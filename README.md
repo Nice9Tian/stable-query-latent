@@ -87,7 +87,7 @@
 
 默认训练配置：
 
-- `epochs=3000`
+- `epochs=400`
 - `batch_size=128`
 - `learning_rate=3e-4`
 - `min_learning_rate=1e-5`
@@ -120,26 +120,26 @@
 
 实验结果：
 
-- 最佳测试准确率出现在 `epoch=307`
-- `train_ce=0.0006218711`
-- `test_ce=0.2100884825`
-- `test_mae=0.0836363636`
-- `test_accuracy=0.9436363636`
+- 最佳测试 MAE 出现在 `epoch=280`
+- `train_ce=0.001557943557`
+- `test_ce=0.19899169`
+- `test_mae=0.08878787879`
+- `test_accuracy=0.9424242424`
 
 逐维测试结果：
 
-| score_column | test_mae | test_accuracy |
-|---|---:|---:|
-| psychological_meaning | 0.069697 | 0.951515 |
-| psychological_mastery | 0.030303 | 0.978788 |
-| psychological_curiosity | 0.100000 | 0.915151 |
-| psychological_autonomy | 0.066667 | 0.933333 |
-| psychological_immersion | 0.112121 | 0.909091 |
-| functional_progress_feedback | 0.145455 | 0.903030 |
-| functional_ease_of_control | 0.045455 | 0.954545 |
-| functional_audiovisual_appeal | 0.133333 | 0.912121 |
-| functional_goals_and_rules | 0.063636 | 0.939394 |
-| functional_challenge | 0.030303 | 0.975758 |
+| score_column | test_ce | test_mae | test_accuracy |
+|---|---:|---:|---:|
+| psychological_meaning | 0.159680 | 0.057576 | 0.966667 |
+| psychological_mastery | 0.050443 | 0.042424 | 0.981818 |
+| psychological_curiosity | 0.377497 | 0.166667 | 0.906061 |
+| psychological_autonomy | 0.241912 | 0.093939 | 0.939394 |
+| psychological_immersion | 0.345395 | 0.181818 | 0.872727 |
+| functional_progress_feedback | 0.215814 | 0.090909 | 0.933333 |
+| functional_ease_of_control | 0.081608 | 0.054545 | 0.975758 |
+| functional_audiovisual_appeal | 0.171714 | 0.075758 | 0.954545 |
+| functional_goals_and_rules | 0.125997 | 0.069697 | 0.939394 |
+| functional_challenge | 0.219857 | 0.054545 | 0.954545 |
 
 ## 运行
 

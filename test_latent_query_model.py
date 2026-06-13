@@ -126,10 +126,12 @@ def evaluate(model, loader, score_dim, device, pin_memory):
     total_mae = 0.0
     total_correct = 0.0
     total_count = 0
+    per_dim_loss_sum = torch.zeros(score_dim, device=device)
     per_dim_mae_sum = torch.zeros(score_dim, device=device)
     per_dim_correct_sum = torch.zeros(score_dim, device=device)
     sample_count = 0
     criterion = torch.nn.CrossEntropyLoss(reduction="sum")
+    per_dim_criterion = torch.nn.CrossEntropyLoss(reduction="none")
 
     with torch.no_grad():
         for tokens, targets in loader:
@@ -142,10 +144,15 @@ def evaluate(model, loader, score_dim, device, pin_memory):
                 logits.reshape(-1, SCORE_CLASS_COUNT),
                 target_classes.reshape(-1),
             ).item()
+            per_item_loss = per_dim_criterion(
+                logits.reshape(-1, SCORE_CLASS_COUNT),
+                target_classes.reshape(-1),
+            ).view(targets.size(0), score_dim)
 
             predicted_scores = logits.argmax(dim=-1).float() + 1.0
             abs_errors = torch.abs(predicted_scores - targets)
             correct = predicted_scores == targets
+            per_dim_loss_sum += per_item_loss.sum(dim=0)
             per_dim_mae_sum += abs_errors.sum(dim=0)
             per_dim_correct_sum += correct.float().sum(dim=0)
             sample_count += targets.size(0)
@@ -153,12 +160,14 @@ def evaluate(model, loader, score_dim, device, pin_memory):
             total_correct += correct.sum().item()
             total_count += targets.numel()
 
+    per_dim_ce = (per_dim_loss_sum / sample_count).cpu().tolist()
     per_dim_mae = (per_dim_mae_sum / sample_count).cpu().tolist()
     per_dim_accuracy = (per_dim_correct_sum / sample_count).cpu().tolist()
     return {
         "test_ce": total_loss / total_count,
         "test_mae": total_mae / total_count,
         "test_accuracy": total_correct / total_count,
+        "per_dim_ce": per_dim_ce,
         "per_dim_mae": per_dim_mae,
         "per_dim_accuracy": per_dim_accuracy,
     }
@@ -362,13 +371,14 @@ def train_and_test(
     if per_dim_txt and best_metrics:
         per_dim_txt.parent.mkdir(parents=True, exist_ok=True)
         with per_dim_txt.open("w", encoding="utf-8") as file:
-            file.write("score_column\ttest_mae\ttest_accuracy\n")
-            for column, mae, accuracy in zip(
+            file.write("score_column\ttest_ce\ttest_mae\ttest_accuracy\n")
+            for column, ce, mae, accuracy in zip(
                 score_columns,
+                best_metrics["per_dim_ce"],
                 best_metrics["per_dim_mae"],
                 best_metrics["per_dim_accuracy"],
             ):
-                file.write(f"{column}\t{mae:.10g}\t{accuracy:.10g}\n")
+                file.write(f"{column}\t{ce:.10g}\t{mae:.10g}\t{accuracy:.10g}\n")
 
     return best_metrics if best_metrics is not None else (history[-1] if history else None)
 
