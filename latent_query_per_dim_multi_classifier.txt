@@ -1,0 +1,11 @@
+score_column	test_mae	test_accuracy
+psychological_meaning	0.06969697028	0.9515151381
+psychological_mastery	0.03030302934	0.9787878394
+psychological_curiosity	0.09999999404	0.9151514769
+psychological_autonomy	0.06666666269	0.9333332777
+psychological_immersion	0.1121212095	0.9090908766
+functional_progress_feedback	0.1454545408	0.9030302763
+functional_ease_of_control	0.04545454308	0.9545454383
+functional_audiovisual_appeal	0.1333333254	0.9121211767
+functional_goals_and_rules	0.06363636255	0.9393939376
+functional_challenge	0.03030302934	0.9757575393

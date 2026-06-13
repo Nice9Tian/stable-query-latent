@@ -128,6 +128,9 @@ def evaluate(model, loader, score_dim, device, pin_memory):
     total_mae = 0.0
     total_correct = 0.0
     total_count = 0
+    per_dim_mae_sum = torch.zeros(score_dim, device=device)
+    per_dim_correct_sum = torch.zeros(score_dim, device=device)
+    sample_count = 0
     criterion = torch.nn.CrossEntropyLoss(reduction="sum")
 
     with torch.no_grad():
@@ -146,11 +149,24 @@ def evaluate(model, loader, score_dim, device, pin_memory):
             ).item()
 
             predicted_scores = logits.argmax(dim=-1).float() + 1.0
-            total_mae += torch.abs(predicted_scores - targets).sum().item()
-            total_correct += (predicted_scores == targets).sum().item()
+            abs_errors = torch.abs(predicted_scores - targets)
+            correct = predicted_scores == targets
+            per_dim_mae_sum += abs_errors.sum(dim=0)
+            per_dim_correct_sum += correct.float().sum(dim=0)
+            sample_count += targets.size(0)
+            total_mae += abs_errors.sum().item()
+            total_correct += correct.sum().item()
             total_count += targets.numel()
 
-    return total_loss / total_count, total_mae / total_count, total_correct / total_count
+    per_dim_mae = (per_dim_mae_sum / sample_count).cpu().tolist()
+    per_dim_accuracy = (per_dim_correct_sum / sample_count).cpu().tolist()
+    return {
+        "test_ce": total_loss / total_count,
+        "test_mae": total_mae / total_count,
+        "test_accuracy": total_correct / total_count,
+        "per_dim_mae": per_dim_mae,
+        "per_dim_accuracy": per_dim_accuracy,
+    }
 
 
 def train_and_test(
@@ -169,6 +185,7 @@ def train_and_test(
     device_name,
     model_out,
     history_txt,
+    per_dim_txt,
     preload_data,
     split_by,
 ):
@@ -180,11 +197,18 @@ def train_and_test(
         model_out = resolve_script_path(model_out)
     if history_txt:
         history_txt = resolve_script_path(history_txt)
+    if per_dim_txt:
+        per_dim_txt = resolve_script_path(per_dim_txt)
 
     with h5py.File(h5_path, "r") as h5:
         sample_count = h5["inputs"].shape[0]
         input_dim = h5["inputs"].shape[2]
         score_dim = h5["targets"].shape[1]
+        score_columns = (
+            decode_h5_strings(h5["score_columns"][:]).tolist()
+            if "score_columns" in h5
+            else [f"score_{index + 1}" for index in range(score_dim)]
+        )
         game_ids = decode_h5_strings(h5["benchmark_game_id"][:]) if "benchmark_game_id" in h5 else None
         if preload_data:
             all_inputs = h5["inputs"][:]
@@ -277,21 +301,17 @@ def train_and_test(
                 train_item_count += targets.numel()
 
             train_ce = train_loss_sum / train_item_count
-            test_ce, test_mae, test_accuracy = evaluate(
-                model, test_loader, score_dim, device, pin_memory
-            )
+            eval_metrics = evaluate(model, test_loader, score_dim, device, pin_memory)
             current_lr = scheduler.get_last_lr()[0]
             history.append(
                 {
                     "epoch": epoch,
                     "learning_rate": current_lr,
                     "train_ce": train_ce,
-                    "test_ce": test_ce,
-                    "test_mae": test_mae,
-                    "test_accuracy": test_accuracy,
+                    **eval_metrics,
                 }
             )
-            if best_metrics is None or test_mae < best_metrics["test_mae"]:
+            if best_metrics is None or eval_metrics["test_mae"] < best_metrics["test_mae"]:
                 best_metrics = history[-1]
                 best_checkpoint = {
                     key: value.detach().cpu().clone()
@@ -301,9 +321,9 @@ def train_and_test(
                 f"epoch={epoch:03d} "
                 f"lr={current_lr:.8f} "
                 f"train_ce={train_ce:.6f} "
-                f"test_ce={test_ce:.6f} "
-                f"test_mae_raw={test_mae:.6f} "
-                f"test_acc={test_accuracy:.6f}"
+                f"test_ce={eval_metrics['test_ce']:.6f} "
+                f"test_mae_raw={eval_metrics['test_mae']:.6f} "
+                f"test_acc={eval_metrics['test_accuracy']:.6f}"
             )
             scheduler.step()
     finally:
@@ -315,6 +335,7 @@ def train_and_test(
             "model_state_dict": best_checkpoint if best_checkpoint is not None else model.state_dict(),
             "input_dim": input_dim,
             "score_dim": score_dim,
+            "score_columns": score_columns,
             "output_dim": score_dim * SCORE_CLASS_COUNT,
             "score_class_count": SCORE_CLASS_COUNT,
             "hidden_dim": hidden_dim,
@@ -346,6 +367,17 @@ def train_and_test(
                     f"{row['test_mae']:.10g}\t"
                     f"{row['test_accuracy']:.10g}\n"
                 )
+
+    if per_dim_txt and best_metrics:
+        per_dim_txt.parent.mkdir(parents=True, exist_ok=True)
+        with per_dim_txt.open("w", encoding="utf-8") as file:
+            file.write("score_column\ttest_mae\ttest_accuracy\n")
+            for column, mae, accuracy in zip(
+                score_columns,
+                best_metrics["per_dim_mae"],
+                best_metrics["per_dim_accuracy"],
+            ):
+                file.write(f"{column}\t{mae:.10g}\t{accuracy:.10g}\n")
 
     return best_metrics if best_metrics is not None else (history[-1] if history else None)
 
@@ -385,6 +417,7 @@ def main():
     parser.add_argument("--device", default=None)
     parser.add_argument("--model-out", default="latent_query_benchmark_multi_classifier.pt")
     parser.add_argument("--history-txt", default="latent_query_training_history_multi_classifier.txt")
+    parser.add_argument("--per-dim-txt", default="latent_query_per_dim_multi_classifier.txt")
     parser.add_argument(
         "--no-preload-data",
         action="store_true",
@@ -408,6 +441,7 @@ def main():
         device_name=args.device,
         model_out=args.model_out,
         history_txt=args.history_txt,
+        per_dim_txt=args.per_dim_txt,
         preload_data=not args.no_preload_data,
         split_by=args.split_by,
     )
@@ -421,6 +455,7 @@ def main():
         )
         print(f"saved model checkpoint: {args.model_out}")
         print(f"saved training history txt: {args.history_txt}")
+        print(f"saved per-dim metrics txt: {args.per_dim_txt}")
 
 
 if __name__ == "__main__":
