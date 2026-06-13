@@ -1,1 +1,8 @@
 benchmark.csv
+/__pycache__
+pseudo_text_data_one_per_game.csv
+pseudo_text_sentence_embeddings/sentence_metadata.csv
+*.pt
+*.h5
+*.npy
+pseudo_text_sentence_embeddings/manifest.json

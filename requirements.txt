@@ -1,0 +1,5 @@
+numpy
+PyQt6
+torch
+transformers>=4.51.0
+wtpsplit
