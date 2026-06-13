@@ -35,42 +35,20 @@ def write_string_dataset(h5, name, values):
     h5.create_dataset(name, data=np.asarray(values, dtype=object), dtype=string_dtype)
 
 
-def average_benchmark_by_game(benchmark, score_columns):
-    for column in score_columns:
-        benchmark[column] = pd.to_numeric(benchmark[column], errors="raise")
-
-    metadata_columns = [
-        column
-        for column in benchmark.columns
-        if column not in set(score_columns) | {"game_id", "sample_index"}
-    ]
-    aggregations = {column: (column, "first") for column in metadata_columns}
-    aggregations.update({column: (column, "mean") for column in score_columns})
-    aggregations["score_sample_count"] = ("game_id", "size")
-
-    averaged = (
-        benchmark.groupby("game_id", sort=False, as_index=False)
-        .agg(**aggregations)
-        .reset_index(drop=True)
-    )
-    averaged["sample_index"] = np.arange(len(averaged), dtype=np.int64)
-    return averaged
-
-
 def build_h5(
-    benchmark_csv,
+    target_csv,
     sentence_metadata_csv,
     embeddings_npy,
     output_h5,
     score_columns,
 ):
-    benchmark_csv = resolve_script_path(benchmark_csv)
+    target_csv = resolve_script_path(target_csv)
     sentence_metadata_csv = resolve_script_path(sentence_metadata_csv)
     embeddings_npy = resolve_script_path(embeddings_npy)
     output_h5 = resolve_script_path(output_h5)
 
-    benchmark = pd.read_csv(
-        benchmark_csv,
+    target_rows = pd.read_csv(
+        target_csv,
         dtype={"game_id": str, "genre_id": str, "game_name": str, "genre_name": str},
     )
     sentence_metadata = pd.read_csv(
@@ -79,11 +57,16 @@ def build_h5(
     )
     embeddings = np.load(embeddings_npy).astype(np.float32)
 
-    missing_scores = [column for column in score_columns if column not in benchmark.columns]
+    missing_scores = [column for column in score_columns if column not in target_rows.columns]
     if missing_scores:
-        raise ValueError(f"Missing score columns in benchmark: {missing_scores}")
+        raise ValueError(f"Missing score columns in target CSV: {missing_scores}")
 
-    benchmark = average_benchmark_by_game(benchmark, score_columns)
+    duplicate_game_ids = target_rows["game_id"][target_rows["game_id"].duplicated()].tolist()
+    if duplicate_game_ids:
+        raise ValueError(
+            "target CSV must contain one row per game_id. Duplicate game_id values: "
+            f"{duplicate_game_ids[:20]}"
+        )
 
     if len(sentence_metadata) != len(embeddings):
         raise ValueError(
@@ -91,10 +74,10 @@ def build_h5(
             f"{len(sentence_metadata)} != {len(embeddings)}"
         )
 
-    missing_game_ids = sorted(set(benchmark["game_id"]) - set(sentence_metadata["game_id"]))
+    missing_game_ids = sorted(set(target_rows["game_id"]) - set(sentence_metadata["game_id"]))
     if missing_game_ids:
         raise ValueError(
-            "Some benchmark game_id values do not appear in sentence metadata: "
+            "Some target CSV game_id values do not appear in sentence metadata: "
             f"{missing_game_ids[:20]}"
         )
 
@@ -102,34 +85,34 @@ def build_h5(
         game_id: group.sort_values("sentence_index")["embedding_index"].to_numpy(dtype=np.int64)
         for game_id, group in sentence_metadata.groupby("game_id", sort=False)
     }
-    sequence_lengths = benchmark["game_id"].map(
+    sequence_lengths = target_rows["game_id"].map(
         lambda game_id: len(game_to_embedding_indices[game_id])
     ).to_numpy(dtype=np.int64)
 
-    sample_count = len(benchmark)
+    sample_count = len(target_rows)
     max_sequence_length = int(sequence_lengths.max())
     embedding_dim = int(embeddings.shape[1])
     inputs = np.zeros((sample_count, max_sequence_length, embedding_dim), dtype=np.float32)
     key_padding_mask = np.ones((sample_count, max_sequence_length), dtype=np.bool_)
 
-    for row_index, game_id in enumerate(benchmark["game_id"]):
+    for row_index, game_id in enumerate(target_rows["game_id"]):
         embedding_indices = game_to_embedding_indices[game_id]
         length = len(embedding_indices)
         inputs[row_index, :length] = embeddings[embedding_indices]
         key_padding_mask[row_index, :length] = False
 
-    targets = benchmark[score_columns].apply(pd.to_numeric, errors="raise").to_numpy(
+    targets = target_rows[score_columns].apply(pd.to_numeric, errors="raise").to_numpy(
         dtype=np.float32
     )
 
     output_h5.parent.mkdir(parents=True, exist_ok=True)
     with h5py.File(output_h5, "w") as h5:
-        h5.attrs["source_benchmark_csv"] = str(benchmark_csv.resolve())
+        h5.attrs["source_target_csv"] = str(target_csv.resolve())
         h5.attrs["source_sentence_metadata_csv"] = str(sentence_metadata_csv.resolve())
         h5.attrs["source_embeddings_npy"] = str(embeddings_npy.resolve())
         h5.attrs["score_columns_json"] = json.dumps(score_columns)
         h5.attrs["input_layout"] = "game_average_sample, sentence_token, embedding_dim"
-        h5.attrs["target_layout"] = "game_average_score"
+        h5.attrs["target_layout"] = "mapped_one_per_game_score"
 
         h5.create_dataset("inputs", data=inputs, compression="gzip", compression_opts=4)
         h5.create_dataset(
@@ -146,17 +129,17 @@ def build_h5(
         )
 
         write_string_dataset(h5, "score_columns", score_columns)
-        write_string_dataset(h5, "benchmark_game_id", benchmark["game_id"].tolist())
-        write_string_dataset(h5, "benchmark_game_name", benchmark["game_name"].astype(str).tolist())
-        write_string_dataset(h5, "benchmark_genre_id", benchmark["genre_id"].astype(str).tolist())
-        write_string_dataset(h5, "benchmark_genre_name", benchmark["genre_name"].astype(str).tolist())
+        write_string_dataset(h5, "benchmark_game_id", target_rows["game_id"].tolist())
+        write_string_dataset(h5, "benchmark_game_name", target_rows["game_name"].astype(str).tolist())
+        write_string_dataset(h5, "benchmark_genre_id", target_rows["genre_id"].astype(str).tolist())
+        write_string_dataset(h5, "benchmark_genre_name", target_rows["genre_name"].astype(str).tolist())
         h5.create_dataset(
             "benchmark_sample_index",
-            data=benchmark["sample_index"].to_numpy(dtype=np.int64),
+            data=np.arange(sample_count, dtype=np.int64),
         )
         h5.create_dataset(
             "benchmark_score_sample_count",
-            data=benchmark["score_sample_count"].to_numpy(dtype=np.int64),
+            data=target_rows["score_sample_count"].to_numpy(dtype=np.int64),
         )
 
         metadata_group = h5.create_group("sentence_metadata")
@@ -179,9 +162,10 @@ def build_h5(
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Package benchmark.csv, sentence metadata, and sentence embeddings into HDF5."
+        description="Package mapped pseudo-text scores, sentence metadata, and sentence embeddings into HDF5."
     )
-    parser.add_argument("--benchmark-csv", default="benchmark.csv")
+    parser.add_argument("--target-csv", default="pseudo_text_data_one_per_game.csv")
+    parser.add_argument("--benchmark-csv", dest="target_csv", help=argparse.SUPPRESS)
     parser.add_argument(
         "--sentence-metadata-csv",
         default="pseudo_text_sentence_embeddings/sentence_metadata.csv",
@@ -195,7 +179,7 @@ def main():
     args = parser.parse_args()
 
     summary = build_h5(
-        args.benchmark_csv,
+        args.target_csv,
         args.sentence_metadata_csv,
         args.embeddings_npy,
         args.output_h5,
