@@ -252,6 +252,104 @@ python generate_pseudo_text.py --input benchmark.csv --output pseudo_text_data_m
 | functional_goals_and_rules | 0.125997 | 0.069697 | 0.939394 |
 | functional_challenge | 0.219857 | 0.054545 | 0.954545 |
 
+## 权重溯源测试
+
+从 `pseudo_text_data_multi.csv` 里选取第 0 行文本，并直接复用
+`benchmark_sentence_latent_query_multi.h5` 中对应的句子 embedding 做
+`grad-times-input` 反向归因。目标类别使用模型对该维度的预测分数。
+
+样本信息：
+
+- `row_index=0`
+- `game_id=72`
+- `game_name=21`
+- `genre_name=Puzzle game`
+- `text_variant_index=1`
+- `checkpoint=latent_query_benchmark_multi_classifier.pt`
+
+原始文本：
+
+> This is a Puzzle game. Another point is that the decision space is broad enough to make play feel flexible. During play, goals, systems, and guidance work together to create a very strong sense of direction. During play, the polished visual and sound design presentation strongly improves immersion and enjoyment. At the same time, the game is highly immersive and can make players lose track of time. From the player's perspective, the game provides very specific progress and reward feedback. In addition, players are easily drawn in by new constraints, surprises, and changes. From the player's perspective, the game makes player choices and actions feel meaningful. Input feedback is accurate, making the game feel very comfortable to control. In practice, the game is moderately challenging while remaining balanced. During play, the game clearly lets players feel that they are becoming better over time.
+
+本次抽查 4 个维度，预测分数均与 CSV 标签一致：
+
+| score_column | true_score | predicted_score | predicted_probability |
+|---|---:|---:|---:|
+| psychological_meaning | 4 | 4 | 0.998968 |
+| psychological_autonomy | 4 | 4 | 0.998343 |
+| functional_goals_and_rules | 5 | 5 | 0.999368 |
+| functional_challenge | 3 | 3 | 0.997105 |
+
+每个维度 top-10 句子归因如下。`importance` 是
+`abs(grad * input)` 的句级总和，`signed` 是有符号的 `grad * input`
+句级总和；正值表示推高目标 logit，负值表示压低目标 logit。
+
+### `psychological_meaning`
+
+| rank | sentence # | importance | signed | sentence |
+|---:|---:|---:|---:|---|
+| 1 | 8 | 28.469210 | -0.018509 | From the player's perspective, the game makes player choices and actions feel meaningful. |
+| 2 | 2 | 23.160913 | -0.006788 | Another point is that the decision space is broad enough to make play feel flexible. |
+| 3 | 4 | 20.712833 | 0.006157 | During play, the polished visual and sound design presentation strongly improves immersion and enjoyment. |
+| 4 | 5 | 20.285248 | -0.009097 | At the same time, the game is highly immersive and can make players lose track of time. |
+| 5 | 11 | 18.705542 | 0.001047 | During play, the game clearly lets players feel that they are becoming better over time. |
+| 6 | 7 | 14.920107 | -0.007795 | In addition, players are easily drawn in by new constraints, surprises, and changes. |
+| 7 | 6 | 12.899150 | -0.004846 | From the player's perspective, the game provides very specific progress and reward feedback. |
+| 8 | 9 | 11.894173 | 0.003073 | Input feedback is accurate, making the game feel very comfortable to control. |
+| 9 | 10 | 11.708222 | 0.000188 | In practice, the game is moderately challenging while remaining balanced. |
+| 10 | 1 | 10.869076 | 0.002041 | This is a Puzzle game. |
+
+### `psychological_autonomy`
+
+| rank | sentence # | importance | signed | sentence |
+|---:|---:|---:|---:|---|
+| 1 | 2 | 26.957672 | 0.012270 | Another point is that the decision space is broad enough to make play feel flexible. |
+| 2 | 8 | 19.949272 | 0.013524 | From the player's perspective, the game makes player choices and actions feel meaningful. |
+| 3 | 9 | 18.452248 | 0.015421 | Input feedback is accurate, making the game feel very comfortable to control. |
+| 4 | 5 | 17.724504 | -0.001987 | At the same time, the game is highly immersive and can make players lose track of time. |
+| 5 | 11 | 16.456701 | 0.001752 | During play, the game clearly lets players feel that they are becoming better over time. |
+| 6 | 4 | 16.389551 | 0.011282 | During play, the polished visual and sound design presentation strongly improves immersion and enjoyment. |
+| 7 | 7 | 15.521434 | 0.002830 | In addition, players are easily drawn in by new constraints, surprises, and changes. |
+| 8 | 3 | 14.815602 | 0.008010 | During play, goals, systems, and guidance work together to create a very strong sense of direction. |
+| 9 | 6 | 13.883622 | -0.000842 | From the player's perspective, the game provides very specific progress and reward feedback. |
+| 10 | 1 | 8.039020 | 0.002425 | This is a Puzzle game. |
+
+### `functional_goals_and_rules`
+
+| rank | sentence # | importance | signed | sentence |
+|---:|---:|---:|---:|---|
+| 1 | 3 | 49.745472 | 0.007319 | During play, goals, systems, and guidance work together to create a very strong sense of direction. |
+| 2 | 6 | 21.964949 | 0.000058 | From the player's perspective, the game provides very specific progress and reward feedback. |
+| 3 | 11 | 20.030167 | 0.013754 | During play, the game clearly lets players feel that they are becoming better over time. |
+| 4 | 2 | 14.509171 | 0.002870 | Another point is that the decision space is broad enough to make play feel flexible. |
+| 5 | 9 | 12.777904 | 0.004639 | Input feedback is accurate, making the game feel very comfortable to control. |
+| 6 | 4 | 11.495865 | 0.003872 | During play, the polished visual and sound design presentation strongly improves immersion and enjoyment. |
+| 7 | 7 | 11.023729 | 0.003466 | In addition, players are easily drawn in by new constraints, surprises, and changes. |
+| 8 | 8 | 10.983618 | 0.009394 | From the player's perspective, the game makes player choices and actions feel meaningful. |
+| 9 | 10 | 7.959258 | 0.004081 | In practice, the game is moderately challenging while remaining balanced. |
+| 10 | 5 | 7.674747 | -0.001358 | At the same time, the game is highly immersive and can make players lose track of time. |
+
+### `functional_challenge`
+
+| rank | sentence # | importance | signed | sentence |
+|---:|---:|---:|---:|---|
+| 1 | 9 | 34.623436 | 0.010462 | Input feedback is accurate, making the game feel very comfortable to control. |
+| 2 | 11 | 21.271782 | -0.006053 | During play, the game clearly lets players feel that they are becoming better over time. |
+| 3 | 2 | 20.202581 | -0.002018 | Another point is that the decision space is broad enough to make play feel flexible. |
+| 4 | 8 | 19.821337 | -0.007812 | From the player's perspective, the game makes player choices and actions feel meaningful. |
+| 5 | 10 | 19.815519 | -0.003833 | In practice, the game is moderately challenging while remaining balanced. |
+| 6 | 7 | 19.667583 | -0.012425 | In addition, players are easily drawn in by new constraints, surprises, and changes. |
+| 7 | 3 | 17.551899 | -0.003004 | During play, goals, systems, and guidance work together to create a very strong sense of direction. |
+| 8 | 1 | 16.997639 | 0.004039 | This is a Puzzle game. |
+| 9 | 6 | 16.036831 | -0.003248 | From the player's perspective, the game provides very specific progress and reward feedback. |
+| 10 | 4 | 14.870131 | -0.009054 | During play, the polished visual and sound design presentation strongly improves immersion and enjoyment. |
+
+可复现时可运行：
+
+```bash
+python visualize_backprop_attribution.py --text "<sample text>" --score-column functional_goals_and_rules --device cpu
+```
+
 ## 运行
 
 训练与测试：
