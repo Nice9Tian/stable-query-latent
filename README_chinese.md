@@ -1,127 +1,149 @@
 # Latent Query Benchmark
 
-This project uses a **latent query** architecture to predict 1–5 ratings across ten scoring dimensions from sentence-level text embeddings.
-The input is a sequence of sentence vectors split from pseudo text; the output is a 5-class classification for each of the 10 dimensions.
+本项目用「latent query」结构，从句子级文本嵌入中预测每个评分维度的 1-5 分等级。
+输入是按文本拆分后的句向量序列，输出是 10 个评分维度的分类结果。
 
-## Task Definition
+## 任务定义
 
-- **Input:** Each sample is a sequence of sentence embeddings (`input_dim=1024`) derived from pseudo text.
-- **Output:** 10 scoring dimensions, each treated as a 5-class classification (scores 1–5).
-- **Output size:** `10 × 5 = 50`
+- 输入：每个样本是一段 pseudo text 对应的句子 embedding 序列，维度为 `input_dim=1024`
+- 输出：10 个评分维度，每个维度做 5 类分类（1-5 分）
+- 最终输出维度：`10 * 5 = 50`
 
-Scoring columns:
+评分列默认包括：
 
 `psychological_meaning`, `psychological_mastery`, `psychological_curiosity`, `psychological_autonomy`, `psychological_immersion`,
 `functional_progress_feedback`, `functional_ease_of_control`, `functional_audiovisual_appeal`, `functional_goals_and_rules`, `functional_challenge`
 
-## Model Details
+## 模型细节
 
-The core model is defined in [`latent_query_model.py`](./latent_query_model.py).
+核心模型定义在 [`latent_query_model.py`](./latent_query_model.py)。
 
-### 1. Input Projection
+### 1. 输入投影
 
-Each 1024-dimensional sentence vector is linearly projected into a hidden space:
+先将每个 1024 维句向量线性投影到隐藏空间：
 
-- `Linear(input_dim → hidden_dim)`
-- Default `hidden_dim=64`
+- `Linear(input_dim -> hidden_dim)`
+- 默认 `hidden_dim=64`
 
-### 2. Three-Stage Latent Query Cross-Attention
+### 2. 三级 latent query cross-attention
 
-The model uses 3 Cross-Attention Blocks with query counts of:
+模型使用 3 个 Cross-Attention Block，latent query 数分别为：
 
 - `32`
 - `16`
 - `8`
 
-Each block contains:
+每个 block 的结构：
 
-- Learnable queries: `nn.Parameter(num_queries, dim)`
-- `LayerNorm` on both queries and context
+- 可学习 queries：`nn.Parameter(num_queries, dim)`
+- `LayerNorm` 归一化 query 和 context
 - `MultiheadAttention`
-- Residual connection
-- FFN: `LayerNorm → Linear → GELU → Dropout → Linear → Dropout`
+- 残差连接
+- FFN：`LayerNorm -> Linear -> GELU -> Dropout -> Linear -> Dropout`
 
-Default hyperparameters:
+默认参数：
 
 - `num_heads=8`
 - `dropout=0.0`
 - `mlp_ratio=4.0`
 
-### 3. Flatten Head
+### 3. Flatten head
 
-The 8 latent vectors from the final block are flattened:
+最后一个 block 输出的 8 个 latent 被直接 flatten：
 
 - `LayerNorm`
-- `Linear(8 × hidden_dim → flat_dim)`
+- `Linear(8 * hidden_dim -> flat_dim)`
 - `GELU`
 - `Dropout`
 - `LayerNorm`
-- `Linear(flat_dim → output_dim)`
+- `Linear(flat_dim -> output_dim)`
 
-Default `flat_dim=128`.
+默认 `flat_dim=128`。
 
-### 4. Training Objective
+### 4. 训练目标
 
-Each scoring dimension is treated as a 5-class classification:
+训练脚本把每个评分维度都当成 5 类分类问题，使用：
 
-- Loss: `CrossEntropyLoss`
-- Labels are in range `1..5`
-- Prediction: `argmax + 1`
+- `CrossEntropyLoss`
+- 标签范围要求是 `1..5`
+- 预测时取 `argmax + 1`
 
-## Data Pipeline
+## 数据管线
 
-1. `generate_pseudo_text.py` — generates pseudo text from `benchmark.csv`
-2. `embed_pseudo_text_sentences.py` — splits into sentences and produces sentence embeddings
-3. `build_h5.py` — packages embeddings, masks, and labels into HDF5
-4. `test_latent_query_model.py` — loads HDF5, trains, and evaluates the model
+1. `generate_pseudo_text.py`
+   - 从 `benchmark.csv` 生成伪文本
+2. `embed_pseudo_text_sentences.py`
+   - 用 sentence splitter + embedding model 生成句向量
+3. `build_h5.py`
+   - 把句向量、mask、标签打包成 HDF5
+4. `test_latent_query_model.py`
+   - 读取 HDF5，训练并评测模型
 
-## Pseudo Text Generation
+## 伪数据生成逻辑
 
-Pseudo text is synthesized by `generate_pseudo_text.py` from `benchmark.csv`. Rather than translating raw scores literally, it maps each sample's 10 rating dimensions into readable English description sentences.
+伪文本由 `generate_pseudo_text.py` 从 `benchmark.csv` 合成。它不是逐字翻译原始分数，而是把每个样本的 10 个评分维度映射成一组可读的英文描述句。
 
-### 1. Input and Grouping
+### 1. 输入与分组
 
-- Input must contain `game_id` and the 10 scoring columns.
-- If a `game_id` spans multiple rows, they are aggregated first: each scoring column is averaged and rounded back to an integer in 1–5.
-- A `score_sample_count` column is added to indicate how many original rows were averaged.
-- `game_title` is not written to output.
+- 输入必须包含 `game_id` 和 10 个评分列
+- 如果同一个 `game_id` 对应多行，脚本会先按游戏聚合
+- 聚合方式是对每个评分列求平均，再把平均值映射回 1-5 分整数
+- 聚合后会新增 `score_sample_count`，表示该游戏被平均了多少条原始记录
+- `game_title` 不会写入输出
 
-### 2. Score-to-Bucket Mapping
+### 2. 分数到文本桶的映射
 
-Each score is mapped to one of five buckets:
+每个评分列先被转换成五档之一：
 
-| Threshold | Bucket | Label |
-|---|---|---|
-| `<= -1.8` | `1` | `very_low` |
-| `<= -0.6` | `2` | `low` |
-| `< 0.6` | `3` | `medium` |
-| `< 1.8` | `4` | `high` |
-| `>= 1.8` | `5` | `very_high` |
+- `<= -1.8` -> `1` (`very_low`)
+- `<= -0.6` -> `2` (`low`)
+- `< 0.6` -> `3` (`medium`)
+- `< 1.8` -> `4` (`high`)
+- `>= 1.8` -> `5` (`very_high`)
 
-A sentence is then sampled from the template pool for that dimension and bucket.
+然后每个维度从对应桶的模板池里随机抽一句。模板池针对不同维度分别写了正负向描述，比如：
 
-### 3. Sentence Structure
+- `psychological_meaning`
+- `psychological_mastery`
+- `psychological_curiosity`
+- `psychological_autonomy`
+- `psychological_immersion`
+- `functional_progress_feedback`
+- `functional_ease_of_control`
+- `functional_audiovisual_appeal`
+- `functional_goals_and_rules`
+- `functional_challenge`
 
-Each pseudo text consists of:
+### 3. 句子结构
 
-1. An opening sentence
-2. One sentence per scoring dimension (10 total)
+默认每条伪文本由两部分组成：
 
-The opening sentence is chosen randomly from:
+1. 开头句
+2. 10 个评分维度句子
+
+开头句从下面几种固定句式里随机选一个，并插入 `genre_name`：
 
 - `This is a {genre}.`
 - `Overall, this {genre} offers a clear player experience.`
 - `As a {genre}, it leaves a fairly distinct impression.`
 - `This {genre} has noticeable strengths and weaknesses across several play dimensions.`
 
-Each dimension sentence may be prefixed by a random connector such as:
-`At the same time, ` / `In addition, ` / `During play, ` / `From the player's perspective, ` / `More specifically, ` / `In practice, ` / `Another point is that ` / (empty)
+每个维度句前还会随机加一个连接词，例如：
 
-When a connector is added, the first letter of the following sentence is lowercased.
+- `At the same time, `
+- `In addition, `
+- `During play, `
+- `From the player's perspective, `
+- `More specifically, `
+- `In practice, `
+- `Another point is that `
+- 空字符串
 
-### 4. Lexical Variation
+如果前面加了连接词，脚本会把后面的句子首字母降成小写，让整句更自然。
 
-To reduce template artifacts, key words are lightly substituted with synonyms, for example:
+### 4. 词汇扰动
+
+为了减少模板痕迹，脚本会对部分关键词做轻量同义词替换，例如：
 
 - `clear` / `specific` / `precise` / `detailed`
 - `difficult` / `challenging` / `demanding`
@@ -130,88 +152,92 @@ To reduce template artifacts, key words are lightly substituted with synonyms, f
 - `rules` / `mechanics` / `systems`
 - `visuals` / `art direction` / `graphics`
 
-Substitution happens randomly with a default probability of ~55%.
+这一步是随机发生的，默认替换概率大约为 55%。
 
-### 5. Order and Variants
+### 5. 顺序与变体
 
-- Dimension sentence order is shuffled by default; use `--keep-order` to preserve column order.
-- The opening sentence is included by default; use `--no-opening` to omit it.
-- Lexical variation is enabled by default; use `--no-lexical-variation` to disable.
-- `--variants-per-row` generates multiple distinct pseudo texts per aggregated game record.
+- 默认会打乱 10 个维度句子的顺序
+- 可用 `--keep-order` 保持列顺序
+- 默认会加入开头句
+- 可用 `--no-opening` 去掉开头句
+- 默认启用词汇扰动
+- 可用 `--no-lexical-variation` 关闭
+- `--variants-per-row` 可以为同一条聚合后的游戏记录生成多条不同伪文本
 
-### 6. Output Fields
+### 6. 输出字段
 
-The output CSV/JSONL includes:
+输出 CSV/JSONL 的核心字段包括：
 
 - `generated_text`
-- Original identifier fields: `game_id`, `genre_id`, `genre_name`, etc.
-- 10 scoring columns
+- 原始标识字段，如 `game_id`、`genre_id`、`genre_name` 等
+- 10 个评分列
 - `score_sample_count`
 - `text_variant_index`
 
-### 7. Example Commands
+### 7. 典型命令
 
-Generate one pseudo text per game:
+生成单条伪文本：
 
 ```bash
 python generate_pseudo_text.py --input benchmark.csv --output pseudo_text_data_one_per_game.csv
 ```
 
-Generate multiple variants per game:
+生成多变体版本：
 
 ```bash
 python generate_pseudo_text.py --input benchmark.csv --output pseudo_text_data_multi.csv --variants-per-row 4
 ```
 
-The full pipeline is: generate pseudo text → split sentences and embed → pack into HDF5.
+如果你后面还想复现完整流水线，一般是先生成伪文本，再做句子切分和嵌入，最后打包成 HDF5。
 
-Default HDF5 input file: `benchmark_sentence_latent_query_multi.h5`
+默认 HDF5 输入文件：
 
-## Training Configuration
+- `benchmark_sentence_latent_query_multi.h5`
 
-| Parameter | Value |
-|---|---|
-| `epochs` | 400 |
-| `batch_size` | 128 |
-| `learning_rate` | 3e-4 |
-| `min_learning_rate` | 1e-5 |
-| `test_ratio` | 0.2 |
-| `seed` | 42 |
-| `split_by` | `score_combo` |
+## 训练设置
 
-Optimizer and scheduler:
+默认训练配置：
+
+- `epochs=400`
+- `batch_size=128`
+- `learning_rate=3e-4`
+- `min_learning_rate=1e-5`
+- `test_ratio=0.2`
+- `seed=42`
+- `split_by=score_combo`
+
+优化器和调度器：
 
 - `AdamW(weight_decay=1e-4)`
 - `CosineAnnealingLR`
 
-## Results
+## 测试结果
 
-Best checkpoint saved at: `latent_query_benchmark_multi_classifier.pt`
+当前仓库保存的最佳 checkpoint：
 
-Model configuration:
+- `latent_query_benchmark_multi_classifier.pt`
 
-| Parameter | Value |
-|---|---|
-| `input_dim` | 1024 |
-| `score_dim` | 10 |
-| `output_dim` | 50 |
-| `hidden_dim` | 64 |
-| `flat_dim` | 128 |
-| `query_sizes` | (32, 16, 8) |
-| `num_heads` | 8 |
-| `dropout` | 0.0 |
-| `split` | `score_combo`, 304 groups, 61 test groups |
+对应配置：
 
-Best test results at `epoch=280`:
+- `input_dim=1024`
+- `score_dim=10`
+- `output_dim=50`
+- `hidden_dim=64`
+- `flat_dim=128`
+- `query_sizes=(32, 16, 8)`
+- `num_heads=8`
+- `dropout=0.0`
+- `split=score_combo groups=304 test_groups=61`
 
-| Metric | Value |
-|---|---|
-| `train_ce` | 0.001558 |
-| `test_ce` | 0.198992 |
-| `test_mae` | 0.088788 |
-| `test_accuracy` | 0.942424 |
+实验结果：
 
-Per-dimension results:
+- 最佳测试 MAE 出现在 `epoch=280`
+- `train_ce=0.001557943557`
+- `test_ce=0.19899169`
+- `test_mae=0.08878787879`
+- `test_accuracy=0.9424242424`
+
+逐维测试结果：
 
 | score_column | test_ce | test_mae | test_accuracy |
 |---|---:|---:|---:|
@@ -226,20 +252,26 @@ Per-dimension results:
 | functional_goals_and_rules | 0.125997 | 0.069697 | 0.939394 |
 | functional_challenge | 0.219857 | 0.054545 | 0.954545 |
 
-## Weight Attribution Test
+## 权重溯源测试
 
-A grad-times-input backward attribution was performed on row 0 of `pseudo_text_data_multi.csv`, reusing the sentence embeddings from `benchmark_sentence_latent_query_multi.h5`. The target class for each dimension is the model's predicted score.
+从 `pseudo_text_data_multi.csv` 里选取第 0 行文本，并直接复用
+`benchmark_sentence_latent_query_multi.h5` 中对应的句子 embedding 做
+`grad-times-input` 反向归因。目标类别使用模型对该维度的预测分数。
 
-Sample info:
+样本信息：
 
-- `row_index=0`, `game_id=72`, `game_name=21`, `genre_name=Puzzle game`, `text_variant_index=1`
+- `row_index=0`
+- `game_id=72`
+- `game_name=21`
+- `genre_name=Puzzle game`
+- `text_variant_index=1`
 - `checkpoint=latent_query_benchmark_multi_classifier.pt`
 
-Input text:
+原始文本：
 
 > This is a Puzzle game. Another point is that the decision space is broad enough to make play feel flexible. During play, goals, systems, and guidance work together to create a very strong sense of direction. During play, the polished visual and sound design presentation strongly improves immersion and enjoyment. At the same time, the game is highly immersive and can make players lose track of time. From the player's perspective, the game provides very specific progress and reward feedback. In addition, players are easily drawn in by new constraints, surprises, and changes. From the player's perspective, the game makes player choices and actions feel meaningful. Input feedback is accurate, making the game feel very comfortable to control. In practice, the game is moderately challenging while remaining balanced. During play, the game clearly lets players feel that they are becoming better over time.
 
-Predictions on 4 sampled dimensions all match the CSV labels:
+本次抽查 4 个维度，预测分数均与 CSV 标签一致：
 
 | score_column | true_score | predicted_score | predicted_probability |
 |---|---:|---:|---:|
@@ -248,7 +280,9 @@ Predictions on 4 sampled dimensions all match the CSV labels:
 | functional_goals_and_rules | 5 | 5 | 0.999368 |
 | functional_challenge | 3 | 3 | 0.997105 |
 
-Top-10 sentence attributions per dimension. `importance` = sentence-level sum of `abs(grad × input)`; `signed` = sentence-level sum of `grad × input` (positive = pushes target logit up, negative = pushes it down).
+每个维度 top-10 句子归因如下。`importance` 是
+`abs(grad * input)` 的句级总和，`signed` 是有符号的 `grad * input`
+句级总和；正值表示推高目标 logit，负值表示压低目标 logit。
 
 ### `psychological_meaning`
 
@@ -310,27 +344,27 @@ Top-10 sentence attributions per dimension. `importance` = sentence-level sum of
 | 9 | 6 | 16.036831 | -0.003248 | From the player's perspective, the game provides very specific progress and reward feedback. |
 | 10 | 4 | 14.870131 | -0.009054 | During play, the polished visual and sound design presentation strongly improves immersion and enjoyment. |
 
-To reproduce:
+可复现时可运行：
 
 ```bash
 python visualize_backprop_attribution.py --text "<sample text>" --score-column functional_goals_and_rules --device cpu
 ```
 
-## Usage
+## 运行
 
-Train and evaluate:
+训练与测试：
 
 ```bash
 python test_latent_query_model.py
 ```
 
-To override hyperparameters:
+如需改参数，可查看脚本里的命令行选项，例如：
 
 ```bash
 python test_latent_query_model.py --epochs 500 --batch-size 64 --device cuda
 ```
 
-## Key Files
+## 主要文件
 
 - [`latent_query_model.py`](./latent_query_model.py)
 - [`test_latent_query_model.py`](./test_latent_query_model.py)
