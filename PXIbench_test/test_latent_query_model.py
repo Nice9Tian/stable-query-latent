@@ -31,6 +31,10 @@ class H5LatentQueryDataset(Dataset):
         self.target_mean = target_mean
         self.target_std = target_std
         self.handle = None
+        with h5py.File(self.h5_path, "r") as h5:
+            self.flattened_inputs = h5["inputs"].ndim == 2
+            self.has_sequence_lengths = "sequence_lengths" in h5
+            self.has_sequence_offsets = "sequence_offsets" in h5
 
     def _h5(self):
         if self.handle is None:
@@ -43,7 +47,17 @@ class H5LatentQueryDataset(Dataset):
     def __getitem__(self, item):
         row = int(self.indices[item])
         h5 = self._h5()
-        tokens = torch.from_numpy(h5["inputs"][row]).float()
+        if self.flattened_inputs:
+            if not (self.has_sequence_offsets and self.has_sequence_lengths):
+                raise ValueError("Flattened HDF5 inputs require sequence_offsets and sequence_lengths.")
+            offset = int(h5["sequence_offsets"][row])
+            length = int(h5["sequence_lengths"][row])
+            tokens_np = h5["inputs"][offset : offset + length]
+        else:
+            tokens_np = h5["inputs"][row]
+            if self.has_sequence_lengths:
+                tokens_np = tokens_np[: int(h5["sequence_lengths"][row])]
+        tokens = torch.from_numpy(tokens_np).float()
         target = torch.from_numpy(h5["targets"][row]).float()
 
         if self.target_mean is not None and self.target_std is not None:
@@ -58,10 +72,23 @@ class H5LatentQueryDataset(Dataset):
 
 
 class TensorLatentQueryDataset(Dataset):
-    def __init__(self, inputs, targets, indices, target_mean=None, target_std=None):
+    def __init__(
+        self,
+        inputs,
+        targets,
+        indices,
+        sequence_offsets=None,
+        sequence_lengths=None,
+        target_mean=None,
+        target_std=None,
+    ):
         indices = np.asarray(indices, dtype=np.int64)
-        self.inputs = torch.from_numpy(inputs[indices]).float()
+        self.inputs = inputs
         self.targets = torch.from_numpy(targets[indices]).float()
+        self.indices = indices
+        self.flattened_inputs = inputs.ndim == 2
+        self.sequence_offsets = sequence_offsets
+        self.sequence_lengths = sequence_lengths
 
         if target_mean is not None and target_std is not None:
             self.targets = (self.targets - target_mean) / target_std
@@ -70,10 +97,36 @@ class TensorLatentQueryDataset(Dataset):
         return self.targets.size(0)
 
     def __getitem__(self, item):
-        return self.inputs[item], self.targets[item]
+        row = int(self.indices[item])
+        if self.flattened_inputs:
+            if self.sequence_offsets is None or self.sequence_lengths is None:
+                raise ValueError("Flattened inputs require sequence_offsets and sequence_lengths.")
+            offset = int(self.sequence_offsets[row])
+            length = int(self.sequence_lengths[row])
+            tokens_np = self.inputs[offset : offset + length]
+        else:
+            tokens_np = self.inputs[row]
+            if self.sequence_lengths is not None:
+                tokens_np = tokens_np[: int(self.sequence_lengths[row])]
+        return torch.from_numpy(tokens_np).float(), self.targets[item]
 
     def close(self):
         pass
+
+
+def pad_variable_length_batch(batch):
+    tokens, targets = zip(*batch)
+    lengths = torch.as_tensor([item.size(0) for item in tokens], dtype=torch.long)
+    max_length = int(lengths.max().item())
+    batch_size = len(tokens)
+    embedding_dim = tokens[0].size(1)
+    padded = tokens[0].new_zeros((batch_size, max_length, embedding_dim))
+    key_padding_mask = torch.ones((batch_size, max_length), dtype=torch.bool)
+    for index, token_tensor in enumerate(tokens):
+        length = token_tensor.size(0)
+        padded[index, :length] = token_tensor
+        key_padding_mask[index, :length] = False
+    return padded, key_padding_mask, torch.stack(targets)
 
 
 def parse_query_sizes(value):
@@ -138,12 +191,15 @@ def evaluate(model, loader, score_dim, device, pin_memory):
     per_dim_criterion = torch.nn.CrossEntropyLoss(reduction="none")
 
     with torch.no_grad():
-        for tokens, targets in loader:
+        for tokens, key_padding_mask, targets in loader:
             tokens = tokens.to(device, non_blocking=pin_memory)
+            key_padding_mask = key_padding_mask.to(device, non_blocking=pin_memory)
             targets = targets.to(device, non_blocking=pin_memory)
             target_classes = targets_to_classes(targets)
 
-            logits = model(tokens).view(targets.size(0), score_dim, SCORE_CLASS_COUNT)
+            logits = model(tokens, key_padding_mask=key_padding_mask).view(
+                targets.size(0), score_dim, SCORE_CLASS_COUNT
+            )
             total_loss += criterion(
                 logits.reshape(-1, SCORE_CLASS_COUNT),
                 target_classes.reshape(-1),
@@ -209,9 +265,11 @@ def train_and_test(
         per_dim_txt = resolve_script_path(per_dim_txt)
 
     with h5py.File(h5_path, "r") as h5:
-        sample_count = h5["inputs"].shape[0]
-        input_dim = h5["inputs"].shape[2]
+        flattened_inputs = h5["inputs"].ndim == 2
+        sample_count = h5["targets"].shape[0]
+        input_dim = h5["inputs"].shape[1] if flattened_inputs else h5["inputs"].shape[2]
         score_dim = h5["targets"].shape[1]
+        input_layout = h5.attrs.get("input_layout", "legacy_padded_inputs")
         score_columns = (
             decode_h5_strings(h5["score_columns"][:]).tolist()
             if "score_columns" in h5
@@ -220,6 +278,8 @@ def train_and_test(
         game_ids = decode_h5_strings(h5["benchmark_game_id"][:]) if "benchmark_game_id" in h5 else None
         if preload_data:
             all_inputs = h5["inputs"][:]
+            all_sequence_offsets = h5["sequence_offsets"][:] if "sequence_offsets" in h5 else None
+            all_sequence_lengths = h5["sequence_lengths"][:] if "sequence_lengths" in h5 else None
             all_targets_np = h5["targets"][:]
         else:
             all_targets_np = h5["targets"][:]
@@ -244,21 +304,41 @@ def train_and_test(
 
     if preload_data:
         train_dataset = TensorLatentQueryDataset(
-            all_inputs, all_targets_np, train_indices
+            all_inputs,
+            all_targets_np,
+            train_indices,
+            sequence_offsets=all_sequence_offsets,
+            sequence_lengths=all_sequence_lengths,
         )
         test_dataset = TensorLatentQueryDataset(
-            all_inputs, all_targets_np, test_indices
+            all_inputs,
+            all_targets_np,
+            test_indices,
+            sequence_offsets=all_sequence_offsets,
+            sequence_lengths=all_sequence_lengths,
         )
     else:
         train_dataset = H5LatentQueryDataset(h5_path, train_indices)
         test_dataset = H5LatentQueryDataset(h5_path, test_indices)
     pin_memory = device.type == "cuda"
-    train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True, pin_memory=pin_memory)
-    test_loader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False, pin_memory=pin_memory)
+    train_loader = DataLoader(
+        train_dataset,
+        batch_size=batch_size,
+        shuffle=True,
+        pin_memory=pin_memory,
+        collate_fn=pad_variable_length_batch,
+    )
+    test_loader = DataLoader(
+        test_dataset,
+        batch_size=batch_size,
+        shuffle=False,
+        pin_memory=pin_memory,
+        collate_fn=pad_variable_length_batch,
+    )
     print(
         f"device={device} samples={sample_count} train={len(train_indices)} "
         f"test={len(test_indices)} batch_size={batch_size} split={split_note} "
-        f"preload_data={preload_data}"
+        f"preload_data={preload_data} input_layout={input_layout}"
     )
 
     model = LatentQueryFlatRegressor(
@@ -287,13 +367,16 @@ def train_and_test(
             train_loss_sum = 0.0
             train_item_count = 0
 
-            for tokens, targets in train_loader:
+            for tokens, key_padding_mask, targets in train_loader:
                 tokens = tokens.to(device, non_blocking=pin_memory)
+                key_padding_mask = key_padding_mask.to(device, non_blocking=pin_memory)
                 targets = targets.to(device, non_blocking=pin_memory)
                 target_classes = targets_to_classes(targets)
 
                 optimizer.zero_grad(set_to_none=True)
-                logits = model(tokens).view(targets.size(0), score_dim, SCORE_CLASS_COUNT)
+                logits = model(tokens, key_padding_mask=key_padding_mask).view(
+                    targets.size(0), score_dim, SCORE_CLASS_COUNT
+                )
                 loss = criterion(
                     logits.reshape(-1, SCORE_CLASS_COUNT),
                     target_classes.reshape(-1),

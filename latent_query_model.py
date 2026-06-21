@@ -30,7 +30,7 @@ class CrossAttentionBlock(nn.Module):
             nn.Dropout(dropout),
         )
 
-    def forward(self, context):
+    def forward(self, context, key_padding_mask=None):
         batch_size = context.size(0)
         queries = self.queries.unsqueeze(0).expand(batch_size, -1, -1)
 
@@ -38,6 +38,7 @@ class CrossAttentionBlock(nn.Module):
             query=self.query_norm(queries),
             key=self.context_norm(context),
             value=self.context_norm(context),
+            key_padding_mask=key_padding_mask,
             need_weights=False,
         )
 
@@ -102,11 +103,11 @@ class LatentQueryFlatRegressor(nn.Module):
             dropout=dropout,
         )
 
-    def forward(self, x):
+    def forward(self, x, key_padding_mask=None):
         x = self.input_proj(x)
 
         for index, block in enumerate(self.blocks):
-            x = block(x)
+            x = block(x, key_padding_mask=key_padding_mask if index == 0 else None)
 
         return self.head(x)
 

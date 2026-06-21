@@ -27,9 +27,10 @@ from pathlib import Path
 _PROJECT_ROOT = Path(__file__).resolve().parent.parent
 if str(_PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(_PROJECT_ROOT))
+SCRIPT_DIR = Path(__file__).resolve().parent
 
-DEFAULT_INPUT_DIR = "game_review_sentences"
-DEFAULT_OUTPUT_DIR = "game_review_embedded"
+DEFAULT_INPUT_DIR = SCRIPT_DIR / "game_review_sentences"
+DEFAULT_OUTPUT_DIR = SCRIPT_DIR / "game_review_embedded"
 DEFAULT_LOCAL_MODEL = "Qwen/Qwen3-Embedding-0.6B"
 
 

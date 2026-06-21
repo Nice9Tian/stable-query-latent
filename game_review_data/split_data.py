@@ -18,8 +18,10 @@ import json
 import re
 from pathlib import Path
 
-DEFAULT_INPUT_DIR = "game_review_metadata"
-DEFAULT_OUTPUT_DIR = "game_review_sentences"
+SCRIPT_DIR = Path(__file__).resolve().parent
+
+DEFAULT_INPUT_DIR = SCRIPT_DIR / "game_review_metadata"
+DEFAULT_OUTPUT_DIR = SCRIPT_DIR / "game_review_sentences"
 DEFAULT_MODEL = "sat-3l-sm"
 DEFAULT_CHUNK_SIZE = 2000
 

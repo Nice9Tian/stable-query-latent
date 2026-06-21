@@ -1,6 +1,6 @@
 # coding=utf-8
 """
-sst_clean.py — Self-contained rebuild of the Stanford Sentiment Treebank (SST).
+sst_build.py — Self-contained rebuild of the Stanford Sentiment Treebank (SST).
 
 Standalone reimplementation of HuggingFace's `sst.py` that needs NO third-party
 libraries (no `datasets`, no `pyarrow`). Run it and it will:
@@ -17,9 +17,9 @@ Configs (matching the HF dataset card):
     ptb         ptb_tree (root label 0-4 baked in)           -> train/dev/test
 
 Usage:
-    py -3.12 sst_clean.py
-    py -3.12 sst_clean.py --output ./sst/clean --cache ./sst/raw
-    py -3.12 sst_clean.py --configs default          # only the default config
+    py -3.12 sst_build.py
+    py -3.12 sst_build.py --output ./sst/clean --cache ./sst/raw
+    py -3.12 sst_build.py --configs default          # only the default config
 
 Only the Python standard library is required.
 """
@@ -55,7 +55,7 @@ def download(url: str, dest: str) -> None:
         print(f"[skip] already cached: {os.path.basename(dest)}")
         return
     print(f"[get ] {url}")
-    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 sst_clean.py"})
+    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 sst_build.py"})
     with urllib.request.urlopen(req) as resp, open(dest, "wb") as out:
         out.write(resp.read())
     print(f"       -> {dest} ({os.path.getsize(dest):,} bytes)")

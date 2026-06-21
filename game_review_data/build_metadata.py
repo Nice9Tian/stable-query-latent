@@ -21,10 +21,13 @@ from pathlib import Path
 
 import pandas as pd
 
-# Defaults point at the local Steam dataset layout used during development.
-DEFAULT_REVIEWS_DIR = r"C:\Users\admin\Desktop\database\game_review_cleaned"
-DEFAULT_GAMES_JSON = r"C:\Users\admin\Desktop\database\game_disturbute\games.json"
-DEFAULT_OUTPUT_DIR = "game_review_metadata"
+SCRIPT_DIR = Path(__file__).resolve().parent
+
+# Script-relative defaults keep the pipeline portable. Override them if your raw
+# review CSVs or games.json live elsewhere.
+DEFAULT_REVIEWS_DIR = SCRIPT_DIR / "reviews"
+DEFAULT_GAMES_JSON = SCRIPT_DIR / "games.json"
+DEFAULT_OUTPUT_DIR = SCRIPT_DIR / "game_review_metadata"
 META_FIELDS = ("detailed_description", "about_the_game", "short_description")
 
 
@@ -110,8 +113,16 @@ def build_metadata(
 
 def parse_args():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--reviews-dir", default=DEFAULT_REVIEWS_DIR)
-    parser.add_argument("--games-json", default=DEFAULT_GAMES_JSON)
+    parser.add_argument(
+        "--reviews-dir",
+        default=DEFAULT_REVIEWS_DIR,
+        help="Raw review CSV directory (default: script-relative reviews/).",
+    )
+    parser.add_argument(
+        "--games-json",
+        default=DEFAULT_GAMES_JSON,
+        help="Game metadata JSON file (default: script-relative games.json).",
+    )
     parser.add_argument("--output-dir", default=DEFAULT_OUTPUT_DIR)
     parser.add_argument("--min-length", default=300, type=int)
     parser.add_argument("--min-count", default=500, type=int)

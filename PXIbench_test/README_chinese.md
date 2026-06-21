@@ -75,7 +75,7 @@
 2. `embed_pseudo_text_sentences.py`
    - 用 sentence splitter + embedding model 生成句向量
 3. `build_h5.py`
-   - 把句向量、mask、标签打包成 HDF5
+   - 把扁平句向量、序列 offset/length、标签打包成 HDF5
 4. `test_latent_query_model.py`
    - 读取 HDF5，训练并评测模型
 
@@ -188,7 +188,7 @@ python generate_pseudo_text.py --input benchmark.csv --output pseudo_text_data_o
 python generate_pseudo_text.py --input benchmark.csv --output pseudo_text_data_multi.csv --variants-per-row 4
 ```
 
-如果你后面还想复现完整流水线，一般是先生成伪文本，再做句子切分和嵌入，最后打包成 HDF5。
+如果你后面还想复现完整流水线，一般是先生成伪文本，再做句子切分和嵌入，最后把扁平句向量和序列 offset/length 打包成 HDF5。
 
 默认 HDF5 输入文件：
 

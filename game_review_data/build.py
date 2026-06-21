@@ -9,7 +9,7 @@ Each stage can be skipped with --skip so you can re-run just part of the pipelin
 The embedding backend (local Qwen vs cloud TEI) is selected with --backend.
 
 Example (experiment on a subset, clean step only):
-    python build_gamedata.py --workdir experiments/run1 --reviews-dir <dir> --only metadata
+    python build.py --workdir experiments/run1 --reviews-dir <dir> --only metadata
 """
 
 import argparse
@@ -19,12 +19,13 @@ from build_metadata import DEFAULT_GAMES_JSON, DEFAULT_REVIEWS_DIR, build_metada
 from split_data import split_data
 from embedding_data import embed_data
 
+SCRIPT_DIR = Path(__file__).resolve().parent
 STAGES = ("metadata", "split", "embed")
 
 
 def parse_args():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--workdir", default="gamedata", type=Path,
+    parser.add_argument("--workdir", default=SCRIPT_DIR / "gamedata", type=Path,
                         help="Directory holding the metadata/sentences/embedded subdirs.")
     parser.add_argument("--only", nargs="+", choices=STAGES, default=None,
                         help="Run only these stages (default: all).")
@@ -33,8 +34,16 @@ def parse_args():
     parser.add_argument("--overwrite", action="store_true")
 
     # stage 1: metadata
-    parser.add_argument("--reviews-dir", default=None, help="Raw review CSV dir (build_metadata default if unset).")
-    parser.add_argument("--games-json", default=None)
+    parser.add_argument(
+        "--reviews-dir",
+        default=None,
+        help="Raw review CSV dir (default: game_review_data/reviews/).",
+    )
+    parser.add_argument(
+        "--games-json",
+        default=None,
+        help="Game metadata JSON file (default: game_review_data/games.json).",
+    )
     parser.add_argument("--min-length", default=300, type=int)
     parser.add_argument("--min-count", default=500, type=int)
     parser.add_argument("--no-meta", dest="with_meta", action="store_false")

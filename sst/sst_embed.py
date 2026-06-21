@@ -1,4 +1,4 @@
-"""Embed the SST `default_*` splits produced by sst_clean.py, keeping each
+"""Embed the SST `default_*` splits produced by sst_build.py, keeping each
 sentence's label next to its embedding.
 
 For every ``clean/default_<split>.csv`` (split = test/dev/train) this reads the
@@ -116,7 +116,7 @@ def build_embedder(args):
 def parse_args():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--input-dir", default=DEFAULT_INPUT_DIR, type=Path,
-                        help="Dir containing default_<split>.csv (sst_clean.py output).")
+                        help="Dir containing default_<split>.csv (sst_build.py output).")
     parser.add_argument("--output-dir", default=DEFAULT_OUTPUT_DIR, type=Path)
     parser.add_argument("--splits", nargs="+", default=DEFAULT_SPLITS,
                         choices=["test", "dev", "train"])
@@ -150,7 +150,7 @@ def main():
     output_dir.mkdir(parents=True, exist_ok=True)
 
     embedder, closer = build_embedder(args)
-    print(f"embed_sst: backend={args.backend} splits={args.splits} "
+    print(f"sst_embed: backend={args.backend} splits={args.splits} "
           f"input={input_dir} output={output_dir}")
     try:
         for split in args.splits:

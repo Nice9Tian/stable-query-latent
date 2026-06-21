@@ -50,12 +50,12 @@ token=hf_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 Notes:
 - One `KEY=VALUE` per line, `#` for comments, blank lines OK.
 - Both `url=` and `token=` are required; the parser
-  ([`game_review_data/cloud_embedding.load_credentials`](game_review_data/cloud_embedding.py))
+  ([`cloud_embedding.load_credentials`](cloud_embedding.py))
   raises a clear error if either is missing.
 - The placeholder values (the `<...>` parts) are **not** valid endpoints —
   scripts will fail with a 404 / bad-request if you leave them in.
 - You can also embed locally without an endpoint:
-  `python sst/embed_sst.py --backend local --device cuda`.
+  `python sst/sst_embed.py --backend local --device cuda`.
 
 If you ever need to share the template again (e.g. you accidentally deleted it),
 it lives at [`tokenAPI.template.txt`](tokenAPI.template.txt) — the only
@@ -74,6 +74,6 @@ python PXIbench_test/test_latent_query_model.py
 python sst/train_sst_head_mlp4.py --hidden-dims 64 16 4
 
 # Game-review end-to-end build
-python game_review_data/build_gamedata.py --workdir <workdir> --backend cloud
+python game_review_data/build.py --workdir <workdir> --backend cloud
 ```
 

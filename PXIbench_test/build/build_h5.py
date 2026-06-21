@@ -106,15 +106,26 @@ def build_h5(
         [len(row_to_embedding_indices[row_index]) for row_index in range(len(target_rows))],
         dtype=np.int64,
     )
+    empty_rows = np.flatnonzero(sequence_lengths == 0)
+    if len(empty_rows):
+        raise ValueError(
+            "Every target row needs at least one sentence embedding; empty rows include "
+            f"{empty_rows[:20].tolist()}"
+        )
 
     sample_count = len(target_rows)
     max_sequence_length = int(sequence_lengths.max())
     embedding_dim = int(embeddings.shape[1])
-    inputs = np.zeros((sample_count, max_sequence_length, embedding_dim), dtype=np.float32)
-    for row_index in range(len(target_rows)):
+    sequence_offsets = np.zeros(sample_count, dtype=np.int64)
+    ordered_embedding_indices = []
+    next_offset = 0
+    for row_index in range(sample_count):
         embedding_indices = row_to_embedding_indices[row_index]
-        length = len(embedding_indices)
-        inputs[row_index, :length] = embeddings[embedding_indices]
+        sequence_offsets[row_index] = next_offset
+        ordered_embedding_indices.append(embedding_indices)
+        next_offset += len(embedding_indices)
+    ordered_embedding_indices = np.concatenate(ordered_embedding_indices).astype(np.int64, copy=False)
+    inputs = embeddings[ordered_embedding_indices]
 
     targets = target_rows[score_columns].apply(pd.to_numeric, errors="raise").to_numpy(
         dtype=np.float32
@@ -126,14 +137,17 @@ def build_h5(
         h5.attrs["source_sentence_metadata_csv"] = str(sentence_metadata_csv.resolve())
         h5.attrs["source_embeddings_npy"] = str(embeddings_npy.resolve())
         h5.attrs["score_columns_json"] = json.dumps(score_columns)
-        h5.attrs["input_layout"] = "text_variant_sample, sentence_token, embedding_dim"
+        h5.attrs["input_layout"] = "flattened_sentence_token, embedding_dim"
+        h5.attrs["sequence_layout"] = "sample boundaries are sequence_offsets + sequence_lengths"
         h5.attrs["target_layout"] = "mapped_game_score_repeated_per_text_variant"
 
         h5.attrs["numeric_dataset_compression"] = compression or "none"
 
         create_numeric_dataset(h5, "inputs", inputs, compression)
         create_numeric_dataset(h5, "targets", targets, compression)
+        h5.create_dataset("sequence_offsets", data=sequence_offsets)
         h5.create_dataset("sequence_lengths", data=sequence_lengths)
+        h5.create_dataset("sequence_embedding_index", data=ordered_embedding_indices)
         h5.create_dataset(
             "benchmark_row_index",
             data=np.arange(sample_count, dtype=np.int64),

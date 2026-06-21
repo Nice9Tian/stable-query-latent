@@ -72,7 +72,7 @@ Each scoring dimension is treated as a 5-class classification:
 
 1. `generate_pseudo_text.py` — generates pseudo text from `benchmark.csv`
 2. `embed_pseudo_text_sentences.py` — splits into sentences and produces sentence embeddings
-3. `build_h5.py` — packages embeddings, masks, and labels into HDF5
+3. `build_h5.py` — packages flattened embeddings, sequence offsets/lengths, and labels into HDF5
 4. `test_latent_query_model.py` — loads HDF5, trains, and evaluates the model
 
 ## Pseudo Text Generation
@@ -163,7 +163,7 @@ Generate multiple variants per game:
 python generate_pseudo_text.py --input benchmark.csv --output pseudo_text_data_multi.csv --variants-per-row 4
 ```
 
-The full pipeline is: generate pseudo text → split sentences and embed → pack into HDF5.
+The full pipeline is: generate pseudo text → split sentences and embed → pack flattened embeddings into HDF5 with sequence offsets/lengths.
 
 Default HDF5 input file: `benchmark_sentence_latent_query_multi.h5`
 
