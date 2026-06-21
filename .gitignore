@@ -22,7 +22,7 @@ pseudo_text_data_multi.csv
 /sst/clean
 
 # Game review experiment data
-/game_review_data/Steam Games Metadata and Player Reviews (2020–2024
+/game_review_data/Steam Games Metadata and Player Reviews (2020–2024)
 /game_review_data/game_review_cleaned_3
 /game_review_data/game_review_cleaned_3_sentences
 /game_review_data/game_review_cleaned_3_sentence_embeddings
