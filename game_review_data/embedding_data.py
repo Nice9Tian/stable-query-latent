@@ -16,9 +16,17 @@ review <-> sentence <-> vector correspondence is preserved by construction.
 
 import argparse
 import json
+import sys
 import time
 from concurrent.futures import FIRST_COMPLETED, ThreadPoolExecutor, wait
 from pathlib import Path
+
+# cloud_embedding.py lives at the project root, one level up from this file.
+# Put that on sys.path so the deferred ``from cloud_embedding import ...`` inside
+# CloudEmbedder works no matter the current working directory.
+_PROJECT_ROOT = Path(__file__).resolve().parent.parent
+if str(_PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(_PROJECT_ROOT))
 
 DEFAULT_INPUT_DIR = "game_review_sentences"
 DEFAULT_OUTPUT_DIR = "game_review_embedded"
