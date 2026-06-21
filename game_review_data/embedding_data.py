@@ -76,16 +76,17 @@ class CloudEmbedder:
     def __init__(self, base_url=None, token_file=None, concurrency=256, batch_size=32,
                  max_in_flight=None, normalize=False):
         from cloud_embedding import (
-            DEFAULT_BASE_URL,
             DEFAULT_TOKEN_FILE,
             EmbeddingClient,
             chunked,
-            load_token,
+            load_credentials,
         )
 
         self.chunked = chunked
-        token = load_token(token_file or DEFAULT_TOKEN_FILE)
-        self.client = EmbeddingClient(base_url or DEFAULT_BASE_URL, token, normalize=normalize)
+        creds = load_credentials(token_file or DEFAULT_TOKEN_FILE)
+        # URL and token both come from the credentials file by default; ``base_url``
+        # only overrides the URL key when explicitly passed.
+        self.client = EmbeddingClient(base_url or creds["url"], creds["token"], normalize=normalize)
         self.batch_size = batch_size
         self.max_in_flight = max_in_flight or concurrency
         self.executor = ThreadPoolExecutor(max_workers=concurrency)

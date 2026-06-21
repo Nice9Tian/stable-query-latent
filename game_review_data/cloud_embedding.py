@@ -22,9 +22,11 @@ import requests
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 
-DEFAULT_BASE_URL = "https://l9lmznp0tzh8i07j.us-east-1.aws.endpoints.huggingface.cloud"
-# tokenAPI.txt lives at the project root (gitignored), one level above this
-# script's dir (game_review_data/). Use an absolute path so it resolves from any cwd.
+# Endpoint URL and token both come from the gitignored credentials file at the
+# project root. No URL is hardcoded — change the endpoint by editing that file.
+# Format (one KEY=VALUE per line, '#' for comments, blank lines allowed):
+#     url=https://<your-endpoint>.huggingface.cloud
+#     token=hf_xxx...
 DEFAULT_TOKEN_FILE = str(SCRIPT_DIR.parent / "tokenAPI.txt")
 DEFAULT_INPUT_DIR = "game_review_cleaned_3_sentences"
 DEFAULT_OUTPUT_DIR = "game_review_cleaned_3_sentence_embeddings"
@@ -42,16 +44,43 @@ def resolve_script_relative(path):
     return path if path.is_absolute() else SCRIPT_DIR / path
 
 
-def load_token(token_file):
+def load_credentials(token_file):
+    """Parse the gitignored credentials file. Returns {'url': ..., 'token': ...}.
+    Supports KEY=VALUE lines (CRLF or LF), '#' comments, and blank lines."""
     token_path = resolve_script_relative(token_file)
     if not token_path.exists():
         raise FileNotFoundError(
-            f"Token file not found: {token_path}. Put the API token (e.g. 'hf_...') in it."
+            f"Credentials file not found: {token_path}. Create it with two lines:\n"
+            f"  url=https://<your-endpoint>.huggingface.cloud\n"
+            f"  token=hf_xxx..."
         )
-    token = token_path.read_text(encoding="utf-8").strip()
-    if not token:
-        raise ValueError(f"Token file {token_path} is empty.")
-    return token
+    creds = {}
+    for raw_line in token_path.read_text(encoding="utf-8").splitlines():
+        line = raw_line.strip()
+        if not line or line.startswith("#"):
+            continue
+        if "=" not in line:
+            raise ValueError(f"{token_path}: invalid line (expected KEY=VALUE): {raw_line!r}")
+        key, _, value = line.partition("=")
+        creds[key.strip().lower()] = value.strip()
+
+    missing = [k for k in ("url", "token") if not creds.get(k)]
+    if missing:
+        raise ValueError(
+            f"{token_path}: missing required key(s) {missing}. "
+            f"Need both 'url=...' and 'token=...' lines."
+        )
+    return creds
+
+
+def load_token(token_file):
+    """Backward-compat shim: return only the token string from the creds file."""
+    return load_credentials(token_file)["token"]
+
+
+def load_base_url(token_file):
+    """Convenience: return only the endpoint URL from the creds file."""
+    return load_credentials(token_file)["url"]
 
 
 def load_sentences(input_path):
@@ -235,7 +264,8 @@ def parse_args():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--input-dir", default=DEFAULT_INPUT_DIR, type=Path)
     parser.add_argument("--output-dir", default=DEFAULT_OUTPUT_DIR, type=Path)
-    parser.add_argument("--base-url", default=DEFAULT_BASE_URL)
+    parser.add_argument("--base-url", default=None,
+                        help="Override endpoint URL. Default: read 'url=' from --token-file.")
     parser.add_argument("--token-file", default=DEFAULT_TOKEN_FILE)
     parser.add_argument("--concurrency", default=DEFAULT_CONCURRENCY, type=int)
     parser.add_argument("--batch-size", default=DEFAULT_BATCH_SIZE, type=int)
@@ -273,8 +303,11 @@ def main():
     if not input_files:
         raise ValueError(f"No JSON files were found in {input_dir}.")
 
-    token = load_token(args.token_file)
-    client = EmbeddingClient(args.base_url, token, normalize=args.normalize)
+    creds = load_credentials(args.token_file)
+    # Resolve effective URL once and store back on args so write_manifest (which
+    # records the run's configuration) reports the URL actually used, not None.
+    args.base_url = args.base_url or creds["url"]
+    client = EmbeddingClient(args.base_url, creds["token"], normalize=args.normalize)
 
     print(
         f"Embedding {len(input_files)} files via {args.base_url} "

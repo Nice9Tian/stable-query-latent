@@ -9,7 +9,7 @@ records:
     {"sentence": "...", "label": 0.5, "embedding": [ ... 1024 floats ... ]}
 
 Backend (user choice):
-    --backend cloud   remote TEI endpoint (token from tokenAPI.txt)
+    --backend cloud   remote TEI endpoint (url + token from tokenAPI.txt)
     --backend local   local Qwen3-Embedding via transformers (GPU/CPU)
 
 Both backends are the same ``LocalEmbedder`` / ``CloudEmbedder`` classes used by
@@ -126,7 +126,8 @@ def parse_args():
     parser.add_argument("--local-model", default=DEFAULT_LOCAL_MODEL)
     parser.add_argument("--device", default=None, help="e.g. 'cuda' or 'cpu' (local backend).")
     # cloud backend
-    parser.add_argument("--base-url", default=None, help="Cloud endpoint base URL.")
+    parser.add_argument("--base-url", default=None,
+                        help="Override endpoint URL. Default: read 'url=' from tokenAPI.txt.")
     parser.add_argument("--token-file", default=None)
     parser.add_argument("--concurrency", default=4, type=int,
                         help="Cloud: concurrent HTTP requests in flight.")
