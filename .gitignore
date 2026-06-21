@@ -1,9 +1,6 @@
 # Bytecode caches (matches any __pycache__ anywhere in the repo)
 __pycache__/
 
-# Credentials & local config
-tokenAPI.txt
-
 # Generated binary artifacts (training outputs, embeddings, datasets, logs)
 *.pt
 *.npy

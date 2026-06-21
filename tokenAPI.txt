@@ -1,0 +1,3 @@
+# Inference endpoint URL (HuggingFace TEI; the deployed Qwen3-Embedding-0.6B endpoint).
+url=https://<your-endpoint-id>.<region>.aws.endpoints.huggingface.cloud
+token=hf_<your-token-here>
