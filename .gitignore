@@ -20,3 +20,4 @@ latent_query_training_history_multi_classifier_nomask_smoke.txt
 /sst
 /game_review_cleaned_3_sentences
 tokenAPI.txt
+*.json
