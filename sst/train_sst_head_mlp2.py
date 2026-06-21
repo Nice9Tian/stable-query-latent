@@ -38,7 +38,7 @@ class Mlp2Head(nn.Module):
 
 def parse_args():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--checkpoint", default=str(SCRIPT_DIR / "clean/heads/mlp2_1024_128_64_1_best.pt"))
+    parser.add_argument("--checkpoint", default=str(SCRIPT_DIR / "heads/mlp2_1024_128_64_1_best.pt"))
     parser.add_argument("--lr", default=1e-3, type=float)
     parser.add_argument("--weight-decay", default=1e-4, type=float)
     parser.add_argument("--batch-size", default=64, type=int)

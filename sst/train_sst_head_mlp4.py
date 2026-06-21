@@ -38,7 +38,7 @@ def parse_args():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--hidden-dims", nargs="+", type=int, default=[64, 32, 18])
     parser.add_argument("--checkpoint", default=None,
-                        help="Default: <script_dir>/clean/heads/mlp4_1024_<dims>_1_best.pt")
+                        help="Default: <script_dir>/heads/mlp4_1024_<dims>_1_best.pt")
     parser.add_argument("--lr", default=1e-3, type=float)
     parser.add_argument("--weight-decay", default=1e-4, type=float)
     parser.add_argument("--batch-size", default=64, type=int)
@@ -54,7 +54,7 @@ def main():
     model = Mlp4Head(hidden_dims=tuple(args.hidden_dims), dropout=args.dropout)
     print(f"model: {model}")
     dims_tag = "_".join(str(d) for d in args.hidden_dims)
-    checkpoint = args.checkpoint or str(SCRIPT_DIR / f"clean/heads/mlp4_1024_{dims_tag}_1_best.pt")
+    checkpoint = args.checkpoint or str(SCRIPT_DIR / f"heads/mlp4_1024_{dims_tag}_1_best.pt")
     train_head(
         model,
         checkpoint_path=checkpoint,

@@ -38,7 +38,7 @@ def parse_args():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--hidden", default=128, type=int)
     parser.add_argument("--checkpoint", default=None,
-                        help="Default: <script_dir>/clean/heads/mlp3_1024_<hidden>_1_best.pt")
+                        help="Default: <script_dir>/heads/mlp3_1024_<hidden>_1_best.pt")
     parser.add_argument("--lr", default=1e-3, type=float)
     parser.add_argument("--weight-decay", default=1e-4, type=float)
     parser.add_argument("--batch-size", default=64, type=int)
@@ -53,7 +53,7 @@ def main():
     args = parse_args()
     model = Mlp3Head(hidden=args.hidden, dropout=args.dropout)
     print(f"model: {model}")
-    checkpoint = args.checkpoint or str(SCRIPT_DIR / f"clean/heads/mlp3_1024_{args.hidden}_1_best.pt")
+    checkpoint = args.checkpoint or str(SCRIPT_DIR / f"heads/mlp3_1024_{args.hidden}_1_best.pt")
     train_head(
         model,
         checkpoint_path=checkpoint,
