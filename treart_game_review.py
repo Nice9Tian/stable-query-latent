@@ -68,6 +68,41 @@ def split_reviews_into_sentences(reviews, splitter, chunk_size=2000, device=None
     return sentences
 
 
+def split_reviews_into_mapping(reviews, splitter, chunk_size=2000, device=None):
+    """Split reviews into sentences while keeping the review_id -> sentence_id structure.
+
+    Returns (mapping, sentence_count) where mapping is an ordered dict:
+
+        { "<review_id>": { "sentence_1": {"sentence_text": ...},
+                            "sentence_2": {"sentence_text": ...}, ... }, ... }
+
+    review_id is the 0-based index of the review in the source list, so the original
+    review is recoverable as ``reviews[int(review_id)]``. sentence_N is 1-based within
+    each review. Reviews that yield no non-empty sentence are omitted (their id simply
+    won't appear). The ``vector`` for each sentence is added later by the embedding step.
+    """
+    normalized = [normalize_text(review) for review in reviews]
+
+    mapping = {}
+    sentence_count = 0
+    for start in range(0, len(normalized), chunk_size):
+        chunk = normalized[start : start + chunk_size]
+        for local_index, review_sentences in enumerate(splitter.split(chunk)):
+            review_id = start + local_index
+            sentences = {}
+            sid = 0
+            for sentence in review_sentences:
+                cleaned = sentence.strip()
+                if cleaned:
+                    sid += 1
+                    sentences[f"sentence_{sid}"] = {"sentence_text": cleaned}
+            if sentences:
+                mapping[str(review_id)] = sentences
+                sentence_count += sid
+        _clear_cuda_cache(device)
+    return mapping, sentence_count
+
+
 def encode_sentences(sentences, args):
     if args.backend == "sentence-transformers":
         return encode_with_sentence_transformers(sentences, args)
@@ -134,7 +169,8 @@ def parse_args():
 
 
 def split_only(input_files, splitter, sentences_dir, overwrite, chunk_size, device):
-    """Run only the sentence splitter and save split text as one JSON list per file."""
+    """Run only the sentence splitter and save the nested review_id/sentence_id
+    structure as one JSON object per file (see split_reviews_into_mapping)."""
     sentences_dir.mkdir(parents=True, exist_ok=True)
     print(f"[split-only] Saving sentence JSON files to {sentences_dir}")
     for file_index, input_path in enumerate(input_files, start=1):
@@ -144,14 +180,19 @@ def split_only(input_files, splitter, sentences_dir, overwrite, chunk_size, devi
             continue
 
         reviews = load_reviews(input_path)
-        sentences = split_reviews_into_sentences(reviews, splitter, chunk_size, device)
+        mapping, sentence_count = split_reviews_into_mapping(reviews, splitter, chunk_size, device)
 
-        with output_path.open("w", encoding="utf-8") as file:
-            json.dump(sentences, file, ensure_ascii=False)
+        # Write atomically so an interrupted run never leaves a half-written file
+        # that a resumed run would skip as "already split".
+        tmp_path = output_path.with_suffix(".json.tmp")
+        with tmp_path.open("w", encoding="utf-8") as file:
+            json.dump(mapping, file, ensure_ascii=False)
+        tmp_path.replace(output_path)
 
         print(
             f"[{file_index}/{len(input_files)}] {input_path.name}: "
-            f"{len(reviews)} reviews -> {len(sentences)} sentences saved"
+            f"{len(reviews)} reviews -> {len(mapping)} non-empty reviews, "
+            f"{sentence_count} sentences saved"
         )
     print(f"[split-only] Done. Sentence JSON files written to {sentences_dir}")
 
