@@ -4,10 +4,13 @@ Run from the repository root:
 
     C:/Users/admin/anaconda3/envs/cuda_Vit/python.exe training.py
 
-Extra arguments after ``--`` are passed to VICReg_review/train_vicreg_review_h5.py,
+Use ``-nowindows`` to run the same workflow from the terminal without opening
+the PyQt monitor. Extra arguments after ``--`` are passed to
+VICReg_review/train_vicreg_review_h5.py,
 for example:
 
     C:/Users/admin/anaconda3/envs/cuda_Vit/python.exe training.py -- --epochs 10 --batch-size 8
+    C:/Users/admin/anaconda3/envs/cuda_Vit/python.exe training.py -nowindows -- --epochs 10 --batch-size 8
 """
 
 from __future__ import annotations
@@ -17,7 +20,9 @@ import csv
 import json
 import re
 import shutil
+import subprocess
 import sys
+import threading
 from datetime import datetime
 from pathlib import Path
 
@@ -29,6 +34,7 @@ PYTHON_EXE = Path("C:/Users/admin/anaconda3/envs/cuda_Vit/python.exe")
 RUN_DIR = ROOT / "VICReg_review" / "heads" / "gui_run"
 TRAIN_SCRIPT = ROOT / "VICReg_review" / "train_vicreg_review_h5.py"
 PROBE_SCRIPT = ROOT / "VICReg_review" / "train_tag_probe.py"
+HEADLESS_ARG_NAMES = {"-nowindows", "--nowindows", "--no-windows", "--no-window"}
 
 TRAIN_LINE_RE = re.compile(
     r"epoch=(?P<epoch>\d+)\s+step=(?P<batch>\d+)/(?P<steps>\d+)\s+"
@@ -51,7 +57,17 @@ def import_qt_and_matplotlib():
     return QtCore, QtGui, QtWidgets, FigureCanvas, Figure
 
 
-QtCore, QtGui, QtWidgets, FigureCanvas, Figure = import_qt_and_matplotlib()
+if any(arg in HEADLESS_ARG_NAMES for arg in sys.argv[1:]):
+    class _DummyQtWidgets:
+        QMainWindow = object
+
+    QtCore = None
+    QtGui = None
+    QtWidgets = _DummyQtWidgets()
+    FigureCanvas = None
+    Figure = None
+else:
+    QtCore, QtGui, QtWidgets, FigureCanvas, Figure = import_qt_and_matplotlib()
 
 
 def qprocess_merged_channels():
@@ -146,6 +162,255 @@ def sibling_history_path(checkpoint_path: Path) -> Path | None:
 def sibling_probe_curve_path(checkpoint_path: Path) -> Path | None:
     candidate = checkpoint_path.with_name("tag_probe_curve.tsv")
     return candidate if candidate.exists() else None
+
+
+def shell_join(parts: list[str]) -> str:
+    return " ".join(f'"{part}"' if " " in str(part) else str(part) for part in parts)
+
+
+class HeadlessMonitor:
+    def __init__(self, args: argparse.Namespace):
+        self.args = args
+        self.run_dir = Path(args.run_dir).resolve()
+        self.run_dir.mkdir(parents=True, exist_ok=True)
+        self.prepare_run_paths()
+        self.current_epoch = 0
+        self.current_global_step = 0
+        self.last_probe_epoch = 0
+        self.attempted_probe_epochs = set()
+        self.probe_thread = None
+        self.probe_process = None
+        self.probe_lock = threading.Lock()
+        self.resume_checkpoint = Path(args.resume_checkpoint).resolve() if args.resume_checkpoint else None
+
+    def prepare_run_paths(self) -> None:
+        self.checkpoint = unique_numbered_path(self.run_dir / "vicreg_review_h5_latest.pt")
+        self.best_checkpoint = unique_numbered_path(self.run_dir / "vicreg_review_h5_best.pt")
+        self.history_tsv = unique_numbered_path(self.run_dir / "vicreg_review_h5_history.tsv")
+        self.manifest_json = unique_numbered_path(self.run_dir / "vicreg_review_h5_manifest.json")
+        self.probe_curve_tsv = unique_numbered_path(self.run_dir / "tag_probe_curve.tsv")
+
+    def train_command(self) -> list[str]:
+        command = [
+            str(Path(self.args.python_exe).resolve()),
+            str(TRAIN_SCRIPT),
+            "--checkpoint-out",
+            str(self.checkpoint),
+            "--best-checkpoint-out",
+            str(self.best_checkpoint),
+            "--history-tsv",
+            str(self.history_tsv),
+            "--manifest-json",
+            str(self.manifest_json),
+            "--amp",
+        ]
+        if self.resume_checkpoint:
+            command.extend(["--resume-checkpoint", str(self.resume_checkpoint)])
+        command.extend(self.args.train_args)
+        return command
+
+    def probe_command(
+        self,
+        checkpoint_snapshot: Path,
+        report_json: Path,
+        history_tsv: Path,
+        head_out: Path,
+    ) -> list[str]:
+        command = [
+            str(Path(self.args.python_exe).resolve()),
+            str(PROBE_SCRIPT),
+            "--checkpoint",
+            str(checkpoint_snapshot),
+            "--report-json",
+            str(report_json),
+            "--history-tsv",
+            str(history_tsv),
+            "--head-out",
+            str(head_out),
+            "--epochs",
+            str(self.args.probe_epochs),
+            "--patience",
+            str(self.args.probe_patience),
+            "--feature-views",
+            str(self.args.probe_feature_views),
+            "--log-every",
+            str(self.args.probe_log_every),
+        ]
+        if self.args.probe_device:
+            command.extend(["--device", self.args.probe_device])
+        if self.args.probe_amp:
+            command.append("--amp")
+        return command
+
+    def run(self) -> int:
+        command = self.train_command()
+        print(f"[headless] run_dir={self.run_dir}", flush=True)
+        print(f"[headless] checkpoint={self.checkpoint}", flush=True)
+        print(f"[headless] best_checkpoint={self.best_checkpoint}", flush=True)
+        print(f"[training] $ {shell_join(command)}", flush=True)
+
+        process = subprocess.Popen(
+            command,
+            cwd=str(ROOT),
+            stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT,
+            text=True,
+            encoding="utf-8",
+            errors="replace",
+            bufsize=1,
+        )
+        try:
+            assert process.stdout is not None
+            for line in process.stdout:
+                self.handle_train_line(line.rstrip("\n"))
+            exit_code = process.wait()
+        except KeyboardInterrupt:
+            print("[headless] interrupted, terminating training/probe processes", flush=True)
+            process.terminate()
+            self.terminate_probe()
+            return 130
+
+        print(f"[training] exited code={exit_code}", flush=True)
+        self.refresh_state_from_files()
+        if exit_code == 0 and not self.args.no_probe:
+            self.maybe_start_probe(force=True)
+        self.join_probe()
+        return exit_code
+
+    def handle_train_line(self, line: str) -> None:
+        match = TRAIN_LINE_RE.search(line)
+        if not match:
+            print(line, flush=True)
+            return
+        epoch = int(match.group("epoch"))
+        batch = int(match.group("batch"))
+        steps = int(match.group("steps"))
+        global_step = int(match.group("global"))
+        loss = float(match.group("loss"))
+        self.current_epoch = max(self.current_epoch, epoch)
+        self.current_global_step = max(self.current_global_step, global_step)
+        print(
+            f"[training] epoch={epoch} batch_num={batch}/{steps} "
+            f"global_batch={global_step} loss={loss:.4f}",
+            flush=True,
+        )
+        self.maybe_start_probe()
+
+    def refresh_state_from_files(self) -> None:
+        manifest = read_json(self.manifest_json)
+        if manifest:
+            self.current_epoch = max(self.current_epoch, int(manifest.get("epoch") or 0))
+            self.current_global_step = max(self.current_global_step, int(manifest.get("global_step") or 0))
+
+    def probe_is_running(self) -> bool:
+        return self.probe_thread is not None and self.probe_thread.is_alive()
+
+    def maybe_start_probe(self, force: bool = False) -> None:
+        if self.args.no_probe or self.probe_is_running():
+            return
+        self.refresh_state_from_files()
+        if not self.checkpoint.exists() or self.current_epoch <= 0:
+            return
+        due = self.current_epoch >= self.last_probe_epoch + self.args.probe_every_epochs
+        if not force and not due:
+            return
+        if self.current_epoch == self.last_probe_epoch or self.current_epoch in self.attempted_probe_epochs:
+            return
+        epoch = self.current_epoch
+        global_step = self.current_global_step
+        self.attempted_probe_epochs.add(epoch)
+        self.probe_thread = threading.Thread(
+            target=self.run_probe,
+            args=(epoch, global_step),
+            daemon=True,
+        )
+        self.probe_thread.start()
+
+    def join_probe(self) -> None:
+        if self.probe_thread is not None:
+            self.probe_thread.join()
+
+    def terminate_probe(self) -> None:
+        with self.probe_lock:
+            process = self.probe_process
+        if process is not None and process.poll() is None:
+            process.terminate()
+        self.join_probe()
+
+    def run_probe(self, encoder_epoch: int, encoder_global_step: int) -> None:
+        stem = f"epoch_{encoder_epoch:04d}"
+        checkpoint_snapshot = unique_numbered_path(self.run_dir / f"probe_checkpoint_{stem}.pt")
+        try:
+            shutil.copy2(self.checkpoint, checkpoint_snapshot)
+        except OSError as exc:
+            print(f"[validation] skipped: could not snapshot checkpoint: {exc}", flush=True)
+            return
+
+        report_json = self.run_dir / f"tag_probe_report_{stem}.json"
+        history_tsv = self.run_dir / f"tag_probe_history_{stem}.tsv"
+        head_out = self.run_dir / f"tag_probe_head_{stem}.pt"
+        command = self.probe_command(checkpoint_snapshot, report_json, history_tsv, head_out)
+        print(
+            f"[validation] start encoder_epoch={encoder_epoch} "
+            f"batch_num={encoder_global_step} checkpoint={checkpoint_snapshot}",
+            flush=True,
+        )
+        print(f"[validation] $ {shell_join(command)}", flush=True)
+        process = subprocess.Popen(
+            command,
+            cwd=str(ROOT),
+            stdout=subprocess.PIPE,
+            stderr=subprocess.STDOUT,
+            text=True,
+            encoding="utf-8",
+            errors="replace",
+            bufsize=1,
+        )
+        with self.probe_lock:
+            self.probe_process = process
+        assert process.stdout is not None
+        for line in process.stdout:
+            print("[validation] " + line.rstrip("\n"), flush=True)
+        exit_code = process.wait()
+        with self.probe_lock:
+            if self.probe_process is process:
+                self.probe_process = None
+        print(f"[validation] exited code={exit_code}", flush=True)
+        if exit_code != 0:
+            return
+
+        report = read_json(report_json)
+        best = report.get("best_metrics") or {}
+        final = report.get("final_val_metrics") or {}
+        metrics = final or best
+        test_loss = best.get("val_loss")
+        if test_loss is None:
+            test_loss = final.get("val_loss")
+        row = {
+            "encoder_epoch": int(report.get("encoder_epoch") or encoder_epoch),
+            "encoder_global_step": int(report.get("encoder_global_step") or encoder_global_step),
+            "test_loss": float(test_loss) if test_loss is not None else "",
+            "mAP": metrics.get("mAP", ""),
+            "micro_f1": metrics.get("micro_f1", ""),
+            "precision": metrics.get("precision", ""),
+            "recall": metrics.get("recall", ""),
+            "predicted_tags_per_game": metrics.get("predicted_tags_per_game", ""),
+            "count_mae": metrics.get("count_mae", ""),
+            "finished_at": datetime.now().strftime("%Y-%m-%dT%H:%M:%S"),
+        }
+        append_probe_curve(self.probe_curve_tsv, row)
+        self.last_probe_epoch = encoder_epoch
+        tag_f1 = row["micro_f1"]
+        tag_f1_text = f"{float(tag_f1):.4f}" if tag_f1 != "" else "NA"
+        val_loss_text = f"{float(row['test_loss']):.4f}" if row["test_loss"] != "" else "NA"
+        map_text = f"{float(row['mAP']):.4f}" if row["mAP"] != "" else "NA"
+        print(
+            f"[validation] encoder_epoch={row['encoder_epoch']} "
+            f"batch_num={row['encoder_global_step']} "
+            f"tab_f1={tag_f1_text} tag_f1={tag_f1_text} "
+            f"val_loss={val_loss_text} mAP={map_text}",
+            flush=True,
+        )
 
 
 class MonitorWindow(QtWidgets.QMainWindow):
@@ -667,8 +932,18 @@ class MonitorWindow(QtWidgets.QMainWindow):
 
 def parse_args(argv: list[str]) -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Launch VICReg review training with a PyQt progress window.")
+    parser.add_argument(
+        "-nowindows",
+        "--nowindows",
+        "--no-windows",
+        "--no-window",
+        dest="nowindows",
+        action="store_true",
+        help="Run in the terminal without opening the PyQt monitor window.",
+    )
     parser.add_argument("--python-exe", default=str(PYTHON_EXE))
     parser.add_argument("--run-dir", default=str(RUN_DIR))
+    parser.add_argument("--resume-checkpoint", default=None, help="Optional checkpoint to resume from in -nowindows mode.")
     parser.add_argument("--auto-start", action="store_true", help="Start training immediately when the window opens.")
     parser.add_argument("--no-probe", action="store_true", help="Only show VICReg training progress.")
     parser.add_argument("--probe-every-epochs", type=int, default=5)
@@ -688,6 +963,8 @@ def parse_args(argv: list[str]) -> argparse.Namespace:
 
 def main(argv: list[str] | None = None) -> int:
     args = parse_args(sys.argv[1:] if argv is None else argv)
+    if args.nowindows:
+        return HeadlessMonitor(args).run()
     app = QtWidgets.QApplication(sys.argv)
     window = MonitorWindow(args)
     window.show()

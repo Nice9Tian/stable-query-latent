@@ -126,6 +126,8 @@ class TagRegressionHead(nn.Module):
     Input is the encoder output (batch, num_latents, latent_out_dim). By default
     the latent set is flattened (num_latents * latent_out_dim) so the head sees
     the full representation; use pool="mean" to average over latents instead.
+    pool="stats" concatenates mean/std/max/min over latent slots, which gives a
+    compact probe for small validation sets.
 
     Outputs a dict with raw presence logits and raw-count regression logits.
     Apply sigmoid() to presence_logits for tag-existence probabilities. Apply
@@ -144,11 +146,16 @@ class TagRegressionHead(nn.Module):
         pool="flatten",
     ):
         super().__init__()
-        if pool not in ("flatten", "mean"):
-            raise ValueError("pool must be 'flatten' or 'mean'.")
+        if pool not in ("flatten", "mean", "stats"):
+            raise ValueError("pool must be 'flatten', 'mean', or 'stats'.")
         self.pool = pool
         self.num_tags = int(num_tags)
-        in_dim = num_latents * latent_out_dim if pool == "flatten" else latent_out_dim
+        if pool == "flatten":
+            in_dim = num_latents * latent_out_dim
+        elif pool == "stats":
+            in_dim = latent_out_dim * 4
+        else:
+            in_dim = latent_out_dim
         layers = []
         prev = in_dim
         for hidden_dim in hidden_dims:
@@ -167,6 +174,16 @@ class TagRegressionHead(nn.Module):
     def forward(self, feats):
         if self.pool == "flatten":
             x = feats.flatten(start_dim=1)
+        elif self.pool == "stats":
+            x = torch.cat(
+                [
+                    feats.mean(dim=1),
+                    feats.std(dim=1, unbiased=False),
+                    feats.amax(dim=1),
+                    feats.amin(dim=1),
+                ],
+                dim=1,
+            )
         else:
             x = feats.mean(dim=1)
         x = self.trunk(x)
