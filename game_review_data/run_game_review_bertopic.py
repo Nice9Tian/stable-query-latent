@@ -233,9 +233,16 @@ def build_balanced_prefix_sample(
     return records, [record["text"] for record in records], embeddings, meta
 
 
-def fit_bertopic(docs: list[str], embeddings: np.ndarray, min_cluster_size: int, random_state: int):
+def fit_bertopic(
+    docs: list[str],
+    embeddings: np.ndarray,
+    min_cluster_size: int,
+    n_neighbors: int,
+    vectorizer_min_df: int,
+    random_state: int,
+):
     umap_model = UMAP(
-        n_neighbors=15,
+        n_neighbors=n_neighbors,
         n_components=5,
         min_dist=0.0,
         metric="cosine",
@@ -252,7 +259,7 @@ def fit_bertopic(docs: list[str], embeddings: np.ndarray, min_cluster_size: int,
     vectorizer_model = CountVectorizer(
         stop_words="english",
         ngram_range=(1, 2),
-        min_df=5,
+        min_df=vectorizer_min_df,
         max_df=0.95,
         max_features=50_000,
         token_pattern=r"(?u)\b[^\W\d_][^\W_]{1,}\b",
@@ -278,6 +285,8 @@ def build_report(
     records: list[dict[str, str]],
     sample_meta: dict,
     min_cluster_size: int,
+    n_neighbors: int,
+    vectorizer_min_df: int,
     random_state: int,
     fit_seconds: float,
 ) -> None:
@@ -302,7 +311,9 @@ def build_report(
     lines.append(f"- Sample method: `{sample_meta['sample_method']}`")
     lines.append(f"- Sampled documents: {sample_meta['sampled_docs']}")
     lines.append(f"- Embedding dimension: {sample_meta['embedding_dim']}")
+    lines.append(f"- UMAP `n_neighbors`: {n_neighbors}")
     lines.append(f"- HDBSCAN `min_cluster_size`: {min_cluster_size}")
+    lines.append(f"- CountVectorizer `min_df`: {vectorizer_min_df}")
     lines.append(f"- Random state: {random_state}")
     lines.append(f"- Fit time: {fit_seconds:.1f} seconds")
     lines.append("")
@@ -370,6 +381,8 @@ def parse_args():
     parser.add_argument("--max-docs", default=100_000, type=int)
     parser.add_argument("--min-chars", default=20, type=int)
     parser.add_argument("--min-cluster-size", default=100, type=int)
+    parser.add_argument("--n-neighbors", default=100, type=int)
+    parser.add_argument("--vectorizer-min-df", default=1, type=int)
     parser.add_argument("--random-state", default=42, type=int)
     parser.add_argument("--include-metadata-records", action="store_true")
     parser.add_argument("--overwrite-cache", action="store_true")
@@ -395,6 +408,8 @@ def main() -> None:
         docs,
         embeddings,
         min_cluster_size=args.min_cluster_size,
+        n_neighbors=args.n_neighbors,
+        vectorizer_min_df=args.vectorizer_min_df,
         random_state=args.random_state,
     )
     fit_seconds = time.time() - started
@@ -406,6 +421,8 @@ def main() -> None:
         records=records,
         sample_meta=sample_meta,
         min_cluster_size=args.min_cluster_size,
+        n_neighbors=args.n_neighbors,
+        vectorizer_min_df=args.vectorizer_min_df,
         random_state=args.random_state,
         fit_seconds=fit_seconds,
     )
