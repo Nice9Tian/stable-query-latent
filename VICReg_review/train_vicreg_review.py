@@ -44,6 +44,27 @@ def _numeric_suffix(value, prefix):
         return text
 
 
+def parse_int_list(value):
+    if isinstance(value, (list, tuple)):
+        return tuple(int(part) for part in value)
+    return tuple(int(part.strip()) for part in str(value).split(",") if part.strip())
+
+
+def grl_lambda_at(global_step, steps_per_epoch, args):
+    """GRL strength schedule: 0 during warmup (encoder learns pure VICReg and the
+    probe warms up), then linear ramp to args.grl_lambda. Units are epochs."""
+    steps_per_epoch = max(1, steps_per_epoch)
+    progress_epochs = global_step / steps_per_epoch
+    warmup = args.grl_warmup_epochs
+    ramp = args.grl_ramp_epochs
+    if progress_epochs < warmup:
+        return 0.0
+    if ramp <= 0:
+        return args.grl_lambda
+    frac = (progress_epochs - warmup) / ramp
+    return args.grl_lambda if frac >= 1.0 else args.grl_lambda * frac
+
+
 def load_game_review_vectors(path):
     with Path(path).open("r", encoding="utf-8") as file:
         raw = json.load(file)
@@ -249,16 +270,22 @@ def train(args):
         latent_dim=args.latent_dim,
         num_latents=args.num_latents,
         num_heads=args.num_heads,
-        depth=args.depth,
-        mlp_ratio=args.mlp_ratio,
         dropout=args.dropout,
+        output_dim=args.output_dim,
+        reduce_hidden=args.reduce_hidden,
     ).to(device)
-    if args.latent_dim != 1024:
-        raise ValueError("SST MLP4-A adversary requires --latent-dim 1024.")
     sentiment_head = load_mlp4_a_sentiment_head(args.sst_checkpoint, map_location=device).to(device)
-    adversary = SentimentAdversarialLoss(sentiment_head, grl_lambda=args.grl_lambda).to(device)
+    adversary = SentimentAdversarialLoss(
+        sentiment_head,
+        input_dim=model.output_dim,
+        probe_hidden=args.probe_hidden,
+        probe_dim=1024,
+        grl_lambda=args.grl_lambda,
+    ).to(device)
 
-    optimizer = torch.optim.AdamW(model.parameters(), lr=args.learning_rate, weight_decay=args.weight_decay)
+    # Probe is a learnable adversary on the head side; include it in the optimizer.
+    trainable = list(model.parameters()) + [p for p in adversary.parameters() if p.requires_grad]
+    optimizer = torch.optim.AdamW(trainable, lr=args.learning_rate, weight_decay=args.weight_decay)
     amp_enabled = args.amp and device.type == "cuda"
     scaler = torch.amp.GradScaler("cuda", enabled=amp_enabled)
     history_rows = []
@@ -283,6 +310,8 @@ def train(args):
             epoch_sums = {}
 
             for step in range(1, steps_per_epoch + 1):
+                current_grl = grl_lambda_at(global_step, steps_per_epoch, args)
+                adversary.grl.lambda_ = current_grl
                 optimizer.zero_grad(set_to_none=True)
                 if args.sequential_game_batch:
                     z_a_parts = []
@@ -335,12 +364,15 @@ def train(args):
                 scaler.scale(loss).backward()
                 if args.grad_clip > 0:
                     scaler.unscale_(optimizer)
-                    clip_grad_norm_(model.parameters(), args.grad_clip)
+                    # Clip encoder + learnable probe together (all optimized params).
+                    params = [p for group in optimizer.param_groups for p in group["params"]]
+                    clip_grad_norm_(params, args.grad_clip)
                 scaler.step(optimizer)
                 scaler.update()
 
                 global_step += 1
                 metrics = {
+                    "grl_lambda": current_grl,
                     "loss": float(loss.detach().cpu()),
                     "vicreg": float(vic["loss"].detach().cpu()),
                     "invariance": float(vic["invariance"].detach().cpu()),
@@ -450,18 +482,27 @@ def parse_args():
     parser.add_argument("--num-workers", type=int, default=0)
 
     parser.add_argument("--input-dim", type=int, default=1024)
-    parser.add_argument("--latent-dim", type=int, default=1024)
-    parser.add_argument("--num-latents", type=int, default=16)
+    parser.add_argument("--latent-dim", type=int, default=256)
+    parser.add_argument("--output-dim", type=int, default=18,
+                        help="Final per-latent code width after the reduction funnel.")
+    parser.add_argument("--reduce-hidden", type=parse_int_list, default=(128, 64, 32),
+                        help="Comma-separated hidden widths between latent-dim and output-dim, e.g. 128,64,32.")
+    parser.add_argument("--probe-hidden", type=int, default=256,
+                        help="Hidden width of the adversary up-projection probe (output_dim -> probe_hidden -> 1024).")
+    parser.add_argument("--num-latents", type=int, default=256)
     parser.add_argument("--num-heads", type=int, default=8)
-    parser.add_argument("--depth", type=int, default=2)
-    parser.add_argument("--mlp-ratio", type=float, default=2.0)
     parser.add_argument("--dropout", type=float, default=0.1)
 
     parser.add_argument("--vicreg-invariance-weight", type=float, default=25.0)
     parser.add_argument("--vicreg-variance-weight", type=float, default=25.0)
     parser.add_argument("--vicreg-covariance-weight", type=float, default=1.0)
     parser.add_argument("--adversary-weight", type=float, default=1.0)
-    parser.add_argument("--grl-lambda", type=float, default=1.0)
+    parser.add_argument("--grl-lambda", type=float, default=1.0,
+                        help="Target GRL strength (reached after warmup + ramp).")
+    parser.add_argument("--grl-warmup-epochs", type=float, default=5.0,
+                        help="Epochs to hold GRL at 0 so the encoder learns pure VICReg first. 0 = on from step 1.")
+    parser.add_argument("--grl-ramp-epochs", type=float, default=10.0,
+                        help="Epochs to linearly ramp GRL from 0 to --grl-lambda after warmup. 0 = hard switch.")
 
     parser.add_argument("--learning-rate", type=float, default=3e-4)
     parser.add_argument("--weight-decay", type=float, default=1e-4)

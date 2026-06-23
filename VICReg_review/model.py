@@ -1,7 +1,11 @@
 """Latent-array VICReg model with a GRL sentiment adversary.
 
-The encoder returns 16 latent vectors by default, each with dimension 1024, so
-the frozen SST MLP4-A head can be applied to every latent vector directly.
+The encoder projects the 1024-d input down to a wide latent_dim (256 by default),
+runs cross- and self-attention at that width, then funnels each latent vector
+down to a small output_dim (256 -> 128 -> 64 -> 32 -> 18 by default). VICReg runs
+on these compact codes. Because the frozen SST MLP4-A head still expects 1024-d
+inputs, the adversary holds a learnable up-projection probe (output_dim -> 1024)
+placed AFTER the GRL, so the encoder is always the adversarial party.
 """
 
 from pathlib import Path
@@ -35,57 +39,50 @@ class GradientReversal(nn.Module):
         return gradient_reverse(x, self.lambda_)
 
 
-def _make_mlp(dim, hidden_dim, dropout):
-    return nn.Sequential(
-        nn.LayerNorm(dim),
-        nn.Linear(dim, hidden_dim),
-        nn.GELU(),
-        nn.Dropout(dropout),
-        nn.Linear(hidden_dim, dim),
-        nn.Dropout(dropout),
-    )
+def _make_funnel_mlp(dims, dropout):
+    """Sequential Linear funnel through dims, e.g. [256, 128, 64, 32, 18].
 
-
-class LatentSelfAttentionMLPBlock(nn.Module):
-    def __init__(self, dim, num_heads=8, mlp_ratio=2.0, dropout=0.1):
-        super().__init__()
-        self.norm = nn.LayerNorm(dim)
-        self.attention = nn.MultiheadAttention(dim, num_heads, dropout=dropout, batch_first=True)
-        self.mlp = _make_mlp(dim, int(dim * mlp_ratio), dropout)
-
-    def forward(self, x):
-        normed = self.norm(x)
-        attended, _ = self.attention(normed, normed, normed, need_weights=False)
-        x = x + attended
-        x = x + self.mlp(x)
-        return x
+    GELU + Dropout between hidden layers; the final projection is raw (no
+    activation, no norm) so VICReg's variance term controls the output scale.
+    """
+    layers = []
+    for index in range(len(dims) - 1):
+        layers.append(nn.Linear(dims[index], dims[index + 1]))
+        if index < len(dims) - 2:
+            layers.append(nn.GELU())
+            layers.append(nn.Dropout(dropout))
+    return nn.Sequential(*layers)
 
 
 class LatentArrayMLP(nn.Module):
-    """Shared-weight view encoder for review subsets.
+    """Minimal shared-weight view encoder for review subsets.
+
+    One cross-attention layer (learnable query array attends to the sentences),
+    no residuals and no extra blocks, then a per-latent funnel down to output_dim.
 
     Input:
         x: (batch, sentence_count, input_dim)
         key_padding_mask: optional bool mask, True where x is padding
 
     Output:
-        (batch, num_latents, latent_dim), default (batch, 16, 1024)
+        (batch, num_latents, output_dim), default (batch, 256, 18)
     """
 
     def __init__(
         self,
         input_dim=1024,
-        latent_dim=1024,
-        num_latents=16,
+        latent_dim=256,
+        num_latents=256,
         num_heads=8,
-        depth=2,
-        mlp_ratio=2.0,
         dropout=0.1,
+        output_dim=18,
+        reduce_hidden=(128, 64, 32),
     ):
         super().__init__()
         self.input_dim = int(input_dim)
         self.latent_dim = int(latent_dim)
         self.num_latents = int(num_latents)
+        self.output_dim = int(output_dim)
 
         self.input_norm = nn.LayerNorm(input_dim)
         if input_dim == latent_dim:
@@ -102,41 +99,72 @@ class LatentArrayMLP(nn.Module):
             dropout=dropout,
             batch_first=True,
         )
-        self.cross_mlp = _make_mlp(latent_dim, int(latent_dim * mlp_ratio), dropout)
-        self.blocks = nn.ModuleList(
-            [
-                LatentSelfAttentionMLPBlock(
-                    latent_dim,
-                    num_heads=num_heads,
-                    mlp_ratio=mlp_ratio,
-                    dropout=dropout,
-                )
-                for _ in range(depth)
-            ]
-        )
         self.output_norm = nn.LayerNorm(latent_dim)
+        self.reduce = _make_funnel_mlp([latent_dim, *reduce_hidden, self.output_dim], dropout)
 
     def forward(self, x, key_padding_mask=None):
-        x = self.input_proj(self.input_norm(x))
-        batch_size = x.size(0)
-        queries = self.latent_array.unsqueeze(0).expand(batch_size, -1, -1)
+        context = self.context_norm(self.input_proj(self.input_norm(x)))
+        queries = self.latent_array.unsqueeze(0).expand(x.size(0), -1, -1)
 
-        context = self.context_norm(x)
-        attended, _ = self.cross_attention(
+        latents, _ = self.cross_attention(
             query=self.query_norm(queries),
             key=context,
             value=context,
             key_padding_mask=key_padding_mask,
             need_weights=False,
         )
-        latents = queries + attended
-        latents = latents + self.cross_mlp(latents)
-        for block in self.blocks:
-            latents = block(latents)
-        return self.output_norm(latents)
+        latents = self.output_norm(latents)
+        return self.reduce(latents)
 
 
 Latent_Array_MLP = LatentArrayMLP
+
+
+class TagRegressionHead(nn.Module):
+    """Validation-only probe: map a frozen encoder code to per-tag scores.
+
+    Input is the encoder output (batch, num_latents, latent_out_dim). By default
+    the latent set is flattened (num_latents * latent_out_dim) so the head sees
+    the full representation; use pool="mean" to average over latents instead.
+
+    Outputs raw logits (apply BCEWithLogitsLoss). This head is never part of the
+    VICReg loss path -- it is trained separately on a frozen encoder.
+    """
+
+    def __init__(
+        self,
+        num_tags,
+        num_latents=256,
+        latent_out_dim=18,
+        hidden_dims=(256, 128),
+        dropout=0.1,
+        pool="flatten",
+    ):
+        super().__init__()
+        if pool not in ("flatten", "mean"):
+            raise ValueError("pool must be 'flatten' or 'mean'.")
+        self.pool = pool
+        self.num_tags = int(num_tags)
+        in_dim = num_latents * latent_out_dim if pool == "flatten" else latent_out_dim
+        layers = []
+        prev = in_dim
+        for hidden_dim in hidden_dims:
+            layers += [
+                nn.LayerNorm(prev),
+                nn.Linear(prev, hidden_dim),
+                nn.GELU(),
+                nn.Dropout(dropout),
+            ]
+            prev = hidden_dim
+        layers += [nn.LayerNorm(prev), nn.Linear(prev, self.num_tags)]
+        self.net = nn.Sequential(*layers)
+
+    def forward(self, feats):
+        if self.pool == "flatten":
+            x = feats.flatten(start_dim=1)
+        else:
+            x = feats.mean(dim=1)
+        return self.net(x)
 
 
 class Mlp4SentimentHead(nn.Module):
@@ -187,8 +215,9 @@ def vicreg_loss(
     """VICReg loss for two latent-array views.
 
     Invariance is computed on matching latent positions. Variance and covariance
-    treat all latent vectors in the batch as the sample axis, which keeps the
-    covariance matrix at 1024 x 1024 instead of flattening 16 x 1024 features.
+    treat all latent vectors in the batch as the sample axis, so the covariance
+    matrix is output_dim x output_dim (18 x 18 by default), not the flattened
+    num_latents x output_dim feature set.
     """
 
     if z_a.shape != z_b.shape:
@@ -235,25 +264,46 @@ class SentimentAdversarialLoss(nn.Module):
     that entropy, so the frozen sentiment head is driven toward uncertainty.
     """
 
-    def __init__(self, sentiment_head, grl_lambda=1.0, eps=1e-6, normalize=True):
+    def __init__(
+        self,
+        sentiment_head,
+        input_dim=18,
+        probe_hidden=256,
+        probe_dim=1024,
+        grl_lambda=1.0,
+        eps=1e-6,
+        normalize=True,
+    ):
         super().__init__()
         self.sentiment_head = sentiment_head
         self.grl = GradientReversal(grl_lambda)
+        # Learnable up-projection probe, placed AFTER the GRL: it tries to recover
+        # sentiment confidence from the compact encoder code, while the GRL makes
+        # the encoder fight it. Its own gradients are NOT reversed. Biases are
+        # disabled so the probe cannot use a learned constant channel shortcut.
+        self.probe = nn.Sequential(
+            nn.Linear(input_dim, probe_hidden, bias=False),
+            nn.GELU(),
+            nn.Linear(probe_hidden, probe_dim, bias=False),
+        )
         self.eps = eps
         self.normalize = normalize
 
     def forward(self, latents):
-        flat = latents.reshape(-1, latents.size(-1))
-        if self.normalize:
-            flat = F.normalize(flat, p=2, dim=-1)
-        pred = self.sentiment_head(self.grl(flat)).clamp(self.eps, 1.0 - self.eps)
-        pred = pred.float()
-        entropy = -(pred * pred.log() + (1.0 - pred) * (1.0 - pred).log())
-        loss = entropy.mean()
-        with torch.no_grad():
-            stats = {
-                "sentiment_mean": pred.mean(),
-                "sentiment_std": pred.std(unbiased=False),
-                "sentiment_entropy": entropy.mean(),
-            }
+        # Run the probe + frozen head + entropy in fp32: normalize() and the
+        # Bernoulli entropy overflow to NaN easily under AMP fp16.
+        with torch.amp.autocast("cuda", enabled=False):
+            flat = latents.reshape(-1, latents.size(-1)).float()
+            up = self.probe(self.grl(flat))
+            if self.normalize:
+                up = F.normalize(up, p=2, dim=-1)
+            pred = self.sentiment_head(up).float().clamp(self.eps, 1.0 - self.eps)
+            entropy = -(pred * pred.log() + (1.0 - pred) * (1.0 - pred).log())
+            loss = entropy.mean()
+            with torch.no_grad():
+                stats = {
+                    "sentiment_mean": pred.mean(),
+                    "sentiment_std": pred.std(unbiased=False),
+                    "sentiment_entropy": entropy.mean(),
+                }
         return loss, stats
