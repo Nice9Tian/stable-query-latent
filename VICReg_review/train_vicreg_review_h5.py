@@ -732,6 +732,7 @@ def train(args):
     np.random.seed(args.seed)
     device = torch.device(args.device or ("cuda" if torch.cuda.is_available() else "cpu"))
     cache_dtype = np.dtype(args.cache_dtype)
+    resume_checkpoint = None
 
     with h5py.File(args.input_h5, "r") as h5:
         num_games = int(h5["game_names"].shape[0])
@@ -762,6 +763,33 @@ def train(args):
     history_rows = []
     best_loss = float("inf")
     global_step = 0
+    start_epoch = 1
+    if args.resume_checkpoint:
+        resume_checkpoint = torch.load(args.resume_checkpoint, map_location=device, weights_only=False)
+        model.load_state_dict(resume_checkpoint["model_state_dict"])
+        incompatible = adversary.load_state_dict(resume_checkpoint["adversary_state_dict"], strict=False)
+        if incompatible.missing_keys or incompatible.unexpected_keys:
+            print(
+                "resume adversary state loaded with differences: "
+                f"missing={list(incompatible.missing_keys)} "
+                f"unexpected={list(incompatible.unexpected_keys)}",
+                flush=True,
+            )
+        if "optimizer_state_dict" in resume_checkpoint:
+            try:
+                optimizer.load_state_dict(resume_checkpoint["optimizer_state_dict"])
+            except ValueError as exc:
+                print(f"resume optimizer state skipped: {exc}", flush=True)
+        start_epoch = int(resume_checkpoint.get("epoch") or 0) + 1
+        global_step = int(resume_checkpoint.get("global_step") or 0)
+        metrics = resume_checkpoint.get("metrics") or {}
+        if "loss" in metrics:
+            best_loss = float(metrics["loss"])
+        print(
+            f"resumed checkpoint={args.resume_checkpoint} "
+            f"from_epoch={start_epoch - 1} global_step={global_step}",
+            flush=True,
+        )
 
     print(
         f"device={device} games={num_games} sentences={total_sentences} "
@@ -789,7 +817,7 @@ def train(args):
         next_epoch_future = executor.submit(
             prepare_epoch_batches,
             args.input_h5,
-            1,
+            start_epoch,
             args.batch_size,
             args.steps_per_epoch,
             args.sample_fraction,
@@ -802,7 +830,7 @@ def train(args):
 
     last_metrics = None
     try:
-        for epoch in range(1, args.epochs + 1):
+        for epoch in range(start_epoch, args.epochs + 1):
             model.train()
             epoch_sums = {}
             epoch_batches, next_epoch_future = iter_epoch(args, epoch, next_epoch_future, executor, cache_dtype)
@@ -848,6 +876,7 @@ def train(args):
                 "optimizer_state_dict": optimizer.state_dict(),
                 "epoch": epoch,
                 "global_step": global_step,
+                "resumed_from": str(Path(args.resume_checkpoint).resolve()) if args.resume_checkpoint else None,
                 "args": vars(args),
                 "metrics": averaged,
                 "model_class": "LatentArrayMLP",
@@ -896,6 +925,8 @@ def parse_args():
     parser.add_argument("--history-tsv", default=str(DEFAULT_HEADS_DIR / "vicreg_review_h5_history.tsv"))
     parser.add_argument("--manifest-json", default=str(DEFAULT_HEADS_DIR / "vicreg_review_h5_manifest.json"))
     parser.add_argument("--smoke-result-json", default=str(DEFAULT_SMOKE_RESULT))
+    parser.add_argument("--resume-checkpoint", default=None,
+                        help="Resume model, adversary, optimizer, epoch, and global step from this checkpoint.")
     parser.add_argument("--no-save", action="store_true")
 
     parser.add_argument("--epochs", type=int, default=100)

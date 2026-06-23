@@ -13,7 +13,7 @@ This script:
 
 Outputs (under VICReg_review/tags/ by default):
   tag_vocab.json   ordered tag list + metadata
-  tag_labels.npz   game_names, appids, labels (num_games, num_tags) float32
+  tag_labels.npz   game_names, appids, labels, raw_counts, normalized_counts
 
 Tags in games.json are a {tag_name: vote_count} dict. Two target modes:
   binary  label = 1.0 if the game has the tag, else 0.0  (default, cleanest probe)
@@ -106,14 +106,20 @@ def build(args):
     num_tags = len(kept)
 
     labels = np.zeros((len(game_names), num_tags), dtype=np.float32)
+    raw_counts = np.zeros((len(game_names), num_tags), dtype=np.float32)
+    normalized_counts = np.zeros((len(game_names), num_tags), dtype=np.float32)
     for row, tags in enumerate(per_game_tags):
         if not tags:
             continue
         present = {tag: weight for tag, weight in tags.items() if tag in tag_to_id}
         if not present:
             continue
+        max_weight = max(present.values()) or 1.0
+        for tag, weight in present.items():
+            col = tag_to_id[tag]
+            raw_counts[row, col] = weight
+            normalized_counts[row, col] = weight / max_weight
         if args.target_mode == "weight":
-            max_weight = max(present.values()) or 1.0
             for tag, weight in present.items():
                 labels[row, tag_to_id[tag]] = weight / max_weight
         else:
@@ -154,6 +160,8 @@ def build(args):
                 game_names=np.asarray(game_names),
                 appids=np.asarray(appids),
                 labels=labels,
+                raw_counts=raw_counts,
+                normalized_counts=normalized_counts,
                 tags=np.asarray(kept),
             )
 

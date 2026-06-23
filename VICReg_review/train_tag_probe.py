@@ -84,6 +84,7 @@ def load_frozen_encoder(checkpoint_path, input_dim, device):
         reduce_hidden=tuple(cfg["reduce_hidden"]),
     ).to(device)
     model.load_state_dict(checkpoint["model_state_dict"])
+    model.float()
     model.eval()
     for param in model.parameters():
         param.requires_grad_(False)
@@ -114,7 +115,7 @@ def extract_features(encoder, h5_path, sample_fraction, feature_views, seed, cac
             views = sample_game_views(h5, game_index, sample_fraction, feature_views, rng, cache_np)
             stacked = []
             for view in views:
-                tensor = view.unsqueeze(0).to(device)
+                tensor = view.unsqueeze(0).to(device).float()
                 with torch.amp.autocast("cuda", enabled=amp and device.type == "cuda"):
                     code = encoder(tensor, key_padding_mask=None)
                 stacked.append(code.squeeze(0).float())
@@ -130,15 +131,28 @@ def extract_features(encoder, h5_path, sample_fraction, feature_views, seed, cac
 def load_labels(tags_dir):
     vocab = json.loads((Path(tags_dir) / "tag_vocab.json").read_text(encoding="utf-8"))
     npz = np.load(Path(tags_dir) / "tag_labels.npz", allow_pickle=False)
-    return vocab, [str(name) for name in npz["game_names"]], npz["labels"].astype(np.float32)
+    labels = npz["labels"].astype(np.float32)
+    raw_counts = npz["raw_counts"].astype(np.float32) if "raw_counts" in npz else labels.copy()
+    normalized_counts = (
+        npz["normalized_counts"].astype(np.float32)
+        if "normalized_counts" in npz
+        else labels.copy()
+    )
+    return (
+        vocab,
+        [str(name) for name in npz["game_names"]],
+        labels,
+        raw_counts,
+        normalized_counts,
+    )
 
 
-def align_labels(feature_names, label_names, labels):
+def align_matrix(feature_names, label_names, values):
     index = {name: row for row, name in enumerate(label_names)}
-    aligned = np.zeros((len(feature_names), labels.shape[1]), dtype=np.float32)
+    aligned = np.zeros((len(feature_names), values.shape[1]), dtype=np.float32)
     for row, name in enumerate(feature_names):
         if name in index:
-            aligned[row] = labels[index[name]]
+            aligned[row] = values[index[name]]
     return aligned
 
 
@@ -159,19 +173,80 @@ def average_precision(scores, labels):
     return float((precision * ordered).sum() / ordered.sum())
 
 
-def evaluate(logits, labels):
-    probs = torch.sigmoid(torch.from_numpy(logits)).numpy()
-    preds = (probs >= 0.5).astype(np.float32)
+def micro_f1_at_threshold(probs, labels, threshold):
+    preds = (probs >= threshold).astype(np.float32)
     tp = float((preds * labels).sum())
     fp = float((preds * (1 - labels)).sum())
     fn = float(((1 - preds) * labels).sum())
     precision = tp / (tp + fp) if tp + fp > 0 else 0.0
     recall = tp / (tp + fn) if tp + fn > 0 else 0.0
     micro_f1 = 2 * precision * recall / (precision + recall) if precision + recall > 0 else 0.0
+    predicted_tags_per_game = float(preds.sum(axis=1).mean()) if preds.size else 0.0
+    return precision, recall, micro_f1, predicted_tags_per_game
+
+
+def best_global_threshold(probs, labels):
+    best = (0.5, -1.0)
+    for threshold in np.linspace(0.05, 0.95, 19):
+        _, _, micro_f1, _ = micro_f1_at_threshold(probs, labels, float(threshold))
+        if micro_f1 > best[1]:
+            best = (float(threshold), micro_f1)
+    return best[0]
+
+
+def evaluate_presence(logits, labels, threshold=None):
+    probs = torch.sigmoid(torch.from_numpy(logits)).numpy()
+    if threshold is None:
+        threshold = best_global_threshold(probs, labels)
+    precision, recall, micro_f1, predicted_tags_per_game = micro_f1_at_threshold(probs, labels, threshold)
     aps = [average_precision(probs[:, tag], labels[:, tag]) for tag in range(labels.shape[1])]
     aps = np.asarray(aps, dtype=np.float64)
     mean_ap = float(np.nanmean(aps)) if np.any(~np.isnan(aps)) else 0.0
-    return {"micro_f1": micro_f1, "precision": precision, "recall": recall, "mAP": mean_ap}, aps
+    return {
+        "micro_f1": micro_f1,
+        "precision": precision,
+        "recall": recall,
+        "mAP": mean_ap,
+        "threshold": float(threshold),
+        "predicted_tags_per_game": predicted_tags_per_game,
+    }, aps
+
+
+def count_regression_loss(count_logits, raw_counts, presence, negative_weight):
+    pred_log_counts = nn.functional.softplus(count_logits)
+    target_log_counts = torch.log1p(raw_counts)
+    positive_mask = presence > 0
+    if positive_mask.any():
+        positive_loss = nn.functional.smooth_l1_loss(
+            pred_log_counts[positive_mask],
+            target_log_counts[positive_mask],
+        )
+    else:
+        positive_loss = pred_log_counts.new_tensor(0.0)
+    if negative_weight > 0:
+        negative_mask = ~positive_mask
+        if negative_mask.any():
+            negative_loss = nn.functional.smooth_l1_loss(
+                pred_log_counts[negative_mask],
+                torch.zeros_like(pred_log_counts[negative_mask]),
+            )
+        else:
+            negative_loss = pred_log_counts.new_tensor(0.0)
+    else:
+        negative_loss = pred_log_counts.new_tensor(0.0)
+    return positive_loss + negative_weight * negative_loss
+
+
+def count_metrics(count_logits, raw_counts, presence):
+    pred_counts = torch.expm1(nn.functional.softplus(torch.from_numpy(count_logits))).numpy()
+    positive_mask = presence > 0
+    if not np.any(positive_mask):
+        return {"count_mae": 0.0, "count_rmse": 0.0}
+    errors = pred_counts[positive_mask] - raw_counts[positive_mask]
+    return {
+        "count_mae": float(np.mean(np.abs(errors))),
+        "count_rmse": float(np.sqrt(np.mean(errors ** 2))),
+    }
 
 
 def train(args):
@@ -189,21 +264,27 @@ def train(args):
         encoder, args.h5, args.sample_fraction, args.feature_views,
         args.seed, args.cache_dtype, device, args.amp,
     )
-    vocab, label_names, raw_labels = load_labels(args.tags_dir)
-    labels = align_labels(feature_names, label_names, raw_labels)
+    vocab, label_names, raw_labels, raw_counts, normalized_counts = load_labels(args.tags_dir)
+    labels = align_matrix(feature_names, label_names, raw_labels)
+    raw_counts = align_matrix(feature_names, label_names, raw_counts)
+    normalized_counts = align_matrix(feature_names, label_names, normalized_counts)
+    presence = (raw_counts > 0).astype(np.float32)
     num_tags = labels.shape[1]
     print(f"features={tuple(feats.shape)} tags={num_tags} target_mode={vocab['target_mode']}", flush=True)
 
-    keep = np.flatnonzero((labels > 0).any(axis=1))
+    keep = np.flatnonzero((presence > 0).any(axis=1))
     train_idx, val_idx = split_indices(keep, args.test_ratio, args.seed)
     print(f"games_with_labels={len(keep)} train={len(train_idx)} val={len(val_idx)}", flush=True)
 
     feats_flat = feats.to(device)
-    labels_t = torch.from_numpy(labels).to(device)
+    presence_t = torch.from_numpy(presence).to(device)
+    raw_counts_t = torch.from_numpy(raw_counts).to(device)
     train_x = feats_flat[train_idx]
-    train_y = labels_t[train_idx]
+    train_presence = presence_t[train_idx]
+    train_counts = raw_counts_t[train_idx]
     val_x = feats_flat[val_idx]
-    val_y = labels[val_idx]
+    val_presence = presence[val_idx]
+    val_counts = raw_counts[val_idx]
 
     head = TagRegressionHead(
         num_tags=num_tags,
@@ -215,11 +296,12 @@ def train(args):
     ).to(device)
     print(f"head params={sum(p.numel() for p in head.parameters())} pool={args.pool}", flush=True)
 
-    # pos_weight counters tag sparsity in the multi-label BCE.
-    pos = train_y.clamp(0, 1).sum(dim=0)
-    neg = train_y.shape[0] - pos
+    # Use a softened pos_weight: the raw neg/pos ratio often over-predicts tags.
+    pos = train_presence.sum(dim=0)
+    neg = train_presence.shape[0] - pos
     pos_weight = (neg / pos.clamp(min=1.0)).clamp(max=args.max_pos_weight)
-    criterion = nn.BCEWithLogitsLoss(pos_weight=pos_weight)
+    pos_weight = 1.0 + args.pos_weight_strength * (pos_weight - 1.0)
+    presence_criterion = nn.BCEWithLogitsLoss(pos_weight=pos_weight)
     optimizer = torch.optim.AdamW(head.parameters(), lr=args.learning_rate, weight_decay=args.weight_decay)
 
     history = []
@@ -232,8 +314,15 @@ def train(args):
     for epoch in range(1, args.epochs + 1):
         head.train()
         optimizer.zero_grad(set_to_none=True)
-        logits = head(train_x)
-        loss = criterion(logits, train_y.clamp(0, 1) if vocab["target_mode"] == "binary" else train_y)
+        outputs = head(train_x)
+        presence_loss = presence_criterion(outputs["presence_logits"], train_presence)
+        count_loss = count_regression_loss(
+            outputs["count_logits"],
+            train_counts,
+            train_presence,
+            args.count_negative_weight,
+        )
+        loss = presence_loss + args.count_loss_weight * count_loss
         loss.backward()
         grad_norm = float(torch.nn.utils.clip_grad_norm_(head.parameters(), args.grad_clip))
         optimizer.step()
@@ -241,16 +330,37 @@ def train(args):
 
         head.eval()
         with torch.no_grad():
-            val_logits = head(val_x).cpu().numpy()
-            val_loss = float(
-                nn.functional.binary_cross_entropy_with_logits(
-                    torch.from_numpy(val_logits), torch.from_numpy(val_y)
-                )
+            val_outputs = head(val_x)
+            val_presence_logits_t = val_outputs["presence_logits"]
+            val_count_logits_t = val_outputs["count_logits"]
+            val_presence_loss = presence_criterion(
+                val_presence_logits_t,
+                torch.from_numpy(val_presence).to(device),
             )
-        metrics, _ = evaluate(val_logits, val_y)
+            val_count_loss = count_regression_loss(
+                val_count_logits_t,
+                torch.from_numpy(val_counts).to(device),
+                torch.from_numpy(val_presence).to(device),
+                args.count_negative_weight,
+            )
+            val_loss = float((val_presence_loss + args.count_loss_weight * val_count_loss).detach().cpu())
+            val_presence_logits = val_presence_logits_t.cpu().numpy()
+            val_count_logits = val_count_logits_t.cpu().numpy()
+        metrics, _ = evaluate_presence(val_presence_logits, val_presence)
+        metrics.update(count_metrics(val_count_logits, val_counts, val_presence))
         score = metrics["mAP"]
-        row = {"epoch": epoch, "train_loss": float(loss.detach().cpu()), "val_loss": val_loss,
-               "grad_norm": grad_norm, "grad_ema": grad_ema, **metrics}
+        row = {
+            "epoch": epoch,
+            "train_loss": float(loss.detach().cpu()),
+            "presence_loss": float(presence_loss.detach().cpu()),
+            "count_loss": float(count_loss.detach().cpu()),
+            "val_loss": val_loss,
+            "val_presence_loss": float(val_presence_loss.detach().cpu()),
+            "val_count_loss": float(val_count_loss.detach().cpu()),
+            "grad_norm": grad_norm,
+            "grad_ema": grad_ema,
+            **metrics,
+        }
         history.append(row)
 
         improved = score > best_score + args.min_delta
@@ -266,6 +376,8 @@ def train(args):
             print(
                 f"epoch={epoch:04d} train_loss={row['train_loss']:.4f} val_loss={val_loss:.4f} "
                 f"mAP={metrics['mAP']:.4f} micro_f1={metrics['micro_f1']:.4f} "
+                f"thr={metrics['threshold']:.2f} pred_tags={metrics['predicted_tags_per_game']:.1f} "
+                f"count_mae={metrics['count_mae']:.2f} "
                 f"grad_ema={grad_ema:.4f} plateau={plateau_count}/{args.patience}",
                 flush=True,
             )
@@ -284,8 +396,11 @@ def train(args):
     # Per-tag AP report on the best head.
     head.eval()
     with torch.no_grad():
-        final_logits = head(val_x).cpu().numpy()
-    final_metrics, per_tag_ap = evaluate(final_logits, val_y)
+        final_outputs = head(val_x)
+        final_presence_logits = final_outputs["presence_logits"].cpu().numpy()
+        final_count_logits = final_outputs["count_logits"].cpu().numpy()
+    final_metrics, per_tag_ap = evaluate_presence(final_presence_logits, val_presence)
+    final_metrics.update(count_metrics(final_count_logits, val_counts, val_presence))
     tags = vocab["tags"]
     ranked = sorted(
         [(tags[i], per_tag_ap[i]) for i in range(num_tags) if not np.isnan(per_tag_ap[i])],
@@ -299,6 +414,10 @@ def train(args):
         "encoder_cfg": cfg,
         "num_tags": num_tags,
         "target_mode": vocab["target_mode"],
+        "head_type": "presence_and_count",
+        "count_loss_weight": args.count_loss_weight,
+        "count_negative_weight": args.count_negative_weight,
+        "pos_weight_strength": args.pos_weight_strength,
         "games_with_labels": int(len(keep)),
         "train": int(len(train_idx)),
         "val": int(len(val_idx)),
@@ -321,7 +440,8 @@ def train(args):
     if not args.no_save:
         atomic_torch_save(
             {"head_state_dict": head.state_dict(), "num_tags": num_tags, "tags": tags,
-             "pool": args.pool, "hidden_dims": list(args.hidden_dims), "report": report},
+             "pool": args.pool, "hidden_dims": list(args.hidden_dims),
+             "head_type": "presence_and_count", "report": report},
             args.head_out,
         )
 
@@ -356,6 +476,12 @@ def parse_args():
     parser.add_argument("--weight-decay", type=float, default=1e-4)
     parser.add_argument("--grad-clip", type=float, default=5.0)
     parser.add_argument("--max-pos-weight", type=float, default=20.0)
+    parser.add_argument("--pos-weight-strength", type=float, default=0.25,
+                        help="0 disables BCE pos_weight; 1 uses the full clipped neg/pos ratio.")
+    parser.add_argument("--count-loss-weight", type=float, default=0.1,
+                        help="Weight for raw tag-count regression in log1p space.")
+    parser.add_argument("--count-negative-weight", type=float, default=0.02,
+                        help="Small penalty for predicting positive counts on absent tags.")
     parser.add_argument("--epochs", type=int, default=2000)
     parser.add_argument("--patience", type=int, default=50,
                         help="Stop after this many epochs without val mAP improvement.")

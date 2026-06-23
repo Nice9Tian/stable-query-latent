@@ -121,14 +121,17 @@ Latent_Array_MLP = LatentArrayMLP
 
 
 class TagRegressionHead(nn.Module):
-    """Validation-only probe: map a frozen encoder code to per-tag scores.
+    """Validation-only probe: map a frozen encoder code to tag signals.
 
     Input is the encoder output (batch, num_latents, latent_out_dim). By default
     the latent set is flattened (num_latents * latent_out_dim) so the head sees
     the full representation; use pool="mean" to average over latents instead.
 
-    Outputs raw logits (apply BCEWithLogitsLoss). This head is never part of the
-    VICReg loss path -- it is trained separately on a frozen encoder.
+    Outputs a dict with raw presence logits and raw-count regression logits.
+    Apply sigmoid() to presence_logits for tag-existence probabilities. Apply
+    softplus() and expm1() to count_logits to recover non-negative tag counts.
+    This head is never part of the VICReg loss path -- it is trained separately
+    on a frozen encoder.
     """
 
     def __init__(
@@ -156,15 +159,21 @@ class TagRegressionHead(nn.Module):
                 nn.Dropout(dropout),
             ]
             prev = hidden_dim
-        layers += [nn.LayerNorm(prev), nn.Linear(prev, self.num_tags)]
-        self.net = nn.Sequential(*layers)
+        layers += [nn.LayerNorm(prev)]
+        self.trunk = nn.Sequential(*layers)
+        self.presence = nn.Linear(prev, self.num_tags)
+        self.count = nn.Linear(prev, self.num_tags)
 
     def forward(self, feats):
         if self.pool == "flatten":
             x = feats.flatten(start_dim=1)
         else:
             x = feats.mean(dim=1)
-        return self.net(x)
+        x = self.trunk(x)
+        return {
+            "presence_logits": self.presence(x),
+            "count_logits": self.count(x),
+        }
 
 
 class Mlp4SentimentHead(nn.Module):
