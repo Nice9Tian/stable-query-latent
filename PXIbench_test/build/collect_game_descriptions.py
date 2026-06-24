@@ -33,6 +33,7 @@ USER_AGENT = "studable-query-latent/1.0 (PXI benchmark text collection)"
 
 QUERY_ALIASES = {
     "21": "Twenty One card game",
+    "8 ball pool": "8 Ball Pool",
     "Agar": "Agar.io",
     "Assassin’s Creed": "Assassin's Creed",
     "Ark": "ARK Survival Evolved",
@@ -44,6 +45,7 @@ QUERY_ALIASES = {
     "Black desert": "Black Desert Online",
     "Bloons": "Bloons TD",
     "Clash Royal": "Clash Royale",
+    "Company of heroes": "Company of Heroes",
     "Counter Strike": "Counter-Strike",
     "Civilization": "Civilization video game series",
     "Darkest Dungeon": "Darkest Dungeon video game",
@@ -66,11 +68,14 @@ QUERY_ALIASES = {
     "GemCraft": "GemCraft",
     "Glory of King": "Honor of Kings",
     "GTA": "Grand Theft Auto",
-    "Harten Jagen": "Hearts card game",
+    "Harten Jagen": "Hearts (card game)",
     "Heroes and Generals": "Heroes & Generals",
     "Heroes of the storm": "Heroes of the Storm",
     "Honkai impact": "Honkai Impact 3rd",
+    "Home Sweet Home": "Home Sweet Home (2017 video game)",
+    "Hollow knight": "Hollow Knight",
     "Horizon zero dawn": "Horizon Zero Dawn",
+    "Into The Breach": "Into the Breach",
     "Kim Kardashian: Hollywood": "Kim Kardashian: Hollywood",
     "King of Glory": "Honor of Kings",
     "Krunker.io": "Krunker",
@@ -91,6 +96,7 @@ QUERY_ALIASES = {
     "Payday 2": "Payday 2 video game",
     "Pokemon": "Pokemon video game series",
     "Pokemon Go": "Pokemon Go",
+    "Pikmin III deluxe": "Pikmin 3 Deluxe",
     "PUBG": "PUBG: Battlegrounds",
     "Ratchet & clank": "Ratchet & Clank",
     "Score!": "Score! Hero",
@@ -111,6 +117,7 @@ QUERY_ALIASES = {
     "The last of us": "The Last of Us",
     "Tom Clanc’s Rainbow Six Siege": "Tom Clancy's Rainbow Six Siege",
     "Tommy Hawk Pro Skater I": "Tony Hawk's Pro Skater",
+    "Total War Warhammer 2": "Total War: Warhammer II",
     "Tribalwars": "Tribal Wars",
     "Trigger fist": "Trigger Fist",
     "Warband": "Mount & Blade: Warband",
@@ -135,6 +142,7 @@ QUERY_ALIASES = {
     "Plants vs Zombies2": "Plants vs. Zombies 2",
     "Phantasy Star": "Phantasy Star video game series",
     "PCM 2020": "Pro Cycling Manager 2020",
+    "Prince Of Persia: Forgotten Sands": "Prince of Persia: The Forgotten Sands",
     "Raceroom Racing Experience": "RaceRoom Racing Experience",
     "Sea of Theives": "Sea of Thieves",
     "Sekiro shadows die twice": "Sekiro: Shadows Die Twice",
@@ -142,6 +150,7 @@ QUERY_ALIASES = {
     "South park the stick of the truth": "South Park: The Stick of Truth",
     "Superhot VR": "Superhot VR",
     "Tamashii": "Tamashii video game",
+    "Uncharted 4: A Thief’s End": "Uncharted 4: A Thief's End",
 }
 
 
@@ -157,6 +166,7 @@ NEGATIVE_TITLE_TERMS = (
     "designer",
     "disambiguation",
     "music",
+    "goldsrc",
 )
 POSITIVE_TEXT_TERMS = (
     "video game",
@@ -174,6 +184,7 @@ POSITIVE_TEXT_TERMS = (
     "fighting game",
     "shooter game",
     "tower defense game",
+    "match-3",
     "casual game",
     "adventure game",
     "action-adventure game",
@@ -192,6 +203,8 @@ POSITIVE_TEXT_TERMS = (
     "first-person shooter",
     "third-person shooter",
     "strategy game",
+    "real-time strategy",
+    "turn-based strategy",
     "survival game",
     "battle royale game",
     "multiplayer",
@@ -199,6 +212,9 @@ POSITIVE_TEXT_TERMS = (
     "game developed",
     "game published",
     "game series",
+    "social network game",
+    "word puzzle",
+    "logic puzzle",
 )
 GAMEPLAY_SECTION_TERMS = ("gameplay", "game play", "mechanics", "features")
 STORY_SECTION_TERMS = ("plot", "story", "synopsis", "setting", "premise", "campaign")
@@ -556,27 +572,19 @@ def find_best_page_from_cache_with_extract(
             pageid = int(page["pageid"])
             candidates_by_id.setdefault(pageid, page)
 
-    pages: list[dict] = []
     for page in sorted(candidates_by_id.values(), key=lambda item: score_page(game_name, item), reverse=True):
         full_page = fetch_page_extract(session, int(page["pageid"]))
         if full_page and is_likely_game_page(full_page):
-            pages.append(full_page)
-        if len(pages) >= 3:
-            break
-
-    if not pages:
-        return None
-    ranked = sorted(pages, key=lambda page: score_page(game_name, page), reverse=True)
-    best = ranked[0]
-    title = best.get("title", "")
-    url = best.get("fullurl") or f"https://en.wikipedia.org/wiki/{quote(title.replace(' ', '_'))}"
-    return WikiPage(
-        title=title,
-        pageid=int(best["pageid"]),
-        extract=best.get("extract", "").strip(),
-        url=url,
-        score=score_page(game_name, best),
-    )
+            title = full_page.get("title", "")
+            url = full_page.get("fullurl") or f"https://en.wikipedia.org/wiki/{quote(title.replace(' ', '_'))}"
+            return WikiPage(
+                title=title,
+                pageid=int(full_page["pageid"]),
+                extract=full_page.get("extract", "").strip(),
+                url=url,
+                score=score_page(game_name, full_page),
+            )
+    return None
 
 
 def split_sections(extract: str) -> dict[str, str]:
