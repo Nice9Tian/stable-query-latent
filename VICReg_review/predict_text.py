@@ -22,9 +22,9 @@ for p in (str(ROOT), str(ROOT / "game_review_data")):
 
 from VICReg_review.train_tag_probe import load_frozen_encoder, pool_features  # noqa: E402
 try:
-    from VICReg_review.coarse_tags import coarsen_tag_dict, keyword_scores
+    from VICReg_review.tap_mapping import load_tap_mapping, map_tag_dict, keyword_scores
 except ImportError:  # pragma: no cover
-    from coarse_tags import coarsen_tag_dict, keyword_scores
+    from tap_mapping import load_tap_mapping, map_tag_dict, keyword_scores
 
 
 def split_text(text, max_sentences=256):
@@ -43,7 +43,7 @@ def normalize_for_probe(pooled, probe):
 
 def apply_keyword_prior(text, probs, tags, probe):
     weight = float(probe.get("keyword_weight", 0.0) or 0.0)
-    if weight <= 0 or not probe.get("coarse_aliases"):
+    if weight <= 0 or not probe.get("tap_mapping_json"):
         return probs
     prior = keyword_scores(text, tags)
     weight = min(max(weight, 0.0), 1.0)
@@ -91,23 +91,29 @@ def main():
     tags = probe["tags"]
     enc_ckpt = args.encoder or probe["encoder_checkpoint"]
     import h5py
-    with h5py.File(SCRIPT_DIR / "h5" / "game_review_cleaned_3_sentences.h5", "r") as h5:
+    h5_path = SCRIPT_DIR / "h5" / "game_review_cleaned_3_sentences.h5"
+    with h5py.File(h5_path, "r") as h5:
         input_dim = int(h5.attrs["input_dim"])
     encoder, _, _, _ = load_frozen_encoder(enc_ckpt, input_dim, device)
 
     from game_review_data.embedding_data import DEFAULT_LOCAL_MODEL, LocalEmbedder
     embedder = LocalEmbedder(DEFAULT_LOCAL_MODEL, device=str(device), batch_size=16)
 
-    # ground-truth non-emotional tags for this game
-    groups = json.loads((SCRIPT_DIR / "tags" / "tag_groups.json").read_text(encoding="utf-8"))
-    subjective = set(groups["subjective"])
-    games = json.loads((ROOT / "game_review_data" / "Steam Games Metadata and Player Reviews (2020–2024" / "games.json").read_text(encoding="utf-8"))
-    raw = games[args.appid].get("tags", {})
-    if probe.get("coarse_aliases"):
-        raw = coarsen_tag_dict(raw)
-    true_tags = [t for t in raw if t in set(tags) and t not in subjective]
+    true_tags = []
+    with h5py.File(h5_path, "r") as h5:
+        if "appids" in h5 and "tap_names" in h5 and "tap_labels" in h5:
+            appids = [a.decode("utf-8") if isinstance(a, bytes) else str(a) for a in h5["appids"][:]]
+            if args.appid in appids:
+                row = appids.index(args.appid)
+                h5_tags = [t.decode("utf-8") if isinstance(t, bytes) else str(t) for t in h5["tap_names"][:]]
+                true_tags = [tag for tag, value in zip(h5_tags, h5["tap_labels"][row]) if value and tag in set(tags)]
+    if not true_tags:
+        games = json.loads((ROOT / "game_review_data" / "Steam Games Metadata and Player Reviews (2020–2024" / "games.json").read_text(encoding="utf-8"))
+        spec = load_tap_mapping()
+        raw = map_tag_dict(games[args.appid].get("tags", {}), spec)
+        true_tags = [t for t in raw if t in set(tags)]
 
-    keep = np.array([t not in subjective for t in tags])
+    keep = np.ones(len(tags), dtype=bool)
     text = Path(args.text_file).read_text(encoding="utf-8")
     probs, n_sent = predict(text, probe, encoder, embedder, device)
     order = [i for i in np.argsort(-probs) if keep[i]]

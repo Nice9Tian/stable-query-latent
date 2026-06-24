@@ -15,8 +15,8 @@ enough to run during training):
     pxi_func_f1         median-split F1 over functional dims
     pxi_psych_f1        median-split F1 over psychological dims
 
-Inputs are the artifacts tag_build.py / probe_selectivity.py / pxi_vicreg_overlap.py
-already produce; any missing input is skipped gracefully (NaN) so training never
+Inputs are the TAP labels stored in the H5 plus probe_selectivity.py /
+pxi_vicreg_overlap.py artifacts; any missing input is skipped gracefully (NaN) so training never
 dies because of the probe.
 """
 
@@ -144,14 +144,19 @@ def _pxi_group_f1(Xmap, overlap_path, groups_cols, pca=8, C=1.0):
     return loo_f1(groups_cols[0]), loo_f1(groups_cols[1]), len(appids)
 
 
-def evaluate(feats, names, tags_dir=DEFAULT_TAGS_DIR, sentiment_cache=DEFAULT_SENTIMENT,
+def evaluate(feats, names, tags_dir=DEFAULT_TAGS_DIR, h5_path=None, sentiment_cache=DEFAULT_SENTIMENT,
              pxi_overlap=DEFAULT_PXI_OVERLAP, folds=5, min_train_pos=2, C=1.0, seed=42, pool="stats"):
     """feats: (G, num_latents, output_dim) numpy. Returns a flat metric dict."""
-    tags, label_names, labels = load_labels(tags_dir)
+    tags, label_names, labels = load_labels(tags_dir, h5_path)
     tag_id = {t: i for i, t in enumerate(tags)}
-    groups = json.loads((Path(tags_dir) / "tag_groups.json").read_text(encoding="utf-8"))
-    content_cols = [tag_id[t] for t in groups.get("content", []) if t in tag_id]
-    subj_cols = [tag_id[t] for t in groups.get("subjective", []) if t in tag_id]
+    groups_path = Path(tags_dir) / "tag_groups.json"
+    if groups_path.exists() and h5_path is None:
+        groups = json.loads(groups_path.read_text(encoding="utf-8"))
+        content_cols = [tag_id[t] for t in groups.get("content", []) if t in tag_id]
+        subj_cols = [tag_id[t] for t in groups.get("subjective", []) if t in tag_id]
+    else:
+        content_cols = list(range(len(tags)))
+        subj_cols = []
 
     y, keep = _align_labels(names, label_names, labels)
     X = pool_features(feats, pool)
@@ -188,7 +193,7 @@ def probe_encoder(encoder, h5_path, device, amp=False, feature_views=2, sample_f
             feats, names = extract_features(
                 encoder, str(h5_path), sample_fraction, feature_views, seed, cache_dtype, device, amp
             )
-        return evaluate(feats, names, seed=seed, **eval_kwargs)
+        return evaluate(feats, names, h5_path=h5_path, seed=seed, **eval_kwargs)
     finally:
         if was_training:
             encoder.train()

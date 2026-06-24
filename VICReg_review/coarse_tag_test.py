@@ -22,11 +22,9 @@ for p in (str(ROOT), str(ROOT / "game_review_data")):
     if p not in sys.path:
         sys.path.insert(0, p)
 
-from VICReg_review.coarse_tags import COARSE_TAG_ALIASES, coarse_names, coarse_vector, keyword_scores  # noqa: E402
+from VICReg_review.tap_mapping import load_tap_mapping, map_tag_dict, keyword_scores  # noqa: E402
 from VICReg_review.train_tag_probe import load_frozen_encoder, pool_features  # noqa: E402
 
-COARSE = COARSE_TAG_ALIASES
-COARSE_NAMES = coarse_names()
 GAMES_JSON = ROOT / "game_review_data" / "Steam Games Metadata and Player Reviews (2020–2024" / "games.json"
 TESTS = [("AO_text.txt", "1385380", "Across the Obelisk"), ("2077_text.txt", "1091500", "Cyberpunk 2077")]
 
@@ -115,14 +113,14 @@ def score_desc(name, true_coarse, probs, K):
 def main():
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     games = json.loads(GAMES_JSON.read_text(encoding="utf-8"))
+    mapping = load_tap_mapping()
 
     # labels aligned to the cached feature game order
-    npz = np.load(SCRIPT_DIR / "tags" / "tag_labels.npz", allow_pickle=True)
-    appids = [str(a) for a in npz["appids"]]
-    fine_tags = [str(t) for t in npz["tags"]]
-    raw_labels = (npz["labels"] > 0)
-    fine_per_game = [set(t for t, v in zip(fine_tags, row) if v) for row in raw_labels]
-    Y = np.stack([coarse_vector(s) for s in fine_per_game])
+    with __import__("h5py").File(SCRIPT_DIR / "h5" / "game_review_cleaned_3_sentences.h5", "r") as h5:
+        global COARSE_NAMES
+        COARSE_NAMES = [x.decode("utf-8") if isinstance(x, bytes) else str(x) for x in h5["tap_names"][:]]
+        appids = [x.decode("utf-8") if isinstance(x, bytes) else str(x) for x in h5["appids"][:]]
+        Y = (h5["tap_labels"][:] > 0).astype(np.int8)
     print(f"coarse tags: {len(COARSE_NAMES)}  games: {len(Y)}  avg coarse/game: {Y.sum(1).mean():.1f}")
 
     # raw review features (cached) -> L2
@@ -168,8 +166,7 @@ def main():
 
     clfs_raw, clfs_vic = fit_full(F_raw, Y), fit_full(F_vic, Y)
     for path, appid, name in TESTS:
-        true_fine = set(games[appid].get("tags", {}))
-        true_coarse = set(COARSE_NAMES[i] for i, v in enumerate(coarse_vector(true_fine)) if v)
+        true_coarse = set(map_tag_dict(games[appid].get("tags", {}), mapping))
         text = Path(ROOT / path).read_text(encoding="utf-8")
         raw_feat, vic_feat = desc_features(path)
         K = len(true_coarse)

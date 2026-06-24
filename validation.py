@@ -40,14 +40,15 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 from game_review_data.embedding_data import DEFAULT_LOCAL_MODEL, LocalEmbedder  # noqa: E402
 from VICReg_review.train_tag_probe import load_frozen_encoder, pool_features  # noqa: E402
 try:
-    from VICReg_review.coarse_tags import coarsen_tag_dict, keyword_scores
+    from VICReg_review.tap_mapping import load_tap_mapping, map_tag_dict, keyword_scores
 except ImportError:  # pragma: no cover
-    from coarse_tags import coarsen_tag_dict, keyword_scores
+    from tap_mapping import load_tap_mapping, map_tag_dict, keyword_scores
 
 
 DEFAULT_HEADS_DIR = ROOT / "VICReg_review" / "heads"
 DEFAULT_GUI_RUN_DIR = DEFAULT_HEADS_DIR / "gui_run"
 DEFAULT_TAGS_DIR = ROOT / "VICReg_review" / "tags"
+DEFAULT_H5 = ROOT / "VICReg_review" / "h5" / "game_review_cleaned_3_sentences.h5"
 DEFAULT_GAMES_JSON = ROOT / "game_review_data" / "Steam Games Metadata and Player Reviews (2020–2024" / "games.json"
 
 
@@ -80,14 +81,6 @@ def split_text(text: str, max_sentences: int) -> list[str]:
     return sentences[:max_sentences]
 
 
-def load_tags_fallback(tags_dir: Path) -> list[str]:
-    vocab_path = tags_dir / "tag_vocab.json"
-    if not vocab_path.exists():
-        return []
-    payload = json.loads(vocab_path.read_text(encoding="utf-8"))
-    return list(payload.get("tags") or [])
-
-
 def game_tag_dict(record: dict) -> dict[str, float]:
     tags = record.get("tags") or {}
     if isinstance(tags, dict):
@@ -95,12 +88,52 @@ def game_tag_dict(record: dict) -> dict[str, float]:
     return {str(name): 1.0 for name in tags}
 
 
-def build_game_index(games_json: Path, tags: list[str], coarse: bool = False):
+def _decode_h5_string(value):
+    return value.decode("utf-8") if isinstance(value, bytes) else str(value)
+
+
+def read_training_appids(h5_path: Path) -> set[str]:
+    import h5py
+
+    with h5py.File(h5_path, "r") as h5:
+        if "appids" in h5:
+            return {_decode_h5_string(x) for x in h5["appids"][:]}
+        return {_decode_h5_string(x).split("_")[0] for x in h5["game_names"][:]}
+
+
+def build_game_index(games_json: Path, tags: list[str], training_h5: Path | None = None):
     import numpy as np
 
-    payload = json.loads(Path(games_json).read_text(encoding="utf-8"))
+    games_json = Path(games_json)
+    if games_json.suffix.lower() in {".h5", ".hdf5"}:
+        import h5py
+
+        with h5py.File(games_json, "r") as h5:
+            if "tap_names" not in h5 or "tap_raw_counts" not in h5:
+                raise ValueError(f"{games_json} has no tap_names/tap_raw_counts datasets.")
+            h5_tags = [_decode_h5_string(x) for x in h5["tap_names"][:]]
+            h5_index = {tag: index for index, tag in enumerate(h5_tags)}
+            cols = [h5_index[tag] for tag in tags if tag in h5_index]
+            matrix = h5["tap_raw_counts"][:, cols].astype(np.float32)
+            out_tags = [h5_tags[col] for col in cols]
+            if out_tags != tags:
+                aligned = np.zeros((matrix.shape[0], len(tags)), dtype=np.float32)
+                for out_col, tag in enumerate(out_tags):
+                    aligned[:, tags.index(tag)] = matrix[:, out_col]
+                matrix = aligned
+            appids = [_decode_h5_string(x) for x in h5.get("appids", h5["game_names"])[:]]
+            if "game_titles" in h5:
+                names = [_decode_h5_string(x) for x in h5["game_titles"][:]]
+            else:
+                names = [_decode_h5_string(x) for x in h5["game_names"][:]]
+        norms = np.linalg.norm(matrix, axis=1).astype(np.float32)
+        return appids, names, matrix, norms
+
+    allowed_appids = read_training_appids(training_h5) if training_h5 else None
+    payload = json.loads(games_json.read_text(encoding="utf-8"))
     items = payload.items() if isinstance(payload, dict) else enumerate(payload)
     tag_to_id = {tag: index for index, tag in enumerate(tags)}
+    spec = load_tap_mapping()
 
     rows = []
     names = []
@@ -108,10 +141,11 @@ def build_game_index(games_json: Path, tags: list[str], coarse: bool = False):
     for key, record in items:
         if not isinstance(record, dict):
             continue
+        appid = str(record.get("steam_appid") or record.get("appid") or key)
+        if allowed_appids is not None and appid not in allowed_appids:
+            continue
         vector = np.zeros(len(tags), dtype=np.float32)
-        raw_tags = game_tag_dict(record)
-        if coarse:
-            raw_tags = coarsen_tag_dict(raw_tags)
+        raw_tags = map_tag_dict(game_tag_dict(record), spec)
         if not raw_tags:
             continue
         max_weight = max(raw_tags.values()) if raw_tags else 1.0
@@ -121,7 +155,6 @@ def build_game_index(games_json: Path, tags: list[str], coarse: bool = False):
             if tag_id is not None:
                 vector[tag_id] = min(float(weight) / max_weight, 1.0)
         if vector.any():
-            appid = str(record.get("steam_appid") or record.get("appid") or key)
             rows.append(vector)
             names.append(str(record.get("name") or appid))
             appids.append(appid)
@@ -136,8 +169,8 @@ def build_game_index(games_json: Path, tags: list[str], coarse: bool = False):
 
 class PredictorWorker(QtCore.QObject):
     status = QtCore.pyqtSignal(str)
-    ready = QtCore.pyqtSignal(str, str, str)
-    result = QtCore.pyqtSignal(list, list, int)
+    ready = QtCore.pyqtSignal(str, str, str, str)
+    result = QtCore.pyqtSignal(list, list, list, int)
     error = QtCore.pyqtSignal(str)
 
     def __init__(self, args: argparse.Namespace):
@@ -147,10 +180,12 @@ class PredictorWorker(QtCore.QObject):
         self.embedder = None
         self.encoder = None
         self.probe = None          # portable linear artifact (dict)
+        self.pxi_probe = None      # portable PXI artifact (dict), optional
         self.keep_mask = None      # which tags to predict/match (per --tag-filter)
         self.tags = []
         self.encoder_path = None
         self.head_path = None
+        self.pxi_head_path = None
         self.games_json_path = None
         self.game_appids = []
         self.game_names = []
@@ -180,6 +215,15 @@ class PredictorWorker(QtCore.QObject):
                     "train_tag_probe.py --export-head."
                 )
 
+            if self.args.pxi_head:
+                candidate = Path(self.args.pxi_head)
+                pxi_head_path = candidate if candidate.is_absolute() else ROOT / candidate
+            else:
+                pxi_head_path = newest_existing([
+                    "VICReg_review/heads/pxi_probe_linear*.pt",
+                    "VICReg_review/heads/**/pxi_probe_linear*.pt",
+                ])
+
             encoder_request = encoder_value or self.args.encoder_checkpoint or probe.get("encoder_checkpoint")
             encoder_path = resolve_optional_path(
                 encoder_request,
@@ -190,16 +234,15 @@ class PredictorWorker(QtCore.QObject):
                 ],
                 "VICReg encoder checkpoint",
             )
-            # Candidate game pool must be the in-domain intersection (the 293
-            # training games), not all 65k games.json entries. test_games.json is
-            # that intersection with emotional tags already filtered out.
-            games_json = resolve_optional_path(
-                games_value or self.args.games_json,
+            # Candidate game pool is restricted to the VICReg training H5. If a
+            # JSON metadata file is passed, build_game_index still filters it by
+            # the H5 appid set.
+            games_path = resolve_optional_path(
+                games_value or self.args.games_json or self.args.h5,
                 [
-                    "VICReg_review/tags/test_games.json",
-                    "game_review_data/**/games.json",
+                    "VICReg_review/h5/game_review_cleaned_3_sentences.h5",
                 ],
-                "test_games.json (run VICReg_review/build_test_games.py)",
+                "TAP-labeled H5 (run VICReg_review/build_review_h5.py)",
             )
 
             if self.embedder is None:
@@ -212,8 +255,9 @@ class PredictorWorker(QtCore.QObject):
             self.device = torch.device(self.embedder.device)
 
             input_dim = self.args.input_dim
+            h5_path = Path(self.args.h5)
             if self.args.h5:
-                with h5py.File(self.args.h5, "r") as h5:
+                with h5py.File(h5_path, "r") as h5:
                     input_dim = int(h5.attrs["input_dim"])
 
             self.status.emit("loading VICReg encoder")
@@ -222,20 +266,33 @@ class PredictorWorker(QtCore.QObject):
 
             self.status.emit("loading linear tag probe")
             self.probe = probe
-            self.tags = list(probe.get("tags") or load_tags_fallback(Path(self.args.tags_dir)))
+            self.pxi_probe = None
+            self.pxi_head_path = None
+            if pxi_head_path and Path(pxi_head_path).exists():
+                self.status.emit("loading PXI probe")
+                pxi_probe = torch.load(pxi_head_path, map_location="cpu", weights_only=False)
+                if isinstance(pxi_probe, dict) and pxi_probe.get("kind") == "linear_pxi_probe":
+                    self.pxi_probe = pxi_probe
+                    self.pxi_head_path = Path(pxi_head_path)
+            self.tags = list(probe.get("tags") or [])
             if not self.tags:
                 self.tags = [f"tag_{index}" for index in range(len(probe["intercept"]))]
             self.keep_mask = self._build_tag_keep_mask()
 
             self.status.emit("loading game table")
             self.game_appids, self.game_names, self.game_matrix, self.game_norms = build_game_index(
-                games_json, self.tags, bool(probe.get("coarse_aliases"))
+                games_path, self.tags, h5_path
             )
             self.encoder_path = encoder_path
             self.head_path = head_path
-            self.games_json_path = games_json
+            self.games_json_path = games_path
 
-            self.ready.emit(str(encoder_path), str(head_path), str(games_json))
+            self.ready.emit(
+                str(encoder_path),
+                str(head_path),
+                f"{games_path} ({len(self.game_appids)} VICReg-training games)",
+                str(self.pxi_head_path) if self.pxi_head_path else "",
+            )
             self.status.emit("ready")
         except BaseException as exc:
             self.error.emit(f"{type(exc).__name__}: {exc}")
@@ -243,8 +300,7 @@ class PredictorWorker(QtCore.QObject):
     def _build_tag_keep_mask(self):
         """Which tags to predict/match, per --tag-filter.
 
-        non_emotional (default): drop the `subjective` affect/quality group.
-        content: keep only mechanics+story (from the probe's content_mask).
+        non_emotional/content: same as all for TAP labels.
         all: keep everything.
         """
         import numpy as np
@@ -257,11 +313,6 @@ class PredictorWorker(QtCore.QObject):
             mask = self.probe.get("content_mask") if self.probe else None
             if mask is not None and np.asarray(mask).any():
                 return np.asarray(mask, dtype=bool)
-        # non_emotional: drop subjective group read from tag_groups.json.
-        groups_path = Path(self.args.tags_dir) / "tag_groups.json"
-        if groups_path.exists():
-            subjective = set(json.loads(groups_path.read_text(encoding="utf-8")).get("subjective", []))
-            return np.array([t not in subjective for t in self.tags], dtype=bool)
         return np.ones(n, dtype=bool)
 
     @QtCore.pyqtSlot(str)
@@ -316,7 +367,7 @@ class PredictorWorker(QtCore.QObject):
             probs = 1.0 / (1.0 + np.exp(-logits))
             probs = np.where(self.probe["trained_mask"], probs, 0.0).astype(np.float32)
             keyword_weight = float(self.probe.get("keyword_weight", 0.0) or 0.0)
-            if keyword_weight > 0 and self.probe.get("coarse_aliases"):
+            if keyword_weight > 0 and self.probe.get("tap_mapping_json"):
                 prior = keyword_scores(text, self.tags)
                 keyword_weight = min(max(keyword_weight, 0.0), 1.0)
                 probs = ((1.0 - keyword_weight) * probs + keyword_weight * prior).astype(np.float32)
@@ -328,12 +379,37 @@ class PredictorWorker(QtCore.QObject):
             )
             rows.sort(key=lambda item: item[1], reverse=True)
             game_rows = self.match_games(presence_scores)
+            pxi_rows = self.predict_pxi(feats)
             if self.args.top_k > 0:
                 rows = rows[: self.args.top_k]
-            self.result.emit(rows, game_rows, len(sentences))
+            self.result.emit(rows, game_rows, pxi_rows, len(sentences))
             self.status.emit("ready")
         except BaseException as exc:
             self.error.emit(f"{type(exc).__name__}: {exc}")
+
+    def predict_pxi(self, feats) -> list[tuple[str, str, float]]:
+        import numpy as np
+
+        probe = self.pxi_probe
+        if not probe:
+            return []
+        pooled = pool_features(feats[None, ...], probe.get("pool", "stats"))[0].astype(np.float32)
+        x = (pooled - probe["scaler_mean"]) / probe["scaler_scale"]
+        comps = probe.get("pca_components")
+        if comps is not None:
+            x = (x - probe["pca_mean"]) @ np.asarray(comps).T
+        values = x @ probe["ridge_coef"].T + probe["ridge_intercept"]
+        target_min = probe.get("target_min")
+        target_max = probe.get("target_max")
+        if target_min is not None and target_max is not None:
+            values = np.clip(values, np.asarray(target_min), np.asarray(target_max))
+        functional = set(probe.get("functional_dims") or [])
+        rows = []
+        for dim, value in zip(probe["dims"], values):
+            group = "functional" if dim in functional else "psychological"
+            rows.append((group, dim, float(value)))
+        rows.sort(key=lambda item: (item[0] != "functional", item[1]))
+        return rows
 
     def match_games(self, scores: list[float]) -> list[tuple[str, str, float, str]]:
         import numpy as np
@@ -341,8 +417,7 @@ class PredictorWorker(QtCore.QObject):
         if self.game_matrix is None or self.game_matrix.shape[0] == 0:
             return []
         pred = np.asarray(scores, dtype=np.float32)
-        # Match on the kept (non-emotional / content) tags only; emotional tags are
-        # filtered from test_games.json anyway and only add cosine noise here.
+        # Match on the kept TAP tags only.
         if self.keep_mask is not None and not self.args.match_all_tags:
             pred = pred * np.asarray(self.keep_mask, dtype=np.float32)
         pred_norm = float(np.linalg.norm(pred))
@@ -396,13 +471,16 @@ class ValidationWindow(QtWidgets.QMainWindow):
         self.status_label = QtWidgets.QLabel("loading")
         self.encoder_label = QtWidgets.QLabel("encoder: auto")
         self.head_label = QtWidgets.QLabel("tag head: auto")
+        self.pxi_label = QtWidgets.QLabel("pxi head: auto")
         self.games_label = QtWidgets.QLabel("games: auto")
         self.encoder_label.setWordWrap(True)
         self.head_label.setWordWrap(True)
+        self.pxi_label.setWordWrap(True)
         self.games_label.setWordWrap(True)
         layout.addWidget(self.status_label)
         layout.addWidget(self.encoder_label)
         layout.addWidget(self.head_label)
+        layout.addWidget(self.pxi_label)
         layout.addWidget(self.games_label)
 
         self.text_edit = QtWidgets.QPlainTextEdit()
@@ -445,8 +523,18 @@ class ValidationWindow(QtWidgets.QMainWindow):
         self.game_table.horizontalHeader().setSectionResizeMode(3, QtWidgets.QHeaderView.ResizeMode.ResizeToContents)
         self.game_table.horizontalHeader().setSectionResizeMode(4, QtWidgets.QHeaderView.ResizeMode.Stretch)
 
+        self.pxi_table = QtWidgets.QTableWidget(0, 3)
+        self.pxi_table.setHorizontalHeaderLabels(["Group", "PXI dimension", "Predicted mean"])
+        self.pxi_table.verticalHeader().setVisible(False)
+        self.pxi_table.setEditTriggers(QtWidgets.QAbstractItemView.EditTrigger.NoEditTriggers)
+        self.pxi_table.setSelectionBehavior(QtWidgets.QAbstractItemView.SelectionBehavior.SelectRows)
+        self.pxi_table.horizontalHeader().setSectionResizeMode(0, QtWidgets.QHeaderView.ResizeMode.ResizeToContents)
+        self.pxi_table.horizontalHeader().setSectionResizeMode(1, QtWidgets.QHeaderView.ResizeMode.Stretch)
+        self.pxi_table.horizontalHeader().setSectionResizeMode(2, QtWidgets.QHeaderView.ResizeMode.ResizeToContents)
+
         self.tabs.addTab(self.table, "标签分数")
         self.tabs.addTab(self.game_table, "最可能游戏")
+        self.tabs.addTab(self.pxi_table, "PXI")
         layout.addWidget(self.tabs, stretch=3)
 
     def _build_worker(self) -> None:
@@ -470,10 +558,11 @@ class ValidationWindow(QtWidgets.QMainWindow):
     def set_status(self, text: str) -> None:
         self.status_label.setText(f"status: {text}")
 
-    @QtCore.pyqtSlot(str, str, str)
-    def on_ready(self, encoder_path: str, head_path: str, games_path: str) -> None:
+    @QtCore.pyqtSlot(str, str, str, str)
+    def on_ready(self, encoder_path: str, head_path: str, games_path: str, pxi_path: str) -> None:
         self.encoder_label.setText(f"encoder: {encoder_path}")
         self.head_label.setText(f"tag head: {head_path}")
+        self.pxi_label.setText(f"pxi head: {pxi_path or 'not loaded'}")
         self.games_label.setText(f"games: {games_path}")
         self.load_button.setEnabled(True)
         self.predict_button.setEnabled(True)
@@ -497,14 +586,15 @@ class ValidationWindow(QtWidgets.QMainWindow):
             return
         games_path, _ = QtWidgets.QFileDialog.getOpenFileName(
             self,
-            "选择 games.json，可取消使用自动路径",
-            str(DEFAULT_GAMES_JSON.parent),
-            "JSON files (*.json);;All files (*)",
+            "选择候选池（默认使用 VICReg 训练 H5；JSON 会按训练 appid 过滤）",
+            str(DEFAULT_H5.parent),
+            "H5/JSON files (*.h5 *.json);;All files (*)",
         )
         self.load_button.setEnabled(False)
         self.predict_button.setEnabled(False)
         self.table.setRowCount(0)
         self.game_table.setRowCount(0)
+        self.pxi_table.setRowCount(0)
         self.set_status("loading selected model")
         self.load_requested.emit(encoder_path, head_path, games_path)
 
@@ -512,11 +602,12 @@ class ValidationWindow(QtWidgets.QMainWindow):
         self.predict_button.setEnabled(False)
         self.table.setRowCount(0)
         self.game_table.setRowCount(0)
+        self.pxi_table.setRowCount(0)
         self.set_status("queued")
         self.predict_requested.emit(self.text_edit.toPlainText())
 
-    @QtCore.pyqtSlot(list, list, int)
-    def on_result(self, rows: list, game_rows: list, sentence_count: int) -> None:
+    @QtCore.pyqtSlot(list, list, list, int)
+    def on_result(self, rows: list, game_rows: list, pxi_rows: list, sentence_count: int) -> None:
         self.count_label.setText(f"sentences: {sentence_count}")
         self.table.setRowCount(len(rows))
         for row_index, (tag, score) in enumerate(rows):
@@ -540,6 +631,15 @@ class ValidationWindow(QtWidgets.QMainWindow):
             self.game_table.setItem(row_index, 2, name_item)
             self.game_table.setItem(row_index, 3, score_item)
             self.game_table.setItem(row_index, 4, matched_item)
+        self.pxi_table.setRowCount(len(pxi_rows))
+        for row_index, (group, dim, value) in enumerate(pxi_rows):
+            group_item = QtWidgets.QTableWidgetItem(str(group))
+            dim_item = QtWidgets.QTableWidgetItem(str(dim))
+            value_item = QtWidgets.QTableWidgetItem(f"{float(value):.6f}")
+            value_item.setTextAlignment(QtCore.Qt.AlignmentFlag.AlignRight | QtCore.Qt.AlignmentFlag.AlignVCenter)
+            self.pxi_table.setItem(row_index, 0, group_item)
+            self.pxi_table.setItem(row_index, 1, dim_item)
+            self.pxi_table.setItem(row_index, 2, value_item)
         self.predict_button.setEnabled(True)
 
     @QtCore.pyqtSlot(str)
@@ -559,9 +659,11 @@ def parse_args(argv: list[str]) -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="PyQt6 VICReg tag validation UI.")
     parser.add_argument("--encoder-checkpoint", default=None)
     parser.add_argument("--tag-head", default=None)
-    parser.add_argument("--games-json", default=None)
+    parser.add_argument("--pxi-head", default=None)
+    parser.add_argument("--games-json", default=None,
+                        help="Optional candidate metadata. JSON inputs are filtered to appids present in --h5.")
     parser.add_argument("--tags-dir", default=str(DEFAULT_TAGS_DIR))
-    parser.add_argument("--h5", default=None, help="Optional H5 path to read input_dim from.")
+    parser.add_argument("--h5", default=str(DEFAULT_H5), help="H5 path with vectors and TAP labels.")
     parser.add_argument("--input-dim", type=int, default=1024)
     parser.add_argument("--local-model", default=DEFAULT_LOCAL_MODEL)
     parser.add_argument("--device", default=None)

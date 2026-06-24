@@ -62,13 +62,9 @@ def build_mean_features(h5_path, max_sentences, seed):
     return np.asarray(names), feats
 
 
-def load_labels(tags_dir):
-    import json
-    vocab = json.loads((Path(tags_dir) / "tag_vocab.json").read_text(encoding="utf-8"))
-    npz = np.load(Path(tags_dir) / "tag_labels.npz", allow_pickle=True)
-    names = [str(n) for n in npz["game_names"]]
-    labels = (npz["labels"] > 0).astype(np.int8)
-    return vocab["tags"], names, labels
+def load_labels(tags_dir, h5_path):
+    from VICReg_review.train_tag_probe import load_labels as load_tap_labels
+    return load_tap_labels(tags_dir, h5_path)
 
 
 def align(feature_names, label_names, labels):
@@ -113,7 +109,7 @@ def run(args):
         np.savez(cache, names=np.asarray(feat_names), feats=feats)
         print(f"cached features {feats.shape} -> {cache}", flush=True)
 
-    tags, label_names, labels = load_labels(args.tags_dir)
+    tags, label_names, labels = load_labels(args.tags_dir, args.h5)
     y, keep = align(np.asarray(feat_names), label_names, labels)
     feats = feats[keep]
     y = y[keep]

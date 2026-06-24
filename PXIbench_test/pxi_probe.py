@@ -3,12 +3,11 @@
 A second evaluation axis beyond the Steam-tag probe ("not just TAP"). It reuses
 the SAME standard as the tag-F1 probe:
 
-  1. baseline first  -> a chance baseline (median/majority) AND the raw 1024-d Qwen
+  1. baseline first  -> a chance baseline AND the raw 1024-d Qwen
      embedding (the information ceiling, like ceiling_diagnostic.py);
   2. then the frozen VICReg code, reported as retention = vicreg / raw;
-  3. the binary "F1 standard": each PXI dimension is split at its median into
-     high/low, and we report micro-F1 exactly like the tag probe -- plus the
-     natural regression metrics (Pearson r, R^2).
+  3. the task matches the pseudo_text setup: text -> averaged PXI score value.
+     We report regression metrics (Pearson r, R^2, MAE).
 
 It compares two dimension GROUPS:
   functional    progress_feedback, ease_of_control, audiovisual_appeal,
@@ -31,6 +30,7 @@ import json
 from pathlib import Path
 
 import numpy as np
+import torch
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 ROOT = SCRIPT_DIR.parent
@@ -58,13 +58,6 @@ def load_features(path, pool):
     return {names[i].split("_")[0]: f[i] for i in range(len(names))}
 
 
-def micro_f1(pred, true):
-    tp = float((pred & true).sum()); fp = float((pred & ~true).sum()); fn = float((~pred & true).sum())
-    p = tp / (tp + fp) if tp + fp else 0.0
-    r = tp / (tp + fn) if tp + fn else 0.0
-    return 2 * p * r / (p + r) if p + r else 0.0
-
-
 def _reduce(Xtr, Xte, pca):
     """Standardize, then optional PCA fit on TRAIN only (proper inside-CV reduction).
     With features >> samples (raw 1024-d, N=21) PCA is what makes the ceiling a
@@ -90,42 +83,89 @@ def loo_regress(X, y, alpha, pca):
     r = 0.0 if np.std(pred) < 1e-9 else float(np.corrcoef(y, pred)[0, 1])
     ss_res = float(((y - pred) ** 2).sum()); ss_tot = float(((y - y.mean()) ** 2).sum())
     r2 = 1.0 - ss_res / ss_tot if ss_tot > 0 else 0.0
-    return r, r2
+    mae = float(np.abs(y - pred).mean())
+    return r, r2, mae
 
 
-def loo_classify(X, yb, C, pca):
-    from sklearn.linear_model import LogisticRegression
-    n = len(yb)
-    pred = np.zeros(n, dtype=bool)
-    for i in range(n):
-        tr = [j for j in range(n) if j != i]
-        if len(set(yb[tr])) < 2:
-            pred[i] = bool(round(float(np.mean(yb[tr]))))
-            continue
-        Xtr, Xte = _reduce(X[tr], X[i:i + 1], pca)
-        clf = LogisticRegression(C=C, max_iter=2000, class_weight="balanced").fit(Xtr, yb[tr])
-        pred[i] = clf.predict(Xte)[0]
-    return micro_f1(pred, yb.astype(bool))
-
-
-def eval_rep(name, feat_map, appids, Y, dims, alpha, C, pca, rng=None):
-    """Returns per-dim (r, r2, f1) and group means."""
+def eval_rep(name, feat_map, appids, Y, dims, alpha, pca, rng=None):
+    """Returns per-dim regression metrics for text -> averaged PXI score."""
     X = np.array([feat_map[a] for a in appids])
     per = {}
     for k, d in enumerate(dims):
         y = Y[:, k].copy()
         if rng is not None:           # chance: shuffle labels
             y = rng.permutation(y)
-        yb = (y >= np.median(y))
-        r, r2 = loo_regress(X, y, alpha, pca)
-        f1 = loo_classify(X, yb, C, pca)
-        per[d] = {"pearson": r, "r2": r2, "f1": f1}
+        r, r2, mae = loo_regress(X, y, alpha, pca)
+        per[d] = {"pearson": r, "r2": r2, "mae": mae}
     return per
 
 
 def group_mean(per, group, key):
     vals = [per[d][key] for d in group]
     return float(np.mean(vals))
+
+
+def fit_export_head(feat_map, appids, Y, dims, args, out_path):
+    """Fit the final deployable PXI head on all overlap games and save arrays.
+
+    Validation uses the same stats-pooled VICReg feature as pxi_probe. The head
+    stores a Ridge regressor for continuous averaged PXI scores.
+    """
+    from sklearn.decomposition import PCA
+    from sklearn.linear_model import Ridge
+    from sklearn.preprocessing import StandardScaler
+
+    X = np.array([feat_map[a] for a in appids], dtype=np.float32)
+    scaler = StandardScaler().fit(X)
+    Xs = scaler.transform(X)
+    pca = None
+    Xp = Xs
+    if args.pca and args.pca < Xs.shape[1]:
+        pca = PCA(n_components=min(args.pca, Xs.shape[0] - 1)).fit(Xs)
+        Xp = pca.transform(Xs)
+
+    ridge_coef = np.zeros((len(dims), Xp.shape[1]), dtype=np.float32)
+    ridge_intercept = np.zeros(len(dims), dtype=np.float32)
+    target_mean = Y.mean(axis=0).astype(np.float32)
+    target_std = Y.std(axis=0).astype(np.float32)
+    target_min = Y.min(axis=0).astype(np.float32)
+    target_max = Y.max(axis=0).astype(np.float32)
+
+    for k, dim in enumerate(dims):
+        y = Y[:, k].astype(np.float32)
+        ridge = Ridge(alpha=args.vic_alpha).fit(Xp, y)
+        ridge_coef[k] = ridge.coef_.astype(np.float32)
+        ridge_intercept[k] = float(ridge.intercept_)
+
+    payload = {
+        "kind": "linear_pxi_probe",
+        "target_kind": "mean_regression",
+        "dims": list(dims),
+        "functional_dims": list(FUNCTIONAL),
+        "psychological_dims": list(PSYCHOLOGICAL),
+        "appid_order": list(appids),
+        "pool": args.vic_pool,
+        "feature_dim": int(X.shape[1]),
+        "scaler_mean": scaler.mean_.astype(np.float32),
+        "scaler_scale": scaler.scale_.astype(np.float32),
+        "pca_components": None if pca is None else pca.components_.astype(np.float32),
+        "pca_mean": None if pca is None else pca.mean_.astype(np.float32),
+        "ridge_coef": ridge_coef,
+        "ridge_intercept": ridge_intercept,
+        "target_mean": target_mean,
+        "target_std": target_std,
+        "target_min": target_min,
+        "target_max": target_max,
+        "alpha": float(args.vic_alpha),
+        "pca": int(args.pca),
+        "n_games": int(len(appids)),
+        "overlap_json": str(Path(OVERLAP).resolve()),
+        "caveat": "N is tiny; use as a feasibility probe, not a powered PXI result.",
+    }
+    out_path = Path(out_path)
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    torch.save(payload, out_path)
+    print(f"exported deployable PXI probe -> {out_path}")
 
 
 def main():
@@ -136,12 +176,14 @@ def main():
                     help="stats(36-d) is safest at N=21; flatten matches the F1 probe but overfits here.")
     ap.add_argument("--raw-alpha", type=float, default=100.0)
     ap.add_argument("--vic-alpha", type=float, default=10.0)
-    ap.add_argument("--C", type=float, default=1.0)
+    ap.add_argument("--C", type=float, default=1.0, help=argparse.SUPPRESS)
     ap.add_argument("--pca", type=int, default=8,
                     help="PCA components (fit inside each LOO fold) so features>>samples "
                          "doesn't make the baseline pure overfit. 0 disables.")
     ap.add_argument("--seed", type=int, default=42)
     ap.add_argument("--report-json", default=str(SCRIPT_DIR / "pxi_probe_report.json"))
+    ap.add_argument("--export-head", default=None,
+                    help="Save a deployable .pt PXI probe fit on all overlapping games.")
     args = ap.parse_args()
 
     ov = json.loads(Path(OVERLAP).read_text(encoding="utf-8"))
@@ -162,39 +204,39 @@ def main():
     print("=" * 72)
 
     rng = np.random.default_rng(args.seed)
-    chance = eval_rep("chance", raw, appids, Y, dims, args.raw_alpha, args.C, args.pca, rng=rng)
-    raw_per = eval_rep("raw", raw, appids, Y, dims, args.raw_alpha, args.C, args.pca)
-    vic_per = eval_rep("vicreg", vic, appids, Y, dims, args.vic_alpha, args.C, args.pca)
+    chance = eval_rep("chance", raw, appids, Y, dims, args.raw_alpha, args.pca, rng=rng)
+    raw_per = eval_rep("raw", raw, appids, Y, dims, args.raw_alpha, args.pca)
+    vic_per = eval_rep("vicreg", vic, appids, Y, dims, args.vic_alpha, args.pca)
 
     def block(per):
         return {
-            "functional": {"f1": group_mean(per, FUNCTIONAL, "f1"),
-                           "pearson": group_mean(per, FUNCTIONAL, "pearson"),
-                           "r2": group_mean(per, FUNCTIONAL, "r2")},
-            "psychological": {"f1": group_mean(per, PSYCHOLOGICAL, "f1"),
-                              "pearson": group_mean(per, PSYCHOLOGICAL, "pearson"),
-                              "r2": group_mean(per, PSYCHOLOGICAL, "r2")},
+            "functional": {"pearson": group_mean(per, FUNCTIONAL, "pearson"),
+                           "r2": group_mean(per, FUNCTIONAL, "r2"),
+                           "mae": group_mean(per, FUNCTIONAL, "mae")},
+            "psychological": {"pearson": group_mean(per, PSYCHOLOGICAL, "pearson"),
+                              "r2": group_mean(per, PSYCHOLOGICAL, "r2"),
+                              "mae": group_mean(per, PSYCHOLOGICAL, "mae")},
         }
 
     cb, rb, vb = block(chance), block(raw_per), block(vic_per)
 
     print(f"{'GROUP / metric':28s} {'chance':>9s} {'raw(ceil)':>10s} {'vicreg':>9s} {'retention':>10s}")
     for g in ("functional", "psychological"):
-        for metric in ("f1", "pearson", "r2"):
+        for metric in ("pearson", "r2", "mae"):
             ret = (vb[g][metric] / rb[g][metric]) if abs(rb[g][metric]) > 1e-6 else float("nan")
             print(f"{g+'  '+metric:28s} {cb[g][metric]:9.3f} {rb[g][metric]:10.3f} "
                   f"{vb[g][metric]:9.3f} {ret:10.3f}")
         print("-" * 72)
 
-    print("\nper-dimension (vicreg): pearson / f1")
+    print("\nper-dimension (vicreg): pearson / mae")
     for grp, cols in (("functional", FUNCTIONAL), ("psychological", PSYCHOLOGICAL)):
         for d in cols:
-            print(f"  [{grp[:4]}] {d:34s} r={vic_per[d]['pearson']:+.3f}  f1={vic_per[d]['f1']:.3f}")
+            print(f"  [{grp[:4]}] {d:34s} r={vic_per[d]['pearson']:+.3f}  mae={vic_per[d]['mae']:.3f}")
 
-    verdict_f1 = vb["functional"]["f1"] - vb["psychological"]["f1"]
     verdict_r = vb["functional"]["pearson"] - vb["psychological"]["pearson"]
+    verdict_mae = vb["functional"]["mae"] - vb["psychological"]["mae"]
     print("\n" + "=" * 72)
-    print(f"functional − psychological:  ΔF1={verdict_f1:+.3f}  Δpearson={verdict_r:+.3f}")
+    print(f"functional − psychological:  Δpearson={verdict_r:+.3f}  ΔMAE={verdict_mae:+.3f}")
     print("NOTE: N=21 — framework/feasibility only, not a powered result.")
 
     report = {
@@ -202,11 +244,13 @@ def main():
         "vic_pool": args.vic_pool, "dims": dims,
         "chance": cb, "raw_ceiling": rb, "vicreg": vb,
         "per_dim_vicreg": vic_per, "per_dim_raw": raw_per,
-        "functional_minus_psychological": {"f1": verdict_f1, "pearson": verdict_r},
+        "functional_minus_psychological": {"pearson": verdict_r, "mae": verdict_mae},
         "caveat": "N=21 overlapping games; feasibility framework only.",
     }
     Path(args.report_json).write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
     print(f"wrote {args.report_json}")
+    if args.export_head:
+        fit_export_head(vic, appids, Y, dims, args, args.export_head)
 
 
 if __name__ == "__main__":

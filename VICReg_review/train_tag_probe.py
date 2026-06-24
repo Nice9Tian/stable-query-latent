@@ -26,7 +26,7 @@ What changed vs. the old probe and *why*:
   * A frequency-floor breakdown: micro-F1 restricted to tags seen in >= F games.
     This quantifies the "labels are too discrete" problem directly.
 
-Run tag_build.py first. Compare the reported micro-F1 against ceiling_diagnostic.py
+Build the H5 with TAP labels first. Compare the reported micro-F1 against ceiling_diagnostic.py
 (the same pipeline on the raw 1024-d Qwen embeddings), which is the upper bound
 any frozen-encoder probe can reach.
 """
@@ -48,10 +48,6 @@ if str(PROJECT_ROOT) not in sys.path:
 
 from VICReg_review.model import LatentArrayMLP  # noqa: E402
 from VICReg_review.train_vicreg_review_h5 import load_game_views  # noqa: E402
-try:
-    from VICReg_review.coarse_tags import COARSE_TAG_ALIASES
-except ImportError:  # pragma: no cover - allows direct script execution
-    from coarse_tags import COARSE_TAG_ALIASES
 
 DEFAULT_H5 = SCRIPT_DIR / "h5" / "game_review_cleaned_3_sentences.h5"
 DEFAULT_CHECKPOINT = SCRIPT_DIR / "heads" / "vicreg_review_h5_best.pt"
@@ -151,12 +147,15 @@ def l2_normalize(X, eps=1e-8):
     return X / (np.linalg.norm(X, axis=1, keepdims=True) + eps)
 
 
-def load_labels(tags_dir):
-    vocab = json.loads((Path(tags_dir) / "tag_vocab.json").read_text(encoding="utf-8"))
-    npz = np.load(Path(tags_dir) / "tag_labels.npz", allow_pickle=True)
-    names = [str(n) for n in npz["game_names"]]
-    labels = (npz["labels"] > 0).astype(np.int8)
-    return vocab["tags"], names, labels
+def load_labels(tags_dir=None, h5_path=None):
+    if h5_path is not None:
+        with h5py.File(h5_path, "r") as h5:
+            if "tap_names" in h5 and "tap_labels" in h5:
+                tags = [decode_name(n) for n in h5["tap_names"][:]]
+                names = [decode_name(n) for n in h5["game_names"][:]]
+                labels = (h5["tap_labels"][:] > 0).astype(np.int8)
+                return tags, names, labels
+    raise FileNotFoundError(f"No tap_names/tap_labels datasets found in {h5_path}. Rebuild the H5.")
 
 
 def align(feature_names, label_names, labels):
@@ -301,12 +300,10 @@ def export_linear_probe(X, y, tags, doc_freq, args, encoder_path):
                 best, best_thr = f1, thr
         threshold[t] = best_thr
 
-    content_mask = np.zeros(num_tags, dtype=bool)
-    groups_path = Path(args.tags_dir) / "tag_groups.json"
-    if groups_path.exists():
-        groups = json.loads(groups_path.read_text(encoding="utf-8"))
-        content_set = set(groups.get("content", []))
-        content_mask = np.array([t in content_set for t in tags], dtype=bool)
+    content_mask = np.ones(num_tags, dtype=bool)
+    tap_mapping_json = None
+    with h5py.File(args.h5, "r") as h5:
+        tap_mapping_json = h5.attrs.get("tap_mapping_json")
 
     artifact = {
         "kind": "linear_tag_probe",
@@ -328,7 +325,7 @@ def export_linear_probe(X, y, tags, doc_freq, args, encoder_path):
         "trained_mask": trained,
         "content_mask": content_mask,
         "doc_freq": doc_freq.astype(np.int32),
-        "coarse_aliases": {tag: COARSE_TAG_ALIASES[tag] for tag in tags if tag in COARSE_TAG_ALIASES},
+        "tap_mapping_json": tap_mapping_json,
         "keyword_weight": float(args.keyword_weight),
     }
     torch.save(artifact, args.export_head)
@@ -358,7 +355,7 @@ def run(args):
         np.savez(cache, feats=feats, names=np.asarray(feature_names))
         print(f"cached features {feats.shape} -> {cache}", flush=True)
 
-    tags, label_names, labels = load_labels(args.tags_dir)
+    tags, label_names, labels = load_labels(args.tags_dir, args.h5)
     y, keep = align(np.asarray(feature_names), label_names, labels)
     feats, y = feats[keep], y[keep]
     X = pool_features(feats, args.pool)

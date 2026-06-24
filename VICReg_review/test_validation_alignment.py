@@ -26,9 +26,11 @@ feat_cache = SCRIPT_DIR / "tags" / "probe_feat_vicreg_adv10_best_fv4_sf0.6.npz"
 data = np.load(feat_cache, allow_pickle=True)
 feats_all, names = data["feats"], [str(n) for n in data["names"]]  # (G, num_latents, output_dim)
 
-labnpz = np.load(SCRIPT_DIR / "tags" / "tag_labels.npz", allow_pickle=True)
-lab_names = [str(n) for n in labnpz["game_names"]]
-labels = (labnpz["labels"] > 0).astype(int)
+import h5py
+
+with h5py.File(SCRIPT_DIR / "h5" / "game_review_cleaned_3_sentences.h5", "r") as h5:
+    lab_names = [n.decode("utf-8") if isinstance(n, bytes) else str(n) for n in h5["game_names"][:]]
+    labels = (h5["tap_labels"][:] > 0).astype(int)
 lab_idx = {n: i for i, n in enumerate(lab_names)}
 
 

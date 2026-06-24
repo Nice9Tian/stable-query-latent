@@ -6,6 +6,7 @@ __pycache__/
 *.npy
 *.h5
 *.json
+!VICReg_review/tags/tap_mapping.json
 *.log
 
 # Pseudo-text CSV outputs (live under PXIbench_test/ but ignored by name too,
@@ -35,4 +36,6 @@ AGENTS.md
 tokenAPI.txt
 *.npz
 /VICReg_review/tags/game_descriptions
+*.npz
+/PXIbench_test/PXIbenchmark_descriptions
 *.npz

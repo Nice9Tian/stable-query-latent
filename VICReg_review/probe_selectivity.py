@@ -93,10 +93,9 @@ def load_npz_features(path):
     return [str(n) for n in data["names"]], feats.astype(np.float32)
 
 
-def load_labels(tags_dir):
-    npz = np.load(Path(tags_dir) / "tag_labels.npz", allow_pickle=True)
-    vocab = json.loads((Path(tags_dir) / "tag_vocab.json").read_text(encoding="utf-8"))
-    return vocab["tags"], [str(n) for n in npz["game_names"]], (npz["labels"] > 0).astype(np.int8)
+def load_labels(tags_dir, h5_path):
+    from VICReg_review.train_tag_probe import load_labels as load_tap_labels
+    return load_tap_labels(tags_dir, h5_path)
 
 
 def kfold(n, k, seed):
@@ -202,10 +201,19 @@ def run(args):
     print(f"game sentiment: mean={sent.mean():.3f} std={sent.std():.3f} "
           f"min={sent.min():.3f} max={sent.max():.3f}", flush=True)
 
-    tags, label_names, y = load_labels(args.tags_dir)
+    tags, label_names, y = load_labels(args.tags_dir, args.h5)
     tag_id = {t: i for i, t in enumerate(tags)}
-    groups = json.loads((Path(args.tags_dir) / "tag_groups.json").read_text(encoding="utf-8"))
-    cols = {g: [tag_id[t] for t in groups[g] if t in tag_id] for g in ("content", "subjective", "mechanics", "story")}
+    groups_path = Path(args.tags_dir) / "tag_groups.json"
+    if groups_path.exists():
+        groups = json.loads(groups_path.read_text(encoding="utf-8"))
+        cols = {g: [tag_id[t] for t in groups[g] if t in tag_id] for g in ("content", "subjective", "mechanics", "story")}
+    else:
+        cols = {
+            "content": list(range(len(tags))),
+            "subjective": [],
+            "mechanics": list(range(len(tags))),
+            "story": [],
+        }
     print(f"group sizes: content={len(cols['content'])} subjective={len(cols['subjective'])} "
           f"(mechanics={len(cols['mechanics'])} story={len(cols['story'])})", flush=True)
 
