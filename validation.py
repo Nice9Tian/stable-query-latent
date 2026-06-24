@@ -1,9 +1,18 @@
 """PyQt6 validation UI for VICReg review tag prediction.
 
-Pipeline:
+Pipeline (aligned with the current train_tag_probe.py method):
 
-    input text -> local Qwen embedding -> VICReg encoder -> tag probe head
-    -> per-tag probabilities sorted high to low
+    input text -> local Qwen embedding -> frozen VICReg encoder -> (num_latents,
+    output_dim) code -> pool (flatten/stats) -> standardize -> per-tag linear
+    logistic probe -> per-tag probabilities sorted high to low.
+
+The probe is the portable linear artifact produced by:
+
+    train_tag_probe.py --export-head VICReg_review/heads/tag_probe_linear.pt
+
+(scaler + per-tag logistic weights; same method as the cross-validation, fit on
+all games). The artifact stores which encoder checkpoint it was fit on, so this UI
+loads that exact encoder by default to keep features consistent.
 
 Run from the repository root:
 
@@ -29,8 +38,7 @@ if str(GAME_REVIEW_DATA) not in sys.path:
 from PyQt6 import QtCore, QtGui, QtWidgets
 
 from game_review_data.embedding_data import DEFAULT_LOCAL_MODEL, LocalEmbedder  # noqa: E402
-from VICReg_review.model import TagRegressionHead  # noqa: E402
-from VICReg_review.train_tag_probe import load_frozen_encoder  # noqa: E402
+from VICReg_review.train_tag_probe import load_frozen_encoder, pool_features  # noqa: E402
 
 
 DEFAULT_HEADS_DIR = ROOT / "VICReg_review" / "heads"
@@ -132,7 +140,8 @@ class PredictorWorker(QtCore.QObject):
         self.device = None
         self.embedder = None
         self.encoder = None
-        self.head = None
+        self.probe = None          # portable linear artifact (dict)
+        self.keep_mask = None      # which tags to predict/match (per --tag-filter)
         self.tags = []
         self.encoder_path = None
         self.head_path = None
@@ -148,31 +157,43 @@ class PredictorWorker(QtCore.QObject):
             import h5py
             import torch
 
-            encoder_path = resolve_optional_path(
-                encoder_value or self.args.encoder_checkpoint,
-                [
-                    "VICReg_review/heads/gui_run/vicreg_review_h5_best*.pt",
-                    "VICReg_review/heads/gui_run/vicreg_review_h5_latest*.pt",
-                    "VICReg_review/heads/vicreg_review_h5_best*.pt",
-                    "VICReg_review/heads/vicreg_review_h5_latest*.pt",
-                ],
-                "VICReg encoder checkpoint",
-            )
+            # Resolve the deployable linear probe first; it records the encoder
+            # checkpoint it was fit on, which we use unless one is given explicitly.
             head_path = resolve_optional_path(
                 head_value or self.args.tag_head,
                 [
-                    "VICReg_review/heads/gui_run/tag_probe_head_epoch_*.pt",
-                    "VICReg_review/heads/tag_probe_head*.pt",
+                    "VICReg_review/heads/tag_probe_linear*.pt",
+                    "VICReg_review/heads/**/tag_probe_linear*.pt",
                 ],
-                "tag probe head checkpoint",
+                "linear tag probe artifact (train_tag_probe.py --export-head)",
             )
+            probe = torch.load(head_path, map_location="cpu", weights_only=False)
+            if not isinstance(probe, dict) or probe.get("kind") != "linear_tag_probe":
+                raise ValueError(
+                    f"{head_path} is not a linear_tag_probe artifact. Re-export with "
+                    "train_tag_probe.py --export-head."
+                )
+
+            encoder_request = encoder_value or self.args.encoder_checkpoint or probe.get("encoder_checkpoint")
+            encoder_path = resolve_optional_path(
+                encoder_request,
+                [
+                    "VICReg_review/heads/sweep_adv/vicreg_adv*_best*.pt",
+                    "VICReg_review/heads/gui_run/vicreg_review_h5_best*.pt",
+                    "VICReg_review/heads/vicreg_review_h5_best*.pt",
+                ],
+                "VICReg encoder checkpoint",
+            )
+            # Candidate game pool must be the in-domain intersection (the 293
+            # training games), not all 65k games.json entries. test_games.json is
+            # that intersection with emotional tags already filtered out.
             games_json = resolve_optional_path(
                 games_value or self.args.games_json,
                 [
+                    "VICReg_review/tags/test_games.json",
                     "game_review_data/**/games.json",
-                    "game_review_data/**/game.json",
                 ],
-                "games.json",
+                "test_games.json (run VICReg_review/build_test_games.py)",
             )
 
             if self.embedder is None:
@@ -193,22 +214,12 @@ class PredictorWorker(QtCore.QObject):
             self.encoder, _, _, _ = load_frozen_encoder(encoder_path, input_dim, self.device)
             self.encoder.float().eval()
 
-            self.status.emit("loading tag regression head")
-            checkpoint = torch.load(head_path, map_location=self.device, weights_only=False)
-            self.tags = list(checkpoint.get("tags") or load_tags_fallback(Path(self.args.tags_dir)))
-            num_tags = int(checkpoint.get("num_tags") or len(self.tags))
+            self.status.emit("loading linear tag probe")
+            self.probe = probe
+            self.tags = list(probe.get("tags") or load_tags_fallback(Path(self.args.tags_dir)))
             if not self.tags:
-                self.tags = [f"tag_{index}" for index in range(num_tags)]
-
-            self.head = TagRegressionHead(
-                num_tags=num_tags,
-                num_latents=self.encoder.num_latents,
-                latent_out_dim=self.encoder.output_dim,
-                hidden_dims=tuple(checkpoint.get("hidden_dims") or [256, 128]),
-                pool=checkpoint.get("pool", "flatten"),
-            ).to(self.device)
-            self.head.load_state_dict(checkpoint["head_state_dict"])
-            self.head.float().eval()
+                self.tags = [f"tag_{index}" for index in range(len(probe["intercept"]))]
+            self.keep_mask = self._build_tag_keep_mask()
 
             self.status.emit("loading game table")
             self.game_appids, self.game_names, self.game_matrix, self.game_norms = build_game_index(games_json, self.tags)
@@ -221,12 +232,37 @@ class PredictorWorker(QtCore.QObject):
         except BaseException as exc:
             self.error.emit(f"{type(exc).__name__}: {exc}")
 
+    def _build_tag_keep_mask(self):
+        """Which tags to predict/match, per --tag-filter.
+
+        non_emotional (default): drop the `subjective` affect/quality group.
+        content: keep only mechanics+story (from the probe's content_mask).
+        all: keep everything.
+        """
+        import numpy as np
+
+        n = len(self.tags)
+        mode = self.args.tag_filter
+        if mode == "all":
+            return np.ones(n, dtype=bool)
+        if mode == "content":
+            mask = self.probe.get("content_mask") if self.probe else None
+            if mask is not None and np.asarray(mask).any():
+                return np.asarray(mask, dtype=bool)
+        # non_emotional: drop subjective group read from tag_groups.json.
+        groups_path = Path(self.args.tags_dir) / "tag_groups.json"
+        if groups_path.exists():
+            subjective = set(json.loads(groups_path.read_text(encoding="utf-8")).get("subjective", []))
+            return np.array([t not in subjective for t in self.tags], dtype=bool)
+        return np.ones(n, dtype=bool)
+
     @QtCore.pyqtSlot(str)
     def predict(self, text: str) -> None:
         try:
+            import numpy as np
             import torch
 
-            if self.embedder is None or self.encoder is None or self.head is None:
+            if self.embedder is None or self.encoder is None or self.probe is None:
                 self.error.emit("Models are not ready yet.")
                 return
 
@@ -237,22 +273,44 @@ class PredictorWorker(QtCore.QObject):
 
             self.status.emit(f"embedding {len(sentences)} sentence(s)")
             vectors = self.embedder.embed(sentences)
-            x = torch.tensor(vectors, dtype=torch.float32, device=self.device).unsqueeze(0)
+            vt = torch.tensor(vectors, dtype=torch.float32, device=self.device)
+            n_sent = vt.shape[0]
 
-            self.status.emit("running encoder and tag head")
+            # Match how the probe's features were built: average feature_views
+            # sub-sampled views (sample_fraction of sentences), not one full pass.
+            # A single full forward is out-of-distribution vs the training feature
+            # and makes the standardized code blow up (saturated probabilities).
+            views = max(1, int(self.probe.get("feature_views") or 4))
+            frac = float(self.probe.get("sample_fraction") or 0.6)
+            rng = np.random.default_rng(0)
+            self.status.emit("running encoder and linear probe")
+            codes = []
             with torch.no_grad():
-                code = self.encoder(x, key_padding_mask=None)
-                outputs = self.head(code)
-                presence_scores = torch.sigmoid(outputs["presence_logits"]).squeeze(0).detach().cpu().tolist()
-                count_scores = (
-                    torch.expm1(torch.nn.functional.softplus(outputs["count_logits"]))
-                    .squeeze(0)
-                    .detach()
-                    .cpu()
-                    .tolist()
-                )
+                for _ in range(views):
+                    if n_sent > 2:
+                        k = max(1, int(np.ceil(n_sent * frac)))
+                        idx = np.sort(rng.choice(n_sent, size=k, replace=False))
+                        sub = vt[idx]
+                    else:
+                        sub = vt
+                    code = self.encoder(sub.unsqueeze(0), key_padding_mask=None)  # (1, L, D)
+                    codes.append(code.squeeze(0).float())
+            feats = torch.stack(codes, dim=0).mean(dim=0).cpu().numpy()  # (num_latents, output_dim)
 
-            rows = sorted(zip(self.tags, presence_scores, count_scores), key=lambda item: item[1], reverse=True)
+            # Pool + standardize + per-tag logistic exactly as train_tag_probe does.
+            pooled = pool_features(feats[None, ...], self.probe["pool"])[0]
+            x_std = (pooled - self.probe["scaler_mean"]) / self.probe["scaler_scale"]
+            x_std = np.clip(x_std, -10.0, 10.0)  # guard against any tiny-variance dim blow-up
+            logits = x_std @ self.probe["coef"].T + self.probe["intercept"]
+            probs = 1.0 / (1.0 + np.exp(-logits))
+            probs = np.where(self.probe["trained_mask"], probs, 0.0).astype(np.float32)
+            presence_scores = probs.tolist()
+
+            keep = self.keep_mask if self.keep_mask is not None else np.ones(len(self.tags), dtype=bool)
+            rows = sorted(
+                (tag, score) for tag, score, k in zip(self.tags, presence_scores, keep) if k
+            )
+            rows.sort(key=lambda item: item[1], reverse=True)
             game_rows = self.match_games(presence_scores)
             if self.args.top_k > 0:
                 rows = rows[: self.args.top_k]
@@ -267,6 +325,10 @@ class PredictorWorker(QtCore.QObject):
         if self.game_matrix is None or self.game_matrix.shape[0] == 0:
             return []
         pred = np.asarray(scores, dtype=np.float32)
+        # Match on the kept (non-emotional / content) tags only; emotional tags are
+        # filtered from test_games.json anyway and only add cosine noise here.
+        if self.keep_mask is not None and not self.args.match_all_tags:
+            pred = pred * np.asarray(self.keep_mask, dtype=np.float32)
         pred_norm = float(np.linalg.norm(pred))
         if pred_norm <= 1e-8:
             return []
@@ -347,15 +409,14 @@ class ValidationWindow(QtWidgets.QMainWindow):
         layout.addLayout(controls)
 
         self.tabs = QtWidgets.QTabWidget()
-        self.table = QtWidgets.QTableWidget(0, 4)
-        self.table.setHorizontalHeaderLabels(["Rank", "Tag", "Probability", "Predicted count"])
+        self.table = QtWidgets.QTableWidget(0, 3)
+        self.table.setHorizontalHeaderLabels(["Rank", "Tag", "Probability"])
         self.table.verticalHeader().setVisible(False)
         self.table.setEditTriggers(QtWidgets.QAbstractItemView.EditTrigger.NoEditTriggers)
         self.table.setSelectionBehavior(QtWidgets.QAbstractItemView.SelectionBehavior.SelectRows)
         self.table.horizontalHeader().setSectionResizeMode(0, QtWidgets.QHeaderView.ResizeMode.ResizeToContents)
         self.table.horizontalHeader().setSectionResizeMode(1, QtWidgets.QHeaderView.ResizeMode.Stretch)
         self.table.horizontalHeader().setSectionResizeMode(2, QtWidgets.QHeaderView.ResizeMode.ResizeToContents)
-        self.table.horizontalHeader().setSectionResizeMode(3, QtWidgets.QHeaderView.ResizeMode.ResizeToContents)
 
         self.game_table = QtWidgets.QTableWidget(0, 5)
         self.game_table.setHorizontalHeaderLabels(["Rank", "AppID", "Game", "Score", "Matched tags"])
@@ -442,17 +503,14 @@ class ValidationWindow(QtWidgets.QMainWindow):
     def on_result(self, rows: list, game_rows: list, sentence_count: int) -> None:
         self.count_label.setText(f"sentences: {sentence_count}")
         self.table.setRowCount(len(rows))
-        for row_index, (tag, score, count) in enumerate(rows):
+        for row_index, (tag, score) in enumerate(rows):
             rank_item = QtWidgets.QTableWidgetItem(str(row_index + 1))
             tag_item = QtWidgets.QTableWidgetItem(str(tag))
             score_item = QtWidgets.QTableWidgetItem(f"{float(score):.6f}")
-            count_item = QtWidgets.QTableWidgetItem(f"{float(count):.3f}")
             score_item.setTextAlignment(QtCore.Qt.AlignmentFlag.AlignRight | QtCore.Qt.AlignmentFlag.AlignVCenter)
-            count_item.setTextAlignment(QtCore.Qt.AlignmentFlag.AlignRight | QtCore.Qt.AlignmentFlag.AlignVCenter)
             self.table.setItem(row_index, 0, rank_item)
             self.table.setItem(row_index, 1, tag_item)
             self.table.setItem(row_index, 2, score_item)
-            self.table.setItem(row_index, 3, count_item)
         self.game_table.setRowCount(len(game_rows))
         for row_index, (appid, name, score, matched) in enumerate(game_rows):
             rank_item = QtWidgets.QTableWidgetItem(str(row_index + 1))
@@ -472,7 +530,7 @@ class ValidationWindow(QtWidgets.QMainWindow):
     def on_error(self, message: str) -> None:
         self.set_status(f"error: {message}")
         self.load_button.setEnabled(True)
-        self.predict_button.setEnabled(self.worker.encoder is not None and self.worker.head is not None)
+        self.predict_button.setEnabled(self.worker.encoder is not None and self.worker.probe is not None)
         QtWidgets.QMessageBox.warning(self, "Validation error", message)
 
     def closeEvent(self, event) -> None:
@@ -495,6 +553,11 @@ def parse_args(argv: list[str]) -> argparse.Namespace:
     parser.add_argument("--max-sentences", type=int, default=256)
     parser.add_argument("--top-k", type=int, default=0, help="0 shows every tag.")
     parser.add_argument("--game-top-k", type=int, default=20)
+    parser.add_argument("--tag-filter", choices=["non_emotional", "content", "all"], default="non_emotional",
+                        help="Which tags to predict and match on. non_emotional drops the "
+                             "subjective affect group; content keeps mechanics+story only.")
+    parser.add_argument("--match-all-tags", action="store_true",
+                        help="Override --tag-filter for game matching and use every tag.")
     return parser.parse_args(argv)
 
 
