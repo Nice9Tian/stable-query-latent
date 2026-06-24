@@ -34,26 +34,32 @@ USER_AGENT = "studable-query-latent/1.0 (PXI benchmark text collection)"
 QUERY_ALIASES = {
     "21": "Twenty One card game",
     "Agar": "Agar.io",
+    "Assassin’s Creed": "Assassin's Creed",
     "Ark": "ARK Survival Evolved",
     "Asphalt nitro": "Asphalt Nitro",
     "Badland": "Badland video game",
     "Banjo Kazooie": "Banjo-Kazooie",
+    "Battlefield": "Battlefield (video game series)",
     "Bioshock": "BioShock",
     "Black desert": "Black Desert Online",
     "Bloons": "Bloons TD",
     "Clash Royal": "Clash Royale",
     "Counter Strike": "Counter-Strike",
+    "Civilization": "Civilization video game series",
     "Darkest Dungeon": "Darkest Dungeon video game",
     "Dead by daylight": "Dead by Daylight",
     "Diablo 3": "Diablo III",
     "Dirt rally": "Dirt Rally",
     "Divinity Original Sin 2": "Divinity: Original Sin II",
     "Don’t Blank": "Don't Blink game",
+    "Don’t Starve": "Don't Starve",
+    "Dragon age": "Dragon Age",
     "Dream gonden": "Dream Garden game",
     "Elder Scrolls Online": "The Elder Scrolls Online",
     "Europa Universalis": "Europa Universalis IV",
     "F1": "Formula One video game series",
     "Farm Simulator": "Farming Simulator",
+    "Farmville": "FarmVille",
     "FIFA": "FIFA video game series",
     "Final Fantasy": "Final Fantasy video game series",
     "Garden escape": "Gardenscapes",
@@ -88,19 +94,24 @@ QUERY_ALIASES = {
     "PUBG": "PUBG: Battlegrounds",
     "Ratchet & clank": "Ratchet & Clank",
     "Score!": "Score! Hero",
+    "Shadow Of Mordor": "Middle-earth: Shadow of Mordor",
     "Shogun": "Shogun: Total War",
     "Simcity": "SimCity",
     "Skyrim": "The Elder Scrolls V: Skyrim",
     "Smite": "SMITE",
+    "Snake": "Snake video game genre",
     "Spider-Man": "Marvel's Spider-Man",
     "Starcraft": "StarCraft",
     "Subnautica Below Zero": "Subnautica: Below Zero",
+    "Sudoku": "Sudoku",
     "Superman": "Superman video game",
     "Team Fortress": "Team Fortress Classic",
+    "TERA": "TERA video game",
     "The Elder Scrolls": "The Elder Scrolls",
     "The last of us": "The Last of Us",
     "Tom Clanc’s Rainbow Six Siege": "Tom Clancy's Rainbow Six Siege",
     "Tommy Hawk Pro Skater I": "Tony Hawk's Pro Skater",
+    "Tribalwars": "Tribal Wars",
     "Trigger fist": "Trigger Fist",
     "Warband": "Mount & Blade: Warband",
     "Warblade": "Warblade video game",
@@ -142,6 +153,10 @@ NEGATIVE_TITLE_TERMS = (
     "episode",
     "song",
     "novel",
+    "company",
+    "designer",
+    "disambiguation",
+    "music",
 )
 POSITIVE_TEXT_TERMS = (
     "video game",
@@ -153,19 +168,36 @@ POSITIVE_TEXT_TERMS = (
     "card game",
     "puzzle game",
     "platform game",
+    "sandbox game",
+    "stealth game",
+    "action game",
+    "fighting game",
+    "shooter game",
+    "tower defense game",
+    "casual game",
     "adventure game",
     "action-adventure game",
     "simulation game",
+    "life simulation game",
+    "social simulation game",
+    "construction and management simulation",
     "sports game",
     "racing game",
     "rhythm game",
+    "music game",
     "role-playing game",
+    "online role-playing game",
+    "massively multiplayer online role-playing game",
+    "mmorpg",
     "first-person shooter",
     "third-person shooter",
     "strategy game",
     "survival game",
     "battle royale game",
     "multiplayer",
+    "free-to-play",
+    "game developed",
+    "game published",
     "game series",
 )
 GAMEPLAY_SECTION_TERMS = ("gameplay", "game play", "mechanics", "features")
@@ -324,6 +356,83 @@ def fetch_title_extracts(session: requests.Session, titles: Iterable[str]) -> li
     return [page for page in pages if not page.get("missing")]
 
 
+def fetch_title_infos(session: requests.Session, titles: Iterable[str]) -> list[dict]:
+    title_list = [title for title in titles if title]
+    if not title_list:
+        return []
+    data = wiki_get(
+        session,
+        action="query",
+        prop="info",
+        redirects=1,
+        inprop="url",
+        titles="|".join(title_list),
+    )
+    pages = data.get("query", {}).get("pages", [])
+    return [page for page in pages if not page.get("missing")]
+
+
+def title_key(title: str) -> str:
+    return re.sub(r"\s+", " ", title.replace("_", " ").strip()).casefold()
+
+
+def fetch_direct_page_cache(
+    session: requests.Session,
+    games: Iterable[Game],
+    *,
+    chunk_size: int = 45,
+) -> dict[str, list[dict]]:
+    all_titles: list[str] = []
+    seen_titles: set[str] = set()
+    for game in games:
+        for title in candidate_titles(game.name):
+            key = title_key(title)
+            if key not in seen_titles:
+                seen_titles.add(key)
+                all_titles.append(title)
+
+    cache: dict[str, list[dict]] = {}
+    for start in range(0, len(all_titles), chunk_size):
+        chunk = all_titles[start : start + chunk_size]
+        data = wiki_get(
+            session,
+            action="query",
+            prop="info",
+            redirects=1,
+            inprop="url",
+            titles="|".join(chunk),
+        )
+        pages_by_title = {
+            title_key(page.get("title", "")): page
+            for page in data.get("query", {}).get("pages", [])
+            if not page.get("missing")
+        }
+        normalized = {
+            title_key(item.get("from", "")): title_key(item.get("to", ""))
+            for item in data.get("query", {}).get("normalized", [])
+        }
+        redirects = {
+            title_key(item.get("from", "")): title_key(item.get("to", ""))
+            for item in data.get("query", {}).get("redirects", [])
+        }
+        for title in chunk:
+            keys = [title_key(title)]
+            if keys[-1] in normalized:
+                keys.append(normalized[keys[-1]])
+            if keys[-1] in redirects:
+                keys.append(redirects[keys[-1]])
+            page = None
+            for key in reversed(keys):
+                page = pages_by_title.get(key)
+                if page:
+                    break
+            if page:
+                cache.setdefault(title_key(title), []).append(page)
+                cache.setdefault(title_key(page.get("title", "")), []).append(page)
+        print(f"cached direct pages {min(start + chunk_size, len(all_titles))}/{len(all_titles)}")
+    return cache
+
+
 def fetch_extracts(session: requests.Session, pageids: Iterable[int]) -> list[dict]:
     ids = "|".join(str(pageid) for pageid in pageids)
     if not ids:
@@ -339,6 +448,14 @@ def fetch_extracts(session: requests.Session, pageids: Iterable[int]) -> list[di
     )
     pages = data.get("query", {}).get("pages", [])
     return [page for page in pages if not page.get("missing")]
+
+
+def fetch_page_extract(session: requests.Session, pageid: int) -> dict | None:
+    pages = fetch_extracts(session, [pageid])
+    if not pages:
+        return None
+    page = pages[0]
+    return page if page.get("extract", "").strip() else None
 
 
 def score_page(game_name: str, page: dict) -> float:
@@ -361,12 +478,19 @@ def is_likely_game_page(page: dict) -> bool:
     first_block = extract[:1800]
     if any(term in title for term in NEGATIVE_TITLE_TERMS):
         return False
+    if "(disambiguation)" in title:
+        return False
     if any(term in title for term in ("video game", "game series", "franchise")):
         return True
     return any(term in first_block for term in POSITIVE_TEXT_TERMS)
 
 
-def find_best_page(session: requests.Session, game_name: str) -> WikiPage | None:
+def find_best_page(
+    session: requests.Session,
+    game_name: str,
+    *,
+    search_fallback: bool = False,
+) -> WikiPage | None:
     direct_pages = [
         page
         for page in fetch_title_extracts(session, candidate_titles(game_name))
@@ -375,15 +499,17 @@ def find_best_page(session: requests.Session, game_name: str) -> WikiPage | None
     ]
     if direct_pages:
         pages = direct_pages
-    else:
+    elif search_fallback:
         candidates = search_pages(session, game_name)
         pages = [
             page
             for page in fetch_extracts(session, [item["pageid"] for item in candidates])
             if page.get("extract", "").strip()
             and is_likely_game_page(page)
-            and score_page(game_name, page) >= 4.0
+            and score_page(game_name, page) >= 6.0
         ]
+    else:
+        pages = []
     if not pages:
         return None
     ranked = sorted(pages, key=lambda page: score_page(game_name, page), reverse=True)
@@ -395,6 +521,62 @@ def find_best_page(session: requests.Session, game_name: str) -> WikiPage | None
         return None
     url = best.get("fullurl") or f"https://en.wikipedia.org/wiki/{quote(title.replace(' ', '_'))}"
     return WikiPage(title=title, pageid=int(best["pageid"]), extract=extract, url=url, score=score)
+
+
+def find_best_page_from_cache(game_name: str, cache: dict[str, list[dict]]) -> WikiPage | None:
+    pages_by_id: dict[int, dict] = {}
+    for title in candidate_titles(game_name):
+        for page in cache.get(title_key(title), []):
+            if page.get("extract", "").strip() and is_likely_game_page(page):
+                pages_by_id[int(page["pageid"])] = page
+    if not pages_by_id:
+        return None
+    ranked = sorted(pages_by_id.values(), key=lambda page: score_page(game_name, page), reverse=True)
+    best = ranked[0]
+    score = score_page(game_name, best)
+    title = best.get("title", "")
+    url = best.get("fullurl") or f"https://en.wikipedia.org/wiki/{quote(title.replace(' ', '_'))}"
+    return WikiPage(
+        title=title,
+        pageid=int(best["pageid"]),
+        extract=best.get("extract", "").strip(),
+        url=url,
+        score=score,
+    )
+
+
+def find_best_page_from_cache_with_extract(
+    session: requests.Session,
+    game_name: str,
+    cache: dict[str, list[dict]],
+) -> WikiPage | None:
+    candidates_by_id: dict[int, dict] = {}
+    for title in candidate_titles(game_name):
+        for page in cache.get(title_key(title), []):
+            pageid = int(page["pageid"])
+            candidates_by_id.setdefault(pageid, page)
+
+    pages: list[dict] = []
+    for page in sorted(candidates_by_id.values(), key=lambda item: score_page(game_name, item), reverse=True):
+        full_page = fetch_page_extract(session, int(page["pageid"]))
+        if full_page and is_likely_game_page(full_page):
+            pages.append(full_page)
+        if len(pages) >= 3:
+            break
+
+    if not pages:
+        return None
+    ranked = sorted(pages, key=lambda page: score_page(game_name, page), reverse=True)
+    best = ranked[0]
+    title = best.get("title", "")
+    url = best.get("fullurl") or f"https://en.wikipedia.org/wiki/{quote(title.replace(' ', '_'))}"
+    return WikiPage(
+        title=title,
+        pageid=int(best["pageid"]),
+        extract=best.get("extract", "").strip(),
+        url=url,
+        score=score_page(game_name, best),
+    )
 
 
 def split_sections(extract: str) -> dict[str, str]:
@@ -555,6 +737,11 @@ def main() -> None:
     parser.add_argument("--overwrite", action="store_true")
     parser.add_argument("--sleep", type=float, default=0.15, help="Pause between API lookups.")
     parser.add_argument("--limit", type=int, help="Only process the first N games.")
+    parser.add_argument(
+        "--search-fallback",
+        action="store_true",
+        help="Use Wikipedia full-text search when direct title/alias lookup fails.",
+    )
     args = parser.parse_args()
 
     games = read_games(args.input)
@@ -566,6 +753,7 @@ def main() -> None:
     session.headers.update({"User-Agent": USER_AGENT})
     retrieved_on = time.strftime("%Y-%m-%d")
     metadata: list[dict[str, object]] = []
+    direct_cache = fetch_direct_page_cache(session, games)
 
     for index, game in enumerate(games, start=1):
         filename = safe_filename(game.name)
@@ -587,7 +775,9 @@ def main() -> None:
             print(f"[{index}/{len(games)}] skipped {game.name}")
             continue
 
-        page = find_best_page(session, game.name)
+        page = find_best_page_from_cache_with_extract(session, game.name, direct_cache)
+        if page is None and args.search_fallback:
+            page = find_best_page(session, game.name, search_fallback=True)
         text = build_description(game, page, retrieved_on)
         atomic_write_text(output_path, text)
         status = "ok" if page else "needs_manual_review"
