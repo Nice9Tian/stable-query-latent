@@ -34,3 +34,4 @@ CLAUDE.md
 AGENTS.md
 tokenAPI.txt
 *.npz
+/VICReg_review/tags/game_descriptions
