@@ -39,3 +39,4 @@ tokenAPI.txt
 *.npz
 /PXIbench_test/PXIbenchmark_descriptions
 *.npz
+/game_review_data/.pip-cache
