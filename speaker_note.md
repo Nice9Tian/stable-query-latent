@@ -1,7 +1,7 @@
 ==========================================================================
 演讲稿（中文更新稿）
 幻灯片本体为日语；本稿与每一页一一对应。
-更新范围：第 24 页以后已按 2026-06-25 的最终 hierarchical64_align_reco 结果重写。
+更新范围：第 24 页以后已按 2026-06-25 的最终 hierarchical64_align_reco_trainonly 结果重写。
 标注【测试任务·重点】= 本次着重讲评测任务（TAG/TAP 标签预测 / PXI 预测 / 文本-游戏召回 / 好评率 probe）。
 ==========================================================================
 
@@ -279,25 +279,23 @@ Expander 投影本身的 PR 只有 12.20，不是我们下游要用的空间；
 不过这里要非常谨慎：293 个候选里进前 100，本身不是强指标，
 真正重要的是是不是能稳定回到自己的 review centroid。
 
-这次最终模型里，BG3、Cyberpunk 的官方描述，以及 Cyberpunk/AO 的长文本改写，
-在诊断集上全部是 rank 1。
-具体是：
+这次合法训练里，BG3、Cyberpunk 的官方描述，以及 Cyberpunk/AO 的长文本改写，
+在绝对测试集上表现如下：
 BG3 description = 1/293；
 Cyberpunk description = 1/293；
-Cyberpunk neutral / positive / negative = 1 / 1 / 1；
+Cyberpunk neutral / positive / negative = 1 / 1 / 4；
 Across the Obelisk neutral / positive / negative = 1 / 1 / 1。
 
-这件事要诚实地解释一下：
-这些长文本变体已经被我放进 description alignment 训练缓存里了，
-所以它更像是「训练目标被学会了」，而不是纯零样本泛化。
-但这恰好说明一件重要的事：只要把完整描述对齐到 review centroid，
-身份召回是可以被明确拉回来的，不再是旧版那种接近末位的失败。
+这里要特别说明：这 6 个长文本是绝对测试集，**没有**进入训练 cache。
+所以这组数字才是真正的泛化结果。
+结论很明确：模型把大多数测试文本都拉回了自己的 review centroid，
+但 Cyberpunk negative 还是掉到了 4，说明这个版本还没有把所有情绪改写都完全稳住。
 
 如果只看同一游戏不同情绪文本的相似度，
-Cyberpunk 的 description vs neutral / positive / negative 分别是 0.887 / 0.885 / 0.604；
-negative vs neutral / negative vs positive / neutral vs positive 分别是 0.689 / 0.702 / 0.878；
-Across the Obelisk 的 negative vs neutral / negative vs positive / neutral vs positive 分别是 0.735 / 0.761 / 0.652。
-更直观的读法是，同一游戏的长文本仍然彼此靠得很近，说明情绪改写没有把身份直接拉飞。
+Cyberpunk 的 description vs neutral / positive / negative 分别是 0.794 / 0.856 / 0.496；
+negative vs neutral / negative vs positive / neutral vs positive 分别是 0.564 / 0.582 / 0.845；
+Across the Obelisk 的 negative vs neutral / negative vs positive / neutral vs positive 分别是 0.624 / 0.644 / 0.613。
+更直观地说，同一游戏的长文本还算靠得近，但 negative 这个方向确实更难一点。
 
 结论是：这次模型不仅修复了低秩坍缩，
 而且把「完整描述 → review centroid」这条身份通路真正训通了。
@@ -313,10 +311,10 @@ Across the Obelisk 的 negative vs neutral / negative vs positive / neutral vs p
 我们用严格的 leave-one-out：每次留出 1 款游戏，用另外 20 款训练，再预测被留出的那款。
 同时比较 chance、raw Qwen ceiling、以及最终 VICReg code。
 
-补跑最终 `hierarchical64_align_reco` checkpoint 后，结果是：
-dual probe 里的 tag_content_f1 = 0.614；
-code_sentiment_r2 = -0.009；
-PXI 里 functional F1 = 0.486，psychological F1 = 0.569，delta = -0.082；
+补跑最终 `hierarchical64_align_reco_trainonly` checkpoint 后，结果是：
+dual probe 里的 tag_content_f1 = 0.607；
+code_sentiment_r2 = -0.087；
+PXI 里 functional F1 = 0.464，psychological F1 = 0.476，delta = -0.012；
 n_pxi 还是只有 21。
 
 所以这里不能说「模型已经能预测 PXI」。
@@ -344,10 +342,10 @@ n_pxi 还是只有 21。
 目标做 logit transform，然后做 5-fold CV。
 
 结果：
-5-fold CV 的 MAE 是 0.104 ± 0.011，
-RMSE 是 0.143 ± 0.022，
-Pearson 是 -0.068 ± 0.064。
-最终 holdout 上，MAE 是 0.111，RMSE 是 0.156，Pearson 是 0.089。
+5-fold CV 的 MAE 是 0.105 ± 0.011，
+RMSE 是 0.144 ± 0.022，
+Pearson 是 -0.119 ± 0.046。
+最终 holdout 上，MAE 是 0.110，RMSE 是 0.156，Pearson 是 0.088。
 
 这个结果说明两点。
 第一，VICReg 表示已经很难被线性读出好评率；
@@ -370,14 +368,14 @@ Across the Obelisk：
 中立 vs 正面是 0.6519。
 
 Cyberpunk 2077：
-官方描述 vs 负面是 0.6038；
-官方描述 vs 中立是 0.8875；
-官方描述 vs 正面是 0.8847；
-负面 vs 中立是 0.6895；
-负面 vs 正面是 0.7021；
-中立 vs 正面是 0.8777。
+官方描述 vs 负面是 0.4962；
+官方描述 vs 中立是 0.7943；
+官方描述 vs 正面是 0.8564；
+负面 vs 中立是 0.5637；
+负面 vs 正面是 0.5817；
+中立 vs 正面是 0.8449。
 
-这些数值都还算高，尤其 Cyberpunk 的官方描述和中立/正面改写仍然很近。
+这些数值还是偏高，说明同一游戏的不同情绪文本仍然大体靠近，只是 negative 方向更难一些。
 这说明，输入文本的情绪色调从夸变成骂，游戏质心并不会跟着大幅移动。
 
 和上一页身份召回合在一起看，结论就更完整：
@@ -389,16 +387,15 @@ Cyberpunk 2077：
 把第二阶段的评测合起来，总结如下。
 
 第一，TAG/TAP 标签预测：
-最终 23 个粗粒度标签 micro-F1 约 0.694；
+最终 23 个粗粒度标签 micro-F1 约 0.683；
 content retention 是 0.888；
 sentiment retention 只有 0.349。
 这里的意思是：内容大体保住了，情感轴被明显压弱。
 
 第二，低秩与身份召回：
-最终模型把游戏质心 PR 提到 26.67，并把 BG3、Cyberpunk、AO 的诊断文本都拉回到 rank 1。
-这次不是“接近找回”，而是“明确找回”。
-但要记住，这里面包含了训练内的完整描述对齐目标，所以它证明的是通路被训通了，
-不是已经完成了对所有未见文本的零样本检索。
+最终模型把游戏质心 PR 提到 26.62，并把 BG3、Cyberpunk description / neutral / positive、AO neutral / positive / negative 都拉回到 rank 1。
+Cyberpunk negative 掉到 4，但这仍然远好于旧版接近末位的失败。
+这次的结论是：完整描述通路被明显修复了，但 negative 风格仍然是最难的一支。
 
 
 第三，PXI：
@@ -406,7 +403,7 @@ sentiment retention 只有 0.349。
 所以它只能算一个已经搭好的接口，不是主结果。
 
 第四，好评率与情感不变性：
-好评率线性 probe 的 CV Pearson 是 -0.068，holdout Pearson 是 0.089；
+好评率线性 probe 的 CV Pearson 是 -0.119，holdout Pearson 是 0.088；
 说明推荐率线性可读性基本失效。
 同时，同一游戏不同情绪文本的 VICReg cosine 普遍较高，
 说明表层情感色彩被明显弱化。

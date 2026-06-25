@@ -40,3 +40,5 @@ tokenAPI.txt
 /PXIbench_test/PXIbenchmark_descriptions
 *.npz
 /game_review_data/.pip-cache
+/game_review_data/kaggle_steam_reviews_prepared/reviews
+/game_review_data/kagglehub_cache/datasets/andrewmvd

@@ -65,6 +65,16 @@ def parse_int_list(value):
     return tuple(int(part.strip()) for part in str(value).split(",") if part.strip())
 
 
+def parse_string_list(value):
+    if value is None:
+        return []
+    if isinstance(value, (list, tuple)):
+        parts = value
+    else:
+        parts = str(value).split(",")
+    return [str(part).strip() for part in parts if str(part).strip()]
+
+
 def atomic_torch_save(payload, path):
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
@@ -244,6 +254,50 @@ def load_recommendation_targets(args, num_games):
     return targets
 
 
+def resolve_train_game_indices(args, h5) -> np.ndarray | None:
+    if args.train_game_count <= 0:
+        args.train_game_indices = None
+        args.train_game_appids = []
+        return None
+
+    num_games = int(h5["game_names"].shape[0])
+    if args.train_game_count > num_games:
+        raise ValueError(f"--train-game-count {args.train_game_count} exceeds H5 games={num_games}.")
+    appids = [decode_name(x) for x in h5["appids"][:]] if "appids" in h5 else [
+        decode_name(x).split("_", 1)[0] for x in h5["game_names"][:]
+    ]
+    anchors = parse_string_list(args.train_game_anchor_appids)
+    anchor_indices = []
+    missing = []
+    for appid in anchors:
+        try:
+            anchor_indices.append(appids.index(appid))
+        except ValueError:
+            missing.append(appid)
+    if missing:
+        raise ValueError(f"Anchor appids not found in H5: {missing}")
+    if len(set(anchor_indices)) > args.train_game_count:
+        raise ValueError("--train-game-count is smaller than the unique anchor appid count.")
+
+    rng = np.random.default_rng(args.train_game_seed)
+    order = rng.permutation(num_games).tolist()
+    selected = []
+    seen = set()
+    for index in anchor_indices + order:
+        index = int(index)
+        if index in seen:
+            continue
+        selected.append(index)
+        seen.add(index)
+        if len(selected) >= args.train_game_count:
+            break
+
+    selected = np.asarray(selected, dtype=np.int64)
+    args.train_game_indices = selected
+    args.train_game_appids = [appids[int(i)] for i in selected]
+    return selected
+
+
 def sample_view(game_vectors, review_offsets, sample_fraction, rng, cache_dtype):
     review_count = len(review_offsets) - 1
     take = max(1, int(math.ceil(review_count * sample_fraction)))
@@ -353,20 +407,27 @@ def make_epoch_indices(
     game_order="random",
     counts=None,
     max_batch_sentences=0,
+    game_indices=None,
 ):
     rng = np.random.default_rng(epoch_seed)
+    if game_indices is None:
+        available = np.arange(num_games, dtype=np.int64)
+    else:
+        available = np.asarray(game_indices, dtype=np.int64)
+        if available.ndim != 1 or available.size == 0:
+            raise ValueError("game_indices must be a non-empty 1D sequence.")
     if game_order == "random":
         base_order = None
     elif game_order == "largest_first":
         if counts is None:
             raise ValueError("largest_first order requires game sentence counts.")
-        base_order = np.argsort(-counts).tolist()
+        base_order = available[np.argsort(-counts[available])].tolist()
     elif game_order == "smallest_first":
         if counts is None:
             raise ValueError("smallest_first order requires game sentence counts.")
-        base_order = np.argsort(counts).tolist()
+        base_order = available[np.argsort(counts[available])].tolist()
     elif game_order == "file":
-        base_order = list(range(num_games))
+        base_order = available.tolist()
     else:
         raise ValueError(f"Unknown game order: {game_order}")
 
@@ -374,23 +435,26 @@ def make_epoch_indices(
         if counts is None:
             raise ValueError("max_batch_sentences requires game sentence counts.")
         if steps_per_epoch <= 0:
-            order = rng.permutation(num_games).tolist() if base_order is None else base_order
+            order = rng.permutation(available).tolist() if base_order is None else base_order
             return pack_by_sentence_budget(order, counts, batch_size, max_batch_sentences)
 
         batches = []
         while len(batches) < steps_per_epoch:
-            order = rng.permutation(num_games).tolist() if base_order is None else base_order
+            order = rng.permutation(available).tolist() if base_order is None else base_order
             batches.extend(pack_by_sentence_budget(order, counts, batch_size, max_batch_sentences))
         return batches[:steps_per_epoch]
 
     if steps_per_epoch <= 0:
-        indices = rng.permutation(num_games).tolist() if base_order is None else base_order
+        indices = rng.permutation(available).tolist() if base_order is None else base_order
     else:
+        if game_indices is not None and base_order is None:
+            take = min(int(batch_size), int(available.size))
+            return [rng.choice(available, size=take, replace=False).tolist() for _ in range(steps_per_epoch)]
         needed = steps_per_epoch * batch_size
         indices = []
         while len(indices) < needed:
             if base_order is None:
-                indices.extend(rng.permutation(num_games).tolist())
+                indices.extend(rng.permutation(available).tolist())
             else:
                 indices.extend(base_order)
         indices = indices[:needed]
@@ -432,6 +496,7 @@ def prepare_epoch_batches(
     pin_cache,
     game_order,
     max_batch_sentences,
+    game_indices=None,
 ):
     batches = []
     rng = np.random.default_rng(seed + epoch * 1_000_003)
@@ -446,6 +511,7 @@ def prepare_epoch_batches(
             game_order=game_order,
             counts=counts,
             max_batch_sentences=max_batch_sentences,
+            game_indices=game_indices,
         )
         for batch_indices in epoch_indices:
             batches.append(prepare_batch(h5, batch_indices, sample_fraction, rng, cache_dtype, pin_cache))
@@ -466,6 +532,7 @@ class QueueEpochIterator:
         prefetch_batches,
         game_order,
         max_batch_sentences,
+        game_indices=None,
     ):
         self.queue = queue.Queue(maxsize=max(1, prefetch_batches))
         self.thread = threading.Thread(
@@ -481,6 +548,7 @@ class QueueEpochIterator:
                 pin_cache,
                 game_order,
                 max_batch_sentences,
+                game_indices,
             ),
             daemon=True,
         )
@@ -498,6 +566,7 @@ class QueueEpochIterator:
         pin_cache,
         game_order,
         max_batch_sentences,
+        game_indices,
     ):
         try:
             rng = np.random.default_rng(seed + epoch * 1_000_003)
@@ -512,6 +581,7 @@ class QueueEpochIterator:
                     game_order=game_order,
                     counts=counts,
                     max_batch_sentences=max_batch_sentences,
+                    game_indices=game_indices,
                 )
                 for batch_indices in epoch_indices:
                     self.queue.put(prepare_batch(h5, batch_indices, sample_fraction, rng, cache_dtype, pin_cache))
@@ -547,6 +617,7 @@ def iter_epoch(args, epoch, next_epoch_future, executor, cache_dtype):
                 args.pin_cache,
                 args.game_order,
                 args.max_batch_sentences,
+                args.train_game_indices,
             )
         else:
             future = None
@@ -564,6 +635,7 @@ def iter_epoch(args, epoch, next_epoch_future, executor, cache_dtype):
         args.prefetch_batches,
         args.game_order,
         args.max_batch_sentences,
+        args.train_game_indices,
     )
     return iterator, None
 
@@ -1151,6 +1223,7 @@ def write_history(rows, path):
 
 
 def write_manifest(path, status, args, epoch, step, metrics=None, error=None):
+    train_game_indices = getattr(args, "train_game_indices", None)
     payload = {
         "status": status,
         "finished_at": time.strftime("%Y-%m-%dT%H:%M:%S"),
@@ -1173,6 +1246,11 @@ def write_manifest(path, status, args, epoch, step, metrics=None, error=None):
         "description_cache": str(Path(args.description_cache).resolve()),
         "recommendation_decorr_weight": args.recommendation_decorr_weight,
         "recommendation_target_transform": args.recommendation_target_transform,
+        "train_game_count": int(args.train_game_count),
+        "train_game_seed": int(args.train_game_seed),
+        "train_game_anchor_appids": parse_string_list(args.train_game_anchor_appids),
+        "train_game_indices": [] if train_game_indices is None else [int(i) for i in train_game_indices],
+        "train_game_appids": list(getattr(args, "train_game_appids", [])),
         "metrics": metrics or {},
         "error": error,
     }
@@ -1229,6 +1307,8 @@ def train(args):
         h5_appids = [decode_name(x) for x in h5["appids"][:]] if "appids" in h5 else [
             decode_name(x).split("_", 1)[0] for x in h5["game_names"][:]
         ]
+        train_game_indices = resolve_train_game_indices(args, h5)
+        effective_num_games = len(train_game_indices) if train_game_indices is not None else num_games
         if args.max_batch_sentences > 0:
             counts = game_sentence_counts(h5)
             default_steps = len(
@@ -1240,19 +1320,27 @@ def train(args):
                     game_order=args.game_order,
                     counts=counts,
                     max_batch_sentences=args.max_batch_sentences,
+                    game_indices=train_game_indices,
                 )
             )
         else:
-            default_steps = math.ceil(num_games / args.batch_size)
+            default_steps = math.ceil(effective_num_games / args.batch_size)
     if args.steps_per_epoch <= 0:
         args.steps_per_epoch = default_steps
 
     description_bank = None
     if args.description_align_weight > 0 or args.description_mse_weight > 0:
         description_bank = load_description_bank(args, h5_appids)
+        if args.train_game_indices is not None:
+            keep = set(int(i) for i in args.train_game_indices)
+            description_bank = [items if index in keep else [] for index, items in enumerate(description_bank)]
     recommendation_targets = None
     if args.recommendation_decorr_weight > 0:
         recommendation_targets = load_recommendation_targets(args, num_games)
+        if args.train_game_indices is not None:
+            mask = np.ones_like(recommendation_targets, dtype=bool)
+            mask[np.asarray(args.train_game_indices, dtype=np.int64)] = False
+            recommendation_targets[mask] = np.nan
     description_rng = np.random.default_rng(args.seed + 704_971)
 
     model, expander, adversary, optimizer = build_training_components(args, input_dim, device)
@@ -1307,6 +1395,7 @@ def train(args):
 
     print(
         f"device={device} games={num_games} sentences={total_sentences} "
+        f"train_games={effective_num_games} "
         f"batch_size={args.batch_size} steps_per_epoch={args.steps_per_epoch} "
         f"max_batch_sentences={args.max_batch_sentences} "
         f"cache_mode={args.cache_mode} backward_mode={args.backward_mode} "
@@ -1346,6 +1435,7 @@ def train(args):
             args.pin_cache,
             args.game_order,
             args.max_batch_sentences,
+            args.train_game_indices,
         )
 
     last_metrics = None
@@ -1500,6 +1590,23 @@ def parse_args():
         ),
     )
     parser.add_argument("--sample-fraction", type=float, default=0.6)
+    parser.add_argument(
+        "--train-game-count",
+        type=int,
+        default=0,
+        help="If >0, train on a fixed subset of this many H5 games while keeping original H5 indices.",
+    )
+    parser.add_argument(
+        "--train-game-seed",
+        type=int,
+        default=20260626,
+        help="Seed for the fixed training-game subset used by --train-game-count.",
+    )
+    parser.add_argument(
+        "--train-game-anchor-appids",
+        default="1086940,1091500,1385380",
+        help="Comma-separated appids that are forced into every fixed training subset.",
+    )
     parser.add_argument("--cache-mode", choices=["queue", "full"], default="queue")
     parser.add_argument("--prefetch-batches", type=int, default=2)
     parser.add_argument("--cache-dtype", choices=["float16", "float32"], default="float16")
