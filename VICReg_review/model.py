@@ -1,11 +1,17 @@
 """Latent-array VICReg model with a GRL sentiment adversary.
 
 The encoder projects the 1024-d input down to a wide latent_dim (256 by default),
-runs cross- and self-attention at that width, then funnels each latent vector
-down to a small output_dim (256 -> 128 -> 64 -> 32 -> 18 by default). VICReg runs
-on these compact codes. Because the frozen SST MLP4-A head still expects 1024-d
-inputs, the adversary holds a learnable up-projection probe (output_dim -> 1024)
-placed AFTER the GRL, so the encoder is always the adversarial party.
+runs one latent-query cross-attention layer at that width, then funnels each
+latent vector down to a compact output_dim. There is no latent-to-latent
+self-attention block in the current VICReg encoder. The H5 trainer pools the
+latent slots into a game-level centroid before the VICReg variance/covariance
+terms, then projects that centroid through an expander MLP so inter-game
+separation is regularized at high width while downstream code can keep using the
+compact centroid.
+
+Because the frozen SST MLP4-A head still expects 1024-d inputs, the adversary
+holds a learnable up-projection probe (output_dim -> 1024) placed AFTER the GRL,
+so the encoder is always the adversarial party.
 """
 
 from pathlib import Path
@@ -118,6 +124,221 @@ class LatentArrayMLP(nn.Module):
 
 
 Latent_Array_MLP = LatentArrayMLP
+
+
+def _heads_for_dim(dim, requested):
+    requested = max(1, int(requested))
+    dim = int(dim)
+    if dim % requested == 0:
+        return requested
+    for heads in range(min(requested, dim), 0, -1):
+        if dim % heads == 0:
+            return heads
+    return 1
+
+
+class LatentSelfAttentionBlock(nn.Module):
+    """Pre-norm self-attention + FFN block over latent slots."""
+
+    def __init__(self, dim, num_heads=8, dropout=0.1, mlp_ratio=4.0):
+        super().__init__()
+        self.norm1 = nn.LayerNorm(dim)
+        self.attention = nn.MultiheadAttention(
+            dim,
+            _heads_for_dim(dim, num_heads),
+            dropout=dropout,
+            batch_first=True,
+        )
+        self.dropout = nn.Dropout(dropout)
+        hidden = max(dim, int(round(dim * float(mlp_ratio))))
+        self.norm2 = nn.LayerNorm(dim)
+        self.ffn = nn.Sequential(
+            nn.Linear(dim, hidden),
+            nn.GELU(),
+            nn.Dropout(dropout),
+            nn.Linear(hidden, dim),
+            nn.Dropout(dropout),
+        )
+
+    def forward(self, x):
+        y = self.norm1(x)
+        y, _ = self.attention(y, y, y, need_weights=False)
+        x = x + self.dropout(y)
+        x = x + self.ffn(self.norm2(x))
+        return x
+
+
+class LatentReductionCrossAttention(nn.Module):
+    """Reduce latent width, then query the previous latent array at that width."""
+
+    def __init__(self, input_dim, output_dim, num_heads=8, dropout=0.1, mlp_ratio=4.0):
+        super().__init__()
+        self.input_dim = int(input_dim)
+        self.output_dim = int(output_dim)
+        self.query_proj = nn.Linear(self.input_dim, self.output_dim)
+        self.context_proj = nn.Linear(self.input_dim, self.output_dim)
+        self.query_norm = nn.LayerNorm(self.output_dim)
+        self.context_norm = nn.LayerNorm(self.output_dim)
+        self.cross_attention = nn.MultiheadAttention(
+            self.output_dim,
+            _heads_for_dim(self.output_dim, num_heads),
+            dropout=dropout,
+            batch_first=True,
+        )
+        self.dropout = nn.Dropout(dropout)
+        self.self_attention = LatentSelfAttentionBlock(
+            self.output_dim,
+            num_heads=num_heads,
+            dropout=dropout,
+            mlp_ratio=mlp_ratio,
+        )
+        self.output_norm = nn.LayerNorm(self.output_dim)
+
+    def forward(self, latents):
+        query = self.query_proj(latents)
+        context = self.context_proj(latents)
+        attended, _ = self.cross_attention(
+            query=self.query_norm(query),
+            key=self.context_norm(context),
+            value=self.context_norm(context),
+            need_weights=False,
+        )
+        latents = query + self.dropout(attended)
+        latents = self.self_attention(latents)
+        return self.output_norm(latents)
+
+
+class HierarchicalLatentArrayMLP(nn.Module):
+    """Latent-array encoder with self-attention and attentional reductions.
+
+    Stage 0 learns a latent array that cross-attends to input sentences and then
+    refines the latent slots with self-attention. Each later stage linearly
+    reduces the latent width and uses the reduced slots as queries over the
+    previous latent array, followed by another self-attention block. The output
+    shape matches LatentArrayMLP: (batch, num_latents, output_dim).
+    """
+
+    def __init__(
+        self,
+        input_dim=1024,
+        latent_dim=256,
+        num_latents=256,
+        num_heads=8,
+        dropout=0.1,
+        output_dim=64,
+        reduce_hidden=(128,),
+        mlp_ratio=4.0,
+    ):
+        super().__init__()
+        self.input_dim = int(input_dim)
+        self.latent_dim = int(latent_dim)
+        self.num_latents = int(num_latents)
+        self.output_dim = int(output_dim)
+        self.reduce_hidden = tuple(int(dim) for dim in reduce_hidden)
+
+        self.input_norm = nn.LayerNorm(input_dim)
+        if input_dim == latent_dim:
+            self.input_proj = nn.Identity()
+        else:
+            self.input_proj = nn.Linear(input_dim, latent_dim)
+
+        self.latent_array = nn.Parameter(torch.randn(num_latents, latent_dim) * 0.02)
+        self.query_norm = nn.LayerNorm(latent_dim)
+        self.context_norm = nn.LayerNorm(latent_dim)
+        self.cross_attention = nn.MultiheadAttention(
+            latent_dim,
+            _heads_for_dim(latent_dim, num_heads),
+            dropout=dropout,
+            batch_first=True,
+        )
+        self.dropout = nn.Dropout(dropout)
+        self.self_attention = LatentSelfAttentionBlock(
+            latent_dim,
+            num_heads=num_heads,
+            dropout=dropout,
+            mlp_ratio=mlp_ratio,
+        )
+        self.output_norm = nn.LayerNorm(latent_dim)
+
+        dims = [latent_dim, *self.reduce_hidden, self.output_dim]
+        self.reduction_stages = nn.ModuleList(
+            [
+                LatentReductionCrossAttention(
+                    dims[index],
+                    dims[index + 1],
+                    num_heads=num_heads,
+                    dropout=dropout,
+                    mlp_ratio=mlp_ratio,
+                )
+                for index in range(len(dims) - 1)
+            ]
+        )
+
+    def forward(self, x, key_padding_mask=None):
+        context = self.context_norm(self.input_proj(self.input_norm(x)))
+        queries = self.latent_array.unsqueeze(0).expand(x.size(0), -1, -1)
+        attended, _ = self.cross_attention(
+            query=self.query_norm(queries),
+            key=context,
+            value=context,
+            key_padding_mask=key_padding_mask,
+            need_weights=False,
+        )
+        latents = queries + self.dropout(attended)
+        latents = self.output_norm(self.self_attention(latents))
+        for stage in self.reduction_stages:
+            latents = stage(latents)
+        return latents
+
+
+class GameCentroidExpander(nn.Module):
+    """Projection head used only by the game-level VICReg regularizer.
+
+    Input/output:
+        centroid: (batch, output_dim), default (batch, 18)
+        expanded: (batch, expander_dim), default (batch, 1024)
+
+    The final layer is raw: VICReg's variance/covariance terms own the scale and
+    decorrelation pressure.
+    """
+
+    def __init__(
+        self,
+        input_dim=18,
+        hidden_dims=(128, 512),
+        output_dim=1024,
+        dropout=0.0,
+    ):
+        super().__init__()
+        self.input_dim = int(input_dim)
+        self.hidden_dims = tuple(int(dim) for dim in hidden_dims)
+        self.output_dim = int(output_dim)
+        self.input_norm = nn.LayerNorm(self.input_dim)
+
+        dims = [self.input_dim, *self.hidden_dims, self.output_dim]
+        layers = []
+        for index in range(len(dims) - 1):
+            layers.append(nn.Linear(dims[index], dims[index + 1]))
+            if index < len(dims) - 2:
+                layers.append(nn.GELU())
+                if dropout > 0:
+                    layers.append(nn.Dropout(dropout))
+        self.net = nn.Sequential(*layers)
+
+    def forward(self, centroid):
+        if centroid.dim() != 2:
+            raise ValueError(f"GameCentroidExpander expects (batch, dim), got {tuple(centroid.shape)}.")
+        return self.net(self.input_norm(centroid))
+
+
+def game_centroid(latents):
+    """Mean-pool latent slots into one compact vector per game."""
+    latents = latents.float()
+    if latents.dim() == 3:
+        return latents.mean(dim=1)
+    if latents.dim() == 2:
+        return latents
+    raise ValueError(f"Expected latents with shape (B,L,D) or centroids (B,D), got {tuple(latents.shape)}.")
 
 
 class TagRegressionHead(nn.Module):
@@ -279,6 +500,70 @@ def vicreg_loss(
         "invariance": repr_loss,
         "variance": std_loss,
         "covariance": cov_loss,
+    }
+
+
+def vicreg_centroid_loss(
+    centroid_a,
+    centroid_b,
+    expander,
+    invariance_weight=25.0,
+    variance_weight=25.0,
+    covariance_weight=1.0,
+    compact_variance_weight=0.0,
+    compact_covariance_weight=0.0,
+    eps=1e-4,
+):
+    """VICReg loss where the sample axis is games, not latent slots.
+
+    Invariance is the MSE between the compact game centroids. Variance and
+    covariance are computed on expander(centroid), so the regularizer directly
+    spreads different games apart and has enough dimensions to do it cleanly.
+    """
+
+    if centroid_a.shape != centroid_b.shape:
+        raise ValueError(
+            f"VICReg centroid views must match, got {centroid_a.shape} and {centroid_b.shape}."
+        )
+    if centroid_a.dim() != 2:
+        raise ValueError(f"VICReg centroid loss expects (batch, dim), got {tuple(centroid_a.shape)}.")
+
+    centroid_a = centroid_a.float()
+    centroid_b = centroid_b.float()
+    repr_loss = F.mse_loss(centroid_a, centroid_b)
+    reg_a = expander(centroid_a).float()
+    reg_b = expander(centroid_b).float()
+
+    def variance_term(z):
+        std = torch.sqrt(z.var(dim=0, unbiased=False) + eps)
+        return torch.mean(F.relu(1.0 - std))
+
+    def covariance_term(z):
+        sample_count = z.size(0)
+        if sample_count < 2:
+            return z.new_tensor(0.0)
+        z = z - z.mean(dim=0)
+        cov = (z.T @ z) / (sample_count - 1)
+        return _off_diagonal(cov).pow(2).sum() / z.size(1)
+
+    std_loss = 0.5 * (variance_term(reg_a) + variance_term(reg_b))
+    cov_loss = 0.5 * (covariance_term(reg_a) + covariance_term(reg_b))
+    compact_std_loss = 0.5 * (variance_term(centroid_a) + variance_term(centroid_b))
+    compact_cov_loss = 0.5 * (covariance_term(centroid_a) + covariance_term(centroid_b))
+    total = (
+        invariance_weight * repr_loss
+        + variance_weight * std_loss
+        + covariance_weight * cov_loss
+        + compact_variance_weight * compact_std_loss
+        + compact_covariance_weight * compact_cov_loss
+    )
+    return {
+        "loss": total,
+        "invariance": repr_loss,
+        "variance": std_loss,
+        "covariance": cov_loss,
+        "compact_variance": compact_std_loss,
+        "compact_covariance": compact_cov_loss,
     }
 
 

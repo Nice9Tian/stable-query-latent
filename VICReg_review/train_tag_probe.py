@@ -46,7 +46,7 @@ PROJECT_ROOT = SCRIPT_DIR.parent
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-from VICReg_review.model import LatentArrayMLP  # noqa: E402
+from VICReg_review.model import HierarchicalLatentArrayMLP, LatentArrayMLP  # noqa: E402
 from VICReg_review.train_vicreg_review_h5 import load_game_views  # noqa: E402
 
 DEFAULT_H5 = SCRIPT_DIR / "h5" / "game_review_cleaned_3_sentences.h5"
@@ -75,9 +75,11 @@ def load_frozen_encoder(checkpoint_path, input_dim, device):
     checkpoint = torch.load(checkpoint_path, map_location=device, weights_only=False)
     saved = checkpoint.get("args", {})
     defaults = dict(latent_dim=256, num_latents=256, num_heads=8,
-                    dropout=0.1, output_dim=18, reduce_hidden=(128, 64, 32))
+                    dropout=0.1, output_dim=18, reduce_hidden=(128, 64, 32),
+                    encoder_arch="latent_mlp")
     cfg = {key: saved.get(key, defaults[key]) for key in defaults}
-    model = LatentArrayMLP(
+    model_cls = HierarchicalLatentArrayMLP if cfg["encoder_arch"] == "hierarchical" else LatentArrayMLP
+    model = model_cls(
         input_dim=input_dim,
         latent_dim=cfg["latent_dim"],
         num_latents=cfg["num_latents"],

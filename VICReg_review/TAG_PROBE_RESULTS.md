@@ -10,6 +10,75 @@ train split ≥ 2 times).
 not the encoder or the probe.** Details below, all numbers are 5-fold CV with the
 fairness rule and the decision threshold tuned on train only (no val leakage).
 
+## 2026-06-25 final update: hierarchical self-attention + description alignment + recommendation decorrelation
+
+The latest checkpoint is `heads/hierarchical64_align_reco/vicreg_review_h5_latest.pt`.
+It keeps the centroid-level VICReg repair, but adds hierarchical latent self-attention,
+full-text description alignment, and a game-level recommendation-rate decorrelation term.
+
+| Diagnostic | Result |
+|---|---:|
+| compact centroid Participation Ratio | 26.67 |
+| z-scored compact centroid PR | 26.64 |
+| BG3 / Cyberpunk / AO diagnostic text ranks | 1 / 1 / 1 |
+| TAP tag micro-F1, flatten pool | 0.6938 |
+| content retention vs raw | 0.888 |
+| sentiment R² retention vs raw | 0.349 |
+| recommendation-rate probe Pearson (CV / holdout) | -0.068 / 0.089 |
+
+Interpretation:
+
+- The tag probe is still healthy, but the stronger result is selectivity.
+- Content survives; sentiment and recommendation-rate linear readouts are both strongly reduced.
+- The identity retrieval success on the diagnostic text set is now rank-1 across BG3,
+  Cyberpunk, and Across the Obelisk, but that includes the long-text cases used in the
+  alignment cache, so it is best read as a trained alignment success rather than pure
+  zero-shot retrieval.
+- Historical sections below describe earlier checkpoint families (`centroid64_grl` and
+  the preceding pure-VICReg ablations).
+
+## 2026-06-25 update: game-centroid VICReg fixes low-rank collapse, with mixed identity retrieval
+
+The low-rank failure was caused by computing VICReg variance/covariance on
+`(batch * latent_slots, output_dim)`: within-game slot spread satisfied the
+regularizer while game centroids stayed collapsed. The H5 trainer now supports
+`--vicreg-scope game`, which mean-pools slots before the loss, applies
+invariance on compact game centroids, and applies variance/covariance on a
+512-d expander projection. The deployed repair uses a 64-d compact centroid
+(`--output-dim 64`) plus a short GRL fine-tune.
+
+Final checkpoint:
+`VICReg_review/heads/centroid64_grl/vicreg_review_h5_latest.pt`.
+
+| Diagnostic | Previous collapsed 18-d code | New 64-d game-centroid code |
+|---|---:|---:|
+| compact game-vector Participation Ratio | ~2 (failure case) | **15.97** |
+| Baldur's Gate 3 identity rank | not measured in old table | **43 / 293** |
+| Cyberpunk 2077 description rank | old Cyberpunk text ranks 273-288 | **25 / 293** |
+| Cyberpunk 2077 neutral / positive / negative ranks | 288 / 273 / 284 | **41 / 41 / 12** |
+| Across the Obelisk neutral / positive / negative ranks | 1 / 8 / 24 | 26 / 27 / 29 (**regression**) |
+| TAP tag micro-F1, flatten pool | 0.435 old Steam-tag run / 0.448 content run | **0.686** |
+| TAP tag micro-F1, stats pool export | 0.394 old Steam-tag run | **0.687** |
+| content retention vs raw | 0.844 | **0.951** |
+| sentiment R² retention vs raw | 0.682 | 0.835 |
+
+Notes:
+
+- The new rank diagnostic uses z-scored cosine over 293 training-game centroids.
+  Raw Qwen mean-pool PR on the same cache is 18.27, so the repaired VICReg
+  centroid reaches the same order of effective dimension while remaining compact.
+- TAP labels in the current H5 are 23 coarse non-subjective labels, so the
+  selectivity probe reports `subjective=nan`; the meaningful checks are content
+  retention and SST sentiment R² retention.
+- The final checkpoint improves the collapsed Cyberpunk/BG3-style failure mode
+  and restores compact centroid PR, while keeping tag F1 essentially unchanged.
+  It is **not** universally better for identity retrieval: Across the Obelisk
+  regresses from the old flattened-identity ranks `1 / 8 / 24` to `26 / 27 / 29`
+  on the compact centroid. Sentiment remains suppressed relative to raw
+  (`0.835` retention), though the content-sentiment gap is smaller than the old
+  18-d pure compression ablation. The result is a better PR/Cyberpunk-collapse
+  repair, not a finished nearest-neighbor identity encoder.
+
 ## The dataset is the binding constraint
 
 - **293 games total, 283 labeled.** That is the entire corpus. Per fold ≈ 234

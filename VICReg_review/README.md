@@ -6,13 +6,19 @@ Self-supervised game-review encoder:
 - Build two views by independently sampling 60 percent of reviews.
 - Encode both views with one shared `LatentArrayMLP` (`Latent_Array_MLP` alias):
   input `1024 -> latent_dim 256`, 256 learnable query slots, a single
-  cross-attention layer (no residuals, no extra blocks), then a per-latent funnel
-  `256 -> 128 -> 64 -> 32 -> 18`. Output is `(B, 256, 18)`.
-- Train with VICReg consistency on the final 18-d latent codes.
+  cross-attention layer (no residuals, no extra blocks), then a per-latent funnel.
+  The current best checkpoint uses `256 -> 128 -> 64`, so the compact downstream
+  game centroid is 64-d.
+- H5 training now mean-pools latent slots before the loss: `(B, 256, D) -> (B, D)`.
+  Invariance is computed on these compact game centroids. Variance/covariance are
+  computed on an expander MLP projection (`D -> 512`) so the regularizer acts on
+  inter-game separation instead of being satisfied by within-game slot spread.
+- Optional compact variance/covariance auxiliary terms keep the downstream
+  centroid itself high-rank.
 - Apply a frozen SST MLP4-A sentiment head through GRL so the latent codes become
   sentiment-confusing (driven toward output 0.5 = maximum entropy). Because the
   head needs 1024-d inputs, the adversary holds a learnable up-projection probe
-  (`18 -> 256 -> 1024`) placed *after* the GRL, so the encoder is always the
+  (`D -> 256 -> 1024`) placed *after* the GRL, so the encoder is always the
   adversarial party while the probe tries to recover sentiment confidence.
 
 Default run:
@@ -34,7 +40,11 @@ HDF5 path for faster training:
 
 ```powershell
 C:/Users/admin/anaconda3/envs/cuda_Vit/python.exe VICReg_review/build_review_h5.py --workers 2 --shards 8
-C:/Users/admin/anaconda3/envs/cuda_Vit/python.exe VICReg_review/train_vicreg_review_h5.py --device cuda --amp --epochs 100 --batch-size 16
+C:/Users/admin/anaconda3/envs/cuda_Vit/python.exe VICReg_review/train_vicreg_review_h5.py --device cuda --amp `
+  --epochs 30 --steps-per-epoch 4 --batch-size 128 `
+  --vicreg-scope game --output-dim 64 --reduce-hidden 128 `
+  --expander-dim 512 --expander-hidden 256,512 `
+  --compact-variance-weight 25 --compact-covariance-weight 25
 ```
 
 `build_review_h5.py` also writes TAP labels into the H5:
@@ -67,8 +77,39 @@ cross-validation** with a **fairness rule** (a tag is scored only where it has
 micro-F1 mean±std, a frequency-floor breakdown, and (with `--export-head PATH`)
 saves a portable linear probe for `validation.py`.
 
-See `TAG_PROBE_RESULTS.md` for the full analysis: the raw-embedding F1 ceiling
-(~0.50 on 293 games), why 0.85 is unreachable, and the selectivity result.
+See `TAG_PROBE_RESULTS.md` for the full analysis: the raw-embedding F1 ceiling,
+the old 18-d bottleneck, and the current 64-d game-centroid results.
+
+## Current best checkpoint
+
+`heads/hierarchical64_align_reco/vicreg_review_h5_latest.pt` is the current best
+checkpoint. It uses a hierarchical latent-array encoder with self-attention and
+reduction stages, a 64-d compact game centroid, centroid-level VICReg, full-text
+description alignment, and a recommendation-rate decorrelation term.
+
+Headline diagnostics:
+
+| Metric | Result |
+|---|---:|
+| compact centroid Participation Ratio | 26.67 |
+| z-scored compact centroid PR | 26.64 |
+| Baldur's Gate 3 description rank | 1 / 293 |
+| Cyberpunk 2077 description / neutral / positive / negative ranks | 1 / 1 / 1 / 1 |
+| Across the Obelisk neutral / positive / negative ranks | 1 / 1 / 1 |
+| TAP tag micro-F1, flatten pool | 0.6938 |
+| content retention vs raw | 0.888 |
+| sentiment R² retention vs raw | 0.349 |
+| recommendation-rate linear probe Pearson (CV / holdout) | -0.068 / 0.089 |
+
+Updated artifacts:
+
+- `heads/hierarchical64_align_reco/tag_probe_linear_flatten.pt`
+- `heads/hierarchical64_align_reco/tag_probe_report_flatten.json`
+- `heads/hierarchical64_align_reco/identity_diagnostic_report.json`
+- `heads/hierarchical64_align_reco/selectivity_report.json`
+- `backheads/heads/recommendation_vicreg_features_hierarchical64_align_reco.npz`
+- `backheads/heads/recommendation_vicreg_linear_probe_hierarchical64_align_reco.pt`
+- `backheads/heads/recommendation_vicreg_linear_probe_hierarchical64_align_reco_report.json`
 
 ## Dual-probe validation during training
 
