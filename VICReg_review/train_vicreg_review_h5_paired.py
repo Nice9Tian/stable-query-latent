@@ -3,8 +3,8 @@
 This is a paired variant of train_vicreg_review_h5.py for the final sweep.  For
 each epoch/batch it samples review views once, then trains two independent arms:
 
-* grl: adversary_weight > 0, with the usual GRL schedule.
-* nogrl: adversary_weight = 0.
+* grl: adversary_weight > 0, with the usual GRL schedule and recommendation loss.
+* nogrl: adversary_weight = 0 and recommendation loss disabled.
 
 The arms keep separate checkpoints, histories, optimizers, and manifests.  The
 sampled input views, description samples, recommendation labels, and dropout RNG
@@ -61,6 +61,9 @@ def arm_namespace(args, arm: str, adversary_weight: float):
     prefix = "grl" if arm == "grl" else "nogrl"
     out.arm = arm
     out.adversary_weight = float(adversary_weight)
+    out.recommendation_decorr_weight = float(
+        getattr(args, f"{prefix}_recommendation_decorr_weight", getattr(args, "recommendation_decorr_weight", 0.0))
+    )
     if out.adversary_weight <= 0:
         out.grl_lambda = 0.0
     out.checkpoint_out = getattr(args, f"{prefix}_checkpoint_out")
@@ -160,8 +163,13 @@ def prepare_common_state(args):
             keep = set(int(i) for i in args.train_game_indices)
             description_bank = [items if index in keep else [] for index, items in enumerate(description_bank)]
 
+    recommendation_weight = max(
+        float(getattr(args, "recommendation_decorr_weight", 0.0)),
+        float(getattr(args, "grl_recommendation_decorr_weight", 0.0)),
+        float(getattr(args, "nogrl_recommendation_decorr_weight", 0.0)),
+    )
     recommendation_targets = None
-    if args.recommendation_decorr_weight > 0:
+    if recommendation_weight > 0:
         recommendation_targets = load_recommendation_targets(args, num_games)
         if args.train_game_indices is not None:
             mask = np.ones_like(recommendation_targets, dtype=bool)
@@ -416,6 +424,8 @@ def parse_args():
     parser.add_argument("--description-embed-batch-size", type=int, default=16)
     parser.add_argument("--description-local-model", default=None)
     parser.add_argument("--recommendation-decorr-weight", type=float, default=0.0)
+    parser.add_argument("--grl-recommendation-decorr-weight", type=float, default=0.0)
+    parser.add_argument("--nogrl-recommendation-decorr-weight", type=float, default=0.0)
     parser.add_argument("--recommendation-reviews-dir", default=None)
     parser.add_argument("--recommendation-label-min-length", type=int, default=0)
     parser.add_argument("--recommendation-min-label-count", type=int, default=10)

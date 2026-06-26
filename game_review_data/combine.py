@@ -11,8 +11,9 @@ deduplicating by Steam appid. Inputs are ordered by priority: if two sources
 contain the same appid, the first source wins. That default keeps the newer
 2020-2024 source ahead of the older Kaggle 2017 source.
 
-It can also merge companion ``games.json`` metadata and raw ``reviews/*.csv`` so
-downstream H5 building, TAG labels, and recommendation-rate probes stay aligned.
+It also writes the final ``games.json`` sidecar. Existing generated metadata can
+be merged when present; appids missing from those sidecars are synthesized from
+the produced ``metadata/*.json`` files so ``games.json`` remains a build output.
 """
 
 from __future__ import annotations
@@ -107,6 +108,16 @@ def appids_in_dirs(input_dirs: list[Path], glob_pattern: str = "*.json") -> set[
     return appids
 
 
+def minimal_game_record(appid: str) -> dict:
+    return {
+        "name": appid,
+        "detailed_description": "",
+        "about_the_game": "",
+        "short_description": "",
+        "tags": {},
+    }
+
+
 def combine_games_json(games_jsons: list[Path], output_path: Path, overwrite: bool,
                        allowed_appids: set[str] | None = None) -> dict:
     selected = {}
@@ -137,6 +148,18 @@ def combine_games_json(games_jsons: list[Path], output_path: Path, overwrite: bo
                 "record": record,
             }
 
+    synthesized = []
+    if allowed_appids is not None:
+        for appid in sorted(allowed_appids, key=lambda value: int(value) if value.isdigit() else value):
+            if appid in selected:
+                continue
+            selected[appid] = {
+                "source": "metadata/*.json",
+                "source_index": len(games_jsons),
+                "record": minimal_game_record(appid),
+            }
+            synthesized.append(appid)
+
     if output_path.exists() and not overwrite:
         copied = False
     else:
@@ -156,6 +179,7 @@ def combine_games_json(games_jsons: list[Path], output_path: Path, overwrite: bo
         "input_jsons": [str(path) for path in games_jsons],
         "allowed_appids": len(allowed_appids) if allowed_appids is not None else None,
         "selected_games": len(selected),
+        "synthesized_games": len(synthesized),
         "duplicate_appids": duplicates,
         "missing_inputs": missing,
         "written": copied,
@@ -267,15 +291,16 @@ def main():
         else None
     )
     games_result = None
-    if args.games_jsons and not args.skip_games_json:
+    if not args.skip_games_json and (args.games_jsons or allowed_sidecar_appids):
         games_result = combine_games_json(
-            [Path(path) for path in args.games_jsons],
+            [Path(path) for path in args.games_jsons or []],
             args.output_workdir / "games.json",
             args.overwrite,
             allowed_appids=allowed_sidecar_appids,
         )
         print(
             f"combine games.json: selected={games_result['selected_games']} "
+            f"synthesized={games_result['synthesized_games']} "
             f"duplicates={len(games_result['duplicate_appids'])}",
             flush=True,
         )

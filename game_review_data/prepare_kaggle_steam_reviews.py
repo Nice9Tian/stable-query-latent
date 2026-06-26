@@ -1,7 +1,7 @@
 """Prepare Kaggle's ``andrewmvd/steam-reviews`` table for the local pipeline.
 
-The existing pipeline expects one CSV per game plus a ``games.json`` metadata
-file:
+The downstream pipeline consumes one CSV per game plus a generated ``games.json``
+metadata file:
 
     <prepared>/reviews/<appid>_<kept_review_count>.csv
     <prepared>/games.json
@@ -12,10 +12,11 @@ shape while preserving the project filters:
 * keep only reviews with text length > 300 by default;
 * keep only games with more than 500 kept reviews by default;
 * preserve the recommendation label for the downstream positive-rate probe;
-* reuse store-page descriptions/tags from the existing Steam metadata JSON.
+* create a minimal ``games.json`` from the Kaggle table, then let the optional
+  enrichment stage fill Steam store-page descriptions/tags.
 
-After this stage, run ``game_review_data/build.py`` with ``--reviews-dir`` and
-``--games-json`` pointing at the prepared outputs.
+The top-level ``game_review_data/build.py`` runs this stage automatically and
+uses the generated prepared ``games.json`` as an intermediate output.
 """
 
 from __future__ import annotations
@@ -33,11 +34,6 @@ from typing import Iterable
 import pandas as pd
 
 SCRIPT_DIR = Path(__file__).resolve().parent
-DEFAULT_BASE_GAMES_JSON = (
-    SCRIPT_DIR
-    / "Steam Games Metadata and Player Reviews (2020–2024"
-    / "games.json"
-)
 DEFAULT_OUTPUT_DIR = SCRIPT_DIR / "kaggle_steam_reviews_prepared"
 
 POSITIVE_VALUE = "Recommended"
@@ -215,16 +211,6 @@ def replace_with_retry(src: Path, dst: Path, retries: int = 20, delay: float = 0
             if attempt + 1 >= retries:
                 raise
             time.sleep(delay)
-
-
-def load_games_json(path: Path | None) -> dict:
-    if not path:
-        return {}
-    path = Path(path)
-    if not path.exists():
-        print(f"[warn] base games.json does not exist: {path}")
-        return {}
-    return json.loads(path.read_text(encoding="utf-8"))
 
 
 class LruCsvWriters:
@@ -429,7 +415,7 @@ def finalize_existing_outputs(args) -> None:
         keep_appids,
         counts,
         names={},
-        base_games=load_games_json(args.base_games_json),
+        base_games={},
     )
     manifest = {
         "status": "finalized_existing",
@@ -471,7 +457,6 @@ def parse_args():
     parser.add_argument("--input", type=Path, default=None,
                         help="Kaggle CSV/TSV/ZIP/PARQUET file, or a directory containing one.")
     parser.add_argument("--output-dir", type=Path, default=DEFAULT_OUTPUT_DIR)
-    parser.add_argument("--base-games-json", type=Path, default=DEFAULT_BASE_GAMES_JSON)
     parser.add_argument("--min-length", type=int, default=300)
     parser.add_argument("--min-count", type=int, default=500)
     parser.add_argument("--strict-length", action=argparse.BooleanOptionalAction, default=True,
@@ -528,7 +513,7 @@ def main():
         keep_appids,
         kept_counts,
         names,
-        load_games_json(args.base_games_json),
+        {},
     )
     manifest = {
         "input": str(input_path.resolve()),

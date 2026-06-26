@@ -5,7 +5,8 @@ The sweep varies four axes:
 * train-game-count: how many games are visible during self-supervised training.
 * sample-fraction: the random review-view fraction used for the two VICReg views.
 * output-dim: compact game-vector width after the hierarchical encoder.
-* arm: GRL adversary enabled vs disabled.
+* arm: GRL adversary enabled vs disabled. The no-GRL arm also disables the
+  recommendation loss for the corrected ablation.
 
 Evaluation is always performed against the full 293-game H5 candidate pool. The
 six long diagnostic texts are test-only here; the default description cache is
@@ -91,6 +92,13 @@ def combo_name(output_dim: int, arm: str, train_games: int, view: float) -> str:
     return f"dim{output_dim:03d}_{arm_label(arm)}_n{train_games:03d}_view{int(round(view * 100)):02d}"
 
 
+def combo_arm_from_dir(combo_dir: Path) -> str | None:
+    parts = combo_dir.name.split("_")
+    if len(parts) >= 4 and parts[0].startswith("dim") and parts[2].startswith("n") and parts[3].startswith("view"):
+        return parts[1]
+    return None
+
+
 def arm_label(arm: str) -> str:
     return str(arm).strip().lower()
 
@@ -102,6 +110,82 @@ def arm_adversary_weight(arm: str) -> float:
     if arm in {"nogrl", "no_grl", "no-grl"}:
         return 0.0
     raise ValueError(f"Unknown arm: {arm}")
+
+
+def arm_recommendation_weight(arm: str) -> float:
+    arm = arm_label(arm)
+    if arm == "grl":
+        return 30.0
+    if arm in {"nogrl", "no_grl", "no-grl"}:
+        return 0.0
+    raise ValueError(f"Unknown arm: {arm}")
+
+
+def manifest_payload(path: Path) -> dict | None:
+    if not path.exists():
+        return None
+    try:
+        payload = json.loads(path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return None
+    return payload if isinstance(payload, dict) else None
+
+
+def manifest_matches_arm(path: Path, arm: str) -> bool:
+    payload = manifest_payload(path)
+    if not payload:
+        return False
+    try:
+        actual_reco = float(payload.get("recommendation_decorr_weight"))
+    except (TypeError, ValueError):
+        return False
+    if not math.isclose(actual_reco, float(arm_recommendation_weight(arm)), rel_tol=0.0, abs_tol=1e-6):
+        return False
+    if "adversary_weight" in payload:
+        try:
+            actual_adv = float(payload.get("adversary_weight"))
+        except (TypeError, ValueError):
+            return False
+        if not math.isclose(actual_adv, float(arm_adversary_weight(arm)), rel_tol=0.0, abs_tol=1e-6):
+            return False
+    return True
+
+
+def report_payload(path: Path) -> dict | None:
+    if not path.exists():
+        return None
+    try:
+        payload = json.loads(path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError:
+        return None
+    return payload if isinstance(payload, dict) else None
+
+
+def checkpoint_fingerprint(path: Path) -> dict | None:
+    if not path.exists():
+        return None
+    stat = path.stat()
+    return {"size": int(stat.st_size), "mtime_ns": int(stat.st_mtime_ns)}
+
+
+def report_is_current(report_path: Path, checkpoint_path: Path, manifest_path: Path | None = None, arm: str | None = None) -> bool:
+    report = report_payload(report_path)
+    if not report:
+        return False
+    current = checkpoint_fingerprint(checkpoint_path)
+    if current is None:
+        return False
+    if arm is not None and manifest_path is not None and not manifest_matches_arm(manifest_path, arm):
+        return False
+    observed = report.get("checkpoint_file")
+    if not isinstance(observed, dict):
+        return False
+    try:
+        observed_size = int(observed.get("size"))
+        observed_mtime = int(observed.get("mtime_ns"))
+    except (TypeError, ValueError):
+        return False
+    return observed_size == current["size"] and observed_mtime == current["mtime_ns"]
 
 
 def combo_dir_for(args, output_dim: int, arm: str, train_games: int, view: float) -> Path:
@@ -135,14 +219,20 @@ def combo_needs_train(args, output_dim: int, arm: str, train_games: int, view: f
         return True
     if not paths["checkpoint"].exists():
         return True
-    status = manifest_status(paths["manifest"])
-    return status != "done"
+    payload = manifest_payload(paths["manifest"])
+    if payload is None:
+        return True
+    if payload.get("status") != "done":
+        return True
+    return not manifest_matches_arm(paths["manifest"], arm)
 
 
 def is_resumable_partial(args, output_dim: int, arm: str, train_games: int, view: float) -> bool:
     paths = combo_paths(args, output_dim, arm, train_games, view)
-    status = manifest_status(paths["manifest"])
-    return paths["checkpoint"].exists() and status not in {None, "done"} and not args.force_train
+    payload = manifest_payload(paths["manifest"])
+    if not paths["checkpoint"].exists() or args.force_train or payload is None:
+        return False
+    return payload.get("status") not in {None, "done"} and manifest_matches_arm(paths["manifest"], arm)
 
 
 def should_try_paired_training(output_dim: int, train_games: int, view: float) -> bool:
@@ -189,7 +279,7 @@ def build_train_command(args, output_dim: int, arm: str, train_games: int, view:
         "--no-description-include-extra-cases",
         "--description-align-weight", "5",
         "--description-mse-weight", "10",
-        "--recommendation-decorr-weight", "30",
+        "--recommendation-decorr-weight", f"{arm_recommendation_weight(arm):g}",
         "--recommendation-target-transform", "logit",
         "--adversary-weight", f"{arm_adversary_weight(arm):g}",
         "--cache-mode", "queue",
@@ -205,7 +295,7 @@ def build_train_command(args, output_dim: int, arm: str, train_games: int, view:
     max_view_sentences = max_view_sentences_for(args, view)
     if max_view_sentences > 0:
         cmd.extend(["--max-view-sentences", str(max_view_sentences)])
-    if checkpoint.exists() and not args.force_train:
+    if is_resumable_partial(args, output_dim, arm, train_games, view):
         cmd.extend(["--resume-checkpoint", str(checkpoint)])
         cmd.append("--reset-optimizer-on-resume")
     if arm_label(arm) == "nogrl":
@@ -241,10 +331,11 @@ def build_paired_train_command(args, output_dim: int, train_games: int, view: fl
         "--no-description-include-extra-cases",
         "--description-align-weight", "5",
         "--description-mse-weight", "10",
-        "--recommendation-decorr-weight", "30",
         "--recommendation-target-transform", "logit",
         "--grl-adversary-weight", f"{arm_adversary_weight('grl'):g}",
         "--nogrl-adversary-weight", f"{arm_adversary_weight('nogrl'):g}",
+        "--grl-recommendation-decorr-weight", f"{arm_recommendation_weight('grl'):g}",
+        "--nogrl-recommendation-decorr-weight", f"{arm_recommendation_weight('nogrl'):g}",
         "--cache-mode", "queue",
         "--cache-dtype", args.cache_dtype,
         "--backward-mode", "split_recompute",
@@ -625,12 +716,21 @@ def evaluate_combo_from_features(
     text_cache: dict,
 ) -> dict:
     report_path = combo_dir / "eval_report.json"
-    if report_path.exists() and not args.rebuild_eval:
-        return json.loads(report_path.read_text(encoding="utf-8"))
+    arm = combo_arm_from_dir(combo_dir)
+    manifest_path = combo_dir / "vicreg_review_h5_manifest.json"
+    if report_path.exists() and not args.rebuild_eval and report_is_current(report_path, checkpoint, manifest_path, arm):
+        payload = report_payload(report_path)
+        if payload is not None:
+            return payload
 
     X_stats = pool_features(feats, "stats").astype(np.float32)
     report = {
+        "report_version": 2,
+        "arm": arm,
+        "adversary_weight": float(arm_adversary_weight(arm)) if arm is not None else None,
+        "recommendation_decorr_weight": float(arm_recommendation_weight(arm)) if arm is not None else None,
         "checkpoint": str(checkpoint.resolve()),
+        "checkpoint_file": checkpoint_fingerprint(checkpoint),
         "tag_probe": tag_probe_metrics(args, feats, feature_names),
         "sentiment_probe": sentiment_r2(args, X_stats, feature_names),
         "recommendation_probe": recommendation_probe(args, X_stats, feature_names),
@@ -643,8 +743,12 @@ def evaluate_combo_from_features(
 
 def evaluate_combo(args, checkpoint: Path, combo_dir: Path) -> dict:
     report_path = combo_dir / "eval_report.json"
-    if report_path.exists() and not args.rebuild_eval:
-        return json.loads(report_path.read_text(encoding="utf-8"))
+    arm = combo_arm_from_dir(combo_dir)
+    manifest_path = combo_dir / "vicreg_review_h5_manifest.json"
+    if report_path.exists() and not args.rebuild_eval and report_is_current(report_path, checkpoint, manifest_path, arm):
+        payload = report_payload(report_path)
+        if payload is not None:
+            return payload
 
     names, appids, titles = h5_game_metadata(args.h5)
     raw_cache = cache_raw_game_vectors(args, appids, names, titles)
@@ -658,7 +762,15 @@ def evaluate_targets(args, targets: list[tuple[Path, Path]]) -> None:
         (checkpoint, combo_dir)
         for checkpoint, combo_dir in targets
         if checkpoint.exists()
-        and (args.rebuild_eval or not (combo_dir / "eval_report.json").exists())
+        and (
+            args.rebuild_eval
+            or not report_is_current(
+                combo_dir / "eval_report.json",
+                checkpoint,
+                combo_dir / "vicreg_review_h5_manifest.json",
+                combo_arm_from_dir(combo_dir),
+            )
+        )
     ]
     if not pending:
         return
@@ -798,9 +910,13 @@ def export_raw_detail_tables(args, rows: list[dict]) -> None:
                 manifest_rows.append({**base, "status": "bad_json", "error": str(exc)})
 
         eval_path = combo_dir / "eval_report.json"
-        if not eval_path.exists():
+        arm = str(row["arm"])
+        manifest_path = combo_dir / "vicreg_review_h5_manifest.json"
+        if not report_is_current(eval_path, combo_dir / "vicreg_review_h5_latest.pt", manifest_path, arm):
             continue
-        report = json.loads(eval_path.read_text(encoding="utf-8"))
+        report = report_payload(eval_path)
+        if report is None:
+            continue
         eval_jsonl.append({**base, "report": report})
 
         tag = report.get("tag_probe") or {}
@@ -897,7 +1013,7 @@ def render_report(rows: list[dict], args) -> str:
         f"- 输出维度轴：{', '.join(str(x) for x in args.output_dims)}",
         f"- 总游戏数：293；实验数据量轴：{', '.join(str(x) for x in args.train_game_counts)}",
         f"- view fraction：{', '.join(f'{v:.1f}' for v in args.sample_fractions)}",
-        f"- 对照 arm：{', '.join(args.arms)}（GRL=adversary_weight 10；no-GRL=adversary_weight 0）。",
+        f"- 对照 arm：{', '.join(args.arms)}（grl=GRL 10 + reco 30；nogrl=GRL 0 + reco 0）。",
         "- 评估候选池：始终使用全量 293 款游戏。",
         "- 测试文本：BG3、Cyberpunk、Across the Obelisk 的官方描述/长文本只在测试阶段使用；训练使用 train-only description cache。",
         f"- 每组合训练预算：epochs={args.epochs}, steps_per_epoch={args.steps_per_epoch}, batch_size={args.batch_size}。",
@@ -946,8 +1062,8 @@ def render_report(rows: list[dict], args) -> str:
         )
     lines.extend([
         "",
-        "说明：Δ = GRL - no-GRL。对情感 R² 和 abs(reco Pearson)，负数表示 GRL 更好；"
-        "对 TAG、Hit@5、PR，正数表示 GRL 更好。",
+        "说明：Δ = GRL+reco - no-GRL+no-reco。对情感 R² 和 abs(reco Pearson)，负数表示前者更好；"
+        "对 TAG、Hit@5、PR，正数表示前者更好。",
         "",
         "## View 最佳窗口预测",
         "",
@@ -1004,8 +1120,15 @@ def summarize(args) -> list[dict]:
                         "train_games": train_games,
                         "view_fraction": view,
                     }
-                    if eval_path.exists():
-                        report = json.loads(eval_path.read_text(encoding="utf-8"))
+                    checkpoint_path = combo_dir / "vicreg_review_h5_latest.pt"
+                    report_current = report_is_current(eval_path, checkpoint_path, manifest_path, arm)
+                    manifest_current = status == "done" and manifest_matches_arm(manifest_path, arm)
+                    if report_current and manifest_current:
+                        report = report_payload(eval_path)
+                        if report is None:
+                            row["status"] = "stale_eval"
+                            rows.append(row)
+                            continue
                         row.update(scalar_from_report(report))
                         row["composite_score"] = composite_score(row)
                         if status == "done":
@@ -1014,8 +1137,13 @@ def summarize(args) -> list[dict]:
                             row["status"] = "evaluated_no_manifest"
                         else:
                             row["status"] = f"evaluated_{status}"
+                    elif eval_path.exists():
+                        row["status"] = "stale_eval"
                     elif manifest_path.exists():
-                        row["status"] = "trained_done_missing_eval" if status == "done" else (status or "missing_eval")
+                        if status == "done" and not manifest_matches_arm(manifest_path, arm):
+                            row["status"] = "stale_manifest"
+                        else:
+                            row["status"] = "trained_done_missing_eval" if status == "done" else (status or "missing_eval")
                     else:
                         row["status"] = "missing"
                     rows.append(row)

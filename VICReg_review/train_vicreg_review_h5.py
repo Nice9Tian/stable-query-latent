@@ -1499,6 +1499,7 @@ def write_manifest(path, status, args, epoch, step, metrics=None, error=None):
         "description_align_weight": args.description_align_weight,
         "description_mse_weight": args.description_mse_weight,
         "description_cache": str(Path(args.description_cache).resolve()),
+        "adversary_weight": args.adversary_weight,
         "recommendation_decorr_weight": args.recommendation_decorr_weight,
         "recommendation_target_transform": args.recommendation_target_transform,
         "train_game_count": int(args.train_game_count),

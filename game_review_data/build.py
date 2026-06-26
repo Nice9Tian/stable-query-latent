@@ -1,14 +1,16 @@
-"""One-command builder for the combined game-review dataset.
+"""One-command builder for the game-review dataset.
 
 Pipeline layout:
 
-1. ``build_1.py`` builds the original 2020-2024 Steam metadata/review source.
+1. ``build_1.py`` optionally builds the local 2020-2024 Steam source, if present.
 2. ``build_2.py`` builds the Kaggle ``andrewmvd/steam-reviews`` source.
-3. ``combine.py`` merges both branches by appid, keeping source 1 first.
+3. ``combine.py`` merges available branches by appid, keeping source 1 first.
 
-The combined output keeps the modern 2020-2024 games used by the identity tests
-while adding the larger Kaggle 2017 review pool. Every stage is resumable by
-default; pass ``--overwrite`` only when you intentionally want to rebuild.
+The build treats ``games.json`` as an output, not an input. The Kaggle branch
+creates its prepared ``games.json`` before metadata building, and the final
+combine stage fills any missing records from produced metadata files. Every
+stage is resumable by default; pass ``--overwrite`` only when you intentionally
+want to rebuild.
 """
 
 from __future__ import annotations
@@ -22,7 +24,6 @@ SCRIPT_DIR = Path(__file__).resolve().parent
 
 DEFAULT_SOURCE1_DIR = SCRIPT_DIR / "Steam Games Metadata and Player Reviews (2020–2024"
 DEFAULT_SOURCE1_REVIEWS = DEFAULT_SOURCE1_DIR / "Game Reviews"
-DEFAULT_SOURCE1_GAMES_JSON = DEFAULT_SOURCE1_DIR / "games.json"
 
 DEFAULT_BUILD1_WORKDIR = SCRIPT_DIR / "build_1_gamedata"
 DEFAULT_BUILD2_WORKDIR = SCRIPT_DIR / "build_2_gamedata"
@@ -36,6 +37,16 @@ COMBINE_STAGE_MAP = {
     "split": "sentences",
     "embed": "embedded",
 }
+
+
+def has_csvs(path: Path) -> bool:
+    path = Path(path)
+    return path.exists() and any(path.glob("*.csv"))
+
+
+def has_stage_outputs(workdir: Path) -> bool:
+    workdir = Path(workdir)
+    return any((workdir / stage).exists() and any((workdir / stage).glob("*.json")) for stage in STAGES)
 
 
 def run_command(cmd: list[str], cwd: Path = SCRIPT_DIR) -> None:
@@ -64,8 +75,6 @@ def build_1_command(args) -> list[str]:
         str(args.build1_workdir),
         "--reviews-dir",
         str(args.build1_reviews_dir),
-        "--games-json",
-        str(args.build1_games_json),
         "--min-length",
         str(args.min_length),
         "--min-count",
@@ -86,8 +95,7 @@ def build_1_command(args) -> list[str]:
     add_stage_args(cmd, args)
     if args.overwrite:
         cmd.append("--overwrite")
-    if args.no_meta:
-        cmd.append("--no-meta")
+    cmd.append("--no-meta")
     if args.split_device:
         cmd.extend(["--split-device", args.split_device])
     if args.embed_device:
@@ -172,22 +180,35 @@ def build_2_command(args) -> list[str]:
     return cmd
 
 
-def combine_command(args) -> list[str]:
+def combine_command(args, *, include_build1: bool, include_build2: bool) -> list[str]:
+    source_workdirs = []
+    games_jsons = []
+    review_dirs = []
+
+    if include_build1:
+        source_workdirs.append(args.build1_workdir)
+        review_dirs.append(args.build1_reviews_dir)
+
+    if include_build2:
+        source_workdirs.append(args.build2_workdir)
+        review_dirs.append(args.build2_prepared_dir / "reviews")
+        games_jsons.append(args.build2_prepared_dir / "games.json")
+
+    if not source_workdirs:
+        raise SystemExit("No built source workdirs are available to combine.")
+
     cmd = [
         sys.executable,
         str(SCRIPT_DIR / "combine.py"),
         "--source-workdirs",
-        str(args.build1_workdir),
-        str(args.build2_workdir),
+        *[str(path) for path in source_workdirs],
         "--output-workdir",
         str(args.combined_workdir),
-        "--games-jsons",
-        str(args.build1_games_json),
-        str(args.build2_prepared_dir / "games.json"),
-        "--review-dirs",
-        str(args.build1_reviews_dir),
-        str(args.build2_prepared_dir / "reviews"),
     ]
+    if games_jsons and not args.skip_combine_games_json:
+        cmd.extend(["--games-jsons", *[str(path) for path in games_jsons]])
+    if review_dirs and not args.skip_combine_reviews:
+        cmd.extend(["--review-dirs", *[str(path) for path in review_dirs]])
     only = mapped_combine_stages(args.only)
     skip = mapped_combine_stages(args.skip)
     if only:
@@ -196,10 +217,6 @@ def combine_command(args) -> list[str]:
         cmd.extend(["--skip", *skip])
     if args.overwrite:
         cmd.append("--overwrite")
-    if args.skip_combine_games_json:
-        cmd.append("--skip-games-json")
-    if args.skip_combine_reviews:
-        cmd.append("--skip-reviews")
     if not args.restrict_sidecars_to_metadata:
         cmd.append("--no-restrict-sidecars-to-metadata")
     return cmd
@@ -207,11 +224,19 @@ def combine_command(args) -> list[str]:
 
 def parse_args():
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument(
+        "--workdir",
+        type=Path,
+        default=None,
+        help=(
+            "Final database workdir. If set, intermediate source dirs are placed "
+            "under <workdir>/_build unless explicitly overridden."
+        ),
+    )
     parser.add_argument("--build1-workdir", type=Path, default=DEFAULT_BUILD1_WORKDIR)
     parser.add_argument("--build2-workdir", type=Path, default=DEFAULT_BUILD2_WORKDIR)
     parser.add_argument("--combined-workdir", type=Path, default=DEFAULT_COMBINED_WORKDIR)
     parser.add_argument("--build1-reviews-dir", type=Path, default=DEFAULT_SOURCE1_REVIEWS)
-    parser.add_argument("--build1-games-json", type=Path, default=DEFAULT_SOURCE1_GAMES_JSON)
     parser.add_argument("--build2-prepared-dir", type=Path, default=DEFAULT_BUILD2_PREPARED)
     parser.add_argument("--kaggle-cache", type=Path, default=DEFAULT_KAGGLE_CACHE)
     parser.add_argument("--kaggle-input", type=Path, default=None)
@@ -256,8 +281,32 @@ def parse_args():
     return parser.parse_args()
 
 
+def apply_workdir_defaults(args) -> None:
+    if args.workdir is None:
+        return
+
+    root = Path(args.workdir)
+    build_root = root / "_build"
+    if args.build1_workdir == DEFAULT_BUILD1_WORKDIR:
+        args.build1_workdir = build_root / "source1"
+    if args.build2_workdir == DEFAULT_BUILD2_WORKDIR:
+        args.build2_workdir = build_root / "source2"
+    if args.build2_prepared_dir == DEFAULT_BUILD2_PREPARED:
+        args.build2_prepared_dir = build_root / "kaggle_prepared"
+    if args.kaggle_cache == DEFAULT_KAGGLE_CACHE:
+        args.kaggle_cache = build_root / "kagglehub_cache"
+    if args.combined_workdir == DEFAULT_COMBINED_WORKDIR:
+        args.combined_workdir = root
+
+
 def main():
     args = parse_args()
+    apply_workdir_defaults(args)
+
+    build1_has_reviews = has_csvs(args.build1_reviews_dir)
+    run_build1 = not args.skip_build1 and build1_has_reviews
+    run_build2 = not args.skip_build2
+
     print(
         "=== combined game-review build ===\n"
         f"build1={args.build1_workdir}\n"
@@ -265,15 +314,31 @@ def main():
         f"combined={args.combined_workdir}",
         flush=True,
     )
-    if not args.skip_build1:
-        print("\n--- source 1/3: build_1.py ---", flush=True)
+    if args.skip_build1:
+        print("\n--- source 1/3: skipped by --skip-build1 ---", flush=True)
+    elif not build1_has_reviews:
+        print(
+            f"\n--- source 1/3: skipped; no review CSVs found in {args.build1_reviews_dir} ---",
+            flush=True,
+        )
+    else:
+        print("\n--- source 1/3: build_1.py (without external games.json) ---", flush=True)
         run_command(build_1_command(args))
-    if not args.skip_build2:
+
+    if run_build2:
         print("\n--- source 2/3: build_2.py ---", flush=True)
         run_command(build_2_command(args))
+    else:
+        print("\n--- source 2/3: skipped by --skip-build2 ---", flush=True)
+
+    include_build1 = run_build1 or has_stage_outputs(args.build1_workdir)
+    include_build2 = run_build2 or has_stage_outputs(args.build2_workdir)
+
     if not args.skip_combine:
         print("\n--- source 3/3: combine.py ---", flush=True)
-        run_command(combine_command(args))
+        run_command(combine_command(args, include_build1=include_build1, include_build2=include_build2))
+    else:
+        print("\n--- source 3/3: skipped by --skip-combine ---", flush=True)
     print(f"\n=== build done. combined workdir={args.combined_workdir} ===", flush=True)
 
 
