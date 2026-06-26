@@ -49,6 +49,7 @@ from VICReg_review.train_tag_probe import (  # noqa: E402
     load_frozen_encoder,
     load_labels,
     pool_features,
+    sample_game_views,
     summarize as tag_summarize,
 )
 
@@ -82,6 +83,10 @@ def run_command(cmd: list[str], cwd: Path) -> None:
     subprocess.run(cmd, cwd=str(cwd), check=True)
 
 
+def timestamp() -> str:
+    return time.strftime("%Y-%m-%d %H:%M:%S")
+
+
 def combo_name(output_dim: int, arm: str, train_games: int, view: float) -> str:
     return f"dim{output_dim:03d}_{arm_label(arm)}_n{train_games:03d}_view{int(round(view * 100)):02d}"
 
@@ -103,8 +108,63 @@ def combo_dir_for(args, output_dim: int, arm: str, train_games: int, view: float
     return args.out_dir / combo_name(output_dim, arm, train_games, view)
 
 
+def combo_paths(args, output_dim: int, arm: str, train_games: int, view: float) -> dict[str, Path]:
+    combo_dir = combo_dir_for(args, output_dim, arm, train_games, view)
+    return {
+        "dir": combo_dir,
+        "checkpoint": combo_dir / "vicreg_review_h5_latest.pt",
+        "best_checkpoint": combo_dir / "vicreg_review_h5_best.pt",
+        "history": combo_dir / "vicreg_review_h5_history.tsv",
+        "manifest": combo_dir / "vicreg_review_h5_manifest.json",
+        "probe_history": combo_dir / "dual_probe_history.tsv",
+    }
+
+
+def manifest_status(path: Path) -> str | None:
+    if not path.exists():
+        return None
+    try:
+        return str(json.loads(path.read_text(encoding="utf-8")).get("status", "unknown"))
+    except json.JSONDecodeError:
+        return "bad_json"
+
+
+def combo_needs_train(args, output_dim: int, arm: str, train_games: int, view: float) -> bool:
+    paths = combo_paths(args, output_dim, arm, train_games, view)
+    if args.force_train:
+        return True
+    if not paths["checkpoint"].exists():
+        return True
+    status = manifest_status(paths["manifest"])
+    return status != "done"
+
+
+def is_resumable_partial(args, output_dim: int, arm: str, train_games: int, view: float) -> bool:
+    paths = combo_paths(args, output_dim, arm, train_games, view)
+    status = manifest_status(paths["manifest"])
+    return paths["checkpoint"].exists() and status not in {None, "done"} and not args.force_train
+
+
+def should_try_paired_training(output_dim: int, train_games: int, view: float) -> bool:
+    # The n=100/view=0.8 pair repeatedly OOMs on the 20GB Windows GPU.
+    # Single-arm runs use the same seed and sampled batches while avoiding the
+    # doubled activation/optimizer footprint.
+    if view >= 0.8 and train_games >= 100:
+        return False
+    return True
+
+
+def max_view_sentences_for(args, view: float) -> int:
+    if view >= 0.8:
+        return int(args.max_view_sentences_80)
+    if view >= 0.6:
+        return int(args.max_view_sentences_60)
+    return int(args.max_view_sentences_default)
+
+
 def build_train_command(args, output_dim: int, arm: str, train_games: int, view: float, combo_dir: Path) -> list[str]:
-    return [
+    checkpoint = combo_dir / "vicreg_review_h5_latest.pt"
+    cmd = [
         str(args.python),
         str(SCRIPT_DIR / "train_vicreg_review_h5.py"),
         "--input-h5", str(args.h5),
@@ -133,7 +193,8 @@ def build_train_command(args, output_dim: int, arm: str, train_games: int, view:
         "--recommendation-target-transform", "logit",
         "--adversary-weight", f"{arm_adversary_weight(arm):g}",
         "--cache-mode", "queue",
-        "--backward-mode", "recompute",
+        "--cache-dtype", args.cache_dtype,
+        "--backward-mode", "split_recompute",
         "--probe-every", "0",
         "--checkpoint-out", str(combo_dir / "vicreg_review_h5_latest.pt"),
         "--best-checkpoint-out", str(combo_dir / "vicreg_review_h5_best.pt"),
@@ -141,6 +202,69 @@ def build_train_command(args, output_dim: int, arm: str, train_games: int, view:
         "--manifest-json", str(combo_dir / "vicreg_review_h5_manifest.json"),
         "--seed", str(args.seed),
     ]
+    max_view_sentences = max_view_sentences_for(args, view)
+    if max_view_sentences > 0:
+        cmd.extend(["--max-view-sentences", str(max_view_sentences)])
+    if checkpoint.exists() and not args.force_train:
+        cmd.extend(["--resume-checkpoint", str(checkpoint)])
+        cmd.append("--reset-optimizer-on-resume")
+    if arm_label(arm) == "nogrl":
+        cmd.extend(["--grl-lambda", "0"])
+    return cmd
+
+
+def build_paired_train_command(args, output_dim: int, train_games: int, view: float) -> list[str]:
+    grl = combo_paths(args, output_dim, "grl", train_games, view)
+    nogrl = combo_paths(args, output_dim, "nogrl", train_games, view)
+    cmd = [
+        str(args.python),
+        str(SCRIPT_DIR / "train_vicreg_review_h5_paired.py"),
+        "--input-h5", str(args.h5),
+        "--device", args.device,
+        "--amp",
+        "--epochs", str(args.epochs),
+        "--steps-per-epoch", str(args.steps_per_epoch),
+        "--batch-size", str(args.batch_size),
+        "--sample-fraction", f"{view:g}",
+        "--train-game-count", str(train_games),
+        "--train-game-seed", str(args.train_game_seed),
+        "--train-game-anchor-appids", args.train_game_anchor_appids,
+        "--encoder-arch", "hierarchical",
+        "--output-dim", str(output_dim),
+        "--reduce-hidden", "128",
+        "--vicreg-scope", "game",
+        "--expander-dim", "512",
+        "--expander-hidden", "256,512",
+        "--compact-variance-weight", "25",
+        "--compact-covariance-weight", "25",
+        "--description-cache", str(args.description_cache),
+        "--no-description-include-extra-cases",
+        "--description-align-weight", "5",
+        "--description-mse-weight", "10",
+        "--recommendation-decorr-weight", "30",
+        "--recommendation-target-transform", "logit",
+        "--grl-adversary-weight", f"{arm_adversary_weight('grl'):g}",
+        "--nogrl-adversary-weight", f"{arm_adversary_weight('nogrl'):g}",
+        "--cache-mode", "queue",
+        "--cache-dtype", args.cache_dtype,
+        "--backward-mode", "split_recompute",
+        "--probe-every", "0",
+        "--grl-checkpoint-out", str(grl["checkpoint"]),
+        "--grl-best-checkpoint-out", str(grl["best_checkpoint"]),
+        "--grl-history-tsv", str(grl["history"]),
+        "--grl-manifest-json", str(grl["manifest"]),
+        "--grl-probe-history-tsv", str(grl["probe_history"]),
+        "--nogrl-checkpoint-out", str(nogrl["checkpoint"]),
+        "--nogrl-best-checkpoint-out", str(nogrl["best_checkpoint"]),
+        "--nogrl-history-tsv", str(nogrl["history"]),
+        "--nogrl-manifest-json", str(nogrl["manifest"]),
+        "--nogrl-probe-history-tsv", str(nogrl["probe_history"]),
+        "--seed", str(args.seed),
+    ]
+    max_view_sentences = max_view_sentences_for(args, view)
+    if max_view_sentences > 0:
+        cmd.extend(["--max-view-sentences", str(max_view_sentences)])
+    return cmd
 
 
 def h5_game_metadata(h5_path: Path) -> tuple[list[str], list[str], list[str]]:
@@ -153,7 +277,7 @@ def h5_game_metadata(h5_path: Path) -> tuple[list[str], list[str], list[str]]:
 
 def cache_raw_game_vectors(args, appids: list[str], names: list[str], titles: list[str]) -> dict:
     cache_path = args.out_dir / "raw_identity_cache_ms4000.npz"
-    if cache_path.exists() and not args.rebuild_eval:
+    if cache_path.exists() and not args.rebuild_shared_eval:
         data = np.load(cache_path, allow_pickle=True)
         return {key: data[key] for key in data.files}
 
@@ -190,7 +314,7 @@ def cache_raw_game_vectors(args, appids: list[str], names: list[str], titles: li
 
 def embed_test_cases(args) -> dict:
     cache_path = args.out_dir / "test_case_embeddings.npz"
-    if cache_path.exists() and not args.rebuild_eval:
+    if cache_path.exists() and not args.rebuild_shared_eval:
         data = np.load(cache_path, allow_pickle=True)
         return {key: data[key] for key in data.files}
 
@@ -230,8 +354,12 @@ def embed_test_cases(args) -> dict:
     return payload
 
 
+def eval_feature_cache_path(combo_dir: Path) -> Path:
+    return combo_dir / "eval_features_full293_fv4.npz"
+
+
 def build_vicreg_feature_cache(args, checkpoint: Path, combo_dir: Path) -> tuple[np.ndarray, list[str]]:
-    cache_path = combo_dir / "eval_features_full293_fv4.npz"
+    cache_path = eval_feature_cache_path(combo_dir)
     if cache_path.exists() and not args.rebuild_eval:
         data = np.load(cache_path, allow_pickle=True)
         return data["feats"].astype(np.float32), [str(n) for n in data["names"]]
@@ -254,6 +382,84 @@ def build_vicreg_feature_cache(args, checkpoint: Path, combo_dir: Path) -> tuple
     with cache_path.open("wb") as handle:
         np.savez_compressed(handle, feats=feats.astype(np.float32), names=np.asarray(names, dtype=object))
     return feats.astype(np.float32), list(names)
+
+
+def build_vicreg_feature_caches_paired(args, targets: list[tuple[Path, Path]]) -> dict[Path, tuple[np.ndarray, list[str]]]:
+    """Build missing GRL/no-GRL eval feature caches in one H5 pass.
+
+    The paired trainer uses identical training batches.  This paired evaluator
+    mirrors that idea for evaluation: it samples each evaluation view once, then
+    forwards the exact same tensors through each frozen encoder.
+    """
+    loaded: dict[Path, tuple[np.ndarray, list[str]]] = {}
+    pending: list[tuple[Path, Path, Path]] = []
+    for checkpoint, combo_dir in targets:
+        cache_path = eval_feature_cache_path(combo_dir)
+        if cache_path.exists() and not args.rebuild_eval:
+            data = np.load(cache_path, allow_pickle=True)
+            loaded[combo_dir] = (data["feats"].astype(np.float32), [str(n) for n in data["names"]])
+        else:
+            pending.append((checkpoint, combo_dir, cache_path))
+
+    if not pending:
+        return loaded
+    if len(pending) == 1:
+        checkpoint, combo_dir, _ = pending[0]
+        loaded[combo_dir] = build_vicreg_feature_cache(args, checkpoint, combo_dir)
+        return loaded
+
+    device = torch.device(args.device if args.device else ("cuda" if torch.cuda.is_available() else "cpu"))
+    with h5py.File(args.h5, "r") as h5:
+        input_dim = int(h5.attrs["input_dim"])
+
+    encoders = []
+    for checkpoint, _, _ in pending:
+        encoder, _, _, _ = load_frozen_encoder(checkpoint, input_dim, device)
+        encoders.append(encoder)
+
+    rng = np.random.default_rng(args.seed)
+    cache_np = np.dtype(args.cache_dtype)
+    feats_by_combo: list[torch.Tensor | None] = [None for _ in pending]
+    with torch.no_grad(), h5py.File(args.h5, "r") as h5:
+        game_names = [decode_h5(name) for name in h5["game_names"][:]]
+        num_games = len(game_names)
+        for game_index in range(num_games):
+            views = sample_game_views(
+                h5,
+                game_index,
+                args.eval_sample_fraction,
+                args.eval_feature_views,
+                rng,
+                cache_np,
+            )
+            per_encoder_codes = [[] for _ in encoders]
+            for view in views:
+                tensor = view.unsqueeze(0).to(device).float()
+                for encoder_index, encoder in enumerate(encoders):
+                    with torch.amp.autocast("cuda", enabled=args.amp_eval and device.type == "cuda"):
+                        code = encoder(tensor, key_padding_mask=None)
+                    per_encoder_codes[encoder_index].append(code.squeeze(0).float())
+                del tensor
+            for encoder_index, codes in enumerate(per_encoder_codes):
+                mean_code = torch.stack(codes, dim=0).mean(dim=0)
+                if feats_by_combo[encoder_index] is None:
+                    feats_by_combo[encoder_index] = torch.empty(
+                        (num_games, *mean_code.shape),
+                        dtype=torch.float32,
+                    )
+                feats_by_combo[encoder_index][game_index] = mean_code.cpu()
+            if (game_index + 1) % 50 == 0 or game_index + 1 == num_games:
+                print(f"paired features {game_index + 1}/{num_games} models={len(pending)}", flush=True)
+
+    for index, (_, combo_dir, cache_path) in enumerate(pending):
+        feats = feats_by_combo[index]
+        if feats is None:
+            raise RuntimeError("paired feature extraction produced no features")
+        array = feats.numpy().astype(np.float32)
+        with cache_path.open("wb") as handle:
+            np.savez_compressed(handle, feats=array, names=np.asarray(game_names, dtype=object))
+        loaded[combo_dir] = (array, list(game_names))
+    return loaded
 
 
 def tag_probe_metrics(args, feats: np.ndarray, feature_names: list[str]) -> dict:
@@ -409,17 +615,20 @@ def identity_metrics(args, checkpoint: Path, feats: np.ndarray, names: list[str]
     }
 
 
-def evaluate_combo(args, checkpoint: Path, combo_dir: Path) -> dict:
+def evaluate_combo_from_features(
+    args,
+    checkpoint: Path,
+    combo_dir: Path,
+    feats: np.ndarray,
+    feature_names: list[str],
+    raw_cache: dict,
+    text_cache: dict,
+) -> dict:
     report_path = combo_dir / "eval_report.json"
     if report_path.exists() and not args.rebuild_eval:
         return json.loads(report_path.read_text(encoding="utf-8"))
 
-    names, appids, titles = h5_game_metadata(args.h5)
-    raw_cache = cache_raw_game_vectors(args, appids, names, titles)
-    text_cache = embed_test_cases(args)
-    feats, feature_names = build_vicreg_feature_cache(args, checkpoint, combo_dir)
     X_stats = pool_features(feats, "stats").astype(np.float32)
-
     report = {
         "checkpoint": str(checkpoint.resolve()),
         "tag_probe": tag_probe_metrics(args, feats, feature_names),
@@ -430,6 +639,39 @@ def evaluate_combo(args, checkpoint: Path, combo_dir: Path) -> dict:
     }
     atomic_json_write(report, report_path)
     return report
+
+
+def evaluate_combo(args, checkpoint: Path, combo_dir: Path) -> dict:
+    report_path = combo_dir / "eval_report.json"
+    if report_path.exists() and not args.rebuild_eval:
+        return json.loads(report_path.read_text(encoding="utf-8"))
+
+    names, appids, titles = h5_game_metadata(args.h5)
+    raw_cache = cache_raw_game_vectors(args, appids, names, titles)
+    text_cache = embed_test_cases(args)
+    feats, feature_names = build_vicreg_feature_cache(args, checkpoint, combo_dir)
+    return evaluate_combo_from_features(args, checkpoint, combo_dir, feats, feature_names, raw_cache, text_cache)
+
+
+def evaluate_targets(args, targets: list[tuple[Path, Path]]) -> None:
+    pending = [
+        (checkpoint, combo_dir)
+        for checkpoint, combo_dir in targets
+        if checkpoint.exists()
+        and (args.rebuild_eval or not (combo_dir / "eval_report.json").exists())
+    ]
+    if not pending:
+        return
+
+    names, appids, titles = h5_game_metadata(args.h5)
+    raw_cache = cache_raw_game_vectors(args, appids, names, titles)
+    text_cache = embed_test_cases(args)
+    for checkpoint, combo_dir in pending:
+        feats, feature_names = build_vicreg_feature_cache(args, checkpoint, combo_dir)
+        evaluate_combo_from_features(args, checkpoint, combo_dir, feats, feature_names, raw_cache, text_cache)
+        del feats, feature_names
+        if torch.cuda.is_available():
+            torch.cuda.empty_cache()
 
 
 def scalar_from_report(report: dict) -> dict:
@@ -461,8 +703,15 @@ def composite_score(row: dict) -> float:
 
 def write_csv(rows: list[dict], path: Path) -> None:
     if not rows:
+        path.unlink(missing_ok=True)
         return
-    fields = list(rows[0].keys())
+    fields = []
+    seen = set()
+    for row in rows:
+        for key in row:
+            if key not in seen:
+                fields.append(key)
+                seen.add(key)
     path.parent.mkdir(parents=True, exist_ok=True)
     tmp = path.with_name(path.name + ".tmp")
     try:
@@ -474,6 +723,148 @@ def write_csv(rows: list[dict], path: Path) -> None:
     except BaseException:
         tmp.unlink(missing_ok=True)
         raise
+
+
+def write_jsonl(rows: list[dict], path: Path) -> None:
+    if not rows:
+        path.unlink(missing_ok=True)
+        return
+    path.parent.mkdir(parents=True, exist_ok=True)
+    tmp = path.with_name(path.name + ".tmp")
+    try:
+        with tmp.open("w", encoding="utf-8") as handle:
+            for row in rows:
+                handle.write(json.dumps(row, ensure_ascii=False) + "\n")
+        tmp.replace(path)
+    except BaseException:
+        tmp.unlink(missing_ok=True)
+        raise
+
+
+def flatten_manifest(manifest: dict, base: dict) -> dict:
+    metrics = manifest.get("metrics") or {}
+    row = {
+        **base,
+        "status": manifest.get("status"),
+        "finished_at": manifest.get("finished_at"),
+        "epoch": manifest.get("epoch"),
+        "step": manifest.get("step"),
+        "input_h5": manifest.get("input_h5"),
+        "checkpoint_out": manifest.get("checkpoint_out"),
+        "train_game_count": manifest.get("train_game_count"),
+        "train_game_seed": manifest.get("train_game_seed"),
+        "train_game_appids": ",".join(str(x) for x in manifest.get("train_game_appids", [])),
+        "train_game_indices": ",".join(str(x) for x in manifest.get("train_game_indices", [])),
+        "error": manifest.get("error"),
+    }
+    for key, value in metrics.items():
+        row[f"metric_{key}"] = value
+    return row
+
+
+def export_raw_detail_tables(args, rows: list[dict]) -> None:
+    raw_dir = args.out_dir / "raw_test_data"
+    eval_jsonl = []
+    manifest_rows = []
+    retrieval_rows = []
+    pair_rows = []
+    tag_floor_rows = []
+    tag_rank_rows = []
+    tag_fold_rows = []
+    probe_rows = []
+    reco_rows = []
+    identity_summary_rows = []
+
+    for row in rows:
+        base = {
+            "output_dim": row.get("output_dim"),
+            "arm": row.get("arm"),
+            "combo": row.get("combo"),
+            "train_games": row.get("train_games"),
+            "view_fraction": row.get("view_fraction"),
+        }
+        combo_dir = combo_dir_for(
+            args,
+            int(row["output_dim"]),
+            str(row["arm"]),
+            int(row["train_games"]),
+            float(row["view_fraction"]),
+        )
+        manifest_path = combo_dir / "vicreg_review_h5_manifest.json"
+        if manifest_path.exists():
+            try:
+                manifest_rows.append(flatten_manifest(json.loads(manifest_path.read_text(encoding="utf-8")), base))
+            except json.JSONDecodeError as exc:
+                manifest_rows.append({**base, "status": "bad_json", "error": str(exc)})
+
+        eval_path = combo_dir / "eval_report.json"
+        if not eval_path.exists():
+            continue
+        report = json.loads(eval_path.read_text(encoding="utf-8"))
+        eval_jsonl.append({**base, "report": report})
+
+        tag = report.get("tag_probe") or {}
+        for index, value in enumerate(tag.get("fold_micro_f1", [])):
+            tag_fold_rows.append({**base, "fold": index, "micro_f1": value})
+        for floor in tag.get("freq_floor_breakdown", []):
+            tag_floor_rows.append({**base, **floor})
+        for kind in ("top_tags", "bottom_tags"):
+            for rank, item in enumerate(tag.get(kind, []), start=1):
+                if len(item) >= 3:
+                    tag_rank_rows.append({
+                        **base,
+                        "kind": kind,
+                        "rank": rank,
+                        "tag": item[0],
+                        "f1": item[1],
+                        "doc_freq": item[2],
+                    })
+
+        sentiment = report.get("sentiment_probe") or {}
+        reco = report.get("recommendation_probe") or {}
+        probe_rows.append({
+            **base,
+            "tag_micro_f1": tag.get("micro_f1"),
+            "tag_precision": tag.get("precision"),
+            "tag_recall": tag.get("recall"),
+            "tag_macro_f1": tag.get("macro_f1"),
+            "tag_fold_mean": tag.get("fold_micro_f1_mean"),
+            "tag_fold_std": tag.get("fold_micro_f1_std"),
+            "tag_scored_tags": tag.get("scored_tags"),
+            "tag_total_tags": tag.get("total_tags"),
+            "sentiment_r2": sentiment.get("r2"),
+            "sentiment_pearson": sentiment.get("pearson"),
+            "sentiment_n": sentiment.get("n"),
+        })
+        reco_rows.append({**base, **reco})
+
+        identity = report.get("identity") or {}
+        identity_summary_rows.append({
+            **base,
+            "participation_ratio": identity.get("participation_ratio"),
+            "zscore_participation_ratio": identity.get("zscore_participation_ratio"),
+            "mean_rank": identity.get("mean_rank"),
+            "median_rank": identity.get("median_rank"),
+            "hit_at_1": identity.get("hit_at_1"),
+            "hit_at_5": identity.get("hit_at_5"),
+            "hit_at_100": identity.get("hit_at_100"),
+            "mean_vicreg_cosine": identity.get("mean_vicreg_cosine"),
+        })
+        for detail in identity.get("retrieval_rows", []):
+            retrieval_rows.append({**base, **detail})
+        for detail in identity.get("pair_rows", []):
+            pair_rows.append({**base, **detail})
+
+    write_jsonl(eval_jsonl, raw_dir / "eval_reports_full.jsonl")
+    write_csv(manifest_rows, raw_dir / "training_manifests.csv")
+    write_csv(probe_rows, raw_dir / "probe_summary.csv")
+    write_csv(reco_rows, raw_dir / "recommendation_probe.csv")
+    write_csv(identity_summary_rows, raw_dir / "identity_summary.csv")
+    write_csv(retrieval_rows, raw_dir / "identity_retrieval_details.csv")
+    write_csv(pair_rows, raw_dir / "identity_pair_cosine_details.csv")
+    write_csv(tag_floor_rows, raw_dir / "tag_freq_floor_details.csv")
+    write_csv(tag_rank_rows, raw_dir / "tag_top_bottom_details.csv")
+    write_csv(tag_fold_rows, raw_dir / "tag_fold_details.csv")
 
 
 def render_report(rows: list[dict], args) -> str:
@@ -510,6 +901,7 @@ def render_report(rows: list[dict], args) -> str:
         "- 评估候选池：始终使用全量 293 款游戏。",
         "- 测试文本：BG3、Cyberpunk、Across the Obelisk 的官方描述/长文本只在测试阶段使用；训练使用 train-only description cache。",
         f"- 每组合训练预算：epochs={args.epochs}, steps_per_epoch={args.steps_per_epoch}, batch_size={args.batch_size}。",
+        "- 训练显存策略：split_recompute，把句嵌入 -> latentArray 的长序列段与后续层次降维分段反传，默认不截断 view。",
         "",
     ]
     if best:
@@ -587,6 +979,7 @@ def render_report(rows: list[dict], args) -> str:
         "",
         "- N 是训练阶段可见的游戏数量，不是每款游戏的评论条数。",
         "- BG3、Cyberpunk、Across the Obelisk 三个锚点在每个训练子集里固定保留，以免身份召回测试变成“目标未见过”的外推问题。",
+        "- 高 view 下少数游戏的随机窗口会超过十万句；训练端使用 split_recompute 分段反传来保留全量窗口，max_view_sentences 默认为 0。",
         "- 若某组合 status 不是 done，它不会进入上面的曲线均值；原始 JSON 保存在各组合目录。",
     ])
     return "\n".join(lines) + "\n"
@@ -603,6 +996,7 @@ def summarize(args) -> list[dict]:
                     combo_dir = combo_dir_for(args, output_dim, arm, train_games, view)
                     eval_path = combo_dir / "eval_report.json"
                     manifest_path = combo_dir / "vicreg_review_h5_manifest.json"
+                    status = manifest_status(manifest_path)
                     row = {
                         "output_dim": output_dim,
                         "arm": arm,
@@ -614,14 +1008,19 @@ def summarize(args) -> list[dict]:
                         report = json.loads(eval_path.read_text(encoding="utf-8"))
                         row.update(scalar_from_report(report))
                         row["composite_score"] = composite_score(row)
-                        row["status"] = "done"
+                        if status == "done":
+                            row["status"] = "done"
+                        elif status is None:
+                            row["status"] = "evaluated_no_manifest"
+                        else:
+                            row["status"] = f"evaluated_{status}"
                     elif manifest_path.exists():
-                        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
-                        row["status"] = str(manifest.get("status", "missing_eval"))
+                        row["status"] = "trained_done_missing_eval" if status == "done" else (status or "missing_eval")
                     else:
                         row["status"] = "missing"
                     rows.append(row)
     write_csv(rows, args.out_dir / "data_view_sweep_summary.csv")
+    export_raw_detail_tables(args, rows)
     atomic_text_write(render_report(rows, args), args.out_dir / "DATA_VIEW_SWEEP_REPORT.md")
     atomic_json_write({"rows": rows, "args": vars_for_json(args)}, args.out_dir / "data_view_sweep_summary.json")
     return rows
@@ -639,32 +1038,113 @@ def vars_for_json(args) -> dict:
     return payload
 
 
+def summarize_counts(rows: list[dict]) -> dict[str, int]:
+    counts: dict[str, int] = {}
+    for row in rows:
+        status = str(row.get("status", "unknown"))
+        counts[status] = counts.get(status, 0) + 1
+    return counts
+
+
+def write_sweep_manifest(args, status: str, rows: list[dict] | None = None, current: dict | None = None, error: str | None = None) -> None:
+    rows = rows or []
+    payload = {
+        "status": status,
+        "started_at": getattr(args, "sweep_started_at", None),
+        "updated_at": timestamp(),
+        "out_dir": str(args.out_dir),
+        "expected_combinations": len(args.output_dims) * len(args.train_game_counts) * len(args.sample_fractions) * len(args.arms),
+        "done_combinations": sum(1 for row in rows if row.get("status") == "done"),
+        "status_counts": summarize_counts(rows),
+        "current": current,
+        "error": error,
+        "args": vars_for_json(args),
+    }
+    atomic_json_write(payload, args.out_dir / "sweep_manifest.json")
+
+
 def run(args) -> None:
     args.out_dir.mkdir(parents=True, exist_ok=True)
-    for output_dim in args.output_dims:
-        for train_games in args.train_game_counts:
-            for view in args.sample_fractions:
-                for arm in args.arms:
-                    arm = arm_label(arm)
-                    combo_dir = combo_dir_for(args, output_dim, arm, train_games, view)
-                    combo_dir.mkdir(parents=True, exist_ok=True)
-                    checkpoint = combo_dir / "vicreg_review_h5_latest.pt"
-                    manifest = combo_dir / "vicreg_review_h5_manifest.json"
+    args.sweep_started_at = timestamp()
+    write_sweep_manifest(args, "running", summarize(args))
+    current = None
+    try:
+        for output_dim in args.output_dims:
+            for train_games in args.train_game_counts:
+                for view in args.sample_fractions:
+                    current = {
+                        "output_dim": output_dim,
+                        "train_games": train_games,
+                        "view_fraction": view,
+                        "arms": [arm_label(arm) for arm in args.arms],
+                    }
+                    write_sweep_manifest(args, "running", summarize(args), current=current)
+                    arms = [arm_label(arm) for arm in args.arms]
+                    for arm in arms:
+                        combo_paths(args, output_dim, arm, train_games, view)["dir"].mkdir(parents=True, exist_ok=True)
+
                     if not args.skip_train:
-                        needs_train = args.force_train or not checkpoint.exists()
-                        if manifest.exists() and not args.force_train:
+                        grl_pair = {"grl", "nogrl"}.issubset(set(arms))
+                        both_need_fresh = (
+                            grl_pair
+                            and should_try_paired_training(output_dim, train_games, view)
+                            and combo_needs_train(args, output_dim, "grl", train_games, view)
+                            and combo_needs_train(args, output_dim, "nogrl", train_games, view)
+                            and not is_resumable_partial(args, output_dim, "grl", train_games, view)
+                            and not is_resumable_partial(args, output_dim, "nogrl", train_games, view)
+                        )
+                        if both_need_fresh:
                             try:
-                                needs_train = json.loads(manifest.read_text(encoding="utf-8")).get("status") != "done"
-                            except json.JSONDecodeError:
-                                needs_train = True
-                        if needs_train:
-                            run_command(build_train_command(args, output_dim, arm, train_games, view, combo_dir), ROOT)
-                    if checkpoint.exists() and not args.skip_eval:
-                        evaluate_combo(args, checkpoint, combo_dir)
-                    summarize(args)
-    rows = summarize(args)
-    done = sum(1 for row in rows if row["status"] == "done")
-    print(f"sweep summary: {done}/{len(rows)} combinations done -> {args.out_dir}", flush=True)
+                                run_command(build_paired_train_command(args, output_dim, train_games, view), ROOT)
+                            except subprocess.CalledProcessError as exc:
+                                print(
+                                    f"paired training failed for {combo_name(output_dim, 'grl', train_games, view)} / "
+                                    f"{combo_name(output_dim, 'nogrl', train_games, view)}: {exc}; "
+                                    "falling back to single-arm training",
+                                    flush=True,
+                                )
+                                time.sleep(20)
+                                for arm in arms:
+                                    if combo_needs_train(args, output_dim, arm, train_games, view):
+                                        paths = combo_paths(args, output_dim, arm, train_games, view)
+                                        run_command(
+                                            build_train_command(args, output_dim, arm, train_games, view, paths["dir"]),
+                                            ROOT,
+                                        )
+                        else:
+                            for arm in arms:
+                                if combo_needs_train(args, output_dim, arm, train_games, view):
+                                    paths = combo_paths(args, output_dim, arm, train_games, view)
+                                    run_command(
+                                        build_train_command(args, output_dim, arm, train_games, view, paths["dir"]),
+                                        ROOT,
+                                    )
+
+                    if not args.skip_eval:
+                        eval_targets = []
+                        for arm in arms:
+                            paths = combo_paths(args, output_dim, arm, train_games, view)
+                            if paths["checkpoint"].exists():
+                                eval_targets.append((paths["checkpoint"], paths["dir"]))
+                        if {"grl", "nogrl"}.issubset(set(arms)):
+                            evaluate_targets(args, eval_targets)
+                        else:
+                            for checkpoint, combo_dir in eval_targets:
+                                evaluate_combo(args, checkpoint, combo_dir)
+                    write_sweep_manifest(args, "running", summarize(args), current=current)
+        rows = summarize(args)
+        done = sum(1 for row in rows if row["status"] == "done")
+        final_status = "done" if done == len(rows) else "incomplete"
+        write_sweep_manifest(args, final_status, rows)
+        print(f"sweep summary: {done}/{len(rows)} combinations done -> {args.out_dir}", flush=True)
+    except KeyboardInterrupt:
+        rows = summarize(args)
+        write_sweep_manifest(args, "interrupted", rows, current=current, error="KeyboardInterrupt")
+        raise
+    except BaseException as exc:
+        rows = summarize(args)
+        write_sweep_manifest(args, "error", rows, current=current, error=repr(exc))
+        raise
 
 
 def parse_args():
@@ -679,6 +1159,25 @@ def parse_args():
     parser.add_argument("--epochs", type=int, default=30)
     parser.add_argument("--steps-per-epoch", type=int, default=4)
     parser.add_argument("--batch-size", type=int, default=128)
+    parser.add_argument("--cache-dtype", choices=["float16", "float32"], default="float16")
+    parser.add_argument(
+        "--max-view-sentences-80",
+        type=int,
+        default=0,
+        help="Training-time per-game view sentence cap for view fractions >= 0.8. 0 disables the cap.",
+    )
+    parser.add_argument(
+        "--max-view-sentences-60",
+        type=int,
+        default=0,
+        help="Training-time per-game view sentence cap for view fractions >= 0.6 and < 0.8. 0 disables the cap.",
+    )
+    parser.add_argument(
+        "--max-view-sentences-default",
+        type=int,
+        default=0,
+        help="Training-time per-game view sentence cap for lower view fractions. 0 disables the cap.",
+    )
     parser.add_argument("--device", default="cuda")
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--train-game-seed", type=int, default=20260626)
@@ -693,6 +1192,11 @@ def parse_args():
     parser.add_argument("--embed-batch-size", type=int, default=32)
     parser.add_argument("--amp-eval", action=argparse.BooleanOptionalAction, default=True)
     parser.add_argument("--rebuild-eval", action="store_true")
+    parser.add_argument(
+        "--rebuild-shared-eval",
+        action="store_true",
+        help="Rebuild sweep-level raw/text evaluation caches. Per-combo eval caches still use --rebuild-eval.",
+    )
     parser.add_argument("--force-train", action="store_true")
     parser.add_argument("--skip-train", action="store_true")
     parser.add_argument("--skip-eval", action="store_true")

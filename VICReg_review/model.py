@@ -108,7 +108,7 @@ class LatentArrayMLP(nn.Module):
         self.output_norm = nn.LayerNorm(latent_dim)
         self.reduce = _make_funnel_mlp([latent_dim, *reduce_hidden, self.output_dim], dropout)
 
-    def forward(self, x, key_padding_mask=None):
+    def forward_stem(self, x, key_padding_mask=None):
         context = self.context_norm(self.input_proj(self.input_norm(x)))
         queries = self.latent_array.unsqueeze(0).expand(x.size(0), -1, -1)
 
@@ -120,7 +120,13 @@ class LatentArrayMLP(nn.Module):
             need_weights=False,
         )
         latents = self.output_norm(latents)
+        return latents
+
+    def forward_tail(self, latents):
         return self.reduce(latents)
+
+    def forward(self, x, key_padding_mask=None):
+        return self.forward_tail(self.forward_stem(x, key_padding_mask=key_padding_mask))
 
 
 Latent_Array_MLP = LatentArrayMLP
@@ -274,7 +280,7 @@ class HierarchicalLatentArrayMLP(nn.Module):
             ]
         )
 
-    def forward(self, x, key_padding_mask=None):
+    def forward_stem(self, x, key_padding_mask=None):
         context = self.context_norm(self.input_proj(self.input_norm(x)))
         queries = self.latent_array.unsqueeze(0).expand(x.size(0), -1, -1)
         attended, _ = self.cross_attention(
@@ -285,10 +291,15 @@ class HierarchicalLatentArrayMLP(nn.Module):
             need_weights=False,
         )
         latents = queries + self.dropout(attended)
-        latents = self.output_norm(self.self_attention(latents))
+        return self.output_norm(self.self_attention(latents))
+
+    def forward_tail(self, latents):
         for stage in self.reduction_stages:
             latents = stage(latents)
         return latents
+
+    def forward(self, x, key_padding_mask=None):
+        return self.forward_tail(self.forward_stem(x, key_padding_mask=key_padding_mask))
 
 
 class GameCentroidExpander(nn.Module):

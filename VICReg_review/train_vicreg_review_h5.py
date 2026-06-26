@@ -316,7 +316,15 @@ def sample_view(game_vectors, review_offsets, sample_fraction, rng, cache_dtype)
     return torch.from_numpy(out)
 
 
-def load_game_views(h5, game_index, sample_fraction, rng, cache_dtype, pin_cache):
+def limit_view_sentences(view, max_view_sentences, rng):
+    if max_view_sentences <= 0 or view.shape[0] <= max_view_sentences:
+        return view
+    selected = rng.choice(int(view.shape[0]), size=int(max_view_sentences), replace=False)
+    selected.sort()
+    return view[torch.from_numpy(selected.astype(np.int64))].contiguous()
+
+
+def load_game_views(h5, game_index, sample_fraction, rng, cache_dtype, pin_cache, max_view_sentences=0):
     game_review_offsets = h5["game_review_offsets"]
     review_offsets_ds = h5["review_offsets"]
     vectors_ds = h5["vectors"]
@@ -333,6 +341,8 @@ def load_game_views(h5, game_index, sample_fraction, rng, cache_dtype, pin_cache
     relative_offsets = review_offsets - sentence_start
     view_a = sample_view(game_vectors, relative_offsets, sample_fraction, rng, cache_dtype)
     view_b = sample_view(game_vectors, relative_offsets, sample_fraction, rng, cache_dtype)
+    view_a = limit_view_sentences(view_a, max_view_sentences, rng)
+    view_b = limit_view_sentences(view_b, max_view_sentences, rng)
     if pin_cache and torch.cuda.is_available():
         view_a = view_a.pin_memory()
         view_b = view_b.pin_memory()
@@ -461,7 +471,7 @@ def make_epoch_indices(
     return [indices[start : start + batch_size] for start in range(0, len(indices), batch_size)]
 
 
-def prepare_batch(h5, batch_indices, sample_fraction, rng, cache_dtype, pin_cache):
+def prepare_batch(h5, batch_indices, sample_fraction, rng, cache_dtype, pin_cache, max_view_sentences=0):
     game_names = h5["game_names"]
     views_a = []
     views_b = []
@@ -469,7 +479,15 @@ def prepare_batch(h5, batch_indices, sample_fraction, rng, cache_dtype, pin_cach
     lengths_a = []
     lengths_b = []
     for game_index in batch_indices:
-        view_a, view_b = load_game_views(h5, game_index, sample_fraction, rng, cache_dtype, pin_cache)
+        view_a, view_b = load_game_views(
+            h5,
+            game_index,
+            sample_fraction,
+            rng,
+            cache_dtype,
+            pin_cache,
+            max_view_sentences=max_view_sentences,
+        )
         views_a.append(view_a)
         views_b.append(view_b)
         names.append(decode_name(game_names[game_index]))
@@ -496,6 +514,7 @@ def prepare_epoch_batches(
     pin_cache,
     game_order,
     max_batch_sentences,
+    max_view_sentences,
     game_indices=None,
 ):
     batches = []
@@ -514,7 +533,17 @@ def prepare_epoch_batches(
             game_indices=game_indices,
         )
         for batch_indices in epoch_indices:
-            batches.append(prepare_batch(h5, batch_indices, sample_fraction, rng, cache_dtype, pin_cache))
+            batches.append(
+                prepare_batch(
+                    h5,
+                    batch_indices,
+                    sample_fraction,
+                    rng,
+                    cache_dtype,
+                    pin_cache,
+                    max_view_sentences=max_view_sentences,
+                )
+            )
     return batches
 
 
@@ -532,6 +561,7 @@ class QueueEpochIterator:
         prefetch_batches,
         game_order,
         max_batch_sentences,
+        max_view_sentences,
         game_indices=None,
     ):
         self.queue = queue.Queue(maxsize=max(1, prefetch_batches))
@@ -548,6 +578,7 @@ class QueueEpochIterator:
                 pin_cache,
                 game_order,
                 max_batch_sentences,
+                max_view_sentences,
                 game_indices,
             ),
             daemon=True,
@@ -566,6 +597,7 @@ class QueueEpochIterator:
         pin_cache,
         game_order,
         max_batch_sentences,
+        max_view_sentences,
         game_indices,
     ):
         try:
@@ -584,7 +616,17 @@ class QueueEpochIterator:
                     game_indices=game_indices,
                 )
                 for batch_indices in epoch_indices:
-                    self.queue.put(prepare_batch(h5, batch_indices, sample_fraction, rng, cache_dtype, pin_cache))
+                    self.queue.put(
+                        prepare_batch(
+                            h5,
+                            batch_indices,
+                            sample_fraction,
+                            rng,
+                            cache_dtype,
+                            pin_cache,
+                            max_view_sentences=max_view_sentences,
+                        )
+                    )
             self.queue.put(None)
         except BaseException as exc:
             self.queue.put(exc)
@@ -617,6 +659,7 @@ def iter_epoch(args, epoch, next_epoch_future, executor, cache_dtype):
                 args.pin_cache,
                 args.game_order,
                 args.max_batch_sentences,
+                args.max_view_sentences,
                 args.train_game_indices,
             )
         else:
@@ -635,6 +678,7 @@ def iter_epoch(args, epoch, next_epoch_future, executor, cache_dtype):
         args.prefetch_batches,
         args.game_order,
         args.max_batch_sentences,
+        args.max_view_sentences,
         args.train_game_indices,
     )
     return iterator, None
@@ -670,6 +714,20 @@ def forward_view(model, view_cpu, device, amp_enabled, pin_transfer):
             return model(view, key_padding_mask=None)
     finally:
         del view
+
+
+def forward_view_stem(model, view_cpu, device, amp_enabled, pin_transfer):
+    view = move_view_to_device(view_cpu, device, pin_transfer)
+    try:
+        with torch.amp.autocast("cuda", enabled=amp_enabled):
+            return model.forward_stem(view, key_padding_mask=None)
+    finally:
+        del view
+
+
+def forward_stems_to_outputs(model, stems, amp_enabled):
+    with torch.amp.autocast("cuda", enabled=amp_enabled):
+        return model.forward_tail(torch.cat(stems, dim=0))
 
 
 def sample_description_views(batch, description_bank, rng, cache_dtype, pin_cache):
@@ -896,11 +954,149 @@ def collect_recompute_latents(view_list, model, device, amp_enabled, pin_transfe
     return latents, rng_states
 
 
+def collect_split_stems(view_list, model, device, amp_enabled, pin_transfer):
+    stems = []
+    rng_states = []
+    with torch.no_grad():
+        for view_cpu in view_list:
+            rng_states.append(capture_rng_state(device))
+            stems.append(forward_view_stem(model, view_cpu, device, amp_enabled, pin_transfer).detach().cpu())
+    return stems, rng_states
+
+
+def replay_stem_grads(view_list, stem_grads, rng_states, model, device, amp_enabled, pin_transfer):
+    for view_cpu, stem_grad, rng_state in zip(view_list, stem_grads, rng_states):
+        restore_rng_state(rng_state, device)
+        stem = forward_view_stem(model, view_cpu, device, amp_enabled, pin_transfer)
+        stem.backward(stem_grad.to(device, non_blocking=pin_transfer).unsqueeze(0))
+        del stem, stem_grad
+        if device.type == "cuda" and view_cpu.shape[0] >= 20000:
+            torch.cuda.empty_cache()
+
+
 def replay_latent_grads(view_list, latent_grads, rng_states, model, device, amp_enabled, pin_transfer):
     for view_cpu, latent_grad, rng_state in zip(view_list, latent_grads, rng_states):
         restore_rng_state(rng_state, device)
         z = forward_view(model, view_cpu, device, amp_enabled, pin_transfer)
         z.backward(latent_grad.unsqueeze(0))
+        del z
+        if device.type == "cuda" and view_cpu.shape[0] >= 20000:
+            torch.cuda.empty_cache()
+
+
+def run_training_batch_split_recompute(
+    batch,
+    model,
+    expander,
+    adversary,
+    optimizer,
+    scaler,
+    args,
+    device,
+    amp_enabled,
+    pin_transfer,
+    description_bank,
+    description_rng,
+    recommendation_targets_np,
+    cache_dtype,
+):
+    if not (hasattr(model, "forward_stem") and hasattr(model, "forward_tail")):
+        return run_training_batch_recompute(
+            batch,
+            model,
+            expander,
+            adversary,
+            optimizer,
+            scaler,
+            args,
+            device,
+            amp_enabled,
+            pin_transfer,
+            description_bank,
+            description_rng,
+            recommendation_targets_np,
+            cache_dtype,
+        )
+
+    optimizer.zero_grad(set_to_none=True)
+    stem_a_parts, rng_a = collect_split_stems(batch["view_a"], model, device, amp_enabled, pin_transfer)
+    stem_b_parts, rng_b = collect_split_stems(batch["view_b"], model, device, amp_enabled, pin_transfer)
+    description_views, description_positions = sample_description_views(
+        batch, description_bank, description_rng, cache_dtype, pin_cache=False
+    )
+    if description_views:
+        stem_description_parts, rng_description = collect_split_stems(
+            description_views, model, device, amp_enabled, pin_transfer
+        )
+        stem_description = torch.cat(stem_description_parts, dim=0).to(device, non_blocking=pin_transfer).requires_grad_(True)
+        z_description = forward_stems_to_outputs(model, [stem_description], amp_enabled)
+    else:
+        stem_description_parts = []
+        rng_description = []
+        stem_description = None
+        z_description = None
+
+    stem_a = torch.cat(stem_a_parts, dim=0).to(device, non_blocking=pin_transfer).requires_grad_(True)
+    stem_b = torch.cat(stem_b_parts, dim=0).to(device, non_blocking=pin_transfer).requires_grad_(True)
+    z_a = forward_stems_to_outputs(model, [stem_a], amp_enabled)
+    z_b = forward_stems_to_outputs(model, [stem_b], amp_enabled)
+    recommendation_targets = recommendation_label_vector(batch, recommendation_targets_np, args, device)
+    loss, vic, adv_loss, stats_a, stats_b, extra = compute_latent_loss(
+        z_a,
+        z_b,
+        expander,
+        adversary,
+        args,
+        amp_enabled,
+        z_description=z_description,
+        description_positions=description_positions,
+        recommendation_targets=recommendation_targets,
+    )
+    scaler.scale(loss).backward()
+
+    stem_a_grads = [grad.detach().cpu().clone() for grad in stem_a.grad.unbind(0)]
+    stem_b_grads = [grad.detach().cpu().clone() for grad in stem_b.grad.unbind(0)]
+    if stem_description is not None and stem_description.grad is not None:
+        stem_description_grads = [grad.detach().cpu().clone() for grad in stem_description.grad.unbind(0)]
+    else:
+        stem_description_grads = []
+    metrics = make_metrics(loss, vic, adv_loss, stats_a, stats_b, batch, extra)
+
+    del (
+        z_a,
+        z_b,
+        z_description,
+        stem_a,
+        stem_b,
+        stem_description,
+        stem_a_parts,
+        stem_b_parts,
+        stem_description_parts,
+        loss,
+        vic,
+        adv_loss,
+        stats_a,
+        stats_b,
+    )
+    if device.type == "cuda":
+        torch.cuda.empty_cache()
+    replay_stem_grads(batch["view_a"], stem_a_grads, rng_a, model, device, amp_enabled, pin_transfer)
+    del stem_a_grads, rng_a
+    replay_stem_grads(batch["view_b"], stem_b_grads, rng_b, model, device, amp_enabled, pin_transfer)
+    del stem_b_grads, rng_b
+    if stem_description_grads:
+        replay_stem_grads(
+            description_views,
+            stem_description_grads,
+            rng_description,
+            model,
+            device,
+            amp_enabled,
+            pin_transfer,
+        )
+        del stem_description_grads, rng_description
+    finish_optimizer_step(model, optimizer, scaler, args)
+    return metrics
 
 
 def run_training_batch_recompute(
@@ -961,7 +1157,9 @@ def run_training_batch_recompute(
 
     del z_a, z_b, z_a_parts, z_b_parts, z_description, z_description_parts, loss, vic, adv_loss, stats_a, stats_b
     replay_latent_grads(batch["view_a"], z_a_grads, rng_a, model, device, amp_enabled, pin_transfer)
+    del z_a_grads, rng_a
     replay_latent_grads(batch["view_b"], z_b_grads, rng_b, model, device, amp_enabled, pin_transfer)
+    del z_b_grads, rng_b
     if z_description_grads:
         replay_latent_grads(
             description_views,
@@ -972,6 +1170,7 @@ def run_training_batch_recompute(
             amp_enabled,
             pin_transfer,
         )
+        del z_description_grads, rng_description
     finish_optimizer_step(model, optimizer, scaler, args)
     return metrics
 
@@ -1013,6 +1212,23 @@ def run_training_batch(
         )
     if args.backward_mode == "recompute":
         return run_training_batch_recompute(
+            batch,
+            model,
+            expander,
+            adversary,
+            optimizer,
+            scaler,
+            args,
+            device,
+            amp_enabled,
+            pin_transfer,
+            description_bank,
+            description_rng,
+            recommendation_targets_np,
+            cache_dtype,
+        )
+    if args.backward_mode == "split_recompute":
+        return run_training_batch_split_recompute(
             batch,
             model,
             expander,
@@ -1109,7 +1325,15 @@ def run_worst_case_smoke(args):
         input_dim = int(h5.attrs["input_dim"])
         worst = select_worst_case_game(h5, args.smoke_worst_case_by)
         batch_indices = [worst["game_index"]] * args.batch_size
-        batch = prepare_batch(h5, batch_indices, args.sample_fraction, rng, cache_dtype, args.pin_cache)
+        batch = prepare_batch(
+            h5,
+            batch_indices,
+            args.sample_fraction,
+            rng,
+            cache_dtype,
+            args.pin_cache,
+            max_view_sentences=args.max_view_sentences,
+        )
 
     model, expander, adversary, optimizer = build_training_components(args, input_dim, device)
     model.train()
@@ -1222,6 +1446,36 @@ def write_history(rows, path):
     atomic_text_write("\n".join(lines) + "\n", path)
 
 
+def read_history(path):
+    path = Path(path)
+    if not path.exists():
+        return []
+    lines = [line.strip() for line in path.read_text(encoding="utf-8-sig").splitlines() if line.strip()]
+    if len(lines) < 2:
+        return []
+    columns = [column.lstrip("\ufeff") for column in lines[0].split("\t")]
+    rows = []
+    for line in lines[1:]:
+        values = line.split("\t")
+        row = {}
+        for column, value in zip(columns, values):
+            try:
+                parsed = float(value)
+                row[column] = int(parsed) if parsed.is_integer() and column in {"epoch", "global_step"} else parsed
+            except ValueError:
+                row[column] = value
+        rows.append(row)
+    return rows
+
+
+def merge_resume_history(history_rows, resume_epoch, global_step, metrics):
+    if resume_epoch <= 0 or not metrics:
+        return history_rows
+    rows = [row for row in history_rows if int(row.get("epoch", -1)) != int(resume_epoch)]
+    rows.append({"epoch": int(resume_epoch), "global_step": int(global_step), **metrics})
+    return sorted(rows, key=lambda row: int(row.get("epoch", 0)))
+
+
 def write_manifest(path, status, args, epoch, step, metrics=None, error=None):
     train_game_indices = getattr(args, "train_game_indices", None)
     payload = {
@@ -1238,6 +1492,7 @@ def write_manifest(path, status, args, epoch, step, metrics=None, error=None):
         "compact_variance_weight": args.compact_variance_weight,
         "compact_covariance_weight": args.compact_covariance_weight,
         "max_batch_sentences": args.max_batch_sentences,
+        "max_view_sentences": args.max_view_sentences,
         "cache_mode": args.cache_mode,
         "backward_mode": args.backward_mode,
         "game_order": args.game_order,
@@ -1387,6 +1642,12 @@ def train(args):
         metrics = resume_checkpoint.get("metrics") or {}
         if "loss" in metrics:
             best_loss = float(metrics["loss"])
+        history_rows = merge_resume_history(
+            read_history(args.history_tsv),
+            int(resume_checkpoint.get("epoch") or 0),
+            global_step,
+            metrics,
+        )
         print(
             f"resumed checkpoint={args.resume_checkpoint} "
             f"from_epoch={start_epoch - 1} global_step={global_step}",
@@ -1398,6 +1659,7 @@ def train(args):
         f"train_games={effective_num_games} "
         f"batch_size={args.batch_size} steps_per_epoch={args.steps_per_epoch} "
         f"max_batch_sentences={args.max_batch_sentences} "
+        f"max_view_sentences={args.max_view_sentences} "
         f"cache_mode={args.cache_mode} backward_mode={args.backward_mode} "
         f"prefetch_batches={args.prefetch_batches} "
         f"sample_fraction={args.sample_fraction} game_order={args.game_order}",
@@ -1589,6 +1851,15 @@ def parse_args():
             "--batch-size so small games pack together while large games form smaller batches."
         ),
     )
+    parser.add_argument(
+        "--max-view-sentences",
+        type=int,
+        default=0,
+        help=(
+            "Optional cap on sampled sentences for each single-game training view. "
+            "This prevents rare ultra-long games from OOMing the attention block."
+        ),
+    )
     parser.add_argument("--sample-fraction", type=float, default=0.6)
     parser.add_argument(
         "--train-game-count",
@@ -1613,9 +1884,13 @@ def parse_args():
     parser.add_argument("--pin-cache", action="store_true")
     parser.add_argument(
         "--backward-mode",
-        choices=["recompute", "standard"],
+        choices=["recompute", "split_recompute", "standard"],
         default="recompute",
-        help="recompute caches only latents, then replays one view at a time for backward to reduce VRAM.",
+        help=(
+            "recompute caches final latents, then replays one view at a time. "
+            "split_recompute caches the latent-array stem and replays only the sentence->latent stem, "
+            "which keeps full windows while reducing long-sequence backward memory."
+        ),
     )
     parser.add_argument(
         "--game-order",
