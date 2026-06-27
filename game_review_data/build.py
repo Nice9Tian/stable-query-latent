@@ -140,14 +140,30 @@ def download_source1(source1_dir: Path, zip_cache: Path) -> bool:
         print(f"[warn] extraction failed: {exc}\nsource1 will be skipped.", flush=True)
         return False
 
-    if not source1_done(source1_dir):
+    if source1_done(source1_dir):
+        print(f"source1: ready ({source1_dir})", flush=True)
+        return True
+
+    # Zip may have extracted under a slightly different folder name — find it.
+    found = None
+    for candidate in source1_dir.parent.iterdir():
+        if candidate.is_dir() and source1_done(candidate):
+            found = candidate
+            break
+
+    if found is None:
         print(
-            f"[warn] extraction finished but expected layout not found under {source1_dir}.\n"
-            "       The zip may have a different internal structure; inspect and pass "
-            "--skip-source1-download with --source1-reviews pointing to the correct path.",
+            f"[warn] extraction finished but no valid source1 layout found under {source1_dir.parent}.\n"
+            "       Expected: games.json + Game Reviews/*.csv inside a top-level folder.\n"
+            "       Place the Mendeley zip at "
+            f"{zip_cache} and re-run, or pass --skip-source1.",
             flush=True,
         )
         return False
+
+    if found != source1_dir:
+        print(f"source1: renaming {found.name!r} -> {source1_dir.name!r}", flush=True)
+        found.rename(source1_dir)
 
     print(f"source1: ready ({source1_dir})", flush=True)
     return True
