@@ -264,13 +264,19 @@ def embed_index_range(
     buf = np.empty((n, dim), dtype=vector_dtype)
 
     # --- pre-tokenize the whole shard (bulk, fast-tokenizer Rust-parallel) ---
+    # GPU is idle during this CPU pass, so log progress or it looks frozen.
     pre_started = time.time()
     ids_cache: list = [None] * n
     pre_chunk = 50_000
+    print(f"{log_prefix}pre-tokenizing {n} sentences (GPU idle until this finishes) ...", flush=True)
     for c in range(0, n, pre_chunk):
         upper = min(c + pre_chunk, n)
         chunk_ids = embedder.tokenize_ids([texts[start + j] for j in range(c, upper)])
         ids_cache[c:upper] = chunk_ids
+        if upper == n or (c // pre_chunk) % 5 == 0:
+            elapsed = time.time() - pre_started
+            rate = upper / elapsed if elapsed > 0 else 0.0
+            print(f"{log_prefix}  pre-tokenized {upper}/{n} ({rate:.0f}/s)", flush=True)
     lengths = [int(len(ids)) for ids in ids_cache]  # true token lengths
     order = list(range(n))  # local positions; row j == sentence start+j
     if sort:
