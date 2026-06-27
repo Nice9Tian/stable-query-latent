@@ -174,7 +174,7 @@ def parse_args():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--input-h5", type=Path, default=DEFAULT_INPUT_H5)
     parser.add_argument("--output-h5", type=Path, default=DEFAULT_OUTPUT_H5)
-    parser.add_argument("--backend", choices=["local", "cloud"], default="cloud")
+    parser.add_argument("--backend", choices=["local", "cloud"], default="local")
     parser.add_argument("--local-model", default=DEFAULT_LOCAL_MODEL)
     parser.add_argument("--device", default=None)
     parser.add_argument("--base-url", default=None)
