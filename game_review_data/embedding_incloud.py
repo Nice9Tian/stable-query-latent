@@ -69,8 +69,6 @@ DEFAULT_LOCAL_MODEL = "Qwen/Qwen3-Embedding-0.6B"
 EMBEDDING_BACKEND = "local_incloud"
 DEFAULT_SHARD_SIZE = 2_000_000
 MANIFEST_SCHEMA = "embedding_incloud.manifest.v1"
-# Rough chars-per-token used only to size token-budget batches from char length.
-CHARS_PER_TOKEN_EST = 4
 
 
 class FatGpuEmbedder:
@@ -91,6 +89,11 @@ class FatGpuEmbedder:
         # Left padding => the last real token is always at column -1, so pooling
         # is a single slice with no per-row gather.
         self.tokenizer = AutoTokenizer.from_pretrained(model_name, padding_side="left")
+        self.pad_id = (
+            self.tokenizer.pad_token_id
+            if self.tokenizer.pad_token_id is not None
+            else (self.tokenizer.eos_token_id or 0)
+        )
 
         dtype = torch.bfloat16 if self.device.startswith("cuda") else torch.float32
         self.model = self._load_model(AutoModel, model_name, dtype, attn_impl)
@@ -122,6 +125,37 @@ class FatGpuEmbedder:
             max_length=self.max_length,
             return_tensors="pt",
         )
+        if pin_memory and self.device.startswith("cuda"):
+            enc = {key: value.pin_memory() for key, value in enc.items()}
+        return enc
+
+    def tokenize_ids(self, texts):
+        """Ragged, truncated token ids (no padding) -> list of int32 arrays.
+
+        Used to learn each sentence's *true* token length up front, so batches
+        can be packed by real token count (robust to CJK/multilingual text where
+        chars-per-token varies wildly).
+        """
+        enc = self.tokenizer(texts, padding=False, truncation=True, max_length=self.max_length)
+        return [np.asarray(ids, dtype=np.int32) for ids in enc["input_ids"]]
+
+    def pad_ids(self, ids_list, pin_memory=False):
+        """Left-pad a batch of cached id arrays into model-ready tensors."""
+        torch = self.torch
+        maxlen = max((len(ids) for ids in ids_list), default=1)
+        maxlen = max(int(maxlen), 1)
+        rows = len(ids_list)
+        input_ids = np.full((rows, maxlen), self.pad_id, dtype=np.int64)
+        attention = np.zeros((rows, maxlen), dtype=np.int64)
+        for row, ids in enumerate(ids_list):
+            length = len(ids)
+            if length:
+                input_ids[row, maxlen - length:] = ids  # left pad
+                attention[row, maxlen - length:] = 1
+        enc = {
+            "input_ids": torch.from_numpy(input_ids),
+            "attention_mask": torch.from_numpy(attention),
+        }
         if pin_memory and self.device.startswith("cuda"):
             enc = {key: value.pin_memory() for key, value in enc.items()}
         return enc
@@ -174,32 +208,27 @@ def plan_shards(total: int, shard_size: int) -> list[dict]:
     return shards
 
 
-def build_batches(order, texts, batch_size, token_budget, max_batch, max_length):
-    """Group sorted indices into batches.
+def build_batches(order, lengths, batch_size, token_budget, max_batch):
+    """Group length-sorted local indices into batches.
 
-    With ``token_budget > 0`` (and a length-sorted ``order``), pack each batch to
-    a roughly fixed total token count: the head element (longest, since sorted
-    descending) sets the padded width, so ``k = char_budget // head_len`` keeps
-    every batch's padded compute about equal — short sentences get thousands per
-    batch, long ones get a handful. This keeps the GPU saturated across the whole
-    length range instead of starving on tiny short-sentence batches.
-
-    Token counts are estimated from character length (``CHARS_PER_TOKEN_EST``);
-    it is approximate, so tune ``token_budget`` by watching GPU memory.
+    ``order`` is local positions sorted by *true* token length (descending) and
+    ``lengths`` are those true token counts. With ``token_budget > 0`` each batch
+    packs ``k`` items so that ``k * head_len <= token_budget`` (head = the batch's
+    longest, which sets the padded width). Because lengths are real token counts,
+    the padded token total is a hard bound regardless of language — short
+    sentences get many per batch, long ones get few, and it never OOMs from a
+    bad chars-per-token guess.
     """
     if not token_budget or token_budget <= 0:
         return [order[i : i + batch_size] for i in range(0, len(order), batch_size)]
 
-    char_budget = max(1, int(token_budget) * CHARS_PER_TOKEN_EST)
-    cap_len = max(1, int(max_length) * CHARS_PER_TOKEN_EST)
+    budget = max(1, int(token_budget))
     batches = []
     i = 0
     n = len(order)
     while i < n:
-        head = min(len(texts[order[i]]), cap_len)  # padded width of this batch
-        head = max(head, 1)
-        k = char_budget // head
-        k = max(1, min(int(max_batch), k))
+        head = max(int(lengths[order[i]]), 1)  # longest in this run -> padded width
+        k = max(1, min(int(max_batch), budget // head))
         batches.append(order[i : i + k])
         i += k
     return batches
@@ -226,16 +255,34 @@ def embed_index_range(
 ):
     """Embed the contiguous original-order range [start, end) -> (end-start, dim).
 
-    Length-sorting only reorders GPU work; every vector is scattered back to
-    ``global_index - start``, so the returned buffer is in original order.
+    Tokenizes the shard once up front (to learn true token lengths and cache the
+    ids), packs batches by real token count, then runs the GPU forward from the
+    cached ids. ``buf`` row ``j`` always holds sentence ``start + j``, so the
+    in-shard length sort never affects output order.
     """
     n = end - start
     buf = np.empty((n, dim), dtype=vector_dtype)
-    order = list(range(start, end))
+
+    # --- pre-tokenize the whole shard (bulk, fast-tokenizer Rust-parallel) ---
+    pre_started = time.time()
+    ids_cache: list = [None] * n
+    pre_chunk = 50_000
+    for c in range(0, n, pre_chunk):
+        upper = min(c + pre_chunk, n)
+        chunk_ids = embedder.tokenize_ids([texts[start + j] for j in range(c, upper)])
+        ids_cache[c:upper] = chunk_ids
+    lengths = [int(len(ids)) for ids in ids_cache]  # true token lengths
+    order = list(range(n))  # local positions; row j == sentence start+j
     if sort:
-        order.sort(key=lambda i: len(texts[i]), reverse=True)
-    batches = build_batches(order, texts, batch_size, token_budget, max_batch, max_length)
+        order.sort(key=lambda j: lengths[j], reverse=True)
+    batches = build_batches(order, lengths, batch_size, token_budget, max_batch)
     n_batches = len(batches)
+    print(
+        f"{log_prefix}pre-tokenized {n} sentences in {time.time() - pre_started:.1f}s "
+        f"-> {n_batches} batches (max token len={max(lengths) if lengths else 0})",
+        flush=True,
+    )
+
     max_in_flight = max(1, prefetch)
     started = time.time()
     done_sentences = 0
@@ -243,9 +290,8 @@ def embed_index_range(
     last_log_batches = 0
     log_every = 50
 
-    def tokenize_job(batch_indices):
-        batch_texts = [texts[i] for i in batch_indices]
-        return batch_indices, embedder.tokenize(batch_texts, pin_memory=True)
+    def pad_job(local_batch):
+        return local_batch, embedder.pad_ids([ids_cache[j] for j in local_batch], pin_memory=True)
 
     with ThreadPoolExecutor(max_workers=max(1, tok_workers)) as executor:
         in_flight = {}
@@ -254,7 +300,7 @@ def embed_index_range(
         def fill():
             nonlocal next_submit
             while next_submit < n_batches and len(in_flight) < max_in_flight:
-                future = executor.submit(tokenize_job, batches[next_submit])
+                future = executor.submit(pad_job, batches[next_submit])
                 in_flight[future] = next_submit
                 next_submit += 1
 
@@ -263,11 +309,10 @@ def embed_index_range(
             ready, _ = wait(in_flight, return_when=FIRST_COMPLETED)
             for future in ready:
                 in_flight.pop(future)
-                batch_indices, enc = future.result()
+                local_batch, enc = future.result()
                 vectors = embedder.embed_tokens(enc, normalize=normalize, out_dtype=torch_out_dtype)
-                # Scatter by original index (offset to shard-local position).
-                buf[np.asarray(batch_indices, dtype=np.int64) - start] = vectors
-                done_sentences += len(batch_indices)
+                buf[np.asarray(local_batch, dtype=np.int64)] = vectors  # row j == sentence start+j
+                done_sentences += len(local_batch)
                 done_batches += 1
             fill()
             if done_batches == 1 or done_batches == n_batches or done_batches - last_log_batches >= log_every:
@@ -509,8 +554,8 @@ def parse_args():
         "--token-budget",
         default=131072,
         type=int,
-        help="approx tokens/batch for dynamic batching (0 disables -> fixed --batch-size); "
-        "raise it until GPU memory is ~70%% full",
+        help="hard cap on real tokens/batch for dynamic batching (0 disables -> fixed "
+        "--batch-size); raise it until GPU memory is ~70%% full",
     )
     parser.add_argument(
         "--max-batch",
