@@ -103,12 +103,25 @@ def download_source1(source1_dir: Path, zip_cache: Path) -> bool:
         zip_cache.parent.mkdir(parents=True, exist_ok=True)
         tmp_zip = zip_cache.with_suffix(".zip.tmp")
         try:
-            def _progress(block_count, block_size, total_size):
-                if total_size > 0 and block_count % 500 == 0:
-                    pct = min(100, block_count * block_size * 100 // total_size)
-                    print(f"  ... {pct}%", flush=True)
-
-            urllib.request.urlretrieve(SOURCE1_DOWNLOAD_URL, str(tmp_zip), _progress)
+            req = urllib.request.Request(
+                SOURCE1_DOWNLOAD_URL,
+                headers={"User-Agent": "Mozilla/5.0"},
+            )
+            with urllib.request.urlopen(req) as resp:
+                total = int(resp.headers.get("content-length") or 0)
+                downloaded = 0
+                chunk = 1 << 20  # 1 MB
+                with tmp_zip.open("wb") as f:
+                    while True:
+                        block = resp.read(chunk)
+                        if not block:
+                            break
+                        f.write(block)
+                        downloaded += len(block)
+                        if total > 0:
+                            pct = downloaded * 100 // total
+                            if downloaded % (500 << 20) < chunk:
+                                print(f"  ... {pct}% ({downloaded >> 20} MB)", flush=True)
             tmp_zip.replace(zip_cache)
         except Exception as exc:
             tmp_zip.unlink(missing_ok=True)
