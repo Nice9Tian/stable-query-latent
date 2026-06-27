@@ -85,6 +85,7 @@ class CloudEmbedder:
         self,
         base_url=None,
         token_file=None,
+        credentials=None,
         concurrency=256,
         batch_size=32,
         max_in_flight=None,
@@ -93,7 +94,7 @@ class CloudEmbedder:
         from cloud_embedding import DEFAULT_TOKEN_FILE, EmbeddingClient, chunked, load_credentials
 
         self.chunked = chunked
-        creds = load_credentials(token_file or DEFAULT_TOKEN_FILE)
+        creds = credentials or load_credentials(token_file or DEFAULT_TOKEN_FILE)
         self.client = EmbeddingClient(base_url or creds["url"], creds["token"], normalize=normalize)
         self.batch_size = batch_size
         self.max_in_flight = max_in_flight or concurrency
@@ -129,34 +130,54 @@ class CloudEmbedder:
         self.executor.shutdown(wait=True)
 
 
+def _build_local_embedder(**kwargs):
+    local_model = kwargs.get("local_model", DEFAULT_LOCAL_MODEL)
+    return LocalEmbedder(
+        local_model,
+        device=kwargs.get("device"),
+        batch_size=kwargs.get("batch_size", 32),
+    ), local_model
+
+
 def make_embedder(backend: str, **kwargs):
+    local_model = kwargs.get("local_model", DEFAULT_LOCAL_MODEL)
     if backend == "local":
-        return LocalEmbedder(
-            kwargs.get("local_model", DEFAULT_LOCAL_MODEL),
-            device=kwargs.get("device"),
-            batch_size=kwargs.get("batch_size", 32),
-        ), kwargs.get("local_model", DEFAULT_LOCAL_MODEL)
+        embedder, model_name = _build_local_embedder(**kwargs)
+        return embedder, model_name, "local"
+
+    try:
+        from cloud_embedding import DEFAULT_TOKEN_FILE, load_credentials
+
+        creds = load_credentials(kwargs.get("token_file") or DEFAULT_TOKEN_FILE)
+    except (FileNotFoundError, ValueError, OSError, UnicodeError) as exc:
+        print(
+            f"embed_data: cloud tokenAPI unavailable ({exc}); falling back to local embedding.",
+            flush=True,
+        )
+        embedder, model_name = _build_local_embedder(**kwargs)
+        return embedder, model_name, "local"
 
     return CloudEmbedder(
         base_url=kwargs.get("base_url"),
         token_file=kwargs.get("token_file"),
+        credentials=creds,
         concurrency=kwargs.get("concurrency", 256),
         batch_size=kwargs.get("batch_size", 32),
         max_in_flight=kwargs.get("max_in_flight"),
         normalize=kwargs.get("normalize", False),
-    ), kwargs.get("local_model", DEFAULT_LOCAL_MODEL)
+    ), local_model, "cloud"
 
 
 def embed_data(input_h5, output_h5, backend, overwrite=False, **kwargs):
     """Compatibility wrapper used by build.py."""
-    embedder, model_name = make_embedder(backend, **kwargs)
+    embedder, model_name, actual_backend = make_embedder(backend, **kwargs)
     closer = getattr(embedder, "close", None)
     try:
         return embed_text_h5(
             input_h5=input_h5,
             output_h5=output_h5,
             embedder=embedder,
-            backend=backend,
+            backend=actual_backend,
             embedding_model=model_name,
             overwrite=overwrite,
             read_batch_size=kwargs.get("read_batch_size", 4096),

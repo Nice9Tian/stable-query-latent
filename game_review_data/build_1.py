@@ -46,7 +46,7 @@ def parse_args():
     parser.add_argument("--tap-mapping", type=Path, default=DEFAULT_TAP_MAPPING)
     parser.add_argument("--no-tap-labels", action="store_true")
 
-    parser.add_argument("--backend", choices=["local", "cloud"], default="cloud")
+    parser.add_argument("--backend", choices=["local", "cloud"], default="local")
     parser.add_argument("--local-model", default=DEFAULT_LOCAL_MODEL)
     parser.add_argument("--embed-device", default=None)
     parser.add_argument("--base-url", default=None)
