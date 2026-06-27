@@ -131,7 +131,7 @@ def download_source1(source1_dir: Path, zip_cache: Path) -> bool:
     else:
         print(f"source1: using cached zip {zip_cache}", flush=True)
 
-    # Extract
+    # Extract outer zip
     print(f"source1: extracting to {source1_dir.parent} ...", flush=True)
     try:
         with zipfile.ZipFile(zip_cache, "r") as zf:
@@ -140,30 +140,46 @@ def download_source1(source1_dir: Path, zip_cache: Path) -> bool:
         print(f"[warn] extraction failed: {exc}\nsource1 will be skipped.", flush=True)
         return False
 
-    if source1_done(source1_dir):
-        print(f"source1: ready ({source1_dir})", flush=True)
-        return True
+    # Locate the extracted folder (name may differ slightly from expected)
+    extracted = source1_dir
+    if not extracted.is_dir():
+        for candidate in source1_dir.parent.iterdir():
+            if candidate.is_dir() and (candidate / "games.json").exists():
+                extracted = candidate
+                break
 
-    # Zip may have extracted under a slightly different folder name — find it.
-    found = None
-    for candidate in source1_dir.parent.iterdir():
-        if candidate.is_dir() and source1_done(candidate):
-            found = candidate
-            break
-
-    if found is None:
+    if not extracted.is_dir():
         print(
-            f"[warn] extraction finished but no valid source1 layout found under {source1_dir.parent}.\n"
-            "       Expected: games.json + Game Reviews/*.csv inside a top-level folder.\n"
-            "       Place the Mendeley zip at "
-            f"{zip_cache} and re-run, or pass --skip-source1.",
+            f"[warn] outer zip extracted but no folder with games.json found under {source1_dir.parent}.\n"
+            f"       Place the Mendeley zip at {zip_cache} and re-run, or pass --skip-source1.",
             flush=True,
         )
         return False
 
-    if found != source1_dir:
-        print(f"source1: renaming {found.name!r} -> {source1_dir.name!r}", flush=True)
-        found.rename(source1_dir)
+    # The dataset ships Game Reviews as a nested zip — extract it too.
+    inner_zip = extracted / "Game Reviews.zip"
+    reviews_dir = extracted / "Game Reviews"
+    if inner_zip.exists() and not (reviews_dir.exists() and any(reviews_dir.glob("*.csv"))):
+        print(f"source1: extracting inner zip {inner_zip.name} ...", flush=True)
+        try:
+            with zipfile.ZipFile(inner_zip, "r") as zf:
+                zf.extractall(extracted)
+        except Exception as exc:
+            print(f"[warn] inner zip extraction failed: {exc}\nsource1 will be skipped.", flush=True)
+            return False
+
+    # Rename to canonical path if needed
+    if extracted != source1_dir:
+        print(f"source1: renaming {extracted.name!r} -> {source1_dir.name!r}", flush=True)
+        extracted.rename(source1_dir)
+
+    if not source1_done(source1_dir):
+        print(
+            f"[warn] extraction finished but Game Reviews/*.csv still not found under {source1_dir}.\n"
+            "       Pass --skip-source1 to continue without it.",
+            flush=True,
+        )
+        return False
 
     print(f"source1: ready ({source1_dir})", flush=True)
     return True
