@@ -1,10 +1,10 @@
-"""Train the deployable PXI head from VICReg(cleaned_3 H5) features.
+"""Train the deployable PXI head from unified game-review H5 features.
 
 This is the real-text PXI path:
 
-    H5 game vectors from game_review_cleaned_3_sentences.h5
-      (cleaned_3 prepends detailed_description/about_the_game/short_description
-       before the review texts)
+    H5 game vectors from game_review_data/embedding_h5.h5
+      (the source text H5 prepends detailed_description/about_the_game/
+       short_description before the review texts)
       -> frozen VICReg encoder
       -> cached VICReg code
       -> cross-validated linear PXI mean-regression head
@@ -38,7 +38,7 @@ if str(ROOT / "game_review_data") not in sys.path:
 from game_review_data.embedding_data import DEFAULT_LOCAL_MODEL, LocalEmbedder  # noqa: E402
 from VICReg_review.train_tag_probe import load_frozen_encoder, pool_features, sample_game_views  # noqa: E402
 
-DEFAULT_H5 = ROOT / "VICReg_review" / "h5" / "game_review_cleaned_3_sentences.h5"
+DEFAULT_H5 = ROOT / "game_review_data" / "embedding_h5.h5"
 DEFAULT_DESCRIPTIONS = ROOT / "VICReg_review" / "tags" / "game_descriptions"
 DEFAULT_OVERLAP = SCRIPT_DIR / "pxi_vicreg_overlap.json"
 DEFAULT_CACHE = ROOT / "VICReg_review" / "tags" / "pxi_feat_h5_cleaned3_vicreg_adv10_best_fv4_sf0.6.npz"

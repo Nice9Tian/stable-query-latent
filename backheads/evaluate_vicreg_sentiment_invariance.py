@@ -28,7 +28,7 @@ from VICReg_review.train_tag_probe import load_frozen_encoder, pool_features, sa
 
 DEFAULT_CACHE = SCRIPT_DIR / "heads" / "recommendation_vicreg_features.npz"
 DEFAULT_PROBE = SCRIPT_DIR / "heads" / "recommendation_vicreg_linear_probe.pt"
-DEFAULT_H5 = ROOT / "VICReg_review" / "h5" / "game_review_cleaned_3_sentences.h5"
+DEFAULT_H5 = ROOT / "game_review_data" / "embedding_h5.h5"
 DEFAULT_REPORT = SCRIPT_DIR / "VICREG_SENTIMENT_INVARIANCE_REPORT.md"
 
 DEFAULT_CASES = [

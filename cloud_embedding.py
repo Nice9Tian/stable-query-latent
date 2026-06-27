@@ -1,10 +1,9 @@
-"""Embed the split game-review sentences with a remote HuggingFace TEI endpoint.
+"""Legacy flat cloud embedder and shared HuggingFace TEI HTTP client.
 
-Reads each JSON list of sentences in ``game_review_cleaned_3_sentences/``, sends
-them to the (Nvidia L4, max-concurrency 512) text-embeddings endpoint in batched
-concurrent requests, and writes one big JSON list of sentence vectors per file to
-``game_review_cleaned_3_sentence_embeddings/`` -- the same layout the local
-pipeline produced.
+New game-review builds should use ``game_review_data/build.py``; that writes
+``text_h5.h5`` first, then streams embeddings into ``embedding_h5.h5``. This
+module remains the shared robust TEI client used by the cloud backend, plus a
+legacy CLI for flat JSON-list sentence inputs.
 
 The API token is read from the local ``tokenAPI.txt`` file (gitignored) instead
 of being hardcoded.
@@ -34,9 +33,9 @@ DEFAULT_TOKEN_FILE = str(SCRIPT_DIR / "tokenAPI.txt")
 DEFAULT_INPUT_DIR = str(SCRIPT_DIR / "game_review_data" / "game_review_cleaned_3_sentences")
 DEFAULT_OUTPUT_DIR = str(SCRIPT_DIR / "game_review_data" / "game_review_cleaned_3_sentence_embeddings")
 
-# The endpoint is configured for an Nvidia L4 with a maximum concurrency of 512,
-# so keep at most this many requests in flight at once.
-DEFAULT_CONCURRENCY = 512
+# 512 is the server queue limit, not usable headroom. Keep the default below it
+# and let the retry budget handle autoscale / brief overloads.
+DEFAULT_CONCURRENCY = 256
 # Sentences per request. TEI batches server-side; a small batch cuts the number
 # of HTTP round-trips while staying well under the per-request token budget.
 DEFAULT_BATCH_SIZE = 32

@@ -24,7 +24,7 @@ PROJECT_ROOT = SCRIPT_DIR.parent
 if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
-DEFAULT_H5 = SCRIPT_DIR / "h5" / "game_review_cleaned_3_sentences.h5"
+DEFAULT_H5 = PROJECT_ROOT / "game_review_data" / "embedding_h5.h5"
 DEFAULT_TAGS_DIR = SCRIPT_DIR / "tags"
 DEFAULT_CACHE = SCRIPT_DIR / "tags" / "raw_mean_features.npz"
 

@@ -55,8 +55,9 @@ from VICReg_review.train_tag_probe import (  # noqa: E402
     sample_game_views,
     summarize as tag_summarize,
 )
+from VICReg_review.train_vicreg_review_h5 import validate_training_h5  # noqa: E402
 
-DEFAULT_H5 = SCRIPT_DIR / "h5" / "game_review_cleaned_3_sentences.h5"
+DEFAULT_H5 = ROOT / "game_review_data" / "embedding_h5.h5"
 DEFAULT_OUT_DIR = SCRIPT_DIR / "heads" / "data_view_sweep"
 DEFAULT_DESCRIPTION_CACHE = SCRIPT_DIR / "heads" / "description_embedding_cache_train_only.npz"
 DEFAULT_PYTHON = Path(sys.executable)
@@ -1214,11 +1215,11 @@ def resolve_pool_and_counts(args) -> int:
     if not Path(args.h5).exists():
         raise SystemExit(
             f"H5 not found: {args.h5}\n"
-            "Build it from the embedded corpus first, e.g.:\n"
-            "  python VICReg_review/build_review_h5.py --input-dir <embedded> "
-            "--games-json <games.json> --output-h5 " + str(args.h5)
+            "Build it first, e.g.:\n"
+            "  python game_review_data/build.py --backend cloud"
         )
     with h5py.File(args.h5, "r") as h5:
+        validate_training_h5(h5, args.h5)
         pool = int(h5["game_names"].shape[0])
 
     normalized = []

@@ -5,10 +5,11 @@ This is the second source pipeline used by the top-level ``build.py``:
 1. download Kaggle ``andrewmvd/steam-reviews`` when needed;
 2. filter it into per-game CSVs with ``prepare_kaggle_steam_reviews.py``;
 3. enrich ``games.json`` with Steam store-page descriptions/tags;
-4. run ``build_1.py`` on the prepared per-game CSVs.
+4. run ``build_1.py`` on the prepared per-game CSVs to produce text/embedding H5.
 
 The script is resumable by default. Existing prepared CSVs, metadata JSONs,
-sentence JSONs, and embedded JSONs are skipped unless ``--overwrite`` is passed.
+sentence JSONs, text H5, and embedding H5 are skipped unless ``--overwrite`` is
+passed.
 """
 
 from __future__ import annotations
@@ -25,7 +26,7 @@ DEFAULT_DATASET = "andrewmvd/steam-reviews"
 DEFAULT_PREPARED_DIR = SCRIPT_DIR / "kaggle_steam_reviews_prepared"
 DEFAULT_WORKDIR = SCRIPT_DIR / "build_2_gamedata"
 DEFAULT_KAGGLE_CACHE = SCRIPT_DIR / "kagglehub_cache"
-STAGES = ("metadata", "split", "embed")
+STAGES = ("metadata", "split", "text-h5", "embed-h5")
 
 
 def run_command(cmd: list[str], cwd: Path = SCRIPT_DIR, env: dict[str, str] | None = None) -> None:
@@ -89,6 +90,12 @@ def build_pipeline(args) -> None:
         str(args.concurrency),
         "--batch-size",
         str(args.batch_size),
+        "--read-batch-size",
+        str(args.read_batch_size),
+        "--embedding-dtype",
+        args.embedding_dtype,
+        "--embedding-compression",
+        args.embedding_compression,
     ]
     if args.only:
         cmd.extend(["--only", *args.only])
@@ -108,6 +115,10 @@ def build_pipeline(args) -> None:
         cmd.extend(["--token-file", args.token_file])
     if args.normalize:
         cmd.append("--normalize")
+    if args.max_in_flight:
+        cmd.extend(["--max-in-flight", str(args.max_in_flight)])
+    if args.no_tap_labels:
+        cmd.append("--no-tap-labels")
     run_command(cmd)
 
 
@@ -143,7 +154,7 @@ def parse_args():
     parser.add_argument("--enrich-retry-sleep", type=float, default=10.0)
     parser.add_argument("--enrich-retries", type=int, default=5)
 
-    # split/embed
+    # split/embed H5
     parser.add_argument("--split-model", default="sat-3l-sm")
     parser.add_argument("--split-device", default=None)
     parser.add_argument("--chunk-size", type=int, default=2000)
@@ -154,7 +165,12 @@ def parse_args():
     parser.add_argument("--token-file", default=None)
     parser.add_argument("--concurrency", type=int, default=256)
     parser.add_argument("--batch-size", type=int, default=32)
+    parser.add_argument("--max-in-flight", type=int, default=None)
+    parser.add_argument("--read-batch-size", type=int, default=4096)
     parser.add_argument("--normalize", action="store_true")
+    parser.add_argument("--embedding-dtype", choices=["float16", "float32"], default="float16")
+    parser.add_argument("--embedding-compression", choices=["none", "gzip", "lzf"], default="none")
+    parser.add_argument("--no-tap-labels", action="store_true")
     return parser.parse_args()
 
 

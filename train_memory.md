@@ -57,3 +57,11 @@ Expected behavior on resume:
 - Keep using `split_recompute`; it is the current OOM-avoidance path.
 - Do not start a new output directory unless explicitly requested. Reusing the existing output directory preserves resume behavior and prevents losing the already completed combinations.
 - Do not rely only on `data_view_sweep_summary.csv` until the resumed scheduler refreshes it.
+
+## Corpus Format Note
+
+- Game-review builds now produce two unified H5 files:
+  `text_h5.h5` after cleaning/splitting, then `embedding_h5.h5` after streaming
+  Qwen embeddings.
+- New training and BERTopic paths read `embedding_h5.h5` directly. Per-game
+  embedded JSON and the old JSON-to-H5 converter are legacy-only paths.

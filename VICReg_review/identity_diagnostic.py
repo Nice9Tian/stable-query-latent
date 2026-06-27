@@ -38,7 +38,7 @@ from game_review_data.embedding_data import DEFAULT_LOCAL_MODEL, LocalEmbedder  
 from VICReg_review.model import GameCentroidExpander  # noqa: E402
 from VICReg_review.train_tag_probe import load_frozen_encoder, sample_game_views  # noqa: E402
 
-DEFAULT_H5 = SCRIPT_DIR / "h5" / "game_review_cleaned_3_sentences.h5"
+DEFAULT_H5 = ROOT / "game_review_data" / "embedding_h5.h5"
 DEFAULT_REPORT = ROOT / "backheads" / "VICREG_SENTIMENT_INVARIANCE_REPORT.md"
 DEFAULT_ENCODER = SCRIPT_DIR / "heads" / "vicreg_review_h5_best.pt"
 DEFAULT_CACHE_DIR = SCRIPT_DIR / "tags"

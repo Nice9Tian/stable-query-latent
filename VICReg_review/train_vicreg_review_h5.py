@@ -1,9 +1,9 @@
 """Train VICReg review model from prebuilt HDF5 data.
 
 This avoids reparsing giant JSON files in the training loop. Batches are built
-from a streamable H5 file produced by build_review_h5.py. Each game is loaded as
-one contiguous vector block, two 60 percent review-level views are sampled, and
-the final VICReg loss is computed over a large batch of games.
+from the streamable H5 file produced by ``game_review_data/build.py``. Each game
+is loaded as one contiguous vector block, two 60 percent review-level views are
+sampled, and the final VICReg loss is computed over a large batch of games.
 """
 
 import argparse
@@ -37,12 +37,18 @@ from VICReg_review.model import (  # noqa: E402
     vicreg_loss,
 )
 
-DEFAULT_H5 = SCRIPT_DIR / "h5" / "game_review_cleaned_3_sentences.h5"
+DEFAULT_H5 = PROJECT_ROOT / "game_review_data" / "embedding_h5.h5"
 DEFAULT_SST_CHECKPOINT = PROJECT_ROOT / "sst" / "heads" / "mlp4_1024_128_32_8_1_best.pt"
 DEFAULT_HEADS_DIR = SCRIPT_DIR / "heads"
 DEFAULT_SMOKE_RESULT = DEFAULT_HEADS_DIR / "vicreg_review_h5_worst_case_smoke.json"
 DEFAULT_DESCRIPTION_DIR = SCRIPT_DIR / "tags" / "game_descriptions"
 DEFAULT_DESCRIPTION_CACHE = DEFAULT_HEADS_DIR / "description_embedding_cache.npz"
+REQUIRED_TRAINING_H5_DATASETS = (
+    "vectors",
+    "review_offsets",
+    "game_review_offsets",
+    "game_names",
+)
 
 
 def decode_name(value):
@@ -97,6 +103,38 @@ def atomic_text_write(text, path):
     except BaseException:
         tmp_path.unlink(missing_ok=True)
         raise
+
+
+def validate_training_h5(h5, path=None):
+    missing = [name for name in REQUIRED_TRAINING_H5_DATASETS if name not in h5]
+    if missing:
+        hint = ""
+        if "texts" in h5 and "vectors" not in h5:
+            hint = " This looks like text_h5.h5; run the embed-h5 stage and pass embedding_h5.h5."
+        raise ValueError(f"Training H5 is missing datasets {missing}.{hint}")
+    vectors = h5["vectors"]
+    review_offsets = h5["review_offsets"]
+    game_review_offsets = h5["game_review_offsets"]
+    game_names = h5["game_names"]
+    if vectors.ndim != 2:
+        raise ValueError(f"{path or 'H5'}: vectors must be 2D, got shape {vectors.shape}")
+    if review_offsets.ndim != 1 or game_review_offsets.ndim != 1:
+        raise ValueError(f"{path or 'H5'}: review/game offsets must be 1D")
+    if int(review_offsets.shape[0]) < 1 or int(game_review_offsets.shape[0]) != int(game_names.shape[0]) + 1:
+        raise ValueError(f"{path or 'H5'}: invalid game/review offset lengths")
+    if int(review_offsets[-1]) != int(vectors.shape[0]):
+        raise ValueError(
+            f"{path or 'H5'}: review_offsets[-1]={int(review_offsets[-1])} "
+            f"but vectors rows={int(vectors.shape[0])}"
+        )
+    if int(game_review_offsets[-1]) != int(review_offsets.shape[0] - 1):
+        raise ValueError(
+            f"{path or 'H5'}: game_review_offsets[-1]={int(game_review_offsets[-1])} "
+            f"but review count={int(review_offsets.shape[0] - 1)}"
+        )
+    if "appids" in h5 and int(h5["appids"].shape[0]) != int(game_names.shape[0]):
+        raise ValueError(f"{path or 'H5'}: appids length does not match game_names")
+    return True
 
 
 def default_extra_description_sources():
@@ -1557,6 +1595,7 @@ def train(args):
     probe_rows = []
 
     with h5py.File(args.input_h5, "r") as h5:
+        validate_training_h5(h5, args.input_h5)
         num_games = int(h5["game_names"].shape[0])
         input_dim = int(h5.attrs["input_dim"])
         total_sentences = int(h5["vectors"].shape[0])

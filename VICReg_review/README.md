@@ -2,8 +2,8 @@
 
 Self-supervised game-review encoder:
 
-- Pick one game JSON from `game_review_data/game_review_cleaned_3_sentences`.
-- Build two views by independently sampling 60 percent of reviews.
+- Read unified game-review data directly from `game_review_data/embedding_h5.h5`.
+- Build two views per game by independently sampling 60 percent of reviews.
 - Encode both views with one shared `LatentArrayMLP` (`Latent_Array_MLP` alias):
   input `1024 -> latent_dim 256`, 256 learnable query slots, a single
   cross-attention layer (no residuals, no extra blocks), then a per-latent funnel.
@@ -24,22 +24,22 @@ Self-supervised game-review encoder:
 Default run:
 
 ```powershell
-C:/Users/admin/anaconda3/envs/cuda_Vit/python.exe VICReg_review/train_vicreg_review.py --device cuda --amp
+C:/Users/admin/anaconda3/envs/cuda_Vit/python.exe VICReg_review/train_vicreg_review_h5.py --input-h5 game_review_data/embedding_h5.h5 --device cuda --amp
 ```
 
 Useful smoke test:
 
 ```powershell
-C:/Users/admin/anaconda3/envs/cuda_Vit/python.exe VICReg_review/train_vicreg_review.py --device cpu --epochs 1 --steps-per-epoch 1 --limit-games 1 --max-sentences 8 --no-save
+C:/Users/admin/anaconda3/envs/cuda_Vit/python.exe VICReg_review/train_vicreg_review_h5.py --input-h5 game_review_data/embedding_h5.h5 --device cpu --epochs 1 --steps-per-epoch 1 --batch-size 1 --limit-games 1 --no-save
 ```
 
 Outputs are written under `VICReg_review/heads/` by default. Checkpoints and JSON
 manifests are ignored by the project `.gitignore`.
 
-HDF5 path for faster training:
+Build the H5 corpus, then train:
 
 ```powershell
-C:/Users/admin/anaconda3/envs/cuda_Vit/python.exe VICReg_review/build_review_h5.py --workers 2 --shards 8
+C:/Users/admin/anaconda3/envs/cuda_Vit/python.exe game_review_data/build.py --backend cloud
 C:/Users/admin/anaconda3/envs/cuda_Vit/python.exe VICReg_review/train_vicreg_review_h5.py --device cuda --amp `
   --epochs 30 --steps-per-epoch 4 --batch-size 128 `
   --vicreg-scope game --output-dim 64 --reduce-hidden 128 `
@@ -47,10 +47,12 @@ C:/Users/admin/anaconda3/envs/cuda_Vit/python.exe VICReg_review/train_vicreg_rev
   --compact-variance-weight 25 --compact-covariance-weight 25
 ```
 
-`build_review_h5.py` also writes TAP labels into the H5:
+`game_review_data/build.py` writes TAP labels into the H5:
 `tap_names`, `tap_labels`, `tap_raw_counts`, `appids`, and `game_titles`.
 The only tag mapping source is `VICReg_review/tags/tap_mapping.json`, where each
 fine Steam tag maps to one coarse TAP class or `"del"`.
+`build_review_h5.py` is now only a legacy converter for old embedded JSON
+corpora.
 
 Use `--cache-mode full` only when RAM can hold the next prepared epoch. The
 default `queue` mode overlaps H5 loading with GPU training using a bounded

@@ -1,67 +1,65 @@
-"""Orchestrator for the game-review embedding pipeline. Runs the three stages in
-sequence inside a single working directory (handy for experiments):
+"""Small-workdir orchestrator for the unified game-review H5 pipeline.
 
-    <workdir>/metadata    build_metadata.py : raw review CSVs -> per-game JSON arrays
-    <workdir>/sentences   split_data.py     : -> nested review_id/sentence_id text
-    <workdir>/embedded    embedding_data.py : -> same nested structure + vectors
+Outputs under ``--workdir``:
 
-Each stage can be skipped with --skip so you can re-run just part of the pipeline.
-The embedding backend (local Qwen vs cloud TEI) is selected with --backend.
-
-Example (experiment on a subset, clean step only):
-    python build_1.py --workdir experiments/run1 --reviews-dir <dir> --only metadata
+    metadata/         cleaned per-game review arrays
+    sentences/        split review_id/sentence_id text JSON
+    text_h5.h5        unified text + metadata corpus
+    embedding_h5.h5   unified text + metadata + vectors corpus
 """
+
+from __future__ import annotations
 
 import argparse
 from pathlib import Path
 
 from build_metadata import DEFAULT_GAMES_JSON, DEFAULT_REVIEWS_DIR, build_metadata
+from embedding_data import DEFAULT_LOCAL_MODEL, embed_data
+from h5_corpus import DEFAULT_TAP_MAPPING, build_text_h5
 from split_data import split_data
-from embedding_data import embed_data
 
 SCRIPT_DIR = Path(__file__).resolve().parent
-STAGES = ("metadata", "split", "embed")
+STAGES = ("metadata", "split", "text-h5", "embed-h5")
 
 
 def parse_args():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--workdir", default=SCRIPT_DIR / "gamedata", type=Path,
-                        help="Directory holding the metadata/sentences/embedded subdirs.")
-    parser.add_argument("--only", nargs="+", choices=STAGES, default=None,
-                        help="Run only these stages (default: all).")
-    parser.add_argument("--skip", nargs="+", choices=STAGES, default=[],
-                        help="Skip these stages.")
+    parser.add_argument("--workdir", default=SCRIPT_DIR / "gamedata", type=Path)
+    parser.add_argument("--only", nargs="+", choices=STAGES, default=None)
+    parser.add_argument("--skip", nargs="+", choices=STAGES, default=[])
     parser.add_argument("--overwrite", action="store_true")
 
-    # stage 1: metadata
-    parser.add_argument(
-        "--reviews-dir",
-        default=None,
-        help="Raw review CSV dir (default: game_review_data/reviews/).",
-    )
-    parser.add_argument(
-        "--games-json",
-        default=None,
-        help="Game metadata JSON file (default: game_review_data/games.json).",
-    )
+    parser.add_argument("--reviews-dir", default=None)
+    parser.add_argument("--games-json", default=None)
     parser.add_argument("--min-length", default=300, type=int)
     parser.add_argument("--min-count", default=500, type=int)
     parser.add_argument("--no-meta", dest="with_meta", action="store_false")
 
-    # stage 2: split
     parser.add_argument("--split-model", default="sat-3l-sm")
     parser.add_argument("--split-device", default=None)
     parser.add_argument("--chunk-size", default=2000, type=int)
 
-    # stage 3: embed
+    parser.add_argument("--text-h5", type=Path, default=None)
+    parser.add_argument("--embedding-h5", type=Path, default=None)
+    parser.add_argument("--limit-files", type=int, default=0)
+    parser.add_argument("--text-chunk-rows", type=int, default=8192)
+    parser.add_argument("--tap-mapping", type=Path, default=DEFAULT_TAP_MAPPING)
+    parser.add_argument("--no-tap-labels", action="store_true")
+
     parser.add_argument("--backend", choices=["local", "cloud"], default="cloud")
-    parser.add_argument("--local-model", default="Qwen/Qwen3-Embedding-0.6B")
+    parser.add_argument("--local-model", default=DEFAULT_LOCAL_MODEL)
     parser.add_argument("--embed-device", default=None)
     parser.add_argument("--base-url", default=None)
     parser.add_argument("--token-file", default=None)
     parser.add_argument("--concurrency", default=256, type=int)
     parser.add_argument("--batch-size", default=32, type=int)
+    parser.add_argument("--max-in-flight", default=None, type=int)
+    parser.add_argument("--read-batch-size", default=4096, type=int)
     parser.add_argument("--normalize", action="store_true")
+    parser.add_argument("--embedding-dtype", choices=["float16", "float32"], default="float16")
+    parser.add_argument("--embedding-chunk-rows", default=2048, type=int)
+    parser.add_argument("--embedding-compression", choices=["none", "gzip", "lzf"], default="none")
+    parser.add_argument("--gzip-level", default=1, type=int)
     return parser.parse_args()
 
 
@@ -73,15 +71,22 @@ def main():
     workdir = args.workdir
     metadata_dir = workdir / "metadata"
     sentences_dir = workdir / "sentences"
-    embedded_dir = workdir / "embedded"
+    text_h5 = args.text_h5 or (workdir / "text_h5.h5")
+    embedding_h5 = args.embedding_h5 or (workdir / "embedding_h5.h5")
+    games_json = Path(args.games_json or DEFAULT_GAMES_JSON)
+    reviews_dir = Path(args.reviews_dir or DEFAULT_REVIEWS_DIR)
 
-    print(f"=== pipeline workdir={workdir} | stages={sorted(run)} | backend={args.backend} ===")
+    print(
+        f"=== pipeline workdir={workdir} | stages={sorted(run)} | backend={args.backend} ===\n"
+        f"text-h5={text_h5}\n"
+        f"embedding-h5={embedding_h5}"
+    )
 
     if "metadata" in run:
-        print("\n--- stage 1/3: build_metadata ---")
+        print("\n--- stage 1/4: build_metadata ---")
         build_metadata(
-            reviews_dir=args.reviews_dir or DEFAULT_REVIEWS_DIR,
-            games_json=args.games_json or DEFAULT_GAMES_JSON,
+            reviews_dir=reviews_dir,
+            games_json=games_json,
             output_dir=metadata_dir,
             min_length=args.min_length,
             min_count=args.min_count,
@@ -90,7 +95,7 @@ def main():
         )
 
     if "split" in run:
-        print("\n--- stage 2/3: split_data ---")
+        print("\n--- stage 2/4: split_data ---")
         split_data(
             input_dir=metadata_dir,
             output_dir=sentences_dir,
@@ -100,11 +105,26 @@ def main():
             overwrite=args.overwrite,
         )
 
-    if "embed" in run:
-        print("\n--- stage 3/3: embedding_data ---")
+    if "text-h5" in run:
+        print("\n--- stage 3/4: build_text_h5 ---")
+        build_text_h5(
+            sentences_dir=sentences_dir,
+            games_json=games_json,
+            output_h5=text_h5,
+            overwrite=args.overwrite,
+            limit_files=args.limit_files,
+            chunk_rows=args.text_chunk_rows,
+            tap_mapping=args.tap_mapping,
+            no_tap_labels=args.no_tap_labels,
+            reviews_dirs=[reviews_dir],
+            label_min_length=args.min_length,
+        )
+
+    if "embed-h5" in run:
+        print("\n--- stage 4/4: embedding_data ---")
         embed_data(
-            input_dir=sentences_dir,
-            output_dir=embedded_dir,
+            input_h5=text_h5,
+            output_h5=embedding_h5,
             backend=args.backend,
             overwrite=args.overwrite,
             local_model=args.local_model,
@@ -113,10 +133,16 @@ def main():
             token_file=args.token_file,
             concurrency=args.concurrency,
             batch_size=args.batch_size,
+            max_in_flight=args.max_in_flight,
+            read_batch_size=args.read_batch_size,
             normalize=args.normalize,
+            dtype=args.embedding_dtype,
+            chunk_rows=args.embedding_chunk_rows,
+            compression=args.embedding_compression,
+            gzip_level=args.gzip_level,
         )
 
-    print(f"\n=== pipeline done. outputs under {workdir} ===")
+    print(f"\n=== pipeline done. text={text_h5} embedding={embedding_h5} ===")
 
 
 if __name__ == "__main__":

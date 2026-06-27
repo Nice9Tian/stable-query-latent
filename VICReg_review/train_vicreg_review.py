@@ -1,8 +1,9 @@
 """Train LatentArrayMLP on Steam game reviews with VICReg + GRL sentiment loss.
 
-Each sample is one game file from game_review_cleaned_3_sentences. For that game,
-view A and view B independently sample 60 percent of reviews, flatten their
-sentence vectors, and pass both views through the same encoder.
+This is the legacy per-game embedded JSON trainer. New game-review runs should
+use ``train_vicreg_review_h5.py`` directly on ``game_review_data/embedding_h5.h5``.
+For each game, view A and view B independently sample 60 percent of reviews,
+flatten their sentence vectors, and pass both views through the same encoder.
 """
 
 import argparse
@@ -37,7 +38,7 @@ from VICReg_review.shard_cache import (  # noqa: E402
 
 GIB = 1 << 30
 
-DEFAULT_INPUT_DIR = PROJECT_ROOT / "game_review_data" / "game_review_cleaned_3_sentences"
+DEFAULT_INPUT_DIR = PROJECT_ROOT / "game_review_data" / "combined_gamedata" / "embedded"
 DEFAULT_SST_CHECKPOINT = PROJECT_ROOT / "sst" / "heads" / "mlp4_1024_128_32_8_1_best.pt"
 DEFAULT_HEADS_DIR = SCRIPT_DIR / "heads"
 
@@ -75,13 +76,6 @@ def grl_lambda_at(global_step, steps_per_epoch, args):
 
 def load_game_review_vectors(path):
     path = Path(path)
-    if path.suffix == ".npz":
-        from game_npz import load_game_review_arrays
-        reviews = [torch.from_numpy(arr).float() for arr in load_game_review_arrays(path)]
-        if not reviews:
-            raise ValueError(f"{path} contains no sentence vectors.")
-        return reviews
-
     with path.open("r", encoding="utf-8") as file:
         raw = json.load(file)
     if not isinstance(raw, dict):
@@ -121,12 +115,14 @@ class GameReviewVicRegDataset(Dataset):
         limit_games=0,
     ):
         self.input_dir = Path(input_dir)
-        # Prefer the compact .npz corpus; fall back to legacy per-game .json.
-        self.files = sorted(self.input_dir.glob("*.npz")) or sorted(self.input_dir.glob("*.json"))
+        self.files = [
+            path for path in sorted(self.input_dir.glob("*.json"))
+            if path.name not in {"train_games.json", "train_sequence.json"}
+        ]
         if limit_games and limit_games > 0:
             self.files = self.files[:limit_games]
         if not self.files:
-            raise ValueError(f"No .npz or .json game files found in {self.input_dir}.")
+            raise ValueError(f"No embedded JSON game files found in {self.input_dir}.")
         if not (0.0 < sample_fraction <= 1.0):
             raise ValueError("--sample-fraction must be in (0, 1].")
         self.sample_fraction = float(sample_fraction)
@@ -673,11 +669,11 @@ def parse_args():
     parser.add_argument("--limit-games", type=int, default=0)
     parser.add_argument("--num-workers", type=int, default=0)
 
-    # Streaming / prefetch-cache mode (out-of-core training over a per-game JSON corpus).
+    # Streaming / prefetch-cache mode (out-of-core training over a per-game corpus).
     # Passing --sequence-file switches train() -> train_streaming().
     parser.add_argument("--sequence-file", default=None,
                         help="train_sequence.json from `shard_cache.py build`. Enables streaming mode: "
-                             "per-game JSON is streamed from --source-dir through --cache-dir in the "
+                             "per-game corpus files are streamed from --source-dir through --cache-dir in the "
                              "sequence's fixed random order. Overrides --input-dir.")
     parser.add_argument("--source-dir", default=None,
                         help="Override the corpus source dir recorded in the sequence (e.g. a Drive path).")

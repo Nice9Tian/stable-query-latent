@@ -29,8 +29,8 @@ import h5py
 SCRIPT_DIR = Path(__file__).resolve().parent
 ROOT = SCRIPT_DIR.parent
 BENCH = SCRIPT_DIR / "PXIbenchmark_data" / "benchmark.csv"
-VIC_H5 = ROOT / "VICReg_review" / "h5" / "game_review_cleaned_3_sentences.h5"
-GAMES_JSON = ROOT / "game_review_data" / "Steam Games Metadata and Player Reviews (2020–2024" / "games.json"
+VIC_H5 = ROOT / "game_review_data" / "embedding_h5.h5"
+GAMES_JSON = ROOT / "game_review_data" / "games.json"
 OUT = SCRIPT_DIR / "pxi_vicreg_overlap.json"
 
 PXI_DIMS = [

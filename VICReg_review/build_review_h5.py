@@ -1,8 +1,10 @@
-"""Build HDF5 training data for VICReg game-review training.
+"""Legacy converter from embedded JSON to HDF5 training data.
 
-The JSON files are expensive to parse during training. This script converts
-them into several shard H5 files in parallel, then merges the shards into one
-streamable H5 layout:
+New game-review builds write the final ``embedding_h5.h5`` directly from
+``game_review_data/build.py``. Keep this script only for old corpora where each
+sentence JSON already contains a ``vector`` field. It converts those files into
+several shard H5 files in parallel, then merges the shards into one streamable
+H5 layout:
 
     vectors              (total_sentences, 1024)
     review_offsets       (total_reviews + 1) offsets into vectors
@@ -29,13 +31,13 @@ import numpy as np
 SCRIPT_DIR = Path(__file__).resolve().parent
 PROJECT_ROOT = SCRIPT_DIR.parent
 if str(PROJECT_ROOT) not in sys.path:
-    sys.path.insert(0, str(PROJECT_ROOT))  # for `import game_npz` under multiprocessing workers
+    sys.path.insert(0, str(PROJECT_ROOT))
 
 DEFAULT_INPUT_DIR = PROJECT_ROOT / "game_review_data" / "combined_gamedata" / "embedded"
 DEFAULT_H5_DIR = SCRIPT_DIR / "h5"
 DEFAULT_SHARD_DIR = DEFAULT_H5_DIR / "shards"
 DEFAULT_OUTPUT_H5 = DEFAULT_H5_DIR / "game_review_cleaned_3_sentences.h5"
-DEFAULT_GAMES_JSON = PROJECT_ROOT / "game_review_data" / "combined_gamedata" / "games.json"
+DEFAULT_GAMES_JSON = PROJECT_ROOT / "game_review_data" / "games.json"
 DEFAULT_TAP_MAPPING = SCRIPT_DIR / "tags" / "tap_mapping.json"
 
 try:
@@ -71,10 +73,6 @@ def atomic_h5_path(path):
 
 def load_game_as_arrays(path, dtype, input_dim):
     path = Path(path)
-    if path.suffix == ".npz":
-        from game_npz import load_game_flat
-        return load_game_flat(path, dtype, input_dim)
-
     with path.open("r", encoding="utf-8") as file:
         raw = json.load(file)
     if not isinstance(raw, dict):
@@ -223,12 +221,14 @@ def partition_files(files, shard_count):
 
 def build_shards(args):
     input_dir = Path(args.input_dir)
-    # Prefer the compact .npz corpus; fall back to legacy per-game .json.
-    files = sorted(input_dir.glob("*.npz")) or sorted(input_dir.glob("*.json"))
+    files = [
+        path for path in sorted(input_dir.glob("*.json"))
+        if path.name not in {"train_games.json", "train_sequence.json"}
+    ]
     if args.limit_files > 0:
         files = files[: args.limit_files]
     if not files:
-        raise ValueError(f"No .npz or .json files found in {input_dir}")
+        raise ValueError(f"No embedded JSON files found in {input_dir}")
 
     shard_count = args.shards or args.workers
     partitions = partition_files(files, shard_count)
@@ -355,10 +355,11 @@ def merge_shards(shard_paths, output_path, args):
     started = time.time()
     try:
         with h5py.File(tmp_path, "w") as out:
+            chunk_rows = min(args.chunk_rows, max(1, totals["sentences"]))
             vectors = out.create_dataset(
                 "vectors",
                 shape=(totals["sentences"], input_dim),
-                chunks=(args.chunk_rows, input_dim),
+                chunks=(chunk_rows, input_dim),
                 dtype=np.dtype(args.dtype),
                 **compression_kwargs(args.compression, args.gzip_level),
             )

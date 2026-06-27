@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import time
 from collections import defaultdict
@@ -17,7 +18,7 @@ from umap import UMAP
 
 from run_game_review_bertopic import (
     DEFAULT_CACHE_DIR,
-    DEFAULT_INPUT_DIR,
+    DEFAULT_INPUT_H5,
     PROJECT_ROOT,
     atomic_save_npy,
     atomic_write_text,
@@ -33,6 +34,7 @@ DEFAULT_OUTPUT_MD = PROJECT_ROOT / "berttopic_topic0.md"
 
 def parent_topics_cache_path(
     cache_dir: Path,
+    sample_meta: dict,
     max_docs: int,
     min_chars: int,
     skip_metadata: bool,
@@ -41,8 +43,12 @@ def parent_topics_cache_path(
     vectorizer_min_df: int,
     random_state: int,
 ) -> Path:
+    corpus_format = sample_meta.get("corpus_format", "json")
+    input_key = sample_meta.get("input_h5") or "missing_h5"
+    suffix = hashlib.sha1(str(input_key).encode("utf-8")).hexdigest()[:8]
     tag = (
-        f"parent_topics_n{max_docs}_minchars{min_chars}_skipmeta{int(skip_metadata)}"
+        f"parent_topics_{corpus_format}_{suffix}_n{max_docs}"
+        f"_minchars{min_chars}_skipmeta{int(skip_metadata)}"
         f"_neighbors{n_neighbors}_mcs{min_cluster_size}"
         f"_vmin{vectorizer_min_df}_seed{random_state}.npy"
     )
@@ -96,9 +102,10 @@ def fit_bertopic(
     return topic_model, np.asarray(topics, dtype=np.int32)
 
 
-def get_parent_topics(args, docs: list[str], embeddings: np.ndarray) -> np.ndarray:
+def get_parent_topics(args, docs: list[str], embeddings: np.ndarray, sample_meta: dict) -> np.ndarray:
     path = parent_topics_cache_path(
         args.cache_dir,
+        sample_meta,
         args.max_docs,
         args.min_chars,
         not args.include_metadata_records,
@@ -143,6 +150,8 @@ def get_parent_topics(args, docs: list[str], embeddings: np.ndarray) -> np.ndarr
                 "min_cluster_size": args.parent_min_cluster_size,
                 "vectorizer_min_df": args.parent_vectorizer_min_df,
                 "random_state": args.random_state,
+                "corpus_format": sample_meta.get("corpus_format"),
+                "input_h5": sample_meta.get("input_h5"),
                 "topic_counts": parent_counts,
             },
             ensure_ascii=False,
@@ -182,7 +191,8 @@ def build_report(
     lines.append("# Game Review BERTopic Topic 0 Refinement")
     lines.append("")
     lines.append(f"- Generated: {datetime.now().isoformat(timespec='seconds')}")
-    lines.append(f"- Input: `{markdown_escape(sample_meta['input_dir'])}`")
+    lines.append(f"- Input H5: `{markdown_escape(sample_meta['input_h5'])}`")
+    lines.append(f"- Corpus format: `{sample_meta.get('corpus_format', 'json')}`")
     lines.append(f"- Base sample documents: {sample_meta['sampled_docs']}")
     lines.append(f"- Parent topic selected: {parent_topic}")
     lines.append(f"- Parent Topic {parent_topic} documents: {parent_count}")
@@ -259,7 +269,7 @@ def build_report(
 
 def parse_args():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--input-dir", default=DEFAULT_INPUT_DIR, type=Path)
+    parser.add_argument("--input-h5", "--input-dir", dest="input_h5", default=DEFAULT_INPUT_H5, type=Path)
     parser.add_argument("--cache-dir", default=DEFAULT_CACHE_DIR, type=Path)
     parser.add_argument("--output-md", default=DEFAULT_OUTPUT_MD, type=Path)
     parser.add_argument("--max-docs", default=100_000, type=int)
@@ -284,14 +294,14 @@ def parse_args():
 def main() -> None:
     args = parse_args()
     records, docs, embeddings, sample_meta = build_balanced_prefix_sample(
-        input_dir=args.input_dir,
+        input_h5=args.input_h5,
         cache_dir=args.cache_dir,
         max_docs=args.max_docs,
         min_chars=args.min_chars,
         skip_metadata=not args.include_metadata_records,
         overwrite_cache=args.overwrite_cache,
     )
-    parent_topics = get_parent_topics(args, docs, embeddings)
+    parent_topics = get_parent_topics(args, docs, embeddings, sample_meta)
     mask = parent_topics == args.parent_topic
     selected_count = int(mask.sum())
     if not selected_count:

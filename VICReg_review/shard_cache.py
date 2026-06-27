@@ -1,10 +1,10 @@
-"""Out-of-core training cache for per-game embedded JSON files.
+"""Out-of-core training cache for legacy per-game embedded JSON files.
 
-The embedded corpus is one JSON file per game (the ``embedded/`` output of the
-game_review_data build). For a big corpus those files live on slow cloud storage
-(Google Drive), and the whole thing does not fit on local disk. Instead of
-merging everything into one giant H5, we keep the per-game files separate and
-stream them through a small local working set:
+New game-review runs use ``game_review_data/embedding_h5.h5`` directly. This
+module remains for old corpora that still live as one embedded JSON file per
+game on slow cloud storage (Google Drive). Instead of merging everything into
+one giant H5, we keep the per-game files separate and stream them through a
+small local working set:
 
   1. ``build_sequence`` pre-computes a *seeded random order* over the game files
      and writes it to ``train_sequence.json``. Because the order is fixed up
@@ -35,6 +35,7 @@ import numpy as np
 
 SEQUENCE_VERSION = 1
 GIB = 1 << 30
+RESERVED_CORPUS_NAMES = {"train_games.json", "train_sequence.json"}
 
 
 # --------------------------------------------------------------------------- sequence
@@ -46,6 +47,8 @@ def build_sequence(source_dir, out_path, seed=42, pattern="*.json"):
     """
     source_dir = Path(source_dir)
     files = sorted(source_dir.glob(pattern))
+    if pattern == "*.json":
+        files = [path for path in files if path.name not in RESERVED_CORPUS_NAMES]
     if not files:
         raise ValueError(f"No files matching {pattern!r} in {source_dir}")
 
@@ -237,12 +240,12 @@ def parse_args():
 
     build = sub.add_parser("build", help="Write a seeded random training sequence.")
     build.add_argument("--source-dir", required=True, type=Path,
-                       help="Directory of per-game embedded JSON files (on Drive).")
+                       help="Directory of per-game corpus files (on Drive).")
     build.add_argument("--out", required=True, type=Path,
                        help="Output train_sequence.json path.")
     build.add_argument("--seed", type=int, default=42)
-    build.add_argument("--pattern", default="*.npz",
-                       help="Glob for per-game corpus files (default *.npz; use *.json for legacy).")
+    build.add_argument("--pattern", default="*.json",
+                       help="Glob for legacy per-game embedded JSON files.")
 
     inspect = sub.add_parser("inspect", help="Summarize a sequence and its block layout.")
     inspect.add_argument("--sequence-file", required=True, type=Path)

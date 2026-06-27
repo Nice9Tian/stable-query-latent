@@ -202,7 +202,7 @@ def probe_encoder(encoder, h5_path, device, amp=False, feature_views=2, sample_f
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--checkpoint", default=str(SCRIPT_DIR / "heads" / "sweep_adv" / "vicreg_adv10_best.pt"))
-    p.add_argument("--h5", default=str(SCRIPT_DIR / "h5" / "game_review_cleaned_3_sentences.h5"))
+    p.add_argument("--h5", default=str(PROJECT_ROOT / "game_review_data" / "embedding_h5.h5"))
     p.add_argument("--tags-dir", default=str(DEFAULT_TAGS_DIR))
     p.add_argument("--feature-views", type=int, default=4)
     p.add_argument("--device", default=None)

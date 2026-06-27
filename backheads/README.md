@@ -5,8 +5,8 @@ negative recommendation rates from game-description/review embeddings.
 
 Pipeline:
 
-1. `VICReg_review/h5/game_review_cleaned_3_sentences.h5`
-   supplies per-game Qwen sentence vectors. The cleaned_3 input already includes
+1. `game_review_data/embedding_h5.h5`
+   supplies per-game Qwen sentence vectors. The source text H5 already includes
    `detailed_description`, `about_the_game`, `short_description`, then reviews.
 2. Raw Steam review CSVs supply the label from the `recommend` column:
    `Recommended` -> positive, `Not Recommended` -> negative.

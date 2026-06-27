@@ -6,7 +6,7 @@ Three coupled experiments around sentence-level embeddings:
 |---|---|
 | [`PXIbench_test/`](PXIbench_test/) | Train a **latent-query** model to predict 10 × 5-class PXI scores from pseudo-text sentence vectors. |
 | [`sst/`](sst/) | Train tiny MLP heads on **SST** sentiment regression from frozen sentence embeddings. |
-| [`game_review_data/`](game_review_data/) | End-to-end pipeline for Steam game-review text → sentence-level vectors. |
+| [`game_review_data/`](game_review_data/) | End-to-end pipeline for Steam game-review text -> unified `text_h5.h5` and `embedding_h5.h5`. |
 
 The model definition lives at the repo root: [`latent_query_model.py`](latent_query_model.py). Each subdirectory has its own README with task-specific details.
 
@@ -73,7 +73,8 @@ python PXIbench_test/test_latent_query_model.py
 # SST sentiment regression head (best variant per sst/heads/RESULTS.md)
 python sst/train_sst_head_mlp4.py --hidden-dims 64 16 4
 
-# Game-review end-to-end build
-python game_review_data/build.py --workdir <workdir> --backend cloud
+# Game-review end-to-end build (text_h5.h5 -> embedding_h5.h5)
+python game_review_data/build.py --data-dir <workdir> --backend cloud
+python VICReg_review/train_vicreg_review_h5.py --input-h5 <workdir>/embedding_h5.h5 --device cuda --amp
 ```
 

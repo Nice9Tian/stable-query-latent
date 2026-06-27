@@ -25,7 +25,8 @@ for p in (str(ROOT), str(ROOT / "game_review_data")):
 from VICReg_review.tap_mapping import load_tap_mapping, map_tag_dict, keyword_scores  # noqa: E402
 from VICReg_review.train_tag_probe import load_frozen_encoder, pool_features  # noqa: E402
 
-GAMES_JSON = ROOT / "game_review_data" / "Steam Games Metadata and Player Reviews (2020–2024" / "games.json"
+GAMES_JSON = ROOT / "game_review_data" / "games.json"
+DEFAULT_H5 = ROOT / "game_review_data" / "embedding_h5.h5"
 TESTS = [("AO_text.txt", "1385380", "Across the Obelisk"), ("2077_text.txt", "1091500", "Cyberpunk 2077")]
 
 
@@ -116,7 +117,7 @@ def main():
     mapping = load_tap_mapping()
 
     # labels aligned to the cached feature game order
-    with __import__("h5py").File(SCRIPT_DIR / "h5" / "game_review_cleaned_3_sentences.h5", "r") as h5:
+    with __import__("h5py").File(DEFAULT_H5, "r") as h5:
         global COARSE_NAMES
         COARSE_NAMES = [x.decode("utf-8") if isinstance(x, bytes) else str(x) for x in h5["tap_names"][:]]
         appids = [x.decode("utf-8") if isinstance(x, bytes) else str(x) for x in h5["appids"][:]]
@@ -142,7 +143,7 @@ def main():
     from game_review_data.embedding_data import DEFAULT_LOCAL_MODEL, LocalEmbedder
     emb = LocalEmbedder(DEFAULT_LOCAL_MODEL, device=str(device), batch_size=32)
     probe = torch.load(SCRIPT_DIR / "heads" / "tag_probe_linear.pt", map_location="cpu", weights_only=False)
-    with __import__("h5py").File(SCRIPT_DIR / "h5" / "game_review_cleaned_3_sentences.h5", "r") as h5:
+    with __import__("h5py").File(DEFAULT_H5, "r") as h5:
         input_dim = int(h5.attrs["input_dim"])
     encoder, _, _, _ = load_frozen_encoder(probe["encoder_checkpoint"], input_dim, device)
 

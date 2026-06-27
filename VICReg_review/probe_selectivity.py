@@ -46,7 +46,7 @@ if str(PROJECT_ROOT) not in sys.path:
 
 from VICReg_review.model import load_mlp4_a_sentiment_head  # noqa: E402
 
-DEFAULT_H5 = SCRIPT_DIR / "h5" / "game_review_cleaned_3_sentences.h5"
+DEFAULT_H5 = PROJECT_ROOT / "game_review_data" / "embedding_h5.h5"
 DEFAULT_TAGS_DIR = SCRIPT_DIR / "tags"
 DEFAULT_RAW_CACHE = SCRIPT_DIR / "tags" / "raw_mean_features.npz"
 DEFAULT_VIC_CACHE = SCRIPT_DIR / "tags" / "probe_feat_vicreg_review_h5_latest_3_fv4_sf0.6.npz"

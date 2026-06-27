@@ -91,7 +91,7 @@ def main():
     tags = probe["tags"]
     enc_ckpt = args.encoder or probe["encoder_checkpoint"]
     import h5py
-    h5_path = SCRIPT_DIR / "h5" / "game_review_cleaned_3_sentences.h5"
+    h5_path = ROOT / "game_review_data" / "embedding_h5.h5"
     with h5py.File(h5_path, "r") as h5:
         input_dim = int(h5.attrs["input_dim"])
     encoder, _, _, _ = load_frozen_encoder(enc_ckpt, input_dim, device)

@@ -1,6 +1,6 @@
 """Train a head that predicts Steam positive/negative recommendation rates.
 
-Input features come from the game-review H5 built by VICReg_review. Labels come
+Input features come from the unified game-review embedding H5. Labels come
 from the raw Steam review CSV ``recommend`` column:
 
     Recommended     -> positive
@@ -32,7 +32,7 @@ if str(ROOT) not in sys.path:
 
 from backheads.model import RecommendationRateHead  # noqa: E402
 
-DEFAULT_H5 = ROOT / "VICReg_review" / "h5" / "game_review_cleaned_3_sentences.h5"
+DEFAULT_H5 = ROOT / "game_review_data" / "embedding_h5.h5"
 DEFAULT_REVIEWS_DIR = (
     ROOT
     / "game_review_data"
@@ -54,6 +54,7 @@ class LabelRow:
     title: str
     positive_count: int
     negative_count: int
+    label_source: str = "unknown"
 
     @property
     def total(self) -> int:
@@ -114,7 +115,46 @@ def count_recommendations(csv_path: Path, label_min_length: int = 0) -> tuple[in
     return positive, negative
 
 
-def load_labels_for_h5(h5_path: Path, reviews_dir: Path, label_min_length: int, min_label_count: int):
+def load_h5_labels(h5, label_min_length: int, min_label_count: int):
+    if "positive" not in h5 or "negative" not in h5:
+        return None
+    h5_label_min_length = int(h5.attrs.get("recommendation_label_min_length", -1))
+    if label_min_length > 0 and h5_label_min_length not in (-1, int(label_min_length)):
+        return None
+
+    rows: list[LabelRow] = []
+    keep_indices: list[int] = []
+    missing: list[str] = []
+    game_names = [decode(value) for value in h5["game_names"][:]]
+    appids = [decode(value) for value in h5["appids"][:]] if "appids" in h5 else [
+        name.split("_", 1)[0] for name in game_names
+    ]
+    titles = [decode(value) for value in h5["game_titles"][:]] if "game_titles" in h5 else appids
+    sources = (
+        [decode(value) for value in h5["recommendation_label_source"][:]]
+        if "recommendation_label_source" in h5
+        else ["h5"] * len(game_names)
+    )
+    positives = h5["positive"][:]
+    negatives = h5["negative"][:]
+
+    for index, (game_name, appid, title, source, pos, neg) in enumerate(
+        zip(game_names, appids, titles, sources, positives, negatives)
+    ):
+        pos = int(pos)
+        neg = int(neg)
+        if pos < 0 or neg < 0:
+            missing.append(f"{game_name}: no H5 recommendation label")
+            continue
+        if pos + neg < min_label_count:
+            missing.append(f"{game_name}: only {pos + neg} H5 labeled reviews")
+            continue
+        rows.append(LabelRow(game_name, appid, title, pos, neg, str(source)))
+        keep_indices.append(index)
+    return rows, np.asarray(keep_indices, dtype=np.int64), missing
+
+
+def load_csv_labels_for_h5(h5_path: Path, reviews_dir: Path, label_min_length: int, min_label_count: int):
     rows: list[LabelRow] = []
     keep_indices: list[int] = []
     missing: list[str] = []
@@ -135,11 +175,19 @@ def load_labels_for_h5(h5_path: Path, reviews_dir: Path, label_min_length: int, 
         if pos + neg < min_label_count:
             missing.append(f"{game_name}: only {pos + neg} labeled reviews")
             continue
-        rows.append(LabelRow(game_name, appid, title, pos, neg))
+        rows.append(LabelRow(game_name, appid, title, pos, neg, "review_csv"))
         keep_indices.append(index)
     if not rows:
         raise ValueError("No labeled games aligned between H5 and raw CSVs.")
     return rows, np.asarray(keep_indices, dtype=np.int64), missing
+
+
+def load_labels_for_h5(h5_path: Path, reviews_dir: Path, label_min_length: int, min_label_count: int):
+    with h5py.File(h5_path, "r") as h5:
+        h5_labels = load_h5_labels(h5, label_min_length, min_label_count)
+    if h5_labels is not None and h5_labels[0]:
+        return h5_labels
+    return load_csv_labels_for_h5(h5_path, reviews_dir, label_min_length, min_label_count)
 
 
 def summarize_vectors(vectors: np.ndarray, mode: str) -> np.ndarray:
@@ -191,6 +239,7 @@ def build_feature_cache(args, rows: list[LabelRow], keep_indices: np.ndarray) ->
     titles = np.asarray([row.title for row in rows], dtype=object)
     positive_counts = np.asarray([row.positive_count for row in rows], dtype=np.int32)
     negative_counts = np.asarray([row.negative_count for row in rows], dtype=np.int32)
+    label_sources = np.asarray([row.label_source for row in rows], dtype=object)
 
     args.cache.parent.mkdir(parents=True, exist_ok=True)
     tmp_path = args.cache.with_suffix(args.cache.suffix + ".tmp")
@@ -206,6 +255,7 @@ def build_feature_cache(args, rows: list[LabelRow], keep_indices: np.ndarray) ->
                 titles=titles,
                 positive_counts=positive_counts,
                 negative_counts=negative_counts,
+                label_sources=label_sources,
                 sentence_counts=np.asarray(sentence_counts, dtype=np.int32),
                 review_counts=np.asarray(review_counts, dtype=np.int32),
                 h5=str(Path(args.h5).resolve()),

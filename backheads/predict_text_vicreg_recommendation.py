@@ -21,7 +21,7 @@ from game_review_data.embedding_data import DEFAULT_LOCAL_MODEL, LocalEmbedder  
 from VICReg_review.train_tag_probe import load_frozen_encoder, pool_features  # noqa: E402
 
 DEFAULT_CHECKPOINT = SCRIPT_DIR / "heads" / "recommendation_vicreg_linear_probe.pt"
-DEFAULT_H5 = ROOT / "VICReg_review" / "h5" / "game_review_cleaned_3_sentences.h5"
+DEFAULT_H5 = ROOT / "game_review_data" / "embedding_h5.h5"
 
 
 def split_text(text: str, max_sentences: int) -> list[str]:

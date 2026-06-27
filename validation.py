@@ -49,8 +49,8 @@ except ImportError:  # pragma: no cover
 DEFAULT_HEADS_DIR = ROOT / "VICReg_review" / "heads"
 DEFAULT_GUI_RUN_DIR = DEFAULT_HEADS_DIR / "gui_run"
 DEFAULT_TAGS_DIR = ROOT / "VICReg_review" / "tags"
-DEFAULT_H5 = ROOT / "VICReg_review" / "h5" / "game_review_cleaned_3_sentences.h5"
-DEFAULT_GAMES_JSON = ROOT / "game_review_data" / "Steam Games Metadata and Player Reviews (2020–2024" / "games.json"
+DEFAULT_H5 = ROOT / "game_review_data" / "embedding_h5.h5"
+DEFAULT_GAMES_JSON = ROOT / "game_review_data" / "games.json"
 DEFAULT_RECOMMENDATION_HEAD = ROOT / "backheads" / "heads" / "recommendation_head.pt"
 DEFAULT_LINEAR_RECOMMENDATION_PROBE = ROOT / "backheads" / "heads" / "recommendation_linear_probe.pt"
 DEFAULT_VICREG_RECOMMENDATION_PROBE = ROOT / "backheads" / "heads" / "recommendation_vicreg_linear_probe.pt"
@@ -265,9 +265,9 @@ class PredictorWorker(QtCore.QObject):
             games_path = resolve_optional_path(
                 games_value or self.args.games_json or self.args.h5,
                 [
-                    "VICReg_review/h5/game_review_cleaned_3_sentences.h5",
+                    "game_review_data/embedding_h5.h5",
                 ],
-                "TAP-labeled H5 (run VICReg_review/build_review_h5.py)",
+                "TAP-labeled H5 (run game_review_data/build.py)",
             )
 
             if self.embedder is None:

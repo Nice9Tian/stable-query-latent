@@ -16,6 +16,7 @@ memory stays bounded on games with very many reviews.
 import argparse
 import json
 import re
+import time
 from pathlib import Path
 
 SCRIPT_DIR = Path(__file__).resolve().parent
@@ -24,6 +25,17 @@ DEFAULT_INPUT_DIR = SCRIPT_DIR / "game_review_metadata"
 DEFAULT_OUTPUT_DIR = SCRIPT_DIR / "game_review_sentences"
 DEFAULT_MODEL = "sat-3l-sm"
 DEFAULT_CHUNK_SIZE = 2000
+
+
+def replace_with_retry(tmp_path: Path, output_path: Path, attempts: int = 8) -> None:
+    for attempt in range(attempts):
+        try:
+            tmp_path.replace(output_path)
+            return
+        except PermissionError:
+            if attempt == attempts - 1:
+                raise
+            time.sleep(0.25 * (attempt + 1))
 
 
 def normalize_text(text):
@@ -109,7 +121,7 @@ def split_data(input_dir, output_dir, model=DEFAULT_MODEL, device=None,
         tmp_path = output_path.with_suffix(".json.tmp")
         with tmp_path.open("w", encoding="utf-8") as file:
             json.dump(mapping, file, ensure_ascii=False)
-        tmp_path.replace(output_path)
+        replace_with_retry(tmp_path, output_path)
 
         print(
             f"[{file_index}/{len(input_files)}] {input_path.name}: "

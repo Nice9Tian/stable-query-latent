@@ -1,23 +1,19 @@
-"""Run BERTopic on game_review_cleaned_3_sentences and write a Markdown report.
-
-The sentence directory stores one huge JSON object per game and each sentence
-already has a Qwen embedding vector. A full in-memory BERTopic fit over the
-entire 100GB sentence/vector directory is not practical on a 32GB workstation,
-so this script builds a deterministic per-game sentence sample by default.
-"""
+"""Run BERTopic on the unified game-review embedding H5 and write a report."""
 
 from __future__ import annotations
 
 import argparse
+import hashlib
 import importlib.metadata as metadata
 import json
 import math
+import sys
 import time
 from collections import defaultdict
 from datetime import datetime
 from pathlib import Path
 
-import ijson
+import h5py
 import numpy as np
 from bertopic import BERTopic
 from hdbscan import HDBSCAN
@@ -27,9 +23,17 @@ from umap import UMAP
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 PROJECT_ROOT = SCRIPT_DIR.parent
-DEFAULT_INPUT_DIR = SCRIPT_DIR / "game_review_cleaned_3_sentences"
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+
+DEFAULT_INPUT_H5 = SCRIPT_DIR / "embedding_h5.h5"
+DEFAULT_INPUT_DIR = DEFAULT_INPUT_H5  # compatibility alias for older imports
 DEFAULT_OUTPUT_MD = PROJECT_ROOT / "game_review_bertopic.md"
 DEFAULT_CACHE_DIR = SCRIPT_DIR / "bertopic_cache"
+
+
+def decode_text(value) -> str:
+    return value.decode("utf-8") if isinstance(value, bytes) else str(value)
 
 
 def markdown_escape(value: object, max_chars: int | None = None) -> str:
@@ -77,7 +81,7 @@ def package_versions() -> dict[str, str]:
         "bertopic",
         "hdbscan",
         "umap-learn",
-        "ijson",
+        "h5py",
         "numpy",
         "scikit-learn",
     ]
@@ -90,13 +94,28 @@ def package_versions() -> dict[str, str]:
     return versions
 
 
-def input_size_gb(input_dir: Path) -> float:
-    total = sum(path.stat().st_size for path in input_dir.glob("*.json"))
-    return total / (1024 ** 3)
+def input_size_gb(input_h5: Path) -> float:
+    return Path(input_h5).stat().st_size / (1024 ** 3)
 
 
-def cache_paths(cache_dir: Path, max_docs: int, min_chars: int, skip_metadata: bool) -> tuple[Path, Path, Path]:
-    tag = f"balanced_prefix_n{max_docs}_minchars{min_chars}_skipmeta{int(skip_metadata)}"
+def h5_fingerprint(input_h5: Path) -> str:
+    path = Path(input_h5)
+    stat = path.stat()
+    raw = f"{path.resolve()}:{stat.st_size}:{int(stat.st_mtime)}"
+    return hashlib.sha1(raw.encode("utf-8")).hexdigest()[:10]
+
+
+def cache_paths(
+    cache_dir: Path,
+    input_h5: Path,
+    max_docs: int,
+    min_chars: int,
+    skip_metadata: bool,
+) -> tuple[Path, Path, Path]:
+    tag = (
+        f"balanced_prefix_h5_{h5_fingerprint(input_h5)}_n{max_docs}"
+        f"_minchars{min_chars}_skipmeta{int(skip_metadata)}"
+    )
     return (
         cache_dir / f"{tag}_docs.json",
         cache_dir / f"{tag}_embeddings.npy",
@@ -114,96 +133,107 @@ def load_cached_sample(docs_path: Path, embeddings_path: Path, meta_path: Path):
     return records, docs, embeddings, meta
 
 
-def iter_sentence_items(path: Path, skip_metadata: bool):
-    with path.open("rb") as file:
-        for review_id, sentences in ijson.kvitems(file, "", use_float=True):
-            if skip_metadata:
-                try:
-                    if int(review_id) < 3:
-                        continue
-                except ValueError:
-                    pass
-            if not isinstance(sentences, dict):
-                continue
-            for sentence_id, item in sentences.items():
-                if not isinstance(item, dict):
-                    continue
-                text = item.get("sentence_text")
-                vector = item.get("vector")
-                if text and vector:
-                    yield review_id, sentence_id, str(text), vector
+def should_skip_metadata_review(review_id: str, skip_metadata: bool) -> bool:
+    if not skip_metadata:
+        return False
+    try:
+        return int(review_id) < 3
+    except ValueError:
+        return False
 
 
 def build_balanced_prefix_sample(
-    input_dir: Path,
+    input_h5: Path,
     cache_dir: Path,
     max_docs: int,
     min_chars: int,
     skip_metadata: bool,
     overwrite_cache: bool,
 ):
+    input_h5 = Path(input_h5)
     cache_dir.mkdir(parents=True, exist_ok=True)
-    docs_path, embeddings_path, meta_path = cache_paths(cache_dir, max_docs, min_chars, skip_metadata)
+    docs_path, embeddings_path, meta_path = cache_paths(
+        cache_dir, input_h5, max_docs, min_chars, skip_metadata
+    )
     if not overwrite_cache:
         cached = load_cached_sample(docs_path, embeddings_path, meta_path)
         if cached:
             print(f"Loaded cached sample: {len(cached[1])} docs from {cache_dir}")
             return cached
 
-    files = sorted(input_dir.glob("*.json"))
-    if not files:
-        raise ValueError(f"No JSON files found in {input_dir}")
-
-    per_file_limit = max(1, math.ceil(max_docs / len(files)))
     records: list[dict[str, str]] = []
     vectors: list[np.ndarray] = []
-    file_counts: dict[str, int] = {}
+    game_counts: dict[str, int] = {}
     skipped_short = 0
     skipped_bad_vector = 0
     started = time.time()
-    dim = None
 
-    print(
-        f"Building balanced prefix sample: files={len(files)} max_docs={max_docs} "
-        f"per_file_limit={per_file_limit}"
-    )
-    for file_index, path in enumerate(files, start=1):
-        kept_for_file = 0
-        for review_id, sentence_id, text, vector in iter_sentence_items(path, skip_metadata=skip_metadata):
-            if kept_for_file >= per_file_limit or len(records) >= max_docs:
+    with h5py.File(input_h5, "r") as h5:
+        required = ("texts", "vectors", "sentence_ids", "review_ids", "review_offsets", "game_review_offsets", "game_names")
+        missing = [name for name in required if name not in h5]
+        if missing:
+            raise ValueError(f"{input_h5} is missing required datasets: {missing}")
+
+        num_games = int(h5["game_names"].shape[0])
+        per_game_limit = max(1, math.ceil(max_docs / max(1, num_games)))
+        embedding_dim = int(h5["vectors"].shape[1])
+        game_review_offsets = h5["game_review_offsets"]
+        review_offsets = h5["review_offsets"]
+        game_names = h5["game_names"]
+        review_ids = h5["review_ids"]
+        sentence_ids = h5["sentence_ids"]
+        texts = h5["texts"]
+        vector_ds = h5["vectors"]
+
+        print(
+            f"Building balanced prefix sample: games={num_games} max_docs={max_docs} "
+            f"per_game_limit={per_game_limit}"
+        )
+        for game_index in range(num_games):
+            game_name = decode_text(game_names[game_index])
+            kept_for_game = 0
+            review_start = int(game_review_offsets[game_index])
+            review_end = int(game_review_offsets[game_index + 1])
+
+            for review_index in range(review_start, review_end):
+                review_id = decode_text(review_ids[review_index])
+                if should_skip_metadata_review(review_id, skip_metadata):
+                    continue
+                sentence_start = int(review_offsets[review_index])
+                sentence_end = int(review_offsets[review_index + 1])
+                for sentence_index in range(sentence_start, sentence_end):
+                    if kept_for_game >= per_game_limit or len(records) >= max_docs:
+                        break
+                    clean_text = " ".join(decode_text(texts[sentence_index]).split())
+                    if len(clean_text) < min_chars:
+                        skipped_short += 1
+                        continue
+                    array = np.asarray(vector_ds[sentence_index], dtype=np.float32)
+                    if array.ndim != 1 or int(array.shape[0]) != embedding_dim:
+                        skipped_bad_vector += 1
+                        continue
+                    records.append(
+                        {
+                            "text": clean_text,
+                            "game": game_name,
+                            "review_id": review_id,
+                            "sentence_id": decode_text(sentence_ids[sentence_index]),
+                        }
+                    )
+                    vectors.append(array)
+                    kept_for_game += 1
+                if kept_for_game >= per_game_limit or len(records) >= max_docs:
+                    break
+
+            game_counts[game_name] = kept_for_game
+            if (game_index + 1) % 25 == 0 or game_index + 1 == num_games:
+                elapsed = time.time() - started
+                print(
+                    f"[{game_index + 1}/{num_games}] sampled={len(records)} "
+                    f"elapsed={elapsed:.1f}s last={game_name}:{kept_for_game}"
+                )
+            if len(records) >= max_docs:
                 break
-            clean_text = " ".join(text.split())
-            if len(clean_text) < min_chars:
-                skipped_short += 1
-                continue
-            array = np.asarray(vector, dtype=np.float32)
-            if array.ndim != 1:
-                skipped_bad_vector += 1
-                continue
-            if dim is None:
-                dim = int(array.shape[0])
-            if int(array.shape[0]) != dim:
-                skipped_bad_vector += 1
-                continue
-            records.append(
-                {
-                    "text": clean_text,
-                    "file": path.name,
-                    "review_id": str(review_id),
-                    "sentence_id": str(sentence_id),
-                }
-            )
-            vectors.append(array)
-            kept_for_file += 1
-        file_counts[path.name] = kept_for_file
-        if file_index % 10 == 0 or file_index == len(files):
-            elapsed = time.time() - started
-            print(
-                f"[{file_index}/{len(files)}] sampled={len(records)} "
-                f"elapsed={elapsed:.1f}s last={path.name}:{kept_for_file}"
-            )
-        if len(records) >= max_docs:
-            break
 
     if not records:
         raise ValueError("No usable sentence/vector pairs were sampled.")
@@ -211,18 +241,19 @@ def build_balanced_prefix_sample(
     embeddings = np.vstack(vectors).astype(np.float32, copy=False)
     meta = {
         "sample_method": "balanced_prefix_per_game",
-        "input_dir": str(input_dir.resolve()),
-        "input_files": len(files),
-        "input_size_gb": round(input_size_gb(input_dir), 3),
+        "corpus_format": "embedding_h5",
+        "input_h5": str(input_h5.resolve()),
+        "input_files": len(game_counts),
+        "input_size_gb": round(input_size_gb(input_h5), 3),
         "max_docs": max_docs,
         "sampled_docs": len(records),
         "embedding_dim": int(embeddings.shape[1]),
-        "per_file_limit": per_file_limit,
+        "per_game_limit": per_game_limit,
         "min_chars": min_chars,
         "skip_metadata_review_ids_lt_3": skip_metadata,
         "skipped_short": skipped_short,
         "skipped_bad_vector": skipped_bad_vector,
-        "file_counts": file_counts,
+        "game_counts": game_counts,
         "created_at": datetime.now().isoformat(timespec="seconds"),
     }
 
@@ -305,9 +336,10 @@ def build_report(
     lines.append("# Game Review BERTopic")
     lines.append("")
     lines.append(f"- Generated: {datetime.now().isoformat(timespec='seconds')}")
-    lines.append(f"- Input: `{markdown_escape(sample_meta['input_dir'])}`")
-    lines.append(f"- Input files: {sample_meta['input_files']}")
-    lines.append(f"- Input directory size: {sample_meta['input_size_gb']} GB")
+    lines.append(f"- Input H5: `{markdown_escape(sample_meta['input_h5'])}`")
+    lines.append(f"- Corpus format: `{sample_meta.get('corpus_format', 'embedding_h5')}`")
+    lines.append(f"- H5 games scanned: {sample_meta['input_files']}")
+    lines.append(f"- H5 size: {sample_meta['input_size_gb']} GB")
     lines.append(f"- Sample method: `{sample_meta['sample_method']}`")
     lines.append(f"- Sampled documents: {sample_meta['sampled_docs']}")
     lines.append(f"- Embedding dimension: {sample_meta['embedding_dim']}")
@@ -318,10 +350,9 @@ def build_report(
     lines.append(f"- Fit time: {fit_seconds:.1f} seconds")
     lines.append("")
     lines.append(
-        "Note: the source sentence/vector directory is about 100 GB. This run uses "
-        "a deterministic per-game prefix sample and skips metadata records with "
-        "`review_id < 3` before fitting BERTopic. It is a practical topic snapshot, "
-        "not a full all-sentence HDBSCAN fit."
+        "Note: this run uses a deterministic per-game prefix sample and skips "
+        "metadata records with `review_id < 3` before fitting BERTopic. It is a "
+        "practical topic snapshot, not a full all-sentence HDBSCAN fit."
     )
     lines.append("")
 
@@ -346,13 +377,8 @@ def build_report(
     lines.append("|---:|---:|---|")
     for _, row in topic_info.iterrows():
         topic_id = int(row["Topic"])
-        if topic_id == -1:
-            words = "outliers"
-        else:
-            words = topic_words(topic_model, topic_id)
-        lines.append(
-            f"| {topic_id} | {int(row['Count'])} | {markdown_escape(words, max_chars=220)} |"
-        )
+        words = "outliers" if topic_id == -1 else topic_words(topic_model, topic_id)
+        lines.append(f"| {topic_id} | {int(row['Count'])} | {markdown_escape(words, max_chars=220)} |")
     lines.append("")
 
     lines.append("## Top Topic Examples")
@@ -365,7 +391,7 @@ def build_report(
         lines.append(f"Top words: {markdown_escape(words)}")
         lines.append("")
         for doc, record in examples.get(topic_id, []):
-            source = f"{record['file']} review={record['review_id']} sentence={record['sentence_id']}"
+            source = f"{record['game']} review={record['review_id']} sentence={record['sentence_id']}"
             lines.append(f"- `{markdown_escape(source)}`: {markdown_escape(doc, max_chars=450)}")
         lines.append("")
 
@@ -375,7 +401,7 @@ def build_report(
 
 def parse_args():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--input-dir", default=DEFAULT_INPUT_DIR, type=Path)
+    parser.add_argument("--input-h5", "--input-dir", dest="input_h5", default=DEFAULT_INPUT_H5, type=Path)
     parser.add_argument("--output-md", default=DEFAULT_OUTPUT_MD, type=Path)
     parser.add_argument("--cache-dir", default=DEFAULT_CACHE_DIR, type=Path)
     parser.add_argument("--max-docs", default=100_000, type=int)
@@ -392,7 +418,7 @@ def parse_args():
 def main() -> None:
     args = parse_args()
     records, docs, embeddings, sample_meta = build_balanced_prefix_sample(
-        input_dir=args.input_dir,
+        input_h5=args.input_h5,
         cache_dir=args.cache_dir,
         max_docs=args.max_docs,
         min_chars=args.min_chars,

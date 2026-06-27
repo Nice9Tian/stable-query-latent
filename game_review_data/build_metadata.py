@@ -19,6 +19,7 @@ and deduplicated by appid (first directory wins). The three metadata strings
 
 import argparse
 import json
+import time
 from pathlib import Path
 
 import pandas as pd
@@ -31,6 +32,17 @@ DEFAULT_REVIEWS_DIR = SCRIPT_DIR / "reviews"
 DEFAULT_GAMES_JSON = SCRIPT_DIR / "games.json"
 DEFAULT_OUTPUT_DIR = SCRIPT_DIR / "game_review_metadata"
 META_FIELDS = ("detailed_description", "about_the_game", "short_description")
+
+
+def replace_with_retry(tmp_path: Path, output_path: Path, attempts: int = 8) -> None:
+    for attempt in range(attempts):
+        try:
+            tmp_path.replace(output_path)
+            return
+        except PermissionError:
+            if attempt == attempts - 1:
+                raise
+            time.sleep(0.25 * (attempt + 1))
 
 
 def load_games_meta(games_json):
@@ -126,7 +138,7 @@ def build_metadata(
         tmp_path = output_path.with_suffix(".json.tmp")
         with tmp_path.open("w", encoding="utf-8") as file:
             json.dump(data, file, ensure_ascii=False)
-        tmp_path.replace(output_path)
+        replace_with_retry(tmp_path, output_path)
 
         kept += 1
         print(f"  {csv_path.name}: {len(reviews)} reviews -> {output_path.name}")

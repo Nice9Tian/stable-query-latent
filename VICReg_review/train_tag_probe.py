@@ -47,9 +47,9 @@ if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
 from VICReg_review.model import HierarchicalLatentArrayMLP, LatentArrayMLP  # noqa: E402
-from VICReg_review.train_vicreg_review_h5 import load_game_views  # noqa: E402
+from VICReg_review.train_vicreg_review_h5 import load_game_views, validate_training_h5  # noqa: E402
 
-DEFAULT_H5 = SCRIPT_DIR / "h5" / "game_review_cleaned_3_sentences.h5"
+DEFAULT_H5 = PROJECT_ROOT / "game_review_data" / "embedding_h5.h5"
 DEFAULT_CHECKPOINT = SCRIPT_DIR / "heads" / "vicreg_review_h5_best.pt"
 DEFAULT_TAGS_DIR = SCRIPT_DIR / "tags"
 DEFAULT_OUT_DIR = SCRIPT_DIR / "heads"
@@ -113,6 +113,7 @@ def extract_features(encoder, h5_path, sample_fraction, feature_views, seed, cac
     rng = np.random.default_rng(seed)
     cache_np = np.dtype(cache_dtype)
     with h5py.File(h5_path, "r") as h5:
+        validate_training_h5(h5, h5_path)
         game_names = [decode_name(name) for name in h5["game_names"][:]]
         num_games = len(game_names)
         feats = None
@@ -152,6 +153,7 @@ def l2_normalize(X, eps=1e-8):
 def load_labels(tags_dir=None, h5_path=None):
     if h5_path is not None:
         with h5py.File(h5_path, "r") as h5:
+            validate_training_h5(h5, h5_path)
             if "tap_names" in h5 and "tap_labels" in h5:
                 tags = [decode_name(n) for n in h5["tap_names"][:]]
                 names = [decode_name(n) for n in h5["game_names"][:]]
