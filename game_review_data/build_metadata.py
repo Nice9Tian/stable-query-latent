@@ -5,14 +5,16 @@ This consolidates the interactive clean_reviews.py chain (length filter -> count
 filter -> merge reviews + prepend game metadata, i.e. the `cleaned_3` form) into a
 single non-interactive pass:
 
-    for each <game_id>_<collect_id>.csv in the reviews dir:
+    for each <game_id>_<collect_id>.csv in the reviews dir(s):
         keep reviews whose text length >= --min-length
         drop the whole game if fewer than --min-count reviews remain
         write <game_id>_<collect_id>.json =
             [detailed_description, about_the_game, short_description, review_1, review_2, ...]
 
-The three metadata strings (looked up in games.json by game_id) are prepended only
-when --with-meta is set (default). Output is one JSON array per game.
+Multiple review directories can be supplied; they are processed in priority order
+and deduplicated by appid (first directory wins). The three metadata strings
+(looked up in games.json by game_id) are prepended only when --with-meta is set
+(default). Output is one JSON array per game.
 """
 
 import argparse
@@ -48,27 +50,49 @@ def read_reviews(csv_path):
 
 
 def build_metadata(
-    reviews_dir,
-    games_json,
-    output_dir,
+    reviews_dirs=None,
+    games_json=DEFAULT_GAMES_JSON,
+    output_dir=DEFAULT_OUTPUT_DIR,
     min_length=300,
     min_count=500,
     with_meta=True,
     overwrite=False,
+    reviews_dir=None,  # deprecated alias for a single directory
 ):
-    reviews_dir = Path(reviews_dir)
+    # Normalise to a list of Path objects.
+    if reviews_dirs is None:
+        reviews_dirs = reviews_dir if reviews_dir is not None else DEFAULT_REVIEWS_DIR
+    if isinstance(reviews_dirs, (str, Path)):
+        reviews_dirs = [Path(reviews_dirs)]
+    else:
+        reviews_dirs = [Path(d) for d in reviews_dirs]
+
     output_dir = Path(output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
 
-    games = load_games_meta(games_json) if with_meta else {}
-    csv_files = sorted(reviews_dir.glob("*.csv"))
-    if not csv_files:
-        raise ValueError(f"No CSV files found in {reviews_dir}")
+    # Collect CSVs from all source dirs and dedup by appid (first dir wins).
+    appid_to_csv: dict[str, Path] = {}
+    source_counts: list[int] = []
+    for reviews_dir in reviews_dirs:
+        reviews_dir = Path(reviews_dir)
+        before = len(appid_to_csv)
+        for csv_path in sorted(reviews_dir.glob("*.csv")):
+            appid = csv_path.stem.split("_")[0]
+            if appid not in appid_to_csv:
+                appid_to_csv[appid] = csv_path
+        source_counts.append(len(appid_to_csv) - before)
 
+    csv_files = sorted(appid_to_csv.values(), key=lambda p: p.stem)
+    if not csv_files:
+        raise ValueError(f"No CSV files found in {reviews_dirs}")
+
+    src_summary = ", ".join(f"src{i+1}={n}" for i, n in enumerate(source_counts))
     print(
-        f"build_metadata: {len(csv_files)} games | min_length={min_length} "
-        f"min_count={min_count} with_meta={with_meta} -> {output_dir}"
+        f"build_metadata: {len(csv_files)} unique games ({src_summary}) | "
+        f"min_length={min_length} min_count={min_count} with_meta={with_meta} -> {output_dir}"
     )
+
+    games = load_games_meta(games_json) if with_meta else {}
 
     kept = skipped = 0
     for csv_path in csv_files:
@@ -114,9 +138,16 @@ def build_metadata(
 def parse_args():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
+        "--reviews-dirs",
+        nargs="+",
+        default=None,
+        metavar="DIR",
+        help="Raw review CSV directories, in priority order (first dir wins per appid).",
+    )
+    parser.add_argument(
         "--reviews-dir",
-        default=DEFAULT_REVIEWS_DIR,
-        help="Raw review CSV directory (default: script-relative reviews/).",
+        default=None,
+        help="Single raw review CSV directory. Alias for --reviews-dirs with one value.",
     )
     parser.add_argument(
         "--games-json",
@@ -138,10 +169,11 @@ def parse_args():
 
 def main():
     args = parse_args()
+    reviews_dirs = args.reviews_dirs or ([args.reviews_dir] if args.reviews_dir else None)
     build_metadata(
-        args.reviews_dir,
-        args.games_json,
-        args.output_dir,
+        reviews_dirs=reviews_dirs,
+        games_json=args.games_json,
+        output_dir=args.output_dir,
         min_length=args.min_length,
         min_count=args.min_count,
         with_meta=args.with_meta,

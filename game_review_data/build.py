@@ -1,271 +1,155 @@
-"""One-command builder for the game-review dataset.
+"""Unified build: merge source1 + source2 → clean → split → embed → H5.
 
-Pipeline layout:
+note.txt cleaning spec (applied to both sources jointly):
+  cleaned   : keep reviews with length > --min-length (default 300)
+  cleaned_1 : keep games with >= --min-count reviews remaining (default 500)
+  cleaned_2 : all reviews for a game concatenated into one list
+  cleaned_3 : game descriptions (detailed / about / short) prepended as first
+              entries so the encoder always sees metadata context
 
-1. ``build_1.py`` optionally builds the local 2020-2024 Steam source, if present.
-2. ``build_2.py`` builds the Kaggle ``andrewmvd/steam-reviews`` source.
-3. ``combine.py`` merges available branches by appid, keeping source 1 first.
+Sources (both must already be present on disk; no download is required):
 
-The build treats ``games.json`` as an output, not an input. The Kaggle branch
-creates its prepared ``games.json`` before metadata building, and the final
-combine stage fills any missing records from produced metadata files. Every
-stage is resumable by default; pass ``--overwrite`` only when you intentionally
-want to rebuild.
+  source1  Steam Games Metadata and Player Reviews (2020–2024)/
+           └─ Game Reviews/*.csv     (23 k games; appid_count.csv format)
+           └─ games.json             (rich metadata: positive/negative/tags/…)
+
+  source2  kaggle_steam_reviews_prepared/
+           └─ reviews/*.csv          (656 games; same CSV schema)
+           └─ games.json             (enriched via Steam API)
+
+When the same appid appears in both sources, source1 wins.
+
+Pipeline stages inside --workdir (default: combined_gamedata/):
+
+  1. games.json merge  → workdir/games.json         (source1 priority)
+  2. metadata          → workdir/metadata/           (clean+filter+prepend)
+  3. sentences         → workdir/sentences/          (SaT sentence split)
+  4. embedded          → workdir/embedded/           (Qwen3 embed, local or cloud)
+  5. h5 (optional)     → VICReg_review/h5/           (shard+merge into one HDF5)
+
+Every stage is resumable: existing output files are skipped unless --overwrite.
+Pass --only or --skip to run a subset of stages (1-4 only; use --build-h5 for 5).
 """
 
 from __future__ import annotations
 
 import argparse
+import json
 import subprocess
 import sys
+import time
 from pathlib import Path
 
 SCRIPT_DIR = Path(__file__).resolve().parent
+PROJECT_ROOT = SCRIPT_DIR.parent
 
-DEFAULT_SOURCE1_DIR = SCRIPT_DIR / "Steam Games Metadata and Player Reviews (2020–2024"
-DEFAULT_SOURCE1_REVIEWS = DEFAULT_SOURCE1_DIR / "Game Reviews"
+# --------------------------------------------------------------------------- sources
+SOURCE1_REVIEWS = SCRIPT_DIR / "Steam Games Metadata and Player Reviews (2020–2024" / "Game Reviews"
+SOURCE1_GAMES_JSON = SCRIPT_DIR / "Steam Games Metadata and Player Reviews (2020–2024" / "games.json"
+SOURCE2_REVIEWS = SCRIPT_DIR / "kaggle_steam_reviews_prepared" / "reviews"
+SOURCE2_GAMES_JSON = SCRIPT_DIR / "kaggle_steam_reviews_prepared" / "games.json"
 
-DEFAULT_BUILD1_WORKDIR = SCRIPT_DIR / "build_1_gamedata"
-DEFAULT_BUILD2_WORKDIR = SCRIPT_DIR / "build_2_gamedata"
-DEFAULT_BUILD2_PREPARED = SCRIPT_DIR / "kaggle_steam_reviews_prepared"
-DEFAULT_COMBINED_WORKDIR = SCRIPT_DIR / "combined_gamedata"
-DEFAULT_KAGGLE_CACHE = SCRIPT_DIR / "kagglehub_cache"
+DEFAULT_WORKDIR = SCRIPT_DIR / "combined_gamedata"
+H5_SCRIPT = PROJECT_ROOT / "VICReg_review" / "build_review_h5.py"
 
-STAGES = ("metadata", "split", "embed")
-COMBINE_STAGE_MAP = {
-    "metadata": "metadata",
-    "split": "sentences",
-    "embed": "embedded",
-}
+PIPELINE_STAGES = ("metadata", "split", "embed")
 
 
-def has_csvs(path: Path) -> bool:
-    path = Path(path)
-    return path.exists() and any(path.glob("*.csv"))
+# --------------------------------------------------------------------------- helpers
+def atomic_json_write(payload: dict, path: Path) -> None:
+    path.parent.mkdir(parents=True, exist_ok=True)
+    tmp = path.with_name(path.name + ".tmp")
+    try:
+        tmp.write_text(json.dumps(payload, ensure_ascii=False), encoding="utf-8")
+        tmp.replace(path)
+    except BaseException:
+        tmp.unlink(missing_ok=True)
+        raise
 
 
-def has_stage_outputs(workdir: Path) -> bool:
-    workdir = Path(workdir)
-    return any((workdir / stage).exists() and any((workdir / stage).glob("*.json")) for stage in STAGES)
+def merge_games_json(sources: list[Path], output_path: Path, overwrite: bool) -> dict:
+    """Merge games.json files from multiple sources; first source wins per appid."""
+    if output_path.exists() and not overwrite:
+        print(f"merge_games_json: skip existing {output_path}", flush=True)
+        return json.loads(output_path.read_text(encoding="utf-8"))
+
+    merged: dict = {}
+    for path in sources:
+        path = Path(path)
+        if not path.exists():
+            print(f"  [warn] games.json not found: {path}", flush=True)
+            continue
+        data = json.loads(path.read_text(encoding="utf-8"))
+        if not isinstance(data, dict):
+            print(f"  [warn] {path}: not a JSON object, skipping", flush=True)
+            continue
+        added = 0
+        for appid, record in data.items():
+            if str(appid) not in merged:
+                merged[str(appid)] = record
+                added += 1
+        print(f"  games.json {path.name}: {len(data)} records, {added} new", flush=True)
+
+    atomic_json_write(merged, output_path)
+    print(f"merge_games_json: {len(merged)} total appids -> {output_path}", flush=True)
+    return merged
 
 
-def run_command(cmd: list[str], cwd: Path = SCRIPT_DIR) -> None:
-    print("RUN " + " ".join(str(part) for part in cmd), flush=True)
-    subprocess.run(cmd, cwd=str(cwd), check=True)
-
-
-def add_stage_args(cmd: list[str], args) -> None:
-    if args.only:
-        cmd.extend(["--only", *args.only])
-    if args.skip:
-        cmd.extend(["--skip", *args.skip])
-
-
-def mapped_combine_stages(stages: list[str] | None) -> list[str] | None:
-    if not stages:
-        return stages
-    return [COMBINE_STAGE_MAP[stage] for stage in stages]
-
-
-def build_1_command(args) -> list[str]:
+def run_h5_build(args, workdir: Path) -> None:
+    embedded_dir = workdir / "embedded"
     cmd = [
-        sys.executable,
-        str(SCRIPT_DIR / "build_1.py"),
-        "--workdir",
-        str(args.build1_workdir),
-        "--reviews-dir",
-        str(args.build1_reviews_dir),
-        "--min-length",
-        str(args.min_length),
-        "--min-count",
-        str(args.min_count),
-        "--split-model",
-        args.split_model,
-        "--chunk-size",
-        str(args.chunk_size),
-        "--backend",
-        args.backend,
-        "--local-model",
-        args.local_model,
-        "--concurrency",
-        str(args.concurrency),
-        "--batch-size",
-        str(args.batch_size),
+        str(args.python),
+        str(H5_SCRIPT),
+        "--input-dir", str(embedded_dir),
+        "--games-json", str(workdir / "games.json"),
+        "--workers", str(args.h5_workers),
+        "--shards", str(args.h5_shards),
     ]
-    add_stage_args(cmd, args)
     if args.overwrite:
         cmd.append("--overwrite")
-    cmd.append("--no-meta")
-    if args.split_device:
-        cmd.extend(["--split-device", args.split_device])
-    if args.embed_device:
-        cmd.extend(["--embed-device", args.embed_device])
-    if args.base_url:
-        cmd.extend(["--base-url", args.base_url])
-    if args.token_file:
-        cmd.extend(["--token-file", args.token_file])
-    if args.normalize:
-        cmd.append("--normalize")
-    return cmd
+    print("RUN " + " ".join(str(c) for c in cmd), flush=True)
+    subprocess.run(cmd, cwd=str(PROJECT_ROOT), check=True)
 
 
-def build_2_command(args) -> list[str]:
-    cmd = [
-        sys.executable,
-        str(SCRIPT_DIR / "build_2.py"),
-        "--prepared-dir",
-        str(args.build2_prepared_dir),
-        "--workdir",
-        str(args.build2_workdir),
-        "--kaggle-cache",
-        str(args.kaggle_cache),
-        "--min-length",
-        str(args.min_length),
-        "--min-count",
-        str(args.min_count),
-        "--prepare-chunksize",
-        str(args.prepare_chunksize),
-        "--enrich-batch-size",
-        str(args.enrich_batch_size),
-        "--enrich-sleep",
-        str(args.enrich_sleep),
-        "--enrich-retry-sleep",
-        str(args.enrich_retry_sleep),
-        "--enrich-retries",
-        str(args.enrich_retries),
-        "--split-model",
-        args.split_model,
-        "--chunk-size",
-        str(args.chunk_size),
-        "--backend",
-        args.backend,
-        "--local-model",
-        args.local_model,
-        "--concurrency",
-        str(args.concurrency),
-        "--batch-size",
-        str(args.batch_size),
-    ]
-    add_stage_args(cmd, args)
-    if args.kaggle_input:
-        cmd.extend(["--kaggle-input", str(args.kaggle_input)])
-    if args.skip_kaggle_download:
-        cmd.append("--skip-download")
-    if args.skip_kaggle_prepare:
-        cmd.append("--skip-prepare")
-    if args.skip_kaggle_enrich:
-        cmd.append("--skip-enrich")
-    if args.overwrite:
-        cmd.append("--overwrite")
-    if args.no_meta:
-        cmd.append("--no-meta")
-    if args.strict_length:
-        cmd.append("--strict-length")
-    else:
-        cmd.append("--no-strict-length")
-    if args.strict_count:
-        cmd.append("--strict-count")
-    else:
-        cmd.append("--no-strict-count")
-    if args.split_device:
-        cmd.extend(["--split-device", args.split_device])
-    if args.embed_device:
-        cmd.extend(["--embed-device", args.embed_device])
-    if args.base_url:
-        cmd.extend(["--base-url", args.base_url])
-    if args.token_file:
-        cmd.extend(["--token-file", args.token_file])
-    if args.normalize:
-        cmd.append("--normalize")
-    return cmd
-
-
-def combine_command(args, *, include_build1: bool, include_build2: bool) -> list[str]:
-    source_workdirs = []
-    games_jsons = []
-    review_dirs = []
-
-    if include_build1:
-        source_workdirs.append(args.build1_workdir)
-        review_dirs.append(args.build1_reviews_dir)
-
-    if include_build2:
-        source_workdirs.append(args.build2_workdir)
-        review_dirs.append(args.build2_prepared_dir / "reviews")
-        games_jsons.append(args.build2_prepared_dir / "games.json")
-
-    if not source_workdirs:
-        raise SystemExit("No built source workdirs are available to combine.")
-
-    cmd = [
-        sys.executable,
-        str(SCRIPT_DIR / "combine.py"),
-        "--source-workdirs",
-        *[str(path) for path in source_workdirs],
-        "--output-workdir",
-        str(args.combined_workdir),
-    ]
-    if games_jsons and not args.skip_combine_games_json:
-        cmd.extend(["--games-jsons", *[str(path) for path in games_jsons]])
-    if review_dirs and not args.skip_combine_reviews:
-        cmd.extend(["--review-dirs", *[str(path) for path in review_dirs]])
-    only = mapped_combine_stages(args.only)
-    skip = mapped_combine_stages(args.skip)
-    if only:
-        cmd.extend(["--only", *only])
-    if skip:
-        cmd.extend(["--skip", *skip])
-    if args.overwrite:
-        cmd.append("--overwrite")
-    if not args.restrict_sidecars_to_metadata:
-        cmd.append("--no-restrict-sidecars-to-metadata")
-    return cmd
-
-
+# --------------------------------------------------------------------------- main
 def parse_args():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument(
-        "--workdir",
-        type=Path,
-        default=None,
-        help=(
-            "Final database workdir. If set, intermediate source dirs are placed "
-            "under <workdir>/_build unless explicitly overridden."
-        ),
-    )
-    parser.add_argument("--build1-workdir", type=Path, default=DEFAULT_BUILD1_WORKDIR)
-    parser.add_argument("--build2-workdir", type=Path, default=DEFAULT_BUILD2_WORKDIR)
-    parser.add_argument("--combined-workdir", type=Path, default=DEFAULT_COMBINED_WORKDIR)
-    parser.add_argument("--build1-reviews-dir", type=Path, default=DEFAULT_SOURCE1_REVIEWS)
-    parser.add_argument("--build2-prepared-dir", type=Path, default=DEFAULT_BUILD2_PREPARED)
-    parser.add_argument("--kaggle-cache", type=Path, default=DEFAULT_KAGGLE_CACHE)
-    parser.add_argument("--kaggle-input", type=Path, default=None)
 
-    parser.add_argument("--only", nargs="+", choices=STAGES, default=None)
-    parser.add_argument("--skip", nargs="+", choices=STAGES, default=[])
+    # Source directories
+    parser.add_argument("--source1-reviews", type=Path, default=SOURCE1_REVIEWS,
+                        help="Source1 review CSV directory (2020-2024 dataset).")
+    parser.add_argument("--source1-games-json", type=Path, default=SOURCE1_GAMES_JSON)
+    parser.add_argument("--source2-reviews", type=Path, default=SOURCE2_REVIEWS,
+                        help="Source2 review CSV directory (Kaggle prepared).")
+    parser.add_argument("--source2-games-json", type=Path, default=SOURCE2_GAMES_JSON)
+
+    # Output
+    parser.add_argument("--workdir", type=Path, default=DEFAULT_WORKDIR,
+                        help="Root working directory for all pipeline outputs.")
+
+    # Stage control
+    parser.add_argument("--only", nargs="+", choices=PIPELINE_STAGES, default=None,
+                        help="Run only these pipeline stages.")
+    parser.add_argument("--skip", nargs="+", choices=PIPELINE_STAGES, default=[],
+                        help="Skip these pipeline stages.")
+    parser.add_argument("--skip-merge-games-json", action="store_true",
+                        help="Skip the games.json merge step (use existing workdir/games.json).")
+    parser.add_argument("--build-h5", action="store_true",
+                        help="After embedding, run build_review_h5.py to produce the HDF5.")
     parser.add_argument("--overwrite", action="store_true")
-    parser.add_argument("--skip-build1", action="store_true")
-    parser.add_argument("--skip-build2", action="store_true")
-    parser.add_argument("--skip-combine", action="store_true")
-    parser.add_argument("--skip-kaggle-download", action="store_true")
-    parser.add_argument("--skip-kaggle-prepare", action="store_true")
-    parser.add_argument("--skip-kaggle-enrich", action="store_true")
 
-    parser.add_argument("--min-length", type=int, default=300)
-    parser.add_argument("--min-count", type=int, default=500)
-    parser.add_argument("--strict-length", action=argparse.BooleanOptionalAction, default=True)
-    parser.add_argument("--strict-count", action=argparse.BooleanOptionalAction, default=True)
-    parser.add_argument("--no-meta", action="store_true")
-    parser.add_argument("--prepare-chunksize", type=int, default=200_000)
+    # Cleaning / filtering (note.txt spec)
+    parser.add_argument("--min-length", type=int, default=300,
+                        help="Minimum review character length (note.txt: >300).")
+    parser.add_argument("--min-count", type=int, default=500,
+                        help="Minimum kept reviews per game (note.txt: >500).")
 
-    parser.add_argument("--enrich-batch-size", type=int, default=1)
-    parser.add_argument("--enrich-sleep", type=float, default=2.0)
-    parser.add_argument("--enrich-retry-sleep", type=float, default=10.0)
-    parser.add_argument("--enrich-retries", type=int, default=5)
-
+    # Splitting
     parser.add_argument("--split-model", default="sat-3l-sm")
     parser.add_argument("--split-device", default=None)
     parser.add_argument("--chunk-size", type=int, default=2000)
+
+    # Embedding
     parser.add_argument("--backend", choices=["local", "cloud"], default="cloud")
     parser.add_argument("--local-model", default="Qwen/Qwen3-Embedding-0.6B")
     parser.add_argument("--embed-device", default=None)
@@ -275,71 +159,112 @@ def parse_args():
     parser.add_argument("--batch-size", type=int, default=32)
     parser.add_argument("--normalize", action="store_true")
 
-    parser.add_argument("--skip-combine-games-json", action="store_true")
-    parser.add_argument("--skip-combine-reviews", action="store_true")
-    parser.add_argument("--restrict-sidecars-to-metadata", action=argparse.BooleanOptionalAction, default=True)
+    # H5 build (only used when --build-h5 is set)
+    parser.add_argument("--h5-workers", type=int, default=2)
+    parser.add_argument("--h5-shards", type=int, default=8)
+    parser.add_argument("--python", type=Path, default=Path(sys.executable))
+
     return parser.parse_args()
-
-
-def apply_workdir_defaults(args) -> None:
-    if args.workdir is None:
-        return
-
-    root = Path(args.workdir)
-    build_root = root / "_build"
-    if args.build1_workdir == DEFAULT_BUILD1_WORKDIR:
-        args.build1_workdir = build_root / "source1"
-    if args.build2_workdir == DEFAULT_BUILD2_WORKDIR:
-        args.build2_workdir = build_root / "source2"
-    if args.build2_prepared_dir == DEFAULT_BUILD2_PREPARED:
-        args.build2_prepared_dir = build_root / "kaggle_prepared"
-    if args.kaggle_cache == DEFAULT_KAGGLE_CACHE:
-        args.kaggle_cache = build_root / "kagglehub_cache"
-    if args.combined_workdir == DEFAULT_COMBINED_WORKDIR:
-        args.combined_workdir = root
 
 
 def main():
     args = parse_args()
-    apply_workdir_defaults(args)
+    started = time.time()
+    workdir = args.workdir
+    workdir.mkdir(parents=True, exist_ok=True)
 
-    build1_has_reviews = has_csvs(args.build1_reviews_dir)
-    run_build1 = not args.skip_build1 and build1_has_reviews
-    run_build2 = not args.skip_build2
+    run = set(args.only) if args.only else set(PIPELINE_STAGES)
+    run -= set(args.skip)
+
+    # Resolve review source dirs (skip missing ones with a warning)
+    review_dirs: list[Path] = []
+    for label, path in [("source1", args.source1_reviews), ("source2", args.source2_reviews)]:
+        if path.exists() and any(path.glob("*.csv")):
+            review_dirs.append(path)
+        else:
+            print(f"[warn] {label} review dir not found or empty: {path}", flush=True)
+
+    if not review_dirs:
+        raise SystemExit("No review CSV directories found. Check --source1-reviews / --source2-reviews.")
 
     print(
-        "=== combined game-review build ===\n"
-        f"build1={args.build1_workdir}\n"
-        f"build2={args.build2_workdir}\n"
-        f"combined={args.combined_workdir}",
+        f"=== unified game-review build ===\n"
+        f"workdir  : {workdir}\n"
+        f"sources  : {[str(p) for p in review_dirs]}\n"
+        f"stages   : {sorted(run)}\n"
+        f"backend  : {args.backend}\n",
         flush=True,
     )
-    if args.skip_build1:
-        print("\n--- source 1/3: skipped by --skip-build1 ---", flush=True)
-    elif not build1_has_reviews:
-        print(
-            f"\n--- source 1/3: skipped; no review CSVs found in {args.build1_reviews_dir} ---",
-            flush=True,
+
+    # ------------------------------------------------------------------ games.json
+    if not args.skip_merge_games_json:
+        print("\n--- merge games.json ---", flush=True)
+        games_json_sources = []
+        for path in [args.source1_games_json, args.source2_games_json]:
+            if path.exists():
+                games_json_sources.append(path)
+        merge_games_json(games_json_sources, workdir / "games.json", args.overwrite)
+
+    games_json = workdir / "games.json"
+    if not games_json.exists():
+        raise SystemExit(
+            f"games.json not found at {games_json}. "
+            "Run without --skip-merge-games-json or supply it manually."
         )
-    else:
-        print("\n--- source 1/3: build_1.py (without external games.json) ---", flush=True)
-        run_command(build_1_command(args))
 
-    if run_build2:
-        print("\n--- source 2/3: build_2.py ---", flush=True)
-        run_command(build_2_command(args))
-    else:
-        print("\n--- source 2/3: skipped by --skip-build2 ---", flush=True)
+    # ------------------------------------------------------------------ stage 1: metadata
+    if "metadata" in run:
+        print("\n--- stage 1/3: metadata (clean + filter + prepend descriptions) ---", flush=True)
+        # Import here so sys.path doesn't need to be modified (same package)
+        from build_metadata import build_metadata
+        build_metadata(
+            reviews_dirs=review_dirs,
+            games_json=games_json,
+            output_dir=workdir / "metadata",
+            min_length=args.min_length,
+            min_count=args.min_count,
+            with_meta=True,
+            overwrite=args.overwrite,
+        )
 
-    include_build1 = run_build1 or has_stage_outputs(args.build1_workdir)
-    include_build2 = run_build2 or has_stage_outputs(args.build2_workdir)
+    # ------------------------------------------------------------------ stage 2: split
+    if "split" in run:
+        print("\n--- stage 2/3: split (SaT sentence splitter) ---", flush=True)
+        from split_data import split_data
+        split_data(
+            input_dir=workdir / "metadata",
+            output_dir=workdir / "sentences",
+            model=args.split_model,
+            device=args.split_device,
+            chunk_size=args.chunk_size,
+            overwrite=args.overwrite,
+        )
 
-    if not args.skip_combine:
-        print("\n--- source 3/3: combine.py ---", flush=True)
-        run_command(combine_command(args, include_build1=include_build1, include_build2=include_build2))
-    else:
-        print("\n--- source 3/3: skipped by --skip-combine ---", flush=True)
-    print(f"\n=== build done. combined workdir={args.combined_workdir} ===", flush=True)
+    # ------------------------------------------------------------------ stage 3: embed
+    if "embed" in run:
+        print("\n--- stage 3/3: embed (Qwen3 vectors) ---", flush=True)
+        from embedding_data import embed_data
+        embed_data(
+            input_dir=workdir / "sentences",
+            output_dir=workdir / "embedded",
+            backend=args.backend,
+            overwrite=args.overwrite,
+            local_model=args.local_model,
+            device=args.embed_device,
+            base_url=args.base_url,
+            token_file=args.token_file,
+            concurrency=args.concurrency,
+            batch_size=args.batch_size,
+            normalize=args.normalize,
+        )
+
+    # ------------------------------------------------------------------ H5 build
+    if args.build_h5:
+        print("\n--- H5: shard + merge -> VICReg_review/h5/ ---", flush=True)
+        run_h5_build(args, workdir)
+
+    elapsed = time.time() - started
+    print(f"\n=== build done in {elapsed:.0f}s. workdir={workdir} ===", flush=True)
 
 
 if __name__ == "__main__":

@@ -28,16 +28,11 @@ import numpy as np
 SCRIPT_DIR = Path(__file__).resolve().parent
 PROJECT_ROOT = SCRIPT_DIR.parent
 
-DEFAULT_INPUT_DIR = PROJECT_ROOT / "game_review_data" / "game_review_cleaned_3_sentences"
+DEFAULT_INPUT_DIR = PROJECT_ROOT / "game_review_data" / "combined_gamedata" / "embedded"
 DEFAULT_H5_DIR = SCRIPT_DIR / "h5"
 DEFAULT_SHARD_DIR = DEFAULT_H5_DIR / "shards"
 DEFAULT_OUTPUT_H5 = DEFAULT_H5_DIR / "game_review_cleaned_3_sentences.h5"
-DEFAULT_GAMES_JSON = (
-    PROJECT_ROOT
-    / "game_review_data"
-    / "Steam Games Metadata and Player Reviews (2020–2024"
-    / "games.json"
-)
+DEFAULT_GAMES_JSON = PROJECT_ROOT / "game_review_data" / "combined_gamedata" / "games.json"
 DEFAULT_TAP_MAPPING = SCRIPT_DIR / "tags" / "tap_mapping.json"
 
 try:
