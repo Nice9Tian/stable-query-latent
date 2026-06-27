@@ -7,8 +7,8 @@ each epoch/batch it samples review views once, then trains two independent arms:
 * nogrl: adversary_weight = 0 and recommendation loss disabled.
 
 The arms keep separate checkpoints, histories, optimizers, and manifests.  The
-sampled input views, description samples, recommendation labels, and dropout RNG
-sequence are shared per batch so differences are attributable to the GRL arm.
+sampled input views, recommendation labels, and dropout RNG sequence are shared
+per batch so differences are attributable to the GRL arm.
 """
 
 from __future__ import annotations
@@ -30,17 +30,14 @@ if str(PROJECT_ROOT) not in sys.path:
     sys.path.insert(0, str(PROJECT_ROOT))
 
 from VICReg_review.train_vicreg_review_h5 import (  # noqa: E402
-    DEFAULT_DESCRIPTION_CACHE,
     DEFAULT_H5,
     DEFAULT_HEADS_DIR,
     DEFAULT_SST_CHECKPOINT,
     build_training_components,
     capture_rng_state,
-    decode_name,
     game_sentence_counts,
     grl_lambda_at,
     iter_epoch,
-    load_description_bank,
     load_recommendation_targets,
     make_epoch_indices,
     prepare_epoch_batches,
@@ -133,9 +130,6 @@ def prepare_common_state(args):
         num_games = int(h5["game_names"].shape[0])
         input_dim = int(h5.attrs["input_dim"])
         total_sentences = int(h5["vectors"].shape[0])
-        h5_appids = [decode_name(x) for x in h5["appids"][:]] if "appids" in h5 else [
-            decode_name(x).split("_", 1)[0] for x in h5["game_names"][:]
-        ]
         train_game_indices = resolve_train_game_indices(args, h5)
         effective_num_games = len(train_game_indices) if train_game_indices is not None else num_games
         if args.max_batch_sentences > 0:
@@ -156,13 +150,6 @@ def prepare_common_state(args):
             default_steps = math.ceil(effective_num_games / args.batch_size)
     if args.steps_per_epoch <= 0:
         args.steps_per_epoch = default_steps
-
-    description_bank = None
-    if args.description_align_weight > 0 or args.description_mse_weight > 0:
-        description_bank = load_description_bank(args, h5_appids)
-        if args.train_game_indices is not None:
-            keep = set(int(i) for i in args.train_game_indices)
-            description_bank = [items if index in keep else [] for index, items in enumerate(description_bank)]
 
     recommendation_weight = max(
         float(getattr(args, "recommendation_decorr_weight", 0.0)),
@@ -185,11 +172,11 @@ def prepare_common_state(args):
         f"max_view_sentences={args.max_view_sentences}",
         flush=True,
     )
-    return device, cache_dtype, input_dim, description_bank, recommendation_targets
+    return device, cache_dtype, input_dim, recommendation_targets
 
 
 def train(args) -> None:
-    device, cache_dtype, input_dim, description_bank, recommendation_targets = prepare_common_state(args)
+    device, cache_dtype, input_dim, recommendation_targets = prepare_common_state(args)
     amp_enabled = args.amp and device.type == "cuda"
     pin_transfer = args.pin_cache and device.type == "cuda"
 
@@ -234,7 +221,6 @@ def train(args) -> None:
             args.train_game_indices,
         )
 
-    description_rng = np.random.default_rng(args.seed + 704_971)
     try:
         for epoch in range(1, args.epochs + 1):
             for state in arms:
@@ -246,13 +232,11 @@ def train(args) -> None:
 
             for batch_index, batch in enumerate(epoch_batches, start=1):
                 rng_state = capture_rng_state(device)
-                description_state = copy.deepcopy(description_rng.bit_generator.state)
                 for state in arms:
                     arm_args = state["args"]
                     current_grl = grl_lambda_at(state["global_step"], args.steps_per_epoch, arm_args)
                     state["adversary"].grl.lambda_ = current_grl
                     restore_rng_state(rng_state, device)
-                    description_rng.bit_generator.state = copy.deepcopy(description_state)
                     metrics = run_training_batch(
                         batch,
                         state["model"],
@@ -264,10 +248,7 @@ def train(args) -> None:
                         device,
                         amp_enabled,
                         pin_transfer,
-                        description_bank=description_bank,
-                        description_rng=description_rng,
                         recommendation_targets_np=recommendation_targets,
-                        cache_dtype=cache_dtype,
                     )
                     metrics["grl_lambda"] = current_grl
                     state["global_step"] += 1
@@ -429,16 +410,6 @@ def parse_args():
     parser.add_argument("--expander-dim", type=int, default=1024)
     parser.add_argument("--expander-hidden", type=parse_int_list, default=(128, 512))
     parser.add_argument("--expander-dropout", type=float, default=0.0)
-    parser.add_argument("--description-align-weight", type=float, default=0.0)
-    parser.add_argument("--description-mse-weight", type=float, default=0.0)
-    parser.add_argument("--description-align-temperature", type=float, default=0.07)
-    parser.add_argument("--description-dir", default=str(SCRIPT_DIR / "tags" / "game_descriptions"))
-    parser.add_argument("--description-cache", default=str(DEFAULT_DESCRIPTION_CACHE))
-    parser.add_argument("--overwrite-description-cache", action="store_true")
-    parser.add_argument("--description-include-extra-cases", action=argparse.BooleanOptionalAction, default=True)
-    parser.add_argument("--description-max-sentences", type=int, default=512)
-    parser.add_argument("--description-embed-batch-size", type=int, default=16)
-    parser.add_argument("--description-local-model", default=None)
     parser.add_argument("--recommendation-decorr-weight", type=float, default=0.0)
     parser.add_argument("--grl-recommendation-decorr-weight", type=float, default=0.0)
     parser.add_argument("--nogrl-recommendation-decorr-weight", type=float, default=0.0)

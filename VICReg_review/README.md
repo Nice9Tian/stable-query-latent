@@ -86,8 +86,8 @@ the old 18-d bottleneck, and the current 64-d game-centroid results.
 
 `heads/hierarchical64_align_reco/vicreg_review_h5_latest.pt` is the current best
 checkpoint. It uses a hierarchical latent-array encoder with self-attention and
-reduction stages, a 64-d compact game centroid, centroid-level VICReg, full-text
-description alignment, and a recommendation-rate decorrelation term.
+reduction stages, a 64-d compact game centroid, centroid-level VICReg, and a
+recommendation-rate decorrelation term.
 
 Headline diagnostics:
 

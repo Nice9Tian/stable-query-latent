@@ -11,9 +11,8 @@ The sweep varies four axes:
 Evaluation is always performed against the full H5 candidate pool (every game in
 the H5, however many there are). A train-game-count of 0 (the default) trains on
 that full pool; positive values train on a seeded subset for the data-size axis.
-The Cyberpunk 2077 and Across the Obelisk sentiment diagnostic texts are
-test-only here; the default description cache is the train-only cache that
-excludes those texts.
+The Cyberpunk 2077 and Across the Obelisk sentiment/name-erased diagnostic texts
+are test-only here.
 """
 
 from __future__ import annotations
@@ -56,11 +55,13 @@ from VICReg_review.train_tag_probe import (  # noqa: E402
     sample_game_views,
     summarize as tag_summarize,
 )
-from VICReg_review.train_vicreg_review_h5 import validate_training_h5  # noqa: E402
+from VICReg_review.train_vicreg_review_h5 import (  # noqa: E402
+    TRAINING_MANIFEST_SCHEMA,
+    validate_training_h5,
+)
 
 DEFAULT_H5 = ROOT / "game_review_data" / "embedding_h5.h5"
 DEFAULT_OUT_DIR = SCRIPT_DIR / "heads" / "data_view_sweep"
-DEFAULT_DESCRIPTION_CACHE = SCRIPT_DIR / "heads" / "description_embedding_cache_train_only.npz"
 DEFAULT_PYTHON = Path(sys.executable)
 
 
@@ -146,6 +147,8 @@ def manifest_payload(path: Path) -> dict | None:
 def manifest_matches_arm(path: Path, arm: str) -> bool:
     payload = manifest_payload(path)
     if not payload:
+        return False
+    if payload.get("training_schema") != TRAINING_MANIFEST_SCHEMA:
         return False
     try:
         actual_reco = float(payload.get("recommendation_decorr_weight"))
@@ -289,10 +292,6 @@ def build_train_command(args, output_dim: int, arm: str, train_games: int, view:
         "--expander-hidden", "256,512",
         "--compact-variance-weight", "25",
         "--compact-covariance-weight", "25",
-        "--description-cache", str(args.description_cache),
-        "--no-description-include-extra-cases",
-        "--description-align-weight", "5",
-        "--description-mse-weight", "10",
         "--recommendation-decorr-weight", f"{arm_recommendation_weight(arm):g}",
         "--recommendation-target-transform", "logit",
         "--adversary-weight", f"{arm_adversary_weight(arm):g}",
@@ -341,10 +340,6 @@ def build_paired_train_command(args, output_dim: int, train_games: int, view: fl
         "--expander-hidden", "256,512",
         "--compact-variance-weight", "25",
         "--compact-covariance-weight", "25",
-        "--description-cache", str(args.description_cache),
-        "--no-description-include-extra-cases",
-        "--description-align-weight", "5",
-        "--description-mse-weight", "10",
         "--recommendation-target-transform", "logit",
         "--grl-adversary-weight", f"{arm_adversary_weight('grl'):g}",
         "--nogrl-adversary-weight", f"{arm_adversary_weight('nogrl'):g}",
@@ -1064,7 +1059,7 @@ def render_report(rows: list[dict], args) -> str:
         f"- view fraction：{', '.join(f'{v:.1f}' for v in args.sample_fractions)}",
         f"- 对照 arm：{', '.join(args.arms)}（grl=GRL 10 + reco 30；nogrl=GRL 0 + reco 0）。",
         f"- 评估候选池：始终使用全量 {getattr(args, 'num_games', '?')} 款游戏。",
-        "- 测试文本：Cyberpunk 2077、Across the Obelisk 的 neutral/positive/negative/noname 长文本只在测试阶段使用；训练使用 train-only description cache。",
+        "- 测试文本：Cyberpunk 2077、Across the Obelisk 的 neutral/positive/negative/noname 长文本只在测试阶段使用。",
         f"- 每组合训练预算：epochs={args.epochs}, steps_per_epoch={args.steps_per_epoch}, batch_size={args.batch_size}。",
         "- 训练显存策略：split_recompute，把句嵌入 -> latentArray 的长序列段与后续层次降维分段反传，默认不截断 view。",
         "",
@@ -1397,7 +1392,6 @@ def parse_args():
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--train-game-seed", type=int, default=20260626)
     parser.add_argument("--train-game-anchor-appids", default="1091500,1385380")
-    parser.add_argument("--description-cache", default=DEFAULT_DESCRIPTION_CACHE, type=Path)
     parser.add_argument("--eval-feature-views", type=int, default=4)
     parser.add_argument("--eval-sample-fraction", type=float, default=0.6)
     parser.add_argument("--probe-folds", type=int, default=5)

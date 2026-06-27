@@ -19,7 +19,6 @@ from types import SimpleNamespace
 import h5py
 import numpy as np
 import torch
-import torch.nn.functional as F
 from torch.nn.utils import clip_grad_norm_
 
 SCRIPT_DIR = Path(__file__).resolve().parent
@@ -42,8 +41,7 @@ DEFAULT_H5 = PROJECT_ROOT / "game_review_data" / "embedding_h5.h5"
 DEFAULT_SST_CHECKPOINT = PROJECT_ROOT / "sst" / "heads" / "mlp4_1024_128_32_8_1_best.pt"
 DEFAULT_HEADS_DIR = SCRIPT_DIR / "heads"
 DEFAULT_SMOKE_RESULT = DEFAULT_HEADS_DIR / "vicreg_review_h5_worst_case_smoke.json"
-DEFAULT_DESCRIPTION_DIR = SCRIPT_DIR / "tags" / "game_descriptions"
-DEFAULT_DESCRIPTION_CACHE = DEFAULT_HEADS_DIR / "description_embedding_cache.npz"
+TRAINING_MANIFEST_SCHEMA = "review_h5_v2"
 REQUIRED_TRAINING_H5_DATASETS = (
     "vectors",
     "review_offsets",
@@ -54,16 +52,6 @@ REQUIRED_TRAINING_H5_DATASETS = (
 
 def decode_name(value):
     return value.decode("utf-8") if isinstance(value, bytes) else str(value)
-
-
-def split_text_for_embedding(text, max_sentences):
-    import re
-
-    parts = re.split(r"(?:\r?\n)+|(?<=[.!?。！？；;])\s*", text.strip())
-    sentences = [part.strip() for part in parts if part.strip()]
-    if not sentences and text.strip():
-        sentences = [text.strip()]
-    return sentences[:max_sentences]
 
 
 def parse_int_list(value):
@@ -136,141 +124,6 @@ def validate_training_h5(h5, path=None):
     if "appids" in h5 and int(h5["appids"].shape[0]) != int(game_names.shape[0]):
         raise ValueError(f"{path or 'H5'}: appids length does not match game_names")
     return True
-
-
-def default_extra_description_sources():
-    return [
-        ("1091500", "Cyberpunk 2077", "neutral", PROJECT_ROOT / "2077_text.txt"),
-        ("1091500", "Cyberpunk 2077", "positive", PROJECT_ROOT / "2077_text_postive.txt"),
-        ("1091500", "Cyberpunk 2077", "negative", PROJECT_ROOT / "2077_text_negative.txt"),
-        ("1385380", "Across the Obelisk", "neutral", PROJECT_ROOT / "AO_text.txt"),
-        ("1385380", "Across the Obelisk", "positive", PROJECT_ROOT / "AO_text_postive.txt"),
-        ("1385380", "Across the Obelisk", "negative", PROJECT_ROOT / "AO_text_negative.txt"),
-    ]
-
-
-def collect_description_sources(args):
-    sources = []
-    description_dir = Path(args.description_dir)
-    if description_dir.exists():
-        for path in sorted(description_dir.glob("*.txt")):
-            sources.append((path.stem, path.stem, "game_description", path))
-    if args.description_include_extra_cases:
-        for appid, title, variant, path in default_extra_description_sources():
-            if path.exists():
-                sources.append((appid, title, variant, path))
-    return sources
-
-
-def build_description_cache(args):
-    from game_review_data.embedding_data import DEFAULT_LOCAL_MODEL, LocalEmbedder
-
-    sources = collect_description_sources(args)
-    if not sources:
-        raise FileNotFoundError(
-            f"No description text files found in {args.description_dir} "
-            "and no extra description cases are available."
-        )
-
-    embedder = LocalEmbedder(
-        args.description_local_model or DEFAULT_LOCAL_MODEL,
-        device=args.device,
-        batch_size=args.description_embed_batch_size,
-    )
-    vectors = []
-    offsets = [0]
-    appids = []
-    titles = []
-    variants = []
-    paths = []
-    for index, (appid, title, variant, path) in enumerate(sources, start=1):
-        text = Path(path).read_text(encoding="utf-8")
-        sentences = split_text_for_embedding(text, args.description_max_sentences)
-        if not sentences:
-            continue
-        embedded = np.asarray(embedder.embed(sentences), dtype=np.float32)
-        vectors.append(embedded)
-        offsets.append(offsets[-1] + embedded.shape[0])
-        appids.append(str(appid))
-        titles.append(str(title))
-        variants.append(str(variant))
-        paths.append(str(Path(path).resolve()))
-        if index % 25 == 0 or index == len(sources):
-            print(
-                f"description embeddings {index}/{len(sources)} "
-                f"appid={appid} variant={variant} sentences={len(sentences)}",
-                flush=True,
-            )
-
-    if not vectors:
-        raise ValueError("Description source collection produced no non-empty texts.")
-    flat = np.concatenate(vectors, axis=0).astype(np.float32)
-    cache_path = Path(args.description_cache)
-    cache_path.parent.mkdir(parents=True, exist_ok=True)
-    tmp_path = cache_path.with_suffix(cache_path.suffix + ".tmp")
-    try:
-        with tmp_path.open("wb") as handle:
-            np.savez_compressed(
-                handle,
-                vectors=flat,
-                offsets=np.asarray(offsets, dtype=np.int64),
-                appids=np.asarray(appids, dtype=object),
-                titles=np.asarray(titles, dtype=object),
-                variants=np.asarray(variants, dtype=object),
-                paths=np.asarray(paths, dtype=object),
-                local_model=args.description_local_model or DEFAULT_LOCAL_MODEL,
-                max_sentences=int(args.description_max_sentences),
-            )
-        tmp_path.replace(cache_path)
-    except BaseException:
-        tmp_path.unlink(missing_ok=True)
-        raise
-    del embedder
-    if torch.cuda.is_available():
-        torch.cuda.empty_cache()
-    print(f"wrote description embedding cache -> {cache_path}", flush=True)
-    return cache_path
-
-
-def load_description_bank(args, h5_appids):
-    cache_path = Path(args.description_cache)
-    if args.overwrite_description_cache or not cache_path.exists():
-        build_description_cache(args)
-
-    data = np.load(cache_path, allow_pickle=True)
-    vectors = data["vectors"].astype(np.float32, copy=False)
-    offsets = data["offsets"].astype(np.int64, copy=False)
-    appids = [str(x) for x in data["appids"]]
-    variants = [str(x) for x in data["variants"]]
-    paths = [str(x) for x in data["paths"]]
-    by_appid = {}
-    for item_index, appid in enumerate(appids):
-        start = int(offsets[item_index])
-        end = int(offsets[item_index + 1])
-        if end <= start:
-            continue
-        by_appid.setdefault(appid, []).append({
-            "vectors": vectors[start:end],
-            "variant": variants[item_index],
-            "path": paths[item_index],
-        })
-
-    bank = []
-    missing = []
-    for game_index, appid in enumerate(h5_appids):
-        variants_for_game = by_appid.get(str(appid), [])
-        bank.append(variants_for_game)
-        if not variants_for_game:
-            missing.append((game_index, str(appid)))
-    covered = len(bank) - len(missing)
-    print(
-        f"description bank: covered={covered}/{len(bank)} "
-        f"text_variants={sum(len(items) for items in bank)} cache={cache_path}",
-        flush=True,
-    )
-    if covered == 0:
-        raise ValueError("Description alignment requested but no H5 appids were covered by the cache.")
-    return bank
 
 
 def load_recommendation_targets(args, num_games):
@@ -769,38 +622,6 @@ def forward_stems_to_outputs(model, stems, amp_enabled):
         return model.forward_tail(torch.cat(stems, dim=0))
 
 
-def sample_description_views(batch, description_bank, rng, cache_dtype, pin_cache):
-    if description_bank is None:
-        return [], []
-    views = []
-    positions = []
-    for position, game_index in enumerate(batch["indices"]):
-        variants = description_bank[int(game_index)]
-        if not variants:
-            continue
-        item = variants[int(rng.integers(0, len(variants)))]
-        arr = item["vectors"]
-        if arr.dtype != cache_dtype:
-            arr = arr.astype(cache_dtype, copy=False)
-        tensor = torch.from_numpy(arr)
-        if pin_cache and torch.cuda.is_available():
-            tensor = tensor.pin_memory()
-        views.append(tensor)
-        positions.append(position)
-    return views, positions
-
-
-def description_alignment_loss(description_centroids, review_centroids, temperature):
-    if description_centroids.numel() == 0 or review_centroids.numel() == 0:
-        return description_centroids.new_tensor(0.0)
-    description_centroids = F.normalize(description_centroids.float(), dim=-1)
-    review_centroids = F.normalize(review_centroids.float(), dim=-1)
-    logits = description_centroids @ review_centroids.T
-    logits = logits / max(float(temperature), 1e-6)
-    target = torch.arange(logits.size(0), device=logits.device)
-    return 0.5 * (F.cross_entropy(logits, target) + F.cross_entropy(logits.T, target))
-
-
 def recommendation_label_vector(batch, recommendation_targets, args, device):
     if recommendation_targets is None:
         return None
@@ -834,8 +655,6 @@ def compute_latent_loss(
     adversary,
     args,
     amp_enabled,
-    z_description=None,
-    description_positions=None,
     recommendation_targets=None,
 ):
     with torch.amp.autocast("cuda", enabled=amp_enabled):
@@ -873,25 +692,6 @@ def compute_latent_loss(
 
         extra = {}
         review_centroid = 0.5 * (centroid_a + centroid_b)
-        if (
-            z_description is not None
-            and description_positions
-            and (args.description_align_weight > 0 or args.description_mse_weight > 0)
-        ):
-            description_centroid = game_centroid(z_description)
-            positions = torch.as_tensor(description_positions, device=review_centroid.device, dtype=torch.long)
-            paired_review = review_centroid.index_select(0, positions)
-            align = description_alignment_loss(
-                description_centroid,
-                paired_review,
-                args.description_align_temperature,
-            )
-            mse = F.mse_loss(description_centroid.float(), paired_review.float())
-            loss = loss + args.description_align_weight * align + args.description_mse_weight * mse
-            extra["description_align"] = align
-            extra["description_mse"] = mse
-            extra["description_count"] = description_centroid.new_tensor(float(description_centroid.size(0)))
-
         if recommendation_targets is not None and args.recommendation_decorr_weight > 0:
             reco = linear_label_decorrelation_loss(review_centroid, recommendation_targets)
             loss = loss + args.recommendation_decorr_weight * reco
@@ -943,10 +743,7 @@ def run_training_batch_standard(
     device,
     amp_enabled,
     pin_transfer,
-    description_bank,
-    description_rng,
     recommendation_targets_np,
-    cache_dtype,
 ):
     optimizer.zero_grad(set_to_none=True)
     z_a_parts = []
@@ -957,15 +754,6 @@ def run_training_batch_standard(
 
     z_a = torch.cat(z_a_parts, dim=0)
     z_b = torch.cat(z_b_parts, dim=0)
-    description_views, description_positions = sample_description_views(
-        batch, description_bank, description_rng, cache_dtype, pin_cache=False
-    )
-    z_description = None
-    if description_views:
-        z_description = torch.cat(
-            [forward_view(model, view_cpu, device, amp_enabled, pin_transfer) for view_cpu in description_views],
-            dim=0,
-        )
     recommendation_targets = recommendation_label_vector(batch, recommendation_targets_np, args, device)
     loss, vic, adv_loss, stats_a, stats_b, extra = compute_latent_loss(
         z_a,
@@ -974,8 +762,6 @@ def run_training_batch_standard(
         adversary,
         args,
         amp_enabled,
-        z_description=z_description,
-        description_positions=description_positions,
         recommendation_targets=recommendation_targets,
     )
     scaler.scale(loss).backward()
@@ -1034,10 +820,7 @@ def run_training_batch_split_recompute(
     device,
     amp_enabled,
     pin_transfer,
-    description_bank,
-    description_rng,
     recommendation_targets_np,
-    cache_dtype,
 ):
     if not (hasattr(model, "forward_stem") and hasattr(model, "forward_tail")):
         return run_training_batch_recompute(
@@ -1051,30 +834,12 @@ def run_training_batch_split_recompute(
             device,
             amp_enabled,
             pin_transfer,
-            description_bank,
-            description_rng,
             recommendation_targets_np,
-            cache_dtype,
         )
 
     optimizer.zero_grad(set_to_none=True)
     stem_a_parts, rng_a = collect_split_stems(batch["view_a"], model, device, amp_enabled, pin_transfer)
     stem_b_parts, rng_b = collect_split_stems(batch["view_b"], model, device, amp_enabled, pin_transfer)
-    description_views, description_positions = sample_description_views(
-        batch, description_bank, description_rng, cache_dtype, pin_cache=False
-    )
-    if description_views:
-        stem_description_parts, rng_description = collect_split_stems(
-            description_views, model, device, amp_enabled, pin_transfer
-        )
-        stem_description = torch.cat(stem_description_parts, dim=0).to(device, non_blocking=pin_transfer).requires_grad_(True)
-        z_description = forward_stems_to_outputs(model, [stem_description], amp_enabled)
-    else:
-        stem_description_parts = []
-        rng_description = []
-        stem_description = None
-        z_description = None
-
     stem_a = torch.cat(stem_a_parts, dim=0).to(device, non_blocking=pin_transfer).requires_grad_(True)
     stem_b = torch.cat(stem_b_parts, dim=0).to(device, non_blocking=pin_transfer).requires_grad_(True)
     z_a = forward_stems_to_outputs(model, [stem_a], amp_enabled)
@@ -1087,30 +852,21 @@ def run_training_batch_split_recompute(
         adversary,
         args,
         amp_enabled,
-        z_description=z_description,
-        description_positions=description_positions,
         recommendation_targets=recommendation_targets,
     )
     scaler.scale(loss).backward()
 
     stem_a_grads = [grad.detach().cpu().clone() for grad in stem_a.grad.unbind(0)]
     stem_b_grads = [grad.detach().cpu().clone() for grad in stem_b.grad.unbind(0)]
-    if stem_description is not None and stem_description.grad is not None:
-        stem_description_grads = [grad.detach().cpu().clone() for grad in stem_description.grad.unbind(0)]
-    else:
-        stem_description_grads = []
     metrics = make_metrics(loss, vic, adv_loss, stats_a, stats_b, batch, extra)
 
     del (
         z_a,
         z_b,
-        z_description,
         stem_a,
         stem_b,
-        stem_description,
         stem_a_parts,
         stem_b_parts,
-        stem_description_parts,
         loss,
         vic,
         adv_loss,
@@ -1123,17 +879,6 @@ def run_training_batch_split_recompute(
     del stem_a_grads, rng_a
     replay_stem_grads(batch["view_b"], stem_b_grads, rng_b, model, device, amp_enabled, pin_transfer)
     del stem_b_grads, rng_b
-    if stem_description_grads:
-        replay_stem_grads(
-            description_views,
-            stem_description_grads,
-            rng_description,
-            model,
-            device,
-            amp_enabled,
-            pin_transfer,
-        )
-        del stem_description_grads, rng_description
     finish_optimizer_step(model, optimizer, scaler, args)
     return metrics
 
@@ -1149,27 +894,11 @@ def run_training_batch_recompute(
     device,
     amp_enabled,
     pin_transfer,
-    description_bank,
-    description_rng,
     recommendation_targets_np,
-    cache_dtype,
 ):
     optimizer.zero_grad(set_to_none=True)
     z_a_parts, rng_a = collect_recompute_latents(batch["view_a"], model, device, amp_enabled, pin_transfer)
     z_b_parts, rng_b = collect_recompute_latents(batch["view_b"], model, device, amp_enabled, pin_transfer)
-    description_views, description_positions = sample_description_views(
-        batch, description_bank, description_rng, cache_dtype, pin_cache=False
-    )
-    if description_views:
-        z_description_parts, rng_description = collect_recompute_latents(
-            description_views, model, device, amp_enabled, pin_transfer
-        )
-        z_description = torch.cat(z_description_parts, dim=0).detach().requires_grad_(True)
-    else:
-        z_description_parts = []
-        rng_description = []
-        z_description = None
-
     z_a = torch.cat(z_a_parts, dim=0).detach().requires_grad_(True)
     z_b = torch.cat(z_b_parts, dim=0).detach().requires_grad_(True)
     recommendation_targets = recommendation_label_vector(batch, recommendation_targets_np, args, device)
@@ -1180,36 +909,19 @@ def run_training_batch_recompute(
         adversary,
         args,
         amp_enabled,
-        z_description=z_description,
-        description_positions=description_positions,
         recommendation_targets=recommendation_targets,
     )
     scaler.scale(loss).backward()
 
     z_a_grads = [grad.detach().clone() for grad in z_a.grad.unbind(0)]
     z_b_grads = [grad.detach().clone() for grad in z_b.grad.unbind(0)]
-    if z_description is not None and z_description.grad is not None:
-        z_description_grads = [grad.detach().clone() for grad in z_description.grad.unbind(0)]
-    else:
-        z_description_grads = []
     metrics = make_metrics(loss, vic, adv_loss, stats_a, stats_b, batch, extra)
 
-    del z_a, z_b, z_a_parts, z_b_parts, z_description, z_description_parts, loss, vic, adv_loss, stats_a, stats_b
+    del z_a, z_b, z_a_parts, z_b_parts, loss, vic, adv_loss, stats_a, stats_b
     replay_latent_grads(batch["view_a"], z_a_grads, rng_a, model, device, amp_enabled, pin_transfer)
     del z_a_grads, rng_a
     replay_latent_grads(batch["view_b"], z_b_grads, rng_b, model, device, amp_enabled, pin_transfer)
     del z_b_grads, rng_b
-    if z_description_grads:
-        replay_latent_grads(
-            description_views,
-            z_description_grads,
-            rng_description,
-            model,
-            device,
-            amp_enabled,
-            pin_transfer,
-        )
-        del z_description_grads, rng_description
     finish_optimizer_step(model, optimizer, scaler, args)
     return metrics
 
@@ -1225,13 +937,8 @@ def run_training_batch(
     device,
     amp_enabled,
     pin_transfer,
-    description_bank=None,
-    description_rng=None,
     recommendation_targets_np=None,
-    cache_dtype=np.dtype("float16"),
 ):
-    if description_rng is None:
-        description_rng = np.random.default_rng(args.seed)
     if args.backward_mode == "standard":
         return run_training_batch_standard(
             batch,
@@ -1244,10 +951,7 @@ def run_training_batch(
             device,
             amp_enabled,
             pin_transfer,
-            description_bank,
-            description_rng,
             recommendation_targets_np,
-            cache_dtype,
         )
     if args.backward_mode == "recompute":
         return run_training_batch_recompute(
@@ -1261,10 +965,7 @@ def run_training_batch(
             device,
             amp_enabled,
             pin_transfer,
-            description_bank,
-            description_rng,
             recommendation_targets_np,
-            cache_dtype,
         )
     if args.backward_mode == "split_recompute":
         return run_training_batch_split_recompute(
@@ -1278,10 +979,7 @@ def run_training_batch(
             device,
             amp_enabled,
             pin_transfer,
-            description_bank,
-            description_rng,
             recommendation_targets_np,
-            cache_dtype,
         )
     raise ValueError(f"Unknown backward mode: {args.backward_mode}")
 
@@ -1519,6 +1217,7 @@ def write_manifest(path, status, args, epoch, step, metrics=None, error=None):
     train_game_indices = getattr(args, "train_game_indices", None)
     payload = {
         "status": status,
+        "training_schema": TRAINING_MANIFEST_SCHEMA,
         "finished_at": time.strftime("%Y-%m-%dT%H:%M:%S"),
         "epoch": epoch,
         "step": step,
@@ -1535,9 +1234,6 @@ def write_manifest(path, status, args, epoch, step, metrics=None, error=None):
         "cache_mode": args.cache_mode,
         "backward_mode": args.backward_mode,
         "game_order": args.game_order,
-        "description_align_weight": args.description_align_weight,
-        "description_mse_weight": args.description_mse_weight,
-        "description_cache": str(Path(args.description_cache).resolve()),
         "adversary_weight": args.adversary_weight,
         "recommendation_decorr_weight": args.recommendation_decorr_weight,
         "recommendation_target_transform": args.recommendation_target_transform,
@@ -1679,9 +1375,6 @@ def train(args):
         num_games = int(h5["game_names"].shape[0])
         input_dim = int(h5.attrs["input_dim"])
         total_sentences = int(h5["vectors"].shape[0])
-        h5_appids = [decode_name(x) for x in h5["appids"][:]] if "appids" in h5 else [
-            decode_name(x).split("_", 1)[0] for x in h5["game_names"][:]
-        ]
         train_game_indices = resolve_train_game_indices(args, h5)
         effective_num_games = len(train_game_indices) if train_game_indices is not None else num_games
         if args.max_batch_sentences > 0:
@@ -1703,12 +1396,6 @@ def train(args):
     if args.steps_per_epoch <= 0:
         args.steps_per_epoch = default_steps
 
-    description_bank = None
-    if args.description_align_weight > 0 or args.description_mse_weight > 0:
-        description_bank = load_description_bank(args, h5_appids)
-        if args.train_game_indices is not None:
-            keep = set(int(i) for i in args.train_game_indices)
-            description_bank = [items if index in keep else [] for index, items in enumerate(description_bank)]
     recommendation_targets = None
     if args.recommendation_decorr_weight > 0:
         recommendation_targets = load_recommendation_targets(args, num_games)
@@ -1716,7 +1403,6 @@ def train(args):
             mask = np.ones_like(recommendation_targets, dtype=bool)
             mask[np.asarray(args.train_game_indices, dtype=np.int64)] = False
             recommendation_targets[mask] = np.nan
-    description_rng = np.random.default_rng(args.seed + 704_971)
 
     model, expander, adversary, optimizer = build_training_components(args, input_dim, device)
     amp_enabled = args.amp and device.type == "cuda"
@@ -1843,10 +1529,7 @@ def train(args):
                     device,
                     amp_enabled,
                     pin_transfer,
-                    description_bank=description_bank,
-                    description_rng=description_rng,
                     recommendation_targets_np=recommendation_targets,
-                    cache_dtype=cache_dtype,
                 )
                 metrics["grl_lambda"] = current_grl
                 global_step += 1
@@ -1862,11 +1545,6 @@ def train(args):
                             f"ccov={metrics['compact_covariance']:.4f}"
                         )
                     extra_msg = ""
-                    if "description_align" in metrics:
-                        extra_msg += (
-                            f" desc_align={metrics['description_align']:.4f} "
-                            f"desc_mse={metrics['description_mse']:.4f}"
-                        )
                     if "recommendation_decorr" in metrics:
                         extra_msg += f" reco_decorr={metrics['recommendation_decorr']:.4f}"
                     print(
@@ -2088,19 +1766,6 @@ def parse_args():
     parser.add_argument("--expander-hidden", type=parse_int_list, default=(128, 512),
                         help="Comma-separated hidden widths for centroid expander, e.g. 128,512.")
     parser.add_argument("--expander-dropout", type=float, default=0.0)
-    parser.add_argument("--description-align-weight", type=float, default=0.0,
-                        help="InfoNCE weight aligning description-text centroids to same-game review centroids.")
-    parser.add_argument("--description-mse-weight", type=float, default=0.0,
-                        help="Auxiliary MSE weight between description centroids and same-game review centroids.")
-    parser.add_argument("--description-align-temperature", type=float, default=0.07)
-    parser.add_argument("--description-dir", default=str(DEFAULT_DESCRIPTION_DIR))
-    parser.add_argument("--description-cache", default=str(DEFAULT_DESCRIPTION_CACHE))
-    parser.add_argument("--overwrite-description-cache", action="store_true")
-    parser.add_argument("--description-include-extra-cases", action=argparse.BooleanOptionalAction, default=True,
-                        help="Include local full-text Cyberpunk/AO neutral/positive/negative cases in the cache.")
-    parser.add_argument("--description-max-sentences", type=int, default=512)
-    parser.add_argument("--description-embed-batch-size", type=int, default=16)
-    parser.add_argument("--description-local-model", default=None)
     parser.add_argument("--recommendation-decorr-weight", type=float, default=0.0,
                         help="Minimize squared linear correlation between compact game centroids and Steam positive rate.")
     parser.add_argument("--recommendation-reviews-dir", default=None)

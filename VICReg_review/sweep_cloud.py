@@ -6,11 +6,13 @@ resume behavior, but replaces the local Windows training command defaults:
 * full sweep grid by default: N increases by --train-game-step up to the H5
   pool, then adds full, views=0.8/0.6/0.4/0.2, dims=18/36/72,
   arms=grl/nogrl.
-* no split_recompute path. The default backward mode is recompute; standard is
-  available for an A100 if full-graph backprop fits.
+* full-window training defaults to split_recompute. It is usually the best
+  A100 path for this heavy-tailed review corpus because it keeps long-game
+  memory bounded while avoiding a full-model replay through the latent tail.
 * paired GRL/no-GRL training is attempted by default on fresh combinations.
-* periodic in-training probes start at --train-probe-start-epoch and then run
-  every --train-probe-every epochs by default, using the full aligned eval:
+* periodic in-training probes are disabled by default for throughput. Enable
+  --train-probe-every when you want learning curves; final per-combo evaluation
+  still runs through run_data_view_sweep.py unless --skip-eval is set.
   sentiment, recommendation, anchor TAG generalization, and real-text TAG/cosine
   behavior.
 """
@@ -58,8 +60,11 @@ def _append_flag(cmd: list[str], flag: str, enabled: bool) -> None:
 def _apply_cloud_train_options(cmd: list[str], args) -> list[str]:
     tag_split_json = args.tag_text_split_json or (args.out_dir / "tag_text_eval_split.json")
     text_variant_cache = args.text_variant_cache or (args.out_dir / "text_variant_embedding_cache.npz")
+    _set_option(cmd, "--cache-mode", args.cache_mode)
     _set_option(cmd, "--backward-mode", args.backward_mode)
     _set_option(cmd, "--prefetch-batches", args.prefetch_batches)
+    if args.max_batch_sentences > 0:
+        _set_option(cmd, "--max-batch-sentences", args.max_batch_sentences)
     _set_option(cmd, "--probe-every", args.train_probe_every)
     _set_option(cmd, "--probe-start-epoch", args.train_probe_start_epoch)
     _set_option(cmd, "--probe-feature-views", args.train_probe_feature_views)
@@ -168,13 +173,23 @@ def parse_args(argv: list[str] | None = None):
     parser.add_argument("--steps-per-epoch", type=int, default=4)
     parser.add_argument("--batch-size", type=int, default=128)
     parser.add_argument("--cache-dtype", choices=["float16", "float32"], default="float16")
+    parser.add_argument("--cache-mode", choices=["queue", "full"], default="queue")
     parser.add_argument("--prefetch-batches", type=int, default=2)
     parser.add_argument("--pin-cache", action="store_true")
     parser.add_argument(
+        "--max-batch-sentences",
+        type=int,
+        default=0,
+        help=(
+            "Optional original-sentence budget per training batch. Use 0 for fixed "
+            "--batch-size; set this to smooth extreme long-game batches."
+        ),
+    )
+    parser.add_argument(
         "--backward-mode",
-        choices=["recompute", "standard"],
-        default="recompute",
-        help="Cloud training path. split_recompute is intentionally not available here.",
+        choices=["split_recompute", "recompute", "standard"],
+        default="split_recompute",
+        help="Cloud training path. standard is fastest only when the full graph fits.",
     )
     parser.add_argument(
         "--paired-mode",
@@ -185,7 +200,7 @@ def parse_args(argv: list[str] | None = None):
     parser.add_argument(
         "--train-probe-every",
         type=int,
-        default=5,
+        default=0,
         help="Run aligned periodic eval every N epochs. 0 disables periodic eval.",
     )
     parser.add_argument(
@@ -237,7 +252,6 @@ def parse_args(argv: list[str] | None = None):
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--train-game-seed", type=int, default=20260626)
     parser.add_argument("--train-game-anchor-appids", default="1091500,1385380")
-    parser.add_argument("--description-cache", default=sweep.DEFAULT_DESCRIPTION_CACHE, type=Path)
     parser.add_argument("--eval-feature-views", type=int, default=4)
     parser.add_argument("--eval-sample-fraction", type=float, default=0.6)
     parser.add_argument("--probe-folds", type=int, default=5)
