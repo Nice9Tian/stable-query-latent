@@ -457,6 +457,28 @@ def write_reviews(input_path: Path, schema: dict[str, str | None], keep_appids: 
     return written
 
 
+def load_base_games(path: Path | None) -> dict:
+    """Load a previously-enriched games.json to reuse as a metadata base.
+
+    Lets a saved games.json (with store descriptions + tags already fetched)
+    seed the freshly rebuilt records, so the downstream enrich step sees them as
+    complete and skips the Steam API entirely.
+    """
+    if not path:
+        return {}
+    path = Path(path)
+    if not path.exists():
+        print(f"prepare: no metadata base at {path} (first run / wiped); enrich will fetch from API.", flush=True)
+        return {}
+    data = json.loads(path.read_text(encoding="utf-8"))
+    if not isinstance(data, dict):
+        print(f"[warn] --base-games-json {path} is not a JSON object; ignoring.", flush=True)
+        return {}
+    base = {str(appid): record for appid, record in data.items() if isinstance(record, dict)}
+    print(f"prepare: reusing metadata base for {len(base)} games from {path}", flush=True)
+    return base
+
+
 def write_games_json(output_path: Path, keep_appids: set[str], counts: dict[str, int],
                      names: dict[str, str], base_games: dict) -> dict:
     output = {}
@@ -518,7 +540,7 @@ def finalize_existing_outputs(args) -> None:
         keep_appids,
         counts,
         names={},
-        base_games={},
+        base_games=load_base_games(args.base_games_json),
     )
     manifest = {
         "status": "finalized_existing",
@@ -560,6 +582,13 @@ def parse_args():
     parser.add_argument("--input", type=Path, default=None,
                         help="Kaggle CSV/TSV/ZIP/PARQUET file, or a directory containing one.")
     parser.add_argument("--output-dir", type=Path, default=DEFAULT_OUTPUT_DIR)
+    parser.add_argument(
+        "--base-games-json",
+        type=Path,
+        default=None,
+        help="A previously-enriched games.json to seed metadata (descriptions + "
+             "tags) from, so the enrich step can skip the Steam API.",
+    )
     parser.add_argument("--min-length", type=int, default=300)
     parser.add_argument("--min-count", type=int, default=500)
     parser.add_argument("--strict-length", action=argparse.BooleanOptionalAction, default=True,
@@ -629,7 +658,7 @@ def main():
         keep_appids,
         kept_counts,
         names,
-        {},
+        load_base_games(args.base_games_json),
     )
     manifest = {
         "input": str(input_path.resolve()),

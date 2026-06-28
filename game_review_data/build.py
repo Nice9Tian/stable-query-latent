@@ -372,6 +372,28 @@ def report_source_overlap(review_dirs: list[Path]) -> None:
     )
 
 
+def find_cached_kaggle_dataset(kaggle_cache: Path) -> Path | None:
+    """Return an already-downloaded copy of the Kaggle dataset, if present.
+
+    kagglehub lays datasets out as
+    ``<cache>/datasets/<owner>/<name>/versions/<n>``. Detecting it ourselves
+    lets us reuse a prior download instead of re-fetching multiple GB, even when
+    kagglehub would otherwise re-run its own checks.
+    """
+    versions = kaggle_cache / "datasets" / KAGGLE_DATASET / "versions"
+    if not versions.is_dir():
+        return None
+    candidates = [p for p in versions.iterdir() if p.is_dir()]
+    if not candidates:
+        return None
+    # Prefer the highest numeric version that actually contains data files.
+    candidates.sort(key=lambda p: int(p.name) if p.name.isdigit() else -1, reverse=True)
+    for candidate in candidates:
+        if any(candidate.rglob("*.csv")) or any(candidate.rglob("*.parquet")):
+            return candidate
+    return None
+
+
 def download_and_prepare_kaggle(args, source2_dir: Path, kaggle_cache: Path) -> bool:
     prepared_dir = source2_dir
     if prepared_done(prepared_dir) and not args.overwrite:
@@ -379,6 +401,13 @@ def download_and_prepare_kaggle(args, source2_dir: Path, kaggle_cache: Path) -> 
         return True
 
     kaggle_input = getattr(args, "kaggle_input", None)
+    if kaggle_input is None:
+        # Smart skip: reuse an already-downloaded dataset instead of re-fetching.
+        cached = find_cached_kaggle_dataset(kaggle_cache)
+        if cached is not None and not args.overwrite:
+            print(f"source2: reusing cached Kaggle dataset at {cached}", flush=True)
+            kaggle_input = cached
+
     if kaggle_input is None:
         try:
             import kagglehub
@@ -422,6 +451,8 @@ def download_and_prepare_kaggle(args, source2_dir: Path, kaggle_cache: Path) -> 
         "--workers",
         str(args.prepare_workers),
     ]
+    if args.kaggle_games_json is not None:
+        cmd += ["--base-games-json", str(args.kaggle_games_json)]
     cmd.append("--strict-length" if args.strict_length else "--no-strict-length")
     cmd.append("--strict-count" if args.strict_count else "--no-strict-count")
     if args.overwrite:
@@ -444,7 +475,7 @@ def download_and_prepare_kaggle(args, source2_dir: Path, kaggle_cache: Path) -> 
             "--retries",
             str(args.enrich_retries),
             "--cache-dir",
-            str(args.enrich_cache_dir),
+            str(SCRIPT_DIR / "_steam_appdetails_cache"),
         ]
         if args.overwrite:
             enrich_cmd.append("--overwrite-cache")
@@ -497,10 +528,15 @@ def parse_args():
     parser.add_argument("--skip-source1", action="store_true")
     parser.add_argument("--skip-source1-download", action="store_true")
     parser.add_argument("--skip-source2", action="store_true")
-    parser.add_argument("--skip-download", action="store_true",
-                        help="Skip Kaggle download and use existing prepared source2 data.")
     parser.add_argument("--skip-enrich", action="store_true")
     parser.add_argument("--kaggle-input", type=Path, default=None)
+    parser.add_argument(
+        "--kaggle-games-json",
+        type=Path,
+        default=None,
+        help="Path to a saved, already-enriched source2 games.json. When given, "
+             "prepare seeds metadata from it so enrich skips the Steam API.",
+    )
 
     parser.add_argument("--prepare-chunksize", type=int, default=200_000)
     parser.add_argument("--prepare-workers", type=int, default=0,
@@ -508,13 +544,6 @@ def parse_args():
     parser.add_argument("--strict-length", action=argparse.BooleanOptionalAction, default=True)
     parser.add_argument("--strict-count", action=argparse.BooleanOptionalAction, default=True)
     parser.add_argument("--enrich-batch-size", type=int, default=1)
-    parser.add_argument(
-        "--enrich-cache-dir",
-        type=Path,
-        default=SCRIPT_DIR / "_steam_appdetails_cache",
-        help="Persistent Steam appdetails cache, kept OUTSIDE --data-dir so "
-             "wiping the data dir does not force re-fetching from the API.",
-    )
     parser.add_argument("--enrich-sleep", type=float, default=2.0)
     parser.add_argument("--enrich-retry-sleep", type=float, default=10.0)
     parser.add_argument("--enrich-retries", type=int, default=5)
@@ -559,9 +588,10 @@ def parse_args():
 
 def resolve_args_paths(args: argparse.Namespace) -> argparse.Namespace:
     args.data_dir = Path(args.data_dir).expanduser().resolve()
-    args.enrich_cache_dir = Path(args.enrich_cache_dir).expanduser().resolve()
     if args.kaggle_input is not None:
         args.kaggle_input = Path(args.kaggle_input).expanduser().resolve()
+    if args.kaggle_games_json is not None:
+        args.kaggle_games_json = Path(args.kaggle_games_json).expanduser().resolve()
     if args.text_h5 is not None:
         args.text_h5 = Path(args.text_h5).expanduser().resolve()
     if args.embedding_h5 is not None:
@@ -585,6 +615,13 @@ def main():
     source1_zip = data_dir / "mendeley_steam_reviews.zip"
     source2_dir = data_dir / "kaggle_steam_reviews_prepared"
     kaggle_cache = data_dir / "kagglehub_cache"
+    # Default the enrich metadata base to source2's own games.json: if a prior
+    # run already enriched it, prepare reuses those descriptions/tags and enrich
+    # skips the Steam API. Survives reruns that don't wipe the data dir; pass
+    # --kaggle-games-json explicitly to point at a saved copy that also survives
+    # a full wipe.
+    if args.kaggle_games_json is None:
+        args.kaggle_games_json = source2_dir / "games.json"
     metadata_dir = data_dir / "metadata"
     sentences_dir = data_dir / "sentences"
     games_json_path = data_dir / "games.json"
@@ -612,17 +649,9 @@ def main():
             print("[warn] source1 not available, continuing without it.", flush=True)
 
     if not args.skip_source2:
-        s2_ready = False
-        if not args.skip_download:
-            s2_ready = download_and_prepare_kaggle(args, source2_dir, kaggle_cache)
-        elif prepared_done(source2_dir):
-            s2_ready = True
-        else:
-            print(
-                f"[warn] source2 prepared data not found at {source2_dir}. "
-                "Run without --skip-download to fetch it.",
-                flush=True,
-            )
+        # download_and_prepare_kaggle auto-reuses existing prepared data and any
+        # cached raw download, so no explicit skip flag is needed.
+        s2_ready = download_and_prepare_kaggle(args, source2_dir, kaggle_cache)
 
         if s2_ready:
             s2_reviews = source2_dir / "reviews"
