@@ -35,6 +35,134 @@ from pathlib import Path
 SCRIPT_DIR = Path(__file__).resolve().parent
 PROJECT_ROOT = SCRIPT_DIR.parent
 
+
+def _download_stream(url: str, out_file: Path, total_hint: int = 0) -> None:
+    """Single-connection sequential download (used as the fallback path)."""
+    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+    with urllib.request.urlopen(req) as resp:
+        total = total_hint or int(resp.headers.get("content-length") or 0)
+        downloaded = 0
+        chunk = 1 << 20
+        with out_file.open("wb") as file:
+            while True:
+                block = resp.read(chunk)
+                if not block:
+                    break
+                file.write(block)
+                downloaded += len(block)
+                if total > 0 and downloaded % (500 << 20) < chunk:
+                    pct = downloaded * 100 // total
+                    print(f"  ... {pct}% ({downloaded >> 20} MB)", flush=True)
+
+
+def parallel_download(url: str, out_file: Path, workers: int = 8) -> None:
+    """Download url into out_file using HTTP Range requests across `workers`
+    connections. Falls back to a single sequential stream when the server does
+    not advertise byte-range support (no Accept-Ranges / unknown length).
+
+    A single big file over one TCP connection is usually capped by per-stream
+    throughput, not link bandwidth; several parallel ranges saturate the pipe.
+    """
+    import threading
+    from concurrent.futures import ThreadPoolExecutor
+
+    # Probe length + range support with a tiny ranged GET (HEAD is often blocked
+    # by the S3 redirect Mendeley hands out).
+    probe = urllib.request.Request(
+        url, headers={"User-Agent": "Mozilla/5.0", "Range": "bytes=0-0"}
+    )
+    total = 0
+    ranges_ok = False
+    try:
+        with urllib.request.urlopen(probe) as resp:
+            ranges_ok = resp.status == 206
+            cr = resp.headers.get("content-range")  # "bytes 0-0/12345"
+            if cr and "/" in cr:
+                total = int(cr.rsplit("/", 1)[1])
+    except Exception:
+        ranges_ok = False
+
+    if not ranges_ok or total <= 0 or workers <= 1:
+        print("  (range not supported, single-stream download)", flush=True)
+        _download_stream(url, out_file, total)
+        return
+
+    print(f"  parallel download: {total >> 20} MB over {workers} connections", flush=True)
+    # Preallocate so each worker can seek+write its own slice independently.
+    with out_file.open("wb") as f:
+        f.truncate(total)
+
+    part = -(-total // workers)  # ceil division
+    bounds = []
+    for i in range(workers):
+        start = i * part
+        end = min(start + part, total) - 1
+        if start <= end:
+            bounds.append((start, end))
+
+    done = [0]
+    lock = threading.Lock()
+
+    def fetch(span):
+        start, end = span
+        req = urllib.request.Request(
+            url,
+            headers={"User-Agent": "Mozilla/5.0", "Range": f"bytes={start}-{end}"},
+        )
+        with urllib.request.urlopen(req) as resp, open(out_file, "r+b") as f:
+            f.seek(start)
+            chunk = 1 << 20
+            while True:
+                block = resp.read(chunk)
+                if not block:
+                    break
+                f.write(block)
+                with lock:
+                    done[0] += len(block)
+                    if done[0] % (500 << 20) < chunk:
+                        print(
+                            f"  ... {done[0] * 100 // total}% ({done[0] >> 20} MB)",
+                            flush=True,
+                        )
+
+    with ThreadPoolExecutor(max_workers=len(bounds)) as pool:
+        list(pool.map(fetch, bounds))
+
+
+def parallel_extractall(zip_path: Path, dest: Path, workers: int = 0) -> None:
+    """Extract every file member of zip_path into dest using a thread pool.
+
+    zlib releases the GIL while decompressing, so threads give a near-linear
+    speed-up over zipfile.extractall() for archives with many members (e.g. the
+    inner Game Reviews.zip with its hundreds of per-game CSVs). ZipFile handles
+    are not thread-safe, so each worker opens its own handle and processes an
+    interleaved slice of the member list.
+    """
+    import os
+    from concurrent.futures import ThreadPoolExecutor
+
+    dest = Path(dest)
+    with zipfile.ZipFile(zip_path) as zf:
+        infos = [info for info in zf.infolist() if not info.is_dir()]
+    if not infos:
+        return
+    if workers <= 0:
+        workers = min(16, os.cpu_count() or 4)
+    workers = max(1, min(workers, len(infos)))
+
+    # Pre-create all target directories so worker extract() calls never race.
+    for parent in {(dest / info.filename).parent for info in infos}:
+        parent.mkdir(parents=True, exist_ok=True)
+
+    def worker(chunk):
+        with zipfile.ZipFile(zip_path) as zf:
+            for info in chunk:
+                zf.extract(info, dest)
+
+    chunks = [infos[i::workers] for i in range(workers)]
+    with ThreadPoolExecutor(max_workers=workers) as pool:
+        list(pool.map(worker, chunks))
+
 SOURCE1_DOWNLOAD_URL = "https://data.mendeley.com/public-api/zip/jxy85cr3th/download/2"
 KAGGLE_DATASET = "najzeko/steam-reviews-2021"
 
@@ -76,24 +204,7 @@ def download_source1(source1_dir: Path, zip_cache: Path) -> bool:
         zip_cache.parent.mkdir(parents=True, exist_ok=True)
         tmp_zip = zip_cache.with_suffix(".zip.tmp")
         try:
-            req = urllib.request.Request(
-                SOURCE1_DOWNLOAD_URL,
-                headers={"User-Agent": "Mozilla/5.0"},
-            )
-            with urllib.request.urlopen(req) as resp:
-                total = int(resp.headers.get("content-length") or 0)
-                downloaded = 0
-                chunk = 1 << 20
-                with tmp_zip.open("wb") as file:
-                    while True:
-                        block = resp.read(chunk)
-                        if not block:
-                            break
-                        file.write(block)
-                        downloaded += len(block)
-                        if total > 0 and downloaded % (500 << 20) < chunk:
-                            pct = downloaded * 100 // total
-                            print(f"  ... {pct}% ({downloaded >> 20} MB)", flush=True)
+            parallel_download(SOURCE1_DOWNLOAD_URL, tmp_zip, workers=8)
             tmp_zip.replace(zip_cache)
         except Exception as exc:
             tmp_zip.unlink(missing_ok=True)
@@ -105,8 +216,7 @@ def download_source1(source1_dir: Path, zip_cache: Path) -> bool:
 
     print(f"source1: extracting to {source1_dir.parent} ...", flush=True)
     try:
-        with zipfile.ZipFile(zip_cache, "r") as zf:
-            zf.extractall(source1_dir.parent)
+        parallel_extractall(zip_cache, source1_dir.parent)
     except Exception as exc:
         print(f"[warn] extraction failed: {exc}\nsource1 will be skipped.", flush=True)
         return False
@@ -130,8 +240,7 @@ def download_source1(source1_dir: Path, zip_cache: Path) -> bool:
     if inner_zip.exists() and not (reviews_dir.exists() and any(reviews_dir.glob("*.csv"))):
         print(f"source1: extracting inner zip {inner_zip.name} ...", flush=True)
         try:
-            with zipfile.ZipFile(inner_zip, "r") as zf:
-                zf.extractall(extracted)
+            parallel_extractall(inner_zip, extracted)
         except Exception as exc:
             print(f"[warn] inner zip extraction failed: {exc}\nsource1 will be skipped.", flush=True)
             return False
