@@ -479,55 +479,101 @@ def build_text_h5(
 
     games = load_games_json(games_json)
     output_h5.parent.mkdir(parents=True, exist_ok=True)
-    tmp_path = atomic_h5_path(output_h5)
-    unlink_with_retry(tmp_path)
+    # Stable checkpoint file (NOT a random temp): kept across interruptions so a
+    # re-run resumes per-game instead of recomputing every game's CSV label scan.
+    partial_path = output_h5.with_name(output_h5.name + ".partial")
     started = time.time()
     chunk_sentences = max(1, min(int(chunk_rows), total_sentences))
     chunk_reviews = max(1, min(int(chunk_rows), total_reviews))
+    flush_every = 50  # games between durable checkpoints
+
+    # --- decide fresh build vs resume from an existing .partial checkpoint ---
+    games_done = 0
+    sentence_cursor = 0
+    review_cursor = 0
+    resume = False
+    if partial_path.exists() and not overwrite:
+        try:
+            with h5py.File(partial_path, "r") as h5:
+                same = (
+                    decode_text(h5.attrs.get("_partial_schema", "")) == TEXT_H5_SCHEMA
+                    and int(h5.attrs.get("games", -1)) == len(plans)
+                    and int(h5.attrs.get("reviews", -1)) == total_reviews
+                    and int(h5.attrs.get("sentences", -1)) == total_sentences
+                )
+                if same:
+                    games_done = int(h5.attrs.get("_games_done", 0))
+                    review_cursor = int(h5.attrs.get("_review_cursor", 0))
+                    sentence_cursor = int(h5.attrs.get("_sentence_cursor", 0))
+                    resume = 0 <= games_done <= len(plans)
+        except Exception as exc:
+            print(f"build_text_h5: cannot reuse checkpoint {partial_path} ({exc}); starting fresh", flush=True)
+            resume = False
+        if not resume:
+            best_effort_unlink(partial_path)
+
+    if resume:
+        print(
+            f"build_text_h5: resuming checkpoint games_done={games_done}/{len(plans)} "
+            f"reviews={review_cursor} sentences={sentence_cursor}",
+            flush=True,
+        )
+    else:
+        games_done = sentence_cursor = review_cursor = 0
 
     try:
-        with h5py.File(tmp_path, "w") as h5:
-            texts = h5.create_dataset(
-                "texts",
-                shape=(total_sentences,),
-                dtype=string_dtype(),
-                chunks=(chunk_sentences,),
-            )
-            sentence_ids = h5.create_dataset(
-                "sentence_ids",
-                shape=(total_sentences,),
-                dtype=string_dtype(),
-                chunks=(chunk_sentences,),
-            )
-            review_ids = h5.create_dataset(
-                "review_ids",
-                shape=(total_reviews,),
-                dtype=string_dtype(),
-                chunks=(chunk_reviews,),
-            )
-            review_offsets = h5.create_dataset("review_offsets", shape=(total_reviews + 1,), dtype=np.int64)
-            game_review_offsets = h5.create_dataset(
-                "game_review_offsets",
-                shape=(len(plans) + 1,),
-                dtype=np.int64,
-            )
+        with h5py.File(partial_path, "r+" if resume else "w") as h5:
+            if not resume:
+                h5.create_dataset(
+                    "texts", shape=(total_sentences,), dtype=string_dtype(),
+                    chunks=(chunk_sentences,),
+                )
+                h5.create_dataset(
+                    "sentence_ids", shape=(total_sentences,), dtype=string_dtype(),
+                    chunks=(chunk_sentences,),
+                )
+                h5.create_dataset(
+                    "review_ids", shape=(total_reviews,), dtype=string_dtype(),
+                    chunks=(chunk_reviews,),
+                )
+                h5.create_dataset("review_offsets", shape=(total_reviews + 1,), dtype=np.int64)
+                h5.create_dataset("game_review_offsets", shape=(len(plans) + 1,), dtype=np.int64)
+                # Per-game metadata written incrementally so resume keeps it.
+                for name in (
+                    "game_names", "appids", "game_titles", "tags_json",
+                    "recommendation_label_source", "source_sentence_files",
+                ):
+                    h5.create_dataset(name, shape=(len(plans),), dtype=string_dtype())
+                h5.create_dataset("positive", shape=(len(plans),), dtype=np.int64)
+                h5.create_dataset("negative", shape=(len(plans),), dtype=np.int64)
+                h5.create_dataset("positive_rate", shape=(len(plans),), dtype=np.float32)
+                h5["review_offsets"][0] = 0
+                h5["game_review_offsets"][0] = 0
+                h5.attrs["games"] = len(plans)
+                h5.attrs["reviews"] = total_reviews
+                h5.attrs["sentences"] = total_sentences
+                h5.attrs["_games_done"] = 0
+                h5.attrs["_review_cursor"] = 0
+                h5.attrs["_sentence_cursor"] = 0
+                # Written LAST so a crash mid-creation leaves no resumable marker.
+                h5.attrs["_partial_schema"] = TEXT_H5_SCHEMA
+                h5.flush()
 
-            game_names: list[str] = []
-            appids: list[str] = []
-            game_titles: list[str] = []
-            tags_json: list[str] = []
-            positives: list[int] = []
-            negatives: list[int] = []
-            positive_rates: list[float] = []
-            label_sources: list[str] = []
-            source_sentence_files: list[str] = []
+            texts = h5["texts"]
+            sentence_ids = h5["sentence_ids"]
+            review_ids = h5["review_ids"]
+            review_offsets = h5["review_offsets"]
+            game_review_offsets = h5["game_review_offsets"]
 
-            sentence_cursor = 0
-            review_cursor = 0
-            review_offsets[0] = 0
-            game_review_offsets[0] = 0
+            def checkpoint(done_index: int) -> None:
+                h5.attrs["_games_done"] = done_index
+                h5.attrs["_review_cursor"] = review_cursor
+                h5.attrs["_sentence_cursor"] = sentence_cursor
+                h5.flush()
 
             for game_index, plan in enumerate(plans, start=1):
+                if game_index <= games_done:
+                    continue
                 path = Path(plan["path"])
                 raw = load_sentence_mapping(path)
                 meta = game_metadata(
@@ -537,15 +583,16 @@ def build_text_h5(
                     label_min_length=label_min_length,
                 )
 
-                game_names.append(str(plan["game_name"]))
-                appids.append(meta["appid"])
-                game_titles.append(meta["title"])
-                positives.append(int(meta["positive"]))
-                negatives.append(int(meta["negative"]))
-                positive_rates.append(float(meta["positive_rate"]))
-                tags_json.append(meta["tags_json"])
-                label_sources.append(meta["label_source"])
-                source_sentence_files.append(str(path.resolve()))
+                row = game_index - 1
+                h5["game_names"][row] = str(plan["game_name"])
+                h5["appids"][row] = meta["appid"]
+                h5["game_titles"][row] = meta["title"]
+                h5["tags_json"][row] = meta["tags_json"]
+                h5["recommendation_label_source"][row] = meta["label_source"]
+                h5["source_sentence_files"][row] = str(path.resolve())
+                h5["positive"][row] = int(meta["positive"])
+                h5["negative"][row] = int(meta["negative"])
+                h5["positive_rate"][row] = float(meta["positive_rate"])
 
                 written_reviews = 0
                 written_sentences = 0
@@ -564,6 +611,8 @@ def build_text_h5(
                     written_sentences += count
 
                 game_review_offsets[game_index] = review_cursor
+                if game_index % flush_every == 0 or game_index == len(plans):
+                    checkpoint(game_index)
                 if game_index % 25 == 0 or game_index == len(plans):
                     elapsed = time.time() - started
                     print(
@@ -580,22 +629,18 @@ def build_text_h5(
                     f"sentences {sentence_cursor}/{total_sentences}"
                 )
 
-            write_string_dataset(h5, "game_names", game_names)
-            write_string_dataset(h5, "appids", appids)
-            write_string_dataset(h5, "game_titles", game_titles)
-            write_string_dataset(h5, "tags_json", tags_json)
-            write_string_dataset(h5, "recommendation_label_source", label_sources)
-            write_string_dataset(h5, "source_sentence_files", source_sentence_files)
-            h5.create_dataset("positive", data=np.asarray(positives, dtype=np.int64))
-            h5.create_dataset("negative", data=np.asarray(negatives, dtype=np.int64))
-            h5.create_dataset("positive_rate", data=np.asarray(positive_rates, dtype=np.float32))
+            # --- finalize: tap labels + public attrs, then drop resume markers ---
             if not no_tap_labels:
+                for key in ("tap_names", "tap_labels", "tap_raw_counts"):
+                    if key in h5:
+                        del h5[key]
+                game_names = [decode_text(value) for value in h5["game_names"][:]]
                 write_tap_metadata(h5, game_names, games, Path(tap_mapping))
 
             h5.attrs["schema"] = TEXT_H5_SCHEMA
             h5.attrs["source"] = "game_review_cleaned_3_sentences_text"
             h5.attrs["created_at"] = time.strftime("%Y-%m-%dT%H:%M:%S")
-            h5.attrs["games"] = len(game_names)
+            h5.attrs["games"] = len(plans)
             h5.attrs["reviews"] = total_reviews
             h5.attrs["sentences"] = total_sentences
             h5.attrs["games_json"] = str(Path(games_json).resolve())
@@ -605,8 +650,11 @@ def build_text_h5(
                 [str(path.resolve()) for path in review_dirs],
                 ensure_ascii=False,
             )
+            for key in ("_partial_schema", "_games_done", "_review_cursor", "_sentence_cursor"):
+                if key in h5.attrs:
+                    del h5.attrs[key]
 
-        replace_with_retry(tmp_path, output_h5)
+        replace_with_retry(partial_path, output_h5)
         write_text_h5_manifest(
             output_h5,
             expected,
@@ -618,7 +666,8 @@ def build_text_h5(
             status="written",
         )
     except BaseException:
-        best_effort_unlink(tmp_path)
+        # Keep partial_path so the next run resumes; only a successful build or an
+        # incompatible scan (handled above) removes it.
         raise
 
     print(

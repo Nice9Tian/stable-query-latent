@@ -57,14 +57,23 @@ def _download_stream(url: str, out_file: Path, total_hint: int = 0) -> None:
 
 def parallel_download(url: str, out_file: Path, workers: int = 8) -> None:
     """Download url into out_file using HTTP Range requests across `workers`
-    connections. Falls back to a single sequential stream when the server does
-    not advertise byte-range support (no Accept-Ranges / unknown length).
+    connections, resuming from a prior interrupted attempt when possible.
 
     A single big file over one TCP connection is usually capped by per-stream
     throughput, not link bandwidth; several parallel ranges saturate the pipe.
+
+    Resume: each worker owns a fixed byte range and records how many of its
+    bytes have landed in a ``<out_file>.progress.json`` sidecar (flushed
+    periodically). On a re-run the preallocated ``out_file`` is reopened in
+    place (never truncated) and every worker continues from its recorded
+    offset, so an interrupted download is never restarted from zero. Falls back
+    to a single sequential stream when the server does not support byte ranges.
     """
     import threading
     from concurrent.futures import ThreadPoolExecutor
+
+    out_file = Path(out_file)
+    progress_path = out_file.with_name(out_file.name + ".progress.json")
 
     # Probe length + range support with a tiny ranged GET (HEAD is often blocked
     # by the S3 redirect Mendeley hands out).
@@ -83,14 +92,11 @@ def parallel_download(url: str, out_file: Path, workers: int = 8) -> None:
         ranges_ok = False
 
     if not ranges_ok or total <= 0 or workers <= 1:
+        # No ranges -> cannot resume; always restart the single stream cleanly.
         print("  (range not supported, single-stream download)", flush=True)
+        progress_path.unlink(missing_ok=True)
         _download_stream(url, out_file, total)
         return
-
-    print(f"  parallel download: {total >> 20} MB over {workers} connections", flush=True)
-    # Preallocate so each worker can seek+write its own slice independently.
-    with out_file.open("wb") as f:
-        f.truncate(total)
 
     part = -(-total // workers)  # ceil division
     bounds = []
@@ -100,33 +106,87 @@ def parallel_download(url: str, out_file: Path, workers: int = 8) -> None:
         if start <= end:
             bounds.append((start, end))
 
-    done = [0]
+    # Per-worker bytes already on disk (index aligned with bounds).
+    done_bytes = [0] * len(bounds)
+    resumed = False
+    if out_file.exists() and progress_path.exists():
+        try:
+            prev = json.loads(progress_path.read_text(encoding="utf-8"))
+            if (
+                int(prev.get("total", -1)) == total
+                and len(prev.get("done", [])) == len(bounds)
+                and out_file.stat().st_size == total
+            ):
+                done_bytes = [int(v) for v in prev["done"]]
+                resumed = True
+        except Exception:
+            resumed = False
+
+    if not resumed:
+        # Fresh attempt: preallocate so each worker can seek+write independently.
+        with out_file.open("wb") as f:
+            f.truncate(total)
+        done_bytes = [0] * len(bounds)
+
+    already = sum(done_bytes)
+    if resumed:
+        print(
+            f"  resuming download: {already >> 20}/{total >> 20} MB already on disk, "
+            f"{len(bounds)} connections",
+            flush=True,
+        )
+    else:
+        print(f"  parallel download: {total >> 20} MB over {len(bounds)} connections", flush=True)
+
+    done_total = [already]
     lock = threading.Lock()
 
-    def fetch(span):
-        start, end = span
+    def save_progress():
+        atomic_json_write({"total": total, "done": done_bytes}, progress_path)
+
+    def fetch(index):
+        start, end = bounds[index]
+        resume_at = start + done_bytes[index]
+        if resume_at > end:
+            return  # this slice is already complete
         req = urllib.request.Request(
             url,
-            headers={"User-Agent": "Mozilla/5.0", "Range": f"bytes={start}-{end}"},
+            headers={"User-Agent": "Mozilla/5.0", "Range": f"bytes={resume_at}-{end}"},
         )
         with urllib.request.urlopen(req) as resp, open(out_file, "r+b") as f:
-            f.seek(start)
+            f.seek(resume_at)
             chunk = 1 << 20
+            since_save = 0
             while True:
                 block = resp.read(chunk)
                 if not block:
                     break
                 f.write(block)
                 with lock:
-                    done[0] += len(block)
-                    if done[0] % (500 << 20) < chunk:
+                    done_bytes[index] += len(block)
+                    done_total[0] += len(block)
+                    since_save += len(block)
+                    if done_total[0] % (500 << 20) < chunk:
                         print(
-                            f"  ... {done[0] * 100 // total}% ({done[0] >> 20} MB)",
+                            f"  ... {done_total[0] * 100 // total}% ({done_total[0] >> 20} MB)",
                             flush=True,
                         )
+                    if since_save >= (100 << 20):  # checkpoint every ~100 MB
+                        save_progress()
+                        since_save = 0
 
-    with ThreadPoolExecutor(max_workers=len(bounds)) as pool:
-        list(pool.map(fetch, bounds))
+    try:
+        with ThreadPoolExecutor(max_workers=len(bounds)) as pool:
+            list(pool.map(fetch, bounds))
+    finally:
+        # Persist whatever progress we have so an interruption can resume.
+        save_progress()
+
+    if sum(done_bytes) < total:
+        raise IOError(
+            f"download incomplete: {sum(done_bytes)}/{total} bytes; rerun to resume"
+        )
+    progress_path.unlink(missing_ok=True)
 
 
 def parallel_extractall(zip_path: Path, dest: Path, workers: int = 0) -> None:
@@ -207,8 +267,13 @@ def download_source1(source1_dir: Path, zip_cache: Path) -> bool:
             parallel_download(SOURCE1_DOWNLOAD_URL, tmp_zip, workers=8)
             tmp_zip.replace(zip_cache)
         except Exception as exc:
-            tmp_zip.unlink(missing_ok=True)
-            print(f"[warn] Mendeley download failed: {exc}\nsource1 will be skipped.", flush=True)
+            # Keep the partial file + its .progress.json so a re-run resumes
+            # instead of restarting the multi-GB download from zero.
+            print(
+                f"[warn] Mendeley download incomplete: {exc}\n"
+                f"       partial kept at {tmp_zip}; re-run to resume. source1 skipped for now.",
+                flush=True,
+            )
             return False
         print(f"source1: downloaded -> {zip_cache}", flush=True)
     else:
