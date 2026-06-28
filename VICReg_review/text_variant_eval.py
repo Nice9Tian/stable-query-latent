@@ -25,7 +25,8 @@ import h5py
 import numpy as np
 import torch
 
-from VICReg_review.identity_diagnostic import encode_text_centroid, l2_normalize, split_text
+from VICReg_review import disturbtion_embed
+from VICReg_review.identity_diagnostic import encode_text_centroid, l2_normalize
 from VICReg_review.train_tag_probe import load_labels
 
 
@@ -121,59 +122,22 @@ def discover_variant_records(root: Path, names: list[str], appids: list[str]) ->
 
 
 def load_or_embed_variant_texts(args, records: list[VariantRecord], cache_path: Path) -> dict:
-    source_paths = [str(record.path.resolve()) for record in records]
-    source_mtime_ns = [int(record.path.stat().st_mtime_ns) for record in records]
-    source_sizes = [int(record.path.stat().st_size) for record in records]
-    source_variants = [record.variant for record in records]
-    if cache_path.exists() and not getattr(args, "rebuild_text_variant_cache", False):
-        data = np.load(cache_path, allow_pickle=True)
-        cached_paths = [str(x) for x in data["paths"]] if "paths" in data else []
-        cached_mtime_ns = [int(x) for x in data["source_mtime_ns"]] if "source_mtime_ns" in data else []
-        cached_sizes = [int(x) for x in data["source_sizes"]] if "source_sizes" in data else []
-        cached_variants = [str(x) for x in data["variants"]] if "variants" in data else []
-        if (
-            cached_paths == source_paths
-            and cached_mtime_ns == source_mtime_ns
-            and cached_sizes == source_sizes
-            and cached_variants == source_variants
-        ):
-            return {key: data[key] for key in data.files}
-        print("text variant embedding cache is stale; rebuilding.", flush=True)
-
-    from game_review_data.embedding_data import LocalEmbedder
-
-    embedder = LocalEmbedder(
-        getattr(args, "local_model", "Qwen/Qwen3-Embedding-0.6B"),
+    if not records and Path(cache_path).exists():
+        return disturbtion_embed.load_npz_payload(cache_path)
+    disturbtion_records = [
+        disturbtion_embed.VariantRecord(record.appid, record.name, record.variant, record.path)
+        for record in records
+    ]
+    disturbtion_embed.ensure_text_variant_cache(
+        cache_path,
+        disturbtion_records,
+        local_model=getattr(args, "local_model", "Qwen/Qwen3-Embedding-0.6B"),
         device=getattr(args, "device", None),
         batch_size=int(getattr(args, "embed_batch_size", 32)),
+        max_text_sentences=int(getattr(args, "max_text_sentences", 4096)),
+        rebuild=bool(getattr(args, "rebuild_text_variant_cache", False)),
     )
-    vectors = []
-    offsets = [0]
-    for record in records:
-        text = record.path.read_text(encoding="utf-8")
-        sentences = split_text(text, int(getattr(args, "max_text_sentences", 4096)))
-        embedded = np.asarray(embedder.embed(sentences), dtype=np.float32)
-        vectors.append(embedded)
-        offsets.append(offsets[-1] + embedded.shape[0])
-        print(
-            f"text variant embedded appid={record.appid} variant={record.variant} sentences={len(sentences)}",
-            flush=True,
-        )
-
-    payload = {
-        "vectors": np.concatenate(vectors, axis=0).astype(np.float32) if vectors else np.zeros((0, 1024), dtype=np.float32),
-        "offsets": np.asarray(offsets, dtype=np.int64),
-        "appids": np.asarray([r.appid for r in records], dtype=object),
-        "names": np.asarray([r.name for r in records], dtype=object),
-        "variants": np.asarray([r.variant for r in records], dtype=object),
-        "paths": np.asarray([str(r.path) for r in records], dtype=object),
-        "source_mtime_ns": np.asarray(source_mtime_ns, dtype=np.int64),
-        "source_sizes": np.asarray(source_sizes, dtype=np.int64),
-    }
-    cache_path.parent.mkdir(parents=True, exist_ok=True)
-    with cache_path.open("wb") as handle:
-        np.savez_compressed(handle, **payload)
-    return payload
+    return disturbtion_embed.load_npz_payload(cache_path)
 
 
 def encode_variant_features(args, encoder, cache: dict, device) -> dict[tuple[str, str], np.ndarray]:
@@ -305,7 +269,10 @@ def evaluate(args, encoder, feats: np.ndarray, feature_names: list[str], combo_d
     names, appids = load_h5_names(h5_path)
     records = discover_variant_records(root, names, appids)
     if not records:
-        return {"status": "skipped", "reason": f"no variant text files found under {root}"}
+        cache_path = Path(getattr(args, "text_variant_cache", "") or (Path(args.out_dir) / "text_variant_embedding_cache.npz"))
+        if not cache_path.exists():
+            return {"status": "skipped", "reason": f"no variant text files found under {root}"}
+        records = []
 
     cache_path = Path(getattr(args, "text_variant_cache", "") or (Path(args.out_dir) / "text_variant_embedding_cache.npz"))
     cache = load_or_embed_variant_texts(args, records, cache_path)

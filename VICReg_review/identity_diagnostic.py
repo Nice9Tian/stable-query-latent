@@ -34,7 +34,8 @@ if str(ROOT) not in sys.path:
 if str(GAME_REVIEW_DATA) not in sys.path:
     sys.path.insert(0, str(GAME_REVIEW_DATA))
 
-from game_review_data.embedding_data import DEFAULT_LOCAL_MODEL, LocalEmbedder  # noqa: E402
+from game_review_data.embedding_data import DEFAULT_LOCAL_MODEL  # noqa: E402
+from VICReg_review import disturbtion_embed  # noqa: E402
 from VICReg_review.model import GameCentroidExpander  # noqa: E402
 from VICReg_review.train_tag_probe import load_frozen_encoder, sample_game_views  # noqa: E402
 
@@ -471,33 +472,39 @@ def run(args):
             "top_eigen_share": participation_ratio(X_expanded)["top_eigen_share"],
         }
 
-    embedder = LocalEmbedder(args.local_model, device=args.device, batch_size=args.batch_size)
     text_features = {}
     retrieval_rows = []
-    for case in cases_from_defaults():
-        text = case["path"].read_text(encoding="utf-8")
-        sentences = split_text(text, args.max_sentences)
-        if not sentences:
+    test_cache_path = Path(args.test_case_cache or (Path(args.report).resolve().parent / "test_case_embeddings.npz"))
+    disturbtion_embed.ensure_test_case_cache(
+        test_cache_path,
+        local_model=args.local_model,
+        device=args.device,
+        batch_size=args.batch_size,
+        max_text_sentences=args.max_sentences,
+        rebuild=args.rebuild_test_case_cache,
+    )
+    text_cache = disturbtion_embed.load_npz_payload(test_cache_path)
+    offsets = text_cache["offsets"].astype(np.int64)
+    for i, (game, appid, sentiment, path) in enumerate(
+        zip(text_cache["games"], text_cache["appids"], text_cache["sentiments"], text_cache["paths"])
+    ):
+        vectors = text_cache["vectors"][int(offsets[i]): int(offsets[i + 1])].astype(np.float32)
+        if vectors.size == 0:
             continue
-        vectors = np.asarray(embedder.embed(sentences), dtype=np.float32)
         raw_query = vectors.mean(axis=0).astype(np.float32)
         vic_query = encode_text_centroid(encoder, vectors, args, device)
-        raw_rank, raw_sim, raw_order, raw_sims = retrieval_rank(
-            X_raw, raw_query, appids, case["appid"], args.top_k
-        )
-        vic_rank, vic_sim, vic_order, vic_sims = retrieval_rank(
-            X_vic, vic_query, appids, case["appid"], args.top_k
-        )
-        text_features[(case["game"], case["sentiment"])] = {
+        raw_rank, raw_sim, raw_order, raw_sims = retrieval_rank(X_raw, raw_query, appids, str(appid), args.top_k)
+        vic_rank, vic_sim, vic_order, vic_sims = retrieval_rank(X_vic, vic_query, appids, str(appid), args.top_k)
+        text_features[(str(game), str(sentiment))] = {
             "raw": raw_query,
             "vicreg": vic_query,
         }
         row = {
-            "game": case["game"],
-            "target_appid": case["appid"],
-            "sentiment": case["sentiment"],
-            "path": str(case["path"]),
-            "sentences": len(sentences),
+            "game": str(game),
+            "target_appid": str(appid),
+            "sentiment": str(sentiment),
+            "path": str(path),
+            "sentences": int(text_cache["sentence_counts"][i]) if "sentence_counts" in text_cache else int(vectors.shape[0]),
             "raw_rank": raw_rank,
             "raw_similarity": raw_sim,
             "raw_top": top_rows(raw_order, raw_sims, appids, titles),
@@ -507,7 +514,7 @@ def run(args):
         }
         retrieval_rows.append(row)
         print(
-            f"{case['game']} {case['sentiment']}: raw_rank={raw_rank} "
+            f"{game} {sentiment}: raw_rank={raw_rank} "
             f"vicreg_rank={vic_rank} vicreg_sim={vic_sim:.4f}",
             flush=True,
         )
@@ -582,6 +589,8 @@ def parse_args():
     parser.add_argument("--device", default=None)
     parser.add_argument("--batch-size", default=32, type=int)
     parser.add_argument("--max-sentences", default=4096, type=int)
+    parser.add_argument("--test-case-cache", default=None, type=Path)
+    parser.add_argument("--rebuild-test-case-cache", action="store_true")
     parser.add_argument("--max-game-sentences", default=4000, type=int)
     parser.add_argument("--feature-views", default=4, type=int)
     parser.add_argument("--sample-fraction", default=0.6, type=float)

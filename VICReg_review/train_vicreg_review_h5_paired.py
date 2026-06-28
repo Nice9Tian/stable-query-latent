@@ -364,6 +364,8 @@ def parse_args():
     parser.add_argument("--text-variant-dir", default=None)
     parser.add_argument("--text-variant-cache", default=None)
     parser.add_argument("--rebuild-text-variant-cache", action="store_true")
+    parser.add_argument("--test-case-cache", default=None)
+    parser.add_argument("--rebuild-test-case-cache", action="store_true")
     parser.add_argument("--text-variant-feature-views", type=int, default=4)
     parser.add_argument("--text-variant-sample-fraction", type=float, default=1.0)
     parser.add_argument("--text-variant-local-model", default="Qwen/Qwen3-Embedding-0.6B")

@@ -9,7 +9,6 @@ prec@K / recall test on AO_text.txt and 2077_text.txt, for both the raw Qwen
 embedding and the frozen VICReg code.
 """
 import json
-import re
 import sys
 from pathlib import Path
 
@@ -23,6 +22,7 @@ for p in (str(ROOT), str(ROOT / "game_review_data")):
         sys.path.insert(0, p)
 
 from VICReg_review.tap_mapping import load_tap_mapping, map_tag_dict, keyword_scores  # noqa: E402
+from VICReg_review import disturbtion_embed  # noqa: E402
 from VICReg_review.train_tag_probe import load_frozen_encoder, pool_features  # noqa: E402
 
 GAMES_JSON = ROOT / "game_review_data" / "games.json"
@@ -32,11 +32,6 @@ TESTS = [("AO_text.txt", "1385380", "Across the Obelisk"), ("2077_text.txt", "10
 
 def l2(x):
     return x / (np.linalg.norm(x, axis=-1, keepdims=True) + 1e-8)
-
-
-def split(t):
-    parts = re.split(r"(?:\r?\n)+|(?<=[.!?。！？；;])\s*", str(t).strip())
-    return [p.strip() for p in parts if p.strip()]
 
 
 def micro_prf(pred, true):
@@ -139,17 +134,34 @@ def main():
     print(f"  raw-L2     : {cv_micro_f1(F_raw, Y):.3f}")
     print(f"  vicreg-L2  : {cv_micro_f1(F_vic, Y):.3f}")
 
-    # embed the two descriptions once; build raw + vicreg features
-    from game_review_data.embedding_data import DEFAULT_LOCAL_MODEL, LocalEmbedder
-    emb = LocalEmbedder(DEFAULT_LOCAL_MODEL, device=str(device), batch_size=32)
+    # Load pre-embedded descriptions; build raw + vicreg features from npz.
+    from game_review_data.embedding_data import DEFAULT_LOCAL_MODEL
+
+    cache_path = SCRIPT_DIR / "heads" / "data_view_sweep" / "test_case_embeddings.npz"
+    disturbtion_embed.ensure_test_case_cache(
+        cache_path,
+        local_model=DEFAULT_LOCAL_MODEL,
+        device=str(device),
+        batch_size=32,
+        max_text_sentences=4096,
+    )
+    text_cache = disturbtion_embed.load_npz_payload(cache_path)
+    offsets = text_cache["offsets"].astype(np.int64)
+    by_appid_sentiment = {
+        (str(appid), str(sentiment)): text_cache["vectors"][int(offsets[i]): int(offsets[i + 1])].astype(np.float32)
+        for i, (appid, sentiment) in enumerate(zip(text_cache["appids"], text_cache["sentiments"]))
+    }
+    text_by_appid_sentiment = {
+        (str(appid), str(sentiment)): str(text)
+        for appid, sentiment, text in zip(text_cache["appids"], text_cache["sentiments"], text_cache["texts"])
+    } if "texts" in text_cache else {}
     probe = torch.load(SCRIPT_DIR / "heads" / "tag_probe_linear.pt", map_location="cpu", weights_only=False)
     with __import__("h5py").File(DEFAULT_H5, "r") as h5:
         input_dim = int(h5.attrs["input_dim"])
     encoder, _, _, _ = load_frozen_encoder(probe["encoder_checkpoint"], input_dim, device)
 
-    def desc_features(path):
-        sents = split(Path(ROOT / path).read_text(encoding="utf-8"))
-        vecs = np.array(emb.embed(sents), dtype=np.float32)
+    def desc_features(appid):
+        vecs = by_appid_sentiment[(str(appid), "neutral")]
         raw_feat = l2(vecs.mean(0))
         vt = torch.tensor(vecs, device=device)
         rng = np.random.default_rng(0); codes = []
@@ -168,8 +180,8 @@ def main():
     clfs_raw, clfs_vic = fit_full(F_raw, Y), fit_full(F_vic, Y)
     for path, appid, name in TESTS:
         true_coarse = set(map_tag_dict(games[appid].get("tags", {}), mapping))
-        text = Path(ROOT / path).read_text(encoding="utf-8")
-        raw_feat, vic_feat = desc_features(path)
+        text = text_by_appid_sentiment.get((str(appid), "neutral"), "")
+        raw_feat, vic_feat = desc_features(appid)
         K = len(true_coarse)
         print(f"\n=== {name} ===  true coarse: {sorted(true_coarse)}")
         print(" raw-L2 probe:")

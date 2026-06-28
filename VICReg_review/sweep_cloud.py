@@ -60,6 +60,7 @@ def _append_flag(cmd: list[str], flag: str, enabled: bool) -> None:
 def _apply_cloud_train_options(cmd: list[str], args) -> list[str]:
     tag_split_json = args.tag_text_split_json or (args.out_dir / "tag_text_eval_split.json")
     text_variant_cache = args.text_variant_cache or (args.out_dir / "text_variant_embedding_cache.npz")
+    test_case_cache = args.test_case_cache or (args.out_dir / "test_case_embeddings.npz")
     _set_option(cmd, "--cache-mode", args.cache_mode)
     _set_option(cmd, "--backward-mode", args.backward_mode)
     _set_option(cmd, "--prefetch-batches", args.prefetch_batches)
@@ -82,8 +83,10 @@ def _apply_cloud_train_options(cmd: list[str], args) -> list[str]:
     _set_option(cmd, "--tag-text-split-seed", args.tag_text_split_seed)
     _set_option(cmd, "--tag-text-threshold-steps", args.tag_text_threshold_steps)
     _set_option(cmd, "--text-variant-cache", text_variant_cache)
+    _set_option(cmd, "--test-case-cache", test_case_cache)
     _append_flag(cmd, "--pin-cache", args.pin_cache)
     _append_flag(cmd, "--rebuild-text-variant-cache", args.rebuild_text_variant_cache)
+    _append_flag(cmd, "--rebuild-test-case-cache", args.rebuild_shared_eval)
     return cmd
 
 
@@ -222,6 +225,7 @@ def parse_args(argv: list[str] | None = None):
         ),
     )
     parser.add_argument("--text-variant-cache", type=Path, default=None)
+    parser.add_argument("--test-case-cache", type=Path, default=None)
     parser.add_argument("--rebuild-text-variant-cache", action="store_true")
     parser.add_argument("--text-variant-feature-views", type=int, default=4)
     parser.add_argument("--text-variant-sample-fraction", type=float, default=1.0)
@@ -279,6 +283,8 @@ def main(argv: list[str] | None = None) -> None:
         args.tag_text_split_json = args.out_dir / "tag_text_eval_split.json"
     if args.text_variant_cache is None:
         args.text_variant_cache = args.out_dir / "text_variant_embedding_cache.npz"
+    if args.test_case_cache is None:
+        args.test_case_cache = args.out_dir / "test_case_embeddings.npz"
     install_cloud_overrides(args)
     sweep.run(args)
 

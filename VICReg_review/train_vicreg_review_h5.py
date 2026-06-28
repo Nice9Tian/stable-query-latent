@@ -1298,6 +1298,7 @@ def run_dual_probe(model, args, device, epoch, global_step, probe_rows):
             device=args.device,
             seed=args.seed,
             probe_folds=args.probe_folds,
+            rebuild_shared_eval=False,
             text_variant_dir=args.text_variant_dir,
             text_variant_cache=args.text_variant_cache,
             rebuild_text_variant_cache=args.rebuild_text_variant_cache,
@@ -1311,6 +1312,7 @@ def run_dual_probe(model, args, device, epoch, global_step, probe_rows):
             local_model=args.text_variant_local_model,
             embed_batch_size=args.text_variant_embed_batch_size,
             max_text_sentences=args.text_variant_max_sentences,
+            max_game_sentences=4000,
             eval_feature_views=args.text_variant_feature_views,
             eval_sample_fraction=args.text_variant_sample_fraction,
             amp_eval=args.amp and device.type == "cuda",
@@ -1643,6 +1645,8 @@ def parse_args():
     parser.add_argument("--text-variant-dir", default=None)
     parser.add_argument("--text-variant-cache", default=None)
     parser.add_argument("--rebuild-text-variant-cache", action="store_true")
+    parser.add_argument("--test-case-cache", default=None)
+    parser.add_argument("--rebuild-test-case-cache", action="store_true")
     parser.add_argument("--text-variant-feature-views", type=int, default=4)
     parser.add_argument("--text-variant-sample-fraction", type=float, default=1.0)
     parser.add_argument("--text-variant-local-model", default="Qwen/Qwen3-Embedding-0.6B")

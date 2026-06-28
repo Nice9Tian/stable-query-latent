@@ -23,7 +23,8 @@ if str(ROOT) not in sys.path:
 if str(ROOT / "game_review_data") not in sys.path:
     sys.path.insert(0, str(ROOT / "game_review_data"))
 
-from game_review_data.embedding_data import DEFAULT_LOCAL_MODEL, LocalEmbedder  # noqa: E402
+from game_review_data.embedding_data import DEFAULT_LOCAL_MODEL  # noqa: E402
+from VICReg_review import disturbtion_embed  # noqa: E402
 from VICReg_review.train_tag_probe import load_frozen_encoder, pool_features, sample_game_views  # noqa: E402
 
 DEFAULT_CACHE = SCRIPT_DIR / "heads" / "recommendation_vicreg_features.npz"
@@ -143,6 +144,8 @@ def main() -> None:
     parser.add_argument("--device", default=None)
     parser.add_argument("--batch-size", default=32, type=int)
     parser.add_argument("--max-sentences", default=4096, type=int)
+    parser.add_argument("--test-case-cache", default=None, type=Path)
+    parser.add_argument("--rebuild-test-case-cache", action="store_true")
     parser.add_argument("--top-k", default=3, type=int)
     parser.add_argument("--seed", default=0, type=int)
     parser.add_argument("--overwrite-identity-cache", action="store_true")
@@ -155,8 +158,7 @@ def main() -> None:
     titles = [str(value) for value in cache["titles"]]
     probe = torch.load(args.probe, map_location="cpu", weights_only=False)
 
-    embedder = LocalEmbedder(args.local_model, device=args.device, batch_size=args.batch_size)
-    device = torch.device(embedder.device)
+    device = torch.device(args.device or ("cuda" if torch.cuda.is_available() else "cpu"))
     with h5py.File(args.h5, "r") as h5:
         input_dim = int(h5.attrs["input_dim"])
     encoder_path = Path(probe["encoder_checkpoint"])
@@ -211,10 +213,24 @@ def main() -> None:
     probe_features_by_case = {}
     identity_features_by_case = {}
 
-    for game, target_appid, sentiment, path in DEFAULT_CASES:
-        text = path.read_text(encoding="utf-8")
-        sentences = split_text(text, args.max_sentences)
-        vectors = np.asarray(embedder.embed(sentences), dtype=np.float32)
+    test_cache_path = Path(args.test_case_cache or (args.report.parent / "test_case_embeddings.npz"))
+    disturbtion_embed.ensure_test_case_cache(
+        test_cache_path,
+        local_model=args.local_model,
+        device=args.device,
+        batch_size=args.batch_size,
+        max_text_sentences=args.max_sentences,
+        rebuild=args.rebuild_test_case_cache,
+    )
+    text_cache = disturbtion_embed.load_npz_payload(test_cache_path)
+    offsets = text_cache["offsets"].astype(np.int64)
+    available_cases = []
+    for i, (game, target_appid, sentiment, path) in enumerate(
+        zip(text_cache["games"], text_cache["appids"], text_cache["sentiments"], text_cache["paths"])
+    ):
+        if str(sentiment) == "noname":
+            continue
+        vectors = text_cache["vectors"][int(offsets[i]): int(offsets[i + 1])].astype(np.float32)
         vt = torch.from_numpy(vectors).to(device)
         rng = np.random.default_rng(args.seed)
         codes = []
@@ -231,6 +247,10 @@ def main() -> None:
         feats = torch.stack(codes, dim=0).mean(dim=0).cpu().numpy()
         identity_feature = feats.reshape(-1).astype(np.float32)
         pooled = pool_features(feats[None, ...], pool)[0].astype(np.float32)
+        game = str(game)
+        target_appid = str(target_appid)
+        sentiment = str(sentiment)
+        available_cases.append((game, target_appid, sentiment))
         probe_features_by_case[(game, sentiment)] = pooled
         identity_features_by_case[(game, sentiment)] = identity_feature
 
@@ -252,7 +272,7 @@ def main() -> None:
                 "game": game,
                 "target_appid": target_appid,
                 "sentiment": sentiment,
-                "sentences": len(sentences),
+                "sentences": int(text_cache["sentence_counts"][i]) if "sentence_counts" in text_cache else int(vectors.shape[0]),
                 "probe_positive": predict_probe_positive(probe, pooled),
                 "target_rank": target_rank,
                 "target_similarity": float(similarities[target_index]),
@@ -266,7 +286,7 @@ def main() -> None:
         )
 
     pair_rows = []
-    for game in sorted({case[0] for case in DEFAULT_CASES}):
+    for game in sorted({case[0] for case in available_cases}):
         sentiments = ["neutral", "positive", "negative"]
         for a, b in itertools.combinations(sentiments, 2):
             fa = identity_features_by_case[(game, a)]

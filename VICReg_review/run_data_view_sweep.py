@@ -38,14 +38,13 @@ if str(ROOT) not in sys.path:
 
 from VICReg_review.identity_diagnostic import (  # noqa: E402
     DEFAULT_LOCAL_MODEL,
-    cases_from_defaults,
     encode_text_centroid,
     l2_normalize,
     participation_ratio,
     retrieval_rank,
-    split_text,
     zscore_against_games,
 )
+from VICReg_review import disturbtion_embed  # noqa: E402
 from VICReg_review.train_tag_probe import (  # noqa: E402
     cross_validate as tag_cross_validate,
     extract_features,
@@ -414,59 +413,59 @@ def cache_raw_game_vectors(args, appids: list[str], names: list[str], titles: li
 
 def embed_test_cases(args) -> dict:
     cache_path = args.out_dir / "test_case_embeddings.npz"
-    cases = cases_from_defaults()
-    source_paths = [str(case["path"].resolve()) for case in cases]
-    source_mtime_ns = [int(case["path"].stat().st_mtime_ns) for case in cases]
-    source_sizes = [int(case["path"].stat().st_size) for case in cases]
-    if cache_path.exists() and not args.rebuild_shared_eval:
-        data = np.load(cache_path, allow_pickle=True)
-        cached_paths = [str(x) for x in data["paths"]] if "paths" in data else []
-        cached_mtime_ns = [int(x) for x in data["source_mtime_ns"]] if "source_mtime_ns" in data else []
-        cached_sizes = [int(x) for x in data["source_sizes"]] if "source_sizes" in data else []
-        if (
-            cached_paths == source_paths
-            and cached_mtime_ns == source_mtime_ns
-            and cached_sizes == source_sizes
-        ):
-            return {key: data[key] for key in data.files}
-        print("test case embedding cache is stale; rebuilding.", flush=True)
+    disturbtion_embed.ensure_test_case_cache(
+        cache_path,
+        local_model=args.local_model,
+        device=args.device,
+        batch_size=args.embed_batch_size,
+        max_text_sentences=args.max_text_sentences,
+        rebuild=args.rebuild_shared_eval,
+    )
+    return disturbtion_embed.load_npz_payload(cache_path)
 
-    from game_review_data.embedding_data import LocalEmbedder
 
-    embedder = LocalEmbedder(args.local_model, device=args.device, batch_size=args.embed_batch_size)
-    vectors = []
-    offsets = [0]
-    games = []
-    appids = []
-    sentiments = []
-    paths = []
-    sentence_counts = []
-    for case in cases:
-        text = case["path"].read_text(encoding="utf-8")
-        sentences = split_text(text, args.max_text_sentences)
-        embedded = np.asarray(embedder.embed(sentences), dtype=np.float32)
-        vectors.append(embedded)
-        offsets.append(offsets[-1] + embedded.shape[0])
-        games.append(case["game"])
-        appids.append(case["appid"])
-        sentiments.append(case["sentiment"])
-        paths.append(str(case["path"]))
-        sentence_counts.append(len(sentences))
-        print(f"embedded test text {case['game']} {case['sentiment']} sentences={len(sentences)}", flush=True)
-    payload = {
-        "vectors": np.concatenate(vectors, axis=0).astype(np.float32),
-        "offsets": np.asarray(offsets, dtype=np.int64),
-        "games": np.asarray(games, dtype=object),
-        "appids": np.asarray(appids, dtype=object),
-        "sentiments": np.asarray(sentiments, dtype=object),
-        "paths": np.asarray(paths, dtype=object),
-        "source_mtime_ns": np.asarray(source_mtime_ns, dtype=np.int64),
-        "source_sizes": np.asarray(source_sizes, dtype=np.int64),
-        "sentence_counts": np.asarray(sentence_counts, dtype=np.int32),
-    }
-    with cache_path.open("wb") as handle:
-        np.savez_compressed(handle, **payload)
-    return payload
+def ensure_disturbtion_eval_caches(args) -> None:
+    if args.skip_eval:
+        return
+    disturbtion_embed.ensure_test_case_cache(
+        args.out_dir / "test_case_embeddings.npz",
+        local_model=args.local_model,
+        device=args.device,
+        batch_size=args.embed_batch_size,
+        max_text_sentences=args.max_text_sentences,
+        rebuild=args.rebuild_shared_eval,
+    )
+    text_variant_dir = getattr(args, "text_variant_dir", None)
+    cache_path = Path(getattr(args, "text_variant_cache", "") or (args.out_dir / "text_variant_embedding_cache.npz"))
+    if not text_variant_dir:
+        if cache_path.exists():
+            disturbtion_embed.ensure_text_variant_cache(
+                cache_path,
+                [],
+                local_model=args.local_model,
+                device=args.device,
+                batch_size=args.embed_batch_size,
+                max_text_sentences=args.max_text_sentences,
+                rebuild=bool(getattr(args, "rebuild_text_variant_cache", False)),
+            )
+        return
+    if not Path(text_variant_dir).exists():
+        if cache_path.exists():
+            print(f"disturbtion text-variant cache exists; dir not required: {cache_path}", flush=True)
+        else:
+            print(f"disturbtion text-variant cache skipped: dir not found {text_variant_dir}", flush=True)
+        return
+    names, appids, _titles = h5_game_metadata(args.h5)
+    records = disturbtion_embed.discover_variant_records(Path(text_variant_dir), names, appids)
+    disturbtion_embed.ensure_text_variant_cache(
+        cache_path,
+        records,
+        local_model=args.local_model,
+        device=args.device,
+        batch_size=args.embed_batch_size,
+        max_text_sentences=args.max_text_sentences,
+        rebuild=bool(getattr(args, "rebuild_text_variant_cache", False)),
+    )
 
 
 def eval_feature_cache_path(combo_dir: Path) -> Path:
@@ -1279,6 +1278,7 @@ def run(args) -> None:
         f"H5 pool: {pool} games | train-game-counts (0=full): {args.train_game_counts}",
         flush=True,
     )
+    ensure_disturbtion_eval_caches(args)
     args.sweep_started_at = timestamp()
     write_sweep_manifest(args, "running", summarize(args))
     current = None
@@ -1407,6 +1407,16 @@ def parse_args():
     parser.add_argument("--max-text-sentences", type=int, default=4096)
     parser.add_argument("--local-model", default=DEFAULT_LOCAL_MODEL)
     parser.add_argument("--embed-batch-size", type=int, default=32)
+    parser.add_argument("--text-variant-dir", default=None, type=Path)
+    parser.add_argument("--text-variant-cache", default=None, type=Path)
+    parser.add_argument("--rebuild-text-variant-cache", action="store_true")
+    parser.add_argument("--text-variant-feature-views", type=int, default=4)
+    parser.add_argument("--text-variant-sample-fraction", type=float, default=1.0)
+    parser.add_argument("--tag-text-split-json", default=None, type=Path)
+    parser.add_argument("--tag-text-train-frac", type=float, default=0.7)
+    parser.add_argument("--tag-text-val-frac", type=float, default=0.15)
+    parser.add_argument("--tag-text-split-seed", type=int, default=20260627)
+    parser.add_argument("--tag-text-threshold-steps", type=int, default=33)
     parser.add_argument("--amp-eval", action=argparse.BooleanOptionalAction, default=True)
     parser.add_argument("--rebuild-eval", action="store_true")
     parser.add_argument(
