@@ -21,7 +21,7 @@ import sys
 from pathlib import Path
 
 SCRIPT_DIR = Path(__file__).resolve().parent
-DEFAULT_DATASET = "artermiloff/steam-games-reviews-2024"
+DEFAULT_DATASET = "andrewmvd/steam-reviews"
 DEFAULT_PREPARED_DIR = SCRIPT_DIR / "kaggle_prepared"
 DEFAULT_WORKDIR = SCRIPT_DIR / "build_new_gamedata"
 DEFAULT_KAGGLE_CACHE = SCRIPT_DIR / "kagglehub_cache"

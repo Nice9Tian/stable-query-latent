@@ -5,7 +5,7 @@ Sources:
   source1  Steam Games Metadata and Player Reviews (2020-2024)
            Game Reviews/*.csv + games.json, downloaded from Mendeley.
 
-  source2  Kaggle andrewmvd/steam-reviews
+  source2  Kaggle najzeko/steam-reviews-2021
            prepared into reviews/*.csv + enriched games.json.
 
 When the same appid appears in both sources, source1 wins. The clean stage keeps
@@ -36,7 +36,7 @@ SCRIPT_DIR = Path(__file__).resolve().parent
 PROJECT_ROOT = SCRIPT_DIR.parent
 
 SOURCE1_DOWNLOAD_URL = "https://data.mendeley.com/public-api/zip/jxy85cr3th/download/2"
-KAGGLE_DATASET = "andrewmvd/steam-reviews"
+KAGGLE_DATASET = "najzeko/steam-reviews-2021"
 
 DEFAULT_DATA_DIR = SCRIPT_DIR
 DEFAULT_TEXT_H5 = DEFAULT_DATA_DIR / "text_h5.h5"
@@ -156,6 +156,45 @@ def prepared_done(prepared_dir: Path) -> bool:
         (prepared_dir / "prepare_manifest.json").exists()
         and (prepared_dir / "games.json").exists()
         and any((prepared_dir / "reviews").glob("*.csv"))
+    )
+
+
+def appids_in_reviews_dir(reviews_dir: Path) -> set[str]:
+    appids: set[str] = set()
+    reviews_dir = Path(reviews_dir)
+    if not reviews_dir.exists():
+        return appids
+    for csv_path in reviews_dir.glob("*.csv"):
+        appid = csv_path.stem.split("_", 1)[0]
+        if appid:
+            appids.add(appid)
+    return appids
+
+
+def report_source_overlap(review_dirs: list[Path]) -> None:
+    if len(review_dirs) < 2:
+        return
+
+    seen: set[str] = set()
+    unique_total = 0
+    lines = []
+    for index, reviews_dir in enumerate(review_dirs, start=1):
+        appids = appids_in_reviews_dir(reviews_dir)
+        overlap = seen & appids
+        added = appids - seen
+        unique_total += len(added)
+        lines.append(
+            f"  src{index}: files_appids={len(appids)} "
+            f"new={len(added)} duplicate_lower_priority={len(overlap)} dir={reviews_dir}"
+        )
+        seen.update(appids)
+
+    print(
+        "source appid dedup priority: earlier sources win per appid "
+        "(source1/Mendeley 2020-2024 before source2/Kaggle).\n"
+        + "\n".join(lines)
+        + f"\n  final_unique_appids={unique_total}",
+        flush=True,
     )
 
 
@@ -331,8 +370,24 @@ def parse_args():
     return parser.parse_args()
 
 
+def resolve_args_paths(args: argparse.Namespace) -> argparse.Namespace:
+    args.data_dir = Path(args.data_dir).expanduser().resolve()
+    if args.kaggle_input is not None:
+        args.kaggle_input = Path(args.kaggle_input).expanduser().resolve()
+    if args.text_h5 is not None:
+        args.text_h5 = Path(args.text_h5).expanduser().resolve()
+    if args.embedding_h5 is not None:
+        args.embedding_h5 = Path(args.embedding_h5).expanduser().resolve()
+    if args.tap_mapping is not None:
+        args.tap_mapping = Path(args.tap_mapping).expanduser().resolve()
+    if args.token_file is not None:
+        args.token_file = str(Path(args.token_file).expanduser().resolve())
+    args.python = Path(args.python).expanduser().resolve()
+    return args
+
+
 def main():
-    args = parse_args()
+    args = resolve_args_paths(parse_args())
     started = time.time()
 
     data_dir: Path = args.data_dir
@@ -395,6 +450,8 @@ def main():
             f"  source1: {SOURCE1_DOWNLOAD_URL}\n"
             "  source2: install kagglehub + configure Kaggle credentials, then re-run."
         )
+
+    report_source_overlap(review_dirs)
 
     print(
         f"=== unified game-review build ===\n"

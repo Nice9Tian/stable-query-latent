@@ -258,16 +258,27 @@ class LruCsvWriters:
 def infer_schema(args, input_path: Path) -> dict[str, str | None]:
     head = read_head(input_path, args.encoding)
     columns = list(head.columns)
-    schema = {
-        "appid": infer_column(columns, args.appid_column, APPID_COLUMNS, "appid"),
-        "name": infer_column(columns, args.name_column, NAME_COLUMNS, "name", required=False),
-        "review": infer_column(columns, args.review_column, REVIEW_COLUMNS, "review"),
-        "recommend": infer_column(columns, args.recommend_column, RECOMMEND_COLUMNS, "recommend", required=False),
-        "helpfulness": infer_column(columns, args.helpful_column, HELPFUL_COLUMNS, "helpful", required=False),
-        "user": infer_column(columns, args.user_column, USER_COLUMNS, "user", required=False),
-        "playtime": infer_column(columns, args.playtime_column, PLAYTIME_COLUMNS, "playtime", required=False),
-        "post_date": infer_column(columns, args.date_column, DATE_COLUMNS, "date", required=False),
-    }
+    try:
+        schema = {
+            "appid": infer_column(columns, args.appid_column, APPID_COLUMNS, "appid"),
+            "name": infer_column(columns, args.name_column, NAME_COLUMNS, "name", required=False),
+            "review": infer_column(columns, args.review_column, REVIEW_COLUMNS, "review"),
+            "recommend": infer_column(columns, args.recommend_column, RECOMMEND_COLUMNS, "recommend", required=False),
+            "helpfulness": infer_column(columns, args.helpful_column, HELPFUL_COLUMNS, "helpful", required=False),
+            "user": infer_column(columns, args.user_column, USER_COLUMNS, "user", required=False),
+            "playtime": infer_column(columns, args.playtime_column, PLAYTIME_COLUMNS, "playtime", required=False),
+            "post_date": infer_column(columns, args.date_column, DATE_COLUMNS, "date", required=False),
+        }
+    except KeyError as exc:
+        raise SystemExit(
+            f"{exc}\n"
+            f"Input table: {input_path}\n"
+            "This pipeline needs raw review text columns such as 'review_text', "
+            "'review', 'text', or 'content', plus an app id column. Datasets that "
+            "only contain Steam recommendation metadata cannot be converted into "
+            "the text embedding corpus. Use a raw text dataset such as "
+            "andrewmvd/steam-reviews, or pass an already prepared reviews/ directory."
+        ) from exc
     print("inferred schema:", json.dumps(schema, ensure_ascii=False, indent=2), flush=True)
     return schema
 

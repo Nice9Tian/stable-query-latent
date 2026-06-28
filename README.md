@@ -78,3 +78,19 @@ python game_review_data/build.py --data-dir <workdir> --backend cloud
 python VICReg_review/train_vicreg_review_h5.py --input-h5 <workdir>/embedding_h5.h5 --device cuda --amp
 ```
 
+## Colab
+
+For a Colab run that starts from Kaggle, splits sentences, embeds, copies the
+final `embedding_h5.h5` to Drive, and then trains:
+
+```python
+!pip install -r requirements.txt
+!python colab_game_review_pipeline.py \
+  --kaggle-json /content/drive/MyDrive/kaggle.json \
+  --drive-root /content/drive/MyDrive/studable_query_latent_runs
+```
+
+The wrapper defaults to the Kaggle-only path, local Qwen embeddings, Drive
+copies for `embedding_h5.h5`, and a Colab-friendly VICReg training run. If you
+have a Hugging Face TEI endpoint, add `--backend cloud --token-file /content/drive/MyDrive/tokenAPI.txt`.
+
