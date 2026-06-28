@@ -229,7 +229,7 @@ KAGGLE_DATASET = "najzeko/steam-reviews-2021"
 DEFAULT_DATA_DIR = SCRIPT_DIR
 DEFAULT_TEXT_H5 = DEFAULT_DATA_DIR / "text_h5.h5"
 DEFAULT_EMBEDDING_H5 = DEFAULT_DATA_DIR / "embedding_h5.h5"
-DEFAULT_TAP_MAPPING = PROJECT_ROOT / "VICReg_review" / "tags" / "tap_mapping.json"
+DEFAULT_TAG_MAPPING = PROJECT_ROOT / "VICReg_review" / "tags" / "tag_mapping.json"
 
 PIPELINE_STAGES = ("metadata", "split", "text-h5", "embed-h5")
 
@@ -394,19 +394,49 @@ def find_cached_kaggle_dataset(kaggle_cache: Path) -> Path | None:
     return None
 
 
+def maybe_enrich_kaggle(args, prepared_dir: Path) -> None:
+    if args.kaggle_games_json is not None:
+        print(
+            f"source2: skip enrich because --kaggle-games-json was provided: {args.kaggle_games_json}",
+            flush=True,
+        )
+        return
+
+    enrich_cmd = [
+        str(args.python),
+        str(SCRIPT_DIR / "enrich_steam_store_metadata.py"),
+        "--games-json",
+        str(prepared_dir / "games.json"),
+        "--batch-size",
+        str(args.enrich_batch_size),
+        "--sleep",
+        str(args.enrich_sleep),
+        "--retry-sleep",
+        str(args.enrich_retry_sleep),
+        "--retries",
+        str(args.enrich_retries),
+        "--cache-dir",
+        str(SCRIPT_DIR / "_steam_appdetails_cache"),
+    ]
+    if args.overwrite:
+        enrich_cmd.append("--overwrite-cache")
+    print("RUN " + " ".join(str(c) for c in enrich_cmd), flush=True)
+    subprocess.run(enrich_cmd, cwd=str(SCRIPT_DIR), check=True)
+
+
 def download_and_prepare_kaggle(args, source2_dir: Path, kaggle_cache: Path) -> bool:
     prepared_dir = source2_dir
     if prepared_done(prepared_dir) and not args.overwrite:
         print(f"source2: prepared data already exists at {prepared_dir}", flush=True)
+        maybe_enrich_kaggle(args, prepared_dir)
         return True
 
-    kaggle_input = getattr(args, "kaggle_input", None)
-    if kaggle_input is None:
-        # Smart skip: reuse an already-downloaded dataset instead of re-fetching.
-        cached = find_cached_kaggle_dataset(kaggle_cache)
-        if cached is not None and not args.overwrite:
-            print(f"source2: reusing cached Kaggle dataset at {cached}", flush=True)
-            kaggle_input = cached
+    kaggle_input = None
+    # Smart skip: reuse an already-downloaded dataset instead of re-fetching.
+    cached = find_cached_kaggle_dataset(kaggle_cache)
+    if cached is not None and not args.overwrite:
+        print(f"source2: reusing cached Kaggle dataset at {cached}", flush=True)
+        kaggle_input = cached
 
     if kaggle_input is None:
         try:
@@ -460,27 +490,7 @@ def download_and_prepare_kaggle(args, source2_dir: Path, kaggle_cache: Path) -> 
     print("RUN " + " ".join(str(c) for c in cmd), flush=True)
     subprocess.run(cmd, cwd=str(SCRIPT_DIR), check=True)
 
-    if not args.skip_enrich:
-        enrich_cmd = [
-            str(args.python),
-            str(SCRIPT_DIR / "enrich_steam_store_metadata.py"),
-            "--games-json",
-            str(prepared_dir / "games.json"),
-            "--batch-size",
-            str(args.enrich_batch_size),
-            "--sleep",
-            str(args.enrich_sleep),
-            "--retry-sleep",
-            str(args.enrich_retry_sleep),
-            "--retries",
-            str(args.enrich_retries),
-            "--cache-dir",
-            str(SCRIPT_DIR / "_steam_appdetails_cache"),
-        ]
-        if args.overwrite:
-            enrich_cmd.append("--overwrite-cache")
-        print("RUN " + " ".join(str(c) for c in enrich_cmd), flush=True)
-        subprocess.run(enrich_cmd, cwd=str(SCRIPT_DIR), check=True)
+    maybe_enrich_kaggle(args, prepared_dir)
 
     return prepared_done(prepared_dir)
 
@@ -526,10 +536,7 @@ def parse_args():
     )
 
     parser.add_argument("--skip-source1", action="store_true")
-    parser.add_argument("--skip-source1-download", action="store_true")
     parser.add_argument("--skip-source2", action="store_true")
-    parser.add_argument("--skip-enrich", action="store_true")
-    parser.add_argument("--kaggle-input", type=Path, default=None)
     parser.add_argument(
         "--kaggle-games-json",
         type=Path,
@@ -565,8 +572,8 @@ def parse_args():
     parser.add_argument("--limit-files", type=int, default=0,
                         help="Debug limit for sentence JSON files when building text H5.")
     parser.add_argument("--text-chunk-rows", type=int, default=8192)
-    parser.add_argument("--tap-mapping", type=Path, default=DEFAULT_TAP_MAPPING)
-    parser.add_argument("--no-tap-labels", action="store_true")
+    parser.add_argument("--tag-mapping", type=Path, default=DEFAULT_TAG_MAPPING)
+    parser.add_argument("--no-tag-labels", action="store_true")
 
     parser.add_argument("--backend", choices=["local", "cloud"], default="local")
     parser.add_argument("--local-model", default="Qwen/Qwen3-Embedding-0.6B")
@@ -588,16 +595,14 @@ def parse_args():
 
 def resolve_args_paths(args: argparse.Namespace) -> argparse.Namespace:
     args.data_dir = Path(args.data_dir).expanduser().resolve()
-    if args.kaggle_input is not None:
-        args.kaggle_input = Path(args.kaggle_input).expanduser().resolve()
     if args.kaggle_games_json is not None:
         args.kaggle_games_json = Path(args.kaggle_games_json).expanduser().resolve()
     if args.text_h5 is not None:
         args.text_h5 = Path(args.text_h5).expanduser().resolve()
     if args.embedding_h5 is not None:
         args.embedding_h5 = Path(args.embedding_h5).expanduser().resolve()
-    if args.tap_mapping is not None:
-        args.tap_mapping = Path(args.tap_mapping).expanduser().resolve()
+    if args.tag_mapping is not None:
+        args.tag_mapping = Path(args.tag_mapping).expanduser().resolve()
     if args.token_file is not None:
         args.token_file = str(Path(args.token_file).expanduser().resolve())
     args.python = Path(args.python).expanduser().resolve()
@@ -615,13 +620,6 @@ def main():
     source1_zip = data_dir / "mendeley_steam_reviews.zip"
     source2_dir = data_dir / "kaggle_steam_reviews_prepared"
     kaggle_cache = data_dir / "kagglehub_cache"
-    # Default the enrich metadata base to source2's own games.json: if a prior
-    # run already enriched it, prepare reuses those descriptions/tags and enrich
-    # skips the Steam API. Survives reruns that don't wipe the data dir; pass
-    # --kaggle-games-json explicitly to point at a saved copy that also survives
-    # a full wipe.
-    if args.kaggle_games_json is None:
-        args.kaggle_games_json = source2_dir / "games.json"
     metadata_dir = data_dir / "metadata"
     sentences_dir = data_dir / "sentences"
     games_json_path = data_dir / "games.json"
@@ -636,7 +634,7 @@ def main():
 
     if not args.skip_source1:
         s1_ready = source1_done(source1_dir)
-        if not s1_ready and not args.skip_source1_download:
+        if not s1_ready:
             s1_ready = download_source1(source1_dir, source1_zip)
         if s1_ready:
             s1_reviews = source1_dir / "Game Reviews"
@@ -729,8 +727,8 @@ def main():
             overwrite=args.overwrite,
             limit_files=args.limit_files,
             chunk_rows=args.text_chunk_rows,
-            tap_mapping=args.tap_mapping,
-            no_tap_labels=args.no_tap_labels,
+            tag_mapping=args.tag_mapping,
+            no_tag_labels=args.no_tag_labels,
             reviews_dirs=review_dirs,
             label_min_length=args.min_length,
         )

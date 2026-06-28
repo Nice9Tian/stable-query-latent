@@ -5,7 +5,7 @@ Player Experience Inventory dimensions (5 psychological + 5 functional + challen
 averaged over several survey respondents per game. The VICReg encoder is trained on
 293 Steam games' reviews. Where the two overlap, we can probe the frozen VICReg
 code against PXI experience dimensions -- a richer target than Steam tags ("not
-just TAP").
+just TAG").
 
 Matching is name-based and conservative:
   * exact (normalized) name match -> trusted automatically

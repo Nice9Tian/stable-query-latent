@@ -41,9 +41,9 @@ from backheads.model import RecommendationRateHead  # noqa: E402
 from game_review_data.embedding_data import DEFAULT_LOCAL_MODEL, LocalEmbedder  # noqa: E402
 from VICReg_review.train_tag_probe import load_frozen_encoder, pool_features  # noqa: E402
 try:
-    from VICReg_review.tap_mapping import load_tap_mapping, map_tag_dict, keyword_scores
+    from VICReg_review.tag_mapping import load_tag_mapping, map_tag_dict, keyword_scores
 except ImportError:  # pragma: no cover
-    from tap_mapping import load_tap_mapping, map_tag_dict, keyword_scores
+    from tag_mapping import load_tag_mapping, map_tag_dict, keyword_scores
 
 
 DEFAULT_HEADS_DIR = ROOT / "VICReg_review" / "heads"
@@ -130,12 +130,12 @@ def build_game_index(games_json: Path, tags: list[str], training_h5: Path | None
         import h5py
 
         with h5py.File(games_json, "r") as h5:
-            if "tap_names" not in h5 or "tap_raw_counts" not in h5:
-                raise ValueError(f"{games_json} has no tap_names/tap_raw_counts datasets.")
-            h5_tags = [_decode_h5_string(x) for x in h5["tap_names"][:]]
+            if "tag_names" not in h5 or "tag_raw_counts" not in h5:
+                raise ValueError(f"{games_json} has no tag_names/tag_raw_counts datasets.")
+            h5_tags = [_decode_h5_string(x) for x in h5["tag_names"][:]]
             h5_index = {tag: index for index, tag in enumerate(h5_tags)}
             cols = [h5_index[tag] for tag in tags if tag in h5_index]
-            matrix = h5["tap_raw_counts"][:, cols].astype(np.float32)
+            matrix = h5["tag_raw_counts"][:, cols].astype(np.float32)
             out_tags = [h5_tags[col] for col in cols]
             if out_tags != tags:
                 aligned = np.zeros((matrix.shape[0], len(tags)), dtype=np.float32)
@@ -154,7 +154,7 @@ def build_game_index(games_json: Path, tags: list[str], training_h5: Path | None
     payload = json.loads(games_json.read_text(encoding="utf-8"))
     items = payload.items() if isinstance(payload, dict) else enumerate(payload)
     tag_to_id = {tag: index for index, tag in enumerate(tags)}
-    spec = load_tap_mapping()
+    spec = load_tag_mapping()
 
     rows = []
     names = []
@@ -267,7 +267,7 @@ class PredictorWorker(QtCore.QObject):
                 [
                     "game_review_data/embedding_h5.h5",
                 ],
-                "TAP-labeled H5 (run game_review_data/build.py)",
+                "TAG-labeled H5 (run game_review_data/build.py)",
             )
 
             if self.embedder is None:
@@ -364,7 +364,7 @@ class PredictorWorker(QtCore.QObject):
     def _build_tag_keep_mask(self):
         """Which tags to predict/match, per --tag-filter.
 
-        non_emotional/content: same as all for TAP labels.
+        non_emotional/content: same as all for TAG labels.
         all: keep everything.
         """
         import numpy as np
@@ -431,7 +431,7 @@ class PredictorWorker(QtCore.QObject):
             probs = 1.0 / (1.0 + np.exp(-logits))
             probs = np.where(self.probe["trained_mask"], probs, 0.0).astype(np.float32)
             keyword_weight = float(self.probe.get("keyword_weight", 0.0) or 0.0)
-            if keyword_weight > 0 and self.probe.get("tap_mapping_json"):
+            if keyword_weight > 0 and self.probe.get("tag_mapping_json"):
                 prior = keyword_scores(text, self.tags)
                 keyword_weight = min(max(keyword_weight, 0.0), 1.0)
                 probs = ((1.0 - keyword_weight) * probs + keyword_weight * prior).astype(np.float32)
@@ -566,7 +566,7 @@ class PredictorWorker(QtCore.QObject):
         if self.game_matrix is None or self.game_matrix.shape[0] == 0:
             return []
         pred = np.asarray(scores, dtype=np.float32)
-        # Match on the kept TAP tags only.
+        # Match on the kept TAG tags only.
         if self.keep_mask is not None and not self.args.match_all_tags:
             pred = pred * np.asarray(self.keep_mask, dtype=np.float32)
         pred_norm = float(np.linalg.norm(pred))
@@ -882,7 +882,7 @@ def parse_args(argv: list[str]) -> argparse.Namespace:
     parser.add_argument("--games-json", default=None,
                         help="Optional candidate metadata. JSON inputs are filtered to appids present in --h5.")
     parser.add_argument("--tags-dir", default=str(DEFAULT_TAGS_DIR))
-    parser.add_argument("--h5", default=str(DEFAULT_H5), help="H5 path with vectors and TAP labels.")
+    parser.add_argument("--h5", default=str(DEFAULT_H5), help="H5 path with vectors and TAG labels.")
     parser.add_argument("--input-dim", type=int, default=1024)
     parser.add_argument("--local-model", default=DEFAULT_LOCAL_MODEL)
     parser.add_argument("--device", default=None)

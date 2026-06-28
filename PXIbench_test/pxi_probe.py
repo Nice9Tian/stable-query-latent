@@ -1,6 +1,6 @@
 """PXI probe: can the frozen VICReg code predict player-experience dimensions?
 
-A second evaluation axis beyond the Steam-tag probe ("not just TAP"). It reuses
+A second evaluation axis beyond the Steam-tag probe ("not just TAG"). It reuses
 the SAME standard as the tag-F1 probe:
 
   1. baseline first  -> a chance baseline AND the raw 1024-d Qwen

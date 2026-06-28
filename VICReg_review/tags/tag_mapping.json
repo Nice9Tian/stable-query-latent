@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "description": "Single source of truth for TAP labels. Each fine Steam tag maps to one coarse TAP class or \"del\".",
+  "description": "Single source of truth for TAG labels. Each fine Steam tag maps to one coarse TAG class or \"del\".",
   "delete_value": "del",
   "mapping": {
     "Action": "Action/Adventure",

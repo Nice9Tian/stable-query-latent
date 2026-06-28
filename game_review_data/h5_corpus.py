@@ -32,7 +32,7 @@ DEFAULT_SENTENCES_DIR = SCRIPT_DIR / "sentences"
 DEFAULT_GAMES_JSON = SCRIPT_DIR / "games.json"
 DEFAULT_TEXT_H5 = SCRIPT_DIR / "text_h5.h5"
 DEFAULT_EMBEDDING_H5 = SCRIPT_DIR / "embedding_h5.h5"
-DEFAULT_TAP_MAPPING = PROJECT_ROOT / "VICReg_review" / "tags" / "tap_mapping.json"
+DEFAULT_TAG_MAPPING = PROJECT_ROOT / "VICReg_review" / "tags" / "tag_mapping.json"
 TEXT_H5_SCHEMA = "game_review_text_h5.v1"
 EMBEDDING_H5_SCHEMA = "game_review_embedding_h5.v1"
 POSITIVE_VALUE = "recommended"
@@ -401,16 +401,16 @@ def write_string_dataset(h5: h5py.File, name: str, values: list[str] | np.ndarra
     h5.create_dataset(name, data=np.asarray(values, dtype=string_dtype()))
 
 
-def write_tap_metadata(h5: h5py.File, game_names: list[str], games: dict, mapping_path: Path) -> None:
+def write_tag_metadata(h5: h5py.File, game_names: list[str], games: dict, mapping_path: Path) -> None:
     try:
-        from VICReg_review.tap_mapping import load_tap_mapping, map_tag_dict, vectorize_taps
+        from VICReg_review.tag_mapping import load_tag_mapping, map_tag_dict, vectorize_tags
     except ImportError:  # pragma: no cover - direct script fallback
-        from tap_mapping import load_tap_mapping, map_tag_dict, vectorize_taps
+        from tag_mapping import load_tag_mapping, map_tag_dict, vectorize_tags
 
-    spec = load_tap_mapping(mapping_path)
-    tap_names = spec["tap_names"]
-    labels = np.zeros((len(game_names), len(tap_names)), dtype=np.uint8)
-    raw_counts = np.zeros((len(game_names), len(tap_names)), dtype=np.float32)
+    spec = load_tag_mapping(mapping_path)
+    tag_names = spec["tag_names"]
+    labels = np.zeros((len(game_names), len(tag_names)), dtype=np.uint8)
+    raw_counts = np.zeros((len(game_names), len(tag_names)), dtype=np.float32)
     missing: list[str] = []
     for row, game_name in enumerate(game_names):
         appid = str(game_name).split("_", 1)[0]
@@ -419,15 +419,15 @@ def write_tap_metadata(h5: h5py.File, game_names: list[str], games: dict, mappin
             missing.append(appid)
             continue
         mapped = map_tag_dict(record.get("tags") or {}, spec)
-        labels[row], raw_counts[row] = vectorize_taps(mapped, tap_names)
+        labels[row], raw_counts[row] = vectorize_tags(mapped, tag_names)
 
-    write_string_dataset(h5, "tap_names", tap_names)
-    h5.create_dataset("tap_labels", data=labels, dtype=np.uint8)
-    h5.create_dataset("tap_raw_counts", data=raw_counts, dtype=np.float32)
-    h5.attrs["tap_mapping_json"] = json.dumps(spec["raw"], ensure_ascii=False, sort_keys=True)
-    h5.attrs["tap_mapping_path"] = str(Path(mapping_path).resolve())
-    h5.attrs["tap_missing_appids"] = json.dumps(sorted(set(missing)), ensure_ascii=False)
-    h5.attrs["tap_count"] = len(tap_names)
+    write_string_dataset(h5, "tag_names", tag_names)
+    h5.create_dataset("tag_labels", data=labels, dtype=np.uint8)
+    h5.create_dataset("tag_raw_counts", data=raw_counts, dtype=np.float32)
+    h5.attrs["tag_mapping_json"] = json.dumps(spec["raw"], ensure_ascii=False, sort_keys=True)
+    h5.attrs["tag_mapping_path"] = str(Path(mapping_path).resolve())
+    h5.attrs["tag_missing_appids"] = json.dumps(sorted(set(missing)), ensure_ascii=False)
+    h5.attrs["tag_count"] = len(tag_names)
 
 
 def build_text_h5(
@@ -437,8 +437,8 @@ def build_text_h5(
     overwrite: bool = False,
     limit_files: int = 0,
     chunk_rows: int = 8192,
-    tap_mapping: Path = DEFAULT_TAP_MAPPING,
-    no_tap_labels: bool = False,
+    tag_mapping: Path = DEFAULT_TAG_MAPPING,
+    no_tag_labels: bool = False,
     reviews_dirs=None,
     label_min_length: int = 0,
 ) -> Path:
@@ -629,13 +629,13 @@ def build_text_h5(
                     f"sentences {sentence_cursor}/{total_sentences}"
                 )
 
-            # --- finalize: tap labels + public attrs, then drop resume markers ---
-            if not no_tap_labels:
-                for key in ("tap_names", "tap_labels", "tap_raw_counts"):
+            # --- finalize: tag labels + public attrs, then drop resume markers ---
+            if not no_tag_labels:
+                for key in ("tag_names", "tag_labels", "tag_raw_counts"):
                     if key in h5:
                         del h5[key]
                 game_names = [decode_text(value) for value in h5["game_names"][:]]
-                write_tap_metadata(h5, game_names, games, Path(tap_mapping))
+                write_tag_metadata(h5, game_names, games, Path(tag_mapping))
 
             h5.attrs["schema"] = TEXT_H5_SCHEMA
             h5.attrs["source"] = "game_review_cleaned_3_sentences_text"

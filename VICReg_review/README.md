@@ -47,10 +47,10 @@ C:/Users/admin/anaconda3/envs/cuda_Vit/python.exe VICReg_review/train_vicreg_rev
   --compact-variance-weight 25 --compact-covariance-weight 25
 ```
 
-`game_review_data/build.py` writes TAP labels into the H5:
-`tap_names`, `tap_labels`, `tap_raw_counts`, `appids`, and `game_titles`.
-The only tag mapping source is `VICReg_review/tags/tap_mapping.json`, where each
-fine Steam tag maps to one coarse TAP class or `"del"`.
+`game_review_data/build.py` writes TAG labels into the H5:
+`tag_names`, `tag_labels`, `tag_raw_counts`, `appids`, and `game_titles`.
+The only tag mapping source is `VICReg_review/tags/tag_mapping.json`, where each
+fine Steam tag maps to one coarse TAG class or `"del"`.
 `build_review_h5.py` is now only a legacy converter for old embedded JSON
 corpora.
 
@@ -67,7 +67,7 @@ plateaus. Rising tag mAP across VICReg checkpoints = a more robust representatio
 The probe flattens the `(256, 18)` code (4608 dims) before its MLP.
 
 ```powershell
-# Probe a checkpoint: review text -> frozen encoder -> TAP labels.
+# Probe a checkpoint: review text -> frozen encoder -> TAG labels.
 C:/Users/admin/anaconda3/envs/cuda_Vit/python.exe VICReg_review/train_tag_probe.py `
   --device cuda --amp --checkpoint VICReg_review/heads/vicreg_review_h5_best.pt
 ```
@@ -97,7 +97,7 @@ Headline diagnostics:
 | z-scored compact centroid PR | 26.64 |
 | Cyberpunk 2077 neutral / positive / negative / noname ranks | 1 / 1 / 1 / TBD |
 | Across the Obelisk neutral / positive / negative / noname ranks | 1 / 1 / 1 / TBD |
-| TAP tag micro-F1, flatten pool | 0.6938 |
+| TAG tag micro-F1, flatten pool | 0.6938 |
 | content retention vs raw | 0.888 |
 | sentiment R² retention vs raw | 0.349 |
 | recommendation-rate linear probe Pearson (CV / holdout) | -0.068 / 0.089 |
@@ -133,7 +133,7 @@ C:/Users/admin/anaconda3/envs/cuda_Vit/python.exe VICReg_review/train_vicreg_rev
 The real claim is that the encoder + sentiment adversary retains content and
 filters opinion. `probe_selectivity.py` measures content-tag F1, subjective-tag
 F1, and SST-sentiment R² on the VICReg code vs the raw embedding (ceiling) and
-reports retention = vicreg/raw. TAP labels are already coarse/non-subjective, so
+reports retention = vicreg/raw. TAG labels are already coarse/non-subjective, so
 they are treated as content labels. `ceiling_diagnostic.py` is the raw-embedding
 upper bound.
 
@@ -160,6 +160,6 @@ C:/Users/admin/anaconda3/envs/cuda_Vit/python.exe validation.py
 ```
 
 Pipeline: text → local Qwen embedding → frozen encoder code → pool → L2 normalize →
-per-TAP logistic probe → TAP probabilities. Game candidates come from the same
-H5 `tap_raw_counts` matrix used to train/evaluate the probe, so matching cannot
+per-TAG logistic probe → TAG probabilities. Game candidates come from the same
+H5 `tag_raw_counts` matrix used to train/evaluate the probe, so matching cannot
 drift from the label mapping.

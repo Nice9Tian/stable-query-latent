@@ -22,9 +22,9 @@ for p in (str(ROOT), str(ROOT / "game_review_data")):
 
 from VICReg_review.train_tag_probe import load_frozen_encoder, pool_features  # noqa: E402
 try:
-    from VICReg_review.tap_mapping import load_tap_mapping, map_tag_dict, keyword_scores
+    from VICReg_review.tag_mapping import load_tag_mapping, map_tag_dict, keyword_scores
 except ImportError:  # pragma: no cover
-    from tap_mapping import load_tap_mapping, map_tag_dict, keyword_scores
+    from tag_mapping import load_tag_mapping, map_tag_dict, keyword_scores
 
 
 def split_text(text, max_sentences=256):
@@ -43,7 +43,7 @@ def normalize_for_probe(pooled, probe):
 
 def apply_keyword_prior(text, probs, tags, probe):
     weight = float(probe.get("keyword_weight", 0.0) or 0.0)
-    if weight <= 0 or not probe.get("tap_mapping_json"):
+    if weight <= 0 or not probe.get("tag_mapping_json"):
         return probs
     prior = keyword_scores(text, tags)
     weight = min(max(weight, 0.0), 1.0)
@@ -101,15 +101,15 @@ def main():
 
     true_tags = []
     with h5py.File(h5_path, "r") as h5:
-        if "appids" in h5 and "tap_names" in h5 and "tap_labels" in h5:
+        if "appids" in h5 and "tag_names" in h5 and "tag_labels" in h5:
             appids = [a.decode("utf-8") if isinstance(a, bytes) else str(a) for a in h5["appids"][:]]
             if args.appid in appids:
                 row = appids.index(args.appid)
-                h5_tags = [t.decode("utf-8") if isinstance(t, bytes) else str(t) for t in h5["tap_names"][:]]
-                true_tags = [tag for tag, value in zip(h5_tags, h5["tap_labels"][row]) if value and tag in set(tags)]
+                h5_tags = [t.decode("utf-8") if isinstance(t, bytes) else str(t) for t in h5["tag_names"][:]]
+                true_tags = [tag for tag, value in zip(h5_tags, h5["tag_labels"][row]) if value and tag in set(tags)]
     if not true_tags:
         games = json.loads((ROOT / "game_review_data" / "Steam Games Metadata and Player Reviews (2020–2024" / "games.json").read_text(encoding="utf-8"))
-        spec = load_tap_mapping()
+        spec = load_tag_mapping()
         raw = map_tag_dict(games[args.appid].get("tags", {}), spec)
         true_tags = [t for t in raw if t in set(tags)]
 

@@ -21,7 +21,7 @@ for p in (str(ROOT), str(ROOT / "game_review_data")):
     if p not in sys.path:
         sys.path.insert(0, p)
 
-from VICReg_review.tap_mapping import load_tap_mapping, map_tag_dict, keyword_scores  # noqa: E402
+from VICReg_review.tag_mapping import load_tag_mapping, map_tag_dict, keyword_scores  # noqa: E402
 from VICReg_review import disturbtion_embed  # noqa: E402
 from VICReg_review.train_tag_probe import load_frozen_encoder, pool_features  # noqa: E402
 
@@ -109,14 +109,14 @@ def score_desc(name, true_coarse, probs, K):
 def main():
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     games = json.loads(GAMES_JSON.read_text(encoding="utf-8"))
-    mapping = load_tap_mapping()
+    mapping = load_tag_mapping()
 
     # labels aligned to the cached feature game order
     with __import__("h5py").File(DEFAULT_H5, "r") as h5:
         global COARSE_NAMES
-        COARSE_NAMES = [x.decode("utf-8") if isinstance(x, bytes) else str(x) for x in h5["tap_names"][:]]
+        COARSE_NAMES = [x.decode("utf-8") if isinstance(x, bytes) else str(x) for x in h5["tag_names"][:]]
         appids = [x.decode("utf-8") if isinstance(x, bytes) else str(x) for x in h5["appids"][:]]
-        Y = (h5["tap_labels"][:] > 0).astype(np.int8)
+        Y = (h5["tag_labels"][:] > 0).astype(np.int8)
     print(f"coarse tags: {len(COARSE_NAMES)}  games: {len(Y)}  avg coarse/game: {Y.sum(1).mean():.1f}")
 
     # raw review features (cached) -> L2

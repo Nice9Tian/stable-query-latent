@@ -46,21 +46,21 @@
 | `recommendation_label_source` | UTF-8 string | `(games,)` | 标签来源说明，如 `review_csv` / `games_json` |
 | `source_sentence_files` | UTF-8 string | `(games,)` | 每个游戏对应的句子 JSON 源文件绝对路径 |
 
-### 可选 TAP 数据
+### 可选 TAG 数据
 
-如果未启用 `--no-tap-labels`，还会写入：
+如果未启用 `--no-tag-labels`，还会写入：
 
 | 名称 | dtype | shape | 含义 |
 |---|---:|---:|---|
-| `tap_names` | UTF-8 string | `(tap_count,)` | TAP 维度名 |
-| `tap_labels` | `uint8` | `(games, tap_count)` | 二值标签 |
-| `tap_raw_counts` | `float32` | `(games, tap_count)` | 原始计数 |
+| `tag_names` | UTF-8 string | `(tag_count,)` | TAG 维度名 |
+| `tag_labels` | `uint8` | `(games, tag_count)` | 二值标签 |
+| `tag_raw_counts` | `float32` | `(games, tag_count)` | 原始计数 |
 
 同时会写入这些属性：
-- `tap_mapping_json`
-- `tap_mapping_path`
-- `tap_missing_appids`
-- `tap_count`
+- `tag_mapping_json`
+- `tag_mapping_path`
+- `tag_missing_appids`
+- `tag_count`
 
 ## 3. 必要属性
 

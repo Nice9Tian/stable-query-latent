@@ -94,8 +94,8 @@ def load_npz_features(path):
 
 
 def load_labels(tags_dir, h5_path):
-    from VICReg_review.train_tag_probe import load_labels as load_tap_labels
-    return load_tap_labels(tags_dir, h5_path)
+    from VICReg_review.train_tag_probe import load_labels as load_tag_labels
+    return load_tag_labels(tags_dir, h5_path)
 
 
 def kfold(n, k, seed):

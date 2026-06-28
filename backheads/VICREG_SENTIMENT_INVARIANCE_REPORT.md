@@ -20,7 +20,7 @@ The latest model is no longer a plain slot-level VICReg encoder. It uses:
 | compact centroid Participation Ratio | 26.67 |
 | z-scored compact centroid PR | 26.64 |
 | Cyberpunk / AO diagnostic text ranks | 1 / 1 |
-| TAP tag micro-F1, flatten pool | 0.6938 |
+| TAG tag micro-F1, flatten pool | 0.6938 |
 | content retention vs raw | 0.888 |
 | sentiment R² retention vs raw | 0.349 |
 | recommendation-rate probe Pearson (CV / holdout) | -0.068 / 0.089 |

@@ -15,7 +15,7 @@ from pathlib import Path
 
 from build_metadata import DEFAULT_GAMES_JSON, DEFAULT_REVIEWS_DIR, build_metadata
 from embedding_data import DEFAULT_LOCAL_MODEL, embed_data
-from h5_corpus import DEFAULT_TAP_MAPPING, build_text_h5
+from h5_corpus import DEFAULT_TAG_MAPPING, build_text_h5
 from split_data import split_data
 
 SCRIPT_DIR = Path(__file__).resolve().parent
@@ -43,8 +43,8 @@ def parse_args():
     parser.add_argument("--embedding-h5", type=Path, default=None)
     parser.add_argument("--limit-files", type=int, default=0)
     parser.add_argument("--text-chunk-rows", type=int, default=8192)
-    parser.add_argument("--tap-mapping", type=Path, default=DEFAULT_TAP_MAPPING)
-    parser.add_argument("--no-tap-labels", action="store_true")
+    parser.add_argument("--tag-mapping", type=Path, default=DEFAULT_TAG_MAPPING)
+    parser.add_argument("--no-tag-labels", action="store_true")
 
     parser.add_argument("--backend", choices=["local", "cloud"], default="local")
     parser.add_argument("--local-model", default=DEFAULT_LOCAL_MODEL)
@@ -114,8 +114,8 @@ def main():
             overwrite=args.overwrite,
             limit_files=args.limit_files,
             chunk_rows=args.text_chunk_rows,
-            tap_mapping=args.tap_mapping,
-            no_tap_labels=args.no_tap_labels,
+            tag_mapping=args.tag_mapping,
+            no_tag_labels=args.no_tag_labels,
             reviews_dirs=[reviews_dir],
             label_min_length=args.min_length,
         )

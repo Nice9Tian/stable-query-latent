@@ -26,7 +26,7 @@ What changed vs. the old probe and *why*:
   * A frequency-floor breakdown: micro-F1 restricted to tags seen in >= F games.
     This quantifies the "labels are too discrete" problem directly.
 
-Build the H5 with TAP labels first. Compare the reported micro-F1 against ceiling_diagnostic.py
+Build the H5 with TAG labels first. Compare the reported micro-F1 against ceiling_diagnostic.py
 (the same pipeline on the raw 1024-d Qwen embeddings), which is the upper bound
 any frozen-encoder probe can reach.
 """
@@ -154,12 +154,12 @@ def load_labels(tags_dir=None, h5_path=None):
     if h5_path is not None:
         with h5py.File(h5_path, "r") as h5:
             validate_training_h5(h5, h5_path)
-            if "tap_names" in h5 and "tap_labels" in h5:
-                tags = [decode_name(n) for n in h5["tap_names"][:]]
+            if "tag_names" in h5 and "tag_labels" in h5:
+                tags = [decode_name(n) for n in h5["tag_names"][:]]
                 names = [decode_name(n) for n in h5["game_names"][:]]
-                labels = (h5["tap_labels"][:] > 0).astype(np.int8)
+                labels = (h5["tag_labels"][:] > 0).astype(np.int8)
                 return tags, names, labels
-    raise FileNotFoundError(f"No tap_names/tap_labels datasets found in {h5_path}. Rebuild the H5.")
+    raise FileNotFoundError(f"No tag_names/tag_labels datasets found in {h5_path}. Rebuild the H5.")
 
 
 def align(feature_names, label_names, labels):
@@ -305,9 +305,9 @@ def export_linear_probe(X, y, tags, doc_freq, args, encoder_path):
         threshold[t] = best_thr
 
     content_mask = np.ones(num_tags, dtype=bool)
-    tap_mapping_json = None
+    tag_mapping_json = None
     with h5py.File(args.h5, "r") as h5:
-        tap_mapping_json = h5.attrs.get("tap_mapping_json")
+        tag_mapping_json = h5.attrs.get("tag_mapping_json")
 
     artifact = {
         "kind": "linear_tag_probe",
@@ -329,7 +329,7 @@ def export_linear_probe(X, y, tags, doc_freq, args, encoder_path):
         "trained_mask": trained,
         "content_mask": content_mask,
         "doc_freq": doc_freq.astype(np.int32),
-        "tap_mapping_json": tap_mapping_json,
+        "tag_mapping_json": tag_mapping_json,
         "keyword_weight": float(args.keyword_weight),
     }
     torch.save(artifact, args.export_head)

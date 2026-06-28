@@ -117,8 +117,8 @@ def build_pipeline(args) -> None:
         cmd.append("--normalize")
     if args.max_in_flight:
         cmd.extend(["--max-in-flight", str(args.max_in_flight)])
-    if args.no_tap_labels:
-        cmd.append("--no-tap-labels")
+    if args.no_tag_labels:
+        cmd.append("--no-tag-labels")
     run_command(cmd)
 
 
@@ -170,7 +170,7 @@ def parse_args():
     parser.add_argument("--normalize", action="store_true")
     parser.add_argument("--embedding-dtype", choices=["float16", "float32"], default="float16")
     parser.add_argument("--embedding-compression", choices=["none", "gzip", "lzf"], default="none")
-    parser.add_argument("--no-tap-labels", action="store_true")
+    parser.add_argument("--no-tag-labels", action="store_true")
     return parser.parse_args()
 
 

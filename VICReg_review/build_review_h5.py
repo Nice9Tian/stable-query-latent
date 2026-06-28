@@ -38,12 +38,12 @@ DEFAULT_H5_DIR = SCRIPT_DIR / "h5"
 DEFAULT_SHARD_DIR = DEFAULT_H5_DIR / "shards"
 DEFAULT_OUTPUT_H5 = DEFAULT_H5_DIR / "game_review_cleaned_3_sentences.h5"
 DEFAULT_GAMES_JSON = PROJECT_ROOT / "game_review_data" / "games.json"
-DEFAULT_TAP_MAPPING = SCRIPT_DIR / "tags" / "tap_mapping.json"
+DEFAULT_TAG_MAPPING = SCRIPT_DIR / "tags" / "tag_mapping.json"
 
 try:
-    from VICReg_review.tap_mapping import load_tap_mapping, map_tag_dict, vectorize_taps
+    from VICReg_review.tag_mapping import load_tag_mapping, map_tag_dict, vectorize_tags
 except ImportError:  # pragma: no cover - direct script execution
-    from tap_mapping import load_tap_mapping, map_tag_dict, vectorize_taps
+    from tag_mapping import load_tag_mapping, map_tag_dict, vectorize_tags
 
 
 def numeric_suffix(value, prefix):
@@ -185,7 +185,7 @@ def write_shard(task):
                 "game_names",
                 data=np.asarray(game_names, dtype=h5py.string_dtype(encoding="utf-8")),
             )
-            write_tap_metadata(h5, game_names, task["args"])
+            write_tag_metadata(h5, game_names, task["args"])
             h5.attrs["input_dim"] = input_dim
             h5.attrs["dtype"] = str(dtype)
             h5.attrs["source"] = "game_review_cleaned_3_sentences"
@@ -276,11 +276,11 @@ def load_games_json(path):
     return json.loads(path.read_text(encoding="utf-8"))
 
 
-def build_tap_arrays(game_names, games, mapping_path):
-    spec = load_tap_mapping(mapping_path)
-    tap_names = spec["tap_names"]
-    labels = np.zeros((len(game_names), len(tap_names)), dtype=np.uint8)
-    raw_counts = np.zeros((len(game_names), len(tap_names)), dtype=np.float32)
+def build_tag_arrays(game_names, games, mapping_path):
+    spec = load_tag_mapping(mapping_path)
+    tag_names = spec["tag_names"]
+    labels = np.zeros((len(game_names), len(tag_names)), dtype=np.uint8)
+    raw_counts = np.zeros((len(game_names), len(tag_names)), dtype=np.float32)
     appids = []
     titles = []
     missing = []
@@ -293,9 +293,9 @@ def build_tap_arrays(game_names, games, mapping_path):
             missing.append(appid)
             continue
         mapped = map_tag_dict(record.get("tags") or {}, spec)
-        labels[row], raw_counts[row] = vectorize_taps(mapped, tap_names)
+        labels[row], raw_counts[row] = vectorize_tags(mapped, tag_names)
     return {
-        "tap_names": tap_names,
+        "tag_names": tag_names,
         "labels": labels,
         "raw_counts": raw_counts,
         "appids": appids,
@@ -311,23 +311,23 @@ def write_string_dataset(h5, name, values):
     h5.create_dataset(name, data=np.asarray(values, dtype=h5py.string_dtype(encoding="utf-8")))
 
 
-def write_tap_metadata(h5, game_names, args):
-    if getattr(args, "no_tap_labels", False):
+def write_tag_metadata(h5, game_names, args):
+    if getattr(args, "no_tag_labels", False):
         return
     games = load_games_json(args.games_json)
-    tap = build_tap_arrays(game_names, games, args.tap_mapping)
-    for name in ("tap_names", "tap_labels", "tap_raw_counts", "appids", "game_titles"):
+    tag = build_tag_arrays(game_names, games, args.tag_mapping)
+    for name in ("tag_names", "tag_labels", "tag_raw_counts", "appids", "game_titles"):
         if name in h5:
             del h5[name]
-    write_string_dataset(h5, "tap_names", tap["tap_names"])
-    h5.create_dataset("tap_labels", data=tap["labels"], dtype=np.uint8)
-    h5.create_dataset("tap_raw_counts", data=tap["raw_counts"], dtype=np.float32)
-    write_string_dataset(h5, "appids", tap["appids"])
-    write_string_dataset(h5, "game_titles", tap["titles"])
-    h5.attrs["tap_mapping_json"] = json.dumps(tap["mapping"], ensure_ascii=False, sort_keys=True)
-    h5.attrs["tap_mapping_path"] = str(Path(args.tap_mapping).resolve())
-    h5.attrs["tap_missing_appids"] = json.dumps(tap["missing"], ensure_ascii=False)
-    h5.attrs["tap_count"] = len(tap["tap_names"])
+    write_string_dataset(h5, "tag_names", tag["tag_names"])
+    h5.create_dataset("tag_labels", data=tag["labels"], dtype=np.uint8)
+    h5.create_dataset("tag_raw_counts", data=tag["raw_counts"], dtype=np.float32)
+    write_string_dataset(h5, "appids", tag["appids"])
+    write_string_dataset(h5, "game_titles", tag["titles"])
+    h5.attrs["tag_mapping_json"] = json.dumps(tag["mapping"], ensure_ascii=False, sort_keys=True)
+    h5.attrs["tag_mapping_path"] = str(Path(args.tag_mapping).resolve())
+    h5.attrs["tag_missing_appids"] = json.dumps(tag["missing"], ensure_ascii=False)
+    h5.attrs["tag_count"] = len(tag["tag_names"])
 
 
 def merge_shards(shard_paths, output_path, args):
@@ -411,7 +411,7 @@ def merge_shards(shard_paths, output_path, args):
                 "game_names",
                 data=np.asarray(game_names, dtype=h5py.string_dtype(encoding="utf-8")),
             )
-            write_tap_metadata(out, game_names, args)
+            write_tag_metadata(out, game_names, args)
             out.attrs["input_dim"] = input_dim
             out.attrs["dtype"] = args.dtype
             out.attrs["created_at"] = time.strftime("%Y-%m-%dT%H:%M:%S")
@@ -447,8 +447,8 @@ def parse_args():
     parser.add_argument("--compression", choices=["none", "gzip", "lzf"], default="none")
     parser.add_argument("--gzip-level", type=int, default=1)
     parser.add_argument("--games-json", type=Path, default=DEFAULT_GAMES_JSON)
-    parser.add_argument("--tap-mapping", type=Path, default=DEFAULT_TAP_MAPPING)
-    parser.add_argument("--no-tap-labels", action="store_true")
+    parser.add_argument("--tag-mapping", type=Path, default=DEFAULT_TAG_MAPPING)
+    parser.add_argument("--no-tag-labels", action="store_true")
     parser.add_argument("--limit-files", type=int, default=0)
     parser.add_argument("--overwrite", action="store_true")
     parser.add_argument("--only-merge", action="store_true")

@@ -15,7 +15,7 @@ enough to run during training):
     pxi_func_f1         median-split F1 over functional dims
     pxi_psych_f1        median-split F1 over psychological dims
 
-Inputs are the TAP labels stored in the H5 plus probe_selectivity.py /
+Inputs are the TAG labels stored in the H5 plus probe_selectivity.py /
 pxi_vicreg_overlap.py artifacts; any missing input is skipped gracefully (NaN) so training never
 dies because of the probe.
 """

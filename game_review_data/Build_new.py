@@ -190,8 +190,8 @@ def parse_args():
     parser.add_argument("--embedding-h5", type=Path, default=None)
     parser.add_argument("--limit-files", type=int, default=0)
     parser.add_argument("--text-chunk-rows", type=int, default=8192)
-    parser.add_argument("--tap-mapping", type=Path, default=None)
-    parser.add_argument("--no-tap-labels", action="store_true")
+    parser.add_argument("--tag-mapping", type=Path, default=None)
+    parser.add_argument("--no-tag-labels", action="store_true")
 
     parser.add_argument("--backend", choices=["local", "cloud"], default="local")
     parser.add_argument("--local-model", default="Qwen/Qwen3-Embedding-0.6B")
@@ -216,10 +216,10 @@ def main():
     args.workdir = Path(args.workdir)
     if args.kaggle_input is not None:
         args.kaggle_input = Path(args.kaggle_input)
-    if args.tap_mapping is None:
-        from h5_corpus import DEFAULT_TAP_MAPPING
+    if args.tag_mapping is None:
+        from h5_corpus import DEFAULT_TAG_MAPPING
 
-        args.tap_mapping = DEFAULT_TAP_MAPPING
+        args.tag_mapping = DEFAULT_TAG_MAPPING
 
     run = set(args.only) if args.only else set(STAGES)
     run -= set(args.skip)
@@ -341,8 +341,8 @@ def main():
             overwrite=args.overwrite,
             limit_files=args.limit_files,
             chunk_rows=args.text_chunk_rows,
-            tap_mapping=args.tap_mapping,
-            no_tap_labels=args.no_tap_labels,
+            tag_mapping=args.tag_mapping,
+            no_tag_labels=args.no_tag_labels,
             reviews_dirs=review_dirs,
             label_min_length=args.min_length,
         )

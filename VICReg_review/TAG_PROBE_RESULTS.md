@@ -21,7 +21,7 @@ full-text description alignment, and a game-level recommendation-rate decorrelat
 | compact centroid Participation Ratio | 26.67 |
 | z-scored compact centroid PR | 26.64 |
 | Cyberpunk / AO diagnostic text ranks | 1 / 1 |
-| TAP tag micro-F1, flatten pool | 0.6938 |
+| TAG tag micro-F1, flatten pool | 0.6938 |
 | content retention vs raw | 0.888 |
 | sentiment R² retention vs raw | 0.349 |
 | recommendation-rate probe Pearson (CV / holdout) | -0.068 / 0.089 |
@@ -56,8 +56,8 @@ Final checkpoint:
 | Cyberpunk 2077 description rank | old Cyberpunk text ranks 273-288 | **25 / 293** |
 | Cyberpunk 2077 neutral / positive / negative ranks | 288 / 273 / 284 | **41 / 41 / 12** |
 | Across the Obelisk neutral / positive / negative ranks | 1 / 8 / 24 | 26 / 27 / 29 (**regression**) |
-| TAP tag micro-F1, flatten pool | 0.435 old Steam-tag run / 0.448 content run | **0.686** |
-| TAP tag micro-F1, stats pool export | 0.394 old Steam-tag run | **0.687** |
+| TAG tag micro-F1, flatten pool | 0.435 old Steam-tag run / 0.448 content run | **0.686** |
+| TAG tag micro-F1, stats pool export | 0.394 old Steam-tag run | **0.687** |
 | content retention vs raw | 0.844 | **0.951** |
 | sentiment R² retention vs raw | 0.682 | 0.835 |
 
@@ -66,7 +66,7 @@ Notes:
 - The new rank diagnostic uses z-scored cosine over 293 training-game centroids.
   Raw Qwen mean-pool PR on the same cache is 18.27, so the repaired VICReg
   centroid reaches the same order of effective dimension while remaining compact.
-- TAP labels in the current H5 are 23 coarse non-subjective labels, so the
+- TAG labels in the current H5 are 23 coarse non-subjective labels, so the
   selectivity probe reports `subjective=nan`; the meaningful checks are content
   retention and SST sentiment R² retention.
 - The final checkpoint improves the collapsed Cyberpunk-style failure mode
