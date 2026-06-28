@@ -419,6 +419,8 @@ def download_and_prepare_kaggle(args, source2_dir: Path, kaggle_cache: Path) -> 
         str(args.min_count),
         "--chunksize",
         str(args.prepare_chunksize),
+        "--workers",
+        str(args.prepare_workers),
     ]
     cmd.append("--strict-length" if args.strict_length else "--no-strict-length")
     cmd.append("--strict-count" if args.strict_count else "--no-strict-count")
@@ -499,6 +501,8 @@ def parse_args():
     parser.add_argument("--kaggle-input", type=Path, default=None)
 
     parser.add_argument("--prepare-chunksize", type=int, default=200_000)
+    parser.add_argument("--prepare-workers", type=int, default=0,
+                        help="Kaggle prepare filter workers (0 -> all CPU cores, 1 -> single process).")
     parser.add_argument("--strict-length", action=argparse.BooleanOptionalAction, default=True)
     parser.add_argument("--strict-count", action=argparse.BooleanOptionalAction, default=True)
     parser.add_argument("--enrich-batch-size", type=int, default=1)

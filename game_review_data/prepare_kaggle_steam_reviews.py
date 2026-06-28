@@ -31,6 +31,7 @@ from collections import OrderedDict, defaultdict
 from pathlib import Path
 from typing import Iterable
 
+import numpy as np
 import pandas as pd
 
 SCRIPT_DIR = Path(__file__).resolve().parent
@@ -284,42 +285,131 @@ def infer_schema(args, input_path: Path) -> dict[str, str | None]:
 
 
 def iter_filtered_rows(chunk: pd.DataFrame, schema: dict[str, str | None], args):
-    appids = chunk[schema["appid"]]
-    reviews = chunk[schema["review"]].fillna("").astype(str)
-    names = chunk[schema["name"]] if schema.get("name") else None
-    recommends = chunk[schema["recommend"]] if schema.get("recommend") else None
-    helpful = chunk[schema["helpfulness"]] if schema.get("helpfulness") else None
-    users = chunk[schema["user"]] if schema.get("user") else None
-    playtimes = chunk[schema["playtime"]] if schema.get("playtime") else None
-    dates = chunk[schema["post_date"]] if schema.get("post_date") else None
+    if len(chunk) == 0:
+        return
 
-    for index, raw_review in reviews.items():
-        review = clean_text(raw_review)
-        if not is_kept_length(review, args.min_length, args.strict_length):
-            continue
-        appid = clean_appid(appids.loc[index])
+    # Clean + length-filter the review text for the WHOLE chunk at once. This is
+    # the only work that touches every row, so doing it vectorized in pandas/C
+    # (instead of a per-row Python loop) is the main speed-up. The whitespace
+    # collapse + strip mirrors clean_text() exactly.
+    reviews = (
+        chunk[schema["review"]]
+        .astype("string")
+        .fillna("")
+        .str.replace(r"\s+", " ", regex=True)
+        .str.strip()
+    )
+    lengths = reviews.str.len().to_numpy()
+    keep = lengths > args.min_length if args.strict_length else lengths >= args.min_length
+    survivors = np.flatnonzero(keep)
+    if survivors.size == 0:
+        return
+
+    # Only the surviving rows get per-row scalar cleaning, and we index by
+    # position into numpy arrays (no slow per-row .loc lookups).
+    reviews_arr = reviews.to_numpy()
+    appids_arr = chunk[schema["appid"]].to_numpy()
+
+    def column(key):
+        name = schema.get(key)
+        return chunk[name].to_numpy() if name else None
+
+    names_arr = column("name")
+    recommends_arr = column("recommend")
+    helpful_arr = column("helpfulness")
+    users_arr = column("user")
+    playtimes_arr = column("playtime")
+    dates_arr = column("post_date")
+
+    for i in survivors:
+        appid = clean_appid(appids_arr[i])
         if not appid:
             continue
-        name = clean_text(names.loc[index]) if names is not None else ""
         yield {
             "appid": appid,
-            "name": name,
-            "review": review,
-            "recommend": to_recommend(recommends.loc[index]) if recommends is not None else "",
-            "helpfulness": clean_text(helpful.loc[index]) if helpful is not None else "",
-            "user": clean_text(users.loc[index]) if users is not None else "",
-            "playtime": clean_text(playtimes.loc[index]) if playtimes is not None else "",
-            "post_date": clean_text(dates.loc[index]) if dates is not None else "",
+            "name": clean_text(names_arr[i]) if names_arr is not None else "",
+            "review": reviews_arr[i],
+            "recommend": to_recommend(recommends_arr[i]) if recommends_arr is not None else "",
+            "helpfulness": clean_text(helpful_arr[i]) if helpful_arr is not None else "",
+            "user": clean_text(users_arr[i]) if users_arr is not None else "",
+            "playtime": clean_text(playtimes_arr[i]) if playtimes_arr is not None else "",
+            "post_date": clean_text(dates_arr[i]) if dates_arr is not None else "",
         }
+
+
+def _filter_chunk_records(chunk: pd.DataFrame, schema: dict[str, str | None],
+                          min_length: int, strict_length: bool) -> list[dict]:
+    """Process-pool worker: filter one chunk, return surviving row dicts.
+
+    Lives at module scope so it is picklable. The expensive CSV parse already
+    happened in the reader process; here each worker runs the (still single-core)
+    vectorized clean + filter on its own chunk, so N workers give ~N-way speed-up
+    on the part that was pinning one core.
+    """
+    import types
+    args = types.SimpleNamespace(min_length=min_length, strict_length=strict_length)
+    return list(iter_filtered_rows(chunk, schema, args))
+
+
+def iter_chunk_records(input_path: Path, schema: dict[str, str | None], args):
+    """Yield (chunk_index, n_rows, rows) for every chunk, filtered.
+
+    With ``args.workers > 1`` the per-chunk filtering runs on a process pool while
+    the main process keeps reading ahead, bounded to ~2x workers chunks in flight
+    so memory stays flat on multi-GB inputs. Results are yielded in input order so
+    downstream counting/writing is deterministic. Falls back to in-process work
+    when workers <= 1.
+    """
+    import collections
+
+    workers = int(getattr(args, "workers", 1) or 1)
+    chunks = read_chunks(input_path, args.chunksize, args.encoding)
+
+    if workers <= 1:
+        for chunk_index, chunk in enumerate(chunks, start=1):
+            yield chunk_index, len(chunk), list(iter_filtered_rows(chunk, schema, args))
+        return
+
+    from concurrent.futures import ProcessPoolExecutor
+
+    min_length, strict = args.min_length, args.strict_length
+    max_inflight = workers * 2
+    chunk_index = 0
+    pending: collections.deque = collections.deque()
+    exhausted = False
+
+    def submit_next(executor):
+        nonlocal chunk_index, exhausted
+        try:
+            chunk = next(chunks)
+        except StopIteration:
+            exhausted = True
+            return
+        chunk_index += 1
+        pending.append((
+            chunk_index,
+            len(chunk),
+            executor.submit(_filter_chunk_records, chunk, schema, min_length, strict),
+        ))
+
+    with ProcessPoolExecutor(max_workers=workers) as executor:
+        while not exhausted and len(pending) < max_inflight:
+            submit_next(executor)
+        while pending:
+            idx, n_rows, future = pending.popleft()
+            rows = future.result()
+            yield idx, n_rows, rows
+            if not exhausted:
+                submit_next(executor)
 
 
 def count_games(input_path: Path, schema: dict[str, str | None], args) -> tuple[dict[str, int], dict[str, str], int]:
     counts: defaultdict[str, int] = defaultdict(int)
     names: dict[str, str] = {}
     total_kept_reviews = 0
-    for chunk_index, chunk in enumerate(read_chunks(input_path, args.chunksize, args.encoding), start=1):
+    for chunk_index, n_rows, rows in iter_chunk_records(input_path, schema, args):
         chunk_kept = 0
-        for row in iter_filtered_rows(chunk, schema, args):
+        for row in rows:
             appid = row["appid"]
             counts[appid] += 1
             chunk_kept += 1
@@ -327,7 +417,7 @@ def count_games(input_path: Path, schema: dict[str, str | None], args) -> tuple[
                 names[appid] = row["name"]
         total_kept_reviews += chunk_kept
         print(
-            f"pass1 chunk={chunk_index} rows={len(chunk)} kept_reviews={chunk_kept} "
+            f"pass1 chunk={chunk_index} rows={n_rows} kept_reviews={chunk_kept} "
             f"candidate_games={len(counts)}",
             flush=True,
         )
@@ -340,9 +430,9 @@ def write_reviews(input_path: Path, schema: dict[str, str | None], keep_appids: 
     writers = LruCsvWriters(reviews_dir, counts, max_open=args.max_open_files)
     written = 0
     try:
-        for chunk_index, chunk in enumerate(read_chunks(input_path, args.chunksize, args.encoding), start=1):
+        for chunk_index, n_rows, rows in iter_chunk_records(input_path, schema, args):
             chunk_written = 0
-            for row in iter_filtered_rows(chunk, schema, args):
+            for row in rows:
                 appid = row["appid"]
                 if appid not in keep_appids:
                     continue
@@ -357,7 +447,7 @@ def write_reviews(input_path: Path, schema: dict[str, str | None], keep_appids: 
                 })
                 written += 1
                 chunk_written += 1
-            print(f"pass2 chunk={chunk_index} rows={len(chunk)} written_reviews={chunk_written}", flush=True)
+            print(f"pass2 chunk={chunk_index} rows={n_rows} written_reviews={chunk_written}", flush=True)
         writers.finalize()
     except BaseException:
         writers.close_all()
@@ -475,6 +565,12 @@ def parse_args():
     parser.add_argument("--strict-count", action=argparse.BooleanOptionalAction, default=True,
                         help="Default keeps games with count > min_count; disable for >=.")
     parser.add_argument("--chunksize", type=int, default=100_000)
+    parser.add_argument(
+        "--workers",
+        type=int,
+        default=0,
+        help="Process-pool workers for chunk filtering (0 -> all CPU cores, 1 -> in-process).",
+    )
     parser.add_argument("--encoding", default=None)
     parser.add_argument("--max-open-files", type=int, default=64)
     parser.add_argument("--overwrite", action="store_true")
@@ -494,6 +590,10 @@ def parse_args():
 def main():
     args = parse_args()
     args.output_dir = Path(args.output_dir)
+    if args.workers <= 0:
+        import os
+        args.workers = os.cpu_count() or 1
+    print(f"prepare: using {args.workers} filter worker(s)", flush=True)
     if args.finalize_existing:
         finalize_existing_outputs(args)
         return
