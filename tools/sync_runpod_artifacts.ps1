@@ -101,6 +101,9 @@ if ($ShowCommand) {
     Write-Host $commandPreview
 }
 Write-Host ""
+Write-Host "Starting AWS CLI. It may stay quiet while it scans the bucket..."
+Write-Host "Press Ctrl+C to cancel."
+Write-Host ""
 
 if (-not (Get-Command $AwsCliPath -ErrorAction SilentlyContinue)) {
     throw "AWS CLI not found: $AwsCliPath"
