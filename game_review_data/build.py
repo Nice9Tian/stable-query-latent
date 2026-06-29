@@ -519,6 +519,80 @@ def merge_games_json(sources: list[Path], output_path: Path, overwrite: bool) ->
     return merged
 
 
+def optional_arg(cmd: list[str], name: str, value) -> None:
+    if value is not None:
+        cmd.extend([name, str(value)])
+
+
+def split_data_parallel(args, metadata_dir: Path, sentences_dir: Path) -> None:
+    workers = max(1, int(args.split_workers))
+    if workers <= 1:
+        from split_data import split_data
+
+        split_data(
+            input_dir=metadata_dir,
+            output_dir=sentences_dir,
+            model=args.split_model,
+            device=args.split_device,
+            chunk_budget=args.chunk_budget,
+            overwrite=args.overwrite,
+            batch_size=args.split_batch_size,
+            outer_batch_size=args.split_outer_batch_size,
+            prefetch_ram_target=args.split_prefetch_ram_target,
+            prefetch_max_files=args.split_prefetch_max_files,
+            prefetch_workers=args.split_prefetch_workers,
+        )
+        return
+
+    print(f"split_data: launching {workers} shard worker processes", flush=True)
+    processes = []
+    for shard_index in range(workers):
+        cmd = [
+            str(args.python),
+            str(SCRIPT_DIR / "split_data.py"),
+            "--input-dir",
+            str(metadata_dir),
+            "--output-dir",
+            str(sentences_dir),
+            "--model",
+            args.split_model,
+            "--chunk-budget",
+            str(args.chunk_budget),
+            "--outer-batch-size",
+            str(args.split_outer_batch_size),
+            "--shard-count",
+            str(workers),
+            "--shard-index",
+            str(shard_index),
+        ]
+        optional_arg(cmd, "--device", args.split_device)
+        optional_arg(cmd, "--batch-size", args.split_batch_size)
+        optional_arg(cmd, "--prefetch-ram-target", args.split_prefetch_ram_target)
+        optional_arg(
+            cmd,
+            "--prefetch-max-files",
+            1 if args.split_prefetch_max_files is None else args.split_prefetch_max_files,
+        )
+        optional_arg(
+            cmd,
+            "--prefetch-workers",
+            1 if args.split_prefetch_workers is None else args.split_prefetch_workers,
+        )
+        if args.overwrite:
+            cmd.append("--overwrite")
+        print("RUN " + " ".join(cmd), flush=True)
+        processes.append(subprocess.Popen(cmd, cwd=str(SCRIPT_DIR)))
+
+    failures = []
+    for shard_index, process in enumerate(processes):
+        returncode = process.wait()
+        if returncode:
+            failures.append((shard_index, returncode))
+    if failures:
+        formatted = ", ".join(f"shard {idx} rc={rc}" for idx, rc in failures)
+        raise RuntimeError(f"split shard worker(s) failed: {formatted}")
+
+
 def parse_args():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
@@ -569,6 +643,8 @@ def parse_args():
     parser.add_argument("--split-prefetch-ram-target", type=float, default=None)
     parser.add_argument("--split-prefetch-max-files", type=int, default=None)
     parser.add_argument("--split-prefetch-workers", type=int, default=None)
+    parser.add_argument("--split-workers", type=int, default=1,
+                        help="Parallel split shard processes (1 -> in-process).")
 
     parser.add_argument("--text-h5", type=Path, default=None)
     parser.add_argument("--embedding-h5", type=Path, default=None)
@@ -711,21 +787,7 @@ def main():
 
     if "split" in run:
         print("\n--- stage 2/4: split (SaT sentence splitter) ---", flush=True)
-        from split_data import split_data
-
-        split_data(
-            input_dir=metadata_dir,
-            output_dir=sentences_dir,
-            model=args.split_model,
-            device=args.split_device,
-            chunk_budget=args.chunk_budget,
-            overwrite=args.overwrite,
-            batch_size=args.split_batch_size,
-            outer_batch_size=args.split_outer_batch_size,
-            prefetch_ram_target=args.split_prefetch_ram_target,
-            prefetch_max_files=args.split_prefetch_max_files,
-            prefetch_workers=args.split_prefetch_workers,
-        )
+        split_data_parallel(args, metadata_dir, sentences_dir)
 
     if "text-h5" in run:
         print("\n--- stage 3/4: text-h5 (unified text corpus) ---", flush=True)

@@ -486,6 +486,8 @@ def split_data(
     prefetch_ram_target=None,
     prefetch_max_files=None,
     prefetch_workers=None,
+    shard_count=1,
+    shard_index=0,
 ):
     input_dir = Path(input_dir)
     output_dir = Path(output_dir)
@@ -494,6 +496,15 @@ def split_data(
     input_files = sorted(input_dir.glob("*.json"))
     if not input_files:
         raise ValueError(f"No JSON files found in {input_dir}")
+    shard_count = max(1, int(shard_count))
+    shard_index = int(shard_index)
+    if shard_index < 0 or shard_index >= shard_count:
+        raise ValueError(f"shard_index must be in [0, {shard_count}), got {shard_index}")
+    total_files = len(input_files)
+    if shard_count > 1:
+        input_files = [
+            path for index, path in enumerate(input_files) if index % shard_count == shard_index
+        ]
 
     if splitter is None:
         splitter = load_splitter(model, device)
@@ -525,7 +536,8 @@ def split_data(
     else:
         batch_note = f"batch_size=auto({vram_tier_gib}GiB VRAM->{resolved_batch_size})"
     print(
-        f"split_data: {len(input_files)} files, model={model}, device={device}, "
+        f"split_data: {len(input_files)}/{total_files} files, "
+        f"shard={shard_index + 1}/{shard_count}, model={model}, device={device}, "
         f"{budget_note}, {batch_note}, "
         f"outer_batch_size={outer_batch_size}, "
         f"prefetch_ram_target={prefetch_ram_target:.0%}, "
@@ -686,6 +698,8 @@ def parse_args():
         type=int,
         help="Reader threads for split-stage metadata prefetch. Default: auto.",
     )
+    parser.add_argument("--shard-count", default=1, type=int)
+    parser.add_argument("--shard-index", default=0, type=int)
     parser.add_argument("--overwrite", action="store_true")
     return parser.parse_args()
 
@@ -704,6 +718,8 @@ def main():
         prefetch_ram_target=args.prefetch_ram_target,
         prefetch_max_files=args.prefetch_max_files,
         prefetch_workers=args.prefetch_workers,
+        shard_count=args.shard_count,
+        shard_index=args.shard_index,
     )
 
 
