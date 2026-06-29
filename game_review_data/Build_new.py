@@ -159,10 +159,39 @@ def optional_arg(cmd: list[str], name: str, value) -> None:
         cmd.extend([name, str(value)])
 
 
+def choose_auto_split_workers(device: str | None) -> tuple[int, float | None, float | None]:
+    try:
+        from split_data import get_cuda_total_memory_gib, get_total_system_ram_gib
+    except ImportError:
+        from game_review_data.split_data import get_cuda_total_memory_gib, get_total_system_ram_gib
+
+    ram_gib = get_total_system_ram_gib()
+    vram_gib = get_cuda_total_memory_gib(device)
+    if ram_gib is not None and vram_gib is not None:
+        if ram_gib >= 125 and vram_gib >= 40:
+            return 4, ram_gib, vram_gib
+        if ram_gib >= 100 and vram_gib >= 20:
+            return 2, ram_gib, vram_gib
+    return 1, ram_gib, vram_gib
+
+
 def split_data_parallel(args, metadata_dir: Path, sentences_dir: Path) -> None:
-    workers = max(1, int(args.split_workers))
+    if args.split_workers is None:
+        workers, ram_gib, vram_gib = choose_auto_split_workers(args.split_device)
+        ram_note = "unknown" if ram_gib is None else f"{ram_gib:.0f}GiB"
+        vram_note = "unknown" if vram_gib is None else f"{vram_gib:.0f}GiB"
+        print(
+            f"split_data: auto split_workers={workers} "
+            f"(RAM={ram_note}, VRAM={vram_note})",
+            flush=True,
+        )
+    else:
+        workers = max(1, int(args.split_workers))
     if workers <= 1:
-        from split_data import split_data
+        try:
+            from split_data import split_data
+        except ImportError:
+            from game_review_data.split_data import split_data
 
         split_data(
             input_dir=metadata_dir,
@@ -265,8 +294,8 @@ def parse_args():
     parser.add_argument("--split-prefetch-ram-target", type=float, default=None)
     parser.add_argument("--split-prefetch-max-files", type=int, default=None)
     parser.add_argument("--split-prefetch-workers", type=int, default=None)
-    parser.add_argument("--split-workers", type=int, default=1,
-                        help="Parallel split shard processes (1 -> in-process).")
+    parser.add_argument("--split-workers", type=int, default=None,
+                        help="Parallel split shard processes (default: auto from RAM/VRAM).")
 
     parser.add_argument("--text-h5", type=Path, default=None)
     parser.add_argument("--embedding-h5", type=Path, default=None)
