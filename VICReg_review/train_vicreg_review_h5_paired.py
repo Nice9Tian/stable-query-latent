@@ -45,7 +45,6 @@ from VICReg_review.train_vicreg_review_h5 import (  # noqa: E402
     parse_string_list,
     resolve_train_game_indices,
     restore_rng_state,
-    run_dual_probe,
     maybe_run_probe,
     run_training_batch,
     should_run_probe,
