@@ -23,7 +23,8 @@ param(
     [switch]$DryRun,
     [switch]$PrintOnly,
     [switch]$ShowCommand,
-    [switch]$RequireFingerprintMatch
+    [switch]$RequireFingerprintMatch,
+    [Int64]$MaxHashBytes = 1GB
 )
 
 $ErrorActionPreference = "Stop"
@@ -187,6 +188,13 @@ function Test-LocalMatchesRemote {
     }
 
     if ($remoteEtag -match '^[A-Fa-f0-9]{32}$') {
+        if (-not $RequireFingerprintMatch -and [Int64]$localItem.Length -gt $MaxHashBytes) {
+            return [PSCustomObject]@{
+                Matches = $true
+                Reason = "size matches; local MD5 skipped for file larger than $MaxHashBytes bytes"
+            }
+        }
+
         $localMd5 = (Get-FileHash -LiteralPath $LocalPath -Algorithm MD5).Hash.ToLowerInvariant()
         if ($localMd5 -eq $remoteEtag.ToLowerInvariant()) {
             Write-S3Meta -LocalPath $LocalPath -Bucket $Bucket -RemoteObject $RemoteObject
@@ -296,6 +304,7 @@ Write-Host "  Includes    : text_h5.h5, embedding_h5.h5, manifests, VICReg_revie
 Write-Host "  Resume      : skip when local size and saved/computable fingerprint match"
 if (-not $RequireFingerprintMatch) {
     Write-Host "                multipart ETags fall back to size-only when no sidecar exists"
+    Write-Host "                local MD5 is skipped for files larger than $MaxHashBytes bytes"
 }
 if ($ShowCommand) {
     Write-Host ""

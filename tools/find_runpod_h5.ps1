@@ -15,7 +15,8 @@ param(
     [string]$EndpointUrl = "https://s3api-us-ks-2.runpod.io",
     [string]$AwsCliPath = "aws",
     [switch]$Download,
-    [switch]$RequireFingerprintMatch
+    [switch]$RequireFingerprintMatch,
+    [Int64]$MaxHashBytes = 1GB
 )
 
 $ErrorActionPreference = "Stop"
@@ -98,6 +99,13 @@ function Test-LocalMatchesRemote {
     }
 
     if ($remoteEtag -match '^[A-Fa-f0-9]{32}$') {
+        if (-not $RequireFingerprintMatch -and [Int64]$localItem.Length -gt $MaxHashBytes) {
+            return [PSCustomObject]@{
+                Matches = $true
+                Reason = "size matches; local MD5 skipped for file larger than $MaxHashBytes bytes"
+            }
+        }
+
         $localMd5 = (Get-FileHash -LiteralPath $LocalPath -Algorithm MD5).Hash.ToLowerInvariant()
         if ($localMd5 -eq $remoteEtag.ToLowerInvariant()) {
             Write-S3Meta -LocalPath $LocalPath -Bucket $Bucket -Key $Key -Head $Head
