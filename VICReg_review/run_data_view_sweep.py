@@ -1441,6 +1441,34 @@ def composite_score(row: dict) -> float:
     return float(0.30 * tag + 0.30 * identity + 0.15 * cos + 0.15 * pr_bonus - 0.05 * sent_penalty - 0.05 * reco_penalty)
 
 
+REPORT_SCORE_KEYS = (
+    "tag_micro_f1",
+    "sentiment_r2",
+    "recommendation_pearson",
+    "pr",
+    "mean_rank",
+    "hit_at_1",
+    "hit_at_5",
+    "hit_at_100",
+    "mean_text_cosine",
+)
+
+
+def scored_done_rows(rows: list[dict]) -> tuple[list[dict], list[dict]]:
+    scored = []
+    unscored = []
+    for row in rows:
+        if row.get("status") != "done":
+            continue
+        if "composite_score" not in row and all(key in row for key in REPORT_SCORE_KEYS):
+            row["composite_score"] = composite_score(row)
+        if "composite_score" in row and all(key in row for key in REPORT_SCORE_KEYS):
+            scored.append(row)
+        else:
+            unscored.append(row)
+    return scored, unscored
+
+
 def write_csv(rows: list[dict], path: Path) -> None:
     if not rows:
         path.unlink(missing_ok=True)
@@ -1642,7 +1670,8 @@ def export_raw_detail_tables(args, rows: list[dict]) -> None:
 
 
 def render_report(rows: list[dict], args) -> str:
-    complete = [row for row in rows if row["status"] == "done"]
+    done = [row for row in rows if row.get("status") == "done"]
+    complete, unscored_done = scored_done_rows(rows)
     best = max(complete, key=lambda row: row["composite_score"]) if complete else None
     paired = []
     by_key = {
@@ -1680,11 +1709,19 @@ def render_report(rows: list[dict], args) -> str:
         f"- view fraction：{', '.join(f'{v:.1f}' for v in args.sample_fractions)}",
         f"- 对照 arm：{', '.join(args.arms)}（grl=GRL 10 + reco 30；nogrl=GRL 0 + reco 0）。",
         f"- 评估候选池：始终使用全量 {getattr(args, 'num_games', '?')} 款游戏。",
+        f"- 已训练完成组合：{len(done)}；其中有 per-combo 评估分数：{len(complete)}。",
         "- 测试文本：Cyberpunk 2077、Across the Obelisk 的 neutral/positive/negative/noname 长文本只在测试阶段使用。",
         f"- 每组合训练预算：epochs={args.epochs}, steps_per_epoch={args.steps_per_epoch}, batch_size={args.batch_size}。",
         "- 训练显存策略：split_recompute，把句嵌入 -> latentArray 的长序列段与后续层次降维分段反传，默认不截断 view。",
         "",
     ]
+    if unscored_done:
+        preview = ", ".join(row.get("combo", "?") for row in unscored_done[:5])
+        suffix = "..." if len(unscored_done) > 5 else ""
+        lines.extend([
+            f"> 注意：{len(unscored_done)} 个 status=done 的组合缺少 per-combo 评估指标，已从下面的 score/report 排名中跳过：{preview}{suffix}",
+            "",
+        ])
     if best:
         lines.extend([
             "## 结论",
