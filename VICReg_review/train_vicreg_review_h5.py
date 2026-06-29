@@ -1260,13 +1260,14 @@ def should_run_probe(epoch: int, args) -> bool:
     return epoch >= start and (epoch - start) % every == 0
 
 
-def run_dual_probe(model, args, device, epoch, global_step, probe_rows):
-    """Periodic full validation on the current encoder.
+def probe_report_and_row(model, args, device, epoch, global_step):
+    """Compute the periodic convergence probe on the current encoder.
 
-    This replaces the old dual_probe path. It measures the sweep tasks we care
-    about during training: sentiment probe, recommendation probe, held-out
-    anchor TAG generalization, and real-text TAG/cosine behavior. Failures are
-    caught so a probe never kills a training run.
+    Measures the sweep tasks we care about during training: sentiment probe,
+    recommendation probe, held-out anchor TAG generalization, and real-text
+    TAG/cosine behavior. Returns ``(report, row)`` or ``None`` when the probe
+    failed (failures never kill a training run). Persistence is handled by the
+    callers (``run_dual_probe`` inline, or the decoupled ``probe_worker``).
     """
     try:
         from VICReg_review.train_tag_probe import extract_features, pool_features
@@ -1361,6 +1362,30 @@ def run_dual_probe(model, args, device, epoch, global_step, probe_rows):
         row[f"{variant}_tag_recall"] = metrics.get("recall")
         row[f"{variant}_drop_micro_f1"] = payload.get("drop_micro_f1")
         row[f"{variant}_drop_recall"] = payload.get("drop_recall")
+    return report, row
+
+
+def append_probe_history(tsv_path, row, report):
+    """Append one probe row (+ jsonl report) to a combo history, restart-safe.
+
+    Reloads the existing rows from disk first so a fresh process (e.g. the
+    decoupled probe_worker) never truncates earlier epochs.
+    """
+    rows = read_history(tsv_path)
+    rows.append(row)
+    write_history(rows, tsv_path)
+    jsonl_path = Path(tsv_path).with_suffix(".jsonl")
+    jsonl_path.parent.mkdir(parents=True, exist_ok=True)
+    with jsonl_path.open("a", encoding="utf-8") as handle:
+        handle.write(json.dumps(report, ensure_ascii=False) + "\n")
+
+
+def run_dual_probe(model, args, device, epoch, global_step, probe_rows):
+    """Inline probe: compute and append to the combo history in this process."""
+    result = probe_report_and_row(model, args, device, epoch, global_step)
+    if result is None:
+        return
+    report, row = result
     probe_rows.append(row)
     write_history(probe_rows, args.probe_history_tsv)
     jsonl_path = Path(args.probe_history_tsv).with_suffix(".jsonl")
@@ -1373,6 +1398,52 @@ def run_dual_probe(model, args, device, epoch, global_step, probe_rows):
         f"sent_r2={row['sentiment_r2']} reco_pearson={row['recommendation_pearson']}",
         flush=True,
     )
+
+
+def emit_probe_job(args, model, epoch, global_step, queue_dir):
+    """Decoupled probe: write a slim encoder checkpoint + a queue marker for the
+    standalone probe_worker.py, then return so training continues uninterrupted.
+
+    The slim checkpoint mirrors what ``load_frozen_encoder`` reads (``args`` +
+    ``model_state_dict``) so the worker rebuilds the exact frozen encoder.
+    """
+    queue_dir = Path(queue_dir)
+    queue_dir.mkdir(parents=True, exist_ok=True)
+    history_tsv = Path(args.probe_history_tsv)
+    ckpt_dir = history_tsv.parent / "probe_ckpts"
+    ckpt_dir.mkdir(parents=True, exist_ok=True)
+    ckpt_path = ckpt_dir / f"ep{int(epoch):03d}.pt"
+    payload = {
+        "args": vars(args),
+        "model_state_dict": {k: v.detach().to("cpu") for k, v in model.state_dict().items()},
+        "epoch": int(epoch),
+        "global_step": int(global_step),
+        "input_h5": str(Path(args.input_h5).resolve()),
+    }
+    atomic_torch_save(payload, ckpt_path)
+    combo_token = history_tsv.parent.name
+    marker = queue_dir / f"{combo_token}__ep{int(epoch):03d}.json"
+    marker_payload = {
+        "checkpoint": str(ckpt_path.resolve()),
+        "probe_history_tsv": str(history_tsv.resolve()),
+        "input_h5": str(Path(args.input_h5).resolve()),
+        "epoch": int(epoch),
+        "global_step": int(global_step),
+        "created_at": time.strftime("%Y-%m-%dT%H:%M:%S"),
+    }
+    tmp = marker.parent / (marker.name + ".tmp")
+    tmp.write_text(json.dumps(marker_payload, ensure_ascii=False, indent=2), encoding="utf-8")
+    tmp.replace(marker)
+    print(f"[probe] queued epoch={epoch} -> {marker.name}", flush=True)
+
+
+def maybe_run_probe(model, args, device, epoch, global_step, probe_rows):
+    """Emit a decoupled probe job when --probe-queue-dir is set, else run inline."""
+    queue_dir = getattr(args, "probe_queue_dir", None)
+    if queue_dir:
+        emit_probe_job(args, model, epoch, global_step, queue_dir)
+    else:
+        run_dual_probe(model, args, device, epoch, global_step, probe_rows)
 
 
 def train(args):
@@ -1607,7 +1678,7 @@ def train(args):
             write_manifest(args.manifest_json, "running", args, epoch, global_step, averaged)
 
             if should_run_probe(epoch, args):
-                run_dual_probe(model, args, device, epoch, global_step, probe_rows)
+                maybe_run_probe(model, args, device, epoch, global_step, probe_rows)
 
         write_manifest(args.manifest_json, "done", args, args.epochs, global_step, last_metrics)
     except KeyboardInterrupt:
@@ -1647,6 +1718,12 @@ def parse_args():
     parser.add_argument("--probe-folds", type=int, default=5)
     parser.add_argument("--probe-sample-fraction", type=float, default=0.6)
     parser.add_argument("--probe-history-tsv", default=str(DEFAULT_HEADS_DIR / "dual_probe_history.tsv"))
+    parser.add_argument(
+        "--probe-queue-dir",
+        default=None,
+        help="If set, probe epochs emit a slim checkpoint + queue marker here for "
+             "probe_worker.py instead of running the probe inline (decoupled mode).",
+    )
     parser.add_argument("--text-variant-dir", default=None)
     parser.add_argument("--text-variant-cache", default=None)
     parser.add_argument("--rebuild-text-variant-cache", action="store_true")

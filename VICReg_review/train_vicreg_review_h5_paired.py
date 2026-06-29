@@ -46,6 +46,7 @@ from VICReg_review.train_vicreg_review_h5 import (  # noqa: E402
     resolve_train_game_indices,
     restore_rng_state,
     run_dual_probe,
+    maybe_run_probe,
     run_training_batch,
     should_run_probe,
     write_history,
@@ -296,7 +297,7 @@ def train(args) -> None:
                     averaged,
                 )
                 if should_run_probe(epoch, arm_args):
-                    run_dual_probe(
+                    maybe_run_probe(
                         state["model"],
                         arm_args,
                         device,
@@ -357,6 +358,13 @@ def parse_args():
     parser.add_argument("--nogrl-manifest-json", default=str(DEFAULT_HEADS_DIR / "paired_nogrl_manifest.json"))
     parser.add_argument("--nogrl-probe-history-tsv", default=str(DEFAULT_HEADS_DIR / "paired_nogrl_dual_probe.tsv"))
     parser.add_argument("--probe-every", type=int, default=0)
+    parser.add_argument(
+        "--probe-queue-dir",
+        default=None,
+        help="If set, probe epochs emit slim checkpoints + queue markers here for "
+             "probe_worker.py instead of running probes inline (decoupled mode). "
+             "Inherited by both arms via arm_namespace().",
+    )
     parser.add_argument("--probe-start-epoch", type=int, default=3)
     parser.add_argument("--probe-feature-views", type=int, default=2)
     parser.add_argument("--probe-folds", type=int, default=5)

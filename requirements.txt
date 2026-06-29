@@ -15,3 +15,4 @@ hdbscan
 umap-learn
 ijson
 psutil
+ipywidgets

@@ -285,6 +285,8 @@ def _apply_cloud_train_options(cmd: list[str], args, backward_mode: str) -> list
     if args.max_batch_sentences > 0:
         _set_option(cmd, "--max-batch-sentences", args.max_batch_sentences)
     _set_option(cmd, "--probe-every", args.train_probe_every)
+    if args.probe_queue_dir:
+        _set_option(cmd, "--probe-queue-dir", args.probe_queue_dir)
     _set_option(cmd, "--probe-start-epoch", args.train_probe_start_epoch)
     _set_option(cmd, "--probe-feature-views", args.train_probe_feature_views)
     _set_option(cmd, "--probe-folds", args.train_probe_folds)
@@ -458,6 +460,17 @@ def parse_args(argv: list[str] | None = None):
     )
     parser.add_argument("--train-probe-feature-views", type=int, default=2)
     parser.add_argument("--train-probe-folds", type=int, default=5)
+    parser.add_argument(
+        "--probe-queue-dir",
+        type=Path,
+        default=None,
+        help=(
+            "If set, in-training probes run decoupled: each probe epoch emits a "
+            "slim checkpoint + queue marker here instead of probing inline. Run "
+            "VICReg_review/probe_worker.py against the same dir to consume them. "
+            "Forwarded to both single-arm and paired training commands."
+        ),
+    )
     parser.add_argument(
         "--text-variant-dir",
         type=Path,
