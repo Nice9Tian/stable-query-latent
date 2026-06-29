@@ -22,6 +22,7 @@ import re
 import time
 import os
 from concurrent.futures import ThreadPoolExecutor
+from collections import deque
 from pathlib import Path
 
 SCRIPT_DIR = Path(__file__).resolve().parent
@@ -30,12 +31,26 @@ DEFAULT_INPUT_DIR = SCRIPT_DIR / "game_review_metadata"
 DEFAULT_OUTPUT_DIR = SCRIPT_DIR / "game_review_sentences"
 DEFAULT_MODEL = "sat-3l-sm"
 DEFAULT_CHUNK_BUDGET = 0
+DEFAULT_SPLIT_BATCH_SIZE = 32
+DEFAULT_SPLIT_OUTER_BATCH_SIZE = 1000
+DEFAULT_PREFETCH_RAM_TARGET = 0.50
+DEFAULT_PREFETCH_MIN_RAM_GIB = 100
+DEFAULT_PREFETCH_MAX_FILES = 64
+DEFAULT_PREFETCH_WORKERS = 2
 
 AUTO_BUDGET_POINTS = (
     (32, 320_000),
     (64, 1_280_000),
     (125, 6_250_000),
     (250, 12_500_000),
+)
+
+AUTO_BATCH_POINTS = (
+    (4, 32),
+    (8, 64),
+    (16, 128),
+    (24, 192),
+    (48, 384),
 )
 
 
@@ -92,6 +107,25 @@ def _clear_cuda_cache(device):
             pass
 
 
+def get_cuda_total_memory_gib(device) -> float | None:
+    if not device or not str(device).startswith("cuda"):
+        return None
+    try:
+        import torch
+
+        if not torch.cuda.is_available():
+            return None
+        device_text = str(device)
+        if ":" in device_text:
+            device_index = int(device_text.split(":", 1)[1])
+        else:
+            device_index = torch.cuda.current_device()
+        props = torch.cuda.get_device_properties(device_index)
+        return props.total_memory / (1024 ** 3)
+    except Exception:
+        return None
+
+
 def get_total_system_ram_gib() -> float | None:
     try:
         if os.name == "nt":
@@ -119,6 +153,45 @@ def get_total_system_ram_gib() -> float | None:
             page_size = os.sysconf("SC_PAGE_SIZE")
             if pages > 0 and page_size > 0:
                 return (pages * page_size) / (1024 ** 3)
+    except Exception:
+        return None
+    return None
+
+
+def get_system_memory_usage() -> tuple[float, float, float] | None:
+    try:
+        if os.name == "nt":
+            class MEMORYSTATUSEX(ctypes.Structure):
+                _fields_ = [
+                    ("dwLength", ctypes.c_ulong),
+                    ("dwMemoryLoad", ctypes.c_ulong),
+                    ("ullTotalPhys", ctypes.c_uint64),
+                    ("ullAvailPhys", ctypes.c_uint64),
+                    ("ullTotalPageFile", ctypes.c_uint64),
+                    ("ullAvailPageFile", ctypes.c_uint64),
+                    ("ullTotalVirtual", ctypes.c_uint64),
+                    ("ullAvailVirtual", ctypes.c_uint64),
+                    ("ullAvailExtendedVirtual", ctypes.c_uint64),
+                ]
+
+            status = MEMORYSTATUSEX()
+            status.dwLength = ctypes.sizeof(MEMORYSTATUSEX)
+            if not ctypes.windll.kernel32.GlobalMemoryStatusEx(ctypes.byref(status)):
+                return None
+            total = status.ullTotalPhys
+            available = status.ullAvailPhys
+            used = max(0, total - available)
+            return used / total, used / (1024 ** 3), total / (1024 ** 3)
+
+        if hasattr(os, "sysconf") and "SC_PHYS_PAGES" in os.sysconf_names:
+            pages = os.sysconf("SC_PHYS_PAGES")
+            available_pages = os.sysconf("SC_AVPHYS_PAGES")
+            page_size = os.sysconf("SC_PAGE_SIZE")
+            if pages > 0 and available_pages >= 0 and page_size > 0:
+                total = pages * page_size
+                available = available_pages * page_size
+                used = max(0, total - available)
+                return used / total, used / (1024 ** 3), total / (1024 ** 3)
     except Exception:
         return None
     return None
@@ -153,6 +226,56 @@ def resolve_chunk_budget(chunk_budget):
     return resolved_budget, tier_gib, total_ram_gib
 
 
+def resolve_prefetch_settings(
+    total_ram_gib: float | None,
+    prefetch_ram_target: float | None,
+    prefetch_max_files: int | None,
+    prefetch_workers: int | None,
+):
+    enabled_by_ram = total_ram_gib is not None and total_ram_gib >= DEFAULT_PREFETCH_MIN_RAM_GIB
+
+    if prefetch_ram_target is None:
+        prefetch_ram_target = DEFAULT_PREFETCH_RAM_TARGET if enabled_by_ram else 0.0
+    if prefetch_max_files is None:
+        prefetch_max_files = DEFAULT_PREFETCH_MAX_FILES if enabled_by_ram else 1
+    if prefetch_workers is None:
+        prefetch_workers = DEFAULT_PREFETCH_WORKERS if enabled_by_ram else 1
+
+    prefetch_ram_target = max(0.0, min(0.95, float(prefetch_ram_target)))
+    prefetch_max_files = max(1, int(prefetch_max_files))
+    prefetch_workers = max(1, int(prefetch_workers))
+    return prefetch_ram_target, prefetch_max_files, prefetch_workers, enabled_by_ram
+
+
+def choose_auto_batch_size(total_vram_gib: float | None) -> tuple[int, int | None]:
+    if total_vram_gib is None:
+        return DEFAULT_SPLIT_BATCH_SIZE, None
+
+    vram_gib = max(float(total_vram_gib), float(AUTO_BATCH_POINTS[0][0]))
+    for (left_vram, left_batch), (right_vram, right_batch) in zip(
+        AUTO_BATCH_POINTS, AUTO_BATCH_POINTS[1:]
+    ):
+        if vram_gib <= right_vram:
+            fraction = (vram_gib - left_vram) / (right_vram - left_vram)
+            batch = left_batch + fraction * (right_batch - left_batch)
+            return max(1, int(round(batch))), int(round(vram_gib))
+
+    left_vram, left_batch = AUTO_BATCH_POINTS[-2]
+    right_vram, right_batch = AUTO_BATCH_POINTS[-1]
+    slope = (right_batch - left_batch) / (right_vram - left_vram)
+    batch = right_batch + (vram_gib - right_vram) * slope
+    return max(1, int(round(batch))), int(round(vram_gib))
+
+
+def resolve_batch_size(batch_size: int | None, device) -> tuple[int, int | None]:
+    if batch_size and batch_size > 0:
+        return int(batch_size), None
+
+    total_vram_gib = get_cuda_total_memory_gib(device)
+    resolved_batch_size, vram_tier_gib = choose_auto_batch_size(total_vram_gib)
+    return resolved_batch_size, vram_tier_gib
+
+
 def iter_review_chunks(normalized_reviews, chunk_budget):
     chunk = []
     used = 0
@@ -177,17 +300,33 @@ def split_reviews_into_mapping(reviews, splitter, device, chunk_budget):
         splitter,
         device,
         chunk_budget,
+        batch_size=DEFAULT_SPLIT_BATCH_SIZE,
+        outer_batch_size=DEFAULT_SPLIT_OUTER_BATCH_SIZE,
     )
 
 
-def split_normalized_reviews_into_mapping(normalized, splitter, device, chunk_budget):
+def split_normalized_reviews_into_mapping(
+    normalized,
+    splitter,
+    device,
+    chunk_budget,
+    batch_size=DEFAULT_SPLIT_BATCH_SIZE,
+    outer_batch_size=DEFAULT_SPLIT_OUTER_BATCH_SIZE,
+):
     """Return (mapping, sentence_count) for reviews already normalized."""
     mapping = {}
     sentence_count = 0
     start = 0
     for chunk in iter_review_chunks(normalized, chunk_budget):
         for local_index, review_sentences in enumerate(
-            split_chunk_with_fallback(chunk, splitter, start, device)
+            split_chunk_with_fallback(
+                chunk,
+                splitter,
+                start,
+                device,
+                batch_size=batch_size,
+                outer_batch_size=outer_batch_size,
+            )
         ):
             review_id = start + local_index
             sentences = {}
@@ -209,17 +348,48 @@ def regex_sentence_fallback(text):
     return [part.strip() for part in parts if part.strip()]
 
 
-def split_chunk_with_fallback(chunk, splitter, start_index, device):
+def split_chunk_with_fallback(
+    chunk,
+    splitter,
+    start_index,
+    device,
+    batch_size=DEFAULT_SPLIT_BATCH_SIZE,
+    outer_batch_size=DEFAULT_SPLIT_OUTER_BATCH_SIZE,
+):
+    oom_reason = None
     try:
-        return list(splitter.split(chunk))
+        return list(
+            splitter.split(
+                chunk,
+                batch_size=batch_size,
+                outer_batch_size=outer_batch_size,
+            )
+        )
     except AssertionError as exc:
         reason = f"SaT assertion: {exc}"
     except RuntimeError as exc:
         if "out of memory" not in str(exc).lower():
             raise
         reason = f"CUDA OOM: {exc}"
+        oom_reason = reason
 
     _clear_cuda_cache(device)
+    if oom_reason and batch_size > DEFAULT_SPLIT_BATCH_SIZE:
+        reduced_batch_size = max(DEFAULT_SPLIT_BATCH_SIZE, batch_size // 2)
+        print(
+            f"  [warn] split chunk starting review {start_index} failed ({oom_reason}); "
+            f"retrying with batch_size={reduced_batch_size}",
+            flush=True,
+        )
+        return split_chunk_with_fallback(
+            chunk,
+            splitter,
+            start_index,
+            device,
+            batch_size=reduced_batch_size,
+            outer_batch_size=outer_batch_size,
+        )
+
     if len(chunk) > 1:
         mid = len(chunk) // 2
         print(
@@ -228,8 +398,22 @@ def split_chunk_with_fallback(chunk, splitter, start_index, device):
             flush=True,
         )
         return (
-            split_chunk_with_fallback(chunk[:mid], splitter, start_index, device)
-            + split_chunk_with_fallback(chunk[mid:], splitter, start_index + mid, device)
+            split_chunk_with_fallback(
+                chunk[:mid],
+                splitter,
+                start_index,
+                device,
+                batch_size=batch_size,
+                outer_batch_size=outer_batch_size,
+            )
+            + split_chunk_with_fallback(
+                chunk[mid:],
+                splitter,
+                start_index + mid,
+                device,
+                batch_size=batch_size,
+                outer_batch_size=outer_batch_size,
+            )
         )
 
     print(
@@ -239,8 +423,20 @@ def split_chunk_with_fallback(chunk, splitter, start_index, device):
     return [regex_sentence_fallback(chunk[0])]
 
 
-def split_data(input_dir, output_dir, model=DEFAULT_MODEL, device=None,
-               chunk_budget=DEFAULT_CHUNK_BUDGET, overwrite=False, splitter=None):
+def split_data(
+    input_dir,
+    output_dir,
+    model=DEFAULT_MODEL,
+    device=None,
+    chunk_budget=DEFAULT_CHUNK_BUDGET,
+    overwrite=False,
+    splitter=None,
+    batch_size=None,
+    outer_batch_size=DEFAULT_SPLIT_OUTER_BATCH_SIZE,
+    prefetch_ram_target=None,
+    prefetch_max_files=None,
+    prefetch_workers=None,
+):
     input_dir = Path(input_dir)
     output_dir = Path(output_dir)
     output_dir.mkdir(parents=True, exist_ok=True)
@@ -253,6 +449,18 @@ def split_data(input_dir, output_dir, model=DEFAULT_MODEL, device=None,
         splitter = load_splitter(model, device)
 
     resolved_budget, tier_gib, total_ram_gib = resolve_chunk_budget(chunk_budget)
+    resolved_batch_size, vram_tier_gib = resolve_batch_size(batch_size, device)
+    (
+        prefetch_ram_target,
+        prefetch_max_files,
+        prefetch_workers,
+        prefetch_enabled_by_ram,
+    ) = resolve_prefetch_settings(
+        total_ram_gib,
+        prefetch_ram_target,
+        prefetch_max_files,
+        prefetch_workers,
+    )
     if tier_gib is None:
         budget_note = f"chunk_budget={resolved_budget}"
     else:
@@ -260,9 +468,21 @@ def split_data(input_dir, output_dir, model=DEFAULT_MODEL, device=None,
             f"chunk_budget=auto({int(total_ram_gib or 0)}GiB->tier{tier_gib}G,"
             f"budget={resolved_budget})"
         )
+    if batch_size and batch_size > 0:
+        batch_note = f"batch_size={resolved_batch_size}"
+    elif vram_tier_gib is None:
+        batch_note = f"batch_size=auto(default {resolved_batch_size})"
+    else:
+        batch_note = f"batch_size=auto({vram_tier_gib}GiB VRAM->{resolved_batch_size})"
     print(
         f"split_data: {len(input_files)} files, model={model}, device={device}, "
-        f"{budget_note} -> {output_dir}",
+        f"{budget_note}, {batch_note}, "
+        f"outer_batch_size={outer_batch_size}, "
+        f"prefetch_ram_target={prefetch_ram_target:.0%}, "
+        f"prefetch_max_files={prefetch_max_files}, "
+        f"prefetch_workers={prefetch_workers}, "
+        f"prefetch_auto_ram={'on' if prefetch_enabled_by_ram else 'off'} "
+        f"-> {output_dir}",
         flush=True,
     )
 
@@ -286,23 +506,50 @@ def split_data(input_dir, output_dir, model=DEFAULT_MODEL, device=None,
         print(message, flush=True)
 
     with (
-        ThreadPoolExecutor(max_workers=1, thread_name_prefix="split-read") as read_pool,
+        ThreadPoolExecutor(max_workers=prefetch_workers, thread_name_prefix="split-read") as read_pool,
         ThreadPoolExecutor(max_workers=1, thread_name_prefix="split-write") as write_pool,
     ):
-        read_future = (
-            read_pool.submit(read_reviews_normalized, process_files[0][1])
-            if process_files
-            else None
-        )
+        pending_reads = {}
+        ready_reads = deque()
+        next_prefetch_index = 0
 
-        for process_index, (file_index, input_path, output_path) in enumerate(process_files):
-            reviews = read_future.result()
-            next_index = process_index + 1
-            read_future = (
-                read_pool.submit(read_reviews_normalized, process_files[next_index][1])
-                if next_index < len(process_files)
-                else None
-            )
+        def below_prefetch_ram_target() -> bool:
+            usage = get_system_memory_usage()
+            return usage is None or usage[0] < prefetch_ram_target
+
+        def pump_reads(force_one=False):
+            nonlocal next_prefetch_index
+            while (
+                next_prefetch_index < len(process_files)
+                and len(pending_reads) + len(ready_reads) < prefetch_max_files
+                and (force_one or below_prefetch_ram_target())
+            ):
+                item = process_files[next_prefetch_index]
+                pending_reads[read_pool.submit(read_reviews_normalized, item[1])] = item
+                next_prefetch_index += 1
+                force_one = False
+
+        def collect_ready_reads():
+            for future, item in list(pending_reads.items()):
+                if future.done():
+                    ready_reads.append((item, future))
+                    del pending_reads[future]
+
+        def next_read_result():
+            while not ready_reads:
+                collect_ready_reads()
+                pump_reads(force_one=not pending_reads)
+                if not ready_reads and pending_reads:
+                    time.sleep(0.01)
+            item, future = ready_reads.popleft()
+            return item, future.result()
+
+        pump_reads(force_one=True)
+
+        for _ in range(len(process_files)):
+            (file_index, input_path, output_path), reviews = next_read_result()
+            collect_ready_reads()
+            pump_reads()
 
             if not isinstance(reviews, list):
                 print(
@@ -316,6 +563,8 @@ def split_data(input_dir, output_dir, model=DEFAULT_MODEL, device=None,
                 splitter,
                 device,
                 chunk_budget=resolved_budget,
+                batch_size=resolved_batch_size,
+                outer_batch_size=outer_batch_size,
             )
 
             pending_writes.append(
@@ -350,6 +599,39 @@ def parse_args():
         type=int,
         help="Approximate character budget per SaT chunk; 0 auto-selects a tier from total system RAM.",
     )
+    parser.add_argument(
+        "--batch-size",
+        default=None,
+        type=int,
+        help="Internal wtpsplit SaT inference batch size. Default: auto from CUDA VRAM.",
+    )
+    parser.add_argument(
+        "--outer-batch-size",
+        default=DEFAULT_SPLIT_OUTER_BATCH_SIZE,
+        type=int,
+        help="Internal wtpsplit SaT outer text batch size.",
+    )
+    parser.add_argument(
+        "--prefetch-ram-target",
+        default=None,
+        type=float,
+        help=(
+            "Keep pre-reading metadata JSON files while system RAM usage is below "
+            "this fraction. Default: auto, enabled only on >=100GiB RAM."
+        ),
+    )
+    parser.add_argument(
+        "--prefetch-max-files",
+        default=None,
+        type=int,
+        help="Maximum normalized metadata JSON files queued ahead of splitting. Default: auto.",
+    )
+    parser.add_argument(
+        "--prefetch-workers",
+        default=None,
+        type=int,
+        help="Reader threads for split-stage metadata prefetch. Default: auto.",
+    )
     parser.add_argument("--overwrite", action="store_true")
     return parser.parse_args()
 
@@ -363,6 +645,11 @@ def main():
         device=args.device,
         chunk_budget=args.chunk_budget,
         overwrite=args.overwrite,
+        batch_size=args.batch_size,
+        outer_batch_size=args.outer_batch_size,
+        prefetch_ram_target=args.prefetch_ram_target,
+        prefetch_max_files=args.prefetch_max_files,
+        prefetch_workers=args.prefetch_workers,
     )
 
 

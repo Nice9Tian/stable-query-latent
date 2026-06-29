@@ -564,6 +564,11 @@ def parse_args():
     parser.add_argument("--split-model", default="sat-3l-sm")
     parser.add_argument("--split-device", default=None)
     parser.add_argument("--chunk-budget", type=int, default=0)
+    parser.add_argument("--split-batch-size", type=int, default=None)
+    parser.add_argument("--split-outer-batch-size", type=int, default=1000)
+    parser.add_argument("--split-prefetch-ram-target", type=float, default=None)
+    parser.add_argument("--split-prefetch-max-files", type=int, default=None)
+    parser.add_argument("--split-prefetch-workers", type=int, default=None)
 
     parser.add_argument("--text-h5", type=Path, default=None)
     parser.add_argument("--embedding-h5", type=Path, default=None)
@@ -715,6 +720,11 @@ def main():
             device=args.split_device,
             chunk_budget=args.chunk_budget,
             overwrite=args.overwrite,
+            batch_size=args.split_batch_size,
+            outer_batch_size=args.split_outer_batch_size,
+            prefetch_ram_target=args.split_prefetch_ram_target,
+            prefetch_max_files=args.split_prefetch_max_files,
+            prefetch_workers=args.split_prefetch_workers,
         )
 
     if "text-h5" in run:
