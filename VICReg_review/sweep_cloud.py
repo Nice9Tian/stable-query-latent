@@ -42,10 +42,6 @@ _BASE_BUILD_PAIRED_TRAIN_COMMAND = sweep.build_paired_train_command
 _BASE_SHOULD_TRY_PAIRED_TRAINING = sweep.should_try_paired_training
 _BASE_RUN_COMMAND = sweep.run_command
 _PAIRED_MODE = "always"
-# Standard backward keeps every long-view activation graph until the batch
-# loss runs backward. On 80GB A100s, 256+ slots at view=0.8 has been observed
-# to OOM mid-combo, especially while the decoupled probe worker shares the GPU.
-_STANDARD_OOM_RULES: list[tuple[int, float]] = [(256, 0.8)]
 _STANDARD_OOM_RETRY = True
 _STANDARD_OOM_FALLBACK = "split_recompute"
 _VRAM_FALLBACK_REPORTED = False
@@ -210,11 +206,6 @@ def _select_backward_mode(args, view: float, latent_scale: float) -> str:
             _VRAM_FALLBACK_REPORTED = True
         return _STANDARD_OOM_FALLBACK
 
-    num_latents = max(1, int(round(int(args.base_num_latents) * float(latent_scale))))
-    view = float(view)
-    for failed_num_latents, failed_view in _STANDARD_OOM_RULES:
-        if num_latents >= failed_num_latents and view >= failed_view:
-            return _STANDARD_OOM_FALLBACK
     return "standard"
 
 
@@ -237,22 +228,24 @@ def _command_had_cuda_oom(cmd: list[str]) -> bool:
     return any(_manifest_error_is_oom(_extract_option(cmd, option)) for option in manifest_options)
 
 
-def _remember_standard_oom(cmd: list[str]) -> None:
+def _log_standard_oom(cmd: list[str]) -> None:
     try:
         num_latents = int(_extract_option(cmd, "--num-latents") or 0)
         view = float(_extract_option(cmd, "--sample-fraction") or 0.0)
     except ValueError:
         return
-    if num_latents <= 0 or view <= 0:
-        return
-    rule = (num_latents, view)
-    if rule not in _STANDARD_OOM_RULES:
-        _STANDARD_OOM_RULES.append(rule)
-        print(
-            "auto backward-mode: standard OOM observed; future combos with "
-            f"num_latents>={num_latents} and view>={view:g} will use {_STANDARD_OOM_FALLBACK}",
-            flush=True,
-        )
+    details = []
+    if num_latents > 0:
+        details.append(f"num_latents={num_latents}")
+    if view > 0:
+        details.append(f"view={view:g}")
+    suffix = f" ({', '.join(details)})" if details else ""
+    print(
+        "auto backward-mode: standard OOM observed for current combo"
+        f"{suffix}; retrying this combo with {_STANDARD_OOM_FALLBACK}. "
+        "Next combo will re-evaluate auto mode from scratch.",
+        flush=True,
+    )
 
 
 def run_command_with_standard_oom_retry(cmd: list[str], cwd: Path) -> None:
@@ -268,7 +261,7 @@ def run_command_with_standard_oom_retry(cmd: list[str], cwd: Path) -> None:
         ):
             raise
 
-    _remember_standard_oom(cmd)
+    _log_standard_oom(cmd)
     retry_cmd = list(cmd)
     _set_option(retry_cmd, "--backward-mode", _STANDARD_OOM_FALLBACK)
     print(
