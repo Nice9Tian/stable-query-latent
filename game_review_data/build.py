@@ -231,6 +231,8 @@ DEFAULT_TEXT_H5 = DEFAULT_DATA_DIR / "text_h5.h5"
 DEFAULT_EMBEDDING_H5 = DEFAULT_DATA_DIR / "embedding_h5.h5"
 DEFAULT_TAG_MAPPING = PROJECT_ROOT / "VICReg_review" / "tags" / "tag_mapping.json"
 DEFAULT_KAGGLE_GAMES_JSON = SCRIPT_DIR / "kaggle_storepage_data" / "games.json"
+KAGGLE_META_FIELDS = ("detailed_description", "about_the_game", "short_description")
+KAGGLE_REQUIRED_FIELDS = ("name", "detailed_description", "about_the_game", "short_description", "tags")
 
 PIPELINE_STAGES = ("metadata", "split", "text-h5", "embed-h5")
 
@@ -334,6 +336,56 @@ def prepared_done(prepared_dir: Path) -> bool:
     )
 
 
+def load_json_object(path: Path) -> dict | None:
+    try:
+        data = json.loads(Path(path).read_text(encoding="utf-8"))
+    except (OSError, UnicodeError, json.JSONDecodeError):
+        return None
+    return data if isinstance(data, dict) else None
+
+
+def kaggle_record_complete(record: object) -> bool:
+    if not isinstance(record, dict):
+        return False
+    if any(field not in record for field in KAGGLE_REQUIRED_FIELDS):
+        return False
+    if not str(record.get("name") or "").strip():
+        return False
+    if not any(str(record.get(field) or "").strip() for field in KAGGLE_META_FIELDS):
+        return False
+    if not record.get("tags"):
+        return False
+    return bool(str(record.get("release_date") or "").strip() or "release_coming_soon" in record)
+
+
+def enriched_games_complete(prepared_games_json: Path, enriched_games_json: Path) -> tuple[bool, str]:
+    prepared = load_json_object(prepared_games_json)
+    if prepared is None:
+        return False, f"cannot read prepared games.json: {prepared_games_json}"
+    enriched = load_json_object(enriched_games_json)
+    if enriched is None:
+        return False, f"missing/unreadable enriched games.json: {enriched_games_json}"
+
+    missing = []
+    incomplete = []
+    for appid in prepared:
+        key = str(appid)
+        record = enriched.get(key)
+        if record is None:
+            missing.append(key)
+        elif not kaggle_record_complete(record):
+            incomplete.append(key)
+
+    if missing or incomplete:
+        bits = []
+        if missing:
+            bits.append(f"missing={len(missing)} e.g. {missing[:5]}")
+        if incomplete:
+            bits.append(f"incomplete={len(incomplete)} e.g. {incomplete[:5]}")
+        return False, "; ".join(bits)
+    return True, f"complete for {len(prepared)} prepared games"
+
+
 def appids_in_reviews_dir(reviews_dir: Path) -> set[str]:
     appids: set[str] = set()
     reviews_dir = Path(reviews_dir)
@@ -396,6 +448,13 @@ def find_cached_kaggle_dataset(kaggle_cache: Path) -> Path | None:
 
 
 def maybe_enrich_kaggle(args, prepared_dir: Path) -> None:
+    if not args.overwrite and args.kaggle_games_json is not None:
+        complete, reason = enriched_games_complete(prepared_dir / "games.json", args.kaggle_games_json)
+        if complete:
+            print(f"source2: enriched games.json already complete; skip enrich ({reason})", flush=True)
+            return
+        print(f"source2: enriched games.json incomplete; running enrich ({reason})", flush=True)
+
     enrich_cmd = [
         str(args.python),
         str(SCRIPT_DIR / "enrich_steam_store_metadata.py"),

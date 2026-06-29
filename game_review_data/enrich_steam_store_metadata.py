@@ -37,12 +37,19 @@ CATEGORY_ALIASES = {
 }
 
 
-def atomic_json_write(payload: dict, path: Path) -> None:
+def atomic_json_write(payload: dict, path: Path) -> bool:
     path.parent.mkdir(parents=True, exist_ok=True)
+    if path.exists():
+        try:
+            if json.loads(path.read_text(encoding="utf-8")) == payload:
+                return False
+        except (json.JSONDecodeError, OSError, UnicodeError):
+            pass
     tmp_path = path.with_name(path.name + ".tmp")
     try:
         tmp_path.write_text(json.dumps(payload, ensure_ascii=False, indent=2), encoding="utf-8")
         tmp_path.replace(path)
+        return True
     except BaseException:
         tmp_path.unlink(missing_ok=True)
         raise
