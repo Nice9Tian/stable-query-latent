@@ -461,6 +461,11 @@ def load_all_texts(
 
 def manifest_path_for(output_h5: Path) -> Path:
     output_h5 = Path(output_h5)
+    return output_h5.with_name(output_h5.name + ".cloud_manifest.json")
+
+
+def legacy_manifest_path_for(output_h5: Path) -> Path:
+    output_h5 = Path(output_h5)
     return output_h5.with_name(output_h5.name + ".incloud_manifest.json")
 
 
@@ -992,10 +997,18 @@ def _load_resumable_manifest(manifest_file, working, config, dim, vector_dtype, 
     """Return a usable manifest for resume, or None if a fresh start is required."""
     import h5py
 
-    if not manifest_file.exists() or not Path(working).exists():
+    manifest_files = (
+        [Path(p) for p in manifest_file]
+        if isinstance(manifest_file, (list, tuple))
+        else [Path(manifest_file)]
+    )
+    if not Path(working).exists():
+        return None
+    manifest_path = next((path for path in manifest_files if path.exists()), None)
+    if manifest_path is None:
         return None
     try:
-        manifest = json.loads(Path(manifest_file).read_text(encoding="utf-8"))
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
     except (OSError, ValueError):
         return None
     if manifest.get("config") != config:
@@ -1063,10 +1076,12 @@ def one_file_output(
         raise FileNotFoundError(f"Input text H5 not found: {input_h5}")
 
     manifest_file = manifest_path_for(output_h5)
+    legacy_manifest_file = legacy_manifest_path_for(output_h5)
     working = working_path_for(output_h5)
     if overwrite:
         best_effort_unlink(working)
         best_effort_unlink(manifest_file)
+        best_effort_unlink(legacy_manifest_file)
 
     started = time.time()
     print(f"embed_incloud: loading all texts from {input_h5} into RAM ...", flush=True)
@@ -1096,7 +1111,14 @@ def one_file_output(
     config = _build_config(
         input_h5, total_sentences, dim, vector_dtype, normalize, local_model, shard_size, chunk_rows, compression
     )
-    manifest = _load_resumable_manifest(manifest_file, working, config, dim, vector_dtype, total_sentences)
+    manifest = _load_resumable_manifest(
+        [manifest_file, legacy_manifest_file],
+        working,
+        config,
+        dim,
+        vector_dtype,
+        total_sentences,
+    )
     if manifest is None:
         print(
             f"embed_incloud: fresh start; device={embedder.device} dim={dim} dtype={vector_dtype} "
@@ -1183,6 +1205,7 @@ def one_file_output(
 
     replace_with_retry(Path(working), output_h5)
     best_effort_unlink(manifest_file)
+    best_effort_unlink(legacy_manifest_file)
     print(
         f"embed_incloud: wrote {output_h5} sentences={total_sentences} dim={dim} "
         f"total={time.time() - started:.1f}s",
@@ -1207,7 +1230,7 @@ def stream_manifest_initial_state(
 ) -> dict:
     stream_manifest_file = stream_manifest_path(cloud_stream_dir)
     stream_manifest_backup = stream_manifest_bak_path(cloud_stream_dir)
-    legacy_manifest_file = manifest_path_for(output_h5)
+    legacy_manifest_files = [manifest_path_for(output_h5), legacy_manifest_path_for(output_h5)]
     expected_config = stream_config(input_h5, total_sentences, dim, vector_dtype, normalize, local_model, shard_size)
     manifest = load_json_with_backup(stream_manifest_file, stream_manifest_backup)
     if manifest is not None and (
@@ -1217,7 +1240,14 @@ def stream_manifest_initial_state(
         manifest = None
 
     if manifest is None:
-        legacy_manifest = load_json_with_backup(legacy_manifest_file)
+        legacy_manifest = next(
+            (
+                payload
+                for payload in (load_json_with_backup(path) for path in legacy_manifest_files)
+                if payload is not None
+            ),
+            None,
+        )
         if legacy_manifest is not None and config_matches(expected_config, legacy_manifest.get("config")):
             shards = []
             for shard in legacy_manifest.get("shards", []):
@@ -1406,6 +1436,7 @@ def stream_cloud_output(
         best_effort_unlink(stream_manifest_path(cloud_stream_dir))
         best_effort_unlink(stream_manifest_bak_path(cloud_stream_dir))
         best_effort_unlink(manifest_path_for(output_h5))
+        best_effort_unlink(legacy_manifest_path_for(output_h5))
 
     remote_text_h5 = stream_remote_text_h5_path(cloud_stream_dir)
     input_h5 = ensure_text_h5_pair(input_h5, remote_text_h5)

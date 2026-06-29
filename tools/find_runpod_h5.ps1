@@ -3,8 +3,8 @@
 Find and optionally download RunPod H5 artifacts without scanning the whole bucket.
 
 .DESCRIPTION
-This checks only likely prefixes used by the Pod notebooks and repo mirror. Use
-it when a broad aws s3 sync stays quiet for a long time.
+This checks exact likely keys used by the Pod notebooks and repo mirror. Use it
+when a broad aws s3 sync or recursive aws s3 ls stays quiet for a long time.
 #>
 
 [CmdletBinding()]
@@ -24,47 +24,39 @@ if (-not (Get-Command $AwsCliPath -ErrorAction SilentlyContinue)) {
 }
 
 $sourceRoot = $Source.TrimEnd("/") + "/"
-$prefixes = @(
-    "stable-query-latent/game_review_data/",
-    "workspace/stable-query-latent/game_review_data/",
-    "game_review_data/",
-    "stable_query_latent_artifacts/",
-    "workspace/stable_query_latent_artifacts/"
-)
+$candidateKeys = @(
+    "stable-query-latent/game_review_data/embedding_h5.h5",
+    "stable-query-latent/game_review_data/embedding_h5.h5.cloud_manifest.json",
+    "stable-query-latent/game_review_data/embedding_h5.h5.incloud_manifest.json",
+    "stable-query-latent/game_review_data/build_new_gamedata/text_h5.h5",
+    "stable-query-latent/game_review_data/build_new_gamedata/text_h5.h5.manifest.json",
 
-$patterns = @(
-    "embedding_h5\.h5$",
-    "embedding_h5\.h5\.incloud_manifest\.json$",
-    "text_h5\.h5$",
-    "text_h5\.h5\.manifest\.json$"
-)
-$matchRegex = "(?i)(" + ($patterns -join "|") + ")"
+    "workspace/stable-query-latent/game_review_data/embedding_h5.h5",
+    "workspace/stable-query-latent/game_review_data/embedding_h5.h5.cloud_manifest.json",
+    "workspace/stable-query-latent/game_review_data/embedding_h5.h5.incloud_manifest.json",
+    "workspace/stable-query-latent/game_review_data/build_new_gamedata/text_h5.h5",
+    "workspace/stable-query-latent/game_review_data/build_new_gamedata/text_h5.h5.manifest.json",
 
-function Get-KeyFromAwsLsLine {
-    param([string]$Line)
-    if ($Line -match "^\S+\s+\S+\s+\d+\s+(.+)$") {
-        return $Matches[1]
-    }
-    return $null
-}
+    "game_review_data/embedding_h5.h5",
+    "game_review_data/embedding_h5.h5.cloud_manifest.json",
+    "game_review_data/embedding_h5.h5.incloud_manifest.json",
+    "game_review_data/build_new_gamedata/text_h5.h5",
+    "game_review_data/build_new_gamedata/text_h5.h5.manifest.json"
+)
 
 $matches = New-Object System.Collections.Generic.List[string]
 
-foreach ($prefix in $prefixes) {
-    $uri = $sourceRoot + $prefix
-    Write-Host "Checking $uri"
-    $lines = & $AwsCliPath s3 ls `
+foreach ($key in $candidateKeys) {
+    $uri = $sourceRoot + $key
+    Write-Host "Checking $key"
+    $output = & $AwsCliPath s3 ls `
         --region $Region `
         --endpoint-url $EndpointUrl `
-        $uri `
-        --recursive
+        $uri 2>$null
 
-    foreach ($line in $lines) {
-        $key = Get-KeyFromAwsLsLine $line
-        if ($key -and $key -match $matchRegex) {
-            $matches.Add($key)
-            Write-Host "  FOUND $key"
-        }
+    if ($LASTEXITCODE -eq 0 -and $output) {
+        $matches.Add($key)
+        Write-Host "  FOUND $key"
     }
 }
 
@@ -72,7 +64,7 @@ $uniqueMatches = $matches | Sort-Object -Unique
 
 if (-not $uniqueMatches) {
     Write-Host ""
-    Write-Host "No text_h5.h5 or embedding_h5.h5 files were found under the checked prefixes."
+    Write-Host "No text_h5.h5 or embedding_h5.h5 files were found at the expected exact keys."
     Write-Host "That usually means the H5 files were not uploaded to this S3 bucket, or they are under an unexpected prefix."
     exit 2
 }
