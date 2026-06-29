@@ -39,6 +39,7 @@
 | `game_names` | UTF-8 string | `(games,)` | 游戏条目名，通常是句子 JSON 文件名去掉扩展名 |
 | `appids` | UTF-8 string | `(games,)` | Steam appid |
 | `game_titles` | UTF-8 string | `(games,)` | 游戏标题 |
+| `release_date` | UTF-8 string | `(games,)` | Steam 商店发行日期；没有来源时为空字符串 |
 | `tags_json` | UTF-8 string | `(games,)` | `tags` 字典的 JSON 序列化 |
 | `positive` | `int64` | `(games,)` | 正向评论数 |
 | `negative` | `int64` | `(games,)` | 负向评论数 |
@@ -111,7 +112,7 @@ game_review_offsets[g] : game_review_offsets[g + 1]
 - `game_review_offsets[-1] == reviews`
 - `len(texts) == len(sentence_ids) == sentences`
 - `len(review_ids) == reviews`
-- `len(game_names) == len(appids) == len(game_titles) == games`
+- `len(game_names) == len(appids) == len(game_titles) == len(release_date) == games`
 
 ## 5. 排序规则
 
@@ -172,4 +173,3 @@ len(game_review_offsets) == len(game_names) + 1
 ```
 
 如果这些成立，`text_h5.h5` 的层级关系基本就是对的。
-

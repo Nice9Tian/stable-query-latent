@@ -493,8 +493,40 @@ def download_and_prepare_kaggle(args, source2_dir: Path, kaggle_cache: Path) -> 
 
 def merge_games_json(sources: list[Path], output_path: Path, overwrite: bool) -> dict:
     if output_path.exists() and not overwrite:
-        print(f"merge_games_json: skip existing {output_path}", flush=True)
-        return json.loads(output_path.read_text(encoding="utf-8"))
+        merged = json.loads(output_path.read_text(encoding="utf-8"))
+        if not isinstance(merged, dict):
+            raise ValueError(f"{output_path} is not a JSON object")
+        patched = 0
+        for path in sources:
+            path = Path(path)
+            if not path.exists():
+                continue
+            data = json.loads(path.read_text(encoding="utf-8"))
+            if not isinstance(data, dict):
+                continue
+            for appid, record in data.items():
+                key = str(appid)
+                if key not in merged:
+                    merged[key] = record
+                    patched += 1
+                    continue
+                if not isinstance(merged[key], dict) or not isinstance(record, dict):
+                    continue
+                if (
+                    not str(merged[key].get("release_date") or "").strip()
+                    and str(record.get("release_date") or "").strip()
+                ):
+                    merged[key]["release_date"] = record["release_date"]
+                    patched += 1
+                if "release_coming_soon" not in merged[key] and "release_coming_soon" in record:
+                    merged[key]["release_coming_soon"] = bool(record["release_coming_soon"])
+                    patched += 1
+        if patched:
+            atomic_json_write(merged, output_path)
+            print(f"merge_games_json: patched existing {output_path} fields={patched}", flush=True)
+        else:
+            print(f"merge_games_json: skip existing {output_path}", flush=True)
+        return merged
 
     merged: dict = {}
     for path in sources:

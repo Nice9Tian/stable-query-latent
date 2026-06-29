@@ -83,6 +83,14 @@ HELPFUL_COLUMNS = (
 USER_COLUMNS = ("user", "author", "username", "steamid", "steam_id")
 PLAYTIME_COLUMNS = ("playtime", "hours", "playtime_forever", "author_playtime_forever")
 DATE_COLUMNS = ("post_date", "date", "timestamp_created", "created_at", "posted")
+RELEASE_DATE_COLUMNS = (
+    "release_date",
+    "release date",
+    "release_time",
+    "release time",
+    "released",
+    "release",
+)
 
 
 def normalize_column(value: str) -> str:
@@ -269,6 +277,13 @@ def infer_schema(args, input_path: Path) -> dict[str, str | None]:
             "user": infer_column(columns, args.user_column, USER_COLUMNS, "user", required=False),
             "playtime": infer_column(columns, args.playtime_column, PLAYTIME_COLUMNS, "playtime", required=False),
             "post_date": infer_column(columns, args.date_column, DATE_COLUMNS, "date", required=False),
+            "release_date": infer_column(
+                columns,
+                args.release_date_column,
+                RELEASE_DATE_COLUMNS,
+                "release-date",
+                required=False,
+            ),
         }
     except KeyError as exc:
         raise SystemExit(
@@ -320,6 +335,7 @@ def iter_filtered_rows(chunk: pd.DataFrame, schema: dict[str, str | None], args)
     users_arr = column("user")
     playtimes_arr = column("playtime")
     dates_arr = column("post_date")
+    release_dates_arr = column("release_date")
 
     for i in survivors:
         appid = clean_appid(appids_arr[i])
@@ -334,6 +350,7 @@ def iter_filtered_rows(chunk: pd.DataFrame, schema: dict[str, str | None], args)
             "user": clean_text(users_arr[i]) if users_arr is not None else "",
             "playtime": clean_text(playtimes_arr[i]) if playtimes_arr is not None else "",
             "post_date": clean_text(dates_arr[i]) if dates_arr is not None else "",
+            "release_date": clean_text(release_dates_arr[i]) if release_dates_arr is not None else "",
         }
 
 
@@ -405,9 +422,14 @@ def iter_chunk_records(input_path: Path, schema: dict[str, str | None], args):
                 submit_next(executor)
 
 
-def count_games(input_path: Path, schema: dict[str, str | None], args) -> tuple[dict[str, int], dict[str, str], int]:
+def count_games(
+    input_path: Path,
+    schema: dict[str, str | None],
+    args,
+) -> tuple[dict[str, int], dict[str, str], dict[str, str], int]:
     counts: defaultdict[str, int] = defaultdict(int)
     names: dict[str, str] = {}
+    release_dates: dict[str, str] = {}
     total_kept_reviews = 0
     for chunk_index, n_rows, rows in iter_chunk_records(input_path, schema, args):
         chunk_kept = 0
@@ -417,13 +439,15 @@ def count_games(input_path: Path, schema: dict[str, str | None], args) -> tuple[
             chunk_kept += 1
             if row["name"] and not names.get(appid):
                 names[appid] = row["name"]
+            if row["release_date"] and not release_dates.get(appid):
+                release_dates[appid] = row["release_date"]
         total_kept_reviews += chunk_kept
         print(
             f"pass1 chunk={chunk_index} rows={n_rows} kept_reviews={chunk_kept} "
             f"candidate_games={len(counts)}",
             flush=True,
         )
-    return dict(counts), names, total_kept_reviews
+    return dict(counts), names, release_dates, total_kept_reviews
 
 
 def write_reviews(input_path: Path, schema: dict[str, str | None], keep_appids: set[str],
@@ -480,7 +504,9 @@ def load_base_games(path: Path | None) -> dict:
 
 
 def write_games_json(output_path: Path, keep_appids: set[str], counts: dict[str, int],
-                     names: dict[str, str], base_games: dict) -> dict:
+                     names: dict[str, str], base_games: dict,
+                     release_dates: dict[str, str] | None = None) -> dict:
+    release_dates = release_dates or {}
     output = {}
     missing_metadata = []
     for appid in sorted(keep_appids, key=lambda value: int(value) if value.isdigit() else value):
@@ -489,10 +515,13 @@ def write_games_json(output_path: Path, keep_appids: set[str], counts: dict[str,
             missing_metadata.append(appid)
         if names.get(appid) and not record.get("name"):
             record["name"] = names[appid]
+        if release_dates.get(appid) and not str(record.get("release_date") or "").strip():
+            record["release_date"] = release_dates[appid]
         record.setdefault("name", appid)
         record.setdefault("detailed_description", "")
         record.setdefault("about_the_game", "")
         record.setdefault("short_description", "")
+        record.setdefault("release_date", "")
         record.setdefault("tags", {})
         record["kaggle_kept_reviews"] = counts[appid]
         output[appid] = record
@@ -615,6 +644,7 @@ def parse_args():
     parser.add_argument("--user-column", default=None)
     parser.add_argument("--playtime-column", default=None)
     parser.add_argument("--date-column", default=None)
+    parser.add_argument("--release-date-column", default=None)
     return parser.parse_args()
 
 
@@ -640,7 +670,7 @@ def main():
     maybe_prepare_output(args)
 
     schema = infer_schema(args, input_path)
-    counts, names, total_kept_reviews = count_games(input_path, schema, args)
+    counts, names, release_dates, total_kept_reviews = count_games(input_path, schema, args)
     keep_appids = {
         appid for appid, count in counts.items()
         if keep_count(count, args.min_count, args.strict_count)
@@ -659,6 +689,7 @@ def main():
         kept_counts,
         names,
         load_base_games(args.base_games_json),
+        release_dates,
     )
     manifest = {
         "input": str(input_path.resolve()),

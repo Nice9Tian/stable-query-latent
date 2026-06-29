@@ -60,6 +60,7 @@ try:
         copy_text_h5,
         decode_text,
         replace_with_retry,
+        sync_embedding_release_date,
     )
 except ImportError:  # pragma: no cover - direct script execution
     from h5_corpus import (
@@ -72,6 +73,7 @@ except ImportError:  # pragma: no cover - direct script execution
         copy_text_h5,
         decode_text,
         replace_with_retry,
+        sync_embedding_release_date,
     )
 
 DEFAULT_INPUT_H5 = DEFAULT_TEXT_H5
@@ -783,6 +785,15 @@ def one_file_output(
     input_h5 = Path(input_h5)
     output_h5 = Path(output_h5)
     if output_h5.exists() and not overwrite:
+        changed, reason = sync_embedding_release_date(input_h5, output_h5)
+        if changed:
+            print(
+                f"embed_incloud: {reason} in existing {output_h5}; skip re-embedding",
+                flush=True,
+            )
+            return output_h5
+        if reason != "release_date already up to date":
+            print(f"embed_incloud: release_date compat sync skipped ({reason})", flush=True)
         print(f"embed_incloud: skip existing {output_h5}", flush=True)
         return output_h5
     if not input_h5.exists():

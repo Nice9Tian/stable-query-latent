@@ -313,6 +313,7 @@ def validate_text_h5(path: Path, expected: dict) -> tuple[bool, str, dict]:
         "game_names": (games,),
         "appids": (games,),
         "game_titles": (games,),
+        "release_date": (games,),
         "tags_json": (games,),
         "positive": (games,),
         "negative": (games,),
@@ -459,12 +460,106 @@ def game_metadata(
     return {
         "appid": appid,
         "title": str(record.get("name") or record.get("title") or appid),
+        "release_date": str(
+            record.get("release_date")
+            or record.get("release_time")
+            or record.get("released")
+            or record.get("releaseDate")
+            or ""
+        ),
         "positive": -1 if positive is None else positive,
         "negative": -1 if negative is None else negative,
         "positive_rate": np.nan if positive_rate is None else positive_rate,
         "tags_json": json.dumps(tags, ensure_ascii=False, sort_keys=True),
         "label_source": label_source,
     }
+
+
+def release_dates_for_game_names(game_names: list[str], games: dict) -> list[str]:
+    return [
+        str(game_metadata(game_name, games).get("release_date") or "")
+        for game_name in game_names
+    ]
+
+
+def existing_text_h5_base_valid(counts: dict) -> tuple[bool, str]:
+    if counts.get("schema") != TEXT_H5_SCHEMA:
+        return False, "not a text H5"
+    games = int(counts.get("games", -1))
+    reviews = int(counts.get("reviews", -1))
+    sentences = int(counts.get("sentences", -1))
+    if games < 0 or reviews < 0 or sentences < 0:
+        return False, "missing count attrs"
+    required_shapes = {
+        "texts": (sentences,),
+        "sentence_ids": (sentences,),
+        "review_ids": (reviews,),
+        "review_offsets": (reviews + 1,),
+        "game_review_offsets": (games + 1,),
+        "game_names": (games,),
+        "appids": (games,),
+        "game_titles": (games,),
+    }
+    datasets = counts.get("datasets", {})
+    for name, shape in required_shapes.items():
+        if datasets.get(name) != shape:
+            return False, f"dataset {name!r} shape mismatch"
+    return True, "base text H5 metadata is usable"
+
+
+def sync_release_date_dataset(text_h5: Path, games_json: Path) -> tuple[bool, str, dict]:
+    """Create/fill ``release_date`` in an existing text H5 without rebuilding."""
+    text_h5 = Path(text_h5)
+    if not text_h5.exists():
+        return False, "missing file", {}
+
+    games = load_games_json(games_json)
+    changed = False
+    action = "release_date already up to date"
+    try:
+        with h5py.File(text_h5, "r+") as h5:
+            if decode_text(h5.attrs.get("schema", "")) != TEXT_H5_SCHEMA:
+                return False, "not a text H5", {}
+            if "game_names" not in h5:
+                return False, "missing game_names dataset", {}
+
+            game_names = [decode_text(value) for value in h5["game_names"][:]]
+            values = release_dates_for_game_names(game_names, games)
+            if "release_date" not in h5:
+                tmp_name = "__release_date_tmp"
+                if tmp_name in h5:
+                    del h5[tmp_name]
+                try:
+                    h5.create_dataset(tmp_name, data=np.asarray(values, dtype=string_dtype()))
+                    h5.move(tmp_name, "release_date")
+                    changed = True
+                    action = "release_date injected"
+                except BaseException:
+                    if tmp_name in h5:
+                        del h5[tmp_name]
+                    raise
+            else:
+                release_ds = h5["release_date"]
+                if tuple(release_ds.shape) != (len(game_names),):
+                    return False, "release_date shape mismatch", {}
+                update_count = 0
+                current = [decode_text(value) for value in release_ds[:]]
+                for index, (old_value, new_value) in enumerate(zip(current, values)):
+                    if not old_value.strip() and new_value.strip():
+                        release_ds[index] = new_value
+                        update_count += 1
+                if update_count:
+                    changed = True
+                    action = f"release_date filled {update_count} empty rows"
+
+            if changed:
+                h5.attrs["release_date_injected_at"] = time.strftime("%Y-%m-%dT%H:%M:%S")
+                h5.attrs["release_date_source_games_json"] = str(Path(games_json).resolve())
+                h5.flush()
+    except Exception as exc:
+        return False, f"cannot sync release_date: {exc}", {}
+
+    return changed, action, read_text_h5_counts(text_h5)
 
 
 def validate_text_shard(path: Path, plan: dict) -> bool:
@@ -479,6 +574,7 @@ def validate_text_shard(path: Path, plan: dict) -> bool:
                 and decode_text(h5.attrs.get("game_name", "")) == str(plan["game_name"])
                 and int(h5.attrs.get("reviews", -1)) == int(plan["reviews"])
                 and int(h5.attrs.get("sentences", -1)) == int(plan["sentences"])
+                and "meta_release_date" in h5.attrs
                 and tuple(h5["texts"].shape) == (int(plan["sentences"]),)
                 and tuple(h5["sentence_ids"].shape) == (int(plan["sentences"]),)
                 and tuple(h5["review_ids"].shape) == (int(plan["reviews"]),)
@@ -712,6 +808,71 @@ def build_text_h5(
     else:
         review_dirs = [Path(path) for path in reviews_dirs]
 
+    if output_h5.exists() and not overwrite:
+        try:
+            actual = read_text_h5_counts(output_h5)
+        except Exception as exc:
+            actual = {}
+            print(
+                f"build_text_h5: cannot inspect existing {output_h5} for "
+                f"release_date injection ({exc}); falling back to validation/rebuild",
+                flush=True,
+            )
+        base_valid, base_reason = existing_text_h5_base_valid(actual) if actual else (False, "not inspected")
+        if base_valid:
+            changed, reason, counts = sync_release_date_dataset(output_h5, games_json)
+            if changed:
+                write_text_h5_manifest(
+                    output_h5,
+                    {
+                        "games": counts["games"],
+                        "reviews": counts["reviews"],
+                        "sentences": counts["sentences"],
+                        "source_sentence_files": counts.get("source_sentence_files", []),
+                    },
+                    sentences_dir,
+                    games_json,
+                    review_dirs,
+                    label_min_length,
+                    limit_files,
+                    status="release_date_injected_existing",
+                )
+                print(
+                    f"build_text_h5: {reason} in existing {output_h5} "
+                    f"games={counts['games']} reviews={counts['reviews']} "
+                    f"sentences={counts['sentences']} -> skip rebuild",
+                    flush=True,
+                )
+                return output_h5
+            if "release_date" in actual.get("datasets", {}):
+                write_text_h5_manifest(
+                    output_h5,
+                    {
+                        "games": actual["games"],
+                        "reviews": actual["reviews"],
+                        "sentences": actual["sentences"],
+                        "source_sentence_files": actual.get("source_sentence_files", []),
+                    },
+                    sentences_dir,
+                    games_json,
+                    review_dirs,
+                    label_min_length,
+                    limit_files,
+                    status="validated_existing_fast",
+                )
+                print(
+                    f"build_text_h5: existing {output_h5} has release_date "
+                    f"({reason}) -> skip rebuild",
+                    flush=True,
+                )
+                return output_h5
+        elif actual and "release_date" not in actual.get("datasets", {}):
+            print(
+                f"build_text_h5: existing {output_h5} cannot use release_date "
+                f"compat path ({base_reason}); falling back to validation/rebuild",
+                flush=True,
+            )
+
     worker_count = text_worker_count(workers, len(list(sentences_dir.glob("*.json"))))
     plans, total_reviews, total_sentences = scan_sentence_files(
         sentences_dir,
@@ -785,7 +946,7 @@ def build_text_h5(
             h5.create_dataset("review_offsets", shape=(total_reviews + 1,), dtype=np.int64)
             h5.create_dataset("game_review_offsets", shape=(len(plans) + 1,), dtype=np.int64)
             for name in (
-                "game_names", "appids", "game_titles", "tags_json",
+                "game_names", "appids", "game_titles", "release_date", "tags_json",
                 "recommendation_label_source", "source_sentence_files",
             ):
                 h5.create_dataset(name, shape=(len(plans),), dtype=string_dtype())
@@ -832,6 +993,7 @@ def build_text_h5(
                     h5["game_names"][row] = str(plan["game_name"])
                     h5["appids"][row] = decode_text(shard.attrs["meta_appid"])
                     h5["game_titles"][row] = decode_text(shard.attrs["meta_title"])
+                    h5["release_date"][row] = decode_text(shard.attrs["meta_release_date"])
                     h5["tags_json"][row] = decode_text(shard.attrs["meta_tags_json"])
                     h5["recommendation_label_source"][row] = decode_text(shard.attrs["meta_label_source"])
                     h5["source_sentence_files"][row] = str(path.resolve())
@@ -911,6 +1073,53 @@ def copy_text_h5(source: h5py.File, target: h5py.File) -> None:
         target.attrs[key] = value
 
 
+def sync_embedding_release_date(input_h5: Path, output_h5: Path) -> tuple[bool, str]:
+    input_h5 = Path(input_h5)
+    output_h5 = Path(output_h5)
+    if not input_h5.exists():
+        return False, "input text H5 missing"
+    if not output_h5.exists():
+        return False, "output embedding H5 missing"
+    try:
+        with h5py.File(input_h5, "r") as source, h5py.File(output_h5, "r+") as target:
+            if "release_date" not in source:
+                return False, "input text H5 has no release_date"
+            if "game_names" not in source or "game_names" not in target:
+                return False, "missing game_names dataset"
+            source_games = [decode_text(value) for value in source["game_names"][:]]
+            target_games = [decode_text(value) for value in target["game_names"][:]]
+            if source_games != target_games:
+                return False, "game_names differ between text and embedding H5"
+            if tuple(source["release_date"].shape) != tuple(target["game_names"].shape):
+                return False, "source release_date shape mismatch"
+
+            changed = False
+            if "release_date" not in target:
+                source.copy("release_date", target)
+                changed = True
+                reason = "release_date copied from text H5"
+            else:
+                if tuple(target["release_date"].shape) != tuple(source["release_date"].shape):
+                    return False, "target release_date shape mismatch"
+                source_values = [decode_text(value) for value in source["release_date"][:]]
+                target_values = [decode_text(value) for value in target["release_date"][:]]
+                filled = 0
+                for index, (old_value, new_value) in enumerate(zip(target_values, source_values)):
+                    if not old_value.strip() and new_value.strip():
+                        target["release_date"][index] = new_value
+                        filled += 1
+                changed = filled > 0
+                reason = f"release_date filled {filled} empty rows" if changed else "release_date already up to date"
+
+            if changed:
+                target.attrs["release_date_synced_at"] = time.strftime("%Y-%m-%dT%H:%M:%S")
+                target.attrs["release_date_source_text_h5"] = str(input_h5.resolve())
+                target.flush()
+            return changed, reason
+    except Exception as exc:
+        return False, f"cannot sync embedding release_date: {exc}"
+
+
 def compression_kwargs(name: str, level: int) -> dict:
     if name == "none":
         return {}
@@ -941,6 +1150,15 @@ def embed_text_h5(
     input_h5 = Path(input_h5)
     output_h5 = Path(output_h5)
     if output_h5.exists() and not overwrite:
+        changed, reason = sync_embedding_release_date(input_h5, output_h5)
+        if changed:
+            print(
+                f"embed_text_h5: {reason} in existing {output_h5}; skip re-embedding",
+                flush=True,
+            )
+            return output_h5
+        if reason != "release_date already up to date":
+            print(f"embed_text_h5: release_date compat sync skipped ({reason})", flush=True)
         print(f"embed_text_h5: skip existing {output_h5}", flush=True)
         return output_h5
     if not input_h5.exists():

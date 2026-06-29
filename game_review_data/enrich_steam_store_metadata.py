@@ -170,6 +170,18 @@ def enrich_record(appid: str, record: dict, data: dict, overwrite_existing: bool
             changed = True
     if data.get("steam_appid"):
         record["steam_appid"] = int(data["steam_appid"])
+    release_date = data.get("release_date")
+    if isinstance(release_date, dict):
+        date_text = str(release_date.get("date") or "").strip()
+        coming_soon = release_date.get("coming_soon")
+        if date_text and (overwrite_existing or not str(record.get("release_date") or "").strip()):
+            record["release_date"] = date_text
+            changed = True
+        if coming_soon is not None and (
+            overwrite_existing or "release_coming_soon" not in record
+        ):
+            record["release_coming_soon"] = bool(coming_soon)
+            changed = True
     app_tags = tag_names_from_appdetails(data)
     if app_tags:
         tags = dict(record.get("tags") or {})
@@ -181,6 +193,7 @@ def enrich_record(appid: str, record: dict, data: dict, overwrite_existing: bool
     record.setdefault("detailed_description", "")
     record.setdefault("about_the_game", "")
     record.setdefault("short_description", "")
+    record.setdefault("release_date", "")
     record.setdefault("tags", {})
     return record, changed
 
@@ -220,7 +233,15 @@ def main():
     skipped = 0
     for appid in appids:
         record = games[str(appid)]
-        if has_description(record) and record.get("tags") and not args.overwrite_existing:
+        if (
+            has_description(record)
+            and record.get("tags")
+            and (
+                str(record.get("release_date") or "").strip()
+                or "release_coming_soon" in record
+            )
+            and not args.overwrite_existing
+        ):
             skipped += 1
         else:
             pending.append(str(appid))
