@@ -35,7 +35,7 @@ DEFAULT_SPLIT_BATCH_SIZE = 32
 DEFAULT_SPLIT_OUTER_BATCH_SIZE = 1000
 DEFAULT_PREFETCH_RAM_TARGET = 0.50
 DEFAULT_PREFETCH_MIN_RAM_GIB = 100
-DEFAULT_PREFETCH_MAX_FILES = 64
+DEFAULT_PREFETCH_MAX_FILES = 0
 DEFAULT_PREFETCH_WORKERS = 2
 
 AUTO_BUDGET_POINTS = (
@@ -126,7 +126,35 @@ def get_cuda_total_memory_gib(device) -> float | None:
         return None
 
 
-def get_total_system_ram_gib() -> float | None:
+def _read_cgroup_int(path: str) -> int | None:
+    try:
+        text = Path(path).read_text(encoding="utf-8").strip()
+    except Exception:
+        return None
+    if not text or text == "max":
+        return None
+    try:
+        value = int(text)
+    except ValueError:
+        return None
+    return value if value > 0 else None
+
+
+def get_cgroup_memory() -> tuple[int, int] | None:
+    limit = _read_cgroup_int("/sys/fs/cgroup/memory.max")
+    used = _read_cgroup_int("/sys/fs/cgroup/memory.current")
+    if limit is not None and used is not None:
+        return used, limit
+
+    limit = _read_cgroup_int("/sys/fs/cgroup/memory/memory.limit_in_bytes")
+    used = _read_cgroup_int("/sys/fs/cgroup/memory/memory.usage_in_bytes")
+    if limit is not None and used is not None:
+        return used, limit
+
+    return None
+
+
+def get_host_total_memory_bytes() -> int | None:
     try:
         if os.name == "nt":
             class MEMORYSTATUSEX(ctypes.Structure):
@@ -146,19 +174,41 @@ def get_total_system_ram_gib() -> float | None:
             status.dwLength = ctypes.sizeof(MEMORYSTATUSEX)
             if not ctypes.windll.kernel32.GlobalMemoryStatusEx(ctypes.byref(status)):
                 return None
-            return status.ullTotalPhys / (1024 ** 3)
+            return int(status.ullTotalPhys)
 
         if hasattr(os, "sysconf") and "SC_PHYS_PAGES" in os.sysconf_names:
             pages = os.sysconf("SC_PHYS_PAGES")
             page_size = os.sysconf("SC_PAGE_SIZE")
             if pages > 0 and page_size > 0:
-                return (pages * page_size) / (1024 ** 3)
+                return int(pages * page_size)
     except Exception:
         return None
     return None
 
 
+def get_total_system_ram_gib() -> float | None:
+    cgroup = get_cgroup_memory()
+    host_total = get_host_total_memory_bytes()
+    if cgroup is not None:
+        _used, limit = cgroup
+        if host_total is None or limit < host_total:
+            return limit / (1024 ** 3)
+
+    if host_total is not None:
+        return host_total / (1024 ** 3)
+
+    return None
+
+
 def get_system_memory_usage() -> tuple[float, float, float] | None:
+    cgroup = get_cgroup_memory()
+    host_total = get_host_total_memory_bytes()
+    if cgroup is not None:
+        used, limit = cgroup
+        if host_total is None or limit < host_total:
+            used = max(0, min(used, limit))
+            return used / limit, used / (1024 ** 3), limit / (1024 ** 3)
+
     try:
         if os.name == "nt":
             class MEMORYSTATUSEX(ctypes.Structure):
@@ -242,7 +292,7 @@ def resolve_prefetch_settings(
         prefetch_workers = DEFAULT_PREFETCH_WORKERS if enabled_by_ram else 1
 
     prefetch_ram_target = max(0.0, min(0.95, float(prefetch_ram_target)))
-    prefetch_max_files = max(1, int(prefetch_max_files))
+    prefetch_max_files = max(0, int(prefetch_max_files))
     prefetch_workers = max(1, int(prefetch_workers))
     return prefetch_ram_target, prefetch_max_files, prefetch_workers, enabled_by_ram
 
@@ -479,7 +529,7 @@ def split_data(
         f"{budget_note}, {batch_note}, "
         f"outer_batch_size={outer_batch_size}, "
         f"prefetch_ram_target={prefetch_ram_target:.0%}, "
-        f"prefetch_max_files={prefetch_max_files}, "
+        f"prefetch_max_files={prefetch_max_files or 'unlimited'}, "
         f"prefetch_workers={prefetch_workers}, "
         f"prefetch_auto_ram={'on' if prefetch_enabled_by_ram else 'off'} "
         f"-> {output_dir}",
@@ -521,7 +571,11 @@ def split_data(
             nonlocal next_prefetch_index
             while (
                 next_prefetch_index < len(process_files)
-                and len(pending_reads) + len(ready_reads) < prefetch_max_files
+                and len(pending_reads) < prefetch_workers
+                and (
+                    prefetch_max_files <= 0
+                    or len(pending_reads) + len(ready_reads) < prefetch_max_files
+                )
                 and (force_one or below_prefetch_ram_target())
             ):
                 item = process_files[next_prefetch_index]
