@@ -178,6 +178,8 @@ def parse_args():
 
     parser.add_argument("--min-length", type=int, default=300)
     parser.add_argument("--min-count", type=int, default=500)
+    parser.add_argument("--metadata-workers", type=int, default=0,
+                        help="Metadata CSV filter workers (0 -> up to 16 CPU cores, 1 -> single process).")
     parser.add_argument("--only", nargs="+", choices=STAGES, default=None)
     parser.add_argument("--skip", nargs="+", choices=STAGES, default=[])
     parser.add_argument("--no-meta", action="store_true")
@@ -315,6 +317,7 @@ def main():
             min_count=args.min_count,
             with_meta=with_meta,
             overwrite=args.overwrite,
+            workers=args.metadata_workers,
         )
 
     if "split" in run:
