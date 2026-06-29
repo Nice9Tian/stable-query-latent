@@ -34,10 +34,11 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import sys
 import time
 import shutil
-from concurrent.futures import FIRST_COMPLETED, ThreadPoolExecutor, wait
+from concurrent.futures import FIRST_COMPLETED, ThreadPoolExecutor, as_completed, wait
 from pathlib import Path
 
 import numpy as np
@@ -81,6 +82,7 @@ DEFAULT_OUTPUT_H5 = DEFAULT_EMBEDDING_H5
 DEFAULT_LOCAL_MODEL = "Qwen/Qwen3-Embedding-0.6B"
 EMBEDDING_BACKEND = "local_incloud"
 DEFAULT_SHARD_SIZE = 2_000_000
+DEFAULT_TEXT_LOAD_CHUNK_SIZE = 250_000
 CPU_DEFAULT_TOKEN_BUDGET = 131072
 VRAM_TOKEN_BUDGET_TIERS = (
     (16, 65536),
@@ -205,16 +207,78 @@ class FatGpuEmbedder:
         return pooled.to(out_dtype).cpu().numpy()
 
 
-def load_all_texts(input_h5: Path):
-    """Read every sentence text into a Python list (held in host RAM)."""
+def default_text_load_workers() -> int:
+    """Default parallel H5 text-load workers: all visible CPU cores minus one."""
+    return max(1, (os.cpu_count() or 2) - 1)
+
+
+def _load_text_chunk(input_h5: Path, start: int, end: int) -> tuple[int, list[str]]:
     import h5py
 
     with h5py.File(input_h5, "r") as h5:
+        raw = h5["texts"][int(start) : int(end)]
+    return int(start), [decode_text(value) for value in raw]
+
+
+def load_all_texts(
+    input_h5: Path,
+    *,
+    workers: int | None = None,
+    chunk_size: int = DEFAULT_TEXT_LOAD_CHUNK_SIZE,
+    log_prefix: str = "embed_incloud: ",
+) -> list[str]:
+    """Read every sentence text into a Python list (held in host RAM)."""
+    import h5py
+
+    input_h5 = Path(input_h5)
+    with h5py.File(input_h5, "r") as h5:
         if "texts" not in h5:
             raise ValueError(f"{input_h5} has no 'texts' dataset")
-        raw = h5["texts"][:]
-    texts = [decode_text(value) for value in raw]
-    return texts
+        total = int(h5["texts"].shape[0])
+
+    if total <= 0:
+        return []
+
+    worker_count = int(workers if workers is not None and workers > 0 else default_text_load_workers())
+    chunk_size = max(1, int(chunk_size))
+    ranges = [(start, min(start + chunk_size, total)) for start in range(0, total, chunk_size)]
+    texts: list[str | None] = [None] * total
+    started = time.time()
+
+    print(
+        f"{log_prefix}parallel text preload: workers={worker_count} "
+        f"chunk_size={chunk_size} chunks={len(ranges)}",
+        flush=True,
+    )
+
+    done = 0
+    last_log = 0
+    log_stride = max(chunk_size * max(worker_count, 1) * 2, 1_000_000)
+
+    if worker_count == 1 or len(ranges) == 1:
+        for start, end in ranges:
+            chunk_start, chunk = _load_text_chunk(input_h5, start, end)
+            texts[chunk_start : chunk_start + len(chunk)] = chunk
+            done += len(chunk)
+            if done == total or done - last_log >= log_stride:
+                last_log = done
+                elapsed = time.time() - started
+                rate = done / elapsed if elapsed > 0 else 0.0
+                print(f"{log_prefix}  loaded texts {done}/{total} ({rate:.0f}/s)", flush=True)
+    else:
+        with ThreadPoolExecutor(max_workers=worker_count) as executor:
+            futures = [executor.submit(_load_text_chunk, input_h5, start, end) for start, end in ranges]
+            for future in as_completed(futures):
+                chunk_start, chunk = future.result()
+                texts[chunk_start : chunk_start + len(chunk)] = chunk
+                done += len(chunk)
+                if done == total or done - last_log >= log_stride:
+                    last_log = done
+                    elapsed = time.time() - started
+                    rate = done / elapsed if elapsed > 0 else 0.0
+                    print(f"{log_prefix}  loaded texts {done}/{total} ({rate:.0f}/s)", flush=True)
+
+    return [text if text is not None else "" for text in texts]
 
 
 def manifest_path_for(output_h5: Path) -> Path:
@@ -774,6 +838,8 @@ def one_file_output(
     shard_size: int = DEFAULT_SHARD_SIZE,
     token_budget: int = 0,
     max_batch: int = 8192,
+    text_load_workers: int | None = None,
+    text_load_chunk_size: int = DEFAULT_TEXT_LOAD_CHUNK_SIZE,
     overwrite: bool = False,
 ) -> Path:
     """Old monolith behavior: embed everything in RAM, then write one H5."""
@@ -807,7 +873,11 @@ def one_file_output(
 
     started = time.time()
     print(f"embed_incloud: loading all texts from {input_h5} into RAM ...", flush=True)
-    texts = load_all_texts(input_h5)
+    texts = load_all_texts(
+        input_h5,
+        workers=text_load_workers,
+        chunk_size=text_load_chunk_size,
+    )
     total_sentences = len(texts)
     if total_sentences == 0:
         raise ValueError(f"{input_h5} has no sentence texts")
@@ -1105,6 +1175,8 @@ def stream_cloud_output(
     shard_size: int = DEFAULT_SHARD_SIZE,
     token_budget: int = 0,
     max_batch: int = 8192,
+    text_load_workers: int | None = None,
+    text_load_chunk_size: int = DEFAULT_TEXT_LOAD_CHUNK_SIZE,
     overwrite: bool = False,
     output_dir: Path | None = None,
     cloud_stream_dir: Path | None = None,
@@ -1137,7 +1209,11 @@ def stream_cloud_output(
 
     started = time.time()
     print(f"embed_incloud: loading all texts from {input_h5} into RAM ...", flush=True)
-    texts = load_all_texts(input_h5)
+    texts = load_all_texts(
+        input_h5,
+        workers=text_load_workers,
+        chunk_size=text_load_chunk_size,
+    )
     total_sentences = len(texts)
     if total_sentences == 0:
         raise ValueError(f"{input_h5} has no sentence texts")
@@ -1339,6 +1415,8 @@ def embed_incloud(
     shard_size: int = DEFAULT_SHARD_SIZE,
     token_budget: int = 0,
     max_batch: int = 8192,
+    text_load_workers: int | None = None,
+    text_load_chunk_size: int = DEFAULT_TEXT_LOAD_CHUNK_SIZE,
     overwrite: bool = False,
     output_dir: Path | None = None,
     cloud_stream_dir: Path | None = None,
@@ -1365,6 +1443,8 @@ def embed_incloud(
             shard_size=shard_size,
             token_budget=token_budget,
             max_batch=max_batch,
+            text_load_workers=text_load_workers,
+            text_load_chunk_size=text_load_chunk_size,
             overwrite=overwrite,
             output_dir=output_dir,
             cloud_stream_dir=cloud_stream_dir,
@@ -1389,6 +1469,8 @@ def embed_incloud(
         shard_size=shard_size,
         token_budget=token_budget,
         max_batch=max_batch,
+        text_load_workers=text_load_workers,
+        text_load_chunk_size=text_load_chunk_size,
         overwrite=overwrite,
     )
 
@@ -1430,6 +1512,18 @@ def parse_args():
     parser.add_argument("--no-sort", dest="sort", action="store_false", help="disable length-sorted batching")
     parser.add_argument("--tok-workers", default=4, type=int, help="CPU tokenization threads")
     parser.add_argument("--prefetch", default=8, type=int, help="max tokenized batches kept in flight")
+    parser.add_argument(
+        "--text-load-workers",
+        default=0,
+        type=int,
+        help="parallel H5 text preload workers; 0 uses cpu_count()-1",
+    )
+    parser.add_argument(
+        "--text-load-chunk-size",
+        default=DEFAULT_TEXT_LOAD_CHUNK_SIZE,
+        type=int,
+        help="sentences per H5 text preload task",
+    )
     parser.add_argument("--dtype", choices=["float16", "float32"], default="float16")
     parser.add_argument("--chunk-rows", default=2048, type=int)
     parser.add_argument("--compression", choices=["none", "gzip", "lzf"], default="none")
@@ -1466,6 +1560,8 @@ def main():
         shard_size=args.shard_size,
         token_budget=args.token_budget,
         max_batch=args.max_batch,
+        text_load_workers=args.text_load_workers,
+        text_load_chunk_size=args.text_load_chunk_size,
         overwrite=args.overwrite,
         output_dir=args.output_dir,
         cloud_stream_dir=args.cloud_stream_dir,
