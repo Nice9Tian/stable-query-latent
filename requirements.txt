@@ -14,3 +14,4 @@ bertopic
 hdbscan
 umap-learn
 ijson
+psutil
