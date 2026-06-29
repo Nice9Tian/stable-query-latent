@@ -91,14 +91,14 @@ def _apply_cloud_train_options(cmd: list[str], args) -> list[str]:
     return cmd
 
 
-def build_train_command(args, output_dim: int, arm: str, train_games: int, view: float, combo_dir: Path) -> list[str]:
-    cmd = _BASE_BUILD_TRAIN_COMMAND(args, output_dim, arm, train_games, view, combo_dir)
+def build_train_command(args, output_dim: int, arm: str, train_games: int, view: float, combo_dir: Path, latent_scale: float = 1.0) -> list[str]:
+    cmd = _BASE_BUILD_TRAIN_COMMAND(args, output_dim, arm, train_games, view, combo_dir, latent_scale)
     _set_option(cmd, "--probe-history-tsv", combo_dir / "dual_probe_history.tsv")
     return _apply_cloud_train_options(cmd, args)
 
 
-def build_paired_train_command(args, output_dim: int, train_games: int, view: float) -> list[str]:
-    cmd = _BASE_BUILD_PAIRED_TRAIN_COMMAND(args, output_dim, train_games, view)
+def build_paired_train_command(args, output_dim: int, train_games: int, view: float, latent_scale: float = 1.0) -> list[str]:
+    cmd = _BASE_BUILD_PAIRED_TRAIN_COMMAND(args, output_dim, train_games, view, latent_scale)
     return _apply_cloud_train_options(cmd, args)
 
 
@@ -172,6 +172,18 @@ def parse_args(argv: list[str] | None = None):
     parser.add_argument("--no-full-count", action="store_true", help="Do not append full-pool training after stepped counts.")
     parser.add_argument("--sample-fractions", type=float, nargs="+", default=[0.8, 0.6, 0.4, 0.2])
     parser.add_argument("--output-dims", type=int, nargs="+", default=[18, 36, 72])
+    parser.add_argument(
+        "--latent-scales",
+        type=float,
+        nargs="+",
+        default=[1.0],
+        help=(
+            "Multipliers for --base-num-latents. Example: 1 2 4 runs "
+            "256/512/1024 latent slots when --base-num-latents is 256."
+        ),
+    )
+    parser.add_argument("--base-num-latents", type=int, default=256)
+    parser.add_argument("--latent-dim", type=int, default=256)
     parser.add_argument("--arms", nargs="+", default=["grl", "nogrl"], choices=["grl", "nogrl"])
     parser.add_argument("--epochs", type=int, default=30)
     parser.add_argument("--steps-per-epoch", type=int, default=4)

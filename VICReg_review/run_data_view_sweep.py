@@ -5,6 +5,7 @@ The sweep varies four axes:
 * train-game-count: how many games are visible during self-supervised training.
 * sample-fraction: the random review-view fraction used for the two VICReg views.
 * output-dim: compact game-vector width after the hierarchical encoder.
+* latent-scale: multiplier for the latent-array slot count.
 * arm: GRL adversary enabled vs disabled. The no-GRL arm also disables the
   recommendation loss for the corrected ablation.
 
@@ -97,10 +98,22 @@ def train_games_label(train_games: int) -> str:
     return "all" if train_games <= 0 else f"{train_games:03d}"
 
 
-def combo_name(output_dim: int, arm: str, train_games: int, view: float) -> str:
+def latent_scale_label(latent_scale: float, num_latents: int) -> str:
+    scale_text = f"{float(latent_scale):g}".replace(".", "p").replace("-", "m")
+    return f"lat{int(num_latents):03d}x{scale_text}"
+
+
+def effective_num_latents(args, latent_scale: float) -> int:
+    return max(1, int(round(int(args.base_num_latents) * float(latent_scale))))
+
+
+def combo_name(output_dim: int, arm: str, train_games: int, view: float, latent_scale: float = 1.0, num_latents: int = 256) -> str:
+    latent_suffix = ""
+    if int(num_latents) != 256 or not math.isclose(float(latent_scale), 1.0, rel_tol=0.0, abs_tol=1e-9):
+        latent_suffix = f"_{latent_scale_label(latent_scale, num_latents)}"
     return (
         f"dim{output_dim:03d}_{arm_label(arm)}_n{train_games_label(train_games)}"
-        f"_view{int(round(view * 100)):02d}"
+        f"_view{int(round(view * 100)):02d}{latent_suffix}"
     )
 
 
@@ -165,6 +178,34 @@ def manifest_matches_arm(path: Path, arm: str) -> bool:
     return True
 
 
+def manifest_matches_config(path: Path, args, arm: str, output_dim: int, latent_scale: float) -> bool:
+    payload = manifest_payload(path)
+    if not payload:
+        return False
+    if not manifest_matches_arm(path, arm):
+        return False
+    expected_num_latents = effective_num_latents(args, latent_scale)
+    checks = {
+        "output_dim": int(output_dim),
+        "num_latents": int(expected_num_latents),
+        "latent_dim": int(args.latent_dim),
+    }
+    for key, expected in checks.items():
+        if key not in payload:
+            if key == "output_dim" and expected == int(output_dim):
+                continue
+            if key in {"num_latents", "latent_dim"} and expected == 256:
+                continue
+            return False
+        try:
+            actual = int(payload.get(key))
+        except (TypeError, ValueError):
+            return False
+        if actual != expected:
+            return False
+    return True
+
+
 def report_payload(path: Path) -> dict | None:
     if not path.exists():
         return None
@@ -182,15 +223,19 @@ def checkpoint_fingerprint(path: Path) -> dict | None:
     return {"size": int(stat.st_size), "mtime_ns": int(stat.st_mtime_ns)}
 
 
-def report_is_current(report_path: Path, checkpoint_path: Path, manifest_path: Path | None = None, arm: str | None = None) -> bool:
+def report_is_current(report_path: Path, checkpoint_path: Path, manifest_path: Path | None = None, arm: str | None = None, args=None, output_dim: int | None = None, latent_scale: float = 1.0) -> bool:
     report = report_payload(report_path)
     if not report:
         return False
     current = checkpoint_fingerprint(checkpoint_path)
     if current is None:
         return False
-    if arm is not None and manifest_path is not None and not manifest_matches_arm(manifest_path, arm):
-        return False
+    if arm is not None and manifest_path is not None:
+        if args is not None and output_dim is not None:
+            if not manifest_matches_config(manifest_path, args, arm, output_dim, latent_scale):
+                return False
+        elif not manifest_matches_arm(manifest_path, arm):
+            return False
     observed = report.get("checkpoint_file")
     if not isinstance(observed, dict):
         return False
@@ -202,12 +247,13 @@ def report_is_current(report_path: Path, checkpoint_path: Path, manifest_path: P
     return observed_size == current["size"] and observed_mtime == current["mtime_ns"]
 
 
-def combo_dir_for(args, output_dim: int, arm: str, train_games: int, view: float) -> Path:
-    return args.out_dir / combo_name(output_dim, arm, train_games, view)
+def combo_dir_for(args, output_dim: int, arm: str, train_games: int, view: float, latent_scale: float = 1.0) -> Path:
+    num_latents = effective_num_latents(args, latent_scale)
+    return args.out_dir / combo_name(output_dim, arm, train_games, view, latent_scale, num_latents)
 
 
-def combo_paths(args, output_dim: int, arm: str, train_games: int, view: float) -> dict[str, Path]:
-    combo_dir = combo_dir_for(args, output_dim, arm, train_games, view)
+def combo_paths(args, output_dim: int, arm: str, train_games: int, view: float, latent_scale: float = 1.0) -> dict[str, Path]:
+    combo_dir = combo_dir_for(args, output_dim, arm, train_games, view, latent_scale)
     return {
         "dir": combo_dir,
         "checkpoint": combo_dir / "vicreg_review_h5_latest.pt",
@@ -227,8 +273,8 @@ def manifest_status(path: Path) -> str | None:
         return "bad_json"
 
 
-def combo_needs_train(args, output_dim: int, arm: str, train_games: int, view: float) -> bool:
-    paths = combo_paths(args, output_dim, arm, train_games, view)
+def combo_needs_train(args, output_dim: int, arm: str, train_games: int, view: float, latent_scale: float = 1.0) -> bool:
+    paths = combo_paths(args, output_dim, arm, train_games, view, latent_scale)
     if args.force_train:
         return True
     if not paths["checkpoint"].exists():
@@ -238,15 +284,15 @@ def combo_needs_train(args, output_dim: int, arm: str, train_games: int, view: f
         return True
     if payload.get("status") != "done":
         return True
-    return not manifest_matches_arm(paths["manifest"], arm)
+    return not manifest_matches_config(paths["manifest"], args, arm, output_dim, latent_scale)
 
 
-def is_resumable_partial(args, output_dim: int, arm: str, train_games: int, view: float) -> bool:
-    paths = combo_paths(args, output_dim, arm, train_games, view)
+def is_resumable_partial(args, output_dim: int, arm: str, train_games: int, view: float, latent_scale: float = 1.0) -> bool:
+    paths = combo_paths(args, output_dim, arm, train_games, view, latent_scale)
     payload = manifest_payload(paths["manifest"])
     if not paths["checkpoint"].exists() or args.force_train or payload is None:
         return False
-    return payload.get("status") not in {None, "done"} and manifest_matches_arm(paths["manifest"], arm)
+    return payload.get("status") not in {None, "done"} and manifest_matches_config(paths["manifest"], args, arm, output_dim, latent_scale)
 
 
 def should_try_paired_training(output_dim: int, train_games: int, view: float) -> bool:
@@ -268,8 +314,9 @@ def max_view_sentences_for(args, view: float) -> int:
     return int(args.max_view_sentences_default)
 
 
-def build_train_command(args, output_dim: int, arm: str, train_games: int, view: float, combo_dir: Path) -> list[str]:
+def build_train_command(args, output_dim: int, arm: str, train_games: int, view: float, combo_dir: Path, latent_scale: float = 1.0) -> list[str]:
     checkpoint = combo_dir / "vicreg_review_h5_latest.pt"
+    num_latents = effective_num_latents(args, latent_scale)
     cmd = [
         str(args.python),
         str(SCRIPT_DIR / "train_vicreg_review_h5.py"),
@@ -284,6 +331,8 @@ def build_train_command(args, output_dim: int, arm: str, train_games: int, view:
         "--train-game-seed", str(args.train_game_seed),
         "--train-game-anchor-appids", args.train_game_anchor_appids,
         "--encoder-arch", "hierarchical",
+        "--latent-dim", str(args.latent_dim),
+        "--num-latents", str(num_latents),
         "--output-dim", str(output_dim),
         "--reduce-hidden", "128",
         "--vicreg-scope", "game",
@@ -307,7 +356,7 @@ def build_train_command(args, output_dim: int, arm: str, train_games: int, view:
     max_view_sentences = max_view_sentences_for(args, view)
     if max_view_sentences > 0:
         cmd.extend(["--max-view-sentences", str(max_view_sentences)])
-    if is_resumable_partial(args, output_dim, arm, train_games, view):
+    if is_resumable_partial(args, output_dim, arm, train_games, view, latent_scale):
         cmd.extend(["--resume-checkpoint", str(checkpoint)])
         cmd.append("--reset-optimizer-on-resume")
     if arm_label(arm) == "nogrl":
@@ -315,9 +364,10 @@ def build_train_command(args, output_dim: int, arm: str, train_games: int, view:
     return cmd
 
 
-def build_paired_train_command(args, output_dim: int, train_games: int, view: float) -> list[str]:
-    grl = combo_paths(args, output_dim, "grl", train_games, view)
-    nogrl = combo_paths(args, output_dim, "nogrl", train_games, view)
+def build_paired_train_command(args, output_dim: int, train_games: int, view: float, latent_scale: float = 1.0) -> list[str]:
+    grl = combo_paths(args, output_dim, "grl", train_games, view, latent_scale)
+    nogrl = combo_paths(args, output_dim, "nogrl", train_games, view, latent_scale)
+    num_latents = effective_num_latents(args, latent_scale)
     cmd = [
         str(args.python),
         str(SCRIPT_DIR / "train_vicreg_review_h5_paired.py"),
@@ -332,6 +382,8 @@ def build_paired_train_command(args, output_dim: int, train_games: int, view: fl
         "--train-game-seed", str(args.train_game_seed),
         "--train-game-anchor-appids", args.train_game_anchor_appids,
         "--encoder-arch", "hierarchical",
+        "--latent-dim", str(args.latent_dim),
+        "--num-latents", str(num_latents),
         "--output-dim", str(output_dim),
         "--reduce-hidden", "128",
         "--vicreg-scope", "game",
@@ -906,6 +958,9 @@ def flatten_manifest(manifest: dict, base: dict) -> dict:
         "step": manifest.get("step"),
         "input_h5": manifest.get("input_h5"),
         "checkpoint_out": manifest.get("checkpoint_out"),
+        "num_latents": manifest.get("num_latents"),
+        "latent_dim": manifest.get("latent_dim"),
+        "output_dim": manifest.get("output_dim"),
         "train_game_count": manifest.get("train_game_count"),
         "train_game_seed": manifest.get("train_game_seed"),
         "train_game_appids": ",".join(str(x) for x in manifest.get("train_game_appids", [])),
@@ -933,6 +988,8 @@ def export_raw_detail_tables(args, rows: list[dict]) -> None:
     for row in rows:
         base = {
             "output_dim": row.get("output_dim"),
+            "latent_scale": row.get("latent_scale"),
+            "num_latents": row.get("num_latents"),
             "arm": row.get("arm"),
             "combo": row.get("combo"),
             "train_games": row.get("train_games"),
@@ -944,6 +1001,7 @@ def export_raw_detail_tables(args, rows: list[dict]) -> None:
             str(row["arm"]),
             int(row["train_games"]),
             float(row["view_fraction"]),
+            float(row.get("latent_scale", 1.0)),
         )
         manifest_path = combo_dir / "vicreg_review_h5_manifest.json"
         if manifest_path.exists():
@@ -955,7 +1013,15 @@ def export_raw_detail_tables(args, rows: list[dict]) -> None:
         eval_path = combo_dir / "eval_report.json"
         arm = str(row["arm"])
         manifest_path = combo_dir / "vicreg_review_h5_manifest.json"
-        if not report_is_current(eval_path, combo_dir / "vicreg_review_h5_latest.pt", manifest_path, arm):
+        if not report_is_current(
+            eval_path,
+            combo_dir / "vicreg_review_h5_latest.pt",
+            manifest_path,
+            arm,
+            args,
+            int(row["output_dim"]),
+            float(row.get("latent_scale", 1.0)),
+        ):
             continue
         report = report_payload(eval_path)
         if report is None:
@@ -1038,30 +1104,37 @@ def render_report(rows: list[dict], args) -> str:
     complete = [row for row in rows if row["status"] == "done"]
     best = max(complete, key=lambda row: row["composite_score"]) if complete else None
     paired = []
-    by_key = {(row.get("output_dim"), row.get("arm"), row["train_games"], row["view_fraction"]): row for row in complete}
+    by_key = {
+        (row.get("output_dim"), row.get("latent_scale"), row.get("arm"), row["train_games"], row["view_fraction"]): row
+        for row in complete
+    }
     for output_dim in args.output_dims:
-        for train_games in args.train_game_counts:
-            for view in args.sample_fractions:
-                grl = by_key.get((output_dim, "grl", train_games, view))
-                nogrl = by_key.get((output_dim, "nogrl", train_games, view))
-                if not grl or not nogrl:
-                    continue
-                paired.append({
-                    "output_dim": output_dim,
-                    "train_games": train_games,
-                    "view_fraction": view,
-                    "delta_score": grl["composite_score"] - nogrl["composite_score"],
-                    "delta_tag": grl["tag_micro_f1"] - nogrl["tag_micro_f1"],
-                    "delta_sentiment_r2": grl["sentiment_r2"] - nogrl["sentiment_r2"],
-                    "delta_reco_pearson_abs": abs(grl["recommendation_pearson"]) - abs(nogrl["recommendation_pearson"]),
-                    "delta_hit_at_5": grl["hit_at_5"] - nogrl["hit_at_5"],
-                    "delta_pr": grl["pr"] - nogrl["pr"],
-                })
+        for latent_scale in args.latent_scales:
+            for train_games in args.train_game_counts:
+                for view in args.sample_fractions:
+                    grl = by_key.get((output_dim, latent_scale, "grl", train_games, view))
+                    nogrl = by_key.get((output_dim, latent_scale, "nogrl", train_games, view))
+                    if not grl or not nogrl:
+                        continue
+                    paired.append({
+                        "output_dim": output_dim,
+                        "latent_scale": latent_scale,
+                        "num_latents": effective_num_latents(args, latent_scale),
+                        "train_games": train_games,
+                        "view_fraction": view,
+                        "delta_score": grl["composite_score"] - nogrl["composite_score"],
+                        "delta_tag": grl["tag_micro_f1"] - nogrl["tag_micro_f1"],
+                        "delta_sentiment_r2": grl["sentiment_r2"] - nogrl["sentiment_r2"],
+                        "delta_reco_pearson_abs": abs(grl["recommendation_pearson"]) - abs(nogrl["recommendation_pearson"]),
+                        "delta_hit_at_5": grl["hit_at_5"] - nogrl["hit_at_5"],
+                        "delta_pr": grl["pr"] - nogrl["pr"],
+                    })
     lines = [
         "# 数据量 x View Fraction 收尾实验报告",
         "",
         f"- 日期：{time.strftime('%Y-%m-%d')}",
         f"- 输出维度轴：{', '.join(str(x) for x in args.output_dims)}",
+        f"- latent array 槽位轴：{', '.join(f'{effective_num_latents(args, s)} (x{s:g})' for s in args.latent_scales)}",
         f"- 总游戏数：{getattr(args, 'num_games', '?')}；实验数据量轴（0=全量）：{', '.join(str(x) for x in args.train_game_counts)}",
         f"- view fraction：{', '.join(f'{v:.1f}' for v in args.sample_fractions)}",
         f"- 对照 arm：{', '.join(args.arms)}（grl=GRL 10 + reco 30；nogrl=GRL 0 + reco 0）。",
@@ -1075,7 +1148,7 @@ def render_report(rows: list[dict], args) -> str:
         lines.extend([
             "## 结论",
             "",
-            f"当前 sweep 的最佳综合窗口是 **dim={best['output_dim']}、arm={best['arm']}、N={best['train_games']}、view={best['view_fraction']:.1f}**。",
+            f"当前 sweep 的最佳综合窗口是 **dim={best['output_dim']}、latents={best['num_latents']}、arm={best['arm']}、N={best['train_games']}、view={best['view_fraction']:.1f}**。",
             f"综合分 {best['composite_score']:.3f}，TAG micro-F1 {best['tag_micro_f1']:.3f}，"
             f"身份 Hit@5 {best['hit_at_5']:.3f}，PR {best['pr']:.2f}，"
             f"情感 R² {best['sentiment_r2']:.3f}，好评率 Pearson {best['recommendation_pearson']:.3f}。",
@@ -1087,12 +1160,12 @@ def render_report(rows: list[dict], args) -> str:
     lines.extend([
         "## 数据量-性能曲线",
         "",
-        "| dim | arm | N | view | score | TAG F1 | sentiment R² | reco Pearson | PR | mean rank | Hit@1 | Hit@5 | Hit@100 | text cosine |",
-        "|---:|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|",
+        "| dim | latents | arm | N | view | score | TAG F1 | sentiment R² | reco Pearson | PR | mean rank | Hit@1 | Hit@5 | Hit@100 | text cosine |",
+        "|---:|---:|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|",
     ])
-    for row in sorted(complete, key=lambda x: (x["output_dim"], x["arm"], x["train_games"], x["view_fraction"])):
+    for row in sorted(complete, key=lambda x: (x["output_dim"], x["latent_scale"], x["arm"], x["train_games"], x["view_fraction"])):
         lines.append(
-            f"| {row['output_dim']} | {row['arm']} | {row['train_games']} | {row['view_fraction']:.1f} | {row['composite_score']:.3f} | "
+            f"| {row['output_dim']} | {row['num_latents']} | {row['arm']} | {row['train_games']} | {row['view_fraction']:.1f} | {row['composite_score']:.3f} | "
             f"{row['tag_micro_f1']:.3f} | {row['sentiment_r2']:.3f} | {row['recommendation_pearson']:.3f} | "
             f"{row['pr']:.2f} | {row['mean_rank']:.1f} | {row['hit_at_1']:.3f} | {row['hit_at_5']:.3f} | "
             f"{row['hit_at_100']:.3f} | {row['mean_text_cosine']:.3f} |"
@@ -1102,12 +1175,12 @@ def render_report(rows: list[dict], args) -> str:
         "",
         "## GRL 对照差值",
         "",
-        "| dim | N | view | Δscore | ΔTAG F1 | Δsentiment R² | Δabs(reco Pearson) | ΔHit@5 | ΔPR |",
-        "|---:|---:|---:|---:|---:|---:|---:|---:|---:|",
+        "| dim | latents | N | view | Δscore | ΔTAG F1 | Δsentiment R² | Δabs(reco Pearson) | ΔHit@5 | ΔPR |",
+        "|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|",
     ])
     for row in paired:
         lines.append(
-            f"| {row['output_dim']} | {row['train_games']} | {row['view_fraction']:.1f} | {row['delta_score']:+.3f} | "
+            f"| {row['output_dim']} | {row['num_latents']} | {row['train_games']} | {row['view_fraction']:.1f} | {row['delta_score']:+.3f} | "
             f"{row['delta_tag']:+.3f} | {row['delta_sentiment_r2']:+.3f} | "
             f"{row['delta_reco_pearson_abs']:+.3f} | {row['delta_hit_at_5']:+.3f} | {row['delta_pr']:+.2f} |"
         )
@@ -1118,27 +1191,29 @@ def render_report(rows: list[dict], args) -> str:
         "",
         "## View 最佳窗口预测",
         "",
-        "| dim | arm | view | 平均 score | 平均 TAG F1 | 平均 Hit@5 | 平均 PR | 平均 sentiment R² |",
-        "|---:|---|---:|---:|---:|---:|---:|---:|",
+        "| dim | latents | arm | view | 平均 score | 平均 TAG F1 | 平均 Hit@5 | 平均 PR | 平均 sentiment R² |",
+        "|---:|---:|---|---:|---:|---:|---:|---:|---:|",
     ])
     for output_dim in args.output_dims:
-        for arm in args.arms:
-            for view in args.sample_fractions:
-                subset = [
-                    row for row in complete
-                    if row["output_dim"] == output_dim
-                    and row["arm"] == arm
-                    and abs(row["view_fraction"] - view) < 1e-8
-                ]
-                if not subset:
-                    continue
-                lines.append(
-                    f"| {output_dim} | {arm} | {view:.1f} | {np.mean([r['composite_score'] for r in subset]):.3f} | "
-                    f"{np.mean([r['tag_micro_f1'] for r in subset]):.3f} | "
-                    f"{np.mean([r['hit_at_5'] for r in subset]):.3f} | "
-                    f"{np.mean([r['pr'] for r in subset]):.2f} | "
-                    f"{np.mean([r['sentiment_r2'] for r in subset]):.3f} |"
-                )
+        for latent_scale in args.latent_scales:
+            for arm in args.arms:
+                for view in args.sample_fractions:
+                    subset = [
+                        row for row in complete
+                        if row["output_dim"] == output_dim
+                        and abs(float(row["latent_scale"]) - float(latent_scale)) < 1e-8
+                        and row["arm"] == arm
+                        and abs(row["view_fraction"] - view) < 1e-8
+                    ]
+                    if not subset:
+                        continue
+                    lines.append(
+                        f"| {output_dim} | {effective_num_latents(args, latent_scale)} | {arm} | {view:.1f} | {np.mean([r['composite_score'] for r in subset]):.3f} | "
+                        f"{np.mean([r['tag_micro_f1'] for r in subset]):.3f} | "
+                        f"{np.mean([r['hit_at_5'] for r in subset]):.3f} | "
+                        f"{np.mean([r['pr'] for r in subset]):.2f} | "
+                        f"{np.mean([r['sentiment_r2'] for r in subset]):.3f} |"
+                    )
 
     lines.extend([
         "",
@@ -1155,49 +1230,67 @@ def render_report(rows: list[dict], args) -> str:
 def summarize(args) -> list[dict]:
     rows = []
     for output_dim in args.output_dims:
-        for arm in args.arms:
-            arm = arm_label(arm)
-            for train_games in args.train_game_counts:
-                for view in args.sample_fractions:
-                    name = combo_name(output_dim, arm, train_games, view)
-                    combo_dir = combo_dir_for(args, output_dim, arm, train_games, view)
-                    eval_path = combo_dir / "eval_report.json"
-                    manifest_path = combo_dir / "vicreg_review_h5_manifest.json"
-                    status = manifest_status(manifest_path)
-                    row = {
-                        "output_dim": output_dim,
-                        "arm": arm,
-                        "combo": name,
-                        "train_games": train_games,
-                        "view_fraction": view,
-                    }
-                    checkpoint_path = combo_dir / "vicreg_review_h5_latest.pt"
-                    report_current = report_is_current(eval_path, checkpoint_path, manifest_path, arm)
-                    manifest_current = status == "done" and manifest_matches_arm(manifest_path, arm)
-                    if report_current and manifest_current:
-                        report = report_payload(eval_path)
-                        if report is None:
+        for latent_scale in args.latent_scales:
+            num_latents = effective_num_latents(args, latent_scale)
+            for arm in args.arms:
+                arm = arm_label(arm)
+                for train_games in args.train_game_counts:
+                    for view in args.sample_fractions:
+                        name = combo_name(output_dim, arm, train_games, view, latent_scale, num_latents)
+                        combo_dir = combo_dir_for(args, output_dim, arm, train_games, view, latent_scale)
+                        eval_path = combo_dir / "eval_report.json"
+                        manifest_path = combo_dir / "vicreg_review_h5_manifest.json"
+                        status = manifest_status(manifest_path)
+                        row = {
+                            "output_dim": output_dim,
+                            "latent_scale": latent_scale,
+                            "num_latents": num_latents,
+                            "arm": arm,
+                            "combo": name,
+                            "train_games": train_games,
+                            "view_fraction": view,
+                        }
+                        checkpoint_path = combo_dir / "vicreg_review_h5_latest.pt"
+                        report_current = report_is_current(
+                            eval_path,
+                            checkpoint_path,
+                            manifest_path,
+                            arm,
+                            args,
+                            output_dim,
+                            latent_scale,
+                        )
+                        manifest_current = status == "done" and manifest_matches_config(
+                            manifest_path,
+                            args,
+                            arm,
+                            output_dim,
+                            latent_scale,
+                        )
+                        if report_current and manifest_current:
+                            report = report_payload(eval_path)
+                            if report is None:
+                                row["status"] = "stale_eval"
+                                rows.append(row)
+                                continue
+                            row.update(scalar_from_report(report))
+                            row["composite_score"] = composite_score(row)
+                            if status == "done":
+                                row["status"] = "done"
+                            elif status is None:
+                                row["status"] = "evaluated_no_manifest"
+                            else:
+                                row["status"] = f"evaluated_{status}"
+                        elif eval_path.exists():
                             row["status"] = "stale_eval"
-                            rows.append(row)
-                            continue
-                        row.update(scalar_from_report(report))
-                        row["composite_score"] = composite_score(row)
-                        if status == "done":
-                            row["status"] = "done"
-                        elif status is None:
-                            row["status"] = "evaluated_no_manifest"
+                        elif manifest_path.exists():
+                            if status == "done" and not manifest_matches_config(manifest_path, args, arm, output_dim, latent_scale):
+                                row["status"] = "stale_manifest"
+                            else:
+                                row["status"] = "trained_done_missing_eval" if status == "done" else (status or "missing_eval")
                         else:
-                            row["status"] = f"evaluated_{status}"
-                    elif eval_path.exists():
-                        row["status"] = "stale_eval"
-                    elif manifest_path.exists():
-                        if status == "done" and not manifest_matches_arm(manifest_path, arm):
-                            row["status"] = "stale_manifest"
-                        else:
-                            row["status"] = "trained_done_missing_eval" if status == "done" else (status or "missing_eval")
-                    else:
-                        row["status"] = "missing"
-                    rows.append(row)
+                            row["status"] = "missing"
+                        rows.append(row)
     write_csv(rows, args.out_dir / "data_view_sweep_summary.csv")
     export_raw_detail_tables(args, rows)
     atomic_text_write(render_report(rows, args), args.out_dir / "DATA_VIEW_SWEEP_REPORT.md")
@@ -1232,7 +1325,7 @@ def write_sweep_manifest(args, status: str, rows: list[dict] | None = None, curr
         "started_at": getattr(args, "sweep_started_at", None),
         "updated_at": timestamp(),
         "out_dir": str(args.out_dir),
-        "expected_combinations": len(args.output_dims) * len(args.train_game_counts) * len(args.sample_fractions) * len(args.arms),
+        "expected_combinations": len(args.output_dims) * len(args.latent_scales) * len(args.train_game_counts) * len(args.sample_fractions) * len(args.arms),
         "done_combinations": sum(1 for row in rows if row.get("status") == "done"),
         "status_counts": summarize_counts(rows),
         "current": current,
@@ -1284,68 +1377,72 @@ def run(args) -> None:
     current = None
     try:
         for output_dim in args.output_dims:
-            for train_games in args.train_game_counts:
-                for view in args.sample_fractions:
-                    current = {
-                        "output_dim": output_dim,
-                        "train_games": train_games,
-                        "view_fraction": view,
-                        "arms": [arm_label(arm) for arm in args.arms],
-                    }
-                    write_sweep_manifest(args, "running", summarize(args), current=current)
-                    arms = [arm_label(arm) for arm in args.arms]
-                    for arm in arms:
-                        combo_paths(args, output_dim, arm, train_games, view)["dir"].mkdir(parents=True, exist_ok=True)
+            for latent_scale in args.latent_scales:
+                num_latents = effective_num_latents(args, latent_scale)
+                for train_games in args.train_game_counts:
+                    for view in args.sample_fractions:
+                        current = {
+                            "output_dim": output_dim,
+                            "latent_scale": latent_scale,
+                            "num_latents": num_latents,
+                            "train_games": train_games,
+                            "view_fraction": view,
+                            "arms": [arm_label(arm) for arm in args.arms],
+                        }
+                        write_sweep_manifest(args, "running", summarize(args), current=current)
+                        arms = [arm_label(arm) for arm in args.arms]
+                        for arm in arms:
+                            combo_paths(args, output_dim, arm, train_games, view, latent_scale)["dir"].mkdir(parents=True, exist_ok=True)
 
-                    if not args.skip_train:
-                        grl_pair = {"grl", "nogrl"}.issubset(set(arms))
-                        both_need_fresh = (
-                            grl_pair
-                            and should_try_paired_training(output_dim, train_games, view)
-                            and combo_needs_train(args, output_dim, "grl", train_games, view)
-                            and combo_needs_train(args, output_dim, "nogrl", train_games, view)
-                            and not is_resumable_partial(args, output_dim, "grl", train_games, view)
-                            and not is_resumable_partial(args, output_dim, "nogrl", train_games, view)
-                        )
-                        if both_need_fresh:
-                            try:
-                                run_command(build_paired_train_command(args, output_dim, train_games, view), ROOT)
-                            except subprocess.CalledProcessError as exc:
-                                print(
-                                    f"paired training failed for {combo_name(output_dim, 'grl', train_games, view)} / "
-                                    f"{combo_name(output_dim, 'nogrl', train_games, view)}: {exc}; "
-                                    "falling back to single-arm training",
-                                    flush=True,
-                                )
-                                time.sleep(20)
+                        if not args.skip_train:
+                            grl_pair = {"grl", "nogrl"}.issubset(set(arms))
+                            both_need_fresh = (
+                                grl_pair
+                                and should_try_paired_training(output_dim, train_games, view)
+                                and combo_needs_train(args, output_dim, "grl", train_games, view, latent_scale)
+                                and combo_needs_train(args, output_dim, "nogrl", train_games, view, latent_scale)
+                                and not is_resumable_partial(args, output_dim, "grl", train_games, view, latent_scale)
+                                and not is_resumable_partial(args, output_dim, "nogrl", train_games, view, latent_scale)
+                            )
+                            if both_need_fresh:
+                                try:
+                                    run_command(build_paired_train_command(args, output_dim, train_games, view, latent_scale), ROOT)
+                                except subprocess.CalledProcessError as exc:
+                                    print(
+                                        f"paired training failed for {combo_name(output_dim, 'grl', train_games, view, latent_scale, num_latents)} / "
+                                        f"{combo_name(output_dim, 'nogrl', train_games, view, latent_scale, num_latents)}: {exc}; "
+                                        "falling back to single-arm training",
+                                        flush=True,
+                                    )
+                                    time.sleep(20)
+                                    for arm in arms:
+                                        if combo_needs_train(args, output_dim, arm, train_games, view, latent_scale):
+                                            paths = combo_paths(args, output_dim, arm, train_games, view, latent_scale)
+                                            run_command(
+                                                build_train_command(args, output_dim, arm, train_games, view, paths["dir"], latent_scale),
+                                                ROOT,
+                                            )
+                            else:
                                 for arm in arms:
-                                    if combo_needs_train(args, output_dim, arm, train_games, view):
-                                        paths = combo_paths(args, output_dim, arm, train_games, view)
+                                    if combo_needs_train(args, output_dim, arm, train_games, view, latent_scale):
+                                        paths = combo_paths(args, output_dim, arm, train_games, view, latent_scale)
                                         run_command(
-                                            build_train_command(args, output_dim, arm, train_games, view, paths["dir"]),
+                                            build_train_command(args, output_dim, arm, train_games, view, paths["dir"], latent_scale),
                                             ROOT,
                                         )
-                        else:
-                            for arm in arms:
-                                if combo_needs_train(args, output_dim, arm, train_games, view):
-                                    paths = combo_paths(args, output_dim, arm, train_games, view)
-                                    run_command(
-                                        build_train_command(args, output_dim, arm, train_games, view, paths["dir"]),
-                                        ROOT,
-                                    )
 
-                    if not args.skip_eval:
-                        eval_targets = []
-                        for arm in arms:
-                            paths = combo_paths(args, output_dim, arm, train_games, view)
-                            if paths["checkpoint"].exists():
-                                eval_targets.append((paths["checkpoint"], paths["dir"]))
-                        if {"grl", "nogrl"}.issubset(set(arms)):
-                            evaluate_targets(args, eval_targets)
-                        else:
-                            for checkpoint, combo_dir in eval_targets:
-                                evaluate_combo(args, checkpoint, combo_dir)
-                    write_sweep_manifest(args, "running", summarize(args), current=current)
+                        if not args.skip_eval:
+                            eval_targets = []
+                            for arm in arms:
+                                paths = combo_paths(args, output_dim, arm, train_games, view, latent_scale)
+                                if paths["checkpoint"].exists():
+                                    eval_targets.append((paths["checkpoint"], paths["dir"]))
+                            if {"grl", "nogrl"}.issubset(set(arms)):
+                                evaluate_targets(args, eval_targets)
+                            else:
+                                for checkpoint, combo_dir in eval_targets:
+                                    evaluate_combo(args, checkpoint, combo_dir)
+                        write_sweep_manifest(args, "running", summarize(args), current=current)
         rows = summarize(args)
         done = sum(1 for row in rows if row["status"] == "done")
         final_status = "done" if done == len(rows) else "incomplete"
@@ -1373,6 +1470,23 @@ def parse_args():
                              "Default [0] = train on everything.")
     parser.add_argument("--sample-fractions", type=float, nargs="+", default=[0.8, 0.6, 0.4, 0.2])
     parser.add_argument("--output-dims", type=int, nargs="+", default=[18, 36, 72])
+    parser.add_argument(
+        "--latent-scales",
+        type=float,
+        nargs="+",
+        default=[1.0],
+        help=(
+            "Multipliers for --base-num-latents. This adds a latent-array capacity "
+            "axis to the sweep; default 1.0 preserves the old 256-slot setup."
+        ),
+    )
+    parser.add_argument(
+        "--base-num-latents",
+        type=int,
+        default=256,
+        help="Base latent-array slot count before applying --latent-scales.",
+    )
+    parser.add_argument("--latent-dim", type=int, default=256)
     parser.add_argument("--arms", nargs="+", default=["grl", "nogrl"], choices=["grl", "nogrl"])
     parser.add_argument("--epochs", type=int, default=30)
     parser.add_argument("--steps-per-epoch", type=int, default=4)
