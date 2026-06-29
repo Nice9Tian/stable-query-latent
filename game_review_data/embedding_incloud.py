@@ -263,8 +263,8 @@ def default_text_load_workers() -> int:
 
 
 def default_pretok_workers() -> int:
-    """Default pre-tokenize workers: all visible CPU cores minus one."""
-    return max(1, effective_cpu_count() - 1)
+    """Default pre-tokenize workers: oversubscribe single-thread tokenizers."""
+    return max(1, effective_cpu_count() * 2)
 
 
 # Per-worker tokenizer, built once via the pool initializer (spawn-safe: each
@@ -274,9 +274,14 @@ _PRETOK_STATE: dict = {}
 
 
 def _pretok_init(model_name: str, max_length: int) -> None:
-    # One tokenizing process per core => keep each tokenizer single-threaded so
-    # N processes don't each spawn N rayon threads (N*N thread thrash).
-    os.environ["TOKENIZERS_PARALLELISM"] = "false"
+    # Many tokenizing processes => keep each tokenizer single-threaded by
+    # default so N processes do not each spawn N rayon threads. Set
+    # EMBED_INCLOUD_TOKENIZERS_PARALLELISM=true to benchmark nested parallelism.
+    parallelism = os.environ.get(
+        "EMBED_INCLOUD_TOKENIZERS_PARALLELISM",
+        os.environ.get("TOKENIZERS_PARALLELISM", "false"),
+    )
+    os.environ["TOKENIZERS_PARALLELISM"] = parallelism
     from transformers import AutoTokenizer
 
     _PRETOK_STATE["tok"] = AutoTokenizer.from_pretrained(model_name, padding_side="left")
