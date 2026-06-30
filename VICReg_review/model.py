@@ -346,7 +346,17 @@ class HierarchicalLatentArrayMLP(nn.Module):
         if chunk_size is None:
             chunk_size = getattr(self, "_stem_chunk_size", None)
         queries = self.latent_dropout(self.latent_array).unsqueeze(0).expand(x.size(0), -1, -1)
-        if chunk_size and key_padding_mask is None and x.size(1) > int(chunk_size):
+        # In training the chunked path's whole point is the checkpoint: it frees
+        # each game's stem activations so a standard-mode batch (which holds every
+        # game's graph at once) stays bounded -- so chunk whenever chunk_size>0,
+        # NOT only when a single game exceeds it (that gate let big batches OOM).
+        # In eval there is no backward graph to bound, so only chunk genuinely
+        # oversized games and otherwise use the faster fused attention.
+        training_grad = self.training and torch.is_grad_enabled()
+        use_chunked = bool(chunk_size) and int(chunk_size) > 0 and key_padding_mask is None and (
+            training_grad or x.size(1) > int(chunk_size)
+        )
+        if use_chunked:
             attended = self._cross_attend_chunked(x, queries, int(chunk_size))
         else:
             context = self.context_norm(self.input_proj(self.input_norm(x)))

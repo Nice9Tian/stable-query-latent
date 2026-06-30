@@ -58,11 +58,12 @@ class Supervisor:
     def __init__(self, config: SweepConfig, config_path=None, *, spawn_worker=None,
                  free_vram_fn=None, calib=None, stats=None, poll=2.0,
                  ready_timeout=3600.0, reclaim_timeout=600.0, logout_address=None,
-                 h5_override=None):
+                 h5_override=None, retry_failed=False):
         self.config = config
         self.config_path = config_path
         self.logout_address = logout_address
         self.h5_override = h5_override
+        self.retry_failed = retry_failed
         self.out_dir = config.out_dir
         self.ledger = Ledger(Path(config.out_dir) / "ledger.jsonl")
         self.probe_queue = Path(config.out_dir) / "probe_queue"
@@ -170,6 +171,14 @@ class Supervisor:
 
     def run(self) -> dict:
         self.ledger.reconcile_running()
+        if self.retry_failed:
+            n = 0
+            for cid, rec in self.ledger.load().items():
+                if rec.get("status") == "failed":
+                    self.ledger.update(cid, status="pending", attempts=0, error=None)
+                    n += 1
+            if n:
+                print(f"supervisor: reset {n} failed combos for retry", flush=True)
         self._wait_ready()
         self._ensure_inputs()
         total = self.config.combo_count()
@@ -260,6 +269,9 @@ def parse_args(argv=None):
                    help="Override config.h5 (e.g. a fast local-disk copy of the embedding H5). "
                         "Only the H5 input is redirected; checkpoints/ledger stay at out_dir.")
     p.add_argument("--logout-address", default=None, help="Append stdout/stderr to this log file.")
+    p.add_argument("--retry-failed", action="store_true",
+                   help="Reset 'failed' combos (attempts exhausted) back to pending so they "
+                        "are retried -- e.g. after a code fix that should make them fit.")
     return p.parse_args(argv)
 
 
@@ -268,7 +280,7 @@ def run_main(args) -> None:
     if args.h5:
         config.h5 = str(args.h5)
     summary = Supervisor(config, config_path=args.config, logout_address=args.logout_address,
-                         h5_override=args.h5).run()
+                         h5_override=args.h5, retry_failed=args.retry_failed).run()
     print(f"sweep done: {summary}", flush=True)
 
 
