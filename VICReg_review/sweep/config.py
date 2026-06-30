@@ -42,6 +42,7 @@ class TrainConfig:
 @dataclass
 class MemoryConfig:
     vram_safety: float = 0.85
+    ram_safety: float = 0.8          # fraction of host RAM the full cache may use
     calib: str = "measure"           # measure | load | off
 
 

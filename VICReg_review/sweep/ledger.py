@@ -29,7 +29,7 @@ from collections import Counter
 from pathlib import Path
 
 VALID_STATUS = {"pending", "running", "done", "failed", "interrupted"}
-_SETTING_KEYS = ("backward_mode", "paired", "stem_chunk_size")
+_SETTING_KEYS = ("backward_mode", "paired", "stem_chunk_size", "cache_mode", "pin_cache")
 
 
 def _now() -> str:

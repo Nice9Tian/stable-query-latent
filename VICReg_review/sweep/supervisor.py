@@ -119,20 +119,28 @@ class Supervisor:
         if self.stats is None:
             self.stats = oom_proxy.GameStats.from_h5(self.config.h5)
 
+    def _ram_budget(self) -> float:
+        return oom_proxy.available_ram_bytes() * float(getattr(self.config.memory, "ram_safety", 0.8))
+
     def plan_settings(self, combo) -> dict:
-        worst = self.stats.subset_worst_sentences(
-            combo.train_games, self.config.data_seed.train_game_seed, self.config.data_seed.anchors)
+        ds = self.config.data_seed
+        worst = self.stats.subset_worst_sentences(combo.train_games, ds.train_game_seed, ds.anchors)
+        total = self.stats.subset_total_sentences(combo.train_games, ds.train_game_seed, ds.anchors)
+        cache_bytes = oom_proxy.estimate_full_cache_bytes(total, combo.view, self.stats.input_dim)
         plan = oom_proxy.plan_combo_chunked(
             self.calib, worst, self._free_vram(), combo.num_latents, combo.view,
-            self.config.train.batch_size, safety=self.config.memory.vram_safety, try_paired=False)
+            self.config.train.batch_size, safety=self.config.memory.vram_safety, try_paired=False,
+            cache_bytes=cache_bytes, ram_budget=self._ram_budget())
         return {"backward_mode": plan["backward_mode"],
                 "stem_chunk_size": int(plan["stem_chunk_size"]),
-                "paired": False}
+                "paired": False,
+                "cache_mode": plan["cache_mode"],
+                "pin_cache": plan["pin_cache"]}
 
     @staticmethod
     def downgrade(settings: dict) -> dict:
-        """Next, more conservative settings after an OOM/death. No cap -- shrink
-        the stem chunk, then fall back to split_recompute, then shrink further."""
+        """VRAM downgrade after a CUDA OOM. No cap -- shrink the stem chunk, then
+        fall back to split_recompute, then shrink further."""
         chunk = int(settings.get("stem_chunk_size", 0) or 0)
         mode = settings.get("backward_mode", "standard")
         if chunk > MIN_CHUNK * 4:
@@ -140,6 +148,15 @@ class Supervisor:
         if mode != "split_recompute":
             return {**settings, "backward_mode": "split_recompute"}
         return {**settings, "stem_chunk_size": max(MIN_CHUNK // 2, chunk // 2)}
+
+    @staticmethod
+    def downgrade_ram(settings: dict) -> dict:
+        """Host-RAM downgrade after a SIGKILL (OOM-killer): stop materialising +
+        pinning the full cache (stream via the bounded queue, shrink prefetch).
+        If already streaming + unpinned, fall back to the VRAM chunk downgrade."""
+        if settings.get("cache_mode") != "queue" or settings.get("pin_cache", True):
+            return {**settings, "cache_mode": "queue", "pin_cache": False, "prefetch_batches": 1}
+        return Supervisor.downgrade(settings)
 
     # --- main loop ---------------------------------------------------------
     def run(self) -> dict:
@@ -184,12 +201,17 @@ class Supervisor:
             result = self._await_result(combo_id)
 
             if result is None:  # worker died mid-combo without writing a result
-                self.ledger.mark_interrupted(combo_id, "worker died during combo")
+                exit_code = self.worker.poll() if self.worker else None
+                self.ledger.mark_interrupted(combo_id, f"worker died (exit={exit_code}) during combo")
                 # Clear the stale job so the fresh worker (spawned at the top of
                 # the next iteration) cannot pick up the job that killed it.
                 protocol.clear_combo(self.out_dir, combo_id)
-                print(f"supervisor: worker died on {combo_id}; will recover + downgrade", flush=True)
-                settings = self.downgrade(settings)
+                if exit_code == -9:   # SIGKILL -> almost certainly the host OOM-killer
+                    print(f"supervisor: {combo_id} worker SIGKILLed (host RAM OOM); RAM-downgrade", flush=True)
+                    settings = self.downgrade_ram(settings)
+                else:
+                    print(f"supervisor: worker died on {combo_id} (exit={exit_code}); VRAM-downgrade", flush=True)
+                    settings = self.downgrade(settings)
                 continue
             if result.get("status") == "done":
                 self.ledger.mark_done(combo_id, result.get("peak_mem_gib"), result.get("ckpt"))

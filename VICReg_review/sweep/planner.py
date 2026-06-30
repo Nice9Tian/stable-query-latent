@@ -26,16 +26,20 @@ GIB = oom_proxy.GIB
 
 
 def plan_for_combo(config: SweepConfig, calib: dict, stats: "oom_proxy.GameStats",
-                   free_vram_bytes: float, combo, *, try_paired: bool = True) -> dict:
-    worst = stats.subset_worst_sentences(
-        combo.train_games, config.data_seed.train_game_seed, config.data_seed.anchors
-    )
+                   free_vram_bytes: float, combo, *, try_paired: bool = True,
+                   ram_budget: float = 0.0) -> dict:
+    ds = config.data_seed
+    worst = stats.subset_worst_sentences(combo.train_games, ds.train_game_seed, ds.anchors)
+    total = stats.subset_total_sentences(combo.train_games, ds.train_game_seed, ds.anchors)
+    cache_bytes = oom_proxy.estimate_full_cache_bytes(total, combo.view, stats.input_dim)
     plan = oom_proxy.plan_combo_chunked(
         calib, worst, free_vram_bytes, combo.num_latents, combo.view,
         config.train.batch_size, safety=config.memory.vram_safety, try_paired=try_paired,
+        cache_bytes=cache_bytes, ram_budget=ram_budget,
     )
     plan["combo_id"] = combo.combo_id
     plan["train_games"] = combo.train_games
+    plan["cache_gib"] = round(cache_bytes / GIB, 1)
     return plan
 
 
@@ -44,6 +48,7 @@ def plan_grid(config: SweepConfig, calib: dict, stats: "oom_proxy.GameStats",
     # paired only matters when both arms are present in the grid.
     arms = {str(a) for a in config.grid.arms}
     try_paired = {"grl", "nogrl"}.issubset(arms)
+    ram_budget = oom_proxy.available_ram_bytes() * config.memory.ram_safety
     # One plan per (output_dim, latent_scale, train_games, view) -- arm-independent
     # for memory, so dedupe across arms to keep the table readable.
     seen = set()
@@ -53,18 +58,22 @@ def plan_grid(config: SweepConfig, calib: dict, stats: "oom_proxy.GameStats",
         if key in seen:
             continue
         seen.add(key)
-        rows.append(plan_for_combo(config, calib, stats, free_vram_bytes, combo, try_paired=try_paired))
+        rows.append(plan_for_combo(config, calib, stats, free_vram_bytes, combo,
+                                   try_paired=try_paired, ram_budget=ram_budget))
     return rows
 
 
-def format_table(rows: list[dict], free_vram_bytes: float, safety: float, pool: int) -> str:
-    out = [f"memory plan | free_vram={free_vram_bytes / GIB:.1f}GiB safety={safety} pool={pool} games", ""]
-    header = ("num_lat", "view", "games", "worst_g", "mode", "paired", "chunk", "note")
+def format_table(rows: list[dict], free_vram_bytes: float, safety: float, pool: int,
+                 ram_budget_gib: float = 0.0) -> str:
+    out = [f"memory plan | free_vram={free_vram_bytes / GIB:.1f}GiB safety={safety} "
+           f"ram_budget={ram_budget_gib:.0f}GiB pool={pool} games", ""]
+    header = ("num_lat", "view", "games", "worst_g", "mode", "paired", "chunk", "cache_gib", "cache", "note")
     out.append("  ".join(f"{h:>9}" for h in header))
     for r in rows:
         row = (r["num_latents"], f"{r['view']:g}", r["train_games"] or "all",
                r["worst_game_sentences"], r["backward_mode"],
-               "Y" if r["paired"] else "n", r["stem_chunk_size"], r["note"])
+               "Y" if r["paired"] else "n", r["stem_chunk_size"],
+               r.get("cache_gib", "?"), r.get("cache_mode", "full"), r["note"])
         out.append("  ".join(f"{str(c):>9}" for c in row))
     return "\n".join(out)
 
@@ -91,7 +100,8 @@ def main(argv=None) -> None:
     free = (args.free_vram_gib * GIB) if args.free_vram_gib is not None \
         else oom_proxy._free_vram_bytes(args.device)
     rows = plan_grid(config, calib, stats, free)
-    print(format_table(rows, free, config.memory.vram_safety, stats.num_games))
+    ram_budget = oom_proxy.available_ram_bytes() * config.memory.ram_safety
+    print(format_table(rows, free, config.memory.vram_safety, stats.num_games, ram_budget / GIB))
 
 
 if __name__ == "__main__":

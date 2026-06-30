@@ -39,6 +39,9 @@ def build_trainer_argv(config, combo, settings: dict, *, device: str = "cuda",
                        probe_queue_dir=None, resume: bool = True) -> list[str]:
     paths = combo_paths(config, combo)
     grl = combo.arm == "grl"
+    cache_mode = settings.get("cache_mode", "full")
+    pin_cache = bool(settings.get("pin_cache", True))
+    prefetch = int(settings.get("prefetch_batches", 2) or 2)
     argv = [
         "--input-h5", str(config.h5),
         "--device", str(device), "--amp",
@@ -64,9 +67,9 @@ def build_trainer_argv(config, combo, settings: dict, *, device: str = "cuda",
         "--recommendation-decorr-weight", str(RECO_DECORR_WEIGHT if grl else 0.0),
         "--backward-mode", str(settings.get("backward_mode", "standard")),
         "--stem-chunk-size", str(int(settings.get("stem_chunk_size", 0) or 0)),
-        "--cache-mode", "full",
+        "--cache-mode", cache_mode,
         "--cache-dtype", "float16",
-        "--pin-cache",
+        "--prefetch-batches", str(prefetch),
         "--seed", str(config.train.seed),
         "--checkpoint-out", str(paths["checkpoint"]),
         "--best-checkpoint-out", str(paths["best"]),
@@ -76,6 +79,8 @@ def build_trainer_argv(config, combo, settings: dict, *, device: str = "cuda",
         "--probe-every", str(config.probe.every),
         "--probe-start-epoch", str(config.probe.start_epoch),
     ]
+    if pin_cache:
+        argv.append("--pin-cache")
     if probe_queue_dir:
         argv += ["--probe-queue-dir", str(probe_queue_dir)]
     if resume and paths["checkpoint"].exists():

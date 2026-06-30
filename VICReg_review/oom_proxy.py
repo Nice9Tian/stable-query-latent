@@ -95,6 +95,39 @@ DEFAULT_MODES = ("standard", "split_recompute")
 # Conservative stem chunk used when a combo has no calibration entry (keeps the
 # chunked stem bounded rather than running an unchunked, possibly-OOM forward).
 NO_CALIB_CHUNK = 2048
+
+
+def _read_int_file(path: str):
+    try:
+        return int(Path(path).read_text(encoding="utf-8").strip())
+    except (OSError, ValueError):
+        return None
+
+
+def available_ram_bytes() -> float:
+    """Usable host RAM (cgroup-aware: limit - current), else psutil, else 0.
+
+    0 means "unknown" -- callers should then NOT force a RAM downgrade (assume
+    enough and let the reactive SIGKILL path handle it)."""
+    limit = _read_int_file("/sys/fs/cgroup/memory.max")
+    current = _read_int_file("/sys/fs/cgroup/memory.current")
+    if limit is None:
+        limit = _read_int_file("/sys/fs/cgroup/memory/memory.limit_in_bytes")
+        current = _read_int_file("/sys/fs/cgroup/memory/memory.usage_in_bytes")
+    if limit is not None and 0 < limit < (1 << 60):
+        return float(max(0, limit - current)) if current is not None else float(limit)
+    try:
+        import psutil
+        return float(psutil.virtual_memory().available)
+    except Exception:
+        return 0.0
+
+
+def estimate_full_cache_bytes(total_sentences: int, view: float, input_dim: int,
+                              *, prefetch_factor: float = 2.0, dtype_bytes: int = 2) -> float:
+    """Approx host RAM for --cache-mode full: ~one epoch of sampled views (both
+    a/b) materialised, plus the prefetched next epoch. dtype float16 = 2 bytes."""
+    return float(total_sentences) * float(view) * 2.0 * int(input_dim) * dtype_bytes * float(prefetch_factor)
 # Total forwarded sentences (both views) probed per calibration point. Kept
 # small so calibration never OOMs even at num_latents=1024; >=2 successes are
 # enough to fit the line.
@@ -299,6 +332,10 @@ class GameStats:
         idx = self.subset_indices(train_game_count, seed, anchor_appids)
         return int(self.sentence_counts[idx].max())
 
+    def subset_total_sentences(self, train_game_count: int, seed: int, anchor_appids) -> int:
+        idx = self.subset_indices(train_game_count, seed, anchor_appids)
+        return int(self.sentence_counts[idx].sum())
+
 
 def plan_combo(calib: dict, worst_game_sentences: int, free_vram_bytes: float,
                num_latents: int, view: float, batch_size: int, *,
@@ -384,7 +421,8 @@ def plan_combo(calib: dict, worst_game_sentences: int, free_vram_bytes: float,
 def plan_combo_chunked(calib: dict, worst_game_sentences: int, free_vram_bytes: float,
                        num_latents: int, view: float, batch_size: int, *,
                        safety: float = 0.85, try_paired: bool = True,
-                       mode: str = "standard") -> dict:
+                       mode: str = "standard",
+                       cache_bytes: float = 0.0, ram_budget: float = 0.0) -> dict:
     """Chunked-stem plan: never drop sentences, pick a stem chunk size instead.
 
     The chunked stem (model.HierarchicalLatentArrayMLP, chunk_size) bounds the
@@ -394,6 +432,13 @@ def plan_combo_chunked(calib: dict, worst_game_sentences: int, free_vram_bytes: 
     conservative (err small = safe) pending a chunked-stem recalibration on GPU.
     """
     budget = float(free_vram_bytes) * float(safety)
+    # Host-RAM decision (independent of VRAM): if the full pinned cache would not
+    # fit in the RAM budget, stream instead. ram_budget<=0 means "unknown" -> keep
+    # full and let the reactive SIGKILL->RAM downgrade handle it.
+    cache_mode, pin_cache = "full", True
+    if ram_budget and ram_budget > 0 and cache_bytes and cache_bytes > ram_budget:
+        cache_mode, pin_cache = "queue", False
+
     entry = calib.get(_calib_key(num_latents, mode)) or calib.get(_calib_key(num_latents, "split_recompute"))
     if not entry:
         # No calibration for this num_latents: fall back to a small conservative
@@ -402,6 +447,7 @@ def plan_combo_chunked(calib: dict, worst_game_sentences: int, free_vram_bytes: 
                 "worst_game_sentences": int(worst_game_sentences),
                 "backward_mode": mode, "paired": False,
                 "stem_chunk_size": NO_CALIB_CHUNK,
+                "cache_mode": cache_mode, "pin_cache": pin_cache,
                 "budget_gib": round(budget / GIB, 2),
                 "note": "no calibration; conservative chunk"}
     C, R = float(entry["C"]), float(entry["R"])
@@ -424,6 +470,8 @@ def plan_combo_chunked(calib: dict, worst_game_sentences: int, free_vram_bytes: 
         "backward_mode": mode,
         "paired": bool(paired),
         "stem_chunk_size": int(chunk),
+        "cache_mode": cache_mode,
+        "pin_cache": pin_cache,
         "budget_gib": round(budget / GIB, 2),
         "note": "ok" if chunk < worst_game_sentences else "chunk >= biggest game (single pass)",
     }
