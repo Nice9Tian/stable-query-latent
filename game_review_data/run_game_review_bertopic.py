@@ -319,6 +319,8 @@ def build_report(
     n_neighbors: int,
     vectorizer_min_df: int,
     random_state: int,
+    examples_per_topic: int,
+    max_example_topics: int,
     fit_seconds: float,
 ) -> None:
     topic_info = topic_model.get_topic_info()
@@ -326,7 +328,7 @@ def build_report(
     examples: dict[int, list[tuple[str, dict[str, str]]]] = defaultdict(list)
     for topic, doc, record in zip(topics, docs, records):
         topic_counts[int(topic)] += 1
-        if len(examples[int(topic)]) < 3:
+        if len(examples[int(topic)]) < examples_per_topic:
             examples[int(topic)].append((doc, record))
 
     non_outlier_topics = [int(topic) for topic in topic_counts if int(topic) != -1]
@@ -381,9 +383,12 @@ def build_report(
         lines.append(f"| {topic_id} | {int(row['Count'])} | {markdown_escape(words, max_chars=220)} |")
     lines.append("")
 
-    lines.append("## Top Topic Examples")
+    lines.append("## Topic Examples")
     lines.append("")
-    for _, row in topic_info[topic_info["Topic"] != -1].head(30).iterrows():
+    example_rows = topic_info[topic_info["Topic"] != -1]
+    if max_example_topics > 0:
+        example_rows = example_rows.head(max_example_topics)
+    for _, row in example_rows.iterrows():
         topic_id = int(row["Topic"])
         words = topic_words(topic_model, topic_id)
         lines.append(f"### Topic {topic_id} ({int(row['Count'])} docs)")
@@ -410,6 +415,9 @@ def parse_args():
     parser.add_argument("--n-neighbors", default=100, type=int)
     parser.add_argument("--vectorizer-min-df", default=1, type=int)
     parser.add_argument("--random-state", default=42, type=int)
+    parser.add_argument("--examples-per-topic", default=10, type=int)
+    parser.add_argument("--max-example-topics", default=0, type=int,
+                        help="0 = include every non-outlier topic")
     parser.add_argument("--include-metadata-records", action="store_true")
     parser.add_argument("--overwrite-cache", action="store_true")
     return parser.parse_args()
@@ -450,6 +458,8 @@ def main() -> None:
         n_neighbors=args.n_neighbors,
         vectorizer_min_df=args.vectorizer_min_df,
         random_state=args.random_state,
+        examples_per_topic=args.examples_per_topic,
+        max_example_topics=args.max_example_topics,
         fit_seconds=fit_seconds,
     )
     print(f"Wrote {args.output_md.resolve()}")
