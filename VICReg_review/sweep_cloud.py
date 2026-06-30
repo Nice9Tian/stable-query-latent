@@ -29,6 +29,7 @@ if str(ROOT) not in sys.path:
 
 from tools.logging_tee import run_with_optional_tee
 from VICReg_review import run_data_view_sweep as sweep
+from VICReg_review.train_vicreg_review_h5 import parse_int_list
 
 
 DEFAULT_OUT_DIR = SCRIPT_DIR / "heads" / "cloud_full_sweep"
@@ -402,6 +403,13 @@ def parse_args(argv: list[str] | None = None):
     )
     parser.add_argument("--base-num-latents", type=int, default=256)
     parser.add_argument("--latent-dim", type=int, default=256)
+    parser.add_argument("--expander-dim", type=int, default=128)
+    parser.add_argument(
+        "--expander-hidden",
+        type=parse_int_list,
+        default=(128,),
+        help="Comma-separated hidden widths for the game-centroid expander.",
+    )
     parser.add_argument("--arms", nargs="+", default=["grl", "nogrl"], choices=["grl", "nogrl"])
     parser.add_argument("--epochs", type=int, default=30)
     parser.add_argument(

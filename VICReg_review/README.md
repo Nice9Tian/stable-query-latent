@@ -43,7 +43,7 @@ C:/Users/admin/anaconda3/envs/cuda_Vit/python.exe game_review_data/build.py --ba
 C:/Users/admin/anaconda3/envs/cuda_Vit/python.exe VICReg_review/train_vicreg_review_h5.py --device cuda --amp `
   --epochs 30 --steps-per-epoch 4 --batch-size 128 `
   --vicreg-scope game --output-dim 64 --reduce-hidden 128 `
-  --expander-dim 512 --expander-hidden 256,512 `
+  --expander-dim 128 --expander-hidden 128 `
   --compact-variance-weight 25 --compact-covariance-weight 25
 ```
 

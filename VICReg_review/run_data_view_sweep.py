@@ -61,6 +61,7 @@ from VICReg_review.train_tag_probe import (  # noqa: E402
 )
 from VICReg_review.train_vicreg_review_h5 import (  # noqa: E402
     TRAINING_MANIFEST_SCHEMA,
+    parse_int_list,
     validate_training_h5,
 )
 
@@ -258,6 +259,7 @@ def manifest_matches_config(path: Path, args, arm: str, output_dim: int, latent_
         "output_dim": int(output_dim),
         "num_latents": int(expected_num_latents),
         "latent_dim": int(args.latent_dim),
+        "expander_dim": int(args.expander_dim),
     }
     for key, expected in checks.items():
         if key not in payload:
@@ -272,6 +274,8 @@ def manifest_matches_config(path: Path, args, arm: str, output_dim: int, latent_
             return False
         if actual != expected:
             return False
+    if tuple(payload.get("expander_hidden") or ()) != tuple(args.expander_hidden):
+        return False
     return True
 
 
@@ -405,8 +409,8 @@ def build_train_command(args, output_dim: int, arm: str, train_games: int, view:
         "--output-dim", str(output_dim),
         "--reduce-hidden", "128",
         "--vicreg-scope", "game",
-        "--expander-dim", "512",
-        "--expander-hidden", "256,512",
+        "--expander-dim", str(args.expander_dim),
+        "--expander-hidden", ",".join(str(dim) for dim in args.expander_hidden),
         "--compact-variance-weight", "25",
         "--compact-covariance-weight", "25",
         "--recommendation-decorr-weight", f"{arm_recommendation_weight(arm):g}",
@@ -456,8 +460,8 @@ def build_paired_train_command(args, output_dim: int, train_games: int, view: fl
         "--output-dim", str(output_dim),
         "--reduce-hidden", "128",
         "--vicreg-scope", "game",
-        "--expander-dim", "512",
-        "--expander-hidden", "256,512",
+        "--expander-dim", str(args.expander_dim),
+        "--expander-hidden", ",".join(str(dim) for dim in args.expander_hidden),
         "--compact-variance-weight", "25",
         "--compact-covariance-weight", "25",
         "--recommendation-target-transform", "logit",
@@ -2081,6 +2085,13 @@ def parse_args():
         help="Base latent-array slot count before applying --latent-scales.",
     )
     parser.add_argument("--latent-dim", type=int, default=256)
+    parser.add_argument("--expander-dim", type=int, default=128)
+    parser.add_argument(
+        "--expander-hidden",
+        type=parse_int_list,
+        default=(128,),
+        help="Comma-separated hidden widths for the game-centroid expander.",
+    )
     parser.add_argument("--arms", nargs="+", default=["grl", "nogrl"], choices=["grl", "nogrl"])
     parser.add_argument("--epochs", type=int, default=30)
     parser.add_argument("--steps-per-epoch", type=int, default=4)
