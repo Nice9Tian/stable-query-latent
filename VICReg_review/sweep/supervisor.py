@@ -18,6 +18,8 @@ recovery loop can be tested without a GPU.
 from __future__ import annotations
 
 import argparse
+import os
+import signal
 import subprocess
 import sys
 import time
@@ -58,11 +60,12 @@ class Supervisor:
     def __init__(self, config: SweepConfig, config_path=None, *, spawn_worker=None,
                  free_vram_fn=None, calib=None, stats=None, poll=2.0,
                  ready_timeout=3600.0, reclaim_timeout=600.0, logout_address=None,
-                 h5_override=None):
+                 h5_override=None, retry_failed=False):
         self.config = config
         self.config_path = config_path
         self.logout_address = logout_address
         self.h5_override = h5_override
+        self.retry_failed = retry_failed
         self.out_dir = config.out_dir
         self.ledger = Ledger(Path(config.out_dir) / "ledger.jsonl")
         self.probe_queue = Path(config.out_dir) / "probe_queue"
@@ -84,7 +87,30 @@ class Supervisor:
             argv += ["--h5", str(self.h5_override)]
         if self.logout_address:
             argv += ["--logout-address", str(self.logout_address)]
-        return subprocess.Popen(argv, cwd=str(ROOT))
+        # start_new_session so the worker + its data-pool children form one
+        # process group we can kill cleanly. expandable_segments reduces the
+        # allocator fragmentation the OOM messages keep flagging.
+        env = {**os.environ, "PYTORCH_CUDA_ALLOC_CONF": "expandable_segments:True"}
+        return subprocess.Popen(argv, cwd=str(ROOT), start_new_session=True, env=env)
+
+    def _kill_worker(self) -> None:
+        """Make sure the previous worker (and its data-pool children) are dead
+        before respawning, so a worker that OOM'd but is slow to release its CUDA
+        context does not leave the GPU full for the next one."""
+        w = self.worker
+        if w is None or w.poll() is not None:
+            return
+        try:
+            os.killpg(os.getpgid(w.pid), signal.SIGKILL)   # whole process group
+        except Exception:
+            try:
+                w.kill()
+            except Exception:
+                pass
+        try:
+            w.wait(timeout=30)
+        except Exception:
+            pass
 
     def _worker_alive(self) -> bool:
         return bool(self.worker) and self.worker.poll() is None
@@ -93,6 +119,7 @@ class Supervisor:
         return getattr(self.worker, "pid", None)
 
     def _wait_ready(self) -> None:
+        self._kill_worker()           # never leave an old worker holding the GPU
         protocol.clear_signals(self.out_dir)
         self.worker = self._spawn()
         deadline = time.time() + self.ready_timeout
@@ -114,8 +141,9 @@ class Supervisor:
         # best effort: proceed even if we couldn't confirm reclamation
 
     def _recover_worker(self) -> None:
-        self._poll_until_free()
-        self._wait_ready()
+        self._kill_worker()           # kill the stuck/old worker first ...
+        self._poll_until_free()       # ... then wait for its GPU memory to return
+        self._wait_ready()            # ... then spawn a fresh one
 
     # --- planning / downgrade ---------------------------------------------
     def _ensure_inputs(self) -> None:
@@ -170,6 +198,14 @@ class Supervisor:
 
     def run(self) -> dict:
         self.ledger.reconcile_running()
+        if self.retry_failed:
+            n = 0
+            for cid, rec in self.ledger.load().items():
+                if rec.get("status") == "failed":
+                    self.ledger.update(cid, status="pending", attempts=0, error=None)
+                    n += 1
+            if n:
+                print(f"supervisor: reset {n} failed combos for retry", flush=True)
         self._wait_ready()
         self._ensure_inputs()
         total = self.config.combo_count()
@@ -260,6 +296,9 @@ def parse_args(argv=None):
                    help="Override config.h5 (e.g. a fast local-disk copy of the embedding H5). "
                         "Only the H5 input is redirected; checkpoints/ledger stay at out_dir.")
     p.add_argument("--logout-address", default=None, help="Append stdout/stderr to this log file.")
+    p.add_argument("--retry-failed", action="store_true",
+                   help="Reset 'failed' combos (attempts exhausted) back to pending so they "
+                        "are retried -- e.g. after a code fix that should make them fit.")
     return p.parse_args(argv)
 
 
@@ -268,7 +307,7 @@ def run_main(args) -> None:
     if args.h5:
         config.h5 = str(args.h5)
     summary = Supervisor(config, config_path=args.config, logout_address=args.logout_address,
-                         h5_override=args.h5).run()
+                         h5_override=args.h5, retry_failed=args.retry_failed).run()
     print(f"sweep done: {summary}", flush=True)
 
 
