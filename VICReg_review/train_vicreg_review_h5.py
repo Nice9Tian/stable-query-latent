@@ -491,6 +491,12 @@ def make_data_pool(data_workers: int):
     return ProcessPoolExecutor(max_workers=workers, mp_context=multiprocessing.get_context("spawn"))
 
 
+# Active data pool for the current train() call. Kept module-level (NOT on args)
+# so it never lands in vars(args) -- torch.save(checkpoint["args"]=vars(args))
+# would otherwise try to pickle the pool's thread locks and crash the combo.
+_DATA_POOL = None
+
+
 def prepare_batch(h5, batch_indices, sample_fraction, rng, cache_dtype, pin_cache, max_view_sentences=0):
     game_names = h5["game_names"]
     views_a = []
@@ -670,7 +676,7 @@ class QueueEpochIterator:
 
 
 def iter_epoch(args, epoch, next_epoch_future, executor, cache_dtype):
-    data_pool = getattr(args, "_data_pool", None)
+    data_pool = _DATA_POOL
     window = max(1, int(args.prefetch_batches))
     if args.cache_mode == "full":
         batches = next_epoch_future.result()
@@ -1710,10 +1716,11 @@ def train(args):
         flush=True,
     )
 
-    args._data_pool = make_data_pool(getattr(args, "data_workers", 0))
-    if args._data_pool is not None:
+    global _DATA_POOL
+    _DATA_POOL = make_data_pool(getattr(args, "data_workers", 0))
+    if _DATA_POOL is not None:
         print(
-            f"data loading: {args._data_pool._max_workers} parallel H5 read workers "
+            f"data loading: {_DATA_POOL._max_workers} parallel H5 read workers "
             f"(spawn) | prefetch window={max(1, int(args.prefetch_batches))} batches",
             flush=True,
         )
@@ -1738,7 +1745,7 @@ def train(args):
             args.max_batch_sentences,
             args.max_view_sentences,
             args.train_game_indices,
-            args._data_pool,
+            _DATA_POOL,
             max(1, int(args.prefetch_batches)),
         )
 
@@ -1849,9 +1856,9 @@ def train(args):
     finally:
         if executor is not None:
             executor.shutdown(wait=False)
-        data_pool = getattr(args, "_data_pool", None)
-        if data_pool is not None:
-            data_pool.shutdown(wait=False)
+        if _DATA_POOL is not None:
+            _DATA_POOL.shutdown(wait=False)
+            _DATA_POOL = None
 
 
 def parse_args(argv=None):
