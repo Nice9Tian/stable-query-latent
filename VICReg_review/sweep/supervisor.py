@@ -18,6 +18,7 @@ recovery loop can be tested without a GPU.
 from __future__ import annotations
 
 import argparse
+import json
 import os
 import signal
 import socket
@@ -49,6 +50,16 @@ def _default_vm_name() -> str:
         return socket.gethostname() or "vm"
     except Exception:
         return "vm"
+
+
+def _manifest_status(path):
+    """The trainer's manifest 'status' -- 'done' only after ALL epochs finish;
+    'running'/'interrupted'/'error' mean a resumable checkpoint may exist but the
+    combo is NOT finished. None if unreadable."""
+    try:
+        return json.loads(Path(path).read_text(encoding="utf-8")).get("status")
+    except (OSError, ValueError):
+        return None
 
 
 def _iter_proc_pids():
@@ -534,12 +545,15 @@ class Supervisor:
 
     def _start_coordinator(self, gpus) -> None:
         """One Coordinator per VM (shared by all lanes): file-based, cross-VM claims on
-        the shared out_dir. done = checkpoint exists (recognises the CURRENT run's
-        finished combos -> seamless migration) OR done.json. Atomic O_EXCL claim means
-        no two lanes -- or VMs -- ever train the same combo."""
+        the shared out_dir. done = the trainer's manifest says status=done (ALL epochs
+        finished -> recognises the pre-migration run) OR done.json. Atomic O_EXCL claim
+        means no two lanes -- or VMs -- ever train the same combo."""
         def _done_fn(cid):
+            # NOT "a checkpoint exists": vicreg_review_h5_latest.pt is the RESUMABLE
+            # checkpoint written every epoch, so a partial/interrupted combo has one too
+            # -- that must be re-claimed and RESUMED (via --resume-checkpoint), not skipped.
             c = self._combo_by_id.get(cid)
-            return bool(c) and jobspec.combo_paths(self.config, c)["checkpoint"].exists()
+            return bool(c) and _manifest_status(jobspec.combo_paths(self.config, c)["manifest"]) == "done"
         liveness = self._liveness or LeaseLiveness(lease=600.0, refresh=120.0)
         base = self._vm_name_req or _default_vm_name()
         total_vram = 0.0
