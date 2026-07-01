@@ -277,10 +277,15 @@ class Supervisor:
         return Supervisor.downgrade(settings)
 
     # --- main loop ---------------------------------------------------------
-    def _tally_str(self) -> str:
+    def _progress(self) -> str:
+        """Monotonic progress from the shared tally (not the grid dispatch index,
+        which jumps around when lanes interleave). Shows how many combos are
+        finished and how many remain across ALL lanes."""
         with self._tally_lock:
-            t = dict(self._tally)
-        return f"done={t['done']} failed={t['failed']} skipped={t['skipped']}"
+            d, f, s = self._tally["done"], self._tally["failed"], self._tally["skipped"]
+        fin = d + f + s
+        left = max(0, self.total - fin)
+        return f"[{fin}/{self.total}] done={d} failed={f} skipped={s} ({left} left)"
 
     def _bump(self, key) -> None:
         with self._tally_lock:
@@ -322,13 +327,13 @@ class Supervisor:
             paths = jobspec.combo_paths(self.config, combo)
             if self.ledger.is_done(combo.combo_id, config_hash) and paths["checkpoint"].exists():
                 self._bump("skipped")
-                print(f"supervisor: [{position}/{self.total}] {combo.combo_id} "
-                      f"skip (already done) | {self._tally_str()}", flush=True)
+                print(f"supervisor: {combo.combo_id} skip (already done) | {self._progress()}", flush=True)
                 continue
             return position, combo
 
     def _lane_loop(self) -> None:
         """Bring this lane's worker up, then drain the shared grid until empty."""
+        protocol.clear_queue(self.qdir)   # drop stale jobs from a previous crashed run
         self._wait_ready()
         try:
             while True:
@@ -354,7 +359,7 @@ class Supervisor:
         combo_id = combo.combo_id
         config_hash = self.config.config_hash(combo)
         paths = jobspec.combo_paths(self.config, combo)
-        prog = f"[{position}/{total}]"
+        tag = f"gpu{self.gpu}"
 
         settings = self.plan_settings(combo)
         while True:
@@ -362,14 +367,14 @@ class Supervisor:
             if attempts >= MAX_ATTEMPTS:
                 self.ledger.mark_failed(combo_id, f"exhausted {attempts} attempts")
                 self._bump("failed")
-                print(f"supervisor: {prog} {combo_id} FAILED after {attempts} attempts | {self._tally_str()}", flush=True)
+                print(f"supervisor: {tag} {combo_id} FAILED after {attempts} attempts | {self._progress()}", flush=True)
                 return
 
             # Single recovery point: if the worker died (mid-combo crash, or it
             # exited itself after an OOM for a clean CUDA context), bring up a
             # fresh one before emitting the next attempt.
             if not self._worker_alive():
-                print(f"supervisor: {prog} gpu{self.gpu} worker not alive before {combo_id}; recovering", flush=True)
+                print(f"supervisor: {tag} worker not alive before {combo_id}; recovering", flush=True)
                 self._recover_worker()
 
             protocol.clear_combo(self.qdir, combo_id)
@@ -390,21 +395,21 @@ class Supervisor:
                 # the next iteration) cannot pick up the job that killed it.
                 protocol.clear_combo(self.qdir, combo_id)
                 if exit_code == -9:   # SIGKILL -> almost certainly the host OOM-killer
-                    print(f"supervisor: {prog} {combo_id} worker SIGKILLed (host RAM OOM); RAM-downgrade", flush=True)
+                    print(f"supervisor: {tag} {combo_id} worker SIGKILLed (host RAM OOM); RAM-downgrade", flush=True)
                     settings = self.downgrade_ram(settings)
                 else:
-                    print(f"supervisor: {prog} worker died on {combo_id} (exit={exit_code}); VRAM-downgrade", flush=True)
+                    print(f"supervisor: {tag} worker died on {combo_id} (exit={exit_code}); VRAM-downgrade", flush=True)
                     settings = self.downgrade(settings)
                 continue
             if result.get("status") == "done":
                 self.ledger.mark_done(combo_id, result.get("peak_mem_gib"), result.get("ckpt"))
                 protocol.clear_combo(self.qdir, combo_id)
                 self._bump("done")
-                print(f"supervisor: {prog} {combo_id} done (peak={result.get('peak_mem_gib')}GiB) | {self._tally_str()}", flush=True)
+                print(f"supervisor: {tag} {combo_id} done (peak={result.get('peak_mem_gib')}GiB) | {self._progress()}", flush=True)
                 return
             # oom / error -> downgrade and retry. The worker exits after an OOM,
             # so the top-of-loop liveness check recovers it on the next pass.
-            print(f"supervisor: {prog} {combo_id} {result.get('status')}: {result.get('error')}; downgrading", flush=True)
+            print(f"supervisor: {tag} {combo_id} {result.get('status')}: {result.get('error')}; downgrading", flush=True)
             settings = self.downgrade(settings)
 
     def _await_result(self, combo_id: str):

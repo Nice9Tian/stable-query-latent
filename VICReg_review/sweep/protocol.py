@@ -122,3 +122,19 @@ def write_stop(qdir) -> None:
 def clear_signals(qdir) -> None:
     for p in (ready_path(qdir), stop_path(qdir)):
         Path(p).unlink(missing_ok=True)
+
+
+def clear_queue(qdir) -> None:
+    """Drop stale job/result files (leftovers from a previous crashed run) so a
+    freshly spawned worker cannot pick up a job the supervisor did not just
+    dispatch. Called once at lane startup. Leaves worker.ready/heartbeat/STOP
+    alone (that is clear_signals' job)."""
+    qd = Path(qdir)
+    if not qd.exists():
+        return
+    for pat in (f"*{_JOB_SUFFIX}", f"*{_JOB_SUFFIX}.done", "*.result.json"):
+        for p in qd.glob(pat):
+            try:
+                p.unlink()
+            except OSError:
+                pass
