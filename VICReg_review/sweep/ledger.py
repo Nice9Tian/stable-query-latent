@@ -24,6 +24,7 @@ from __future__ import annotations
 
 import json
 import os
+import threading
 import time
 from collections import Counter
 from pathlib import Path
@@ -60,14 +61,18 @@ class Ledger:
     def __init__(self, path):
         self.path = Path(path)
         self.path.parent.mkdir(parents=True, exist_ok=True)
+        # Multi-GPU lanes share one Ledger across threads; serialise appends so a
+        # concurrent write can never interleave two records on one line.
+        self._lock = threading.Lock()
 
     # --- low level ---------------------------------------------------------
     def _append(self, record: dict) -> dict:
         record = {**record, "ts": _now()}
-        with self.path.open("a", encoding="utf-8") as f:
-            f.write(json.dumps(record, ensure_ascii=False) + "\n")
-            f.flush()
-            os.fsync(f.fileno())
+        with self._lock:
+            with self.path.open("a", encoding="utf-8") as f:
+                f.write(json.dumps(record, ensure_ascii=False) + "\n")
+                f.flush()
+                os.fsync(f.fileno())
         return record
 
     def load(self) -> dict:

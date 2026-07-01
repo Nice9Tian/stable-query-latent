@@ -1,10 +1,14 @@
-"""File-based job/result protocol between supervisor and worker.
+"""File-based job/result protocol between supervisor and worker(s).
 
-Mirrors the probe_queue idiom (on-disk, restart-safe). The supervisor writes one
-``<combo_id>.job.json`` and waits for ``<combo_id>.result.json``; the worker polls
-for pending jobs, trains, and writes the result. A ``worker.heartbeat`` carries
-the worker PID + current combo; ``worker.ready`` signals startup (calibration)
-is done; ``STOP`` tells the worker to exit.
+Mirrors the probe_queue idiom (on-disk, restart-safe). All functions take a
+``qdir`` -- the queue directory a single worker polls. For a single-GPU sweep
+that is ``<out_dir>/sweep_jobs``; for multi-GPU each lane gets its own subdir
+(``<out_dir>/sweep_jobs/gpu<N>``) so lane workers never steal each other's jobs.
+
+Per queue dir: the supervisor writes one ``<combo_id>.job.json`` and waits for
+``<combo_id>.result.json``; the worker polls for pending jobs, trains, writes the
+result. ``worker.heartbeat`` carries the worker PID + current combo; ``worker.ready``
+signals startup (calibration) is done; ``STOP`` tells the worker to exit.
 """
 
 from __future__ import annotations
@@ -17,28 +21,29 @@ from pathlib import Path
 _JOB_SUFFIX = ".job.json"
 
 
-def jobs_dir(out_dir) -> Path:
+def default_qdir(out_dir) -> Path:
+    """The single-GPU queue dir. Multi-GPU lanes use default_qdir(out_dir)/gpuN."""
     return Path(out_dir) / "sweep_jobs"
 
 
-def job_path(out_dir, combo_id: str) -> Path:
-    return jobs_dir(out_dir) / f"{combo_id}{_JOB_SUFFIX}"
+def job_path(qdir, combo_id: str) -> Path:
+    return Path(qdir) / f"{combo_id}{_JOB_SUFFIX}"
 
 
-def result_path(out_dir, combo_id: str) -> Path:
-    return jobs_dir(out_dir) / f"{combo_id}.result.json"
+def result_path(qdir, combo_id: str) -> Path:
+    return Path(qdir) / f"{combo_id}.result.json"
 
 
-def heartbeat_path(out_dir) -> Path:
-    return jobs_dir(out_dir) / "worker.heartbeat"
+def heartbeat_path(qdir) -> Path:
+    return Path(qdir) / "worker.heartbeat"
 
 
-def ready_path(out_dir) -> Path:
-    return jobs_dir(out_dir) / "worker.ready"
+def ready_path(qdir) -> Path:
+    return Path(qdir) / "worker.ready"
 
 
-def stop_path(out_dir) -> Path:
-    return jobs_dir(out_dir) / "STOP"
+def stop_path(qdir) -> Path:
+    return Path(qdir) / "STOP"
 
 
 def _now() -> str:
@@ -63,33 +68,32 @@ def read_json(path) -> dict | None:
         return None
 
 
-def write_job(out_dir, job: dict) -> None:
-    atomic_write(job_path(out_dir, job["combo_id"]), job)
+def write_job(qdir, job: dict) -> None:
+    atomic_write(job_path(qdir, job["combo_id"]), job)
 
 
-def write_result(out_dir, result: dict) -> None:
-    atomic_write(result_path(out_dir, result["combo_id"]), result)
+def write_result(qdir, result: dict) -> None:
+    atomic_write(result_path(qdir, result["combo_id"]), result)
 
 
-def read_result(out_dir, combo_id: str) -> dict | None:
-    return read_json(result_path(out_dir, combo_id))
+def read_result(qdir, combo_id: str) -> dict | None:
+    return read_json(result_path(qdir, combo_id))
 
 
-def clear_combo(out_dir, combo_id: str) -> None:
-    jd = jobs_dir(out_dir)
-    Path(job_path(out_dir, combo_id)).unlink(missing_ok=True)
-    Path(result_path(out_dir, combo_id)).unlink(missing_ok=True)
-    (jd / f"{combo_id}{_JOB_SUFFIX}.done").unlink(missing_ok=True)
+def clear_combo(qdir, combo_id: str) -> None:
+    Path(job_path(qdir, combo_id)).unlink(missing_ok=True)
+    Path(result_path(qdir, combo_id)).unlink(missing_ok=True)
+    (Path(qdir) / f"{combo_id}{_JOB_SUFFIX}.done").unlink(missing_ok=True)
 
 
-def pending_jobs(out_dir) -> list[Path]:
-    jd = jobs_dir(out_dir)
-    if not jd.exists():
+def pending_jobs(qdir) -> list[Path]:
+    qdir = Path(qdir)
+    if not qdir.exists():
         return []
     out = []
-    for p in sorted(jd.glob(f"*{_JOB_SUFFIX}")):
+    for p in sorted(qdir.glob(f"*{_JOB_SUFFIX}")):
         combo_id = p.name[: -len(_JOB_SUFFIX)]
-        if not result_path(out_dir, combo_id).exists():
+        if not result_path(qdir, combo_id).exists():
             out.append(p)
     return out
 
@@ -103,18 +107,18 @@ def mark_job_consumed(job_file) -> None:
         pass
 
 
-def write_heartbeat(out_dir, pid: int, combo_id: str | None = None) -> None:
-    atomic_write(heartbeat_path(out_dir), {"pid": int(pid), "ts": _now(), "combo_id": combo_id})
+def write_heartbeat(qdir, pid: int, combo_id: str | None = None) -> None:
+    atomic_write(heartbeat_path(qdir), {"pid": int(pid), "ts": _now(), "combo_id": combo_id})
 
 
-def write_ready(out_dir, pid: int) -> None:
-    atomic_write(ready_path(out_dir), {"pid": int(pid), "ts": _now()})
+def write_ready(qdir, pid: int) -> None:
+    atomic_write(ready_path(qdir), {"pid": int(pid), "ts": _now()})
 
 
-def write_stop(out_dir) -> None:
-    atomic_write(stop_path(out_dir), {"ts": _now()})
+def write_stop(qdir) -> None:
+    atomic_write(stop_path(qdir), {"ts": _now()})
 
 
-def clear_signals(out_dir) -> None:
-    for p in (ready_path(out_dir), stop_path(out_dir)):
+def clear_signals(qdir) -> None:
+    for p in (ready_path(qdir), stop_path(qdir)):
         Path(p).unlink(missing_ok=True)

@@ -74,24 +74,31 @@ def main_loop(args) -> int:
     config = SweepConfig.load(args.config)
     if getattr(args, "h5", None):
         config.h5 = str(args.h5)
-    out_dir = config.out_dir
+    qdir = args.queue_dir or protocol.default_qdir(config.out_dir)
     pid = os.getpid()
     poll = max(0.5, float(args.poll_interval))
 
-    try:
-        maybe_calibrate(config, args.device)
-    except BaseException as exc:  # calibration failure shouldn't strand the worker
-        print(f"worker: calibration failed ({type(exc).__name__}: {exc})", flush=True)
-    protocol.write_ready(out_dir, pid)
-    print(f"worker: ready pid={pid} out_dir={out_dir}", flush=True)
+    # Calibration is produced once and shared via calib.json. In multi-GPU runs
+    # the supervisor pre-calibrates (--calib-only worker) and starts lane workers
+    # with --no-calib so they don't all race to rewrite it.
+    if not args.no_calib:
+        try:
+            maybe_calibrate(config, args.device)
+        except BaseException as exc:
+            print(f"worker: calibration failed ({type(exc).__name__}: {exc})", flush=True)
+    if args.calib_only:
+        print("worker: calib-only done; exiting", flush=True)
+        return 0
+    protocol.write_ready(qdir, pid)
+    print(f"worker: ready pid={pid} qdir={qdir}", flush=True)
 
     while True:
-        if protocol.stop_path(out_dir).exists():
+        if protocol.stop_path(qdir).exists():
             print("worker: STOP seen; exiting", flush=True)
             return 0
-        jobs = protocol.pending_jobs(out_dir)
+        jobs = protocol.pending_jobs(qdir)
         if not jobs:
-            protocol.write_heartbeat(out_dir, pid, None)
+            protocol.write_heartbeat(qdir, pid, None)
             time.sleep(poll)
             continue
         job_file = jobs[0]
@@ -100,7 +107,7 @@ def main_loop(args) -> int:
             time.sleep(poll)
             continue
         combo_id = job["combo_id"]
-        protocol.write_heartbeat(out_dir, pid, combo_id)
+        protocol.write_heartbeat(qdir, pid, combo_id)
         print(f"worker: training {combo_id}", flush=True)
         try:
             result = run_job(job, args.device)
@@ -108,7 +115,7 @@ def main_loop(args) -> int:
             if torch.cuda.is_available():
                 torch.cuda.empty_cache()
             result = {"combo_id": combo_id, "status": "oom", "peak_mem_gib": _peak_gib(), "error": f"{exc}"}
-            protocol.write_result(out_dir, result)
+            protocol.write_result(qdir, result)
             protocol.mark_job_consumed(job_file)
             # Exit so the supervisor respawns a fresh worker with a clean CUDA
             # context (an OOM can leave the allocator fragmented/wedged). The
@@ -118,7 +125,7 @@ def main_loop(args) -> int:
         except BaseException as exc:
             result = {"combo_id": combo_id, "status": "error",
                       "error": f"{type(exc).__name__}: {exc}", "traceback": traceback.format_exc()}
-            protocol.write_result(out_dir, result)
+            protocol.write_result(qdir, result)
             protocol.mark_job_consumed(job_file)
             print(f"worker: {combo_id} -> error: {exc}", flush=True)
             gc.collect()
@@ -126,7 +133,7 @@ def main_loop(args) -> int:
                 torch.cuda.empty_cache()
             continue
         result["combo_id"] = combo_id
-        protocol.write_result(out_dir, result)
+        protocol.write_result(qdir, result)
         protocol.mark_job_consumed(job_file)
         print(f"worker: {combo_id} -> done", flush=True)
         gc.collect()
@@ -139,6 +146,9 @@ def parse_args(argv=None):
     p.add_argument("--config", required=True, type=Path)
     p.add_argument("--out-dir", default=None, help="Override config.out_dir (rarely needed).")
     p.add_argument("--h5", default=None, help="Override config.h5 (e.g. a local-disk copy).")
+    p.add_argument("--queue-dir", default=None, help="Job queue dir to poll (default <out_dir>/sweep_jobs).")
+    p.add_argument("--calib-only", action="store_true", help="Only calibrate + write calib.json, then exit.")
+    p.add_argument("--no-calib", action="store_true", help="Skip calibration (supervisor pre-calibrated).")
     p.add_argument("--device", default="cuda")
     p.add_argument("--poll-interval", type=float, default=2.0)
     p.add_argument("--logout-address", default=None, help="Append stdout/stderr to this log file.")
