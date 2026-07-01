@@ -464,15 +464,22 @@ class Supervisor:
         return Supervisor.downgrade(settings)
 
     # --- main loop ---------------------------------------------------------
-    def _progress(self) -> str:
-        """Monotonic progress from the shared tally (not the grid dispatch index,
-        which jumps around when lanes interleave). Shows how many combos are
-        finished and how many remain across ALL lanes."""
+    def _done_count(self) -> int:
+        """Current done count from the shared out_dir, including prior runs/VMs."""
+        if self.coordinator is not None and self._ordered_ids:
+            return sum(1 for cid in self._ordered_ids if self.coordinator.is_done(cid))
         with self._tally_lock:
-            d, f, s = self._tally["done"], self._tally["failed"], self._tally["skipped"]
-        fin = d + f + s
-        left = max(0, self.total - fin)
-        return f"[{fin}/{self.total}] done={d} failed={f} skipped={s} ({left} left)"
+            return int(self._tally["done"])
+
+    def _progress(self) -> str:
+        """Progress from manifest/done.json, not just this supervisor process.
+
+        Failed combos are intentionally excluded here; the audit/check tooling is
+        the clearer place to inspect them without making the done counter lie.
+        """
+        d = self._done_count()
+        left = max(0, self.total - d)
+        return f"[{d}/{self.total}] done={d} ({left} not done)"
 
     def _bump(self, key) -> None:
         with self._tally_lock:
@@ -636,7 +643,7 @@ class Supervisor:
         finally:
             self.close()
         summary = self.ledger.summary()
-        print(f"supervisor: sweep complete [{self.total}/{self.total}] -> {summary}", flush=True)
+        print(f"supervisor: sweep complete done={self._done_count()}/{self.total} -> {summary}", flush=True)
         return summary
 
     def _run_combo(self, combo, position=0, total=0) -> None:
@@ -774,7 +781,7 @@ def run_sweep(config: SweepConfig, config_path, gpus, *, logout_address=None,
         primary.close()                        # stop the lease refresher
 
     summary = primary.ledger.summary()
-    print(f"supervisor: sweep complete [{primary.total}/{primary.total}] "
+    print(f"supervisor: sweep complete done={primary._done_count()}/{primary.total} "
           f"gpus={gpus} vm={primary.vm_name} -> {summary}", flush=True)
     return summary
 
