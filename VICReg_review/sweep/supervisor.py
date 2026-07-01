@@ -39,6 +39,16 @@ from VICReg_review.sweep.ledger import Ledger, pid_alive  # noqa: E402
 
 MAX_ATTEMPTS = 4
 MIN_CHUNK = 64
+_SIGKILL = getattr(signal, "SIGKILL", getattr(signal, "SIGTERM", 15))  # Windows has no SIGKILL
+
+
+def _iter_proc_pids():
+    """All live PIDs from /proc (Linux). Empty on platforms without /proc so the
+    stale-worker reap is a harmless no-op off the training host."""
+    try:
+        return [int(name) for name in os.listdir("/proc") if name.isdigit()]
+    except OSError:
+        return []
 
 
 def _free_vram_bytes_smi(gpu: int = 0) -> float:
@@ -69,7 +79,7 @@ class Supervisor:
                  free_vram_fn=None, calib=None, stats=None, poll=2.0,
                  ready_timeout=3600.0, reclaim_timeout=600.0, logout_address=None,
                  h5_override=None, retry_failed=False, gpu=0, qdir=None,
-                 no_calib=False, ram_divisor=1, shard=(0, 1)):
+                 no_calib=False, ram_divisor=1, shard=(0, 1), work_dir=None):
         self.config = config
         self.config_path = config_path
         self.logout_address = logout_address
@@ -81,7 +91,12 @@ class Supervisor:
         self._shard = (int(shard[0]), max(1, int(shard[1])))
         self.no_calib = bool(no_calib)
         self.out_dir = config.out_dir
-        self.qdir = Path(qdir) if qdir is not None else protocol.default_qdir(self.out_dir)
+        # out_dir  -> DURABLE, may be on the shared FS: ledger, checkpoints, probes.
+        # work_dir -> MACHINE-LOCAL scratch: calib.json + the job queue (transient
+        # same-machine IPC + a GPU-specific memory calibration). Defaults to out_dir
+        # so single-machine behaviour is unchanged.
+        self.work_dir = Path(work_dir) if work_dir else Path(self.out_dir)
+        self.qdir = Path(qdir) if qdir is not None else protocol.default_qdir(self.work_dir)
         self.ledger = Ledger(Path(config.out_dir) / "ledger.jsonl")
         self.probe_queue = Path(config.out_dir) / "probe_queue"
         self._spawn_fn = spawn_worker or self._default_spawn
@@ -127,7 +142,8 @@ class Supervisor:
     def _default_spawn(self, gpu, qdir):
         argv = [sys.executable, "-u", str(SCRIPT_DIR / "worker.py"),
                 "--config", str(self.config_path), "--device", "cuda",
-                "--queue-dir", str(qdir), "--out-dir", str(self.out_dir)]
+                "--queue-dir", str(qdir), "--out-dir", str(self.out_dir),
+                "--work-dir", str(self.work_dir)]
         if self.no_calib:
             argv += ["--no-calib"]           # calib was pre-computed once by _ensure_calib
         if self.h5_override:
@@ -182,19 +198,125 @@ class Supervisor:
             time.sleep(self.poll)
         raise TimeoutError("worker did not become ready in time")
 
+    def _total_vram(self) -> float:
+        try:
+            out = subprocess.run(
+                ["nvidia-smi", "--query-gpu=memory.total", "--format=csv,noheader,nounits",
+                 f"--id={int(self.gpu)}"],
+                capture_output=True, text=True, timeout=5,
+            ).stdout.strip()
+            if out:
+                return float(out.splitlines()[0].strip()) * 1024 * 1024
+        except Exception:
+            pass
+        return 0.0
+
     def _poll_until_free(self) -> None:
+        """Wait until the just-killed worker's VRAM is actually reclaimed before
+        respawning. The old ``free >= first`` test returned on the FIRST poll
+        (free never dips below itself), so the fresh worker could allocate on top
+        of a not-yet-released context and OOM immediately. Now we wait until this
+        lane's GPU is mostly empty again (it owns the card), or free plateaus."""
+        total = self._total_vram()
+        target = 0.85 * total if total else 0.0
         deadline = time.time() + self.reclaim_timeout
-        first = self._free_vram()
+        best, stall = -1.0, 0
         while time.time() < deadline:
             time.sleep(self.poll)
-            if self._free_vram() >= first:        # memory came back after the crash
-                return
+            free = self._free_vram()
+            if target and free >= target:
+                return                                 # GPU reclaimed -> safe to respawn
+            margin = 0.02 * (total or free or 1.0)
+            if free > best + margin:
+                best, stall = free, 0                  # still climbing (memory coming back)
+            else:
+                stall += 1
+                if stall >= 5:                         # plateaued -> as free as it will get
+                    return
         # best effort: proceed even if we couldn't confirm reclamation
 
     def _recover_worker(self) -> None:
         self._kill_worker()           # kill the stuck/old worker first ...
         self._poll_until_free()       # ... then wait for its GPU memory to return
         self._wait_ready()            # ... then spawn a fresh one
+
+    @staticmethod
+    def _proc_cmdline(pid):
+        try:
+            with open(f"/proc/{pid}/cmdline", "rb") as f:
+                return f.read().replace(b"\x00", b" ").decode("utf-8", "ignore")
+        except OSError:
+            return None
+
+    def _protected_pids(self) -> set:
+        """Ourselves + our whole ancestor chain -- the notebook kernel may hold a
+        CUDA context and appear on the GPU; killing it would abort the run."""
+        protected, pid = set(), os.getpid()
+        for _ in range(64):
+            if pid <= 1 or pid in protected:
+                break
+            protected.add(pid)
+            try:
+                with open(f"/proc/{pid}/stat") as f:
+                    pid = int(f.read().rsplit(")", 1)[1].split()[1])   # ppid
+            except (OSError, IndexError, ValueError):
+                break
+        return protected
+
+    def _gpu_pids(self, gpus) -> set:
+        """PIDs currently holding compute contexts on our target GPUs (nvidia-smi
+        reads this without the supervisor ever creating a CUDA context)."""
+        pids = set()
+        for g in gpus:
+            try:
+                out = subprocess.run(
+                    ["nvidia-smi", "--query-compute-apps=pid", "--format=csv,noheader,nounits",
+                     f"--id={int(g)}"], capture_output=True, text=True, timeout=5).stdout
+                pids.update(int(x) for x in out.split() if x.strip().isdigit())
+            except Exception:
+                pass
+        return pids
+
+    def _reap_stale_workers(self, gpus) -> None:
+        """Automatically clear the target GPUs of stale workers before starting.
+
+        Workers spawn in a new session (start_new_session) so the supervisor can
+        kill a worker + its data-pool children as one group -- but that also
+        DETACHES them from the supervisor, so a supervisor/notebook-kernel restart
+        leaves them running and holding ~30 GiB of VRAM each. The next run then
+        OOMs on top of these ghosts. So on startup (before spawning anything) we
+        find every process pinned to OUR GPUs, and SIGKILL the ones that are our
+        worker script -- confirmed via /proc cmdline so an unrelated GPU job is
+        never touched, and skipping our own ancestor chain (the kernel). This is
+        the automatic replacement for a manual `pkill -f worker.py`."""
+        worker_script = str(SCRIPT_DIR / "worker.py")
+        protected = self._protected_pids()
+        candidates = self._gpu_pids(gpus)
+        # Also catch our worker.py that isn't momentarily pinned to the GPU (e.g.
+        # mid-startup, or a ghost whose out_dir differs from this run's), via a
+        # /proc scan. Matching the script PATH means only THIS repo's workers are
+        # ever touched -- not probe_worker, not some other job. One supervisor runs
+        # per machine, so any pre-existing sweep worker here is a stale ghost.
+        for pid in _iter_proc_pids():
+            cmd = self._proc_cmdline(pid)
+            if cmd and worker_script in cmd:
+                candidates.add(pid)
+        killed = []
+        for pid in candidates:
+            if pid in protected:
+                continue
+            cmd = self._proc_cmdline(pid)
+            if cmd is None or worker_script not in cmd:
+                continue          # gone, or not one of our workers -> leave it
+            try:
+                os.kill(pid, _SIGKILL)
+                killed.append(pid)
+            except OSError:
+                pass
+        if killed:
+            print(f"supervisor: auto-killed {len(killed)} stale GPU worker(s) from a "
+                  f"previous run (gpus={list(gpus)}): {killed}", flush=True)
+            time.sleep(3)   # let the driver reclaim their VRAM before we spawn
 
     # --- one-off calibration ----------------------------------------------
     def _ensure_calib(self) -> None:
@@ -203,7 +325,7 @@ class Supervisor:
         then run with --no-calib."""
         if self.calib is not None:            # injected (tests) or already loaded
             return
-        calib_path = Path(self.out_dir) / "calib.json"
+        calib_path = Path(self.work_dir) / "calib.json"
         mode = getattr(self.config.memory, "calib", "measure")
         if mode == "off":
             self.calib = {}
@@ -218,7 +340,7 @@ class Supervisor:
         print(f"supervisor: calibrating once on gpu {self.gpu} ...", flush=True)
         argv = [sys.executable, "-u", str(SCRIPT_DIR / "worker.py"),
                 "--config", str(self.config_path), "--device", "cuda", "--calib-only",
-                "--out-dir", str(self.out_dir)]
+                "--out-dir", str(self.out_dir), "--work-dir", str(self.work_dir)]
         if self.h5_override:
             argv += ["--h5", str(self.h5_override)]
         if self.logout_address:
@@ -312,10 +434,12 @@ class Supervisor:
             combos = [c for idx, c in enumerate(combos) if idx % n == i]
         return combos
 
-    def _prepare(self) -> None:
+    def _prepare(self, gpus=None) -> None:
         """Shared, run once (by the primary lane): reconcile, calibrate, load
         stats, and build the shared grid iterator. Safe to call before spawning
-        any lane worker."""
+        any lane worker. ``gpus`` are the physical cards this run will use -- they
+        get auto-cleared of stale workers first."""
+        self._reap_stale_workers(gpus or [self.gpu])   # clear VRAM ghosts before anything
         self.ledger.reconcile_running()
         if self.retry_failed:
             self._reset_failed()
@@ -422,10 +546,18 @@ class Supervisor:
                 self._bump("done")
                 print(f"supervisor: {tag} {combo_id} done (peak={result.get('peak_mem_gib')}GiB) | {self._progress()}", flush=True)
                 return
-            # oom / error -> downgrade and retry. The worker exits after an OOM,
-            # so the top-of-loop liveness check recovers it on the next pass.
-            print(f"supervisor: {tag} {combo_id} {result.get('status')}: {result.get('error')}; downgrading", flush=True)
+            # oom / error -> downgrade and retry.
+            status = result.get("status")
+            print(f"supervisor: {tag} {combo_id} {status}: {result.get('error')}; downgrading", flush=True)
             settings = self.downgrade(settings)
+            if status == "oom":
+                # The worker exits itself after an OOM (clean CUDA context). Bring
+                # up a fresh one NOW -- after its VRAM is actually reclaimed
+                # (_poll_until_free) -- so the next attempt never allocates on top
+                # of the dying worker's memory. Doing it here (vs waiting for the
+                # top-of-loop liveness check) avoids dispatching to a worker that
+                # is mid-teardown and getting a spurious second downgrade.
+                self._recover_worker()
 
     def _await_result(self, combo_id: str):
         while True:
@@ -441,27 +573,30 @@ class Supervisor:
 def run_sweep(config: SweepConfig, config_path, gpus, *, logout_address=None,
               h5_override=None, retry_failed=False, poll=2.0, ready_timeout=3600.0,
               reclaim_timeout=600.0, spawn_worker=None, free_vram_fn=None,
-              calib=None, stats=None, shard=(0, 1)) -> dict:
+              calib=None, stats=None, shard=(0, 1), work_dir=None) -> dict:
     """Drive the sweep across ``gpus``. One lane per GPU, each with its own worker
     (pinned via CUDA_VISIBLE_DEVICES) and its own job queue subdir; all lanes share
     one ledger + grid + tally so every combo is trained exactly once. A single GPU
-    is just one lane. ``calib``/``stats`` are injectable for testing without a GPU."""
+    is just one lane. ``work_dir`` (machine-local) hosts calib.json + the job queue;
+    the durable ledger/checkpoints stay under out_dir. ``calib``/``stats`` are
+    injectable for testing without a GPU."""
     gpus = list(dict.fromkeys(int(g) for g in gpus)) or [0]
     multi = len(gpus) > 1
+    work_base = Path(work_dir) if work_dir else Path(config.out_dir)
 
     def qdir_for(g):
-        base = protocol.default_qdir(config.out_dir)
+        base = protocol.default_qdir(work_base)
         return base / f"gpu{g}" if multi else base
 
     common = dict(config_path=config_path, logout_address=logout_address,
                   h5_override=h5_override, poll=poll, ready_timeout=ready_timeout,
                   reclaim_timeout=reclaim_timeout, no_calib=True, ram_divisor=len(gpus),
-                  spawn_worker=spawn_worker, free_vram_fn=free_vram_fn)
+                  spawn_worker=spawn_worker, free_vram_fn=free_vram_fn, work_dir=work_dir)
 
     primary = Supervisor(config, gpu=gpus[0], qdir=qdir_for(gpus[0]),
                          retry_failed=retry_failed, calib=calib, stats=stats,
                          shard=shard, **common)
-    primary._prepare()                       # reconcile + one-off calib + stats + grid
+    primary._prepare(gpus)                    # auto-clear GPUs + reconcile + calib + stats + grid
     lanes = [primary]
     for g in gpus[1:]:
         lane = Supervisor(config, gpu=g, qdir=qdir_for(g), retry_failed=False, **common)
@@ -505,9 +640,13 @@ def parse_args(argv=None):
                    help="Override config.h5 (e.g. a fast local-disk copy of the embedding H5). "
                         "Only the H5 input is redirected; checkpoints/ledger stay at out_dir.")
     p.add_argument("--out-dir", default=None,
-                   help="Override config.out_dir (ledger + checkpoints + calib). Give each "
-                        "machine its own out_dir when sharding one sweep across VMs, so their "
-                        "ledgers never contend on the network FS.")
+                   help="Override config.out_dir: the DURABLE state (ledger + checkpoints + "
+                        "probes). Give each machine its own out_dir when sharding one sweep "
+                        "across VMs, so their ledgers never contend on the network FS.")
+    p.add_argument("--work-dir", default=None,
+                   help="Machine-LOCAL scratch dir (e.g. RunPod /tmp or /root) for calib.json "
+                        "(measured on this GPU) + the job queue. Keeps machine-specific + "
+                        "transient files off the shared network FS. Defaults to out_dir.")
     p.add_argument("--logout-address", default=None, help="Append stdout/stderr to this log file.")
     p.add_argument("--retry-failed", action="store_true",
                    help="Reset 'failed' combos (attempts exhausted) back to pending so they "
@@ -535,7 +674,8 @@ def run_main(args) -> None:
     gpus = _parse_gpus(args.gpus) if args.gpus else [args.gpu]
     shard = _parse_shard(args.shard) if args.shard else (0, 1)
     summary = run_sweep(config, args.config, gpus, logout_address=args.logout_address,
-                        h5_override=args.h5, retry_failed=args.retry_failed, shard=shard)
+                        h5_override=args.h5, retry_failed=args.retry_failed, shard=shard,
+                        work_dir=args.work_dir)
     print(f"sweep done: {summary}", flush=True)
 
 

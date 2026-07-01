@@ -17,10 +17,17 @@ Runnable as a dry-run plan table::
 from __future__ import annotations
 
 import argparse
+import sys
 from pathlib import Path
 
-from VICReg_review import oom_proxy
-from VICReg_review.sweep.config import SweepConfig
+SCRIPT_DIR = Path(__file__).resolve().parent
+ROOT = SCRIPT_DIR.parent.parent
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+
+from tools.logging_tee import run_with_optional_tee  # noqa: E402
+from VICReg_review import oom_proxy  # noqa: E402
+from VICReg_review.sweep.config import SweepConfig  # noqa: E402
 
 GIB = oom_proxy.GIB
 
@@ -87,11 +94,11 @@ def _parse_args(argv=None):
     p.add_argument("--free-vram-gib", type=float, default=None,
                    help="Override measured free VRAM (plan for a different card / no GPU).")
     p.add_argument("--device", default="cuda")
+    p.add_argument("--logout-address", default=None, help="Append stdout/stderr to this log file.")
     return p.parse_args(argv)
 
 
-def main(argv=None) -> None:
-    args = _parse_args(argv)
+def _run(args) -> None:
     config = SweepConfig.load(args.config)
     if args.h5:
         config.h5 = str(args.h5)
@@ -105,6 +112,11 @@ def main(argv=None) -> None:
     rows = plan_grid(config, calib, stats, free)
     ram_budget = oom_proxy.available_ram_bytes() * config.memory.ram_safety
     print(format_table(rows, free, config.memory.vram_safety, stats.num_games, ram_budget / GIB))
+
+
+def main(argv=None) -> None:
+    args = _parse_args(argv)
+    run_with_optional_tee(args.logout_address, _run, args)
 
 
 if __name__ == "__main__":

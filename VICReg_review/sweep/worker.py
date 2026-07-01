@@ -52,8 +52,10 @@ def run_job(job: dict, device: str) -> dict:
     return {"status": "done", "peak_mem_gib": _peak_gib(), "ckpt": job.get("ckpt")}
 
 
-def maybe_calibrate(config: SweepConfig, device: str) -> None:
-    calib_path = Path(config.out_dir) / "calib.json"
+def maybe_calibrate(config: SweepConfig, device: str, calib_dir=None) -> None:
+    # calib.json is machine-specific (C/R measured on THIS GPU) -> keep it on the
+    # local work dir, not the shared out_dir, when one is given.
+    calib_path = Path(calib_dir or config.out_dir) / "calib.json"
     mode = config.memory.calib
     if mode == "off":
         return
@@ -75,8 +77,11 @@ def main_loop(args) -> int:
     if getattr(args, "h5", None):
         config.h5 = str(args.h5)
     if getattr(args, "out_dir", None):
-        config.out_dir = str(args.out_dir)   # keep calib.json + checkpoints on the same shard dir
-    qdir = args.queue_dir or protocol.default_qdir(config.out_dir)
+        config.out_dir = str(args.out_dir)   # durable ledger/checkpoints dir (may be on /workspace)
+    # Machine-local scratch: calib.json (measured on this GPU) + the job queue.
+    # Defaults to out_dir so single-machine behaviour is unchanged.
+    work_dir = getattr(args, "work_dir", None) or config.out_dir
+    qdir = args.queue_dir or protocol.default_qdir(work_dir)
     pid = os.getpid()
     poll = max(0.5, float(args.poll_interval))
 
@@ -85,7 +90,7 @@ def main_loop(args) -> int:
     # with --no-calib so they don't all race to rewrite it.
     if not args.no_calib:
         try:
-            maybe_calibrate(config, args.device)
+            maybe_calibrate(config, args.device, work_dir)
         except BaseException as exc:
             print(f"worker: calibration failed ({type(exc).__name__}: {exc})", flush=True)
     if args.calib_only:
@@ -147,8 +152,10 @@ def parse_args(argv=None):
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--config", required=True, type=Path)
     p.add_argument("--out-dir", default=None, help="Override config.out_dir (rarely needed).")
+    p.add_argument("--work-dir", default=None,
+                   help="Machine-local scratch dir for calib.json (default = out_dir).")
     p.add_argument("--h5", default=None, help="Override config.h5 (e.g. a local-disk copy).")
-    p.add_argument("--queue-dir", default=None, help="Job queue dir to poll (default <out_dir>/sweep_jobs).")
+    p.add_argument("--queue-dir", default=None, help="Job queue dir to poll (default <work_dir>/sweep_jobs).")
     p.add_argument("--calib-only", action="store_true", help="Only calibrate + write calib.json, then exit.")
     p.add_argument("--no-calib", action="store_true", help="Skip calibration (supervisor pre-calibrated).")
     p.add_argument("--device", default="cuda")

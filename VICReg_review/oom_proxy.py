@@ -487,6 +487,7 @@ def _parse_args(argv=None):
     p.add_argument("--safety", type=float, default=0.85)
     p.add_argument("--free-vram-gib", type=float, default=None,
                    help="Override measured free VRAM (e.g. plan on a different card).")
+    p.add_argument("--logout-address", default=None, help="Append stdout/stderr to this log file.")
     return p.parse_args(argv)
 
 
@@ -494,8 +495,7 @@ def _num_latents_list(base: int, scales) -> list[int]:
     return sorted({max(1, int(round(base * s))) for s in scales})
 
 
-def main(argv=None) -> None:
-    args = _parse_args(argv)
+def _run(args) -> None:
     nl_list = _num_latents_list(args.base_num_latents, args.latent_scales)
 
     calib = None
@@ -533,6 +533,12 @@ def main(argv=None) -> None:
                        "Y" if plan["paired"] else "n", plan["max_batch_sentences"],
                        plan["max_view_sentences"], f"{plan.get('est_peak_gib', '?')}", plan["note"])
                 print("  ".join(f"{str(c):>9}" for c in row), flush=True)
+
+
+def main(argv=None) -> None:
+    args = _parse_args(argv)
+    from tools.logging_tee import run_with_optional_tee
+    run_with_optional_tee(args.logout_address, _run, args)
 
 
 if __name__ == "__main__":
