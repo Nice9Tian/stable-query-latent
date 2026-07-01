@@ -91,8 +91,10 @@ class Supervisor:
         self.stats = stats
         # Host RAM is shared across lanes (VRAM is not -- each lane reads its own
         # card). Divide the RAM budget so N lanes don't each plan a full pinned
-        # cache and blow the OOM-killer.
+        # cache and blow the OOM-killer. Data-loader procs are likewise auto-scaled
+        # to cores / lane-count (not a YAML knob).
         self._ram_divisor = max(1, int(ram_divisor))
+        self._data_workers = jobspec.auto_data_workers(self._ram_divisor)
         # Coordination state -- per-instance by default; run_sweep replaces these
         # refs on every lane so they share one grid/tally/ledger.
         self.total = 0
@@ -371,7 +373,9 @@ class Supervisor:
                 self._recover_worker()
 
             protocol.clear_combo(self.qdir, combo_id)
-            argv = jobspec.build_trainer_argv(self.config, combo, settings, probe_queue_dir=self.probe_queue)
+            argv = jobspec.build_trainer_argv(self.config, combo, settings,
+                                              probe_queue_dir=self.probe_queue,
+                                              data_workers=self._data_workers)
             protocol.write_job(self.qdir, {
                 "combo_id": combo_id, "config_hash": config_hash,
                 "argv": argv, "settings": settings, "ckpt": str(paths["checkpoint"]),
@@ -443,7 +447,8 @@ def run_sweep(config: SweepConfig, config_path, gpus, *, logout_address=None,
         lane._share_from(primary)
         lanes.append(lane)
 
-    print(f"supervisor: driving {primary.total} combos across gpus={gpus}", flush=True)
+    print(f"supervisor: driving {primary.total} combos across gpus={gpus} "
+          f"| {jobspec.effective_cpu_count()} cores -> {primary._data_workers} data-workers/lane", flush=True)
     if len(lanes) == 1:
         lanes[0]._lane_loop()
     else:

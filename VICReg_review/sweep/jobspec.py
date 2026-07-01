@@ -9,6 +9,7 @@ controlled without a separate paired trainer.
 
 from __future__ import annotations
 
+import os
 from pathlib import Path
 
 # Loss constants for the current experiment (legacy run_data_view_sweep values).
@@ -17,6 +18,24 @@ ADVERSARY_WEIGHT = 10.0
 RECO_DECORR_WEIGHT = 30.0
 COMPACT_VAR_WEIGHT = 25.0
 COMPACT_COV_WEIGHT = 25.0
+
+
+def effective_cpu_count() -> int:
+    """Visible CPU cores, respecting cgroup/affinity (RunPod may pin a subset).
+    Kept torch-free so the supervisor can call it without a CUDA import."""
+    try:
+        return max(1, len(os.sched_getaffinity(0)))
+    except (AttributeError, OSError):
+        return max(1, os.cpu_count() or 1)
+
+
+def auto_data_workers(n_lanes: int = 1) -> int:
+    """Per-lane parallel H5-read procs, auto-scaled to the machine: the trainer's
+    convention (cores-1, capped at 16) divided across the GPU lanes, so N lanes
+    don't collectively oversubscribe the CPU. Not a YAML knob -- it follows the
+    hardware and how many GPUs the sweep is spread over."""
+    n_lanes = max(1, int(n_lanes))
+    return max(1, min(16, (effective_cpu_count() - 1) // n_lanes))
 
 
 def combo_dir(config, combo) -> Path:
@@ -36,12 +55,16 @@ def combo_paths(config, combo) -> dict:
 
 
 def build_trainer_argv(config, combo, settings: dict, *, device: str = "cuda",
-                       probe_queue_dir=None, resume: bool = True) -> list[str]:
+                       probe_queue_dir=None, resume: bool = True,
+                       data_workers: int | None = None) -> list[str]:
     paths = combo_paths(config, combo)
     grl = combo.arm == "grl"
     cache_mode = settings.get("cache_mode", "full")
     pin_cache = bool(settings.get("pin_cache", True))
     prefetch = int(settings.get("prefetch_batches", 2) or 2)
+    # data_workers is auto-scaled by the supervisor (cores / lane-count); it is
+    # not read from the YAML. Fall back to auto for a single lane if unspecified.
+    dw = int(data_workers) if data_workers is not None else auto_data_workers(1)
     argv = [
         "--input-h5", str(config.h5),
         "--device", str(device), "--amp",
@@ -70,7 +93,7 @@ def build_trainer_argv(config, combo, settings: dict, *, device: str = "cuda",
         "--cache-mode", cache_mode,
         "--cache-dtype", "float16",
         "--prefetch-batches", str(prefetch),
-        "--data-workers", str(int(getattr(config.train, "data_workers", 0))),
+        "--data-workers", str(dw),
         "--seed", str(config.train.seed),
         "--checkpoint-out", str(paths["checkpoint"]),
         "--best-checkpoint-out", str(paths["best"]),
