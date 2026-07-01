@@ -1,8 +1,8 @@
 # Pod Deployment — multi-VM coordinated sweep
 
 `Pod/` is the **single template**. Run **`prepare_pods.ipynb` once, on the first VM** — it
-installs git, pulls the repo, and generates the per-VM bundles `Pod_1 … Pod_5` at the
-`/workspace` root (each with its `VM_NAME` = `VM1`…`VM5`). Because `/workspace` is shared,
+installs git, pulls the repo, and generates the per-VM bundles `Pod_1 … Pod_7` at the
+`/workspace` root (each with its `VM_NAME` = `VM1`…`VM7`). Because `/workspace` is shared,
 one run makes **every VM's folder appear**; VM _N_ just opens `/workspace/Pod_N`. You only
 maintain this one template — re-run the generator to push template changes to all bundles.
 
@@ -13,7 +13,7 @@ automatically** (a combo whose checkpoint already exists is recognised as done).
 ## Notebooks (run in this order)
 
 - **`prepare_pods.ipynb`** (repo root, NOT in a bundle) — run once on the first VM to
-  generate `/workspace/Pod_1..5` from this template. See the deploy sequence below.
+  generate `/workspace/Pod_1..7` from this template. See the deploy sequence below.
 - **`setup.ipynb`** — environment: gh CLI, clone/pull, `pip install`, flash-attn. Once per pod.
 - **`prepare_training.ipynb`** — build/embed the H5 (**one VM only** — it writes the shared
   `embedding_h5.h5`; if it already exists, build/embed just skip) → stage the H5 to local
@@ -26,15 +26,15 @@ automatically** (a combo whose checkpoint already exists is recognised as done).
 
 ## Deploy sequence
 
-0. **First VM:** drag in + run **`prepare_pods.ipynb`** → generates `/workspace/Pod_1..5`
+0. **First VM:** drag in + run **`prepare_pods.ipynb`** → generates `/workspace/Pod_1..7`
    (shared, so all VMs now have their folder).
 1. **Every VM:** open its `/workspace/Pod_N` → `setup` → `prepare_training`.
 2. **VM1 only:** start `training`.
 3. **Run `check_paralle`** (on VM1, or any VM — it reads the shared dir): confirm
    **O_EXCL is atomic on MooseFS ✓**, **VM1 registered ✓**, **migration OK** (existing
    checkpoints recognized, none re-claimed) **✓**.
-4. **If green → VM2…VM5:** start `training`.
-5. **Re-run `check_paralle`** → see all 5 claiming, **no combo twice**.
+4. **If green → VM2…VM7:** start `training`.
+5. **Re-run `check_paralle`** → see all 7 claiming, **no combo twice**.
 
 ## Multi-VM setup notes
 
