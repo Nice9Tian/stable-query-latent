@@ -749,43 +749,40 @@ class Supervisor:
         return oom_proxy.estimate_full_cache_bytes(total, combo.view, self.stats.input_dim)
 
     def _select_active_gpus(self, gpus: list[int], combos: list) -> list[int]:
-        """Auto-degrade lane count from RAM/cache economics.
+        """Keep every GPU active; per-combo _ram_budget picks full vs queue per lane.
 
-        Score model: a full-cache lane is +1; each lane that must be degraded or
-        disabled is -1. Maximising that score chooses the VM's full-cache slot
-        count for the current heavy cache class.
+        The old rule sized the PERMANENT lane count off the SINGLE heaviest combo's
+        full cache and disabled the rest for the whole run -- so one 221GiB class
+        (n2000 x view0.8, whose cache doesn't even depend on num_latents) throttled
+        an L40x2 down to a single GPU, and an A100x5 to 3, even though almost every
+        other combo fits full cache on all lanes and the heavy one runs fine in queue
+        mode (streamed from the RAM-resident H5 page cache). An idle GPU is always
+        worse than a queue-mode lane, and _ram_budget already bounds host RAM safely
+        per combo (full cache to as many lanes as fit, the rest stream), so disabling
+        lanes was redundant AND harmful. Adapt per combo, never park a GPU.
         """
         gpus = list(gpus)
         if len(gpus) <= 1 or not combos:
             return gpus
-        cache_bytes = max((self._cache_bytes_for_combo(c) for c in combos), default=0.0)
-        if cache_bytes <= 0:
-            return gpus
         pool = self._ram_pool_budget()
-        full_slots = min(len(gpus), max(1, int(pool // float(cache_bytes))))
-        active_n = max(1, full_slots)
-        active = gpus[:active_n]
-        full = min(active_n, full_slots)
-        degraded = len(gpus) - full
-        score = full - degraded
-        if active_n < len(gpus):
-            print(
-                f"supervisor: auto-lanes {active_n}/{len(gpus)} active "
-                f"gpus={active} disabled={gpus[active_n:]} "
-                f"score={score} (+{full} full, -{degraded} degraded) "
-                f"cache_target={cache_bytes / oom_proxy.GIB:.1f}GiB "
-                f"ram_pool={pool / oom_proxy.GIB:.1f}GiB",
-                flush=True,
-            )
-        else:
-            print(
-                f"supervisor: auto-lanes keep all {len(gpus)} gpus "
-                f"score={score} (+{full} full, -{degraded} degraded) "
-                f"cache_target={cache_bytes / oom_proxy.GIB:.1f}GiB "
-                f"ram_pool={pool / oom_proxy.GIB:.1f}GiB",
-                flush=True,
-            )
-        return active
+        caches = [self._cache_bytes_for_combo(c) for c in combos]
+        heavy = max(caches, default=0.0)
+        light = min((c for c in caches if c > 0), default=0.0)
+
+        def full_lanes(cache: float) -> int:
+            return len(gpus) if cache <= 0 else min(len(gpus), int(pool // float(cache)))
+
+        # Full-cache lanes VARY by combo now: the heaviest gets the fewest (rest
+        # stream), the lightest gets all. Report the range so the log still explains
+        # the memory economics without ever disabling a card.
+        print(
+            f"supervisor: auto-lanes keep all {len(gpus)} gpus active (per-combo full/queue); "
+            f"full-cache lanes {full_lanes(heavy)}..{full_lanes(light)}/{len(gpus)} "
+            f"[heaviest={heavy / oom_proxy.GIB:.1f}GiB lightest={light / oom_proxy.GIB:.1f}GiB] "
+            f"ram_pool={pool / oom_proxy.GIB:.1f}GiB",
+            flush=True,
+        )
+        return gpus
 
     def _max_alive_full_slots(self, cache_bytes: float) -> int:
         """How many full-cache lanes the most capable alive VM can likely run for
