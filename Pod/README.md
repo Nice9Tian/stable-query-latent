@@ -26,8 +26,9 @@ automatically** (a combo whose checkpoint already exists is recognised as done).
   into a raw fp16 `.dat` memmap (~150GiB) + a tiny companion mini-H5 (offsets + shape) →
   smoke-validate the pipeline (per-VM `cloud_smoke_<VM>`). Training then reads ONLY the local
   `.dat` + mini-H5 (one shared copy per VM via the OS page cache), never the big workspace H5.
-  Gated on host RAM: if a VM is too small to keep the `.dat` resident, staging is skipped and
-  training streams the workspace H5 instead.
+  Gated on LOCAL DISK only (RAM does not gate: a `.dat` bigger than RAM is NVMe-paged on
+  demand, still far faster than the network FS); only if the local disk can't hold the
+  `.dat` does training fall back to streaming the workspace H5 (last resort).
 - **`training.ipynb`** — the coordinated sweep. Registers this VM, claims combos, trains.
 - **`check_paralle.ipynb`** — verify the *live* coordination (O_EXCL atomic on this mount,
   VM registry, migration OK). Run it **after** training has started.

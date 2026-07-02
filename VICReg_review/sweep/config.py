@@ -55,9 +55,11 @@ class MemoryConfig:
     h5_page_cache_chunk_mb: int = 256
     pin_cache_max_gib: float = 64.0  # avoid page-locking huge full caches
     calib: str = "measure"           # measure | load | off
-    resident_vectors: bool = True    # on big-RAM VMs, memmap vectors once (shared) and
-                                     # gather by pointer instead of per-combo view caches
-    resident_vectors_ram_headroom: float = 1.15  # need available_ram >= vectors_bytes * this
+    resident_vectors: bool = True    # memmap vectors once per VM (local NVMe .dat, shared)
+                                     # and gather by pointer instead of per-combo view caches;
+                                     # only LOCAL DISK space gates this, not RAM
+    resident_vectors_ram_headroom: float = 1.15  # INFO only: available_ram >= vectors*this ->
+                                                 # logged as RAM-resident, else NVMe-paged
 
 
 @dataclass

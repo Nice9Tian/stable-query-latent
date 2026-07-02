@@ -20,6 +20,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import shutil
 import signal
 import socket
 import subprocess
@@ -467,6 +468,15 @@ class Supervisor:
             return
         if size <= 0:
             return
+        # Warming only helps if the whole file can actually stay cached: on a
+        # smaller-RAM VM the head is evicted while the tail is read, so the pass
+        # is mostly wasted network I/O with the GPU idle. Skip it there.
+        available = float(oom_proxy.available_ram_bytes())
+        if available and size > available:
+            print(f"supervisor: H5 page-cache warm skipped -- H5 "
+                  f"{size / oom_proxy.GIB:.1f}GiB > available RAM "
+                  f"{available / oom_proxy.GIB:.1f}GiB (would evict itself)", flush=True)
+            return
         chunk_mb = max(8, int(getattr(self.config.memory, "h5_page_cache_chunk_mb", 256)))
         chunk = chunk_mb * 1024 * 1024
         start = time.time()
@@ -711,7 +721,10 @@ class Supervisor:
              .dat (no local full-H5 copy -> respects tight local disk) + write a small
              companion mini-H5 (offsets + shape-only vectors).
         Stale local artifacts are cleared BEFORE writing so we never need 2x the disk.
-        Gated on config + enough host RAM to keep the .dat page-cache resident."""
+        Gated on config + LOCAL DISK space only. RAM does NOT gate: a .dat bigger
+        than RAM is paged from local NVMe on demand -- the per-combo hot subset
+        stays in page cache -- which still beats streaming the workspace H5 over
+        the network FS by a wide margin. RAM size only picks the log message."""
         self._vectors_dat = None
         self._resident_h5 = None
         self._resident_enabled = False
@@ -727,11 +740,8 @@ class Supervisor:
         vectors_bytes = rows * dim * itemsize.get(dtype_name, 2)
         headroom = float(getattr(self.config.memory, "resident_vectors_ram_headroom", 1.15))
         available = float(oom_proxy.available_ram_bytes())
-        if available < vectors_bytes * headroom:
-            print(f"supervisor: resident vectors OFF -- want "
-                  f"{vectors_bytes * headroom / oom_proxy.GIB:.0f}GiB RAM, have "
-                  f"{available / oom_proxy.GIB:.0f}GiB; using full/queue planning", flush=True)
-            return
+        ram_mode = ("RAM-resident" if available >= vectors_bytes * headroom
+                    else "NVMe-paged: .dat > RAM, page cache keeps the hot subset")
         Path(self._local_data_dir).mkdir(parents=True, exist_ok=True)
         dat_path = trainer.default_vectors_dat_path(self.config.h5, self._local_data_dir)
         meta_h5 = trainer.default_offsets_h5_path(self.config.h5, self._local_data_dir)
@@ -745,7 +755,7 @@ class Supervisor:
                 print(f"supervisor: rebuilt stale resident mini-H5 {meta_h5} (label datasets)", flush=True)
             self._vectors_dat, self._resident_h5, self._resident_enabled = desc[0], str(meta_h5), True
             print(f"supervisor: resident vectors ON (reused local {dat_path}) "
-                  f"({vectors_bytes / oom_proxy.GIB:.0f}GiB)", flush=True)
+                  f"({vectors_bytes / oom_proxy.GIB:.0f}GiB, {ram_mode})", flush=True)
             return
         # 2. Clear stale local artifacts BEFORE writing (tight local disk: never 2x).
         for stale in (dat_path, Path(str(dat_path) + ".tmp"),
@@ -755,6 +765,19 @@ class Supervisor:
                 Path(stale).unlink()
             except OSError:
                 pass
+        # LOCAL DISK is the only hard gate: no room for the .dat -> stream the
+        # workspace H5 (last resort, slow). Checked AFTER clearing stale artifacts
+        # so their space counts as free.
+        try:
+            disk_free = float(shutil.disk_usage(str(self._local_data_dir)).free)
+        except OSError:
+            disk_free = 0.0
+        if disk_free < vectors_bytes * 1.05:
+            print(f"supervisor: resident vectors OFF -- need "
+                  f"{vectors_bytes * 1.05 / oom_proxy.GIB:.0f}GiB free on local disk "
+                  f"{self._local_data_dir}, have {disk_free / oom_proxy.GIB:.0f}GiB; "
+                  f"streaming the workspace H5 instead", flush=True)
+            return
         try:
             desc = trainer.stage_resident_vectors(self.config.h5, dat_path, work_dir=self._local_data_dir)
             trainer.write_offsets_h5(self.config.h5, meta_h5)   # small companion (offsets + shape)
@@ -763,7 +786,7 @@ class Supervisor:
             return
         self._vectors_dat, self._resident_h5, self._resident_enabled = desc[0], str(meta_h5), True
         print(f"supervisor: resident vectors ON {desc[0]} (+ meta {meta_h5}) "
-              f"({vectors_bytes / oom_proxy.GIB:.0f}GiB shared via page cache; "
+              f"({vectors_bytes / oom_proxy.GIB:.0f}GiB, {ram_mode}; "
               f"available_ram={available / oom_proxy.GIB:.0f}GiB)", flush=True)
 
     def _start_coordinator(self, gpus) -> None:
