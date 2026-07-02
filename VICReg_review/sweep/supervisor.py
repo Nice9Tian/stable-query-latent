@@ -413,10 +413,11 @@ class Supervisor:
         worst = self.stats.subset_worst_sentences(combo.train_games, ds.train_game_seed, ds.anchors)
         total = self.stats.subset_total_sentences(combo.train_games, ds.train_game_seed, ds.anchors)
         cache_bytes = oom_proxy.estimate_full_cache_bytes(total, combo.view, self.stats.input_dim)
+        ram_budget = self._ram_budget()
         plan = oom_proxy.plan_combo_chunked(
             self.calib, worst, self._free_vram(), combo.num_latents, combo.view,
             self.config.train.batch_size, safety=self.config.memory.vram_safety, try_paired=False,
-            total_sentences=total, cache_bytes=cache_bytes, ram_budget=self._ram_budget())
+            total_sentences=total, cache_bytes=cache_bytes, ram_budget=ram_budget)
         # Surface the memory model so it can be sanity-checked against real peaks.
         # Two ORTHOGONAL axes:
         #  * backward_mode (across games): standard = keep every game's graph for one
@@ -435,7 +436,9 @@ class Supervisor:
               f"std_peak={plan.get('standard_peak_gib')}GiB "
               f"std_required={plan.get('standard_required_gib')}GiB "
               f"budget={plan.get('budget_gib')}GiB "
-              f"cache={plan['cache_mode']}", flush=True)
+              f"cache={plan['cache_mode']} "
+              f"cache_est={cache_bytes / oom_proxy.GIB:.1f}GiB "
+              f"ram_budget={ram_budget / oom_proxy.GIB:.1f}GiB", flush=True)
         return {"backward_mode": plan["backward_mode"],
                 "stem_chunk_size": int(plan["stem_chunk_size"]),
                 "paired": False,

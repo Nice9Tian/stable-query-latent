@@ -116,9 +116,14 @@ from VICReg_review.mem_budget import (  # noqa: E402
 
 
 def estimate_full_cache_bytes(total_sentences: int, view: float, input_dim: int,
-                              *, prefetch_factor: float = 2.0, dtype_bytes: int = 2) -> float:
-    """Approx host RAM for --cache-mode full: ~one epoch of sampled views (both
-    a/b) materialised, plus the prefetched next epoch. dtype float16 = 2 bytes."""
+                              *, prefetch_factor: float = 1.0, dtype_bytes: int = 2) -> float:
+    """Approx host RAM for --cache-mode full: one materialised epoch of sampled
+    views (both a/b). dtype float16 = 2 bytes.
+
+    Full-cache training intentionally avoids preloading the next whole epoch so
+    high-RAM multi-GPU pods can cache large train subsets without doubling memory.
+    Queue mode still uses its bounded prefetch window for streaming.
+    """
     return float(total_sentences) * float(view) * 2.0 * int(input_dim) * dtype_bytes * float(prefetch_factor)
 
 

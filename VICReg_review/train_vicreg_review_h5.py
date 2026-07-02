@@ -679,12 +679,12 @@ def iter_epoch(args, epoch, next_epoch_future, executor, cache_dtype):
     data_pool = _DATA_POOL
     window = max(1, int(args.prefetch_batches))
     if args.cache_mode == "full":
-        batches = next_epoch_future.result()
-        if epoch < args.epochs:
-            future = executor.submit(
-                prepare_epoch_batches,
+        if next_epoch_future is not None:
+            batches = next_epoch_future.result()
+        else:
+            batches = prepare_epoch_batches(
                 args.input_h5,
-                epoch + 1,
+                epoch,
                 args.batch_size,
                 args.steps_per_epoch,
                 args.sample_fraction,
@@ -698,9 +698,7 @@ def iter_epoch(args, epoch, next_epoch_future, executor, cache_dtype):
                 data_pool,
                 window,
             )
-        else:
-            future = None
-        return batches, future
+        return batches, None
 
     iterator = QueueEpochIterator(
         args.input_h5,
@@ -1745,27 +1743,6 @@ def train(args):
 
     executor = None
     next_epoch_future = None
-    if args.cache_mode == "full":
-        from concurrent.futures import ThreadPoolExecutor
-
-        executor = ThreadPoolExecutor(max_workers=1)
-        next_epoch_future = executor.submit(
-            prepare_epoch_batches,
-            args.input_h5,
-            start_epoch,
-            args.batch_size,
-            args.steps_per_epoch,
-            args.sample_fraction,
-            args.seed,
-            cache_dtype,
-            args.pin_cache,
-            args.game_order,
-            args.max_batch_sentences,
-            args.max_view_sentences,
-            args.train_game_indices,
-            _DATA_POOL,
-            max(1, int(args.prefetch_batches)),
-        )
 
     last_metrics = None
     try:
