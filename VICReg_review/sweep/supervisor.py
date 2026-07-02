@@ -163,6 +163,8 @@ class Supervisor:
         self._h5_cache_reserve_bytes = None
         self._alive_full_slots_cache = {}
         self._alive_full_slots_cache_ts = 0.0
+        self._active_gpus = None
+        self._h5_page_cache_warmed = False
 
     def _share_from(self, primary: "Supervisor") -> None:
         """Adopt the primary lane's shared coordination state (multi-GPU)."""
@@ -432,6 +434,62 @@ class Supervisor:
         self._h5_cache_reserve_bytes = max(0.0, reserve)
         return self._h5_cache_reserve_bytes
 
+    def _warm_h5_page_cache(self) -> None:
+        """Read the H5 once per VM to populate Linux's shared page cache.
+
+        This is deliberately VM-level, not worker-level: all GPU lanes and HDF5
+        worker processes share the same kernel file cache, so preloading here
+        avoids duplicating a 150GB raw tensor cache in every training process.
+        """
+        if self._h5_page_cache_warmed:
+            return
+        if not bool(getattr(self.config.memory, "h5_page_cache_warm", True)):
+            return
+        path = Path(self.config.h5)
+        try:
+            size = path.stat().st_size
+        except OSError as exc:
+            print(f"supervisor: H5 page-cache warm skipped ({path}: {exc})", flush=True)
+            return
+        if size <= 0:
+            return
+        chunk_mb = max(8, int(getattr(self.config.memory, "h5_page_cache_chunk_mb", 256)))
+        chunk = chunk_mb * 1024 * 1024
+        start = time.time()
+        read = 0
+        print(
+            f"supervisor: warming H5 page cache {path} "
+            f"size={size / oom_proxy.GIB:.1f}GiB chunk={chunk_mb}MiB",
+            flush=True,
+        )
+        try:
+            with path.open("rb", buffering=0) as f:
+                while True:
+                    data = f.read(chunk)
+                    if not data:
+                        break
+                    read += len(data)
+            try:
+                if hasattr(os, "posix_fadvise") and hasattr(os, "POSIX_FADV_WILLNEED"):
+                    fd = os.open(str(path), os.O_RDONLY)
+                    try:
+                        os.posix_fadvise(fd, 0, 0, os.POSIX_FADV_WILLNEED)
+                    finally:
+                        os.close(fd)
+            except OSError:
+                pass
+        except OSError as exc:
+            print(f"supervisor: H5 page-cache warm failed after {read / oom_proxy.GIB:.1f}GiB: {exc}", flush=True)
+            return
+        elapsed = max(1e-6, time.time() - start)
+        print(
+            f"supervisor: H5 page-cache warm done "
+            f"read={read / oom_proxy.GIB:.1f}GiB "
+            f"rate={read / oom_proxy.GIB / elapsed:.2f}GiB/s",
+            flush=True,
+        )
+        self._h5_page_cache_warmed = True
+
     def _ram_pool_budget(self) -> float:
         ram = max(0.0, oom_proxy.available_ram_bytes() - self._h5_cache_reserve())
         ram *= float(getattr(self.config.memory, "ram_safety", 0.8))
@@ -608,11 +666,16 @@ class Supervisor:
             self._reset_failed()
         self._ensure_calib()
         self._ensure_inputs()
-        combos = self._order_combos(self._sharded_combos())   # fast tier first, slow tier last
+        self._warm_h5_page_cache()
+        combos = self._order_combos(self._sharded_combos())
+        active_gpus = self._select_active_gpus(list(gpus or [self.gpu]), combos)
+        self._active_gpus = active_gpus
+        self._ram_divisor = max(1, len(active_gpus))
+        self._data_workers = jobspec.auto_data_workers(self._ram_divisor)
         self.total = len(combos)
         self._ordered_ids = [c.combo_id for c in combos]
         self._combo_by_id = {c.combo_id: c for c in combos}
-        self._start_coordinator(gpus or [self.gpu])
+        self._start_coordinator(active_gpus)
         i, n = self._shard
         shard_note = f" (shard {i}/{n} of {self.config.combo_count()})" if n > 1 else ""
         print(f"supervisor: {self.total} combos to process{shard_note} as vm={self.vm_name}", flush=True)
@@ -671,6 +734,52 @@ class Supervisor:
         ds = self.config.data_seed
         total = self.stats.subset_total_sentences(combo.train_games, ds.train_game_seed, ds.anchors)
         return oom_proxy.estimate_full_cache_bytes(total, combo.view, self.stats.input_dim)
+
+    def _cache_bytes_for_combo(self, combo) -> float:
+        if combo is None or self.stats is None:
+            return 0.0
+        ds = self.config.data_seed
+        total = self.stats.subset_total_sentences(combo.train_games, ds.train_game_seed, ds.anchors)
+        return oom_proxy.estimate_full_cache_bytes(total, combo.view, self.stats.input_dim)
+
+    def _select_active_gpus(self, gpus: list[int], combos: list) -> list[int]:
+        """Auto-degrade lane count from RAM/cache economics.
+
+        Score model: a full-cache lane is +1; each lane that must be degraded or
+        disabled is -1. Maximising that score chooses the VM's full-cache slot
+        count for the current heavy cache class.
+        """
+        gpus = list(gpus)
+        if len(gpus) <= 1 or not combos:
+            return gpus
+        cache_bytes = max((self._cache_bytes_for_combo(c) for c in combos), default=0.0)
+        if cache_bytes <= 0:
+            return gpus
+        pool = self._ram_pool_budget()
+        full_slots = min(len(gpus), max(1, int(pool // float(cache_bytes))))
+        active_n = max(1, full_slots)
+        active = gpus[:active_n]
+        full = min(active_n, full_slots)
+        degraded = len(gpus) - full
+        score = full - degraded
+        if active_n < len(gpus):
+            print(
+                f"supervisor: auto-lanes {active_n}/{len(gpus)} active "
+                f"gpus={active} disabled={gpus[active_n:]} "
+                f"score={score} (+{full} full, -{degraded} degraded) "
+                f"cache_target={cache_bytes / oom_proxy.GIB:.1f}GiB "
+                f"ram_pool={pool / oom_proxy.GIB:.1f}GiB",
+                flush=True,
+            )
+        else:
+            print(
+                f"supervisor: auto-lanes keep all {len(gpus)} gpus "
+                f"score={score} (+{full} full, -{degraded} degraded) "
+                f"cache_target={cache_bytes / oom_proxy.GIB:.1f}GiB "
+                f"ram_pool={pool / oom_proxy.GIB:.1f}GiB",
+                flush=True,
+            )
+        return active
 
     def _max_alive_full_slots(self, cache_bytes: float) -> int:
         """How many full-cache lanes the most capable alive VM can likely run for
@@ -876,6 +985,10 @@ def run_sweep(config: SweepConfig, config_path, gpus, *, logout_address=None,
                          retry_failed=retry_failed, calib=calib, stats=stats,
                          shard=shard, ram_lane_rank=0, **common)
     primary._prepare(gpus)                    # auto-clear GPUs + calib + stats + coordinator
+    gpus = list(primary._active_gpus or gpus)
+    common["ram_divisor"] = len(gpus)
+    primary._ram_divisor = len(gpus)
+    primary._data_workers = jobspec.auto_data_workers(primary._ram_divisor)
     lanes = [primary]
     for lane_rank, g in enumerate(gpus[1:], start=1):
         lane = Supervisor(config, gpu=g, qdir=qdir_for(g), retry_failed=False, **common)
