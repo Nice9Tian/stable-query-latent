@@ -100,7 +100,7 @@ class Supervisor:
                  ready_timeout=3600.0, reclaim_timeout=600.0, logout_address=None,
                  h5_override=None, retry_failed=False, gpu=0, qdir=None,
                  no_calib=False, ram_divisor=1, shard=(0, 1), work_dir=None,
-                 vm_name=None, liveness=None):
+                 vm_name=None, liveness=None, ram_lane_rank=0):
         self.config = config
         self.config_path = config_path
         self.logout_address = logout_address
@@ -136,6 +136,7 @@ class Supervisor:
         # cache and blow the OOM-killer. Data-loader procs are likewise auto-scaled
         # to cores / lane-count (not a YAML knob).
         self._ram_divisor = max(1, int(ram_divisor))
+        self._ram_lane_rank = max(0, int(ram_lane_rank))
         self._data_workers = jobspec.auto_data_workers(self._ram_divisor)
         # Coordination state -- per-instance by default; run_sweep replaces these
         # refs on every lane so they share one grid/tally/ledger.
@@ -429,17 +430,30 @@ class Supervisor:
         self._h5_cache_reserve_bytes = max(0.0, reserve)
         return self._h5_cache_reserve_bytes
 
-    def _ram_budget(self) -> float:
+    def _ram_pool_budget(self) -> float:
         ram = max(0.0, oom_proxy.available_ram_bytes() - self._h5_cache_reserve())
         ram *= float(getattr(self.config.memory, "ram_safety", 0.8))
-        return ram / self._ram_divisor
+        return ram
+
+    def _ram_budget(self, cache_bytes: float = 0.0) -> float:
+        pool = self._ram_pool_budget()
+        if self._ram_divisor <= 1 or not cache_bytes or cache_bytes <= 0:
+            return pool / self._ram_divisor
+
+        # Host RAM is shared at VM scope, not GPU scope. After reserving room for
+        # the H5 page cache, give whole full-cache "slots" to as many lanes as fit
+        # instead of slicing the pool evenly and making every lane stream.
+        full_slots = min(self._ram_divisor, int(pool // float(cache_bytes)))
+        if self._ram_lane_rank < full_slots:
+            return pool / max(1, full_slots)
+        return pool / self._ram_divisor
 
     def plan_settings(self, combo) -> dict:
         ds = self.config.data_seed
         worst = self.stats.subset_worst_sentences(combo.train_games, ds.train_game_seed, ds.anchors)
         total = self.stats.subset_total_sentences(combo.train_games, ds.train_game_seed, ds.anchors)
         cache_bytes = oom_proxy.estimate_full_cache_bytes(total, combo.view, self.stats.input_dim)
-        ram_budget = self._ram_budget()
+        ram_budget = self._ram_budget(cache_bytes)
         plan = oom_proxy.plan_combo_chunked(
             self.calib, worst, self._free_vram(), combo.num_latents, combo.view,
             self.config.train.batch_size, safety=self.config.memory.vram_safety, try_paired=False,
@@ -465,6 +479,8 @@ class Supervisor:
               f"cache={plan['cache_mode']} "
               f"cache_est={cache_bytes / oom_proxy.GIB:.1f}GiB "
               f"ram_budget={ram_budget / oom_proxy.GIB:.1f}GiB "
+              f"ram_pool={self._ram_pool_budget() / oom_proxy.GIB:.1f}GiB "
+              f"ram_lane={self._ram_lane_rank + 1}/{self._ram_divisor} "
               f"h5_reserve={self._h5_cache_reserve() / oom_proxy.GIB:.1f}GiB", flush=True)
         return {"backward_mode": plan["backward_mode"],
                 "stem_chunk_size": int(plan["stem_chunk_size"]),
@@ -794,11 +810,12 @@ def run_sweep(config: SweepConfig, config_path, gpus, *, logout_address=None,
 
     primary = Supervisor(config, gpu=gpus[0], qdir=qdir_for(gpus[0]),
                          retry_failed=retry_failed, calib=calib, stats=stats,
-                         shard=shard, **common)
+                         shard=shard, ram_lane_rank=0, **common)
     primary._prepare(gpus)                    # auto-clear GPUs + calib + stats + coordinator
     lanes = [primary]
-    for g in gpus[1:]:
+    for lane_rank, g in enumerate(gpus[1:], start=1):
         lane = Supervisor(config, gpu=g, qdir=qdir_for(g), retry_failed=False, **common)
+        lane._ram_lane_rank = lane_rank
         lane._share_from(primary)
         lanes.append(lane)
 
