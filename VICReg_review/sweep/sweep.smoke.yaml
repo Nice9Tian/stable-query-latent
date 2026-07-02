@@ -32,6 +32,7 @@ train:
 memory:
   vram_safety: 0.85
   calib: measure
+  resident_vectors: false   # smoke reads the H5 directly; don't dump the 150GiB .dat for a 4-combo gate
 
 probe:
   every: 0          # no probes for the smoke run

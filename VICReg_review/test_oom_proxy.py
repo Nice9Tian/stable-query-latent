@@ -71,6 +71,29 @@ def test_same_combo_can_use_standard_when_required_memory_fits():
     assert plan["standard_required_gib"] < plan["budget_gib"]
 
 
+def test_resident_mode_skips_the_ram_queue_fallback():
+    gib = oom_proxy.GIB
+    calib = {
+        "_meta": {"input_dim": 1024},
+        "512|standard": {"C": 8.59 * 1024, "R": 0.5 * gib},
+        "512|split_recompute": {"C": 1.0, "R": 0.18 * gib},
+    }
+    common = dict(
+        worst_game_sentences=850_071, free_vram_bytes=44.31 * gib, num_latents=512,
+        view=0.2, batch_size=128, safety=0.85, try_paired=False,
+        total_sentences=19_859_200, standard_batch_sentences=5_000_000,
+        cache_bytes=500 * gib, ram_budget=100 * gib,   # would normally force queue
+    )
+    queued = oom_proxy.plan_combo_chunked(calib, **common)
+    resident = oom_proxy.plan_combo_chunked(calib, resident=True, **common)
+
+    assert queued["cache_mode"] == "queue"
+    assert resident["cache_mode"] == "resident"
+    assert resident["pin_cache"] is False
+    # resident still uses the per-batch standard decision (fits here -> standard)
+    assert resident["backward_mode"] == "standard"
+
+
 def test_subset_batch_sentences_is_expected_plus_worst():
     stats = oom_proxy.GameStats(
         sentence_counts=np.array([100, 200, 300, 400, 500], dtype=np.int64),

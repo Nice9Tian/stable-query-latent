@@ -100,7 +100,7 @@ class Supervisor:
                  ready_timeout=3600.0, reclaim_timeout=600.0, logout_address=None,
                  h5_override=None, retry_failed=False, gpu=0, qdir=None,
                  no_calib=False, ram_divisor=1, shard=(0, 1), work_dir=None,
-                 vm_name=None, liveness=None, ram_lane_rank=0):
+                 vm_name=None, liveness=None, ram_lane_rank=0, local_data_dir=None):
         self.config = config
         self.config_path = config_path
         self.logout_address = logout_address
@@ -117,6 +117,11 @@ class Supervisor:
         # same-machine IPC + a GPU-specific memory calibration). Defaults to out_dir
         # so single-machine behaviour is unchanged.
         self.work_dir = Path(work_dir) if work_dir else Path(self.out_dir)
+        # local_data_dir -> MACHINE-LOCAL big-file store for the resident vectors .dat +
+        # companion mini-H5 (~150GiB). Separate from work_dir so it can sit on the big
+        # local volume (e.g. /root/data) while calib/queue/ledger stay wherever work_dir
+        # points. Defaults to work_dir.
+        self._local_data_dir = Path(local_data_dir) if local_data_dir else self.work_dir
         self.qdir = Path(qdir) if qdir is not None else protocol.default_qdir(self.work_dir)
         # ledger = MACHINE-LOCAL forensics/attempts (the cross-VM done-truth is the
         # coordinator's per-combo status/done markers). Keep it in work_dir so many
@@ -165,6 +170,12 @@ class Supervisor:
         self._alive_full_slots_cache_ts = 0.0
         self._active_gpus = None
         self._h5_page_cache_warmed = False
+        # Resident vectors: a raw fp16 memmap of the H5 'vectors', staged once per VM,
+        # shared across lanes via the OS page cache. When enabled, combos gather by
+        # pointer (cache_mode=resident) instead of materialising per-combo view caches.
+        self._vectors_dat = None
+        self._resident_h5 = None       # small companion H5 (offsets + shape-only vectors)
+        self._resident_enabled = False
 
     def _share_from(self, primary: "Supervisor") -> None:
         """Adopt the primary lane's shared coordination state (multi-GPU)."""
@@ -179,6 +190,9 @@ class Supervisor:
         self._ordered_ids = primary._ordered_ids
         self._combo_by_id = primary._combo_by_id
         self._fits_fn = primary._fits_fn
+        self._vectors_dat = primary._vectors_dat            # shared resident memmap (whole VM)
+        self._resident_h5 = primary._resident_h5
+        self._resident_enabled = primary._resident_enabled
 
     def _free_vram(self) -> float:
         return self._free_vram_fn(self.gpu)
@@ -520,7 +534,7 @@ class Supervisor:
             self.calib, worst, self._free_vram(), combo.num_latents, combo.view,
             self.config.train.batch_size, safety=self.config.memory.vram_safety, try_paired=False,
             total_sentences=total, cache_bytes=cache_bytes, ram_budget=ram_budget,
-            standard_batch_sentences=std_batch)
+            standard_batch_sentences=std_batch, resident=self._resident_enabled)
         pin_cache = bool(plan["pin_cache"])
         pin_limit_gib = float(getattr(self.config.memory, "pin_cache_max_gib", 64.0))
         if pin_cache and pin_limit_gib > 0 and cache_bytes > pin_limit_gib * oom_proxy.GIB:
@@ -641,7 +655,7 @@ class Supervisor:
                 self.calib, worst, free, c.num_latents, c.view, self.config.train.batch_size,
                 safety=self.config.memory.vram_safety, try_paired=False,
                 total_sentences=total, cache_bytes=cache_bytes, ram_budget=ram,
-                standard_batch_sentences=std_batch)
+                standard_batch_sentences=std_batch, resident=self._resident_enabled)
             self._std_required_gib[c.combo_id] = (
                 plan.get("standard_required_gib") or plan.get("standard_peak_gib")
             )   # portable across VMs
@@ -672,7 +686,9 @@ class Supervisor:
             self._reset_failed()
         self._ensure_calib()
         self._ensure_inputs()
-        self._warm_h5_page_cache()
+        self._prepare_resident_vectors()      # stage the shared vectors memmap (big-RAM VMs)
+        if not self._resident_enabled:
+            self._warm_h5_page_cache()        # resident staging already warmed the .dat
         combos = self._order_combos(self._sharded_combos())
         active_gpus = self._select_active_gpus(list(gpus or [self.gpu]), combos)
         self._active_gpus = active_gpus
@@ -685,6 +701,65 @@ class Supervisor:
         i, n = self._shard
         shard_note = f" (shard {i}/{n} of {self.config.combo_count()})" if n > 1 else ""
         print(f"supervisor: {self.total} combos to process{shard_note} as vm={self.vm_name}", flush=True)
+
+    def _prepare_resident_vectors(self) -> None:
+        """Localise vectors once per VM and decide whether to use resident mode.
+
+        Ladder (config.h5 is the SOURCE -- e.g. the workspace/shared H5):
+          1. valid local .dat + companion mini-H5 already here -> reuse, no work;
+          2. else build them: multiprocess-READ the source H5 straight into the local
+             .dat (no local full-H5 copy -> respects tight local disk) + write a small
+             companion mini-H5 (offsets + shape-only vectors).
+        Stale local artifacts are cleared BEFORE writing so we never need 2x the disk.
+        Gated on config + enough host RAM to keep the .dat page-cache resident."""
+        self._vectors_dat = None
+        self._resident_h5 = None
+        self._resident_enabled = False
+        if not bool(getattr(self.config.memory, "resident_vectors", True)):
+            return
+        from VICReg_review import train_vicreg_review_h5 as trainer  # lazy: pulls torch
+        itemsize = {"float16": 2, "float32": 4}
+        try:
+            rows, dim, dtype_name = trainer.resident_vectors_meta(self.config.h5)
+        except Exception as exc:
+            print(f"supervisor: resident vectors skipped (meta read failed: {exc})", flush=True)
+            return
+        vectors_bytes = rows * dim * itemsize.get(dtype_name, 2)
+        headroom = float(getattr(self.config.memory, "resident_vectors_ram_headroom", 1.15))
+        available = float(oom_proxy.available_ram_bytes())
+        if available < vectors_bytes * headroom:
+            print(f"supervisor: resident vectors OFF -- want "
+                  f"{vectors_bytes * headroom / oom_proxy.GIB:.0f}GiB RAM, have "
+                  f"{available / oom_proxy.GIB:.0f}GiB; using full/queue planning", flush=True)
+            return
+        Path(self._local_data_dir).mkdir(parents=True, exist_ok=True)
+        dat_path = trainer.default_vectors_dat_path(self.config.h5, self._local_data_dir)
+        meta_h5 = trainer.default_offsets_h5_path(self.config.h5, self._local_data_dir)
+        # 1. Reuse valid local artifacts (resume / restart) -- no source read at all.
+        desc = trainer.resident_descriptor(dat_path, self.config.h5)
+        if desc is not None and Path(meta_h5).exists():
+            self._vectors_dat, self._resident_h5, self._resident_enabled = desc[0], str(meta_h5), True
+            print(f"supervisor: resident vectors ON (reused local {dat_path}) "
+                  f"({vectors_bytes / oom_proxy.GIB:.0f}GiB)", flush=True)
+            return
+        # 2. Clear stale local artifacts BEFORE writing (tight local disk: never 2x).
+        for stale in (dat_path, Path(str(dat_path) + ".tmp"),
+                      trainer._vectors_dat_meta_path(dat_path), meta_h5,
+                      Path(str(meta_h5) + ".tmp")):
+            try:
+                Path(stale).unlink()
+            except OSError:
+                pass
+        try:
+            desc = trainer.stage_resident_vectors(self.config.h5, dat_path, work_dir=self._local_data_dir)
+            trainer.write_offsets_h5(self.config.h5, meta_h5)   # small companion (offsets + shape)
+        except Exception as exc:
+            print(f"supervisor: resident vectors staging FAILED ({exc}); using full/queue planning", flush=True)
+            return
+        self._vectors_dat, self._resident_h5, self._resident_enabled = desc[0], str(meta_h5), True
+        print(f"supervisor: resident vectors ON {desc[0]} (+ meta {meta_h5}) "
+              f"({vectors_bytes / oom_proxy.GIB:.0f}GiB shared via page cache; "
+              f"available_ram={available / oom_proxy.GIB:.0f}GiB)", flush=True)
 
     def _start_coordinator(self, gpus) -> None:
         """One Coordinator per VM (shared by all lanes): file-based, cross-VM claims on
@@ -902,7 +977,9 @@ class Supervisor:
             argv = jobspec.build_trainer_argv(self.config, combo, settings,
                                               probe_queue_dir=self.probe_queue,
                                               data_workers=self._data_workers,
-                                              vm_name=self.vm_name)
+                                              vm_name=self.vm_name,
+                                              vectors_dat=self._vectors_dat,
+                                              input_h5=self._resident_h5)
             protocol.write_job(self.qdir, {
                 "combo_id": combo_id, "config_hash": config_hash,
                 "argv": argv, "settings": settings, "ckpt": str(paths["checkpoint"]),
@@ -963,7 +1040,7 @@ def run_sweep(config: SweepConfig, config_path, gpus, *, logout_address=None,
               h5_override=None, retry_failed=False, poll=2.0, ready_timeout=3600.0,
               reclaim_timeout=600.0, spawn_worker=None, free_vram_fn=None,
               calib=None, stats=None, shard=(0, 1), work_dir=None,
-              vm_name=None, liveness=None) -> dict:
+              vm_name=None, liveness=None, local_data_dir=None) -> dict:
     """Drive the sweep across ``gpus``. One lane per GPU, each with its own worker
     (pinned via CUDA_VISIBLE_DEVICES) and its own job queue subdir; all lanes share
     one ledger + grid + tally so every combo is trained exactly once. A single GPU
@@ -982,7 +1059,7 @@ def run_sweep(config: SweepConfig, config_path, gpus, *, logout_address=None,
                   h5_override=h5_override, poll=poll, ready_timeout=ready_timeout,
                   reclaim_timeout=reclaim_timeout, no_calib=True, ram_divisor=len(gpus),
                   spawn_worker=spawn_worker, free_vram_fn=free_vram_fn, work_dir=work_dir,
-                  vm_name=vm_name, liveness=liveness)
+                  vm_name=vm_name, liveness=liveness, local_data_dir=local_data_dir)
 
     primary = Supervisor(config, gpu=gpus[0], qdir=qdir_for(gpus[0]),
                          retry_failed=retry_failed, calib=calib, stats=stats,
@@ -1046,6 +1123,11 @@ def parse_args(argv=None):
                    help="Machine-LOCAL scratch dir (e.g. RunPod /tmp or /root) for calib.json "
                         "(measured on this GPU) + the job queue. Keeps machine-specific + "
                         "transient files off the shared network FS. Defaults to out_dir.")
+    p.add_argument("--local-data-dir", default=None,
+                   help="Machine-LOCAL big-file dir (e.g. /root/data) for the resident vectors "
+                        ".dat + companion mini-H5 (~150GiB). Kept separate from --work-dir so the "
+                        "big files sit on the large local volume while calib/queue/ledger stay in "
+                        "work-dir. Defaults to work-dir.")
     p.add_argument("--logout-address", default=None, help="Append stdout/stderr to this log file.")
     p.add_argument("--retry-failed", action="store_true",
                    help="Reset 'failed' combos (attempts exhausted) back to pending so they "
@@ -1078,7 +1160,8 @@ def run_main(args) -> None:
     shard = _parse_shard(args.shard) if args.shard else (0, 1)
     summary = run_sweep(config, args.config, gpus, logout_address=args.logout_address,
                         h5_override=args.h5, retry_failed=args.retry_failed, shard=shard,
-                        work_dir=args.work_dir, vm_name=args.vm_name)
+                        work_dir=args.work_dir, vm_name=args.vm_name,
+                        local_data_dir=args.local_data_dir)
     print(f"sweep done: {summary}", flush=True)
 
 

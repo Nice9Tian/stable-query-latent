@@ -463,7 +463,8 @@ def plan_combo_chunked(calib: dict, worst_game_sentences: int, free_vram_bytes: 
                        safety: float = 0.85, try_paired: bool = True,
                        mode: str = "standard", total_sentences: int = 0,
                        cache_bytes: float = 0.0, ram_budget: float = 0.0,
-                       standard_batch_sentences: float = 0.0) -> dict:
+                       standard_batch_sentences: float = 0.0,
+                       resident: bool = False) -> dict:
     """Chunked-stem plan: never drop sentences, pick the backward mode + stem chunk.
 
     Memory model (both from the same calibrated ``peak = R + C*S``, S = both-view
@@ -483,12 +484,18 @@ def plan_combo_chunked(calib: dict, worst_game_sentences: int, free_vram_bytes: 
     keeps the caller's ``mode``.
     """
     budget = float(free_vram_bytes) * float(safety)
-    # Host-RAM decision (independent of VRAM): if the full pinned cache would not
-    # fit in the RAM budget, stream instead. ram_budget<=0 means "unknown" -> keep
-    # full and let the reactive SIGKILL->RAM downgrade handle it.
-    cache_mode, pin_cache = "full", True
-    if ram_budget and ram_budget > 0 and cache_bytes and cache_bytes > ram_budget:
-        cache_mode, pin_cache = "queue", False
+    # Host-RAM decision (independent of VRAM).
+    #  * resident: vectors live in a page-cache-shared memmap; batches stream by
+    #    pointer, so there is NO per-combo view cache to fit -- never RAM-bound.
+    #  * else: materialise the full pinned cache, unless it wouldn't fit the RAM
+    #    budget, then stream via queue. ram_budget<=0 means "unknown" -> keep full
+    #    and let the reactive SIGKILL->RAM downgrade handle it.
+    if resident:
+        cache_mode, pin_cache = "resident", False
+    else:
+        cache_mode, pin_cache = "full", True
+        if ram_budget and ram_budget > 0 and cache_bytes and cache_bytes > ram_budget:
+            cache_mode, pin_cache = "queue", False
 
     # --- backward-mode selection from the memory model ---
     std = calib.get(_calib_key(num_latents, "standard"))

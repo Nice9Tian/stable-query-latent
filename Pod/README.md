@@ -16,8 +16,13 @@ automatically** (a combo whose checkpoint already exists is recognised as done).
   generate `/workspace/Pod_1..7` from this template. See the deploy sequence below.
 - **`setup.ipynb`** — environment: gh CLI, clone/pull, `pip install`, flash-attn. Once per pod.
 - **`prepare_training.ipynb`** — build/embed the H5 (**one VM only** — it writes the shared
-  `embedding_h5.h5`; if it already exists, build/embed just skip) → stage the H5 to local
-  NVMe → smoke-validate the pipeline (per-VM `cloud_smoke_<VM>`).
+  `embedding_h5.h5`; if it already exists, build/embed just skip) → **stage RESIDENT VECTORS**
+  to local NVMe (`LOCAL_DATA`, default `/root/data`): a multiprocess read of the workspace H5
+  into a raw fp16 `.dat` memmap (~150GiB) + a tiny companion mini-H5 (offsets + shape) →
+  smoke-validate the pipeline (per-VM `cloud_smoke_<VM>`). Training then reads ONLY the local
+  `.dat` + mini-H5 (one shared copy per VM via the OS page cache), never the big workspace H5.
+  Gated on host RAM: if a VM is too small to keep the `.dat` resident, staging is skipped and
+  training streams the workspace H5 instead.
 - **`training.ipynb`** — the coordinated sweep. Registers this VM, claims combos, trains.
 - **`check_paralle.ipynb`** — verify the *live* coordination (O_EXCL atomic on this mount,
   VM registry, migration OK). Run it **after** training has started.
@@ -47,6 +52,10 @@ automatically** (a combo whose checkpoint already exists is recognised as done).
   readable, one file per VM, so logs never mix.
 - **Machine-local scratch** (`calib.json`, job queue, ledger) lives under the system temp
   dir keyed by `VM_NAME` — never on the shared FS.
+- **`LOCAL_DATA`** (default `/root/data`) is the machine-local big-file store for the resident
+  vectors `.dat` + mini-H5 (`--local-data-dir`). Kept separate from `WORK_DIR` so the ~150GiB
+  `.dat` sits on the large local volume while calib/queue/ledger stay small elsewhere. Only the
+  `.dat` (+ tiny mini-H5) ends up local — no full local copy of the workspace H5.
 
 ## Download RunPod artifacts
 

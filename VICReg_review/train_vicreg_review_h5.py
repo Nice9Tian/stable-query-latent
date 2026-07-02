@@ -223,16 +223,18 @@ def limit_view_sentences(view, max_view_sentences, rng):
 def load_game_views(h5, game_index, sample_fraction, rng, cache_dtype, pin_cache, max_view_sentences=0):
     game_review_offsets = h5["game_review_offsets"]
     review_offsets_ds = h5["review_offsets"]
-    vectors_ds = h5["vectors"]
 
     review_start = int(game_review_offsets[game_index])
     review_end = int(game_review_offsets[game_index + 1])
     review_offsets = review_offsets_ds[review_start : review_end + 1].astype(np.int64)
     sentence_start = int(review_offsets[0])
     sentence_end = int(review_offsets[-1])
-    game_vectors = vectors_ds[sentence_start:sentence_end]
+    if _VECTORS_DAT is not None:
+        game_vectors = _proc_memmap(_VECTORS_DAT)[sentence_start:sentence_end]   # resident: gather by pointer
+    else:
+        game_vectors = h5["vectors"][sentence_start:sentence_end]
     if game_vectors.dtype != cache_dtype:
-        game_vectors = game_vectors.astype(cache_dtype, copy=False)
+        game_vectors = np.asarray(game_vectors).astype(cache_dtype, copy=False)
 
     relative_offsets = review_offsets - sentence_start
     view_a = sample_view(game_vectors, relative_offsets, sample_fraction, rng, cache_dtype)
@@ -397,26 +399,195 @@ def _proc_h5(h5_path):
     return handle
 
 
+# --- resident vectors (memmap) ------------------------------------------------
+# The H5 'vectors' are uncompressed fp16 but chunked, so they can't be memmapped
+# in place. `stage_resident_vectors` dumps them once to a raw C-order .dat; then
+# every worker process memmaps that file -- backed by the OS page cache, so a VM
+# holds ONE resident copy (~150GiB) shared across all lanes, and training gathers
+# per-sentence by pointer instead of materialising per-combo view caches.
+_PROC_MEMMAP: dict = {}
+_VECTORS_DAT = None   # (path, (rows, dim), dtype_name) or None; set per train() run
+
+
+def _proc_memmap(descriptor):
+    """Per-process cached read-only memmap of the resident vectors .dat."""
+    mm = _PROC_MEMMAP.get(descriptor)
+    if mm is None:
+        path, shape, dtype_name = descriptor
+        mm = np.memmap(path, dtype=np.dtype(dtype_name), mode="r", shape=tuple(shape))
+        _PROC_MEMMAP[descriptor] = mm
+    return mm
+
+
+def resident_vectors_meta(h5_path):
+    """(rows, dim, dtype_name) of the H5 'vectors' dataset -- the shape/dtype the
+    raw .dat must round-trip so it can be memmapped without opening the H5."""
+    with h5py.File(str(h5_path), "r") as h5:
+        ds = h5["vectors"]
+        return int(ds.shape[0]), int(ds.shape[1]), np.dtype(ds.dtype).name
+
+
+def default_vectors_dat_path(h5_path, work_dir=None):
+    base = Path(work_dir) if work_dir else Path(h5_path).parent
+    return base / (Path(h5_path).stem + ".vectors.f16.dat")
+
+
+def _vectors_dat_meta_path(dat_path):
+    dat_path = Path(dat_path)
+    return dat_path.with_name(dat_path.name + ".meta.json")
+
+
+def resident_descriptor(dat_path, h5_path=None):
+    """(path, (rows, dim), dtype_name) for memmapping, or None if the .dat / its
+    sidecar are missing or don't match. h5_path is a fallback for the meta."""
+    if not dat_path:
+        return None
+    dat_path = Path(dat_path)
+    if not dat_path.exists():
+        return None
+    meta = None
+    try:
+        meta = json.loads(_vectors_dat_meta_path(dat_path).read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        if h5_path is not None:
+            rows, dim, dtype_name = resident_vectors_meta(h5_path)
+            meta = {"rows": rows, "dim": dim, "dtype": dtype_name,
+                    "bytes": rows * dim * np.dtype(dtype_name).itemsize}
+    if not meta or dat_path.stat().st_size != int(meta.get("bytes", -1)):
+        return None
+    return (str(dat_path), (int(meta["rows"]), int(meta["dim"])), str(meta["dtype"]))
+
+
+def _dump_vectors_range(task):
+    """Worker: copy vectors[start:end] from the H5 into the .dat memmap. Each worker
+    opens its OWN H5 handle (spawn; h5py isn't fork-safe) and writes a DISJOINT row
+    range, so concurrent writers never overlap and no bulk data crosses IPC."""
+    h5_path, dat_path, dtype_name, rows, dim, start, end = task
+    h5 = _proc_h5(h5_path)
+    out = np.memmap(dat_path, dtype=np.dtype(dtype_name), mode="r+", shape=(int(rows), int(dim)))
+    try:
+        out[int(start):int(end)] = h5["vectors"][int(start):int(end)]
+        out.flush()
+    finally:
+        mm = getattr(out, "_mmap", None)
+        if mm is not None:
+            mm.close()
+    return int(end) - int(start)
+
+
+def stage_resident_vectors(h5_path, dat_path=None, work_dir=None, *,
+                           chunk_rows=200_000, workers=None):
+    """Dump the H5 'vectors' dataset to a raw C-order fp16 .dat (+ .meta.json) once.
+
+    Reads the H5 with a spawn process pool -- hiding network-FS (MooseFS) read latency
+    the same way the training loader does -- and writes DISJOINT row ranges straight
+    into the preallocated memmap, so there is no giant in-RAM intermediate and no bulk
+    data crosses IPC. Idempotent (skips a matching existing .dat), atomic (.tmp then
+    rename). Returns (path, (rows, dim), dtype_name)."""
+    rows, dim, dtype_name = resident_vectors_meta(h5_path)
+    dtype = np.dtype(dtype_name)
+    dat_path = Path(dat_path) if dat_path else default_vectors_dat_path(h5_path, work_dir)
+    expected = {"rows": rows, "dim": dim, "dtype": dtype_name,
+                "bytes": rows * dim * dtype.itemsize}
+    existing = resident_descriptor(dat_path, h5_path)
+    if existing is not None and existing[1] == (rows, dim) and existing[2] == dtype_name:
+        return existing
+    dat_path.parent.mkdir(parents=True, exist_ok=True)
+    tmp = dat_path.with_name(dat_path.name + ".tmp")
+    n_workers = int(workers) if workers else default_data_workers()
+    stride = max(1, int(chunk_rows))
+    ranges = [(s, min(rows, s + stride)) for s in range(0, rows, stride)]
+    t0 = time.time()
+    try:
+        # Preallocate the full-size file so workers can memmap r+ into disjoint ranges.
+        pre = np.memmap(tmp, dtype=dtype, mode="w+", shape=(rows, dim))
+        pre.flush()
+        pre_mm = getattr(pre, "_mmap", None)
+        if pre_mm is not None:
+            pre_mm.close()
+        del pre
+        tasks = [(str(h5_path), str(tmp), dtype_name, rows, dim, s, e) for s, e in ranges]
+        if n_workers <= 1 or len(tasks) <= 1:
+            for task in tasks:
+                _dump_vectors_range(task)
+        else:
+            ctx = multiprocessing.get_context("spawn")
+            with ProcessPoolExecutor(max_workers=n_workers, mp_context=ctx) as pool:
+                for _ in pool.map(_dump_vectors_range, tasks):
+                    pass
+        tmp.replace(dat_path)
+        _vectors_dat_meta_path(dat_path).write_text(json.dumps(expected), encoding="utf-8")
+    except BaseException:
+        try:
+            tmp.unlink()
+        except OSError:
+            pass
+        raise
+    print(f"resident: staged vectors {dat_path} rows={rows} dim={dim} dtype={dtype_name} "
+          f"{expected['bytes'] / (1024 ** 3):.1f}GiB in {time.time() - t0:.0f}s "
+          f"({n_workers} readers x {len(ranges)} ranges)", flush=True)
+    return (str(dat_path), (rows, dim), dtype_name)
+
+
+def default_offsets_h5_path(h5_path, work_dir=None):
+    base = Path(work_dir) if work_dir else Path(h5_path).parent
+    return base / (Path(h5_path).stem + ".meta.h5")
+
+
+def write_offsets_h5(source_h5, out_path):
+    """Small companion H5 for resident mode: every dataset the trainer reads EXCEPT
+    the bulk vectors (those come from the .dat memmap). Keeps an EMPTY-shaped 'vectors'
+    dataset (chunked, never written -> ~0 bytes) so validate_training_h5 and the
+    total-sentence read -- which touch only .shape -- still pass. A few MB regardless
+    of corpus size, so training can run with the big H5 deleted."""
+    source_h5 = Path(source_h5)
+    out_path = Path(out_path)
+    out_path.parent.mkdir(parents=True, exist_ok=True)
+    tmp = out_path.with_name(out_path.name + ".tmp")
+    try:
+        with h5py.File(str(source_h5), "r") as src, h5py.File(str(tmp), "w") as dst:
+            rows = int(src["vectors"].shape[0])
+            dim = int(src["vectors"].shape[1])
+            vdtype = src["vectors"].dtype
+            for name in ("review_offsets", "game_review_offsets", "game_names", "appids"):
+                if name in src:
+                    dst.create_dataset(name, data=src[name][:])
+            dst.create_dataset("vectors", shape=(rows, dim), dtype=vdtype, chunks=True)  # shape only
+            for key, value in src.attrs.items():
+                dst.attrs[key] = value
+        tmp.replace(out_path)
+    except BaseException:
+        try:
+            tmp.unlink()
+        except OSError:
+            pass
+        raise
+    return str(out_path)
+
+
 def _load_game_views_np(task):
     """Worker entry: read one game's vectors and sample two views. Returns numpy
     arrays (picklable); torch conversion + pinning happen in the main process.
     The per-game rng is seeded from (seed, epoch, flat_position) so the result is
     deterministic and independent of which worker/order handles it."""
-    h5_path, game_index, sample_fraction, cache_dtype_name, max_view_sentences, seed_key = task
+    (h5_path, game_index, sample_fraction, cache_dtype_name, max_view_sentences,
+     seed_key, vectors_dat) = task
     h5 = _proc_h5(h5_path)
     cache_dtype = np.dtype(cache_dtype_name)
     rng = np.random.default_rng(seed_key)
     game_review_offsets = h5["game_review_offsets"]
     review_offsets_ds = h5["review_offsets"]
-    vectors_ds = h5["vectors"]
     review_start = int(game_review_offsets[game_index])
     review_end = int(game_review_offsets[game_index + 1])
     review_offsets = review_offsets_ds[review_start : review_end + 1].astype(np.int64)
     sentence_start = int(review_offsets[0])
     sentence_end = int(review_offsets[-1])
-    game_vectors = vectors_ds[sentence_start:sentence_end]
+    if vectors_dat is not None:
+        game_vectors = _proc_memmap(vectors_dat)[sentence_start:sentence_end]   # resident: gather by pointer
+    else:
+        game_vectors = h5["vectors"][sentence_start:sentence_end]
     if game_vectors.dtype != cache_dtype:
-        game_vectors = game_vectors.astype(cache_dtype, copy=False)
+        game_vectors = np.asarray(game_vectors).astype(cache_dtype, copy=False)
     relative_offsets = review_offsets - sentence_start
     view_a = sample_view(game_vectors, relative_offsets, sample_fraction, rng, cache_dtype)
     view_b = sample_view(game_vectors, relative_offsets, sample_fraction, rng, cache_dtype)
@@ -447,7 +618,8 @@ def _iter_parallel_batches(pool, h5_path, epoch_indices, game_names, sample_frac
         futures = []
         for game_index in batch_indices:
             task = (h5_path, int(game_index), float(sample_fraction), dtype_name,
-                    int(max_view_sentences), (int(base_seed), int(epoch), int(flat)))
+                    int(max_view_sentences), (int(base_seed), int(epoch), int(flat)),
+                    _VECTORS_DAT)
             flat += 1
             futures.append(pool.submit(_load_game_views_np, task))
         pending.append((batch_indices, futures))
@@ -1732,8 +1904,12 @@ def train(args):
         flush=True,
     )
 
-    global _DATA_POOL
+    global _DATA_POOL, _VECTORS_DAT
     _DATA_POOL = make_data_pool(getattr(args, "data_workers", 0))
+    _VECTORS_DAT = resident_descriptor(getattr(args, "vectors_dat", None), args.input_h5)
+    if _VECTORS_DAT is not None:
+        print(f"resident: vectors memmap {_VECTORS_DAT[0]} shape={_VECTORS_DAT[1]} "
+              f"dtype={_VECTORS_DAT[2]} (gather-by-pointer; no per-combo view cache)", flush=True)
     if _DATA_POOL is not None:
         print(
             f"data loading: {_DATA_POOL._max_workers} parallel H5 read workers "
@@ -1855,6 +2031,7 @@ def train(args):
         if _DATA_POOL is not None:
             _DATA_POOL.shutdown(wait=False)
             _DATA_POOL = None
+        _VECTORS_DAT = None
 
 
 def parse_args(argv=None):
@@ -1957,7 +2134,16 @@ def parse_args(argv=None):
         default="1091500,1385380",
         help="Comma-separated appids that are forced into every fixed training subset.",
     )
-    parser.add_argument("--cache-mode", choices=["queue", "full"], default="queue")
+    parser.add_argument("--cache-mode", choices=["queue", "full", "resident"], default="queue")
+    parser.add_argument(
+        "--vectors-dat",
+        default=None,
+        help="Path to a raw C-order fp16 memmap of the H5 'vectors' (see "
+             "stage_resident_vectors). When set, per-sentence vectors are gathered "
+             "by pointer from this page-cache-resident file instead of re-read from "
+             "the H5 -- one shared copy per VM, no per-combo view materialisation. "
+             "Pairs with --cache-mode resident (streamed, no epoch cache).",
+    )
     parser.add_argument("--prefetch-batches", type=int, default=2)
     parser.add_argument(
         "--data-workers",

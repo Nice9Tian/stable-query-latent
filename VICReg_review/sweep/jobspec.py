@@ -56,7 +56,8 @@ def combo_paths(config, combo) -> dict:
 
 def build_trainer_argv(config, combo, settings: dict, *, device: str = "cuda",
                        probe_queue_dir=None, resume: bool = True,
-                       data_workers: int | None = None, vm_name: str | None = None) -> list[str]:
+                       data_workers: int | None = None, vm_name: str | None = None,
+                       vectors_dat: str | None = None, input_h5: str | None = None) -> list[str]:
     paths = combo_paths(config, combo)
     grl = combo.arm == "grl"
     cache_mode = settings.get("cache_mode", "full")
@@ -66,7 +67,7 @@ def build_trainer_argv(config, combo, settings: dict, *, device: str = "cuda",
     # not read from the YAML. Fall back to auto for a single lane if unspecified.
     dw = int(data_workers) if data_workers is not None else auto_data_workers(1)
     argv = [
-        "--input-h5", str(config.h5),
+        "--input-h5", str(input_h5 or config.h5),
         "--device", str(device), "--amp",
         "--epochs", str(config.train.epochs),
         "--steps-per-epoch", "0",
@@ -105,6 +106,8 @@ def build_trainer_argv(config, combo, settings: dict, *, device: str = "cuda",
     ]
     if pin_cache:
         argv.append("--pin-cache")
+    if vectors_dat:
+        argv += ["--vectors-dat", str(vectors_dat)]
     if probe_queue_dir:
         argv += ["--probe-queue-dir", str(probe_queue_dir)]
     if resume and paths["checkpoint"].exists():
