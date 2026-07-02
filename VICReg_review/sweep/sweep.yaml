@@ -13,6 +13,9 @@ grid:
   train_game_counts: [200, 500, 1000, 1500, 2000]   # dropped 'all' (=2020, n2000 already covers ~99%) and n<128 (n50/n100: fewer games than batch_size=128)
   sample_fractions: [0.8, 0.6, 0.4, 0.2]
   arms: [grl, nogrl]
+  exclude:                          # drop the two heaviest corners: high latent x widest window.
+    - {num_latents: 512, view: 0.8}   #   window effect -> compare on small latent; latent effect -> compare on small window.
+    - {num_latents: 1024, view: 0.8}  #   the 512/1024 x view80 cross-term is redundant + too expensive.
 
 model:
   latent_dim: 256

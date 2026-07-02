@@ -22,6 +22,11 @@ class GridConfig:
     train_game_counts: list          # ints, or the string "all" for the full pool
     sample_fractions: list
     arms: list
+    # Cross-cell exclusions the plain cartesian product can't express: drop
+    # specific (num_latents, view) corners without deleting a whole axis. Each
+    # rule is {num_latents: int, view: float}. Mirrors prune_small_n.py's
+    # --drop-latent-view LATENTS:VIEW so config + running-sweep prune agree.
+    exclude: list = field(default_factory=list)
 
 
 @dataclass
@@ -140,6 +145,20 @@ class SweepConfig:
     def num_latents_for(self, latent_scale: float) -> int:
         return max(1, int(round(self.grid.base_num_latents * float(latent_scale))))
 
+    def _is_excluded(self, num_latents: int, view: float) -> bool:
+        """True if this (num_latents, view) corner is in grid.exclude. Skips the
+        cell for BOTH arms; other combos keep their combo_id/config_hash unchanged
+        (those are per-field, not positional), so removing a cell never invalidates
+        an already-'done' combo."""
+        for rule in self.grid.exclude or []:
+            try:
+                if int(rule["num_latents"]) == int(num_latents) and \
+                   math.isclose(float(rule["view"]), float(view), abs_tol=1e-9):
+                    return True
+            except (KeyError, TypeError, ValueError):
+                continue
+        return False
+
     def iter_combos(self):
         """Yield every Combo. Order matches the legacy sweep so on-disk combo
         dirs / resume align: output_dim -> latent_scale -> train_games -> view -> arm."""
@@ -149,6 +168,8 @@ class SweepConfig:
                 for raw_games in self.grid.train_game_counts:
                     train_games = _as_int_or_zero(raw_games)
                     for view in self.grid.sample_fractions:
+                        if self._is_excluded(num_latents, view):
+                            continue          # drop this cross-cell (both arms)
                         for arm in self.grid.arms:
                             yield Combo(
                                 output_dim=int(output_dim),
