@@ -459,19 +459,23 @@ def resident_descriptor(dat_path, h5_path=None):
 
 
 def _dump_vectors_range(task):
-    """Worker: copy vectors[start:end] from the H5 into the .dat memmap. Each worker
-    opens its OWN H5 handle (spawn; h5py isn't fork-safe) and writes a DISJOINT row
-    range, so concurrent writers never overlap and no bulk data crosses IPC."""
+    """Worker: copy vectors[start:end] from the H5 into the .dat via positioned
+    writes (seek+write, the pattern proven by Pod/h5_staging.parallel_copy). Each
+    worker opens its OWN H5 handle (spawn; h5py isn't fork-safe) and writes a
+    DISJOINT row range, so concurrent writers never overlap and no bulk data
+    crosses IPC. Positioned writes (vs a whole-file r+ memmap) fail with a proper
+    ENOSPC OSError if the disk fills, instead of a silent SIGBUS process kill."""
     h5_path, dat_path, dtype_name, rows, dim, start, end = task
     h5 = _proc_h5(h5_path)
-    out = np.memmap(dat_path, dtype=np.dtype(dtype_name), mode="r+", shape=(int(rows), int(dim)))
-    try:
-        out[int(start):int(end)] = h5["vectors"][int(start):int(end)]
-        out.flush()
-    finally:
-        mm = getattr(out, "_mmap", None)
-        if mm is not None:
-            mm.close()
+    dtype = np.dtype(dtype_name)
+    arr = np.ascontiguousarray(h5["vectors"][int(start):int(end)], dtype=dtype)
+    offset = int(start) * int(dim) * dtype.itemsize
+    view = memoryview(arr).cast("B")
+    with open(dat_path, "r+b") as f:
+        f.seek(offset)
+        written = 0
+        while written < len(view):
+            written += f.write(view[written:])
     return int(end) - int(start)
 
 
@@ -494,6 +498,18 @@ def stage_resident_vectors(h5_path, dat_path=None, work_dir=None, *,
         return existing
     dat_path.parent.mkdir(parents=True, exist_ok=True)
     tmp = dat_path.with_name(dat_path.name + ".tmp")
+    tmp.unlink(missing_ok=True)          # stale partial: reclaim before the space check
+    # Fail FAST and CLEARLY if the local volume can't hold the .dat. Without this,
+    # writes into a sparse preallocated file die with SIGBUS (worker killed ->
+    # BrokenProcessPool) when the disk fills mid-dump.
+    import shutil as _sh
+    free = _sh.disk_usage(str(dat_path.parent)).free
+    need = int(expected["bytes"] * 1.02) + (1 << 30)
+    if free < need:
+        raise RuntimeError(
+            f"not enough local disk for resident vectors: need ~{need / (1024 ** 3):.0f}GiB "
+            f"free at {dat_path.parent}, have {free / (1024 ** 3):.0f}GiB "
+            f"(expand the container disk, or run with memory.resident_vectors=false)")
     n_workers = int(workers) if workers else default_data_workers()
     stride = max(1, int(chunk_rows))
     ranges = [(s, min(rows, s + stride)) for s in range(0, rows, stride)]
@@ -515,13 +531,17 @@ def stage_resident_vectors(h5_path, dat_path=None, work_dir=None, *,
         return now
 
     try:
-        # Preallocate the full-size file so workers can memmap r+ into disjoint ranges.
-        pre = np.memmap(tmp, dtype=dtype, mode="w+", shape=(rows, dim))
-        pre.flush()
-        pre_mm = getattr(pre, "_mmap", None)
-        if pre_mm is not None:
-            pre_mm.close()
-        del pre
+        # Preallocate the full-size file so workers can seek+write disjoint ranges.
+        # posix_fallocate RESERVES the blocks up front (not sparse), so "disk too
+        # small" surfaces here as a clean ENOSPC instead of killing workers later.
+        with open(tmp, "wb") as f:
+            f.truncate(rows * row_bytes)
+        if hasattr(os, "posix_fallocate"):
+            fd = os.open(str(tmp), os.O_RDWR)
+            try:
+                os.posix_fallocate(fd, 0, rows * row_bytes)
+            finally:
+                os.close(fd)
         tasks = [(str(h5_path), str(tmp), dtype_name, rows, dim, s, e) for s, e in ranges]
         done_rows, last_report = 0, time.time()
         if n_workers <= 1 or len(tasks) <= 1:
