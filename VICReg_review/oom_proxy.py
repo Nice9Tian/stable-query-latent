@@ -98,12 +98,16 @@ NO_CALIB_CHUNK = 2048
 
 # The standard-backward calibration is intentionally cheap: it measures a few
 # small pseudo batches, then extrapolates the activation slope. Production plans
-# also set a stem_chunk_size. When that chunk covers the largest game, the
-# chunked stem allocates an fp32 attention score tensor of shape
-# [batch=1, heads, num_latents, chunk_sentences]. The small calibration points do
-# not see the 10+ GiB late allocation from view80/1024-latent full chunks, so the
-# planner must reserve it explicitly before choosing standard mode.
+# also set a stem_chunk_size. Per chunk, the stem allocates an fp32 attention
+# score tensor of shape [batch=1, heads, num_latents, chunk_sentences] -- and at
+# the checkpointed backward up to STEM_SCORE_COPIES same-shape copies coexist:
+# recompute holds scores + exp(weights); backward holds weights + grad_weights +
+# grad_scores. The small calibration points never see this 10+ GiB-per-copy late
+# allocation from view80/1024-latent chunks, so the planner must reserve ALL
+# copies explicitly. Reserving only one is exactly how lat1024x4 view80 combos
+# OOMed on 80GiB cards (2 x 33.6GiB copies + other activations > total VRAM).
 DEFAULT_NUM_HEADS = 8
+STEM_SCORE_COPIES = 3
 
 
 # Host-RAM accounting lives in the torch-free mem_budget module so the notebook
@@ -129,11 +133,14 @@ def estimate_full_cache_bytes(total_sentences: int, view: float, input_dim: int,
 
 def estimate_standard_transient_bytes(worst_game_sentences: int, view: float, num_latents: int,
                                       *, num_heads: int = DEFAULT_NUM_HEADS,
-                                      score_dtype_bytes: int = 4) -> float:
-    """Largest chunked-stem score tensor not captured by small-S calibration."""
+                                      score_dtype_bytes: int = 4,
+                                      copies: int = STEM_SCORE_COPIES) -> float:
+    """Chunked-stem score tensors not captured by small-S calibration: the
+    worst-game full chunk times the STEM_SCORE_COPIES simultaneous copies the
+    checkpointed backward holds."""
     chunk_sentences = max(1.0, float(worst_game_sentences) * float(view))
     return (float(num_heads) * float(num_latents) *
-            chunk_sentences * float(score_dtype_bytes))
+            chunk_sentences * float(score_dtype_bytes) * float(copies))
 
 
 def estimate_stem_score_bytes_per_sentence(num_latents: int, *,
@@ -535,12 +542,20 @@ def plan_combo_chunked(calib: dict, worst_game_sentences: int, free_vram_bytes: 
     # forwarded sentence is ~N x the fitted slope. Correct it so the chunk is sized
     # for a single game, not the whole calib batch.
     c_sent = C * float(CALIB_N_GAMES) if chosen_mode == "split_recompute" else C
-    c_sent = max(c_sent, estimate_stem_score_bytes_per_sentence(num_latents))
+    # Per-chunk peak has TWO per-sentence costs that must fit TOGETHER at the
+    # backward peak, so they are summed, not max'ed:
+    #  * 2 * c_sent           -- calibrated activations, doubled for both views held;
+    #  * STEM_SCORE_COPIES * score_sent -- the fp32 [1,H,L,chunk] stem score tensor,
+    #    of which up to 3 same-shape copies coexist during the checkpointed
+    #    backward (see STEM_SCORE_COPIES). The old max(c_sent, 1x score)/2 sizing
+    #    budgeted only 2 copies and OOMed lat1024 view80 full chunks.
+    score_sent = estimate_stem_score_bytes_per_sentence(num_latents)
 
     def chunk_for(resident_R: float) -> int:
-        # Per-chunk peak ~ resident_R + c_sent * chunk_sentences; /2 keeps a margin
-        # for both views held. Floor at 1 so it always fits.
-        return max(1, int((budget - resident_R) / (2.0 * c_sent)))
+        # Per-chunk peak ~ resident_R + (2*c_sent + copies*score_sent) * chunk.
+        # Floor at 1 so it always fits.
+        denom = 2.0 * c_sent + float(STEM_SCORE_COPIES) * score_sent
+        return max(1, int((budget - resident_R) / denom))
 
     paired = bool(try_paired) and (budget - 2.0 * R) > 0
     resident_R = 2.0 * R if paired else R

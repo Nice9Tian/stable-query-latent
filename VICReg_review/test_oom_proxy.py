@@ -12,7 +12,11 @@ def test_standard_transient_matches_full_chunk_attention_score():
         num_latents=1024,
     )
 
-    assert math.isclose(transient / oom_proxy.GIB, 13.05, rel_tol=0.01)
+    # 3 simultaneous copies of the 13.05 GiB fp32 score tensor (see STEM_SCORE_COPIES).
+    assert math.isclose(transient / oom_proxy.GIB, 3 * 13.05, rel_tol=0.01)
+    one_copy = oom_proxy.estimate_standard_transient_bytes(
+        worst_game_sentences=534_641, view=0.8, num_latents=1024, copies=1)
+    assert math.isclose(one_copy / oom_proxy.GIB, 13.05, rel_tol=0.01)
 
 
 def test_view80_1024_latents_routes_to_split_on_48gb_card():
@@ -39,10 +43,13 @@ def test_view80_1024_latents_routes_to_split_on_48gb_card():
 
     assert plan["backward_mode"] == "split_recompute"
     assert plan["standard_peak_gib"] == 31.8
-    assert plan["standard_transient_gib"] == 13.05
+    assert plan["standard_transient_gib"] == 39.16     # 3 x 13.05 GiB score copies
     assert plan["standard_required_gib"] > plan["budget_gib"]
-    assert plan["stem_chunk_size"] >= int(534_641 * 0.8)
-    assert plan["stem_chunk_size"] < 1_000_000
+    # A 48GB card canNOT hold 3 full-chunk score copies (3 x 13.05 > budget), so
+    # the worst game must now run in >=2 chunks instead of one "full" chunk.
+    fwd_worst = int(534_641 * 0.8)
+    assert fwd_worst // 2 <= plan["stem_chunk_size"] < fwd_worst
+    assert plan["chunk_full"] is False
 
 
 def test_same_combo_can_use_standard_when_required_memory_fits():
@@ -53,9 +60,13 @@ def test_same_combo_can_use_standard_when_required_memory_fits():
         "1024|split_recompute": {"C": 1.0, "R": 0.18 * gib},
     }
 
+    # Smaller worst game than the split-routing test above: 3 score copies for a
+    # 150k-sentence game are ~11 GiB, so standard's required memory fits the
+    # 80GiB card. (At 534k sentences it no longer does -- 31.8 + 39.16 > budget --
+    # which is precisely the OOM the copies-aware reserve exists to prevent.)
     plan = oom_proxy.plan_combo_chunked(
         calib,
-        worst_game_sentences=534_641,
+        worst_game_sentences=150_000,
         free_vram_bytes=80.0 * gib,
         num_latents=1024,
         view=0.8,
