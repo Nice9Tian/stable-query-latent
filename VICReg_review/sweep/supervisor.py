@@ -512,12 +512,15 @@ class Supervisor:
         ds = self.config.data_seed
         worst = self.stats.subset_worst_sentences(combo.train_games, ds.train_game_seed, ds.anchors)
         total = self.stats.subset_total_sentences(combo.train_games, ds.train_game_seed, ds.anchors)
+        std_batch = self.stats.subset_batch_worst_sentences(
+            combo.train_games, ds.train_game_seed, ds.anchors, self.config.train.batch_size)
         cache_bytes = oom_proxy.estimate_full_cache_bytes(total, combo.view, self.stats.input_dim)
         ram_budget = self._ram_budget(cache_bytes)
         plan = oom_proxy.plan_combo_chunked(
             self.calib, worst, self._free_vram(), combo.num_latents, combo.view,
             self.config.train.batch_size, safety=self.config.memory.vram_safety, try_paired=False,
-            total_sentences=total, cache_bytes=cache_bytes, ram_budget=ram_budget)
+            total_sentences=total, cache_bytes=cache_bytes, ram_budget=ram_budget,
+            standard_batch_sentences=std_batch)
         pin_cache = bool(plan["pin_cache"])
         pin_limit_gib = float(getattr(self.config.memory, "pin_cache_max_gib", 64.0))
         if pin_cache and pin_limit_gib > 0 and cache_bytes > pin_limit_gib * oom_proxy.GIB:
@@ -536,7 +539,7 @@ class Supervisor:
         n_chunks = -(-fwd_worst // n)                          # ceil
         stem = "full" if plan.get("chunk_full") else f"chunk={n} (~{n_chunks}/worst-game)"
         print(f"supervisor: gpu{self.gpu} {combo.combo_id} plan: backward={plan['backward_mode']} "
-              f"stem={stem} view={combo.view:g} worst={worst} total={total} "
+              f"stem={stem} view={combo.view:g} worst={worst} total={total} std_batch={std_batch} "
               f"std_peak={plan.get('standard_peak_gib')}GiB "
               f"std_required={plan.get('standard_required_gib')}GiB "
               f"budget={plan.get('budget_gib')}GiB "
@@ -631,11 +634,14 @@ class Supervisor:
         def scored(c):
             total = self.stats.subset_total_sentences(c.train_games, ds.train_game_seed, ds.anchors)
             worst = self.stats.subset_worst_sentences(c.train_games, ds.train_game_seed, ds.anchors)
+            std_batch = self.stats.subset_batch_worst_sentences(
+                c.train_games, ds.train_game_seed, ds.anchors, self.config.train.batch_size)
             cache_bytes = oom_proxy.estimate_full_cache_bytes(total, c.view, self.stats.input_dim)
             plan = oom_proxy.plan_combo_chunked(
                 self.calib, worst, free, c.num_latents, c.view, self.config.train.batch_size,
                 safety=self.config.memory.vram_safety, try_paired=False,
-                total_sentences=total, cache_bytes=cache_bytes, ram_budget=ram)
+                total_sentences=total, cache_bytes=cache_bytes, ram_budget=ram,
+                standard_batch_sentences=std_batch)
             self._std_required_gib[c.combo_id] = (
                 plan.get("standard_required_gib") or plan.get("standard_peak_gib")
             )   # portable across VMs

@@ -38,11 +38,14 @@ def plan_for_combo(config: SweepConfig, calib: dict, stats: "oom_proxy.GameStats
     ds = config.data_seed
     worst = stats.subset_worst_sentences(combo.train_games, ds.train_game_seed, ds.anchors)
     total = stats.subset_total_sentences(combo.train_games, ds.train_game_seed, ds.anchors)
+    std_batch = stats.subset_batch_worst_sentences(
+        combo.train_games, ds.train_game_seed, ds.anchors, config.train.batch_size)
     cache_bytes = oom_proxy.estimate_full_cache_bytes(total, combo.view, stats.input_dim)
     plan = oom_proxy.plan_combo_chunked(
         calib, worst, free_vram_bytes, combo.num_latents, combo.view,
         config.train.batch_size, safety=config.memory.vram_safety, try_paired=try_paired,
         total_sentences=total, cache_bytes=cache_bytes, ram_budget=ram_budget,
+        standard_batch_sentences=std_batch,
     )
     plan["combo_id"] = combo.combo_id
     plan["train_games"] = combo.train_games

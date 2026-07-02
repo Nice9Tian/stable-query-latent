@@ -349,6 +349,33 @@ class GameStats:
         idx = self.subset_indices(train_game_count, seed, anchor_appids)
         return int(self.sentence_counts[idx].sum())
 
+    def subset_batch_worst_sentences(self, train_game_count: int, seed: int,
+                                     anchor_appids, batch_size: int) -> int:
+        """Forwarded-sentence budget for ONE standard-mode backward.
+
+        A standard backward holds ONE batch of min(batch_size, subset) games
+        (train_vicreg_review_h5.make_epoch_indices -> rng.choice(size=batch_size)),
+        NOT the whole subset -- so budgeting standard against subset_total_sentences
+        over-counts by ~num_games/batch_size and needlessly forces split_recompute
+        for every combo with n >= batch_size.
+
+        A random batch of k games from N drawn without replacement has its sentence
+        sum concentrate tightly around the expected k/N * total (the k draws average
+        out), so we budget the EXPECTED batch plus a full worst-game of headroom for
+        the ~k/N of batches that happen to draw the single biggest game. The rare
+        heavier draw (two monsters in one batch) is left to the reactive
+        standard->split_recompute downgrade rather than paid for on every combo.
+        """
+        idx = self.subset_indices(train_game_count, seed, anchor_appids)
+        counts = self.sentence_counts[idx]
+        n = int(counts.size)
+        total = int(counts.sum())
+        k = int(batch_size) if batch_size and batch_size > 0 else n
+        k = max(1, min(k, n))
+        if k >= n:
+            return total                                       # one batch holds every game
+        return int(total * k / n + int(counts.max()))          # expected batch + worst-game headroom
+
 
 def plan_combo(calib: dict, worst_game_sentences: int, free_vram_bytes: float,
                num_latents: int, view: float, batch_size: int, *,
@@ -435,7 +462,8 @@ def plan_combo_chunked(calib: dict, worst_game_sentences: int, free_vram_bytes: 
                        num_latents: int, view: float, batch_size: int, *,
                        safety: float = 0.85, try_paired: bool = True,
                        mode: str = "standard", total_sentences: int = 0,
-                       cache_bytes: float = 0.0, ram_budget: float = 0.0) -> dict:
+                       cache_bytes: float = 0.0, ram_budget: float = 0.0,
+                       standard_batch_sentences: float = 0.0) -> dict:
     """Chunked-stem plan: never drop sentences, pick the backward mode + stem chunk.
 
     Memory model (both from the same calibrated ``peak = R + C*S``, S = both-view
@@ -468,8 +496,15 @@ def plan_combo_chunked(calib: dict, worst_game_sentences: int, free_vram_bytes: 
     standard_peak = None
     standard_transient = 0.0
     standard_required = None
-    if total_sentences and total_sentences > 0 and std:
-        s_total = 2.0 * float(view) * float(total_sentences)     # both views, whole batch
+    # Standard mode's peak scales with ONE backward's batch (<= batch_size games),
+    # NOT the whole train subset. Prefer the per-batch figure the caller measures
+    # (top-k largest games); fall back to total_sentences only when it isn't given,
+    # so old callers/tests keep the previous (over-conservative) behaviour.
+    std_batch = (float(standard_batch_sentences)
+                 if standard_batch_sentences and standard_batch_sentences > 0
+                 else float(total_sentences))
+    if std_batch and std_batch > 0 and std:
+        s_total = 2.0 * float(view) * std_batch                 # both views, one backward's batch
         standard_peak = float(std["R"]) + float(std["C"]) * s_total
         standard_transient = estimate_standard_transient_bytes(worst_game_sentences, view, num_latents)
         standard_required = standard_peak + standard_transient
