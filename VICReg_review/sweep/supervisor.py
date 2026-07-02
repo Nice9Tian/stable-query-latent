@@ -161,6 +161,8 @@ class Supervisor:
         self._vram_cache = None
         self._vram_cache_ts = 0.0
         self._h5_cache_reserve_bytes = None
+        self._alive_full_slots_cache = {}
+        self._alive_full_slots_cache_ts = 0.0
 
     def _share_from(self, primary: "Supervisor") -> None:
         """Adopt the primary lane's shared coordination state (multi-GPU)."""
@@ -554,15 +556,19 @@ class Supervisor:
         return combos
 
     def _order_combos(self, combos: list) -> list:
-        """Schedule order: run the FAST tier first -- 'backward=standard, stem=full'
-        (fits in one pass) -- descending batch size so the biggest fast combos start
-        early; defer the SLOW tier (split_recompute / multi-chunk) to the end. Batch
-        size S = 2*view*total is a machine-independent proxy for peak, so the order
-        is stable across GPUs. One plan per combo (cheap; a single VRAM snapshot)."""
+        """Capability-aware order.
+
+        Big cards should spend their time burning down the hard end of the queue;
+        smaller cards should keep making progress from the easy end instead of
+        waiting merely because a bigger VM exists. Difficulty is based on the
+        portable standard-mode requirement plus the batch-size proxy.
+        """
         ds = self.config.data_seed
         free = self._free_vram()          # snapshot once (avoid one nvidia-smi per combo)
         ram = self._ram_budget()
         self._std_required_gib = {}
+        vram_gib = self._total_vram() / oom_proxy.GIB
+        big_gpu = bool(vram_gib >= 70.0)
 
         def scored(c):
             total = self.stats.subset_total_sentences(c.train_games, ds.train_game_seed, ds.anchors)
@@ -576,13 +582,19 @@ class Supervisor:
                 plan.get("standard_required_gib") or plan.get("standard_peak_gib")
             )   # portable across VMs
             light = plan["backward_mode"] == "standard" and bool(plan.get("chunk_full"))
-            return (0 if light else 1, -(2.0 * float(c.view) * float(total)))
+            requirement = float(self._std_required_gib.get(c.combo_id) or 0.0)
+            batch_proxy = 2.0 * float(c.view) * float(total)
+            # Small cards: easy -> hard. Big cards: hard -> easy.
+            if big_gpu:
+                return (0 if not light else 1, -requirement, -batch_proxy)
+            return (0 if light else 1, requirement, batch_proxy)
 
         keyed = [(scored(c), c) for c in combos]
         keyed.sort(key=lambda t: t[0])
-        n_light = sum(1 for (tier, _), _ in keyed if tier == 0)
-        print(f"supervisor: scheduling {n_light} fast (standard+full) then "
-              f"{len(keyed) - n_light} slow (split/chunked), each by descending size", flush=True)
+        n_light = sum(1 for c in combos if (self._std_required_gib.get(c.combo_id) or 0.0) <= vram_gib * float(getattr(self.config.memory, "vram_safety", 0.85)))
+        direction = "hard->easy" if big_gpu else "easy->hard"
+        print(f"supervisor: scheduling {len(keyed)} combos {direction} "
+              f"(standard-fit here approx {n_light}/{len(keyed)}, vram={vram_gib:.1f}GiB)", flush=True)
         return [c for _, c in keyed]
 
     def _prepare(self, gpus=None) -> None:
@@ -647,11 +659,54 @@ class Supervisor:
             self._vram_cache_ts = now
         return self._vram_cache
 
+    def _remaining_nonterminal_count(self) -> int:
+        if self.coordinator is None:
+            return len(self._ordered_ids)
+        return sum(1 for cid in self._ordered_ids if not self.coordinator.is_terminal(cid))
+
+    def _cache_bytes_for(self, cid) -> float:
+        combo = self._combo_by_id.get(cid)
+        if combo is None or self.stats is None:
+            return 0.0
+        ds = self.config.data_seed
+        total = self.stats.subset_total_sentences(combo.train_games, ds.train_game_seed, ds.anchors)
+        return oom_proxy.estimate_full_cache_bytes(total, combo.view, self.stats.input_dim)
+
+    def _max_alive_full_slots(self, cache_bytes: float) -> int:
+        """How many full-cache lanes the most capable alive VM can likely run for
+        this combo class. Used only as a tail-stage guard: small VMs keep claiming
+        work until the remaining count is small enough for the biggest VM to drain."""
+        if cache_bytes <= 0 or self.coordinator is None:
+            return 1
+        now = time.time()
+        key = round(float(cache_bytes) / oom_proxy.GIB, 1)
+        if now - self._alive_full_slots_cache_ts > 3.0:
+            self._alive_full_slots_cache = {}
+            self._alive_full_slots_cache_ts = now
+        if key in self._alive_full_slots_cache:
+            return self._alive_full_slots_cache[key]
+
+        ram_safety = float(getattr(self.config.memory, "ram_safety", 0.8))
+        best = 1
+        for _vm, info in self.coordinator.alive_vms():
+            gpus = info.get("gpus") or []
+            lanes = max(1, len(gpus))
+            ram_gib = float(info.get("ram_gib") or 0.0)
+            h5_gib = float(info.get("h5_reserve_gib") or 0.0)
+            pool = max(0.0, (ram_gib - h5_gib) * ram_safety) * oom_proxy.GIB
+            slots = min(lanes, int(pool // float(cache_bytes))) if pool > 0 else lanes
+            best = max(best, slots)
+        self._alive_full_slots_cache[key] = max(1, int(best))
+        return self._alive_full_slots_cache[key]
+
     def _capability_fits(self, cid) -> bool:
-        """Heterogeneous routing: claim a combo iff it fits MY card in fast standard,
-        OR I'm the biggest alive VM (so a combo too big for EVERY card still gets done
-        -- on the biggest card, in split -- never starved). Unknown peak/VRAM -> claim
-        (safe default; degrades to no routing, e.g. homogeneous or single VM)."""
+        """Heterogeneous routing.
+
+        The old rule made smaller VMs wait whenever a bigger VM was alive. That
+        wastes L40 pods once the sweep is mostly slow/high-view work. New rule:
+        smaller VMs may still claim slow combos; they only stand down at the very
+        end, when the remaining work fits inside the biggest VM's full-cache slots.
+        """
         peak = self._std_required_gib.get(cid)
         my = self._my_vram_gib
         if peak is None or not my:
@@ -660,7 +715,11 @@ class Supervisor:
         if float(peak) <= my * safety:
             return True                              # fits me -> fast standard here
         biggest = self._max_alive_vram()
-        return biggest is None or my >= biggest      # else only the biggest takes it
+        if biggest is None or my >= biggest:
+            return True                              # biggest VM burns down the hard end
+        cache_bytes = self._cache_bytes_for(cid)
+        tail_slots = self._max_alive_full_slots(cache_bytes)
+        return self._remaining_nonterminal_count() > tail_slots
 
     def close(self) -> None:
         if self.coordinator is not None:
