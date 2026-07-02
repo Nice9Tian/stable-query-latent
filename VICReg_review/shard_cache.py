@@ -2,7 +2,7 @@
 
 New game-review runs use ``game_review_data/embedding_h5.h5`` directly. This
 module remains for old corpora that still live as one embedded JSON file per
-game on slow cloud storage (Google Drive). Instead of merging everything into
+game on slow cloud storage (Cloud Drive). Instead of merging everything into
 one giant H5, we keep the per-game files separate and stream them through a
 small local working set:
 
@@ -240,7 +240,7 @@ def parse_args():
 
     build = sub.add_parser("build", help="Write a seeded random training sequence.")
     build.add_argument("--source-dir", required=True, type=Path,
-                       help="Directory of per-game corpus files (on Drive).")
+                       help="Directory of per-game corpus files (on Cloud Drive).")
     build.add_argument("--out", required=True, type=Path,
                        help="Output train_sequence.json path.")
     build.add_argument("--seed", type=int, default=42)

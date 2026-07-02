@@ -3,11 +3,11 @@
 Two modes are supported:
 
     1. one-file output: current monolith behavior for a big local GPU box.
-    2. cloud stream output: shard locally, upload shards to Drive, resume from
-       a Drive-backed manifest, and let a later server reassemble the final H5.
+    2. cloud stream output: shard locally, upload shards to Cloud Drive, resume from
+       a Cloud Drive-backed manifest, and let a later server reassemble the final H5.
 
 The original single-file path is still the default. Pass ``--cloud-stream-dir``
-to switch to the Drive-backed stream workflow.
+to switch to the Cloud Drive-backed stream workflow.
 
 Strategy for the one-file path (tuned for one big GPU + lots of host RAM, e.g.
 80GB A100 / 200GB RAM):
@@ -1415,7 +1415,7 @@ def stream_cloud_output(
     cloud_stream_dir: Path | None = None,
     free_floor_bytes: int = 8 * 1024**3,
 ) -> Path:
-    """Drive-backed streaming workflow for Colab-style limited local storage."""
+    """Cloud Drive-backed streaming workflow for Colab-style limited local storage."""
     import gc
     import h5py
     import torch
@@ -1623,7 +1623,7 @@ def stream_cloud_output(
         if str(embedder.device).startswith("cuda"):
             gc.collect()
             torch.cuda.empty_cache()
-        print(f"embed_incloud: shard {shard['id']} streamed to Drive", flush=True)
+        print(f"embed_incloud: shard {shard['id']} streamed to Cloud Drive", flush=True)
 
     if all(shard.get("upload_status") == STREAM_UPLOAD_DONE for shard in shards):
         manifest["status"] = STREAM_STATUS_COMPLETE
@@ -1726,7 +1726,7 @@ def parse_args():
     parser.add_argument("--input-h5", type=Path, default=DEFAULT_INPUT_H5)
     parser.add_argument("--output-h5", type=Path, default=DEFAULT_OUTPUT_H5)
     parser.add_argument("--output-dir", type=Path, default=None, help="local temporary output directory")
-    parser.add_argument("--cloud-stream-dir", type=Path, default=None, help="Drive directory for streamed shards")
+    parser.add_argument("--cloud-stream-dir", type=Path, default=None, help="Cloud Drive directory for streamed shards")
     parser.add_argument("--local-model", default=DEFAULT_LOCAL_MODEL)
     parser.add_argument("--device", default=None)
     parser.add_argument(

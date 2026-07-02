@@ -81,7 +81,7 @@ python VICReg_review/train_vicreg_review_h5.py --input-h5 <workdir>/embedding_h5
 ## Colab
 
 For a Colab run that starts from Kaggle, splits sentences, embeds, copies the
-final `embedding_h5.h5` to Drive, and then trains:
+final `embedding_h5.h5` to Cloud Drive, and then trains:
 
 ```python
 !pip install -r requirements.txt
@@ -90,7 +90,7 @@ final `embedding_h5.h5` to Drive, and then trains:
   --drive-root /content/drive/MyDrive/studable_query_latent_runs
 ```
 
-The wrapper defaults to the Kaggle-only path, local Qwen embeddings, Drive
+The wrapper defaults to the Kaggle-only path, local Qwen embeddings, Cloud Drive
 copies for `embedding_h5.h5`, and a Colab-friendly VICReg training run. If you
 have a Hugging Face TEI endpoint, add `--backend cloud --token-file /content/drive/MyDrive/tokenAPI.txt`.
 

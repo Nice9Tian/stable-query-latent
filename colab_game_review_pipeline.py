@@ -3,10 +3,10 @@
 This wrapper does the Kaggle-only path:
 
     Kaggle download -> prepare per-game CSVs -> sentence split -> embed ->
-    copy embedding_h5.h5 to Drive -> train VICReg
+    copy embedding_h5.h5 to Cloud Drive -> train VICReg
 
 It keeps the heavy intermediate build in a local workspace for speed, then
-persists the final embedding H5 and all training outputs under a Drive run
+persists the final embedding H5 and all training outputs under a Cloud Drive run
 directory.
 """
 

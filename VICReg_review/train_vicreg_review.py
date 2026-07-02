@@ -676,7 +676,7 @@ def parse_args():
                              "per-game corpus files are streamed from --source-dir through --cache-dir in the "
                              "sequence's fixed random order. Overrides --input-dir.")
     parser.add_argument("--source-dir", default=None,
-                        help="Override the corpus source dir recorded in the sequence (e.g. a Drive path).")
+                        help="Override the corpus source dir recorded in the sequence (e.g. a Cloud Drive path).")
     parser.add_argument("--cache-dir", default=str(DEFAULT_HEADS_DIR.parent / "training_space"),
                         help="Local working-set dir that blocks are copied into during streaming.")
     parser.add_argument("--block-gb", type=float, default=100.0,
