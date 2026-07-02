@@ -14,6 +14,11 @@ automatically** (a combo whose checkpoint already exists is recognised as done).
 
 - **`prepare_pods.ipynb`** (repo root, NOT in a bundle) — run once on the first VM to
   generate `/workspace/Pod_1..7` from this template. See the deploy sequence below.
+- **`run.ipynb`** (optional one-click orchestrator) — chains `setup` →
+  `prepare_training` → `training` in order, each in a fresh kernel, and **aborts at
+  the first error** (like a plain Python script). Executed copies with outputs land
+  as `executed_<name>.ipynb`; on failure open that copy for the traceback.
+  Equivalent to running the three notebooks below by hand.
 - **`setup.ipynb`** — environment: gh CLI, clone/pull, `pip install`, flash-attn. Once per pod.
 - **`prepare_training.ipynb`** — build/embed the H5 (**one VM only** — it writes the shared
   `embedding_h5.h5`; if it already exists, build/embed just skip) → **stage RESIDENT VECTORS**
