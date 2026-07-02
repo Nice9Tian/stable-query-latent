@@ -543,6 +543,28 @@ def split_data(
             path for index, path in enumerate(input_files) if index % shard_count == shard_index
         ]
 
+    # Resume scan FIRST: when every output already exists there is nothing to do,
+    # so return before paying the wtpsplit/SaT model load (torch + CUDA init +
+    # weights -- minutes on a cold pod, for zero work).
+    skipped_existing = 0
+    process_files = []
+    for file_index, input_path in enumerate(input_files, start=1):
+        output_path = output_dir / input_path.name
+        if output_path.exists() and not overwrite:
+            skipped_existing += 1
+            continue
+        process_files.append((file_index, input_path, output_path))
+    if skipped_existing:
+        print(f"skip existing sentence JSON files: {skipped_existing}", flush=True)
+    if not process_files:
+        print(
+            f"split_data: all {skipped_existing} outputs exist "
+            f"(shard={shard_index + 1}/{shard_count}) -> nothing to split; "
+            f"splitter not loaded",
+            flush=True,
+        )
+        return
+
     if splitter is None:
         splitter = load_splitter(model, device)
 
@@ -597,18 +619,6 @@ def split_data(
         f"-> {output_dir}",
         flush=True,
     )
-
-    skipped_existing = 0
-    process_files = []
-    for file_index, input_path in enumerate(input_files, start=1):
-        output_path = output_dir / input_path.name
-        if output_path.exists() and not overwrite:
-            skipped_existing += 1
-            continue
-        process_files.append((file_index, input_path, output_path))
-
-    if skipped_existing:
-        print(f"skip existing sentence JSON files: {skipped_existing}", flush=True)
 
     pending_writes = []
 
