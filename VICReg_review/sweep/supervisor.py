@@ -458,6 +458,10 @@ class Supervisor:
             self.calib, worst, self._free_vram(), combo.num_latents, combo.view,
             self.config.train.batch_size, safety=self.config.memory.vram_safety, try_paired=False,
             total_sentences=total, cache_bytes=cache_bytes, ram_budget=ram_budget)
+        pin_cache = bool(plan["pin_cache"])
+        pin_limit_gib = float(getattr(self.config.memory, "pin_cache_max_gib", 64.0))
+        if pin_cache and pin_limit_gib > 0 and cache_bytes > pin_limit_gib * oom_proxy.GIB:
+            pin_cache = False
         # Surface the memory model so it can be sanity-checked against real peaks.
         # Two ORTHOGONAL axes:
         #  * backward_mode (across games): standard = keep every game's graph for one
@@ -477,6 +481,7 @@ class Supervisor:
               f"std_required={plan.get('standard_required_gib')}GiB "
               f"budget={plan.get('budget_gib')}GiB "
               f"cache={plan['cache_mode']} "
+              f"pin={int(pin_cache)} "
               f"cache_est={cache_bytes / oom_proxy.GIB:.1f}GiB "
               f"ram_budget={ram_budget / oom_proxy.GIB:.1f}GiB "
               f"ram_pool={self._ram_pool_budget() / oom_proxy.GIB:.1f}GiB "
@@ -486,7 +491,7 @@ class Supervisor:
                 "stem_chunk_size": int(plan["stem_chunk_size"]),
                 "paired": False,
                 "cache_mode": plan["cache_mode"],
-                "pin_cache": plan["pin_cache"]}
+                "pin_cache": pin_cache}
 
     @staticmethod
     def downgrade(settings: dict) -> dict:
