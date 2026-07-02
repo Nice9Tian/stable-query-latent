@@ -159,6 +159,7 @@ class Supervisor:
         self._my_vram_gib = None
         self._vram_cache = None
         self._vram_cache_ts = 0.0
+        self._h5_cache_reserve_bytes = None
 
     def _share_from(self, primary: "Supervisor") -> None:
         """Adopt the primary lane's shared coordination state (multi-GPU)."""
@@ -404,8 +405,33 @@ class Supervisor:
         if self.stats is None:
             self.stats = oom_proxy.GameStats.from_h5(self.config.h5)
 
+    def _h5_cache_reserve(self) -> float:
+        """Reserve host RAM for the embedding H5 page cache before per-lane caches.
+
+        Linux will naturally keep the staged embedding_h5.h5 in page cache as it is
+        read. The per-lane full-cache planner should not spend that same RAM on
+        materialised sampled batches, or high-GPU-count pods end up with every lane
+        building its own epoch cache while the shared H5 cache is squeezed out.
+        """
+        if self._h5_cache_reserve_bytes is not None:
+            return self._h5_cache_reserve_bytes
+        reserve = 0.0
+        try:
+            reserve = float(Path(self.config.h5).stat().st_size)
+        except OSError:
+            reserve = 0.0
+        # Keep this bounded so small-RAM pods still have room to stream and the
+        # planner can fall back to queue mode rather than reporting zero budget.
+        available = float(oom_proxy.available_ram_bytes())
+        max_fraction = float(getattr(self.config.memory, "h5_cache_reserve_fraction", 0.4))
+        if available > 0 and max_fraction > 0:
+            reserve = min(reserve, available * max_fraction)
+        self._h5_cache_reserve_bytes = max(0.0, reserve)
+        return self._h5_cache_reserve_bytes
+
     def _ram_budget(self) -> float:
-        ram = oom_proxy.available_ram_bytes() * float(getattr(self.config.memory, "ram_safety", 0.8))
+        ram = max(0.0, oom_proxy.available_ram_bytes() - self._h5_cache_reserve())
+        ram *= float(getattr(self.config.memory, "ram_safety", 0.8))
         return ram / self._ram_divisor
 
     def plan_settings(self, combo) -> dict:
@@ -438,7 +464,8 @@ class Supervisor:
               f"budget={plan.get('budget_gib')}GiB "
               f"cache={plan['cache_mode']} "
               f"cache_est={cache_bytes / oom_proxy.GIB:.1f}GiB "
-              f"ram_budget={ram_budget / oom_proxy.GIB:.1f}GiB", flush=True)
+              f"ram_budget={ram_budget / oom_proxy.GIB:.1f}GiB "
+              f"h5_reserve={self._h5_cache_reserve() / oom_proxy.GIB:.1f}GiB", flush=True)
         return {"backward_mode": plan["backward_mode"],
                 "stem_chunk_size": int(plan["stem_chunk_size"]),
                 "paired": False,
@@ -575,8 +602,15 @@ class Supervisor:
             total_vram = self._total_vram()
         except Exception:
             pass
+        total_ram = 0.0
+        try:
+            total_ram = float(oom_proxy.available_ram_bytes())
+        except Exception:
+            pass
         info = {"gpus": list(gpus), "cores": jobspec.effective_cpu_count(),
-                "vram_gib": round(total_vram / oom_proxy.GIB, 1) if total_vram else None}
+                "vram_gib": round(total_vram / oom_proxy.GIB, 1) if total_vram else None,
+                "ram_gib": round(total_ram / oom_proxy.GIB, 1) if total_ram else None,
+                "h5_reserve_gib": round(self._h5_cache_reserve() / oom_proxy.GIB, 1)}
         self.coordinator = Coordinator(self.out_dir, base, done_fn=_done_fn, liveness=liveness, info=info)
         self.vm_name = self.coordinator.vm_name
         self._my_vram_gib = info["vram_gib"]

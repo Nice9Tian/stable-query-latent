@@ -45,6 +45,7 @@ class TrainConfig:
 class MemoryConfig:
     vram_safety: float = 0.85
     ram_safety: float = 0.8          # fraction of host RAM the full cache may use
+    h5_cache_reserve_fraction: float = 0.4  # max fraction reserved for embedding H5 page cache
     calib: str = "measure"           # measure | load | off
 
 
