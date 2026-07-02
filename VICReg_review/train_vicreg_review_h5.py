@@ -16,7 +16,7 @@ import queue
 import sys
 import threading
 import time
-from concurrent.futures import ProcessPoolExecutor
+from concurrent.futures import ProcessPoolExecutor, as_completed
 from pathlib import Path
 from types import SimpleNamespace
 
@@ -497,7 +497,23 @@ def stage_resident_vectors(h5_path, dat_path=None, work_dir=None, *,
     n_workers = int(workers) if workers else default_data_workers()
     stride = max(1, int(chunk_rows))
     ranges = [(s, min(rows, s + stride)) for s in range(0, rows, stride)]
+    row_bytes = dim * dtype.itemsize
+    print(f"resident: staging {expected['bytes'] / (1024 ** 3):.1f}GiB {h5_path} -> {dat_path} "
+          f"({n_workers} readers x {len(ranges)} ranges; progress every ~30s)", flush=True)
     t0 = time.time()
+
+    def _progress(done_rows, last_report):
+        now = time.time()
+        if now - last_report < 30.0:
+            return last_report
+        frac = done_rows / max(1, rows)
+        rate = done_rows * row_bytes / (1024 ** 3) / max(1e-6, now - t0)
+        eta = (rows - done_rows) * row_bytes / (1024 ** 3) / max(1e-6, rate)
+        print(f"resident: staging {frac * 100:.0f}% "
+              f"({done_rows * row_bytes / (1024 ** 3):.0f}GiB, {rate:.2f}GiB/s, ~{eta:.0f}s left)",
+              flush=True)
+        return now
+
     try:
         # Preallocate the full-size file so workers can memmap r+ into disjoint ranges.
         pre = np.memmap(tmp, dtype=dtype, mode="w+", shape=(rows, dim))
@@ -507,14 +523,18 @@ def stage_resident_vectors(h5_path, dat_path=None, work_dir=None, *,
             pre_mm.close()
         del pre
         tasks = [(str(h5_path), str(tmp), dtype_name, rows, dim, s, e) for s, e in ranges]
+        done_rows, last_report = 0, time.time()
         if n_workers <= 1 or len(tasks) <= 1:
             for task in tasks:
-                _dump_vectors_range(task)
+                done_rows += _dump_vectors_range(task)
+                last_report = _progress(done_rows, last_report)
         else:
             ctx = multiprocessing.get_context("spawn")
             with ProcessPoolExecutor(max_workers=n_workers, mp_context=ctx) as pool:
-                for _ in pool.map(_dump_vectors_range, tasks):
-                    pass
+                futures = [pool.submit(_dump_vectors_range, task) for task in tasks]
+                for future in as_completed(futures):
+                    done_rows += future.result()
+                    last_report = _progress(done_rows, last_report)
         tmp.replace(dat_path)
         _vectors_dat_meta_path(dat_path).write_text(json.dumps(expected), encoding="utf-8")
     except BaseException:
