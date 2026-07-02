@@ -458,6 +458,33 @@ def resident_descriptor(dat_path, h5_path=None):
     return (str(dat_path), (int(meta["rows"]), int(meta["dim"])), str(meta["dtype"]))
 
 
+def _verify_dat_sample(h5_path, dat_path, rows, dim, dtype_name,
+                       spots=4, spot_rows=256) -> bool:
+    """Cheap content check for an existing .dat: compare head, tail and a few
+    evenly spaced middle row ranges against the H5 'vectors'. Catches truncated
+    or hole-y dumps (the sparse-file/SIGBUS era) that still pass the size/meta
+    check. Reads a few MB total from each side."""
+    rows, dim = int(rows), int(dim)
+    if rows <= 0:
+        return True
+    dtype = np.dtype(dtype_name)
+    starts = {0, max(0, rows - spot_rows)}
+    for i in range(1, spots + 1):
+        starts.add(max(0, min(rows - spot_rows, rows * i // (spots + 1))))
+    mm = np.memmap(str(dat_path), dtype=dtype, mode="r", shape=(rows, dim))
+    try:
+        with h5py.File(str(h5_path), "r") as h5:
+            ds = h5["vectors"]
+            for s in sorted(starts):
+                e = min(rows, s + spot_rows)
+                want = np.ascontiguousarray(ds[s:e], dtype=dtype)
+                if not np.array_equal(np.asarray(mm[s:e]), want):
+                    return False
+    finally:
+        del mm
+    return True
+
+
 def _dump_vectors_range(task):
     """Worker: copy vectors[start:end] from the H5 into the .dat via positioned
     writes (seek+write, the pattern proven by Pod/h5_staging.parallel_copy). Each
@@ -495,7 +522,13 @@ def stage_resident_vectors(h5_path, dat_path=None, work_dir=None, *,
                 "bytes": rows * dim * dtype.itemsize}
     existing = resident_descriptor(dat_path, h5_path)
     if existing is not None and existing[1] == (rows, dim) and existing[2] == dtype_name:
-        return existing
+        if _verify_dat_sample(h5_path, dat_path, rows, dim, dtype_name):
+            print(f"resident: reusing existing {dat_path} "
+                  f"(meta + head/mid/tail content match the H5)", flush=True)
+            return existing
+        print(f"resident: existing {dat_path} FAILS the content check vs the H5 "
+              f"(stale or hole-y dump); deleting and re-staging", flush=True)
+        dat_path.unlink(missing_ok=True)   # reclaim its space before the free-disk check
     dat_path.parent.mkdir(parents=True, exist_ok=True)
     tmp = dat_path.with_name(dat_path.name + ".tmp")
     tmp.unlink(missing_ok=True)          # stale partial: reclaim before the space check
