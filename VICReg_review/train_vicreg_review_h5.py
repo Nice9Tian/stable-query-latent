@@ -607,6 +607,27 @@ def default_offsets_h5_path(h5_path, work_dir=None):
     return base / (Path(h5_path).stem + ".meta.h5")
 
 
+# Every non-bulk dataset the trainer may read from its --input-h5. Includes the
+# per-game recommendation label datasets (positive/negative/...): the grl arm's
+# load_recommendation_targets reads them from --input-h5, and without them it
+# falls back to scanning raw review CSVs that do not exist on cloud pods.
+RESIDENT_META_DATASETS = (
+    "review_offsets", "game_review_offsets", "game_names", "appids",
+    "game_titles", "positive", "negative", "recommendation_label_source",
+)
+
+
+def offsets_h5_complete(meta_path, source_h5):
+    """True if the companion mini-H5 carries every RESIDENT_META_DATASETS entry the
+    SOURCE has. Minis written before the label datasets were added return False so
+    callers rebuild them (few MB; the big .dat is unaffected)."""
+    try:
+        with h5py.File(str(meta_path), "r") as meta, h5py.File(str(source_h5), "r") as src:
+            return all(name in meta for name in RESIDENT_META_DATASETS if name in src)
+    except OSError:
+        return False
+
+
 def write_offsets_h5(source_h5, out_path):
     """Small companion H5 for resident mode: every dataset the trainer reads EXCEPT
     the bulk vectors (those come from the .dat memmap). Keeps an EMPTY-shaped 'vectors'
@@ -622,7 +643,7 @@ def write_offsets_h5(source_h5, out_path):
             rows = int(src["vectors"].shape[0])
             dim = int(src["vectors"].shape[1])
             vdtype = src["vectors"].dtype
-            for name in ("review_offsets", "game_review_offsets", "game_names", "appids"):
+            for name in RESIDENT_META_DATASETS:
                 if name in src:
                     dst.create_dataset(name, data=src[name][:])
             dst.create_dataset("vectors", shape=(rows, dim), dtype=vdtype, chunks=True)  # shape only

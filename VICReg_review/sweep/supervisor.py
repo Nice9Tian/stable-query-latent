@@ -738,6 +738,11 @@ class Supervisor:
         # 1. Reuse valid local artifacts (resume / restart) -- no source read at all.
         desc = trainer.resident_descriptor(dat_path, self.config.h5)
         if desc is not None and Path(meta_h5).exists():
+            if not trainer.offsets_h5_complete(meta_h5, self.config.h5):
+                # mini-H5 written by older code lacks the label datasets the grl
+                # arm reads -> rebuild it (few MB); the big .dat is reused as-is.
+                trainer.write_offsets_h5(self.config.h5, meta_h5)
+                print(f"supervisor: rebuilt stale resident mini-H5 {meta_h5} (label datasets)", flush=True)
             self._vectors_dat, self._resident_h5, self._resident_enabled = desc[0], str(meta_h5), True
             print(f"supervisor: resident vectors ON (reused local {dat_path}) "
                   f"({vectors_bytes / oom_proxy.GIB:.0f}GiB)", flush=True)
