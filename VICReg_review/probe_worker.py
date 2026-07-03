@@ -62,21 +62,37 @@ def _h5_has_vector_data(h5_path: str) -> bool:
             return True   # not chunked / old h5py: assume a real source H5
 
 
-def resolve_vector_source(saved: dict, input_h5: str, fallback_h5: str | None):
+def resolve_vector_source(saved: dict, input_h5: str, fallback_h5: str | None,
+                          local_data_dir: str | None = None):
     """Where do this probe's sentence vectors actually come from?
 
     Ladder (mirrors the trainer's resident design):
       1. the machine-local resident .dat named in the training args, when it
          exists here -> gather-by-pointer, offsets/labels from the meta-H5;
-      2. ``input_h5`` itself, when its 'vectors' dataset holds real data
+      2. a .dat staged locally for ``--fallback-h5`` under ``--local-data-dir``
+         (by eval.ipynb's staging cell, or a training run on this pod) ->
+         NVMe gather on ANY pod; the probe re-reads vectors for EVERY marker,
+         so this is what keeps a big drain off the network FS;
+      3. ``input_h5`` itself, when its 'vectors' dataset holds real data
          (streaming-mode combos point at the source H5 already);
-      3. ``--fallback-h5`` (the shared source H5) -> works on any pod;
-      4. otherwise fail LOUDLY -- never probe the meta-H5's shape-only zeros.
+      4. ``--fallback-h5`` (the shared source H5) -> slow but correct anywhere;
+      5. otherwise fail LOUDLY -- never probe the meta-H5's shape-only zeros.
     Returns (vectors_dat_descriptor_or_None, h5_path_for_probe).
     """
     desc = trainer_mod.resident_descriptor(saved.get("vectors_dat"), input_h5)
     if desc is not None:
         return desc, input_h5
+    if fallback_h5 and local_data_dir:
+        dat_path = trainer_mod.default_vectors_dat_path(fallback_h5, local_data_dir)
+        meta_h5 = trainer_mod.default_offsets_h5_path(fallback_h5, local_data_dir)
+        desc = trainer_mod.resident_descriptor(dat_path, fallback_h5)
+        if desc is not None:
+            # Offsets/labels from the local companion meta-H5 when staged,
+            # else from the shared source H5 (small index reads only).
+            if Path(meta_h5).exists():
+                return desc, str(meta_h5)
+            if Path(fallback_h5).exists():
+                return desc, str(fallback_h5)
     if Path(input_h5).exists() and _h5_has_vector_data(input_h5):
         return None, input_h5
     if fallback_h5 and Path(fallback_h5).exists() and _h5_has_vector_data(str(fallback_h5)):
@@ -90,7 +106,8 @@ def resolve_vector_source(saved: dict, input_h5: str, fallback_h5: str | None):
     )
 
 
-def process_marker(marker: Path, device: torch.device, fallback_h5: str | None = None) -> dict:
+def process_marker(marker: Path, device: torch.device, fallback_h5: str | None = None,
+                   local_data_dir: str | None = None) -> dict:
     data = json.loads(marker.read_text(encoding="utf-8"))
     ckpt_path = str(data["checkpoint"])
     tsv_path = Path(data["probe_history_tsv"])
@@ -100,7 +117,7 @@ def process_marker(marker: Path, device: torch.device, fallback_h5: str | None =
 
     checkpoint = torch.load(ckpt_path, map_location=device, weights_only=False)
     saved = dict(checkpoint.get("args", {}))
-    vectors_desc, probe_h5 = resolve_vector_source(saved, input_h5, fallback_h5)
+    vectors_desc, probe_h5 = resolve_vector_source(saved, input_h5, fallback_h5, local_data_dir)
 
     with h5py.File(probe_h5, "r") as h5:
         input_dim = int(h5.attrs["input_dim"])
@@ -164,7 +181,8 @@ def main_loop(args) -> None:
             continue
         for marker in markers:
             try:
-                process_marker(marker, device, fallback_h5=args.fallback_h5)
+                process_marker(marker, device, fallback_h5=args.fallback_h5,
+                               local_data_dir=args.local_data_dir)
                 marker.rename(marker.parent / (marker.name + ".done"))
                 processed += 1
                 print(
@@ -204,6 +222,12 @@ def parse_args(argv: list[str] | None = None):
                              "input_h5 is a resident-mode meta-H5 (shape-only vectors) and the "
                              "machine-local .dat from training is not on this pod -- makes the "
                              "drain runnable on any machine.")
+    parser.add_argument("--local-data-dir", default="/root/data",
+                        help="Machine-local dir checked for a resident .dat staged for "
+                             "--fallback-h5 (plus its companion meta-H5). When present, every "
+                             "probe gathers vectors from local NVMe instead of re-reading the "
+                             "shared H5 per marker. Stage it with eval.ipynb's staging cell or "
+                             "train_vicreg_review_h5.stage_resident_vectors.")
     parser.add_argument("--logout-address", default=None, help="Append stdout/stderr to this log file.")
     return parser.parse_args(argv)
 
