@@ -44,13 +44,53 @@ if str(ROOT) not in sys.path:
 
 from tools.logging_tee import run_with_optional_tee  # noqa: E402
 from VICReg_review.train_tag_probe import load_frozen_encoder  # noqa: E402
+from VICReg_review import train_vicreg_review_h5 as trainer_mod  # noqa: E402
 from VICReg_review.train_vicreg_review_h5 import (  # noqa: E402
     append_probe_history,
     probe_report_and_row,
 )
 
 
-def process_marker(marker: Path, device: torch.device) -> dict:
+def _h5_has_vector_data(h5_path: str) -> bool:
+    """False for a resident-mode meta-H5, whose 'vectors' dataset is shape-only
+    (chunked, never written -- reads would SILENTLY return zeros)."""
+    with h5py.File(h5_path, "r") as h5:
+        ds = h5["vectors"]
+        try:
+            return ds.id.get_num_chunks() > 0
+        except Exception:
+            return True   # not chunked / old h5py: assume a real source H5
+
+
+def resolve_vector_source(saved: dict, input_h5: str, fallback_h5: str | None):
+    """Where do this probe's sentence vectors actually come from?
+
+    Ladder (mirrors the trainer's resident design):
+      1. the machine-local resident .dat named in the training args, when it
+         exists here -> gather-by-pointer, offsets/labels from the meta-H5;
+      2. ``input_h5`` itself, when its 'vectors' dataset holds real data
+         (streaming-mode combos point at the source H5 already);
+      3. ``--fallback-h5`` (the shared source H5) -> works on any pod;
+      4. otherwise fail LOUDLY -- never probe the meta-H5's shape-only zeros.
+    Returns (vectors_dat_descriptor_or_None, h5_path_for_probe).
+    """
+    desc = trainer_mod.resident_descriptor(saved.get("vectors_dat"), input_h5)
+    if desc is not None:
+        return desc, input_h5
+    if Path(input_h5).exists() and _h5_has_vector_data(input_h5):
+        return None, input_h5
+    if fallback_h5 and Path(fallback_h5).exists() and _h5_has_vector_data(str(fallback_h5)):
+        return None, str(fallback_h5)
+    raise RuntimeError(
+        f"no vector source on this machine: input_h5={input_h5} is missing or "
+        f"shape-only (resident meta-H5), the training .dat "
+        f"({saved.get('vectors_dat')}) is not here, and no usable --fallback-h5 "
+        f"was given. Run the drain on the pod that staged the .dat, or pass "
+        f"--fallback-h5 <shared embedding_h5.h5>."
+    )
+
+
+def process_marker(marker: Path, device: torch.device, fallback_h5: str | None = None) -> dict:
     data = json.loads(marker.read_text(encoding="utf-8"))
     ckpt_path = str(data["checkpoint"])
     tsv_path = Path(data["probe_history_tsv"])
@@ -58,21 +98,31 @@ def process_marker(marker: Path, device: torch.device) -> dict:
     epoch = int(data["epoch"])
     global_step = int(data["global_step"])
 
-    with h5py.File(input_h5, "r") as h5:
+    checkpoint = torch.load(ckpt_path, map_location=device, weights_only=False)
+    saved = dict(checkpoint.get("args", {}))
+    vectors_desc, probe_h5 = resolve_vector_source(saved, input_h5, fallback_h5)
+
+    with h5py.File(probe_h5, "r") as h5:
         input_dim = int(h5.attrs["input_dim"])
 
     model, _cfg, _ep, _gs = load_frozen_encoder(ckpt_path, input_dim, device)
-    checkpoint = torch.load(ckpt_path, map_location=device, weights_only=False)
-    saved = dict(checkpoint.get("args", {}))
     # The marker is authoritative for where output goes and which device we run on.
     saved["probe_history_tsv"] = str(tsv_path)
     saved["device"] = str(device)
+    saved["input_h5"] = str(probe_h5)
     saved_args = SimpleNamespace(**saved)
 
-    result = probe_report_and_row(model, saved_args, device, epoch, global_step)
-    del model
-    if device.type == "cuda":
-        torch.cuda.empty_cache()
+    # load_game_views consults the trainer module's _VECTORS_DAT global (that is
+    # how training itself gathers in resident mode); point it at the local .dat
+    # for this marker and always reset afterwards.
+    trainer_mod._VECTORS_DAT = vectors_desc
+    try:
+        result = probe_report_and_row(model, saved_args, device, epoch, global_step)
+    finally:
+        trainer_mod._VECTORS_DAT = None
+        del model
+        if device.type == "cuda":
+            torch.cuda.empty_cache()
     if result is None:
         raise RuntimeError("probe_report_and_row returned None (probe failed)")
     report, row = result
@@ -114,7 +164,7 @@ def main_loop(args) -> None:
             continue
         for marker in markers:
             try:
-                process_marker(marker, device)
+                process_marker(marker, device, fallback_h5=args.fallback_h5)
                 marker.rename(marker.parent / (marker.name + ".done"))
                 processed += 1
                 print(
@@ -149,6 +199,11 @@ def parse_args(argv: list[str] | None = None):
     parser.add_argument("--poll-interval", type=float, default=5.0, help="Seconds between polls when the queue is empty.")
     parser.add_argument("--stop-file", default=None, help="Worker exits once this file exists and the queue is empty. Defaults to <queue-dir>/STOP.")
     parser.add_argument("--run-once", action="store_true", help="Process the current backlog once, then exit (for testing).")
+    parser.add_argument("--fallback-h5", default=None,
+                        help="Shared source embedding H5 with REAL vectors. Used when a marker's "
+                             "input_h5 is a resident-mode meta-H5 (shape-only vectors) and the "
+                             "machine-local .dat from training is not on this pod -- makes the "
+                             "drain runnable on any machine.")
     parser.add_argument("--logout-address", default=None, help="Append stdout/stderr to this log file.")
     return parser.parse_args(argv)
 
