@@ -143,7 +143,7 @@ class Supervisor:
         # to cores / lane-count (not a YAML knob).
         self._ram_divisor = max(1, int(ram_divisor))
         self._ram_lane_rank = max(0, int(ram_lane_rank))
-        self._data_workers = jobspec.auto_data_workers(self._ram_divisor)
+        self._data_workers = self._resolve_data_workers(self._ram_divisor)
         # Coordination state -- per-instance by default; run_sweep replaces these
         # refs on every lane so they share one grid/tally/ledger.
         self.total = 0
@@ -201,6 +201,24 @@ class Supervisor:
     def _spawn(self):
         return self._spawn_fn(self.gpu, self.qdir)
 
+    def _resolve_data_workers(self, n_lanes: int | None = None) -> int:
+        configured = int(getattr(self.config.train, "data_workers", 0) or 0)
+        if configured > 0:
+            return configured
+        return jobspec.auto_data_workers(n_lanes or self._ram_divisor)
+
+    @staticmethod
+    def _worker_env(gpu: int) -> dict:
+        # Each GPU lane already has a worker plus H5-read subprocesses. Keep
+        # incidental CPU libraries single-threaded so 7 lanes don't multiply into
+        # hundreds of hidden BLAS/OpenMP threads.
+        env = {**os.environ,
+               "PYTORCH_CUDA_ALLOC_CONF": "expandable_segments:True",
+               "CUDA_VISIBLE_DEVICES": str(gpu)}
+        for key in ("OMP_NUM_THREADS", "MKL_NUM_THREADS", "OPENBLAS_NUM_THREADS", "NUMEXPR_NUM_THREADS"):
+            env.setdefault(key, "1")
+        return env
+
     # --- worker process management ----------------------------------------
     def _default_spawn(self, gpu, qdir):
         argv = [sys.executable, "-u", str(SCRIPT_DIR / "worker.py"),
@@ -211,16 +229,12 @@ class Supervisor:
             argv += ["--no-calib"]           # calib was pre-computed once by _ensure_calib
         if self.h5_override:
             argv += ["--h5", str(self.h5_override)]
-        if self.logout_address:
-            argv += ["--logout-address", str(self.logout_address)]
         # start_new_session so the worker + its data-pool children form one
         # process group we can kill cleanly. expandable_segments reduces the
         # allocator fragmentation the OOM messages keep flagging. CUDA_VISIBLE_DEVICES
         # pins the worker to this GPU (its cuda:0 == physical gpu), so this lane's
         # per-GPU free-VRAM read stays consistent on multi-GPU hosts.
-        env = {**os.environ,
-               "PYTORCH_CUDA_ALLOC_CONF": "expandable_segments:True",
-               "CUDA_VISIBLE_DEVICES": str(gpu)}
+        env = self._worker_env(gpu)
         return subprocess.Popen(argv, cwd=str(ROOT), start_new_session=True, env=env)
 
     def _kill_worker(self) -> None:
@@ -406,11 +420,7 @@ class Supervisor:
                 "--out-dir", str(self.out_dir), "--work-dir", str(self.work_dir)]
         if self.h5_override:
             argv += ["--h5", str(self.h5_override)]
-        if self.logout_address:
-            argv += ["--logout-address", str(self.logout_address)]
-        env = {**os.environ,
-               "PYTORCH_CUDA_ALLOC_CONF": "expandable_segments:True",
-               "CUDA_VISIBLE_DEVICES": str(self.gpu)}
+        env = self._worker_env(self.gpu)
         p = subprocess.Popen(argv, cwd=str(ROOT), start_new_session=True, env=env)
         try:
             p.wait(timeout=self.ready_timeout)
@@ -703,7 +713,7 @@ class Supervisor:
         active_gpus = self._select_active_gpus(list(gpus or [self.gpu]), combos)
         self._active_gpus = active_gpus
         self._ram_divisor = max(1, len(active_gpus))
-        self._data_workers = jobspec.auto_data_workers(self._ram_divisor)
+        self._data_workers = self._resolve_data_workers(self._ram_divisor)
         self.total = len(combos)
         self._ordered_ids = [c.combo_id for c in combos]
         self._combo_by_id = {c.combo_id: c for c in combos}
@@ -1096,7 +1106,7 @@ def run_sweep(config: SweepConfig, config_path, gpus, *, logout_address=None,
     gpus = list(primary._active_gpus or gpus)
     common["ram_divisor"] = len(gpus)
     primary._ram_divisor = len(gpus)
-    primary._data_workers = jobspec.auto_data_workers(primary._ram_divisor)
+    primary._data_workers = primary._resolve_data_workers(primary._ram_divisor)
     lanes = [primary]
     for lane_rank, g in enumerate(gpus[1:], start=1):
         lane = Supervisor(config, gpu=g, qdir=qdir_for(g), retry_failed=False, **common)

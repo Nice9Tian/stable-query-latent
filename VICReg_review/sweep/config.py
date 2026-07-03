@@ -42,8 +42,8 @@ class TrainConfig:
     epochs: int = 30
     batch_size: int = 128
     seed: int = 42
-    data_workers: int = 0            # DEPRECATED/ignored: the supervisor auto-scales
-                                     # H5-read procs to cores/lane-count (jobspec.auto_data_workers)
+    data_workers: int = 0            # 0 = auto-scale to cores/lane-count;
+                                     # >0 = explicit H5-read procs per GPU lane
 
 
 @dataclass
