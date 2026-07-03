@@ -63,6 +63,13 @@ def parse_args() -> argparse.Namespace:
         help="Prune combos with this num_latents and sample_fraction/view. Example: 1024:0.8",
     )
     p.add_argument("--drop-all", action="store_true", help="Prune train_game_count=all combos.")
+    p.add_argument(
+        "--from-config-exclude",
+        action="store_true",
+        help="Also prune every (num_latents, view) cell listed in the config's grid.exclude. "
+             "Soft-masks cells already excluded from the grid, so old, un-restarted "
+             "supervisors (still holding the pre-exclude grid in memory) stop claiming them.",
+    )
     p.add_argument("--apply", action="store_true", help="Actually write failed.json markers.")
     p.add_argument(
         "--include-live",
@@ -103,7 +110,18 @@ def main() -> None:
     out_dir = Path(cfg.out_dir)
     threshold = int(args.threshold)
     latent_view_rules = parse_latent_view_rules(args.drop_latent_view)
+    if args.from_config_exclude:
+        for rule in cfg.grid.exclude or []:
+            latent_view_rules.append((int(rule["num_latents"]), float(rule["view"])))
+    # Drop rules must be able to MATCH cells the config already excludes (the
+    # normal order nowadays: yaml exclusion lands first, then this soft-masks the
+    # running sweep). Iterate the FULL, un-excluded grid; markers only ever land
+    # on rule-matched, unfinished, unclaimed combos, so this widens nothing else.
+    cfg.grid.exclude = []
     if threshold <= 0 and not latent_view_rules and not args.drop_all:
+        if args.from_config_exclude:
+            print("config grid.exclude is empty and no other rules active -- nothing to prune.")
+            return
         raise SystemExit("No prune rules active. Pass --threshold N and/or --drop-latent-view LATENTS:VIEW.")
 
     counts = {
