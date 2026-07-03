@@ -106,6 +106,8 @@ def build_trainer_argv(config, combo, settings: dict, *, device: str = "cuda",
     ]
     if pin_cache:
         argv.append("--pin-cache")
+    if settings.get("pin_stream"):
+        argv.append("--pin-stream")
     if vectors_dat:
         argv += ["--vectors-dat", str(vectors_dat)]
     if probe_queue_dir:

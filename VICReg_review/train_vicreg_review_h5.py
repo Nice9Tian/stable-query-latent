@@ -941,6 +941,16 @@ class QueueEpochIterator:
             yield item
 
 
+def effective_batch_pin(args) -> bool:
+    """Whether freshly assembled batch tensors should be pinned. --pin-cache pins
+    everywhere (full mode retains the whole pinned epoch, so it stays opt-in via
+    the planner's pin budget); --pin-stream additionally pins the BOUNDED
+    streaming window of queue/resident mode, never the full-epoch cache."""
+    if bool(args.pin_cache):
+        return True
+    return bool(getattr(args, "pin_stream", False)) and args.cache_mode != "full"
+
+
 def iter_epoch(args, epoch, next_epoch_future, executor, cache_dtype):
     data_pool = _DATA_POOL
     window = max(1, int(args.prefetch_batches))
@@ -974,7 +984,7 @@ def iter_epoch(args, epoch, next_epoch_future, executor, cache_dtype):
         args.sample_fraction,
         args.seed,
         cache_dtype,
-        args.pin_cache,
+        effective_batch_pin(args),
         args.prefetch_batches,
         args.game_order,
         args.max_batch_sentences,
@@ -1920,7 +1930,10 @@ def train(args):
         model._stem_chunk_size = int(args.stem_chunk_size)
     amp_enabled = args.amp and device.type == "cuda"
     scaler = torch.amp.GradScaler("cuda", enabled=amp_enabled)
-    pin_transfer = args.pin_cache and device.type == "cuda"
+    # non_blocking H2D only pays off when the source tensors are pinned; the
+    # flag mirrors whatever the batch pipeline actually pins (--pin-cache or
+    # the streaming-window --pin-stream).
+    pin_transfer = effective_batch_pin(args) and device.type == "cuda"
     history_rows = []
     best_loss = float("inf")
     global_step = 0
@@ -2255,6 +2268,16 @@ def parse_args(argv=None):
     )
     parser.add_argument("--cache-dtype", choices=["float16", "float32"], default="float16")
     parser.add_argument("--pin-cache", action="store_true")
+    parser.add_argument(
+        "--pin-stream",
+        action="store_true",
+        help="Pin the STREAMING prefetch window (queue/resident cache modes) and use "
+             "non_blocking H2D copies, so uploads overlap compute instead of each "
+             "pageable copy blocking the step. Orthogonal to --pin-cache (which pins "
+             "the whole materialised epoch in full cache mode): the pinned footprint "
+             "here is bounded to ~(prefetch+1) in-flight batches. The supervisor "
+             "injects this only when host RAM clearly has headroom.",
+    )
     parser.add_argument(
         "--backward-mode",
         choices=["recompute", "split_recompute", "standard"],

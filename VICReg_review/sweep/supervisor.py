@@ -559,6 +559,20 @@ class Supervisor:
         pin_limit_gib = float(getattr(self.config.memory, "pin_cache_max_gib", 64.0))
         if pin_cache and pin_limit_gib > 0 and cache_bytes > pin_limit_gib * oom_proxy.GIB:
             pin_cache = False
+        # Pin the STREAMING window (queue/resident) when host RAM clearly has
+        # room. Without it every per-game H2D copy is a blocking pageable
+        # transfer that serialises with compute (GPUs idle at ~40% util).
+        # Pinned pages are unswappable, so require the whole-VM worst case
+        # (~prefetch+1 in-flight batches per lane, every lane) to fit in a
+        # quarter of the RAM available right now; the SIGKILL RAM-downgrade
+        # strips pin_stream first if the OOM-killer disagrees.
+        pin_stream = False
+        if plan["cache_mode"] in ("resident", "queue") and not pin_cache:
+            window_batches = 3.0   # prefetch window (2) + the batch being consumed
+            batch_bytes = 2.0 * float(combo.view) * float(std_batch) * self.stats.input_dim * 2.0
+            need = window_batches * batch_bytes * float(self._ram_divisor)
+            avail = float(oom_proxy.available_ram_bytes())
+            pin_stream = bool(avail > 0 and need <= avail * 0.25)
         # Surface the memory model so it can be sanity-checked against real peaks.
         # Two ORTHOGONAL axes:
         #  * backward_mode (across games): standard = keep every game's graph for one
@@ -578,7 +592,7 @@ class Supervisor:
               f"std_required={plan.get('standard_required_gib')}GiB "
               f"budget={plan.get('budget_gib')}GiB "
               f"cache={plan['cache_mode']} "
-              f"pin={int(pin_cache)} "
+              f"pin={int(pin_cache)} pin_stream={int(pin_stream)} "
               f"cache_est={cache_bytes / oom_proxy.GIB:.1f}GiB "
               f"ram_budget={ram_budget / oom_proxy.GIB:.1f}GiB "
               f"ram_pool={self._ram_pool_budget() / oom_proxy.GIB:.1f}GiB "
@@ -588,7 +602,8 @@ class Supervisor:
                 "stem_chunk_size": int(plan["stem_chunk_size"]),
                 "paired": False,
                 "cache_mode": plan["cache_mode"],
-                "pin_cache": pin_cache}
+                "pin_cache": pin_cache,
+                "pin_stream": pin_stream}
 
     @staticmethod
     def downgrade(settings: dict) -> dict:
@@ -604,9 +619,13 @@ class Supervisor:
 
     @staticmethod
     def downgrade_ram(settings: dict) -> dict:
-        """Host-RAM downgrade after a SIGKILL (OOM-killer): stop materialising +
-        pinning the full cache (stream via the bounded queue, shrink prefetch).
-        If already streaming + unpinned, fall back to the VRAM chunk downgrade."""
+        """Host-RAM downgrade after a SIGKILL (OOM-killer): first release the
+        pinned streaming window (cheapest unswappable RAM to give back), then
+        stop materialising + pinning the full cache (stream via the bounded
+        queue, shrink prefetch). If already streaming + unpinned, fall back to
+        the VRAM chunk downgrade."""
+        if settings.get("pin_stream"):
+            return {**settings, "pin_stream": False}
         if settings.get("cache_mode") != "queue" or settings.get("pin_cache", True):
             return {**settings, "cache_mode": "queue", "pin_cache": False, "prefetch_batches": 1}
         return Supervisor.downgrade(settings)
