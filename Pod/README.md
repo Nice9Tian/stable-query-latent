@@ -30,6 +30,10 @@ automatically** (a combo whose checkpoint already exists is recognised as done).
   demand, still far faster than the network FS); only if the local disk can't hold the
   `.dat` does training fall back to streaming the workspace H5 (last resort).
 - **`training.ipynb`** — the coordinated sweep. Registers this VM, claims combos, trains.
+- **`reload.ipynb`** — refresh THIS bundle from the repo's `Pod/` template: pulls
+  origin/main, copies the template's files over the bundle (local extras kept),
+  re-stamps `VM_NAME`. Bundles are snapshots — run this whenever the template
+  changed on GitHub so the copies never go stale.
 - **`check_paralle.ipynb`** — verify the *live* coordination (O_EXCL atomic on this mount,
   VM registry, migration OK). Run it **after** training has started.
 - **`realtime_reader.ipynb`** — follow this VM's log + global coordinated progress.
