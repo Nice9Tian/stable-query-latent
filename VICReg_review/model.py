@@ -326,8 +326,16 @@ class HierarchicalLatentArrayMLP(nn.Module):
             with torch.autocast(device_type=x_chunk.device.type, enabled=False):
                 qf, kf, vf = q_.to(red_dtype), k.to(red_dtype), v.to(red_dtype)
                 scores = torch.matmul(qf, kf.transpose(-2, -1)) * scale     # [B,H,Lq,c]
-                chunk_max = scores.amax(dim=-1)                             # [B,H,Lq]
+                # The max is only a numerical-stability constant: the online
+                # softmax is algebraically invariant to every m_c, so its exact
+                # gradient contribution is zero -- detach it. Left in the graph,
+                # amax saves the full [B,H,Lq,c] scores for its backward, which
+                # keeps a 4th score-copy alive at the checkpointed backward's
+                # peak while the planner budgets STEM_SCORE_COPIES=3 (one
+                # unbudgeted 22GiB copy at lat1024 view80 -> OOM on 80G cards).
+                chunk_max = scores.amax(dim=-1).detach()                    # [B,H,Lq]
                 weights = torch.exp(scores - chunk_max.unsqueeze(-1))
+                del scores      # nothing saves it once the max is detached
                 denom = weights.sum(dim=-1)                                 # [B,H,Lq]
                 out = torch.matmul(weights, vf)                            # [B,H,Lq,Dh]
             return chunk_max, denom, out
