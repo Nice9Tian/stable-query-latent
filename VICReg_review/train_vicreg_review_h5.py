@@ -2005,9 +2005,13 @@ def train(args):
         print(f"resident: vectors memmap {_VECTORS_DAT[0]} shape={_VECTORS_DAT[1]} "
               f"dtype={_VECTORS_DAT[2]} (gather-by-pointer; no per-combo view cache)", flush=True)
     if _DATA_POOL is not None:
+        if _VECTORS_DAT is not None:
+            source = f"vectors: resident .dat | offsets/labels: meta-H5 {args.input_h5}"
+        else:
+            source = f"streaming H5 {args.input_h5}"
         print(
-            f"data loading: {_DATA_POOL._max_workers} parallel H5 read workers "
-            f"(spawn) | prefetch window={max(1, int(args.prefetch_batches))} batches",
+            f"data loading: {_DATA_POOL._max_workers} parallel gather workers "
+            f"(spawn) | {source} | prefetch window={max(1, int(args.prefetch_batches))} batches",
             flush=True,
         )
 
