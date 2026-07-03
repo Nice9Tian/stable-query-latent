@@ -559,20 +559,28 @@ class Supervisor:
         pin_limit_gib = float(getattr(self.config.memory, "pin_cache_max_gib", 64.0))
         if pin_cache and pin_limit_gib > 0 and cache_bytes > pin_limit_gib * oom_proxy.GIB:
             pin_cache = False
-        # Pin the STREAMING window (queue/resident) when host RAM clearly has
-        # room. Without it every per-game H2D copy is a blocking pageable
-        # transfer that serialises with compute (GPUs idle at ~40% util).
-        # Pinned pages are unswappable, so require the whole-VM worst case
-        # (~prefetch+1 in-flight batches per lane, every lane) to fit in a
-        # quarter of the RAM available right now; the SIGKILL RAM-downgrade
-        # strips pin_stream first if the OOM-killer disagrees.
+        # Pin the STREAMING window (queue/resident) when this lane's ABSOLUTE
+        # RAM share can hold it. Without it every per-game H2D copy is a
+        # blocking pageable transfer that serialises with compute (GPUs idle
+        # at ~40% util). Same accounting style as the VRAM planner, host-side:
+        #   need   = (prefetch+1 in-flight batches, pinned) + 1 more window of
+        #            unpinned numpy assembly copies, in bytes
+        #            (batch bytes = both views x sampled sentences x fp16,
+        #             std_batch = expected batch + worst-game headroom)
+        #   budget = _ram_budget(): (available - H5 page-cache reserve) x
+        #            ram_safety, split across lanes -- absolute bytes, the
+        #            same budget the full-cache planner charges against.
+        # Pinned pages are unswappable; the SIGKILL RAM-downgrade strips
+        # pin_stream first if the OOM-killer disagrees.
+        prefetch_batches = 2   # jobspec default; downgrade_ram may lower it later
         pin_stream = False
+        pin_need = 0.0
+        lane_ram = self._ram_budget(0.0)
         if plan["cache_mode"] in ("resident", "queue") and not pin_cache:
-            window_batches = 3.0   # prefetch window (2) + the batch being consumed
+            window = prefetch_batches + 1          # in-flight + the batch being consumed
             batch_bytes = 2.0 * float(combo.view) * float(std_batch) * self.stats.input_dim * 2.0
-            need = window_batches * batch_bytes * float(self._ram_divisor)
-            avail = float(oom_proxy.available_ram_bytes())
-            pin_stream = bool(avail > 0 and need <= avail * 0.25)
+            pin_need = (window + 1) * batch_bytes  # +1 window of unpinned assembly copies
+            pin_stream = bool(pin_need <= lane_ram)
         # Surface the memory model so it can be sanity-checked against real peaks.
         # Two ORTHOGONAL axes:
         #  * backward_mode (across games): standard = keep every game's graph for one
@@ -592,7 +600,9 @@ class Supervisor:
               f"std_required={plan.get('standard_required_gib')}GiB "
               f"budget={plan.get('budget_gib')}GiB "
               f"cache={plan['cache_mode']} "
-              f"pin={int(pin_cache)} pin_stream={int(pin_stream)} "
+              f"pin={int(pin_cache)} "
+              f"pin_stream={int(pin_stream)} (need={pin_need / oom_proxy.GIB:.1f}GiB "
+              f"lane_ram={lane_ram / oom_proxy.GIB:.1f}GiB) "
               f"cache_est={cache_bytes / oom_proxy.GIB:.1f}GiB "
               f"ram_budget={ram_budget / oom_proxy.GIB:.1f}GiB "
               f"ram_pool={self._ram_pool_budget() / oom_proxy.GIB:.1f}GiB "
@@ -603,7 +613,8 @@ class Supervisor:
                 "paired": False,
                 "cache_mode": plan["cache_mode"],
                 "pin_cache": pin_cache,
-                "pin_stream": pin_stream}
+                "pin_stream": pin_stream,
+                "prefetch_batches": prefetch_batches}
 
     @staticmethod
     def downgrade(settings: dict) -> dict:
