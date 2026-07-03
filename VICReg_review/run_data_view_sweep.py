@@ -1366,8 +1366,7 @@ def full_train_count_value(args) -> int:
     return 0 if any(int(count) <= 0 for count in args.train_game_counts) else max(int(count) for count in args.train_game_counts)
 
 
-def final_best_candidates(args) -> list[tuple[float, Path, Path, dict]]:
-    target_count = full_train_count_value(args)
+def final_best_candidates_for_count(args, target_count: int) -> list[tuple[float, Path, Path, dict]]:
     candidates = []
     for output_dim in args.output_dims:
         for latent_scale in args.latent_scales:
@@ -1400,10 +1399,18 @@ def final_best_candidates(args) -> list[tuple[float, Path, Path, dict]]:
     return sorted(candidates, key=lambda item: item[0])
 
 
+def final_best_candidates(args) -> list[tuple[float, Path, Path, dict]]:
+    for target_count in args.train_game_counts:
+        candidates = final_best_candidates_for_count(args, int(target_count))
+        if candidates:
+            return candidates
+    return []
+
+
 def evaluate_final_best(args) -> dict | None:
     candidates = final_best_candidates(args)
     if not candidates:
-        print("final_best eval skipped: no completed full-train checkpoint found.", flush=True)
+        print("final_best eval skipped: no completed checkpoint found for any requested train-game-count.", flush=True)
         return None
     _loss, checkpoint, combo_dir, metadata = candidates[0]
     final_dir = args.out_dir / "final_best_eval"
