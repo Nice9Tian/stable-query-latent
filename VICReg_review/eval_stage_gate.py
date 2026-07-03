@@ -62,7 +62,20 @@ def wait_queue_drained(queue_dir: Path, poll: float, timeout: float) -> dict[str
         time.sleep(max(1.0, poll))
 
 
-def claim_final(out_dir: Path, vm_name: str, wait: bool, poll: float, timeout: float) -> bool:
+def _owner_pid_alive_here(owner: dict) -> bool | None:
+    """True/False when the claim was made on THIS host (pid check is meaningful);
+    None when it belongs to another machine (unknowable from here)."""
+    if str(owner.get("host", "")) != socket.gethostname():
+        return None
+    try:
+        os.kill(int(owner.get("pid")), 0)
+        return True
+    except (OSError, TypeError, ValueError):
+        return False
+
+
+def claim_final(out_dir: Path, vm_name: str, wait: bool, poll: float, timeout: float,
+                stale_seconds: float = 0.0) -> bool:
     gate_dir = out_dir / "_eval_coord"
     claim = gate_dir / "final_owner.json"
     done = gate_dir / "final_done.json"
@@ -73,9 +86,30 @@ def claim_final(out_dir: Path, vm_name: str, wait: bool, poll: float, timeout: f
         "claimed_at": time.strftime("%Y-%m-%dT%H:%M:%S"),
         "claimed_ts": time.time(),
     }
-    if atomic_create_json(claim, payload):
-        print(f"eval_stage_gate: final owner = {vm_name}", flush=True)
-        return True
+    while True:
+        if atomic_create_json(claim, payload):
+            print(f"eval_stage_gate: final owner = {vm_name}", flush=True)
+            return True
+        if done.exists():
+            break                     # a previous run finished -> plain skip path
+        owner = read_json(claim) or {}
+        # DEAD-OWNER RECOVERY: without this, any eval interrupted after claiming
+        # (kernel restart, crash) deadlocks every later run behind a claim whose
+        # process no longer exists. Same-host dead pid -> reclaim immediately;
+        # other hosts -> reclaim only past --stale-seconds (0 = never).
+        alive_here = _owner_pid_alive_here(owner)
+        age = time.time() - float(owner.get("claimed_ts", 0) or 0)
+        if alive_here is False or (stale_seconds > 0 and age > stale_seconds):
+            aside = claim.parent / f".final_owner.stale.{int(time.time() * 1000)}.json"
+            try:
+                os.rename(str(claim), str(aside))
+            except OSError:
+                break                 # someone else reclaimed first -> fall through
+            print(f"eval_stage_gate: reclaimed stale final claim from "
+                  f"{owner.get('vm', '?')} (pid_alive_here={alive_here}, age={age:.0f}s)",
+                  flush=True)
+            continue
+        break
     owner = read_json(claim) or {}
     print(f"eval_stage_gate: final already owned by {owner.get('vm', '?')}", flush=True)
     if wait:
@@ -118,6 +152,10 @@ def parse_args(argv: list[str] | None = None):
     claim.add_argument("--wait", action="store_true")
     claim.add_argument("--poll", type=float, default=30.0)
     claim.add_argument("--timeout", type=float, default=0.0, help="Seconds; 0 waits forever.")
+    claim.add_argument("--stale-seconds", type=float, default=0.0,
+                       help="Reclaim another HOST's final claim older than this with no "
+                            "final_done.json (same-host dead pids are always reclaimed). "
+                            "0 = never.")
 
     done = sub.add_parser("mark-final-done")
     done.add_argument("--out-dir", required=True, type=Path)
@@ -132,7 +170,8 @@ def main(argv: list[str] | None = None) -> None:
         print(f"eval_stage_gate: queue drained {counts}", flush=True)
         return
     if args.cmd == "claim-final":
-        raise SystemExit(0 if claim_final(args.out_dir, args.vm_name, args.wait, args.poll, args.timeout) else 2)
+        raise SystemExit(0 if claim_final(args.out_dir, args.vm_name, args.wait, args.poll,
+                                          args.timeout, stale_seconds=args.stale_seconds) else 2)
     if args.cmd == "mark-final-done":
         mark_final_done(args.out_dir, args.vm_name)
         return
