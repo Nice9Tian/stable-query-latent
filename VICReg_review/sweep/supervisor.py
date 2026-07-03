@@ -681,10 +681,17 @@ class Supervisor:
         return combos
 
     def _order_combos(self, combos: list) -> list:
-        """Capability-aware order.
+        """Full-data first, then capability-aware.
 
-        Big cards should spend their time burning down the hard end of the queue;
-        smaller cards should keep making progress from the easy end instead of
+        PRIMARY KEY -- full train count first: every parameter cell's n=<max>
+        combo answers "which config is best" fastest (final_best also selects
+        at the full train count), so ALL full-n combos are drained before any
+        smaller n is even considered. next_claim walks this order, so smaller
+        n starts exactly when no full-n combo is left claimable
+        (done/claimed/failed).
+
+        SECONDARY -- capability: big cards burn down the hard end of the
+        queue; smaller cards keep making progress from the easy end instead of
         waiting merely because a bigger VM exists. Difficulty is based on the
         portable standard-mode requirement plus the batch-size proxy.
         """
@@ -694,6 +701,10 @@ class Supervisor:
         self._std_required_gib = {}
         vram_gib = self._total_vram() / oom_proxy.GIB
         big_gpu = bool(vram_gib >= 70.0)
+        # Same "full" semantics as run_data_view_sweep.full_train_count_value:
+        # 0 ('all') wins if present, else the largest explicit count.
+        counts = [int(c.train_games) for c in combos]
+        full_n = 0 if any(n <= 0 for n in counts) else (max(counts) if counts else 0)
 
         def scored(c):
             total = self.stats.subset_total_sentences(c.train_games, ds.train_game_seed, ds.anchors)
@@ -712,16 +723,19 @@ class Supervisor:
             light = plan["backward_mode"] == "standard" and bool(plan.get("chunk_full"))
             requirement = float(self._std_required_gib.get(c.combo_id) or 0.0)
             batch_proxy = 2.0 * float(c.view) * float(total)
+            full_first = 0 if int(c.train_games) == full_n else 1
             # Small cards: easy -> hard. Big cards: hard -> easy.
             if big_gpu:
-                return (0 if not light else 1, -requirement, -batch_proxy)
-            return (0 if light else 1, requirement, batch_proxy)
+                return (full_first, 0 if not light else 1, -requirement, -batch_proxy)
+            return (full_first, 0 if light else 1, requirement, batch_proxy)
 
         keyed = [(scored(c), c) for c in combos]
         keyed.sort(key=lambda t: t[0])
         n_light = sum(1 for c in combos if (self._std_required_gib.get(c.combo_id) or 0.0) <= vram_gib * float(getattr(self.config.memory, "vram_safety", 0.85)))
+        n_full = sum(1 for c in combos if int(c.train_games) == full_n)
         direction = "hard->easy" if big_gpu else "easy->hard"
-        print(f"supervisor: scheduling {len(keyed)} combos {direction} "
+        print(f"supervisor: scheduling {len(keyed)} combos n={full_n or 'all'} first "
+              f"({n_full}/{len(keyed)}), then {direction} within each group "
               f"(standard-fit here approx {n_light}/{len(keyed)}, vram={vram_gib:.1f}GiB)", flush=True)
         return [c for _, c in keyed]
 
