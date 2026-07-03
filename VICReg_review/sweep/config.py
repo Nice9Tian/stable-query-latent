@@ -44,6 +44,10 @@ class TrainConfig:
     seed: int = 42
     data_workers: int = 0            # 0 = auto-scale to cores/lane-count;
                                      # >0 = explicit H5-read procs per GPU lane
+    checkpoint_flush_seconds: float = 120.0  # >0: per-epoch artifacts pulse-flushed by a
+                                             # background writer (coalesced to newest per
+                                             # file); kills the ~30s/epoch shared-FS write
+                                             # stall. 0 = synchronous writes.
 
 
 @dataclass

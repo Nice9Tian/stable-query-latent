@@ -98,6 +98,110 @@ def atomic_text_write(text, path):
         raise
 
 
+class AsyncArtifactWriter:
+    """Coalescing background writer for per-epoch artifacts on a slow shared FS.
+
+    ``submit(path, fn, prio)`` keeps only the NEWEST closure per target path (a
+    stale latest.pt / manifest rewrite is pure waste -- every artifact here is
+    a whole-file atomic rewrite), and a daemon thread flushes all dirty slots
+    in (prio, submit-order) every ``period`` seconds: one write PULSE instead
+    of per-epoch synchronous writes that stall the training loop on network-FS
+    chunk allocation (~30s per epoch boundary observed on MooseFS).
+
+    Priorities order a pulse so referents land before referrers: checkpoints
+    (0) before probe snapshots (1) before their queue markers (2) before
+    history (3) before the manifest (4) -- the manifest on the shared FS never
+    claims an epoch whose checkpoint has not been written in the same pulse.
+
+    ``flush(raise_errors=True)`` drains synchronously; call it before any
+    TERMINAL manifest / done marker so 'done' never precedes the artifacts it
+    claims. Crash semantics: at most ``period`` seconds of progress re-trained
+    after resume -- same class as dying mid-way through today's sync write.
+    """
+
+    def __init__(self, period: float):
+        self.period = float(period)
+        self._slots = {}
+        self._seq = 0
+        self._slots_lock = threading.Lock()
+        self._io_lock = threading.Lock()
+        self._stop = threading.Event()
+        self._thread = None
+        if self.period > 0:
+            self._thread = threading.Thread(target=self._loop, daemon=True,
+                                            name="artifact-writer")
+            self._thread.start()
+
+    def submit(self, path, fn, prio: int = 0) -> None:
+        if self.period <= 0:
+            fn()
+            return
+        with self._slots_lock:
+            self._seq += 1
+            self._slots[str(path)] = (int(prio), self._seq, fn)
+
+    def _drain(self, raise_errors: bool = False) -> None:
+        with self._io_lock:
+            with self._slots_lock:
+                jobs = sorted(self._slots.values())
+                self._slots.clear()
+            last_exc = None
+            for _prio, _seq, fn in jobs:
+                try:
+                    fn()
+                except BaseException as exc:  # noqa: BLE001 - keep flushing the rest
+                    last_exc = exc
+                    print(f"[artifact-writer] write failed: {type(exc).__name__}: {exc}",
+                          flush=True)
+            if raise_errors and last_exc is not None:
+                raise last_exc
+
+    def _loop(self) -> None:
+        while not self._stop.wait(self.period):
+            self._drain()
+
+    def flush(self, raise_errors: bool = False) -> None:
+        self._drain(raise_errors=raise_errors)
+
+    def close(self) -> None:
+        self._stop.set()
+        if self._thread is not None:
+            self._thread.join(timeout=max(5.0, self.period))
+        self._drain()
+
+
+# Active writer for the current train() call (module-level like _DATA_POOL, so
+# emit_probe_job can reach it without threading it through every signature).
+_ARTIFACT_WRITER = None
+
+
+def _writer_submit(path, fn, prio: int = 0) -> None:
+    if _ARTIFACT_WRITER is None:
+        fn()
+    else:
+        _ARTIFACT_WRITER.submit(path, fn, prio)
+
+
+def _writer_flush(raise_errors: bool = False) -> None:
+    if _ARTIFACT_WRITER is not None:
+        _ARTIFACT_WRITER.flush(raise_errors=raise_errors)
+
+
+def snapshot_cpu_tensors(obj):
+    """Deep-copy every tensor in a (nested) container to detached CPU memory so
+    the async writer serialises a CONSISTENT snapshot while training keeps
+    mutating the live parameters / optimizer state. Non-tensors pass through."""
+    if torch.is_tensor(obj):
+        return obj.detach().to("cpu", copy=True)
+    if isinstance(obj, dict):
+        return {k: snapshot_cpu_tensors(v) for k, v in obj.items()}
+    if isinstance(obj, tuple):
+        return tuple(snapshot_cpu_tensors(v) for v in obj)
+    if isinstance(obj, list):
+        return [snapshot_cpu_tensors(v) for v in obj]
+    return obj
+
+
 def validate_training_h5(h5, path=None):
     missing = [name for name in REQUIRED_TRAINING_H5_DATASETS if name not in h5]
     if missing:
@@ -1839,7 +1943,6 @@ def emit_probe_job(args, model, epoch, global_step, queue_dir):
         "global_step": int(global_step),
         "input_h5": str(Path(args.input_h5).resolve()),
     }
-    atomic_torch_save(payload, ckpt_path)
     combo_token = history_tsv.parent.name
     marker = queue_dir / f"{combo_token}__ep{int(epoch):03d}.json"
     marker_payload = {
@@ -1850,9 +1953,17 @@ def emit_probe_job(args, model, epoch, global_step, queue_dir):
         "global_step": int(global_step),
         "created_at": time.strftime("%Y-%m-%dT%H:%M:%S"),
     }
-    tmp = marker.parent / (marker.name + ".tmp")
-    tmp.write_text(json.dumps(marker_payload, ensure_ascii=False, indent=2), encoding="utf-8")
-    tmp.replace(marker)
+
+    def _write_marker(mp=marker_payload, mk=marker):
+        tmp = mk.parent / (mk.name + ".tmp")
+        tmp.write_text(json.dumps(mp, ensure_ascii=False, indent=2), encoding="utf-8")
+        tmp.replace(mk)
+
+    # Payload tensors are already detached CPU copies, so it is async-safe.
+    # Distinct per-epoch paths -> probe snapshots are never coalesced away;
+    # prio 1 < 2 keeps the marker from landing before the checkpoint it names.
+    _writer_submit(ckpt_path, lambda p=payload, cp=ckpt_path: atomic_torch_save(p, cp), prio=1)
+    _writer_submit(marker, _write_marker, prio=2)
     print(f"[probe] queued epoch={epoch} -> {marker.name}", flush=True)
 
 
@@ -2011,9 +2122,15 @@ def train(args):
         flush=True,
     )
 
-    global _DATA_POOL, _VECTORS_DAT
+    global _DATA_POOL, _VECTORS_DAT, _ARTIFACT_WRITER
     _DATA_POOL = make_data_pool(getattr(args, "data_workers", 0))
     _VECTORS_DAT = resident_descriptor(getattr(args, "vectors_dat", None), args.input_h5)
+    flush_secs = float(getattr(args, "checkpoint_flush_seconds", 0) or 0)
+    _ARTIFACT_WRITER = AsyncArtifactWriter(flush_secs) if flush_secs > 0 else None
+    if _ARTIFACT_WRITER is not None:
+        print(f"artifact writer: async pulse every {flush_secs:g}s "
+              f"(latest/best/history/manifest/probe coalesced to newest per file; "
+              f"forced flush before terminal manifests)", flush=True)
     if _VECTORS_DAT is not None:
         print(f"resident: vectors memmap {_VECTORS_DAT[0]} shape={_VECTORS_DAT[1]} "
               f"dtype={_VECTORS_DAT[2]} (gather-by-pointer; no per-combo view cache)", flush=True)
@@ -2109,23 +2226,43 @@ def train(args):
                 "sst_checkpoint": str(Path(args.sst_checkpoint).resolve()),
             }
             if not args.no_save:
-                atomic_torch_save(checkpoint, args.checkpoint_out)
-            if averaged["loss"] < best_loss:
+                # Snapshot to CPU (milliseconds) so training continues while the
+                # writer serialises to the shared FS in the background.
+                payload = (snapshot_cpu_tensors(checkpoint)
+                           if _ARTIFACT_WRITER is not None else checkpoint)
+                _writer_submit(args.checkpoint_out,
+                               lambda p=payload: atomic_torch_save(p, args.checkpoint_out),
+                               prio=0)
+                if averaged["loss"] < best_loss:
+                    best_loss = averaged["loss"]
+                    _writer_submit(args.best_checkpoint_out,
+                                   lambda p=payload: atomic_torch_save(p, args.best_checkpoint_out),
+                                   prio=0)
+            elif averaged["loss"] < best_loss:
                 best_loss = averaged["loss"]
-                if not args.no_save:
-                    atomic_torch_save(checkpoint, args.best_checkpoint_out)
 
-            write_history(history_rows, args.history_tsv)
-            write_manifest(args.manifest_json, "running", args, epoch, global_step, averaged)
+            rows_snapshot = list(history_rows)
+            _writer_submit(args.history_tsv,
+                           lambda r=rows_snapshot: write_history(r, args.history_tsv),
+                           prio=3)
+            _writer_submit(args.manifest_json,
+                           lambda e=epoch, g=global_step, m=averaged: write_manifest(
+                               args.manifest_json, "running", args, e, g, m),
+                           prio=4)
 
             if should_run_probe(epoch, args):
                 maybe_run_probe(model, args, device, epoch, global_step, probe_rows)
 
+        # Terminal manifest: everything it claims must already be on the shared
+        # FS, so force-flush (and surface write errors -> supervisor retries).
+        _writer_flush(raise_errors=True)
         write_manifest(args.manifest_json, "done", args, args.epochs, global_step, last_metrics)
     except KeyboardInterrupt:
+        _writer_flush()
         write_manifest(args.manifest_json, "interrupted", args, epoch if "epoch" in locals() else 0, global_step, last_metrics)
         raise
     except BaseException as exc:
+        _writer_flush()
         write_manifest(
             args.manifest_json,
             "error",
@@ -2143,6 +2280,9 @@ def train(args):
             _DATA_POOL.shutdown(wait=False)
             _DATA_POOL = None
         _VECTORS_DAT = None
+        if _ARTIFACT_WRITER is not None:
+            _ARTIFACT_WRITER.close()
+            _ARTIFACT_WRITER = None
 
 
 def parse_args(argv=None):
@@ -2195,6 +2335,13 @@ def parse_args(argv=None):
     parser.add_argument("--reset-optimizer-on-resume", action="store_true",
                         help="Load model/adversary/expander weights from --resume-checkpoint but start a fresh optimizer.")
     parser.add_argument("--no-save", action="store_true")
+    parser.add_argument("--checkpoint-flush-seconds", type=float, default=0.0,
+                        help="If >0, per-epoch artifacts (latest/best checkpoint, history, "
+                             "manifest, probe snapshots) are written by a background thread "
+                             "that pulses at this interval, coalescing to the newest version "
+                             "per file -- removes the per-epoch synchronous write stall on "
+                             "slow shared filesystems. Terminal manifests always force a "
+                             "flush first. 0 = synchronous writes (old behavior).")
 
     parser.add_argument("--epochs", type=int, default=100)
     parser.add_argument("--steps-per-epoch", type=int, default=0, help="0 means one full pass over game IDs.")
