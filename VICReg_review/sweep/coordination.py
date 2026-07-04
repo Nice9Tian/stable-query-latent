@@ -207,6 +207,31 @@ class Coordinator:
     def _vm_alive(self, vm) -> bool:
         return self.liveness.alive(self._vm_file(vm))
 
+    def _vm_record(self, vm) -> dict:
+        return _read_json(self._vm_file(vm)) or {}
+
+    def _claim_is_live(self, rec) -> bool:
+        """A claim is protected only by ITS OWNER INCARNATION's lease.
+
+        The vm NAME holding a fresh lease is not enough: after a same-name
+        restart (old lease lapsed, _register reused the name) the new
+        incarnation's lease must not resurrect the dead predecessor's claims.
+        The claim records the writer's pid and the registry the current
+        incarnation's pid -- a mismatch means the claim belongs to a previous
+        life and is reclaimable. Legacy records without pids fall back to the
+        lease-only rule."""
+        vm = rec.get("vm") if rec else None
+        if not vm or not self._vm_alive(vm):
+            return False
+        claim_pid = rec.get("pid")
+        reg_pid = self._vm_record(vm).get("pid")
+        if claim_pid is None or reg_pid is None:
+            return True
+        try:
+            return int(claim_pid) == int(reg_pid)
+        except (TypeError, ValueError):
+            return True
+
     def alive_vms(self) -> list:
         """(vm_name, info) for every registered VM whose lease is still fresh. Used
         for capability routing: each VM sees everyone's GPU/VRAM to decide who runs
@@ -299,11 +324,53 @@ class Coordinator:
             except OSError:
                 pass
 
+    def _refresh_claim(self, cid, lane) -> None:
+        """Stamp OUR incarnation onto a claim we are resuming: a claim inherited
+        from a same-name predecessor still carries the old pid, so without the
+        refresh every peer would see it as dead and could reclaim it while we
+        train. (The tiny resume/reclaim race that remains is settled by the
+        fenced_done commit, same as any lost-claim case.)"""
+        _atomic_write(self._status_file(cid),
+                      {"vm": self.vm_name, "lane": lane, "pid": os.getpid(), "ts": time.time()})
+
+    def reconcile_own_claims(self, grid_ids, lanes) -> int:
+        """Startup pass over claims left by a SAME-NAME predecessor (pid differs).
+
+        Keep the ones our current lanes will naturally resume (combo still in
+        OUR grid and its lane still exists here); RELEASE the rest -- combos
+        masked out of the grid or lanes this incarnation no longer runs would
+        otherwise look in-flight forever (nobody walks them, and peers used to
+        see the fresh same-name lease and never reclaim)."""
+        released = 0
+        me = os.getpid()
+        for cdir in self.root.iterdir():
+            if cdir.name == VM_DIR or not cdir.is_dir():
+                continue
+            rec = _read_json(self._status_file(cdir.name)) or {}
+            if rec.get("vm") != self.vm_name:
+                continue
+            try:
+                if int(rec.get("pid")) == me:
+                    continue
+            except (TypeError, ValueError):
+                pass
+            if self.is_done(cdir.name):
+                continue
+            if cdir.name in grid_ids and rec.get("lane") in lanes:
+                continue                     # our lane resumes + refreshes it
+            try:
+                self._status_file(cdir.name).unlink()
+                released += 1
+            except OSError:
+                pass
+        return released
+
     def _reclaim_dead(self, cid) -> bool:
-        """Free a status file whose owner's lease expired, via atomic rename-aside."""
+        """Free a status file whose owner incarnation is gone, via atomic rename-aside."""
         sf = self._status_file(cid)
-        owner = self.claim_owner(cid)
-        if not owner or owner == self.vm_name or self._vm_alive(owner) or self.is_done(cid):
+        rec = self._status(cid) or {}
+        owner = rec.get("vm")
+        if not owner or owner == self.vm_name or self._claim_is_live(rec) or self.is_done(cid):
             return False
         aside = sf.parent / f".{STATUS}.stale.{self.vm_name}.{int(time.time() * 1000)}"
         try:
@@ -332,13 +399,18 @@ class Coordinator:
         for cid in ordered_combo_ids:
             if self.is_terminal(cid):
                 continue
-            owner = self.claim_owner(cid)
+            rec = self._status(cid)
+            owner = rec.get("vm") if rec else None
             if owner is not None:
-                if owner == self.vm_name and self.claim_lane(cid) == lane:
-                    return cid                    # resume OUR lane's own claim
-                if self._vm_alive(owner):
-                    continue                      # a live VM (or sibling lane) has it
-                self._reclaim_dead(cid)           # dead owner -> free the slot (atomic)
+                if owner == self.vm_name and rec.get("lane") == lane:
+                    # Resume OUR lane's claim (possibly inherited from a
+                    # same-name predecessor) and stamp it with THIS pid so
+                    # peers stop seeing it as a dead incarnation's claim.
+                    self._refresh_claim(cid, lane)
+                    return cid
+                if self._claim_is_live(rec):
+                    continue                      # a live incarnation has it
+                self._reclaim_dead(cid)           # dead incarnation -> free the slot
             if fits_fn is not None and not fits_fn(cid):
                 continue                          # too big here -> leave for a bigger VM
             if self.try_claim(cid, lane):

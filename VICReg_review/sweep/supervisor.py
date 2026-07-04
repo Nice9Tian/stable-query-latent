@@ -762,6 +762,10 @@ class Supervisor:
         self._ordered_ids = [c.combo_id for c in combos]
         self._combo_by_id = {c.combo_id: c for c in combos}
         self._start_coordinator(active_gpus)
+        freed = self.coordinator.reconcile_own_claims(set(self._ordered_ids), set(active_gpus))
+        if freed:
+            print(f"supervisor: released {freed} stale claim(s) left by a previous "
+                  f"{self.vm_name} incarnation (combo out of grid or lane gone)", flush=True)
         i, n = self._shard
         shard_note = f" (shard {i}/{n} of {self.config.combo_count()})" if n > 1 else ""
         print(f"supervisor: {self.total} combos to process{shard_note} as vm={self.vm_name}", flush=True)
