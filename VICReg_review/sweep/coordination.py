@@ -359,14 +359,23 @@ class Coordinator:
             except OSError:
                 pass
 
-    def _refresh_claim(self, cid, lane) -> None:
+    def _refresh_claim(self, cid, lane) -> bool:
         """Stamp OUR incarnation onto a claim we are resuming: a claim inherited
         from a same-name predecessor still carries the old pid, so without the
         refresh every peer would see it as dead and could reclaim it while we
-        train. (The tiny resume/reclaim race that remains is settled by the
-        fenced_done commit, same as any lost-claim case.)"""
+        train.
+
+        Re-verify ownership IMMEDIATELY before the overwrite: at tail-restart a
+        peer may reclaim the dead-generation claim in the same instant, and a
+        blind rewrite would clobber its fresh claim -- both sides then train
+        the combo (observed: duelling checkpoint writes every flush pulse).
+        The remaining ms-window is settled by the fenced_done commit."""
+        rec = self._status(cid)
+        if not rec or rec.get("vm") != self.vm_name or rec.get("lane") != lane:
+            return False                       # lost to a peer in the same instant
         _atomic_write(self._status_file(cid),
                       {"vm": self.vm_name, "lane": lane, "pid": os.getpid(), "ts": time.time()})
+        return True
 
     def reconcile_own_claims(self, grid_ids, lanes) -> int:
         """Startup pass over claims left by a SAME-NAME predecessor (pid differs).
@@ -440,9 +449,11 @@ class Coordinator:
                 if owner == self.vm_name and rec.get("lane") == lane:
                     # Resume OUR lane's claim (possibly inherited from a
                     # same-name predecessor) and stamp it with THIS pid so
-                    # peers stop seeing it as a dead incarnation's claim.
-                    self._refresh_claim(cid, lane)
-                    return cid
+                    # peers stop seeing it as a dead incarnation's claim. If a
+                    # peer snatched it in the same instant, walk on.
+                    if self._refresh_claim(cid, lane):
+                        return cid
+                    continue
                 if self._claim_is_live(rec):
                     continue                      # a live incarnation has it
                 self._reclaim_dead(cid)           # dead incarnation -> free the slot

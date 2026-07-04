@@ -16,6 +16,7 @@ import queue
 import sys
 import threading
 import time
+import uuid
 from concurrent.futures import ProcessPoolExecutor, as_completed
 from pathlib import Path
 from types import SimpleNamespace
@@ -74,10 +75,19 @@ def parse_string_list(value):
     return [str(part).strip() for part in parts if str(part).strip()]
 
 
+def _unique_tmp(path: Path) -> Path:
+    """Per-writer staging name. Two contenders on one combo (the tolerated
+    claim-race tail case) used to share '<name>.tmp': one rename stole the
+    other's tmp (FileNotFoundError spam every flush pulse) and interleaved
+    writes into a single tmp could publish a CORRUPT file. Unique names make
+    each rename publish a complete file; last writer wins."""
+    return path.with_name(f"{path.name}.tmp.{os.getpid()}.{uuid.uuid4().hex[:6]}")
+
+
 def atomic_torch_save(payload, path):
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
-    tmp_path = path.with_name(path.name + ".tmp")
+    tmp_path = _unique_tmp(path)
     try:
         torch.save(payload, tmp_path)
         tmp_path.replace(path)
@@ -89,7 +99,7 @@ def atomic_torch_save(payload, path):
 def atomic_text_write(text, path):
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
-    tmp_path = path.with_name(path.name + ".tmp")
+    tmp_path = _unique_tmp(path)
     try:
         tmp_path.write_text(text, encoding="utf-8")
         tmp_path.replace(path)
@@ -1955,7 +1965,7 @@ def emit_probe_job(args, model, epoch, global_step, queue_dir):
     }
 
     def _write_marker(mp=marker_payload, mk=marker):
-        tmp = mk.parent / (mk.name + ".tmp")
+        tmp = _unique_tmp(mk)
         tmp.write_text(json.dumps(mp, ensure_ascii=False, indent=2), encoding="utf-8")
         tmp.replace(mk)
 
