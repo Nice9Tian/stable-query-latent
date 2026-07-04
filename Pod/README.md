@@ -37,7 +37,15 @@ automatically** (a combo whose checkpoint already exists is recognised as done).
 - **`check_paralle.ipynb`** — verify the *live* coordination (O_EXCL atomic on this mount,
   VM registry, migration OK). Run it **after** training has started.
 - **`realtime_reader.ipynb`** — follow this VM's log + global coordinated progress.
-- **`eval.ipynb`** — post-training: drain probes + final eval + archive (run on one VM).
+- **`eval_champions.ipynb`** — after (or during) training: the full downstream battery
+  (TAG/identity/text-variant/sentiment/recommendation) on every DONE full-n combo's best
+  checkpoint, one worker per GPU (claims coordinate across GPUs and VMs); streams
+  `grid_metrics.json` after every finished combo.
+- **`eval_curve_prepare.ipynb`** — select champions FROM `grid_metrics.json` (per-metric
+  top-K intersection) into `champions.json`. Pure file->file, instant, re-tune freely.
+- **`eval_curve.ipynb`** — post-training: drain probe-snapshot queue (convergence curves)
+  + final eval + archive; every VM drains, exactly one VM claims final (INTERIM mode for
+  mid-sweep collections).
 
 ## Deploy sequence
 
