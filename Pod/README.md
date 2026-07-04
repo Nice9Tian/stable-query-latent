@@ -47,10 +47,12 @@ automatically** (a combo whose checkpoint already exists is recognised as done).
   `grid_metrics.json` after every finished combo.
 - **`eval_curve_prepare.ipynb`** — select champions FROM `grid_metrics.json` (per-metric
   top-K intersection) into `champions.json`. Pure file->file, instant, re-tune freely.
-- **`clean_eval_champions.ipynb`** — reset the battery: delete cached `eval_report.json`
-  (report_is_current can't detect metric-code changes, so re-evaluation REQUIRES this),
-  optionally feature caches / stray claims / aggregates. Never touches checkpoints or
-  training state. Dry-run by default.
+- **`clean_champions_data.ipynb`** — reset the battery DATA: delete cached
+  `eval_report.json` (report_is_current can't detect metric-code changes, so
+  re-evaluation REQUIRES this), optionally feature caches / stray claims / aggregates.
+  Never touches checkpoints or training state. Dry-run by default. (Battery CLAIMS
+  self-heal without it: a restarted machine reclaims its own dead claims instantly,
+  other hosts' after the 2h TTL.)
 - **`eval_curve.ipynb`** — post-training: drain probe-snapshot queue (convergence curves)
   + final eval + archive; every VM drains, exactly one VM claims final (INTERIM mode for
   mid-sweep collections).

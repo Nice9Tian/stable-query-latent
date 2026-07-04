@@ -153,6 +153,20 @@ def rebuild_grid_metrics(out_root: Path, sweep_yaml: Path, git_commit: str = "")
 
 
 # ------------------------------------------------------------------ claims
+def _pid_alive_here(pid) -> bool:
+    """POSIX existence probe. PermissionError means the pid exists (not ours).
+    Only meaningful on the host that wrote the claim."""
+    if os.name != "posix":
+        return True                 # never probe on Windows (os.kill(pid,0) kills there)
+    try:
+        os.kill(int(pid), 0)
+        return True
+    except PermissionError:
+        return True
+    except (OSError, TypeError, ValueError):
+        return False
+
+
 def try_claim(cdir: Path, ttl: float) -> bool:
     claim = cdir / CLAIM_NAME
     payload = {"host": socket.gethostname(), "pid": os.getpid(), "ts": time.time()}
@@ -160,7 +174,13 @@ def try_claim(cdir: Path, ttl: float) -> bool:
         return True
     owner = read_json(claim) or {}
     age = time.time() - float(owner.get("ts", 0) or 0)
-    if age <= ttl:
+    # Same-host dead owner -> reclaim IMMEDIATELY (a pod reboot / SIGKILL never
+    # runs release_claim; without this the restarted machine would stare at its
+    # own predecessor's claim for the full TTL). Other hosts' deaths can't be
+    # verified from here, so they still wait out the TTL.
+    same_host_dead = (str(owner.get("host", "")) == payload["host"]
+                      and not _pid_alive_here(owner.get("pid")))
+    if not same_host_dead and age <= ttl:
         return False
     aside = claim.parent / f".{CLAIM_NAME}.stale.{int(time.time() * 1000)}"
     try:
