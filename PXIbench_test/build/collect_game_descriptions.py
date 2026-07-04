@@ -421,7 +421,7 @@ def fetch_direct_page_cache(
         pages_by_title = {
             title_key(page.get("title", "")): page
             for page in data.get("query", {}).get("pages", [])
-            if not page.get("missing")
+            if not page.get("missing") and not page.get("invalid") and "pageid" in page
         }
         normalized = {
             title_key(item.get("from", "")): title_key(item.get("to", ""))
@@ -569,8 +569,9 @@ def find_best_page_from_cache_with_extract(
     candidates_by_id: dict[int, dict] = {}
     for title in candidate_titles(game_name):
         for page in cache.get(title_key(title), []):
-            pageid = int(page["pageid"])
-            candidates_by_id.setdefault(pageid, page)
+            if "pageid" not in page:
+                continue
+            candidates_by_id.setdefault(int(page["pageid"]), page)
 
     for page in sorted(candidates_by_id.values(), key=lambda item: score_page(game_name, item), reverse=True):
         full_page = fetch_page_extract(session, int(page["pageid"]))
