@@ -129,12 +129,26 @@ class Ledger:
 
     # --- resume helpers ----------------------------------------------------
     def reconcile_running(self) -> list[str]:
-        """Reclassify 'running' entries whose worker PID is dead as 'interrupted'.
-        Returns the combo_ids that were reconciled."""
+        """Reclassify 'running' entries whose worker PID is dead as 'interrupted'
+        and REFUND that dispatch's attempt.
+
+        An entry still marked running at startup means the SUPERVISOR died
+        without recording a verdict -- a maintenance restart, pkill, or host
+        OOM of the supervisor itself, not evidence against the combo. Fleet
+        restarts must not consume retry budget: with MAX_ATTEMPTS=4, a day of
+        rolling restarts pushed a perfectly healthy combo to a spurious
+        'exhausted 4 attempts' at epoch 29/30. Genuine worker crashes are
+        verdicted in-loop while the supervisor lives, and those attempts still
+        count. Returns the combo_ids that were reconciled."""
         touched = []
         for cid, rec in self.load().items():
             if rec.get("status") == "running" and not pid_alive(rec.get("worker_pid")):
-                self.mark_interrupted(cid, reason=f"worker pid {rec.get('worker_pid')} not alive at reconcile")
+                self.update(
+                    cid,
+                    status="interrupted",
+                    error=f"worker pid {rec.get('worker_pid')} not alive at reconcile",
+                    attempts=max(0, int(rec.get("attempts", 0) or 0) - 1),
+                )
                 touched.append(cid)
         return touched
 
