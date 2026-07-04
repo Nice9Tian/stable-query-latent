@@ -37,7 +37,7 @@ if str(ROOT) not in sys.path:
 from tools.logging_tee import run_with_optional_tee  # noqa: E402
 from VICReg_review import oom_proxy  # noqa: E402
 from VICReg_review.sweep import jobspec, protocol  # noqa: E402
-from VICReg_review.sweep.coordination import Coordinator, LeaseLiveness  # noqa: E402
+from VICReg_review.sweep.coordination import Coordinator, LeaseLiveness, VM_DIR  # noqa: E402
 from VICReg_review.sweep.config import SweepConfig  # noqa: E402
 from VICReg_review.sweep.ledger import Ledger, pid_alive  # noqa: E402
 
@@ -51,6 +51,47 @@ def _default_vm_name() -> str:
         return socket.gethostname() or "vm"
     except Exception:
         return "vm"
+
+
+def revoke_stale_host_leases(vm_dir: Path, host: str, alive_fn=None) -> list:
+    """Expire every lease registered from ``host`` whose supervisor pid is gone.
+
+    Called at startup after reaping orphan supervisors: without it the dead
+    incarnations' leases stay fresh for up to 10 minutes, so _register would
+    suffix the name (_2) and peers would treat the dead claims as live. Only
+    records that carry ``info.host`` (written since the incarnation fixes) can
+    be attributed; leases of LIVE pids and other hosts are never touched."""
+    alive = alive_fn or pid_alive
+    revoked = []
+    vm_dir = Path(vm_dir)
+    if not vm_dir.exists():
+        return revoked
+    for f in vm_dir.glob("*.json"):
+        try:
+            rec = json.loads(f.read_text(encoding="utf-8"))
+        except (OSError, ValueError):
+            continue
+        if not isinstance(rec, dict) or (rec.get("info") or {}).get("host") != host:
+            continue
+        pid = rec.get("pid")
+        try:
+            if pid is not None and alive(int(pid)):
+                continue
+        except (TypeError, ValueError):
+            pass
+        if float(rec.get("expiry", 0) or 0) <= time.time():
+            continue                                   # already expired
+        rec["expiry"] = 0.0
+        rec["revoked_at"] = time.strftime("%Y-%m-%dT%H:%M:%S")
+        rec["revoked_by"] = f"startup-reap@{host}"
+        tmp = f.with_name(f.name + f".tmp.{os.getpid()}")
+        try:
+            tmp.write_text(json.dumps(rec, ensure_ascii=False, indent=2), encoding="utf-8")
+            tmp.replace(f)
+            revoked.append(rec.get("vm") or f.stem)
+        except OSError:
+            pass
+    return revoked
 
 
 def _manifest_status(path):
@@ -353,6 +394,61 @@ class Supervisor:
             except Exception:
                 pass
         return pids
+
+    def _reap_stale_supervisors(self) -> None:
+        """THERE CAN BE ONLY ONE supervisor per machine per out_dir.
+
+        A notebook-kernel restart detaches the running supervisor (it survives
+        as an orphan) and the next launch then races it for the same GPUs and
+        claims -- the double-supervisor state observed fleet-wide. Before doing
+        anything else: kill every OTHER local supervisor.py driving the SAME
+        out_dir (SIGTERM first so new-code ones revoke their lease themselves,
+        SIGKILL after a grace), then expire whatever leases this HOST's dead
+        incarnations left behind so _register can reuse the base name at once.
+        Their orphaned workers are cleared right after by _reap_stale_workers."""
+        proc_root = Path("/proc")
+        if not proc_root.exists():
+            return                          # non-Linux dev/test box
+        marker = "sweep/supervisor.py"
+        out_tag = Path(str(self.config.out_dir)).name    # e.g. cloud_full_sweep_a100
+        protected = self._protected_pids()
+        victims = []
+        for proc_dir in proc_root.iterdir():
+            if not proc_dir.name.isdigit():
+                continue
+            pid = int(proc_dir.name)
+            if pid == os.getpid() or pid in protected:
+                continue
+            cmd = self._proc_cmdline(pid)
+            if cmd and marker in cmd and out_tag in cmd:
+                victims.append(pid)
+        if victims:
+            print(f"supervisor: {len(victims)} other supervisor(s) on this machine drive "
+                  f"{out_tag} ({victims}); terminating them (one supervisor per machine)",
+                  flush=True)
+            for pid in victims:
+                try:
+                    os.kill(pid, signal.SIGTERM)     # new code self-revokes its lease
+                except OSError:
+                    pass
+            deadline = time.time() + 8.0
+            while time.time() < deadline and any(pid_alive(p) for p in victims):
+                time.sleep(0.5)
+            for pid in victims:
+                if pid_alive(pid):
+                    try:
+                        os.kill(pid, _SIGKILL)
+                        print(f"supervisor: SIGKILLed stubborn supervisor {pid}", flush=True)
+                    except OSError:
+                        pass
+        # Reboot case too (no victims, but leases from dead pids linger):
+        try:
+            host = socket.gethostname()
+        except Exception:
+            return
+        revoked = revoke_stale_host_leases(Path(self.out_dir) / VM_DIR, host)
+        if revoked:
+            print(f"supervisor: revoked stale lease(s) from this host: {revoked}", flush=True)
 
     def _reap_stale_workers(self, gpus) -> None:
         """Automatically clear the target GPUs of stale workers before starting.
@@ -744,6 +840,7 @@ class Supervisor:
         stats, and build the shared grid iterator. Safe to call before spawning
         any lane worker. ``gpus`` are the physical cards this run will use -- they
         get auto-cleared of stale workers first."""
+        self._reap_stale_supervisors()                 # one supervisor per machine + revoke dead leases
         self._reap_stale_workers(gpus or [self.gpu])   # clear VRAM ghosts before anything
         self.ledger.reconcile_running()
         if self.retry_failed:
