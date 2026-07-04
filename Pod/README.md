@@ -37,6 +37,14 @@ automatically** (a combo whose checkpoint already exists is recognised as done).
 - **`check_paralle.ipynb`** — verify the *live* coordination (O_EXCL atomic on this mount,
   VM registry, migration OK). Run it **after** training has started.
 - **`realtime_reader.ipynb`** — follow this VM's log + global coordinated progress.
+- **`auto_champions.ipynb`** — overnight CONDUCTOR (run on exactly ONE pod; others run
+  `auto_stop_fulln.ipynb`): waits for FULL-N to drain, kills training, runs the full
+  battery per GPU, selects champions (top-K intersection), soft-prunes the non-champion
+  tail, relaunches training for the champion ladders, and self-stops when the whole
+  grid is terminal. Stall guards at every phase.
+- **`auto_stop_fulln.ipynb`** — overnight sentinel for the other pods: stops training +
+  self-stops the pod on FULL-N drain / 4h stall / local graduation. Self-stop ladder
+  shared with the conductor (`VICReg_review/pod_selfstop.py`).
 - **`clean_old_VM.ipynb`** — run BEFORE a planned restart (kills this machine's
   supervisors/workers) or AFTER a pod reboot: revokes this host's VM leases so the
   restart starts immediately — no 10-minute lease wait, no `_2` name suffix, no peers
