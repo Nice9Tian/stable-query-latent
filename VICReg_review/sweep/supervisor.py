@@ -871,6 +871,8 @@ class Supervisor:
         except Exception:
             pass
         info = {"gpus": list(gpus), "cores": jobspec.effective_cpu_count(),
+                "host": socket.gethostname(),   # lets clean_old_VM.ipynb find THIS
+                                                # machine's leases after a reboot
                 "vram_gib": round(total_vram / oom_proxy.GIB, 1) if total_vram else None,
                 "ram_gib": round(total_ram / oom_proxy.GIB, 1) if total_ram else None,
                 "h5_reserve_gib": round(self._h5_cache_reserve() / oom_proxy.GIB, 1)}

@@ -37,6 +37,10 @@ automatically** (a combo whose checkpoint already exists is recognised as done).
 - **`check_paralle.ipynb`** — verify the *live* coordination (O_EXCL atomic on this mount,
   VM registry, migration OK). Run it **after** training has started.
 - **`realtime_reader.ipynb`** — follow this VM's log + global coordinated progress.
+- **`clean_old_VM.ipynb`** — run BEFORE a planned restart (kills this machine's
+  supervisors/workers) or AFTER a pod reboot: revokes this host's VM leases so the
+  restart starts immediately — no 10-minute lease wait, no `_2` name suffix, no peers
+  sliding to lower-priority combos. Dry-run by default (`APPLY=False`).
 - **`eval_champions.ipynb`** — after (or during) training: the full downstream battery
   (TAG/identity/text-variant/sentiment/recommendation) on every DONE full-n combo's best
   checkpoint, one worker per GPU (claims coordinate across GPUs and VMs); streams
