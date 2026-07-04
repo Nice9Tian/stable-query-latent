@@ -20,6 +20,7 @@ from __future__ import annotations
 import argparse
 import json
 import os
+import re
 import shutil
 import signal
 import socket
@@ -51,6 +52,53 @@ def _default_vm_name() -> str:
         return socket.gethostname() or "vm"
     except Exception:
         return "vm"
+
+
+def revoke_family_leases(vm_dir: Path, base: str, host: str = "") -> list:
+    """Revoke EVERY lease in ``base``'s name family (base, base_2, base_3 ...).
+
+    The bundle identity is UNIQUE by design -- one Pod_N runs on exactly one
+    machine -- so at startup any family lease is a previous incarnation: an
+    orphan just killed by _reap_stale_supervisors, or the same logical machine
+    before a reboot (whose hostname/container id changed). Judged purely by
+    NAME: no pid, no host attribution -- which also covers legacy records that
+    predate the info.host field (the gap that kept VM1's lease alive through
+    repeated cleans). If two machines are MISCONFIGURED to share a bundle name,
+    the loser's in-flight work is fenced at commit; a loud warning flags it."""
+    revoked = []
+    vm_dir = Path(vm_dir)
+    if not vm_dir.exists():
+        return revoked
+    family = re.compile(re.escape(base) + r"(?:_\d+)?$")
+    for f in vm_dir.glob("*.json"):
+        try:
+            rec = json.loads(f.read_text(encoding="utf-8"))
+        except (OSError, ValueError):
+            continue
+        if not isinstance(rec, dict):
+            continue
+        vm = str(rec.get("vm") or f.stem)
+        if not family.fullmatch(vm):
+            continue
+        if float(rec.get("expiry", 0) or 0) <= time.time():
+            continue                                   # already expired
+        rec_host = (rec.get("info") or {}).get("host")
+        if rec_host and host and rec_host != host:
+            print(f"supervisor: WARNING revoking FRESH lease {vm} registered on host "
+                  f"{rec_host}; bundle identities must be unique -- if another machine "
+                  f"is intentionally running as {base}, stop it (double training is "
+                  f"fenced at commit, but wasted)", flush=True)
+        rec["expiry"] = 0.0
+        rec["revoked_at"] = time.strftime("%Y-%m-%dT%H:%M:%S")
+        rec["revoked_by"] = f"family-reap@{host or 'unknown'}"
+        tmp = f.with_name(f.name + f".tmp.{os.getpid()}")
+        try:
+            tmp.write_text(json.dumps(rec, ensure_ascii=False, indent=2), encoding="utf-8")
+            tmp.replace(f)
+            revoked.append(vm)
+        except OSError:
+            pass
+    return revoked
 
 
 def revoke_stale_host_leases(vm_dir: Path, host: str, alive_fn=None) -> list:
@@ -441,14 +489,27 @@ class Supervisor:
                         print(f"supervisor: SIGKILLed stubborn supervisor {pid}", flush=True)
                     except OSError:
                         pass
-        # Reboot case too (no victims, but leases from dead pids linger):
         try:
             host = socket.gethostname()
         except Exception:
-            return
-        revoked = revoke_stale_host_leases(Path(self.out_dir) / VM_DIR, host)
-        if revoked:
-            print(f"supervisor: revoked stale lease(s) from this host: {revoked}", flush=True)
+            host = ""
+        # PRIMARY: name-family revocation. The bundle identity is unique, so
+        # every lease named like ours belongs to a dead incarnation (locals
+        # were just reaped above; other hosts are pre-reboot containers).
+        # Covers legacy records without info.host and rebooted hostnames --
+        # _register then reuses the BASE name, so no _2 suffix ever again and
+        # a plain training restart needs no clean_old_VM first.
+        base = self._vm_name_req or _default_vm_name()
+        fam = revoke_family_leases(Path(self.out_dir) / VM_DIR, base, host)
+        if fam:
+            print(f"supervisor: revoked {len(fam)} lease(s) in the {base} name family: {fam}",
+                  flush=True)
+        # SECONDARY sweep: leases this HOST left under OTHER names (e.g. the
+        # bundle was renamed) whose pids are gone.
+        if host:
+            revoked = revoke_stale_host_leases(Path(self.out_dir) / VM_DIR, host)
+            if revoked:
+                print(f"supervisor: revoked stale lease(s) from this host: {revoked}", flush=True)
 
     def _reap_stale_workers(self, gpus) -> None:
         """Automatically clear the target GPUs of stale workers before starting.
