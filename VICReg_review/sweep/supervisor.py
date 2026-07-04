@@ -1162,6 +1162,24 @@ def run_sweep(config: SweepConfig, config_path, gpus, *, logout_address=None,
         lane._share_from(primary)
         lanes.append(lane)
 
+    # pkill/SIGTERM must still revoke the lease: the default SIGTERM handler
+    # kills the process before the finally-close below can run, leaving this
+    # VM's claims 'live' for the remaining lease window (<=10 min). During that
+    # window a restart gets a _2 suffix and peers slide to lower-priority
+    # combos -- each mis-taken combo costs its full training time. Revoke
+    # first, then exit hard (workers are reaped by the next startup anyway).
+    def _sigterm_revoke(signum, _frame):
+        try:
+            primary.close()
+            print(f"supervisor: SIGTERM -- lease revoked for {primary.vm_name}; exiting", flush=True)
+        finally:
+            os._exit(128 + int(signum))
+
+    try:
+        signal.signal(signal.SIGTERM, _sigterm_revoke)
+    except (ValueError, OSError):
+        pass                                   # non-main thread / platform without SIGTERM
+
     print(f"supervisor: driving {primary.total} combos as vm={primary.vm_name} across gpus={gpus} "
           f"| {jobspec.effective_cpu_count()} cores -> {primary._data_workers} data-workers/lane", flush=True)
     try:
@@ -1175,7 +1193,7 @@ def run_sweep(config: SweepConfig, config_path, gpus, *, logout_address=None,
             for t in threads:
                 t.join()
     finally:
-        primary.close()                        # stop the lease refresher
+        primary.close()                        # revoke the lease (clean shutdown)
 
     summary = primary.ledger.summary()
     print(f"supervisor: sweep complete done={primary._done_count()}/{primary.total} "

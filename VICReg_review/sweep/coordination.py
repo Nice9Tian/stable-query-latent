@@ -141,6 +141,25 @@ class LeaseLiveness:
                 pass
             self._proc = None
 
+    def revoke(self) -> None:
+        """Expire the lease NOW (clean shutdown). Without this a killed
+        supervisor's claims stay 'live' for the remaining lease window
+        (<=10 min): a same-name restart gets a _2 suffix, and peers slide to
+        lower-priority combos while apparently-live claims block the queue --
+        each mis-taken combo costs its full training time. Revoking makes the
+        claims reclaimable immediately; the lease window remains only for
+        hard deaths (SIGKILL, OOM-killer, pulled pods)."""
+        self.stop()
+        if self._file is None:
+            return
+        rec = _read_json(self._file) or {}
+        rec["expiry"] = 0.0
+        rec["revoked_at"] = time.strftime("%Y-%m-%dT%H:%M:%S")
+        try:
+            _atomic_write(self._file, rec)
+        except OSError:
+            pass
+
     def alive(self, vm_file) -> bool:
         rec = _read_json(vm_file)
         return bool(rec) and time.time() < float(rec.get("expiry", 0))
@@ -178,6 +197,15 @@ class HeartbeatLiveness:
     def stop(self) -> None:
         if self._stop is not None:
             self._stop.set()
+
+    def revoke(self) -> None:
+        """mtime-based equivalent of LeaseLiveness.revoke: age the file out."""
+        self.stop()
+        if self._file is not None:
+            try:
+                os.utime(self._file, (0.0, 0.0))
+            except OSError:
+                pass
 
     def alive(self, vm_file) -> bool:
         try:
@@ -255,7 +283,14 @@ class Coordinator:
         return name
 
     def close(self) -> None:
-        self.liveness.stop()
+        """Clean shutdown: REVOKE the lease (not just stop refreshing it) so our
+        claims become reclaimable immediately -- no <=10 min zombie window, no
+        _2 suffix on restart, no peers wandering off to lower-priority combos."""
+        revoke = getattr(self.liveness, "revoke", None)
+        if revoke is not None:
+            revoke()
+        else:
+            self.liveness.stop()
 
     # --- per-combo status (claim + done, both write-once) -----------------
     def _status_file(self, cid) -> Path:
