@@ -153,6 +153,20 @@ def rebuild_grid_metrics(out_root: Path, sweep_yaml: Path, git_commit: str = "")
 
 
 # ------------------------------------------------------------------ claims
+def derive_worker_id(explicit=None) -> str:
+    """Stable machine identity for claims, mirroring the training design:
+    prefer the explicit --worker-id (the notebook derives it from its bundle
+    folder, Pod_N -> VMN, which survives reboots), then a Pod_N cwd, then the
+    hostname as the last resort (container ids change across pod restarts)."""
+    if explicit:
+        return str(explicit)
+    import re
+    m = re.fullmatch(r"Pod_(\d+)", Path.cwd().name)
+    if m:
+        return f"VM{m.group(1)}"
+    return socket.gethostname()
+
+
 def _pid_alive_here(pid) -> bool:
     """POSIX existence probe. PermissionError means the pid exists (not ours).
     Only meaningful on the host that wrote the claim."""
@@ -167,20 +181,33 @@ def _pid_alive_here(pid) -> bool:
         return False
 
 
-def try_claim(cdir: Path, ttl: float) -> bool:
+def try_claim(cdir: Path, ttl: float, worker_id: str | None = None) -> bool:
+    """Identity-first reclaim, mirroring the training coordination design.
+
+    ``worker_id`` is the STABLE bundle identity (Pod_N -> VMN), which survives
+    pod reboots where the hostname (container id) does not:
+      * owner.id == ours, and it is NOT a live sibling on this host -> our own
+        previous incarnation: take over IMMEDIATELY (covers reboots that
+        changed the hostname -- exactly the case host+pid matching misses);
+      * foreign id but written on THIS host by a dead pid -> reclaim now;
+      * anything else -> wait out the TTL (remote deaths are unverifiable).
+    Legacy claims without an id fall into the foreign-id rules."""
     claim = cdir / CLAIM_NAME
-    payload = {"host": socket.gethostname(), "pid": os.getpid(), "ts": time.time()}
+    me = str(worker_id) if worker_id else socket.gethostname()
+    payload = {"id": me, "host": socket.gethostname(), "pid": os.getpid(), "ts": time.time()}
     if atomic_create_json(claim, payload):
         return True
     owner = read_json(claim) or {}
     age = time.time() - float(owner.get("ts", 0) or 0)
-    # Same-host dead owner -> reclaim IMMEDIATELY (a pod reboot / SIGKILL never
-    # runs release_claim; without this the restarted machine would stare at its
-    # own predecessor's claim for the full TTL). Other hosts' deaths can't be
-    # verified from here, so they still wait out the TTL.
-    same_host_dead = (str(owner.get("host", "")) == payload["host"]
-                      and not _pid_alive_here(owner.get("pid")))
-    if not same_host_dead and age <= ttl:
+    owner_id = str(owner.get("id") or "")
+    same_host = str(owner.get("host", "")) == payload["host"]
+    if owner_id and owner_id == me:
+        if same_host and _pid_alive_here(owner.get("pid")):
+            return False              # live sibling worker (another GPU, same id)
+        # our previous incarnation (rebooted host or dead pid) -> take over now
+    elif same_host and not _pid_alive_here(owner.get("pid")):
+        pass                          # dead local stranger -> reclaim now
+    elif age <= ttl:
         return False
     aside = claim.parent / f".{CLAIM_NAME}.stale.{int(time.time() * 1000)}"
     try:
@@ -275,8 +302,9 @@ def run_worker(args) -> None:
     except Exception:
         pass
 
+    worker_id = derive_worker_id(args.worker_id)
     pool, _live, full_n = full_pool(sweep_yaml)
-    tag = f"[{socket.gethostname()}:{os.getpid()} gpu={os.environ.get('CUDA_VISIBLE_DEVICES', '?')}]"
+    tag = f"[{worker_id}:{os.getpid()} gpu={os.environ.get('CUDA_VISIBLE_DEVICES', '?')}]"
     print(f"{tag} battery worker: {len(pool)} full-n (n={full_n}) combos in scope", flush=True)
 
     # Shared caches, loaded ONCE per worker (evaluate_combo reloads them per call).
@@ -299,7 +327,7 @@ def run_worker(args) -> None:
         if report_path.exists() and sweep.report_is_current(report_path, ckpt, cdir / MANIFEST, arm):
             skip_n += 1
             continue
-        if not try_claim(cdir, args.claim_ttl):
+        if not try_claim(cdir, args.claim_ttl, worker_id=worker_id):
             continue                      # someone else is on it (or fresh claim)
         try:
             print(f"{tag} evaluating {combo.combo_id}", flush=True)
@@ -336,6 +364,11 @@ def parse_args(argv=None):
     p.add_argument("--sweep-yaml", default="VICReg_review/sweep/sweep.yaml")
     p.add_argument("--claim-ttl", type=float, default=7200.0,
                    help="Seconds before another worker may reclaim a stale eval claim.")
+    p.add_argument("--worker-id", default=None,
+                   help="Stable machine identity for claims (bundle name VMN). The "
+                        "notebook passes its Pod_N-derived id; defaults to a Pod_N cwd "
+                        "or the hostname. Lets a rebooted machine (new hostname) "
+                        "reclaim its own previous claims instantly.")
     p.add_argument("--local-data-dir", default="/root/data",
                    help="Machine-local dir holding the resident vectors .dat staged for "
                         "--h5. When present, feature extraction gathers vectors from "
