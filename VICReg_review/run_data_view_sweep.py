@@ -2039,8 +2039,17 @@ def run(args) -> None:
                             eval_targets = []
                             for arm in arms:
                                 paths = combo_paths(args, output_dim, arm, train_games, view, latent_scale)
-                                if paths["checkpoint"].exists():
-                                    eval_targets.append((paths["checkpoint"], paths["dir"]))
+                                # Only FINISHED combos (a partial latest.pt is not
+                                # comparable data), and prefer the best checkpoint
+                                # like final_best does.
+                                manifest = manifest_payload(paths["manifest"])
+                                combo_done = (isinstance(manifest, dict) and manifest.get("status") == "done") \
+                                    or (paths["dir"] / "done.json").exists()
+                                if not combo_done:
+                                    continue
+                                checkpoint = paths["best_checkpoint"] if paths["best_checkpoint"].exists() else paths["checkpoint"]
+                                if checkpoint.exists():
+                                    eval_targets.append((checkpoint, paths["dir"]))
                             if {"grl", "nogrl"}.issubset(set(arms)):
                                 evaluate_targets(args, eval_targets)
                             else:
