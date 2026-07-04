@@ -31,6 +31,7 @@ $ErrorActionPreference = "Stop"
 $includes = @(
     "*cloud_full_sweep_a100/grid_metrics.json",
     "*cloud_full_sweep_a100/champions.json",
+    "*cloud_full_sweep_a100/combo_timings.json",
     "*cloud_full_sweep_a100/*/eval_report.json",
     "*cloud_full_sweep_a100/*/dual_probe_history.tsv",
     "*cloud_full_sweep_a100/*/dual_probe_history.jsonl",

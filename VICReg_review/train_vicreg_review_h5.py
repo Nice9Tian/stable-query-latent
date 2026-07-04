@@ -521,6 +521,7 @@ def _proc_h5(h5_path):
 # per-sentence by pointer instead of materialising per-combo view caches.
 _PROC_MEMMAP: dict = {}
 _VECTORS_DAT = None   # (path, (rows, dim), dtype_name) or None; set per train() run
+_TRAIN_T0 = None      # time.time() at train() entry; manifests report session wall time
 
 
 def _proc_memmap(descriptor):
@@ -1705,12 +1706,15 @@ def run_worst_case_smoke(args):
 def write_history(rows, path):
     if not rows:
         return
-    columns = list(rows[0].keys())
+    # union of keys, first-seen order: pre-timing rows lack epoch_seconds and
+    # merge_resume_history rebuilds the resume row without it -- missing cells
+    # become "" instead of KeyError
+    columns = list(dict.fromkeys(key for row in rows for key in row))
     lines = ["\t".join(columns)]
     for row in rows:
         line = []
         for column in columns:
-            value = row[column]
+            value = row.get(column, "")
             line.append(f"{value:.10g}" if isinstance(value, float) else str(value))
         lines.append("\t".join(line))
     atomic_text_write("\n".join(lines) + "\n", path)
@@ -1752,6 +1756,9 @@ def write_manifest(path, status, args, epoch, step, metrics=None, error=None):
         "status": status,
         "training_schema": TRAINING_MANIFEST_SCHEMA,
         "finished_at": time.strftime("%Y-%m-%dT%H:%M:%S"),
+        # session wall time only (resets on resume); cumulative time lives in
+        # history.tsv epoch_seconds and Pod/reconstruct_timings.ipynb estimates
+        "session_wall_seconds": round(time.time() - _TRAIN_T0, 1) if _TRAIN_T0 else None,
         "epoch": epoch,
         "step": step,
         "input_h5": str(Path(args.input_h5).resolve()),
@@ -2005,6 +2012,8 @@ def _fence_check(args):
 
 
 def train(args):
+    global _TRAIN_T0
+    _TRAIN_T0 = time.time()
     torch.manual_seed(args.seed)
     np.random.seed(args.seed)
     device = torch.device(args.device or ("cuda" if torch.cuda.is_available() else "cpu"))
@@ -2161,6 +2170,7 @@ def train(args):
     last_metrics = None
     try:
         for epoch in range(start_epoch, args.epochs + 1):
+            epoch_t0 = time.time()
             _fence_check(args)   # multi-VM: abort early if this combo was reclaimed from us
             model.train()
             if expander is not None:
@@ -2214,7 +2224,8 @@ def train(args):
                     )
 
             averaged = {key: value / args.steps_per_epoch for key, value in epoch_sums.items()}
-            history_rows.append({"epoch": epoch, "global_step": global_step, **averaged})
+            history_rows.append({"epoch": epoch, "global_step": global_step, **averaged,
+                                 "epoch_seconds": round(time.time() - epoch_t0, 1)})
             checkpoint = {
                 "model_state_dict": model.state_dict(),
                 "expander_state_dict": expander.state_dict() if expander is not None else None,
