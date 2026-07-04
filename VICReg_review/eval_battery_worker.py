@@ -236,6 +236,23 @@ def combo_ready(cdir: Path):
     return ckpt.exists(), (ckpt if ckpt.exists() else None)
 
 
+def enable_resident_vectors(h5_path, local_data_dir):
+    """Point the trainer module's _VECTORS_DAT global at the machine-local
+    resident .dat when it is staged here. extract_features -> load_game_views
+    consults that global (exactly how training and the probe drain gather in
+    resident mode); without it the battery reads EVERY game's vector block
+    serially from the shared H5 over the network FS and the GPU sleeps.
+    Returns the .dat path, or None when not staged on this machine."""
+    from VICReg_review import train_vicreg_review_h5 as trainer_mod
+
+    dat_path = trainer_mod.default_vectors_dat_path(h5_path, local_data_dir)
+    desc = trainer_mod.resident_descriptor(dat_path, h5_path)
+    if desc is None:
+        return None
+    trainer_mod._VECTORS_DAT = desc
+    return str(desc[0])
+
+
 def run_worker(args) -> None:
     from VICReg_review import run_data_view_sweep as sweep
 
@@ -243,6 +260,13 @@ def run_worker(args) -> None:
     sweep_yaml = Path(args.sweep_yaml) if Path(args.sweep_yaml).is_absolute() else ROOT / args.sweep_yaml
     eval_args = build_eval_args(args)
     eval_args.out_dir = out_root
+    dat = enable_resident_vectors(eval_args.h5, args.local_data_dir)
+    if dat:
+        print(f"battery: resident .dat ON {dat} (bulk vectors from local NVMe)", flush=True)
+    else:
+        print(f"battery: resident .dat NOT staged under {args.local_data_dir}; bulk "
+              f"vectors stream from {eval_args.h5} over the shared FS -- SLOW. "
+              f"Stage it (prepare_training / trainer startup does) and restart.", flush=True)
     git_commit = ""
     try:
         import subprocess
@@ -312,6 +336,10 @@ def parse_args(argv=None):
     p.add_argument("--sweep-yaml", default="VICReg_review/sweep/sweep.yaml")
     p.add_argument("--claim-ttl", type=float, default=7200.0,
                    help="Seconds before another worker may reclaim a stale eval claim.")
+    p.add_argument("--local-data-dir", default="/root/data",
+                   help="Machine-local dir holding the resident vectors .dat staged for "
+                        "--h5. When present, feature extraction gathers vectors from "
+                        "local NVMe instead of streaming the shared H5 per game.")
     p.add_argument("--warmup-only", action="store_true",
                    help="Build/load the shared raw/description/text caches, then exit. "
                         "Run once before fanning out workers so they don't all build "
