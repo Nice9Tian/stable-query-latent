@@ -9,9 +9,11 @@ be revisited with real-text evidence (see get_champions_namerank.py):
       name : article -> own-game retrieval (game-level max-sim over view rows),
              hit@1/5/10 + median rank, neutral and noname (258 queries)
       con  : contrastive fine-tune (frozen backbone, residual linear head,
-             full-softmax InfoNCE, identity init, early stop on val hit@1;
-             181/77 game split, seed 20260705) -- zero-shot vs fine-tuned
-             retrieval on the SAME held-out 77 games / mean-anchor gallery
+             full-softmax InfoNCE, identity init, early stop on val hit@1),
+             5-FOLD cross-validation over the article games: each fold trains
+             on 4/5 and scores the held-out 1/5, so EVERY game is tested
+             exactly once; zero-shot vs fine-tuned reported on the same
+             aggregated held-out predictions (mean-anchor gallery)
   after every combo the streaming summary <out_dir>/realtext_grid_metrics.json
   is rebuilt from all per-combo files (resume = skip existing output).
 
@@ -196,17 +198,13 @@ def main() -> None:
                 "finished_at": time.strftime("%Y-%m-%dT%H:%M:%S"),
             }
 
-            # ---- contrastive fine-tune on the frozen backbone (linear head)
+            # ---- contrastive fine-tune, 5-fold CV over the article games
             if not args.skip_contrastive:
                 import torch.nn as nn
                 torch.manual_seed(args.seed)
                 rng = np.random.default_rng(args.seed)
                 order = rng.permutation(len(games))
-                n_tr = int(round(len(games) * 0.7))
-                tr_games = [games[i] for i in order[:n_tr]]
-                te_games = [games[i] for i in order[n_tr:]]
-                n_fit = int(round(len(tr_games) * 0.85))
-                fit_g, val_g = tr_games[:n_fit], tr_games[n_fit:]
+                folds = np.array_split(order, 5)
 
                 A = torch.tensor(anchor, device=device)
                 A = A / A.norm(dim=1, keepdim=True)
@@ -216,15 +214,15 @@ def main() -> None:
                     lab = torch.tensor([n2i[g] for g in gs for _ in vs], device=device)
                     return torch.tensor(X, device=device), lab
 
-                def hits_t(sims, labels):
-                    rk = (sims > sims.gather(1, labels[:, None])).sum(1) + 1
-                    return {"hit_at_1": float((rk == 1).float().mean()),
-                            "hit_at_10": float((rk <= 10).float().mean()),
-                            "median_rank": float(rk.float().median())}
+                def ranks_t(sims, labels):
+                    return ((sims > sims.gather(1, labels[:, None])).sum(1) + 1)
 
-                Xf, yf = qt(fit_g)
-                Xv, yv = qt(val_g)
-                Xt, yt = qt(te_games, ("neutral",))
+                def agg(all_ranks):
+                    r = torch.cat(all_ranks).float()
+                    return {"hit_at_1": float((r == 1).float().mean()),
+                            "hit_at_10": float((r <= 10).float().mean()),
+                            "median_rank": float(r.median()),
+                            "n_queries": int(r.numel())}
 
                 class Head(nn.Module):
                     def __init__(self, dim):
@@ -236,45 +234,65 @@ def main() -> None:
                     def forward(self, q):
                         return q + self.scale * self.f(q)
 
-                head = Head(A.shape[1]).to(device)
-                opt = torch.optim.AdamW(head.parameters(), lr=1e-3, weight_decay=1e-4)
-                best_state, best_val, patience = None, -1.0, 0
-                for _ep in range(args.con_epochs):
-                    head.train()
-                    perm = torch.randperm(Xf.shape[0], device=device)
-                    for i in range(0, len(perm), 256):
-                        idx = perm[i:i + 256]
-                        q = head(Xf[idx])
-                        q = q / q.norm(dim=1, keepdim=True)
-                        loss = nn.functional.cross_entropy(
-                            (q @ A.T) / head.log_tau.exp(), yf[idx])
-                        opt.zero_grad()
-                        loss.backward()
-                        opt.step()
+                zs_ranks, con_ranks, fold_hit1 = [], [], []
+                for k in range(5):
+                    te_games = [games[i] for i in folds[k]]
+                    tr_idx = np.concatenate([folds[j] for j in range(5) if j != k])
+                    tr_games = [games[i] for i in tr_idx]
+                    n_fit = int(round(len(tr_games) * 0.85))
+                    fit_g, val_g = tr_games[:n_fit], tr_games[n_fit:]
+
+                    Xf, yf = qt(fit_g)
+                    Xv, yv = qt(val_g)
+                    Xt, yt = qt(te_games, ("neutral",))
+
+                    head = Head(A.shape[1]).to(device)
+                    opt = torch.optim.AdamW(head.parameters(), lr=1e-3, weight_decay=1e-4)
+                    best_state, best_val, patience = None, -1.0, 0
+                    for _ep in range(args.con_epochs):
+                        head.train()
+                        perm = torch.randperm(Xf.shape[0], device=device)
+                        for i in range(0, len(perm), 256):
+                            idx = perm[i:i + 256]
+                            q = head(Xf[idx])
+                            q = q / q.norm(dim=1, keepdim=True)
+                            loss = nn.functional.cross_entropy(
+                                (q @ A.T) / head.log_tau.exp(), yf[idx])
+                            opt.zero_grad()
+                            loss.backward()
+                            opt.step()
+                        head.eval()
+                        with torch.no_grad():
+                            qv = head(Xv)
+                            qv = qv / qv.norm(dim=1, keepdim=True)
+                            rk = ranks_t(qv @ A.T, yv)
+                            v1 = float((rk == 1).float().mean())
+                        if v1 > best_val:
+                            best_val, patience = v1, 0
+                            best_state = {k2: v.clone() for k2, v in head.state_dict().items()}
+                        else:
+                            patience += 1
+                            if patience >= 30:
+                                break
+                    head.load_state_dict(best_state)
                     head.eval()
                     with torch.no_grad():
-                        qv = head(Xv)
-                        qv = qv / qv.norm(dim=1, keepdim=True)
-                        v1 = hits_t(qv @ A.T, yv)["hit_at_1"]
-                    if v1 > best_val:
-                        best_val, patience = v1, 0
-                        best_state = {k: v.clone() for k, v in head.state_dict().items()}
-                    else:
-                        patience += 1
-                        if patience >= 30:
-                            break
-                head.load_state_dict(best_state)
-                head.eval()
-                with torch.no_grad():
-                    q0 = Xt / Xt.norm(dim=1, keepdim=True)
-                    qc = head(Xt)
-                    qc = qc / qc.norm(dim=1, keepdim=True)
-                    payload["contrastive"] = {
-                        "n_train_games": len(tr_games), "n_test_games": len(te_games),
-                        "zero_shot": hits_t(q0 @ A.T, yt),
-                        "con_linear": hits_t(qc @ A.T, yt),
-                    }
-                del head, A, Xf, Xv, Xt
+                        q0 = Xt / Xt.norm(dim=1, keepdim=True)
+                        qc = head(Xt)
+                        qc = qc / qc.norm(dim=1, keepdim=True)
+                        zs_ranks.append(ranks_t(q0 @ A.T, yt))
+                        rk_c = ranks_t(qc @ A.T, yt)
+                        con_ranks.append(rk_c)
+                        fold_hit1.append(float((rk_c == 1).float().mean()))
+                    del head, Xf, Xv, Xt
+
+                payload["contrastive"] = {
+                    "folds": 5,
+                    "zero_shot": agg(zs_ranks),
+                    "con_linear": agg(con_ranks),
+                    "per_fold_hit1": fold_hit1,
+                }
+                del A
             tve.atomic_json_write(payload, outp)
             done += 1
             n = rebuild_summary()
