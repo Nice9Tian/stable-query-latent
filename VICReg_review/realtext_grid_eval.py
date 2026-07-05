@@ -51,7 +51,20 @@ def main() -> None:
                    help="zero-shot metrics only (faster)")
     p.add_argument("--con-epochs", type=int, default=300)
     p.add_argument("--seed", type=int, default=20260705)
+    p.add_argument("--selfstop", action="store_true",
+                   help="stop this RunPod pod once EVERY ready combo has output "
+                        "(the last shard to finish triggers it; same ladder as "
+                        "the auto notebooks)")
+    p.add_argument("--runpod-api-key", default="",
+                   help="override for pod_selfstop (else env RUNPOD_API_KEY)")
     args = p.parse_args()
+
+    if args.selfstop:
+        from VICReg_review import pod_selfstop
+        pod_id, api_key, ctl = pod_selfstop.preflight(args.runpod_api_key)
+        if not pod_id or not api_key:
+            raise SystemExit("--selfstop requested but the pod cannot stop itself; "
+                             "fix credentials first (see preflight output).")
 
     import h5py
     import numpy as np
@@ -257,6 +270,22 @@ def main() -> None:
             print(f"FAIL {combo.combo_id}: {type(e).__name__}: {e}", flush=True)
     rebuild_summary()
     print(f"shard {args.shard} exit: done={done} skip={skip} fail={fail}", flush=True)
+
+    if args.selfstop:
+        # complete = every READY combo of the FULL pool has an output file;
+        # only the last shard to finish sees this true, so N shards need no
+        # coordination -- earlier finishers just exit.
+        missing = [c.combo_id for c in pool
+                   if worker.combo_ready(out_root / c.combo_id)[0]
+                   and not (out_root / c.combo_id / OUT_NAME).exists()]
+        if missing:
+            print(f"selfstop: {len(missing)} ready combos still lack output "
+                  f"(other shards running?) -- NOT stopping. First: {missing[:3]}",
+                  flush=True)
+        else:
+            print("selfstop: grid complete -- stopping this pod.", flush=True)
+            from VICReg_review import pod_selfstop
+            pod_selfstop.stop_pod(pod_id, api_key, ctl)
 
 
 if __name__ == "__main__":
