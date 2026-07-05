@@ -522,20 +522,6 @@ def _proc_h5(h5_path):
 _PROC_MEMMAP: dict = {}
 _VECTORS_DAT = None   # (path, (rows, dim), dtype_name) or None; set per train() run
 _TRAIN_T0 = None      # time.time() at train() entry; manifests report session wall time
-_GPU_NAME_CACHE = ()  # lazily probed once; () = not probed yet, None = no cuda
-
-
-def _gpu_name():
-    """Device model for the manifest -- combos train on L40/A100/H100 pods and
-    nothing else on disk says which, so timing comparisons need this recorded."""
-    global _GPU_NAME_CACHE
-    if _GPU_NAME_CACHE == ():
-        try:
-            _GPU_NAME_CACHE = (torch.cuda.get_device_name(torch.cuda.current_device())
-                               if torch.cuda.is_available() else None)
-        except Exception:
-            _GPU_NAME_CACHE = None
-    return _GPU_NAME_CACHE
 
 
 def _proc_memmap(descriptor):
@@ -1773,7 +1759,6 @@ def write_manifest(path, status, args, epoch, step, metrics=None, error=None):
         # session wall time only (resets on resume); cumulative time lives in
         # history.tsv epoch_seconds and Pod/reconstruct_timings.ipynb estimates
         "session_wall_seconds": round(time.time() - _TRAIN_T0, 1) if _TRAIN_T0 else None,
-        "gpu_name": _gpu_name(),
         "epoch": epoch,
         "step": step,
         "input_h5": str(Path(args.input_h5).resolve()),

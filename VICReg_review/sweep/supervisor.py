@@ -1028,15 +1028,7 @@ class Supervisor:
             total_ram = float(oom_proxy.available_ram_bytes())
         except Exception:
             pass
-        gpu_name = None
-        try:
-            import torch
-            if torch.cuda.is_available():
-                gpu_name = torch.cuda.get_device_name(int(list(gpus)[0]) if gpus else 0)
-        except Exception:
-            pass
         info = {"gpus": list(gpus), "cores": jobspec.effective_cpu_count(),
-                "gpu_name": gpu_name,
                 "host": socket.gethostname(),   # lets clean_old_VM.ipynb find THIS
                                                 # machine's leases after a reboot
                 "vram_gib": round(total_vram / oom_proxy.GIB, 1) if total_vram else None,
