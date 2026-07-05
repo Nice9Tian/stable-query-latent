@@ -19,9 +19,12 @@ from __future__ import annotations
 
 import argparse
 import json
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
 
 VARIANTS = ("neutral", "positive", "negative", "noname")
 PILOT_JSON = "real_text_pilot.json"
@@ -34,6 +37,9 @@ def main() -> None:
     p.add_argument("--variant-dir", default=str(ROOT / "VICReg_review/text_variants_generated"))
     p.add_argument("--champions-json", default=None,
                    help="default: <out-dir>/champions.json")
+    p.add_argument("--combos", default="",
+                   help="comma-separated EXTRA combo ids to evaluate alongside the "
+                        "champions (e.g. their nogrl siblings as a control group)")
     p.add_argument("--rebuild-cache", action="store_true",
                    help="re-embed the pilot texts even if the pilot cache exists")
     args = p.parse_args()
@@ -53,7 +59,10 @@ def main() -> None:
     champs_path = Path(args.champions_json or out_root / "champions.json")
     champions = [row["combo_id"] for row in
                  json.loads(champs_path.read_text(encoding="utf-8"))["champions"]]
-    print(f"{len(champions)} champions; {n_txt} pilot texts under {variant_dir}")
+    extra = [c.strip() for c in args.combos.split(",") if c.strip()]
+    champions += [c for c in extra if c not in champions]
+    print(f"{len(champions)} combos ({len(extra)} extra); "
+          f"{n_txt} pilot texts under {variant_dir}")
 
     ev = worker.build_eval_args(argparse.Namespace(h5=args.h5, out_dir=str(out_root)))
     ev.out_dir = out_root
@@ -95,6 +104,13 @@ def main() -> None:
         if device.type == "cuda":
             torch.cuda.empty_cache()
         print(f"  {cid}: done -> {cdir / PILOT_JSON}")
+
+    summary_path = out_root / "real_text_pilot_summary.json"
+    text_variant_eval.atomic_json_write(
+        {"created_at": __import__("time").strftime("%Y-%m-%dT%H:%M:%S"),
+         "variant_dir": str(variant_dir), "n_texts": n_txt, "rows": rows},
+        summary_path)
+    print(f"\nsummary -> {summary_path}")
 
     fmt = lambda x: f"{x:.3f}" if isinstance(x, (int, float)) else "  -  "
     n_games = next((r.get("neutral_n") for r in rows if r.get("neutral_n")), "?")
