@@ -7,14 +7,18 @@ be revisited with real-text evidence (see get_champions_namerank.py):
   per combo -> <combo>/real_text_grid.json
       tag  : zero-shot article micro-F1 per variant + mean drop vs anchor
       name : article -> own-game retrieval (game-level max-sim over view rows),
-             hit@1/5/10 + median rank, neutral and all-variants
+             hit@1/5/10 + median rank, neutral and noname (258 queries)
+      con  : contrastive fine-tune (frozen backbone, residual linear head,
+             full-softmax InfoNCE, identity init, early stop on val hit@1;
+             181/77 game split, seed 20260705) -- zero-shot vs fine-tuned
+             retrieval on the SAME held-out 77 games / mean-anchor gallery
   after every combo the streaming summary <out_dir>/realtext_grid_metrics.json
   is rebuilt from all per-combo files (resume = skip existing output).
 
-Run on a pod (artifacts local) or anywhere the out_dir is complete:
+Multi-GPU on one machine = manual shards (multi-VM claims deliberately absent):
 
     python VICReg_review/realtext_grid_eval.py                  # single GPU
-    CUDA_VISIBLE_DEVICES=1 python ... --shard 1/4               # manual shards
+    CUDA_VISIBLE_DEVICES=1 python ... --shard 1/4               # per-GPU shards
 """
 from __future__ import annotations
 
@@ -43,6 +47,10 @@ def main() -> None:
                         "<out-dir>/text_variant_pilot_cache.npz (built on first run)")
     p.add_argument("--shard", default="0/1", help="i/n: evaluate every n-th combo")
     p.add_argument("--overwrite", action="store_true")
+    p.add_argument("--skip-contrastive", action="store_true",
+                   help="zero-shot metrics only (faster)")
+    p.add_argument("--con-epochs", type=int, default=300)
+    p.add_argument("--seed", type=int, default=20260705)
     args = p.parse_args()
 
     import h5py
@@ -156,6 +164,86 @@ def main() -> None:
                 "retrieval": {v: ret(v) for v in ("neutral", "noname")},
                 "finished_at": time.strftime("%Y-%m-%dT%H:%M:%S"),
             }
+
+            # ---- contrastive fine-tune on the frozen backbone (linear head)
+            if not args.skip_contrastive:
+                import torch.nn as nn
+                torch.manual_seed(args.seed)
+                rng = np.random.default_rng(args.seed)
+                order = rng.permutation(len(games))
+                n_tr = int(round(len(games) * 0.7))
+                tr_games = [games[i] for i in order[:n_tr]]
+                te_games = [games[i] for i in order[n_tr:]]
+                n_fit = int(round(len(tr_games) * 0.85))
+                fit_g, val_g = tr_games[:n_fit], tr_games[n_fit:]
+
+                A = torch.tensor(anchor, device=device)
+                A = A / A.norm(dim=1, keepdim=True)
+
+                def qt(gs, vs=VARIANTS):
+                    X = np.stack([vfeat[(g, v)] for g in gs for v in vs]).astype(np.float32)
+                    lab = torch.tensor([n2i[g] for g in gs for _ in vs], device=device)
+                    return torch.tensor(X, device=device), lab
+
+                def hits_t(sims, labels):
+                    rk = (sims > sims.gather(1, labels[:, None])).sum(1) + 1
+                    return {"hit_at_1": float((rk == 1).float().mean()),
+                            "hit_at_10": float((rk <= 10).float().mean()),
+                            "median_rank": float(rk.float().median())}
+
+                Xf, yf = qt(fit_g)
+                Xv, yv = qt(val_g)
+                Xt, yt = qt(te_games, ("neutral",))
+
+                class Head(nn.Module):
+                    def __init__(self, dim):
+                        super().__init__()
+                        self.f = nn.Linear(dim, dim, bias=False)
+                        self.scale = nn.Parameter(torch.zeros(()))
+                        self.log_tau = nn.Parameter(torch.tensor(-2.65))
+
+                    def forward(self, q):
+                        return q + self.scale * self.f(q)
+
+                head = Head(A.shape[1]).to(device)
+                opt = torch.optim.AdamW(head.parameters(), lr=1e-3, weight_decay=1e-4)
+                best_state, best_val, patience = None, -1.0, 0
+                for _ep in range(args.con_epochs):
+                    head.train()
+                    perm = torch.randperm(Xf.shape[0], device=device)
+                    for i in range(0, len(perm), 256):
+                        idx = perm[i:i + 256]
+                        q = head(Xf[idx])
+                        q = q / q.norm(dim=1, keepdim=True)
+                        loss = nn.functional.cross_entropy(
+                            (q @ A.T) / head.log_tau.exp(), yf[idx])
+                        opt.zero_grad()
+                        loss.backward()
+                        opt.step()
+                    head.eval()
+                    with torch.no_grad():
+                        qv = head(Xv)
+                        qv = qv / qv.norm(dim=1, keepdim=True)
+                        v1 = hits_t(qv @ A.T, yv)["hit_at_1"]
+                    if v1 > best_val:
+                        best_val, patience = v1, 0
+                        best_state = {k: v.clone() for k, v in head.state_dict().items()}
+                    else:
+                        patience += 1
+                        if patience >= 30:
+                            break
+                head.load_state_dict(best_state)
+                head.eval()
+                with torch.no_grad():
+                    q0 = Xt / Xt.norm(dim=1, keepdim=True)
+                    qc = head(Xt)
+                    qc = qc / qc.norm(dim=1, keepdim=True)
+                    payload["contrastive"] = {
+                        "n_train_games": len(tr_games), "n_test_games": len(te_games),
+                        "zero_shot": hits_t(q0 @ A.T, yt),
+                        "con_linear": hits_t(qc @ A.T, yt),
+                    }
+                del head, A, Xf, Xv, Xt
             tve.atomic_json_write(payload, outp)
             done += 1
             n = rebuild_summary()

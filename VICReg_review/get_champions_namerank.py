@@ -38,6 +38,9 @@ METRICS = {
     "rt_tag_f1": (lambda b, r: (r.get("tag") or {}).get("neutral", {}).get("micro_f1"), True),
     "rt_drop": (lambda b, r: r.get("mean_drop"), False),
     "namerank": (lambda b, r: (r.get("retrieval") or {}).get("neutral", {}).get("median_rank"), False),
+    # contrastive fine-tuned name recall (77 held-out games, mean-anchor gallery)
+    "namerank_con": (lambda b, r: ((r.get("contrastive") or {}).get("con_linear") or {}).get("median_rank"), False),
+    "hit1_con": (lambda b, r: ((r.get("contrastive") or {}).get("con_linear") or {}).get("hit_at_1"), True),
 }
 
 
@@ -48,6 +51,10 @@ def main() -> None:
                    help="per-metric top-K for the intersection set (0 = skip)")
     p.add_argument("--n-champions", type=int, default=8,
                    help="how many top rank-sum combos to store as champions")
+    p.add_argument("--by", default="rank_sum",
+                   help="ordering: 'rank_sum' or a single metric key "
+                        f"(one of {list(METRICS)}), e.g. --by namerank_con to "
+                        "pick purely by fine-tuned name recall")
     args = p.parse_args()
 
     out_root = Path(args.out_dir)
@@ -90,7 +97,12 @@ def main() -> None:
             continue
         rows.append({"combo_id": cid, **values[cid], "ranks": rk,
                      "rank_sum": sum(rk.values())})
-    rows.sort(key=lambda r: r["rank_sum"])
+    if args.by == "rank_sum":
+        rows.sort(key=lambda r: r["rank_sum"])
+    else:
+        if args.by not in METRICS:
+            raise SystemExit(f"--by must be rank_sum or one of {list(METRICS)}")
+        rows.sort(key=lambda r: r["ranks"][args.by])
     inter = set(pool)
     if args.top_k:
         for key in METRICS:
@@ -99,8 +111,10 @@ def main() -> None:
     champions = rows[: args.n_champions]
     payload = {
         "created_at": time.strftime("%Y-%m-%dT%H:%M:%S"),
-        "selection": "get_champions_namerank: rank-sum over battery + real-text "
-                     "metrics (incl. name-recall median rank)",
+        "selection": f"get_champions_namerank: ordered by {args.by} over battery "
+                     "+ real-text metrics (incl. zero-shot and contrastive "
+                     "name-recall ranks)",
+        "ordered_by": args.by,
         "metrics": list(METRICS),
         "top_k": args.top_k,
         "intersection_all_topk": sorted(inter),
@@ -111,15 +125,18 @@ def main() -> None:
     from VICReg_review.text_variant_eval import atomic_json_write
     atomic_json_write(payload, out_root / "champions_namerank.json")
 
-    print(f"\nRANK-SUM over {list(METRICS)}  (lower = better)")
+    fmt = lambda x, w, d: (f"{x:{w}.{d}f}" if isinstance(x, (int, float)) else " " * (w - 1) + "-")
+    print(f"\nORDERED BY {args.by}  over {list(METRICS)}")
     head = (f"{'#':>3} {'combo_id':40} {'sum':>5} {'tagF1':>6} {'rtF1':>6} "
-            f"{'rtDrop':>7} {'nameRk':>7} {'old?':>5}")
+            f"{'rtDrop':>7} {'nameRk':>7} {'nameRkC':>8} {'hit1C':>6} {'old?':>5}")
     print(head)
     print("-" * len(head))
     for i, r in enumerate(rows[:20], 1):
         print(f"{i:3d} {r['combo_id']:40} {r['rank_sum']:5d} "
-              f"{r['tag_f1']:6.3f} {r['rt_tag_f1']:6.3f} {r['rt_drop']:7.3f} "
-              f"{r['namerank']:7.0f} {'YES' if r['combo_id'] in old else '':>5}")
+              f"{fmt(r['tag_f1'], 6, 3)} {fmt(r['rt_tag_f1'], 6, 3)} "
+              f"{fmt(r['rt_drop'], 7, 3)} {fmt(r['namerank'], 7, 0)} "
+              f"{fmt(r['namerank_con'], 8, 0)} {fmt(r['hit1_con'], 6, 3)} "
+              f"{'YES' if r['combo_id'] in old else '':>5}")
     print(f"\nintersection of all {len(METRICS)} top-{args.top_k} sets: "
           f"{len(inter)} combos")
     moved = [(cid, next((i + 1 for i, r in enumerate(rows) if r["combo_id"] == cid), None))
