@@ -3,10 +3,12 @@
 The battery's real_text_tag eval discovers `text_variant_dir/<appid>/<variant>.txt`
 automatically -- coverage today is 2 hand-collected games. This script expands it
 to the whole tag-eval TEST split (303 games): for each game's Steam
-`about_the_game` description it asks a chat-completions API for two rewrites --
-one critical (negative), one praising (positive) -- that keep the factual
-content / gameplay / mechanics intact, and stores the original description as
-the neutral variant for free.
+`about_the_game` description it asks a chat-completions API for three rewrites
+-- critical (negative), praising (positive), and de-identified (noname: every
+game/character/item name swapped for invented words) -- all preserving the
+factual content / gameplay / mechanics, and stores the original description as
+the neutral variant for free. A game's rewrites run CONCURRENTLY (one task per
+missing file), so no variant systematically finishes before another.
 
 Run LOCALLY (games.json lives in game_review_data/):
     python VICReg_review/generate_text_variants.py --dry-run   # coverage check
@@ -28,7 +30,7 @@ from pathlib import Path
 # ---- API credentials (paste locally; NEVER commit a real token) -------------
 BASE_URL = "https://yunwu.ai/v1"
 API_TOKEN = ""                      # <-- paste your key here before running
-MODEL = "gpt-4o"
+MODEL = "gemma-7b-it"
 
 TEMPERATURE = 0.7
 CONCURRENCY = 8
@@ -44,6 +46,11 @@ SYSTEM_PROMPTS = {
     "positive": (
         "完整保留游戏内容/游戏玩法/游戏机制的真实内容，"
         "但是使用赞扬态度来完成一篇关于游戏的描述文章。"
+        "不要虚构游戏中不存在的内容。用英文撰写，直接输出文章正文。"
+    ),
+    "noname": (
+        "保留完整的文章内容，但是不要暴露出游戏的名字/角色的名字/道具的名字"
+        "等信息，全部替换成假想的虚构单词，其余内容保持不变。"
         "不要虚构游戏中不存在的内容。用英文撰写，直接输出文章正文。"
     ),
 }
@@ -98,21 +105,14 @@ def write_atomic(path: Path, text: str) -> None:
     tmp.replace(path)
 
 
-def one_game(appid: str, name: str, desc: str, out_root: Path) -> list[str]:
-    """Returns list of 'appid/variant' strings actually generated."""
-    done = []
-    neutral = out_root / appid / "neutral.txt"
-    if not neutral.exists():
-        write_atomic(neutral, desc)
-        done.append(f"{appid}/neutral")
+def gen_variant(appid: str, name: str, desc: str, variant: str, out_root: Path) -> str:
+    """One API call -> one <appid>/<variant>.txt. Tasks are submitted per
+    (game, variant) so a game's positive/negative/noname run CONCURRENTLY --
+    no 'all negatives first' ordering, and resume is per-file."""
     user_msg = f"Game: {name}\n\nOfficial description:\n{desc}"
-    for variant, system in SYSTEM_PROMPTS.items():
-        out = out_root / appid / f"{variant}.txt"
-        if out.exists():
-            continue
-        write_atomic(out, chat(system, user_msg))
-        done.append(f"{appid}/{variant}")
-    return done
+    text = chat(SYSTEM_PROMPTS[variant], user_msg)
+    write_atomic(out_root / appid / f"{variant}.txt", text)
+    return f"{appid}/{variant}"
 
 
 def main() -> None:
@@ -157,36 +157,43 @@ def main() -> None:
         todo = todo[: args.limit]
 
     out_root = Path(args.out_dir)
-    pending = [(a, n, d) for a, n, d in todo
-               if not all((out_root / a / f"{v}.txt").exists()
-                          for v in (*SYSTEM_PROMPTS, "neutral"))]
+    # one task per MISSING (game, variant) file -> a game's three rewrites run
+    # concurrently and a rerun resumes at file granularity
+    tasks = [(a, n, d, v) for a, n, d in todo for v in SYSTEM_PROMPTS
+             if not (out_root / a / f"{v}.txt").exists()]
     print(f"{args.split} split: {len(names)} games | with usable description: {len(todo)} "
           f"| missing meta: {len(missing)} | too-thin desc: {len(thin)}")
-    print(f"already complete: {len(todo) - len(pending)} | to generate: {len(pending)} "
-          f"(x{len(SYSTEM_PROMPTS)} API calls each)")
+    print(f"variant files to generate: {len(tasks)} "
+          f"(= missing files among {len(todo)} games x {list(SYSTEM_PROMPTS)})")
     if args.dry_run:
-        for appid, name, desc in pending[:10]:
-            print(f"  would generate {appid}  {name[:40]!r}  desc {len(desc)} chars")
+        for appid, name, _desc, variant in tasks[:12]:
+            print(f"  would generate {appid}/{variant}.txt   {name[:40]!r}")
         return
     if not API_TOKEN:
         raise SystemExit("API_TOKEN is empty -- paste your key at the top of this script.")
 
+    # neutral = the original description, written up front (no API cost)
+    for appid, _name, desc in todo:
+        neutral = out_root / appid / "neutral.txt"
+        if not neutral.exists():
+            write_atomic(neutral, desc)
+
     ok = err = 0
     t0 = time.time()
     with cf.ThreadPoolExecutor(max_workers=CONCURRENCY) as pool:
-        futs = {pool.submit(one_game, a, n, d, out_root): a for a, n, d in pending}
+        futs = {pool.submit(gen_variant, a, n, d, v, out_root): (a, v)
+                for a, n, d, v in tasks}
         for i, fut in enumerate(cf.as_completed(futs), 1):
-            appid = futs[fut]
+            appid, variant = futs[fut]
             try:
-                made = fut.result()
+                fut.result()
                 ok += 1
-                print(f"[{i}/{len(pending)}] {appid} ok ({', '.join(made) or 'cached'})",
-                      flush=True)
+                print(f"[{i}/{len(tasks)}] {appid}/{variant} ok", flush=True)
             except Exception as e:                      # keep going; rerun resumes
                 err += 1
-                print(f"[{i}/{len(pending)}] {appid} FAILED: {type(e).__name__}: {e}",
-                      flush=True)
-    print(f"\ndone in {(time.time() - t0) / 60:.1f} min: {ok} games ok, {err} failed "
+                print(f"[{i}/{len(tasks)}] {appid}/{variant} FAILED: "
+                      f"{type(e).__name__}: {e}", flush=True)
+    print(f"\ndone in {(time.time() - t0) / 60:.1f} min: {ok} file(s) ok, {err} failed "
           f"-> {out_root}")
     if err:
         print("rerun the same command to retry failures (existing files are skipped).")
