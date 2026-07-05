@@ -1,0 +1,32 @@
+Game: Wartales
+appid: 1527950
+Source: Wartales
+URL: https://en.wikipedia.org/wiki/Wartales
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Wartales is a tactical role-playing game developed by Shiro Games and published for Windows, Nintendo Switch, and Xbox Series X/S by Shiro Unlimited in 2023.  Players manage a mercenary band as it attempts to survive in a low fantasy world that is trying to recover from a plague.
+
+
+== Gameplay ==
+After being hit by a magical plague, a medieval land suffers shortages and banditry.  Wartales is a tactical role-playing game with sandbox gameplay.  The game has an open world in which players traverse an overworld map, encountering points of interest, such as towns, dungeons, and other mercenaries.  When the player's group encounters hostile non-player characters or animals, turn-based combat is resolved on a tactical map.  There are elements of survival games, where characters gather necessary resources, such as raw food or leather, and craft items from them, such as cooked food or clothing.  Characters tire as they travel, and camping is necessary once they have become exhausted.  If players' mercenaries are not fed while camping, they may desert.  While camping, characters can engage in a variety of actions related to their profession, such as cooking, blacksmithing, and appraising relics found while adventuring.  Players can optionally enable level scaling.  If they choose not to, regions on the map become progressively more difficult as players travel further.  Players are presented with narrative choices, and each region has a story line that players can investigate, but there is no main quest or overarching story line.  The game takes on elements of an economic simulation instead, forcing players to find ways to finance their growing mercenary company.  It has cooperative multiplayer.
+
+
+== Development ==
+Wartales was developed in France. The developers wanted to avoid forcing quests on players.  One of the design goals was to make it possible to decline any quest and avoid having quests automatically added.  The developers also found games like Skyrim more fun when ignoring the main quest, which inspired them to not implement one in their game.  Instead of progressing through an epic story, they wanted players to focus on surviving a harsh world while giving them as much freedom as possible.  It entered early access in December 2021 and was released on April 12, 2023.  It was released for Nintendo Switch and Xbox Series X/S on September 14 and October 31, 2023, respectively.  Downloadable content named "Pirates of Belerion" was released on December 14, 2023.
+
+
+== Reception ==
+Wartales received positive reviews on Metacritic.  Comparing Wartales to games like Rimworld and Dwarf Fortress, Rock Paper Shotgun praised its emergent gameplay and ability to create interesting anecdotes from the interplay of its game mechanics, which they said were honed in its early access.  Acknowledging that the request went against the core game design, they suggested adding a main quest to give the game more momentum.  PC Gamer wrote, "Don't be fooled by its drab exterior, Wartales is a deep and richly rewarding exercise in party creation."  Commenting on the game's complexity, NME said hardcore role-playing games have fallen out of favor, making new releases "worth their weight in looted gold".  However, they found Wartales' art style to be conservative and the mechanics to be repetitive once one has progressed through several regions.  The reviewer concluded, "Wartales walks far enough off the beaten path to be interesting, but it isn't quite bold or elegant enough to be essential."
+As of December 2024, Wartales surpassed 1 million copies sold. To mark this milestone, the "Skelmar Invasion" DLC, introducing siege battles and additional content, was released on December 10, 2024.
+
+
+=== Accolades ===
+
+
+== References ==
+
+
+== External links ==
+Official website
+Wartales at MobyGames

@@ -1,0 +1,43 @@
+Game: Gloomwood
+appid: 1150760
+Source: Gloomwood
+URL: https://en.wikipedia.org/wiki/Gloomwood
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Gloomwood is a 2022 first-person stealth survival horror video game developed by Dillon Rogers and David Szymanski and published by New Blood Interactive. The player controls an unnamed doctor who makes his way through the Victorian style titular city. The game features stealth and exploratory gameplay, along with utilizing weapons (melee and firearms) against enemies.
+The game is heavily inspired by the Thief series of games, especially its first two: The Dark Project (1998) and The Metal Age (2000). It has also been favorably compared to Dishonored, Bloodborne, Sir, You Are Being Hunted, Resident Evil, BioShock, and Deathloop. It has also been referred to as an immersive sim.
+Having been announced in June 2020, Gloomwood was released via early access on September 5, 2022, after a delay from its initial August 16, 2022 date. The pre-release builds have received praise for the atmosphere, tone, world, level design and gameplay, but has been criticized for the unfinished elements and difficulty.
+
+
+== Gameplay ==
+
+Gloomwood takes place from a first-person perspective, with the player navigating the titular city. The player has the option to rely on either stealth or weapons, with stealth often being the most encouraged strategy. The player character is given a ring, which indicates the level of light in the environment and the amount of noise being generated. For instance, being exposed to light or walking on metal and rock surfaces increases the likelihood of alerting enemies. Conversely, remaining in darker, shadowy areas and moving on quieter surfaces are encouraged to avoid detection. With a stealth approach, the player can take down unsuspecting enemies from behind using a sword cane and eavesdrop to obtain information. Items like cans and bottles can also be thrown to distract enemies.
+In addition to stealth, the player has the ability to fight with various types of weapons, including a sword cane, different kinds of guns (revolvers and shotguns) with ammo for them occasionally scattered around the map, and explosive barrels that can be blown up upon being shot. The amount of ammo that can be found depends on the selected difficulty. The weapons can also be opened to check how much ammo is in them. Traps and harpoon guns can also be obtained.
+The player carries a briefcase, which uses a grid-based inventory system, that has a finite amount of space. The grid-based inventory system has drawn comparisons to Resident Evil 4's inventory system. There are health items (such as syringes), coins, keys, and maps. Areas of the map contain gramophones (indicated from the music they play), which act as save points (similar to Resident Evil's typewriter system). The map also contains secret areas with extra pickups, and shortcuts that are unlocked via different keys. There are puzzles to complete within the map as well.
+
+
+== Setting ==
+The titular city of Gloomwood has been described as neo-Victorian, gothic, steampunk-like, and industrial. The city is made up of multiple areas in one interconnected map. Some of the main areas of the map include a fishery, mines, and a lighthouse. The interior for a tavern was added in a subsequent update. On July 25, 2023, a market district was added to the map, which includes a merchant's shop to buy and sell items. Within the map are enemies, including hunters and hounds, that patrol the areas. They travel in a set pattern unless alerted or provoked by the player.
+
+
+== Release ==
+
+
+=== Pre-release ===
+On June 16, 2020, the game was announced at the 2020 PC Gaming Show with a reveal trailer. In the trailer, Terri Brosius (who previously voiced Viktoria in the first two Thief games) voiced the Countess of Gloomwood. Over Twitter, Dillon Rogers confirmed her involvement. A demo was released on the same day, and the early access release was given an initial release date of August 16, 2022.
+In reference to its similarities with the Thief series, the developers bought the domain "ThiefWithGuns.com" for the game. Prior to the early access release, Dillon Rogers teased at upcoming features for the game, such as the inclusion for new weapons and destructible lighting. Early access was delayed and pushed to September 6, 2022 due to development and COVID-19 related issues. As a compromise, the "Act 2" update for New Blood's Ultrakill was released. New Blood Interactive co-founder, Dave Oshry, uploaded a video to Twitter featuring Malcolm McDowell addressing the fans. On September 5 (a day before), early access for the game released on Steam for $20 USD. New Blood Interactive co-founder, Dave Oshry, explained the release timing was done to avoid overlap with CD Projekt's showcase of extra content for Cyberpunk 2077. This resulted in Gloomwood becoming #1 on Steam's top 10 for 24 hours.
+
+
+=== Early access reception ===
+The early access release of Gloomwood has received positive reviews from critics and players alike. By September 7, 2022, the game garnered an "overwhelmingly positive" score out of a thousand ratings on Steam.
+Many critics heavily praised the level design, with Renata Price of Vice Media saying, "[It] isn’t just good—it's exceptional", and Andrew King of TheGamer stating, "[The game] is a brilliant exercise in small scale level design against the backdrop of a larger world." The atmosphere, world, and gameplay mechanics have also received praise. Aaron Boehm of Bloody Disgusting called it "a classic in the making."
+Andrei Pechalin of The Escapist called Gloomwood "a masterclass" in its use of cost–benefit scenarios, where the player must weigh the benefits between using acquired gear against enemies or eschewing from doing so in order to avoid detection and/or to conserve the gear. The game has also been criticized for its unfinished elements. Alice Bell of Rock Paper Shotgun gave an overall positive review, calling it, "a grubby delight of a game", but criticized its unfinished nature. Because of this, Bell didn't recommend it on launch. Morgan Park of PC Gamer drew similar conclusions, stating, "It's good as-is, but unless you're truly desperate for an immersive sim fix, you're better off waiting until it's all out, which is exactly what I intend to do now."
+Gloomwood was also the subject of an 18-minute documentary by Noclip.
+
+
+== References ==
+
+
+== External links ==
+Gloomwood on Steam

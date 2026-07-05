@@ -1,0 +1,54 @@
+Game: XCOM: Chimera Squad
+appid: 882100
+Source: XCOM: Chimera Squad
+URL: https://en.wikipedia.org/wiki/XCOM:_Chimera_Squad
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+XCOM: Chimera Squad is a turn-based tactical video game developed by Firaxis Games and published by 2K as part of the XCOM series. It is set as a sequel to XCOM 2: War of the Chosen, after a tenuous peace accord between warring human and alien forces has been achieved. The player controls a mixed squad of human and alien special forces soldiers that help maintain the fragile peace of City 31, an experimental city where humans and aliens are attempting cohabitation. While Chimera Squad follows similar tactical elements of the XCOM series, it introduces new gameplay concepts to accelerate the pace of gameplay.
+The game was released on Windows on April 24, 2020.
+
+
+== Gameplay ==
+
+The player takes control of a squad of eleven characters, both human and alien, that form Chimera Squad. Each character has unique abilities, replacing character classes from previous installments in the franchise. The game is divided between turn-based tactical combat and management of the squad's non-combat activities. These non-combat activities take place in the game's strategy layer, which allows players to modify or upgrade squad members' equipment and assign squad members to investigations. The strategy layer shows the level of unrest in each district, and failing to address that unrest leads to the city breaking out into violence.
+Once players initiate a combat mission, they choose which of the playable characters will participate. Each mission may have multiple separate combat segments. Missions start in a planning phase called "breach mode", which allows players to position their units at designated points, from which they will enter the combat area. Different entry points present different bonuses and challenges for players, and players can split their units across multiple entry points.
+Once combat starts, player-controlled units and computer-controlled enemies take turns based on their position through a mixed player-enemy turn order, a system which the game calls "interleaved turns". Some agents have abilities that enable them to modify the turn order, and once per mission the player can force one of their units to act next regardless of the turn order. This is a divergence from previous entries in the XCOM franchise, which had all player-controlled units act then all computer-controlled enemies act. Units have similar options as they did in previous XCOM games, including moving, attacking, taking defensive cover, or using special abilities. Some of these abilities synergize with other character's abilities.
+Characters can be downed during combat, requiring another character to stabilize them, but if any character is not revived in time and dies, the mission fails and has to be restarted. As with previous games in the franchise, players will have the option of enabling "ironman mode", which limits them to a single save slot and imposes permadeath. A playthrough of the game's campaign is expected to take around 20 hours.
+Like its predecessor, Chimera Squad has extensive support for mods, which allows players to add new characters, missions, and equipment to the game.
+
+
+== Synopsis ==
+Chimera Squad is set in City 31, a model city with humans and aliens living alongside one another. It takes place five years after the events of XCOM 2: War of the Chosen, in which the titular organization defeated ADVENT, the alien-led puppet government that ruled Earth for 20 years following an invasion. The game puts players in control of the eponymous squad, an elite peacekeeper force pitted against unknown elements that seek to destabilize City 31.
+
+
+=== Plot ===
+City 31's Mayor Nightingale is killed in a terrorist attack and Chimera Squad is tasked to find the culprit. During their investigation, Chimera Squad confronts three criminal factions, one at a time; The Progeny, a doomsday cult composed of individuals with psionic powers, Gray Phoenix, a street gang composed of aliens who see themselves unfit for Earth society, and Sacred Coil, a religious cult preaching salvation for those who opposed XCOM composed of former ADVENT soldiers and aliens. They eventually discover that these groups are backed by a fourth, mysterious faction, which they codename as "Atlas."
+Once all the three criminal groups are defeated, Atlas launch an attack on City 31's Town Hall and Chimera Squad rescues Deputy Mayor Parata while fending off the attackers. Soon after, they learn that Atlas was responsible for Mayor Nightingale's assassination and supported the other factions to destabilize City 31 and take it over. In response, Chimera Squad storms Atlas' hideout and defeat their leader, bringing down the organization. One month later, as Chimera Squad celebrates their victory, two individuals watching their headquarters from a monitor note that by the time XCOM realizes that they are in a new war with the mysterious new threat they represent, it will be too late to stop them.
+
+
+== Development ==
+Chimera Squad's lead designer is Mark Nauta, who was a designer on XCOM 2. According to XCOM 2 lead developer Jake Solomon, the development team for Chimera Squad includes many people from the XCOM 2 team, though he himself was not part of the project. Work on Chimera Squad began after completion of the XCOM 2: War of the Chosen expansion.
+Firaxis, Chimera Squad's developer, called the game "neither a sequel or expansion to XCOM 2". Nauta stated that their intention was to explore different gameplay and storytelling mechanics of the XCOM games without having to re-balance the elements within XCOM 2 or War of the Chosen. Nauta said that with Chimera Squad, they felt the changes were large enough to be challenging to experienced players, but the game's smaller scale would help draw newer players into the XCOM universe. 2K Games, the game's publisher, stated that the game's price – US$20 with a 50% discount for the first week after launch – was intended to draw new players into the series.
+The decision to pivot to a character-centered game where each unit had unique abilities was a result of the developers experiences with the XCOM 2: War of the Chosen expansion, which had several unique enemies and recruitable soldiers. Because they opted for designing characters, rather than using randomly generated ones as typical with XCOM games, they avoided the normal permadeath rules, while also ensuring that there are still consequences from having characters bleed out in battle.
+The "interleaved turns" mechanic was a result of complaints from players of past games about the normal XCOM turn order, where all units on one side move followed by movement of the opposing side. Players found they could not easily implement long-term strategies in combat due to mass enemy movement, while the new interleaved turns allowed for players to maintain this strategy but react as needed to individual enemy movement. Firaxis founder Sid Meier was an early advocate for the mechanic, and developed a prototype in an engine that he had been building for around twenty years. This helped Nauta and others see how it would work and make small refinements to improve the idea for XCOM-style gameplay.
+The Breach system is based on the past XCOM games' Ambush system, but gave players multiple encounters per mission to set up breaches which is meant to improve the pacing of the game.
+There are no plans for console versions of the title, nor for any downloadable content or expansions.
+
+
+== Reception ==
+
+Chimera Squad received "generally favorable reviews", according to review aggregator Metacritic. Fellow review aggregator OpenCritic assessed that the game received strong approval, being recommended by 71% of critics.
+One of the core changes between Chimera Squad and XCOM 2 – the replacement of randomly generated soldiers with the cast of eleven unique ones – was the subject of both praise and disappointment by critics. Ben Reeves, writing for Game Informer, praised the decision to have the characters be voiced and enjoyed the interactions that they had with one another, though Destructoid's Chris Carter found the voice acting poor and the contrast between bloody combat and lighthearted banter jarring. The characters' unique abilities and their ability to combine with other characters' powers were widely praised.
+The Guardian's Lewis Packwood found it "wonderfully cathartic" to now wield the same abilities that had been used against players in previous games in the franchise. PC Gamer's Tom Senior, however, felt that - with each combat scenario being short - players did not have enough time to use some of these power combinations, and expressed a desire for more of the characters' abilities to be unlocked at the start of the game.
+Several other reviews were less enthusiastic, mainly noting the discrepancy in tone and story quality compared to previous entries in the franchise. Strategy Gamer's Richard Scott-Jones lamented the game's lack of polish and relatively low difficulty level, while IGN's Tom Marks said the game had some interesting ideas, but did not "bring them together into a particularly graceful whole."
+Reviewers also noted the game was significantly easier than prior entries in the franchise. Kirk McKeand of VG247 noted that the player-controlled characters become vastly more powerful than the enemies by the middle of the game and posited that the unlimited ability to restart missions and the lack of permanent character death "strips combat of tension". The same sentiment was echoed by Game Informer's Reeves, who noted that losing a unit went from being a "powerful gut punch" in previous entries to a "frustration" in this one.
+At the time of the game's release, software bugs that caused the game to crash were an issue. Destructoid's Carter experienced two crashes while preparing his review, though he noted that the game's autosave system meant that less than a minute of play was lost each time. Nauta, the game's lead designer, tweeted an apology for the issues two days after launch.
+It was nominated for the category of Best Sim/Strategy game at The Game Awards 2020.
+
+
+== References ==
+
+
+== External links ==
+Official website

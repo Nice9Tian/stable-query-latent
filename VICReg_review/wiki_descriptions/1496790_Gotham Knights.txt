@@ -1,0 +1,73 @@
+Game: Gotham Knights
+appid: 1496790
+Source: Gotham Knights (video game)
+URL: https://en.wikipedia.org/wiki/Gotham_Knights_(video_game)
+Match score: 7.31
+Retrieved: 2026-07-04
+--------
+Gotham Knights is a 2022 action role-playing game developed by WB Games Montréal and published by Warner Bros. Games. Inspired by the Batman: Gotham Knights comic series and based on the DC Comics character Batman and his supporting cast, the game focuses on the characters Nightwing, Batgirl, Robin, and Red Hood as they attempt to restore justice to Gotham City during a period of decline in the immediate aftermath of Batman's death. While investigating the events that led to their mentor's demise, the heroes become embroiled in an ancient conflict between two secret organizations fighting for control of Gotham: the Court of Owls and the League of Shadows.
+Gameplay is presented from the third-person perspective with a primary focus on using each playable character's traversal and combat abilities to defeat enemies and explore the environment. Players can freely move around Gotham City, interacting with characters, undertaking missions, and gaining experience points and other resources to level up their characters and equipment. Outside of the story, players are able to complete side missions to unlock additional content and collectible items. A cooperative online multiplayer mode is also included, allowing two players to play through the single-player campaign together while progressing in their own game.
+Gotham Knights was released for PlayStation 5, Windows, and Xbox Series X/S on October 21, 2022. Versions for the PlayStation 4 and Xbox One were also planned, but were ultimately cancelled. The game received mixed reviews from critics, with criticism for its general gameplay design and story, although its co-op mode and the characterization of the lead characters received praise.
+
+
+== Gameplay ==
+Gotham Knights is an action role-playing game set in an open world Gotham City. The game features four playable characters: Nightwing, Batgirl, Robin, and Red Hood. Each character has their own unique playstyle and abilities, such as Robin being able to teleport via the Justice League's satellite. Players can level up their characters, but enemies will be automatically leveled up as well. They can also use vehicles such as the Batcycle to explore the city. During the daytime, players will occupy the Belfry, which acts as the team's base of operations and allows players to switch characters and prepare for the next mission by managing progression, and upon leaving the Belfry, the game will fast forward to the nighttime.
+While the narrative campaign can be played solo, the game also features a two-player cooperative multiplayer mode, wherein the second player can drop in and out at any time without affecting the other one. A separate four-player cooperative mode named "Heroic Assault" was introduced in November 2022. In this mode, players battle enemies across 30 levels in an arena-like environment while completing various objectives.
+
+
+== Synopsis ==
+
+
+=== Setting and characters ===
+Gotham Knights is set in Gotham City after the deaths of Bruce Wayne / Batman (Michael Antonakos) and Police Commissioner James Gordon, which has resulted in a rise of crime and police corruption. Players assume the role of four of Batman's former protégés—Dick Grayson / Nightwing (Christopher Sean), Barbara Gordon / Batgirl (America Young), Tim Drake / Robin (Sloane Morgan Siegel), and Jason Todd / Red Hood (Stephen Oyoung)—as they attempt to continue his legacy by protecting Gotham upon receiving a pre-recorded message from Batman.
+During the game, the Knights come into conflict with several supervillains, primarily the Court of Owls, a secret society dating back to colonial times that seeks to take over Gotham with their legion of assassins called Talons, and the League of Shadows, led by Talia al Ghul (Emily O'Brien) after the death of her father Ra's al Ghul (Navid Negahban). The Knights also have altercations with Mr. Freeze (Donald Chang), Harley Quinn (Kari Wahlgren), Clayface (Brian Keane), the Man-Bat Commandos, and Penguin (Elias Toufexis). Starro (Mark Meer) makes an appearance in the "Heroic Assault" mode.
+Supporting characters include Bruce's former butler Alfred Pennyworth (Gildart Jackson), who provides technical assistance and moral support to the Knights; police captain Renee Montoya (Krizia Bajos), one of the few honest cops left in Gotham; Bruce's uncle and wealthy industrialist Jacob Kane (Tommie Earl Jenkins) and his wife Commissioner Catherine Kane (Liz Burnette); former WayneTech employee-turned-CEO of Foxteca Lucius Fox (Peter Jay Fernandez); Gotham City News anchorwoman Noor Rashid (Zehra Fazal); journalist Arturo Rodriguez (Mateo d'Amato), Gotham City Mayor Brandon Tsai (David Shih); and Jada Thompkins (Keisha Castle-Hughes), daughter of Leslie Thompkins who took up her mother's profession as a doctor after she retired.
+
+
+=== Plot ===
+Batman is ambushed in the Batcave by Ra's al Ghul and is mortally wounded. With no way to win, Batman seals himself and Ra's in the Batcave and initiates the self-destruct protocol, killing them both. Batman's death triggers a "Code Black" contingency, which summons Nightwing, Batgirl, Red Hood, and Robin. As his final act, Batman bequeaths a backup base called the Belfry, located in the Union Station Clock Tower, as well as the files of all of his investigations, telling his students that Gotham will need them more than ever once the criminal underworld notices Batman has gone missing. Determined to carry on Batman's will, the four heroes band together to form the Gotham Knights.
+With the assistance of Alfred Pennyworth following the funeral attended by Bruce Wayne's uncle Jacob Kane, the Knights get the Belfry operational and pursue one of Batman's leads, a scientist named Kirk Langstrom. The Knights find Langstrom murdered, as well as a hard drive containing his secret research. When they infiltrate the GCPD morgue to recover Langstrom's DNA encryption key, they encounter Talia al Ghul who incinerates Ra's' body and warns the Knights the League of Shadows will make their move on Gotham soon. The Knights then receive a message from Harley Quinn, who has been investigating another lead for Batman while locked up in Blackgate Penitentiary. The Knights recover her intelligence and discover evidence of a centuries-long conspiracy where multiple violent criminals were released early from Blackgate after witnesses to their crimes were mysteriously murdered, with Langstrom being the latest victim. The Knights then confront the Penguin, suspecting he is involved with the conspiracy. The Penguin tells them of the existence of the Court of Owls, a secret society that supposedly rules Gotham from the shadows, and directs the Knights to investigate the ultra-elite Powers Club.
+The Knights infiltrate the Powers Club, discovering the Court of Owls is real, and manage to escape with an old key. Realizing that Batman had been secretly investigating the Court, the Knights search for all the information they can, but only manage to learn that the Court is allegedly searching for the Fountain of Youth. The Knights use the key to access a secret mine underneath Gotham, where the Court has been synthesizing a compound called Dionesium, a watered-down version of a Lazarus Pit, which they use to create undead super soldiers called Talons. Talia reveals that the League has been observing the Court and are preparing to destroy all of Gotham just to eliminate them, and she advises that the Knights defeat the Court before the League can mobilize. The Knights infiltrate a masquerade party at the Orchard Hotel hosted by the Court. While learning that Penguin's mother Constance Cobblepot is a member, the Knights discover the identity of their leader (who holds the title of Voice of the Court) and are shocked to find out it is Jacob Kane. Kane reveals that he knew Bruce was Batman and that he is also aware of the Knights' secret identities, and warns them not to interfere with his plans. The Knights are then forced to flee when League assassins attack the masquerade, slaughtering many Court members except for Kane, Constance, and those who evaded the attacks. The Knights continue to investigate the Court, slowing down their plans to awaken an army of Talons to take over Gotham.
+Having gathered enough evidence to implicate Kane, the Knights enlist the aid of Renee Montoya, a trustworthy GCPD detective, revealing their true identities to her as a sign of trust. Montoya agrees to serve an arrest warrant and apprehend Kane, as long as the Knights can remove him from his fortified headquarters at Kane Industries. The Knights breach the defenses and apprehend Kane, but he is assassinated by Talia before he can be taken into custody. Talia reveals she manipulated the Knights into dismantling the Court for her and now plans to lead the League to purge Gotham of all corruption.
+The Knights follow Talia's trail to the ruins of Arkham Asylum, where they find that the League has appropriated Langstrom's research and Lazarus Pit water to create mutant Man-Bats. After dealing with the Man-Bats, the Knights follow the League into a network of tunnels underneath the Gotham Cemetery, where they find a Lazarus Pit under the ruins of the Batcave. Talia then reveals that she had stolen Bruce's body and revived him in the Lazarus Pit, using its powers to brainwash him into becoming the League's next leader. The Knights manage to free Bruce of the brainwashing with an emotional outreach and defeat Talia, forcing her to retreat. However, members of the Court, led by a new Voice, arrive to claim the Lazarus Pit, prompting Bruce to sacrifice himself to destroy the Pit by ramming the Batwing into it.
+In the aftermath, Talia and the League abandon Gotham, leaving only a few assassins to harass the heroes. The Court goes into hiding but continue to plot in the shadows. To reassure the people of Gotham while planning to expose Kane, the Knights make a public address declaring that the city is under their protection.
+
+
+== Development ==
+Despite WB Games Montréal's previous work developing Batman: Arkham Origins and the game featuring many of the same characters from the Batman: Arkham series, and even a similar premise to the ending of Batman: Arkham Knight (in which Batman is seemingly killed), Gotham Knights features an original story wholly separate from those games. The game is also unrelated to The CW's similarly titled television series, which features certain similar plot points such as Bruce Wayne's death and the Court of Owls as antagonists.
+Gotham Knights was developed in Unreal Engine 4. PlayStation 4 and Xbox One versions of the game were in development, but were ultimately cancelled due to the developer wanting to "provide players with the best possible gameplay experience". The game on the consoles is locked at 30 frames per second.
+
+
+== Release ==
+Gotham Knights was revealed during a virtual event called DC FanDome in August 2020. The game was originally planned to be released for PlayStation 4, PlayStation 5, Windows, Xbox One, and Xbox Series X/S in 2021, but was delayed to 2022. The PlayStation 4 and Xbox One versions were later cancelled. It was released on October 21, 2022.
+
+
+=== Marketing ===
+
+A comic book limited series—written by Evan Narcisse and illustrated by ABEL—titled Batman: Gotham Knights – Gilded City, serves as a tie-in and a prequel to Gotham Knights, exploring Batman's final case before his death. It was released on October 25 the same year, with subsequent issues releasing monthly. Each issue of the limited series came with a code for an in-game item, as well as a seventh item given to those who purchase all six issues of the comic book.
+
+
+== Reception ==
+
+
+=== Critical reception ===
+
+Gotham Knights received "mixed or average" reviews from critics, according to review aggregator website Metacritic. Game Informer praised the game for its co-op gameplay, but criticized its mission objectives, combat, and side activities. GameSpot similarly criticized the game's story and the focus on its loot system, while bemoaning the game's objectives for lacking in variety, but praised the co-op gameplay and the characterization of its four leads. IGN felt that the game was a poor follow-up to the Batman: Arkham series. They praised the costume upgrade options, but felt that the combat was too underwhelming to justify the game's focus on grinding.
+
+
+=== Sales ===
+Gotham Knights was the second best-selling game in its first week of release in the United Kingdom. In Japan, the PlayStation 5 version sold 3,125 physical units during its week of release, making it the thirteenth best-selling retail game of the week in the country. It became the 17th best-selling game of 2022 in the US.
+
+
+=== Accolades ===
+Gotham Knights was nominated for Outstanding Visual Effects in a Real-Time Project at the 21st Visual Effects Society Awards, as well as Outstanding Achievement in Audio Design at the 26th Annual D.I.C.E. Awards.
+
+
+== Notes ==
+
+
+== References ==
+
+
+== External links ==
+Official website

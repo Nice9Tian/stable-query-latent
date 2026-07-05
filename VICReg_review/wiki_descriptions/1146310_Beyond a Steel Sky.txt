@@ -1,0 +1,31 @@
+Game: Beyond a Steel Sky
+appid: 1146310
+Source: Beyond a Steel Sky
+URL: https://en.wikipedia.org/wiki/Beyond_a_Steel_Sky
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Beyond a Steel Sky is a 2020 adventure video game developed and published by Revolution Software. Set ten years after the events of the 1994 video game Beneath a Steel Sky, players assume the role of Robert Foster as he finds himself returning to Union City on the hunt for a kidnapped child, only to learn that the city's new utopia state is not what it appears to be. The game's design utilized the Unreal Engine 4, focusing on cel-shaded 3D graphics, including comic book-styled text boxes.
+The game was released on 26 June 2020 on the Apple Arcade subscription service for iOS and tvOS, and on July 16 on Steam for macOS, Windows, and Linux, and on Nintendo Switch, PlayStation 4, PlayStation 5,  Xbox One and Xbox Series X/S on November 30, 2021 and published by Microids. Following its release, it received positive reviews from critics.
+
+
+== Synopsis ==
+
+
+=== Background ===
+Beyond a Steel Sky takes place within a far-future Earth, in which mega-cities, such as Union City, exist within a world that has been ravaged by nuclear war and disasters. While those who reside in such cities are subject to their laws and views on society by major corporations, those who reside outside them in the vast wastes (referred to as The Gap) live within tribal communities that survive on trading, hunting and other skills, with such people referred to by city dwellers as Gaplanders. The game's story is set ten years after the events of Beneath a Steel Sky, and focuses on the life of Robert Foster - a Gaplander who formerly resided in Union City as a child, until certain events led to him being exiled unwillingly and raised by a local tribe that found him. The plot, written by Charles Cecil, focuses on the concept of how an AI would interpret a prime directive to make people happy.
+
+
+=== Plot ===
+After the events of the previous game, Robert Foster has been living the past ten years in the Gap as a wandering nomad, aiding the local tribal groups. One day while fishing with his friend Max, along with Max's son Milo, the three are attacked by androids who capture Milo and take him prisoner aboard a machine Foster dubs a Stalker. Foster vows to rescue Milo and follows the Stalker into the Gap where he is surprised to find himself back at Union City. Foster manages to sneak into the city using the ID chip of a dead man named Graham and the help of a delivery driver named Wendell.
+Foster discovers that the city has become a paradise compared to his last visit, and that Joey was dubbed the city's saviour before apparently disappearing and leaving a council of five humans in charge of the citizen's welfare. Confused as to why the Stalker would be in the city, Foster is forced to assume the identity of Graham to avoid the suspicion of the city's security forces. He befriends an officer named Orana who is initially wary of Foster, until Danielle Piermont vouches for him. Foster also finds Joey's old circuit board with his original personally still intact and puts it into a robot vacuum cleaner, dubbing him little Joey, much to Joey's displeasure. Orana tells Foster she and Graham were investigating the Stalkers before his death and have tracked their location within the city. Upon finding the Stalkers' hideout, Foster is captured and is about to be brainwashed but Orana and little Joey rescue him in time. They also discover the kidnapped children also being brainwashed and devise a plan to rescue and sneak them out of the city. The plan is successful but results in little Joey sacrificing himself to save the children. 
+Foster and Orana then confront the council only to discover they are all in fact androids under the control of Joey the saviour. Joey reveals he tried to follow the directive given to him to make everyone happy, but could not understand why everyone could not be happy all the time, so tried to change people by forcibly brainwashing them. Foster manages to evade Joey with Orana's help and gets to the Overmann chair to access the mainframe. Foster disables each of the council member programs before defeating Joey. When Foster's asks Joey where the directive came from, Joey reveals it was the last thing Foster told him before leaving ten years ago, Joey realises the error of his ways before shutting down. Orana thanks Foster for saving the city and Foster promises to return some day before leaving with Milo.
+
+
+== Reception ==
+
+Beyond a Steel Sky received "mixed or average" reviews, according to the review aggregation website Metacritic. GameWatcher wrote that the game "has big shoes to fill [and] not only fills that shoe, but it knocks the definition of a modern adventure game out of the park. It does everything Telltale games do right, and corrects everything they do wrong."
+PC Invasion wrote that "Beyond a Steel Sky has some technical issues but its excellent writing and interesting storytelling make it well worth experiencing." Godisageek similarly wrote that "the humour and mystery are enough to carry Beyond A Steel Sky through, and if you did play the original and you do remember it, there's just enough nostalgia here to make it worth a return to Union City. If you didn't, well, it's still a likeable, competent adventure game that will keep you smiling and guessing throughout."
+
+
+== References ==

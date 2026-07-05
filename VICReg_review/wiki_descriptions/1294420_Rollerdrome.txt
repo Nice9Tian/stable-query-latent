@@ -1,0 +1,35 @@
+Game: Rollerdrome
+appid: 1294420
+Source: Rollerdrome
+URL: https://en.wikipedia.org/wiki/Rollerdrome
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Rollerdrome is an action video game developed by Roll7 and originally published by Private Division. It was released for Windows, PlayStation 4 and PlayStation 5 on August 16, 2022, and for Xbox Series X/S on November 28, 2023. The game mixes roller skating with third-person shooting.
+
+
+== Gameplay ==
+Players assume control of Kara Hassan, a participant in a deadly sport named "Rollerdrome" in which contestants must perform roller-skating tricks while fighting against enemies using firearms. As a third-person shooter, ammunition is refilled by performing various roller-skating tricks, while health is restored by acquiring health pick-ups from defeated enemies. Players skate throughout various stages while dodging incoming attacks, and using a bullet time function to aim weaponry. As players complete levels, they will gradually unlock more powerful weapons such as grenade launchers and shotguns, though they will have to face more challenging enemies as the game progresses. Each stage also has optional challenges, which prompt players to perform feats such as eliminating enemies while performing certain tricks.
+
+
+== Development ==
+Rollerdrome was developed by Roll7, the company behind the OlliOlli series. The game was initially a side project of solo game designer Paul Rabbitte. Rollerdrome was initially conceived by Rabbitte during a 48-hour game jam hosted by Game Maker's Toolkit in 2017 with the theme of 'Dual Purpose Design'. Roll7 took a liking to this prototype, and Rabbitte subsequently joined the studio to finish the project. At the time, he described the prototype as a mix between Tony Hawk's games and Doom.
+The game spent two years in production, with the team using the first year to determine the core gameplay. They ultimately decided that Rollerdrome would primarily be a shooter, though the skating mechanics would heavily complement the gunplay. Players do not fall when failing to perform a trick—an intentional gameplay design choice to help maintain momentum in both skating and combat. According to lead producer Drew Jones, the team drew on "a wealth of fantastic inspiration from the 1970s", citing Rollerball and The Running Man as examples. The game features a stylized, cel-shaded visual style, as the team believed a simple art direction would preserve gameplay readability and prevent players from feeling overwhelmed.
+Roll7 and publisher Private Division announced the game on June 2, 2022, during Sony's State of Play event. It was released for Windows, PlayStation 4 and PlayStation 5 on August 16, 2022.
+After Take Two Interactive's sale of Private Division and the dissolution of Roll7 in 2024, the publishing rights to the game were transferred to 2K.
+
+
+== Reception ==
+
+According to review aggregator Metacritic, Rollerdrome released "generally favorable reviews" upon release. OpenCritic determined that 78% of critics recommended the game.
+GameSpot enjoyed the way the game incorporated skating gameplay with traditional third-person shooter mechanics, remarking "it never feels like the tricks are an impediment to the shooting; instead, they're the secret ingredient that helps Rollerdrome stand apart from other shooters". The Guardian praised the flow state that players could achieve with combos, but criticized the high difficulty spikes as "downright brutal". Game Informer liked how tricks were needed to reload, causing the player to rely on trying to "dazzle the crowd or down an adversary". The Washington Post felt that the game could be unclear on where the player could skate, writing "I often felt the wind knocked out of my sails when I failed to get that one wall ride to the balcony some gunman was on. It started to feel like a flaw in a certain map’s design and not a challenge". GamesRadar+ disliked how the game failed to make full usage of the arenas, "each arena may look different, but they rarely challenge you to use their layouts in creative ways". Eurogamer praised the artstyle, comparing it favorably to magazines and the works of Jean Giraud. The game crossed 1 million players on March 19, 2024.
+
+
+=== Accolades ===
+
+
+== References ==
+
+
+== External links ==
+Official website

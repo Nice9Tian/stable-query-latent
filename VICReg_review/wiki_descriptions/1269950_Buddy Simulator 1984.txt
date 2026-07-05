@@ -1,0 +1,26 @@
+Game: Buddy Simulator 1984
+appid: 1269950
+Source: Buddy Simulator 1984
+URL: https://en.wikipedia.org/wiki/Buddy_Simulator_1984
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Buddy Simulator 1984 is a horror adventure/role-playing video game, developed by Chicago-based team Not a Sailor Studios. It was first released for Windows on February 18, 2021, before being released on October 27, 2022, for Nintendo Switch, and on PlayStation 4, 5, Xbox One, and Xbox Series X/S on April 6, 2023.
+The game presents itself as a piece of text-based software from the year 1984, that allows the player to interact with an AI virtual "buddy".
+
+
+== Gameplay ==
+Buddy Simulator 1984 begins as a text adventure, operated in a mock-up of an operating system using a command prompt. After the opening portion of the story, the game shifts into a 2D turn-based role-playing game.
+
+
+== Reception ==
+
+Buddy Simulator 1984 has a Metacritic score of 79/100 for Nintendo Switch, indicating "generally favorable" reviews. Cubed3, reviewing the Nintendo Switch version, rated it 7/10, criticizing the implementation of the text-based inputs on a console controller, although describing it overall as "a very immersive thriller".
+
+
+== References ==
+
+
+== External links ==
+Buddy Simulator 1984 at Not a Sailor Studios
+Buddy Simulator 1984 at Feardemic Games

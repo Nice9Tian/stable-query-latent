@@ -1,0 +1,33 @@
+Game: Kerbal Space Program 2
+appid: 954850
+Source: Kerbal Space Program 2
+URL: https://en.wikipedia.org/wiki/Kerbal_Space_Program_2
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Kerbal Space Program 2 is an abandoned space flight simulation video game formerly developed by Intercept Games and published by Private Division, before the former was shut down. It is the sequel to 2015's Kerbal Space Program and was released in early access on February 24, 2023, for Windows only.
+Take-Two Interactive began development of Kerbal Space Program 2 in 2017 and planned to release the game by 2020. However, development issues and delays related to the COVID-19 pandemic led to the game's release date being delayed multiple times. Layoffs at Intercept Games and Take-Two Interactive and the former's closure in 2024 has left the status of Kerbal Space Program 2's development unknown, with the game last receiving an update in June 2024.
+
+
+== Gameplay ==
+Kerbal Space Program 2 features the same sandbox mechanics of Kerbal Space Program. During development, Private Division planned to add alternative propulsion methods, habitation modules, orbital and planetary colonies, a multiplayer mode, and interstellar travel to the final release of the game.
+
+
+== Development ==
+Kerbal Space Program 2 was announced at Gamescom on August 19, 2019, and planned for release in early 2020. Star Theory Games, formerly Uber Entertainment, was initially responsible for developing the game. Kerbal Space Program 2's development team consulted a panel of field experts, including Dr. Uri Shumlak, the associate chair of the University of Washington's Aeronautics and Astronautics department, and Dr. Joel Green, an astrophysicist. The team stated that they aimed to make Kerbal Space Program 2 more accessible over the original game by including more tutorials in order to help players better understand the game's mechanics.
+Due to the COVID-19 pandemic, the release date of Kerbal Space Program 2 was pushed back to Q3 2021. In 2020, Take-Two Interactive entered negotiations to acquire Star Theory Games. However, these plans faltered by June and Intercept Games was created under Private Division to take over development of the game. Over a third of the employees working at Star Theory Games, including the creative director and the lead producer, continued to work on Kerbal Space Program 2 at the new studio.
+A series of announcements made in 2021 stated that the game would release on PlayStation 5 and Xbox Series X/S and that Squad, the developer of the original game, would also be involved in Kerbal Space Program 2's development. Repeated delays to Kerbal Space Program 2's release date from 2020 onwards resulted in the game's final early access release date being announced for early 2023. However, according to Engadget, the exploration game mode, colonies, interstellar travel, multiplayer, improved exploration, and resource gathering were to be added later into the game's development.
+In December 2023, the first major roadmap update for Kerbal Space Program 2 titled "For Science!" was added to the game. A replacement for the original game's "Science" game mode, called "Exploration Mode", was added as part of this update.
+According to Bloomberg, Take-Two Interactive was aiming to shut down Intercept Games in May 2024. The company denied these claims, which was later reaffirmed by the CEO of Take-Two Interactive, Strauss Zelnick. Former developers in the studio, such as design manager Quinn Duffy, claimed otherwise, indicating that the team would be laid off on June 28, 2024. In November 2024, Take-Two Interactive sold Private Division to an unspecified investor.
+
+
+== Reception ==
+Kerbal Space Program 2 has received mostly negative reviews since release. According to PC Gamer, players criticized the game for its poor technical performance, bugs and lack of content at launch; however, players praised the improved graphics, sound design and quality-of-life changes over Kerbal Space Program. The "For Science!" update was received positively for introducing bug fixes and a new progression-based game mode. The game was later review bombed on Steam after the reports of development team layoffs emerged in 2024.
+
+
+== See also ==
+Abandonware
+List of space flight simulation games
+
+
+== References ==

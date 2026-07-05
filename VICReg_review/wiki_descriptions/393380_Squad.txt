@@ -1,0 +1,51 @@
+Game: Squad
+appid: 393380
+Source: Squad (video game)
+URL: https://en.wikipedia.org/wiki/Squad_(video_game)
+Match score: 5.86
+Retrieved: 2026-07-04
+--------
+Squad is a realism-based military tactical first-person shooter video game developed and published by Canadian indie developer Offworld Industries exclusively through the Steam distribution platform. It is a spiritual successor to the Project Reality modification for Battlefield 2. The game depicts realistic modern warfare between military and paramilitary factions in large and expansive battlefields. Squad became available on Steam Early Access in December 2015, and was officially released on Steam in September 2020.
+
+
+== Gameplay ==
+True to its motto "Communicate, Coordinate, Conquer", Squad gameplay emphasises strategic teamwork, accurate communication, and combined arms warfare across protracted and expansive multiplayer battles.  
+Squad borrows many of its gameplay aspects from its predecessor, Project Reality, with its game modes placing heavy emphasis on team coordination. Matches take place on extremely large realistic battlefields up to 36 km2 (14 sq mi) in size, facilitating the use of a wide variety of vehicles such as main battle tanks, armored personnel carriers, transport trucks, and helicopters. The two teams, utilizing vehicle and infantry warfare, compete over various objectives, such as strategic locations to hold or weapon caches to destroy. To facilitate maneuver warfare, squad leaders can construct forward operating bases around the map, which provide a team-wide location for soldiers to respawn and must be kept supplied by a logistics network.  
+Both teams are kept in check by the "ticket" system, which simulates combat effectiveness. The loss of strategic locations, destruction of forward operating bases or vehicles, and infantry respawns all remove tickets from a team's ticket pool. In all game modes, a team will immediately lose if their ticket pool reaches 0.  
+Exhausting the enemy's ability to fight is only one path to victory, however, as various game modes have unique win conditions that reward strategic thinking and maneuvering. For example, in the "invasion" game mode, the attacking team will immediately win upon capturing the final point, regardless of the defending team's tickets. Squad has seven unique game modes: Advance and Secure (AAS), Random Advance and Secure (RAAS), Invasion (INV), Skirmish, Destruction, Territory Control, and Insurgency. 
+
+
+== Squad Structure ==
+Each match is played between two belligerent teams of 50 players, each divided into squads of, at most, 9 players. 
+Each squad is led by a squad leader who can communicate with allied squad leaders, claim vehicles, construct forward operating bases, and place spawn points. Any squad leader can additionally nominate themselves for the position of commander, who, once voted into position, can coordinate the team's battle plan and call in additional support such as UAV recon and artillery. 
+Squad members have access to various kits (or classes) with distinct roles in combat. These kits include riflemen who provide ammo and target infantry, Light Anti-Tank (LAT) who target vehicles using MANPATS, and medics who quickly revive and heal downed teammates. The crewman and pilot kits enable players to operate armored vehicles and helicopters respectively. All squad member kits have an entrenching tool, used to construct structures placed by squad leaders.
+
+
+== Factions ==
+There are currently fourteen playable factions in Squad, which are divided into three categories; BLUFOR, REDFOR, and INDFOR, and change based on the map and game mode being played. The real-life militaries featured include the United States Army, United States Marine Corps, British Army, Canadian Army, Australian Army, and the Armed Forces of Ukraine for the BLUFOR side, as well as the Russian Ground Forces, Russian Airborne Forces, People's Liberation Army and People's Liberation Army Navy Marine Corps for the REDFOR. Five conventional and unconventional stock factions are included as part of INDFOR: the Insurgents, modeled after various Middle Eastern insurgent groups; the Irregular Militia, modeled after paramilitary forces in Eastern Europe and the Balkans; the Ground Forces of Iran, the Turkish Land Forces; a Private Military Contractor faction based on various Western PMCs, and a Canadian Resistance Forces.
+
+
+== Development ==
+Development of Squad was announced in October 2014 when Project Reality developer Sniperdog (a.k.a. Will Stahl) made a post on the Project Reality forums. The announcement carried the news that the team of fifteen was making a spiritual successor to Project Reality on Epic Games' Unreal Engine 4.
+The game's Kickstarter campaign started in May 2015. It featured six backer levels with various rewards such as merchandise, in-game rewards, and pre-alpha testing access. Five days after the Kickstarter launch, the game had raised over $200,000.
+On April 5, 2015, Squad appeared in Steam's Greenlight service and was announced in an update called "Vote For Us". It was officially greenlit eight days later.
+Squad was released on Steam Early Access on December 15, 2015, and officially released on Steam on September 23, 2020.
+Squad is currently at version 9.0.2 as of Thur, September 11, 2025.
+
+
+== Reception ==
+As of 2026, the game has sold over 6 million copies.
+
+
+== See also ==
+Arma (series) – series with similar gameplay developed by Bohemia Interactive
+Post Scriptum – a World War II tactical shooter published by Offworld Industries; originally a mod for Squad
+Project Reality
+Bellum - a tactical shooter created by former Squad co-founder, and Squad developers.
+
+
+== References ==
+
+
+== External links ==
+Squad website

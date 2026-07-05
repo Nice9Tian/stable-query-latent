@@ -1,0 +1,41 @@
+Game: Creaks
+appid: 956030
+Source: Creaks
+URL: https://en.wikipedia.org/wiki/Creaks
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Creaks is a puzzle-platform game developed and published by Amanita Design. It was announced on 9 October 2018. The game was released on 10 July 2020 for iOS, macOS, and tvOS through Apple Arcade, followed by releases for Xbox One, PlayStation 4, Nintendo Switch, and Windows on 22 July 2020.
+
+
+== Plot ==
+Creaks begins in the bedroom of the unnamed player character, who is seen sitting at his desk when the light flickers and dies, and the wallpaper peels away to reveal a secret tunnel behind his wall. The protagonist ventures through the newly discovered tunnel and, after climbing down a ladder, finds himself in a massive mansion-like structure contained within an enormous cavern. He encounters aggressive monsters that become harmless inanimate objects when seen under the light. He also discovers that there is a giant feline monster slowly destroying the mansion by climbing on it.
+While exploring the underground world, the protagonist also meets several friendly bird-like people; an elderly bird person searching for a codex in order to defeat the giant monster, a younger bird person who tries to fight it with weapons and traps, a scientist bird person who attempts to tame it, and a small mechanic with a pipe for a head who repairs the destruction caused.
+The protagonist eventually reaches the bottom of the mansion, where he finds the scientist and the mechanic fighting the giant monster. It swallows the mechanic before retreating, and the scientist, saddened, leads the protagonist to her workshop, where it is revealed that she originally built the giant creature to power the mansion. The elder then arrives with the codex and reveals plans about a crystal, which the scientist builds a container lantern for. She then takes the protagonist further down into the sewers in search of it. He finds the crystal in a cavern and puts it into the lantern, creating a light that can defeat the giant monster.
+They begin climbing back up to the top of the mansion, regroup with the other two bird folk, and prepare to fight the monster. The protagonist jumps into its mouth, encountering the mechanic still alive - the monster is made out of household objects. The protagonist releases the crystal, destroying the monster and rescuing the mechanic in the process. With the monster defeated, the protagonist says goodbye to the bird folk and climbs back up to his bedroom, closes the entrance to the underground world behind his wallpaper, and opens his window to find that it is now day time.
+
+
+== Gameplay ==
+Creaks is a 2D puzzle-platform game. The player controls a person who crawls through a hole in his bedroom wall and discovers a subterranean world home to various monsters called Creaks, which are inspired by a phenomenon called pareidolia: when the monsters encounter light, they turn into ordinary household objects that they otherwise resemble. The player has to avoid these monsters and solve puzzles in order to advance through the game. Puzzles generally revolve around the use of buttons, switches, lights, and mechanical devices to bypass enemies, which turn into furniture when exposed to light, and reach the next area. Solving puzzles requires logical thinking and an understanding of the movements and behaviors of the various monsters.
+Besides the main storyline, the game contains various paintings inspired by 18th and 19th century aesthetics. These pictures serve as collectibles, and many also contain minigames or interactive elements that metaphorically work as windows to another world.
+
+
+== Development ==
+Radim Jurda and Jan Chlup came up with the idea for Creaks while at university, during which time they created various prototypes using Flash as their graduation work. They eventually met Jakub Dvorský, who started helping them with the project with his advice. Their project caught Dvorský's attention and Jurda with Chlup were allowed to join Amanita Design, forming a small team within the studio to develop the game. Originally, the game was to be titled "Pareidolia". It was then changed to "Blik", and then again to the final title "Creaks", because a game named "Blik" already existed. The game was officially revealed on 9 October 2018 with a short teaser trailer uploaded to Amanita Design's YouTube channel. The budget of the game surpassed 20 Million CZK (US$1 Million).
+The game was released after eight years of development for Apple Arcade on 10 July 2020 with the PC, PlayStation 4 and Xbox One versions being announced for later in the month. The Nintendo Switch version was in the works at the time of initial release. On 14 July 2020, the release date for PC and consoles was announced as 22 July 2020.
+
+
+== Reception ==
+
+The game has received very positive reviews following its release. Nathan Birch, in his review for Wccftech, gave the game 9.5 points out of 10. He stated that "Creaks renovates a well-worn genre, delivering one of the most satisfying indie puzzle-platformers in some time. Between its stunning visual and audio design, absorbing world, and perfectly-balanced puzzles, it's hard to find serious fault with any part of this game's construction." Noelle Adams of Critical Hit gave the game 8 points out of 10. She called it a "wonderfully weird puzzle platformer." She primarily praised the visuals, atmosphere and gameplay. She also praised the game's soundtrack. Kieron Verbugge of Well-Played also gave the game 8 points out of 10. He praised the game's puzzles, aesthetic and audio production. On the other hand, he complained about lack of any hint system and some puzzle concepts. Liam Croft of Push Square gave the game 9 points out of 10. He praised the game's puzzles, hand-drawn art style, story, and soundtrack. Steve Caife of Slant Magazine gave 3.5 star out of 5 stating that "the game does lack some of the sense of accomplishment and “ah-ha” moments of the best puzzle games. Reasonably clever though Creaks may be, it's primarily a vehicle for Amanita's brand of typically immaculate artistry, augmented here by the way the jangly music from composer Hidden Orchestra changes as the puzzle pieces fall into place. Though you encounter familiar configurations of levers and passageways and other obstacles, the mansion's rooms all feel distinct, subtly interconnected in a way you likely won't even notice unless you hit the load screen and see that every puzzle is coherently plotted on a zoomed-out side view of the mysterious mansion. Creaks hums along smoothly and pleasantly without calling attention to itself, to its sporadic detriment but mainly to its strength."
+
+
+=== Accolades ===
+Creaks was nominated for 4 Central & Eastern European Game Awards including award for Best Game, Visual Art, Design and Audio.
+
+
+== References ==
+
+
+== External links ==
+Official website

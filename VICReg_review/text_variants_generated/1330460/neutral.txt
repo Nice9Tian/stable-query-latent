@@ -1,0 +1,7 @@
+Becastled is a fantasy castle-building and defense game centered on surviving repeated sieges. Players are tasked with finding a suitable location for their keep and constructing a castle around it, using walls, gates, and towers to establish defenses. Archers can be positioned on these structures to attack enemies during the night.
+
+The game also emphasizes resource management and city building. During the day, players gather resources, maintain their workers and army, and build new structures to support the growing settlement. House construction allows for a larger population, which in turn increases the workforce and helps sustain a stronger economy and military. The game includes production chains and the expansion of territory, which unlocks access to additional resources.
+
+Military preparation is another key part of the gameplay. Troops can be trained in advance of nighttime attacks, and their equipment can be upgraded with new armor in the armory. Siege engines such as trebuchets and ballistas can also be built and placed on top of towers, provided there is enough ammunition available.
+
+At night, the castle comes under attack from moon monsters. The longer the game goes on, the stronger these attacks become. Enemies may also use rams or siege towers to breach walls, making defensive planning increasingly important. The central challenge of Becastled is to build, expand, and defend a thriving castle city for as long as possible.

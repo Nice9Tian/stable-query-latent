@@ -1,0 +1,52 @@
+Game: NORCO
+appid: 1221250
+Source: Norco (video game)
+URL: https://en.wikipedia.org/wiki/Norco_(video_game)
+Match score: 5.86
+Retrieved: 2026-07-04
+--------
+Norco is a 2022 point-and-click adventure game developed by Geography of Robots and published by Raw Fury. Set in a dystopian, futuristic version of Norco, Louisiana, it follows Kay, a woman who has returned home after her estranged mother's death. While searching for her missing brother, she becomes entangled in the mystery of her mother's investigations. 
+Norco developed out of a multimedia documentary project about the landscape of Louisiana after Hurricane Katrina, and was eventually expanded into a full game. The game was released for macOS and Windows in May 2022 and for PlayStation 4, PlayStation 5, Xbox One, and Xbox Series X/S in November 2022. Norco received positive reviews, with praise directed towards its art and writing. It was nominated for several awards and won the Long Form Award at A MAZE. / Berlin.
+
+
+== Gameplay and setting ==
+Norco is a point-and-click adventure game played from a first-person perspective. The game alternates between the perspective of Kay, set during the present day, and her mother Catherine, in flashbacks set a few months ago. The player can converse with non-player characters (NPCs), examine and interact with objects in the environment, and add items to their inventory. Kay possesses a mind map, which can be used to revisit connections between characters and provide context about the town. Catherine's mobile phone, which is later obtained by Kay, can be used to record voice memos and call rideshares to travel between different areas in New Orleans. Minigames include turn-based combat and navigating a boat to explore the swamp. 
+The game is set in a dystopian, futuristic version of Norco, Louisiana, and in other portions of the state around New Orleans. The town and surrounding landscape is dominated by the transnational oil conglomerate Shield, an in-game stand-in for Shell. Shield's activity has caused "pollution, surveillance, and the collapse of neighborhoods", and the town faces serious environmental and societal decline. Writing for New Yorker, Julian Lucas notes, "We are incessantly returned to the poisoning of the land, sky, and waterways—and especially of human lives."
+
+
+== Plot ==
+Kay Madére returns to Norco after five years in the wake of her estranged mother Catherine's death. She reunites with Million, a fugitive android her mother sheltered, and learns that before her death Catherine was investigating something mysterious in Lake Pontchartrain. While looking for her younger brother Blake, who has apparently vanished, private detective Brett LeBlanc tells Kay that Shield seized a box of Catherine's belongings. Infiltrating the local Shield refinery with Million and oil pirate Lucky to retrieve it, they encounter Shield regional CEO Laura Saint Claire, who admits her wavering sanity in pursuit of a "light" Catherine witnessed. Saint Claire allows Kay to take the box, committing suicide shortly after. Kay finds an access card that unlocks a secret office in the family house, which contains Catherine's "versioned" consciousness. Upon seeing this, Million suddenly attacks Kay; she is rescued by LeBlanc, who destroys the android and surmises it was sent to spy on Catherine.
+Flashback segments show that after incurring heavy medical debt from cancer treatment, Catherine was contracted by a node of Superduck – a semi-biological "viral network" that evolved from a fork of another versioned consciousness – to retrieve the Stone. The Stone is a luminous floating orb of enigmatic origins and power, which was taken to an abandoned mall by a cult led by Kenner John, whose adherents are called Garretts. Reluctantly, Catherine enlists the help of Pawpaw, a homeless Christian fanatic who believes Catherine's bloodline is descended directly from Jesus Christ, to break into the mall and steal the Stone. Catherine delivers the Stone to Superduck, which eats it and pays her. Meanwhile, Pawpaw decapitates Kenner John and assumes leadership of the Garretts. Catherine's cancer recurs and she dies weeks later.
+In the present, Kay learns that the Superduck network has been rapidly decaying since eating the Stone, emitting a distress signal from a node in Lake Pontchartrain. Kay and LeBlanc retrieve the Stone from the node and discover the Garretts have secretly been constructing a spaceship in the bayou. After a hallucinatory, surreal journey through the levels of the spaceship, Kay comes to, finding LeBlanc gravely injured after being attacked by Pawpaw. Pawpaw has installed Blake and Catherine's embalmed corpse in a shrine on the top level, waiting for Kay to arrive in the belief the Stone will guide them to an extraterrestrial Christian civilization. Pawpaw invites Kay to complete the shrine. Kay can choose to accept her fate, dying together with her family as the faulty ship explodes, or she can dive into the lake alone and swim to safety, abandoning Blake. Alternatively, if Kay earlier convinced a Garrett named Bruce controlling the launch to leave the cult and return home, the launch will be delayed, allowing her to escape with Blake and Catherine's corpse.
+
+
+== Development and release ==
+
+The game's developer goes by a pseudonym, Yuts, derived from a nickname for his grandfather. Yuts spent his childhood and some of his later life in Norco. Growing up, Yuts was "frightened yet transfixed" by the landscape in and around Norco, which has been shaped by the petroleum industry and hosts a major Shell facility which has twice experienced catastrophic explosions.
+The game grew out of a multimedia documentary work by Yuts and a friend, started in 2015. The work incorporated writing, interviews, and audio-visual components, focused on the impact of Hurricane Katrina on Louisiana and its landscape. In addition to Yuts, the development team, Geography of Robots, also includes Yuts' sister, Aaron Gray, Jesse Jacobi, and pseudonymous musicians fmAura and Gewgawly I. Part of the multimedia project was a side-scrolling game in which a robot attempts to enter a refinery in Norco; this game became Norco, and the earliest version of the current game was created in 2016. Yuts and Geography of Robots designed the game in the pixel art style. Yuts relied on internet research to teach himself how to create the illustrations he contributed to the game.
+Gewgawly I was Yuts' original collaborator. Gewgawly I and fmAura worked to design the game's soundtrack, attempting to "capture the... mood and ambience" of the River Parishes. The game incorporates field recordings by a friend of the development team, Matt Carney, taken around Baton Rouge.
+The game was originally titled Norco: Faraway Lights and planned to be the first game in an episodic trilogy, though this was ultimately retooled into the first act of a single standalone game. Raw Fury signed to publish the game in 2020. Geography of Robots announced in September 2022 that the game would become available on consoles on 20 October 2022.
+
+
+=== Influences ===
+Direct influences on Norco include the games Déjà Vu and Snatcher. Yuts was also influenced by the fictional city Midgar from the Final Fantasy series. He has said Midgar, a highly stratified city controlled by a power company, gave him a "framework for understanding how both industry and industrial disaster [sic] are distributed across society". Yuts, who previously worked for the city of New Orleans doing GIS work, has cited Mike Davis as an influence. Davis, a Marxist scholar and critical geographer, often wrote about the intersection between environmental and social issues.
+
+
+== Reception ==
+
+The game received positive reviews from critics. On review aggregator Metacritic, the game has a weighted average score of 89 out of 100, indicating "generally favorable reviews".
+The game's art received praise. Kyle LeClair wrote that the art was "impressive" especially the "variety of detail". Noelle Warner, in an article published by Destructoid, wrote that the game's "visuals [were] often gorgeous" and noted that they could look "ugly and grotesque" in a way that helped convey the game's message. Warner further wrote that the "risks" the game took with its art "worked in its favor".
+As with the game's art, critics emphasized the quality of NORCO's writing. Writing for The Gamer, Khee Hoon Chan referred to the writing as "impeccable" and "accentuat[ed]" by sudden turns in the narrative. In a review for Kotaku, John Walker echoed this sentiment, praising the writing as the portion of the game that "shines the brightest...embracing that magical realism theme, often poetic, yet stark and pessimistic".
+Critics have compared Norco to Disco Elysium, a role-playing video game, and Kentucky Route Zero, a point-and-click adventure game. Chris Tapsell, in a review written for Eurogamer criticized Norco as "overwritten, in places, in the same way Kentucky Route Zero or Disco Elysium could be". Writing for Vice, Cameron Kunzelman praised the game as having also achieved the "great accomplishment" of Kentucky Route Zero and Disco Elysium: their creation of "lived-in worlds where people tried to make do". 
+Yuts views comparisons to between Norco and Kentucky Route Zero as fair, but has said that he sees Norco "as very different mechanically, thematically". Alexis Ong, writing for PC Gamer, grouped Norco, Kentucky Route Zero, and Night in the Woods in a "small but vital group of hyperlocal narrative-driven point-and-click games" which emphasize economic concerns. Ong faulted critics and players for hastily comparing the games and failing to "[cultivate] better ways to talk about this sub-genre".
+
+
+=== Awards ===
+Norco won the inaugural Tribeca Games Award at the 2021 Tribeca Film Festival. At the A MAZE. Festival 2022, Norco won the Long Form Award. Polygon and The New Yorker included Norco on their lists of the best games of 2022.
+
+
+== References ==
+
+
+== External links ==
+Official website

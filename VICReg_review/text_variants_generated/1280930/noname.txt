@@ -1,0 +1,11 @@
+This is a 2D platformer roguelite set in a modern fantasy world, where the player takes on the role of one of four distinct heroes and attempts to escape a celestial prison guarded by twelve powerful bosses. The game emphasizes repeated runs, with each attempt gradually making the character stronger while also testing skill and reaction speed.
+
+A core part of the experience is building a personalized combat style. Each character can unlock dozens of unique spells, allowing players to refine their setup or experiment with new combinations as they progress through increasingly difficult encounters. Combat is built around fast decision-making, adaptation, and growth over time.
+
+The twelve major bosses serve as the primary opposition. Spread across four visually rich worlds, each guardian has unique attack patterns, fighting styles, and backstories that unfold gradually as the player continues deeper into the game. They are presented as formidable threats that stand between the player and freedom.
+
+The four playable heroes each offer a different approach to combat. One is a swift assassin who relies on blades and speed. Another uses raw physical power to create shockwaves with heavy attacks. A third fights with magical gemstones and focuses on breaking through defenses. The fourth summons ethereal weapons and is designed to handle both close and long-range situations. These differences give each run a distinct feel depending on the chosen character.
+
+The game also includes a narrative structure that reveals itself piece by piece. Rather than delivering the story all at once, it unfolds through replaying runs and becoming stronger, gradually exposing character motivations and hidden truths about the world and the prison they inhabit.
+
+In addition, the game supports two-player co-op, both locally and through online remote play, allowing friends to tackle the challenges together. Its world is described as large, colorful, and handcrafted, with fluid frame-by-frame animation and a strong emphasis on visual presentation and exploration.

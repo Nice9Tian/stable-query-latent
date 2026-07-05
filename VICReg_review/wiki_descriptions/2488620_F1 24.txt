@@ -1,0 +1,42 @@
+Game: F1 24
+appid: 2488620
+Source: F1 24
+URL: https://en.wikipedia.org/wiki/F1_24
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+F1 24, officially EA Sports F1 24, is a racing video game developed by Codemasters and published by EA Sports. It is the seventeenth entry in the F1 series and holds the license for the 2024 Formula One and Formula 2 championships. The game was released on 31 May, or three days earlier for users who pre-ordered the Champions' Edition. The game features a revamped career mode, which received positive reviews from critics, though criticism has been aimed at its handling model, AI and slow-speed traction.
+It is also the last F1 game to be released on the eighth generation of consoles (PlayStation 4 and Xbox One), as, starting with F1 25, games are released only on the current-generation consoles due to technological generational shifts.
+
+
+== Gameplay ==
+
+Similar to previous entries of the series, players drive cars using game controllers or steering wheels. A session mimics a real race weekend, starting on free practice and ending on the Grand Prix. Throughout the race, players experience pit stops and various incidents, which may result in safety cars and changes to the player's super license.
+F1 24 introduced a new career mode, in which players play as real drivers and gain reputation throughout the season. In addition to playing as any of the twenty Formula One drivers, players can play as Formula 2 and retired drivers. One of the new features are mid-race objectives given by team engineers and sponsors, which give players additional experience and rewards if completed. "F1 World", first introduced in F1 23 as an expansion to F1 22's "F1 Life", also received an expansion. A new "Fanzone" mode was added, allowing players to contribute fan points to teams and drivers to compete with other fanzones during any season. Furthermore, voiceovers from real F1 drivers have been added.
+Oliver Bearman, Franco Colapinto, Liam Lawson and Jack Doohan do not appear in F1 despite deputising for Carlos Sainz & Kevin Magnussen at Saudi Arabia and Baku respectively, Logan Sargeant from Italy onwards, Daniel Ricciardo from the United States onward and Esteban Ocon at Abu Dhabi.
+The story mode, Braking Point, which was available in F1 2021 and F1 23, was not continued.
+
+
+== Development and release ==
+An announcement trailer was released on 27 February, on EA Sports' F1 YouTube channel. Like its predecessor, F1 24 was developed with Codemasters' Ego Engine. According to director Lee Mather, development was focused on the career mode and handling model, with little changes to AI behavior and graphics. Ian Livingstone and Lapalux composed the game's soundtrack.
+The game was released on 31 May on Microsoft Windows, PlayStation 4, PlayStation 5, Xbox One and Xbox Series X/S, with the Champions' Edition of the game available three days earlier on 28 May. The standard edition cover art features Lewis Hamilton, Charles Leclerc and Lando Norris, the same three drivers as featured in the previous title, alongside their respective cars, the Mercedes W15, Ferrari SF-24 and McLaren MCL38, racing down a street circuit. This marks the first title since F1 2018 that both the drivers and cars are featured on the cover art. The Champions' Edition cover art features Max Verstappen celebrating his grand chelem at the 2023 Spanish Grand Prix.
+
+
+== Reception ==
+
+F1 24 received "mixed or average" reviews, according to review aggregator website Metacritic, which gave the title a score of 72/100. OpenCritic, another aggregator, gave the game a score of 60%. In Japan, four critics from Famitsu gave the game a total score of 32 out of 40, with each critic awarding the game an 8 out of 10.
+Critics praised its new Career mode and the improved F1 World, though the mid-race objectives received criticism. Justin Towell from PC Gamer described the objectives as "uncharacteristically messy". The game's new physics handling model received mixed reviews. IGN's Luke Reilly described cars as "surprisingly simple to tame and get great drive out of corners", while Steve Boxer from The Guardian said that "you now must spend as much time looking after tyres as the real drivers do".
+
+
+=== Awards ===
+
+
+== Notes ==
+
+
+== References ==
+
+
+== External links ==
+
+Official website

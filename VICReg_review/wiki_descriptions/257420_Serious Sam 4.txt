@@ -1,0 +1,40 @@
+Game: Serious Sam 4
+appid: 257420
+Source: Serious Sam 4
+URL: https://en.wikipedia.org/wiki/Serious_Sam_4
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Serious Sam 4 is a 2020 first-person shooter developed by Croatian studio Croteam and published by Devolver Digital. It is part of the Serious Sam series and a prequel to Serious Sam 3: BFE. The game was announced in April 2018, originally as Serious Sam 4: Planet Badass, and was released in September 2020 for Microsoft Windows and Stadia, followed by PlayStation 5 and Xbox Series X/S ports in December 2021. A standalone expansion, Serious Sam: Siberian Mayhem, was released in January 2022.
+
+
+== Gameplay ==
+As in other entries in the series, Serious Sam 4 involves fighting against massive hordes of enemies in large areas. Enemies either attack close range or from a distance.
+The player does not have a weapon limit, and is able to carry an infinite amount, such as shotguns, a minigun, grenade launcher and sniper. Reloading returns from Serious Sam 3: BFE, but the weapons have been adjusted, making this less of a necessity. The knife from the Encounters returns, replacing the sledgehammer.
+Many new additions are present in Serious Sam 4, mainly a skill tree, side quests and gadgets. The skill tree, which is progressed by finding objects called Sirian Artefacts of Might (S.A.Ms), can enable multiple skills such as dual wielding any weapon, riding enemies or using signs as weapons. Only 10 S.A.Ms are present within the game, making it impossible to fill out the tree in a playthrough, and as such the player can unlearn a skill, restoring the point and losing the benefits of the skill. Side quests are optional objectives that reward the player with items and weapons. Gadgets are smaller items which range from support items that can induce temporary buffs to the player to offensive ones such as crystallised black holes that suck up all enemies nearby. Another addition are weapon mods, which unlock alternate fire modes for certain weapons.
+Vehicles play a larger part in the game than other entries, as multiple levels have the player use vehicles to traverse some environments. Players can also pilot multiple mechs that appear throughout the game, which are armed with machine guns and rocket launchers. Unlike other vehicles, mechs cannot be exited once entered.
+
+
+== Plot ==
+An unknown amount of time before the events of Serious Sam 3: BFE, a massive portal opens in Tunguska, Russia which serves as a bridgehead for Mental's forces to invade Earth. As the whole planet scrambles to repel the alien invasion, a unit from the Earth Defense Force led by "Serious" Sam Stone is sent by General Brand to Rome to meet Father Mikhail, a priest who claims to have found some clues leading to the Holy Grail, which, according to him, is a powerful alien artefact hidden inside the Ark of the Covenant that may aid them against the invasion. However, the team is forced to abandon the city when it is overrun by the army of Lord Achriman, one of Mental's generals. In order to get back to the city, Sam and his companions retreat to Pompeii, where they remotely use the seismic capabilities of the HAARP complex to trigger an eruption on Mount Vesuvius that disrupts Achriman's air forces. Jones, one of Sam's companions, is killed by one of the alien monsters during the mission.
+Upon returning to Rome, Sam meets a gun-toting old lady called Nonna who provides him directions to the Vatican, which Father Mikhail believes contains the next clue to the Grail. There, Sam retrieves a book that reveals the Grail is located in an abandoned church in Carcassonne, France. In Carcassonne, Sam is confronted by Achriman, who kills Kenny, another one of Sam's friends, in front of him before fleeing. With help from the local resistance, Sam and his friends arrive at the church and defeat Lord Achriman, whom Sam kills personally to avenge Kenny. Outside the church, Father Mikhail begins to express doubt that the Grail is really what is hidden inside the Ark of the Covenant. When Mikhail uncovers the Ark, he finds that it actually contains a golden sceptre with the figure of a snake wrapped around it (likely Aaron's Rod). General Brand then appears and reveals himself as a traitor, intending to offer the artefact to Mental to earn his favour. The artefact transforms Brand into a monster who kills Mikhail and captures Sam along the rest of his team.
+After awakening inside Brand's transport plane, Sam escapes by parachute to an abandoned oil platform in the Arctic where he obtains a boat and departs to Tunguska in pursuit of Brand. On reaching land, Sam is assisted by a version of himself from the future who provides him with a snowmobile before departing. At the site of the superportal in Tunguska, Sam finds that his friends have also escaped from Brand and joins them in a large-scale battle between the EDF and the alien forces. Brand recaptures Sam and offers both him and the artefact as gifts to Ugh-Zan VI, one of Mental's most powerful warriors, but the alien rejects him. With help from his friends, Sam kills Ugh-Zan VI with the artefact and straps Brand to an ICBM that the team then launches into the portal, destroying it.
+After the battle, Sam and his remaining friends celebrate while remembering their lost companions. Sam indicates that their next mission will be in Egypt, leading to the events of Serious Sam 3: BFE. In a post-credits scene, the future Sam visits Nonna to tell her that he has a mission for her.
+
+
+== Development ==
+Development of Serious Sam 4 began in October 2012. The game was confirmed in June 2013, when the website Humble Bundle launched a "Humble Weekly Sale" containing several past games from the Serious Sam series to help fund the game. While playtesting the game's "jammer" feature—a movable device that could disable objects in a certain radius—the development team devised that this component and further prospective mechanics would better fit a different type of game, which was developed as The Talos Principle and released in 2014. In September 2015, The Talos Principle co-writer Jonas Kyratzes and his wife, Verena, were announced as the screenwriters for Serious Sam 4.
+Serious Sam 4 was announced under the name Serious Sam 4: Planet Badass in April 2018, during the opening of the Reboot Develop 2018 conference in Croatia, with a teaser trailer. One level was demonstrated behind closed doors at E3 2018 that June. At the time, the game was planned to launch in 2019. In May 2020, Serious Sam 4 was re-announced without the Planet Badass subtitle and with a release window of August 2020 for Microsoft Windows and Stadia. According to developers, the Planet Badass title, which had borne out from the game's plot of a few Earthlings fighting against invading forces, was dropped as localizing this part of the title to other languages was impossible to do.
+The game was later delayed to 24 September. Devolver Digital stated that, due to an exclusivity deal with Stadia, versions for PlayStation 4 and Xbox One had been postponed to early 2021. However, according to Croteam's communications manager Daniel Lucic, the game was not set for release on those consoles and never had been. He attributed the error to a misunderstanding. The game was released for Xbox Series X/S (including via Xbox Game Pass) and PlayStation 5 on 7 December 2021.
+
+
+== Reception ==
+
+Serious Sam 4 received "mixed or average reviews", according to review aggregator website Metacritic. The site calculated normalised ratings of 68/100 for the Microsoft Windows version, 65/100 for the PlayStation 5 port, and 57/100 on Xbox Series X/S. Fellow review aggregator OpenCritic assessed that the game received fair approval, being recommended by 38% of critics.
+
+
+== References ==
+
+
+== External links ==
+Official website

@@ -1,0 +1,32 @@
+Game: Little Witch Nobeta
+appid: 1049890
+Source: Little Witch Nobeta
+URL: https://en.wikipedia.org/wiki/Little_Witch_Nobeta
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Little Witch Nobeta (simplified Chinese: 小魔女诺贝塔; traditional Chinese: 小魔女諾貝塔) is a 2022 Soulslike 3D action shooter video game developed by Pupuya Games for Windows, PlayStation 4 and Nintendo Switch.
+
+
+== Gameplay ==
+Little Witch Nobeta is a single-player Soulslike third-person 3D action shooter game. Players control Nobeta, an amnesiac witch exploring an ancient castle on a quest to recover her memory. 
+The gameplay consists of mostly ranged combat using a variety of different spells that are acquired and upgraded throughout the game. Players fight different bosses and unlock new areas in the castle as they progress. The game has two difficulty options: "standard" and "advanced", with the former being more forgiving and adding health and mana regeneration.
+
+
+== Development ==
+Little Witch Nobeta was developed by Taiwanese indie game developers Pupuya Games and Simon Creative. The development started in June 2017, and an initial demo was released in January 2019 featuring a single stage with one boss. The game then entered early access on Steam in June 2020, with development continuing until the release of the full version on 29 September 2022. PlayStation 4 and Nintendo Switch versions were published by Idea Factory International in North America and Europe on 7 March 2023.
+The game's audio is in Japanese, with English subtitles available. Nobeta is voiced by Konomi Kohara, and all three major bosses are voiced by popular virtual YouTubers.
+
+
+== Reception ==
+
+Little Witch Nobeta received "mixed or average reviews", according to the review aggregator website Metacritic. Aggregator OpenCritic found that 57% of 15 critics recommended the game.
+Christopher Farris of Anime News Network gave the game an overall 'B' rating, calling it a "Baby's First Dark Souls". Adam Haffen, writing for Siliconera, rated the game 8/10 points, praising its "incredibly fun" boss fights, but finding most of the regular enemies to be just "annoying obstacles". Calling it "not perfect", he nevertheless stated that he would return to play more of it. 4Gamer.net praised its "cute" character design and voice acting. Ryan Thomas Bamsey of TheGamer, on the other hand, rated the game 1/5 stars, calling the combat "functional", but "boring" and overly easy. He claimed it "suffers from a total lack of taste", and that it was "filled to the brim with egregious, pervy fan service", noting that a large amount of enemies, as well as the player's companion, were anime girls.
+The game's Switch and PlayStation versions were the 13th and 17th most sold in Japan during its debut week, selling 12165 copies. In total, more than 250,000 copies have been sold since the game entered early access.
+
+
+== References ==
+
+
+== External links ==
+Official website

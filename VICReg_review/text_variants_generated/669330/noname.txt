@@ -1,0 +1,9 @@
+This tactical wargame centers on planning ahead, adapting under pressure, and building the right response to an opponent’s army. Players command a mechanized force in battles against either human or AI opponents, using unit customization, ability selection, and battlefield positioning to shape the outcome.
+
+The experience emphasizes a mix of strategy and spectacle. A wide range of distinct war machines is available, from fast light aircraft to enormous flame-based heavy units. Each has different strengths and weaknesses, and players are encouraged to learn how these units interact, then modify them before and during combat to improve their effectiveness.
+
+Battles unfold through deliberate placement and counterplay. Rather than relying on direct control, the game asks players to anticipate enemy moves, choose effective unit combinations, and adjust loadouts as the fight develops. Tactical support options can also shift the momentum of a battle, such as precision strikes that can reverse a bad situation or swarm-style deployables that create confusion inside enemy lines.
+
+The presentation focuses on large-scale destruction, with visual effects including shrapnel, incendiary ordnance, and powerful laser fire cutting across the battlefield as armies collide. As rounds progress, the scale of the combat escalates, making each engagement feel increasingly intense.
+
+Players can first test strategies against advanced AI before entering PvP combat, which provides a way to experiment with different unit combinations and abilities without the pressure of facing real opponents.

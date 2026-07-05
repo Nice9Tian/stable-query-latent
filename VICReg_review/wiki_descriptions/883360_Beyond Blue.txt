@@ -1,0 +1,25 @@
+Game: Beyond Blue
+appid: 883360
+Source: Beyond Blue (video game)
+URL: https://en.wikipedia.org/wiki/Beyond_Blue_(video_game)
+Match score: 7.00
+Retrieved: 2026-07-04
+--------
+Beyond Blue is an educational underwater diving adventure game developed and published by American studio E-Line Media, who had formerly developed Never Alone. The game was inspired by the BBC's Blue Planet II nature documentary series. It was released in 2020 on iOS, macOS, and tvOS through Apple Arcade on April 17, and on Windows, PlayStation 4 and Xbox One on June 11. The game was released for the Nintendo Switch on November 11, 2021. It received positive reviews praising its quality for an educational game while criticizing its short length, graphics, and unrealistic nature.
+
+
+== Plot ==
+The game's main character is Mirai (Anna Akana), a deep-sea researcher who leads a research team to investigate ocean life, such as whales. The game combines educational and narrative aspects.
+
+
+== Reception ==
+
+The game received "mixed or average" reviews for Windows and Xbox One and "generally favorable" reviews for PlayStation 4, according to review aggregator Metacritic. The Switch port received "mixed or average" reviews. Fellow review aggregator OpenCritic assessed that the game received fair approval, being recommended by 47% of critics.
+Rebecca Stow of Push Square rated the game 8 stars out of 10, praising the game's atmosphere, narrative, music and voice acting, while criticizing the lack of realistic marine life. Rachel Watts of PC Gamer rated the game 71/100, saying that while the game was a "brilliant educational tool" due to its ability to scan wildlife, its environments felt empty and "uninspired", and its narrative remained "one-note". Jordan Devore of Destructoid rated the game 7/10, calling it a "contemplative journey" with "beautiful imagery" and "heavenly" music, while criticizing the shallow aquatic simulation.
+
+
+== Franchise ==
+A new game titled Beyond Blue: After the Storm was announced for Meta Quest 3 on December 5, 2024.
+
+
+== References ==

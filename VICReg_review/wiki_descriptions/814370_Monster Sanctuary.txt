@@ -1,0 +1,37 @@
+Game: Monster Sanctuary
+appid: 814370
+Source: Monster Sanctuary
+URL: https://en.wikipedia.org/wiki/Monster_Sanctuary
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Monster Sanctuary is a 2020 Metroidvania role-playing video game developed by Moi Rai Games and published by Team17. The game combines side-scrolling exploration with monster-taming mechanics and turn-based combat. It was released for Windows, PlayStation 4, Xbox One, and Nintendo Switch on December 8, 2020, after a period of early access on Windows beginning in August 2019. The game was also available through Xbox Game Pass at launch.
+Monster Sanctuary originated as a solo hobby project by Denis Sinner. A Kickstarter campaign in October 2018 raised over €105,000, more than five times its goal. The game received generally favorable reviews, with an average score of 81/100 on the review aggregator OpenCritic, based on 28 critic reviews.
+
+
+== Gameplay ==
+Monster Sanctuary blends Metroidvania-style side-scrolling exploration with monster-taming and turn-based combat. Players take on the role of a Monster Keeper, exploring a pixel art world full of wild creatures. Defeating monsters yields eggs that can be hatched and added to the player's roster, and each creature has its own skill tree that develops as it gains experience.
+Battles are turn-based three-on-three encounters. Weapons, armor and skill trees let players build specialised monster teams around status effects, healing or raw damage output, with team composition and ability synergies playing a central role.
+Different monsters also help with traversal—some smash through walls, others let players fly over gaps or light up dark areas. Collecting new creatures gradually opens up parts of the map that were previously out of reach, following the Metroidvania progression loop. Players can also battle each other online in a player-versus-player mode.
+
+
+== Development ==
+Monster Sanctuary was created by Denis Sinner, a German game developer who had previously worked as a programmer on the Might and Magic and Tropico series. Sinner began the project in 2015 as a solo endeavor during his free time, handling all programming, pixel art, game design and music composition himself. He has cited Stardew Valley (2016) as an inspiration for the one-person development approach, and the positive reception of an early demo posted online encouraged him to pursue the project more seriously.
+In October 2018, Sinner launched a Kickstarter campaign under his studio name Moi Rai Games, seeking €20,000 to fund full development. The campaign ran from October 23 to November 22, 2018, and raised €105,297 from 4,466 backers. Stretch goals achieved during the campaign included an expanded monster roster of over 100 creatures, a New Game Plus mode, a Nintendo Switch port and online PvP combat.
+An early access version launched on Steam on August 28, 2019. Over the next year, Moi Rai Games added new biomes, monsters and gameplay features through a series of updates, including the Magma Chamber, Underworld and Mystical Workshop areas. Team17 served as publisher for both PC and consoles. The full release arrived on December 8, 2020, across Windows, PlayStation 4, Xbox One and Nintendo Switch, and was available through Xbox Game Pass from day one.
+Moi Rai Games continued to support the game with free content updates after launch. The final patch, "Relics of Chaos," added a new game mode alongside bug fixes and balance adjustments.
+
+
+== Reception ==
+
+On the review aggregator website Metacritic, the PC version holds a score of 81/100 and the PlayStation 4 version holds a score of 83/100, indicating "generally favorable reviews," while the Nintendo Switch version holds a score of 74/100, indicating "mixed or average reviews." According to OpenCritic, 82% of critics recommended the game.
+The combat system drew wide praise for its strategic depth and the range of options available through monster customization. Nintendo Life described the game as accomplished but noted that battles could feel slow at times. RPGFan found that the combination of detailed pixel art, Metroidvania movement design and a deep combat system made the game stand out within the monster-taming genre.
+Several reviewers saw the genre blend as a particular strength, noting that the Metroidvania structure and monster-taming worked well together. TheGamer observed that the game's emphasis on buffs, debuffs and team synergies gave combat greater strategic depth than many similar titles. GameSpew found the exploration rewarding and the turn-based encounters suitably deep.
+Some reviewers found the narrative to be a weaker element, with TheGamer comparing the story unfavorably to older JRPGs and noting that most non-player character dialogue was primarily functional. Some critics also considered the Metroidvania exploration relatively simple compared to dedicated entries in that genre.
+
+
+== References ==
+
+
+== External links ==
+Official website

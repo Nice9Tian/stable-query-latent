@@ -1,0 +1,32 @@
+Game: Stacklands
+appid: 1948280
+Source: Stacklands
+URL: https://en.wikipedia.org/wiki/Stacklands
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Stacklands is a card-based construction and management simulation video game developed and published by indie developer Sokpop Collective. It was released for Microsoft Windows and macOS on 8 April 2022. In this game, the player stacks cards to craft resources, build structures, and fight creatures.
+
+
+== Gameplay ==
+Stacklands is a card-based village building, management, and survival game that also carries roguelike elements. The player drags cards on a board and stacks them on top of each other to have them interact with each other and thus craft resources, collect food, build structures, and fight creatures. Dragging a villager card onto a berry bush card for instance will see the berries slowly harvested. The game starts with a single villager and a couple resources from which the player builds and grows a village over time.
+Cards can be sold for coins (themselves represented as cards, yet not sellable) at any time, which can then be used to buy various Card Packs. Packs contain multiple cards that can be used to expand the village amongst other things.
+The game features over 300 cards to collect, many of which were added in subsequent updates. All of the cards can be viewed in the game's Cardopedia, which lists them in various categories. One category of cards are "ideas", which act like recipes, telling the player how to create new cards. New Card Packs are unlocked by completing quests, various tasks that also act as milestones and a means to guide the player.
+At the end of every Moon (a regular time interval), the villagers need to eat. If there's not enough food for everyone, those that didn't get enough will starve and die, leaving behind a corpse. The game provides settings to have moons be shorter or longer, essentially changing the game's difficulty.
+Throughout the game, enemy creatures will appear, e.g. through portals that sometimes spawn at the end of a Moon, or hidden in Card Packs. Villagers coming into contact with enemy creatures will engage them in an automatic battle that may result in death. The player can improve their villagers' combat abilities by giving them weapons, and have multiple villagers fight together. Defeated enemies will often drop cards as loot. There is also the option to enable a 'peaceful' mode in which no enemies appear.
+The de facto ultimate goal of the game is to defeat a particularly strong enemy that spawns after bringing a special item to a specific building. The game ends in a defeat if at any point all villagers are dead.
+
+
+== Development ==
+Stacklands was developed by Dutch studio Sokpop Collective, using the Unity game engine. It was initially released for Microsoft Windows and macOS on 31 March 2022. It marks the 90th game released by Sokpop as part of their monthly subscription-like model via Patreon.
+DLC for the game, titled Cursed Worlds, was announced in April 2022;  it was released on 25 July 2023.
+A second DLC titled Stacklands 2000 was released on October 30, 2024 The expansion introduced industrial elements to the game, expanding on automation mechanics and systems for managing villager well-being.
+
+
+== Reception ==
+PC Gamer's Christopher Livingston and Jonathan Bolding wrote favorably about the game, as did Alice O'Connor of Rock Paper Shotgun. Polygon's Nicole Clark called it "one of the most immediately accessible and engaging card-based roguelites I've played this year."  In a roundup of the best cards games on Windows, PCGamesN called it "a great card game to clear in a weekend".
+Stacklands was nominated for Excellence in Design at the 25th annual Independent Games Festival, and for Best Game, Best Innovation, and Best Game Design at the Dutch Game Awards, where in addition to winning Best Innovation, its developer, Sokpop Collective, was awarded the Awesome Achievement Award.
+The game's mechanics inspired a new subgenre of indie games dubbed "stacklike" (analogous to roguelike), characterized by their card-stacking gameplay mechanics.
+
+
+== References ==

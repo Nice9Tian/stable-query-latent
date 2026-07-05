@@ -1,0 +1,52 @@
+Game: Granblue Fantasy: Versus
+appid: 1090630
+Source: Granblue Fantasy Versus
+URL: https://en.wikipedia.org/wiki/Granblue_Fantasy_Versus
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Granblue Fantasy Versus is a 2020 2.5D fighting game developed by Arc System Works for Microsoft Windows and PlayStation 4. It is based on the role-playing video game Granblue Fantasy, and was released in Japan and Asia by Cygames and Sega, respectively on February 6, 2020, and in the west by Xseed Games and Marvelous Europe in March. The PC Windows version was released worldwide on March 13 in the same year. A sequel, Granblue Fantasy Versus: Rising, was released on December 14, 2023.
+
+
+== Gameplay ==
+Granblue Fantasy Versus is mainly a fighting game where the goal is to eliminate the opponent by using a combination of attacks to empty their character's life bar enough times to win the match. Each character has special abilities called "Skybound Arts", which correspond to skills that the character is able to use in the main Granblue Fantasy game. In an attempt to make the game more accessible to new players, each Skybound Arts can be triggered with a simple button press, but the player will have to wait for a short cooldown period before they can use it again. If the player uses a more advanced combination of movement and button presses to launch the attack, the cooldown time on the skill will be shortened.
+The game also contains a story mode called RPG Mode. Unlike the main game mode, RPG Mode is more of a side-scrolling, beat 'em up, action role-playing game, similar to Guilty Gear Judgment. The story mode includes exclusive bosses and minions to battle, setting weapon grids, and a co-op mode.
+
+
+=== Playable characters ===
+Granblue Fantasy Versus has 12 initial playable characters. One character is unlockable through the main story, but is also available for purchase in Character Pass 1 for instant access, while another serves as an alternative random slot in a free update patch. Following the game's launch, several additional playable characters were developed and added to the game via Character Passes. Purchasing the Character Pass also provides various bonuses to the main Granblue Fantasy game. In total, there are 25 characters.
+
+
+== Plot ==
+In the RPG Mode, Granblue Fantasy Versus features a standalone storyline where players embark on a journey visiting the featured locales within the fighting game. The player takes control of Gran and company to fight other notable characters within the Granblue Fantasy universe visiting various islands and uncovering the mysterious force surrounding the violence and chaos that ensues through quests. Along with meeting the main cast of characters, the player is also introduced to their backstories and existing relationships with other characters.
+
+
+== Development and release ==
+Granblue Fantasy Versus was developed by Arc System Works, who have developed other titles such as Dragon Ball FighterZ and BlazBlue: Cross Tag Battle in 2018. The creative director, Tetsuya Fukuhara, along with publisher Cygames, wanted to introduce the Western audiences to the Granblue Fantasy franchise. Due to the already established fictional universe and fan base since its initial debut years ago as a role-playing video game, Fukuhara believed that throwing players into the on-going narratives would make it difficult for Western newcomers to be attracted to its universe. Therefore, Fukuhara opted to make a fighting game for the franchise due to their confidence in the popularity of the fighting game genre with Western audiences.
+The game was developed with accessibility in mind, sharing a lot of the design philosophies surrounding their recently developed titles Dragon Ball FighterZ and BlazBlue: Cross Tag Battle, with the implementation of mechanics that are to be easier to comprehend. They opted for a more deliberate and simple combat design emphasizing shorter combos and one-button special moves via shortcuts, lowering the barrier of entry for newer players. Tetsuya emphasized that while the fighting game would be considered more beginner-friendly, there would still be room for depth when it comes to competitive play, such as the activation of special moves with shortcuts having a short cooldown period and the player having to strategize around that mechanic unique to Granblue Fantasy Versus. English voice acting was also included in this game.
+Granblue Fantasy Versus was initially released on the PlayStation 4 on February 6, 2020, in Asia. Cygames published the game in Japan, while Sega released it in other territories. In the following month, Xseed Games released the game in North America on March 3, and its sister company Marvelous Europe released the game in Europe in Australia on March 27. The Windows version arrived on March 13, but does not support cross-platform play with PlayStation 4. In-game rewards, in the form of codes, for the Granblue Fantasy mobile game were not made available for the Windows port of Granblue Fantasy Versus.
+The game's director Tetsuya Fukuhara expressed a desire for a sequel to be produced. Speculation was uncertain on whether Versus will get a PlayStation 5 upgrade with minor updates, a more direct sequel to be made and released on PS5, or if sequel/upgrade plans will fall through entirely. A sequel which also adds a PlayStation 5 version, known as Granblue Fantasy Versus: Rising, was released in 2023.
+
+
+== Reception ==
+
+The game received "generally favorable reviews" according to review aggregator Metacritic. IGN gave the game an 8 out of 10, calling it another excellent addition to the Arc System Works family. Game Informer gave Granblue Fantasy Versus a 7.75 out of 10, praising for its innovate design in breaking down the barrier of entry for newcomers and putting on a different take with the narrative-driven gameplay of RPG mode, into a fighting game.
+
+
+=== Awards ===
+Granblue Fantasy Versus was nominated for the category of Best Fighting at The Game Awards 2020, as well as "Fighting Game of the Year" at the 24th Annual D.I.C.E. Awards, but lost both awards to Mortal Kombat 11 Ultimate.
+
+
+=== Sales ===
+According to Famitsu, the PlayStation 4 version of Granblue Fantasy Versus was the bestselling retail game during its launch week in Japan, with 86,248 physical copies being sold. The game also debuted at #2 in Taiwan and #4 in South Korea according to Media Create. In its first week debut in Japan, Granblue Fantasy Versus nearly topped the sales charts of its genre, in comparison to other major releases of fighting games within recent years. By November 2020, the game had sold over 450,000 copies worldwide.
+
+
+== See also ==
+List of fighting games
+
+
+== References ==
+
+
+== External links ==
+Official website

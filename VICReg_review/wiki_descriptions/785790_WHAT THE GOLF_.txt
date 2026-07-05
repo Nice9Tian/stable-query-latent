@@ -1,0 +1,40 @@
+Game: WHAT THE GOLF?
+appid: 785790
+Source: What the Golf?
+URL: https://en.wikipedia.org/wiki/What_the_Golf%3F
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+What the Golf? (stylized as WHAT THE GOLF?) is a 2019 sports video game developed and published by Danish studio Triband. It was originally released for iOS, macOS and tvOS through Apple Arcade by The Label on 19 September 2019 as a launch title for the service, with a visionOS version also released on the service in 2024 by Team17 USA, The Label's successor. Ports for Windows, Nintendo Switch, PlayStation 4 and PlayStation 5 were released by Triband, respectively in 2019, 2020 and 2024. The game received critical acclaim for its surreal humor and gameplay, winning multiple awards and becoming one of Apple Arcade's most popular titles. It was followed up by What the Car? and What the Clash?.
+
+
+== Gameplay ==
+
+The game revolves around completing levels to progress on the world map. The goal of each level is to reach the hole. Every level of the game has a twist on traditional golf. Each section of the world map has its own theme, which the level's unique mechanics follow in comedic fashion. 
+A multiplayer mode, Party Mode, was initially released exclusively for the Nintendo Switch version before being released for other non-Apple Arcade versions.
+
+
+== Development ==
+What the Golf? was crowdfunded through American crowdfunding website Fig. The developers chose golf as the sport to parody, saying that it was "mostly played by rich people, so it seemed like a safe target". The levels in the game were designed to be short, to be able to try as many jokes as possible. Much of the game's humor is based around slapstick, as it was seen as a form of comedy that would work regardless of where the player was. The game's crown system was designed to make players revisit levels and for people who wanted to complete everything. The developers considered having unlockable skins for the golf ball, but the idea ended up being scrapped. The slow-motion feature was originally intended for the game's soccer level, but it was added to the rest of the game. FoxNext funded the game's development.
+
+
+== Release ==
+What the Golf? released on 19 September 2019 for iOS, macOS and tvOS on Apple Arcade by The Label. A macOS version separate from Apple Arcade and a Windows port launched through the Epic Games Store on 1 October 2019. A Nintendo Switch port was released on 21 May 2020. A physical Nintendo Switch release was sold through Iam8bit alongside a vinyl soundtrack. A Steam version was released on 22 October 2020. A version for visionOS with mixed reality features became available through Apple Arcade with the release of the Apple Vision Pro headset on February 2, 2024. Versions for PlayStation 4 and PlayStation 5 were released on 14 March 2024.
+
+
+== Reception ==
+
+What the Golf? received "generally favorable" reviews, according to review aggregator Metacritic. Fellow review aggregator OpenCritic assessed that the game received "mighty" approval, being recommended by 98% of critics. Sergio Velasquez of TouchArcade praised the element of surprise the game presented. Jordan Devore of Destructoid appreciated the game's comedic value. Christopher Livingston, writing for PC Gamer, while also praising the comedy, enjoyed both the soundtrack and the challenge each level brought. However, James O'Connor of GameSpot did not enjoy the differences between the Windows and Apple editions.
+
+
+=== Awards ===
+
+
+== Notes ==
+
+
+== References ==
+
+
+== External links ==
+Official website

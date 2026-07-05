@@ -1,0 +1,28 @@
+Game: Parkasaurus
+appid: 591460
+Source: Parkasaurus
+URL: https://en.wikipedia.org/wiki/Parkasaurus
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Parkasaurus is a construction and management simulation video game developed by Washbear Studio. The player is tasked to create a zoo for dinosaurs by designing and building exhibits. It entered Steam Early Access on September 25, 2018, and officially released on August 13, 2020. The game was also released on the Nintendo Switch on April 28, 2022.
+
+
+== Gameplay ==
+The standard game mode revolves around hiring employees, hatching dinosaur eggs, and catching dinosaurs if they escape. The player can use various components such as fences and plants to create exhibits for dinosaurs. All zoo buildings can be chosen from a build menu and placed within the zoo to generate income with its perks. Guests who stay longer at the location will also pay more. Among the employees, scientists can search around to find fossils, create new dinosaur eggs, and janitors clean up by taking the trash out. Single player mode is supported. Each dinosaur has certain diet and habitat needs, as well as privacy requirements. There are some basic biomes can be created immediately, but for others, some terrain needs be tweaked (water supplies, making it more rugged, adding trees). The game has two skill trees that will unlock new buildings, dinosaurs, and items.
+
+
+== Reception ==
+
+Parkasaurus received "mixed or average" reviews for Windows according to review aggregator Metacritic; the Nintendo Switch version received "generally favorable" reviews.
+
+
+=== Awards ===
+Parkasaurus has won some awards during the development including Ubisoft Indie Series National Bank Special Prize Winner 2019, Pax Online 2020 Indie Showcase Selection and The MIX Pax West Showcase Selection 2019.
+
+
+== References ==
+
+
+== External links ==
+Official website

@@ -1,0 +1,55 @@
+Game: Valheim
+appid: 892970
+Source: Valheim
+URL: https://en.wikipedia.org/wiki/Valheim
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Valheim is an upcoming survival and sandbox video game by the Swedish developer Iron Gate Studio and published by Coffee Stain Publishing. It was released in early access for Linux and Microsoft Windows via Steam on 2 February 2021, and for Xbox One and Xbox Series X/S on 14 March 2023. The full version will be released on 9 September 2026 alongside versions for the PlayStation 5 and Nintendo Switch 2.
+Valheim is being developed by a five-person team, building on development work which studio co-founder Richard Svensson had undertaken as a side project in his spare time. Since its early-access release, Valheim has achieved both critical and commercial success, being praised as a "rare exception" of a refined early access game. A month after its release, it had sold over five million copies and was one of the most played games on Steam.
+
+
+== Gameplay ==
+Valheim is an open-world survival game played from a third-person perspective. As fallen Vikings, players must craft tools, build shelters and fight enemies to survive. The game uses low-resolution stylized three-dimensional graphics, with a combat system inspired by action games. Co-operative gameplay with up to ten people and optional player versus player gameplay is also supported.
+After creating their Viking character, players can create a world that is procedurally generated from a map seed. Each world is split into several biomes, such as meadows, the Black Forest, swamps, mountains, plains, oceans, the Mistlands, the Deep North, and the Ashlands. Each biome has its own unique enemies, items, and bosses that change how difficult it is to survive there. Valheim operates on an in-game day and night cycle.
+To survive, players must gather natural resources found throughout the world, either through foraging, hunting, mining, or farming. These resources are used to build shelters, make tools and equipment, and forge weapons. Players have a health bar (which depletes from enemy attacks or taking large falls), as well as a stamina bar that drains as players perform actions like running and attacking. Players can eat food to increase their maximum value of health, stamina, or Eitr (used for magic items). Different foods provide differing bonuses to each of these bars and increase the rate of regeneration at which these bars increase after depletion.
+In addition, the game utilizes a skill-level system that ranges from blocking to running. Each skill can be increased up to a level of 100 and has different effects on the game mechanics. For example, the spears skill will determine the damage the player can do with spears, while the running skill will determine how stamina is drained while sprinting.
+The main objective of the game is to kill the eight bosses located in different biomes of the game. To summon each boss, players must travel to each boss' altar and give a specific item, or set of items, as an offering. Bosses will drop a collectable trophy when killed; this trophy can be placed at a central altar to grant each player a special power-up. Power-ups can be used infinitely, but the player needs to wait for a brief period between uses. Only one power-up can be carried at a time. To change the power-up the player will need to re-visit the central altar and interact with a different trophy.
+Combat makes use of one- and two-handed weapons, shields, bows, spears, and magic weapons. Players can travel through the different biomes either by foot or on crafted boats, which range from rafts to different types of Viking longships.
+
+
+== Plot ==
+Valheim takes place in a world where slain Vikings go to prove themselves fit for the halls of Valhalla. As one such, the player begins with nothing and soon discovers that to reach the Norse afterlife, they must defeat the evils that stalk Valheim.  Led only by their instincts and occasional hints from a raven, the player must prepare to fight the sworn enemies of Odin himself.
+The term "Valheim" denotes a fictional tenth world within Yggdrasil, the world tree of Norse mythology.
+
+
+== Development ==
+Valheim is developed by Iron Gate Studio, a small Swedish game development studio formed during the game's production. The studio co-founders Richard Svensson and Henrik Tornqvist were co-workers at a local game development company named Pieces Interactive. Before Valheim, Svensson had previously begun development on a simulation game called Tolroko in his spare time; however, this game was ultimately unreleased. According to Tornqvist, Svensson realized that it was "redundant to implement simulation systems for their own sake, rather than for the player".  With his next game, Svensson wanted to make an open-world experience where its simulations improved the player's experience.
+Svensson began working on Valheim in 2017 under the working title of Fejd (Swedish for "feud"). He ended up leaving Pieces Interactive in 2018 to work on Valheim full time, and convinced Tornqvist to join him later that year. The game was released into alpha in June 2018 and officially released into early access in February 2021.
+Continued support for the game is planned, and it involves the expansion of unfinished biomes, as well as improvements to fundamental game mechanics. Iron Gate Studio updated the game on 16 September 2021 with the "Hearth & Home" update. This update brought general improvements to the game and introduced new food, weapons, and build options.
+The game's original soundtrack was released 29 October 2021, by Iron Gate AB, to stream on Spotify and for purchase on Steam.
+In December 2022, Iron Gate released the "Mistlands" update for Valheim. The update added a new biome (the Mistlands), along with a large quantity of new content. This content included enemies, neutral non-player characters, random events, items, food, building parts, the sixth main boss (the Queen), crafting stations, weapons, and a few other miscellaneous features. The update also saw the addition of a magic system (and four magic weapons to go with it). 
+During the Xbox Games Showcase 2022 Extended on June 14, it was announced that Valheim would be coming to Windows 10 via the Microsoft Store in Q3 2022, and later in Q2 2023 to Xbox One and Xbox Series X/S consoles. These versions, developed by external studios Piktiv and Fishlabs, would support cross-platform play and launch directly into Xbox Game Pass. Meanwhile, Iron Gate Studio would focus on the "core Valheim experience and its next major update milestones". In February 2023 it was announced that the game would release in early access on the Xbox consoles on 14 March 2023.
+The "Ashlands Update" was launched in May of 2024, bringing the game closer to its full release with only the "Deep North" biome remaining in development. The Ashlands update added another new biome (the titular Ashlands), new clothing and armor options, weapons, and many other new roleplay elements. The seventh of eight expected final bosses, Fader, was also added and the magic system was expanded with gem crafting.
+This was followed up by a minor expansion called "Call to Arms" that updated some of the weapon mechanics, boss powers, and introduced a trinket system.
+In June 2026, Iron Gate announced that Valheim would be receiving its 1.0 update on 9 September 2026 alongside releases for Nintendo Switch 2 and PlayStation 5.
+
+
+== Reception ==
+
+The early access version of Valheim has received positive reviews from critics. IGN Nordic gave the game a rating of 9/10, stating that the game has "excellent art and music highlighting a world that generates endless exciting stories". PC Gamer called Valheim a "rare exception" for early access games, as well as stating that the game "feels refined and satisfying as it is right now". The Washington Post appreciated that Valheim did not elaborate on certain gameplay and story elements, allowing its fans to build a sense of community with each other by sharing things like design ideas and theories about the game's lore.
+A month after its early access release, it had sold five million copies and was one of the most-played games on Steam. It sold over 10 million copies on Steam by July 2022.
+
+
+=== Awards and accolades ===
+Valheim was nominated for Best Debut Indie Game and Best Multiplayer Game at The Game Awards 2021. The game was named the Game of the Year for 2021 by PC Gamer. Later, Valheim won the Best Debut and Audience Award at the Game Developer's Choice 2022.
+
+
+== Notes ==
+
+
+== References ==
+
+
+== External links ==
+Official website

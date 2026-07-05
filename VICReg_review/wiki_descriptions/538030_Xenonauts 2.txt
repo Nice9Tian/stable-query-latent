@@ -1,0 +1,41 @@
+Game: Xenonauts 2
+appid: 538030
+Source: Xenonauts 2
+URL: https://en.wikipedia.org/wiki/Xenonauts_2
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Xenonauts 2 is a  turn-based tactics video game developed by Goldhawk Interactive and published by Hooded Horse. A sequel to Xenonauts (2014), the game was released on July 18, 2023, through early access, and fully on April 2, 2026.
+
+
+== Gameplay ==
+Xenonauts 2 is a turn-based tactics video game. Like its predecessor, the player must command soldiers against an alien invasion.
+
+
+== Synopsis ==
+Xenonauts 2 takes place in an alternate history timeline during the Cold War, rather than being a chronological sequel to Xenonauts. Though like its predecessor, Xenonauts 2 is inspired by UFO: Enemy Unknown.
+
+
+== Development ==
+In 2015, Goldhawk Interactive began prototyping and designing a potential sequel to their 2014 game Xenonauts. At the time, the possibility of Xenonauts 2 becoming their next project was still under evaluation.
+The game was developed using the Unity game engine. It makes use of 3D graphics rather than the 2D sprites of its predecessor. The development team's main concern with the transition to 3D graphics was whether they could create an art style that looked good and replicated the sprites from the original game. The use of 3D graphics enables features such as objects with physics behavior and rotating the camera angle.
+Setting the game in an alternate timeline meant that humanity would not possess the advanced alien technology from Xenonauts. The developers believed that this decision gave them the freedom to alter the story, setting and enemies to craft a more interesting game. They also set out to redesign the aliens for the sequel. Project lead, Chris England remarked that he wanted them to be both visually and mechanically more interesting than in Xenonauts.
+
+
+== Release ==
+In February 2016, Goldhawk officially announced Xenonauts 2, with the game scheduled to be released in 2017. In November 2016, Goldhawk began distributing free development builds of Xenonauts 2 with fortnightly updates. The demo was later released on distribution service GOG.com in February 2017. They wanted to get feedback from the player community before charging for an in-development version of the game through the Steam Early Access program. Goldhawk launched a Kickstarter crowdfunding campaign in July 2018, the funding goal was reached within 8.5 hours. A closed beta was released on November 28, 2018, for Kickstarter backers who pledged £25 or more. In the announcement of the closed beta, the developers stated that the game would enter Early Access in March 2019.
+In June 2023, Goldhawk announced that the game would be released in Early Access for PC via Steam, Epic Games Store and GOG on July 18, 2023.
+In March 2026 the official release of the "v1.0" version was announced for April 2, 2026.
+
+
+== Reception ==
+
+Xenonauts 2 received generally favorable reviews from critics, according to the review aggregation website Metacritic. Fellow review aggregator OpenCritic assessed that the game received "mighty" approval, being recommended by 75% of critics.
+Mikrobitti praised the design of the enemy aliens and the improved variety of mission types compared to the first game, but criticized the long loading times.
+
+
+== References ==
+
+
+== External links ==
+Official website

@@ -1,0 +1,40 @@
+Game: Mortal Shell
+appid: 1110910
+Source: Mortal Shell
+URL: https://en.wikipedia.org/wiki/Mortal_Shell
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Mortal Shell is an action role-playing video game developed by Cold Symmetry and published by Playstack. The game was released on 18 August 2020, for PlayStation 4, Xbox One and Microsoft Windows.
+A remastered version titled Mortal Shell: Enhanced Edition was released on 4 March 2021 for PlayStation 5 and Xbox Series X/S, and on 18 November 2021 for Amazon Luna. A port for Nintendo Switch with all the DLC included titled Complete Edition was released on 19 December 2022.
+Mortal Shell received positive to mixed reviews from critics and has sold one million units as of September 2023. A sequel, Mortal Shell II, is currently in development and set to release in 2026.
+
+
+== Gameplay ==
+Mortal Shell is a third-person action role-playing game focused on melee combat, where players control one of several "shell" characters with different playstyles.
+
+
+== Development ==
+
+The game was developed by American indie developer Cold Symmetry. It was published by Playstack on 18 August 2020 for Microsoft Windows, PlayStation 4, and Xbox One. "Rotting Autumn", an update adding new shell shades (skins), a new quest, a photo mode, and an alternative soundtrack by the Greek black metal band Rotting Christ, was released in October 2020.
+The developers created Mortal Shell as they thought there was a gap in the market for video games evoking deeper emotional experiences. They were influenced by the 2011 game Dark Souls, similarly creating a setting with a dark atmosphere and populated with characters giving players cryptic information, and designing gameplay based around challenging melee combat, but still intended to change things up and create their own take on the concept. While some changes to the Dark Souls formula were creatively driven, such as giving players only a limited amount of consumable health items to encourage use of the health-leeching mechanic, compared to Dark Souls' Estus flasks, other changes came from the limitations of being a smaller developer: for example, they could not develop the same amount of armours, weapons and character builds, and instead developed four "shells" with different play styles and backstories.
+An early prototype of the game, titled Dungeonhaven, was focused on procedural generation; the developers moved away from this, feeling that it was antithetical to the Dark Souls series of games, and instead opted for designing the game's areas by hand, wanting players to feel like they were going on an adventure, traversing a space that made sense as a setting.
+A remastered version of the game titled Mortal Shell: Enhanced Edition, for PlayStation 5 and Xbox Series X/S was released on 4 March 2021, and was made available for Amazon Luna on 18 November 2021.
+
+
+== Reception ==
+
+Mortal Shell was met by generally positive reviews on all platforms, according to the review aggregator Metacritic, except on PlayStation 5, which received mixed reviews. Fellow review aggregator OpenCritic assessed that the game received strong approval, being recommended by 64% of critics. The game was nominated for Best Debut Game at The Game Awards 2020.
+Reviewers frequently compared the game to playing Dark Souls for the first time. 
+GameSpot awarded the game an 8/10, saying: "Cold Symmetry's budget action-RPG is a love letter to FromSoftware's work, but Mortal Shell's take on similar ideas feels aimed at those who struggle to get through Soulsborne games."
+
+
+=== Sales ===
+By March 2021, Mortal Shell had sold over 500,000 units worldwide. By September 2023, the game had sold one million units.
+
+
+== References ==
+
+
+== External links ==
+Official website

@@ -1,0 +1,56 @@
+Game: Maneater
+appid: 629820
+Source: Maneater (video game)
+URL: https://en.wikipedia.org/wiki/Maneater_(video_game)
+Match score: 6.56
+Retrieved: 2026-07-04
+--------
+Maneater is a 2020 action role-playing game developed and published by Tripwire Interactive. The player assumes control of a female bull shark who must evolve and survive in an open world so she can take revenge on a fisherman who disfigured her as a pup and killed her mother.
+Maneater was released for Windows, PlayStation 4, and Xbox One in May 2020, for Xbox Series X/S and PlayStation 5 in November, for Nintendo Switch in May 2021, and for iOS and Android in December 2025. It was a commercial success, surpassing 14 million units in sales. Downloadable content, Truth Quest, was released in August 2021. Set after the main story, it follows the shark as she travels to a mysterious experiment site and confronts a radioactive monster causing chaos around Port Clovis.
+
+
+== Gameplay ==
+
+The game is an action role-playing game played from a third-person perspective. The player assumes control of a baby bull shark who must take revenge on a shark hunter named Scaly Pete, who killed its mother and disfigured it. The shark has several basic attacks, including charging into enemies, siloing out of the water and whipping enemies with its tail to stun them. It can also use its surroundings for combat advantages, such as using a swordfish as a spear. The shark needs to hunt and consume other aquatic wildlife such as fish and turtles in order to obtain nutrients, namely proteins, fats, minerals and rare mutagenics. Players can attack humans by wreaking havoc along the coast, destroying yachts and ships, and knocking people off jet skis. As the player gains enough nutrients, the shark must enter underwater grottos to unlock abilities and increase in size, which allows it to take on larger and deadlier creatures. Over time, the shark will slowly evolve into an adult "mega" shark while players can acquire advanced upgrades and customization options such as external bone plates, shadow armor, and bioelectric spikes to further enhance the shark's combat abilities.
+Playing as the shark, players can freely explore the open world of Port Clovis, which consists of eight regions: Caviar Keys, Crawfish Bay, Dead Horse Lake, Fawtick Bayou, Golden Shores, Prosperity Sands, Sapphire Bay, and the Gulf. They can also discover hidden landmarks and complete side objectives. While each region will have other predators that will attack the player, such as muskellunge, barracuda, alligators, sperm whales, orcas, and other sharks, they have their own apex predator, which are larger and differ in appearance than normal predators. The apex predators are a great barracuda, a shortfin mako, an American alligator, a great hammerhead, a great white, an orca, and an albino sperm whale. Defeating these predators will earn the player special skills. As the shark creates more havoc, the world reacts by dispatching human bounty hunters to hunt it down. If the shark manages to kill the ten lead hunters, which are named characters, it will receive additional rewards. The game is narrated by Trip Westhaven (voiced by Chris Parnell), the host of an in-game reality TV show titled Maneaters vs. Sharkhunters, who guides the player throughout the game.
+
+
+== Plot ==
+A film crew for a reality television show follows experienced shark hunter Pierre "Scaly Pete" LeBlanc (Carlo Mestroni) and his son Kyle (Raphael Grosz-Harvey) as they hunt for an adult bull shark with a harpoon in her side owned by Scaly Pete's father. They manage to capture the shark after she goes on a killing spree at a beach. Upon discovering that the bull shark is pregnant, the film crew is shocked when Scaly Pete cuts out the infant shark and uses his knife to disfigure it so that he can identify it later as it grows, but he loses his right hand to the infant shark during its release.
+The infant shark grows larger over time by eating fish, aquatic mammals and reptiles, humans, and apex predators. Other shark hunters eventually go after the shark, but are also killed and eaten. Back on Scaly Pete's boat, the Cajun Queen, tensions grow between him and Kyle over claims that Scaly Pete's father was killed by a megalodon, even though it is believed to have been extinct for over two million years. They relocate the shark and attempt to burn it alive. However, the shark eats Scaly Pete's left leg and escapes while Kyle is killed in an explosion that causes the Cajun Queen to sink and leaves Scaly Pete disfigured.
+As the shark continues to grow, the film crew grows concerned for Scaly Pete's sanity after losing Kyle as he prepares to use extreme methods to kill the shark. He repairs and arms his father's old patrol boat with military-grade firepower, attacks the film crew when they attempt to talk him out of it, and sets out to kill the shark, which has by now evolved into a megashark, measuring 10 m (33 ft) in length. The shark gets the upper hand on Scaly Pete, who in a last-ditch effort, plans to use explosives to kill himself and the shark. While Scaly Pete dies in the explosion, the shark survives and retreats to an underwater cave to recover.
+
+
+=== Truth Quest ===
+Having survived its battle with Scaly Pete, the shark senses the presence of another, more sinister apex predator that threatens its current status. Discovering radioactive chemicals left behind by the unknown predator around Port Clovis, the shark ventures to Plover Island, also known as "Site P", which is said to be an off-the-books experimental station. Upon arriving, the shark attacks the island's technology and hunts new wildlife, hunters, and mutated predators that have developed abilities such as bio-electricity, shadow powers, bone armor, and the ability to emit radiation.
+Amidst its attacks and its own transformation into an irradiated mutant however, the shark unknowingly releases the apex predator, a mosasaur-like leviathan called M.O.L.O.C.H., which escapes to Port Clovis and attacks several settlements. The shark eventually faces and kills M.O.L.O.C.H. in battle before returning to Plover Island, only for the entire facility to be destroyed in an explosion.
+
+
+== Development ==
+Maneater was developed by Blindside Interactive alongside publisher Tripwire Interactive. The game's production was led by Alex Quick, who worked on the competitive multiplayer game Depth in which players assume control of either a shark or a diver as they combat each other. Initially envisioned as an expansion for Depth, the title became a standalone product after members of the development team splintered off and worked on a single-player experience that builds on the gameplay systems established by Depth. The team was inspired by Jaws Unleashed and other action role-playing games such as Deus Ex and Dishonored while working on the title. According to John Gibson, the president of Tripwire, the team had always wanted to make an open world title similar to games like Far Cry and The Legend of Zelda: Breath of the Wild, though the team wanted their take on the genre to be "completely new and unique". The combat system was inspired by Punch Out and Dark Souls, as the player needs to think tactically and discern an opponent's attack pattern.
+Maneater was announced in June 2018 by Tripwire's newly formed publishing division which provided funding, marketing and additional development for the game. The game's physical retail version is published by Deep Silver. The first trailer for the game was shown at E3 2018 during the PC Gaming Show. Maneater was released worldwide for Microsoft Windows via the Epic Games Store, PlayStation 4 and Xbox One on May 22, 2020. The Nintendo Switch version was originally planned for release in 2020, but was later delayed to May 25, 2021.
+
+
+=== Downloadable content ===
+
+Two pieces downloadable content (DLC) have been released. On August 20, 2020, the first DLC known as Tiger Shark Skin, which gives the shark a red colored body with blue stripes. This evolution allows the player to collect more nutrients from wildlife, hunters, and nutrient caches.
+The second DLC, Truth Quest, which features the return of narrator Trip Westhaven as well as new regions, side challenges, hunter vehicles and bounty hunters, wildlife, and evolution sets as well as another story arc and the shark increasing in size, was in the works. The release date for Truth Quest was August 31, 2021.
+
+
+== Reception ==
+
+Maneater received "mixed or average" reviews according to the review aggregator Metacritic. Fellow review aggregator OpenCritic assessed that the game received fair approval, being recommended by 53% of critics. PC Gamer criticized the repetitive gameplay. IGN also criticized the repetition, especially with the game's approximate length of 15 hours, but praised the premise. Screen Rant complimented the B movie stylization of the game.
+
+
+=== Sales ===
+Just in the first month of sales on Steam, Maneater had sold about 50,000 copies. By April 2024, Maneater had sold 14 million copies across all platforms, according to Tripwire Interactive.
+
+
+== Notes ==
+
+
+== References ==
+
+
+== External links ==
+Official website

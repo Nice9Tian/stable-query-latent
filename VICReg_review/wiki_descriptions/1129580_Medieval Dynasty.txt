@@ -1,0 +1,44 @@
+Game: Medieval Dynasty
+appid: 1129580
+Source: Medieval Dynasty
+URL: https://en.wikipedia.org/wiki/Medieval_Dynasty
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Medieval Dynasty is a survival-strategy role-playing game developed by Render Cube and published by Toplitz Productions on September 23, 2021. The game is part of the publisher's Dynasty series, where players, from the perspective of a character, establish a new dynasty within a thematic setting— in this case, from the viewpoint of common people in the Middle Ages.
+The game was first released in Early Access on Steam in September 2020, with the full version released on September 23 the following year. In the subsequent year, the game was released for PlayStation and Xbox. A virtual reality version called Medieval Dynasty New Settlement, was released on March 28 2024. A major update, which added a new map and a co-op mode for up to four players, was made available for PC players on December 7, 2023. Console players received the same update on June 27, 2024.
+
+
+== Plot ==
+
+
+=== The Valley ===
+In a fictional medieval region surrounded by high mountain ranges, the player takes on the role of young Racimir, who starts near the village of Gostovia after fleeing from war in search of his uncle. However, upon arrival, the local castellan, Uniegost, informs him that his uncle has already died. Because his uncle was held in high regard in the area, Uniegost grants Racimir permission to settle outside the village and establish his own settlement. The player's task is to build this village, recruit residents, and ensure the supply of resources and production. At the same time, Racimir slowly learns about his uncle's past and the mystery behind his demise with Uniegost's aid.
+
+
+=== The Oxbow ===
+As a prisoner and outlaw in a convoy, the player character, initially not named, narrowly survives a bandit attack on the camp at night. Apparently unconscious for some time, they awaken in the fictional village of Piastovia, in the house of the local healer. The doctor helps the player recover and asks about their background, though it quickly becomes clear that he already knows who they are. Since the area is in desperate need of housing, jobs, and skilled builders, the village lord gives the player a chance to rehabilitate by complying with his orders: founding a new village and paying taxes.
+
+
+== Gameplay ==
+The player character is controlled from a first-person perspective, although since December 2021, switching to a third-person view is also possible. Basic resources must be gathered or obtained using tools that can be crafted, found, or purchased. For food, animals must be hunted, and/or plants gathered. As the player progresses, better materials become available, leading to more efficient and durable tools and weapons. Recruited villagers need basic provisions like housing, food, and firewood. Through a detailed menu, the player can assigns jobs to villagers, decides which materials they should produce, and manage fields. Each villager has their own personality and varying skills, so careful planning is required to manage resources efficiently.
+The buildings in the game are divided into several types: houses, resource buildings, survival buildings, storage buildings, farming buildings, and production buildings. These types have individual buildings within them. These specific buildings are further divided into levels of quality. The better quality, the larger and more durable. Wattle, wood, and stone are the levels respectively.
+The game simulates seasons, each of which affects the environment and the player, such as temperature changes and the availability of seasonal plants. 
+Several quest lines and regular side quests introduce the player to basic game mechanics. Successfully completing quests increases "Dynasty Reputation," allowing more buildings to be constructed and more villagers to be recruited. However, many game elements must be discovered independently, following a "learning by doing" principle, where players gain experience in various tasks and can unlock skill bonuses through ability points. These skills are mostly small helps to ease some of the monotonous tasks in the game. For example, the tracker ability allows for animals to be highlighted in the inspector mode. These abilities can often be upgraded. Usually there are three tiers on each ability.
+A key aspect of the Dynasty series is ensuring not just the survival of the player's lifetime but also the continuation of the family line through an heir. Players can interact with female villagers (or male villagers if playing as a female character on the Oxbow map) and gain, or lose affection points, depending on the character's personality, through flirting options and gifts. Once enough affection is earned, marriage and spending a night together become options. If a child is conceived, and the heir grows old enough, the player has the option to continue the game from the heir's perspective.
+After the main chapter quests are completed, the player may do quests for the king. The quests are usually very large orders of a specific resource. After completing enough quests, a player may name their settlement. After even more quests are completed, a player may create a dynasty crest.
+
+
+== Development ==
+The developers began by looking at other games with similar content or techniques for inspiration in creating Medieval Dynasty. Producer Marcin Warszawski specifically cites Kingdom Come: Deliverance as an influence for the game's graphical design and historical setting, and games like Stronghold and The Forest for their city-building and survival elements.
+Before the game entered Early Access, a comprehensive tutorial guided by quests was already in place to gradually unlock and explain game mechanics. However, after the release of a gameplay video, player feedback and internal discussions about available resources led to a complete overhaul of the game's start. The goal was to avoid limiting the open-world aspect and focus more on crafting the game world. Early Access was an important phase in the development process, with a strong emphasis on community feedback and its implementation.
+On April 21, 2022, the developers announced the addition of a co-op mode, which was released on December 7, 2023 (for PC) and June 27, 2024 (for consoles). This fulfilled one of the most requested features. The co-op mode is only available on a newly added map, which also introduced the option to customize the appearance of the player character, including the choice to play as a female character.
+
+
+== Reception ==
+Metacritic calculated an aggregate score of 73 out of 100 for the PC version of Medieval Dynasty.
+The game was praised for its appealing graphical design, successful immersion, the freedom it offers in gameplay and building, and the overall content depth. However, reviewers frequently criticized the storyline for being somewhat shallow, the quests for lacking depth and variety, and the fact that many of the game's mechanics and options are poorly explained, making it especially difficult for newcomers to the genre to get started.
+Testers of the console versions specifically criticized the UI design and menu navigation. Gareth Brierley mentioned that, although it is a game for the Xbox Series X, interactions with NPCs gave off "old-school Skyrim vibes."
+
+
+== References ==

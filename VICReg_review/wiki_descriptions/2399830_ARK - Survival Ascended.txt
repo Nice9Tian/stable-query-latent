@@ -1,0 +1,27 @@
+Game: ARK: Survival Ascended
+appid: 2399830
+Source: Ark: Survival Ascended
+URL: https://en.wikipedia.org/wiki/Ark:_Survival_Ascended
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Ark: Survival Ascended is an action-adventure survival video game developed by Studio Wildcard. It is a remaster of the 2017 game Ark: Survival Evolved. The game was released in early access for Windows on October 25, 2023, Xbox Series X/S on November 21, 2023, and PlayStation 5 on November 30, 2023.
+
+
+== Gameplay ==
+
+
+== Development and release ==
+ARK: Survival Ascended was announced in March 2023. Originally planned to release in August 2023, it was delayed to October 2023. Survival Evolved's official servers were set to be shut down at the same time, with the shutdown date being delayed until September 30, 2023 when Survival Ascended's release window was pushed back. Despite previously being stated by the studio co-founder, the remaster would not be a free upgrade. Survival Ascended was released in early access for Windows on October 25, 2023, Xbox Series X/S on November 21, 2023, and PlayStation 5 on November 30, 2023. The remaster includes a graphical overhaul developed in Unreal Engine 5. It features all previously released downloadable content (DLC) as well as original content, including new DLC, seasonal events, and quality-of-life updates.
+
+
+== Reception ==
+The early access release of Ark: Survival Ascended was met with criticism from players for its technical issues, including frame rate drops and game crashes. It received mixed user reviews on Steam. As a result of "critical issues" in the multiplayer, Studio Wildcard announced the console versions would be delayed until November 2023.
+
+
+=== Sales ===
+Ark: Survival Ascended sold over 600,000 copies in the first two weeks and reached 1.6 million within 5 months.
+As of May 2, 2026, it had sold 4 million copies.
+
+
+== References ==

@@ -1,0 +1,15 @@
+War Dust VR: 32v32 Battlefields is an action-oriented multiplayer VR shooter built around large-scale battlefield combat. The game emphasizes fast-paced gameplay, balanced mechanics, and an immersive VR battlefield experience across expansive maps.
+
+Its core mode features massive 32v32 battles on a range of official maps, alongside player-created maps. Matches take place across diverse landscapes with vehicles and dynamic day and night environments. The game is described as community-driven, with ongoing development and expansion shaped by its active player base.
+
+Gameplay centers on conquest-style objectives, where capturing control points and defeating enemies are key. Players progress through an XP system that unlocks weapons, accessories, skins, and ammunition types. There are four classes to choose from: Assault, Engineer, Support, and Scout. The game includes 5 types of vehicles, 15 types of guns, 3 support spawnables, 2 types of grenades, and more than 80 weapon skins.
+
+War Dust VR also includes modding support. Players can create Conquest and Team Deathmatch maps, host public or password-protected servers, and work with a modding template in the game files to modify maps, weapons, vehicles, and player avatars. The game is compatible with the Unity engine.
+
+The player community is international, with four official servers: US East as the default server, plus EU, Asia, and Aus. The game’s FAQ states that there is a very active core player base, though real-player numbers are smaller during off-peak hours. It also notes that the game has been continually updated since a major player-developed update on May 20, 2022, with regular work on new features, maps, bug fixes, optimization, and polishing.
+
+War Dust VR is described as arcade-style rather than a milsim, with an emphasis on balanced, fast gameplay over realism. Movement options include paragliding, flying, driving vehicles, and squad-based spawning, which are intended to help players move quickly across large battlefields. The game also supports three locomotion options: thumbstick, pro-loco, and fitrun, with smooth or snap turning, and it can be played standing or seated. Locomotion can be controller-directed or headset-directed.
+
+The FAQ explains that official matches on Rotation contain 64 soldiers total, made up of real players and bots. The server network caps at 46 real players per server room, with 18 bots filling remaining slots. Modded servers can use different bot counts. Gun handling uses physical grab-based interactions for loading and removing magazines rather than button-only actions, and weapons are held in a customizable virtual belt area that resets after death.
+
+The game supports Quest 2 through virtual desktop, according to the store text, and also has a Playtest version for testing newer or experimental builds. While the page acknowledges that some bugs and jank may remain, it states that many issues have been addressed over time and that feedback from the community is used to continue improving the game.

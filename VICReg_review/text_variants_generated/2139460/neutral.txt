@@ -1,0 +1,9 @@
+Once Human is an open-world survival game set in a post-apocalyptic world where an alien substance called Stardust has infected humans, animals, plants, soil, and water. Players take on the role of a Meta-Human, able to survive the contamination and use Stardust’s power while exploring, fighting, building, and surviving either alone or with others.
+
+The game emphasizes survival in a hostile wilderness. Players wake up in an unknown location and must contend with dangers such as monsters, food shortages, polluted food, and dirty water. Consuming contaminated resources lowers Sanity, and reduced Sanity in turn lowers maximum HP, making resource management an important part of survival.
+
+Combat features battles against enemies that were once human, as well as bosses from another dimension. Defeating them can provide powerful items and help reduce Stardust pollution. The game also includes weapon customization, with around 100 gun blueprints across seven categories to collect and craft. Weapons can be further modified with accessories, parts, and gun perks.
+
+Building is another core system. Using the Territory Core, players can construct a home or base in a style of their choosing, from compact practical layouts to larger houses with multiple rooms and features. Territories can also be relocated at any time.
+
+The game includes exploration and narrative discovery as players uncover the truth behind Stardust and its origins. Different factions exist in the world, some hostile and some helpful, and players can interact with human settlements, learn their stories, or choose to defeat bosses without seeking recognition. Version 1.3 adds a new PvE scenario, The Way of Winter, which introduces the Temperature survival mechanic, a new map, Thermal Tower cooperation and upgrades, new bosses, new deviations, and additional content.

@@ -1,0 +1,95 @@
+Game: Assassin's Creed Mirage
+appid: 3035570
+Source: Assassin's Creed Mirage
+URL: https://en.wikipedia.org/wiki/Assassin%27s_Creed_Mirage
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Assassin's Creed Mirage is a 2023 action-adventure game developed by Ubisoft Bordeaux and published by Ubisoft. The game is the thirteenth main installment in the Assassin's Creed series and the successor to Assassin's Creed Valhalla (2020). Set in 9th-century Baghdad during the Islamic Golden Age—in particular during the Anarchy at Samarra—the story follows Basim Ibn Ishaq, a street thief who joins the Hidden Ones to fight for peace and liberty, against the Order of the Ancients, who desire peace through control. The main narrative focuses on Basim's internal struggle between his duties as a Hidden One and his desire to uncover his mysterious past.
+Originally envisioned as an expansion for Valhalla, the game was reworked into a standalone title to expand its scope. The design philosophy behind Mirage—the first game to be developed primarily by Ubisoft Bordeaux, previously just a support studio—was to return to the series' roots by focusing on stealth, parkour, and assassinations over the role-playing elements featured heavily in recent installments. As a result, the game is much smaller in scale than its predecessors and combines elements introduced in them with those found in earlier installments of the franchise.
+Mirage was released for PlayStation 4, PlayStation 5, Windows, Xbox One, and Xbox Series X/S on 5 October 2023, and for iOS on iPhone 15 Pro and iPadOS on iPad models on 6 June 2024. Upon release, the game received generally positive reviews from critics, who praised its world design, focus on stealth and return to form of the franchise, though some criticized the characters and the story's reliance on previous installments in the series. Mirage's successor, Assassin's Creed Shadows, set in Japan during the Sengoku period and returning to the role-playing style of gameplay of previous installments, was released in March 2025.
+
+
+== Gameplay ==
+
+Assassin's Creed Mirage is an action-adventure stealth game set in an open-world. It was intended to be reminiscent of older Assassin's Creed titles, being more linear and story-focused and reducing the number of role-playing elements present in recent installments of the series. Parkour, close-quarter combat, and stealth are core elements of the gameplay. For assassination missions, Mirage adopts the "Black Box" design previously seen in Assassin's Creed Unity and Assassin's Creed Syndicate, where players have to explore the environment to find different ways to reach and eliminate their targets.
+The game is set principally in the city of Baghdad, which is divided into four districts—the Round City, Karkh, Abassiyah with its House of Wisdom, and Harbiyah—but also features several smaller towns like Anbar and Jarjaraya, located on the outskirts of the city. Alamut, the fortress headquarters of the Hidden Ones, is also featured in several missions, but is inaccessible outside of the storyline. Baghdad is much smaller than the worlds of recent Assassin's Creed titles, being closer in size to Unity's and Revelations' depictions of Paris and Constantinople, respectively.
+Mirage features a single playable character, Basim Ibn Ishaq, removing gender choices from previous games like Valhalla.
+Similarly to previous Assassin protagonists, Basim has a large arsenal of weapons and tools at his disposal, including the signature Assassin Hidden Blade, smoke bombs, throwing knives, and poison darts. Both weapons and tools can be upgraded through a skill tree which allows different effects to be applied to them. Basim also has access to both Eagle Vision and an avian companion named Enkidu (after the character from Mesopotamian mythology), an eastern imperial eagle that can be used to scout nearby areas. Unlike previous Assassin's Creed games which featured avian companions, enemy marksmen can detect and shoot at Enkidu, requiring the player to eliminate the marksmen before Enkidu can be used again.
+Mirage introduces a new ability called "Assassin Focus", which allows the player to eliminate multiple enemies simultaneously and is recharged by performing stealth assassinations. When the ability is activated, time stops and the player can mark up to five enemies who will then be automatically killed by Basim in quick succession. Another new feature are various poles located around Baghdad, which can be used to cross wide gaps. Furthermore, moving and running animations have been refined to improve mobility and fluidity, with the development team taking inspiration from "samurai, ninja, and even Jedi to a certain point".
+
+
+== Synopsis ==
+
+
+=== Setting ===
+Assassin's Creed Mirage is set in Baghdad during the Islamic Golden Age, primarily during the Anarchy at Samarra, which was a period of extreme internal instability during the reign of the Abbasid Caliphate. Taking place a decade before the events of Assassin's Creed Valhalla, the game explores the backstory of Basim Ibn Ishaq (voiced by Lee Majdoub), depicting his transition from street thief to fully-fledged Hidden One, under the tutelage of his mentor, Roshan bint-La'Ahad (Shohreh Aghdashloo). Like previous Assassin's Creed games, Mirage also features a number of characters based on historical figures, including Ali ibn Muhammad, leader of the Zanj Rebellion against slavery in the Abbasid Caliphate; the Banū Mūsā brothers, a trio of scholars and inventors; Muhammad ibn Abdallah ibn Tahir, the last Tahirid governor of Khurasan and Baghdad; and the Caliph al-Mu'tazz (Abu 'Abdallah Muhammad ibn Ja'far) and his mother Qabiha, in addition to al-Jahiz, al-Farghani, Hunayn ibn Ishaq, Arib al-Ma'muniyya, and Wasif al-Turki.
+
+
+=== Plot ===
+Following the events of Assassin's Creed Valhalla: The Last Chapter, the modern-day Assassins use a blood sample provided by Basim Ibn Ishaq to relive his memories during the age of the Abbasid Caliphate.
+In 861 CE, Basim is a young street thief living in Anbar with his childhood friend and companion, Nehal. For his entire life, Basim has been haunted by visions of a monstrous jinni, which Nehal has been helping him cope with. While just a simple thief, Basim has greater aspirations and seeks to join the Hidden Ones, but is flatly rejected by the senior Hidden One stationed in Anbar, Roshan. In an effort to prove himself, Basim sneaks into the Caliph's palace to steal a chest sought by both the Hidden Ones and the Order of the Ancients. Basim retrieves a disk-shaped artifact from the chest, which displays a holographic message, before he is confronted by the Caliph, al-Mutawakkil. Nehal kills the Caliph to save Basim, and they both flee the palace.
+In retaliation for the Caliph's murder, the guards begin slaughtering all thieves in Anbar, including many of Basim's friends, and he angrily blames Nehal before parting ways. Now on the run, Basim manages to escape the city with Roshan's help, and she takes him to the Hidden Ones' mountain fortress at Alamut. Over the following months, Basim trains under Roshan and is eventually initiated into the Hidden Ones. When their Mentor, Rayhan, learns of the Order's rapidly expanding influence in Baghdad, he decides to send a contingent of Hidden Ones to the city to investigate, with Basim and Roshan leading the way.
+Upon arriving in Baghdad, Basim learns that five Order members have infiltrated the Caliphate's highest levels of power and are exploiting it to excavate or rebuild ancient Isu artifacts. He proceeds to hunt down four of the Order members, assassinating them and their subordinates and foiling their respective plots. During this time, Basim reunites with Nehal, who is distrustful of the Hidden Ones and encourages Basim to investigate the artifacts sought by the Order, believing they are both somehow linked to them. Eventually, Basim confronts the Order's leader, al-Mutawakkil's former concubine Qabiha, who claims that the answers he seeks lie in an Isu temple underneath Alamut. Qabiha then tries to convince Basim to accompany her to the temple, but Roshan kills her and warns Basim not to investigate any further.
+Disobeying Roshan, Basim travels to Alamut with Nehal, only to find the fortress under siege by the Order's forces. Basim rescues many captured Hidden Ones and rallies them to fight off the attack while he heads to the temple after convincing Rayhan that the knowledge held within could be used to defeat the Order. However, he is confronted by Roshan, who reveals that she is aware of Basim's true nature and attempts to stop him from entering the temple, fearing what it may awaken within Basim. Basim defeats Roshan, but spares her life and enters the temple with Nehal. Inside, he finds more disk-shaped artifacts and discovers that the temple used to be a prison where the Isu Loki was once held. Basim also realizes that Nehal never existed; both she and the jinni were representations of his repressed memories as Loki. Deciding to embrace his nature as Loki's reincarnation, Basim "fuses" with Nehal and regains Loki's memories.
+After leaving the temple, Basim is welcomed back into the Hidden Ones, while Roshan resigns in protest. Now fully aware of his past life as Loki, Basim muses that he has been reborn in a new world, and looks forward to a "reunion" with those who were responsible for his imprisonment.
+
+
+==== Valley of Memory ====
+Sometime before his confrontation with Qabiha, Basim is told by his friend Dervis of a painting made by the former's estranged father, Is'haq ibn Khalid, which suggests he is at the ancient city of al-Ula. Having not seen his father since he was mysteriously exiled from Samarra years prior, Basim and Dervis travel to al-Ula together to find answers. During his investigation, Basim learns of a gang of robbers terrorizing the local populace and is captured and imprisoned by their leader, 'Abis. After escaping and killing 'Abis, Basim discovers that the robbers have kidnapped Is'haq.
+Following a trail of clues, Basim learns that Is'haq is being held hostage by the true leader of the robbers, a local merchant named Nimlot, who seeks revenge on Basim for killing his father—one of the Order members he assassinated in Baghdad. Basim infiltrates Nimlot's stronghold and kills him, saving Is'haq, though he is disheartened to learn his father is suffering from dementia and still believes himself to be in Samarra. As Is'haq recalls his past, Basim accompanies him to a nearby tomb, where Is'haq recounts his memories of Basim and Basim's late mother, revealing how much he loves them both. Unwilling to reveal his identity to Is'haq, Basim parts ways with him and returns to Dervis, glad to finally have a sense of closure so he can focus on his future endeavors.
+
+
+== Development ==
+Prior to its announcement at Ubisoft Forward on 10 September 2022, details about Mirage leaked–under the codename Rift–when it was revealed that the game started out as an expansion pack for Assassin's Creed Valhalla before being turned into a standalone release.
+Mirage has been described as a smaller Assassin's Creed title, with the main campaign lasting around 15–20 hours, similar to older games in the franchise. It was designed to celebrate the series' 15th anniversary, in which the developers used the technology built for Valhalla to create a game that pays tribute to the first Assassin's Creed.
+On 4 June 2023, it was announced that the game would be the first in the series to feature an Arabic dubbing, with Jordanian actor Eyad Nassar voicing Basim in this version.
+The game includes an educational database on the history of Baghdad, in which articles are gradually unlocked as the player progresses. These illustrate 9th-century Abbasid culture with photographs of objects from the Khalili Collections, the David Collection, Doris Duke Foundation for Islamic Art and the Institut du Monde Arabe. The creation of the database involved four academic experts in Islamic art, and was supported with grants from the UK's Economic and Social Research Council and the charity Barakat Trust.
+Mirage features compatibility with a tie-in haptic vest designed by the gaming company Owo. This is a wireless skinsuit that registers movement from the upper body and arms.
+A promotional map for Mirage was featured in the 2020 video game Trackmania.
+
+
+== Release ==
+Assassin's Creed Mirage was originally set to launch on 12 October 2023, before having its release date brought forward to 5 October. It was released for the PlayStation 4, PlayStation 5, Windows, Xbox One and Xbox Series X/S. A version for iOS on iPhone 15 Pro and iPadOS on iPad models was released on 6 June 2024. The game was made available on Day 1 for all players subscribed to Ubisoft+.
+Shortly after the game's announcement, the title was reported as receiving an Adults Only rating from the Entertainment Software Rating Board, which would have limited the number of outlets it could be distributed at in the United States. The reports came from a listing on the Xbox Store a week prior to the game's reveal, with one of the reasons being for containing "real gambling". Ubisoft later corrected both claims, stating the game had not been rated yet and "no real gambling or lootboxes [will be] present in the game".
+In promotion of the game,  American band OneRepublic released a song titled "Mirage", featuring Mishaal Tamer, on 22 September 2023. A music video was also released the same day, containing footage of the band members and Tamer alongside promotional footage of the game. Frontman Ryan Tedder said, "Having toured extensively in the Middle East, I wanted to capture the spirit of that region and reflect the location of the game sonically as much as possible."
+
+
+== Additional content ==
+Ubisoft announced that they would release an exclusive mission titled The Forty Thieves for players who pre-ordered the game. A Deluxe Edition of Mirage includes the base game, a Prince of Persia–inspired pack featuring additional weapons and cosmetic items, the game's soundtrack, and a digital artbook. The Prince of Persia pack is also available for purchase separately.
+In July 2023, it was confirmed by game director Stéphane Boudon that Ubisoft had no plans to release any post-launch downloadable content.
+In August 2023, Ubisoft confirmed that Mirage would have cosmetic microtransactions, in the form of "cosmetic bundles that will be purchasable directly on first-party stores at launch".
+On 12 December 2023, a free update for the game was released, introducing a New Game Plus mode, a legacy outfit inspired by Bayek's robes from Assassin's Creed Origins, and various gameplay improvements and bug fixes, including improved parkour mechanics. A second free update, released on 20 February 2024, added a permadeath mode called "Full Synchronization", which upon completion offers players various rewards, including new outfits and dyes.
+Discovery Tour: Medieval Baghdad, the fourth installment of the Discovery Tour series introduced with Assassin's Creed Origins, was released for free on 4 September 2025. In contrast to the previous Discovery Tours, which served as educational modes for their respective games, this installment was released as a separate application for iOS and Android. Despite this, it functions similarly to its predecessors, allowing users to learn about the history and culture of 9th-century Baghdad while completing a short narrative campaign set in the world of Mirage.
+On 24 January 2025, French newspaper Les Echos reported that, following a diplomatic delegation to Saudi Arabia that Ubisoft CEO Yves Guillemot attended, the Public Investment Fund agreed to finance an expansion for Mirage. On 23 August 2025, Ubisoft confirmed that new content would be added to the game later that year, centered around the ancient city of al-Ula in Saudi Arabia. The DLC, titled Valley of Memory, was officially revealed with a trailer on 6 October 2025, and was released for free on 18 November. Set during the events of Mirage, it revolves around Basim's journey to al-Ula to uncover a mystery surrounding his father and is estimated to provide six hours of new content. Alongside the story expansion, Ubisoft also released an update for Mirage that introduced additional difficulties, new weapon upgrades and parkour mechanics, and the ability to replay some completed missions to beat various challenges and unlock rewards.
+
+
+== Reception ==
+
+
+=== Critical reception ===
+
+Assassin's Creed Mirage received "generally favorable" reviews from critics, according to review aggregator website Metacritic.
+GamesRadar+ complimented the dense nature of Baghdad in comparison to recent entries, saying: "Markets bustle with shoppers and traders speaking multiple languages, streets see people meander in clusters". While enjoying the focus on stealth and calling the game a "back-to-basics approach" a successful first step in returning to the stealthy style, IGN felt the character of Basim was dull, writing, "He's a pretty milquetoast, golden retriever of a man, largely agreeable and affable when it comes to his interpersonal relationships." Game Informer praised the parkour system of Mirage, "The opportunity for engaging parkour traversal is always present, and moving along rooftops, sliding down zip lines, and diving into hiding spots is great fun." GameSpot praised the social stealth, world design, and investigations, but criticized the storyline's reliance on previous entries and uninteresting supporting characters.
+
+
+=== Sales ===
+According Famitsu, the PlayStation 5 version of Assassin's Creed Mirage sold an estimated 20,407 physical units in its first week of release in Japan, making it the third best-selling retail game in the country on its chart.
+According to Tom Henderson of Insider Gaming, the game had accumulated 5 million players and estimated $250 million in revenue by January 2024.
+In November 2025, Ubisoft reported that the game had reached 10 million players.
+
+
+=== Awards ===
+
+
+== Notes ==
+
+
+== References ==
+
+
+== External links ==
+Official website
+Assassin's Creed Mirage at IMDb
+Assassin's Creed Mirage at MobyGames
+Assassin's Creed Mirage at Metacritic

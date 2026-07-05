@@ -1,0 +1,37 @@
+Game: The Gunk
+appid: 1087760
+Source: The Gunk
+URL: https://en.wikipedia.org/wiki/The_Gunk
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+The Gunk is an action-adventure video game developed by Thunderful Development and published by Thunderful Publishing. The game was released on December 16, 2021 for Windows, Xbox One and Xbox Series X and Series S.
+
+
+== Gameplay ==
+The Gunk is a story-driven action-adventure video game played from a third-person perspective. In the game, the player assumes control of Rani, a scavenger who has arrived on an alien planet with her partner Becks. The alien planet features various biomes such as canyons, jungles and caves, but the terrains have been corrupted by a black slime-like parasite named the Gunk which is actively harming the environment and its wildlife. Rani is equipped with a power glove that can be used to suck in the gunk, effectively restoring the original environment. Players may also need to fight against corrupted monsters. When the gunk is removed, wildlife will thrive, and the player can use Rani's scanner to scan the environment and learn more about the world. All findings will be documented in a logbook that players can read.
+
+
+== Plot ==
+Scavengers Rani and Becks discover a strong power source from an uncharted planet, and decide to land to investigate. While Becks stays with the ship, Rani explores the planet and collect resources using her powered glove, Pumpkin. She discovers that a strange organic substance she calls gunk has polluted the environment, but removing the gunk with Pumpkin helps to restore the beauty of the planet. Rani discovers the ruins of an alien civilization, and while Becks tries to dissuade her from investigating as there is no value in such relics, Rani begins searching through them.
+Rani learns that the alien species had built a thriving society but fled when the gunk started to appear. She finds one of the aliens kept alive in a pod and frees him. The alien, named Hari, explains that they had lived in harmony with the planet for centuries, but when an entity called the Gardener arrived, he had caused the gunk to appear and forced the aliens from the planet. Becks argues with Rani's decision to head towards the Garden to try to put an end to the gunk, and soon stops talking to her, leaving Rani on her own.
+When she first arrives at the Garden, the Gardener identifies Rani as a human and accuses her kind of also being destructive to planets across the galaxy, and ousts her from the Garden. In a wasteland of the planet, Rani finds her mask broken and her health starts to wane from exposure to the gunk, but she is rescued by Becks and Hari, Becks having a change of heart and realizing she was wrong at pushing away Rani, having put her concern about their financial state and losing their ship over their friendship. With Hari's guidance, Rani finds a way back into the Garden. With support from Becks and Hari, Rani is able to defeat the Gardener. They put an end to the systems creating the gunk and after saying goodbye to Hari, return to populated space, trying to determine what story they will tell local authorities.
+
+
+== Development ==
+The game was developed by Image & Form, the studio behind the SteamWorld series. The team began conceptualizing ideas for a new game after the release of SteamWorld Dig 2 (2017). They wanted to create a game that was larger in scale and one that would feature 3D computer graphics. Since it was one of the studio's first 3D games, Image & Form decided to use Unreal Engine 4, which enabled a smooth transition for the team. The first prototype of the game was created by director Ulf Hartelius. The prototype included several basic character movements, and saw the player "[vacuuming] slimy gunk off the ground and watching plants grow back". The team believed that the experience was "ridiculously gratifying" and decided to turn it into a full project. Unlike the previous SteamWorld games, which were released on many platforms, the game's 3D visuals required the team to work with more powerful hardwares. Therefore, the team partnered with Microsoft to release the game exclusively on Windows, Xbox One and Xbox Series X and Series S.  
+The Gunk was officially announced on July 24, 2020 during the Xbox Series X Games Showcase. The same year, Image & Form merged with Zoink and Guru Games to form Thunderful Development, which would continue to develop the game. Initially set to be released in September 2021, the game was delayed to December 16, 2021.
+
+
+== Reception ==
+
+The game received "mixed or average" reviews according to review aggregator website Metacritic. 
+CJ Andriessen of Destructoid gave the game a six out of ten while classifying it as a "middle-of-the road, milquetoast title", praising its art direction and gratifying feel while criticizing the gameplay loop's lack of iteration over the course of the five-hour campaign. Tom Marks of IGN called the gameplay loop "satisfying" while claiming that the introduction of new ideas never made the game overly exciting due to limited movement mechanics. He also praised the world-building and in-game atmosphere as well as story for being engaging in areas where the gameplay might have otherwise gotten tedious. Eurogamer's Christian Donlan recommended the game, praising the SteamWorld developers' trademark attention to intricate detail, colorful world, and compact nature, stating that the act of sucking gunk was "an absolute joy" while citing the story as another worthwhile component that incentivized finishing the campaign. 
+GamesRadar+ called the story and characters of the game "intriguing" and the act of hoovering up gunk "satisfying" while criticizing the limited range of challenges and puzzles, the basic nature of the gameplay loop for overstaying its welcome, and the pointless progression system. Jill Grodt of Game Informer deemed that the game was largely evocative of other games without ever reaching their heights, citing the story's conflict as the main reason to play through the entire campaign, and lamented that the world wasn't realized enough. GameSpot called the title "unambitious", criticizing its inability to engage due to overly simplistic design, while praising the characters' relationships and the game's relaxing nature. 
+
+
+== References ==
+
+
+== External links ==
+Official website

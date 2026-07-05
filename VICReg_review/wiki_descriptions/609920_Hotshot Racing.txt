@@ -1,0 +1,32 @@
+Game: Hotshot Racing
+appid: 609920
+Source: Hotshot Racing
+URL: https://en.wikipedia.org/wiki/Hotshot_Racing
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Hotshot Racing is a 2020 racing video game developed by Lucky Mountain Games and Sumo Digital, and published by Curve Digital. An arcade-style racer, it draws visual and gameplay inspiration from 1990s titles of that style, such as Virtua Racing (1992) and Ridge Racer (1993). Developed over more than 10 years, the game was released on 10 September 2020 for Nintendo Switch, PlayStation 4, Windows and Xbox One.
+The game received mixed reviews. Critics praised its artstyle, its evocation of its 1990s arcade racer influences, its various gamemodes, and its gameplay design. Track design, the design of the computer opponents, and the amount of content drew criticism.
+
+
+== Gameplay ==
+Hotshot Racing is an arcade-style racing game. It can be played in single-player, by up to four players in split screen multiplayer, or by up to eight players in online multiplayer. Gameplay revolves around drifting and slipstreaming. Drifting is performed by pressing the brake button while turning; the player can then control the tightness of the turn. Drifting and slipstreaming charge a boost gauge; once charged, players can spend their boost gauge for a burst of speed.
+The game's main mode is head-to-head races, which can be played as single races or as a championship in the Grand Prix mode. Other modes include Cops & Robbers, a mode about chasing down other players, and Drive or Explode, a speed-based elimination mode. Players play as one of eight characters: each is associated with a nationality and has four vehicles. Vehicles have different parameters for speed, acceleration, and drifting ability. The game includes sixteen tracks.
+
+
+== Development and release ==
+Hotshot Racing was developed by Lucky Mountain Games and Sumo Digital and published by Curve Digital. It originated more than ten years before its release as Racing Apex, a game developed by Trevor Ley and the other members of Lucky Mountain Games, and was originally a Unity racing game focused on destructible vehicles and combat and targeted for an iOS release. Sumo Digital joined the project in 2018, expanding the available game modes, overseeing a change of game engine to Sumo's inhouse one, and targeting the game for more platforms. The game was announced on 26 February 2020, and released on 10 September 2020 for Nintendo Switch, PlayStation 4, Windows and Xbox One.
+It was released in an era where simulation-style racing games had largely displaced arcade-style racers. When asked why they produced an arcade-style racing game, the developers responded that contemporary racing games had become very similar, reusing the same set of licensed vehicles and tracks, also citing nostalgia for arcade racers. The game is illustrated in a low poly art style. The developers cited Virtua Racing, Hard Drivin', and Winning Run as inspirations for the artstyle, and Daytona USA and Ridge Racer as inspirations for the color palette.
+
+
+== Reception ==
+
+Hotshot Racing received mixed reviews. 64% of critics recommended the game, according to OpenCritic.
+Many reviewers praised the game's visual style and its evocation of its 1990s arcade game influences. Eurogamer's Martin Robinson said Hotshot Racing "successfully invokes the spirit of the 90s arcade", but described the tracks and overall game as forgettable due a perceived lack of detail and innovation from its inspirations. Writing for PC Mag, Jeffrey Wilson praised the racing and found the game to capture the "look and feel of classic retro racers", but criticized the track design and the adaptive difficulty of the computer-controlled racers. Keith Stuart of The Guardian described it as a "slick callback" to 90s-era racing games.
+Nintendo Life's Chris Scullion praised the visuals, the driving mechanics, faithfulness of its visual style, and characters, while noting the amount of content and dynamic difficulty as downsides.
+Stephen Tailby, writing for Push Square, praised the game's art style, soundtrack, handling, and alternate modes, while criticizing the "simple" track design.
+Multiplayer.it's Andrea Palmisano wrote positively about the aesthetics and multiplayer modes of the game, but overall found the game repetitive.
+Some reviewers commented on the amount of content included, such as the quantity of tracks. Tailby described it as a "modestly sized offering". Others expressed concerns about the amount of content available for solo players outside of the Grand Prix mode.
+
+
+== References ==

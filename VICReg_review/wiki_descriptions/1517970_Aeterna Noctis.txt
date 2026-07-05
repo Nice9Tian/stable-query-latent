@@ -1,0 +1,46 @@
+Game: Aeterna Noctis
+appid: 1517970
+Source: Aeterna Noctis
+URL: https://en.wikipedia.org/wiki/Aeterna_Noctis
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Aeterna Noctis is a 2021 Metroidvania video game developed in Spain by Aeternum Game Studios. It was released in December 2021 for Nintendo Switch, PlayStation 5, Windows, and Xbox Series X/S.
+
+
+== Plot ==
+
+
+=== Story ===
+The series narrates the story of a pair of monarchs who, after being cursed with immortality, have been fighting and killing each other for eternity. But then, a revelation unleashes a chain of events that helps the monarchs find a way to break the curse and find love in the process.
+
+
+=== Characters ===
+King of Darkness - the main protagonist of the game and father of the Grey Soul.
+Queen of Light - leader of the forces of light and lover of the King of Darkness. Mother of the Grey Soul.
+Chaos - the Supreme God who rules all Creation and who placed the curses on the King and Queen.
+Chronicler - an elderly being who chronicles all the events of the world and its history in his library.
+Grey Soul - child of the King of Darkness and Queen of Light.
+Oracle - a mysterious being that helps the King of Darkness on his journey.
+Lord Drake VI - an archaeologist and adventurer, he sells Maps and Potions to the King of Darkness
+The Collector - a man who resides in the graveyard, who tasks the King with bringing him rare specimens. He gives the King the bestiary for documenting all monsters.
+B-69 - a robot who operates a train capable of warping through space. He is used as a fast travel mechanic between some areas.
+The Emperor - a powerful ruler who killed three gods before having his powers sealed by the Oracle. He is an optional boss.
+Celestial Dragon - a dragon from outer space disguised as a human. After finding his side quest, the King must chase him to random parts of the world.
+
+
+== Reception ==
+
+The PC, PlayStation 5, and Nintendo Switch versions of Aeterna Noctis both received "mixed or average" reviews from critics, according to the review aggregation website Metacritic. Fellow review aggregator OpenCritic assessed that the game received fair approval, being recommended by 50% of critics.
+Concluding his review of the game for Push Square, Ollie Reynolds wrote: "Ultimately, although there's a distinct feeling of déjà vu when playing Aeterna Noctis thanks to its unmistakable similarities to Hollow Knight, it thankfully manages to nail the most important elements in a Metroidvania: exploration and combat."
+
+
+== Legacy ==
+The second installment in the series, Summum Aeterna, a roguelite prequel based on Aeterna Noctis, was initially released for Steam in June 2022, and was released for PlayStation 5, Xbox Series X/S and Nintendo Switch in late 2023. The third installment in the series, Aeterna Lucis, a sequel to Aeterna Noctis, is set for release sometime 2026.
+
+
+== References ==
+
+
+== External links ==
+Official website

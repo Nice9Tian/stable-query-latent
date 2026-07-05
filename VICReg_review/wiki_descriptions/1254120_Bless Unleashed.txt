@@ -1,0 +1,55 @@
+Game: Bless Unleashed
+appid: 1254120
+Source: Bless Unleashed
+URL: https://en.wikipedia.org/wiki/Bless_Unleashed
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Bless Unleashed is a massively multiplayer online role-playing game developed by Round 8 Studios and published by Bandai Namco Entertainment for the PlayStation 4 and the Xbox One in 2020. It is a reboot of Bless Online. Similarly, Unleashed uses a free-to-play business model. It was also released for the PC by Neowiz, then later published by VALOFE, in 2021. The game featured multiple classes and races. The game is currently available for Windows but unavailable on consoles.
+
+
+== Gameplay ==
+
+
+== Plot ==
+After a dream sequence fighting the Archon of Fire, the Hero of Lumios wakes up inside their house on the neutral island of Telarion. Temperate and cultured, it teems with festivities and trade, and serves as a safe haven for refugees fleeing the cruelties of war. Guiding them is a lighthouse that stands unguarded and always lit. Each year, travellers gather from all over the world to attend a grand festival that commemorates the day that the first inhabitants built the lighthouse and watched a holy fire burst to life inside it. During this year's festivities, the island is attacked by a powerful mage named Gideon who summons hell spawn to aid in the invasion. After defeating a handful of these creatures, the Hero of Lumios narrowly escapes when their new ally, Don Diego, swoops in and grabs them with his griffin. This starts the long and treacherous journey to defeat Gideon and his minions, and prevent the Breaking from happening again.
+
+
+== Development ==
+
+Bless Unleashed was announced in 2018.
+
+
+=== Beta testing ===
+Closed beta releases for the game were held during April and July 2019. The first open beta for the game was held in November 2019. In January 2020, the same beta reopened for the purposes of stress testing the game's servers.
+
+
+=== Xbox One ===
+On March 12, 2020, the game was finally released for the Xbox One for the Windows Store, with early access to the game available via paid Founders Packs on the Xbox One. On July 2, 2020, it had its first major expansion update, "Saurin's Deception".
+
+
+=== PlayStation 4 ===
+The PlayStation 4 version was released on October 22, 2020.
+
+
+=== PC ===
+The PC version was released on Steam on August 6, 2021.
+
+
+== Closing ==
+Bandai Namco closed their Bless Unleashed servers on November 30, 2022 at 11 PM PT.
+
+
+== Reboot ==
+VALOFE rebooted the game following its shutdown by Bandai Namco.
+
+
+== Reception ==
+
+
+== References ==
+
+
+== External links ==
+Official website 
+Official website (VALOFE)

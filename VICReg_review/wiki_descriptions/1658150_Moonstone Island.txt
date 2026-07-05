@@ -1,0 +1,50 @@
+Game: Moonstone Island
+appid: 1658150
+Source: Moonstone Island
+URL: https://en.wikipedia.org/wiki/Moonstone_Island
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Moonstone Island is a 2023 role-playing video game developed by Studio Supersoft and published by Raw Fury. It was released for Windows, Linux, and macOS on September 20, 2023, and for the Nintendo Switch on June 19, 2024. The game launched on iOS and Android via Crunchyroll as part of its Games Vault offerings for Mega Fan or Ultimate Fan subscribers on November 7, 2024. A physical edition for Nintendo Switch was given a limited release by Super Rare Games on November 13, 2025 as both a standard and a deluxe editions.
+The game follows a gender-neutral protagonist thats seeks to become a world-renowned alchemist - mediators who bridge the conflicted human and spirit worlds by teaching harmonious coexistence with nature. During their journey, players explore ancient dungeons and temples - the last surviving structures from before the Cataclysm that destroyed the legendary Old Kingdom, where humans and spirits once coexisted in harmony. This apocalyptic event opened interdimensional gates known as Rifts, allowing the corrupting force known as The Creeping Dark to slowly spread across the land, draining all life in its path. As part of their quest, the player must seal The Rift closest to Moonstone Island to halt this encroaching threat.
+
+
+== Gameplay ==
+
+Moonstone Island is a life simulation and monster-taming video game that incorporates deck-building mechanics. The player controls the protagonist from an overhead perspective and navigates a procedurally generated world of over 100 islands in the sky centered around the titular Moonstone Island. 
+The game emphasizes nonlinear gameplay, encouraging players to participate in numerous activities beyond advancing the main storyline. Key gameplay elements include taming Spirits, constructing decks for turn-based battles, gathering resources, crafting items, and developing relationships with non-playable characters (NPCs) through social interactions, including romance options.
+
+
+== Development ==
+Moonstone Island was conceived by developer Sandy Spink, founder of Toronto, Canada-based Studio Supersoft; the game draws inspiration from classic video games such as Pokémon, The Legend of Zelda, and Harvest Moon, as well as films by Studio Ghibli and deck-building games like Dominion and Slay the Spire. Spink sought to create a hybrid of Stardew Valley-style life simulation, monster-taming mechanics, and strategic deck-building. Development began in January 2021, with Spink initially pursuing a solo project using the Construct game engine. The core vision emphasized three pillars: exploration, social interaction, and turn-based combat, designed to appeal to publishers supportive of long-term, iterative updates. Over time, the project expanded into a collaborative effort, with Stan Merezhko joining as programmer and Chern Fai as lead pixel artist. Later, writer Kate Gray contributed to worldbuilding and NPC dialogue, with the dating system serving as a narrative vehicle for lore and character development. Additional contractors were brought in for specialized roles, including sound design, animation, and large-scale pixel art, allowing the team to remain small but adaptable.
+
+
+=== Updates ===
+Following its release, Moonstone Island has received continued developer support through periodic updates with no additional cost. These updates have expanded the game's content by introducing new Spirits, craftable items, and seasonal in-game events as well as including quality-of-life improvements. As of July 2025, eight major updates have been released, introducing 27 new Spirits to the base roster of 66, along with 30 evolutionary paths for existing Spirits. Key additions include a Spirit storage system for improved collection management, a marriage mechanic that allows for deeper character interactions, a cooking system enabling the crafting of consumable items and clothing items to customize the playable character.
+The game features crossover characters from several notable indie titles, primarily added through post-launch updates, including Terraria, Ooblets, Cassette Beasts, Slay the Spire, Coromon and Dome-King Cabbage.
+
+
+=== Downloadable content (DLC) ===
+Moonstone Island follows Studio Supersoft's distinctive paid DLC model, offering exclusively cosmetic craftable items that never include gameplay-altering content such as new cards, dialogue, or Spirits - all such game-changing additions are released through free updates. As of July 2025, eight thematic DLC packs have been released:
+
+Decore Galore (luxury furnishings)
+Eerie Items (Halloween-themed)
+Cozy Comforts (winter seasonal)
+Designed for Lovers (Valentine’s Day)
+Arcane Artifacts (magical objects)
+Pool Party (summer items; the only free DLC)
+Chef’s Kiss (culinary-themed)
+Autumnal Accessories (fall decorations)
+
+
+== Reception ==
+
+Moonstone Island received mixed to positive reviews from critics. The game was praised for its distinctive pixel art style and innovative blending of genres, though some reviewers criticized its early-game pacing.
+The Nintendo Switch version garnered generally favorable reviews, with critics noting significant improvements from post-launch updates and quality-of-life enhancements implemented during the game's first year.
+
+
+== References ==
+
+
+== External links ==
+Official website

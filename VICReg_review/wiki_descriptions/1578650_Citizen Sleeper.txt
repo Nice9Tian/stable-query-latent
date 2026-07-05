@@ -1,0 +1,94 @@
+Game: Citizen Sleeper
+appid: 1578650
+Source: Citizen Sleeper
+URL: https://en.wikipedia.org/wiki/Citizen_Sleeper
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Citizen Sleeper is a 2022 role-playing video game by Jump Over the Age and published by Fellow Traveller for macOS, Microsoft Windows, Nintendo Switch, Xbox One, and Xbox Series X/S on 5 May 2022. It was also released for PlayStation 4 and PlayStation 5 on 31 March 2023. A port for Nintendo Switch 2 was released on 25 June 2026.
+A sequel, titled Citizen Sleeper 2: Starward Vector, was released on 31 January 2025.
+
+
+== Plot ==
+In Citizen Sleeper, the player character is a "Sleeper," a human whose mind has been digitized and has been put into a robot body to be controlled by the Essen-Arp corporation. The player's Sleeper has escaped indentured servitude on a freighter and has arrived at a space station called the Eye, where they fight for both survival and freedom. The player meets a number of different people who represent different factions and interests. The game features multiple endings depending on the choices of the player.
+The Eye was originally owned by the Solheim corporation, but the corporation collapsed decades ago, leaving the station in anarchy. A trade union called Havenage rose to become the leading power and now controls the station alongside a criminal gang known as Yatagan.
+The Sleeper is discovered by a scrap merchant named Dragos, who provides them shelter in an empty shipping container and allows them to work at his operation; however, after several "cycles" (The day/night system in the game) he becomes afraid of possible reprisal from Essen-Arp and cuts ties with the Sleeper. From there, the player can pursue several independent plot lines.
+
+
+=== Sabine and Yatagan ===
+The Sleeper discovers that their robot body is programmed with a form of planned obsolescence, causing it to break down over time without the use of a chemical stabilizer manufactured by Essen-Arp. To survive, they track down Sabine, a doctor who works for Yatagan. Sabine is able to source the stabilizer from criminal contacts, but charges the Sleeper an exorbitant fee for each dose. After some time has passed, the Sleeper is informed that Sabine has left the office, and the next stabilizer they purchase contains a key and a hidden message from Sabine. The Sleeper discovers the key is for Sabine's personal dwelling, where Sabine asks the Sleeper to help them escape from Yatagan. After sending Sabine hacked data from several Yatagan agents, Sabine discovers that the agents' cybernetic implants are sending telemetry data to an unknown receiver without their knowledge. Sabine believes that Yannick, the leader of Yatagan, is using the implants to spy on Yatagan agents and send their data to a corporate sponsor.
+Sabine fails to meet the Sleeper at their next rendezvous, and the Sleeper instead finds Rabiah, a Yatagan enforcer. Rabiah reveals that Sabine is a former employee of Essen-Arp, and claims that they are merely using the Sleeper and are not to be trusted. Rabiah offers to let the Sleeper work as a Yatagan enforcer to show them Yatagan is not as evil as Sabine claims. Afterwards, Sabine confronts Rabiah in her office and the two nearly kill each other, but Sabine sways Rabiah to their side with evidence that Yannick is working for Essen-Arp. Sabine apologizes for concealing their past from the Sleeper, and reveals that they are actually a whistleblower who opposed the Sleeper project.
+Rabiah arranges a meeting between Yannick and the Sleeper and convinces Yannick to hire the Sleeper as one of his personal enforcers. After gaining Yannick's trust by working several jobs, the Sleeper discovers a transmission device in Yannick's office. After destroying it, Yannick dies; the Sleeper realizes that he was a walking corpse controlled remotely by a brain implant. Rabiah and Sabine meet the Sleeper a few days later to thank them for their help. Sabine gives the Sleeper several vials of stabilizer, but warns that they will no longer be able to sell any more, as Yannick was sourcing the vials through his corporate contacts in Essen-Arp.
+
+
+=== Feng ===
+The Sleeper is contacted by Feng, an information security specialist who works for Havenage. He warns the Sleeper that their body contains a tracker Essen-Arp will use to recapture, and offers to disable it if the Sleeper helps him with some internal investigations into Havenage. From data provided by the Sleeper, Feng discovers that one of Havenage's leaders is actually Hardin, a former employee of Solheim who ruined the lives of Feng's parents and many other workers with his unethical labor practices. Feng confronts Hardin, but fails to expose him and is forced to go into hiding.
+After the Sleeper provides Feng with data hacked from Hardin's agents, Feng learns that Hardin is planning to make a deal with Conway, another corporation. Feng and the Sleeper hack Hardin's security, allowing them to observe a meeting between Hardin and a Conway official where he offers to let Conway scrap the entire station. Feng broadcasts the meeting across the Eye, publicly exposing Hardin. Feng is re-employed by Havenage and disables the Sleeper's tracker as promised.
+
+
+=== Ethan and Maywick ===
+The Sleeper's tracker allows them to be found by Ethan, a bounty hunter hired by Essen-Arp to retrieve rogue Sleepers. Ethan agrees to let the Sleeper live as long as they pay his bar tab every week. However, two weeks later, Ethan discovers that Essen-Arp has canceled his contract and given it to Maywick, a ruthless mercenary. He warns the Sleeper and offers to protect them if they help him repay his debt to the bar owner.
+If the Sleeper fails to remove their tracker in time, Ethan will turn the Sleeper over to Maywick, even if the Sleeper has helped him. Maywick then kills Ethan, and the Sleeper uses Ethan's gun to shoot and kill Maywick. If the tracker is removed, Maywick never arrives and Ethan leaves the station, believing the Sleeper to be dead.
+
+
+=== Lem and Mina ===
+If the Sleeper works in the shipyard, they will encounter Lem, a fellow shipyard worker caring for a young girl named Mina. Lem desperately wants to leave the Eye, and has staked his hopes on the Sidereal Horizon, a generation ship that has offered to provide passage to the workers who help build it. The Sleeper offers to babysit Mina while Lem works, causing the two of them to bond. Lem reveals that Mina is not his biological daughter, but a orphaned refugee he adopted after retrieving her from a damaged ship.
+After the Sidereal Horizon is finished, it is revealed that only official employees of the corporate sponsor were eligible for a ticket, and Havenage restricted this privilege to its own senior members. Lem is crestfallen, but the Sleeper offers to find another way to get him a ticket. They are contacted by Castor, a local data broker, who offers to forge a ticket for Lem and Mina on the condition that the Sleeper accompany them in order to spy on the Horizon's corporate activities.
+This storyline has four endings. The Sleeper can refuse Castor's offer (or accept his offer but destroy the tickets); accept Castor's offer but hide the tickets from Lem and Mina, booking passage on the Horizon alone; give the tickets to Lem and Mina but stay behind; or accompany Lem and Mina onto the Horizon. If the Sleeper leaves on the Horizon, the game ends after an epilogue revealing that the Sleeper's body eventually breaks down after decades on the ship; if they accompany Lem and Mina, Lem also dies during the voyage, but Mina survives to reach the ship's destination. If the Sleeper refuses or stays, Castor is disappointed but does not punish the Sleeper.
+
+
+=== Ankhita ===
+While working on the station the Sleeper encounters Ankhita, a mercenary who requires repairs for her damaged ship. After helping her, Ankhita realizes that the ship's "shipmind", an artificial intelligence required to navigate the ship, was stolen by Ashton, one of her teammates, and asks the Sleeper to help her track him down. If the Sleeper does so, Ashton reveals that he stole the shipmind in order to store the mind of another sleeper, whose body is deteriorating and on the brink of death. Ankhita kills him and the sleeper he was trying to save, but regrets the outcome. She pays the Sleeper for their assistance, but the Sleeper can refuse to accept it.
+
+
+=== Bliss and Moritz ===
+In the central hub of the Eye, the Sleeper can encounter Bliss and Moritz, station engineers who want to start a repair business. If the Sleeper provides Bliss with seed money, Bliss gets a contract and enlists the Sleeper's help; however, the payment for the job is stolen by Bliss' vengeful ex-partner. The next job goes only slightly better: Bliss realizes too late that the clients are communists who can only pay her in foodstuffs, which she sells for a pittance. After a third job, Bliss finally receives payment, allowing her repair bay to stay operational.
+After completing Ankhita's storyline, Ankhita enlists Bliss' help in de-arming her warship, revealing that she wishes to retire from mercenary work after the trauma of killing Ashton. She gives Bliss an offer to join her crew, which she accepts. She also extends an offer to the Sleeper; if they accept, the game ends, while if they refuse, they stay behind with Moritz, who inherits Bliss' repair business.
+
+
+=== Navigator, Hunter, and Killer ===
+While retrieving data from the station's network, the Sleeper is confronted by "Hunter", an artificial intelligence designed to identify and destroy sentient AIs. From then on, Hunter will attack and damage the Sleeper for every 6 attempts they make to hack station data.
+In an abandoned room of the station, the Sleeper discovers an old vending machine that contains a sophisticated AI who is trying to hide from Hunter. The AI explains that Hunter is only a subordinate program to another AI known as Killer, who is responsible for actually deleting aberrant AIs. Due to Hunter exceeding its operational limits, it itself has developed sentience, and so the AI believes it can trick Hunter into flagging itself for deletion, provided the Sleeper assist it by transporting its computer to physical access ports across the station. Hunter's self-preservation protocols prevent it from killing itself, but it is caught in an infinite loop, neutralizing it as a threat.
+Now freed, the AI reveals itself to be "Navigator", a ship navigation AI. It warns the Sleeper that the true threat, Killer, is still at large and must also be neutralized before AIs on the station can be truly free. The Sleeper takes Navigator to the Eye's mainframe, where they discover Killer has severely deteriorated, blinding itself and destroying data at random. The Sleeper hacks the mainframe and is given the choice of either destroying Killer or simply isolating it from the station's systems, removing it as a threat.
+In gratitude, Navigator gives the Sleeper the passcode to the Greenway, a section of the Eye that is cut off from the rest of the network. The Sleeper discovers the Greenway's network is very bizarre, and completely different from the rest of the station's. Using the passcode, the Sleeper finds an AI known as "Gardener" who gives them a physical seed. Planting it in the Greenway causes it to grow into a mind/machine interface that allows the Sleeper to fully enter the cyberspace of the Greenway, where they learn that Gardener has connected the consciousnesses of the Greenway's fungal and plant life into the network, creating a hive mind. The Gardener offers to let the Sleeper join the mind by cutting the connection to their physical body; if they accept, the game ends.
+
+
+== Gameplay ==
+In order to progress the plot, survive, and escape the Eye, the player rolls a number of dice each in-game day. These dice are then placed into different tasks, where higher numbers generally indicate better outcomes. Lower numbers generally are useful on the data-cloud side of the station, which allow the player to gather intelligence on the activities of the various factions. Higher numbers generally lead to better outcomes throughout the rest of the game. The player must constantly work in order to feed themselves and care for their degrading robot body which requires specialized materials to upkeep.
+
+
+== Development ==
+Citizen Sleeper was created and developed by Gareth Damian Martin, through their London-based  one-person game development studio Jump Over The Age. Character artwork was designed by Guillaume Singelin. When Martin first began their work as a developer, they conceived of two games: In Other Waters and a game about being a thief in a fantasy city trying to survive hardships and poverty while getting involved in the political situation there. The latter changed to a sci-fi setting and became the basis for Citizen Sleeper.
+During development, Martin focused on the intimate feeling of people coming together, and their own experiences as a non-binary person struggling to make ends meet in a city through the gig economy. When playing science-fiction games like the Mass Effect series, Martin found themselves drawn to the side characters. "As science fiction stories drag the narrative toward explosive quests, I want to stay with these people living ordinary lives in extraordinary settings." They cited Diaries of a Spaceport Janitor as an example of the kind of story they were aiming towards, which showed how science-fiction could be a great space for slice of life gaming experiences.
+Contemporary experiences of Uber and other gig economy and debt experiences drove the direction of how Martin portrayed capitalism in the game. Martin said, "I wanted to tell a story at capitalism's periphery, where so many of us have learned how to exist." They also focused on how life can be incredibly precarious for people living at the periphery of capitalism, and they were inspired by Anna Tsing's The Mushroom at the End of the World among other works.
+The developers announced three additional DLC packs, available for download at no additional cost. The first DLC, Flux, was released in July 2022, the second chapter, Refuge, was released in October 2022, and the final chapter, Purge, was released in March 2023.
+
+
+== Reception ==
+Citizen Sleeper received "generally favorable" reviews, according to review aggregator website Metacritic. At its release, Polygon named Citizen Sleeper among the best games of 2022.
+Reviewers praised Citizen Sleeper's writing, with a number of reviewers remarking on the well-drawn characters found in the game. The Guardian's Lewis Packwood called the writing "gloriously evocative and compelling" and noted that the picture that is painted in the game feels "intriguing and unique." Polygon's Alexis Ong called the game's ability to remove the player from chasing concrete objectives as part of the plot its "greatest strength.". IndieGameReviewer wrote "The dual layer of a virtual ghost world and an unfathomable wet one create a simply sublime and rare experience," giving it 3rd position on its top 10 games of 2022.
+Critics praised the game's streamlined mechanics. Eurogamer's Chris Tapsell described the game's mechanics as creating a "wonderful elegance" in a positive review.
+The game's three free DLC chapters received positive notes from critics. Polygon's Nicole Clark noted that the first chapter, Flux, caused her to change how she played the game by encouraging her to create systems to help the community of The Eye at-large instead of just her character's friends. The Gamer's Ben Sledge felt that the second chapter lacked urgency, but that the third made up for the second's more lackadaisical pacing.
+
+
+=== Accolades ===
+
+
+== Related media ==
+An art book titled Citizen Sleeper: Design Works was published by Lost in Cult in 2024. The same company also released a tabletop role-playing game called Cycles of the Eye, co-designed by Gareth Damian Martin.
+Helion Dispatches, a serialized, text-based narrative bridging the events of the first game and its sequel was released on Martin's Substack.
+
+
+== Sequel ==
+
+A sequel, titled Citizen Sleeper 2: Starward Vector, was announced for Windows in June 2023. A port for Xbox Series was unveiled in August the same year, which was followed by a Nintendo Switch and PlayStation 5 port in June 2024. The sequel was released on 31 January 2025.
+
+
+== References ==
+
+
+== Further reading ==
+
+
+== External links ==
+Official website

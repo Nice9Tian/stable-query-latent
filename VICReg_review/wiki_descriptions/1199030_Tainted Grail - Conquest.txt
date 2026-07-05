@@ -1,0 +1,25 @@
+Game: Tainted Grail: Conquest
+appid: 1199030
+Source: Tainted Grail: Conquest
+URL: https://en.wikipedia.org/wiki/Tainted_Grail:_Conquest
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Tainted Grail: Conquest is a roguelike deck-building game developed by Questline and published in 2021 by Awaken Realms.  Players control an adventurer who attempts to stop a curse that is infecting their land.
+
+
+== Gameplay ==
+Tainted Grail: Conquest is a roguelike deck-building game set in a dark fantasy world based on Arthurian legend.  The protagonist wakes to find their village empty, and a goat-like creature tells them that a cursed fog has driven most people in their land insane and transformed them.  Survivors of this catastrophe – encountered as non-player characters – relay the story in-game, give side quests, or trade equipment.  These characters are procedurally generated, so some elements of the story may not be revealed in every session.  After choosing a character class, players send their character into the fog to find out what has happened.  Four gates lead out of the village to increasingly more difficult areas claimed by the fog.  The gates are closed behind players once they leave the village, preventing reentry.  Combat is turn-based and similar to Slay the Spire: players know their opponents' next action and must counter it in card battles.  Each card-based ability has a cost, limiting how many players can use each turn.  Cards are granted by character class and after gaining levels.  Players must create a new character when defeated, but some new classes and abilities are unlocked based on their progress, including permanent upgrades.  Winning the game unlocks harder difficulty modes.
+
+
+== Development ==
+Tainted Grail: Conquest is based on a board game by Krzysztof Piskorski.  The video game adaptation was initially announced as Tainted Grail, and a separate mode with roguelike elements named Conquest was planned.  
+During early access, which began in June 2020, Conquest was spun off into its own title.  Conquest was released on May 27, 2021. Ports for Xbox One and Xbox Series X/S were released on September 23, 2021, with a version for Linux released on March 22, 2022. 
+The original open world role-playing game, now titled Tainted Grail: The Fall of Avalon, was released into early access on March 30, 2023, with the full release on May 23, 2025.
+
+
+== Reception ==
+Tainted Grail: Conquest received positive reviews on Metacritic.  Rock Paper Shotgun wrote that it combines the dark fantasy of Diablo with the gameplay from Slay the Spire, praising its depth and ability to make failure an interesting gameplay element.  RPGamer praised its accessibility to newcomers, replayability, and game design, which they said showed an understanding of the genre.  RPGFan wrote, "Tainted Grail: Conquest carves out a niche for itself as a more story-driven card-based roguelite, but it struggles with balance and pacing."  CD-Action praised the role-playing elements.
+
+
+== References ==

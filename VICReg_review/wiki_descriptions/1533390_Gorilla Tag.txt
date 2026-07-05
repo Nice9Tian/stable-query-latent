@@ -1,0 +1,45 @@
+Game: Gorilla Tag
+appid: 1533390
+Source: Gorilla Tag
+URL: https://en.wikipedia.org/wiki/Gorilla_Tag
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Gorilla Tag is a virtual reality social casual game developed and released by Another Axiom. The game involves controlling legless gorillas through hand movements to interact with others online casually or in matches with tag-like mechanics. Originally developed by Kerestell "Lemming" Smith, Gorilla Tag was made available in early access on SteamVR and Meta Quest in 2021. It was officially launched on Quest in December 2022, on Steam in January 2023, and on PlayStation VR2 in November 2024. The game was popularized through social media and, by June 2024, received 10 million total players and crossed $100 million in revenue.
+
+
+== Gameplay ==
+
+In Gorilla Tag, players assume the role of gorillas without legs, officially nicknamed "monkes". Control focuses on the player's hand movements, allowing the monke to walk, jump by pushing away from surfaces, and climb with its arms. A grip button allows the player to hold on to objects. Multiple environments, such as Forest, Cave, and Canyon, are available to choose, and a voice chat feature is enabled by default. Avatar cosmetics can be bought with an in-game currency, Shiny Rocks, which is obtainable through daily logins or in-app purchases.
+A match is formed through queues of multiple types, including minigame, which allows for matches with custom rules. The game has featured four main game modes.
+
+Casual mode is non-competitive and allows for socialization and exploration.
+Infection mode consists of a game of tag where a randomly selected player starts as a 'Lava Monke', who can turn other players into Lava Monkes by tagging. The game ends when every player is a Lava Monke.
+In Hunt mode, each player is tasked with tagging a unique target with information from a hunt watch. Tagged players temporarily turn into a sped-up Ice Monke, with the ability to slow down the hunters (not Ice Monkes) by tagging them. The game ends when only two players are hunters.
+In Paintbrawl, players in orange and blue teams fire paint at each other with slingshots. When a player is hit three times (represented by three balloons on the back popping), they are eliminated, but they can shoot adversaries afterwards to slow them down. The game ends when all of a team's members get eliminated.
+Other than the main game modes, some others were introduced in subsequent game updates, such as Super Infection, Monke Blocks, and Ghost Reactor.
+
+
+== Development and release ==
+Gorilla Tag was originally developed as a solo project by Kerestell Smith, known by his online username Lemming or LemmingVR. Smith took a greater interest in virtual reality with his frequent plays of Ready at Dawn's Echo Arena at the time, eventually competing in Echo Arena esports events. He described how the game's zero gravity mechanic reflected on an idea of internal logic and immersion within virtual environments, which inspired Gorilla Tag's development. 
+Smith started on the game's prototype in December 2019. The arm-based locomotion mechanic was inspired by Hidden Path's Raccoon Lagoon, in which the avatars reach torso height, facilitating the collection of items from the ground. Smith also cited the lack of VR leg controllers. He "had some of the movement prototype working" by around January 2020, and the tag idea was conceptualized some months after.
+When presented with the movement mechanics, a friend of Smith remarked on the similarity with a gorilla's style of locomotion, originating the avatar concept. He implemented a low poly art style inspired by videos of indie games with graphics reminiscent of the first PlayStation console. Smith opted out of certain common game elements, such as a tutorial, menu, or joystick, for a deeper player connection to the places.
+Gorilla Tag was first released in early access for the Oculus Quest line (now Meta Quest) via SideQuest and for SteamVR in February 2021. It launched on the App Lab section of the Oculus Store for Quest the following month. In August 2022, Smith formed the studio Another Axiom with David Yee and David Neubelt, who helped with development. The game officially debuted on the Meta Quest Store (previously the Oculus Store) on December 15, 2022, leaving Steam early access on January 1, 2023. It was launched for the PlayStation VR2 on November 8, 2024.
+
+
+== Reception ==
+PC Gamer wrote that its "deceptively simple" gameplay was the main appealing aspect of the game, with movement controls that were "easy to toy with but tricky to master." In 2021, Gorilla Tag was awarded "Best Competitive Multiplayer" by UploadVR, commenting on its innovation on tag and physical immersion not present in flatscreen games. Android Central described how the game experience was aided by "the physics-based simplicity" and how players can enjoy it if they endure the "poor" graphics and unwelcoming player behavior (toxicity). TechRadar praised the game's focus on simple fun over winning or losing, despite mentioning the potentially nauseating movement and describing how a game menu would be convenient for reporting or muting players.
+
+
+=== Popularity ===
+During its early access phase, Gorilla Tag reportedly reached 1.5 million lifetime players by the end of 2021 and 4.5 million by November 2022. By that month, it had surpassed Beat Saber in becoming the most user-reviewed game on the Quest Store, and in January 2023, it was listed as the store's most popular game. By June 2024, Gorilla Tag had amassed 10 million total users, 110 thousand reviews, and 90 thousand concurrent players. Average play session time approached 60 minutes and, according to developer David Yee, the game received three million monthly active users and one million daily active players. Gorilla Tag reportedly generated $26 million in lifetime revenue in January 2023 and $100 million in June 2024.
+The Another Axiom team stated that the game was not subject to any substantive direct marketing. It was publicized through word of mouth, particularly on social media such as TikTok, in which Gorilla Tag videos had accumulated 10 billion views by June 2024. Active communities also formed on YouTube, Reddit, and Discord. Mark Delaney of GameSpot commented that the game primarily attracted players roughly between 7 and 14 years of age and considered Gorilla Tag as the "preferred virtual hangout" of Generation Alpha. As reported by VentureBeat, the popularity led the Another Axiom team to allow over 100 people to help develop Gorilla Tag and update it every few weeks.
+An organized group was formed to create leagues with monetary prizes for players with the best performances. Other parts of the community were dedicated to modding the game; for instance, the Monke Map Loader add-on allows for loading custom locations inspired by real places and video game settings into Gorilla Tag. A large number of game clones have been released, which led VR platform SideQuest to decline further Gorilla Tag clone submissions in 2022 and the Meta Horizon Store to delist dozens of them in 2025. Fan-made hoaxes akin to creepypastas were spread online surrounding players ("ghosts") that play eerie sounds or display hacking capabilities inside matches.
+
+
+== References ==
+
+
+== External links ==
+
+Official website

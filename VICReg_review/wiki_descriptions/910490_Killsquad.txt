@@ -1,0 +1,27 @@
+Game: Killsquad
+appid: 910490
+Source: Killsquad
+URL: https://en.wikipedia.org/wiki/Killsquad
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Killsquad is an action role-playing game developed and published by Novarama. The game entered early access on Microsoft Windows in July 2019 and was released October 21, 2021. It is designed for four player online co-op play but is playable single player. Killsquad is based on a science fiction universe where bounty hunter teams called Killsquads raid planets seeking for the little available resources left. It takes inspiration from 70s westerns, pulp fiction, as well as military science fiction such as Starship Troopers. Versions for PlayStation 4 and PlayStation 5 were released on July 20, 2023.
+
+
+== Gameplay ==
+Upon entering the game, players are presented with a contract browser. Bounty Hunter Contracts are being offered to players in real-time, so they can either select one, or tag along with other players to fulfill missions together. Players can join forces with others on Steam, or tag along with unknowns. These contracts last approximately thirty minutes, and can be anything from hunting a large boss creature, escorting units, defending areas, etc.
+Heroes in Killsquad are class-based, and always start each contract at Level 1. Passive and active skills are specific to each hero, and can be available from the start, or unlocked as the contract progresses. By choosing skills, players can adapt their hero to the contract they need to undertake.
+Heroes also have a numeric value, the Vector. Vector is a metric of how good is the equipment currently assigned to that hero, be it weapons, or additional power-ups called Gears in the Killsquad universe. The Vector of a squad is a metric based on the Vectors of its team members. Fulfilling contracts and using the bounty to buy new weapons and gears is thus key, as Contracts require a certain vector to enter. If your squad has a Vector number below of the recommendation for the Contract, survival chances are lowered.
+Killsquad is a paid title, and so there is no microtransactions or loot boxes: once the contract is fulfilled, players get a reward in in-game currency, which they can spend on better weapons or equipment for their heroes.
+Planets on Killsquad are procedurally generated in a way similar to Left4Dead: the layout of the map is built by an AI, which also controls the spawning of monsters, the quests offered to the team, the reward, to keep players engaged. Planets are considered as another enemy on Killsquad, and so the AI can also spawn disasters to hamper the squad's progress, from meteor storms to minefields and police squads.
+
+
+=== Multiplayer ===
+Killsquad is class oriented, and so combining different heroes with different skills is key to survival. Some heroes, like Kosmo, follow a classic tank pattern, with aggro, huge life pools and melee attacks, whereas others, like Zero, are healer-style characters, which allow the team to heal mid-mission.  Killsquad has four heroes to choose from, with more to be added. The game is playable solo, but this is used mostly for training, as the main game mode is four player co-op.
+
+
+== Reception ==
+At E3 2019, Killsquad received an Unreal Award nomination for Most Engaging Game from Epic Games.  Killsquad received mixed reviews on Metacritic.  Upon previewing the title, Alana Hagues of RPGFan wrote: "Killsquad was one of the biggest surprises at this year's E3 for me."
+
+
+== References ==

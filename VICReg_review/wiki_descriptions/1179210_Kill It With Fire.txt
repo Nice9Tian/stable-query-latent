@@ -1,0 +1,36 @@
+Game: Kill It With Fire
+appid: 1179210
+Source: Kill It with Fire
+URL: https://en.wikipedia.org/wiki/Kill_It_with_Fire
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Kill It with Fire (stylised as KILL IT WITH FIRE) is a 2020 simulation video game developed by Casey Donnellan Games and published by TinyBuild. The player controls an exterminator, who must eliminate a spider infestation in a town using a wide arsenal of weaponry. The game received mixed reviews from critics, who praised the game's premise and art direction, but critiqued the controls and length.
+
+
+== Gameplay ==
+The game is similar to a first-person shooter. The player controls an exterminator, who needs to eliminate every spider hidden throughout 9 levels. Each level has a set number of spiders hidden underneath objects with certain areas of the level and the level's exit blocked by doors requiring a certain number of spiders be killed. The player starts with a clipboard as a weapon, but can find additional weapons hidden throughout the game, including shotguns, molotov cocktails, a frying pan and throwing stars. Each level additionally has optional objectives, some of which are unrelated to killing spiders; the objectives reward the player with upgrades between levels. Completing every objective in a level unlocks "Spider gauntlets", additional challenges which alter the game's final level. Throughout the game different types of spiders are present, such as explosive spiders, spiders that spawn smaller ones upon death and spiders that shoot webbing at the player's screen.
+
+
+== Release ==
+Kill It with Fire was initially revealed on April 28, 2020 and subsequently released on Steam on August 13, 2020. One year later, on February 19, 2021, the game was announced to receive a port to the PlayStation 4, Nintendo Switch, Xbox One and mobile devices. The port released on March 4, 2021.
+
+
+== Reception ==
+
+The game received "mixed or average reviews" according to review aggregator Metacritic. OpenCritic determined that 51% of critics recommended the game.
+Jupiter Hadley of Pocket Gamer gave the game 4 of 5 stars, praising the game's premise and optional objectives, while critiquing the controls. Multiplayer.it gave the game 7/10, citing the game's art style, concept and setting, but disliked the game's performance and controls. Push Square also gave the game a 7 out of 10, highlighting the game's sound design, though criticizing the game's short length.
+Nintendo Life gave the game a more mixed review, disliking how the game controlled and perceived repetitiveness, but enjoying the way the spiders were depicted and the gameplay, ultimately giving the game 6 of 10 stars. Steven Green of Nintendo World Report gave the game 6.5 of 10 and stated that "It's extremely fun to go on this absurd rampage, but there isn't a ton of content or variety". Shacknews negatively reviewed the game, giving it a score of 3/10 due to its mechanics and saying "the experience never digs any deeper, offering a bland playthrough that uses dubious game design to stretch the basic premise thin."
+
+
+== Sequels ==
+The game was followed up by a VR port on April 13, 2023. A sequel was announced on June 11, 2023, which went into early access on April 16, 2024. The sequel was released on November 25, 2025 for Steam, Xbox One, and PlayStation 5. It was later released on the Nintendo Switch on May 7, 2026.
+
+
+== References ==
+
+
+== External links ==
+Kill It With Fire at Metacritic
+Kill It with Fire at MobyGames
+Official website

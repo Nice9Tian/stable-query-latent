@@ -1,0 +1,73 @@
+Game: The Sinking City
+appid: 750130
+Source: The Sinking City
+URL: https://en.wikipedia.org/wiki/The_Sinking_City
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+The Sinking City is a 2019 action-adventure game developed by Frogwares and inspired by the works of horror fiction author H. P. Lovecraft. Set in the fictional city of Oakmont, Massachusetts during the 1920s, the story follows private investigator and war veteran Charles W. Reed as he searches for clues to the cause of the terrifying visions plaguing him, and becomes embroiled in the mystery of Oakmont's unrelenting flooding.
+The Sinking City was released for Microsoft Windows, PlayStation 4 and Xbox One in June 2019, for Nintendo Switch in September 2019, for PlayStation 5 in February 2021 and for Xbox Series X/S in April 2021. A Remastered version of the game released in May 2025 for Microsoft Windows, PlayStation 5 and Xbox Series X/S. A sequel, The Sinking City 2, is set to be released in 2026.
+
+
+== Gameplay ==
+The Sinking City is an open-world detective game with a third-person camera perspective. It features an investigation system in which the outcome of the player's quests will often be defined by how observant the players are when investigating different clues and pieces of evidence.
+The town of Oakmont is made up of seven districts (Advent, Coverside, Grimhaven Bay, Oldgrove, Reed Heights, Salvation Harbor, and The Shells) which have all been affected by flooding to various degrees, and the player must use a boat to safely traverse the flooded streets to reach drier areas. The player can swim if necessary, but the water is infested and can fatally damage the player's health and sanity. The player also assembles an arsenal of tools and weapons, and at times must use them to kill otherworldly creatures and dispel hallucinations. However, as Oakmont is an isolated place with dwindling resources and deteriorating social order, bullets have replaced money as the preferred currency; expending too many bullets can leave the player unable to barter for desired items. Another major resource is sanity, which is spent on investigative powers used to reconstruct crime scenes and identify clues. Sanity slowly regenerates on its own, but can be replenished faster with antipsychotic drugs. Disturbing scenes and encounters can cause sudden, sharp drops in sanity, affecting the player's perception of the surrounding environment, and complete loss of sanity is fatal.
+
+
+== Synopsis ==
+
+
+=== Setting ===
+The Sinking City takes place in the secluded city of Oakmont, Massachusetts in the 1920s, a place that is not marked on any map and few people know how to find due to its remoteness. Oakmont has a long history of association with the occult and many of its citizens are not only eccentric, but unabashed practitioners of occultism. Cultists in bloody ritual garb are an unremarkable sight on the streets alongside fishermen, average townsfolk, refugees from the destruction of nearby Innsmouth, the destitute and desperate, and well-heeled members of the upper class. The town also developed its own unique dialect over the years, but the origin of many phrases is murky. Six months prior to the events of the game, Oakmont was inundated by a mysterious flood of supernatural origin that has submerged many of its streets and cut it off from the mainland. The Flood brought with it a dark force that pushes its terrified citizens toward madness, along with a plague of otherworldly monsters called Wylebeasts, and the struggling city is on the brink of collapse. In addition, droves of people from outside Oakmont who were reported missing have been turning up in the town, drawn by haunting, unaccountable visions.
+
+
+=== Plot ===
+Charles Reed, a former U.S. Navy diver and World War I veteran turned private investigator, travels from Boston to Oakmont at the invitation of Professor Johannes van der Berg to discover the cause of the nightmarish visions that have been plaguing him since surviving the wreck of the USS Cyclops. These visions are shared by numerous other people and are reported most frequently in Oakmont. Soon after arrival, Reed is also hired by Robert Throgmorton, the influential and physically striking head of one of Oakmont's leading families, to locate Professor Harriet Dough, the researcher Throgmorton had tasked with uncovering the cause of the Flood.
+While pursuing his primary investigation, Reed addresses several other cases which embroil him in the politics and conspiratorial machinations of the power players of Oakmont. He investigates a break-in at the storehouse of a charity organization called the EOD ("Everyone's Obvious Duty"), learning that a professor was attempting to poison the EOD's food bank to discredit them, as the EOD is actually the Esoteric Order of Dagon, a cult worshipping Dagon. Reed can choose to turn in the poisoner or aid his plan to sabotage the EOD.
+Later, he is hired by local crime boss Brutus Carpenter, who has survived an assassination attempt and been replaced by an identical clone. Reed discovers the attempted killer is Brutus's son, Graham, an army veteran who wishes to turn the family away from crime and use their fortune to help the needy. Graham has made a devil's bargain with the Redemption Church, a cult that worships Shub-Niggurath, and used their magic to create a docile duplicate of Brutus. Reed can support either Graham's idealism and cult problems or Brutus's old-fashioned mob leadership; the other Carpenter is killed.
+Reed discovers that Professor Dough was kidnapped by Innsmouthers working for Ebernote Blackwood. The Blackwoods, one of Oakmont's grand families, raised Ebernote in the belief that he was one of the Chosen Few, people who are granted visions by a mystical property called the Seed of the Dreamer. When it became clear that Ebernote was not Chosen, his family abandoned him and entered the undersea society of the Deep Ones, leaving him the only remaining Blackwood in Oakmont. Ebernote wishes to conduct a ritual to transfer the Seed of the Dreamer from another Chosen into himself so that he can use the power to sabotage his family's foretold doomsday, but his previous attempts have all failed (killing the Chosen) due to his lack of an artifact called the Seal of Cthygonnaar. Reed and Professor Dough are both Chosen, but by the time Reed recovers the Seal, Dough has died one way or another. Reed can refuse the ritual and kill Ebernote; if he undergoes the ritual, the Seed of the Dreamer forces him to kill Ebernote anyway.
+Reed goes to confer with Professor van der Berg, only to find him murdered and himself framed for the crime. Reed discovers the true killers were a gang called the Yellow Kings, who serve Hastur. They kidnapped the family of Glenn Byers, a man who looks remarkably like Reed, and threatened to kill his family if he didn't murder van der Berg. After rescuing the Byers family, Reed can either tell Glenn to turn himself in or frame Milton Pierce, the corrupt politician who witnessed the murder and testified Reed was responsible.
+Reed's search for answers ultimately unearths a plot by one of the Great Old Ones to purge humanity. Van der Berg is shown to be alive, as he is Hastur in human guise. Every few centuries, when the stars are right, the Chosen are drawn to Oakmont, where the last survivor has the power to unseal the sunken temple of Cthygonnaar and release Cthylla, the secret daughter of Cthulhu and Idh-yaa as well as the source of the Flood, the Wylebeasts, and the nightmares. Once Cthylla is freed, she will give birth to Cthulhu's reincarnation, destroying the world as we know it. Van der Berg reveals he brought Reed to Oakmont and prompted him to become immersed in its underbelly because he wished to persuade him of humanity's worthlessness and impel him to fulfill the prophecy.
+Reed is faced with a choice, leading to one of three endings:
+
+Accept his destiny and unleash Cthylla, who consumes him and ascends to the surface.
+Commit suicide to leave his destiny as the Chosen unfulfilled and delay Cthylla's awakening for another cycle. Some unknown time later, Van der Berg waits in the docks of Oakmont for another Chosen.
+Refuse the choice and abscond to Boston with the Seal of Cthygonnaar, in an attempt to break the cycle. Years later, Van der Berg joins Reed in a Boston bar as the city begins to flood.
+
+
+== Development and release ==
+When planning The Sinking City, developer Frogwares envisioned the open-world setting of Oakmont as a densely-built urban area that was two kilometers square. As the scope of this made handcrafting the entire town unfeasible, Frogwares turned to Unreal Engine 4 and followed the example of city generation techniques pioneered in Ubisoft's Assassin's Creed series to create entire blocks of Oakmont at once through procedural generation. These prefabricated blocks were assembled from assets based on actual early 20th century New England architecture, with blocks in different districts of Oakmont following different sets of rules to give each district a distinct purpose and atmosphere. Among the various generic blocks, the designers placed a number of unique buildings and landmarks, and also decorated the generic blocks with other assets by hand. The areas of the town designated for flooding also used unique assets in their generation, such as silt, seaweed, and barnacles, to make them stand out in their districts.
+The Sinking City was announced by Frogwares on March 9, 2016, with pre-alpha gameplay footage debuting on July 28, 2017. The game was originally slated for release on March 21, 2019, but it was eventually delayed to June 27, 2019. Frogwares Community Manager Sergey Oganesyan explained that the decision to delay the game was made in order to avoid a crowded release window and allow for additional polishing time. Frogwares later announced that The Sinking City would be a one-year timed-exclusive release for the Epic Games Store on PC, but this would not affect the console releases. A Nintendo Switch port was self-published by Frogwares on September 12, 2019.
+The release of the game for Microsoft Windows, PlayStation 4 and Xbox One was distributed by Bigben Interactive, which claimed to be the publisher but was only a distribution intermediary. The exact role of Bigben (and Focus Home Interactive previously) was explained by Frogwares CEO in an interview given to the French media Planète Aventure in February 2020, in which he explained that Frogwares had never worked with publishing companies. Bigben Interactive and Focus Home Interactive were only licensees which do not possess intellectual properties on the games.
+Frogwares was previously working on Call of Cthulhu in collaboration with Focus Home Interactive.
+
+
+=== Distributor dispute and delisting ===
+Nacon (formally Bigben Interactive) was licensed to distribute the game until April 20, 2020. The contract was terminated by Frogwares, on account of both intellectual property violation and lack of payment. This resulted in The Sinking City being delisted from Steam, the Epic Games Store, and the Xbox One and PlayStation 4 digital storefronts on August 25, 2020 pending the resolution of Frogwares' legal dispute with Bigben. The Nintendo Switch version of the game remained available on the Nintendo eShop, as that version had been self-published by Frogwares.
+The game was republished onto Steam in February 2021 by Nacon. Frogwares quickly denounced this re-release of the game on Twitter claiming that it was not the version they created, accusing Nacon of using a version that was "hacked" from their version of the game to change out certain assets and mask its origins. Fans of the game began to review bomb the re-release, in support of Frogwares. Nacon asserted that they have financially met the terms of their contract with Frogwares and that the developers were trying to change the terms of the agreed-upon contract, and further that the contract stipulated that Nacon was the sole entity that could release the game on Steam, despite Frogwares' own attempts to release a version of the game without mention of Nacon. Nacon justified this clause in the contract for releasing the modified version of the game on Steam. Frogwares issued a DMCA takedown notice to have this version on Steam removed on March 2, 2021.
+On January 2, 2024, Frogwares announced that they became the sole publisher of the game for all platforms, resolving its legal dispute with Nacon.
+
+
+== Reception ==
+
+The Sinking City received "mixed or average" reviews according to Metacritic. Reviewers generally praised the game's writing, worldbuilding, and the lack of hand-holding in finding and drawing conclusions from clues to solve cases, but criticized the combat as slow and frustrating, and noted multiple technical issues, such as overly long loading times and screen-tearing.
+Jeff Marchiafava of Game Informer summarized: "The Sinking City shares all of the same problems of Frogwares' previous games, but it also capitalizes on the same strengths. Reed's cases offer up surprising twists and memorable moments, and flesh out a twisted world and cast of characters that I enjoyed learning about."
+
+
+=== Accolades ===
+The game was nominated for "Best Action and Adventure Game" at The Independent Game Developers' Association Awards.
+
+
+== Sequel ==
+
+A sequel, The Sinking City 2, was announced in March 2024. A Kickstarter campaign launched on March 6, 2025 to help fund the game and additional features to it.
+
+
+== Notes ==
+
+
+== References ==
+
+
+== External links ==
+Official website

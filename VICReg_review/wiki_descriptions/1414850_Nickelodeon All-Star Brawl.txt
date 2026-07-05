@@ -1,0 +1,45 @@
+Game: Nickelodeon All-Star Brawl
+appid: 1414850
+Source: Nickelodeon All-Star Brawl
+URL: https://en.wikipedia.org/wiki/Nickelodeon_All-Star_Brawl
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Nickelodeon All-Star Brawl is a 2021 crossover fighting game developed by Ludosity and Fair Play Labs, and published by GameMill Entertainment. It is part of the Nickelodeon Super Brawl series of browser games and mobile games, serving as its first console game. Featuring characters from various Nickelodeon animated television series, the game was released on October 5, 2021, for Nintendo Switch, PlayStation 4, PlayStation 5, Windows, Xbox One, and Xbox Series X/S. A sequel, Nickelodeon All-Star Brawl 2, released in 2023.
+
+
+== Gameplay ==
+
+Nickelodeon All-Star Brawl is a platform fighter, with players battling on different stages and attempting to launch their opponents off the arena and out of bounds. Movement takes place on a two-dimensional plane, with characters able to move around by running, jumping, double-jumping, or performing a mid-air dash in any of eight directions. Characters have three different types of attacks: light attacks, which are weak but quick and can be used to perform combos; strong attacks, which are slower but do more damage and knock opponents back further; and special attacks, the properties of which vary by character. Different attacks can be performed by pushing up or down or running in combination with one of the three attack buttons. Players can also grab and throw opponents or enemy projectiles, even in the air, and guard against attacks without penalty, though they will be pushed back in doing so. Unique to the game is the "strafe" function, where players can hold a button to prevent their character from turning around while moving in different directions; this can be used to continue attacking an opponent while actively retreating from them. As characters take damage, the amount of knockback caused by opponents' attacks will increase, making them easier to knock off the stage. Each stage offers a different layout, with some also having additional hazards that can cause damage to the characters. An update in June 2022 added 16 items to the game, which can be toggled in the match options. These items will spawn intermittently on the battlefield and can be grabbed and thrown to inflict damage on opponents in different ways.
+The game supports local and online multiplayer for up to four players, with the game's online functionality utilizing rollback netcode on supported platforms. The game also features a single-player arcade mode and a "Sports" mode, based on the "Slap Ball" game type from the developer's previous fighting game Slap City. In Sports mode, players must knock a ball into an opponent's goal, with different types of balls having different properties, such as soccer balls being unable to be grabbed. Players are able to unlock images displayed in an in-game gallery, music for the game's sound test, and online profile icons.
+
+
+=== Playable characters ===
+The game features 25 playable characters from 17 Nickelodeon franchises, consisting of 20 characters in the base roster, two additional characters added via free updates, and three paid downloadable content characters. Each character also has their own stage usually based on their series of origin.
+
+Notes
+
+
+== Development ==
+
+Following the success of Swedish independent studio Ludosity's fighting game Slap City, Nickelodeon approached the game's developers and laid out their plans for a platform fighter. Nickelodeon All-Star Brawl entered development in early 2020, being developed by Ludosity with assistance from Costa Rican studio Fair Play Labs. The game was designed with competitive play in mind from its inception, with Ludosity seeking to simplify the controls for newer players without sacrificing the gameplay depth sought by competitive players. The character roster was decided collaboratively between GameMill and Ludosity; according to Ludosity, only a few of their character choices were rejected by Nickelodeon due to global licensing issues. Prior to its announcement, the existence of Nickelodeon All-Star Brawl was leaked by GameFly on July 10, 2021. The game was officially announced three days later on July 13, via a trailer on IGN. It is the first console game in the long-running Nickelodeon Super Brawl series, with previous entries having been online browser games and mobile games. Like Nickelodeon Kart Racers and Nickelodeon Kart Racers 2: Grand Prix, the previous two Nickelodeon games published by GameMill Entertainment, Nickelodeon All-Star Brawl did not launch with voice acting for any of the playable characters. Ludosity CEO Joel Nyström stated that "as we continue to build the Nick All-Star Brawl franchise, we will be reviewing all options, which may include adding VO down the road." Maximum Games distributed physical copies of the game in most of Europe, while French publisher Just For Games distributed physical copies in France due to the publisher's partnership with GameMill Entertainment.
+Within the game's first week of release, players created several extensive mods for the PC version, including implementing gameplay changes, alternate costumes, and voice acting for all characters. In November 2021, the official Nickelodeon All-Star Brawl Twitter account confirmed that alternate costumes would be added to the game via a free update. Ludosity confirmed that two additional playable characters would be added to the game via free post-launch updates; the first of these characters, Garfield, was released on December 9, 2021, while the second, Shredder, was released on February 3, 2022, alongside a stage based on Double Dare. In December 2021, art director Diego Hernández Cruz confirmed that cross-platform play was scheduled to be added to the game via an update in Q1 2022, with voice acting planned for a later update. On May 13, 2022, Ludosity announced the first wave of paid downloadable content characters: Jenny, released simultaneously with the announcement, and Hugh Neutron and Rocko, who were released on August 5, 2022, and October 7, 2022, respectively. An update in June 2022 added English voice acting for all characters, along with items that can be enabled during gameplay. A physical "Ultimate Edition" containing all the downloadable content was released on November 11, 2022.
+
+
+== Reception ==
+
+
+=== Critical reception ===
+Nickelodeon All-Star Brawl received "mixed or average" reviews, according to review aggregator Metacritic. Reviewers praised the gameplay but criticized the game's presentation and lack of content.
+Push Square called the game "the best Super Smash Bros. clone we have ever played", but criticized the lack of modes offered and lamented that the lack of voice acting made the game feel "a bit cheap overall". IGN felt that the mechanical differences and good online play made the game a great alternative to similar fighting games like Super Smash Bros. Ultimate, though noted it was far less polished or fully-featured than such other games. Destructoid believed that the game provided a solid framework for a future franchise, and hoped GameMill would invest more time and money into a sequel.
+
+
+=== Accolades ===
+The game was nominated for Best Fighting Game at The Game Awards 2021 and Fighting Game of the Year at the 25th Annual D.I.C.E. Awards, but lost both awards to Guilty Gear Strive.
+
+
+== References ==
+
+
+== External links ==
+Official website

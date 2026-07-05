@@ -1,0 +1,28 @@
+Game: Bodycam
+appid: 2406770
+Source: Bodycam (video game)
+URL: https://en.wikipedia.org/wiki/Bodycam_(video_game)
+Match score: 6.36
+Retrieved: 2026-07-04
+--------
+Bodycam is an upcoming multiplayer tactical shooter video game being developed by indie company Reissad Studio. The game was released as an early access title on June 7, 2024. It has received attention for its almost photorealistic gameplay.
+
+
+== Gameplay ==
+Bodycam is a tactical shooter which is played from a first-person perspective. It features seven game modes: Body Bomb, Team Deathmatch, Versus, Hard point, Gun game, Deathmatch, Zombies as well as a training tutorial.
+
+
+== Development ==
+Bodycam was developed using Unreal Engine 5 by two people from France named Luca and Leo who at the time were 17 and 20 years old, respectively. The Multiplayer Zombie Mode update launched on November 8, 2024.
+
+
+== Reception ==
+Bodycam has been praised for its realistic graphics, sound design, and gun play. The game's graphics and environments have been compared to that of Unrecord, as the two games have graphic elements in common.
+Ranked as the best-selling game on the Steam platform during the first week of its release, the game sold 800,000 units in July 2024, generating sales of approximately €20 million.
+
+
+== References ==
+
+
+== External links ==
+Official website

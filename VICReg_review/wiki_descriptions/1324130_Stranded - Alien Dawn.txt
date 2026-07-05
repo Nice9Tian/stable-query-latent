@@ -1,0 +1,30 @@
+Game: Stranded: Alien Dawn
+appid: 1324130
+Source: Stranded: Alien Dawn
+URL: https://en.wikipedia.org/wiki/Stranded:_Alien_Dawn
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Stranded: Alien Dawn is a survival simulation video game developed by Haemimont Games and originally published by Frontier Foundry. The game was released for Windows PC, PlayStation 4, PlayStation 5, Xbox One and Xbox Series X and Series S in April 2023. In April 2025, the game's rights were sold to Paradox Interactive for £3.6 million.
+
+
+== Gameplay ==
+Stranded: Alien Dawn is a simulation video game which tasks players to guide a group of settlers marooned on a deadly alien planet and ensure their survival. At the beginning of the game, players can select several starting scenarios, each with their own goals and objectives. The game features several difficulty levels, and the game allows players to adjust various parameters of gameplay such as the aggression level of alien lifeforms and the frequency of natural disasters.
+Players need to manage the crew and assign tasks for each survivor, occasionally controlling them directly. They need to gather resources, observe alien lifeforms, and eventually, plant crops, hunt for food, and build a self-sustaining community. The maps are procedurally generated, and players can send off a scout out in a hot air balloon to collect natural resources, and sometimes recruit new survivors. Each survivor also has their own strengths and weaknesses and distinct personality, which affects the performance and the happiness of other crew members. As player progresses, their settlement or outpost will gradually expand, and they will unlock new technology that improve the survivors' well-being, and weaponry that can be used against hostile lifeforms.
+
+
+== Development ==
+Stranded: Alien Dawn was developed by Bulgarian developer Haemimont Games, the developer behind the Tropico series and Surviving Mars. Frontier Foundry, the publishing arm of British developer Frontier Developments, first announced their partnership with Haemimont in December 2019. The game was officially revealed during Gamescom 2022 Opening Night Live. After entering early access in October 2022, Stranded: Alien Dawn was released in full on April 25, 2023, for Windows PC, PlayStation 4, PlayStation 5, Xbox One and Xbox Series X and Series S.
+
+
+== Reception ==
+
+The game received "generally positive reviews" upon release, according to review aggregator platform Metacritic. 
+Kim Armstrong from Rock, Paper, Shotgun compared the game to RimWorld, and described the experience as "incredibly refreshing". Christopher Livingston from PC Gamer, meanwhile, described the game as a "a survival colony builder that generates stories of triumph, disaster, and white-knuckle rescues".
+
+
+== References ==
+
+
+== External links ==
+Official website

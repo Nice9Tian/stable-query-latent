@@ -1,0 +1,39 @@
+Game: DNF Duel
+appid: 1216060
+Source: DNF Duel
+URL: https://en.wikipedia.org/wiki/DNF_Duel
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+DNF Duel is a fighting video game co-developed by Arc System Works, Eighting and Neople, and published by Nexon. It is a spin-off of the Dungeon & Fighter series and was released for the Microsoft Windows, PlayStation 4, and PlayStation 5 on 28 June 2022. A Nintendo Switch port was released on 20 April 2023.
+
+
+== Gameplay ==
+DNF Duel is similar to other fighting games developed by Arc System Works but with more simplified mechanics. Like some previous games, the game features simplified inputs to allow new players to be able to get into the game without being put off by complicated controls. One major difference in this game is the use of an MP bar that is used to activate certain attacks, called "skills" in the game, similar to the main series games and other RPGs. Though the bar disappears after each use of a skill, it slowly regenerates over time, unlike the use of special meters found in other fighting games.
+
+
+== Characters ==
+The base roster includes 15 playable characters plus 1 unlockable boss. A season pass with 5 additional characters was released in December 2022. Characters listed in bold are post-release downloadable content characters, characters listed in italics are boss characters.
+
+
+== Plot ==
+The story of DNF Duel is set in an astral plane full of gates, one of many alternate realities created in the aftermath of the destructive event known as the Great Metastasis. Each gate connects to other locations across time and space, allowing its inhabitants to cross to other dimensions at will. Suddenly, the gates malfunction and ultimately shut down altogether in an event known as "The Day the Doors Closed", and as their powers faded into myth, the gates became known as "Wonders".
+Moving forward to the present day, the fates of several adventurers and warriors begin to converge in the Principality of Bel Myre. Each armed with their own "Wills", the special power that hides its true potential has recently awakened the Wonders once again, and upholds the future fates of both the gates and the multiverse.
+
+
+== Development and release ==
+DNF Duel was developed by Arc System Works, based on Nexon's multiplayer beat 'em up Dungeon Fighter Online. Kim Daehwon, the vice president of Nexon's development division, said Dungeon Fighter Online{{{1}}} popularity was limited to China and South Korea, and they wanted to find its global audience by create a fighting game based on it.
+The game was first revealed at Dungeon & Fighter Universe Festival in December 2020, with a teaser trailer. A beta was held from 17 to 20 December 2021 with 10 playable characters and a second, last beta from 1–4 April 2022, with 11 characters. Patch 1.04 was released in August, which includes several balance changes and bug fixes. The game features voices in Korean, Chinese and Japanese.
+
+
+== Reception ==
+
+DNF Duel received "generally favorable" reviews, according to review aggregator platform Metacritic.
+Destructoid liked the game's chaotic nature, ambitious premise, attractive roster, extensive training menus, and stable rollback netcode, and noted that the rote narrative, lack of crossplay, high-budget visuals, and high price tag as factors that held it back. GameSpot gave praise to the accessible yet deep fighting system, roster variety, and "exceptional" online play, but felt the "story mode isn't much of a story" and that the learning curve would prove to be steep for casual players. Hardcore Gamer praised the title's visuals, saying that the animation quality and art direction make this game entertaining to watch and play. IGN awarded the title a score of 8/10 and wrote that DNF Duel is a game of resource management, patience, and creative problem solving wrapped up in a "beautiful package", but noted that it may not be friendly to newcomers. The site further praised the variety of offline modes, flexible fighting system, distinct roster, solid netcode, striking art style, and bonus content while criticizing the dull story mode and generic music. Shacknews similarly praised the solid, varied cast of fighters, "beautiful" visuals and soundtrack, stable netcode, and abundance of modes but took minor issue with the flimsy character balance and overly accessible controls. VG247 called DNF Duel "a perplexing cocktail of well-implemented accessibility options" and gave high praise to the rollback netcode but noted that the story was not "substantial" for single-player mode.
+
+
+== References ==
+
+
+== External links ==
+Official website

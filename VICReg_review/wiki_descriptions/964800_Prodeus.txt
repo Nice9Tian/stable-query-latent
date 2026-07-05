@@ -1,0 +1,38 @@
+Game: Prodeus
+appid: 964800
+Source: Prodeus
+URL: https://en.wikipedia.org/wiki/Prodeus
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Prodeus is a first-person shooter game developed by Bounding Box Software and published by Humble Games. The game was crowdfunded by a Kickstarter campaign in April 2019. An early access version was released on November 9, 2020. The full game was released on macOS, Microsoft Windows, Nintendo Switch, PlayStation 4, PlayStation 5, Xbox One, and Xbox Series X/S in September 2022. A DLC was announced for the game in 2023.
+
+
+== Gameplay ==
+The developers describe Prodeus as "the first-person shooter of old, re-imagined using modern rendering techniques." The gameplay resembles that of classic 1990s first-person shooters such as Doom and Quake. The player must explore complex levels, sometimes searching out keys to progress, while engaging enemies in fast-paced combat using a variety of weapons. To help the player find their way, and to aid in discovering secrets, the game features an automap similar in function to those featured in games such as Doom, Duke Nukem 3D, and Metroid Prime.
+Prodeus employs a modern game engine to extend the experience of classic shooters with visuals such as dynamic lighting and particle effects, interactive levels, a gore system, and a dynamic soundtrack. Though the game may be played entirely with modern visuals, the game allows the player to apply shaders that give the game a pixelated look, simulating resolutions down to 360p or even 216p.
+
+
+== Plot ==
+In the future, humanity harnessed power from a hellish dimension which they used to become technologically advanced, some even used the power to become a new species called the Prodeuns. The Chaos, the monsters from the hellish dimension learned of humanity and opened a portal to the universe to destroy Earth. Most humans were killed after quickly losing the war, the Prodeuns then took over humanity and forced everyone to become Prodeuns, but a small group fled on a ship and came up with a plan to get to the Prodeuns base to defeat them and Chaos.
+However, everyone except for the protagonist of the game (only known as the Prodeus Agent) is killed by Chaos and the Agent is forced to finish the mission himself. The Agent tries to break into the Prodeun’s base but is turned into a Prodeun instead, but he survives and gains access to a train. The Agent travels across the ruined land, destroying key facilities to both the Chaos’ and Prodeuns’ war effort, the Chaos try to freeze the world by using a space station but the Agent knocks it off course.
+The Agent eventually makes it to the Prodeun’s base and weakens them enough, he then goes to the Chaos’ dimension and kills their leader, The Hunter. With the Hunter’s death, all of the Chaos are forced back to their dimension and are permanently sealed away. The Prodeuns inherit the Earth and the Agent travels through a portal to a utopian dimension.
+
+
+== Development ==
+Developers Mike Voeller and Jason Mojica met while working together at Raven Software on Singularity. By 2017, Voeller had decided to leave the industry to pursue an idea for a retro first-person shooter (that would become Prodeus). Around that time, Mojica reconnected with Voeller and decided to leave his job at Starbreeze Studios to join the project. Later, the two recruited Andrew Hulshult for the soundtrack and Josh "Dragonfly" O'Sullivan from the Doom modding community to work on level design.
+Prodeus was announced in November 2018. The launch trailer and later gameplay demos were created with a pre-alpha version of the game showcasing a typical level.
+The developers have stated that community engagement was considered a core principle of the game from the beginning. Thus, Prodeus includes an integrated level editor from day one. Anyone who owns the game on a PC will have the same tools used by the developers to make levels from scratch. The level editor is built specifically for Prodeus and is designed for speed and ease of use.
+Despite originally promising a native Linux version, it was announced on September 5, 2022 that the game would instead merely be tailored for the Proton compatibility layer, citing issues with platform support from the Unity game engine.
+
+
+== Reception ==
+
+Prodeus received "generally favorable" reviews, according to review aggregator Metacritic.
+
+
+== References ==
+
+
+== External links ==
+Official website

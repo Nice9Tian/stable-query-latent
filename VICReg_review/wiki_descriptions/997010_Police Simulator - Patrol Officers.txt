@@ -1,0 +1,35 @@
+Game: Police Simulator: Patrol Officers
+appid: 997010
+Source: Police Simulator: Patrol Officers
+URL: https://en.wikipedia.org/wiki/Police_Simulator:_Patrol_Officers
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Police Simulator: Patrol Officers is a law enforcement simulation video game developed by Aesir Interactive and published by Astragon Entertainment for Windows, PlayStation 4, PlayStation 5, Xbox One, and Xbox Series X/S. The game was first released in early access through Steam on June 17, 2021, and was fully released on November 10, 2022. It received mixed reception from critics.
+
+
+== Gameplay ==
+Police Simulator: Patrol Officers is set in the open world of Brighton, a fictional American city loosely based on Boston and Suffolk County, in the fictional U.S. state of Franklin. The player character of the game is an officer of the Brighton Police Department.
+Gameplay is divided into "shifts", which are divided into morning, evening, and night duties. Players can choose to conduct a foot patrol or a vehicle patrol in their assigned beat, which they must patrol to handle crimes they witness or callouts sent by dispatch, ranging from minor crimes like jaywalking, moving violations, and theft to serious offenses like assaults, drug trafficking, and robberies. The player has access to a variety of tools such as a handgun, a taser, handcuffs, a radar speed gun, a flashlight, a camera, road flares, a pull-over sign, a citation book, a mobile data terminal, and others, as well as a fleet of police cars. Similar to the Police Quest series, the player must follow a loose system of police regulations including a use of force continuum while on duty, such as properly handling and processing suspects and choosing whether to fine, arrest, or warn suspects based on their offenses. Proper performance, measured by a count of "Conduct Points" that starts at 100 and decreases with improper performance, earns "Shift Points", which serve as experience points. By collecting enough experience points, the player can rank up and collect "Duty Stars" that unlock new tools, vehicles, and events.
+
+
+== Development ==
+Police Simulator: Patrol Officers is being developed by German developer Aesir Interactive and published by Astragon Entertainment with public funding by FilmFernsehFonds Bayern. It was announced on February 10, 2021. The game released in early access on June 17, 2021, for PC on Steam. Regular updates were released since early access, including a cooperative multiplayer mode for up to two players. A public roadmap is available on Trello, laying out current and future plans.
+The game left Steam Early Access and fully launched on PC, PlayStation 4, PlayStation 5, Xbox One, and Xbox Series X/S on November 10, 2022.
+On June 17, 2024, the Highway Patrol Expansion DLC was released, expanding the world with a highway leading out of the city and adding content for highway patrol and commercial vehicle enforcement.
+
+
+== Reception ==
+
+On Metacritic,  the PlayStation 5 version of the game had an average score of 58 out of 100 with a rating of "Mixed or Average", while the Xbox Series X/S version had  48 out of 100 with a rating of "Generally Unfavorable".
+German magazine GameStar said that "the game has much potential even this early in the Early Access phase. Patrolling the streets is quite entertaining". GameStar criticizes  the quality of animations, the AI, and a lack of replayability reasons but still says that the game is 'the best police simulation thus far'.  Chris Hardings of DualShockers.com  gave it a 4/10, calling the game "Boring, bland, and a wasted opportunity to do something fun and cool in the simulator space", saying "it could have been so much more had the systems in play been deeper and more robust, not to mention, fun". A staff review from Softpedia rated the game 4 out of 5 stars, praising its concept and mission progression, but noting the dismal graphics and repetitive gameplay.
+
+
+== DLC's ==
+
+
+== References ==
+
+
+== External links ==
+Official website

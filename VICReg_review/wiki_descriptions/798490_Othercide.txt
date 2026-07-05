@@ -1,0 +1,31 @@
+Game: Othercide
+appid: 798490
+Source: Othercide
+URL: https://en.wikipedia.org/wiki/Othercide
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Othercide is a horror-themed tactical role-playing video game developed by French indie developer Lightbulb Crew and published by Focus Home Interactive. It was released for Windows, PlayStation 4 and Xbox One on July 28, 2020 and for Nintendo Switch on September 10, 2020. It received generally positive reviews.
+
+
+== Gameplay ==
+Othercide is a tactical role-playing game in which the player controls a group of Daughters, who are female warriors who fight against the nightmarish Suffering in a dimension known as the Dark Corner. While the Daughters and the enemies take turns to take actions, the game features a dynamic timeline system, allowing players to use various skills to delay an opponent's turn or speed up another Daughter's turn. All actions require action points, and if the players spend too many action points, the Daughter will become exhausted and she will need to wait longer before she can act again. The game features three classes: Blademaster, who wields a melee weapon, the Shieldbearer which has a lot of health, and the Soulslinger who serves mainly as a ranged support character. Each character has unique skills and can be combined together to start a chain reaction. The skills of these classes can also be extensively customised. The player's playstyle will also shape their traits and personalities.
+The game also features roguelike elements. Battles take place in small maps, and when the player's squad is defeated, they would not lose their progress and new items named "Remembrances" are unlocked. These items improve combat efficiency and allow players to survive longer. The only way to heal a fallen daughter is to sacrifice another Daughter in exchange. The surviving Daughter will have altered traits, enabling further customisations.
+
+
+== Development ==
+The development of the game began in 2017. French studio Lightbulb Crews served as the game's developer. The main goal for art director Alex Chaudret was to make the game artistically distinct from other strategy games in the market. The game's artistic direction was inspired by BLAME, Berserk and Claymore. Initially, the game was set in a city inspired by Paris (where Lightbulb Crews is based in), the team ultimately decided that they did not want to create a setting that was grounded in reality, and therefore, opted to set the game in an otherworldly dimension named The Dark Corner. According to Chaudret, the Dark Corner was "shaped by broken psyches and trauma". The game mainly features black and white as its color scheme, with splashes of red to "flesh out the important elements of both the lore and the gameplay".
+Publisher Focus Home Interactive announced the game on February 21, 2020. It was released for Windows, PlayStation 4 and Xbox One on July 28, 2020. A Nintendo Switch version released on September 10, 2020.
+
+
+== Reception ==
+
+The PC and PS4 versions of the game received generally positive reviews upon release according to review aggregator website Metacritic, while the Xbox One version received mixed reviews. Fellow review aggregator OpenCritic assessed that the game received strong approval, being recommended by 68% of critics.
+Leana Hafer from IGN awarded the game a 9/10, praising its combat and difficulty. She concluded her review by saying that "Othercide is a tactical roguelike with a flair for the dramatic, full of satisfying combat, careful planning, and sometimes heart-rending decisions". Tom Hatfield from PC Gamer also enjoyed the combat and described the combat system as "a pleasing puzzle". He also praised the "striking" art style, which helps create the game's "doom and gloom atmosphere". Due to the game's inclusion of roguelike elements, Hatfield believed that the game may not be suitable for players who are impatient.
+
+
+== References ==
+
+
+== External links ==
+Official website

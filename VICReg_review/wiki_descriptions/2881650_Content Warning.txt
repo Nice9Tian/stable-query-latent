@@ -1,0 +1,61 @@
+Game: Content Warning
+appid: 2881650
+Source: Content Warning
+URL: https://en.wikipedia.org/wiki/Content_Warning
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Content Warning is a 2024 co-op survival-horror video game published by Landfall. It was released for Windows on 1 April 2024, as a part of Landfall's tradition of releasing a game on April Fools' Day. On 1 April 2026, the game received ports to Nintendo Switch, Nintendo Switch 2, PlayStation 5, Xbox One, and Xbox Series X/S.
+In Content Warning, up to four players use a diving bell to descend into a vast underground abandoned ancient world, dubbed "The Old World", to film the monsters within and return to the surface to upload the recording to a website known as "SpöökTube". To progress, they must meet a view count quota on their recorded videos, and can purchase upgrades using the ad revenue from their videos. 
+
+
+== Gameplay ==
+The gameplay of Content Warning bears similarities to Lethal Company and Phasmophobia,  two cooperative survival horror video games played from a first-person perspective. Up to four players can team up to venture into the Old World, complexes of underground ruins with descending entrances to procedurally-generated rooms containing lost items, artifacts, and hostile creatures. The Old World is more than hundreds of millions of meters across. While players are in the Old World, they have oxygen meters that slowly deplete over five hundred seconds unless they are inside the diving bell that takes them to and from the Old World, which pauses the timer.
+Players are tasked with recording the monsters they encounter on camera, then escaping to Sky Island to upload the recorded video to Spooktube to gain views and ad revenue. The number of views and the money gained are scaled by how dangerous the captured monsters are, their presence on the screen, and their interaction with players. Some gadgets can boost the views and ad revenue as well. Once uploaded, players can save their videos to their computer in .webm format.
+Players have three days to reach the views quota. Players can upload a recording to Spooktube once, and only one dive to the Old World is permitted per day before players need to rest in the bedroom and conclude the day. Failure to reach the quota results in a game over, all equipment and money are lost, and the view quota is reset to the initial number. Additionally, players can accept a sponsor, a side objective that rewards Metacoins once completed. Metacoins can be used to purchase customization to the Sky Island like a trampoline and swimming pool, or player's cosmetics like hats.
+
+
+=== Equipment ===
+At Sky Island, players can interact with a kiosk in front of the house to purchase items with earned money. The purchasable items are sorted into the following categories;
+
+Lights: These items provide illumination, such as flashlights and flares. Flashlights can be recharged at a designated station near the diving bell.
+Medical: This category includes items like the Hugger, which gradually restores health to nearby players, and the Defibrillator, which can revive a deceased player.
+Gadgets: Gadgets are items intended to enhance in-game recordings or offer defense. Examples include the clapper, sound player, and boom mic, which increase view counts, as well as defensive tools such as the goo ball, grappling hook, and shock stick. The goo ball creates a large slime sphere that slows any entity it touches. The shock stick temporarily stuns any creature or player that comes into contact with its end. The grappling hook allows players to pull other players or creatures towards them or pull themselves towards an anchored point in the environment.
+Emote: This category includes a set of consumable emote books. Players can perform various emotes, which increase view counts when used in front of a camera.
+Misc: This category contains the party popper, a consumable item that emits a loud noise and releases confetti when used.
+Each item occupies a single inventory slot, and players can carry up to three items at a time. In addition to purchased items, players may discover items scattered randomly throughout the Old World environment. Artifacts, which provide a slight view count boost when recorded, are unpurchasable items that may have unique hazardous effects. Artifacts cannot be transported back to Sky Island, and any items left in the Old World are permanently lost.
+
+
+=== Monsters ===
+As of the May 2024 update, Content Warning features 32 monsters. These monsters interact with players in different ways. Some monsters include:
+
+Snail: A slow, bipedal creature with a shell on its back and a hollow face. It will chase players until it comes into contact with one, temporarily holding them and depleting their health over time.
+Bomber: A creature that will stalk the player from a distance before throwing a bomb at them. The bomb has slow projectile speed and takes some time to detonate, dealing damage in a blast radius and knocking back any player caught within.
+Knifo: A small ghost-like creature with a knife that it uses to stab the player. When running at the player, it makes noises that resemble a child laughing.
+Slurper: A star-shaped creature that sits on the roofs of buildings. If the player walks under it, it will grab them and slowly damage them until they die.
+
+
+=== Customization ===
+The players can customize their avatar's face by using a monitor located in the bedroom in the lobby area. This customization feature allows players to select a diving helmet visor color from a preset palette and input emoticons or other text-based symbols to be displayed on the helmet's visor. 
+
+
+== Release ==
+Content Warning was developed from February to April 2024 by a team of five developers. It is stated on Landfall's website that the game was mostly developed during an internal game jam in Seoul, South Korea. The game launched on 1 April 2024, and was available for free for the first 24 hours.
+An update in November 2025 added 48 achievements to the game. Other improvements include  bug fixes and optimizations. On 1 April 2026, the game was released on the Nintendo Switch, Nintendo Switch 2, PlayStation 5, Xbox One, and Xbox Series X/S consoles, as well as Windows via Microsoft Store with Xbox Play Anywhere support. All versions of the game allow for cross-platform play.
+
+
+== Reception ==
+Content Warning received positive reviews on online game platforms like Steam. Within twelve hours of the game's launch, it reached 50 thousand concurrent players on Steam. The game reached an all-time high of over 200 thousand concurrent players in less than 24 hours after launch. During the launch period, it was stated that the game was claimed by around 6.2 million Steam users. By mid-April 2024, Landfall stated the game had sold more than one million copies atop those claimed while it was free.
+
+
+== See also ==
+Totally Accurate Battle Simulator
+Lethal Company
+Phasmophobia
+
+
+== References ==
+
+
+== External links ==
+Official trailer on YouTube

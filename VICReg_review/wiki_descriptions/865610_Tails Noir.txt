@@ -1,0 +1,32 @@
+Game: Tails Noir
+appid: 865610
+Source: Tails Noir
+URL: https://en.wikipedia.org/wiki/Tails_Noir
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Tails Noir (previously known as Backbone) is a 2021 noir role-playing indie video game by Canadian developer EggNut and published by Raw Fury. It was released for Microsoft Windows in June 2021, for PlayStation 4, PlayStation 5, Xbox One and Xbox Series X/S in October 2021, and on Nintendo Switch in February 2022. A prequel, titled Tails Noir Preludes, was released in February 2023 on Windows.
+
+
+== Plot ==
+
+Set in a dystopian version of Vancouver, Canada, populated by anthropomorphic creatures, Tails Noir follows Howard Lotor, a raccoon and private detective tasked with solving mysteries.
+
+
+== Reception ==
+
+The game was awarded with the Gran Prix, Best PC Game and Best Art categories at the DevGAMM Unreal Engine competition in Minsk, Belarus, and with the Best Indie Game Award at the Strasbourg European Film Festival in France.
+
+
+== Prequel ==
+A prequel, titled Tails Noir Preludes, was released in February 2023 on Windows.
+
+
+== References ==
+
+
+== Further reading ==
+
+
+== External links ==
+Official website

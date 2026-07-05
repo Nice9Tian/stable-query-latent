@@ -1,0 +1,38 @@
+Game: STRIDE
+appid: 1292040
+Source: Stride
+URL: https://en.wikipedia.org/wiki/Stride
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Stride or STRIDE may refer to:
+
+
+== Computing ==
+STRIDE model, used for threat modeling
+Stride (software), a successor to the cloud-based HipChat, a corporate cloud-based collaboration tool
+Stride (game engine), a free and open-source 2D and 3D cross-platform game engine
+STRIDE (algorithm), an algorithm for identifying secondary structures in proteins
+Stride of an array, in computer programming
+Stride scheduling, a soft real-time scheduling algorithm
+System to Retrieve Information from Drug Evidence, a United States Drug Enforcement Administration database used to track the prices of drugs obtained in sting operations
+
+
+== Music ==
+Stride (composition), a 2019 orchestral composition by Tania León
+Stride (music), a type of piano playing
+"Stride", a song by Avail from their 1992 album Satiate
+"Stride," a song by Canadian musician Hayden from his 1996 EP Moving Careful
+
+
+== People ==
+Stride (surname)
+
+
+== Other uses ==
+Stride (bus rapid transit), a bus rapid transit system in the Seattle area
+Stride (gum), a chewing gum produced by Cadbury Adams
+Stride Rite Corporation, a footwear company
+Strides, a British & Australian slang term for trousers
+Strides Pharma, a pharmaceutical company headquartered in India
+Stride, formerly K12, an online education company

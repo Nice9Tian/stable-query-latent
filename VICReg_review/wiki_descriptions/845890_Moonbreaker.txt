@@ -1,0 +1,32 @@
+Game: Moonbreaker
+appid: 845890
+Source: Moonbreaker
+URL: https://en.wikipedia.org/wiki/Moonbreaker
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Moonbreaker was a turn-based strategy video game developed by Unknown Worlds Entertainment and published by Krafton for Windows. The game was released via early access on September 29, 2022, followed by its full release on February 2, 2024. 
+The game was described by the team as a "digital miniatures game", as it was heavily inspired by both tabletop role-playing games and collectible card games. The game is set in an original universe created by Brandon Sanderson.
+
+
+== Gameplay ==
+Moonbreaker is a turn-based strategy video game. In each match, players must commandeer a captain and their squad and eliminate their enemy counterparts. The player's captain is supported by nine other crewmates, which can be deployed once the player has collected enough "cinder", which is gained after each turn. Each character has their own unique abilities, and players need to spend cinder in order to utilize each character's special abilities. In each match, players need to carefully consider the positioning of their units. Hard cover can block incoming attacks, while soft cover  can reduce enemy's accuracy. The positioning of each character may also block the movement of both friendly and enemy units. Players can also call in Ship Assist. These abilities have a longer cooldown time, but they do not cost any resource. Players can fight against units controlled by artificial intelligence, though the main mode of the game also supports 1-versus-1 competitive multiplayer. The game also features another mode named "Cargo Run", a mode that is strictly single-player and features elements from roguelike games, with plans to add an additional single-player campaign mode currently titled in-game as "The Reaches".
+The characters in the game are reminiscent of miniatures from tabletop games. Each character can be painted by the player. Moonbreaker features an extensive suite of painting options such as drybrushing, stippling, and airbrushing for players to paint their digital figures. The studio also released fully-voiced audio dramas. Players can listen to these podcasts while they are painting the characters. All existing character units are available to players upon game start. Extra paint sets, sticker packs and decals, and other customization items in the game can be unlocked through playing the game and gaining experience.
+
+
+== Development ==
+Development of the game began in 2017 by Unknown Worlds Entertainment. Charlie Cleveland, the director of Subnautica, served as the game's director. According to Cleveland, the original pitch of the game was to make a "digital miniatures game". The game was heavily inspired by the Warhammer series of tabletop game. In addition to giving the ability for players to paint their digital figures, they also wanted the game to have engrossing lore and an interesting backdrop. The team, therefore, enlisted the help of novelist Brandon Sanderson to help create the game's setting. The goal for Sanderson was to build an "optimistic" universe, and he collaborated with Unknown Worlds in a weekly basis. Due to the game's large roster of characters and Unknown Worlds' intention to support the game for years, Moonbreaker will have a "long-form" story that will "last a decade or longer". He compared the game's storytelling to that of The Canterbury Tales, a story told from the perspectives of 30 different pilgrims. 
+Gameplay wise, the game was also influenced by both collectible card games including Magic: The Gathering and Hearthstone, and  strategy board games such as Cosmic Encounter. The studio wanted to limit the amount of planning players can do before starting a match. For instance, at the beginning of a match, players must choose from 3 pairs of ship assists; the combination of each pair is randomly selected by the game. The studio initially envisioned a system in which players cannot build their own roster; the game would randomly select a squad for the players based on the characters they already unlocked. However, this was scrapped as the team thought that it made the game too imbalanced and luck-based, and discouraged players from collecting additional characters. The team initially worked on a story-based "Adventure Mode", but the team abandoned this idea because they were unable to create a campaign mode that was replayable, and it failed to showcase all the units the team created for the game. 
+The game was officially announced at Gamescom 2022. The game entered early access on September 29, 2022. The early access version included three captains (Zax Ja'kar, Extilior and Astra), and around 50 other units. New units and captains would be introduced every four months. Accompanying the game's early access launch was the release of Moonbreaker: Tales From the Reaches, a podcast written by Dan Wells. Three audio dramas would be released in the game's first season. Cleveland, speaking about the future of the game, noted that Unknown Worlds hoped the game to "last a decade or longer", and that it may potentially go free-to-play in the future. Prior to the EA1.1 Update, Moonbreaker briefly contained microtransactions through an in-game "store" menu. The game was released in full on February 2, 2024.
+
+
+== Reception ==
+The game didn't receive enough critical reviews to gain a Metacritic rating.
+The game was apparently a financial disappointment in terms of sales.  In 2025, a lawsuit against the founders of Unknown Worlds Entertainment included documents of internal info that indicated Moonbreaker was considered a "commercial failure" internally.  The lawsuit also stated that Moonbreaker was a passion project of Max McGuire, one of the cofounders, but that he continued working on it rather than a potentially more lucrative Subnautica sequel, as desired by management.
+
+
+== References ==
+
+
+== External links ==
+Official website

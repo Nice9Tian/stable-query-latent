@@ -1,0 +1,65 @@
+Game: The Forever Winter
+appid: 2828860
+Source: The Forever Winter
+URL: https://en.wikipedia.org/wiki/The_Forever_Winter
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+The Forever Winter is a cooperative tactical, survival-horror, extraction-shooter video game developed and published by Fun Dog Studios. It entered early access for Microsoft Windows on September 24, 2024. The game combines squad‑based combat, survival mechanics, and asymmetrical combat in a dystopian world dominated by warring superstates and colossal war machines.
+
+
+== Gameplay ==
+The Forever Winter features tactical third‑person and first person shooting along with survival mechanics. Players assume the role of unaffiliated civilian scavengers, exploring hazardous maps to collect resources while choosing when to engage or avoid powerful AI factions who are fighting each other in the area. The game encourages stealth, resource management, and strategic decision‑making due to the strength of enemy forces and the scarcity of supplies. The gameplay allows for situations in which players may have to think carefully before firing their weapons, as it could draw unwanted attention that would result in death.
+Players have to navigate dangerous underground tunnels in order to reach above-ground areas to scavenge, with their own unique set of challenges.
+Developers for the title described the gameplay ethos as one in which “winning” means surviving and returning home with vital resources rather than defeating all enemies outright.
+
+
+== Factions ==
+The Forever Winter's world is defined by conflict between three major superstates that dominate its narrative setting. Players remain separate from these powers and instead navigate the war as independent scavengers.
+
+
+=== Europa ===
+Europa is a superstate formed from what was once Western Europe, North America, and South America. Despite its vast territory, Europa faces widespread famine, disease, and continuous warfare that have degraded its infrastructure and society. Their crops have been devastated by the war and thus rely on synthesized food for their population. They have an advantage over the other factions in terms of raw manpower. Europa's military doctrine is spearheaded by traditional combined arms tactics, relying on large numbers of infantry supported by older armored vehicles and tanks rather than relying on cutting-edge technology as part of its defensive doctrine against more technologically advanced foes. However they do utilize surgical strike teams of powerful elite units such as mechs. They utilize UAV's in combat to get a better view of the battlefield.
+
+
+=== Eurasia ===
+Eurasia is a coalition covering the entirety of Asia (except Russia), standing out from the others as the most technologically advanced faction, and are reliant on sophisticated biotech systems that allow their agricultural production to continue even as the world decays. They field a smaller military force than Europa, but use advanced technology and cyborg-infantry to overwhelm Europan positions.
+
+
+=== Euruska ===
+Euruska is an ally of Eurasia, and is a federation of former Slavic states and regions of Africa. Its culture and military are heavily influenced by Eurasia's technological and biotechnological systems, and its forces use biomechanical constructs on the battlefield like robotic dogs, and bipedal recycling units that repurpose fallen cyborg parts from their Eurasian allies.
+
+
+== Development ==
+Developer Fun Dog Studios is based in Olympia, Washington; it announced The Forever Winter in early 2024. The studio consists of industry veterans from major titles who seek to emphasize gameplay that requires tactical thinking and strategy.
+According to Miles Williams, CEO and Creative Director of Fun Dog Studios: "Our work on The Forever Winter started out with one simple truth: war is hell… With The Forever Winter, we wanted to redefine victory as survival — ensuring that every battle is hard fought, and every defeat is a lesson learned."
+The game has gone through several notable changes to its mechanics since launch, such as revised water scarcity mechanics, new enemy units, new maps, bugfixes, tunnels for the players to go through, AI improvements, and more.
+
+
+== Release ==
+The game entered early access on September 24, 2024, for Microsoft Windows. The initial version included multiple playable characters, cooperative multiplayer, and ongoing updates scheduled throughout its development lifecycle.
+
+
+== Reception ==
+
+
+=== Critical reception ===
+The Forever Winter has received mixed reviews during its early access period. According to Metacritic, early critic reviews include a 70/100 score from GamingBolt. Polygon's review highlighted the game's atmospheric design, complexity, and developer engagement with player feedback, while also noting its ongoing early access status and remaining technical issues such as enemies spawning inside incorrect areas along with gunplay still being refined.
+
+
+=== Aggregate scores ===
+GamingBolt: 70/100 
+
+
+== See also ==
+Broken-backed war theory
+World War III
+Extraction Shooter
+Nuclear Winter
+
+
+== References ==
+
+
+== External links ==
+Official website

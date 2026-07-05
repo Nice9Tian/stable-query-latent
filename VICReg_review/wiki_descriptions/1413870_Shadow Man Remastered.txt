@@ -1,0 +1,48 @@
+Game: Shadow Man Remastered
+appid: 1413870
+Source: Shadow Man (video game)
+URL: https://en.wikipedia.org/wiki/Shadow_Man_(video_game)
+Match score: 7.00
+Retrieved: 2026-07-04
+--------
+Shadow Man is a 1999 action-adventure video game developed by Acclaim Studios Teesside and published by Acclaim Entertainment. It is based on the Shadow Man comic book series published by Valiant Comics. The game was released for Nintendo 64, Microsoft Windows, and PlayStation on August 31, 1999, with a Dreamcast version following on December 1.
+The game was re-released in September 2013 by Nightdive Studios for Windows and OS X via digital distribution services. The studio later developed a remastered version with improved graphics and restored content, which was released for Windows in April 2021 and PlayStation 4, Xbox One, and Nintendo Switch in January 2022.
+Shadow Man received positive reviews, with praise for its graphics, story, and presentation. However, the PlayStation version was negatively received for its poor technical performance. A sequel, Shadow Man: 2econd Coming, was released for PlayStation 2 in 2002. Another game starring Jack Boniface, Shadowman: Darque Legacy, was announced in 2023.
+
+
+== Gameplay ==
+
+Shadow Man is sometimes considered a 3D metroidvania.
+
+
+== Plot ==
+In 1888, Jack the Ripper – lamenting the fact that his ritualistic murders have not unlocked a mystical power that he believes to exist – prepares to perform the ritual upon himself at the expense of his own life. A man named Legion appears and tells Jack that the power he seeks does exist and offers to share this power with him if Jack constructs an insane asylum for like-minded killers in Deadside – the land of the dead. Proclaiming "for we are many!", Jack commits suicide.
+In the present day, Michael LeRoi becomes the current Shadow Man – a lineage of voodoo warriors who protect the world of the living (known as Liveside) from threats crossing over from Deadside – after the voodoo priestess Mama Nettie bonds the Mask of Shadows to him. Nettie has a prophetic dream that Legion is preparing to usher in the Apocalypse by claiming the Dark Souls – the immortal souls of damned warriors – and using them to create an immortal army and send it into Liveside. Nettie reveals that Michael cannot stop the Five, a group of serial killers recruited by Legion, without his powers. The Five, who each have a Dark Soul within them, are hiding in Liveside, where Michael's powers do not work during the day. Michael travels to Deadside with the use of his dead brother's teddy bear, which serves as a link between both worlds.
+After collecting all of the Dark Souls in Deadside and passing trials set by the gods of Deadside, Michael assembles a magic knife called the Eclipser. Returning to Liveside, Nettie uses the Eclipser to trigger an eclipse, which enables Michael to become the Shadow Man in Liveside. The ritual drains Nettie of her powers and causes her to go into a deep sleep.
+Michael returns to Deadside and finds the Asylum as well as the Dark Engine which powers it. Michael finds his long-dead brother Luke within the Dark Engine along with several paths to Liveside which lead to the hiding places of the Five. Michael defeats the Five and claims each of their souls in the process. During this time, Michael finds Jack the Ripper's diary, which contains instructions on how to shut down the Engine. Michael returns to Deadside and shuts down the Engine, giving Luke his teddy bear back. Luke reveals himself to be Legion in disguise.
+Legion reveals that he sent Nettie the dream so that Michael would be forced to collect all of the Dark Souls and confront Legion, enabling Legion to claim all of the souls at once and use them to power the Engine, creating his army and sending it into Liveside. After an intense battle, Michael gives Legion all of the souls, whose combined power overwhelms Legion and kills him, destroying the Asylum as well. However, Michael is now stranded in Deadside but embraces his position as lord of Deadside.
+
+
+== Development and release ==
+Acclaim Studios Teesside began by creating the game engine, with no specific concept in mind. Acclaim Entertainment then offered them about eight comic book series to create a game from, and the developers chose Shadow Man.
+The game's development budget was more than $6 million. It was announced in 1997 and was originally slated for a late 1998 release on Nintendo 64 and an early 1999 release for Windows, but was delayed to 1999.
+The developers drew heavily on the decaying industrial structures which littered Northeast England (where Acclaim Studios Teesside was headquartered) for the design of Deadside. Asylum headquarters's design was based on Pieter Bruegel the Elder's painting The Tower of Babel.
+Shadow Man was re-released on September 17, 2013 by Nightdive Studios, on GOG.com, available for Windows (with a version for Mac OS X subsequently added), and later on Steam, available for Windows and OS X.
+Nightdive Studios later developed Shadow Man Remastered, a remastered version of the game which includes 4K resolution, improved shadow mapping, per-pixel lighting, anti-aliasing and missing content that was cut from the original game. The game was released for Microsoft Windows on April 15, 2021, while the PlayStation 4 and Xbox One ports were released on January 13, 2022, and the Nintendo Switch port on January 17, 2022. The Nintendo 64 version was also re-released on the Nintendo Classics service for the Nintendo Switch via the Mature 17+ app on October 28, 2024.
+
+
+== Reception ==
+
+The Dreamcast, PC and N64 versions of Shadow Man received favorable reviews, while the PlayStation version received mixed to negative reviews, according to video game review aggregator GameRankings. Alan Lackey of Computer Games Strategy Plus gave the PC version four-and-a-half stars out of five, calling it "an example of how [integration and manipulation of the gamer's emotion] can be done successfully. Shadow Man is graphically rich and emotionally binding. Top it off with an excellent storyline and superb gameplay and you have a game that you must experience to truly appreciate." Edge gave the same PC version eight out of ten, saying: "Shadow Man, near-peerlessly expansive in size and demands on player time, is a child of both eras, comprising the best and worst of each."
+Damien Thorpe of AllGame gave the Dreamcast version four stars out of five, saying: "Shadow Man is lengthy and difficult, and can cause you some frustration, but if you're not interested in completing it the first week that you have it, then it can also reward you with hours of enjoyable and challenging gameplay." Likewise, Jason White gave the PlayStation version the same score of four stars, saying: "While this game is very challenging, it's not the kind of challenge that will make you put your foot through the TV. If you're a fan of the horror or comic book genre, Shadow Man is a must have." However, Anthony Baize gave the PC version three-and-a-half stars out of five, calling it "a good game that can get bogged down as any complex game can. Its replay value is very high, because there is a plethora of hidden goodies waiting to be found. If I keep attacking Shadow Man in small chunks, I might just solve it. For now, I am satisfied running, searching, and shooting." PlanetDreamcast gave the Dreamcast version 6.5 out of 10, saying that it "offers a good filler game until the next batch of games hits your local store."
+Jes Bickham of N64 Magazine gave the Nintendo 64 version 93%, calling it "a dark and glittering jewel in the N64's gaudy crown. Open the door, step into the night, and revel in its bloody charms. You won't be disappointed." Dan Toose of Hyper gave the same console version 90%, calling it "a refreshing breath of stale air with the sweet smell of decay thrown in." However, Doug Trueman of NextGen called the same console version "a well-intentioned misfire".
+
+
+== Notes ==
+
+
+== References ==
+
+
+== External links ==
+Shadow Man at MobyGames

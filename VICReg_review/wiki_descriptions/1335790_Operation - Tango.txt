@@ -1,0 +1,31 @@
+Game: Operation: Tango
+appid: 1335790
+Source: Operation: Tango
+URL: https://en.wikipedia.org/wiki/Operation:_Tango
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Operation: Tango is a cooperative first-person video game, created by the Canadian studio Clever Plays. Two players take control of either an Agent or a Hacker and must work together to solve puzzles to bring down a hi-tech global menace.
+
+
+== Premise and gameplay ==
+Announced in 2020, Operation: Tango is an asymmetrical co-operative game that puts the player in control of either Angel, a field operative, or Alistair, a top hacker, tasked with saving the world by investigating and locating a global cyber-criminal named Cypher.
+
+
+== Reception ==
+
+
+=== Critical response ===
+
+The Xbox Series X version of Operation: Tango received generally favorable reviews according to review aggregator Metacritic. Jerome Joffard of Jeuxvideo.com generally praised Operation: Tango for its unique and innovative gameplay, particularly the asymmetric cooperative experience where players assume the roles of Agent and Hacker. However, he criticized the game's repetitiveness and unclear objectives in later missions, which he felt could frustrate players. In their review of Operation: Tango, Zheng Yi of Geek Culture praised the futuristic world, comparing it with the cyberpunk aesthetic of Keiichi Matsuda's Hyper-Reality and the distinctive style of Robert Valley. Thomas Heath of TheGamer applauded the game for its engaging gameplay and globe-trotting setting, which he believes make it a thrilling co-op experience. He does however note that the game's relatively short length might leave some players wanting more.
+
+
+=== Awards ===
+Operation: Tango has won a number of awards since its release, including "Best Game Design Award Winner" at the Tokyo Game Show 2021 Sense of Wonder Night, "Best Multiplayer Game Winner" at the Gamescom 2021 Indie Arena Booth, and "Grand Winner PC Game - Multiplayer Game" at the NYX Game Awards 2021.
+
+
+== References ==
+
+
+== External links ==
+Official website

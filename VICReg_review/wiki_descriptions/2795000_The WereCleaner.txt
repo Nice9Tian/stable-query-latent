@@ -1,0 +1,32 @@
+Game: The WereCleaner
+appid: 2795000
+Source: The WereCleaner
+URL: https://en.wikipedia.org/wiki/The_WereCleaner
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+The WereCleaner is a 2024 freeware video game. It was developed by Howlin' Hugs and published by USC Games for Windows, iOS, and Android.
+
+
+== Gameplay ==
+In The WereCleaner, the player controls Kyle, an ordinary janitor who is secretly a werewolf. After being assigned to work a night shift, Kyle must perform his duties and clean up messes in his wolf form while avoiding his co-workers, who he will attack and kill if they spot him. If he kills a co-worker, he must also clean up the carnage.
+Kyle's main cleaning implement is a hose, though he later acquires a vacuum and sacks for capturing small animals. The sacks can also be used to temporarily blind co-workers. Kyle can also distract his co-workers with balls of trash, which they will throw away if they find them.
+
+
+== Plot ==
+Howlin' Hugs, a company that produces plush toys, employs Kyle as a janitor. One night the CEO sends out an email demanding that all employees work nights for one week of unpaid overtime, specifying that anyone who refuses to work will not be paid. Kyle, who is secretly a werewolf, reluctantly goes to work so he can make rent. Over the next week, he cleans up his office in his wolf form while attempting to avoid his co-workers, who he'll uncontrollably kill if they spot him. Security guard Daryl grows increasingly obsessed with hunting down the monster in the office. While this is going on, the employees begin rebelling against their treatment, culminating in the CEO's unexplained death in the office.
+On the last night of the week, Daryl discovers Kyle's secret after reviewing security camera footage of him. He confronts Kyle and denounces him as a threat to the office (regardless of whether Kyle has killed anyone), hunting him down as Kyle attempts to perform his duties. Kyle escapes out a window followed by Daryl, who falls to his death. Kyle cleans up his remains before at last receiving his paycheck for the week, amounting to $119.
+
+
+== Development ==
+The WereCleaner was developed by a team of students at the University of Southern California. It was pitched as a stealth game where the player character is stronger than their enemies, as opposed to the reverse. After spending a year in development, it was released as freeware as a part of the school's annual game expo.
+Many of the game's non-player characters are directly modeled after members of the development team.
+
+
+== Reception ==
+Glenn Bunn of Screen Rant praised the game's humor and twist on the stealth genre. He was particularly impressed with the title's quality given the fact that it was freeware and the developers were college students.
+By November 2024, The WereCleaner had reached one million downloads across all platforms.
+At the 2024 App Store Awards, The WereCleaner was nominated for "iPhone Game of the Year". At the 2025 Independent Games Festival, it was nominated for "Best Student Game". At the ceremony, it won the Audience Award.
+
+
+== References ==

@@ -1,0 +1,103 @@
+Game: Fear & Hunger 2: Termina
+appid: 2171440
+Source: Fear & Hunger
+URL: https://en.wikipedia.org/wiki/Fear_%26_Hunger
+Match score: 6.12
+Retrieved: 2026-07-04
+--------
+Fear & Hunger is a 2018 survival horror role-playing video game developed by Finnish indie game developer Miro Haverinen. It was released on 11 December 2018 on Windows, MacOS and Linux.
+The story takes place in an alternate history medieval dark fantasy setting, and follows four characters, one of whom the player chooses as a playable protagonist. Their goal is to find a man named Le'garde, into the labyrinthic, deadly Dungeons of Fear and Hunger, where monsters and gods dwell. Fear & Hunger features unforgiving turn-based combat during which party members can permanently die or lose limbs, with each enemy type having unique moves and weaknesses. Players must manage the physical health, mental health, and hunger of the characters in their party, and find their way throughout the Dungeons with very little guidance; there are no experience points and saving comes with risks, encouraging the player to avoid certain encounters and go without saving for lengthier periods.
+The game received generally positive reviews, with critics praising the game's atmosphere, gameplay, storytelling and difficulty while criticizing the presence of semi-frequent typos, frequent bugs, and the game's handling of some of its more mature themes, particularly that of sexual violence, drugs, and violence towards children. A sequel, Fear & Hunger 2: Termina, was released in 2022.
+
+
+== Gameplay ==
+
+At the start of the game the player chooses one of four characters, each with their own character class: Cahara the Mercenary, D'arce the Knight, Enki the Dark Priest, or Ragnvaldr the Outlander. The player then selects their backstory, the answers of which grant special items or abilities. The player will be prompted to choose one of four difficulty options, the last of which must be unlocked to use. The player must then traverse the dungeons of Fear & Hunger, avoiding or fighting the many monsters and traps that occupy the dungeon. Throughout the game, the player can meet numerous NPCs, some of which can be recruited to the player's party. Some of these NPCs are hostile at first, but can be brought to the players side through different actions, item interactions, and dialogues. Regardless of which character you choose, you will be able to find the other three character options within the dungeon, and all can be recruited if the player performs correct actions, unless you are playing on hard mode.
+The game features a "turn-based strategic dismember combat system" where characters can target different body parts of their enemies. Player attacks are often single-turn options, while enemy characters are given different attacks on different limbs. Likewise, enemy attacks can cause the playable characters to permanently lose limbs, affecting their speed and ability to use weapons. The player must also maintain their hunger and sanity which both worsen over time. Many actions throughout the game, including saving and avoiding instant death, are determined through a coin toss mechanic, with the player having to correctly predict an outcome of 'heads' or 'tails'.
+The game features multiple endings based on choices made by the player and the selected difficulty.
+The game also features a hidden difficulty mode called "Dungeon Nights," an adventure/dating sim with both elements from the base game, as well as elements parodying dating games. The goal of this mode is to secure one of the many NPCs as a date for the Prom. These NPCs include characters one could recruit, as well as gods and major enemies. It is unlocked by naming your character Schoolboy, schoolgirl, or schoolkid.
+
+
+== Synopsis ==
+Fear & Hunger employs minimalist storytelling to convey its plot and lore. Historical events in the world and their significance are mostly told through optional dialogue, readable "book" items and world design; what happens over the course of the game, and in what order, varies heavily based on the player's actions.
+
+
+== Plot ==
+The game is set in the year 1590 of a medieval fantasy world divided into countries and revolving heavily around the worship of several Gods. The four playable characters each have their own backstory, although all are in the search of Le'garde, the leader of the Knights of the Midnight Sun, a group of mercenaries on the rise who seek to unite the world in peace and unity; growing scared of his influence, the Kingdom of Rondon turns on Le'garde and captured him, sending him to the Dungeons of Fear & Hunger, an infamous prison in Rondon believed to host a dark power that kills or twists everything within its depths. 
+The playable characters are Cahara, a mercenary desperate for wealth who takes on the risky job of rescuing Le'garde; D'arce, one of Le'garde's closest followers on a desperate one-woman quest to save him; Enki, a scholar who grew disillusioned with the world until a vision hinted that Le'garde might be the key to changing it, leading him to seek the Dungeons; and Ragnvaldr, a hunter whose village and family were slaughtered by the Knights of the Midnight Sun, and seeks to ensure Le'garde's demise. Whichever characters are not selected by the player will still be featured in the game with the same backstory, and can possibly be recruited in the party.
+Exploring the Dungeons reveals that the Humans within have been slaughtered by monsters from its depths, or otherwise twisted into monsters themselves. Among the few sane Humans within are potential party members such as an unnamed little Girl found in a cage and Le'garde, if he is found within the Dungeons fast enough. Key background elements to the story are the Gods: the first generation, the Old Gods; the "Ascended" God Alll-mer, a Human who somehow reached Godhood on a level rivaling that of the Old Gods; and the New Gods, other Humans who became Gods, yet whose powers could never reach the heights of the Old Gods' and Alll-Mer's.
+Eventually, the player can reach in the deepest parts of the Dungeons, the body of an Ancient God, the God of the Depths, which they can enter to reach his heart, the Heart of Darkness; they can also find a way to Ma'habre, the ancient city of the Gods the entrance of which is hidden within the Dungeons, where they can meet the most powerful of the New Gods to acquire their souls, typically by defeating them. In Ma'habre, the player can find the Throne of Ascension, allowing those who sit upon it to become a God.
+
+
+=== Endings ===
+The game has ten endings: six regular Endings, named from Ending A to Ending E (with two different C Endings) and which can be reached with any character at any difficulty, and four S Endings, only available in hard mode (the highest difficulty) and each exclusive to one of the four playable characters.
+
+Ending A takes place if the player reaches the Heart of Darkness with the Girl in their party. Then, the Girl transforms into a new God, the God of Fear and Hunger, while the main character dies battling her; although the protagonist is forgotten by history, the coming of this new God brings about the Cruel Age, a grueling period bringing about never-seen before industrial and technological growth.
+Ending B takes place if the player reaches the Heart of Darkness without the Girl. Then, they are attacked by the "Traces" of the Old God Gro-goroth; if they survive long enough, the remnants of the God kill the main character by sharing information incomprehensible to a mortal mind.
+Ending C takes place if the player reaches the Throne of Ascension with Le'garde in their party. Then, Le'garde will use the Throne to ascend to Godhood. If the main character follows, they reach an otherwordly realm where they find Le'garde, for whom roughly a century has passed. They can:
+Refuse to acknowledge Le'garde as their god, killing him and escaping the Dungeons, resulting in the regular C ending.
+Bow to Le'garde and accept him as their god, resulting in Ending C-II.
+Ending D takes place if the player reaches the Throne of Ascension without Le'garde. In this case, they will encounter in the otherwordly realm a god version of themselves, starting a discussion that decides what the main character's rule as a god will be. This leads to Ending D, with the specifics of the character's future explained via text and dependent on previous dialogue.
+Ending E takes place if the player finds Le'garde already dead, having taken too long to reach him, and leaves the Dungeons the same way they came. As a result, they return to the normal world, although their mental state has deteriorated so much that they become unsure they ever truly left.
+Cahara's S Ending sees him returning from the Dungeons with great treasure, which he sells to become one of the most affluent individuals in Rondon. However, he is traumatized by the experience, and spends the rest of his life convinced that some creature in a dark corner is waiting for a chance to kill him.
+D'arce S Ending requires her to find Le'Garde already dead, and use a specific magic spell to bring him back to life. The resurrected Le'garde is changed in both body and mind, a fleshy monster who believes himself a god, ready to unleash upon the world the same suffering he has known in the Dungeons.
+Enki's S Ending sees him become "enlightned", gifted with knowledge beyond that of mortals, and take residence in the Great Library of Ma'habre, finding a way to extend his life beyond mortal means and dedicating his life to an eternal research for more knowledge.
+Ragnvaldr's S Ending requires him to defeat almost every strong enemy in the game, and for Le'garde to be dead; after this, having reached his original goal and removed all traces of darkness in the Dungeons, he dedicates the rest of his life to eradicating evil wherever he will find it.
+
+
+== Development and release ==
+Fear & Hunger was built on the RPG Maker MV engine and was developed and designed almost solely by its developer Miro Haverinen over the course of two years. In an interview, he stated that the idea for the game was born from his school days when he would propose morally awkward hypotheticals to his classmates that would all take place in a morbid dungeon. The first demo of Fear & Hunger served as the practical portion of Haverinen's academic thesis. Haverinen has stated that the inspiration for the game came from a desire to create a sensation of relentless darkness and experiment in different ways to evoke hopelessness and horror. Silent Hill, Hellraiser, Amnesia: The Dark Descent, Nethack, Berserk, the Souls games and Mortal Kombat were all named as inspirations by Haverinen. Some aspects of the game, including a swimming section, were cut during development.
+Fear & Hunger was released on Steam and Itch.io on 11 December 2018.
+
+
+== Reception ==
+Fear & Hunger received generally positive reviews. Critics praised the game's atmosphere, gameplay, storytelling and unforgiving difficulty. Writing for DualShockers, Marcus Jones wrote that, "Fear and Hunger is the absolute essence of grueling, with death being a natural part of the game. Yet those who persevere and apply their knowledge of past playthroughs to the current one are granted a one-of-a-kind dungeon crawler that will literally have you crawling back for more."
+Dominic Tarason, writing for Rock Paper Shotgun, praised the game's gameplay and atmosphere but criticized the semi-frequent typos, varying quality of the artwork and some of the more sexual aspects of the horror.
+Lorenzo Sabatino of The Games Machine generally praised the game but criticized the chance-based elements of the game's difficulty as being unfair and frustrating.
+Brazilian reviewer Cauê Batista described Fear & Hunger as "captivating" but "problematic", praising the game's atmosphere and immersive mechanics but criticising some of the more "morbid" aspects of the game, particularly the "trivialization of sexual violence."
+
+
+== Fear & Hunger 2: Termina ==
+
+Fear & Hunger 2: Termina is a roleplaying survival horror video game developed by Finnish developer Miro Haverinen and released on December 9, 2022 on Windows and macOS for Steam and Itch.io.
+
+The game takes place in 1942, roughly 350 years after the first game. It retains the original's turn-based unforgiving battle system, with gameplay changes including the ability to dash, the addition of firearms both inside and outside combat, the ability to draw sigils to appeal to the powers of the gods, and a set in-game time limit of three days, with time moving forward with every save, further encouraging the player to save as rarely as possible; which point the player is at time-wise influences characters, enemies, and quests. The number of playable characters is extended from four to eight, each with unique skills that can heavily affect progression.
+Termina received critical acclaim, and was praised for introducing new elements to the established lore and gameplay, while retaining the strengths of the original.
+
+
+=== Plot ===
+Set in an alternate history, Termina takes place in a fictional 1942, on the tail end of the Cruel Age, which saw great industrial and technological growth. The game begins very shortly after the end of a second world war, which concluded in a peace treaty as soon as the invading Bremen Empire captured the Eastern Union city of Prehevil.
+The game starts on a train bound to Prehevil, although it mysteriously stops on the outskirts, with its crew nowhere to be seen. All twelve passengers have the same dream, where a strange being named Per'kele claims that they are now the "Candidates", participating in the "Festival of Termina", a twelve-participant battle royal to the death willed by the God Rher, and that the winner must be the sole survivor before a three day limit lest all remaining Candidates suffer a gruesome fate. 
+Among the Candidates are the eight playable characters, one of whom the player picks as their protagonist: Levi, a Prehevil native and former child soldier now plagued by PTSD and a heroin addiction; Marina, another Prehevil native returning after years away studying occultism; Daan, a medically-trained widower of mysterious origins seeking information on his wife's death; Abella, a skilled mechanic from the Kingdom of Oldegård part of the NIL Eastern Union revolutionary group; O'saa, an Abyssonian and one of the Yellow Mages who use otherwordly powers only for their own benefit, and follows the God Nas'hrah, whose head he carries; Olivia, a Bremen botanist looking for her twin sister Reila, leader of NIL; Marcoh, a Vatican boxer fleeing from a criminal group he worked for; and Karin, a Bremen war correspondent and human rights activist on a quest for the truth behind the Kaiser, leader of the Bremen army. The non-playable Candidates are: Tanaka, a businessman; Henryk, a chef; Samarie, a girl who, unbeknown to Marina, has been stalking the latter during her studies; August, a mysterious, resourceful gentleman; Pav, a Bremen soldier with elusive goals; and Caligura, a cruel mobster.
+Exploring Prehevil, the protagonist finds that Rher's power has "Moonscorched" its inhabitants and the Bremen occupiers alike into monstrous bloodthirsty beings, and must find their way through the deadly city. Save for the protagonist, all playable characters, depending on the player's actions, can become Moonscorched themselves, turning into inhuman enemies, although it is possible to recruit them into the party instead, while the ultimate surviving number of Candidates can go from thirteen to zero. The story can take two main directions: one requires finding three Telelectroscopes hidden under the city to reach the otherwise-locked White Bunker, while the other requires the player to kill all other Candidates themselves (either as Humans or Moonscorched) to gain access to The Hollow Tower, atop which Per'kele awaits.
+
+
+==== Endings ====
+The game has three endings, although the first two have several variations:
+
+Ending A, "The Machine God", takes place by reaching the White Bunker. Inside, the player finds and defeat the Kaiser, who is actually  Le'garde/The Yellow King from the original game. What he was guarding is a nascent new God: Logic, born from the combination of Reila and technology to create a God of a kind never seen before. The protagonist's party seemingly becomes part of Logic and the network she is connected to, prematurely ending the Festival of Termina.
+All Candidates still alive and Human by the point this ending is reached will be shown aboard the train, safely leaving Prehevil.
+Ending B, "Day 4", takes place by killing all other Candidates and reach The Hollow Tower, where Per'kele can reveal that he is not actually a servant of Rher; although the Festival is a byproduct of Rher, Per'kele and his true God have been re-purposing it to serve their own goals, and he offers the protagonist to join the service of his true God. If the player either attacks Per'kele outright or refuses the offer, they must defeat him, and survive a fight against Rher himself attacking in the form of the moon, after which the player character will finally leave Prehevil, having overcome the Festival.
+In this ending, whichever of the eight playable characters is the protagonist gets their own unique epilogue depicting what happens to them after Prehevil.
+Ending C, "The Sulfur God", is reached by following the same steps as Ending B but ultimately accepting Per'kele's deal; the two must then fight to their mutual deaths, so that the protagonist can be reborn as a follower of Per'kele's true god, the Sulfur God, of which they have a short vision.
+
+
+=== Development ===
+Like the first game, Fear & Hunger 2: Termina is based on RPG Maker MV. The game was released on December 9, 2022, although Miro Haverinen has continued to update it with new content since.
+
+
+=== Reception ===
+
+Marcus Jones of DualShockers, who also wrote a review for Fear and Hunger, writes that "Termina takes all the best aspects of the first game and evolves them". He argues that the game is a "JRPG Horror Perfection", and acclaims a wide selection of characters, and novelties gameplay and history wise.
+Andrea Gonzalez of Destructoid applauded the game for having kept the great elements of the first video game while adding an original setting and a large selection of characters. While stating the game was "deeply frustrating", there was "magic" in its difficulty.
+Patrick Armstrong of ScreenRant praised Miro Haverinen for having exploited the potential of RPG Maker MV while preserving the great elements of its prequel. While remaining "devilishly hard", he stresses that the sequel is easier than the prequel. In his eyes it is one of the best sequels in video game history.
+Zubi Kan explains that the knowledge-based gameplay which is truly unique and subversive makes this game truly fantastic.
+SUPERJUMP columnist Maris Crane salutes this video game and particularly its immersion thanks to its horrific, stressful and threatening music and universe, contrasted by the safe zone of the game allowing the player to rest.
+On IndieHellZone, "scitydreamer" says that "Combat is largely similar to the previous game, though it feels more refined", and "the presence of rape is better utilized than the original game". However, he also noted that Pav, one of the contestants, "presents something that [he] [feels] might bother people", that being that although "the premise creates the expectation that you'll be fighting other contestants, they don't really pick fights with you".
+Game Rant's Ritwik Mitra called it "one of the best sequels of all time", noting the slightly easier difficulty compared to the previous game, added that it was "still devilishly hard and will brutally test players to their very limits". 
+
+
+== Notes ==
+
+
+== References ==

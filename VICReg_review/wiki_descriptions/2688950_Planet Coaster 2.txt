@@ -1,0 +1,43 @@
+Game: Planet Coaster 2
+appid: 2688950
+Source: Planet Coaster 2
+URL: https://en.wikipedia.org/wiki/Planet_Coaster_2
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Planet Coaster 2 is a construction and management simulation video game developed and published by Frontier Developments. It is a sequel to Planet Coaster (2016). The game was released on Microsoft Windows, PlayStation 5 and Xbox Series X on 6 November 2024.
+
+
+== Gameplay ==
+As a sequel to 2016's Planet Coaster, Planet Coaster 2 expands upon its predecessor with improved building tools, water park building and management, and event sequencing gameplay. Like its predecessor, the game features career, sandbox, and challenge mode. Cross-platform cooperative gameplay has been added, with players able to visit other parks online, or build a new one together with save sharing.
+The game features many returning systems from Planet Coaster, which have been re-built using feedback from the first game. This includes the pathing system, which has been changed from a piece-by-piece building system to a draw system. New utilities for building scenery pieces have also been added, including object scaling and mirroring/twinning, and the ability to add scenery pieces directly to rides and roller coasters. Update 2 was launched on 12 February 2025, which introduced customizable video billboards and synchronized ride launches.
+
+
+== Development and release ==
+Prior to Planet Coaster 2, Frontier Developments was working on the F1 Manager series, and Warhammer Age of Sigmar: Realms of Ruin, but both titles underperformed, contributing to layoffs in an organizational review. This also changed the company's strategy from diversifying the game portfolio to refocusing on the management simulation genre, which had previously led them success.
+The game's title was leaked in June 2024, when an unofficial site tracking games on the Epic Games Store revealed an upcoming title by Frontier Developments titled Planet Coaster 2. The game was formally revealed on 11 July 2024 with its first official trailer, and had a gameplay reveal on 31 July 2024 in a Frontier Unlocked livestream. It released on Microsoft Windows, PlayStation 5 and Xbox Series X on 6 November 2024.
+
+
+== Reception ==
+
+
+=== Critics ===
+
+Planet Coaster 2 received generally positive reviews from critics, with praise for its improvements over the original game, particularly in terms of visuals, customization, and new features.
+Leana Hafer from IGN praised Planet Coaster 2 for expanding on its predecessor's strengths, particularly with improved customization and new water attractions. She highlighted the intuitive terrain and coaster editing tools but noted that the extensive options could be overwhelming. Hafer criticized the management aspects for lacking depth and found issues with staff and ride maintenance. Despite these flaws, she emphasized that the sandbox mode remained a standout feature, enabling detailed and creative park building.
+Brendan Caldwell from Rock Paper Shotgun heavily criticised the game for its "fiddlesome busywork", "penchant for micromanagement", and "poor user interface".
+Timo Reinecke of Shacknews commended Planet Coaster 2 for its improved visuals, intuitive menus, and water-themed attractions. He highlighted the engaging campaign mode and quality-of-life updates like customizable paths and ride details. However, he criticized the shallow management mechanics and passive research progression. Despite these issues, he praised the game for its creativity and immersive park-building experience.
+
+
+=== Player reviews ===
+The game received mixed reviews from players on release day, with players saying it was a half-finished experience with an inferior UI and buggy guest AI. The game was praised on Steam for its performance and graphical improvements over the first game, as well as the improved controller support.
+
+
+== Note ==
+
+
+== References ==
+
+
+== External links ==
+Official website

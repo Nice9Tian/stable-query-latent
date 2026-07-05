@@ -1,0 +1,41 @@
+Game: The Ascent
+appid: 979690
+Source: The Ascent (video game)
+URL: https://en.wikipedia.org/wiki/The_Ascent_(video_game)
+Match score: 6.87
+Retrieved: 2026-07-04
+--------
+The Ascent is a cyberpunk-themed action role-playing video game developed by Swedish game studio Neon Giant and published by Curve Digital for Windows, Xbox Series X/S and Xbox One on 29 July 2021. It was developed using Unreal Engine 4 by a team of 12 people and is Neon Giant's debut in the industry. The game received positive reviews for visuals, combat, and soundtrack, but criticism for the emphasis on grinding.
+
+
+== Gameplay ==
+The Ascent is presented from an isometric view overlooking the character(s). It is a twin-stick shooter. It includes the ability to aim both high and low on enemy targets, allowing the player to differentiate between shooting enemies closer or further away. This mechanic is key to the game's cover system, allowing the player to aim at enemies over the top of the props in the environment. The player can fully customize their character's appearance, and can augment their character with cyberware upgrades to get new skills and abilities. Players have an upgradeable cyberdeck device, which they can use to gain access or "hack" into previously locked areas and loot certain chests.
+The game features a destructible environment that reacts to the player's actions, such as bullet impacts, skill powers and explosions. A fast travel system is implemented in the game via a built-in subway system and paid taxi, allowing the player to travel vast distances in-game quickly. It is an open world game that IGN described as having "essentially no loading screens". Defeating enemies allows the player to collect loot of various rarities. Items can be obtained by completing missions, exploring the world or purchasing them from vendors with in-game currency. The gameplay modes include single-player, local co-op and online co-op with a maximum of 4 players.
+
+
+== Premise ==
+The game takes place within an arcology in a futuristic dystopian world known as Veles, controlled by a powerful megacorporation called "The Ascent Group". Players assume control of a worker enslaved by the company. After the mysterious collapse of The Ascent Group, the arcology descends into a chaotic free-for-all pitting districts, syndicates and rival corporations against each other for control. The player's role is to stop other factions from seizing control and uncover the mystery behind the demise of The Ascent Group.
+
+
+== Development ==
+The Ascent is developed by Neon Giant, a team of 12 people. On 28 June 2018, it was announced that Epic Games had awarded Neon Giant one of 37 developers grants based on their work on an unannounced title set in a "brand new cyberpunk world". For which they received between $5,000 and $50,000 to help progress the project. In around May 2019, Neon Giant had struck a deal with Microsoft. Creative director Tor Frick said that they (Microsoft) were "immediately very excited" about what they had made in its early development stage. The game was developed using Unreal Engine 4.
+The game's inspiration came from 2000 AD comics as well as the Robocop series. The release of Cyberpunk 2077 around the same time proved somewhat frustrating for the team as the two game's world feature several similarities although Neon Giant was unaware of these until late into development. The team at one point considered previewing more of their game than they planned, just to prove that they were not copying CD Projekt.
+The Witcher and Dying Light composer Paweł Błaszczak wrote the score for The Ascent. The original soundtrack has a runtime of just under two hours (114 minutes) and consists of 30 tracks. The soundtrack features original music from numerous licensed artists, such as Maximum Love.
+
+
+== Release and marketing ==
+The Ascent was announced on 7 May 2020, along with a reveal trailer on the same day. Originally an Xbox Series X launch title, the game was delayed  and was released 29 July 2021 on Windows 10, Xbox Series X/S and Xbox One.  It was included with the Xbox Game Pass subscription upon release. On 24 February 2022, it was announced that The Ascent would be releasing on PlayStation 4 and PlayStation 5, with a reveal trailer. The PlayStation port eventually released on 24 March 2022.
+A downloadable content pack titled Cyber Heist was released on August 18, 2022. Set after the events of the main game, Cyber Heist is set in new locations and features new missions and sidequests. It introduces melee weapons such as the Rock Crusher and Guillotine.
+
+
+== Reception ==
+
+The Ascent received "mixed or average" reviews from critics for Windows and Xbox Series X/S, according to review aggregator Metacritic; the PlayStation 5 version received "generally favorable" reviews. Fellow review aggregator OpenCritic assessed that the game received fair approval, being recommended by 56% of critics.
+Game Informer gave the game 7.25/10, writing, "The Ascent delivers mindless co-op fun in a beautiful cyberpunk world that ends up emphasizing style over substance." IGN rated it 7/10, summarizing with: "The Ascent's satisfying gun-tastic action-RPG gameplay loop mixes with its beautiful cyberpunk aesthetic to create an overall enjoyable experience. Neither its story nor its characters are all that memorable, and its enemy encounters can stumble toward the end, but its gunplay and ultra-violence in a neon-soaked world combine to craft a co-op-friendly game you don't see every day."
+GameSpot gave the game a 6/10, saying, "Even if The Ascent was fully functional and balanced in a way where building up a character to become the ultimate Indent warrior felt great, there's the fact that so much of the game is designed to feel like servitude... Your bosses insult you when you go on your task, ignore you when you've done well, and provide no rewards for success. For so much of the play time, The Ascent feels like, well, an uphill battle."
+uVeJuegos.com gave the game 8/10, praising the game's soundtrack, stating that "it meets the requirements that every cyberpunk work needs, with its synthesizer sounds, futuristic feel and synthwave rhythm" and that "the work of composer Paweł Błaszczak and licensed songs by artists such as Maximum Love and Extra Terra were remarkable and pleasant to listen to".
+On 4 August 2021, publisher Curve Digital announced that The Ascent set its largest-ever opening weekend sales revenue, generating over $5 million in sales. During this time, The Ascent became the number one top-selling game worldwide on Steam's global charts. After the release, developer Neon Giant stated that The Ascent was a "monumental effort" for a team of 12 people and that they had been overwhelmed by the positive response from the player base.
+During the 25th Annual D.I.C.E. Awards, the Academy of Interactive Arts & Sciences nominated The Ascent for Action Game of the Year.
+
+
+== References ==

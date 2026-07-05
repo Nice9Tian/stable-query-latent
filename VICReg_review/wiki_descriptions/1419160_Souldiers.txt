@@ -1,0 +1,37 @@
+Game: Souldiers
+appid: 1419160
+Source: Souldiers
+URL: https://en.wikipedia.org/wiki/Souldiers
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Souldiers is a 2022 Metroidvania video game with role-playing elements developed by Retro Forge and published by Dear Villagers. It released on 2 June 2022 for Microsoft Windows, Nintendo Switch, PlayStation 4, PlayStation 5, Xbox One, and Xbox Series X/S.
+
+
+== Gameplay ==
+Souldiers is a 2D action-adventure metroidvania with soulslike combat. The player can select one of three classes at the beginning of the game, Scout, Archer, and Caster, each with different abilities and combat styles. The player has access to light and heavy attacks, a dodge ability, and class-specific utility abilities. Throughout the story the player gains the ability to infuse their attacks with different elements, allowing them to deal more damage to enemies of a certain element in exchange for taking more damage from others. The available elements are: Fire, Earth, Lightning, Water, and Wind.
+The exploration options are limited by the character's abilities. Thus, the player unlocks new areas as they unlock new power-ups. Enemies defeated give the player experience that allows them to level up. As the character levels up, they can then unlock new abilities in a skill tree unique to each class
+
+
+== Story ==
+Souldiers takes place at the beginning of a war against the Dadelm army. The Royal Council of Zarga, one of the three nations that rule the continent of Ascil, is preparing its military plan. The War Council led by the King of Zarga announces the positioning of the troops determined by General Brigard.
+Arkzel, the king's sorcerer and main advisor, who has led him to victory on many occasions, suggests a change of strategy that leads the troop of soldiers to the edge of a cave. After a devastating earthquake, they find themselves trapped in the darkness. A luminous silhouette appears before their eyes and invites them to accompany her. It is a Valkyrie, an entity that comes to find the deceased so that their existence continues beyond the world. Informing them that their circumstances are unnatural, the Valkyrie transports the soldiers, amongst which is the player character, to the world of Terryaga, where they are instructed to seek out the "Guardian".
+After regrouping with their commander Brigard in Terryaga's capital of Hafin, the player sets out on several missions to investigate the different factions of the world, encountering among them a parasitic race of monsters that possess their hosts, The deceased enemy general Galath and his forces, as well as a mysterious legion of Armored warriors exterminating their fellow soldiers. Eventually the player is told about a monster named Ratatosk who is attempting to destroy Terryaga by gnawing at the roots of its world tree. The player then traverses the Fire temple to Reach Ratatosk and defeats him, wherein he gives the player a cube to traverse the valley of silence and reach the Guardian.
+Clearing the challenges of the Valley of Silence and defeating Galath for good, the player reencounters the legion of warriors, reborn through the power of their leader, who the player then defeats and absorbs. Ascending to a mystical tower, the player encounters the Guardian Beigon, who is revealed to be infected by one of the parasites. Beigon steals the players combined power and attempts to kill them, only for the Legion of warriors to empower the player with their fallen energy, allowing them to defeat Beigon and release him from the parasite. Beigon reveals that Arkzel was possessed by the power of one of the parasites, and lured the army to the cave to ensure that the parasites could devour the Players homeworld. Beigon opens a portal for the player and their comrades to return home and attempt to save their world.
+
+
+== Development ==
+The game was announced on October 20, 2021, in partnership with IGN. Souldiers was also featured in the MIX (Media Indie Exchange) NEXT showcase 2021 with a commented trailer by the developers introducing the gameplay and classes of the game.
+Souldiers was originally produced in Spanish and was subsequently localized into British English, French, German, Russian, Portuguese, Chinese and Japanese. Localization was coordinated by Ad Ludus Game Localization, with the Spanish to English translation itself also being directly produced by the same. The game was initially scheduled to launch on May 19, but was delayed to June 2 to add further polish.
+
+
+== Reception ==
+
+Souldiers received "generally favorable" reviews for Windows, PlayStation 5, and Xbox Series X/S, and "mixed or average" reviews for Nintendo Switch, according to review aggregator Metacritic.  Mitch Vogel of Nintendo Life praised the art style, abundance of collectibles, and combat system while criticizing the performance problems, long load times, and difficulty spikes.
+
+
+== References ==
+
+
+== External links ==
+Official website

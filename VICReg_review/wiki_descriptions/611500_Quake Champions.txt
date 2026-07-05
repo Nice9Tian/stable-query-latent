@@ -1,0 +1,31 @@
+Game: Quake Champions
+appid: 611500
+Source: Quake Champions
+URL: https://en.wikipedia.org/wiki/Quake_Champions
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Quake Champions is a 2022 first-person shooter game developed by id Software and published by Bethesda Softworks. It is the fifth main entry in the Quake series, following 2005's Quake 4. The game was first released in early access on August 22, 2017; since August 10, 2018, the game has been free-to-play. The game's full version was released on August 18, 2022.
+
+
+== Development ==
+Quake Champions was announced at the Electronic Entertainment Expo 2016. The game features a large quantity of playable characters, with each having access to one or more 'passive abilities', and one 'active ability' that must be triggered by a key-press. The game was promised to be a "fast paced arena based shooter", and would not be released on consoles due to hardware limitations.
+At QuakeCon 2016, creative-director Tim Willits revealed that Quake Champions does not run on the id Tech 6 game engine, but instead works on a hybrid engine made up of id Tech and Saber3D Engine, which means a number of the features seen in Doom are not native to Quake Champions, such as virtual reality, Vulkan API, SnapMaps and mod support, although mod support is potentially planned after initial release. It was revealed that Quake Champions was originally considered as an expansion to Quake Live, a revamped version of Quake III Arena released in 2010. The game went into closed beta on April 6, 2017, and was released onto Steam's early access program on August 22.
+It is stated that the game would feature a free-to-play option, allowing players to play as Ranger, with additional characters available for purchase, similar to the model used in Killer Instinct.
+At E3 2017, B.J. Blazkowicz of the Wolfenstein series was announced as a playable character.
+At E3 2018, Bethesda announced the availability of a free-to-play trial downloadable on Steam. Players who signed up during the free trial period would be able to keep playing for free after the game launch. Early access to the game was available for purchase at $30 on Steam.
+Andrew Hulshult announced on his Twitter that he will be composing new music for the game. Hulshult previously composed music for the modification Brutal Doom and Apogee Software titles like 2013's Rise of the Triad and 3D Realms' Bombshell.
+During Quakecon 2018, it was announced that Quake Champions would be free-to-play and open to all players on August 10. At launch, the game made use of loot boxes containing random cosmetic items. It later transitioned to a battle pass model in December, with players earning "shards" from weekly challenges to unlock new cosmetics.
+
+
+== Reception ==
+The game has been well-received by fans of the Quake series, however, the lack of modding support has disappointed many, it also failed to keep the player's attention for longer than other free-to-play games.
+The game was nominated for "Fan-favorite Shooter Game" at the Gamers' Choice Awards, and for "Best Action Game" at the Titanium Awards.
+The game has inspired two demakes on earlier id Tech games: Quake Champions: Doom Edition for the original Doom, and Quake Champions Classic for the original Quake.
+
+
+== References ==
+
+
+== External links ==
+Official website

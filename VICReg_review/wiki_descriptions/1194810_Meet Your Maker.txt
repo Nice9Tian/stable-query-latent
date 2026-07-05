@@ -1,0 +1,32 @@
+Game: Meet Your Maker
+appid: 1194810
+Source: Meet Your Maker
+URL: https://en.wikipedia.org/wiki/Meet_Your_Maker
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Meet Your Maker is a first-person shooter video game developed and published by Behaviour Interactive. In the game, players are tasked to build and raid user-generated outposts filled with traps and guards. The game was released for Microsoft Windows, PlayStation 4, PlayStation 5, Xbox One and Xbox Series X/S in April 2023.
+
+
+== Gameplay ==
+
+Meet Your Maker is set in a post-apocalyptic world in which players must construct an outpost and infiltrate those created by other players. The infiltrating player must grab "GenMat", genetic materials that are found in the center of each outpost, and escape the outpost with it. Players can raid an outpost solo or with another player. Players are equipped with a variety of firearms, grenades, a grappling hook and a melee weapon. Players are encouraged to leave words of recognition that describe their experience after raiding an outpost.
+While creating an outpost, players must ensure that there is viable path for other players to reach the GenMat. A harvester robot will inform them whether the GenMat is accessible. They can then fortify the path with a variety of traps, as well as guards controlled by artificial intelligence to fend off other infiltrating players. Once the construction is completed, players can test and share their creations with other players online. They can further iterate its design by watching how other players attempt to raid it.  Both building and raiding outposts will grant players resources that allow them to further upgrade their traps and weapons in their own outposts.
+
+
+== Development ==
+Meet Your Maker was developed by Behaviour Interactive, the developers behind Dead by Daylight. Early previews compared the game to Doom, Super Mario Maker and Minecraft. To ensure that the game is balanced, there is a maximum build capacity for each outpost, though this limit can be further increased through upgrades. The game was playable in first-person perspective as the team felt that it highlights the claustrophobic setting, making the experience more immersive. Traps in the game cannot fire at players until they are identified, thus giving time for the invading players to react.
+The game was officially announced in August 2022. An open beta for the game ran from February 7 to February 13, 2023. It was released for Microsoft Windows, PlayStation 4, PlayStation 5, Xbox One and Xbox Series X/S on April 4, 2023; it was made available on the PlayStation Plus subscription service as a day-one release.
+
+
+== Reception ==
+
+According to review aggregator Metacritic, the PC version of the game received "generally positive reviews", while the PS5 and the Xbox Series X versions of the game received "mixed or average" reviews.
+Travis Northup from IGN described the game as a "terrific concept", and that the game's launch was a "great start for a dungeon-delving shooter that’s as unique as it is hard to put down". However, he wrote that at launch, the game did not have sufficient content and noted that the game had technical issues. Imogen Donovan from NME wrote that the game did not provide incentive for players to create "artistically challenging" levels. She felt that while the game sometimes offered a tense and satisfying experience, many of the levels created by players are way too difficult, and that "outposts are built for greatest gain to the builder, not to the community".
+
+
+== References ==
+
+
+== External links ==
+Official website

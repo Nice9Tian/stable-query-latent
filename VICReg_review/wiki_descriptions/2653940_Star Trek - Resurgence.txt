@@ -1,0 +1,38 @@
+Game: Star Trek: Resurgence
+appid: 2653940
+Source: Star Trek: Resurgence
+URL: https://en.wikipedia.org/wiki/Star_Trek:_Resurgence
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Star Trek: Resurgence is a 2023 adventure video game developed by Dramatic Labs and published by Bruner House. Players control two officers on a Starfleet ship that becomes engulfed in a deadly alien conspiracy; the primary focus of the game is the player's choices and how they shape the outcome of the main story.
+
+
+== Gameplay ==
+Set in the fictional Star Trek universe after Star Trek: Nemesis, Resurgence is centered around Commander Jara Rydek (Krizia Bajos), the new first officer of the USS Resolute, and Petty Officer Carter Diaz (Josh Keaton), who has recently been assigned to the Resolute's engineering crew. The Resolute is tasked with escorting Ambassador Spock as he seeks to mediate a dispute between two formerly peaceful alien civilizations over control of valuable mining claims but soon discover that an unseen enemy is manipulating both sides to its advantage.
+Both Rydek and Diaz have distinct narratives: Rydek finds herself torn between the Resolute's veteran officers and her captain, who has become increasingly reckless in his command; she is ultimately forced to pick a side to determine the vessel's fate. Diaz works to prove himself as a capable crewmember, pursues a potential romantic relationship, and becomes instrumental in thwarting an attempt to destroy the Federation.
+Players choose dialogue options and solve puzzles, including quick time events. There are also action sequences where players engage in firefights and fly shuttles. Failed sequences can be restarted from a checkpoint, but there is no way to go back to previous chapters to make different decisions. Each player has a guide to check their relationships with different characters, which will in turn affect how their stories end.
+
+
+== Development ==
+The developer, Dramatic Labs, was founded by former Telltale Games staff. Star Trek: Resurgence was first announced at the Game Awards 2021 with the hope of it being released in "Spring 2022", although Drarmatic Labs later admitted "our initial target was just too aggressive", and that "it became clear the game wouldn't be what we wanted if we kept that release window."  
+The first of several releases occurred on May 23, 2023 where the game was made available digitally on Windows exclusively via the Epic Games Store, Xbox One and Series X/S, as well as a Playstation 4 edition which was also available on Playstation 5. A physical release followed on 27th October, alongside a native Playstation 5 edition, a digital upgrade of which was also made available for free to anyone who had previously purchsed the Playstation 4 edition.
+The game was subsequently released on Steam on May 23, 2024, following its year of Epic Games Store exclusivity,  and a Nintendo Switch version was released on August 28th, 2025. 
+Prior to the Switch release however, several players had already noted several features had been removed from the game's official website, including the ability to register an account and access the ability to compare choices made throughout the game to those of other players was not working. The publishers replied by stating that "We are changing some of the backend infrastructure and hope to have the choices site back on-line shortly."  Despite this the website was not updated, even to the point of still saying that a Switch release "would be a way off" several months after the release itself.  
+On 14th April Bruner House made an announcement on Steam stating "Our license to distribute Star Trek: Resurgence has come to an end, so the game will no longer be offered for sale. Existing customers can continue to access the game via their Steam library",  though it was reported that "While today’s statement suggests the game is already unavailable for sale, Resurgence remains accessible on four of its five digital storefronts" with only the Xbox version having been removed "at the time of writing". 
+
+
+== Reception ==
+Star Trek: Resurgence received "mixed or average" reviews from critics, according to review aggregator website Metacritic.  
+PC Gamer, IGN, and Polygon praised the combination of storytelling and decision-making, which they thought captured the spirit of Star Trek.  However, PC Gamer criticized the number of quick-time events, Polygon disliked the minigames entirely, and IGN felt the stories lacked closure.  IGN and Polygon also commented on having technical problems with the Windows and PlayStation versions, respectively.  Shacknews called it "the most logical choice" for Star Trek fans, though they criticized what they felt were melodramatic cutscenes and overcomplicated minigames.  RPG Site enjoyed the visual novel aspects and recommended it overall despite their dislike of the game mechanics that strayed from making dialogue choices.
+
+
+== See also ==
+List of Star Trek games
+
+
+== References ==
+
+
+== External links ==
+Official website

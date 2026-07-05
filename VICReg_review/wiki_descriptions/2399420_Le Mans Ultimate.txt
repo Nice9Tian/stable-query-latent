@@ -1,0 +1,36 @@
+Game: Le Mans Ultimate
+appid: 2399420
+Source: Le Mans Ultimate
+URL: https://en.wikipedia.org/wiki/Le_Mans_Ultimate
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Le Mans Ultimate is a sim racing video game developed by Dutch video game developer Studio 397 and published by Motorsport Games. The game is an officially licensed simulation of the FIA World Endurance Championship, European Le Mans Series, and the 24 Hours of Le Mans, and focuses on Le Mans Hypercar, LMP2, GTE, and LMGT3 cars. The game was first released as an early access title on 20 February 2024, officially releasing a year later on 22 July 2025.
+Originally slated for release in December 2023, the date was pushed back to February 2024 before Studio 397 switched to an early access model just weeks prior to the official release of the game. The game is currently featured only on PC, but console versions are being considered with porting agencies the likely method, according to Motorsport Games CEO Stephen Hood.
+
+
+== Gameplay ==
+As the FIA World Endurance Championship's officially licensed simulation, Le Mans Ultimate includes the series' official car classes and manufacturers featured since the 2023 season and onwards, those being Le Mans Hypercar, LMP2, GTE, and LMGT3. Race tracks used both currently and previously by the FIA WEC since 2023 are also present in the game, including Sebring, Portimão, Spa-Francorchamps, Circuit de la Sarthe, Monza, Fuji, and Bahrain.
+Le Mans Ultimate later became the officially licensed simulation for the European Le Mans Series, officially releasing downloadable content in September 2025, including a new car class and a racing circuit, those being LMP3 and Silverstone Circuit.
+Race Weekend is Le Mans Ultimate's single-player mode where players can set how many classes will be on track, weather forecast, time scaling, fuel usage scaling, and tyre wear scaling. Online multiplayer is present in early access and is powered by RaceControl, Motorsport Games' online racing platform. Players can compete in daily races, limited timed special events, or create a private session for select players to join.
+
+
+== Development ==
+The game is built on the isiMotor 2.5 engine, developed by Image Space Incorporated for use in rFactor 2. Le Mans Ultimate also features Real Road 3.0, which is a system that allows for dynamic simulation of a race track's surface, including changing surface conditions as cars drive over a race track and the simulation of rain and puddles affecting the environment of a circuit.
+Before becoming its own release, the basis of Le Mans Ultimate was originally intended to be for the successor of the rFactor 2 video game, in the form of rFactor 3.
+
+
+== Reception ==
+
+Le Mans Ultimate received "generally favorable" reviews from critics according to review aggregator website Metacritic.
+In its 2025 review, Video Games Chronicle's Mike Channell highlights the game's handling model, writing that "the degree of communication via the handling model about how the car is behaving on the track surface is second to none", while also criticizing the game's lack of single-player features, such as no career mode feature, concluding that Le Mans Ultimate is "not necessarily a great game, but a genuinely exceptional sim."
+
+
+=== Awards ===
+
+
+== References ==
+
+
+== External links ==
+Official website

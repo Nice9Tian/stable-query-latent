@@ -1,0 +1,31 @@
+Game: Necromunda: Underhive Wars
+appid: 566440
+Source: Necromunda: Underhive Wars
+URL: https://en.wikipedia.org/wiki/Necromunda:_Underhive_Wars
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Necromunda: Underhive Wars is a 2020 tactical role-playing game video game developed by Rogue Factor and published by Focus Home Interactive. The game is based on Games Workshop's 1995 tabletop game Necromunda. The game is set in the Warhammer 40,000 universe, and takes place on the mechanized planet of Necromunda, with the player controlling a gang of up to 5 who fight with other gangs for resources. Necromunda: Underhive Wars was released on 7 September 2020 for PlayStation 4, Xbox One and Microsoft Windows.
+
+
+== Development ==
+In 2018, Games Workshop announced, in partnership with Rogue Factor Entertainment, that the development of a Necromunda video game titled Necromunda: Underhive Wars had begun, and would be published by Focus Entertainment. A trailer for the game was revealed during the announcement showing a monologue with a House Escher Leader squaring off with House Goliath gangers, and a tentative release date of 2019 was set. However, Rogue Factor was not able to meet this timeline and no further announcements were made regarding the game, leading many to believe that production on the project had been cancelled.
+In June 2020, Rogue Factor announced that development for Necromunda: Underhive Wars was still ongoing and that they were targeting a summer 2020 release. Following the release of a new trailer for the game, they advised that the long period of silence stemmed from a complete revision of what they wanted the game to achieve, as a great deal of early speculation drove potential players to think that Necromunda: Underhive Wars nothing more than a reskin of their earlier success Mordheim: City of the Damned. Additionally, Rogue Factor advised that gameplay would allow players to build a gang of up to five gangers (whereas the tabletop would allow players to have anywhere between 1–15, depending on the gang they were using), and featured a new campaign written by Games Workshop Alumni Andy Chambers. In mid-June, Steam advised that they had begun taking preorders for Underhive Wars with a release date of 8 September 2020.
+The game was released on 8 September 2020.
+
+
+== Gameplay ==
+On release three gangs were available; Goliath, Escher, and Orlock with each gang having different traits and characteristics. Players hire gang members but only five at a time can be present in missions. Each ganger is customisable and come in five classes; Deadeye, Brawler, Heavy, Saboteur and Lay-Mechanic. There is a progression system and permanent injuries so if a gang member gets injured during a battle they may not recover.
+During a battle each gang member has a turn to carry out their actions and movement and are controlled third person.
+
+
+== Reception ==
+
+Necromunda: Underhive Wars received mixed reviews on release. Criticism came about the AI behaviour in the game, bugs and save corruption.
+
+
+== References ==
+
+
+== External links ==
+Steam page

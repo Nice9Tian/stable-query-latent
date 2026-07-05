@@ -1,0 +1,59 @@
+Game: Blasphemous 2
+appid: 2114740
+Source: Blasphemous 2
+URL: https://en.wikipedia.org/wiki/Blasphemous_2
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Blasphemous 2 is a side-scrolling Metroidvania video game developed by The Game Kitchen and published by Team17. The sequel to Blasphemous (2019), it was released for Microsoft Windows, Nintendo Switch, PlayStation 5 and Xbox Series X/S in August 2023 and for PlayStation 4 and Xbox One in November 2023. The game received generally positive reviews upon release.
+
+
+== Gameplay ==
+Like its predecessor, Blasphemous 2 is a 2D side-scrolling Metroidvania action-adventure game. Players assume control of the Penitent One, a silent knight who must embark on an adventure in a new kingdom to prevent the rebirth of a curse named "The Miracle". The story of the game is set after the "Wounds Of Eventide" update of the original game. As with previous games in the series, the world in the game is filled with deadly traps, difficult platform sequences, hostile enemies and boss characters. Players will also encounter other non-playable characters who will either offer assistance, or side quests.
+
+The game introduces several new weapons, with each having their own reach, speed, special abilities and skill tree. The weapons in the game include the Veredicto, a war censer with the furthest reach that deals powerful but slow attacks and is incapable of parrying; Sarmiento and Centella, a dual-wielded rapier and dagger with rapid strikes but have the shortest range and a damage bonus that is lost if the player gets hit; and the Ruego Al Alba, a praying blade with balanced attributes. These weapons are also useful for traversal, aiding players in discovering new paths and solving puzzles. The abilities of the protagonist can also be customized. Players can equip up to five "rosary beads", which provide passive bonuses, and two active spells (known as prayers) in the game. Players can also collect statues which provide small bonuses by themselves, and more significant buffs when they are placed together in certain combinations.
+
+
+== Plot ==
+
+
+=== Setting and characters ===
+Set many years after the Wounds of Eventide ending, worship for the Miracle had declined following the death of the High Wills and Escribar, and for a time, Castodia experienced an age without gods or the Miracle's influence. However, pain and suffering remained in the world, and people eventually began praying for a greater power to relieve their suffering, giving the Miracle an opportunity to return. The Miracle eventually gathered enough power to create a massive heart in the sky to birth a new child. To protect the heart, the Miracle resurrected its most loyal followers, the Archconfraternity led by the very first Penitent, Eviterno.
+Afterwards, Crisanta attempted to put a stop to the Miracle's plans by slaying the child before it could be born, but she failed and commited suicide after being defeated by Eviterno. Meanwhile, Deogracias took charge of the Penitent One's coffin and guarded it until his death. The Miracle's return also served to resurrect the Penitent One, forcing him to continue his penance.
+
+
+=== Synopsis ===
+After resurrecting and obtaining a new weapon to replace the Mea Culpa, the Penitent One encounters an angelic woman named Anunciada, who instructs him to destroy the Miracle's new child and prevent the Miracle from returning. In order to do this, the Penitent One must collect the Three Regrets, which will open a path for the Penitent One to reach the heart in the sky. With a new mission, the Penitent One proceeds to travel across Cvstodia again, collecting the Three Regrets as well as eliminating all of the members of the Archconfraternity. 
+As the Penitent One collects the Three Regrets and uncovers more information, he eventually learns that the Miracle was able to return thanks to answering the prayers of a devout husband and wife, who fervently prayed for a child despite the wife being barren. What resulted was a miraculous immaculate conception, but the birth instead created the disfigured Witness and released a plague that killed the wife and many others. However, the Miracle's goals were achieved as the inhabitants of Cvstodia rediscovered its existence. The Penitent One also encounters the spirit of the Witness, who explains that his role is to observe and narrate the events of the story. 
+Finally, the Penitent One manages to reach the top of the City of the Blessed Name, where he confronts and defeats Eviterno. However, he is too late to stop the child, the Incarnate Devotion, from being born. The Incarnate Devotion is initially confused at what its purpose is, but attacks the Penitent One, seeing it as a test. The Penitent One eventually defeats the Incarnate Devotion, leading to one of two endings:
+
+In the default ending, the Incarnate Devotion realizes the pain it experienced battling the Penitent One was meant to be its baptism, and it merges with the mortally wounded Penitent One to complete its transformation, heralding the age of the Second Psalm and the return of the Miracle.
+If the player completed several optional quests and obtained the Incense of the Envoys item, then the Incarnate Devotion realizes that the pain it experienced is the embodiment of Cvstodia's rejection of the Miracle, and it voluntarily dies, ending the threat of the Miracle forever. Anunciada rewards the Penitent One by carrying his spirit to the afterlife, where his deceased companions are waiting for him, and the Witness concludes that the Penitent One's penitence is complete.
+
+
+=== Mea Culpa DLC ===
+Shortly after defeating all of the Archconfraternity members and before the final confrontation with the Incarnate, the Penitent One has been called by Crisanta's soul to restore the original Mea Culpa sword which was destroyed after the High Wills' death in order to end the Miracle's threat for good. She gives him the Mea Culpa's hilt, but he is ambushed by another penitent named Brother Asterion, who serves the Miracle through his unnamed dead master. The Penitent One reclaims the hilt before Asterion can kill Anunciada, who sacrifices herself in order to restore the Mea Culpa. The Penitent One later confronts and defeats Asterion a second time, who falls off a ledge to his death.
+Upon defeating the Incarnate Devotion with the Mea Culpa, Crisanta's soul claims the blade and delivers the final blow, ending the Miracle's reign and allowing her to ascend to the afterlife. Somewhere in the desert, the Penitent One discards his helmet and the Mea Culpa, implying his penance is over. In the post-credits scene, Asterion's sword, which his master is entombed in, begins to crack.
+
+
+=== The Third Sin DLC ===
+Upon obtaining a lantern that lets him get through a magical mist and taking a barge across a lake, The Penitent One finds himself in a faraway castle. The Penitent One meets the castle's sole remaining sapient resident, Eliseo, who is nailed to the glass coffin of his lover, the castle's duchess, who was granted by the Miracle the wish for them to remain between life and death. Upon freeing him from the magic nails that bound him, The Penitent One faces the duchess's undead spirit and finally lifts the castle's curse.
+
+
+== Development ==
+Spanish developer The Game Kitchen returned to develop the sequel. According to producer David Erosa, an important goal for the team was to make the game "closer to the classic Metroidvania genre". Therefore, the team worked to expand the Penitent One's arsenal of weapons, providing him with more means to combat enemies and traverse the world. The team did not use any of the code from the original game and instead took 18 months to rebuild the code for Blasphemous 2 from the ground up. The team also took time to refine the controls after hearing feedback from players of the original game. Like the original game, the team took inspirations from paintings and local Spanish culture, history and architecture while creating Blasphemous 2. The sequel was released with complete voice overs in both English and Castilian Spanish, the latter featuring multiple actors from Spain as well as Mexican voice actor Humberto Vélez.
+The Game Kitchen and publisher Team17 officially announced the game in April 2023. The game was digitally released for Windows PC, Nintendo Switch, PlayStation 5 and Xbox Series X and Series S on August 24, 2023. The physical version of the game was released on September 15, 2023. A more expensive Digital Deluxe edition, which includes access to a digital artbook and the game's official soundtrack, can also be purchased.
+A paid expansion of the game, titled Mea Culpa, was released on October 31, 2024, adding two new areas, boss encounters, and additional quests. In June 2026, The Game Kitchen released a free expansion titled The Third Sin, adding a new weapon and a new area.
+
+
+== Reception ==
+
+Blasphemous 2 received "generally favorable" reviews, according to review aggregator website Metacritic. OpenCritic determined that 94% of critics recommended it.
+Travis Northup from IGN described the game as "a gloriously gross return to Cvstodia", and added that despite the game's lack of originality with its design, "it more than makes up for with its bizarre world, appalling story, and inspired look and sound". Writing for Destructoid, Timothy Monbleau compared the game favourably to "all-time genre greats like Castlevania: Aria of Sorrow", and concluded his review by saying that "Anyone who likes Metroidvanias should absolutely make time for Blasphemous 2". Brian Shea, from Game Informer, praised its exploration element.
+
+
+== References ==
+
+
+== External links ==
+Official website

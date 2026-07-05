@@ -1,0 +1,45 @@
+Game: Evil West
+appid: 1065310
+Source: Evil West
+URL: https://en.wikipedia.org/wiki/Evil_West
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Evil West is a 2022 hack and slash videogame developed by Flying Wild Hog and published by Focus Entertainment. The game was released for PlayStation 4, PlayStation 5, Windows, Xbox One and Xbox Series X/S on 22 November 2022. It received mixed reviews from critics.
+
+
+== Gameplay ==
+Evil West is a third-person shooter. The player assumes control of Jesse Rentier, a vampire hunter. Jesse is equipped with several powerful firearms including a six-shot revolver, a lever-action rifle, and a flamethrower. He also has access to various melee attacks through a specialized gauntlet capable of accumulating electrical energy. Enemies can be stunned and staggered following a melee attack, allowing players to execute them using a special finisher move. Players can use the environment to their advantage. For instance, they can kick enemies into a spike trap, or shoot explosive barrels. Players will occasionally encounter boss characters, which are powerful enemies with unique attack patterns. As the player progresses, they will level up and gain skills and abilities. The campaign can be played cooperatively with another player.
+
+
+== Plot ==
+
+
+=== Premise ===
+Jesse Rentier (portrayed by Derek Hagen), one of the last agents of a clandestine vampire-hunting organization, must protect the American frontier from supernatural monstrosities.
+
+
+=== Synopsis ===
+Jesse Rentier is an agent of the Rentier Institute, a secret organization dedicated to battling supernatural creatures such as the Sanguisuge, vampires that prey on humanity. Working together with retired agent Edgar Gravenor, they follow the trail of Peter D'Abano, a high ranking vampire that advocates for declaring war on humanity before their technology develops to the point where it will become a threat to the Sanguisuge. The Sanguisuge leadership, wanting to stay in the shadows, reject D'Abano's plan and sentence him and his entire line to death. Jesse and Edgar then ambush D'Abano and capture his head, taking it back to the Manor, the Rentier Institute's headquarters.
+Upon arriving, Jesse is given a special Gauntlet by his father William who reveals it is capable of breaking the magical Glamours the Sanguisuge use to hide themselves. During a presentation of the Gauntlet in front of Assistant Secretary of War James Harrow, D'Abano's daughter Felicity attacks the Manor, killing most of the staff and agents stationed there and recovering D'Abano's head. With William critically wounded, Jesse, Edgar, and Harrow flee to the nearby city of Calico where they make contact with the local Rentier Institute cell, led by Emilia Blackwell. Suspecting that William may have been infected with vampirism by Felicity, Edgar heads off by himself to find a possible cure for the infection while Jesse works to repair the Gauntlet.
+While recovering the parts needed to repair the Gauntlet, Jesse finds that Felicity has been siphoning blood from the cadavers of mythical pre-Columbian beasts to create her own army of creatures called Foulbloods. He destroys Felicity's blood source and returns to Calico to find that his father has indeed been infected by vampire blood and is in the process of turning into Felicity's Familiar. With time short, Jesse heads out to find Edgar and the cure and injects it into William. However, William is still briefly telepathically linked with Felicity and warns Jesse she is in Dickinson, an important rail hub. Jesse heads to Dickinson, but is unable to prevent Felicity from escaping. With little other choice, Jesse heads to an abandoned Rentier Institute lab to further upgrade his Gauntlet.
+Returning to Calico, Jesse is confronted by Harrow, who has discovered they have kept William alive in violation of protocol, and orders him to kill William. When Jesse and the rest of the Calico cell refuse, Harrow leaves, promising to withdraw the US government's support. Jesse then reunites with Edgar, and learn from their vampire informant Chester that Felicity is planning to attack Washington D.C. Chester also warns them that the cure they used on William is only temporary, and will not stop him from eventually turning. Jesse and Edgar rush back to Calico, but arrive to find out that William had turned in their absence, killed several members of the Calico cell- including their engineer Virgil, and then fled. Realizing his father is too far gone, Jesse promises to hunt William down.
+Jesse follows William's trail to Felicity's base in Persephone, where he reluctantly kills him. He then proceeds to Felicity's headquarters in Carmine City, where she is using the local bank to finance her activities. While Felicity is already gone, Jesse recaptures D'Abano, who under interrogation reveals Felicity has already left to ambush President Grover Cleveland so she can turn him. Jesse and his friends follow Felicity. While his friends secure President Cleveland, Jesse confronts Felicity and manages to kill her.
+Emilia informs President Cleveland of how Harrow has been abusing his position for profit, leading to his arrest and dismissal. President Cleveland then promises to reinstate the Rentier Institute and give it his full backing. Knowing that the war against the Sanguisuge is far from over, Jesse and Emilia begin to come up with ideas to rebuild and reform the Rentier Institute.
+
+
+== Development and release ==
+Evil West was developed by Polish studio Flying Wild Hog. The game's combo system was inspired by the Devil May Cry series, while the third-person perspective and melee combat were inspired by 2018's God of War.
+Flying Wild Hog and publisher Focus Entertainment announced their partnership in September 2020. The game was announced at The Game Awards 2020. The game was initially set to be released on 20 September 2022 for Windows, PlayStation 4, PlayStation 5, Xbox One and Xbox Series X/S, but was later delayed to 22 November 2022.
+
+
+== Reception ==
+
+Evil West received "mixed or average" reviews from critics for the PC and PS5 versions, while the Xbox Series X/S version received "generally favorable" reviews, according to review aggregator website Metacritic. Fellow review aggregator OpenCritic assessed that the game received fair approval, being recommended by 58% of critics.
+
+
+== References ==
+
+
+== External links ==
+Official website

@@ -1,0 +1,27 @@
+Game: Drug Dealer Simulator
+appid: 682990
+Source: Drug Dealer Simulator
+URL: https://en.wikipedia.org/wiki/Drug_Dealer_Simulator
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Drug Dealer Simulator is a 2020 simulation video game developed by Byterunners and published by Movie Games S.A. In the game, the player assumes the role of a drug dealer that must create and sell drugs, slowly creating a drug empire while avoiding local law enforcement. Players can use an in-game "mixing table" to combine a range of existing substances—from amphetamines to baking soda—into unique drugs. The game received mixed reviews from critics upon release, who criticized the game's mechanics, which were viewed as basic while lacking variety and challenge.
+
+
+== Gameplay ==
+Drug Dealer Simulator is a simulation video game. Players are put in the role of a drug dealer with ties to a fictional cartel, and must create and sell drugs while avoiding the local police and Drug Enforcement Administration (DEA). These drugs are created through an in-game "mixing table", which allows the player to create drugs out of existing substances (e.g. amphetamine, baking soda, ibuprofen). These substances are obtained through searching random areas that a fictional cartel member named Eddie drops the player off at, or by buying them at a local gas station. Selling quality drugs increases the player's reputation in the area, and will allow them to reach more customers and eventually forming a drug empire in the city. As the player's drug empire grows in territory, managing the compositions of the drugs they create becomes more important, with poor mixtures possibly leading to the death of their clients.
+
+
+== Release and reception ==
+
+Drug Dealer Simulator was developed by Byterunners and published by Movie Games S.A.. The game was released on April 16, 2020. It received generally mixed reviews from critics, with a score of 59 out of 100 on review aggregator Metacritic based on nine reviews.
+Josh Hawkins of Shacknews described the game as "barebones", criticizing what he viewed to be a lack of challenge in the game besides the police and stating that the game failed to reach its "true potential," held back by "basic systems" that made it "[feel] like a half-finished early access title". While he viewed the games "mixing" mechanic positively, he stated that the game needed more possibilities on how to use it, including the addition of more substances to use in creations. Rob Gordon of Screen Rant shared similar thoughts as Hawkins, believing that the game didn't offer much challenge to the player after its introduction and never deviated from a basic gameplay loop. 
+Andy Kelly of PC Gamer described the game as "ugly, dumb, and kinda clunky", though viewed the game as having more effort into it than other simulation video games released around the same time. Steve Hogarty of Rock Paper Shotgun had different thoughts, stating that while the game was "ugly", it was still fun. He also described the games writing and voice acting as "entertainingly bizarre."
+In April 2025, Movie Games S.A launched an extensive investigation on another indie drug-dealing game, Schedule I, for allegedly IP infringing on Drug Dealer Simulator. This announcement led Drug Dealer Simulator to amass negative reviews on Steam.
+
+
+== Sequel ==
+A sequel, Drug Dealer Simulator 2, was released on June 20, 2024. The games sequel features a similar premise while adding new features, such as a multiplayer mode that allows players to work together, while also expanding the in-game map. 
+
+
+== References ==

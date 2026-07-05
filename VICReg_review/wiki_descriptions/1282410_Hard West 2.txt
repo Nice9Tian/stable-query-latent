@@ -1,0 +1,25 @@
+Game: Hard West 2
+appid: 1282410
+Source: Hard West 2
+URL: https://en.wikipedia.org/wiki/Hard_West_2
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Hard West 2 is a 2022 tactical role-playing game developed by Ice Code Games and published by Good Shepherd Entertainment for Windows.  It is the sequel to Hard West.
+
+
+== Gameplay ==
+Players control an outlaw, Gin Carter, in a Weird West setting that includes demons, witches, and zombies.  After attempting to rob a train, Carter discovers it is a ghost train owned by the demon Mammon.  Mammon steals Carter's soul and dumps him.  Carter must find and defeat Mammon to recover his soul.  Players can recruit a posse of gunfighters and melee specialists, each of whom have special abilities.  These range from tactical bonuses, such as shooting through cover, to supernatural abilities, such as switching bodies with anyone in line of sight.  When completing missions, players are given a poker card.  Assigning these cards to characters improves their special ability based on the rank of their poker hand.  Combat in Hard West 2 uses turn-based combat.  Each character gets three action points, which they can spend on moving, attacking, or using a special ability.  Dead characters revive after combat, but some missions require all characters to survive.  The game lacks an overwatch mechanic; instead, players are encouraged to aggressively advance on enemies.  Characters who make a killing blow replenish their action points, potentially allowing them to continue attacking indefinitely.  Trick shots allow characters to ricochet bullets off objects and hit enemies hiding behind cover.
+
+
+== Reception ==
+
+Hard West 2 was released for Windows on August 4, 2022. The game received "generally favorable" reviews from critics, according to the review aggregation website oMetacritic.
+Rick Lane of Rock Paper Shotgun said he enjoyed the game and its changes to the standard tactics game formula, though he criticized it for having arbitrary difficulty spikes and occasionally difficult controls.  In his review for PC Gamer, Ian Evenden described Hard West 2 as "a superb tactics game" whose fun combat makes its other issues tolerable. IGN's reviewer, Jon Bolding, wrote, "Hard West 2 has plenty of little annoyances, but it's a supernatural western tactics game with a lot of style and the substance to back it."  Eurogamer recommended the game.  Reviewer Christian Donlan believed that the change from two to three action points in a traditional XCOM: Enemy Unknown-style tactical combat game opened up interesting possibilities.  Donlan concluded that this made it "a tactics game just built for experimentation".  Although he criticized the game's lack of depth when it comes to role-playing, David Wildgoose said the game "gets it right where it counts".  In particular, Wildgoose praised the game's tactical combat in his review for GameSpot.  At RPGFan, reviewer Bob Richardson wrote, "While I technically enjoyed Hard West 2, the onerous difficulty makes it hard to recommend."
+
+
+== References ==
+
+
+== External links ==
+Official website

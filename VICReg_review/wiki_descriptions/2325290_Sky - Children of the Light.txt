@@ -1,0 +1,57 @@
+Game: Sky: Children of the Light
+appid: 2325290
+Source: Sky: Children of the Light
+URL: https://en.wikipedia.org/wiki/Sky:_Children_of_the_Light
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Sky: Children of the Light (shortened to Sky in-game) is a social massively multiplayer online adventure game by Thatgamecompany. It was first released for iOS on July 18, 2019. An Android version was later released on April 7, 2020, and a Nintendo Switch version was released on June 29, 2021, followed by a PlayStation 4 release on December 6, 2022, and a Microsoft Windows release via Steam Early Access on April 10, 2024. A separate version of the game was released for Mainland China on Android and iOS devices that is co-developed and published by NetEase.
+
+
+== Gameplay ==
+
+In Sky, players explore a once-prosperous kingdom using a cape that allows them to fly. The in-game world consists of seven unique realms, each with a variety of areas to explore, and a theme representing different stages of life. There is also Home and Aviary Village, with Home being a small island which serves as the world hub and the starting point and Aviary Village as a village with shops and a place that the player can customize as their house. Throughout the world, players encounter "spirits" that allow them to unlock items in return for in-game currency, and "children of light" which give players "winged light". When a player has collected enough winged light, their cape level goes up, allowing them to fly further.
+The game places heavy focus on social mechanics. Players are able to meet and befriend one another, and can unlock new abilities like chat and sending gifts as their friendship grows. There are also many cosmetic items to collect including capes, masks, hairstyles, hats, pants, shoes, musical instruments, expressions, and more. These items can be obtained using in-game currency or, in some cases, bought with real money. Some cosmetics are only available to certain players, such as the original beta cape, exclusive to those who played the beta version prior to the full release.
+Sky has multiple in-game currencies. "Candles" are the main currency of Sky, and are exchanged with spirits and friends in return for items and abilities. Candles are obtained by collecting pieces of light (called wax in-game) and forging them, or by purchasing them for real money. "Hearts" are the social currency of Sky, and are obtained when players receive gifts from others, or can be bought directly from spirits with candles. Hearts are mainly used to purchase cosmetic items from spirits. "Ascended candles" are the rarest currency in Sky, which are rewarded to players for giving their winged light to "the fallen" at the end of the game. Ascended candles are exchanged with spirits for "wing buffs", which give players extra Winged Light, or can be used to upgrade friendship and purchase various spells such as height alteration and cape recharge. Another form of currency called "Event Currency", introduced in the 0.21.5 update, is a type of currency that is only available for specific events. Event Currency was created to bring equity to newer players and allow for event-specific in-game currency (IGC) items to be obtained more easily. Some examples of event currency are: seasonal candles, seasonal hearts, and event tickets.
+
+
+== Development ==
+The game was developed and published by American studio Thatgamecompany over the course of seven years, developing a custom game engine based on their previous work on PlayStation titles, to initially support the Apple Metal API, later expanding it to add support for other platforms as well. The game servers are hosted on Amazon Web Services infrastructure (credited in-game as AWS), with parts of the backend being written in Erlang in cooperation with Amber Studio.
+
+
+=== Seasons and events ===
+Sky features ongoing seasonal events, with new storylines and unique spirits and items. Seasons and events follow a freemium strategy, where some of the cosmetics sold by spirits require a paid "Season Pass" or via microtransactions from the in-game shop. The seasons have a unique currency called "seasonal candles", which can be used to purchase seasonal items and are converted to regular candles when the season ends. Seasonal spirits may return as "Traveling Spirits" in the future, which players can give their candles and hearts to receive seasonal items for a limited time, albeit at a higher price. Some seasonal events involve collaborations with literary works and fictional characters such as The Little Prince, Sanrio's Cinnamoroll, the Moomins, and Alice's Adventures in Wonderland.
+
+
+=== Music ===
+Sky features an orchestral score composed by Vincent Diamante, with some tracks performed by FAME'S Macedonian Symphonic Orchestra. Norwegian singer Aurora also provides the vocals for the intro and outro songs. The game utilizes FMOD for dynamic music and sound playback.
+Four volumes of soundtrack albums have been released. The first volume covers more recognizable music from the base game cycle. The second volume contains mostly ambient background music, and the third includes various pieces composed for Sky's Seasonal Events.
+
+
+=== Charity ===
+In 2020, Thatgamecompany held some in-game events in support of charity. The first was the "Days of Nature" event, in celebration of Earth Day, during which a unique IAP (in-app purchase) was available. Proceeds from the IAP's were used to plant one tree per purchase, in partnership with the OneTreePlanted charity. This event resulted in a total of 40,576 trees planted across the Amazonian and Australian forests damaged by wildfires. In April 2021, Sky hosted its second "Days of Nature" event, using the game to promote awareness towards plastic pollution of the ocean.
+In May 2020, Thatgamecompany hosted a "Days of Healing" event to help raise money for the Médecins Sans Frontières organization, after which Thatgamecompany donated US$719,138 to the MSF COVID-19 Crisis Fund. For the event, Thatgamecompany also joined the World Health Organization's #PlayApartTogether campaign.
+In June 2020, Sky held its first "Days of Rainbow" event, featuring colorful rainbow items and spells as a way to celebrate pride month. The second "Days of Rainbow" event the following year gathered funds for The Trevor Project and the Global Fund for Women, with players raising $794,420.
+
+
+== Reception ==
+
+Review aggregator Metacritic awarded the game an 82 out of 100 based on 18 reviewers, as well as awarding it the number one shared iOS game of 2019, number three most discussed iOS game of 2019, and number 13 best iOS game of 2019.
+Game Informer scored the game an 8.5 out of 10 stating "Sky is a refreshingly moving and robust game on the iOS platform, and one best shared with others – especially folks who might not normally pick up a video game." GameSpot scored the game an 8 out of 10, giving exceptional praise to the visuals, animations and music, but admitting that "return visits to previous environments aren't nearly as captivating as your first trip." IGN scored the game an 8.5 out of 10, likening the game to its predecessor as "a bigger and bolder follow-up that expands on what made Journey so great." Destructoid, like many other reviewers, praised how it is a game that "most everyone should experience", but was highly critical of the touch controls and the lack of control over the character. They went as far to suggest that "most everyone should wait for a console or PC release" to play the game. Nintendo Life scored the Switch version 8 out of 10, sharing the same praise as other reviewers, though highlighting that the simplistic gameplay may not keep players engaged in the long run, and how the option to toggle the FPS from 60 to 30 is objectively worse and provides only minor improvements.
+
+
+=== Accolades ===
+The game won Apple's iPhone game of the year for 2019. It was also nominated for Best Mobile Game at The Game Awards 2019. On October 5, 2020, Gamasutra reported that the game had topped 50 million downloads worldwide. Pocket Gamer awarded it the People's Choice award in 2020. At Gamescom 2023, it won Games for Impact and Best Mobile Game.
+Sky additionally holds two Guinness World Records for "Most Users in a Concert-Themed World" and "Most Players Emoting Together at the Same Time in a Video Game". These records were set as part of a virtual concert featuring Norwegian singer Aurora, in which thousands of players could interact with the concert and each other simultaneously.
+
+
+== Animated adaptation ==
+On March 27, 2022, during AnimeJapan 2022, an animated project was announced.
+On August 26, 2023, IGN published an article announcing a teaser to the animated series, and the name, Sky: The Two Embers. On May 20, 2025, an official trailer came out, revealing the release date of the series, which then premiered in-game on July 21, 2025 as part of a tie-in season, now titled as "Sky: The Two Embers - Part 1". Announced by TGC member Tio, who hosted the in-game Sky Creator Awards as a segment host along with Stellify, the series feature the Hopeful Steward meeting a manatee 500 years ago. A teaser for the second part of the series, titled "Sky: The Two Embers - Part 2", was revealed at the end of the event, now featuring a little boy seeing a butterfly.
+
+
+== References ==
+
+
+== External links ==
+Official website

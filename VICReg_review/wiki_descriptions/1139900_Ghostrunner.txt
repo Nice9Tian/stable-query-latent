@@ -1,0 +1,48 @@
+Game: Ghostrunner
+appid: 1139900
+Source: Ghostrunner
+URL: https://en.wikipedia.org/wiki/Ghostrunner
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Ghostrunner is a 2020 action platform video game co-developed by One more Level and Slipgate Ironworks, produced by 3D Realms, and co-published by 505 Games and All in! Games. The game was released for PlayStation 4, Windows and Xbox One in October 2020, and Nintendo Switch in November 2020, followed by a next gen release for PlayStation 5 and Xbox Series X/S in September 2021. A version for Amazon Luna was made available in April 2021. A story expansion, titled Ghostrunner: Project Hel, was released on 3 March 2022. 
+Ghostrunner received positive reviews from critics and has sold over 2.5 million units as of September 2023. A sequel, Ghostrunner 2, released on 26 October 2023.
+
+
+== Gameplay ==
+Played from a first person perspective as Jack the Ghostrunner, the player must traverse dangerous environments by dashing, jumping, wall-running, grappling, and sliding. The player will also encounter enemies, which must be handled carefully, as both enemies and the player can be killed in one hit. Jack can use a mechanic called Sensory Boost, allowing him to slow down time and dodge and deflect bullets in midair. As the player progresses through the story, they will unlock new abilities and upgrades, which they can apply using tetromino-like pieces on a grid system.
+
+
+== Plot ==
+After an unspecified global cataclysm known as the Burst, mankind is housed in Dharma Tower, a vast skyscraper-like arcology sheltering the rest of humanity. The Ghostrunner awakens with no recollection, but is ordered to free the Architect, Adam's preserved consciousness who established and ruled Dharma Tower and designed the Ghostrunners, technologically enhanced super humans that served as a peacekeeping and policing force. Mara, the Architect's confidant, betrayed him in a coup that destroyed most of the Ghostrunner units, and now she is known as the Keymaster. The Ghostrunner was discovered for repairs by a group of rebels known as the Climbers, though the uprising was put down just before the Ghostrunner was reactivated. The Architect assigns the mission of defeating the Keymaster to the Ghostrunner.
+The remaining Cybervoid systems, the digital network connecting Dharma Tower, and the basis upon which the Architect's intelligence is based are all accessible to the Ghostrunner. As a result, the Architect is able to repair damage to the Ghostrunner's coding. Zoe, a surviving Climber, gets contacted by the Ghostrunner when trying to call for help. She offers him assistance in his quest to defeat the Keymaster. Zoe also gives him the moniker 'Jack,' which was a pseudonym the Climbers used when attempting to repair him. Mara disables the air filtering systems in the district where the uprising took place, potentially causing all of the district's residents to die from the radioactive dust in the outside atmosphere. To the Architect's dismay, the Ghostrunner agrees to reinitialize the turbines at Zoe's request.
+To go to Dharma City, the Tower's elite sector, the Ghostrunner takes the Amida elevator. The Ghostrunner proceeds on to the Repository, a protected Cybervoid server that has pre-Burst data as well as certain Project Ghostrunner knowledge. Zoe sees a distortion in the monitoring systems, which turns out to be a replica of the Ghostrunners constructed by Mara, with whom she worked on their design. The unit takes the data, forcing the Ghostrunner to defeat it in order to obtain access to the data's enhancements. The Keymaster tells the Architect and his "puppet" that once the Ghostrunner is beaten, she will destroy all surviving Cybervoid systems, wiping out the Architect's intelligence. The Ghostrunner then moves on to the Keymaster's power center, the Core. The Architect is always dismissive of the Ghostrunner's friendship with Zoe, and views the Ghostrunner's willfulness to be a flaw in the Architect's perfect weapon.
+Zoe receives a distress signal while the Ghostrunner traverses the Core, prompting her to leave her safe location in the hopes of rescuing a fellow Climber, despite the Ghostrunner's warning that it could be a trap. Regardless, she bids him farewell. The Keymaster speaks directly to the citizens of the Tower, outlining her ultimate goal: invasively changing the human body to allow humanity to depart by allowing it to survive the conditions of the Outside. The products of her research are capable of doing so, but the nature of the augments would harm their minds, leaving them with little that could be called human. The Ghostrunner discovers a last Cybervoid server and acquires the ability to hack his opponents' ubiquitous 'Atma' neural implants. The Ghostrunner realizes the Architect has the ability to manipulate individuals as a result of this skill, and remarks that the Architect is worse than Mara. Mara recognizes that the only reason the Ghostrunner would have preserved the sector from earlier rather than continuing his journey to confront her is because he wasn't totally obedient, and she tries to persuade him that the Architect is nothing more than a mad machine. The Ghostrunner realizes the Architect has been lying about his capabilities within the Tower when he silences her.
+After defeating Mara, the Architect drives the Ghostrunner into Cybervoid since the Architect's strength increased when the Ghostrunner connected with the Cybervoid servers, with the Architect aiming to entirely absorb the Ghostrunner into itself because the Ghostrunner is now independent and sentient. As the objective of both the original Adam and the Architect is revealed to be complete subjugation of humanity, the Ghostrunner resists and traverses the landscape. The Architect sees this as a win-win situation, whereas the Ghostrunner believes Mara's first coup was correct. The Ghostrunner arrives at the Architect's manifestation, who informs him that without him, Cybervoid would cease to exist, effectively killing the Ghostrunner. Regardless, the Ghostrunner destroys the Architect and reintroduces himself as Jack. The epilogue is narrated by Zoe, who claims that mankind is now free to choose its own destiny, free of the delusional Architect and Mara's tyranny. She conveys her thankfulness to Jack, who appears to have been reactivated.
+
+
+== Development ==
+Polish developer One More Level worked with 3D Realms to create the game. The game was made using Unreal Engine 4 and supports Nvidia's RTX technology. Ghostrunner was announced during Gamescom 2019. A demo was available 6–13 May 2020 on Steam. The game received positive comments prior to its release. Forbes called the game a mix of Titanfall, Dishonored and Superhot. Andy Chalk from PC Gamer called the game a mix between Mirror's Edge and Dishonored. The game was released for Microsoft Windows, Xbox One and PlayStation 4 on 27 October 2020 by All In! Games and 505 Games, with a Nintendo Switch version launching on 10 November 2020 and versions for PlayStation 5 and Xbox Series X/S releasing on 28 September 2021. A version for Amazon Luna was also made available on 6 April 2021.
+
+
+== Reception ==
+
+Ghostrunner received "generally favorable" reviews for all platforms, except for Nintendo Switch which received "mixed or average" reviews from critics, according to Metacritic. Fellow review aggregator OpenCritic assessed that the game received strong approval, being recommended by 82% of critics.
+
+
+=== Sales ===
+Ghostrunner had sold over 600,000 units by May 2021. The game has sold over 2.5 million units as of September 2023.
+
+
+== Sequel ==
+
+On 13 May 2021, 505 Games parent company Digital Bros announced that Ghostrunner 2 was in development for Microsoft Windows, PlayStation 5 and Xbox Series X/S. Teasers for Ghostrunner 2 were released in the second anniversary stream and in the steam feed on November 4, 2022. On May 24, 2023, it was officially revealed during the PlayStation Showcase event, and was released on October 26, 2023. received "generally favorable" reviews from critics, according to review aggregator website Metacritic. 
+
+
+== References ==
+
+
+== External links ==
+Official website
+Ghostrunner at MobyGames
+Ghostrunner at IMDb

@@ -1,0 +1,107 @@
+Game: Cult of the Lamb
+appid: 1313140
+Source: Cult of the Lamb
+URL: https://en.wikipedia.org/wiki/Cult_of_the_Lamb
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Cult of the Lamb is a 2022 roguelike video game developed by Australian studio Massive Monster and published by Devolver Digital. The game was released on 11 August 2022, for macOS, Nintendo Switch, PlayStation 4, PlayStation 5, Windows, Xbox One and Xbox Series X/S. It was made available on iOS, macOS and visionOS through Apple Arcade on 4 December 2025. 
+The last lamb is saved from execution by an imprisoned deity named The One Who Waits. The Lamb must repay their debt to the deity by creating a loyal cult, and taking vengeance against the four bishops who imprisoned him. The game is primarily split between crusades - action sequences working through the dungeons which house the bishops - and more calm sequences of cult management. Ultimately, the Lamb must face The One Who Waits himself.
+Cult of the Lamb received generally positive reviews from critics upon release, with praise directed towards its gameplay and replay value. It received three nominations at the 19th British Academy Games Awards, including Best Game. It has since been expanded significantly by a number of free content updates. In January 2026, the Woolhaven expansion added a postgame storyline as well as a number of new mechanics. The game has been referred to as a cult classic.
+
+
+== Gameplay ==
+Cult of the Lamb centers on a player-controlled lamb tasked with forming a cult to appease the deity "The One Who Waits". Having saved the player character's life at the start of the game, it instructs them to embark on roguelike-style "crusades" by venturing out into one of the game's four regions in order to defeat various enemies (so-called "heretics"). There, they can find or rescue other captured or lost animals in order to create and grow a cult following dedicated to the player. The randomly generated world contains resources to gather, perks and weapons to collect, enemies in the form of rival cultists and non-believers to fight, and other animals to rescue; these animals can be indoctrinated into the player's cult. They have appearances that can be changed and both positive and negative traits, which can affect how they act within the cult and how they respond to the player's actions regarding the cult.
+
+The player can manage their followers in the cult's base. Followers can be assigned different tasks at the base such as gathering resources, building structures, worshipping, sending them to assist the player in battle, or sacrificing them, which can affect the player's abilities and the team itself. The player must ensure their followers' needs are met by performing sermons and rituals to reinforce their faith, cooking food for them to survive, providing them with shelter, and ensuring the village is clean and sanitary. Otherwise, the followers can turn against the player, spread dissent, and eventually leave the cult with other followers and coins; to prevent this, the player can provide for them, give them gifts, reeducate them, get rid of them (there are various ways to do so) or detain them in a pillory until they stop dissenting.
+
+
+=== Twitch integration ===
+The game has Twitch integration via the "Companion of the Lamb" Twitch extension. Viewers can customize their follower by entering via a "Follower Raffle", which (when chosen at random) will have their username displayed above their character at all times. Other features include the "Twitch Totem Bar," which lets viewers contribute channel points, resulting in a random reward for the player, and a "Help or Hinder" event where they can vote to either help or hinder the player's progress.
+
+
+== Plot ==
+In a land of false prophets, the Lamb, supposedly the last of their kind, is brought before The Four Bishops of the Old Faith, and is sacrificed before them. Upon dying, the Lamb is brought before "The One Who Waits", a strange deity who is imprisoned in chains. The One Who Waits tasks the Lamb with starting a cult in its name, gives the Lamb a demonic crown, then resurrects it.
+Assisted by Ratau, the Lamb's precursor, the Lamb settles at the ruins of a temple and establishes a cult on behalf of The One Who Waits, in order to defeat the four other Bishops—Leshy, Heket, Kallamar, and Shamura—and free it. After settling down into their cult, the Lamb adventures off on crusades, defeating each of the Four Bishops while simultaneously expanding the cult with followers, increasing its influence and the Lamb's powers. With the death of each Bishop, one of the four chains holding The One Who Waits breaks, ultimately freeing the deity. While crusading, the Four Bishops and The One Who Waits speak to the Lamb in different encounters.
+As the Lamb progressively gets closer to their ultimate goal, The One Who Waits informs the Lamb that the Four Bishops had betrayed and imprisoned him, and that he intends to ultimately rule the cult and the world while remaking them in his image. During the Lamb's crusade against Shamura, Shamura reveals the identity of The One Who Waits: "Narinder". Shamura informs the Lamb that Narinder was the Fifth Bishop of the Old Faith, and their brother and equal, having ruled over the realm of Death. Shamura laments to the Lamb, confessing that millennia before, Narinder had grown ambitious and was discontent with his role as a Bishop. Shamura, blinded by their love for Narinder, had tried to help him by teaching him ideas of change, although Shamura's teachings were "most unnatural" for Narinder, as Shamura stated. Ultimately, Narinder betrayed the Bishops, which forced Shamura and the others to imprison him. Before the final battle, Shamura warns the Lamb that Narinder will come for them when all of the Bishops are dead.
+After Shamura is defeated, The One Who Waits instructs the Lamb to visit him in his realm to return the demonic crown and to be sacrificed in his name. The Lamb opens the final gateway and goes before The One Who Waits. The Lamb is instructed to kneel and be sacrificed, so that The One Who Waits can retake his crown and obtain his place as god of the world. The player is given the option to sacrifice themselves to fulfill the prophecy or reject doing so. If the player accepts, The One Who Waits is freed, and subsequently tortures the Lamb before killing it, ending the game.
+If the player refuses, a final battle ensues between the Lamb and The One Who Waits's followers, Baal and Aym. Once the followers are defeated, The One Who Waits attempts to kill the Lamb himself. After the first defeat, The One Who Waits taunts the Lamb and transforms while pulling the Lamb into a hellscape, attempting to kill them in front of their followers a second time. If the Lamb defeats The One Who Waits again, it is stripped of its powers and transforms into a follower-like creature named Narinder. Narinder admits defeat and resents the Lamb, and the player is given the option to spare Narinder or murder him. If the player chooses to kill Narinder, Narinder claims that the Lamb is no different than he was before he is subsequently killed. If the player chooses to spare Narinder, Narinder can be indoctrinated into the cult as an immortal follower and insults the Lamb for being weak. Either option results in the Lamb's followers being rescued and the Lamb returning to their cult, and the game ends.
+In the postgame, the Lamb encounters an entity that calls itself the Merchant of Eternity and the Meter of Gods. The entity asks to face the bosses again and release the Bishops into the afterlife to indoctrinate them. It asks for items called God Tears. For each freed Bishop, it reveals to the Lamb the past of the gods. Upon resurrecting all the Bishops, the entity will give a statue or a follower to the Lamb.
+
+
+=== Woolhaven expansion ===
+The Lamb is called back to Ewefall, the island's mountain and the ancestral home of the lambs. Their fallen god, Yngya, is active once again. This is causing the return of winter to the island, along with the spread of the Rot, a disease-like contamination which is affecting the mountain greatly. 
+The Lamb retrieves the wool of Yngya's most devoted followers, restoring them as spirits in the town of Woolhaven where they gradually reveal the increasingly desperate measures they had taken to keep the lambs' home hidden. Their efforts culminated in a ritual that buried Yngya in the mountain itself to await the last lamb: the player character, who was sent away from the flock as an infant before the beginning of the main story.  
+The mountain is home to the wolf Marchosias, an atheist figure who stands against gods like the Lamb. They must also confront the executioner who originally killed them, and decide whether to embrace or purge the Rot, which originates with Yngya.
+When the Lamb finally arrives in the heart of the mountain, they discover Yngya's heart, which was cut from her as part of the lambs' ritual to save themselves. The spirits of Yngya's disciples reveal that they intended Yngya to spread rot across the whole world, effectively bringing about an apocalypse that would kill everyone who could do them harm and bring them to peace at last. The spirits require The Lamb to die to complete this; resisting their efforts, a fight against the heart (now possessed by the spirits) ensues. After defeating it, the Lamb purges the rot and frees Yngya, turning her into a Follower. The spirits, now understanding what the rot truly is, realise their plans would have only caused them endless pain and abandon the ritual.
+
+
+== Development ==
+Cult of the Lamb is developed by Massive Monster, an Australian independent game development studio that has created The Adventure Pals, Never Give Up, and Unicycle Giraffe. Much of their early work had been commercial failures.
+Because of the cute art style used in these games, there had been a perception that the studio was catering to children, and opted to go in a different direction for their next game, looking towards themes of horror and the occult. They planned to make a roguelite dungeon crawler along with base building, but the premise was uncertain and evolved over the course of development. It originally featured a lamb god who had been kicked out of a pantheon over a lack of popularity, and had to rebuild his following on earth. The next revision featured the Lamb running hell, but the team did not want to include torture as a theme too heavily. The premise of the Lamb instead running a cult proved more popular with the team, and this line of thinking secured the publishing deal with Devolver Digital.
+Additional funding for development was provided through VicScreen's Victorian Production Fund. Cult of the Lamb was announced at Gamescom in August 2021 and was released on 11 August 2022.
+
+
+=== Post-release updates ===
+After the game's launch, it received several major content updates. These were sometimes billed as DLCs or expansions in marketing material, though they were all free updates.
+
+Blood Moon Festival (24 October 2022) added the blood moon ritual and various cosmetic items.
+Relics of the Old Faith (24 April 2023) added a post-game storyline with a crusade campaign; a photo mode; and additions and enhancements to the game's combat and cult management mechanics.
+Don't Starve Together (21 August 2023) added penitence mode, in addition to crossover content from Klei Entertainment's Don't Starve Together.
+Sins of the Flesh (16 January 2024) added a sin mechanic, more doctrines, a new blunderbuss weapon, more cosmetics, and a breeding system.
+Unholy Alliance (12 August 2024) added two-player cooperative play to the game, with the second player playing the Goat alongside the Lamb. The update also expanded the game's weapons, powers, and buildable items.
+
+
+=== DLC ===
+Several paid downloadable content packs have been made available. These offer cosmetic additions such as follower forms, outfits and decorations, unless otherwise noted.
+
+Cultist Pack (11 August 2022)
+Heretic Pack (24 April 2023)
+Sinful Pack (12 January 2024)
+Pilgrim Pack (12 August 2024) adds cosmetics and a digital version of the Pilgrim comic.
+
+
+=== Expansion ===
+Woolhaven is a paid DLC expansion which was unveiled at Gamescom 2025. It added new story content, two new dungeons, weather effects, animal breeding and more. It was released on 22 January 2026.
+
+
+== Soundtrack ==
+The game's original soundtrack was composed by Narayana Johnson, professionally known as River Boy. River Boy was also the voice actor for all followers. The score was made available for purchase on the Steam page on launch day. It is also available on River Boy's Bandcamp page. The soundtrack was performed live several times by River Boy. This included a performance with Orchestra Victoria in October 2023 which drew 6,000 attendees, He also performed a rave version at Pax Australia 2024. On 21 October 2024, an extended play (titled Hymns of the Unholy) was announced by Massive Monster containing metal remixes of songs from the soundtrack by Pick Up Goliath, featuring current and former members of Light the Torch, Trivium, While She Sleeps, Polyphia and more.
+On 3 April 2025, Massive Monster announced that River Boy had died from an undisclosed cause. His death came midway through the production of the Woolhaven expansion. Some tracks were already completed by that point, while others were finished by Ray Vavasis, also known as Arrowbird. Arrowbird was responsible for the remaining audio work, which included cutscenes, Yngya's motifs, and Yngya's voice. Some audio for a minigame was also composed collaboratively with Kalyani Ellis, who had previously performed with River Boy. Arrowbird made use of unused tracks and samples from River Boy's earlier work to complete the project. A Massive Monster blog post described the Woolhaven soundtrack as "a mixtape of his life". As a tribute, a River Boy follower was added to the game. He is found on a remote island; upon meeting the Lamb he says "It's good to spend time in nature. We all go back there, in the end."
+
+
+== Graphic novels ==
+On 12 March 2024, a graphic novel adaptation of the game entitled The First Verse was launched on Kickstarter, written by Alex Paknadel and illustrated by Troy Little, published by Oni Press. The crowdfunding target was reached in six minutes. This has been followed by several other comics and graphic novels.
+
+The First Verse (December 2024)
+Pilgrim (February 2025)
+Schism Special #1 (October 2025)
+Last Sacrament Special #1 (March 2026)
+
+
+== Marketing ==
+
+The marketing team for the game has a reputation for irreverent, viral social media posts. A notable example was during the promotion for the Sins of the Flesh update, which was preceded by the Twitter account posting "We will add sex to the game if we hit 300k followers by the end of the year." The post started a trend of indie marketing posts using a similar format.
+At the 2024 PAX Aus gaming convention, the developers of Cult of the Lamb erected a replica of the game's temple. At the end of the weekend, the development team performed legally binding wedding ceremonies for two couples, in front of a large audience in costume. The developers revealed after the event that they had received "hundreds of applications" from couples wanting to marry at their temple. Additionally, the game's composer River Boy held a rave at the temple.
+
+
+== Reception ==
+
+
+=== Critical response ===
+Cult of the Lamb received "generally favourable" reviews, according to review aggregator website Metacritic. GameSpot praised the combat, calling it "fast-paced, fluid and fun" while also being surprised by the amount of customization and player choice which in turns makes the game "very replayable". Nintendo Life liked the variety present in the dungeon crawling, writing, "New layouts and equipment loadouts keep every run unique, while its intense and chaotic battles demand your full attention". Destructoid felt the game tutorialized its mechanics properly, "Again, for all of the elements that come into play, Cult of the Lamb presents everything in a digestible way". PC Gamer compared the game to the Animal Crossing series, saying it's like "if Tom Nook craved power instead of money", and enjoyed the ways in which the player could manage their cult, writing that it could be complicated, "but it never threatens to be overwhelming". IGN praised the way it balanced macabre themes with "cutesy cartoon vibes".
+While enjoying the premise, Game Informer criticized how difficult it was to find time to customize the cult, "with so many cosmetic items thrown into the formula, I was disappointed by how rarely I was afforded the time to focus on them". The Washington Post disliked the combat, feeling that it often devolved into a jumbled mess, "the game's 2.5D perspective would make it difficult to gauge where you are even if you weren't constantly sliding all over the battlefield". Polygon liked the characters that the player could find in dungeons, saying that they were "genuinely interesting, with their backstories mostly obfuscated and enhanced by their charming picture book-esque designs". Eurogamer praised the art style of the game, noting that it looked like "the best New Yorker cartoon".
+
+
+=== Sales ===
+Cult of the Lamb sold one million units within its first week of release. As of October 2024, it has sold 4.5 million units.
+
+
+=== Accolades ===
+
+
+== References ==
+
+
+== External links ==
+Official website

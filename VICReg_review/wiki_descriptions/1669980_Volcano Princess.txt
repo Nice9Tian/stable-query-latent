@@ -1,0 +1,55 @@
+Game: Volcano Princess
+appid: 1669980
+Source: Volcano Princess
+URL: https://en.wikipedia.org/wiki/Volcano_Princess
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Volcano Princess (Chinese: 火山的女儿; pinyin: huǒshān de nǚ'ér; lit. 'Daughter of Volcano') is a social simulation game, developed by the Chinese studio Egg Catcher and published by the Chinese publisher Gamera Games, where players play the role of the single father to a young girl. It was released for Microsoft Windows on April 21, 2023. By July 2023, it had sold over 600,000 copies.
+
+
+== Story ==
+The story of the game takes place in the Volcano Kingdom where chivalry, magic and alchemy are prevalent. The player takes on the role of father who takes care of his daughter alone after his wife died.
+
+
+== Gameplay ==
+In Volcano Princess, players spend time with the daughter and manage what daily activities she participates in. The daughter has several stats, such as strength, intelligence, emotion and imagination, which can be increased by enrolling her in classes and managing her schedule. The daughters are able to learn more than a dozen skills from courses such as music, painting and fighting. They can also participate in other activities such as work, adventures, gardening, dances, dice games, horse catching, horse racing and others. As time passes, the character will grow older and go through different stages in her life, reflected by her appearance and additional gameplay options. The player and the daughter will also interact with many different NPCs. Based on player decisions, NPCs can form friendships and romantic relationships with the daughter. These interactions can affect the ending of the game.
+The game features 330 illustrations and more than 50 endings.
+
+
+== Development and release ==
+The game was developed by the team Egg Hatcher, which consists of two students who graduated from the Communication University of China in 2019. This work was adapted from their previous graduation project, which took 4 years of development to complete.
+On July 9, 2021, the game released the Steam store page, and announced that the game trial would be available at Shanghai CCG EXPO from July 15 to 18. On 15 September 2022, the game published its first trailer, and announced that a trial version will be launched on Steam in October.
+On 3 October 2022, the game launched a trial version on Steam, and simultaneously launched crowdfunding on Modian. The crowdfunding ended on November 13, and a total of ¥320,000 was raised. On November 22, the developers announced that it would be officially released on Steam on 2 February 2023. However, on December 30, the game announced that due to the need for additional quality improvements and the impact of the COVID-19 pandemic, the release date had been postponed to April 2023. On 20 March 2023, Gamera Games announced that the game will be released on 21 April 2023.
+On 21 June 2023, Egg Hatcher released a new version of the game, which added support of the Japanese language, introducing 3 new endings and modifying some plots. The character "daughter" is voiced by Mai Nakahara.
+A Nintendo Switch version was announced on September 21, 2023. The publisher Gamera Games announced the suspension of development of this version on Sina Weibo the following year.
+On April 29 2024, Microsoft and Gamera Games announced Volcano Princess would be available on Xbox Game Pass. 
+On June 17 of 2025, Microsoft published a new article on Xbox Wire announcing that an Xbox Series X/S version would be available on June 24 of the same year.
+
+
+== Reception ==
+Amanda Yeo of Mashable stated the game to be "as wholesome as parenting can get". She compared the game with Princess Maker 2, saying that since both of the games are "raising simulators", this game is "the experience nostalgic players remember Princess Maker 2 to be". However, she also mentioned that it "has a fairly robust social system", with multiple routes to be chosen from. Despite that, she pointed out that numerous errors exist in the English language localisation of the game, alongside a few bugs upon release. In all, she compared the game to "a handmade gift", since it "isn't perfect, but is beautiful and made with heart".
+Jenni Lada of Siliconera also compared the game with the Princess Maker series. In her view, the game "lets you be more involved in your child’s life", since the player character can take part in activities together, forming the scene of "a father-daughter outing". In general, she claimed the game to be "both more interactive and approachable".
+Mr. Katoh of Game*Spark gave a positive comment on the game, stating the game to be "easy to play, with a relatively orthodox upbringing system", and the atmosphere of the game that "focuses on the bond between parents and children" to be "attractive". He also pointed out that the text and graphics are "good overall".
+Kashiwamata of Dengeki Online said that the feature that the conditions for the ending are not determined by status alone left him with a good impression. He also described the story to be "very gentle" that "his heart was healed when he read the lines".
+United Daily News praised the great storytelling, beautiful art style and diverse gameplay, but it also criticized the design of playing repeatedly and the lack of the plot of father in the later stage. It also warned that the true ending has a great impact that may disgust some people.
+
+
+=== Sales ===
+Volcano Princess sold 150,000 copies within 3 days of its release. In July 2023, it was announced that the game had sold over 600,000 copies.
+
+
+== See also ==
+
+Amazing Cultivation Simulator
+Dyson Sphere Program
+Princess Maker Series
+
+
+== References ==
+
+
+== External links ==
+Volcano Princess on X
+养蛋人O on Weibo (in Chinese)
+Volcano Princess at The Visual Novel Database

@@ -1,0 +1,39 @@
+Game: Orcs Must Die! 3
+appid: 1522820
+Source: Orcs Must Die! 3
+URL: https://en.wikipedia.org/wiki/Orcs_Must_Die!_3
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Orcs Must Die! 3 is an action-tower defense video game developed and published by Robot Entertainment. It is the fourth installment in the Orcs Must Die! series, and the direct sequel to Orcs Must Die! 2. It was released as a timed exclusive on Stadia on July 14, 2020, and for Windows, PlayStation 4, Xbox One and Xbox Series X/S on July 23, 2021.
+
+
+== Gameplay ==
+Similar to its predecessor and the original game, Orcs Must Die! 3 is a variation on a tower defense game. The player takes the role of one of two apprentice war mages and is tasked to defend rifts from an onslaught of orc armies by using the characters' weapons and special abilities, as well as setting traps. The game launched with 18 different levels.
+Besides the standard Story game mode, the game includes an Endless mode and Weekly Challenges game mode. Unlike its predecessors, it includes a War Scenarios game mode, which tasks a player to defend against armies of orcs at a much larger scale (up to 1,000). This mode utilizes oversized traps, referred to as War Machines, to defend a castle and its rift from larger armies.
+The game allows for two-player cooperative multiplayer mode.
+
+
+== Plot ==
+The story picks up 20 years after the events in Orcs Must Die! 2.
+
+
+== Expansions ==
+An expansion entitled "Drastic Steps" was released on November 6, 2020. The expansion includes a new story campaign, 5 new scenarios, an endless map, weapons, traps, enemies, and hero cosmetics to the game.
+An expansion entitled "Cold as Eyes" was released on November 11, 2021. The expansion includes 3 new scenarios as well as new weapons, traps and enemies to the game.
+Another expansion title "Tipping the Scales" was released on April 7, 2022, for all platforms, with 5 new scenarios, new traps, new weapons, and enemies.
+
+
+== Reception ==
+
+ 
+Orcs Must Die! 3 received "mixed or average" reviews for Stadia and "generally favorable" reviews for Windows according to the review aggregation website Metacritic. Fellow review aggregator OpenCritic assessed that the game received strong approval, being recommended by 72% of critics.
+Jeremy Peel of PC Gamer said "Robot Entertainment has shown it still knows exactly how to make Orcs Must Die!" and defined the game as a "conservative but confident return to form from the masters of a much-loved genre".
+
+
+== References ==
+
+
+== External links ==
+Official website
+Orcs Must Die! 3 at MobyGames

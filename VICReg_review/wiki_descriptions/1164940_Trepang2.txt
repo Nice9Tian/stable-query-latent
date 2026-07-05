@@ -1,0 +1,33 @@
+Game: Trepang2
+appid: 1164940
+Source: Trepang2
+URL: https://en.wikipedia.org/wiki/Trepang2
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Trepang2 (stylized Trepang²) is a first-person shooter video game designed by Trepang Studios and published by Team17 in June 2023.
+
+
+== Gameplay ==
+The gameplay is similar to that of many mid-2000s first-person shooters, such as F.E.A.R. or Black.  Players control an amnesiac test subject who wakes up in a black site of a mysterious, militarized corporation. The protagonist is handcuffed and must rely on stealth at first, but players eventually must fight their way through enemies, both human and paranormal.  During combat, the player character wields a variety of modern day firearms, also including a fictional "bolt launcher" that shoots penetrating spikes or several grenades. Players can carry two weapons at a time, aside from hand grenades, eventually gaining the ability to dual wield most weapons. Characteristics of firearms can be improved when the players collect and apply various modifications. For example, a shotgun can have a choke  installed or employ incendiary ammunition. In close proximity the player character can bash enemies with the currently wielded weapon and attack using kicks and other close combat moves or grab a disoriented enemy and temporarily use them as a human shield. Bladekisser is a piece of downloadable content, released  on 25th July 2023, that allows the player character to obtain a sword in the latter part of the game and use it as a weapon.  Players also have the ability to slow down the action using a bullet time effect and have the character briefly turn invisible. The player character is sometimes aided by allies.
+
+
+== Plot ==
+Subject 106 is a prisoner of the Horizon corporation, a global business entity that wields a large number of private military contractors while secretly conducting dangerous and inhumane experiments. The game opens with him being rescued by a mysterious man later revealed to be "Subject 105". 105 guides 106 through the facility using glow sticks, killing a large number of guards in his wake. 106 is led to a security room where 105 has left a key for 106's handcuffs and 106 also finds a weapon, a Heckler & Koch Mark 23 pistol. Fighting through the facility, 106 eventually escapes and is greeted by friendly mercenaries from an organization known as Task Force 27.
+106 fights with the task force to clear out several black sites, Horizon facilities that fell to their own test subjects, to obtain significant evidence to destroy the company, while also fighting against a violent cult of self-sacrificing fire worshippers. As he does this, he encounters several drones that warn him that there is more going on than just corporate espionage. After the end of his final mission, 106 discovers that most of the real causes of Horizon's failings were due to previous cloned soldiers from Task Force 27 going rogue, eventually leading 106 to turn against Task Force 27 after they subdue him and try to dispose of him, including attempting to cremate him.
+After prevailing in a close battle against his successor, Subject 107, 106 destroys Task Force 27's base by  activating its thermonuclear warhead, dying in the process as the device needs to be triggered manually. Should the player obtain all the messages carried by drones throughout the game, 106's consciousness is transferred to an unknown facility and implanted into a clone of him, who is informed that his work is not over.
+
+
+== Development ==
+Developer Trepang Studios is based in Vancouver, Canada. Development started in 2016 as a hobby project to learn the Unreal Engine. The team grew from being a single person to four members after posting public demos. Stealth and bullet time were not originally part of the game's design, but they were added later to balance the difficulty. Some of the enemy dialogue was also added to give players a fair chance to react to enemy tactics, such as flanking.  Team17 released it for Windows on June 21, 2023.  Ports to the Xbox Series X/S and PlayStation 5 were released on October 2, 2023.
+
+
+== Reception ==
+Trepang2 received positive reviews on Metacritic.  Video Gamer called it "an excellent ultra-violent shooter" and praised the combat, stealth, and story.  TechRadar said it does not surpass F.E.A.R., which it was inspired by, but it "delivers stylish, bloody action".
+
+
+== References ==
+
+
+== External links ==
+Official website

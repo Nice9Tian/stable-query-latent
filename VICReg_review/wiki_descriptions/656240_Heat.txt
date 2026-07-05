@@ -1,0 +1,25 @@
+Game: Heat
+appid: 656240
+Source: Heat (video game)
+URL: https://en.wikipedia.org/wiki/Heat_(video_game)
+Match score: 5.53
+Retrieved: 2026-07-04
+--------
+Heat was a proposed video game, based on the 1995 crime film with the same name. It was under development by Gearbox Software for PlayStation 3 and Xbox 360. Gearbox did not have the license to make the game and development was halted in 2009.
+
+
+== Development ==
+In a 2009 interview Randy Pitchford, CEO of Gearbox Software, said that development of the game had been halted and that the IP could potentially be available to pass on to another developer, saying:
+
+"In a nutshell, we're nowhere. We have passionate game makers that would love to do it. We've got filmmakers that think it's a great idea that would love to see it done. We have publishing partners that would love to publish it. But we have no time. That's the limiting factor. Because of the situation, we're not keeping the IP locked down anymore. So if somebody else were in a spot where they could do it, and everybody was comfortable with that, then conceivably that could happen."
+
+
+== Successor ==
+Although not based on the movie Heat, the 2013 game Grand Theft Auto V was described by USA Today as treading "the same turf as films such as Scarface and, in this case, Heat".
+
+
+== References ==
+
+
+== External links ==
+Heat on IGN

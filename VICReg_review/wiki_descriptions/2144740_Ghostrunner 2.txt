@@ -1,0 +1,42 @@
+Game: Ghostrunner 2
+appid: 2144740
+Source: Ghostrunner 2
+URL: https://en.wikipedia.org/wiki/Ghostrunner_2
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Ghostrunner 2 is an action platform video game developed by One More Level and published by 505 Games. A sequel to Ghostrunner (2020), the game was released for PlayStation 5, Windows, and Xbox Series X/S on 26 October 2023. Upon release, it received positive reviews from critics.
+
+
+== Gameplay ==
+The game is played from a first-person perspective. The playable character Jack is very agile, being able to traverse dangerous environments by dashing, jumping, wall-running, and sliding. He can also utilize a grappling hook to swing through the environment, and use "Sensory Boost", which briefly slows down time, allowing Jack to strafe through the air. The game also introduces a stamina meter, which dictates how frequent players can dash and deflect attacks. While a sword is the player's primary weapon, Jack also has access to several special abilities, which can be used in both combat scenarios and solving puzzles. For instance, the "Shuriken" ability, which allows Jack to throw multiple electrical throwing stars, can be used to stun enemies as well as hitting distant switches. Both Jack and his enemy have very limited health, and both can be killed in one hit.
+In the game, Jack must venture beyond the Dharma Tower to defeat a group of violent cyber ninja AI cult.  Ghostrunner 2 introduces vehicular combat. During certain levels, Jack is able to ride a motorcycle while combating enemies and avoiding obstacles. Levels in the game are more non-linear, with players being able to plan their own routes before confronting the enemies. As players progress in the game, they can purchase upgrades that further enhance Jack's abilities. The motorcycle, however, cannot be upgraded.
+
+
+== Plot ==
+Following the events of the previous game, Dharma Tower has fallen into chaos. Without the Architect or the Keymaster and their armies, different factions vie for control of the tower by hoarding resources and fighting against others. The Ghostrunner Jack, who was mysteriously reactivated after defeating the Architect and destroying the Cybervoid, works with the Climbers, the rebel faction who rebuilt him, to establish a governing council. 
+One faction, the Hammers, has recently become much more dangerous and organized following the arrival of a new leader, Ahriman. Jack is deployed to prevent them from taking the reactor at the summit of the tower, but fails to arrive before Ahriman. Ahriman is revealed to be a Ghostrunner, and alongside projections of two other Ghostrunners, Rahu and Madhu, collectively called the Asura, uses the reactor to revive the Asura's deactivated leader, Mitra. As the Asura escape, Jack fights Ahriman, and defeats him with the help of a human soldier named Adrian Bakunin, who is afterwards arrested by the Climbers.
+At the Interface Council's HQ, Bakunin, a former member of Mara's army before defecting, explains that the Asura were the first Ghostrunners, created by Adam and Mara as enforcers. However they went rogue and were never seen again. Unsure of how to track the Asura, the council's leader, Connor Muller, sends Jack instead to investigate a cult worshiping the Architect. Fearing the Architect's return, Jack infiltrates the cult's cathedral, recruiting Bakunin's ally, the hacker Kira, to assist. Jack finds at the depths of the cathedral that the cult is being controlled by the Rahu of the Asura, who can control Cybervoid freely, and may have been the reason Jack survived the Architect's deletion. With Kira's help, Jack manages to incapacitate Rahu and escape Cybervoid, and retrieves Rahu's physical body, a decapitated Ghostrunner head. 
+Back at the HQ, the Climbers attempt to study Rahu, but before they can do so, Mitra breaks in, assassinates Muller, and steals back Rahu before fleeing. Jack pursues, tracking Mitra through the city and ultimately out of Dharma Tower altogether. Jack emerges in the apocalyptic Outside, and navigates the scorched ruins, finding the Outside populated with feral biomechanical humanoids. As Jack tracks Mitra, he communicates with Madhu of the Asura, who created these biomechanical creatures, which he calls "Scions". Eventually Jack closes in on the Asura, but ultimately is trapped once again in Cybervoid by Rahu.
+In Cybervoid, Jack manages to break out of Rahu's illusion, and begins finding data logs about the Architect. Rahu muses that the data must have been put there by the Architect, and that is what allowed Jack to escape. Rahu implores Jack to decode the data logs, offering a truce to learn more about themselves. The records reveal that Mitra was originally a human named Gyges, a rival to Adam and Mara. Gyges attempted to take the pair down, but was captured, interrogated, and tortured, before being forcibly turned into the first Ghostrunner. Mitra and the other Ghostrunner prototypes tried to kill Adam and Mara, but were thwarted. Mitra was deactivated and trapped in permanent stasis, Madhu was exiled outside the Tower, Rahu was dismembered and kept as a desk ornament, and only Ahriman, who did not directly participate, was allowed to continue serving the pair. Rahu and Jack both realize that Mitra's ultimate goal was not to elevate the Ghostrunners as the Asura had been told, but to take revenge on Adam and Mara by destroying Dharma and everyone in it.
+Rahu teams up with Jack and releases him from Cybervoid. Back in the real world, three weeks have passed. In that time, Mitra, Madhu, and their army of Scions have breached Dharma tower and have been wreaking havoc. Jack downloads Rahu into himself and races back to Dharma tower, arriving in time to defeat Madhu moments before he is able to kill Bakunin. With Rahu and the Climbers' aid, Jack ascends the tower, and intercepts Mitra in the reactor. Mitra, furious at Jack and Rahu, attacks, as Rahu theorizes that Mitra is not actually Gyges, but a Ghostrunner programmed with Gyges' memories. Ultimately, Jack kills Mitra, saving the Tower. 
+In the aftermath, Kira begins work on a pathogen to kill the remaining Scions in the tower; Zoe takes over organizing the Interface Council, and Jack plugs Rahu back into the Cathedral at his request, so he can live out his days in Cybervoid alone. Jack elects to depart Dharma tower on a mission to find himself. In a post-credit scene, Kira scans soil samples retrieved from Outside, and finds one batch to be fertile, signalling that life has returned on Earth.
+
+
+== Development and release ==
+One More Level, which is based in Poland, served as the game's developer. Game director Radoslaw Ratusznik described the game as an "evolution" to the original Ghostrunner. While it was designed to be challenging, the team introduced various gameplay enhancements to make it more approachable to new players. For instance, the team introduced an active blocking mechanic for players who were struggling with the game's fast movement system. Samurai Jack was cited by lead gameplay designer Lukasz Wabik as one of the game's inspirations. Jack's motorcycle was added to the game because the team felt that it aligned with the game's fast-paced combat and its cyberpunk aesthetic.
+In March 2021, 505 Games, the co-publisher of original game, announced that they had acquired the intellectual property from All In Games for €5 million. The existence of a sequel was first confirmed by 505 Games in May 2021. The game was officially revealed in May 2023. The game was released on PlayStation 5, Windows, and Xbox Series X/S on 26 October 2023. Players who pre-ordered the game or purchased its more expensive Deluxe Edition were granted several in-game weapon and character skins. A demo for the game was released for PlayStation 5 on 15 September 2023.
+
+
+== Reception ==
+
+Ghostrunner 2 received "generally favorable" reviews from critics, according to review aggregator website Metacritic. Fellow review aggregator OpenCritic assessed that the game received strong approval, being recommended by 81% of critics. In Japan, four critics from Famitsu gave the game a total score of 32 out of 40. The game was nominated for "Best Action Game" at The Game Awards 2023.
+Lauren Bergin of PCGamesN scored the game 9/10 saying "I am so glad that I took on this Ghostrunner 2 review – it may just be one of my favorite games of the year."
+
+
+== References ==
+
+
+== External links ==
+Official website
+Ghostrunner 2 at IMDb

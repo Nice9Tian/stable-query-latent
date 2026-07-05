@@ -1,0 +1,32 @@
+Game: Deliver Us Mars
+appid: 1345890
+Source: Deliver Us Mars
+URL: https://en.wikipedia.org/wiki/Deliver_Us_Mars
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Deliver Us Mars is a 2023 action-adventure video game developed by KeokeN Interactive and published by Frontier Foundry.  It is the sequel to Deliver Us the Moon.
+
+
+== Gameplay ==
+Players control an astronaut named Kathy.  Her father, Isaac, left Earth years ago after abandoning a mission to save it from ecological disaster.  Players learn about Kathy's relationship with her family as she travels to Mars in search of Isaac and technology that may still help save Earth.  Her exploration involves solving puzzles in first-person and platforming in third person perspective.
+
+
+== Development ==
+KeokeN Interactive is based in the Netherlands.  Frontier Foundry released it for Windows, PlayStation 4 and 5, and Xbox One and Series X/S on February 2, 2023.
+
+
+== Reception ==
+Deliver Us Mars received mixed reviews on Metacritic.  PC Gamer said its limited budget caused Deliver Us Mars to fall short of its potential, but they recommended it to fans of single-player games with a strong story.  Although they disliked the puzzles, Rock Paper Shotgun praised the story and platform game elements.  Conversely, IGN enjoyed the puzzles but disliked the platforming, which they called "a chore".  They praised the voice acting and story but said they could not save Deliver Us Mars from performance issues and poor graphics.  Game Informer wrote, "A gripping narrative fuels gameplay that otherwise feels functional but underbaked", comparing it to Macbeth performed by poorly-made animatronics.  Push Square said it has "an entrancing sci-fi story" with great voice acting, but they criticized the terrain pop-in, poor performance, software bugs, and platforming, which they found tedious.
+It was nominated for best audio at the 2023 Dutch Game Awards.
+
+
+== Sequel ==
+A sequel, Deliver Us Home, was launched on Kickstarter on June 11th, 2024.
+
+
+== References ==
+
+
+== External links ==
+Official website

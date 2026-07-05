@@ -1,0 +1,31 @@
+Game: Nobody Saves the World
+appid: 1432050
+Source: Nobody Saves the World
+URL: https://en.wikipedia.org/wiki/Nobody_Saves_the_World
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Nobody Saves the World is an action role-playing dungeon crawling video game developed and published by DrinkBox Studios. The game was released for Microsoft Windows, Xbox One and Xbox Series X/S in January 2022, which was followed by ports on Nintendo Switch, PlayStation 4 and PlayStation 5 in April 2022.  
+
+
+== Gameplay ==
+Nobody Saves the World is an action role-playing game played from a top-down perspective. The game can be played solo, or in a cooperative multiplayer mode. In the game, the player controls a blank-state character named Nobody, who is equipped with a wand. The wand allows them to transform into 18 forms, such as a magician, a robot and a dragon. Each form has two basic skills at the beginning. As players progress, abilities are unlocked. These characters have different stats and attributes. The skills and the abilities of different Forms can be combined to create devastating attacks. Other Forms can share the gameplay benefits of one Form when it was unlocked.
+As players explore the overworld and dungeons which are procedurally generated, players need to complete quests and gameplay objectives in order to earn experience for upgrades and Star, a currency which is used to unlock the legendary dungeons featured in the game. These dungeons are filled with enemies and traps, though players may find treasure chests and hidden keys if they explore an area thoroughly. In each of the game's dungeons, the only respawn point is located in the area where the player is about to encounter an enemy boss.
+
+
+== Development ==
+The game was developed by DrinkBox Studios, who previously released Guacamelee! and its sequel Guacamelee! 2. The game was inspired by The Legend of Zelda and Final Fantasy Tactics, in particular, its Job system that allows players to assume different roles and occupations. Nobody Saves the World is DrinkBox's first multiplayer game after the team was convinced by Microsoft to add online multiplayer. Jim Guthrie, who previously composed the music for Superbrothers: Sword & Sworcery EP and Planet Coaster, served as the game's composer.
+The game was officially announced in March 2021 during the ID@Xbox Twitch Gaming Showcase. While the game was originally set to be released in 2021, DrinkBox announced that the game would be delayed to early 2022 in August 2021. The game was released on January 18, 2022, for Windows, Xbox One and Xbox Series X and Series S. An expansion for the game, titled Frozen Hearth, which adds areas, challenges and forms, released on September 13, 2022.
+
+
+== Reception ==
+
+Nobody Saves the World received "generally favorable reviews" according to review aggregator Metacritic.
+Game Informer enjoyed how the game forced the player to constantly change their loadout, "Every dungeon sports a dangerous modifier, which often upset my preferred loadout... The various modifiers made me appreciate the breadth of customization and experimentation for every form". Destructoid liked the cartoon-inspired visuals, writing that the game, "injects a ton of personality into basically every facet of its being. The animation is fantastic: like something straight out of a Cartoon Network show, with characters who have exaggerated, over-the-top emotive reactions". PC Gamer praised the variety each of the game's forms enabled "Each form begins with a unique signature attack and passive ability... But the real fun begins once you can mix and match abilities from different forms in an open-ended system... with a similar onus on freeform experimentation". IGN criticized the endgame, saying it lacked the variety in new forms that was found earlier, "On the other end of that, the last stretch of the 15-hour adventure starts to suffer from a feeling that the well has run dry. I ran out of new forms to chase, I felt like I had seen and experimented with all of the ability synergies that made sense, and I felt like I had easy answers for just about everything". Eurogamer recommended the game, calling it extremely replayable, concluding, "Drinkbox's latest is as polished and colourful as you might expect - and it's as generous too." Shacknews praised the game for its combat, customizable builds, art style, dungeons, characters, and commentary on the RPG genre while criticizing the autosave system. Hardcore Gamer praised the ability to encourage experimentation and its challenge system, calling it "Drinkbox’s most curious but mechanically-satisfying title to date."
+
+
+== References ==
+
+
+== External links ==
+Official website

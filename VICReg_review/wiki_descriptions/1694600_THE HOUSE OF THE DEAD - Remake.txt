@@ -1,0 +1,77 @@
+Game: THE HOUSE OF THE DEAD: Remake
+appid: 1694600
+Source: The House of the Dead (video game)
+URL: https://en.wikipedia.org/wiki/The_House_of_the_Dead_(video_game)
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+The House of the Dead is a 1997 light gun shooter video game developed by Sega AM1 and published by Sega for arcades. Players assume the role of agents Thomas Rogan and "G" as they combat an army of undead experiments created by Dr. Curien, a mad scientist. The game was developed for over a year on the Sega Model 2 arcade hardware. Targeting an adult audience, AM1 devised a story and atmosphere inspired by Western horror films. AM1's plans for detailed environments, non-linear level designs, and a gory aesthetic were challenged – and often limited – by the Model 2 hardware and other factors. After its initial release in arcades, the game was ported to the Sega Saturn, Microsoft Windows, and Japanese mobile phones.
+The House of the Dead was well-received by critics. Along with Resident Evil, it has been credited with popularizing zombie video games, as well as re-popularizing zombies in wider popular culture from the late 1990s onwards, leading to renewed interest in zombie films during the 2000s, which includes a film series of its own, the first being released in 2003. The game spawned a franchise including several sequels and spin-offs, starting with The House of the Dead 2 in 1998. A remake of the game was developed by MegaPixel Studio and published by Forever Entertainment for Nintendo Switch, PlayStation 4, Stadia, Windows, and Xbox One in April 2022, for Xbox Series X/S in September 2022, and for PlayStation 5 in January 2023.
+
+
+== Gameplay ==
+
+The House of the Dead is a rail shooter where players use a light gun (or mouse, in the PC version) to aim and shoot at approaching enemies. The characters' pistols use magazines which hold six rounds; players reload by shooting away from the screen. When a player sustains damage or shoots a civilian, one point of health is removed. The continue screen appears when all health is lost. If the player runs out of continues, the game is over. First-aid packs are available throughout the game which restore one point of health; some can be obtained from rescued hostages, while others are hidden inside certain breakable objects. Special items can be found within other breakables, granting a bonus to the player who shoots them. The player can earn additional health at the end of each level based on the number of hostages rescued.
+Throughout the course of the game, players are faced with numerous situations in which their action (or inaction) will have an effect on the direction of gameplay. This is exemplified in the opening stage of the game when a hostage is about to be thrown from the bridge to his death. If the player saves the hostage, they will enter the house directly through the front door; however, if the player fails to rescue the hostage, the character is redirected to an underground route through the sewers.
+Players can score additional points by shooting enemies in the head, rescuing hostages and finding hidden items.
+
+
+== Plot ==
+In Europe, the renowned biochemist and geneticist, Dr. Curien, becomes obsessed with discovering the nature of life and death. While supported by the DBR Corporation and its own team of scientists, Curien's behavior becomes more erratic and his experiments take an inhumane and gruesome turn. The Curien Mansion, which serves as his home and laboratory, experiences an outbreak of genetically engineered creatures.    
+On December 18, 1998, AMS Agent Thomas Rogan receives a distress call from his fiancée, Sophie Richards, from the Curien Mansion. Rogan and his partner, "G", travel to the estate, finding it overrun with creatures, which Curien unleashed. A mortally wounded scientist gives them a journal containing information about Curien's creations and their weaknesses, and urges them to rescue the survivors still trapped inside. 
+Rogan and G reach Sophie, only to witness her being carried away by a flying bat-like monster called Hangedman. The two enter the house, and later find Sophie, just before she is attacked by Chariot, a hulking, heavily-armored creature armed with a bardiche. After killing it, Rogan and G attend to a wounded Sophie, who warns them that they must stop Curien at all costs, before collapsing from her wounds. Furious, Rogan and G push further into the mansion, and upon reaching the rooftops encounter Hangedman. In the ensuing battle, Rogan and G are nearly thrown to their deaths, but still manage to shoot it down. Fighting deeper into the mansion’s laboratories, the two eventually find Curien, who is protected by a massive, arachnoid creature called the Hermit. After killing it, Rogan and G continue their chase.
+The duo traverse through several laboratories housed in a mountain cave system beneath the manor, arriving at a massive laboratory where Curien unleashes his masterpiece, the Magician, a powerful humanoid creature with pyrokinetic abilities. However, the Magician refuses to serve any master and kills Curien. To prevent it from escaping, Rogan and G fight the Magician; upon its defeat, it explodes after warning the players, "You haven't seen anything yet!" With both Curien and the Magician dead, the agents leave the mansion.
+
+
+=== Endings ===
+There are three different endings; which one players see is determined by their score rank. In what the developers called the "normal ending", achived by scoring under 62,000 points, and having a final score that is divisible by 10, Sophie is reanimated and becomes a zombie. What the developers have referred to as the "true ending" is only seen if the players get the highest rank, over 62,000 points, and have a final score divisible by 10: Sophie is alive, having survived her injuries. In the third ending, obtained by having a score that isn't divisible by 10, a far view of the mansion is shown and Sophie is absent (leaving it unknown if she survived or not).
+
+
+== Development and release ==
+Development started in December 1995 and took one year and three months. None of the development team could speak English, so they arrived at the name The House of the Dead by taking various horror-themed phrases in Japanese and picking the one where the English translated text had the most "cool" visual, without concern for what sort of connotations the phrase might have to English speakers. The team saw people in their 20s and 30s as their target audience, and hoped that the game would primarily be experienced as a two-player game.
+The House of the Dead was built on the Virtua Cop game engine, and the cabinet uses the same Virtua Guns. The developers wanted to have a more complex system of path branches, and to have the system impact the game's story, but eventually realized these ideas were too ambitious to fulfill within the time allotted to make the game.
+The enemy designs were drafted quickly, going from idea directly to design drawing without any rough sketches. Anticipating that foreign markets, particularly Germany, would require the violence be toned down, they built in an option for operators to change the color of the game's blood, with green, purple, and blue available in addition to the traditional red. They also cut a female zombie from the game because they felt she looked too much like a normal elderly woman, which could provoke controversy given that the player is encouraged to shoot the zombies. The Chariot was animated by using motion capture with an actor wielding a broom, but the other enemies were all animated manually, using motion capture for reference only.
+Sega AM4 designed the game's cabinet using screenshots and illustrations given to them by AM1. The House of the Dead came in two cabinet formats, both upright: one with a 50-inch monitor and one with a 29-inch monitor.
+
+
+=== Ports ===
+In late 1997, Sega confirmed that work had begun on a port to Sega Saturn, as an early version had been delivered to them. The port was handled by Tantalus Interactive and released in 1998, with a port to Windows (PC-CD) by Sega arriving the same year. Extra game modes were added to both ports, which include selectable characters with different weapons and a boss rush mode. The Saturn port supports the console's light gun peripherals.
+Both the Sega Saturn and PC editions have slightly remixed soundtracks. On Chapter 2, there is a reference to the Space Shuttle Challenger disaster, as the words "Challenger, go at throttle up", spoken by Richard O. Covey from the mission control room only seconds before the explosion, can be heard three times before the music loops. These words do not appear in the arcade version; a snickering laugh is heard instead. The title, and boss themes are reversed on the PC port as well.
+A version for mobile phones was released in Japan, and aimed to recreate the gameplay and locations from the arcade version. The pre-installed trial version containing the game's first chapter was included with Vodafone V603SH in February 2005, and utilized the phone's accelerometer functionality to control the camera.
+
+
+== Remake ==
+In April 2021, it was announced that a remake of the game was to be released for the Nintendo Switch. The House of the Dead: Remake was developed by MegaPixel Studio and published by Forever Entertainment under license from Sega. In January 2022 news outlets reported that the game was expected to launch in March 2022, but it was ultimately released on April 7, 2022. Ports for PlayStation 4, Stadia, Windows, and Xbox One were released on April 28, 2022, followed by Xbox Series X/S on September 23, 2022, and PlayStation 5 on January 20, 2023.
+The remake uses an analog controlled crosshair for aiming by default. The Switch version also includes alternative control schemes by utilizing the controller's built in “gyro aiming” system or the touchscreen to emulate the use of a light gun, while the subsequent Xbox One and PS4 ports also have alternate control methods, such as USB mouse control and the PlayStation Move/Aim controllers respectively.
+
+
+== Reception and legacy ==
+
+In Japan, Game Machine listed The House of the Dead as the second most successful dedicated arcade game of April 1997.  It went on to be the country's highest-grossing dedicated arcade game of 1998. The arcade game was also a major hit overseas; by 1998, it had sold 8,600 arcade cabinets worldwide, including 1,600 in Japan and 7,000 overseas.
+
+
+=== Reviews ===
+The arcade version of The House of the Dead received positive reviews upon release. In July 1997, Computer and Video Games magazine called it "the best shooting game ever!" Next Generation reviewed the arcade version of the game, rating it four stars out of five, and stated that "Overall, this is an excellent take on the light-gun genre - a sheer bloody scream." The review praised the branching levels, story, creature design, graphics, and destructible environments. In a retrospective review, AllGame awarded it 4.5 out of 5 stars, likewise praising the story, graphics, and destructible environments, but particularly focused on the game's intelligent challenge. The reviewer dubbed it "one of the best shooting games to hit arcades in the late 1990s."
+The Saturn version of The House of the Dead garnered generally favorable reviews. It had a 71% rating on review aggregation website GameRankings based on five online reviews.
+The Nintendo Switch remake received mixed reviews. Starburst praised the new soundtrack, added game modes, and the exciting atmosphere. They concluded that the remake is "a fantastic revival of an old favourite". Gaming Bible similarly commented that the graphical upgrades and extras are appealing. Nook Gaming was laudatory of the game's "clever camera angles and situations" that encourage efficient play. Reviewers criticized the gyro and thumbstick controls. Nintendo Life felt that unlike the Wii, the Switch is unsuitable for light gun games due to its lack of a sensor bar, without which the gyro controls cause the cursor to twitch when firing. They concluded that while the gameplay still held up and the graphical upgrades and extras were reasonably well done, those who are not fans of the original game might not have the patience for it.
+In a review of The House of the Dead Remake in Black Gate, Sue Granquist said "Though the Nintendo Switch has a pretty slick, updated gun option as a game controller, and the PS5 boasts a new 'dualsense' haptics controller, I'm still not sure I'm ready to give up my OG guns for blasting away at the undead. Unfortunately, I am unlikely to be able to pass up playing an updated version."
+
+
+=== Cultural impact ===
+According to Kim Newman in the book Nightmare Movies (2011), the "zombie revival began in the Far East" during the late 1990s with the Japanese zombie games Resident Evil and The House of the Dead.  The success of these two zombie games inspired a wave of Asian zombie films, such as Bio Zombie (1998) and Versus (2000). The zombie revival later went global following the worldwide success of Resident Evil and The House of the Dead, which inspired a wave of Western zombie films during the 2000s, such as 28 Days Later (2002) and Shaun of the Dead (2004). In 2013, George A. Romero said it was the video games Resident Evil and House of the Dead "more than anything else" that popularised his zombie concept in early 21st-century popular culture. The House of the Dead was one of the games cited by the U.S. Court of Appeals when striking down Indianapolis' attempt to ban violent video games in 2000, with Judge Richard Posner writing that its themes of "self-defense, protection of others, dread of the 'undead', fighting against overwhelming odds" were "age-old themes of literature" subject to the same protections as other literary media.
+
+
+== Notes ==
+
+
+== References ==
+
+
+== Further reading ==
+"The House of the Dead". EGM2. June 1997.
+
+
+== External links ==
+The House of the Dead at MobyGames
+The House of the Dead at the Killer List of Videogames
+The House of the Dead at SegaSaturn.co.uk

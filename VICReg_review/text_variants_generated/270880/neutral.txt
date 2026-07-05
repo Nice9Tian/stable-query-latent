@@ -1,0 +1,11 @@
+American Truck Simulator is a trucking simulation game that lets players transport cargo across California, Nevada, and Arizona. Built on the model of Euro Truck Simulator 2 and expanded with additional features, the game places players in the role of a hired driver entering the freight market and progressing toward ownership of a transport company.
+
+The game features officially licensed truck models from well-known manufacturers, with extensive customization options. Players can modify cabins, chassis, paint jobs, tuning accessories, and engines to suit their preferences. Cargo variety is broad, ranging from food and machinery to hazardous materials, and hauling is supported by multiple trailer types, including reefers, flatbeds, dumpers, lowboys, and goosenecks. Some trailers can reach up to 53 feet, adding difficulty to both driving and parking.
+
+Deliveries take place across a range of company types and industrial locations such as refineries, oil storage sites, gas stations, car factories, and roadworks. The simulation includes realistic trucking systems such as air brake simulation, retarder, Jake brake, trailer brake, different transmission types, and adjustable brake intensity. Players can also adjust their seat, mirrors, and head position to improve visibility inside the cab.
+
+American Truck Simulator emphasizes road safety and compliance with traffic rules. Police can issue fines for speeding or other violations, and weigh stations may check for overweight cargo. A route adviser assists during travel. As players complete deliveries and develop their skills, they can buy trucks and garages, hire drivers, manage a fleet, and grow their own company for profit.
+
+The game also includes a built-in music player, radio streaming support, photo mode with editing tools, and support for steering wheels, gamepads, and other input devices. It offers ongoing support, Steam achievements, and hand-painted trading cards.
+
+An optional online service, World of Trucks, adds community features. Players can use photo mode to share screenshots, favorite images, discuss them with others, and aim to appear in the game’s Editor’s Pick. World of Trucks also supports custom avatars and license plates, and requires ownership of American Truck Simulator or Euro Truck Simulator 2 to join.

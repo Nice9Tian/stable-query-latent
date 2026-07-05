@@ -1,0 +1,33 @@
+Game: Car Mechanic Simulator 2021
+appid: 1190000
+Source: Car Mechanic Simulator 2018
+URL: https://en.wikipedia.org/wiki/Car_Mechanic_Simulator_2018
+Match score: 7.78
+Retrieved: 2026-07-04
+--------
+Car Mechanic Simulator 2018 is a simulation video game developed by Polish studio Red Dot Games depicting the work of an automotive mechanic. It was released on July 28, 2017, for Microsoft Windows; in 2019 on February 15 for Nintendo Switch and June 25 for PlayStation 4 and Xbox One. A simplified version for mobile platforms was released in June 2018. It is the third game in the Car Mechanic Simulator series and was followed up by Car Mechanic Simulator 2021 in August 2021.
+
+
+== Gameplay ==
+The game is played from a first-person perspective, with the player able to walk freely around the shop, showrooms and barns where damaged cars can be purchased to be repaired and/or resold. The player has access to a wide variety of tools, most of which are unlocked by completing jobs and earning experience. Over the course of the game, the player expands their workshop, allowing them to complete increasingly complex repair work as well as the restoration of classic cars.
+Gameplay involves examining the various components of the vehicles engine, suspension and chassis, identifying damaged components and replacing them. This can be done by purchasing a replacement component or, at higher levels, repairing the existing one. Engines are rendered in a great deal of detail, requiring the player to remove parts in a realistic manner in order to access the relevant component. In order to complete the required task, the player must use realistic hardware like a tire balancer, spring puller, detailing kit and engine mount.
+Further sections of the workroom become unlocked over the course of the game. These include a test track which can identify issues with a car's brakes and suspension and a paintshop which is used to paint and customize the car's body.
+
+
+== Reception ==
+
+The Switch version of Car Mechanic Simulator received "generally unfavorable reviews" and the Xbox One received "generally favorable reviews" on Metacritic.
+Rock Paper Shotgun called the game "singularly captivating and cathartic" while criticising a large number of bugs present in the initial release, as well as a number of the design decisions. A follow-up review after patching was complete indicated that the technical issues had been resolved.
+The Nintendo Switch version of the game was heavily criticised by Nintendo Enthusiast, who criticised it for being a port of the mobile release, calling it "a really sad attempt at making a quick buck off of unsuspecting buyers".
+
+
+== Downloadable content ==
+A variety of downloadable content is available for Car Mechanic Simulator 2018, the majority of which expands the range of cars available. Unlike the cars in the base game, which are fictional analogues for real cars, DLC cars are officially licensed replicas. These cars are integrated into the existing game, marked with a "DLC" banner in their description.
+In addition to the cars, on October 30, a free Tuning DLC was released. This expands the number of cosmetic upgrades and high performance parts that can be used to improve the vehicles the player builds. The player can also unlock a Dyno that can be used to check how much the vehicle has improved compared to its previous state.
+
+
+== Sequel ==
+Car Mechanic Simulator 2021 was released on August 11, 2021 for Windows, PlayStation 4, Xbox One and Xbox Series X/S. On May 2, 2022, it also released on PlayStation 5. Games.cz called it akin to a remaster with minor added features, but not enough to justify an upgrade if one already owned all DLC for the previous game.
+
+
+== References ==

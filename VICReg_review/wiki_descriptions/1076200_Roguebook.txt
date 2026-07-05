@@ -1,0 +1,27 @@
+Game: Roguebook
+appid: 1076200
+Source: Roguebook
+URL: https://en.wikipedia.org/wiki/Roguebook
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Roguebook is a roguelike deck-building game developed by Abrakam Entertainment.  Nacon published it in 2021 for Linux, macOS, and Windows.  Console ports were released in 2022.
+
+
+== Gameplay ==
+A magical book with an insatiable hunger for creating stories sucks everything from its surrounding environment into its pages.  Players traverse an overworld map in the form of a lore book from Faeria, with which Roguebook shares its setting.  As players win battles with enemies, they acquire ink.  This ink can be used to reveal the features of the map.  Brushes can reveal a larger portion of the map.  Combat is turn-based and uses deck-building mechanics.  Players combine the decks of two characters, each of whom has their own unique skills and tactics.  Besides ink, players can accumulate money and gems.  Gems can be used to enhance cards, giving them unique abilities.  Each playthrough can permanently unlock new characters, cards, and other gameplay elements, making new games easier.  To win, players must win engage in a boss fight.  The boss is randomly selected from avatars of the book itself.
+
+
+== Development ==
+The concept came from Abrakam's desire to connect their new game to Faeria.  The setup of fighting a greater evil gave them an excuse to have characters who disliked each other in Faeria to work together.  The open world overworld map came from a desire to differentiate Roguebook from Slay the Spire, which uses branches.  Richard Garfield helped design the game.  Abrakam crowdfunded Roguebook via Kickstarter in June 2019.  Nacon released it for PCs on June 17, 2021; PS4, PS5, and Xbox One and Xbox Series X/S on February 24, 2022; and Switch on April 21, 2022.
+
+
+== Reception ==
+On Metacritic, Roguebook received positive reviews for the PC, PlayStation 5, and Xbox One versions, and it received mixed reviews for Switch.  PC Gamer wrote that it has "a few clever twists" but "nothing in Roguebook is particularly novel".  IGN praised the overworld and how two heroes combine their decks in combat, but they said this combat mechanic leaves player strategy less focused than similar games.  NME said it is a good game but "[adds] a few too many ideas into an already stuffed experience".  Digitally Downloaded praised its game balance and its depth, which they said help differentiate it from other deckbuilding games.  Though they said the Switch version suffers from long load times, they said Roguebook is also very good for bursts of gameplay on a handheld system.
+
+
+== References ==
+
+
+== External links ==
+Official website

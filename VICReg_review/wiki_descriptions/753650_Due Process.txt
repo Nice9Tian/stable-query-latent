@@ -1,0 +1,23 @@
+Game: Due Process
+appid: 753650
+Source: Due Process (video game)
+URL: https://en.wikipedia.org/wiki/Due_Process_(video_game)
+Match score: 7.00
+Retrieved: 2026-07-04
+--------
+Due Process is an online multiplayer tactical first-person shooter video game developed by American studio Giant Enemy Crab and to be published by Annapurna Interactive. It was made available in early access for Windows on November 4, 2020. The game's core revolves around teamwork and communication, allowing players to draw a "playbook" during the planning phase onto the hand-curated, procedurally generated maps. The visuals are inspired by 1990s arcade light gun games, such as Time Crisis, and it is set in a cyberpunk dystopia.
+
+
+== Gameplay ==
+Matches are multiplayer, composed of a team of five players on defense versus a team of five players on offense. Every match begins with a planning phase where players may discuss strategy, gear up, and draw a "playbook" on the map. After planning, the combat begins.
+Maps are procedurally generated and then hand-curated resulting in a very interesting and new type of game. There are currently 5 tile sets in the game (Dome, Factory, Killhouse, C-store, and Bank). In any given match you will play three rounds of attacking, and three rounds of defending. In a ranked game mode you will play six with alternating after each three.
+Maps are procedurally generated, allowing the developers to add a large number of maps quickly via smaller updates. There are currently 5 tile sets within the game, with around ~150 maps in the rotation at any given time split between the 5 tile sets. All the maps are procedurally generated and then curated to ensure proper gameplay flow. With the increased ease of maps updates, player familiarity which each specific map type is decreased, requiring players to focus on map strategy during the tactical window prior to deployment, heightening the necessity for pre-match teamwork.
+Due Process League is the primary form of competitive e-sports in the game.
+
+
+== References ==
+
+
+== External links ==
+Official website
+Due Process League Youtube

@@ -1,0 +1,28 @@
+Game: Millennia
+appid: 1268590
+Source: Millennia (video game)
+URL: https://en.wikipedia.org/wiki/Millennia_(video_game)
+Match score: 6.72
+Retrieved: 2026-07-04
+--------
+Millennia  is a 4X turn-based strategy video game developed by C Prompt Games and released by Paradox Interactive on March 27, 2024.
+Upon release, the game received mixed reviews, with criticism mostly focused on the limitations of expanding in the game and critics comparing it to Sid Meier's Civilization VI, from which Millennia drew inspiration.
+
+
+== Gameplay ==
+Millennia contains many elements of a 4X game.
+Players lead their nation through 10 different ages; advancement through these depends on technologies researched by the player and affects every player in-game.
+
+
+== Reception ==
+
+Millennia received mixed reviews upon release from both players and critics.
+The game has been criticized for drawing inspiration from Sid Meier's Civilization VI without building a strong foundation. Critics have also pointed out the lack of a proper combat system and few ways to expand cities.
+However, the game's variant age system, which allows different ages to be chosen based on the player's achievements, has been praised for its uniqueness and playability.
+
+
+== References ==
+
+
+== External links ==
+Official website

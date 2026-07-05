@@ -1,0 +1,33 @@
+Game: Lil Gator Game
+appid: 1586800
+Source: Lil Gator Game
+URL: https://en.wikipedia.org/wiki/Lil_Gator_Game
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Lil Gator Game is a 2022 video game developed by MegaWobble and published by Playtonic Games. It is a 3D platform game where the player controls a young alligator who spends their time trying to get their older sister's attention. Lil Gator Game was released in December 2022 for Microsoft Windows and Nintendo Switch, then for PlayStation 4, PlayStation 5, Xbox One, and Xbox Series X/S on October 10, 2023. A full-length expansion, Lil Gator Game: In the Dark, was released on February 12, 2026. The game and expansion are available bundled together in a combination release, Lil Gator Game: Gator of the Year Edition.
+
+
+== Gameplay ==
+The player can explore a series of islands, each with different inhabitants with side quests to complete. The player can earn cardboard money and objects that can be used to craft new items that open up new areas of the world. The player character can climb, swim, and glide to reach new areas.
+
+
+== Plot ==
+Players control Lil Gator, a curious and outgoing young alligator who enjoys exploring and hanging out with their friends. Years ago, they used to have make-believe adventures at the local island park with their older sister, who would create elaborate cardboard props and structures for them to play with. In the present, Lil Gator's sister has become busy with their college studies and no longer has time to play. Distraught, Lil Gator decides to rally the other children in the park to create an expansive fantasy game in the hopes their sister will be compelled to join. Once all of the Lil Gator’s friends have joined the game, Lil Gator's sister decides to take a break from her studies and join the game.
+
+
+== Development ==
+The game's development was started by Scott Slucher, with the other two developers, Robin Burgess and Connor Quinn, joining after. Development on the game started in 2020, based on a small tech demo, Playground Hero. The positive reception to a GIF of the game's gator running around in a circle spurred publisher attention and helped the game start production.
+The main character's design was inspired by Link from The Legend of Zelda, specifically the design from Oracle of Seasons and Oracle of Ages. As for influences on the writing, the developers took inspiration from Frog Detective, The Fairly OddParents, and SpongeBob SquarePants. The side quests in particular were based on the Yakuza series, with a focus on the absurd nature of the characters. The game's visual style and exploratory nature was influenced by 2019's A Short Hike, alongside Kirby Air Ride and Tony Hawk's Pro Skater.
+In February 2023, the game received a speedrunning mode.
+In February 2026, the game received a paid DLC, Lil Gator Game: In the Dark, which allows players to explore the island's underground.
+
+
+== Reception ==
+
+Lil Gator Game received "generally favorable reviews" according to review aggregator, Metacritic.
+Polygon enjoyed how the title took ideas from different Zelda entries in order to build out its story, "what I truly love about the game, is how it balances the childlike veneer of the protagonist's perspective with a poignant emotional core that's reminiscent of Wind Waker". Destructoid liked the game's portrayal of adolescence, "Lil Gator is attempting to create to the tools he acquires around the island, there is so much here that feels like it was pulled directly from the mind of a child". Rock Paper Shotgun felt that the side content was a pleasant diversion from the main story, "The quests are almost always simple throughout, but they make for relaxing little tasks to complete as you explore".
+While praising the central hub, Game Informer criticized how the game could be difficult to explore, "However, with several places in the picturesque main island appearing similar and no access to a minimap, it's easy to get turned around". Nintendo Life loved the visuals, noting that, "the autumn forest cel-shaded visuals look wonderful on Switch, and the game generally runs well".
+
+
+== References ==

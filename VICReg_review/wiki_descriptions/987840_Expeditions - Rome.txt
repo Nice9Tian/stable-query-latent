@@ -1,0 +1,38 @@
+Game: Expeditions: Rome
+appid: 987840
+Source: Expeditions: Rome
+URL: https://en.wikipedia.org/wiki/Expeditions:_Rome
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Expeditions: Rome is a tactical role-playing game developed by Danish developer Logic Artists and published by THQ Nordic. It is the third game in the Expeditions series, which includes Expeditions: Conquistador and Expeditions: Viking. It was released for Windows on January 20, 2022. The game is an RPG that combines gameplay in local, tactical battles with other types. In the game, the player controls a legatus who investigates the death of their father and travels throughout the Roman Republic and nearby nations as they expand Roman influence across the world.
+The game received mostly positive reviews from critics, who praised the game's strong gameplay elements and strong plot elements, but criticized its legionary battles for being weaker than the tactical gameplay and the length of time that battles could take.
+
+
+== Gameplay ==
+
+Each campaign region is a different "Act" inside of the game. The player must scout each region's sectors, where they can encounter resources that they need to grow their army, story decisions, or military strongpoints they need to conquer. The game is split into two different kinds of battle systems: legionary battles and story missions that generally take place in turn-based combat settings. In the legionary battles, the player assigns a Centurion to lead the attack, and can prepare the army before the battle to raise the odds of victory. Cards are drawn during combat which affect the likelihood of success. In story battles, the player takes turns controlling a small squad of characters that they use to move around a battlefield and defeat an enemy. Players are also responsible for managing their legion's camp, which can help them have better outcomes during legionary combat. Story-based battles often have objectives outside of defeating all enemies and sometimes can be won without engaging in combat; in one instance, a mission requires the player to quickly steal an Olympic trophy.
+
+
+== Plot ==
+In Expeditions: Rome, the player controls a legatus in the final years of the Roman Republic. Real historical figures like Cicero, Julius Caesar, and Cato appear in the plot, although the game takes historical licenses with these people; the presence of the player character dramatically alters the path of Roman history throughout by their actions (and their existence). After the death of their father at the hands of unknown political opponents, the player's character is forced to flee Rome and becomes a soldier in the armies of Lucullus during the Third Mithridatic War. Lucullus is a family friend and gives the player control of one legion - which they then take command of in campaigns across regions in Asia-Minor, Africa, and Gaul, all the while seeking to identify their father's murderers and attain justice for their crime.
+
+
+== Development ==
+Expeditions: Rome entered pre-production shortly after the release of Expeditions: Viking in 2017. Logic Artists, the developers of the game, presented the game idea to THQ Nordic in 2018, which is when full development began in earnest. THQ Nordic acquired the Expeditions Series intellectual property (IP) in November 2018. Logic Artists previously worked on the on-hold title Divinity: Fallen Heroes, which would have taken place in the same universe as Divinity: Original Sin II; because of this experience, they had experience working with Larian Studios in their CRPG-style. Development was generally not affected by the lockdowns caused by the COVID-19 pandemic, because Logic Artists was already a development team split between Copenhagen and Istanbul (the latter was where most of the art team was based) and they were able to easily transition to remote work. Concerned about the lack of variety in enemy types sometimes found in historical games, Logic Artists attempted to diversify the enemy character classes in a way that would make the user experience more enjoyable. Logic Artists felt that the historical period had to feel accurate, but that once the player character came into the scene, "all bets were off."
+
+
+=== NFT concerns ===
+Soon after the release of Expeditions: Rome, it was announced that the founders of Logic Artists were creating a new studio dedicated to NFT gaming and were winding down the studio to support this endeavor. After concerns cropped up from players about what this meant for the future of Expeditions: Rome development, publisher THQ Nordic released a statement that there would be at least one DLC pack coming for the game, and that Logic Artists would continue to maintain additional support for any technical issues with the game or its DLC. THQ Nordic also stated that Expeditions: Rome "does not include any kind of NFT and has no links to the blockchain."
+
+
+== Reception ==
+
+Expeditions: Rome received "generally favorable" reviews, according to review aggregator Metacritic. Rock Paper Shotgun's Nate Crowley praised the game's attention to historical detail (including accurate Latin pronunciations) and said that after a mediocre first half hour, the game "lets rip" and became much more fun. RPGamer's Alex Fuller called the game an "easy recommendation" and praised the game's flexible difficulty settings. IGN's Leana Hafer called it "one of the better tactical RPGs of the last several years" but wished that the legionary combat was "more engrossing", an opinion shared by Crowley. PC Gamer's Robert Zak wrote that battles took far too long, but he appreciated the game's level of historical detail. Crowley criticized the game's lack of customization options for your player character and felt that the characters traversed the map too slowly.
+
+
+== Sources ==
+
+
+== External links ==
+Official website

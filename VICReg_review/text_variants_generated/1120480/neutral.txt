@@ -1,0 +1,13 @@
+The Anacrusis is a sci-fi first-person shooter for 1–8 players centered on survival against endless alien hordes. It supports intense 4-player co-op play, and also includes a Versus mode where players can control the aliens and try to stop the survivors from reaching the end of the level.
+
+The game features a range of sci-fi weapons and tools for co-op survival. Players can use items such as the stasis grenade, shield grenade, Respawner, and laser rifle, with additional new enemies, grenades, and weapons available. A beta mode called Ultra Violence adds new challenges and weapons, and is described as being especially fun in solo play.
+
+In Versus mode, players can take control of alien types including the Brute, Flasher, Grabber, Gooper, and Spawner. This PVP mode is designed for teams of 2, 3, or 4 players, and also supports private matches against bots for practice.
+
+The game is set in a distant future where humanity has expanded across thousands of systems, only to face an alien infestation. The story follows four survivors—Nessa, Guion, Liu, and Lance—who are caught in the fight to defend humanity. As players progress, they uncover more of the mystery behind the alien attack.
+
+A notable feature of The Anacrusis is its AI Driver, which controls enemy spawns, boss behavior, and the placement of weapons, gadgets, and health kits. This system is intended to create varied encounters and adjust the challenge to different skill levels, making each playthrough different.
+
+The game also includes a perk system tied to matter compilers found throughout the game. These unlockable perks can modify gameplay, such as improving the last-resort pistol or strengthening defense by enhancing the shield pulse. Unlocks can be shared with the whole team.
+
+The Anacrusis supports Steam Workshop mods, including new campaigns, holdout maps, player skins, player hats, emotes, character accessories, gun charms, and animations. The page also notes that the community online is small at the moment, so finding active public games may be difficult, but the game is intended to be played with friends or through community events and mod testing.

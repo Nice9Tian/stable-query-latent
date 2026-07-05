@@ -1,0 +1,31 @@
+Game: Tails of Iron
+appid: 1283410
+Source: Tails of Iron
+URL: https://en.wikipedia.org/wiki/Tails_of_Iron
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Tails of Iron is an action role-playing video game developed by Odd Bug Studio and published in 2021 by United Label.  Players control an anthropomorphic rat who must kill frogs that have invaded his kingdom.
+
+
+== Gameplay ==
+After invading frogs kill his father, young King Redgi, an anthropomorphic rat, attempts to defeat the invaders and rescue the rest of his family.  Tails of Iron is a side-scrolling Soulslike game, a genre that focuses on boss fights in which players must carefully time their attacks and defense.  Players can customize Redgi with different skills and change their build to fit specific battles. There are three main hand-to-hand weapon types: spears, swords, and axes. All these weapons play differently from each other and have their own advantages and disadvantages. These weapon types are used in the light weapon category and the heavy weapon category. There are also ranged weapons with three main categories: bows, crossbows, and firearms. Each have different fire rates which effect your play style and when you use the ranged weapon. Using heavy equipment can slow down players' movements but provide better attack and defense values.  As Redgi defeats enemies and progresses through the story, the kingdom slowly recovers.  It has a hand-drawn art style.
+
+
+== Development ==
+Odd Bug Studio is based in Manchester, UK.  Tails of Iron is their second game.  Unsure they would have the opportunity to make a third, they said they wanted to make something that appealed strongly to them: a gory, open world fantasy role-playing game with challenging combat.  Redgi's attempts to save his kingdom were influenced by their worries about the studio itself.  Doug Cockle narrates the game.  The art style was influenced by Eastern European block printing.  Gameplay influences include The Witcher, God of War, and Dark Souls, though Odd Bug said Tails of Iron's difficulty was influenced more by Hollow Knight than Dark Souls.  For the story, they were inspired by Redwall, Mouse Guard, The Wind in the Willows to create anthropomorphic characters in peril.  The characters themselves are derived from the game director's pet rats.  Unlike other Soulslike games, Tails of Iron lacks a stamina bar to limit attacks.  Odd Bug originally implemented this, but they found that combat was not as fluid and dynamic as they wanted.  United Label released it for Switch, PlayStation 4 and 5, Xbox One and Series X/S, and Windows on September 17, 2021.
+
+
+== Reception ==
+Tails of Iron received positive reviews on Metacritic.  Though they enjoyed the game, Rock Paper Shotgun criticized some of the boss fights as "barely disguised" padding.  GamingBolt called it "functional and serviceable", but they found the combat and platform elements do not distinguish themselves beyond what other Soulslike games have done.  NintendoWorldReport praised both the combat and the world-building, which they said was good enough to carry the game by itself.
+
+
+== Sequel ==
+A sequel, titled Tails of Iron 2: Whiskers of Winter, released on January 28, 2025.
+
+
+== References ==
+
+
+== External links ==
+Official website

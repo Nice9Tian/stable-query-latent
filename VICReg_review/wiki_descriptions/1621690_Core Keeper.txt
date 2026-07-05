@@ -1,0 +1,85 @@
+Game: Core Keeper
+appid: 1621690
+Source: Core Keeper
+URL: https://en.wikipedia.org/wiki/Core_Keeper
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Core Keeper is a survival game and sandbox game developed by Pugstorm and published by Fireshine Games. Set in a procedurally generated underground world, the game combines mining, crafting, farming, automation, and combat while supporting single-player and cooperative multiplayer for up to eight players. Critics have compared its mechanics and tone to Minecraft, Terraria, and Stardew Valley for blending exploration, base-building and survival systems within a darker, atmospheric cave setting.
+The game entered Steam early access on 8 March 2022, where it received positive reviews for its progression systems, art style, tone, and accessibility to new players and co-op groups. During this period it surpassed one million sales and received multiple award nominations. Core Keeper left early access with its 1.0 release on Windows and Linux on 27 August 2024, followed by versions for PlayStation 5, Xbox Series X/S, Nintendo Switch, PlayStation 4 and Xbox One on 17 September 2024. The game is set to receive a port to Nintendo Switch 2 on 26 January 2026, with owners of the original Switch version receiving it free of charge. The full release was met with generally favorable reviews, including an 85/100 score on Metacritic.  The game has continued to receive free post-release updates with new content and features.
+
+
+== Gameplay ==
+Core Keeper is a top-down sandbox survival game set in a procedurally generated underground world. It can be played solo or cooperatively with up to eight players, with worlds hosted locally or on dedicated servers.
+Players begin in a central chamber known as the Core and expand outward by digging through terrain, gathering resources, and uncovering a series of biomes with distinct enemies, materials and environmental hazards. Progressively deeper areas introduce tougher creatures and more complex traversal challenges, while later updates added travel options such as boats and portals to support long-distance exploration.
+Crafting drives progression. Resources collected while exploring can be refined into equipment, workstations, and structures that unlock further crafting tiers. The game includes skill trees that improve through repeated use, enhancing abilities such as mining, combat, fishing, gardening and movement. Optional systems such as farming, cooking and fishing provide food, buffs and crafting materials that support sustained exploration and boss encounters.
+Automation becomes possible as players advance. Conveyor belts, mechanical arms, wiring systems and various automated production devices allow for large-scale resource processing, farming setups and base logistics, enabling more efficient progression for players who enjoy technical or creative approaches.
+Combat features a mixture of roaming enemies and bosses that act as major progression milestones. Early-game bosses must be defeated to unlock new technologies and reach subsequent biomes, while later bosses drop powerful equipment, materials or tools that improve mobility, survivability or efficiency. Although higher-tier bosses can often be challenged in flexible order depending on a player’s gear, skill, playstyle or group size, they contribute to the game’s overall power curve and eventual endgame. If a player dies, they respawn at the starting chamber and may recover dropped equipment by returning to the site of their death.
+
+
+== Development ==
+
+
+=== Announcement and early development (2021) ===
+Core Keeper was developed by Pugstorm and published by Fireshine Games. It was announced during an IGN livestream on 11 June 2021. It launched in open alpha later that year from 1–14 December. A demo was also released for Steam Next Fest in February 2022.
+
+
+=== Early access (2022–2024) ===
+The game entered early access on Steam on 8 March 2022. During early access the developers released a series of major content updates and timed events while supporting Windows and Linux.
+
+
+==== Seasonal events and crossovers ====
+The first seasonal event, “The Great Egg Hunt”, ran from 13–19 April 2022, introducing Easter-themed collectibles and enemies. Later that year, the Halloween event “Creepy Costume Party” ran until 5 November 2022 and added themed cosmetics.
+During this time a crossover event with Terraria followed on 26 September 2022, bringing the King Slime boss and other themed content into the game.
+Seasonal events continued into 2023. A Christmas event ran from 13 December 2022 to 5 January 2023, adding winter-themed enemies, decorations and mechanics, later made permanently accessible through in-game settings. The “Quality of Love” update in February 2023 combined a Valentine’s event with permanent features such as a visual overhaul, musical instruments and expanded character customisation. A brief “Cherry Blossom” event in March 2023 added sakura-themed trees, flowers and a new achievement.
+
+
+==== Major content updates ====
+The first major content update, "The Sunken Sea", released on 15 June 2022 and added a large water biome with boats, islands, new fish, ores, enemies and weapons. The "Desert of Beginnings" update followed on 10 November 2022, adding a desert biome, two bosses, go-karts and bug-hunting mechanics.
+In March 2023, the "Paws & Claws" update (version 0.6.0) introduced a pet system, cattle farming, the Meadow sub-biome, creative and casual world modes, and a wide range of quality-of-life changes and balance adjustments. The later "Shimmering Frontier" update (version 0.7.0), released in October 2023, added a new late-game biome, the Atlantean Worm boss, an equipment upgrade station and additional enemies, resources and building options intended to expand long-term progression.
+
+
+=== Full release and 1.0 update (2024) ===
+Core Keeper left early access and was fully released on Windows and Linux on 27 August 2024. Console versions for PlayStation 4, PlayStation 5, Xbox One, Xbox Series X and Series S and Nintendo Switch launched on 17 September 2024. The 1.0 launch update introduced a new endgame area known as the Passage, additional bosses, mage and warlock playstyles, waypoint teleportation, seed-based finite world generation and expanded PvP options, alongside an overhauled world layout and balance changes to reduce grind and rework progression systems.
+
+
+=== Post-release updates (2025–present) ===
+After the 1.0 release, Pugstorm continued updating the game with free content patches. The "Bags & Blasts" update (version 1.1.0), released in March 2025, added a new boss in the Desert of Beginnings, an Oasis sub-biome, an explosives skill tree, specialised inventory pouches and further expansions to the mage and warlock systems. An April 2025 crossover with the survival game Abiotic Factor added a themed custom scene, new items and the Electro-Pest enemy to the Forgotten Ruins.
+A minor update in May 2025 (version 1.1.2) introduced pet beds and colour variations for cattle, rebalanced boss health regeneration, and further adjusted warlock and summoner-focused equipment and mechanics. In August 2025, a dedicated server update enabled cross-play between PC storefronts, allowing players on Steam, Epic Games Store, GOG.com and the Microsoft Store versions to join the same dedicated servers while retaining mod support on compatible setups.
+In November 2025, Pugstorm announced the upcoming Void & Voltage update, which launched on February 25, 2026. The update introduced a post-game biome based on the void and electrical elements, alongside additional equipment, enemies, progression mechanics, and further systemic expansions designed to build on post-1.0 content.
+In May 2026, a minor update (version 1.2.1) was released. This update added a new character type, which didn't drop any items on death, had a reduced hunger drain, an increased parry window, and shorter healing and mana potion cooldowns. The update also added two new types of pouches and the ability to label chests.
+
+
+== Reception ==
+
+
+=== Early access reception ===
+Early-access reviews for Core Keeper were broadly positive. Critics frequently highlighted the game’s atmosphere, accessible progression, and blend of familiar survival mechanics with a distinctive underground setting.
+Rick Lane of NME compared the presentation to Dungeon Keeper for its dark tone and pixel art style, arguing that while the mechanics draw heavily from games like Minecraft, the shift in theme keeps them from feeling stale.
+Nicole Clark of Polygon described Core Keeper as a “top-down Terraria”, praising its meditative progression loop, gradual crafting reveals, and its ability to teach through experimentation rather than complex interfaces.
+Jason Coles of PCGamesN praised the game’s clear sense of direction, noting how its starting items, introductory cutscene, and crafting tiers guide players naturally through early progression.
+Christopher Livingston of PC Gamer highlighted the contrast between “spooky” subterranean areas and the game’s cozy, Stardew Valley-like atmosphere, praising its art, animation, and farming and cooking systems.
+Harry Alston of TheGamer commended the game’s “gorgeous” visual design and “straightforward but nuanced” combat, describing the overall tone as nostalgic and comfortable.
+In broader media coverage, Vulture named Core Keeper one of the best games of early 2022, Polygon listed it among the best co-op management games of the year, and PC Gamer called it 2022’s best co-op survival game.
+
+
+=== Full release reception ===
+The PC version of Core Keeper holds a Metacritic score of 85 out of 100, indicating "generally favorable" reviews.
+Jason Coles of TheSixthAxis praised the variety of biomes, flexible combat styles and co-op play, calling the game "clever, challenging, and immensely enjoyable" and highlighting its "satisfying gameplay loop" and "excellent music".
+The Games Machine similarly gave the game a positive review, praising its atmosphere, progression systems and variety of activities, describing it as "engaging and captivating" with "fabulous game design" and strong pixel art presentation.
+Óscar Ontañón of Gamereactor highlighted the sense of discovery, diverse biomes, mod support and high replayability, though noted that grinding for materials can become repetitive and the skill system is somewhat limited.
+In a review of the final 1.0 release, PC Gamer praised the game's expansive automation systems, exploration, and atmosphere, calling it "a sprawling survival game in a beautiful subterranean world." The reviewer noted strong biome variety and rewarding progression, though mentioned that inventory management can become cumbersome.
+
+
+== Sales ==
+Core Keeper reached a quarter-million sales within its first week in early access, and surpassed half a million copies within two weeks. PC Gamer attributed this early success partly to attention from streamers, noting that the game had accumulated nearly 2 million Twitch views by 23 March 2022. The game reached 1 million total sales by July 2022.
+
+
+== Awards and nominations ==
+
+
+== References ==
+
+
+== External links ==
+Official website

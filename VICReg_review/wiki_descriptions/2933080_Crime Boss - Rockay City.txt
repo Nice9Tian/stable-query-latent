@@ -1,0 +1,33 @@
+Game: Crime Boss: Rockay City
+appid: 2933080
+Source: Crime Boss: Rockay City
+URL: https://en.wikipedia.org/wiki/Crime_Boss:_Rockay_City
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Crime Boss: Rockay City is a 2023 cooperative first-person shooter video game developed by Ingame Studios and published by 505 Games. The player assembles a team of criminals and is sent on missions to infiltrate, steal, and defeat enemies in shooter gameplay. The game features a cast of prominent actors including Michael Madsen (in his final performance for a video game), Chuck Norris (in his final performance for a video game), Danny Trejo, Danny Glover, Michael Rooker, Kim Basinger, Vanilla Ice, and Damion Poitier.
+The game was initially released for Windows through the Epic Games Store on 28 March 2023. It was later released for PlayStation 5 and Xbox Series X/S on 15 June 2023 and for Steam on 18 June 2024. It received mixed reviews from critics.
+
+
+== Gameplay ==
+Crime Boss: Rockay City is focused around missions undertaken by teams of four criminals.  The player controls one of the criminals and cooperates with either other players or AI-controlled teammates to pull off heists in a first-person perspective.  The gameplay has frequently been compared to the Payday series of games.  The players need to collect enough loot from the target (banks, trucks, jewelry stores, etc.), but the longer they take, the greater the likelihood of police reinforcements arriving.  
+There are several ways that the missions are set up.  The simplest option is as quick play one-offs.  There are also six mini-campaigns of three missions chained in a row with a loose connecting story for each called "Urban Legends". There is a single-player campaign with roguelike elements where the player attempts to expand their territory across Rockay City after the previous leader of the underground dies.  The player allocates gang members to fight turf wars, buys new weapons, and goes on missions to attempt to take new territory—but if the player character dies in a mission, their quest to become Crime Boss is over.  In the same way, hired crew members who die or are arrested on missions are also lost forever.
+The feel of the game is consciously imitative of 1990s crime movies such as Heat.  Rockay City itself is set in a Florida reminiscent of Miami Vice.
+
+
+== Development and release ==
+Crime Boss is the first game produced by Ingame Studios, a new developer of around 70 employees based in Brno, Czech Republic.
+The game released in late March 2023 exclusively to the Epic Games Store for PC.  It was later released for PlayStation 5 and Xbox Series X/S in June 2023.  The game was released on Steam on 18 June 2024, alongside the "Cagnali's Order" DLC that features a corporation's robot cops helping the police.
+
+
+== Reception ==
+
+Crime Boss: Rockay City received "mixed or average" reviews from critics for the PC and Xbox Series X/S versions, while the PS5 version received "generally unfavorable" reviews, according to review aggregator website Metacritic. Metacritic listed the PlayStation 5 version the sixth worst game of 2023. In Japan, four critics from Famitsu gave the game a total score of 30 out of 40.
+Many of the reviews wrote that most of the hired voice cast, despite their fame in movies, put in underwhelming performances.  Another complaint common to most reviews was that the stealth system to the game was overly finicky and not well-supported, with the game eventually prompting players to get to the shooting regardless of how carefully an attempt at a stealthy approach was made.  Alice Bell of Rock Paper Shotgun said the game was a worse Payday, already a twelve-year old game in 2023. Wesley LeBlanc of Game Informer was harsh, saying the gameplay was buggy and boring, and that the plot and characters were poorly written. He gave the game a mere 3/10 overall score.   Cory Wells of Hardcore Gamer gave the game a cautiously positive review, warning that the game was neither exactly like Payday nor an open-world freeform game in the vein of the Grand Theft Auto series that many expected, but that gamers who didn't mind repetition would find a solid basic gameplay experience in the heists. Luke Plunkett of Kotaku was derisive, writing that Crime Boss "gets absolutely everything it sets out to do wrong".  Writing a month after the PC release in April 2023, he said that the game had attracted little comment and notice on the Internet, even negative, and noted the lack of a Steam release as a potential reason why.
+
+
+== References ==
+
+
+== External links ==
+Official website

@@ -1,0 +1,47 @@
+Game: Fields of Mistria
+appid: 2142790
+Source: Fields of Mistria
+URL: https://en.wikipedia.org/wiki/Fields_of_Mistria
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Fields of Mistria is a farm life simulation role-playing video game developed and published by NPC Studio. It was released in early access on Windows on August 5, 2024, with a full release planned for August 5, 2026. The player resides in the fictional town of Mistria, which is recovering from an earthquake, and socializes with its villagers. The game features conventional aspects of farm life games as well as combat and magic.
+The development of the game began in 2019. It was highly influenced by the games Harvest Moon, Rune Factory, and Stardew Valley, as well as the anime Sailor Moon. Upon its early access release, the game received praise for its writing, characters, mechanics, art style, and music.
+
+
+== Gameplay ==
+
+Fields of Mistria is a single-player farm life simulation and cozy video game with pixel art-styled graphics and anime-inspired character designs. The indie game incorporates elements of the role-playing, fantasy, and simulation genres. After creating a character, the player enters the fictional town of Mistria, which is recovering from a devastating earthquake. The town leaders ask the player to live on a plot of land in exchange for their assistance. The goal of the game is to rebuild the town and connect with its villagers. The player is first exposed to the town's tale and game mechanics. The game also includes traditional farm life game mechanics such as farming, animal breeding, crafting, gifting, fishing, mining, and forging relationships with the non-player characters (NPCs) who live there, as well as combat. The player can upgrade the town's rank and thus gain benefits.
+The player receives information about birthdays and special events at the start of each day. Fields of Mistria allows the player from the beginning to customize their character, including their name, birthday, and pronouns, as well as the farm and house. The game has a progression system that allows the player to do daily tasks to advance the tale; Mistria's request board also has quests that the player can complete at any time during the game for a prize. Fields of Mistria also provides quests after interacting with the villagers, as well as festival-themed quests.
+The player can donate items to the town's museum, including various types of flora, insects, archaeological artifacts, and fish. The game features elements of magic. The town is protected by a dragon statue, named Caldarus; the player can acquire "essence" while farming, fishing, and gathering, which grants the player access to a skill tree and useful abilities. Mana, unlocked later in the game, allows the player to cast a healing and energy spell, as well as instantly grow crops or summon rain.
+Mistria is home to an array of villagers, each with their own schedules and preferences, and will ask the player for help in various tasks. The game also features pets. The player can interact with the town's villagers while also listening in on their conversations. A map displays the real-time positions of the town's inhabitants. Players can increase their relationship status with villagers through conversation and gift-giving, and they can romance several villagers, regardless of gender. Fields of Mistria offers modding support, allowing modders to change the looks of the villagers.
+
+
+== Development and release ==
+Fields of Mistria is the first game developed and published by NPC Studio, a Chicago-based independent video game developer. The team, consisting of fans of farm life simulation games, was founded in 2019 and began working on the game the same year. Claire Belton and Andrew Duff, the game's co-directors and designers, had previously worked on the Pusheen cat character for their web comic Everyday Cute. Harvest Moon, Rune Factory, Story of Seasons, Animal Crossing, and Stardew Valley all served as inspiration for their video game. The visual style of the game was also influenced by the anime Sailor Moon. The game's developer characterized it as the "spiritual successor" to Harvest Moon and similar titles. Fields of Mistria was developed in the GameMaker game engine.
+The developer unveiled the game's trailer in June 2023 at the Wholesome Direct, with Toby Fox being its guest composer. The demo version of the game was available on Steam from June 5 to June 17, 2024. The hour-long demo covered the first three days of gameplay. Fields of Mistria was released in early access on Steam on August 5, 2024, for Windows. The game is also available via Steam Deck. Hidehito Ikumo composed the game's music, which consists of 52 tracks.
+Fields of Mistria is set to be fully released in August 5, 2026, exactly two years after the game entered early access. NPC Studio indicated that the game would be continuously updated during development, and that a console edition would be released too. The first major update was released on November 18, 2024.
+
+
+== Reception ==
+
+Fields of Mistria received positive reception upon its early access release. Brittany Alva of TechRaptor said that the game "stands out like a light at the end of a tunnel" in the farm life simulation genre. The game received an overwhelmingly positive reception on Steam.
+The game's characters and writing were praised. The feature that has all inhabitants socialize inside an inn every Friday, encouraging the player to join them, was commended by reviewers. Due to the game's diversity in activities, Alva said that "it's something that no other farming simulator, cozy or not, has really pushed". Reviewers praised the dialogue system between the player and villagers. Lauren Morton of PC Gamer said that the villagers strike the proper combination of sincerity and humor without going overboard. Kazuma Hashimoto of Siliconera said that the dialogue choices are either keen or impudent, and wished that more choices beyond the two existed. Nicole Carpenter of Polygon, who recommended the game, noted that, in comparison with the game's inspirations, Fields of Mistria is mainly centered on building a community; she also praised the game's variety of character activities and its writing.
+The game's progression system and mechanics were commended by Liam Nolan of The Escapist, who highly recommended the game. Alva said that the needs of the progression and quests are "well-balanced". Carpenter, however, noted that the in-game days are short, which she saw as irritating. Emily Price of PC Gamer said that the game included aspects ripped from Stardew Valley and hoped that the game will stop importing elements from Stardew Valley and instead begin "doing its own thing". Nolan felt that the game's farming, mining, combat, and fishing aspects were superior to those in Stardew Valley. DeVante Chisolm of GameSpot praised the addition of jumping and swimming. Moises Taveras of Kotaku said that the game resembles mechanics of The Legend of Zelda games. Writing for Vice, Shaun Cichacki said that he hoped the game would introduce a multiplayer option.
+Reviewers praised the game's art style. Emily Spindler of Kotaku said that the game's art style makes the game stick out in the farm life sim genre. Alva praised the looks of walking and swimming. Audra Bowling of RPGFan also compared the game's graphics to the Littlewood video game, while Hashimoto compared it to the manga Imadoki!. Writing for The Daily Californian, Maida Suta said that the game brings back nostalgia. Bruno Magalhães Barbosa of Voxel praised the looks of the villagers as energetic and meaningful, noting that they have different looks during each season. The game's soundtrack received positive reception. Alva characterized the soundtrack as "walking through an idyllic village in an RPG constantly". Morton praised Fox's trailer music.
+Despite its similarity to Stardew Valley, Anna Koselke of GamesRadar+ rejected describing the game as its clone. Additionally, the developer of Critter Cove, an Animal Crossing-like simulation game, saw the similarities positively, saying that "you probably wouldn't have Pokémon Red, Blue, and Yellow without Dragon Quest V".
+Price, Nolan, and Alva complained about the game crashing while reviewing the game; Alva, however, noted that the game crash issue was addressed soon after by the developers.
+
+
+=== Sales ===
+During the first week of its early access launch, the game was downloaded more than 100,000 times, while during the first month it was downloaded over 250,000 times in total.
+
+
+== Notes ==
+
+
+== References ==
+
+
+== External links ==
+Official website

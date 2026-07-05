@@ -1,0 +1,56 @@
+Game: No More Room in Hell 2
+appid: 292000
+Source: No More Room in Hell
+URL: https://en.wikipedia.org/wiki/No_More_Room_in_Hell
+Match score: 7.71
+Retrieved: 2026-07-04
+--------
+No More Room in Hell is a cooperative first-person survival horror video game created by Matt "Maxx" Kazan and initially developed as a modification on Valve's Source game engine. Set in a zombie apocalypse, the player assumes the role of one of eight remaining survivors, with a focus on co-operation and survival. The game can be played through "Objective" or "Survival" mode. It is heavily inspired by George A. Romero's Living Dead series, with the title being a reference to Dawn of the Dead, specifically the line "When there's no more room in hell, the dead will walk the earth.", and some characters being references to other films such as American Psycho and The Big Lebowski.
+The game was first released on October 31, 2011, as a Half-Life 2 mod. It was later officially re-released as a standalone title on October 31, 2013, via Steam Greenlight after having been in development since 2004. It was met with positive reviews. Its sequel, No More Room in Hell 2, was released on October 22, 2024.
+
+
+== Gameplay ==
+
+There are two game modes in the game: Objective mode and Survival mode. In Objective mode, players must follow the instructions given by the game, each Objective mode map has different goals but the ultimate goal is usually to escape the map alive. To increase replayability certain maps can have different objectives, items and routes which can change with every new playthrough. In Survival mode, players must protect certain sectors of a level against waves of incoming zombies. Each new wave brings in more zombies and sometimes new supplies will be dropped from a military helicopter, after a set number of waves a rescue vehicle will arrive to bring the survivors to safety. The health percentages of all the sectors will decrease if players let them become overrun by zombies and if they all reach zero, the rescue vehicle will refuse to arrive and the players lose the match.
+The in-game HUD is minimal. There are no crosshairs. Health is indicated by how bright or how dark the screen is. An ammunition counter is only shown when reloading, or if the player holds down the reload key to check their ammunition. The player can change the method of counting ammunition from showing the ammo counter, having their character's voice call out often a vague estimate, or both combined. The player can also add an extra round in the chamber of their firearm even when the magazine is full.
+Zombies can grapple and bite players if they get too close, which risks the player becoming infected. This chance is greater if the player's health is low. If a player is infected, veins will appear at the edges of their vision and the colour will progressively get darker. Players can find Phalanx pills which can be used to delay the infection, find Gene Therapy syringes to cure themselves completely and grant immunity to infection, or turn their gun on themselves to prevent reanimation. If the player allows the infection to spread completely, they will die and reanimate as a zombie which can attack other players.
+Up to eight players can play together cooperatively in a single server. If a player dies in the middle of an Objective map, easier types of difficulties will allow the player to respawn once the surviving players reach a predefined checkpoint on the map. If a player dies in the middle of a Survival map, they will respawn at the start of the next wave or instantly if they have gained enough points beforehand which is subjected to the game server's difficulty level.
+Players are able to use a variety of items and weapons to help them in their goals. Up to 18 firearms are available, each requiring a variety of ammunition types that are scattered around the game. Certain weapons can be more effective than others in dispatching zombies, however these guns can be rare, and its ammunition even rarer. Because of this, numerous melee weapons are available. These can range from blunt weapons like bats and sledgehammers, to edged weapons like fire axes and knives. There are also a few unique melee weapons like chainsaws. Players can also have access to explosives such as grenades and TNT which are helpful in dispatching large hordes of zombies.
+
+
+== Reception ==
+No More Room in Hell was named "Mod of the Year" for 2011 by PC Gamer magazine, and was featured in two issues in 2012.
+The mod was in the top 100 of Mod DB's 2011 Mod of the Year list and was named Multiplayer Mod of the Year 2011.
+It was featured in Maximum PC in a two-page article about the mod, alongside two-page articles for both DayZ and The War Z in a special about the best of zombie games. NMRiH won the 2012 Mod of the Year from GameFront in a reader poll on Facebook. It was again nominated in 2012 by users of ModDB for Mod of the Year, making it in to the top 100 and subsequently placing third for Player's Choice Mod of the Year. Since it failed to place higher than the previous year, attaining the same ranking as 2011, it did not make it into the official Top Ten list and was supplanted by Cry of Fear. In 2013, it placed second for the ModDB Mod of the Year award.
+
+
+== Controversy ==
+Although No More Room in Hell was well received because of its realism and its gameplay, there was a significant source of controversy over the inclusion of zombie children. Whereas many other literature, movies and video games tend to shy away from the topic of zombified children, No More Room in Hell both portrayed zombified children and also lets players kill them, which triggered heated debates within the community. Despite the controversial nature of zombified children, the Project Manager and the development team decided to keep them, stating quote:
+
+"To officially address the topic of children zombies:
+We will not be removing them. They are a core component of our game design, our design philosophy, and our long-term vision for NMRiH. Part of our goal was to create a zombie game not based on killing and action, but on tension and fear and moral and ethical choice. We are attempting to simulate a real-world collapse of society as a result of a lethal epidemic. If you cannot handle it, do not play the game. We are sorry that some people seem to be offended for one reason or another but we are NOT going to censor our game and our vision.
+Reading some posts by players off-put by the zombie children, being unable to shoot them on first encounter.. that is something that we set out to achieve. That reaction is actually intentional, that is what we wanted. This is a game about survival.
+Our game is free, and we developed it solely out of passion and fun to make the zombie game we always wanted. If you do not like it, we are sorry and it's unfortunate but this is a no-compromise situation.
+
+We appreciate any and all feedback on the game, as always."
+
+
+== Sequel ==
+On October 28, 2016, a teaser trailer was posted on the official No More Room in Hell YouTube channel. Later, developers began talking about the development of the game through blog posts on the No More Room in Hell 2 developer blog.
+On May 25, 2017, it was announced on the Unreal Engine website that No More Room in Hell was given US$275,000 in that round of Unreal Dev Grants.
+No More Room in Hell 2 released its official trailer at the MathChief's Game Expo in 2021. Originally, No More Room in Hell 2 was slated to be released on October 31, 2022, to commemorate Halloween, but its release was delayed after their development team had secured a partnership that enabled them to spend more of their time to developing their product.
+On June 7, 2024, it was announced through an official trailer at the Summer Game Fest 2024 that No More Room in Hell 2 will release through early access on Halloween, though this was later revised to October 22. Torn Banner Studios served as the game's developer and publisher. The sequel was met with mixed reviews in Early Access, with critics praising the game's vision and atmosphere, while criticizing its game-breaking bugs and server issues. Torn Banner Studios has issued hotfixes to address bugs.
+
+
+== See also ==
+List of Source engine mods
+List of video games derived from modifications
+List of zombie video games
+
+
+== References ==
+
+
+== External links ==
+No More Room in Hell official website
+NMRiH page at ModDB

@@ -1,0 +1,35 @@
+Game: Old World
+appid: 597180
+Source: Old World (video game)
+URL: https://en.wikipedia.org/wiki/Old_World_(video_game)
+Match score: 6.72
+Retrieved: 2026-07-04
+--------
+Old World is a historical turn-based strategy 4X video game developed by Mohawk Games for Microsoft Windows and macOS, released on July 1, 2021, and for Steam and GOG alongside Linux support on May 19, 2022.
+
+
+== Gameplay ==
+Old World is a historical turn-based strategy game set in the ancient and classical eras with gameplay comparable to other 4X games such as the Civilization series. It also incorporates dynasty simulation and narrative elements reminiscent of the Crusader Kings series. In Old World, the nations' leaders age and die, and an heir must be ready to step up. Leaders develop traits based on their education and the choices made in the game. The leader can give only a limited amount of orders each round, so while a large army will require multiple orders to move, a single unit can perform multiple orders until it is exhausted.
+Nations in the game are the major states that are vying for Victory in Old World. There are ten major playable Nations present in Old World, seven in the base game: Assyria, Babylonia, Carthage, Egypt, Greece, Persia, and Rome; and three added with various DLCs: Hittites (Heroes of the Aegean DLC), Kush (Pharaohs of the Nile DLC), Aksum (Wrath of Gods DLC).
+
+
+== Development ==
+Old World is the second game developed by American studio Mohawk Games, which was founded in 2013 and also developed Offworld Trading Company. The studio is led by CEO Leyla Johnson, and the game was designed by Soren Johnson, who had previously served as the lead designer for Civilization IV. Johnson considered a game that covered 6,000 years of world history both a blessing and a curse, and instead focused Old World on the earliest eras of civilization.
+Initially the game was known as 10 Crowns and was to be published by Starbreeze, but during a restructuring of Starbreeze, publishing rights were sold back, and the game was renamed and published through Epic Games Store.
+On April 28, 2020, Mohawk Games announced the game would be released on Early Access on May 5, 2020, via the Epic Games Store. The game was released on July 1, 2021. It was later announced that Hooded Horse would publish the game, with Steam and GOG versions releasing on May 19, 2022. As of March 2026, seven DLCs have been released for the game.
+
+
+== Reception ==
+
+Old World received "generally favorable" reviews, according to aggregate review website Metacritic.
+Leana Hafer of IGN wrote "Old World is a smaller-scale 4X game than its Civilization forebears but its new ideas add both interesting depth and intimidating complexity", awarding the game eight out of ten. PC Gamer named Old World the best strategy game of 2021.
+Old World's soundtrack by Christopher Tin was nominated for the Grammy Award for Best Score Soundtrack for Video Games and Other Interactive Media.
+Old World was among the top three best-selling games that were released in 2022 at GOG.com.
+
+
+== References ==
+
+
+== External links ==
+
+Official website

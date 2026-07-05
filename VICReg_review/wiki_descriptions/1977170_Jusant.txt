@@ -1,0 +1,50 @@
+Game: Jusant
+appid: 1977170
+Source: Jusant
+URL: https://en.wikipedia.org/wiki/Jusant
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Jusant is a 2023 puzzle platform game developed and published by Don't Nod. The player controls a lone wanderer as they climb a desolate tower, filled with the artifacts of civilizations long past. The game was released for PlayStation 5, Windows, and Xbox Series X/S on 31 October 2023. It received positive reviews from critics, but was a commercial disappointment for Don't Nod.
+
+
+== Gameplay and setting ==
+
+Jusant tasks the player with climbing to the top of a tower, which is split into different biomes, each with unique traversal mechanics and challenges. As the player ascends the tower, they will find more about the civilization that resided there, and what became of them. The player can place pitons with a button, catching them if they fall or run out of stamina. The triggers are used in order to place a hand while climbing.
+By holding down a button, the player character jumps, using up a large amount of stamina in the process. Periodically, the player can let down ropes to areas they have already passed through, making backtracking easier. Throughout the game, the player is accompanied by a companion named Ballast, which is described by the team as "a creature made entirely out of water". Ballast will reveal clues and "wake nature", opening up new paths for players to use and explore. The game has no dialogue, and therefore, relies heavily on environmental storytelling.
+
+
+=== Setting ===
+Jusant takes place on a massive rocky pillar that stretches well above the cloud level. Several generations prior to the start of the game, the Tower was surrounded by ocean, and was settled by a large population of people that lived throughout the vertical structure, adapting by developing relatively advanced climbing gear and placing ziplines and grappling points throughout. The Tower was also home to a variety of magical creatures, including "sparks" that have an anti-gravity effect and "ballasts", flying whale-like creatures seemingly made of water. The tower experienced a devastating drought, called "the Jusant", which would eventually lead to the complete abandonment of it.
+
+
+== Development and release ==
+Jusant was developed and published by French studio Don't Nod. The game was announced at the Xbox Games Showcase 2023 on 11 June 2023 for release in fall. Don't Nod simultaneously revealed the release platforms, and released a demo on Steam shortly after the announcement. It was released for PlayStation 5, Windows, and Xbox Series X/S on 31 October 2023. It also launched on Xbox Game Pass for cloud, console, and PC.
+The game was a PlayStation Plus "Monthly" title in July 2025.
+
+
+== Reception ==
+
+Jusant received "generally favorable" reviews from critics, according to review aggregator website Metacritic.
+Eurogamer, playing an early preview, enjoyed the climbing system, likening it to Grow Home. "That squeezing of the triggers also makes it densely physical. I feel, in some small way, the exhaustion of the climber, because I am gripping this thing along with them".
+Le Monde, through its subcategory published a test of the game, praising its immersive universe and gameplay. "Jusant strives to bring out the very essence of climbing, organically, through its dangerous beauty and the intoxication of its execution". PC Gamer enjoyed how accessible the game's climbing mechanics were, writing, "you can feel that Jusant wants you to make this climb, and to hopefully enjoy yourself along the way". Destructoid liked Jusant's peaceful atmosphere, highlighting in particular the sound design, "Its use of silence makes it the perfect game to throw on when you're listening to a podcast, or if you want to unwind for half an hour before bed".
+Game Informer felt that not enough time was spent polishing other forms of traversal, "walking can be troublesome as the character has a habit of getting stuck on even the most negligible geometry, such as small pieces of rubble, resulting in awkward jumping and spinning to break loose". Rock Paper Shotgun praised the open-ended nature of the game's narrative, saying, "Like an actual archaeologist, you must sometimes make informed guesses, fill in some gaps with gut instinct, and tread carefully".
+
+
+=== Sales ===
+In February 2024, ''Le Syndicat des Travailleurs et Travailleuses du Jeu Vidéo'' claimed Jusant apparently failed to meet commercial expectations, with the production team being disbanded.
+
+In September 2024, Don't Nod said that the sales of Jusant had performed well below their expectations.
+
+
+=== Awards ===
+
+
+== Note ==
+
+
+== References ==
+
+
+== External links ==
+Official website

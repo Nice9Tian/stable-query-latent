@@ -1,0 +1,33 @@
+Game: Amber Isle
+appid: 1663040
+Source: Amber Isle
+URL: https://en.wikipedia.org/wiki/Amber_Isle
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Amber Isle is a social simulation game developed by Ambertail Games and published by Team17. It was released for Windows on 10 October 2024 while a Nintendo Switch version followed on 13 February 2025.
+
+
+== Gameplay and plot ==
+Amber Isle is a social and shopkeeping simulation game taking place in a quaint island town where players interact with a variety of townsfolk made up of anthropomorphic dinosaurs and other prehistoric animals known as "Paleofolk". The game features species from a variety of geologic eras including Ice Age mammals, Permian amphibians, marine life, and invertebrates. Players assume the role of their own Paleofolk, which can be customized from a variety of parts from different species, allowing them to create their own distinct character.
+Players work to build relationships with 48 separate villagers, each with their own personalities and character traits, while serving as the island's sole shop keep. The player is able to craft items for their store, their price, and which will go on sale, in order to maximize their success and help restore the town to its former glory. Shops may also be upgraded and the island itself customized based on the player's preference, including paths, recreational areas, and water features. Areas of the town may be repaired or unlocked in order to allow expansion and new villagers to become permanent residents.
+
+
+== Development ==
+Amber Isle was first announced on 26 December 2020, as the debut project of Northern Ireland-based independent game studio Ambertail Games by the company's co-founder, Jordan Bradley. The title began development for Microsoft Windows and Nintendo Switch, and was inspired by other simulation games such as the Animal Crossing series and Recettear: An Item Shop's Tale. Ambertail Games set out to improve upon the dialogue "redundancy" found in Animal Crossing by giving villagers their own distinct personalities, interests, and jobs which they will talk about though the day. A variety of prehistoric and dinosaur species were chosen to represent the town's inhabitants which the developers felt were underrepresented in mainstream media. While the developers originally intended for players to assume the role of a human character, they added the ability to create and customize their own Paleofolk after it became their most-requested feature. A trailer was shown during the "Wholesome Direct" gaming showcase event at E3 2021 in June of that year.
+In April 2024, Team17 revealed that they would be serving as the game's publisher, and would bring the title to all announced platforms sometime in the future. Development was supported by Northern Ireland Screen to lend assistance to Irish media projects.
+The game was released for Windows on 10 October 2024, with the Switch version made available on 13 February 2025.
+
+
+== Reception ==
+
+Amber Isle received an average critic score of 72 out of 100 from Metacritic, equating to "mixed or average reviews". Loren Chandler of Shacknews commented "There's a lot to like about Amber Isle and the team at Ambertail has tried its best to create a wholesome experience [...] even though it has a few bugs related to the camera and UI, as well as some progression issues to be worked out, I know I'll be spending a lot more time in my shop crafting items to sell to my dinosaur customers." The title received five wins at the 2025 Imirt Irish Game Awards, including Best Game Design, Best Game Art, Best Game Audio, Best Debut Game, and Game of the Year.
+
+
+== References ==
+
+
+== External links ==
+Official website
+Official website at Ambertail Games
+Official website at Team17

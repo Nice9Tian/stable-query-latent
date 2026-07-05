@@ -1,0 +1,48 @@
+Game: MADiSON
+appid: 1670870
+Source: Madison (video game)
+URL: https://en.wikipedia.org/wiki/Madison_(video_game)
+Match score: 6.36
+Retrieved: 2026-07-04
+--------
+Madison (stylized as MADiSON) is a first-person horror video game developed by the Argentine game development studio Bloodious Games, and published by British publisher Perpetual Games. It was first released on July 8, 2022, for Microsoft Windows, PlayStation 4, PlayStation 5, and Xbox Series X/S. Perpetual Games had localized and published the game internationally on Nintendo Switch consoles on August 26, 2022. A VR version of MADiSON was ported to PSVR2 and PCVR platforms in May 2024. 
+The story follows a teenage boy named Luca, who receives a cursed instant camera for his sixteenth birthday and uses it to solve puzzles and uncover the truth behind the camera.
+Development of the game started in 2016, and was announced with  a demo released on itch.io in 2017, which received universal acclaim. With Bloodious Games continuing the development of MADiSON into 2021. MADiSON was a commercial success and earned positive reviews for the handling of the quality of the puzzles and the balanced tension. It would win multiple awards from different video game publications, while critics were divided on the lack of originality. 
+
+
+== Gameplay ==
+Madison is a first-person psychological horror game that primarily focuses on the use of an instant camera. Players must solve puzzles that allow them to discover objects and items that are unable to be seen with the naked eye, while simultaneously driving away demonic entities. The game showcases a variety of creepy locales, including subterranean tunnels, dingy storerooms, gloomy churches, and long, dimly lit hallways.
+
+
+== Plot ==
+Madison centers on a sixteen year-old boy named Luca, who receives an instant camera for his sixteenth birthday. However, the camera belonged to a serial killer 30 years earlier, and through the camera the spirit of the killer plans to use Luca to put an end to a macabre ritual. Throughout the game, Luca uses the camera to solve puzzles, navigate a shifting, haunted house, and interact with the spirit world to uncover the truth behind the seven-sacrifice ritual required for the demon to fully inhabit a human vessel.  
+
+
+== Development and release ==
+Madison was inspired by the psychological horror games P.T. (2014) and Clock Tower II: The Struggle Within (1998). The idea for the game's concept was provided by Argentine video game developer Alexis Di Stefano. Di Stefano had originally began development of MADiSON in 2016, and released a demo version released on game distribution platform itch.io in 2017. The demo was well received by players, and surpassed over 100,000 downloads on the platform. In an interview with Shacknews' Sam Chandler, Stefano noted that while developing MADiSON, he had multiple goals—including that he wanted to make a game as scary as possible. The studio continued with development and announced a launch for Windows PCs in June 2021. The second trailer was released during the Gamescom trade fair in July 2021. MADiSON was set to release on January 7, 2022. Bloodious Games was met with inconveniences of publishing MADiSON under their previous trade name, Nosebleed Games. 
+The game was first released for Microsoft Windows, PlayStation 4, PlayStation 5, and Xbox Series X/S on July 8, 2022. In August 2022, developers announced that a Nintendo Switch version for MADiSON would be released. On January 30, 2023, Stefano would officially announce the development of a virtual reality version at a Perp Games Showcase via IGN called MADiSON VR. MADiSON VR was ported to physical PSVR2 platform editions and PCVR in 2024.
+
+
+== Reception ==
+
+Upon release, MADiSON received "generally favorable" and "mixed or average" reviews from video game publications based on the review aggregate website Metacritic aimed towards the PC and PS5 ports.
+Sam Chandler of Shacknews gave the game a 9 out of 10 stars, and mentioned that its writing was "consistent", feeling that it contrasted the usual trend of "a sluggish second act after an incredible opener". The reviewer praised the quality of the puzzles, the game's tension, which they observed to never "ease up", and the lore that was unpleasant "on a true crime level". While IGN's Tristan Ogilvie awarded the game an 7/10, writing that Madison was a creepy game with "genuine" scares. Daniel Quesada writing for HobbyConsolas felt that Madison was the "most terrifying" adventure he had played in a while. Nintendo Life's Ollie Reynolds wrote that the game is "not the most original game", saying it was inspired by the "lead of pioneers" games Outlast and P.T., expressing "What you've got here is an effective horror experience regardless, and one that [you're] going to enjoy from start to finish." Checkpoint Gaming's felt the game's soundtrack was "particularly effective" in causing [you] to feel tense at times. Marcus Steward of Game Informer said "It succeeds in building tension and puzzle variety." While NME's Jon Bailes gave it a 3 out of 5, and criticized the game for its use of "stock creepy ambient noises" saying "a door creaks, a tin bucket falls over–that repeat to the point of insignificance." Bailes felt it was wasteful as players are never in immediate danger. Alice Bell of Rock Paper Shotgun felt it was what the players would expect, with the repeated thuds and thunder. Also saying that a lot of backtracking was involved, with players having to finish quests from earlier rooms. Writing for Inverse, Joseph Yaden said that the game was "exceptional", and that it had a "genuinely terrifying atmosphere" that keeps players engaged.
+Madison has been frequently compared to its inspirations P.T and Outlast. 
+In October 2022, MADiSON was recognized as the "Scariest Video Game of All Time", by The Science of Scare Project from Broadband Choices who set out to measure the scariest forms of entertainment available. 200 participants were invited to play over 45 horror games released in the last three decades. In each case–the subjects’ heart rate was monitored while playing the game. Heart rates were measured while resting or in the middle of the game. The respondents playing Madison recorded an average of 97 beats / minute, and at the peak this rate stopped at 131 bit/s, with the new IP surpassing established franchises such as Resident Evil and Silent Hill. MADiSON would also be declared of cultural interest in Buenos Aires, Argentina.
+
+
+=== Awards ===
+The game was nominated for multiple awards and won. Including "Best Spanish/Latin Game" in Moscow XII DROP Festival's 12th Festival Awards; for "Best Horror Game" in Shacknews's Best Horror Game of 2022; and for "Community Game Of The Year" in the Rely on Horror Community Awards.
+
+
+==== MADiSON ====
+
+
+==== MADiSON VR ====
+
+
+== References ==
+
+
+== External links ==
+Official site

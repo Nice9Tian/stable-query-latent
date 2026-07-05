@@ -1,0 +1,9 @@
+This game presents a mining rogue-lite experience blended with tower defense elements. The player explores procedurally generated underground areas within a colossal vertical structure, uncovering a range of fantastical biomes as they go. Progress is driven by collecting resources and technologies, which are then used to purchase upgrades and strengthen survival chances.
+
+A central feature is a mobile mechanical base that serves as both shelter and combat platform. The player can travel across the surface freely, moving through day and night cycles as well as changing weather conditions, while also descending into different sections of the structure to mine for materials. Exploration is not without danger: aggressive enemies attack in waves, and the player must regularly return to the mobile base in time for the next assault.
+
+Combat is fast-paced and varied, with weapons ranging from basic firearms to homing explosives. Players can also use hacking and direct attacks against hostile creatures. To improve survivability, they can abandon their camp quickly and continue fighting while on the move.
+
+Progression includes upgrading the exosuit to increase movement speed in the mines and to break through harder rock, as well as enhancing the combat capabilities of the mechanical base to withstand stronger enemies. Building plays an important role too: automated defenses, repair stations, and resource-collection structures can be constructed and improved, although their blueprints must first be discovered deep within the structure.
+
+Overall, the game combines exploration, resource gathering, strategic defense, and continuous upgrading within an ever-changing underground world.

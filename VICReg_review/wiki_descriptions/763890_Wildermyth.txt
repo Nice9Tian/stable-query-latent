@@ -1,0 +1,31 @@
+Game: Wildermyth
+appid: 763890
+Source: Wildermyth
+URL: https://en.wikipedia.org/wiki/Wildermyth
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Wildermyth is a tactical role-playing video game developed and published by Worldwalker Games. First released in 2019, the game was released in full in June 2021 for Linux, macOS, and Windows, and was released for Nintendo Switch, PlayStation 4, PlayStation 5, Xbox One, and Xbox Series X/S in October 2024. The game received generally positive reviews upon release, with praise mostly directed at the game's use of procedural generation for storytelling.
+
+
+== Gameplay ==
+Wildermyth is a tactical role-playing game. At the beginning of the game, the player will choose from several randomized characters. Gradually, these characters will grow into battle-hardened heroes and acquire new traits, which will lead to both additional narrative and gameplay opportunities. These characters will also form both friendship or rival relationship with each other, and will age as time progresses. While the main campaign still follows the major story beats, character development is based on a procedural generation system, meaning that each playthrough will be different from one another. Turn-based combat is similar to the XCOM series of games which utilizes a grid-based system. Outside of combat, the player also needs to make choices in the campaign map. For instance, players can choose to rebuild a village, but this decision may mean that the player has less time to prepare for another invasion event.
+
+
+== Development ==
+The game was developed by Worldwalker Games, an independent video game development studio based in Austin, Texas. The studio only had six full-time employees. According to Nate Austin, the designer of the game, Wildermyth "[alternates] layers of handcrafted and procedural content". The game features a central narrative that has a defined beginning, middle and end, but it also incorporates procedural events arisen through combat and the personality of each player character. The story is mainly told through comic strips known as "Library of Plays".
+Wildermyth was released via Steam's early access program on November 14, 2019. While Worldwalker was expected to release the 1.0 version of the game within six months after its initial launch, the game was released in full on June 15, 2021.
+On May 24, 2024, Austin announced that active development on the game would cease, following the release of the roguelike-inspired Omenroad DLC earlier that month. The game was released for Nintendo Switch, PlayStation 4, PlayStation 5, Xbox One, and Xbox Series X/S via publisher Auroch Digital on October 22, 2024.
+
+
+== Reception ==
+
+The game received "generally favourable reviews" according to review aggregator Metacritic with a Metascore of 86, based on 26 Critic Reviews. Praise was mainly directed to the game's use of procedural generation for character development and storytelling.
+Wildermyth was nominated for Ultimate Game of the Year, PC Game of the Year, Best Indie Game and Best Storytelling at the 39th Annual Golden Joystick Awards. During the 25th Annual D.I.C.E. Awards, the Academy of Interactive Arts & Sciences nominated Wildermyth for "Role-Playing Game of the Year".
+
+
+== References ==
+
+
+== External links ==
+Official website

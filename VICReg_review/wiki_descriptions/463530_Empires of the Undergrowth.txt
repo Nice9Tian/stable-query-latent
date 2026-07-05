@@ -1,0 +1,103 @@
+Game: Empires of the Undergrowth
+appid: 463530
+Source: Empires of the Undergrowth
+URL: https://en.wikipedia.org/wiki/Empires_of_the_Undergrowth
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Empires of the Undergrowth is a real-time strategy game developed by Slug Disco Studios and published by Hooded Horse. Players control a colony of Ants or Termites by expanding the colony, gathering resources, and fighting enemies in standard RTS fashion.
+
+
+== Gameplay ==
+In the main campaign, Players assume the responsibility of the ant colony that they are assigned to. Tasked with overseeing side missions that place them in challenging scenarios and dealing with their main colony of "Gene thief" ants, a fictional species of ant that integrates genetic data from other species via Royal Jelly. On side missions they must lead struggling or threatened ant or termite colonies to success. Each side mission is narrated in a documentary style, with an in-game narrator providing both context and key information. The narrator offers insights into the situation of the ants or termites and helps the player by alerting them to critical information, much like a nature documentary, creating an immersive and educational experience. Alongside other optional missions and gameplay included with the game.
+Along with the story mode, there is also a Sandbox mode, extra levels and, Demos for incoming levels and ants and a DLC.
+
+
+=== Gameplay Loop ===
+The core gameplay loop involves completing these side missions, where players will experience different Ant and Termite species and their unique abilities. Once the mission is complete, the player returns to the main colony—the Gene Thieves—where they are rewarded with resources from the laboratory scientists. These resources help to develop and strengthen the colony.
+As the game progresses, the player unlocks the species they led in the side missions, integrating them into the Gene Thieves colony. Once a specific stage is complete, the laboratory staff will conduct an "experiment", sending in enemy forces such as rival colonies or other dangerous insects, small animals to challenge the player’s colony. The player must defend against these threats to prove the strength of their colony, progressing back to their main colony until deciding to head to the side missions once more. Experiments are only accessible after completing one sublevel.
+
+
+=== Levels ===
+It is important to note that levels do not follow a set storyline, as each level is almost unrelated. Levels normally have two or three sublevels, which generally each have their sole relation being the ant or termite species. Sublevels generally provide rewards which scale the harder the level in question is.
+
+
+=== List of Species ===
+
+
+==== Eusocial species ====
+"Gene-thief" ant (Formica ereptor & Myrmica ereptor)
+African stink ant (Paltothyreus tarsatus)
+Army ant (Eciton burchellii)
+Black ant (Formica fusca)
+Big-headed ant (Pheidole morrisii)
+Bullet ant (Paraponera clavata)
+Driver ant (Dorylus nigricans)
+Exploding ant (Colobopsis explodens)
+Exploding termite (Neocapritermes taracua)
+Fire ant (Solenopsis invicta)
+Leafcutter ant (Atta cephalotes)
+Little black ant (Monomorium minimum)
+Matabele ant (Megaponera analis)
+Slave maker ant (Formica sanguinea)
+Termite (Macrotermes bellicosus)
+Trap-jaw ant (Odontomachus bauri)
+Wood ant (Formica rufa)
+Non-eusocial species
+
+African Giant Centipede (Ethmostigmus trigonopodus)
+African Giant Mantis (Sphodromantis viridis)
+American Bullfrog (Lithobates catesbeianus)
+Assassin Bug (Acanthaspis petax)
+"Aphid" (various species)
+"Rove Beetle" (various species)
+Bombardier Beetle (Brachinus alternans)
+Bush Cricket (Panacanthus varius)
+"Carnivourus Plant" (various species)
+"Caterpillar" (various species)
+Checkered Beetle (Enoclerus rosmarus)
+Devil's Coach Horse (Ocypus olens)
+Dwarf Salamander (Eurycea quadridigitata)
+Earwig (Forficula auricularia)
+Eastern Newt (Notophthalmus viridescens)
+False Bombardier Beetle (Galerita bicolor)
+Great Blue Skimmer (Libellula vibrans)
+Hermit Crab (Coenobita clypeatus)
+Ladybird (Coccinella septempunctata)
+Leaf-mimic Praying Mantis (Pseudoxyops perpulchra)
+Mole Cricket (Gryllotalpa gryllotalpa)
+Narrow-mouthed Toad (Gastrophryne carolinensis)
+Phorid Fly (Apocephalus sp.)
+Pine Woods Tree Frog (Dryophytes femoralis)
+Rainbow Lizard (Agama africana)
+Red Velvet Ant (Dasymutilla occidentalis)
+Sand Lizard (Lacerta agilis)
+Shore Crab (Carcinus maenas)
+"Tiger Beetle" (various species)
+Velvet Worm (Oroperipatus ecuadoriensis)
+Wasp Mantidfly (Climaciella brunnea)
+Woodlice (Oniscus asellus)
+"Woodworm"
+
+
+== Development ==
+Developer Slug Disco Studios is based in the United Kingdom. Empires of the Undergrowth entered early access in December 2017. Hooded Horse released it for Windows on June 7, 2024.
+
+
+== Reception ==
+PC Gamer called it "an absolutely excellent RTS". GamesRadar said it is a very satisfying SimAnt-style game. The Games Machine said it did nothing new and was missing several features common to real-time strategy games, such as multiplayer, but they enjoyed the variety of enemies and the boss battles.
+
+
+== Cancelled features ==
+There were originally meant to be honeypot ants, bull ants, Saharan silver ants, and Rasberry crazy ants, although they were never added. The game was also meant to be a mobile game with tug-of-war like features above ground and a dungeon-keeper like underground game play.
+
+
+== Notes ==
+
+
+== References ==
+
+
+== External links ==
+Official website
+Empires of the Undergrowth at Metacritic

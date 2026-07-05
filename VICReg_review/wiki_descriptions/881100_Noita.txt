@@ -1,0 +1,14 @@
+Game: Noita
+appid: 881100
+Source: Noita
+URL: https://en.wikipedia.org/wiki/Noita
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Noita is the Finnish word for witch and may refer to:
+
+Noita (album), a 2015 album by Korpiklaani
+Noita (video game), a 2020 action-adventure game by Nolla Games
+"Noita", a song by 22-Pistepirkko from their 1984 album Piano, rumpu ja kukka
+"Noita", a song by Indica from their 2007 album Kadonnut puutarha
+Noita palaa elämään (English: The Witch), a 1952 Finnish horror film

@@ -1,0 +1,26 @@
+Game: Thronefall
+appid: 2239150
+Source: Thronefall
+URL: https://en.wikipedia.org/wiki/Thronefall
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Thronefall is a strategy video game developed and published by Grizzly Games. An early access version was released for Microsoft Windows on August 2, 2023. The full version was released for Windows and Nintendo Switch on October 11, 2024. The iOS version was released in June 2025.
+In December 2025, it was announced that the game's publisher, Mythwright had acquired the entire Thronefall intellectual property from Grizzly Games. Mythwright stated that it would continue Grizzly Games' existing partnership with Doghowl Games for the mobile version, while the two-person Grizzly Games team cited limited resources and a desire to move on to new projects as reasons for the transfer.
+
+
+== Gameplay ==
+Thronefall is a strategy video game, with elements of tower defense games. The kingdom is centered around a great hall which the monarch must protect; they can defend it by spending gold to build walls, defensive towers, and other helpful buildings. The monarch can earn gold by building homes and farmland inside the kingdom, in addition to other economical structures such as mines and fisheries. Soldiers such as crossbowmen and knights can be recruited at barracks buildings, and can be positioned by the monarch around the level to protect certain areas from attack.
+Once the monarch has finished preparing their kingdom, they can choose for night to arrive and begin their defense against the enemy waves. Aside from the defensive structures and units, the player can also protect the kingdom by attacking enemies with the monarch's weapons, which include a bow and a spear that possess their own special abilities. Completing a night by defeating all the enemies allows the player to regain all their destroyed buildings and units, and grants the monarch an amount of gold depending on the number of buildings that survived the attacks.
+
+
+== Development ==
+German studio Grizzly Games gained inspiration for Thronefall as they began having less time to play games due to their preoccupation with work and everyday life. The developers wanted to create an experience that would not be time-consuming, and be more accessible to an audience that did not have much experience with playing games. Early concepts for Thronefall were created   through feedback on several short prototypes, with the developers envisioning Thronefall as a building experience. Its structures were designed to be placed only in pre-set areas, allowing the developers to continue adding new types of buildings and features without drastically affecting the experience of any of the previous levels.
+
+
+== Reception ==
+
+Based on 4 reviews, Thronefall received "critical acclaim" according to review aggregator Metacritic. Thronefall had sold just under 1 million copies over a year.
+
+
+== References ==

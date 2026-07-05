@@ -1,0 +1,56 @@
+Game: Redfall
+appid: 1294810
+Source: Redfall
+URL: https://en.wikipedia.org/wiki/Redfall
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Redfall is a first-person shooter video game developed by Arkane Austin and published by Bethesda Softworks. It was released for Windows and Xbox Series X/S on May 2, 2023. The game received mixed reviews, with criticism for its gameplay design, story, and technical problems.
+
+
+== Gameplay ==
+Redfall is an open world first-person shooter video game that features both single-player and cooperative multiplayer modes. Players can choose among four playable characters – each with unique backgrounds and abilities – to fight against vampires as well as human enemies within the game.
+The playable area is split into two in-game maps, District 1 and District 2. A large component of Redfall's gameplay loop is weapon/gear looting and rarity. Players are rewarded with better gear upon leveling up, exploring, and completing quest objectives.
+
+
+== Story ==
+
+
+=== Setting ===
+The game is set within the fictional island town of Redfall, Massachusetts. After a failed scientific experiment, a legion of vampires occupied the isolated town and cut off communication to the outside world. Trapped inside Redfall, players must choose among four unique survivors – fame-seeking cryptozoologist inventor Devinder Crousley, telekinetic student Layla Ellison, combat engineer Remi de la Rosa, and former US military special forces sniper veteran turned supernatural private military company operator of Bellwether Security Jacob Boyer – and slay their enemies: vampires and human collaborators/cultists alike.
+
+
+=== Plot ===
+The island town of Redfall is secretly infiltrated by a group of vampires. It becomes a full-scale invasion as the vampires begin devouring the people of Redfall openly in the streets. Some of the townspeople, including four vampire hunters, attempt to escape the town by boat, but the vampires cast a spell that erects an impassable wall of water around the island, trapping Redfall's surviving population, along with creating a permanent eclipse to blot out the sun, so the vampires can move freely throughout the island. The vampire hunters return to the town and liberate the local fire station, turning it into their headquarters and a safe haven for survivors. They then venture out into the town to kill vampires, fight the human cultists who worship them, and discover the source of the vampirism.
+They learn that vampires were created by Dr. Peter Addison, a scientist working at Aevum Therapeutics, a scientific research group which has a lab on the island. Addison used an experimental procedure to become a vampire god known as the "Hollow Man" and began to spread vampirism across the island. Investigating the Hollow Man's home, the vampire hunters discover, to their horror, that the Hollow Man experimented on his own daughter, trying to cure her illness. They use the Hollow Man's radio broadcasts and psychic echoes to track him down to his lair, where they kill him. With the Hollow Man dead, the island's radios begin to work again, allowing the vampire hunters to contact other survivors on the island.
+The vampire hunters hear a distress call from the Redfall Maritime Center and head over to liberate it, making it their second survivor haven. There, they learn that there are two more vampire gods, Bloody Tom and Miss Whisper, present in the area. They investigate a Bellwether Security outpost and discover Bloody Tom and Miss Whisper's identities as Thomas Kildere and Alice Young, also former Aevum researchers. They investigate Bloody Tom and Miss Whisper's psychic spaces to find out their pasts, and find out Bloody Tom left his ill father to die so he could focus on his research while Miss Whisper experimented on her own patients. The vampire hunters track down both vampire gods to their lairs and eliminate them.
+With the death of Bloody Tom and Miss Whisper, there is one remaining vampire god, the Black Sun, who is responsible for the eclipse over Redfall. The vampire hunters receive a psychic summons from Charles Beck, one of the founders of Aevum, who is now forcibly transformed into the vampiric beast and figurative bloodbag for the vampire gods, Bloodbag Chuck. Bloodbag Chuck reveals that the Black Sun is his sister Claire, and sends the vampire hunters into his own psychic realm to find the clues needed to destroy her. Inside, they find out that Charles and Claire obtained a girl they called the Gateway from billionaire investor Elias Kurz, whose unique healing blood they used for experiments. When Aevum was on the verge of being investigated, Claire, Addison, Young, and Kildere sacrificed the Gateway to turn themselves into the vampire gods while Claire murdered Charles and turned him into Bloodbag Chuck to keep him quiet.
+The vampire hunters mercy kill Bloodbag Chuck and confront the Black Sun, who reveals she manipulated them into killing the other vampire gods, who had become her rivals. After a heated battle, the vampire hunters defeat and kill the Black Sun, and are greeted by the spirit of the Gateway, Grace. She thanks the vampire hunters for eliminating the people who took advantage of her. With the Black Sun dead, the eclipse ends and sunlight returns to Redfall, killing most of the remaining vampires. The remaining Redfall survivors stage a counterattack, killing more vampires and forcing their cultists to flee into the wilderness. The spell isolating Redfall from the outside world also begins to wear off. However, not all of the vampires have been slain, and a few escape to fight another day.
+
+
+== Development ==
+Redfall was announced during the Xbox and Bethesda E3 2021 showcase on June 13, 2021. The game was developed by Arkane Studios at their Austin, Texas locations, with Roundhouse Studios providing additional assistance and support. Co-Creative Director Ricardo Bare stated that the game will continue Arkane's tradition of making each game different from the last, but will still focus on deep worldbuilding and inventive game mechanics. On May 12, 2022, it was announced that the release was delayed to the first half of 2023. Redfall released on May 2, 2023. At launch, 60 FPS was not available on the console versions of the game, with it being added months later in October 2023.
+The PlayStation 5 version was cancelled after Microsoft acquired Bethesda Softworks.
+In May 2024, Microsoft Gaming President of Game Content & Studios Matt Booty announced that all development on Redfall would come to an end with the closure of Arkane Austin. Xbox also compensated players who paid for the Hero DLC. On May 30, the developers released one final update that revamped the Neighborhood and Nest systems, while adding single player pausing and an offline mode.
+
+
+== Reception ==
+
+Redfall received "mixed or average" reviews, according to the review aggregator website Metacritic. 
+PCGamesN disliked the story, writing that the game failed in "making me care about its characters. It's all just a bit basic." VG247 felt that only tying progress to the host was a mistake, "dooming their guests to play through the same missions again should they want to play in solo". While enjoying the gunplay, GamesRadar+ criticized the repetitiveness of the campaign: "There are always going to be vampires to be staked, something to be blown up, keys to be found, or items to be collected – it's just a case of which version of the mission structure it'll be." IGN called the game "an undercooked looter-shooter by every metric" and that the game is a "bafflingly bad time across the board. Plagued with bland missions, boneheaded enemies, and repeated technical problems, Redfall simply wasn't ready for daylight." The Verge was also critical, saying the game "feels unpolished, underdone, underwhelming, and uncomfortable. I am glad I do not have to play this anymore."
+The game received mostly negative user reviews on Steam upon its launch, with users criticizing its enemy artificial intelligence, world design, and performance issues. 
+Phil Spencer, the chief executive officer of Microsoft Gaming, apologized for the game, stating "I'm disappointed. I'm upset with myself" and that delaying the game would not have helped as "the game isn't realizing the creative vision that it had for its players."
+
+
+=== Sales ===
+According to Microsoft, Redfall had generated "minimal sales".
+
+
+== Notes ==
+
+
+== References ==
+
+
+== External links ==
+Official website

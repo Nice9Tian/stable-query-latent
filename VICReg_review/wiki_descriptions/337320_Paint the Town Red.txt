@@ -1,0 +1,42 @@
+Game: Paint the Town Red
+appid: 337320
+Source: Paint the Town Red (video game)
+URL: https://en.wikipedia.org/wiki/Paint_the_Town_Red_(video_game)
+Match score: 7.60
+Retrieved: 2026-07-04
+--------
+Paint the Town Red is a 2021 first-person action video game, developed and published by South East Games. Initially released as an early access title in 2015, the full version became available on Steam in 2021, with versions also released for Xbox Series X/S and Nintendo Switch. Developed on the Unity Engine, with the use of voxels, players are placed in various locations where the goal is to kill all other non-playable characters. Weapons and items around the levels are used to inflict damage on NPCs, with them also able to attack the player in return.
+The title generally received positive reviews, particularly for the combat system and the use of voxels, while it received criticism for its lengthy progression time and unbalanced difficulty without changing difficulty settings.
+
+
+== Gameplay ==
+
+Paint the Town Red places the player in various locations dependent on the level, including a bar or disco. The game is in first-person perspective, with all non-playable characters the targets of toggleable weapons, along with physical violence. Once a player enters a level, fights break out with approximately eighty voxel NPCs. Players are able to attack NPCs using physical actions, throwing objects such as ashtrays, with the ultimate goal of becoming the last player alive. Occasionally, a power move, such as "Shock Wave" can be triggered to inflict damage on multiple enemies at once.
+
+
+=== Game modes ===
+There are multiple game modes that players can choose from, these include the following:
+
+Scenarios: Sandbox style mode, which includes customisable modifiers to change match experiences. Modifiers include the ability to play with a top-down view camera perspective, having NPCs fight alongside players and multiple special combat attacks.
+Arena: Includes five challenges, with players choosing one and then facing seven to ten back-to-back brawls. These levels are themed, such as the in the style of Roman gladiators. Bosses from Beneath mode also appear in a boss rush challenge.
+Beneath: Has a story, described by Way Too Many Games as "roguelite". One of four available classes is chosen by the player, these including Warlock, Spectre, Brawler and Vanguard, and the player must kill NPCs known as Ancient Gods. Each class offers different abilities and stats, with upgrades becoming available as the mode progresses. The mode offers six available areas, with each having several levels between them.
+Level editor: A level editor which includes user-generated content uploaded to the Steam Workshop is available in the game. Level editor levels are not available in multiplayer or on console.
+
+
+== Development ==
+Paint the Town Red was initially developed by Australian game developer South East Games in 2014 as part of a game jam for 7dfps, which was completed in six days, with the game then uploaded to Itch.io. The team consisted of Matthew Carr who served as a programmer and Shane Carr as art director. The use of voxels were not originally considered by the developers, whose primary focus was an art style. However, they found voxels contrasted well with the blocky design of the in-game characters, along with how they react when attacked and their physics. Voxels also allowed the game to "live up to its name", whereby the environment ends up covered in blood by the end of a level. The game entered early access, where it remained for six years. As the team only consisted of one programmer, artist and composer, there was difficulty in maintaining routine updates on Steam whilst simultaneously developing versions for console.  
+In an interview with Shacknews, programmer Matthew Carr confirmed that implementing multiplayer and cross-platform play onto the console version was beyond the scope of what the team could achieve, due to netcode working differently per console and potential bugs requiring more work than could be handled. However, they remained open to exploring options to include multiplayer and cross-play in the future, such as on PlayStation 5 and Xbox Series X. Porting to the Switch was a significant challenge for the developers due to the limitations the systems memory, with particular emphasis on voxel optimisation which uses a lot of memory and offloading CPU to memory cache. There were also challenges upscaling to 1080p on Xbox. A version for virtual reality headsets including the Meta Quest 3 was later developed, featuring the existing game modes. Other VR headsets also compatible include Steam VR, PlayStation VR2 and the other models of Quest.
+
+
+== Reception ==
+
+Paint the Town Red has a score of 67 out of 100 from thirteen reviews on the gaming aggregate website OpenCritic, indicating "generally favorable" reviews. The game has a score of 77/100 on Metacritic.
+William Worrall, writing for TechRaptor, gave praise to the use of voxels, explaining that whenever someone is "hit", that "specific part of their body" reacts accordingly. However, Worrall found Paint the Town Red to be unbalanced, as "without modifiers", "a single enemy wielding a bladed weapon or broken bottle can wipe a third of your health in a single hit". Ultimately scoring it 5 out of 10. Dread Central writer Samuel Guglielmo also expressed enjoyment of the combat system, but proposed that a healing system would benefit the game, opening up more styles of play. Guglielmo was especially positive toward Beneath mode, believing everybody would find something they enjoy, regardless of play style and due to fewer enemies, this mode better suits the combat system. He recommended the PC version over the console version as the latter lacked user-generated content, scoring the game 4 out of 5 stars. Xbox Tavern writer AJ Small compared the gameplay to the church melee scene from Kingsman: The Secret Service and the prison fight scenes from The Raid 2: Berandal.
+Reviewing the Nintendo Switch version of the game, Damiano Gerli of GameCritics commented on the "bare minimum content that one might expect from an RPG-lite experience",  highlighting the lengthy time it takes to unlock special moves, stat level-ups and new equipment purchase options. Gerli also criticised the features not present in the Switch version, that allow for "an almost infinite level of variety" on the PC version, comparing the game to a "tech demo". Russian gaming site IXBT was praised the graphics and soundtrack, but were critical of the Russian localisation, commenting on "text spilling out of bounds" and incomplete translations.
+
+
+== References ==
+
+
+== External links ==
+Official website

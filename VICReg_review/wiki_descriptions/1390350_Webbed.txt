@@ -1,0 +1,46 @@
+Game: Webbed
+appid: 1390350
+Source: Webbed
+URL: https://en.wikipedia.org/wiki/Webbed
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Webbed is a 2021 puzzle-platform video game developed and published by Australian, Brisbane-based studio Sbug Games. A physics-based game set in a fantasy version of Queensland, players control a peacock spider whose goal is to rescue her boyfriend after he is kidnapped by a bowerbird, with the help of other bugs. The player can use spider webs to swing to different areas, create bridges, or move objects.
+In October 2019, a prototype of Webbed was published on the indie game website Itch.io. The finished game was released for Microsoft Windows, macOS, and Linux on 9 September 2021. It was later ported to PlayStation 4, Xbox One and Nintendo Switch on February 2, 2022.
+
+
+== Gameplay ==
+Typical of puzzle platformers in 2D, it has a simple, non-linear gameplay style that encourages players to explore and revisit areas of the open and interconnected map space to fully discover the five distinct areas.
+The player controls Buddy, a female jumping peacock spider, with the gameplay functionality centering mostly around her webbing abilities of which two different types can be used for varying means. The first is those that can be used for swinging the player across the map and dragging objects which disintegrate after being used. As well as stationery webs that can be used to attach between objects to make bridges or manipulate objects which remain until destroyed. Other gameplay features include laser shooting eyes which can be used to damage enemies, destroy map obstacles such as wood planks, webs, and push objects. As well as a skateboarding minigame, swimming and gliding using leaves to travel along air currents.
+It has a frequent check-pointing system, with the player able to die by swinging into or falling on spikes throughout the map without losing much progress.
+In addition the game has additional small fetch-quests for each section in collecting ant larvae, flies, pollen and baby spiders which reward the player with stamps in the game's menu. This menu also shows the map areas with filled in circles to indicate that all collectibles have been found, and empty ones to indicate there are still more to find.
+Furthermore, a dance button can operate the spider player that when done nearby other insects, will cause them to dance in return.
+The game also features an 'Arachnophobia mode' in the menus that transforms the spiders into colored blobs.
+
+
+== Plot ==
+The plot follows the player as Buddy, the female peacock jumping spider who sets off on the quest to save her boyfriend after he is kidnapped by a male Satin Bowerbird. Recruiting the help and resources of three other distinct insects; bees, ants and dung beetles by helping with their own objectives such as completing the construction of a Mech-Ant by attaching its legs with webs. Together they help the player construct a hot air balloon fashioned out of the moth's silk cocoon, with the ants providing the manpower, the bees providing repairs to the balloon, and the dung beetles the fuel to reach the Bowerbird's nest in the Sky Bower.
+
+
+== Development ==
+Webbed is developed by co-developers Riley Neville and Noah Seymour, and features a colorful pixel 2D art style with procedural animations created in GameMaker engine, for both its player and non-playable characters that give them reactive and generated movement.
+From an interview with Checkpointgaming, Neville explained the reasoning for the arachnid player character stating "If you've seen videos of peacock spiders doing their little dances, they're incredibly cute. There's nothing threatening about them. That's not an enemy! It's about a millimetre across in total, it's a tiny little dancing, colourful friend and we want to show that sort of character in our game."
+Seymour, who had already made indie itch.io titles featuring spiders such as 'A Mess of Legs', notes a fascination and love for them, stating: "I just kind of keep falling down the rabbit hole further and further. I've bought big books of the most documented spiders in Australia and love to take pictures of them in my backyard."
+Neville also showed an interest in accessibility for Webbed, spawning the Arachnophobia mode which changed all the insects into blobs, for those on social media who still expressed fear at the bug aspects.
+
+
+== Reception ==
+
+Alex Walker of Kotaku gave Webbed a positive review despite noting his arachnophobia, praising the web mechanics and writing: "It's not exactly a breakthrough when it comes to platforming puzzles, but it's deeply, mechanically satisfying."
+WellPlayed Zach Jackson's review of Webbed praises its whimsical and fun gameplay in particular its swinging mechanics, its solid and jovial soundtrack, but criticizing parts of its difficulty in moving objects with said webs, giving it an 8/10 score. "The web mechanics are fun and fluid, with the swinging especially one of the game's highlights – fanging through the bush like George of the Jungle is a really good time."
+Reviews on Metacritic focus mainly on its ingenious puzzle design that is balanced with its easy gameplay fluidity, with many noting a drawback of being ultimately short and sweet. With user GamesHub writing "Webbed chose joy, whilst never sacrificing sharp puzzle design nor the fundamentals of platforming and web-swinging that make it a pleasure to play."
+
+
+=== Awards ===
+
+
+== References ==
+
+
+== Further reading ==
+Walker, Alex (4 August 2021). "Queensland's Latest Game Is All About Being A Cute Spider". Kotaku Australia. Archived from the original on 15 September 2021. Retrieved 30 September 2021.

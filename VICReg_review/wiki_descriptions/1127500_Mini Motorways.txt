@@ -1,0 +1,47 @@
+Game: Mini Motorways
+appid: 1127500
+Source: Mini Motorways
+URL: https://en.wikipedia.org/wiki/Mini_Motorways
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Mini Motorways is a puzzle strategy game released by the New Zealand studio Dinosaur Polo Club. It is a follow-up to their 2015 video game Mini Metro.  The game tasks the player with creating a network of roads to connect coloured houses to buildings. Through the use of upgrades such as traffic lights, roundabouts, and motorways, the player aims to build an efficient network, allowing cars to reach their destination before the timer runs out.
+The game was released on Apple Arcade in September 2019, Windows and macOS via Steam in July 2021, and on Nintendo Switch in May 2022.
+
+
+== Gameplay ==
+The game plays similarly to Mini Metro, its predecessor, except it involves following a grid-like system to build road networks instead of rail networks. The game consists of drawing roads to link houses (which contain cars) to buildings of identical colours (red to red, yellow to yellow, etc.). New buildings and houses appear randomly as the game progresses. The buildings have pins which the cars of the correct colour must collect. The score is the number of pins that have been collected. If too many pins accumulate on a building (seven for square buildings and ten for circular buildings), a timer is set as a warning. Once a building's timer is full, the game is over. Vehicles reaching the destination will reduce the progression of the timer slightly, and once the number of pins on the building drops back within capacity, the timer will deplete by itself, after which it will split back up into standard pins. Vehicles will prioritise buildings with timers to help deal with them.
+After each week, the player may choose between two upgrade choices, which could include special tools. Both choices will always provide extra road tiles, and one choice will always provide a special tool. Sometimes one of the choices will just be extra road tiles. Special tools include:
+
+Bridges and Tunnels - A stretch of road across water or through a mountain, respectively. Only one is used for a stretch of road across an obstacle, no matter how long the road is.
+Traffic Lights - Alternates the flow of traffic.
+Roundabout - A 3x3 circle of one-way road (no road tiles needed to build) to help improve efficiency of an intersection.
+Motorway - A singular stretch of road that links point A directly to point B, passing over everything, with the exception of mountains, on its way. The player can shift the Motorway's route (without affecting gameplay) by dragging its shield, allowing the player to see what's going on below it.
+If a special tool is deleted, it returns to the inventory once all existing traffic has completed their journey (or takes an alternative route). Traffic lights and the ends of motorways can be moved without having to delete and reposition them.
+
+
+=== Maps ===
+As of June 2026, the game features playable maps of 25 cities, with new cities added periodically via game updates:
+
+Hong Kong
+Cape Town
+Istanbul
+On April 17, 2023, Dinosaur Polo Club announced a voting contest, where players were able to vote which among the 30 Mini Metro maps would be added to Mini Motorways. The voting ended on May 8, after which the winner was announced to be New York City.
+With the release of the "Miniversary Update" in July 2023, and the addition of New York City, London and Mumbai, trains and train stations were included in the game as a crossover from Mini Metro.
+
+
+== Reception ==
+
+Mini Motorways received "generally favorable" reviews according to review aggregator Metacritic. Fellow review aggregator OpenCritic assessed that the game received strong approval, being recommended by 87% of critics.
+Nathan Reinauer from TouchArcade praised the game's soundtrack and minimalistic art style, both similar to Mini Metro. Pocket Gamer liked the accessibility options, saying that the colourblind mode was a "nice touch", while criticising the frantic pace of gameplay. Eurogamer enjoyed the soundtrack, describing it as "a chilled tumbler of pips and muttering hums and clicks and whistles and honks". VG247 thought that the game was well designed to avoid frustrating the player, "There's an intricate, impossible-feeling balance to this game; it is fiendishly difficult and filled with tactical nuance... and yet it is also joyously mellow". Rock Paper Shotgun felt the audio design was informative, singling out the car horns as a helpful sound, "Cues like this help alert you to potential problems in your network, but also let you keep a calm head, and I rarely felt stressed or overwhelmed when my cities went awry".
+The traffic light upgrade was criticised for its lack of usefulness in gameplay, often making the traffic worse.
+
+
+== Notes ==
+
+
+== References ==
+
+
+== External links ==
+Official website

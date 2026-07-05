@@ -1,0 +1,106 @@
+Game: Alone in the Dark
+appid: 1310410
+Source: Alone in the Dark
+URL: https://en.wikipedia.org/wiki/Alone_in_the_Dark
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Alone in the Dark is a survival horror video game series originally developed by Infogrames. In most of the games, the player controls private investigator Edward Carnby, who goes to investigate a haunted house or town that is full of undead creatures.
+The series, particularly for its debut game, is widely acknowledged as an early instance of survival horror video games and (along with Sweet Home) is often credited with the creation of the genre. The original story was based on the writings of H. P. Lovecraft; later games in the series drew inspiration from other sources including voodoo, the Wild West, and the works of H. R. Giger. Seven installments of the series have been created, with various themes and locations. Two comic books and two films were created based upon the games.
+In September 2018, Atari SA sold the Alone in the Dark franchise to THQ Nordic.
+As of 2007, over 6 million units have been sold.
+
+
+== Games ==
+
+
+=== Main series ===
+
+
+=== Alone in the Dark (1992) ===
+
+The first game in the series was developed by Infogrames and released for PC in 1992. It was one of the first two games to use polygonal characters over pre-rendered backgrounds. Guinness World Records awarded it the record of "First Ever 3D Survival Horror Game" in the Guinness World Records Gamer's Edition 2008 edition. Krisalis Software made a port for the 3DO in 1994 that was released by Interplay Entertainment. A Mac version was released in 1994. In 2014, Atari published a port to iOS developed by Kung Fu Factory but was pulled out of the App Store after the latest iOS updates.
+
+
+=== Jack in the Dark (1993) ===
+A small game made during the second game's production, Jack in the Dark, was used as a promotional game distributed during Christmas of 1993, just before the second installment's release. The game was on a single floppy disk in a golden wrapping featuring a Jack-in-the-box illustration on the top. It is a short adventure featuring the young child Grace Saunders. During Halloween, she enters a small toy store after dark and gets locked inside. There, the toys are alive, and Grace must save Santa Claus from an evil Jack-in-the-box. Jack in the Dark is an adventure game that focuses purely on puzzles and has no combat. Later CD versions of both Alone in the Dark and Alone in the Dark 2 came packaged with this game.
+
+
+=== Alone in the Dark 2 (1993) ===
+
+Developed by Infogrames and released for PC in 1993, Alone in the Dark 2 was a drastic departure from the original game, being more action-oriented than its predecessor, with a much greater emphasis on firearms and shootouts, and resulting in more difficult combat. Like the original, it was ported to the 3DO by Krisalis and released by Interplay. An enhanced port under the name of Alone in the Dark: Jack is Back (Alone in the Dark: One-Eyed Jack's Revenge in the United States) was released in 1996 for the PlayStation and Sega Saturn. Both versions were also released in Japan under the original name.
+
+
+=== Alone in the Dark 3 (1995) ===
+
+Alone in the Dark 3 was the last game to utilize the same engine and characters as the original game. Released for PC in 1995, the game returned to the gameplay style of the original game. A version of the game for Windows 95 was released as Alone in the Dark: Ghosts in Town in 1996.
+
+
+=== Alone in the Dark: The New Nightmare (2001) ===
+
+The next generation game of the Alone in the Dark series was created by Darkworks as a console survival horror title, and shows significant influence from the Resident Evil series. The control scheme and gameplay are much closer to that of Resident Evil than the original Alone in the Dark games. Internally known as Alone in the Dark 4, the game was released in 2001, developed by Darkworks for the PlayStation and Dreamcast, and by Spiral Studios for PC and PlayStation 2, also with an alternative portable Game Boy Color version developed by Pocket Studios. The game unlike its predecessors is set in modern settings, features new main character design and no longer features Savate as unarmed combat method.
+
+
+=== Alone in the Dark (2008) ===
+
+Developed by Eden Games for PC, PlayStation 3 and Xbox 360, and by Hydravision Entertainment for the PlayStation 2 and Wii, Alone in the Dark changed the focus of the series back to survival horror. Initially known as Alone in the Dark: Near Death Investigation, the game was re-branded as Alone in the Dark despite having few connections with the original game. The game introduced 3D generated scenarios and interchangeable first and third-person view to the series. The environment plays a large role in core gameplay; any object, even decorative, can be used as a melee weapon or combined to make different styles of weapons. The PlayStation 3 version was released several months after the other versions as Alone in the Dark: Inferno. It had a few gameplay changes and fewer glitches.
+
+
+=== Alone in the Dark: Illumination (2015) ===
+
+Alone in the Dark: Illumination was released on June 11, 2015. Unlike the previous installments, the game is only played online. The game was heavily panned by critics.
+
+
+=== Alone in the Dark (2024) ===
+
+Developed by Pieces Interactive, Alone in the Dark is a reimagining of the original 1992 video game in a similar style to the Resident Evil remakes. The game features a single-player narrative set in the 1930s, where players can choose to play as Edward Carnby (David Harbour) or Emily Hartwood (Jodie Comer), as they make their way through Derceto Mansion to uncover the mysteries within. It was released for Microsoft Windows, PlayStation 5 and Xbox Series X/S on March 20, 2024.
+
+
+== Storyline ==
+
+Edward Carnby is the main protagonist of the series, and is a private detective. In the first three games, he is depicted as a middle-aged private investigator during the 1920s. The New Nightmare depicts him as a younger adult in 2001. In the 2008 installment of the series, Carnby's appearance was drastically changed. He has been the main protagonist in every game to date, with the exception of the mini game, Jack in the Dark, which instead features Grace Saunders, a character who appears in Alone in the Dark 2. He is also the main character in two movies loosely based upon the games.
+The three original games take place in the 1920s and depict the paranormal cases of private eye Edward Carnby. In 1924 (Alone in the Dark) he is commissioned by an antique dealer to investigate a piano in the loft of the Louisiana mansion Derceto, which was abandoned after its owner Jeremy Hartwood committed suicide. On Christmas Eve 1924 (Alone in the Dark 2) Carnby goes on to solve a case involving the kidnapping of young Grace Saunders after the investigating procedures of his deceased partner Ted Stryker, with all the clues leading to an old California mansion named "Hell's Kitchen" and an infamous gangster who inhabited it. In July 1925 (Alone in the Dark 3) he is called to investigate the disappearance of a film crew at a two-bit ghost town known by the name of Slaughter Gulch located in the Mojave Desert in California. The first game shares the protagonist role with Jeremy Hartwood's niece, Emily Hartwood, who also takes a role of damsel-in-distress in Alone in the Dark 3.
+In Alone in the Dark: The New Nightmare Carnby is investigating the death of his best friend, Charles Fiske. He teams up with Aline Cedrac, a young University professor specializing in ancient Indian languages, on a mission to Shadow Island. When Alone in the Dark: The New Nightmare was made, the setting was moved from the 1920s to 2001, and a background legend was made up in order to explain that Edward Carnby belonged to a lineage of Shadow Hunters who were born the 29th of February of every 40 years and raised as orphan children in St George's Orphanage, all of them going by the name of Edward Carnby. The name is depicted as a literal anglicized form of "El War Qarn'bi", which means "the one who battles evil incarnate and hunts out the shadows". According to this legend, the original Edward Carnby was born in 1888 and went out of record after engaging several strange affairs in the years 1920 to 1939. The Edward Carnby that plays the main role in Alone in the Dark: The New Nightmare was born in 1968.
+The 2008 Alone in the Dark reinterpreted once again the series storyline. It follows the canon of the first three games, and ignores the events of Alone in the Dark: The New Nightmare. The story takes place in Central Park, New York, both inside the park and in its surroundings. Taking place in 2008, the game claims that there has only ever been one Edward Carnby, who has been possessed since the late 1920s, and is now over 100 years old, though he retains a youthful appearance.
+Alone in the Dark: Illumination takes place in the mining town of Lorwich, Virginia and harkens back to the series' Lovecraftian background. Theodore "Ted" Carnby, one of Illumination's four protagonists, is a direct descendent of Edward Carnby. Ted is actually implied to be Edward Carnby himself living under an assumed identity, still alive in the modern era due to the events of the 2008 Alone in the Dark game.
+
+
+== Development ==
+The original game engine was created by Frédérick Raynal as a pet project while working at Infogrames. With the help of Didier Chanfray, who made the 3D models, a working prototype of the attic (the game's first room) was designed. An internal contest was held to create the art to complete the 3D prototype. Yaël Barroz's art was selected and she was introduced into the game's core team. Frédérick Raynal directed the project.
+Shortly after Alone in the Dark's initial release, a major disagreement between the team and Infogrames' director (Bruno Bonnell) took place regarding the direction of the sequel. As a result, most of the original team left Infogrames to create a new studio named Adeline Software International.
+According to an interview made just after the release of Alone in the Dark, portions of the sequels were designed by the original team before leaving. The interview presented a sketch of the house that was used in the sequel and mentioned the fact that Carnby could be dressed as Santa Claus.
+The original game's engine is the first known to use interpolated animation, relying on the computer to render the frames between key frames. This approach has the advantages of reducing the game's memory footprint (requiring less memory to store) and adapting to each computer's power.
+The game engine developed for Alone in the Dark was reused in its first two sequels (Alone in the Dark 2 and Alone in the Dark 3) without substantial changes. Infogrames updated it for use in 1996's Time Gate: Knight's Chase.
+
+
+== Adaptations ==
+
+
+=== Films ===
+In 2005, an Alone in the Dark film was released starring Christian Slater as Edward Carnby. The film has little-to-no relation to the games from the 1990s or the 2008 continuation. The film is known as one of the worst ever made. Guinness World Records named the film the "Lowest-Grossing Game Based Movie" in Guinness World Records: Gamer's Edition 2008.
+In 2008, a low-budget sequel titled Alone in the Dark II was released, starring Rick Yune as Edward Carnby and featuring an entirely new cast and a story centered on witch hunting.
+
+
+=== Reboot film and television series ===
+In December 2025, Uwe Boll director of the 2005 film adaptation was announced a reboot film, based on the 2024 reboot game, with a planned television series is also in development.
+
+
+=== Comic ===
+An Alone in the Dark one-shot comic book entitled Life is a Hideous Thing was published by Semic Comics in 2001 in France and translated by Image Comics in the U.S. in September 2002. It was also translated and published in Italy and Spain. Written by Jean-Marc Lofficier and drawn by Matt Haley and Aleksi Briclot, it takes place just before Alone in the Dark: The New Nightmare. It stars Edward Carnby and introduces Aline Cedrac, both on the trail of a mysterious lost city of Aggartha in Tibet. The comic also features Frank Stone, a young scientist who accompanies Aline, Ganesha, a fortune hunter, and Dr. Leng, a wise man who lives in his private flying ship along with his beautiful assistant Monplaisir (the two characters also appear in a French comic book based on "Motor Mayhem").
+The characters travel to Aggartha in order to destroy the Crown of Genghis Khan, a powerful artifact able to summon a powerful creature known as the Creeping Chaos. Frank Stone is revealed to be possessed by a demon, and unleashes the Creeping Chaos. Its up to Carnby and Cedrac to defeat him and cast the creature back. The Creeping Chaos's appearance is based on a deity from Lovecraft's lore, Shub-Niggurath.
+
+
+== Notes ==
+
+
+== References ==
+
+
+== Additional sources ==
+Haug, Vegard (March 13, 2008). "Edward Carnby is ready for adventure" (in Norwegian). gamer.no. Retrieved June 9, 2012.{{cite web}}:  CS1 maint: deprecated archival service (link)
+Williams, Kevin (January 28, 2005). "'Alone' should stay that way". Chicago Tribune. Retrieved June 9, 2012.{{cite news}}:  CS1 maint: deprecated archival service (link) (subscription required)
+
+
+== External links ==
+
+Alone in the Dark at MobyGames

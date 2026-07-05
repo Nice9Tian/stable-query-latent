@@ -1,0 +1,29 @@
+Game: Wobbledogs
+appid: 1424330
+Source: Wobbledogs
+URL: https://en.wikipedia.org/wiki/Wobbledogs
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Wobbledogs is a pet simulation game created by Tom Astle and published by Secret Mode. It was released on PC on March 15, 2022, and on the Nintendo Switch on November 17, 2022. It is a pet simulation with sandbox elements, featuring a fully developed breeding system, allowing for the aforementioned mutated dogs.
+
+
+== Gameplay ==
+Wobbledogs is a pet simulation game where the player cares for wobbly dogs. Wobbledogs has a fully functioning breeding system with traits being mixed together and passed down via genetics. Dogs acquire traits by eating different foods which introduce new flora into their gut. At several points in the dogs' lifespans, they will enter a chrysalis and mutate, with their gut flora influencing physical and behavioral changes. Dogs in the game reproduce by laying eggs.
+The game also features sandbox elements; the home of the wobbly dogs, which consists of a series of tubes leading to different rooms, can be edited and constructed as well.
+
+
+== Development ==
+Tom Astle, the Los Angeles-based creator of Wobbledogs, had his original vision be fairly similar to how it was in the end. However, he spent two years prototyping various gameplay concepts in the hopes one of them would be a perfect fit for the game. This approach failed, and Tom decided the only way to finish the game would be to return to what had worked and focus specifically on that.
+Wobbledogs first entered early access on January 28, 2021. It then exited early access at March 15, 2022 and released on Nintendo Switch on November 17, 2022. Wobbledogs would later receive a free Desert Patch near the end of 2023, adding new desert-themed toys and decorations.
+
+
+== Reception ==
+NME was endeared with its goofiness, likening it to a cross between Nintendogs and Mewgenics, but acknowledged that the game may not be for everyone, with mutation being a lengthy system and it having a simplistic core loop. It was described as "the kind of brightly-colored fun that I was longing for as a kid when I rented the Catz 5 from my local library" by Rock Paper Shotgun author Lauren Morton. PC Gamer stated "the game is more passive observation than puzzle". The game received "overwhelmingly positive" user reviews on Steam as of March 15, 2022.
+
+
+== References ==
+
+
+== External links ==
+Official website

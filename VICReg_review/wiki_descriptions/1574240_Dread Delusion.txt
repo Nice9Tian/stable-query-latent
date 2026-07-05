@@ -1,0 +1,56 @@
+Game: Dread Delusion
+appid: 1574240
+Source: Dread Delusion
+URL: https://en.wikipedia.org/wiki/Dread_Delusion
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Dread Delusion is a 2024 video game developed by independent studio Lovely Hellplace and published by DreadXP. Described as an "open world role-playing game brimming with strange places and dark perils," Dread Delusion encourages player exploration and discovery over the use of combat and grinding. Upon release, Dread Delusion received average reviews, with praise directed by critics to the game's setting, narrative and worldbuilding, and mixed views over the execution and depth of the game's combat mechanics.
+
+
+== Gameplay ==
+
+Dread Delusion is a role-playing game that is played in first-person perspective across an open world. 
+The game features a character system that provides players with opportunities to resolve quests outside of combat, under four attributes (Might, Guile, Wisdom, and Persona) which govern eight skills (Attack, Defence, Lockpick, Agility, Lore, Spellcast, Charm and Barter). The player increases attributes through the collection of Delusions, which are skulls found throughout the world and collected through exploration or completion of certain quests. Combat is straightforward and used by swinging weapons at enemies using the mouse. The player can also interact with the world in several ways using skills, such as using lockpicks to open doors, charm characters to open up dialog options, or use lore to possess the knowledge to interact with items. Weapons, spells and quick-use items are managed in the inventory, where the player can also acquire or buy gear that improves their attack and defence skills. If the player loses their health and dies, they revert to the last discovered location of a death shrine, scattered throughout the game's map.
+
+
+== Plot ==
+
+
+=== Setting ===
+Dread Delusion takes place in a series of floating islands known as the Oneiric Isles. The Isles are set in an obscure corner of the Skyrealms, which formed after an apocalypse made the surface uninhabitable in the distant past. Inhabited by several factions, the Isles are dominated by the Apostatic Union, who enforced a ban on worship following the God War against the gods and the Wikkans, who commune between the gods and people. The Union have recently arrived in the Isles to seize control over the outlaws in the region.
+
+
+=== Synopsis ===
+The player awakes as a prisoner of the Inquisition, the enforcers of the Apostatic Union. Released by the High Confessor, they are offered freedom in exchange for assisting the Inquisition in hunting down and capturing Vela Callose. Callose, the daughter of the Admiral of the Union, has attracted the attention of the Inquisition after becoming rogue and leading the outlaw Dark Star Mercenaries, becoming the most wanted criminal in the Union. Callose also made claims about creating a new age of Heaven that are tantamount to heresy in the Union. The player enters the Blinding Light fortress, where Callose has taken refuge, to witness Callose escaping in her ship. The High Confessor recruits the player as a Confessor of the Inquisition, assisted by the Inquisitor Ignavius. The High Confessor tasks them with locating former Dark Star mercenaries to find information leading to Callose's location.
+The player is directed by the High Confessor to Jack Basalt, a former Navy Captain residing in Hallow Town, who became disgraced after abandoning his post to join Callose. He informs the player that Callose has escaped to the Underlands, a place beneath the surface of the Isles. Basalt provides the player with the names of three former Dark Star mercenaries: a figure named 'The Emberian', a powerful wizard named the 'Endless Duchess', located in the Endless Realm, and the engineer Caxton Frost, located in the Clockwork Kingdom. The player is tasked to locate these three characters across the Isles and convince them to locate and capture Callose.
+
+
+== Development ==
+Dread Delusion was developed by Lovely Hellplace, a studio established in 2018 by Brighton-based independent developer James Wragg. Wragg began development of Dread Delusion in 2019 as a desire to merge the role-playing game and walking simulator genres, from an observation that modern role-playing games were "unnecessarily burdened by repetitive combat". An initial version of Dread Delusion was submitted to the compilation Haunted PS1 Demo Disc, published by Breogán Hackett on 6 February 2020.
+An early access version of Dread Delusion was released onto Steam on 16 June 2022, following the involvement of independent publisher DreadXP in the development of the game. Whilst initially planning to distribute the game as full release, Wragg stated he was "won over to the idea of early access" following recognition of the "different level of feedback when you release a game to passionate fans". The 'Rise of the Skeletons' update, released in October 2023, added a new area, Summonisle, and a player ability to summon skeletons to aid the player in combat. The 'Clockwork Kingdom' update was released in January 2024, adding a new region of the same title to the game.
+Dread Delusion received a full release on 14 May 2024, accompanied by the release of launch trailer. The release introduced several end-game content updates, including an ending to the game's main quest, the inclusion of a new region named the Underlands, and pilotable airships.
+Dread Delusion was announced for Nintendo Switch 2, PlayStation 5, PlayStation 4, Xbox Series X/S, and Xbox One in February 2026, with a release set for that spring. Following another announcement on 12 March, the console versions would release on 17 March 2026, complete with all the game's existing content and features.
+
+
+== Reception ==
+
+
+=== Early access ===
+Reception of the early access version of Dread Delusion was positive, with critics praising the game's atmosphere and worldbuilding. Renata Price of Vice praised the game's "brilliantly released and haunting setting, one that I spend my hours outside the game thinking about", citing the "beautiful and terrible" scenery. Willa Rowe of Inverse praised the "sense of scale" of the game, stating "the game offers such deep worldbuilding that I felt compelled to turn over every rock and find every secret available to me," observing the game "devotes so much attention to compelling stories" that were "satisfying" and part of a "deeper experience". Alice O'Connor of Rock Paper Shotgun stated the game established "a hell of a mood" and "a great vibe." Several outlets raised favorable comparisons between the game and early 3D role-playing games, particularly the 2002 Bethesda Softworks game The Elder Scrolls III: Morrowind.
+Some critics raised critiques of the early access build of the game. Ted Litchfield of PC Gamer noted the system was "a bit too old school", noting that "staying on your feet too long introduces attribute penalties" that "drain very quickly", and noting the limited options to recover fatigue. Courtney Ehrenhofler of TechRaptor noted that understanding the game's mechanics were a "process of trial and error...which can get frustrating at times", noting "I found myself consulting the controls menu more times than I would like, as well as being utterly baffled by weapon upgrades." Writing for GamesHub, David Wildgoose stated the game was equally compelling and bewildering, noting that "throughout the surreal landscape were many locations and incidents that left me puzzled, but intrigued and keen to discover more", observing that I'm rarely sure whether its mysteriousness is the result of deliberate design or that some bits just aren't done yet."
+
+
+=== Critical reception ===
+
+The PC version of Dread Delusion received "mixed or average" reviews from critics upon release, according to review aggregator website Metacritic. with praise directed to the game's narrative, exploration and worldbuilding. Fellow review aggregator OpenCritic assessed that the game received strong approval, being recommended by 62% of critics.
+Matt Wales of Eurogamer commended the game's setting as "full of stories" and "wonderfully, vibrantly alive" setting, with its "ample" horror ideas moderated by a "strong thread of humour" throughout the game. Philip Watson of Comics Gaming Magazine praised the "many choices and solutions" in the game, and the "charm and excellent character writing" of the quests, particularly highlighting the "mythos" of the character Vela Callose. Highlighting the game's "narrative depth and sense of discovery", Willa Rowe of Kotaku similarly considered the game's tone to be an "enthralling" mixture of  unsettling horror and absurd humour. Ian Boudreau of PCGamesN commended the game's "seamless fusion of fantasy, science fiction and horror", although highlighted the "humanity" of the game's dialogue. However, Alexander Chatziionnou of PC Gamer considered the game's final chapter to be of a lower quality, due to the "visually uninteresting" setting of the Underlands, describing it as "rigidly designed" and repetitive.
+Gameplay and combat mechanics received mixed assessments from reviewers. Describing the combat as "stiff", Matt Wales of Eurogamer nonetheless noted the game's "nicely streamlined" progression and the balance of managing stamina to add "welcome" depth to the game. Alexander Chatziionnou of PC Gamer praised the open-ended and immersive approach to quests, although found combat mechanics and movement to be "rudimentary" and "simplistic" in nature. However, he considered the combat to fit the tone of the game. Willa Rowe of Kotaku stated that the game's combat was "simple but not very fun", considering it to be "silly" lacking depth, and outmoded by other options including sneaking, lockpicking or charming the player's way out of encounters. In addition to the "clunky combat" which he considered could have been more "interesting and dangerous", Ian Boudreau of PCGamesN faulted the game's "unreliable" quest logs and bugs. Philip Watson of Comics Gaming Magazine also felt the game's skull-based progression system was "limited" and "stuck behind stat checks", also critiquing the game's lockpicking system as reliant on dice rolls and adding artificial length to the game.
+
+
+== References ==
+
+
+== External links ==
+Official website
+Dread Delusion at MobyGames

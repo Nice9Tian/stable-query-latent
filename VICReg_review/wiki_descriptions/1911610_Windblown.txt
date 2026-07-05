@@ -1,0 +1,26 @@
+Game: Windblown
+appid: 1911610
+Source: Windblown
+URL: https://en.wikipedia.org/wiki/Windblown
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Windblown is an upcoming action roguelike video game developed by Motion Twin, and co-published by Motion Twin and Kepler Ghost. It launched in early access for Windows on October 24, 2024, with a full release anticipated for 2026.
+
+
+== Gameplay ==
+In Windblown, the player controls a Leaper, an anthropomorphic creature in a world made up of floating islands. The Leapers, who live in the Ark—a village of their kind—work together to explore the nearby Vortex, fighting off Sentinel robotic creations that patrol the islands within it, while locating survivors, materials, and gear to bring back to the Ark. The character can use up to two weapons with various combination attacks, along with other gear and powerups they gain while exploring the Vortex. If the Leaper dies, they are returned to the Ark, losing their gear but retaining materials, which allow them to unlock new gear and abilities for future exploration.
+
+
+== Development ==
+Motion Twin achieved success with their roguelike Dead Cells, first released in 2018. As they transferred ongoing development of the game's expansions to Evil Empire, the group began to brainstorm on what their next game would be. While they initially wanted to move away from the roguelike genre, they decided to build upon what they learned through Dead Cells to create a new roguelike.
+One goal with Windblown was to introduce cooperative multiplayer, compared to the single-player Dead Cells. Another was to give the player the ability to quickly move about the game's levels, placing islands that they could reach in sight and providing routes to get there using a dash ability. Initially this was an ability with a cooldown but they found the game's pacing was improved by allowing the player to dash indefinitely without any cooldown. 
+They wanted to maintain the same goal as Dead Cells, in which each run for the player would feel different, and tried a variety of metagame systems such as ideas borrowed from The Binding of Isaac and Hades, ultimately returning to a similar approach they had used in Dead Cells, which the player can unlock new weapons and gear that will randomly appear during a run by spending materials collected from previous runs. Motion Twin also wanted to improve on the dual-weapon system from Dead Cells; while the player could switch between one of the two weapons they carried at any time within Dead Cells, there was no other benefit from this switch. Within Windblown, they added an "Alterattack" system that allowed extra boosts when the player switches between weapons. The team also looked to the Monster Hunter games to expand on what abilities they could incorporate into their weapons.
+Windblown was first announced in December 2023 as part of The Game Awards. Motion Twin began alpha testing with about 300 users in February 2024. The game entered its early access release in October the same year, following the success of early access in refining Dead Cells before its full release.
+
+
+== References ==
+
+
+== External links ==
+Official website

@@ -1,0 +1,30 @@
+Game: This Land Is My Land
+appid: 1069640
+Source: This Land Is My Land
+URL: https://en.wikipedia.org/wiki/This_Land_Is_My_Land
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+This Land is My Land is a stealth action video game developed and published by Game-Labs. It was released in early access for Windows in 2019, prior to its full release in October 2021. The game is set in the 19th-century American frontier and features a Native American protagonist resisting white settlers from the United States. It has been criticised for perpetuating stereotypes and for having no Native Americans involved with development.
+
+
+== Gameplay ==
+This Land Is My Land is a stealth action game set in an open world resembling the 19th-century American frontier. Players control a male indigenous protagonist, with no reference to any specific tribe or time period, as well as NPC allies to assist in scouting and other duties. The gameplay revolves around stemming the invasion of non-indigenous settlers into indigenous territory. The player can use weapons, set traps and baits, and mount a horse to hasten their travels.
+Every playthrough is different because the world changes every time a player restarts the game. Cities grow differently, camps develop in altered places, and patrols take new routes, so that the player does not have any reference points from the last playthrough.
+The game also features a "karma" system that penalizes the player for taking violent revenge on invading colonizers.
+
+
+== Development and release ==
+This Land is My Land was developed by Game-Labs. The game was released via Steam Early Access on Windows in late 2019; the full game was released on October 20, 2021.
+On February 24, 2022, Game-Labs announced that development on updates would be halted due to the 2022 Russian invasion of Ukraine and the members are prioritising saving their families.
+
+
+== Reception ==
+The game was criticised for its stereotypical portrayal of Native American peoples as a homogenous people rather than a varied group of peoples with different cultures, and for not consulting any indigenous people during the design and writing of the game. Baylee Giroux of Vice criticised the developer's denials of racist or stereotypical content, noting that they "could have listened respectfully to their criticism", but "instead they've done actual harm" with the creation of the game and its community.
+
+
+== References ==
+
+
+== External links ==
+Official website

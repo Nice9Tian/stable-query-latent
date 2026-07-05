@@ -1,0 +1,37 @@
+Game: The Shore
+appid: 1297300
+Source: The Shore (video game)
+URL: https://en.wikipedia.org/wiki/The_Shore_(video_game)
+Match score: 6.72
+Retrieved: 2026-07-04
+--------
+The Shore is a Lovecraftian horror exploration and adventure video game developed by Greek indie developer Ares Dragonis. The game takes place on a remote, mysterious island, where the protagonist is searching for his missing daughter.
+A playable demo of the game was released in July 2020. The full version of the game was released for Microsoft Windows on February 19, 2021.
+
+
+== Gameplay ==
+The Shore borrows elements from walking simulators and survival horror genres, with a large portion of the game's earlier levels being focused on navigating and interacting with the environment in search of clues and items that develop the story, while later sections involve combat and monster chase sequences. Certain abilities (e.g., the ability to jump) are gradually unlocked as the player progresses in the game, including 'The Artifact', a projectile weapon that can be used to stun and kill monsters. As part of the exploration component, The Shore features a variety of puzzles, many of which involve the player finding and using items scattered throughout the environment to unlock access to the next area of the game. 
+
+
+== Plot ==
+Based on the works of H. P. Lovecraft, The Shore tells the story of Andrew, a fisherman in search of his daughter on a mysterious island overrun with nightmarish Lovecraftian entities.
+
+
+== Development ==
+The Shore was mostly designed and developed by indie game developer and 3d character artist Ares Dragonis, who began working on the game in early 2019, mainly as a skills exercise. Working solo on the project for 11 months, Dragonis eventually joined forces with programmer Adonis Brosteanu and composer Thanos Zampoukas, with voice-over work for the main protagonist being provided by Brandon Fague. A playable demo of The Shore was released in July 2020, along with a crowdfunding campaign on Ulule to support a full commercial release. The campaign successfully ended in August, raising the necessary funds for Dragonis and Brosteanu to flesh out the game's Story mode.
+
+
+== Reception ==
+The original free-to-play demo of The Shore released in the summer of 2020 received widespread praise for its graphics and atmosphere, going on to gain financial support from Epic Games via its Epic MegaGrants program.
+After its release in February 2021, reception for The Shore has been mixed. The game currently has a "mostly positive" rating on Steam, with approximately seventy three percent of the users giving the game a positive review. On review aggregator site Metacritic, The Shore currently has an average score of 59/100 based on 7 reviews. Critics generally praised the game's visuals, atmosphere and sound design, but criticized the gameplay, particularly The Shore's puzzles and combat mechanics.
+
+
+== The Shore VR ==
+A few days after the game's release, developer Ares Dragonis announced plans for a separate version of The Shore with VR support. This version of The Shore released on Steam on 8 January 2022.
+
+
+== References ==
+
+
+== External links ==
+Official website

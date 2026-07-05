@@ -1,0 +1,37 @@
+Game: Totally Accurate Battle Simulator
+appid: 508440
+Source: Totally Accurate Battle Simulator
+URL: https://en.wikipedia.org/wiki/Totally_Accurate_Battle_Simulator
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Totally Accurate Battle Simulator (TABS) is a physics-based strategy video game developed and published by Landfall. An alpha version of the game was initially released in 2016 to a small audience. The game was released for macOS and Windows on April 1, 2019, for Xbox Series X/S in October 2021, for Nintendo Switch in November 2022, for PlayStation 4 in September 2023, for PlayStation 5 in December 2024, and for Android and iOS in August 2025. It has since received numerous free updates that have added new content, such as maps, units and new editors, in addition to fixing bugs and improving the performance.
+
+
+== Gameplay ==
+
+Totally Accurate Battle Simulator is a physics-based battle simulator, where the player creates an army of units to oppose an enemy army. The game encompasses two main modes: Campaign and Sandbox. In the former, players are given a limited amount of in-game currency to build an army and defeat a certain enemy force; in the latter, there is no currency limit and players build both armies. The two opposing armies can be placed on either opposite sides of the map, or one can surround the other, while the units can be placed however the player wants to. As soon as the player clicks "Start", the battle begins and the two armies rush forward to attack each other, controlled by artificial behaviour. 
+Once either army has been defeated, the battle freezes and the player is informed who won it. While armies typically win by defeating all enemy units, a May 2020 update added new winning conditions, such as surviving for a given amount of time or killing a specific enemy unit. During ongoing battles, players can move the camera around the map to get a better view of the fight, and can slow down or freeze time themselves. With the addition of a May 2019 update, players are also able to 'possess' units—controlling them manually from a third- or first-person perspective. The game has over 130 units across fourteen factions, which are mostly themed around different cultures and eras of human history. Such factions include the Tribal Faction (Prehistory), Farmer (Neolithic Revolution), Medieval (Middle/Dark Ages), Ancient (Classical Era), Viking (Viking Age), Dynasty (Sengoku Period), Renaissance (Renaissance), Pirate (Golden Age of Piracy), and Wild West (American Frontier). There are also five fictional factions, being Spooky, Good, Evil, Secret and Legacy. There are five scrapped factions, being Aztec, Napoleonic, World War, Neon, and Desert Kingdom. Some of these units are hidden on various maps and must be found by the player before they are unlocked. Many units have special abilities that are unique to them or they share with a few others, such as flight, projectile deflection, and teleportation. The game also features representations of the storytelling tropes of good and evil, with the good and evil sides having angelic and demonic themes respectively. The maps in the game are centered around the same themes as the factions and differ in size and geography. The game features twenty maps in total, with twenty-two additional "Simulation" maps. Various 'easter eggs' are scattered across maps of different levels, that unlock various special units if the player finds them.
+Players can create their own battle scenarios, choosing from any of the available units, maps, and winning conditions. A December 2020 update added the Unit Creator, where players can create their own units, giving them abilities, clothing, and weapons from the already existing TABS units, as well as the spin-offs Totally Accurate Battlegrounds and Totally Accurate Battle Zombielator. Both custom battles and units can be shared with other players via the in-game workshop. The full release of the game in April 2021 added both online and local multiplayer modes, and achievements. A new update on 20 November 2022, added a map creator, allowing players to create their own battlefields and landscapes.
+
+
+== Development ==
+
+The game was made during a week-long game jam in a Swedish castle. The game was developed using the Unity game engine. Landfall released the download for people who signed up to their website in July 2016. The game was released in open alpha in November 2016, while the closed alpha was released in December 2016. The full version of the game was released in early access on Steam on 1 April 2019 for Windows and macOS.
+On 9 June 2019 at the E3 convention, Xbox announced via their Indie Developers program that TABS would be coming to Xbox One in the Xbox Game Pass later that year. It was released via Xbox Game Preview on 20 December 2019. On 1 April 2020, free downloadable content (DLC) for the game, entitled the Bug DLC, was released; for a limited time, players could buy the DLC, with half the money raised being donated to Doctors Without Borders.
+The game exited early access for Windows and Mac on 1 April 2021. The Xbox One version was released on 5 October 2021, followed by a Nintendo Switch port of the game on 3 November 2022, with a version for PlayStation 4 released on 5 September 2023. The PlayStation 5 version was released on 17 December 2024. The iOS and Android version was released on 7 August 2025.
+
+
+== Reception ==
+The game received generally positive reviews. It has been referred to as a "vibrant and goofy take on chaotic combat", and its "silly graphics and kind of wonky body physics" were told to be part of the "charming appeal of an otherwise realistic simulator". The game has also been noted as "brilliant in its simplicity" and "outstanding". The battles were described as "madness" but with a "clever piece of mathematical symmetry", reminding people about armies of toys they used to built in their childhood.
+
+
+== Spin-offs ==
+Two spin-offs, Totally Accurate Battle Zombielator, which is a parody of the survival horror genre, and Totally Accurate Battlegrounds, a parody of the battle royale genre, were released on 1 April 2017 and 5 June 2018, respectively.
+
+
+== References ==
+
+
+== External links ==
+Official website

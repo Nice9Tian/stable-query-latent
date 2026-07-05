@@ -1,0 +1,42 @@
+Game: Kingdom Eighties
+appid: 1956040
+Source: Kingdom (video game)
+URL: https://en.wikipedia.org/wiki/Kingdom_(video_game)
+Match score: 6.88
+Retrieved: 2026-07-04
+--------
+Kingdom is a strategy and resource management game developed by Dutch developer Thomas van den Berg and Iceland-based Marco Bancale with support from publisher Raw Fury. Originally released as a flash game in 2013, the title was released on 21 October 2015 for Microsoft Windows, macOS, and Linux systems. A reworked version of the game, titled Kingdom: New Lands, was released in August 2016, and a sequel, Kingdom Two Crowns, was released in 2018. A second sequel, developed by Fury Studios, titled Kingdom Eighties: Summer of Greed launched on October 16, 2023, for Windows via Steam. 
+The game is played out on a pixel art-based two-dimensional landscape; the player controls a king or queen that rides back and forth, collecting coins and using those coins to spend on various resources, such as hiring soldiers and weaponsmiths, building defenses against creatures that can attack and steal the monarch's crown which will end the game, and otherwise expanding their kingdom. The player has otherwise little direct control of the game, and thus must use the coins they collect in judicious ways.
+Kingdom received generally positive reviews appreciating the game's art and music, and its approach that required the players to figure out what to do based on these elements, but felt that the tedious nature of some tasks in the game affected its end-game and replayability.
+
+
+== Gameplay ==
+Kingdom is presented to the player in a pixel art, two-dimensional screen, with the goal to build up and create a kingdom while surviving various foes that will attempt to capture the player-character's crown, effectively ending their rule. The player starts the game with a randomly generated king or queen on horseback. The player can move the character on horse to the left or right, including at a gallop, but has no other direct action. As the character passes landmarks, these will produce a few coins, from which the player can pick up by riding over them, and spend on various resources, which will be marked with open coin slots when the character passes near them; to purchase an upgrade, the player must be able to provide all the required coins at that time.
+Initially, such resources will include hiring wandering travelers (vagrants) to become part of the kingdom and creating smiths to craft weapons and tools. As the player gathers more resources, new options to spend coins will open up. For example, once the player has a citizen of the kingdom with a tool, they can build defensive walls. Many such resources include upgrades that can be purchased with coins. To get more coins, the player roams their kingdom, collecting them from their subjects; static landmarks can grant more coins, as well as working people who fund the player after they complete certain tasks independently (such as farming or hunting game).
+While exploration of the kingdom can lead to finding more coins and potential resources, the areas away from the main kingdom center can become more dangerous for both the player-character and any followers; further, the game has a day-and-night cycle in which more harmful creatures can roam the kingdom at night, with subsequent nights becoming more and more dangerous. Other nights may have blood moons, which will cause much larger hordes of creatures to appear. These creatures will work to destroy existing resources that the player has created, steal gold from the player-character, and if the player-character has no gold, steal their crown, which represents failure in the game from which the player will need to restart the game. The player is encouraged to manage the construction of defenses and guards to manage those defenses against the need to expand and improve the kingdom. There is an ultimate goal to achieve victory, though the player must come to determine that for themselves.
+
+
+== Development ==
+Kingdom was developed by the two-man team of Amsterdam-based Thomas van den Berg and Iceland-based Marco Bancale, who go by the aliases noio and Licorice, respectively. The game is an expanded, standalone version of a Flash game by noio. The development of the game was supported by Raw Fury, a Sweden-based publisher launched by former members of Paradox Interactive and EA DICE. In May 2019, Raw Fury acquired the rights to the series from van de Berg, allowing the publisher to continue development.
+In mid-2016, Raw Fury announced Kingdom: New Lands, an expansion to the original game. New content was added to the game and addressed some of the repetitive aspects critics found on the game's original release, such as adding new explorable lands and a seasonal climate system that affects gameplay. The expansion released on 9 August 2016, with owners of the original game able to update for free.
+Within one day of its Windows, macOS, and Linux release, Raw Fury announced that it had sold enough copies to pay for the game's development. As a result, they affirmed that they will be releasing the title for the Xbox One, and that all future improvements and expansions to the game will remain free to players on the aforementioned platforms. The team also later announced plans for a port to the Nintendo Switch. The game released alongside the "New Lands" update for Nvidia Shield on 29 September 2016, for iOS on 9 March 2017, and for Nintendo Switch on 14 September 2017.
+A sequel, developed by Noio and Coatsink, Kingdom Two Crowns, was released on 11 December 2018 for Microsoft Windows, macOS, Linux, Nintendo Switch, PlayStation 4, and Xbox One, and for iOS and Android on 28 April 2020. DLC for the game, titled Kingdom Two Crowns: Norse Lands was made available on 16 November 2021. A second sequel developed by Fury Studios, titled Kingdom Eighties: Summer of Greed was announced on 10 May 2022 for Windows via Steam and was released on October 16, 2023.
+
+
+== Reception ==
+
+Kingdom has received generally favorable reviews. Dan Stapleton of IGN gave the title a 7.7 out of 10, and felt the lack of instruction combined with the tension of the various random attacks created a great experience for the game. Robert Purchase of Eurogamer gave the game a "Recommended" rating, believing the game achieved the right balance between being fair to the player while the player learns the mechanics of the game. James Davenport of PC Gamer, giving the game a 70 out of 100, was more critical of the lack of instruction, noting that a half-hour's worth of gameplay investment could be wiped away due to the player not being aware of how certain mechanics work, and that the game would be one to test a player's patience. Reviewers praised the game's retro pixel art look and its chiptune soundtrack, which created the appropriate atmosphere for the title and provided appropriate visual and audible clues as events in the game for the player to pick up on.
+Reviewers commented that once the player understood the mechanics, the end-game and subsequent replays could become tedious. Stapleton found that the lack of information or means to manage the kingdom at the end-game made the end game more frustrating than difficult, and that once he had found a strategy to deal with the attacks, the game became too easy to play. Davenport commented that while the late game can be exciting on subsequent playthroughs, the early game of setting up the initial kingdom can become monotonous.
+Kingdom was nominated for the Excellence in Design award for the 2016 Independent Games Festival.
+The Kingdom games had sold over 4 million copies as of May 2019.
+
+
+== Notes ==
+
+
+== References ==
+
+
+== External links ==
+Official website
+Official website for the original 2013 Flash game

@@ -1,0 +1,37 @@
+Game: Super Animal Royale
+appid: 843380
+Source: Super Animal Royale
+URL: https://en.wikipedia.org/wiki/Super_Animal_Royale
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Super Animal Royale is an indie battle royale video game developed and published by Pixile Studios. The game features 64-player matches starring anthropomorphic animals who use a variety of weapons and firearms from a 2D overhead perspective and was built using the Unity game engine. An early version debuted on Steam Early Access on December 12, 2018, with a free-to-play demo version released the following month in January 2019. An Xbox One and Xbox Series X/S version appeared on Xbox Game Pass in game preview on June 1, 2021. The game left early access on Steam and was released for macOS, Microsoft Windows, Nintendo Switch, PlayStation 4, PlayStation 5, Xbox One and Xbox Series X/S on August 26, 2021, and for Google Stadia on December 14, 2021.
+
+
+== Gameplay ==
+Super Animal Royale (or SAR for short) is a 2D, top-down, third-person battle royale shooter. The game currently consists of up to 5 different game modes including "Solo", "Duos", "Squads", "SAR vs. Rebellion", and "The Bwoking Dead". Up to 64 players compete to be the last person standing, using a variety of weapons. When joining, players are placed in the lobby, whereupon they have to wait until the match starts. At the start of the match players are riding the Giant Eagle (excluding the "Bwoking Dead"), and can eject, using an umbrella to fly to a spot on the map. The map has various biomes and locations, such as Pete's Swamp, Superite Mountain, and the Super Penguin Palace.
+Players create a character from one of several "Super Animals", anthropomorphic animals of different species and subspecies, some fictional. Species and subspecies are unlocked by collecting animal DNA, and super serum awarded after each match. Other post-match awards include Carl Coins, EXP, and various cosmetics. Experience points are granted based on the player's performance at the end of each game, which allows them to level up, and they can use post-match rewards to unlock new species and cosmetic items. There are various cosmetic items, such as sunglasses, hats, different melee weapons, and outfits. Some can be unlocked by reaching certain milestones (such as ties for kills-based milestones and bow ties for matches played.) 
+After joining a lobby, players mingle in a non-combat area until the match begins, with non-player bots joining the queue if less than 64 human players are present fifteen seconds before the start of the game. In a recent interview, developers Michael Silverwood and Ruben Grijalva in fact, promised that the upcoming new additions will focus on making this hub a place to socialize where players can be there as long as they like. Each combatant parachutes from a large eagle onto a battlefield (Super Animal World) containing weapons, protective armor, and Health Juice which can be stocked to restore health when needed. Initially wielding a katana or another equipped melee weapon, players can find automatic and semi-automatic guns and ammunition along with grenades and other throwable items used to defeat other players. Hamster balls can also be entered for protection, faster transport, and as a method for running over opponents, dealing damage. Super skunk gas will creep in from the outer edges of the map as the match progresses, forcing players into progressively smaller areas until the end of the game. Each game can be joined solo, as a duo, or as a squad. Super Animal Royale features "seasons" which are mainly drops of new weapons, Super Animal species, and cosmetics. Each Season also features a season package (paid) which grants SAW tickets (a paid currency) and various cosmetics. There is also a season pass, paid for in SAW tickets, which, as you play matches, lets you unlock various cosmetics. 
+Past Seasons
+The current season is Season 13, known as the Bright Future, and the season pass is free to everyone. This followed Season 11's By Popular Request Pass and Season 10's Dragon Loot Pass. Season 9 was known as the Party Animal Update and came after the Season 8 the Sea Leg's Pass and Season 7's Super Healthy Pass.
+
+
+== Development ==
+Super Animal Royale began development in October 2017 by members of Pixile Studios. The game was inspired by similar shooter games such as H1Z1 and PlayerUnknown's Battlegrounds, with its 2D aesthetic taken from "classic top-down adventure games" such as The Legend of Zelda. Lead designer Michael Silverwood and lead developer Chris Clogg built the game in Unity, and created the line-of-sight mechanic of hiding players in object's shadows by modifying an existing Unity plugin to aid with performance. Silverwood stated that his decision to have the game feature cartoon animals was that he liked the absurd humor of juxtaposing whimsical, colorful characters with surprisingly angry and violent personalities.
+Sign-ups for the alpha version began in March 2018, where players could register on the title's official website. A later version of the title was released on Steam Early Access on December 12, 2018, which launched with a "Free Weekend" promotion for the following four days. On January 3, 2019, a permanent free-to-play demo version was released which allows players to transfer their progress and unlocked content to the full, paid version of the game when purchased.
+On May 8, 2024, Michael Silverwood announced Super Animal Royale would be going independent, no longer having Modus Games as the game's publisher, with Pixile Studios self-publishing Super Animal Royale on all platforms.
+After the game was released on all platforms, Pixile Studios released a teaser for Super Animal World, an expansion to the game that is more chill than the typical battle royale game that players are used to.
+As of now, the "Super Animal World expansion" has been added to the game since December 9, 2025. This free expansion added a social hub, fishing, bug catching, Hamsterball racing, and 350+ new quests to the game.
+
+
+== Reception ==
+
+As of May 2022, Super Animal Royale has 30,000 reviews on Steam, with 92% of the reviews being positive.
+
+
+== References ==
+
+
+== External links ==
+Official website
+Developer website

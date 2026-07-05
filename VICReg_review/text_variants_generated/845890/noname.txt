@@ -1,0 +1,9 @@
+This title is a turn-based strategy and tactical skirmish game developed by a studio known for another acclaimed sci-fi series. It is presented as a digital miniatures experience set in a large science-fiction universe created in collaboration with a best-selling fantasy and sci-fi author.
+
+The game focuses on approachable competitive play built around fast-paced, turn-based battles. Players command squads of units in strategic skirmishes that can be played against other players, against AI opponents, or in a single-player roguelike mode. The structure is designed to be easy to learn while still offering depth and replayability.
+
+A central part of the experience is roster building. Units are not interchangeable: each one has distinct abilities, playstyle, and personality, which means different rosters can support very different tactics. Players can assemble multiple team compositions to explore new dynamics and adapt their approach to combat.
+
+Another major feature is unit painting. The game provides digital tools intended to evoke the process of painting physical miniatures, while removing real-world limitations. Tools such as undo, masking, and zoom are included to support detailed customization and creative expression.
+
+The setting is also a significant draw. The world is populated by varied characters and cultures, and its lore is expanded through audio dramas, fully voiced in-game dialogue, and an unlockable codex. Together, these elements create a sci-fi strategy game that combines tactical battles, team customization, artistic creation, and narrative worldbuilding.

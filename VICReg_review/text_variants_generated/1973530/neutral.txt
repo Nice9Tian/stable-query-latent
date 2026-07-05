@@ -1,0 +1,7 @@
+*Limbus Company* is a turn-based RPG with real-time brawl elements, set in the distinctive world created by Project Moon. In combat, both sides act simultaneously during each turn, and characters targeting one another can enter a Clash. Clash outcomes are determined by the strength of the opposing skills, along with a degree of luck, and the winner can interrupt the loser’s skill. Success therefore depends on choosing the right skills to gain advantage in these confrontations.
+
+The game also features a direct command system in which players connect skill icons across a grid to guide their units’ actions. Linking skills of the same color increases damage, allowing for straightforward but tactical control over how the Sinners act in battle.
+
+Strategic team building is a major part of the experience. Players can assemble teams using different Identities and equip E.G.O to create strong synergies. Enemies use a range of Affinity-based attacks and special effects, while Abnormalities present especially demanding encounters. To progress, players must learn enemy behavior and weaknesses and build teams suited to overcoming them.
+
+The story takes place in a large dystopian metropolis and follows a cast of 12 Sinners on a journey to find the Golden Boughs. As a work from the creators of *Lobotomy Corporation* and *Library of Ruina*, it continues in the same setting and presents a new narrative with a series of events to experience. The main story dialogue is fully voiced in Korean.

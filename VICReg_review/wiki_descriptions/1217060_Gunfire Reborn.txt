@@ -1,0 +1,31 @@
+Game: Gunfire Reborn
+appid: 1217060
+Source: Gunfire Reborn
+URL: https://en.wikipedia.org/wiki/Gunfire_Reborn
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Gunfire Reborn is a 2021 roguelike first-person shooter video game developed by Duoyi Games. It was released for Microsoft Windows in November 2021. It was followed by mobile ports in May 2022, then released on Xbox One and Xbox Series X/S in October of the same year, and released for the PlayStation 4 and PlayStation 5 in June 2023. A Nintendo Switch port is also in the works.
+
+
+== Gameplay ==
+One to four players must progress through four zones which each contain a number of levels filled with rooms that need to be cleared one by one before they move to the next. Each level is randomly generated but with a boss at the end of each level. When killing enemies players will collect coins and essence which they can use to purchase weapons, occult scrolls, and level up weapons to make them more powerful. Enemies also drop weapons occasionally for the player to use. Throughout the levels there are possibilities for hidden areas called Vaults hidden behind cracked walls, once entered the player must complete one of the various trials from four different types: Non-Fighting, Fighting, Elite and Special. Each level possesses unique enemies to suit the aesthetic, which each have their own attack patterns, such as Grenadiers, Spear-Throwers, Desert Coyotes, and Crossbowmen. In metagame, players unlock access to new playable characters and permanent upgrades, talents, for these characters with the use of essence as well as seeing achievements. New occult scrolls and weapons can be obtained by completing challenges in-game.
+
+
+== Development ==
+Gunfire Reborn is developed by Chinese studio Duoyi Games and features a cel-shaded low polygon aesthetic. Inspired by Borderlands and Enter the Gungeon, Gunfire Studio thought a roguelike would be most beneficial design. While designing the game, Gunfire Studios decided that it would be better to have randomized scrolls and weapons so the player will be able to experience different builds every time the player starts from the beginning. The game was created with the use of the Unity engine.
+Gunfire Studios released the game into early access on Windows via Steam, on May 22, 2020, then went into full release on November 18, 2021. The game was also released on iOS and Android devices in May 2022. The Xbox One and Xbox Series X/S versions of the game were released on October 27, 2022, and joined the Xbox PC Game Pass at the same time. The PlayStation 4 and PlayStation 5 versions were released on June 8, 2023.
+
+
+== Reception ==
+
+Gunfire Reborn received "generally favorable" reviews according to review aggregator Metacritic.
+Marco Bortoluzzi of The Games Machine summed Gunfire Reborn as a game where you shoot a lot while collecting powerups with a potentially addictive formula and gave it an 8.5/10. Elijah Beahm of The Escapist compares the correlation to the Borderlands series enjoyed how while it is easy to feel quite powerful, the game can be easily lost after only a few hits.
+As of November 2021, Gunfire Reborn had sold 2 million copies.
+
+
+== References ==
+
+
+== External links ==
+Official website

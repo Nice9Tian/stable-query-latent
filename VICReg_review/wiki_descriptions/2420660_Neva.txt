@@ -1,0 +1,36 @@
+Game: Neva
+appid: 2420660
+Source: Neva (video game)
+URL: https://en.wikipedia.org/wiki/Neva_(video_game)
+Match score: 5.53
+Retrieved: 2026-07-04
+--------
+Neva is a 2024 puzzle-platform game developed by Nomada Studio and published by Devolver Digital. It follows a young woman named Alba who must travel with her wolf companion Neva across four seasons in a world corrupted by darkness. The game was released for Windows, macOS, Nintendo Switch, PlayStation 4, PlayStation 5 and Xbox Series X/S in October 2024. A standalone expansion and a prequel for the game, titled Neva Prologue, was released in February 2026.
+
+
+== Gameplay ==
+The game follows a young woman named Alba who forms a lifelong bond with a wolf companion named Neva as the pair explore and cleanse a world corrupted by dark forces. The game is divided into several chapters which sees Neva grow from a young cub to a full-grown adult.
+Neva is a side-scrolling platform game in which players need to solve environmental puzzles and fight creatures of the darkness to progress. The player character controls Alba, who can call Neva's name to encourage it to reach the player's desired location. Neva features a combat system. Alba is equipped with a sword and she has two basic combat moves: a horizontal slash and a vertical slash. She can also jump, double jump, perform a short air dash, and dodge hostile attacks. By chaining attacks together, Alba's lost health will slowly regenerate. Healing cairns can also be found in each level. Alba's skills cannot be upgraded, but Neva will become stronger and assist Alba in both combat and traversal.
+
+
+== Development ==
+Neva was Spanish game development company Nomada Studio's second game, following Gris (2018). The studio recruited a larger team for the project, and the game's length was about twice as long as Gris. As with Gris, the game had nearly no dialogue, with the exception of Alba calling Neva's name in various intonations. The team felt that the game being wordless left room for players to freely interprete the events of the game. The story originally revolved around two humans, though the team scrapped this plan as they were impressed by the early drafts for Neva. Princess Mononoke served as an important inspiration for the game's visual design. Unlike Gris, the studio's previous game, the game features a combat system, though the team introduced a story mode to ensure that the game is approachable for all players.
+According to Adrian Cuevas, the founder of Nomada Studio, the team wanted explore the relationship through parents and their children, how these relationships change gradually over time, and "how a parent feels when raising a kid, as the kid grows and changes". The team was inspired by their own experience raising a child. In the game, which was divided into four chapters, Neva slowly turns from a timid young cub, to a teenager eager to jump headfirst into dangers, into a fully-grown adult. While Neva gains a lot of new abilities, Alba's core abilities remained unchanged throughout the game. The team wanted players to have mixed emotions: to feel scared when Neva's life is at risk, and to be delighted when Neva performed well. The enemies in the game were inspired by the environmental challenges faced by the Earth. They are the embodiment of fears that one may have raising children. While the earlier segments of the game had a more delightful tone, the later segments of the game contrasted it by having both characters threatened by this corruption.
+Neva was announced by Nomada Studio and publisher Devolver Digital in May 2023. The game was released on October 15, 2024, for Windows PC, macOS, Nintendo Switch, PlayStation 4, PlayStation 5, Xbox Series X/S. A standalone expansion, titled Prologue, is set to be released on February 19, 2026. It serves as a prequel to the game, though it was designed for players who had finished the main game as its gameplay is more difficult. The expansion also introduced three new locations, as well as additional enemy types and boss encounters.
+
+
+== Reception ==
+
+Neva received "generally favorable reviews" according to review aggregator platform Metacritic. According to OpenCritic, 95% of 111 critics recommend the game.
+Keza MacDonald from The Guardian lauded the game, commending its "extraordinary visuals and elegant animation" and "chest-tighteningly effective music". She also praised the seasons in the game for being distinct from each other, as each has its own distinct tone and gameplay challenges. She compared the game to Journey and praised its ability to evoke strong emotions during its short runtime. Writing for Polygon, Nicole Carpenter wrote that the combat encounters show "the evolution of Alba and Neva’s relationship rather than existing as an element of sheer challenge", and that its runtime was suitable for game that was "ethereal" and "devastatingly beautiful". Christopher Cruz from Rolling Stone described Neva as the "most heartbreaking game of 2024". He compared it to films by Studio Ghibli, applauding its art design and its ability to tell a story that is "highly accessible and deeply affecting". The last segment of the game set in winter, in particular, received critical acclaim.
+Echo Apsey from Push Square praised the game's combat and puzzles, and wrote that the boss encounters in the game were "memorable, challenging, and visually impressive". While she noted that the game kept introducing new gameplay mechanics, some of them did not last long enough for players to truly appreciate them. While Jessica Conditt from Engadget described Neva as a "light and responsive platformer", Alice Bell from Rock, Paper, Shotgun felt that the combat lacked precision.
+
+
+=== Awards and nominations ===
+
+
+== References ==
+
+
+== External links ==
+　Official website

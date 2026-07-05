@@ -1,0 +1,44 @@
+Game: My Friendly Neighborhood
+appid: 1574260
+Source: My Friendly Neighborhood
+URL: https://en.wikipedia.org/wiki/My_Friendly_Neighborhood
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+My Friendly Neighborhood is a 2023 indie survival horror video game developed by brothers John and Evan Szymanski and published by DreadXP. Inspired by the children's shows Sesame Street and The Muppets, the game follows a repairman who is sent to disable the signal at an abandoned television studio, where the puppets from the canceled show have come to life and become hostile.
+
+
+== Gameplay ==
+Years after a children's show has ended, the abandoned studio mysteriously begins broadcasting again. Players control Gordon O'Brian, a repairman sent to investigate and disable the signal. When now-sentient puppets from the show attempt to hunt down and unintentionally kill Gordon, players must evade or defeat them while solving puzzles. Defeated puppets revive when Gordon re-enters a room unless he has tied them up with his limited supply of duct tape. Gordon can find and use several improvised weapons, such as a shotgun-like weapon called the Stenographer (or Rolodexer) that shoots letters of the alphabet. Limited amounts of other power-ups can also be found, including items that allow players to save their progress or heal themselves. It is played from a first-person perspective and features multiple endings based on the players' actions, such as choosing to help puppets with their problems rather than ignoring them.
+
+
+== Synopsis and plot ==
+
+
+=== Setting ===
+In a world where sentient puppets are a normal occurrence, Ricky with Friends was a children's show created by Al Gerzwald that began on public access, with the aim of bringing joy to children while teaching them life lessons. After its success on public access, the show was picked up by the City Network Broadcasting Group and its title was changed to My Friendly Neighborhood. Production took place in the City Network Hotel and the first episode aired on November 9, 1968. It was an instant hit, with children drawn to the lovable neighbors and their idealistic world. A film franchise followed, as well as hundreds of episodes over the next decade.
+Whilst My Friendly Neighborhood was popular for many years, its downfall began as a result of a war waging on the Northern Continent that lasted for 20 years and claimed almost 100,000 lives before ending on February 4, 1972. The war being televised had repercussions that changed the television landscape, moving further away from the positive family-friendly outputs and more towards more negative adult content. Audiences became jaded and conditioned by the graphic imagery appearing on the screens during wartime and wanted programming to reflect that.
+By the early 1980s, a shift had occurred with programming moving towards crime and drama shows that appealed to the generation of children who grew up during the televised war, with My Friendly Neighborhood and its wholesomeness no longer fitting in. The City Network Broadcasting Group thus instructed Al to change the tone of the show and reimagine its core principals. Around that time, the city went through a massive economic downturn and was thus being bought up by business tycoon Ronald Richbaucher and his company Nebuzaradan Enterprises, evicting many citizens from their homes as he strove to create a city that could withstand the future by placing profits ahead of the wellbeing of consumers. This turned the city into a dark and hostile place.
+My Friendly Neighborhood struggled to keep up with the new format of televised broadcasting, which favored pessimism over optimism. A scandal also happened on the set in which one of the puppets, Ray, assaulted the show's lead human actor Richie Bromine, leading Richie to quit and the show losing its leading man. This, coupled with box office failures and a lack of interest in the show due to a jaded post-war generation of viewers, led to the show’s cancellation on July 15, 1983. Al gave a final recorded address to his young viewers in which he said that while darkness exists in people's hearts, there is also light, and urged his viewers to try and find the light and see the best in humanity.
+
+
+=== Plot ===
+Gordon J. O'Brian is a cynical handyman and war veteran who is on probation from his employer due to his "sullen and impolite" behavior towards clients. One day, the City Network Broadcasting Group's abandoned building on 123 Sunrise Street suddenly turns on and begins broadcasting signals for their long-cancelled puppet show My Friendly Neighborhood. On July 8, 1993, Gordon is sent to his last job of the day at the building, where he finds things out of place. He meets a sock puppet named Ricky, who is surprised that Gordon has been sent to disable the studio's antenna. After encountering malicious puppets, Ricky reluctantly allows Gordon to use weapons to protect himself against the puppets.
+Throughout the game, Gordon is helped out by Ricky and encounters other puppets who are in disarray over their current state. Gordon can either ignore or help the puppets; doing the latter will result in Gordon opening up and becoming more cordial about his own living situation. Eventually, Gordon makes his way up to the broadcasting tower, where Ricky appears and states his belief that the reason their show was cancelled was because people preferred to be dark and cynical rather than be happy. Despite Ricky's attempts to convince him otherwise, Gordon shuts off the signal but the tower is struck by a bolt of lightning, sending Gordon falling into the basement of the building.
+Through a payphone in the basement, Ricky tells Gordon why the puppets have turned malicious: when the show was airing, the producers would not allow the puppets to watch television. After the humans left, the puppets saw other television shows for the first time, only to be horrified and driven insane by what they saw. With the elevators locked, Ricky tells Gordon that he must venture through the abandoned basement set of the "Unfriendly Neighborhood" and turn on the emergency switch. Gordon faces off against deformed versions of the puppets he has encountered before defeating the Amalgamuppet, a monstrous amalgamation of the demented puppets.
+Gordon approaches his truck, but Ricky appears and asks him if he could stay and help run the studio instead, prompting three potential endings. In the good ending, the player says yes after having helped a specific list of puppets throughout the game, and Gordon is fired from his repairman job but is happy and at peace running the studio. In the neutral ending, the player says yes without having helped all of the aforementioned puppets, and Gordon helps to get the studio running again but eventually stops showing up at the studio and sometimes finds himself wondering what happened to the puppets. In the bad ending, the player says no and leaves, after which Gordon's bosses congratulate and promote him; he often thinks about the puppets, but soon moves on and forgets them. There is also a secret fourth ending which can be triggered by getting in the truck and leaving halfway through the game, which results in a similar ending to the bad ending, except Gordon gets fired.
+
+
+== Release ==
+DreadXP released the game for Windows on July 18, 2023. Two years later, it was released for the PS4, PS5, Xbox One, and Xbox Series X/S on July 17, 2025. The game was made available on Xbox Game Pass.
+
+
+== Reception ==
+Based on nine reviews, Metacritic described My Friendly Neighborhood as receiving "generally favorable" reviews. Slant Magazine said it "isn't all that scary or all that tense" but praised its setting as "truly exceptional" and said that it showed "a tangible love and care" in bringing it to life. Polygon similarly called the worldbuilding "remarkable", praised the strategic choices players have to make, and recommended it to people looking for survival horror games that are "light on gore and heavy on spine-tingling thrills". Adventure Gamers described it as "Resident Evil or Bioshock with chattering Muppets" and recommended it as a "charming and genuinely fun" game made by people who are clearly fans of survival horror. Hardcore Gamer recommended it as "a pleasant surprise and a genuine delight" and praised the story, characters, visuals, and puzzles.
+
+
+== References ==
+
+
+== External links ==
+Official website

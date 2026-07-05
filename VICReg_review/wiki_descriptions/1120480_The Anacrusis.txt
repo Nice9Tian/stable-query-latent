@@ -1,0 +1,33 @@
+Game: The Anacrusis
+appid: 1120480
+Source: The Anacrusis
+URL: https://en.wikipedia.org/wiki/The_Anacrusis
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+The Anacrusis is a first-person shooter video game released in December 2023, following a period of early access that began in January 2022. Primarily a co-operative multiplayer game, a team of four must overcome hordes of alien invaders on board a space station to reach a specified goal. The game is the debut title by Stray Bombay, and the gameplay is similar to the Left 4 Dead series, on which studio co-founder Chet Faliszek had previously worked.
+
+
+== Gameplay ==
+
+The Anacrusis is a first-person shooter with a focus on co-operative gameplay in a similar style to the Left 4 Dead series. The game is set on board a retrofuturistic space station during an alien incursion. In the main campaign mode, a four-player team must fight their way through alien hordes to reach the objective. Among the horde are special aliens with unique abilities, such as the Flasher, who can blind players. Players can upgrade their characters during the campaign by finding Matter Compilers, which will award the player with a selection of randomly selected upgrades.
+The game uses a dynamic difficulty system, and because it was built upon the AI Director philosophy from Left 4 Dead, it was named the AI Director 2.0. The Director 2.0 adjusts enemy placements to create moments of downtime in between moments of intensity, with aim to make every team feel like they're operating at the limits of their capability. The Director 2.0 has more inputs available to it compared to Left 4 Dead, and has more levers to vary the difficulty and intensity, such as adjusting Matter Compiler points to encourage risky detours.
+Aside from the main campaign, there is a timed co-operative Holdout mode; and a player versus player Versus mode, which allows players to control the special aliens against the human survivors. When there are fewer than four-players, bots will act as a substitute. The game supports cross-platform play between Windows and Xbox platforms.
+
+
+== Development ==
+Stray Bombay was formed in 2019 by Chet Faliszek and Kim Voll with the intention to create co-operative video games. Faliszek had previously worked on the Left 4 Dead series as a writer and co-lead. The Anacrusis was announced two years later at the 2021 Summer Games Fest, and would become their debut title. The name refers to the musical term anacrusis, referencing the notes before the first downbeat in a piece of music; Falizsek explained that the player characters get caught in a skirmish against the alien threat "in the beats before [it] turns to soldiers, pilots, and space fighters". The game's setting was inspired by 60s and 70s science fiction, Faliszek enjoyed shows such as Space: 1999, Logan's Run, and Battlestar Galactica when he was growing up, and he describes the sci-fi of this era as "more about taking what we have in the real world but making it strange [rather than]  smaller/faster/better that happened once the integrated circuit captured the public's imagination."
+The game was released in early access on January 13, 2022, with an initial three co-operative campaign episodes. Stray Bombay updated the game throughout the early access period, and valued the feedback they received through their public Discord channel. Mod support had been a priority for Stray Bombay, and an update in June 2022 included community made mods; full Steam Workshop integration came in November 2022. A new Holdout co-operative game mode was added in April 2022, and fourth campaign episode was released in beta form in October 2022. By January 2023, Rock, Paper, Shotgun noted the game had more varied weaponry, enemies that provided more feedback on being hit, and general improvements to the game's stability, though cautioned that "plenty of glitches could [still] use some attention". In June 2023, Stray Bombay released Versus Mode for the game, and was the last game mode to be released before the game's official launch in December 2023, which also saw the release of the fifth campaign episode.
+Prior to the full release of the game, Faliszek reflected on the early access experience, and wrote that he would not use it for future releases. He said that for smaller multiplayer games like The Anacrusis, the concurrent player count was under-counted in the publicly visible Steam statistics, discouraging potential customers from buying a supposedly "dead game". He also believed making the game available through Game Pass had cannibalised their sales.
+
+
+== Reception ==
+Reviews during the early access period were mixed. Tyler Wilde, writing at PC Gamer found The Anacrusis less appealing than Left 4 Dead. He described the space station setting as "more like arena shooter levels than human habitats". He criticised the lack of feedback from the guns and the enemies, describing the weaponry feeling like "a UI element rather than an object", and that the enemies "can come across like holograms that don't truly inhabit the space or feel the impacts of sizzling plasma bolts". IGN had similar concerns about the gunplay, their reviewer Luke Winkie wrote, "there are only three basic weapons, and each of them feel nearly identical and lack the same kinetic, fleshy feedback you find in say, Back 4 Blood." Others were more positive, Andy Brown at the NME fondly recalled his experience holding out against a horde on The Anacrusis's space disco level to its "catchy funk-rock soundtrack". The team at Rock, Paper, Shotgun found the perks interesting, noting how it could allow for a degree of specialisation in the characters, and saw promise in the replayability offered by the Director.
+Reviews did not improve following the game's official launch. IGN revisited the game and awarded it 4/10, and the Edge review gave it 5/10. Both outlets enjoyed the retrofuturistic space station aesthetics, but it was not enough to overcome the derivative gameplay.  Edge wrote that "the weapons and enemies are nigh indistinguishable from their Left 4 Dead counterparts" and that the special aliens were just "familiar monsters in futuristic cosplay". IGN reviewer Travis Northup agreed, concluding that "[it] borrows so much from Left 4 Dead that it forgets to do its own thing and refuses to benefit from 15 years of co-op shooter evolution".
+
+
+== References ==
+
+
+== External links ==
+Official website

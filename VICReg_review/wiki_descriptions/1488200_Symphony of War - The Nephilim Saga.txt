@@ -1,0 +1,28 @@
+Game: Symphony of War: The Nephilim Saga
+appid: 1488200
+Source: Symphony of War: The Nephilim Saga
+URL: https://en.wikipedia.org/wiki/Symphony_of_War:_The_Nephilim_Saga
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Symphony of War: The Nephilim Saga is a tactical role playing video game developed by Dancing Dragon Games and published by indie.io in 2022.
+
+
+== Gameplay ==
+Symphony of War: The Nephilim Saga is a tactical role-playing game.  Players control squads of up to nine units, which engage in battle automatically, similar to auto battlers.  Depending on the quest, they can field up to 20 squads on the overworld map, each led by a squad commander.  Progressing through quests allows players to gain special abilities that may make combat easier.  Characters can form bonds with each other, including romances.
+
+
+== Development ==
+Lead developer Phil Hamilton was inspired by Ogre Battle and Fire Emblem.  To differentiate Symphony of War: The Nephilim Saga from the Fire Emblem games, Hamilton increased the scope of battles while scaling back the customization of individual troops, moving this instead to squad-level decisions.  It was important to Hamilton that the game be balanced for any style of gameplay, and he playtested the game with various strategies, such as using all mages or all archers for his squads.  The game was originally developed in RPG Maker, but the engine was heavily customized.  Freedom Games published Symphony of War: The Nephilim Saga on June 10, 2022.  The game may be ported to other platforms eventually.
+
+
+== Reception ==
+
+Symphony of War: The Nephilim Saga received positive reviews on Metacritic. Rock Paper Shotgun's reviewer, who said she initially found it good "for an RPG Maker game", eventually came to believe to it to be one of the year's best games.   Although PC Gamer criticized the story writing as melodramatic, they concluded, "Novel tactical mechanics make this indie a contender for the best strategy RPG this year."  RPGSite said the game's quality and professionalism was "astonishing" given it was made in RPG Maker, though they criticized the combination of chibi artwork with more realistic portraits.  RPGFan said that it "draws from classic heavyweights of the genre, but it also has more than enough substance to stand on its own".  RPGamer selected it as the runner-up for best tactical RPG of 2022, recommending it to fans of Ogre Battle and Fire Emblem.  
+
+
+== References ==
+
+
+== External links ==
+Official website

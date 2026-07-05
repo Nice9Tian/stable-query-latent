@@ -1,0 +1,45 @@
+Game: Another Crab's Treasure
+appid: 1887840
+Source: Another Crab's Treasure
+URL: https://en.wikipedia.org/wiki/Another_Crab%27s_Treasure
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Another Crab's Treasure is a 2024 Soulslike video game developed and published by Aggro Crab. The game was released for PlayStation 5, Windows, Nintendo Switch, Xbox One and Xbox Series X/S on April 25, 2024.
+
+
+== Gameplay ==
+Another Crab's Treasure is a Soulslike played from a third-person perspective. The player controls Kril, a hermit crab stripped of his protective shell due to unpaid taxes. Unlike most Soulslike games, Another Crab's Treasure allows players to change the difficulty at any time, though it is set to Hard by default. Additionally, Kril uses the same weapon, a discarded fork, for the duration of the game, although he is able to upgrade it using Stainless Relics. The basic gameplay centers around combating various polluted foes by dodging their attacks and waiting for an opening to strike. Trash-based Shells function as Kril's armor, granting various levels of defense. When tucked inside a Shell, all damage (save for Grab attacks) is mitigated, but the Shell is damaged in the process, and has potential to shatter. Additionally, each Shell has a unique Shell Spell, which can be activated by spending mana, referred to as Umami. Filling an enemy's Balance meter will cause them to Capsize, opening them up for a critical hit.
+The underwater world is a web of interconnected environments, some of which are more linear, while others are more open. Microplastics, remnants of a polluted world, become Kril's currency for upgrades and resources. Death causes the loss of all Microplastics, which can be retrieved by returning to the site of death. However, dying before reaching lost Microplastics will cause them to disappear permanently. Early on in the game, a skill tree is unlocked through an NPC called the Moon Snail, which unlocks various new offensive and defensive options. Kril can also learn various Adaptations, which are powerful abilities that cost Umami to use. Kril possesses a more advanced platforming moveset than most Soulslikes, and has the ability to swim for a short period of time after jumping, as well as the ability to climb netting and use a fish hook to grapple onto marked objects. Dotted across the area are Moon Snail Shells, which act as bonfires where the player can cash in Microplastics and fast travel to other Moon Snail Shells. Additionally, dying to most bosses will give the option to respawn at a floating Moon Jelly instead of the nearest Moon Snail Shell. Some Adaptations also allow access to previous inaccessible areas, such as the Mantis Punch. Environmental storytelling is emphasized by Aggro Crab, integrating the narrative into the world design, item descriptions, and cryptic messages from fellow inhabitants.
+
+
+== Plot ==
+Kril is a misanthropic hermit crab living alone in a tide pool, whose shell is confiscated by a "loan shark" as collateral for the taxes the shark tells him he owes Magista, the duchess of Slacktide. He meets the duchess, who agrees to trade his shell back for a treasure. Along the way, Kril meets the Moon Snail, who unlocks his ability to use Umami, a kind of magic. Kril successfully manages to find the treasure, though he discovers that Magista and her guards have succumbed to the Gunk, an affliction that makes sea creatures mindlessly hostile and nihilistic.
+Kril follows the loan shark, who appears to have sold the shell to "prawnshop" owner Prawnathan in New Carcinia, a massive city built out of trash in a nearby reef. While he is there, a garbage patch called Trash Island passes over and rains garbage, including a cereal box whose incomplete printed maze is interpreted by the citizens as part of a treasure map. Prawnathan offers Kril his shell in exchange for the treasure. Kril, agreeing to the deal, joins the other treasure hunters, including the entrepreneur Firth, tavern owner Nemma, museum curator Konche, Shellfish Corp CEO Roland, and Roland's sinister enforcer Inkerton.
+On his quest to recover the missing pieces of the map, Kril meets Chitan, one of Magista's former guards, who tells him the Gunk, caused by ocean pollution, has been progressively spreading. After completing the map, the treasure is revealed to be located in a lake of polluted sludge near a drop-off called the Drain. Roland, as the only one with the resources to dredge the lake, confiscates the map and resolves to take the treasure unopposed. However, Kril, Firth, Nemma, Konche, Chitan, and a handful of townsfolk are able to follow and board Roland's barge. During the confrontation, Kril accidentally capsizes the barge, causing them to fall into the abyssal depths of the Unfathom, which is considered a kind of Hell for the New Carcinians.
+Firth realizes that the treasure, a chest of paper bills, is worthless in their economy and storms off alone in disgust. Roland and Inkerton argue, resulting in Inkerton killing Roland before being killed in turn by Kril. Meanwhile, Konche identifies nearby architectural ruins as the original Carcinia, an ancient city located in a bleached coral reef, and enlists Kril to find the Perfect Whorl, a shell crafted by the ancient hermit sorcerers capable of conferring godlike powers. Upon finding the Whorl beneath the Old Ocean, they are ambushed by Chitan, who kills Konche. Chitan is revealed to be under the control of Praya Dubia, an enormous siphonophore comprising the souls of all ocean life that had succumbed to pollution. Praya Dubia's attempts to convince Kril to use the Whorl to destroy the world are unsuccessful, and it puppets Chitan to fight him before discarding her body for one final attack.
+After Praya Dubia is defeated, Kril resolves to use the Perfect Whorl to heal Chitan; however, he is interrupted by Firth, who takes it for himself and flees to the surface. Kril follows and confronts Firth, who reveals that he seeks to sink Trash Island onto New Carcinia to stimulate the economy, not caring it will advance the Gunk. They promptly fight, resulting in the Whorl being shattered and New Carcinia being buried in trash. Firth is crushed by the falling debris. Back in the city, Kril finds that the citizens are actually excited about the new influx of trash for the wealth it will bring them, completely ignorant of the dangers of the Gunk. He then finds Prawnathan and kills him when he refuses to return his shell.
+An epilogue reveals that New Carcinia began cleaning up its trash, Chitan survived her injuries and began training again, Nemma returns to her tavern, and that Kril, ultimately dissatisfied with his old life in the tide pool, decided to remain under the sea as a traveling adventurer. A final shot reveals that he left his shell to a homeless hermit crab named Dune.
+
+
+== Development ==
+Another Crab's Treasure was announced during a Nintendo Indie World presentation in 2022. Aggro Crab showcased the game's Soulslike concept. Following the announcement, details about the game emerged throughout 2023. Information regarding the core mechanics like the "Shell System" – where discarded trash becomes Kril's customizable armor – and the emphasis on exploration and environmental storytelling were revealed. Additionally, the developers confirmed the game's release platforms, including Nintendo Switch, PC, and Xbox One and Series X/S, and PlayStation 5. The confirmation of Xbox availability, including its inclusion on Xbox Game Pass on launch day, came in June 2023. Aggro Crab announced that the game would be released on April 25, 2024.
+
+
+== Reception ==
+
+Another Crab's Treasure received "generally favorable" reviews from critics according to Metacritic. Fellow review aggregator OpenCritic assessed that the game received strong approval, being recommended by 81% of critics.
+
+
+=== Awards ===
+
+
+== See also ==
+Peak (video game), developed by Aggro Crab and Landfall Games
+
+
+== References ==
+
+
+== External links ==
+Official website

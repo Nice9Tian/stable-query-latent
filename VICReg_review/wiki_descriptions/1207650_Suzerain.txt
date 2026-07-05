@@ -1,0 +1,55 @@
+Game: Suzerain
+appid: 1207650
+Source: Suzerain (video game)
+URL: https://en.wikipedia.org/wiki/Suzerain_(video_game)
+Match score: 6.56
+Retrieved: 2026-07-04
+--------
+Suzerain is a text based government simulation visual novel developed by Berlin-based studio Torpor Games and published by Fellow Traveller. It was released for Windows, PlayStation 4 and 5, Xbox One and Xbox Series, macOS, iOS, Nintendo Switch and Android in the years from 2020 to 2025. In 2021, Suzerain received the People's Choice Award at the Games for Change Awards, and the German Computer Game Award for "Best Expert Game."
+An expansion for the game with a new storyline, Suzerain: Kingdom of Rizia, was released in 2024. Two other expansions with working titles are in development: Project Aperture, which is expected to release in 2026, and Project Vanguard, which has no specific release window. A standalone video game titled The Conformist, which is also set in the Suzerain universe, is in development too.
+
+
+== Story and setting ==
+
+
+=== Suzerain ===
+The original Suzerain story places the player in the role of Anton Rayne, the newly elected president of the fictitious Republic of Sordland. While nominally democratic, the nation is emerging from twenty years of authoritarianism under the regime of former president Colonel Tarquin Soll, as well as a severe economic recession begun under Rayne's predecessor, Ewald Alphonso. As president and leader of the governing United Sordland Party (USP), the player must decide how to lead the country, navigating various structural problems and crises affecting the country amid increasing global tensions, in order to secure their re-election. The plot is largely limited to a single term of office, but the player's decisions determine the future of Rayne and Sordland alike.
+The world of Suzerain is a historical parallel to mid-20th century Earth, shaped by the geopolitical rivalry between capitalist and communist superpowers in the global west and east. Sordland is presented at the start of the game as a non-aligned state, neighboring both western-aligned and eastern-aligned nations, as well as Rumburg, a bellicose monarchy with global ambitions of its own. The player can attempt to side with either the western or eastern faction, or try to maintain their neutrality.
+
+
+=== Kingdom of Rizia ===
+In the Kingdom of Rizia expansion, the player assumes the role of Romus Toras, the newly crowned monarch of the titular Kingdom of Rizia. The kingdom benefits from an abundance of natural resources, such as gold and fossil fuels; but the ineffective leadership of Romus' deceased father, Valero Toras "the Frail," and the loss of the Zille and Pales regions as a result, has left the kingdom's economy, internal stability, and foreign relations in a precarious state. As the player responds to these situations, they must also confront the future prospects of the royal family in a world where monarchies are losing relevance, as well as balancing the favor of Rizia's three royal houses.
+The player also encounters several characters from the base game, including Anton Rayne; if the Sordland campaign is completed beforehand, the player can use their savefile to align the version of Rayne in the Rizia campaign to the one they created. Alternatively, the player may select a pre-packaged archetype of Rayne that aligns with the superpowers or maintains Sordland's non-aligned status.
+
+
+== Gameplay ==
+
+Gameplay in Suzerain is primarily based around character dialogue; the player interacts via read text with ministers, advisers, and other important figures in their attempt to understand the various situations affecting their country, followed by multiple-choice prompts for how their character might react. In Sordland, these decisions include major reforms to the nation’s constitution, pursuit of market-driven or centrally planned economic policies, and responding to security threats and public welfare issues as they arise. Family also plays a prominent role in the story, adding greater personal weight to the player’s decisions as they try to balance their responsibilities as head of state with their life at home.
+The dialogue is supplemented by visual aids such as political maps, a constant feed of reports and newspaper articles, statistics for available budget and resources, and a library of informational briefs on the people, places, and history of the setting. According to the developers, the game contains 450,000 words, about the same length as The Lord of the Rings; however, the supplementary text does not have to be read in order to progress, and the base game can be completed in under twelve hours. The player also receives prompts for secondary decisions that, while important to the outcome of the game, do not require a narrative-driven deliberation.
+The Rizia expansion includes an optional interactive war chapter with corresponding game mechanics, allowing the player to organize their armed forces and lead them through an armed conflict.
+Since both the base game and the expansion have several different endings, both games and campaigns have a high replay value. The conclusion of the narrative is followed by a results screen, displaying the player’s final position in an in-universe political compass and a list of statistics detailing their accomplishments.
+
+
+== Development ==
+The creators of Suzerain cited multiple inspirations for the game, including Max Weber's essay Politics as a Vocation, Niccolò Machiavelli's work Il Principe, political television series House of Cards and The West Wing, and other political simulators such as Tyranny and Orwell.
+
+
+=== Updates and expansions ===
+A major update, titled "Amendment", was released July 31, 2023. It added content and lore in the form of a number of scenes, several bills, and several hundred news events; the update was accompanied by information surrounding an upcoming DLC for the in-game country of Rizia.
+Suzerain: Kingdom of Rizia was released as Suzerain's first expansion on March 25, 2024; the DLC was added to mobile, in addition to the 2.0 update, on December 11, 2024. The 3.1.0 update, titled "Sovereign" and released on May 7, 2025, featured a significant overhaul of the Rizia storyline in response to player feedback.
+Due to the game's popularity in the People's Republic of China, a Mandarin Chinese localization is under development as of 2025.
+
+
+== Reception ==
+
+Suzerain was awarded the Deutscher Computerspielpreis Bestes Expertenspiel (Best Expert Game) in 2021, as well as the Games for Change People's Choice Award, and was recognized as a "Most Innovative" nominee. Unfold Games Awards also awarded the game with an honorable mention.
+Suzerain received "generally favorable" reviews, according to review aggregator Metacritic.
+Der Spiegel called Suzerain "perhaps the most realistic video game about politics." According to Der Spiegel, the game is "explicitly political, not in the sense of taking political sides, but because, despite its fictional world vaguely reminiscent of Central Europe in the 1950s, it is based on the real world of politics." Rock Paper Shotgun noted the game world as impressively detailed and called it an overall "superb" game. PC Gamer noted it as a "fascinating" and "truly unique" game. Vice.com said the game has "sharp historical insight and commentary on the politics of today." Oyungezer gave the game a positive review, praising its worldbuilding, character designs, and replayability, but also noted the tutorial and user interface could be better, and called the music repetitive. The Escapist said the game "[...] makes for an interesting and emotionally taxing experience". In 2024, PCGamesN listed Suzerain as one of the best political games on the PC.
+
+
+== References ==
+
+
+== External links ==
+Official website
+Suzerain at The Visual Novel Database

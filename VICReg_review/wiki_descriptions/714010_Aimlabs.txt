@@ -1,0 +1,34 @@
+Game: Aimlabs
+appid: 714010
+Source: Aimlabs
+URL: https://en.wikipedia.org/wiki/Aimlabs
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Aimlabs, formerly Aim Lab, is an aim-training platform developed and published by State Space Labs, Inc.. It provides players with the tools to practice and optimize their gameplay in first and third-person shooter settings. Aimlabs is available for Windows, Xbox, PlayStation 5, iOS, and Android, and uses machine learning and performance analytics to provide personalized training feedback. As of 2025, the playform has surpassed 45 million registered players worldwide, making it most widely used aim trainer in the world.
+
+
+== Gameplay ==
+As players complete tasks, the platform collects data on accuracy, reaction time, movement patterns, and more offering performance feedback and identifying areas of weakness. The platform can be calibrated to replicate the physics and sensitivity settings of specific games, and includes 1:1 map recreations of titles such as Valorant for game-specific practice.
+Aimlabs also offers the Aimlabs+ membership, which provides access to advanced features including an AI coaching system, an adaptive sensitivity finder, personalized training plans with daily missions, video courses from professional esports players, and detailed aim analysis. The sensitivity finder, described by Aimlabs as the most precise available, assesses a player's optimal mouse angle, lift-off distance, and flick sensitivity. According to the company, Plus members using the sensitivity finder improve 49% faster than non-members.
+
+
+== Development and release ==
+Aimlabs, then called Aim Lab, entered Steam early access on February 7, 2018. A mobile version was released for iOS and Android on July 14, 2022. The game officially launched on Windows on June 16, 2023, under the rebranded name Aimlabs, reaching number one on Steam's bestseller list within two days and surpassing 30 million registered players.
+The platform grew significantly during the COVID-19 pandemic. By September 2021, it had 5 million monthly active users from a base of 20 million total players, compared to 100,000 monthly active users and 1.5 million total players in March 2020. On November 4, 2025, it launched on PlayStation 5. The same year, the platform hosted its first Logitech G Playdays competition, The Gauntlet, with a prize pool exceeding $100,000. In 2025, Aimlabs introduced its Official Benchmark system, a fully redesigned aim assessment and ranking tool. 
+
+
+== Partnerships ==
+In 2021, Ubisoft designated Aimlabs as the official FPS training partner for Tom Clancy's Rainbow Six Siege. Riot Games followed in 2022, announcing Aimlabs as the official training and coaching platform of Valorant esports, and becoming a minority shareholder. The same year, Call of Duty League announced Aimlabs as the official first-person training sponsor for the league and presenting sponsor of the Call of Duty Challenger Scouting Series.
+Additionally, Aimlabs collaborated with neurotechnology company Kernel to use the game for studies on cerebral palsy and brain activity during games.
+
+
+== Reception ==
+Emma Matthews of PC Gamer gave a positive review of Aimlabs, saying that the game effectively points out mistakes and allows the player to improve from them.
+
+
+== References ==
+
+
+== External links ==
+Official website

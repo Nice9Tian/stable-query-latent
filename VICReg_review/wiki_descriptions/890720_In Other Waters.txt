@@ -1,0 +1,36 @@
+Game: In Other Waters
+appid: 890720
+Source: In Other Waters
+URL: https://en.wikipedia.org/wiki/In_Other_Waters
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+In Other Waters is a 2020 adventure game for Microsoft Windows, macOS, and Nintendo Switch. Players take on the role of an AI that assists a xenobiologist in exploring an alien world.
+
+
+== Gameplay ==
+Ellery Vas, a xenobiologist employed by an interplanetary mining corporation, arrives on alien planet Gliese 667 Cc. Players control an artificial intelligence Ellery depends on to monitor her life support, collect and analyze samples, and manage the goals she sets for the mission.  Players cannot directly interact with the world itself but receive feedback from Ellery based on her observations.
+
+
+== Development ==
+Jump Over the Age is a one-person studio based in London. Gareth Damian Martin did most of the game development themself.  Although they had experience in the industry, they are self-taught in developing games in Unity. Martin said they wanted to create a world using text and the game's user interface rather than direct experience. The initial idea came when Martin combined three interests: diving, climate change and video games.
+
+
+== Reception ==
+
+On the review aggregation website Metacritic, the PC version received mixed reviews, and the Switch version received positive reviews. Fellow review aggregator OpenCritic assessed that the game received strong approval, being recommended by 78% of critics.  Alice Bell of Rock Paper Shotgun called it a "very meditative" game that is "possibly exactly what you need right now".  Bell wrote that, even when uncovering dark secrets about the planet, it "remains calming and lovely".  Also describing it as "meditative", Eurogamer's reviewer, Edwin Evans-Thirlwell, recommended the game for its "hypnotic art, otherworldly audio and captivating writing".  Rachel Watts of PC Gamer called it "a gentle and engrossing underwater sci-fi game that will have you thinking about more than what lies beneath the waves". Writing for Game Informer, Matthew Kato said that it "succeeds more as an exercise in world building than as an exciting adventure game" because of the lack of puzzles and repetitive gameplay.
+
+
+== See also ==
+List of underwater science fiction works
+Citizen Sleeper – the developer's next game
+
+
+== References ==
+
+
+== Further reading ==
+
+
+== External links ==
+Official website

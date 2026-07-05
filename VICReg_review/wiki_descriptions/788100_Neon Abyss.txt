@@ -1,0 +1,36 @@
+Game: Neon Abyss
+appid: 788100
+Source: Neon Abyss
+URL: https://en.wikipedia.org/wiki/Neon_Abyss
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Neon Abyss is a run and gun video game with roguelike elements developed by Veewo Games. The game's premise is centered around members of the Grim Squad as they descend the Abyss, which consists of a series of levels with procedurally generated rooms, in pursuit of powerful entities known as the New Gods. The characters can use a variety of firearms and special abilities to fight enemies across each level. Neon Abyss was released for multiple platforms on July 14, 2020, with British video game developer Team17 as their primary publisher. Neon Abyss has received a generally positive reception with video game critics.
+
+
+== Gameplay ==
+Neon Abyss is a side-scrolling run and gun video game with gameplay mechanics commonly associated with dungeon crawlers and platform games. Players take on the role of a member of the "Grim Squad", a group formed by an individual who identifies himself as Hades, the Greek god of the Underworld; more characters could be unlocked as the game progresses or through the purchase of downloadable content (DLC). Beginning their journey from a neon-lighted nightclub, the Grim Squad's goal is to explore a subterranean region known as the Abyss, through a series of procedurally generated levels, in order to hunt down and destroy the New Gods as well as their followers. Players may backtrack to previously visited locations using teleportation stones to access locked chests or previously sealed rooms.
+Players may randomly acquire a mix of unique weapons and items that alter the way the game's rules work or statistically increase their characters' damage. Player may also discover eggs which float in a line between their character, which may hatch to reveal a little pet creature that could assist the player with special abilities. The longer the current player character survives, the further existing pets could evolve to provide superior benefits for the duration of the run. All passive effects can stack between each item or pet with no limit to how many combinations can be applied. Other unlockable features include new rooms, bosses, and special rules.
+
+
+== Development and release ==
+ Neon Abyss is developed by Veewo Games, an independent game development studio founded in 2011 and based in Xiamen, China. Prior to Neon Abyss, Veewo Games were primarily involved in the development of mobile games, with several titles published on the Google Play Store. Veewo described the game's procedurally generated dungeons as "unique and expandable", and that the unlimited synergy as a result of the stackable statistical boosts is intended to help make each run feel unique for players.
+Neon Abyss was released for Microsoft Windows, Nintendo Switch, PlayStation 4, Xbox One on July 14, 2020. Team17 is the game's publisher for all platforms in most regions and territories, whereas Yooreka Studio serves as the publisher for the mainland Chinese market. The game is supported by post-launch DLC, such as the 2021 Alter Ego Pack which introduces new abilities and appearances for all player characters.
+
+
+== Reception ==
+
+In her preview of the game, Rachel Watts from PC Gamer said she liked the art style and compared it to Hotline Miami with its mixture of religious iconography and neon graffiti. On the other hand, she wish the same uncanniness was also reflected in the way the smaller enemies attack, which are often presented as "slightly different variations of glowing orbs". According to review aggregator Metacritic, reviews for the PC version of Neon Abyss were mixed or average, whereas its console versions received generally favorable reviews. Fellow review aggregator OpenCritic assessed that the game received strong approval, being recommended by 76% of critics.
+James Cunningham from Hardcore Gamer lauded Neon Abyss as "highly playable", praising the large variety of perks and weapons available to players as well as the satisfactory implementation of the game's powerup progression within each run. Simon Fitzgerald from Push Square summarized Neon Abyss as a "fun, fast-paced twist on the rogue-like genre with a solid core gameplay loop", highlighting the variety of weapons, enemies and synergies as well as the novel collectible egg mechanic for praise. Drew Hurley from Cubed3 drew favorable comparisons to other roguelike games like The Binding of Isaac and Enter the Gungeon with its fast and fluid gameplay, striking presentation, and generous amount of unlockable content. Stuart Gipp from Nintendo Life opined that Neon Abyss has much to offer as it possesses all of the essential elements that make it a fun and compelling roguelike: "a good challenge, lovely controls and plenty of scope for craziness".
+On the other hand, Fitzgerald criticized its performance issues on the PlayStation 4, the lack of a dedicated dodge button common to the genre, and its chaotic room design. Hurley felt that the game's biggest weakness is the lack of variety of unique rooms for the game's procedurally generated levels, a fact which will become apparent to players who engage in multiple runs. Playstation Official Magazine UK cautioned that some players may find the process of accruing a good combination of stackable upgrades for a particular run to be a "long, hard slog",  but suggested that players who are willing to persevere may find the overall gameplay experience to be dense and addictive once they have accrue enough upgrades for their characters. Gipp felt that there are aspects of Neon Abyss which felt cliched or derivative compared to other Nintendo Switch games with roguelike mechanics, and lamented the fact that it was not released earlier in the console's cycle.
+
+
+== Sequel ==
+A sequel, Neon Abyss 2, entered early access on 17 July 2025.
+
+
+== References ==
+
+
+== External links ==
+Official website

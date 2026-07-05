@@ -1,0 +1,42 @@
+Game: Deep Rock Galactic: Survivor
+appid: 2321470
+Source: Deep Rock Galactic: Survivor
+URL: https://en.wikipedia.org/wiki/Deep_Rock_Galactic:_Survivor
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Deep Rock Galactic: Survivor is a shoot 'em up video game by Funday Games. It is a top down spin-off of the first-person shooter Deep Rock Galactic modeled on the auto-shooter Vampire Survivors. The player controls a dwarf on a solo mission to mine ore, shooting enemies and ultimately defeating a boss at the end of each level in order to gain experience and increase their weapon's power. Funday began developing the game after discussing Vampire Survivors with the CEO of Ghost Ship Games at the 2022 Gamescom convention. It was released into early access on Windows on February 14, 2024. The game fully released on September 17, 2025 on Windows and Xbox Series X/S.
+
+
+== Launch ==
+Deep Rock Galactic: Survivor launched in early access on February 14, 2024, and in its first week it sold over 500,000 units. In a Steam post titled “The Road Ahead,” the developers expressed their gratitude to players for the game's download success. They then outlined the game's future with a “living roadmap” detailing upcoming updates. Deep Rock Galactic: Survivor has received very positive reviews on Steam, with players praising its engaging gameplay, familiar Deep Rock Galactic elements, and rewarding upgrade system.
+
+
+== Gameplay ==
+Players take control of a lone Dwarf miner venturing into the depths of the procedurally generated planet Hoxxes IV. The top-down perspective allows players to navigate the environment and strategically position themselves against waves of increasingly difficult enemies. Enemies drop experience gems that, when collected, progress the character's exp bar. Once the character reaches a new level, there will be a selection of upgrades that the player can choose from.
+Players can choose from the four familiar Dwarf classes, each offering unique gameplay styles and abilities:
+
+Driller: As per the name is particularly proficient at mining. Weapons focus are on thrown and beam.
+Engineer: Focus is on drones and constructs/turrets, explosive weapons, or fast XP growth
+Scout: Fastest and 'dodgiest' class, light weapon expert
+Gunner: Heavy weapons and armor
+Each class has 3 special roles and the combination of who you select determines specific bonuses and what weapons you begin with and what will be offered on level up during the run.
+As players gain experience through wave completion and enemy elimination, new tiers of upgrades become available within each upgrade tree, offering progressively stronger and more impactful enhancements.
+One of the main features of Deep Rock Galactic: Survivor is the upgrade system. The player can collect ore, artifacts, and overclocks from the planet Hoxxes IV, and use them to improve their weapons and abilities. Each class has 10 weapons to choose from, each with different stats and effects. The player can also unlock and equip overclocks, which are powerful modifications that can drastically change the performance of a weapon. Additionally, the player can buy account upgrades that provide permanent benefits, such as increased health, ammo, or damage.
+Throughout the run, players focus on strategically eliminating enemies and gathering resources to maximize their resources and experience gain.
+Players have the option to choose among five different stages called biomes, with each biome offering five different hazard levels to select from, adding different challenges.
+
+
+== Reception ==
+Within a month of its release in early access, Deep Rock Galactic: Survivor had sold one million copies.
+
+
+=== Accolades ===
+
+
+== References ==
+
+
+== External links ==
+Official website 
+Official wiki

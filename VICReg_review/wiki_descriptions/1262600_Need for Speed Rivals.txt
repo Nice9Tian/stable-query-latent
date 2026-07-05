@@ -1,0 +1,101 @@
+Game: Need for Speed Rivals
+appid: 1262600
+Source: Need for Speed Rivals
+URL: https://en.wikipedia.org/wiki/Need_for_Speed_Rivals
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Need for Speed Rivals is a 2013 racing video game developed in collaboration between Ghost Games and Criterion Games, and published by Electronic Arts.  It is the twentieth installment in the Need for Speed series, and the debut title for Ghost Games (the formally named EA Gothenburg; which would be the main developer of all subsequent non-mobile installments up until 2020).
+Rivals was well received by critics at E3 2013 and was awarded with "Best Racing Game" from Game Critics Awards. It received mostly positive reviews upon release. It was followed in 2015 by the mobile game Need for Speed: No Limits, and the self-titled reboot. The online services for Rivals shut down on 7 October 2025, though the game continues to be playable offline.
+
+
+== Gameplay ==
+
+
+=== Features ===
+
+Need for Speed Rivals is a racing game and features gameplay similar to earlier Need for Speed titles, such as Criterion's Need for Speed: Most Wanted and Need for Speed: Hot Pursuit. Rivals uses the Frostbite 3 engine. The development team opted to target 30 FPS across all platforms instead of 60 FPS, because of the AllDrive feature.
+AllDrive is the system used to seamlessly matchmake players within the same open world. Another reason was due to the number of players able to be in the same world at the same time.
+Rivals is the first cross-platform next-gen game to achieve a native 1080p across both PlayStation 4 and Xbox One. Talk of resolutions and frame rates became a major point of contention between Sony and Microsoft's new consoles after it emerged that both Call of Duty: Ghosts and Battlefield 4 run at a higher resolution on Sony's PS4 console as compared to Microsoft's Xbox One.
+
+
+=== Roles and progression ===
+After completing the prologue (tutorial), players choose a faction—Cop or Racer—to start their own tasks. Players can switch between factions at a hideout (Racer) or a command post (Cop). Cops can choose from the three car specifications: Patrol, Undercover, and Enforcer.
+Most of the story takes place through cutscenes, with the chosen character voicing their opinions on current events in the game. Story progression is made through completing speed lists as a racer or assignments as a cop.
+
+
+=== Missions ===
+Rivals features a career progression system for both Cop and Racer. Progression is made by means of Speedlists for Racer and Assignments for Cop, which are sets of objectives which involve dangerous driving, maneuvers, and race standings. Upon completion of each set of objectives, the player levels up and unlocks new content, and is presented with another set of objectives to choose from.
+
+
+=== Weapon system ===
+Similar to the 2010 Hot Pursuit, players can use weapons, referred to as Pursuit Tech, to attack other players or AI cars, or otherwise defend themselves. Players can equip from two of each side's six available weapons, each of which can be enhanced, although upgrades are limited to a certain level based on the max level of the car's Pursuit Tech. Besides electrostatic field and EMP (electromagnetic pulse), which are the only weapons available to both factions, Cops can deploy shock rams, assemble roadblocks, request helicopter support, or drop spike strips, while Racers can deploy radar jammers, trigger shockwaves, drop stun mines, or activate turbo boosts.
+
+
+=== Online system ===
+The Autolog system, a competition-between-friends system developed by Criterion for Hot Pursuit, records the player's completion time for each event, Speedlist or Assignment. These times are posted to Speed Walls for local and global leaderboards to be compared to other players' times.
+Rivals features a new social system called the AllDrive, which allows players to transition from playing alone to playing with others, described as "destroying the line between single player and multiplayer". This allows players to engage in both cooperative and competitive gameplay. The game also features a dynamic weather system, which makes "the world feel alive in a much bigger sense than any other Need for Speed game".
+As of October 2025, the Online services for the game have been shut down.
+
+
+=== Vehicle modification ===
+Rivals also takes on some gameplay features of earlier Underground titles in the franchise with cues on aesthetic vehicle personalization, such as paint jobs, decals, rims and license plates and liveries can be modified, as well as vehicle performance, and various 'Pursuit Tech' gadgets. With the exception for the Aston Martin Vanquish (and most DLC cars), all cars in the game are only available to either the Racers or the Cops.
+
+
+=== Map and background ===
+Need for Speed Rivals takes place in the fictional Redview County. The open world environment features a similar set-up to Most Wanted, with several jumps, speed traps, and unlockable cars, as well as shortcuts that are not shown on the map.
+The map's design took heavy inspiration from the landscapes of the Western United States, with the setting's open world map consisting of over 100 miles (160 km) of road. The northern part of the map takes inspiration from Californian coastline towns like Santa Monica, the eastern part consists of woods similar to the redwood forests of northern California and snowy mountainside based on the Rocky Mountains in Colorado, the southern part is a rocky desert based on the Grand Canyon in Arizona, and the western and central parts are based on contemporary rural America.
+
+
+== Plot ==
+The player can choose to play as either a racer or a cop. In the Racer story, the player assumes the role of a street racer known as Zephyr. In the Cop story, the player takes on the role of an unnamed, newly initiated police officer. As the player completes the objectives on the Speedlists or Assignments, story cutscenes are revealed, each of which appears to be connected with the other.
+In an attempt to make himself known to the public, street racer Zephyr uploads a video of him outrunning the police along the streets of Redview County. Within a few days, other racers begin replicating what Zephyr did in the video. As a result, the racers have become more public in their criminal acts and increasingly more dangerous, committing more acts of damage to property as they speed through the streets. The Redview County Police Department responds by increasing their punitive measures in an attempt to bring the racers to justice, resulting in public backlash. Later on, an RCPD officer named John McManis is injured while attempting to keep up with the racers. Public outcry swings back in support of the police, leading the rookie officer to swear revenge on the racers.
+However, further increase in police intimidation and accusations of 'excessive force' leads to all RCPD officers being placed under probationary suspension, while the Federal Bureau of Investigation sends in the Vehicle Response Team to take the police's place. Realizing the new threat, Zephyr begins taking on the VRT as he continues to defy the authorities. Angered by Zephyr's recklessness and a lack of response to his actions, the cop decides to go rogue as a vigilante under the name F-8 (alternatively pronounced fate), taking an impounded Ferrari Enzo out to the streets, where he wreaks havoc by taking down street racers under the guise of a fellow racer. This causes the FBI to take an interest in F-8, sending him an invitation to join the VRT. Knowing this, F-8 immediately gives up his vigilante persona and accepts the invitation. At the same time, all police units have been called back on active duty.
+Zephyr eventually discovers who F-8 really is and decides to retaliate, stealing a decommissioned Koenigsegg Agera police car and respraying it in his style. He then uses the car to attract police attention and wreck police units coming after him. Later on, the RCPD has been cleared of all accusations against its officers, causing public outrage as the VRT stays in Redview County. The subsequent increase in police activity and discontent over the violent arrests of street racers leads Zephyr to release a public message to the RCPD, demanding that they stop their brutality. He then issues an open challenge to both the racers and the cops, a race around Redview County, so that the two sides of the law could resolve their differences once and for all. Meanwhile, F-8, now a top officer at the VRT, is tasked with locating Zephyr and taking him down, being the only one able to do so. He eventually succeeds in intercepting Zephyr's radio communications. Upon learning of Zephyr's message, F-8 sets out to stop the infamous street racer for good.
+
+
+=== Endings ===
+There are two endings, one for the Racer story and another for the Cop story. As with all preceding story cutscenes, these endings are connected to each other, with the cop ending being both concurrent and subsequent to the racer ending.
+At the end of the Racer story, right after he completes the decisive race, Zephyr runs into a police blockade, causing him to crash violently. A subsequent news report shows Zephyr's car smoking heavily behind trees, even going so far as to suggest he has been killed in the crash. However, Zephyr is revealed to have just survived the crash. While barely awake, he starts up his badly damaged car in an attempt to drive away, with the screen fading to black as the engine roars.
+At the end of the Cop story, F-8 is revealed to have been involved in a collision with Zephyr, likely shortly before the latter's own collision with the police blockade, and wrecks his car in the ensuing crash, leaving him in critical condition. A following news report also reveals that F-8 has been terminated from the RCPD for his recklessness and dangerous actions leading up to the crash. Sometime later, F-8 suddenly resurfaces as a street racer, having apparently taken over Zephyr's mantle, and issues a challenge to fellow racers in Redview County via a video, declaring himself their rival.
+
+
+== History ==
+After the commercial and critical success of 2010's Need for Speed: Hot Pursuit, Criterion Games executives stated that they wanted to draw from the series' roots and re-introduce old Need for Speed ideals.
+However, in 2011, EA Black Box released Need for Speed: The Run, which received mixed reviews.
+In 2012, EA Labels president Frank Gibeau said that although he was proud of the Black Box-developed installment, "he didn't want a 60, I want an 80+". On the subject of EA Black Box, Gibeau said the publisher would not be changing its alternating studio strategy.
+At Electronic Entertainment Expo 2012, Criterion vice president Alex Ward announced that the days of random developers churning out yearly Need for Speed installments were over. Ward would not confirm that all Need for Speed titles for the future would be developed wholly by Criterion, but did say that the studio would have "strong involvement" in them.
+With EA Canada and Black Box restructured and refocused towards online and free-to-play games in February 2012, EA had already formed a new studio in 2011, EA Gothenburg. Based in Gothenburg, Sweden, it was reported that the studio would focus on developing games using the Frostbite game engine. Also reported was that the studio was developing a game "in the Need For Speed franchise".
+According to the CVs of employees, much of the studio's staff had worked previously on major racing titles, including Forza Horizon, Need for Speed: The Run, Project Gotham Racing and Race Pro.
+On 22 October 2012, the series main developer Criterion Games confirmed that EA Gothenburg was working on a title in the Need for Speed franchise, but did not reveal the level of involvement or when the title would be released.
+On 15 November 2012, EA Gothenburg was rebranded as Ghost Games. Ghost's website went live around the same time and called for potential staff to apply for a range of open positions.
+On 23 May 2013, EA confirmed their next Need for Speed game, Rivals, with a teaser trailer, following marketing material tease days before. It was also confirmed that Rivals was in the works at EA's Swedish games developer Ghost Games in partnership with Criterion Games. Ghost is headed up by former DICE executive producer Marcus Nilsson, who previously led development on games including Battlefield 2: Modern Combat, Battlefield 2142 and Shift 2: Unleashed.
+The team asserted that while Rivals will be released on both current and next-gen systems, the versions would "ultimately be the same", aside from the graphics would look different, and next-gen would provide for more dynamic weather and gameplay.
+On 30 August 2013, Ghost Games head Marcus Nilsson stated that the studio had been given complete charge of the Need for Speed franchise and that the franchise being bounced between multiple EA studios was not "consistent" with different game types.
+On 16 September 2013, Criterion Games had its staff numbers reduced to 17 people total, as the majority of the studio moved over to Ghost Games UK to work with Need for Speed games. Due to this, what remained of Criterion Games began work on a project of their own.
+Because of the low sales of Most Wanted on the Wii U and PlayStation Vita, Rivals was not developed for those platforms.
+In July 2025, it was announced that Rivals' online services would be shut down on 7 October 2025. Due to a single-player patch released in 2013, the game will remain playable offline. The online services for the game were shut down on the announced date just right after 12AM EST.
+
+
+== Marketing and release ==
+
+Rivals was released for PlayStation 3, Windows, and Xbox 360 on 19 November 2013 in North America, 21 November in Australia, and 22 November in Europe. The PlayStation 4 version was released in North America a few days earlier, on 15 November 2013, as a launch title for the system, and on 29 November in Europe. The Xbox One version was released worldwide on 22 November 2013.
+On 21 October 2014, Need for Speed Rivals Complete Edition was released. It features all DLC packs (as well as all pre-order bonuses previously re-released in the "Fully Loaded Garage" DLC pack) along with the main game.
+
+
+== Reception ==
+
+Need for Speed Rivals was well received by critics at E3 2013 and was awarded with "Best Racing Game" from Game Critics Awards. Previewers who had access to Rivals called the game a spiritual successor to 1999's Need for Speed: High Stakes, citing similar gameplay style. Others called it an improved version of Criterion's Hot Pursuit, citing similar gameplay mechanics.
+Need for Speed Rivals received mostly positive reviews upon release. Aggregate review website Metacritic gave the PlayStation 4 version 80/100, the Xbox One version 75/100, the PlayStation 3 version 80/100, the Windows version 76/100, and the Xbox 360 version 76/100.
+During the 17th Annual D.I.C.E. Awards, the Academy of Interactive Arts & Sciences nominated Need for Speed Rivals for "Racing Game of the Year".
+Steve Hannley of Hardcore Gamer gave the game a 4.5/5, saying "It's raw, visceral, intense and boasts a ton of replay value thanks to over one hundred events and seamless online multiplayer." Jeff Gerstmann from Giant Bomb gave the game a 3/5, praising the game's gameplay and soundtrack but criticized the lack of amount players allowed on the online multiplayer. Gerstmann also noted that the PC version was locked at 30 frames-per-second and stated that "is especially ridiculous", but still considered the PC version the best looking version. GameZone's Mike Splechta gave the PS4 version an 8.5/10, stating "For a game that touts speed in its name, Need for Speed: Rivals delivers on every front. It's gorgeous, fast and definitely furious." Daniel Krupa for IGN scored the game an 8.0 and stated: "Fast, furious, and fun. NFS: Rivals blends Hot Pursuit and Most Wanted to great effect." Philip Kollar of Polygon gave the game an 8.5 out of 10, writing: "Need for Speed Rivals' technical shortcomings are frustrating primarily because almost everything else about the game is so well-designed and impressive. It builds on the series' legacy but also stretches into meaningful new directions. It may hit a few bumps, but if this is what Ghost Games can pull off in their first release and the first next-gen Need for Speed, the future is bright for this franchise." Andrew Reiner of Game Informer gave high praise to the online multiplayer interactivity, stressing that the online features create an experience unlike any other. Reiner also called the game's visuals "drop dead gorgeous", and complimented the playability for making the game feel "silky smooth". Reiner gave the game a 9/10 and had minor criticisms. Nick Pino from GamesRadar also praised the visuals and controls, calling them "absolutely gorgeous" and "slick" respectively. Pino was critical of the car customization and damage, but commended the game world for feeling alive. Eurogamer's Martin Robinson gave the game a 9/10 and called it "fantastic". He spoke well of the overall action gameplay, the points system, the sound design of the cars, the visuals, and the world design. Robinson's main criticisms were concerning the "obnoxious" soundtrack, the inability to pause the game, the world size, and the vehicle takedown systems.
+Negative reception centered around the many bugs and glitches in the game, and frustrations around the game's lack of dedicated servers, triggering frequent host migration. There were also many clashing game features which caused frustrations for players, such as cops chasing players for no reason at all and the inability to pause the game at any time. Ghost Games also removed the ability to change from automatic to manual transmission.
+
+
+== References ==
+
+
+== External links ==
+Official website
+Need for Speed Rivals at MobyGames
+Need for Speed Rivals at IMDb

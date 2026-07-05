@@ -1,0 +1,52 @@
+Game: Monster Prom 3: Monster Roadtrip
+appid: 1665190
+Source: Monster Prom
+URL: https://en.wikipedia.org/wiki/Monster_Prom
+Match score: 5.35
+Retrieved: 2026-07-04
+--------
+Monster Prom is a dating simulation game developed by Beautiful Glitch, a studio based in Barcelona and founded by Julián Quijano, and published by Those Awesome Guys. The game was released for Windows, macOS and Linux on 27 April 2018 and was distributed on Steam. A Nintendo Switch release was launched on 21 May 2020. Monster Prom was written by Julián Quijano, Cory O'Brien and Maggie Herskowitz, illustrated by Arthur Tien, and programmed by Elías Pereiras. Players assume the role of a student at Spooky High (later renamed to Spooky Academy as of Monster Prom 3: Monster Roadtrip), a school populated by monsters, as they attempt to find a date to prom.
+An expansion to the game, titled Monster Prom: Second Term, was released on 14 February 2019. A sequel, Monster Prom 2: Monster Camp, was released on October 23, 2020, followed by a third sequel Monster Prom 3: Monster Roadtrip on October 21, 2022. A fourth sequel, Monster Prom 4: Monster Con was released on April 24, 2025.
+
+
+== Gameplay ==
+
+Monster Prom is a 2D narrative dating sim that features both a singleplayer mode as well as a multiplayer competitive mode of up to four players. The player assumes the role of one of four pre-set characters, all of whom students at Spooky High, and can choose between six different monsters they can try to date. Players can play as any gender and pronouns with the game allowing for straight, gay, and lesbian dating options.
+The game randomizes the story every time it is played. Each turn, players must decide how they will spend their time over the course of six weeks leading up to prom, going through various events in one of several map locations at Spooky High in order to gain stats that affect the way their love interest perceives them. Throughout the game, players will be presented with various choices which may affect their relationship with other characters, as well as which events and endings they experience. The players' actions will decide whether their love interest agrees to take them to prom or not. It features multiple endings, mini-games, and limited voice acting. The game also includes a shop where players can purchase items that can trigger new events as well as special endings.
+The Second Term expansion included additional content such as new endings and two newly-dateable characters.
+
+
+== Plot ==
+The players are presented as students within Spooky High, a high school in a world inhabited by monsters. They are given a time limit of six weeks in order to convince their chosen love interest to take them to prom. The game's plot changes with each new playthrough, giving players a unique sequence of events, dialogue and endings, depending on their choices. The four player characters are Oz, the personification of fear; Amira Rashid, a fire djinn; Brian Yu, a zombie; and Vicky Schmidt, a Frankenstein's monster, although the names and pronouns of the characters can be changed before playing. The six monsters available to romance are Scott Howl, a werewolf; Liam de Lioncourt, a vampire; Vera Oberlin, a gorgon; Damien LaVey, a fire demon; Polly Geist, a ghost; and Miranda Vanderbilt, a mermaid. Second Term introduces two new monsters to romance: Zoe, an Eldritch monster; and Calculester Hewlett-Packard, a computer robot.
+The majority of the game's humor is very Western-influenced, consisting of many pop culture references, banter-based dialogue, self-referential commentary on monster fiction, and light satirical themes. The game has over 1,300 possible events and 47 secret endings.
+
+
+== Development ==
+On 25 November 2016, the game successfully completed a Kickstarter campaign raising funds through 1,592 backers. The campaign raised just over €32,000, quadruple the intended goal of €8,000. The additional funding allowed for more content such as endings, items, and characters. A roster of notable voice actors was assembled to portray the cast, including Arin Hanson, Dan Avidan, Nathan Sharp, Cristina Valenzuela, Sarah Anne Williams, Christine Marie Cabanos, Danielle McRae, Erika Ishii and others. On 14 February 2018, the developers announced the game's release via a teaser trailer, and the game was released on 27 April 2018 on Steam for Windows, Mac OS, and Linux. The Second Term expansion DLC, which was a stretch goal of the Kickstarter campaign, was released on 14 February 2019, adding additional voice work from Felicia Day, Casey Mongillo, Jacksepticeye, Ross O'Donovan, and Anna Brisbin. Language support for Simplified Chinese was added on 23 January 2020.
+On 27 April 2020, to celebrate the 2nd Anniversary of the game's initial release, Beautiful Glitch announced Monster Prom: XXL, which consists of the original game, the Second Term DLC, as well as all seasonal content released throughout the game's lifespan. It was released on the Nintendo Switch on 21 May 2020 and on PlayStation 4 and Xbox One thereafter on 14 October 2020.
+
+
+=== Sequels ===
+On May 8, 2019, Beautiful Glitch announced a sequel titled Monster Prom 2: Holiday Season and launched another Kickstarter campaign with a playable demo. The planned sequel was set to feature the same characters from Monster Prom in three minigames: Summer Camp, a dating simulation similar to the original game; Winter Retreat, a strategy game featuring Vera and Miranda; and Roadtrip, an adventure survival game featuring Scott and Polly. The campaign proved successful and raised over €535,000 from almost 9,000 backers within a month, surpassing their goal of €32,000. As development progressed and the game's scope grew beyond the team's expectations, the decision was made to release the Summer Camp portion of Holiday Season as its own game title, Monster Prom 2: Monster Camp, which was released on October 23, 2020. Damien and Calculester reprise their roles as romanceable characters, and three NPCs from the original game - Aaravi Mishra, a monster-human hybrid and monster slayer; Dahlia Aquino, a female demon; and Joy Johnson-Johjima, a witch - as well as a brand new character, Milo Belladonna, a death reaper, also appear as romanceable options. 
+Initially, the plan was to release Winter Retreat and Roadtrip under the title Monster Memories, along with an additional DLC game titled Monster Prom: Not Another Isekai!, which had been achieved with the extra funding on Kickstarter. However, like Monster Camp, these games were separated into their own individual titles. On April 28, 2022, Beautiful Glitch released a reveal trailer for Roadtrip, now titled Monster Prom 3: Monster Roadtrip, which was later released on October 21, 2022. 
+Additionally, Beautiful Glitch was able to fund a spin-off game through the sequel's Kickstarter titled Monster Prom: REVERSE, in which the playable characters from the first game can be romanced.
+On May 3rd 2024, Monster Prom 4: Monster Con was announced. In this iteration players have the chance to romance series regulars Liam de Lioncourt and Zoe, as well as 4 new characters - Nico Sharp, a mimic; April First, a clown; Doug Campbell, a slime; and Omen, an "unknown monster type." As the name implies, Monster Prom 4: Monster Con takes place at a comic convention. New locations include the Main Stage, The Lobby, Community Zone, Merch Hall, and Hotels and Outdoors. The game was released on April 24, 2025.
+
+
+== Reception ==
+
+The PC version of the game received a score of 73 on the review aggregator Metacritic, indicating "mixed or average reviews", while the Nintendo Switch version received a score of 81, indicating "generally favorable reviews". The game was mainly praised for its writing, humor and character art. Jeff Ramos and Allegra Frank of Polygon praised "how genuinely funny Monster Prom is. Considering almost every line in the game is a punchline, it's an achievement that the humor never felt labored or forced." Many critics also praised the game's multiplayer mode, many of whom declared it stronger than the singleplayer version. Rebekah Valentine of App Trigger had a more favorable view of both game modes, stating that the game "rests on a framework of superb character art and hilarious scenario writing, then goes several steps further to offer a challenging competitive experience and an addictive solo one."
+Publications also praised the amount of content the game offers, with Alyse Stanley of Rock, Paper, Shotgun stating that "its combinations of events and endings make every playthrough feel like it's your first time." Stan Yeung of Gaming Age adds that "the sheer amount of events and possible outcomes meant it would be hard for me to get bored." However, some critics noted that despite the game's strengths, its mechanics often stagnated which made it difficult to find much in the way of replayability. CD-Action states that the "hilarious, brilliant dialogues are not enough to compensate for random, grind-oriented gameplay." Similarly, in a mixed review, Eugene Sax of Game Critics notes that "despite the wealth of options, the scenarios become predictable and tired quickly."
+Regarding the Nintendo Switch version, Neal Ronaghan of Nintendo World Report had a favorable review and wrote that while "not a game for everyone... Monster Prom is a riotously good time" thanks to its humor and ability to "take a visual novel and dating sim and transforms it into a party game".
+
+
+=== Accolades ===
+The game was nominated for the "Matthew Crump Cultural Innovation Award" and for "Most Fulfilling Community-Funded Game" at the SXSW Gaming Awards.
+
+
+== References ==
+
+
+== External links ==
+
+Official website

@@ -1,0 +1,77 @@
+Game: Coral Island
+appid: 1158160
+Source: Coral Island (video game)
+URL: https://en.wikipedia.org/wiki/Coral_Island_(video_game)
+Match score: 7.11
+Retrieved: 2026-07-04
+--------
+Coral Island is a 2023 farming simulation game developed by Stairway Games and published by Humble Games. Set on a tropical island, the game features mechanics similar to other farming simulators, such as Stardew Valley. It was a major success on Kickstarter, reaching its initial funding goal within 36 hours. Coral Island entered early access for PC in October 2022, and was fully released on November 14, 2023, alongside its console versions. Cooperative multiplayer was added to the game on August 14, 2025.
+
+
+== Gameplay ==
+The player controls a customizable protagonist who’s been disenchanted with city life and moves to a small farming community on a tropical island. Upon arrival, the player is given an overrun farm and is tasked with restoring it and planting crops. Harvested crops can be sold for profit, with opportunities to increase income through various methods.
+In Coral Island, players can engage in a wide range of farming activities, including animal husbandry, adopting pets, fishing, crafting, cooking, combat with monsters, exploring caves and mines for rare resources. Players can also interact and form relationships with the town’s non-player characters (NPCs). As players' relationships with characters develop, they can unlock additional dialogue and storylines. Marriage is available, including options for same-sex partnerships, and players have the opportunity to conceive a child with their chosen partner.
+The game includes an offering system tied to four altars located throughout the island. Each altar requiring six offerings based on crops, animal products, foraged items, mineable resources, and insects and fish. The offerings can be submitted in any order, and players can receive a reward upon completing the entire bundle.
+Additionally, Coral Island features activities unique to the ocean setting, such as diving and the cleaning up of an oil spill. Each in-game day is tracked, by a time and energy system that determines how many activities the player can perform. Events such as town festivals and character birthdays occur on specific days throughout the calendar. The player has an Energy bar and a Health bar, the former is depleted by performing actions with your tools, while the latter is used when mining and in combat with monsters. Energy can be increased by consuming food, and certain dishes, whether bought or cooked. And some certain dishes can grant benefit certain activity buffs and situations.
+Coral Island features a simplified calendar with four 28-day months, each representing a season. This system affects which crops can be grown and which activities are most effective. As players progress, they can restore a greenhouse and unlock a tropical island, allowing them to grow any crop year-round, regardless of the season.
+
+
+== Plot ==
+The player returns to Starlet Town, their hometown on Coral Island, to work on a farm there and meets Conner, the town's mayor. The town is in disarray due to giant dark roots appearing on the island and an oil spill, and may be forced to cooperate with an oil company called Pufferfish Corporation, which secretly plans to convert the town into an oil facility. The player sets out to revive the island and prevent the corporation from taking control of the island, all while befriending the townsfolk, providing new products for the town's supermarket, and increasing the museum's popularity. During their mission, the player meets the Chieftain, the leader of a group of monkey-like creatures called giants, who grants them the power of nature and has them help revive his four fellow giants, who have been turned to stone in the mines. To do so, they must enter the mines and activate the runes at the bottom of each shaft. The player also helps the island's harvest goddess and meets the merfolk who live near the island. Initially wary of humans, the merfolk come to trust the player after their coral tree is revived, which in turn fully restores the island and eliminates the roots and oil spill. 
+Once the town's popularity reaches Rank C, Karen, the corporation's CEO, becomes more determined to take over of the town. She attempts to run for mayor, prompting the player to stop her by persuading the townsfolks to reject her votes. When the town reaches Rank A, Pufferfish Corporation's headquarters is infested with vines, which forces it to stop its operations and leave Coral Island. The player does additional mission such as helping the giants rescue their fifth comrade, assisting a group of creatures called the Mural Guardians, and guiding a group of merfolk during their journey on land. The main story ends when the town reaches Rank S.
+
+
+== Development ==
+Stairway Games, an Indonesian developer, chose to set the game in a similar setting and that influenced its cast of characters, crops, architecture, and biomes.  The character art was heavily influenced by Disney animation.  Coral Island was partially funded through a successful Kickstarter campaign that ran from February 1 to March 3, 2021, raising $1,639,368 from 36,374 backers, making it one of the most successful campaigns of 2021. The campaign surpassed its initial funding goal of $70,000 within 36 hours and unlocked additional content through stretch goals. After entering early access in October 2022, Humble Games released Coral Island for Windows, PlayStation 5, and Xbox Series X/S on November 14, 2023.
+Shortly after its release, an imposter account on social media targeted fans with NFT scams. In response, the developers issued a warning and clarified that the game does not incorporate NFTs or blockchain technology.
+A planned Nintendo Switch port has yet to materialize, and the effective closure of Humble Games in July 2024 interfered with updates for existing platforms and cast doubt on the Switch release. Stairway Games addressed the issue in a statement on Twitter, writing: "[W]e share in your frustrations regarding the lack of a Nintendo Switch port of Coral Island. Over the years, there's a lot we've wanted to say in the spirit of transparency, about many different things, but continue to be unable to do so because of the publishing agreement and NDA we have in place." The developers reiterated the Humble Games was responsible for the console releases versions, including the Switch port and stated that the publisher's restructuring had introduced a significant uncertainty moving forward. While patches for the console versions began to release again in the following months, there has been no further update about the release on Switch since July 2024.
+Cooperative multiplayer was added to the game with the 1.2 Multiplayer and Romance Update on August 14, 2025.
+
+
+== Reception ==
+Coral Island is often compared to Stardew Valley and has been described by multiple gaming publications as one of the most notable Stardew Valley–inspired games.  The game was funded through a highly successful Kickstarter campaign, which raised over $1.6 million from more than 36,000 backers. The campaign met its initial goal within 36 hours, reflecting strong anticipation for a new take on the farming simulation genre.
+The visual design of Coral Island has drawn frequent comparisons to the animation style popularized by Disney. The game's character models are described as expressive, colorful, and polished, contributing to a whimsical and approachable atmosphere. This aesthetic choice plays a significant role in establishing the game's tone, positioning it as both family-friendly and visually engaging. The art style has also been compared to that of Disney Dreamlight Valley, according to Gayming magazine.
+The project places strong emphasis on eco-conscious themes, including environmental sustainability and coral reefs preservation, aligning with contemporary concerns about ecological issues. A notable gameplay feature is the sea diving mechanic, which enables players to clean ocean debris and help restore coral reefs, reflecting the game's marine conservation themes. While diving, players can also explore the Merfolk Underwater Village, home to the mermaid characters.
+Coral Island received positive feedback for its inclusion of LGBT options and representation within both character customization and gameplay mechanics. Gayming Magazine praised the LGBT-friendly atmosphere and overall inclusivity, highlighting features such as diverse character customization, non-player characters with disabilities, and a range of body types and skin color.
+Salomé Grouard writing for the South China Morning Post noted that some countries in Southeast Asia, including Singapore, Malaysia, and parts of Indonesia, still enforce laws that criminalize homosexuality or lack equal protections for LGBT rights. Grouard described Coral Island as a tool for members of the LGBT community to express themselves and as a way to promote understanding, visibility, and well-being within the community.
+Coral Island incorporates elements of Southeast Asian culture by blending traditional regional influences with Western-style gameplay and setting. The game features a unique cooking system that highlights traditional Indonesian recipes, allowing players to prepare dishes such as Sayur Iodeh, Spring Rolls, Klepon, and herbal drinks like Jamu (a traditional herbal medicine). The architecture is also inspired, for example, by the Balinese Hindu temples. The animals and plants in the game are also based on local Southeast Asia plant fauna and flora and animal species.
+Stairways Games has been translating Coral Island into multiple languages, guided by Kickstarter stretch goals and community feedback gathered through social media surveys.
+
+
+=== Early access ===
+During its early access release in October 2022, Coral Island received generally positive feedback. Rock Paper Shotgun noted that the build was somewhat buggy but described it as overall "mature". They recommended it to players looking for a game similar to Stardew but with faster progression and less grinding.  GamesRadar acknowledged the similarities to other farming simulators, particularly Stardew Valley, but praised Coral Island for its well-executed mechanics and unique twists. In May 2023, TechRadar stated that they were "thoroughly excited" by the game's roadmap and that Coral Island demonstrated the genre of farm sims still had room to grow.
+
+
+=== Release ===
+Upon release, Coral Island received generally positive reviews on Metacritic. Siliconera noted that while the game was not particularly innovative, it successfully built upon its influences and introduced several quality-of-life improvements. They described it as essential for fans of farming simulators but advised players to wait for bug fixes on the PlayStation 5 version.  TouchArcade stated that the game "feels unfinished in parts" and may have left early access too soon, though they praised the title as "a joy to play" on the Steam Deck and described it as having "a fantastic base to build on," despite technical issues.  GameSpot included Coral Island in its list of hidden gems released in 2023 and called it "a breath of fresh air" for the genre due to its tropical setting, expansive and diverse cast, large map, and compelling story.  At the 2023 Steam Awards, Coral Island was nominated for the "Sit Back And Relax" award.
+
+
+=== Sales ===
+Coral Island has seen notable commercial success in terms of sales and popularity. Since its early access release on October 11, 2022, the game has generated approximately $21.46 million in gross revenue, with an estimated net revenue of about $6.33 million
+In its first month alone, Coral Island sold nearly 100,000 copies, generating close to $2 million in revenue. As of August 2024, total ownership reached around 400,000 players, reflecting a strong and growing player base. The game has been well-received, maintaining a positive user rating on Steam, where about 70% of its players are English speakers, followed by significant portions of German and Chinese-speaking players.
+
+
+=== Award ===
+Coral Island received recognition for its distinct approach to the farming simulation genre. It was nominated for the "Sit Back and Relax" category at the 2023 Steam Awards, reflecting its appeal as a cozy and immersive game.
+In 2024, the game was an entrant in the Independent Games Festival, further highlighting its status as a notable indie title.
+GameSpot described Coral Island as a "hidden gem," praising its tropical setting, relaxing gameplay, visually engaging environment, and environmental themes. The outlet noted that these features helped distinguish it from other games in the genre.
+
+
+== Other Media ==
+Additional content and soundtrack
+The Coral Island soundtrack, has been noted for its soothing and immersive qualities, with over 140 tracks composed to reflect the game's seasonal and environmental themes. The music varies by season, offering distinct day and night tracks, as well as themes for in-game events such as the New Year and Harvest Festival. Areas like the Beach Shack, General Store, and Blacksmith each feature unique background music, while mining and diving sections are accompanied by more adventurous compositions.
+The full soundtrack is included as part of the game’s downloadable content (DLC) and is available on platforms such as Steam. The music contributes to the game's atmospheric world-building and supports its culturally inspired simulation setting.
+
+
+== See also ==
+Fields of Mistria
+My Time at Sandrock
+Sun Haven
+
+
+== References ==
+
+
+== External links ==
+Official website
+mos:VG

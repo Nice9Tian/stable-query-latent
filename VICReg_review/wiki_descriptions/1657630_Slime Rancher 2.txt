@@ -1,0 +1,31 @@
+Game: Slime Rancher 2
+appid: 1657630
+Source: Slime Rancher 2
+URL: https://en.wikipedia.org/wiki/Slime_Rancher_2
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Slime Rancher 2 is a 2025 farm life sim video game developed and published by American indie studio Monomi Park. Slime Rancher 2 is the direct sequel to its predecessor Slime Rancher (2017). It features the playable character and main protagonist of Slime Rancher, Beatrix LeBeau, exploring a new location called Rainbow Island. The game released in early access on September 22, 2022, with a version 1.0 full release for Xbox Series X/S and Windows via the Microsoft Store, and PlayStation 5 released on September 23, 2025.
+
+
+== Gameplay ==
+
+In an open world the player controls the character Beatrix LeBeau, a rancher who moved from planet Earth to a far away planet to live the life of a slime rancher, centered around ranch construction and the exploration of the environment in order to collect, raise, feed, and breed slimes, gelatinous living organisms of various sizes and characteristics.
+The game revolves around feeding slimes food so that they can produce "plorts", which can be sold in exchange for Newbucks, a currency required to purchase upgrades for the ranch and its equipment. There are different kinds of slimes in the world, including some introduced for Slime Rancher 2. Slimes react and change based on what they are fed. Slime Rancher 2 introduces a dynamic weather system (including rain, wind, thunderstorms, lightning, pollen, cyclone, and slimefall) that impacts the environment and the slimes that appear during specific weather events. In addition to slimes from the first game, players can raise new slime variants.
+
+
+== Development and release ==
+Slime Rancher 2 was revealed on June 13, 2021, having been featured during the 2021 Xbox & Bethesda Games Showcase. During the Xbox & Bethesda Games Showcase 2022 more information about the game was revealed along with a projected release date of fall 2022.
+Slime Rancher 2 uses the Unity engine. It utilizes Unity's new High Definition Render Pipeline, a render pipeline that handles graphical features. This required a new approach to the graphics pipeline compared to the one used in the previous game.
+The game's 1.0 version was launched on September 23, 2025.
+
+
+== Reception ==
+Slime Rancher 2 received positive reviews upon its version 1.0 release. Checkpoint Gaming gave praise to the game's art style, visuals, and addictive gameplay loop. Criticism was directed at the game's story, calling it "unengaging" and the late game grind "tedious".
+
+
+== References ==
+
+
+== External links ==
+Official website

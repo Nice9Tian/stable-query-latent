@@ -1,0 +1,34 @@
+Game: Star Trek: Infinite
+appid: 1622900
+Source: Star Trek: Infinite
+URL: https://en.wikipedia.org/wiki/Star_Trek:_Infinite
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Star Trek: Infinite  is a 4X grand strategy video game developed by Argentine studio Nimble Giant Entertainment and published by Paradox Interactive. In Star Trek: Infinite, players take control of one of four of Star Trek's interstellar civilizations on the galactic stage and are tasked with exploring, colonizing and engaging minor nations and other major civilizations with diplomacy, trade, or warfare. A large part of the game involves dealing with both scripted and emergent events, many based on or referencing events in the Star Trek franchise. It was released for Windows and macOS on October 12, 2023. On March 27, 2024, it was announced that the game would receive no further updates.
+
+
+== Gameplay ==
+Players choose to play as the Federation, Klingons, Romulans or Cardassians. Each faction has its own mission tree and unique abilities geared for lore-aligned play styles, with the Federation focused on exploration and diplomacy, the Klingons on warfare, the Cardassians on spying, and the Romulans on stealth. The game features several planets and political events from The Next Generation, such as the larger sovereign states being able to support the independence of the Bajorans from the Cardassian Union. 
+Players playing as the United Federation of Planets may use the focus tree assigned to the Enterprise to obtain characters such as Data, Worf and Deanna Troi. These characters all provide bonuses to their selective specialties on the NCC-1701-D. Other characters in the Federation such as Spock and Benjamin Sisko also make an appearance within the game.
+Events and event chains occur for each faction over the course of the game charting and allowing the player to interact with the major events of the world of Star Trek in the time period.
+A ship designer allows the player to modify ships based around basic designs from the Star Trek franchise, selecting particular parts and abilities, or to simply rely on the game's auto-design.
+Many mechanics and systems are used from Paradox Interactive's Stellaris, of which the game is built off an earlier build.
+
+
+== Reception ==
+Star Trek: Infinite received “mixed or average reviews” according to aggregator Metacritic. On Steam, it received mixed reviews. IGN’s Will Borger gave it 5/10, or “mediocre.” Most complaints focused on the presence of bugs and glitches, some of which prevented the game from functioning properly. 
+It was favorably received in preliminary reviews up to September 2023. Mick Fraser called it "huge, complex, and a Trekkie's dream". IGN's Will Borger described a preliminary build as doing a good job of bringing Star Trek into 4X gaming as something akin to "Star Trek-themed spreadsheets", but also writing that the game "can sometimes feel overwhelming". At PC Gamer, Russell Adderson called it "the Star Trek game of my dreams", especially praising the mission tree system and use of Star Trek lore. Polygon indicated that, like in Stellaris (the game Star Trek: Infinite is based on), warfare was the most "underwhelming" part of the game, but said that the review version of Star Trek: Infinite was "already promising" and "likely to get a lot deeper" with Paradox's history of ongoing support and downloadable content for titles.
+
+
+== See also ==
+
+List of grand strategy video games
+List of Paradox Interactive games
+
+
+== References ==
+
+
+== External links ==
+Official website

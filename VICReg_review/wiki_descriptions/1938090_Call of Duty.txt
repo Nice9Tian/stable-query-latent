@@ -1,0 +1,89 @@
+Game: Call of Duty
+appid: 1938090
+Source: Call of Duty (video game)
+URL: https://en.wikipedia.org/wiki/Call_of_Duty_(video_game)
+Match score: 7.11
+Retrieved: 2026-07-04
+--------
+Call of Duty is a 2003 first-person shooter game developed by Infinity Ward and published by Activision. It is the first installment in the Call of Duty franchise, released on October 29, 2003, for Microsoft Windows. The game simulates infantry and combined arms warfare of World War II using a modified version of the id Tech 3 engine. Much of its theme and gameplay is similar to the Medal of Honor series; however, Call of Duty showcases multiple viewpoints staged in the American, British, and Soviet campaigns of World War II in Europe.
+The game introduced a new take on AI-controlled allies who support the player during missions and react to situational changes during gameplay. This led to a greater emphasis on squad-based play as opposed to the "lone wolf" approach often portrayed in earlier first-person shooter games. Much of Infinity Ward's development team consisted of members who helped develop Medal of Honor: Allied Assault. On release, the game received universal acclaim and won several Game of the Year awards. Retrospective assessments have been less favorable, with many critics saying the game aged poorly; it has placed low in lists ranking the series' games.
+In September 2004, an expansion pack called Call of Duty: United Offensive, which was produced by Activision and developed by Gray Matter Studios and Pi Studios, was released. At the same time, the N-Gage version received an arena pack with three new levels. An enhanced port of Call of Duty for the PlayStation 3 and Xbox 360, titled Call of Duty: Classic, developed by Aspyr, was released worldwide in November 2009 with the release of Call of Duty: Modern Warfare 2, being available via redemption codes included with the "Hardened" and "Prestige" editions of the game.
+
+
+== Gameplay ==
+
+As a first-person shooter, Call of Duty places the player in control of an infantry soldier who makes use of various authentic World War II firearms in combat. Each mission features a series of objectives that are marked on the heads-up display's compass; the player must complete all objectives to advance to the next mission. The player can save and load at any time, rather than the checkpoint system utilized in later Call of Duty games.
+The player has two primary weapon slots, a handgun slot, and can carry up to ten grenades. Weapons may be exchanged with those found on the battlefield dropped by dead soldiers. Unlike later Call of Duty games, the first allows the player to toggle between different firing modes (single shot or automatic fire). Call of Duty was one of the early first-person shooters to feature iron sights in game play; by pressing the corresponding key the player aims down the gun's actual sights for increased accuracy. In addition to weapons carried by the player, mounted machine guns and other fixed weapon emplacements are controllable by the player.
+The game uses a standard health points system, with a limited amount of health reflected by a health bar. Medkits scattered throughout the levels or dropped by some foes are used to restore health when the player is injured.
+Call of Duty also featured "shellshock" (not to be confused with the psychological condition of the same name): when there is an explosion near the player, he momentarily experiences simulated tinnitus, appropriate sound "muffling" effects, blurred vision, and also results in the player slowing down, unable to sprint.
+As the focus of the game is on simulation of the actual battlefield, the gameplay differed from many single-player shooters of the time. The player moves in conjunction with allied soldiers rather than alone; allied soldiers will assist the player in defeating enemy soldiers and advancing; however, the player is given charge of completing certain objectives. The game places heavy emphasis on usage of cover, suppressive fire, and grenades. AI-controlled soldiers will take cover behind walls, barricades, and other obstacles when available.
+
+
+== Campaign ==
+
+
+=== American campaign ===
+The American campaign begins in August 1942 with Private Martin, a newly enlisted member of the 506th Parachute Infantry Regiment in Baker Company, completing basic training at Camp Toccoa under the supervision of Cpt. Foley and Sgt. Moody. In June 1944, Martin establishes a landing zone for soldiers participating in Operation Overlord. The paratroopers are scattered, leaving Martin in a mixed unit formed from various companies led by his CO Foley, who seize a nearby town from Germans. Martin and his unit are sent to force the remaining Germans from Sainte-Mère-Église and disable several Flakpanzer IVs as D-Day begins. Martin, with Sgt. Moody and 82nd Airborne Division paratrooper Pvt. Elder, break through German lines to contact company HQ for reinforcements. Martin's unit then destroys German artillery positions attacking the landing force at Utah Beach. 
+Afterwards, Martin and his unit have been reassigned to participate in an attack on a Bavarian manor in August 1944 to rescue two British officers, Captain Price and Major Ingram. He learns from Price that Ingram had already been moved to a more secure POW camp for interrogation; Martin and his unit infiltrate the camp and rescue Ingram. The last mission happens during the Battle of the Bulge where Martin and his company take out panzers while defending a captured bunker system.
+
+
+=== British campaign ===
+The British campaign starts with Sergeant Jack Evans and a unit from 2nd Ox and Bucks of the 6th Airborne Division taking part in Operation Tonga. The unit is dropped in Horsa gliders near Pegasus Bridge, Bénouville. Led by Captain Price, Evans and his troops clear the bridge of German soldiers. The unit holds out against an attempt by a German battalion to retake the bridge with the help of the 7th Parachute Battalion.
+By September, Evans and Price have been transferred to the SAS working with Sgt. Waters. He takes part in a mission to sabotage the Eder Dam, restored after being destroyed by the No. 617 Squadron RAF during Operation Chastise, destroying the Flakvierling anti-aircraft guns protecting it. Following extraction, Evans helps to cut off pursuing German troops. Reaching a German airport to escape, Evans uses an anti-air gun to cover Price and Waters from German Stuka dive-bombers as they procure and flee in a Fw.200. Evans, Price and Waters then pose as German naval officers and sailors to infiltrate the battleship Tirpitz, disable its defenses, and steals information for the RAF to attack the ship. Price sacrifices himself to buy time for Evans, who escapes with Waters by boat. Later, Evans, Waters and their squad arrive near Burgsteinfurt, Germany, to assist the impending Allied assault on the city. Discovering plans to launch V-2 rockets at the Allied forces, the unit destroys them before joining the rest of the army.
+
+
+=== Soviet campaign ===
+The Soviet campaign begins during the Battle of Stalingrad in September 1942. Corporal Alexei Ivanovich Voronin and his fellow recruits are sent across the Volga River, many of whom are killed when the Luftwaffe launch an attack. Once across, they call in an artillery strike that forces the Germans back. At Red Square with Soviet officers killing soldiers who retreat, Voronin kills several German officers and soldiers, disrupting the German offense long enough for Soviet artillery to destroy their tanks. Voronin links up with surviving allies in a train station and guides them to Major Zubov of the 13th Guards Rifle Division; Voronin is promoted to Junior Sergeant. In November, Voronin rendezvous with a unit led by Sergeant Pavlov, tasked with retaking an apartment building in German hands. The unit assaults and clears the building, and defends it from a German counterattack.
+In January 1945, Voronin, now a full Sergeant, serves with the 150th Rifle Division of the 3rd Shock Army. The unit secures a makeshift German tank repair facility in Warsaw during the Vistula–Oder Offensive, and regroup with the 4th Guards Tank Army. Due to shortages in experienced soldiers, Voronin commands a T-34-85 tank for the 2nd Guards Tank Army, and helps the Soviets capture a town near the Oder River. In April, Sergeant Voronin is returned to his old unit, the 150th Rifle Division. He and a small group of soldiers storm the Reichstag building and raise the Victory Banner atop the roof, ending the European war.
+
+
+== Development ==
+
+Call of Duty was developed by Infinity Ward, a new studio formed in 2002 originally consisting of 21 employees, many of whom were project lead developers of the successful Medal of Honor: Allied Assault released the same year. Led by Chief Creative Officer Vince Zampella, development began in April 2002, and the team grew to 27 members by May 2003. At its beginning, the project was nicknamed "Medal of Honor Killer". Using an enhanced version of the id Tech 3 game engine developed for Quake III Arena and an in-house skeletal animation system called "Ares", Infinity Ward set out to develop a new World War II-era video game that, unlike many of its predecessors, placed more emphasis on squad-based play with intelligent assistance from teammates during large-scale battles. The team also extensively researched weapons, artillery, and vehicles from World War II to enhance the authenticity of animation and sounds used throughout the game. The game's budget was $4.5 million.
+Another area the development team focused on was their artificial intelligence (AI) pathfinding component dubbed "Conduit". The ability to suppress the enemy with cover fire and clear obstacles, such as fences and windows, was tightly integrated into the squad-based aspect of the single-player campaigns. The AI in the game was designed to flank the opponent, bank grenades, and move from one cover point to another. Lead animation director Michael Boon explained that actions which would have normally been scripted in past games were moved to a dynamic AI environment, in order to help create a different experience each time levels are replayed. While the campaigns were the primary focus, development of the multiplayer modes were tailored to please modders. Zied Rieke, a lead designer, clarified that gameplay and modes were written in script making it "extremely easy for players to make their own modifications to Call of Duty multiplayer".
+
+
+== Music ==
+The music for the game was created by Michael Giacchino and was originally released in 2003 as the Call Of Duty Official Soundtrack Sampler CD, part of the game's pre-order from EB Games in Europe. The music was later released in the United States in 2005 as part of the Deluxe Edition, which included Call of Duty: United Offensive. An additional composition, "Age Of War" by Justin Skomarovsky, was commissioned for the intro cinematic leading into the "Call Of Duty" main title.
+
+
+== Reception ==
+
+
+=== Critical reception ===
+Call of Duty received "universal acclaim", according to review aggregator website Metacritic. It won several "Game of the Year" awards for 2003 from several reviewers.
+During the 7th Annual Interactive Achievement Awards (now known as the D.I.C.E. Awards), Call of Duty was honored "Game of the Year" of 2003 by the Academy of Interactive Arts & Sciences; it also won awards for "Computer Game of the Year" and "Computer First-Person Action Game of the Year", along with nominations for "Outstanding Innovation in Computer Gaming", "Outstanding Achievement in Original Music Composition", and "Outstanding Achievement in Sound Design".
+GameSpot named it the best computer game of October 2003.
+Computer Games Magazine named Call of Duty the sixth-best computer game of 2003, and the editors wrote, "This game ups the ante in the WWII shooter arena, and makes everything that has come before it seem as outdated as France's army." The editors of Computer Gaming World presented Call of Duty with their 2003 "Shooter of the Year" award. They remarked, "Call of Duty won this category without a shot fired—there simply was no debate." It was also nominated for "Best Game" at the 2004 Game Developers Choice Awards. While it did not receive that award, it did win Infinity Ward the "Rookie Studio of the Year". Chuck Russom was also presented with the "Excellence in Audio" award for his work on the game.
+IGN rated the game 9.3/10, with reviewer Dan Adams saying "You have to love a game that glues you to your seat and keeps you interested... A thrilling piece of software that action fans should grab a hold of and love fiercely." His only negative critique was on the short length of the game, which many reviewers pointed out.
+The N-Gage version got "mixed or average reviews" on the site Metacritic.
+
+
+=== Sales ===
+The NPD Group named Call of Duty the eighth-best-selling computer game of 2003. It maintained this position on NPD's computer game sales rankings for the following year. In the United States alone, Call of Duty sold 790,000 copies and earned $29.6 million (~$44.2 million in 2024) by August 2006. At the time, this led Edge to declare it the country's 13th-best-selling computer game released since January 2000.
+In the United Kingdom, Call of Duty sold 95,000 copies by the end of 2003, which made it 88th-biggest seller across all platforms that year. Discussing this performance, Kristan Reed of GamesIndustry.biz wrote that "Activision will be pleased that it managed to interrupt the Sims party" with the game's release. Call of Duty ultimately received a "Silver" sales award from the Entertainment and Leisure Software Publishers Association (ELSPA), indicating sales of at least 100,000 copies in the United Kingdom.
+Call of Duty ultimately sold 4.5 million copies worldwide by 2013.
+
+
+== Legacy ==
+
+
+=== Franchise ===
+
+Call of Duty spawned numerous spin-offs and sequels, as part of the Call of Duty series. Its expansion pack, Call of Duty: United Offensive, was developed by Gray Matter Studios and released September 14, 2004. Call of Duty 2 was also developed by Infinity Ward and was released in October 2005. Some Call of Duty spinoffs were developed for consoles, such as Call of Duty: Finest Hour by Spark Unlimited and Call of Duty 2: Big Red One by Gray Matter Studios (merged into Treyarch). The franchise eventually had over fifteen more sequels and spin offs.
+
+
+=== Ports ===
+Call of Duty Classic is a downloadable version of Call of Duty for Xbox 360 and PlayStation 3, featuring HD resolutions. Tokens to download the game ahead of its release were sold along with special "Hardened" and "Prestige" editions of Call of Duty: Modern Warfare 2, and the game was publicly released on December 2, 2009.
+IGN rated this version 7.5, citing it as not well adapted to the consoles, as well as criticizing the multiplayer for only supporting up to eight players.
+
+
+=== Retrospective reception ===
+In the decades following its release, retrospective assessments of Call of Duty acknowledge the game's legacy of creating one of the biggest and iconic gaming franchises ever and laying the groundwork for every subsequent game in the series, as well as its impact on the first-person shooter (FPS) genre as a whole. Keith Arem, the game's performance director, said of its legacy: "It has really changed the industry from the inside. It pays off in what you're seeing in the production ways that we do things in the video game industry, the way that our scripts are defined, the way that our pipelines are defined, the way actors work. ... Call of Duty was one of the most important titles to showcase why we do what we do." Nevertheless, reception to the game itself has been less favorable over time, with many critics agreeing that the game aged poorly; it has generally placed low in lists ranking the series' games. More positively, the staff of IGN ranked the game number six in their 2024 list of the ten best Call of Duty games, writing: "While it's obviously a little out of date 20 years on, the campaign is still fun to play and it's impossible to understate the foundation it built for the future of not just the Call of Duty series but first-person shooters as a whole."
+
+
+== References ==
+
+
+== External links ==
+Call of Duty at IMDb

@@ -1,0 +1,101 @@
+appid,game_name,filename,status,source_title,source_url,match_score,extract_chars,extract_words
+2484110,FINAL FANTASY VII EVER CRISIS,2484110_FINAL FANTASY VII EVER CRISIS.txt,ok,Final Fantasy VII,https://en.wikipedia.org/wiki/Final_Fantasy_VII,6.43,62226,10030
+1147860,UFO 50,1147860_UFO 50.txt,existing,,,,57448,9964
+1687950,Persona 5 Royal,1687950_Persona 5 Royal.txt,ok,Persona 5,https://en.wikipedia.org/wiki/Persona_5,6.50,56794,9265
+1091500,Cyberpunk 2077,1091500_Cyberpunk 2077.txt,existing,,,,53684,8450
+2322010,God of War Ragnarök,2322010_God of War Ragnarök.txt,ok,God of War Ragnarök,https://en.wikipedia.org/wiki/God_of_War_Ragnar%C3%B6k,8.00,49887,8267
+12210,Grand Theft Auto IV: The Complete Edition,12210_Grand Theft Auto IV - The Complete Edition.txt,existing,,,,48406,7818
+1113000,Persona 4 Golden,1113000_Persona 4 Golden.txt,existing,,,,48198,8006
+1284210,Guild Wars 2,1284210_Guild Wars 2.txt,existing,,,,46134,7666
+1151640,Horizon Zero Dawn Complete Edition,1151640_Horizon Zero Dawn Complete Edition.txt,existing,,,,46102,7198
+2561580,Horizon Zero Dawn Remastered,2561580_Horizon Zero Dawn Remastered.txt,ok,Horizon Zero Dawn,https://en.wikipedia.org/wiki/Horizon_Zero_Dawn,6.53,46102,7198
+1151340,Fallout 76,1151340_Fallout 76.txt,existing,,,,45248,7371
+1222690,Dragon Age Inquisition,1222690_Dragon Age Inquisition.txt,existing,,,,44858,7123
+1173770,FINAL FANTASY,1173770_FINAL FANTASY.txt,existing,,,,44547,7088
+1173780,FINAL FANTASY II,1173780_FINAL FANTASY II.txt,existing,,,,44547,7088
+1173790,FINAL FANTASY III,1173790_FINAL FANTASY III.txt,existing,,,,44547,7088
+1173800,FINAL FANTASY IV,1173800_FINAL FANTASY IV.txt,existing,,,,44547,7088
+1173810,FINAL FANTASY V,1173810_FINAL FANTASY V.txt,existing,,,,44547,7088
+1173820,FINAL FANTASY VI,1173820_FINAL FANTASY VI.txt,existing,,,,44547,7088
+2515020,FINAL FANTASY XVI,2515020_FINAL FANTASY XVI.txt,ok,Final Fantasy,https://en.wikipedia.org/wiki/Final_Fantasy,7.20,44547,7088
+975370,Dwarf Fortress,975370_Dwarf Fortress.txt,ok,Dwarf Fortress,https://en.wikipedia.org/wiki/Dwarf_Fortress,8.00,42657,6962
+1378990,Crash Bandicoot 4: It’s About Time,1378990_Crash Bandicoot 4 - It’s About Time.txt,ok,Crash Bandicoot 4: It's About Time,https://en.wikipedia.org/wiki/Crash_Bandicoot_4:_It%27s_About_Time,7.91,42628,6873
+2208920,Assassin's Creed Valhalla,2208920_Assassin's Creed Valhalla.txt,ok,Assassin's Creed Valhalla,https://en.wikipedia.org/wiki/Assassin%27s_Creed_Valhalla,8.00,42593,6853
+1809700,Persona 3 Portable,1809700_Persona 3 Portable.txt,ok,Persona 3,https://en.wikipedia.org/wiki/Persona_3,6.00,42247,6992
+2131630,METAL GEAR SOLID - Master Collection Version,2131630_METAL GEAR SOLID - Master Collection Version.txt,ok,Metal Gear Solid (video game),https://en.wikipedia.org/wiki/Metal_Gear_Solid_(video_game),6.30,41175,6729
+1659040,HITMAN World of Assassination,1659040_HITMAN World of Assassination.txt,ok,Hitman 3,https://en.wikipedia.org/wiki/Hitman_3,4.27,41000,6655
+1237970,Titanfall 2,1237970_Titanfall 2.txt,existing,,,,40825,6499
+2000950,Call of Duty: Modern Warfare,2000950_Call of Duty - Modern Warfare.txt,ok,Call of Duty,https://en.wikipedia.org/wiki/Call_of_Duty,5.69,40818,6889
+1262540,Need for Speed,1262540_Need for Speed.txt,existing,,,,40535,6707
+2668510,Red Dead Redemption,2668510_Red Dead Redemption.txt,ok,Red Dead Redemption,https://en.wikipedia.org/wiki/Red_Dead_Redemption,8.00,40269,6250
+2653790,The Exit 8,2653790_The Exit 8.txt,ok,The Exit 8,https://en.wikipedia.org/wiki/The_Exit_8,8.00,39853,6701
+1086940,Baldur's Gate 3,1086940_Baldur's Gate 3.txt,existing,,,,39227,6115
+1238840,Battlefield 1,1238840_Battlefield 1.txt,existing,,,,37354,6164
+1498570,THE KING OF FIGHTERS XV,1498570_THE KING OF FIGHTERS XV.txt,ok,The King of Fighters,https://en.wikipedia.org/wiki/The_King_of_Fighters,7.58,36677,6204
+2050650,Resident Evil 4,2050650_Resident Evil 4.txt,ok,Resident Evil 4,https://en.wikipedia.org/wiki/Resident_Evil_4,8.00,36603,6053
+1196590,Resident Evil Village,1196590_Resident Evil Village.txt,existing,,,,36361,5917
+1236300,Resident Evil Re:Verse,1236300_Resident Evil Re -Verse.txt,existing,,,,36361,5917
+1985690,The Looker,1985690_The Looker.txt,ok,The Witness (2016 video game),https://en.wikipedia.org/wiki/The_Witness_(2016_video_game),3.95,36271,6049
+1238860,Battlefield 4,1238860_Battlefield 4.txt,existing,,,,35677,5809
+2012840,Portal with RTX,2012840_Portal with RTX.txt,ok,Portal (video game),https://en.wikipedia.org/wiki/Portal_(video_game),6.38,35618,5844
+1778820,TEKKEN 8,1778820_TEKKEN 8.txt,ok,Tekken,https://en.wikipedia.org/wiki/Tekken,7.14,35606,5904
+1401590,Disney Dreamlight Valley,1401590_Disney Dreamlight Valley.txt,ok,Disney Dreamlight Valley,https://en.wikipedia.org/wiki/Disney_Dreamlight_Valley,8.00,35482,5784
+2058190,Lost Judgment,2058190_Lost Judgment.txt,ok,Lost Judgment,https://en.wikipedia.org/wiki/Lost_Judgment,8.00,34806,5642
+2709570,Supermarket Together,2709570_Supermarket Together.txt,ok,Supermarket,https://en.wikipedia.org/wiki/Supermarket,6.26,34653,5371
+1671200,Honkai Impact 3rd,1671200_Honkai Impact 3rd.txt,ok,Honkai Impact 3rd,https://en.wikipedia.org/wiki/Honkai_Impact_3rd,8.00,34548,5466
+1920490,The Outer Worlds: Spacer's Choice Edition,1920490_The Outer Worlds - Spacer's Choice Edition.txt,ok,The Outer Worlds,https://en.wikipedia.org/wiki/The_Outer_Worlds,5.43,34512,5498
+578650,The Outer Worlds,578650_The Outer Worlds.txt,ok,The Outer Worlds,https://en.wikipedia.org/wiki/The_Outer_Worlds,8.00,34512,5498
+1238060,Dead Space 3,1238060_Dead Space 3.txt,existing,,,,34511,5467
+782330,DOOM Eternal,782330_DOOM Eternal.txt,ok,Doom Eternal,https://en.wikipedia.org/wiki/Doom_Eternal,8.00,33472,5406
+1328660,Need for Speed Hot Pursuit Remastered,1328660_Need for Speed Hot Pursuit Remastered.txt,ok,Need for Speed: Hot Pursuit (2010 video game),https://en.wikipedia.org/wiki/Need_for_Speed:_Hot_Pursuit_(2010_video_game),6.56,33351,5617
+2161700,Persona 3 Reload,2161700_Persona 3 Reload.txt,ok,Persona 3 Reload,https://en.wikipedia.org/wiki/Persona_3_Reload,8.00,33310,5298
+2058180,Judgment,2058180_Judgment.txt,ok,Judgment (video game),https://en.wikipedia.org/wiki/Judgment_(video_game),6.56,33234,5247
+1546990,Grand Theft Auto: Vice City – The Definitive Edition,1546990_Grand Theft Auto - Vice City – The Definitive Edition.txt,ok,Grand Theft Auto: Vice City,https://en.wikipedia.org/wiki/Grand_Theft_Auto:_Vice_City,6.16,33091,5238
+1954200,Kena: Bridge of Spirits,1954200_Kena - Bridge of Spirits.txt,ok,Kena: Bridge of Spirits,https://en.wikipedia.org/wiki/Kena:_Bridge_of_Spirits,8.00,32801,5256
+2358720,Black Myth: Wukong,2358720_Black Myth - Wukong.txt,ok,Black Myth: Wukong,https://en.wikipedia.org/wiki/Black_Myth:_Wukong,8.00,32333,5237
+1703340,The Stanley Parable: Ultra Deluxe,1703340_The Stanley Parable - Ultra Deluxe.txt,ok,The Stanley Parable,https://en.wikipedia.org/wiki/The_Stanley_Parable,6.47,32286,5359
+990080,Hogwarts Legacy,990080_Hogwarts Legacy.txt,ok,Hogwarts Legacy,https://en.wikipedia.org/wiki/Hogwarts_Legacy,8.00,32199,4990
+2172010,Until Dawn,2172010_Until Dawn.txt,ok,Until Dawn,https://en.wikipedia.org/wiki/Until_Dawn,8.00,31791,5059
+753640,Outer Wilds,753640_Outer Wilds.txt,ok,Outer Wilds,https://en.wikipedia.org/wiki/Outer_Wilds,8.00,31547,5287
+607080,Psychonauts 2,607080_Psychonauts 2.txt,ok,Psychonauts 2,https://en.wikipedia.org/wiki/Psychonauts_2,8.00,31438,4949
+1693980,Dead Space,1693980_Dead Space.txt,ok,Dead Space,https://en.wikipedia.org/wiki/Dead_Space,8.00,31251,5113
+2124490,SILENT HILL 2,2124490_SILENT HILL 2.txt,ok,Silent Hill,https://en.wikipedia.org/wiki/Silent_Hill,7.50,31070,5022
+239140,Dying Light,239140_Dying Light.txt,ok,Dying Light,https://en.wikipedia.org/wiki/Dying_Light,8.00,31060,5042
+1967430,Ghost Trick: Phantom Detective,1967430_Ghost Trick - Phantom Detective.txt,ok,Ghost Trick: Phantom Detective,https://en.wikipedia.org/wiki/Ghost_Trick:_Phantom_Detective,8.00,30959,4923
+2239550,Watch Dogs: Legion,2239550_Watch Dogs - Legion.txt,ok,Watch Dogs: Legion,https://en.wikipedia.org/wiki/Watch_Dogs:_Legion,8.00,30831,4866
+1113560,NieR Replicant ver.1.22474487139...,1113560_NieR Replicant ver.1.22474487139.txt,existing,,,,30788,4976
+1150080,Azur Lane Crosswave,1150080_Azur Lane Crosswave.txt,existing,,,,30462,4800
+2420110,Horizon Forbidden West Complete Edition,2420110_Horizon Forbidden West Complete Edition.txt,ok,Horizon Forbidden West,https://en.wikipedia.org/wiki/Horizon_Forbidden_West,6.33,30223,4836
+482400,System Shock,482400_System Shock.txt,ok,System Shock,https://en.wikipedia.org/wiki/System_Shock,8.00,30031,4812
+1845910,Dragon Age: The Veilguard,1845910_Dragon Age - The Veilguard.txt,ok,Dragon Age: The Veilguard,https://en.wikipedia.org/wiki/Dragon_Age:_The_Veilguard,8.00,30027,4738
+2679460,Metaphor: ReFantazio,2679460_Metaphor - ReFantazio.txt,ok,Metaphor: ReFantazio,https://en.wikipedia.org/wiki/Metaphor:_ReFantazio,8.00,29839,4718
+1715130,Crysis Remastered,1715130_Crysis Remastered.txt,ok,Crysis (video game),https://en.wikipedia.org/wiki/Crysis_(video_game),6.53,29749,4857
+1721470,Poppy Playtime,1721470_Poppy Playtime.txt,ok,Poppy Playtime,https://en.wikipedia.org/wiki/Poppy_Playtime,8.00,29601,4739
+2231380,Tom Clancy's Ghost Recon Breakpoint,2231380_Tom Clancy's Ghost Recon Breakpoint.txt,ok,Tom Clancy's Ghost Recon Breakpoint,https://en.wikipedia.org/wiki/Tom_Clancy%27s_Ghost_Recon_Breakpoint,8.00,29595,4693
+368260,Marvel's Midnight Suns,368260_Marvel's Midnight Suns.txt,ok,Marvel's Midnight Suns,https://en.wikipedia.org/wiki/Marvel%27s_Midnight_Suns,8.00,29466,4691
+699130,World War Z,699130_World War Z.txt,ok,World War Z,https://en.wikipedia.org/wiki/World_War_Z,8.00,29169,4676
+1041720,Kingdoms of Amalur: Re-Reckoning,1041720_Kingdoms of Amalur - Re-Reckoning.txt,existing,,,,28874,4610
+1388880,Doki Doki Literature Club Plus!,1388880_Doki Doki Literature Club Plus!.txt,ok,Doki Doki Literature Club!,https://en.wikipedia.org/wiki/Doki_Doki_Literature_Club!,7.45,28717,4612
+924980,Trials of Mana,924980_Trials of Mana.txt,ok,Trials of Mana,https://en.wikipedia.org/wiki/Trials_of_Mana,8.00,28624,4813
+1875830,Shin Megami Tensei V: Vengeance,1875830_Shin Megami Tensei V - Vengeance.txt,ok,Shin Megami Tensei V,https://en.wikipedia.org/wiki/Shin_Megami_Tensei_V,6.80,28526,4499
+1404210,Red Dead Online,1404210_Red Dead Online.txt,ok,Red Dead Online,https://en.wikipedia.org/wiki/Red_Dead_Online,8.00,28386,4470
+978300,Saints Row: The Third Remastered,978300_Saints Row - The Third Remastered.txt,ok,Saints Row: The Third,https://en.wikipedia.org/wiki/Saints_Row:_The_Third,6.71,28370,4605
+1282690,Crysis 3,1282690_Crysis 3.txt,existing,,,,28102,4604
+2096610,Crysis 3 Remastered,2096610_Crysis 3 Remastered.txt,ok,Crysis 3,https://en.wikipedia.org/wiki/Crysis_3,5.56,28102,4604
+1172470,Apex Legends,1172470_Apex Legends.txt,existing,,,,27948,4559
+2357570,Overwatch 2,2357570_Overwatch 2.txt,ok,Overwatch (2023 video game),https://en.wikipedia.org/wiki/Overwatch_(2023_video_game),5.67,27800,4525
+1449560,Metro Exodus,1449560_Metro Exodus.txt,ok,Metro Exodus,https://en.wikipedia.org/wiki/Metro_Exodus,8.00,27704,4486
+412020,Metro Exodus,412020_Metro Exodus.txt,ok,Metro Exodus,https://en.wikipedia.org/wiki/Metro_Exodus,8.00,27704,4486
+397540,Borderlands 3,397540_Borderlands 3.txt,ok,Borderlands 3,https://en.wikipedia.org/wiki/Borderlands_3,8.00,27669,4495
+934700,Dead Island 2,934700_Dead Island 2.txt,ok,Dead Island 2,https://en.wikipedia.org/wiki/Dead_Island_2,8.00,27534,4465
+1088850,Marvel's Guardians of the Galaxy,1088850_Marvel's Guardians of the Galaxy.txt,existing,,,,27165,4304
+1167630,Teardown,1167630_Teardown.txt,existing,,,,27062,4212
+1237320,Sonic Frontiers,1237320_Sonic Frontiers.txt,existing,,,,27034,4297
+1718130,SCP: Secret Files,1718130_SCP - Secret Files.txt,ok,SCP Foundation,https://en.wikipedia.org/wiki/SCP_Foundation,4.40,26723,4130
+872670,SCP: 5K,872670_SCP - 5K.txt,ok,SCP Foundation,https://en.wikipedia.org/wiki/SCP_Foundation,4.40,26723,4130
+1627720,Lies of P,1627720_Lies of P.txt,ok,Lies of P,https://en.wikipedia.org/wiki/Lies_of_P,8.00,26136,4213
+2221490,Tom Clancy’s The Division 2,2221490_Tom Clancy’s The Division 2.txt,ok,Tom Clancy's Rainbow Six (video game),https://en.wikipedia.org/wiki/Tom_Clancy%27s_Rainbow_Six_(video_game),6.54,26127,4098
+839770,Phoenix Point,839770_Phoenix Point.txt,ok,Phoenix Point,https://en.wikipedia.org/wiki/Phoenix_Point,8.00,26117,4165
+1259420,Days Gone,1259420_Days Gone.txt,existing,,,,26105,4221
+1222670,The Sims 4,1222670_The Sims 4.txt,existing,,,,25727,4016
+1888930,The Last of Us Part I,1888930_The Last of Us Part I.txt,ok,The Last of Us Part I,https://en.wikipedia.org/wiki/The_Last_of_Us_Part_I,8.00,25543,3910

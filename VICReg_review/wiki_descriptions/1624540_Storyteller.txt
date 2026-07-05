@@ -1,0 +1,35 @@
+Game: Storyteller
+appid: 1624540
+Source: Storyteller (video game)
+URL: https://en.wikipedia.org/wiki/Storyteller_(video_game)
+Match score: 7.00
+Retrieved: 2026-07-04
+--------
+Storyteller is a puzzle video game designed by Daniel Benmergui and published by Annapurna Interactive. The game was released on March 23, 2023, for Nintendo Switch and Windows, and was released on September 26, 2023, for iOS and Android via Netflix.
+
+
+== Gameplay ==
+Storyteller is a puzzle game in which players form story narratives by placing characters and scenes into picture book styled panels. Depending on how the characters, scenes and panels are arranged, the story and character motivations adapt accordingly, affecting the outcome of subsequent panels. For example, if a character dies in one panel, they will appear as a ghost in later panels. Each puzzle has a descriptive title, with the player tasked with forming a story that matches the title using the provided characters and scenes within a set number of panels. For example, if the title calls for a character to drink poison, they must form a story in which said character will be motivated to drink it. Puzzles may have multiple solutions and certain puzzles have sub-objectives which require the story to fulfil additional criteria to clear.
+
+
+== Development ==
+
+Storyteller has been under development by Argentine game designer Daniel Benmergui since 2009. An early prototype of the game was awarded the Independent Games Festival's innovation award, the Nuovo, in 2012.
+Benmergui spoke of the development hell the game was in during a Fuckup Nights presentation in 2020, detailing how he abandoned the game in 2015 after being forced to move home to his mother (and subsequently started working on it again). Benmergui would later bring on artist Jeremias Babini, who replaced the game's pixel art aesthetic with a style inspired by antique children's books, and composer Zypce as the game's sound designer. A limited time demo of the game, featuring its new art and music, was released in July 2021.
+
+
+== Reception ==
+
+Storyteller received "mixed or average" reviews, according to review aggregator Metacritic. OpenCritic determined that 44% of critics recommend the game.
+
+
+== Notes ==
+
+
+== References ==
+
+
+== External links ==
+Official website
+Developer website
+Composer profile

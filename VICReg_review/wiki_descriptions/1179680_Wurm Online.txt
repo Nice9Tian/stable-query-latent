@@ -1,0 +1,45 @@
+Game: Wurm Online
+appid: 1179680
+Source: Wurm Online
+URL: https://en.wikipedia.org/wiki/Wurm_Online
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Wurm Online is a 3D massively multiplayer online video game (MMO) developed by Code Club AB (formerly called Onetofree AB and Mojang Specifications AB, with no direct relation to Mojang AB). Development started in 2002-2003 by friends Rolf Jansson and Markus Persson, and was released for personal computers using Java in 2006. Both player versus player and realm versus realm combat are possible in the game.
+
+
+== Gameplay ==
+ 
+Wurm Online is a sandbox MMO game. The world of Wurm is a medieval-style fantasy setting. It consists of over a dozen persistent servers, either PvE or PvP. Travel between server islands is done by crossing the surrounding oceans by ship, or by teleportation via portal. The servers' terrain and landscape is changeable by players, who can lower and raise the land, change biomes and vegetation, and more. Aside from a few pre-made starter towns and a minimal amount of NPCs, everything on the originally wild-natured servers is built and managed by players: settlements, infrastructure, the economy and social interaction. 
+The game has no character classes but over a hundred skills players can freely use and train, among them crafting and fighting skills; only characters that become priests accept restrictions in return for magical abilities. Players can use a detailed and expansive crafting system to build everything from equipment to houses to decorations. This encourages specialization and trade, where players can co-operate with each other to achieve goals and complete projects.
+Wurm Online is free-to-play, with a skill cap that is suspended with a paid subscription ("premium time"), payable in real-world or in-game currency ("silvers", which can be acquired in-game or bought). Players can rent land from the game for in-game currency, which offers full control and protection of the deeded land.
+
+
+== Development ==
+
+Wurm is developed in Java and uses OpenGL for rendering the game. The development of the game was started by Rolf Jansson and Notch. Wurm first started its Beta stage in 2003 and had its official release in 2006. In 2007, Markus Persson left the company. When asked if Wurm would shut down due to his resignation, Markus said "Wurm's not going anywhere". In 2008, the main developer began publishing a blog.
+In 2011, the main developer hired their first paid employee, a client developer. This was later followed by a lead artist being hired by the developer, resulting in a total of two known employees as of July 2011. The game was officially released in 2012.
+In October 2015, a standalone version of Wurm Online, known as Wurm Unlimited, was released on Steam as an alternative payment method, having a one time fee rather than having a limited free trial and monthly fee, and is played on player-run servers instead of the main official servers.
+In 2020, Wurm Online was also added to Steam, and introduced four new official servers.
+
+
+== Reception ==
+Massively.com has, since 2012, begun regularly featuring Wurm, often doing live streams of the game and regularly posting news updates about Wurm. Massively have often praised Wurm for its no-limit freedom and for truly being a "sandbox" MMO with many different skills and abilities, criticizing only the "maintenance mode" that occurs when maintaining a (large) deed/village.
+Tisthammer examined it in a "First Impressions" review. The distant landscapes were highlighted for their photographic quality, and the main appeal was seen in the interactivity of the world, but overall, it failed to keep the reviewer's attention, feeling that MUD-style text-based combat has been eclipsed by modern MMORPGs.
+A PC Gamer review after the official release was critical, with a score of 68%, citing the time commitment required as well as the lack of creativity in what a player could accomplish.
+Christopher Steele of Topfreemmorpg.net praised Wurm Online's gameplay and noted that it provides a true challenge to the players.
+MMO Sandboxes' reviewer Crescent Wolf described it as a "true sandbox title".
+
+
+== References ==
+
+
+== Further reading ==
+Jordan Hall, Wurm Online 1.0 Review, OnRPG.com, 28 December 2012
+Benjy Ikimi, Wurm Online Review Archived 3 March 2010 at the Wayback Machine, gamezine.co.uk, 13 Aug 2009
+(in German) Sascha "Hugin" Wall, Wurm Online. Auf den Spuren der letzten Trapper Archived 13 January 2010 at the Wayback Machine, onlinewelten.com, 20 July 2008
+
+
+== External links ==
+Official website
+The Wurm Online wiki: wurmpedia.com

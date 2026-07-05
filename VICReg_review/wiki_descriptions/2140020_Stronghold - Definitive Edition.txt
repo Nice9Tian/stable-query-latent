@@ -1,0 +1,84 @@
+Game: Stronghold: Definitive Edition
+appid: 2140020
+Source: Stronghold (2001 video game)
+URL: https://en.wikipedia.org/wiki/Stronghold_(2001_video_game)
+Match score: 5.05
+Retrieved: 2026-07-04
+--------
+Stronghold is a 2001 real-time strategy video game developed by Firefly Studios and originally published by Gathering of Developers for Microsoft Windows and Mac OS X. It is the first instalment of the Stronghold series. The game focuses primarily on conquest and expansion through military pursuits but also has prominent economic and infrastructure development elements. There is both an economic and a military campaign to be played and both are discussed in the game manual. The country depicted in the game is never mentioned, but the geography and nobility of the game strongly resembles Medieval England.
+Stronghold was a commercial success, with global sales above 1.5 million units by 2004. As well as earning many favourable reviews from reviewers such as PC Gamer and GameSpy, the game continues to boast a large community, who edit and create various material through the in-game map editor/scenario creator. The game's popularity led to several sequels. The original game received a high-definition re-release in 2013. A remaster subtitled Definitive Edition was released on 7 November 2023 for Windows by Firefly Studios, two years after the company was acquired by Devolver Digital.
+
+
+== Story ==
+The game opens with a small backstory; the King, who is abroad invading an unnamed Barbarian homeland, was taken prisoner abroad.
+In his absence, the kingdom has been invaded and divided by four tyrants: Duc de Puce (known as The Rat), Duc Beauregard (The Snake), Duc Truffe (The Pig), and Duc Volpe (The Wolf). Various nobles loyal to the King and country try to end the fighting, but they are ambushed and killed. Only three nobles survive: the intelligent Lord Woolsack, the brash Sir Longarm, and the unnamed player character, whose father was among the slain nobles. Against his better judgement, Woolsack assigns the player to create a fort and begin gathering supplies. However, an impatient Longarm sends secret instructions to begin testing de Puce's defences. When some of de Puce's scouts escape, the player character chooses to pursue them, inadvertently revealing their presence to Duc de Puce and triggering a war.
+The player pushes further into de Puce's lands thanks to help from minor lords rising up against him, and Beauregard. However, Beauregard betrays the player and takes de Puce's lands for his own. Longarm manages to capture de Puce's castle, and the player fortifies it. When de Puce attempts to recapture it, he is killed in the siege.
+Following this, the player and Longarm begin to take Beauregard's lands, while Woolsack opens a second front against Truffe. Longarm leaves the front to negotiate for the King's release, and while he is gone Truffe captures and kills Woolsack. When Volpe's heavily armoured swordsmen begin assisting Beauregard, a group of monks gives the player crossbows, allowing them to defeat the swordsmen and siege Beauregard's castle, killing him in combat.
+The player begins to march into Truffe's lands, however, the initial invasion goes poorly, and they are forced to hide deep in Truffe's territory. The monks give the player new devices in exchange for helping defend their monastery. With the help of the monks and a returning Longarm, the player is able to siege Truffe's castle and kill him.
+With the king back in Britain, the player and Longarm begin to advance upon Volpe's territories. Many territories, sick of Volpe's rule, begin to turn against him as well. Volpe reveals to the player that he was the one who killed their father and challenges the player to face him at his castle. Finally meeting the King, he wants to see the player in battle and gives them command over his armies. The player manages to take Volpe's castle and stabs him in the stomach before pushing him off the walls, seemingly to his death. The King is put back on his throne, and everyone lives happily ever after.
+
+
+== Gameplay ==
+
+In Stronghold, the player takes the role of a lord in a medieval kingdom. The goal is to create a stable economy and a strong military to defend against invaders, destroy enemy castles, and accomplish various mission objectives.
+Stronghold contains several modes of gameplay, with both combat and economic missions. The main game mode is the military campaign, which is based upon a map of England and Wales in the English version of the game, but changes according to the language the game is set in (so that, for example, with the game in Italian the game happens in Italy and in Spanish the game happens in the Iberian Peninsula). The backstory to the campaign explains that the king was captured and held for ransom while invading a neighbouring barbarian kingdom. Four lords take control of the kingdom, dividing it into their personal territories. The player is represented by a young, inexperienced commander whose father is killed in an ambush by one of the villains. He is helped by two lords who remain loyal to the king. The player must regain control of the kingdom by reconquering counties from rival lords one by one. The player has to defeat each of the four lords in the campaign, receiving help from the king once he has been successfully ransomed mid-game. An economic campaign is set after the main campaign in which the player reconstructs parts of the kingdom. The player is given goals to complete against a variety of obstacles, such as bandits and fire.
+Other game modes are single-mission combat and economic scenarios, where the player has to complete either military or economic goals. A siege mode is also included in the game, where the player may attack or defend several historical castles. Free build mode is another game mode; here the player has the option of building a castle without any objectives. More scenarios can be created for the game using the in-game map editor.
+
+
+=== Combat ===
+Stronghold does not use a rock paper scissors system (in which each unit class is strong against a class and weak against the other) for game balance, instead opting for a "soft-counter" system.
+Combat in Stronghold is based on a strength and hit point system. There are a variety of unit types in the game, with each successive unit being stronger, and hence more expensive, than the preceding unit, in general. Even though the expensive units are stronger in combat, all units have abilities that are necessary to defend the castle, both melee units (such as the basic spearman and the stronger swordsman), and ranged units (such as archers). The game also contains support troops such as engineers, who provide additional combat options such as constructing siege engines. Unlike some other strategy games there are no counters for units, and units do not take up space, allowing them to overlap each other. Several non-combat characters can fight against enemy units, although most have no ability to fight. Injured soldiers remain injured for the rest of the game—there is no healing system—and since the lord is the central figurehead of the player's kingdom, despite being a powerful fighter, the game is automatically lost if he dies.
+
+
+==== Simulated fire ====
+Fire plays a main role in the Stronghold storyline, as in certain missions, igniting pitch is almost necessary for survival. There are also certain trigger events that can start fires. Fires spread very quickly, and a flaming building can ignite people or other buildings. Fires will only go out if all sources of fuel are consumed, or if the fire itself is extinguished by fire watches. Fires can spread over small boundaries of water.
+In most real-time strategy games, fire appears on buildings as an indicator of damage; for example, if a building is damaged enough it might catch fire, though it may not necessarily sustain damage from that fire. In some games, such as StarCraft, some buildings damaged to a certain extent will catch fire and continue to take damage from it until they are repaired or the fire destroys them. In Stronghold, buildings that are damaged by siege weapons or are torn down will not catch fire; instead, they lose hit points until they collapse, with the indication of damage being visible signs of cracks and damage throughout the building. However, boiling oil pots, if destroyed, will start a small fire where they were built.
+Contrary to many RTS titles where fire plays a secondary, aesthetic role, fire in Stronghold is an actual gameplay element. For instance, the player is subtly encouraged to build wells against enemies that like to use fire attacks.
+
+
+=== Map editor ===
+An in-game map editor was included with the game. Rather than incorporating a proprietary scripting language, the editor has a WYSIWYG interface designed for use by all users.
+
+
+=== HD re-release ===
+In 2013, an updated version of the game was released on Steam, featuring support for modern operating systems, higher resolutions, and Steam cloud saves. Some gameplay has been tweaked in the newer version, such as an increased unit cap and a battlefield view that allows the player to view the full map from a distance. The game was released for free on GOG.com for a brief time in 2017, packaged with the 1996 game A.D. 2044.
+
+
+=== Definitive Edition ===
+In 2023, a definitive edition of the game was released on Steam, featuring updated visuals, new campaigns, multiplayer support, Steam workshop support and much more.
+
+
+== Development ==
+
+The game was announced in November 2000. The title went gold on 17 October 2001.
+
+
+== Reception ==
+
+
+=== Sales ===
+Stronghold was a commercial success, with global sales of 1.5 million units by 2004. It received a "Silver" signification from the Entertainment and Leisure Software Publishers Association (ELSPA) for at least 100,000 copies sold in the United Kingdom.
+On Media Control's sales chart for the German market, Stronghold launched at #1 among computer games for the month of October 2001. The Verband der Unterhaltungssoftware Deutschland (VUD) presented it with a "Gold" award in late 2001, indicating sales of at least 100,000 units across Germany, Austria, and Switzerland. By the end of the year, the committee had upgraded it to a "Platinum" status, indicating 200,000 sales. Stronghold remained in Media Control's top 30 consistently through May 2002, placing 14th that month and 10th in April. After a 19th-place finish in June, it dropped to 27th in July, while the new Stronghold Deluxe edition debuted that month at #12. Deluxe proceeded to place seventh and 13th in August and September 2002, respectively.
+In the United States, Stronghold debuted at #6 on NPD Intelect's computer game sales rankings for the week of October 21. Holding the position in its second week, it placed 15th for the month of October overall. It was absent from NPD's weekly top 10 by its third week of release. Stronghold ultimately sold 220,000 copies and earned $7.8 million in the United States by August 2006. At the time, this led Edge to declare it the country's 95th-best-selling computer game released since January 2000.
+"At launch Stronghold: Definitive Edition became a critical and commercial success for Firefly Studios. It topped the Global Top Sellers chart as one of Steam's top selling games of November 2023, with over 100,000 sales in the first 72 hours. The game garnered a 'very positive' Steam user score, the highest Metacritic rating in the Stronghold series and most Steam concurrents with nearly 10,000 CCUs at launch." As of January 2025, Stronghold: Definitive Edition has sold over 500,000 copies worldwide.
+
+
+=== Reviews ===
+
+Carla Harker reviewed the PC version of the game for Next Generation, rating it three stars out of five, and stated that "Both sim and strategy players will find something to like in Stronghold, whether it's a long military campaign or just creating the largest, most well-run castle ever."
+The game received "favorable" reviews according to the review aggregation website Metacritic. The graphics were praised by a number of reviewers; GameSpot said of the graphics that "The buildings look good, but not great, and the same can be said of the units", adding that "The animations are well done." IGN disagreed to a degree, saying "Animations are a bit choppy", and commented on the overall state of the graphics: "This isn't the prettiest game ever by a longshot, but it's good enough that your eyes won't burn." GameZone gave high praise to the graphics, saying that the environments were "wonderful" and commenting on the good animation of the characters.
+GameSpot noted that the "Soundtrack is dramatic." GameSpy was neutral on its review of sound, saying that "...the music is nice, if not especially memorable", but also commenting on the "poor voice acting."
+Stronghold was a nominee for Computer Gaming World's 2001 "Best Strategy Game" award, which ultimately went to Kohan: Immortal Sovereigns. The editors called Stronghold "extraordinarily creative and unique".
+
+
+== Notes ==
+
+
+== References ==
+
+
+== External links ==
+Official website via Internet Archive
+Stronghold HD at Firefly Studios
+Stronghold at MobyGames
+Stronghold Nation

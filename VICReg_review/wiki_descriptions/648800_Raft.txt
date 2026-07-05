@@ -1,0 +1,101 @@
+Game: Raft
+appid: 648800
+Source: Raft (video game)
+URL: https://en.wikipedia.org/wiki/Raft_(video_game)
+Match score: 5.53
+Retrieved: 2026-07-04
+--------
+Raft is a survival and sandbox video game developed by Redbeet Interactive and published by Axolot Games. Set on Earth in an endless ocean caused by climate change, players are placed on a small raft circled by sharks, and they must manage their hunger and thirst to survive. Using a hook, players can reel in debris floating in the ocean and use these materials to expand their raft into an expansive base, forge tools, make amenities to aid in survival, and create navigational equipment. By crafting a radio receiver, players can explore a series of story islands with a narrative about freeing survivors from imprisonment by a corrupt military general.
+Raft started development as a student project at the Gotland campus of Uppsala University in Sweden. After they completed their course and released Raft's prototype to the indie game platform Itch.io in December 2016, the game received attention from YouTubers, which allowed the team to focus on its development as their full-time jobs. As Redbeet Interactive expanded their staff from three to seven, Raft launched in  early access to the storefront Steam on 23 May 2018, and received continuous updates, before the full game was released on 20 June 2022. Ports for the PlayStation 5 and Xbox Series X/S were released on 4 December 2024.
+The game received praise from several critics for its game design, sense of progression, multiplayer mode, and story islands, although a few reviewers thought its early game was slow. Commercially, Raft's full release was the best-selling title on Steam for two consecutive weeks, and the game also saw a favorable launch on the Xbox Series X/S, as one of the best-selling indie games on the console. By 2024, Raft had sold at least five million copies.
+
+
+== Gameplay ==
+
+
+=== Premise and survival ===
+
+Raft is a survival and sandbox video game that can be played in single-player and co-op. Multiplayer, which can be played with up to ten people, supports cross-platform play and in-game voice chat. Raft is played in first-person by default, but a third-person perspective can be toggled via hot key. In the game, players are stranded on a raft in an endless ocean with a hook to reel in items from the waters. These resources, which include planks, palm leaves, and plastic, can be used to expand the initially four-panel raft, craft tools, and make amenities such as storage chests. Further crafting recipes are unlocked by placing materials and blueprints into a research table. Some resources can be refined using other appliances, such as ores into ingots using a smelter. New materials encountered throughout the game's progression unlock gradually stronger tools.
+While gathering resources, players must also sustain themselves by gathering food through farming, fishing, or hunting, and hydrate themselves using water purifiers. Using a cooking pot or juicer, players can combine different ingredients to cook recipes for foods and drinks, which may also give additional status effects. If either the hunger or thirst meter reach zero, the player's health will start to deplete. The depletion of all health causes the player's death; afterwards, they can either be revived by a co-op teammate or respawn and lose part of their inventory. The raft is constantly circled by sharks, which will attack players if they enter the water. Sharks can also attack and destroy pieces of the raft, but they can be fought off using spears or bows. Another hazard is seagulls, which will ravage crop plots but can be distracted by scarecrows.
+The raft serves both as players' mode of transport and base of operations; since building is impossible on land, all amenities must be placed on the boat. In addition to expanding its surface area with a building hammer, players can make structural components such as walls, support beams, staircases, and roofs, to eventually expand the raft into an elaborate base. Ziplines can be installed to aid in traversing onboard the raft, and collection nets can be crafted to automatically collect items from the ocean stream. It is also possible to unlock and craft various decorational items, such as furniture and paintings, and use a paint brush to modify the color and pattern of objects. In the game's creative mode, players are given unlimited health and resources to experiment with building. Other difficulty modes — peaceful, easy, and hard — change the amount of damage taken from enemies and the speed at which hunger and thirst are depleted.
+
+
+=== Environment and objectives ===
+
+Raft is an open world game. Breaking up the endless ocean in the world generation are occasional island, which feature materials such as trees, flowers for paint, and wild fruit, and metals and clays in the surrounding shallow reefs. Islands spawn in both small and large variants. The large islands feature trading posts, where players can exchange trash cubes — acquired by salvaging spare resources in a recycling machine — for various items such as fish bait. Players can also capture lifestock — cluckers, goats, llamas, and bees — which can be brought to the raft to farm produce. Outside lifestock, islands are populated by hostile animals, such as screecher birds and warthogs, and pufferfish in the shallows. The raft is always pushed by a directional wind, but players can craft anchors, engines, boat controls, sails, and paddles to steer their trajectory.
+By crafting a radio receiver with batteries and antennas, players can see a radar screen, which displays nearby landmasses as dots on a map. By inputting four-digit codes into the receiver, players are guided to one of the game's story islands—islands which incorporate puzzle-solving elements as players search for the code to the next destination. Story islands, which serve as the primary objective breaking up endless drifting in the ocean, are often significantly larger than the regular islands and can take multiple in-game days to explore. They also feature discoverable notes and voice logs, which expand on the backstory to the game's apocalypse, and non-player characters who are unlocked as skins when talked to. Receiver codes and notes are stored in the player character's notebook. Exploring all story islands unlocks the last tier of tools and leads to the game's ending, but players are still able to continue exploring and expanding their raft thereafter.
+
+
+=== Modding ===
+
+Raft can be modded, which is facilitated by an external mod loader and the downloading website RaftModding. In a listicle for PC Gamer, Sarah James noted mods with quality-of-life additions and ones that remove base game features. Additions in her listed mods included a minimap, faster swimming, the removal of the hunger system, increases to the amount of debris in the ocean stream, and sprite helpers which players can assign to different tasks on the raft, such as farming crops. RaftVR, a mod that adds virtual reality support and allows players to physically throw their hook, paddle the raft, and fight enemies, was described as "[bringing] the game's open waters to life in a spectacular way" by Eurogamer's Ian Higton.
+
+
+== Plot ==
+
+After the Earth's ice caps melt as a result of global warming, a worldwide flood leads to the deaths of many and the submerging of almost all land. An initiative, the Floating Cities Project, is launched to construct livable environments floating on the oceans, but it is led by an egotistical former military general, Olof Wilkstrom. The player character is a Forward Scout—a person tasked with searching for a rumored utopia upon which civilization lives.
+After constructing the radio receiver, the Forward Scout traverses to several locations, following a trace of trouble left by Olof. On the luxury ship Vasagatan, Olof abandoned his crew using the only lifeboat upon a crash. This led Olof to Caravan Town, an Indonesian settlement, where a salmonella pandemic soon broke out, believed by local scientists to have been intentionally caused by Olof. The residents of Caravan Town fled to the floating city Tangaroa, where conflict ensued between the refugees and the local governor. Coupled with an insect infestation and reactor failure, the people of Tangaroa and the refugees from Caravan Town were forced to evacuate. By the time the Forward Scout arrives at these locations, these events have already transpired and the settlements are abandoned.
+After other stops, the Forward Scout arrives at the floating city Utopia, where they come face-to-face with Olof, who has enacted martial law over the city and imprisoned the refugees from Caravan Town and Tangaroa. After Olof and his army of hyenas are defeated by the Forward Scout, the general is imprisoned and the civilians are freed. In the ending cutscene, the survivors vow to rebuild human civilization.
+
+
+== Development and release ==
+
+
+=== Itch.io prototype (2016–2017) ===
+
+Developed in Unity, Raft started as a student project at the Gotland campus of Uppsala University in Sweden, by an indie team comprising programmer Semih Parlayan and artists Ellen Mellåker and André Bengtsson. As part of a course on researching and delivering a product to a video game market, they created the first prototype of Raft in approximately four months. In this first version, players could only use the hook to collect planks. To add intensity, the team introduced the hunger and thirst systems, but realized that players could jump into the waters to collect items directly instead of using the hook. To combat this oversight, they introduced the shark as a constant threat. According to Bengtsson, the shark solved multiple other gameplay issues as well, such as presenting a physical threat to the raft. When they later added islands, they found the shark also helped improve engagement when scavaging reefs.
+After the completion of their university course, the team released Raft for free in its prototype state to the indie platform Itch.io in December 2016, under the alias "Raft Developer", with support for Windows, Linux, and MacOS. Bengtsson told PC Gamer that the game first received attention from a Russian YouTuber with around 300,000 subscribers and gained popularity in that country, before it "started snowballing". Raft was subsequently played by English-speaking YouTubers such as the Family Gaming Team and Markiplier. The latter, who has a fear of the ocean, played the game as part of a series called F*ck the Ocean and attracted over three million viewers. According to the developers' blog, the game received 100,000 download within a week; after half a year, it had been downloaded over five million times.
+
+
+=== Early access (2018–2022) ===
+
+Upon the response to the prototype, Redbeet Interactive — the game studio subsequently formed by the developers — began to work on Raft as their full-time jobs. They relocated headquarters to Skövde, a central city in the Swedish video game industry, and sold a 20% share in their studio to Axolot Games, a Stockholm-based developer who would acquire the publishing rights for Raft. As development towards a full release continued, Redbeet hired new staff including artists and programmers. By the game's completion, they were employing seven people. Bengtsson served as CEO and was in charge of most paperwork, which he described as "not great fun". Jannik Schmidt, a composer from Germany, was brought in to write the soundtrack in 2018. He would continue to contribute new pieces as the game was updated.
+Raft launched in early access to the storefront Steam on 23 May 2018, exclusively for Windows, with an added multiplayer mode. Redbeet gradually released updates to the game. At first, these consisted primarily of small-scale additions and bug fixes, but they later transitioned their focus over to major updates. They began to expand on the game's story islands and lore with an update entitled "The First Chapter" on 3 December 2019, followed by "The Second Chapter" on 9 October 2020. "The Renovation Update" on 21 June 2021 added more options for decorating.
+
+
+=== Full release (2022–) ===
+
+After four years in early access, Raft was officially released with  "The Final Chapter" update on 20 June 2022. Described by PC Gamer's Jonathan Bolding as the "largest update in Raft's history", it added the last of the game's story islands, among other features. Following the launch, Redbeet continued to add occasional hotfixes to the game, but mostly ceased development and downsized their team from seven to three. A quiet addition in the final update blocked players without internet connection from entering the game, due to technical issues experienced when playing offline. After criticism from players, Redbeet reinstated the offline mode while warning that it "might not work as expected" due to bugs.
+Ports of Raft for unspecified home consoles were announced via a Steam blog post in November 2022. After two years of mostly silence, and with little promotion, Raft was released for PlayStation 5 and Xbox Series X/S on 4 December 2024. Pure Xbox described it as a "very nice port job", although they reported user complaints upon launch about thumbstick sensitivity, which Redbeet attempted to alleviate in a hotfix later that month. Alongside the console version's release, Redbeet opened beta testing for cross-platform play. This feature would not be officially implemented until an update on 10 March 2026 — Raft's first major update since its full release — which also added voice chat and other quality-of-life fixes.
+
+
+== Reception ==
+
+
+=== Critical response ===
+
+Critical reception to Raft has included rankings among the best survival games by GameSpot, PCGamesN, and GamesRadar+. GameSpot also ranked it as one of the best sandbox games. Rock Paper Shotgun recommended it as one of the best survival games on PC, as did Pure Xbox on the Xbox Series X/S. Polygon placed Raft as the 28th best release of 2022.
+In respect to how players start with almost nothing but can eventually develop their raft into a well-equipped base, several reviewers praised Raft's sense of progression, although a few felt this could only be experienced by bearing through a less compelling early game. Writing for PC Gamer, Christopher Livingston said he at first "hated" Raft and would have quit early on if it wasn't for his job as a reviewer, but found that after this slow phase was an addictive and "engrossing survival experience". Shacknews's Donovan Erskine thought the game picks up pace when players settle into a rhythm with food and water. Regarding the later game, he noted a "great sense of pride and achievement" upon loading into his world and observing the progress made to his base throughout a playthrough, and concluded that Raft is an "easy recommendation for survival fans". Giving a differing opinion on the early game, Magi Inaya in Dengeki Online scored the "busy" gameplay for providing a realistic feeling of survival. In contrast, Shacknews and PCGamesN's Gina Lees considered Raft a relaxing game.
+Several critics praised the game for its multiplayer experience. Regarding Raft's game design, Game*Spark's Mr. Katoh thought variations in gameplay — such as preparation for a story island or the shark attacking the raft — kept players doing new things, preventing monotony in a brilliant display of design. However, a few elements received a range of opinions from positive to negative, such as the shark. Steve Hogarty, reviewing the early access for Rock Paper Shotgun, considered the shark a "marvellous example of clever game design" for presenting players with a constant sense of danger; Shacknews, however, thought the shark eventually became a mere nuisance, when it failed to pose a significant threat to players' upgraded tools later in the game. Outside of gameplay, multiple critics gave positive remarks towards the story islands and wrote about an awe factor provided by their greater scale, contrast to the mostly empty ocean. A few reviewers also appreciated these locations for providing a change in pace to the gameplay loop.
+Raft has received numerous comparisons to Subnautica (2018), another ocean planet-set survival game. Writing for NME, Rick Lane thought both games' "non-terrestrial" settings resulted in a new take on survival mechanics, but noted a difference in Subnautica's greater focus on underwater exploration, which the shark discourages in Raft. Framing Raft to survival games as a whole, a few writers noted that players' base also being the primary mode of transport created a new take on the genre. Noting another difference from the typical formula of survival games, Elliot Allard for Checkpoint Gaming considered it unique for the game to feature an objective ending — and appreciated the amount of attention given to the narrative locations, a level of detail he thought was atypical of the genre — but thought that the postgame lacked incentive to continue playing.
+
+
+=== Awards and honors ===
+At the 2022 Indie Live Expo Awards, Raft won the Late Bloom Award — presented to titles which came out of lengthy development periods — and was nominated for Most Addictive Game, which it lost to Vampire Survivors. During the Steam Awards, voted by Steam's playerbase, the game won Better with Friends for its multiplayer experience. In October 2024, Redbeet Interactive and Raft, alongside four other titles, were presented with a bronze plaque engraved into the pavement of Rådhusgatan, a central street in Skövde. The plaques are part of the Walk of Game — a spoof of the Hollywood Walk of Fame to honor successful video games originating from the city.
+
+
+=== Sales ===
+Upon its early access release in 2018, Raft entered Steam charts as the third best-selling game on the platform, with approximately 20,000 concurrent players. The release of "The Second Chapter" in 2020 caused a surge in popularity; its concurrent player count peaked at a new best of 42,000, a 1300% increase in active players from the days before update. Upon its full release, Raft was part of a summer sale and reached number four on the Steam charts, with over 100,000 concurrent players. A month later in July, it would chart two consecutive weeks as the top grossing title on Steam. Despite its promotion with "basically no fanfare" according to Pure Xbox, Raft had a favorable launch on Xbox Series X/S, where it became an indie outlier on charts otherwise occupied mostly by triple-A titles. By 2024, the game had sold five million copies at minimum, per the criteria for the Skövde Walk of Game.
+In 2020, Swedish trade magazine Dagens Industri described Redbeet as "one of Sweden's most impressive start-ups" and calculated at least 500,000 copies of Raft sold, although Bengtsson said it was "much more". While not disclosing a number, the magazine reported that 2022 — the year of the game's full release — was the developer's most successful. The table below lists Redbeet's revenue and profit margins for different years (solely from Raft), as reported by Dagens Industri:
+
+
+== See also ==
+
+Sharks in popular culture
+Scrap Mechanic (2016), another title by Axolot Games
+Stranded Deep (2020), survival game set in a procedurally generated world of oceans and islands
+
+
+== Notes ==
+
+Notes on attribution to multiple sources
+
+
+== References ==
+
+
+== External links ==
+
+Official website
+Redbeet Interactive official website
+Original free prototype of Raft at Itch.io

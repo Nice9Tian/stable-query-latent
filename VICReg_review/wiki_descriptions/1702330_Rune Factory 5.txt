@@ -1,0 +1,46 @@
+Game: Rune Factory 5
+appid: 1702330
+Source: Rune Factory 5
+URL: https://en.wikipedia.org/wiki/Rune_Factory_5
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Rune Factory 5 is a 2021 role-playing simulation game by Marvelous. The first entry in the Rune Factory series since Rune Factory 4 (2012), it was released for the Nintendo Switch in Japan in May 2021 and in North America and Europe in March 2022, including a Windows port in July 2022.
+
+
+== Plot ==
+A hero (whose gender—male or female—and name—Ares or Alice by default—can be chosen by the player) loses their memory and ends up joining SEED, a group of rangers led by a young girl named Livia operating in the small town of Rigbarth, populated by humans and beast people, after saving a young fox girl. The hero is encouraged to tend the land and complete tasks for the townspeople, as well as battle monsters in order to maintain the peace. It is later discovered that the hero is an Earthmate. After helping to capture a bandit named Oswald, they learn from him that SEED is doing more than just protecting innocents and that the organization's warden Gideon has ulterior motives; Oswald himself and Radea, a shapeshifting dragon girl, are mere pawns to his plans and that he had convinced the latter that an Earthmate murdered her sister. The hero soon learns that Radea is actually Livia's younger sister and that Livia herself is also a shapeshifting dragon. They later stop Radea's attempt to absorb all runes in the area and after learning that her sister is alive and well, explains Gideon's plans to control everyone's will after seeing the chaos that happened following the collapse of the Sechs Empire. With the help of a god named Lucas, the hero and Radea infiltrate Gideon's airborne hideout, but he overpowers them and kidnaps Radea. The hero finds them with Lucas's assistance and after they and Livia defeat Gideon, they learn that he's been manipulated by an evil entity called the Fathomless Dread into freeing it. After Gideon frees himself from the entity's control, it merges with Radea and uses her to open a passageway into its prison, with Gideon sacrificing himself to save the others. The hero defeats the Fathomless Dread and saves Radea, but it then merges with the hero and tries to use their body to escape. Lucas and the townsfolks contact the hero and, with the aid of Livia and Radea, free the hero from the Fathomless Dread's control, destroying the entity for good. Afterwards, the group return to Rigbarth.
+
+
+== Gameplay ==
+
+As with previous games in the series, gameplay features the ability to farm and tame monsters. Players can also form social connections with the game's townsfolk, including ones with bachelors or bachelorettes leading to marriage.
+The game's crafting system allows players to create new equipment. Crafting items costs Rune Power, which is replenished each day, and the player character must consume "recipe bread" items to randomly gain recipes to craft new items. The player can cook food with or without recipes, though cooking food without a recipe costs more Rune Power than if the player uses a recipe.
+
+
+== Development ==
+Following the success of Rune Factory 4, series producer Yoshifumi Hashimoto commented that the development of a sequel was expected. However, after Rune Factory developer Neverland Co. declared bankruptcy in 2013, the future of the series was left uncertain. In 2014, Marvelous AQL stated that they had hired former Rune Factory developers, including Hashimoto, to develop Lord of Magna: Maiden Heaven. Hashimoto left his executive officer role in 2018 and opened a new studio under Marvelous called Hakama, where he went to work on Rune Factory 4 Special and Rune Factory 5.
+The game was announced in February 2019 and was planned to be released in 2020 before being delayed. It was released in Japan on May 20, 2021, in North America on March 22, 2022, and in Europe three days later. A Windows version was released on July 13, 2022.
+
+
+=== Localization ===
+Xseed Games, who handled the game's localization, worked closely with the game's developers, providing feedback on how overseas players would likely respond to the game. Xseed was asked by the developers to help create a design document for a same-sex marriage feature in the game, which is an unusual amount of involvement in the game's development for a localization company. The same-sex marriage feature was available in the global releases at launch, and added to the Japanese version later.
+
+
+== Reception ==
+
+Rune Factory 5 received "mixed or average" reviews according to review aggregator Metacritic. It was praised for its combat system, gameplay, and characters, but criticized for its graphics and a lack of innovation to the series' formula. The Switch version was also criticized for its technical performance.
+
+
+=== Sales ===
+In Japan, the Nintendo Switch version of Rune Factory 5 debuted with 102,853 physical copies sold, making it the bestselling retail game during its first week of release. Total worldwide shipments and digital sales surpassed 500,000 copies as of March 2022.
+
+
+== Notes ==
+
+
+== References ==
+
+
+== External links ==
+Official website

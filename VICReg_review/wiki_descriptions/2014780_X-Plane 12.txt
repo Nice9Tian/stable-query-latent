@@ -1,0 +1,25 @@
+Game: X-Plane 12
+appid: 2014780
+Source: X-Plane (simulator)
+URL: https://en.wikipedia.org/wiki/X-Plane_(simulator)
+Match score: 5.56
+Retrieved: 2026-07-04
+--------
+X-Plane is a flight simulator initially launched by Laminar Research in 1995. Commercial desktop versions are sold for macOS, Windows, and Linux. A mobile version has been available for Android, iOS, and webOS since 2009 as well.
+
+
+== Reception ==
+
+In a review of version 5.11, Inside Mac Games praised the simulator's options but criticized its lack of polish. Reviewing the same version, Macworld stated that its features were close to those of FAA-approved simulators. PC Gamer called version 5.43 the "current standard-bearer for flight model realism in a commercial simulation", with physics incorporating blade element theory. Multiplayer.it noted that the professional version of version 12 is certified by the FAA, and that X-Plane is made for serious flight simulator enthusiasts.
+
+
+== See also ==
+List of flight simulator video games
+
+
+== References ==
+
+
+== External links ==
+Official website 
+X-Plane at MobyGames

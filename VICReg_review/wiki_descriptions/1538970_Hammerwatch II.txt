@@ -1,0 +1,28 @@
+Game: Hammerwatch II
+appid: 1538970
+Source: Hammerwatch 2
+URL: https://en.wikipedia.org/wiki/Hammerwatch_2
+Match score: 7.33
+Retrieved: 2026-07-04
+--------
+Hammerwatch 2 is a 2023 action role-playing video game developed by Crackshell and published by Modus Games.  It is the sequel to Hammerwatch and Heroes of Hammerwatch.  It is available for Windows, PlayStation 5, and Nintendo Switch.  Ports to the PlayStation 4 and Xbox Series X/S were released on April 23, 2024.
+
+
+== Gameplay ==
+Players attempt to stop a supernatural blight from corrupting a fantasy land.  Hammerwatch 2 is an action role-playing game in which players can complete quests, explore dungeons, collect loot, craft power-ups, and customize their characters through skill trees.  Each class has two meters that are used to power ranged attacks and special abilities exclusive to their class.  Players can respec their character's skills.  Hammerwatch 2's story is generally linear, but players can explore an open world and complete the quests in any order.  Combat is similar to classic twin-stick shooter games, such as Gauntlet.  Upon dying, players can pay gold to respawn. The game is played from an isometric point of view.
+
+
+== Development ==
+The developer, Crackshell, wanted to bring the Hammerwatch series in a more action-adventure direction, influenced by large action role-playing games, such as Sacred.  Modus Games released the Windows version on August 15, 2023.  The PlayStation 5 and Switch versions were released on December 12, 2023.  Further ports to PlayStation 4 and Xbox Series X/S were released on April 23, 2024.
+
+
+== Reception ==
+
+Hammerwatch 2 received "mixed or average" reviews according to the review aggregation website Metacritic. Although they found the multiplayer and character progression fun, RPGFan recommended that fans avoid Hammerwatch II, which they said is "stuck in the past" due to poor design decisions.  They also criticized the writing and what they felt were poorly made dungeons, which they said made it "a slog of an adventure".  PC Gamer said the old-school design may annoy some players, but they found the game fun enough to overcome the frustrating elements.  Rock Paper Shotgun enjoyed how the game could be made as simple or complex as one desires, though they said it can feel unpolished.  Nintendo Life said its writing and technical issues on the Switch make Hammerwatch 2 feel like a rough draft, but they recommended it to people who enjoy mindless grinding and fun combat. Software bugs caused TouchArcade to recommend against buying the Switch version, but they said fans of retrogaming may be interested in it after the bugs are fixed.
+
+
+== References ==
+
+
+== External links ==
+Official website

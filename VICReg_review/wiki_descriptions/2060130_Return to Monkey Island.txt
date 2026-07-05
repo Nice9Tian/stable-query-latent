@@ -1,0 +1,103 @@
+Game: Return to Monkey Island
+appid: 2060130
+Source: Return to Monkey Island
+URL: https://en.wikipedia.org/wiki/Return_to_Monkey_Island
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Return to Monkey Island is a 2022 point-and-click adventure game developed by Terrible Toybox and published by Devolver Digital in association with Lucasfilm Games. It is the sixth installment in the Monkey Island series, and was first released for macOS, Nintendo Switch, and Windows on September 19, 2022. Ports were later released for Linux, PlayStation 5, Xbox Series X/S, iOS, and Android. The story follows series protagonist Guybrush Threepwood as he searches for the real secret of Monkey Island.
+Return to Monkey Island was the first Monkey Island game by the series' creator, Ron Gilbert, since Monkey Island 2: LeChuck's Revenge (1991), and its story continues from the events of that game. Gilbert worked on the first two Monkey Island games before leaving the development company, LucasArts, in 1992. Further installments were developed by LucasArts and Telltale Games without him. The Walt Disney Company acquired the rights to Monkey Island when it purchased Lucasfilm in 2012; in 2019, Gilbert negotiated to create a new Monkey Island with designer Dave Grossman, who had also worked on the first two games. Return to Monkey Island was announced in April 2022. Dominic Armato reprised his role as the protagonist, Guybrush Threepwood. The game received generally positive reviews.
+
+
+== Gameplay ==
+Return to Monkey Island is a 2D point-and-click adventure game. The objective is to move the story forward by solving narrative-based puzzles. This can be done by exploring locations, talking to non-player characters to acquire information, collecting items and using them at the right time. The player controls the pirate Guybrush Threepwood, who sails the seas and visits islands.
+The user interface is different from previous 2D Monkey Island games. Tooltips over screen hotspots guide the player's actions: when the cursor is moved over an interactive zone of the scene, a brief phrase appears, suggesting what action Guybrush will take. The inventory uses a drag and drop interface to easily use and combine items and the interface has been designed to work with controllers or mouses.
+The game includes a hint system designed to discourage players from looking for walkthroughs online and make sense "in the fantasy" of the game. The game also includes a simplified mode called "casual mode" for less experienced players.
+
+
+== Synopsis ==
+
+
+=== Setting and characters ===
+Return to Monkey Island  takes place on fictional islands in the Caribbean around the Golden Age of Piracy, as with previous games of the franchise. The game features a frame story that continues from the ending of LeChuck's Revenge, while the primary narrative is set after Tales of Monkey Island and follows Guybrush's journey to finally find the secret of Monkey Island. Along the way, Guybrush revisits iconic locations from the series, such as Mêlée Island (which is now under new management) and Monkey Island. He also lands on islands that have never been explored before in previous games, like the chilly "Brr Muda" and "Terror Island".
+Several of the main characters of the series return for the game: the pirate Guybrush Threepwood (Dominic Armato), his wife Elaine Marley (Alexandra Boyd) and his arch-enemy zombie pirate LeChuck (Jess Harnell). Other returning characters include Murray the Demonic Talking Skull (Denny Delk), mapmaker Wally B. Feed (Neil Ross), used ship salesman Stan S. Stanman (Gavin Hammon), Mêlée governor and former swordmaster Carla (Leilani Jones Wilmore), and the mysterious Corina the Voodoo Lady (Wilmore). New characters include Captains Madison (Alix Wilton Regan), Lila (Annie Q.), and Trent (LeQuan Bennett), the three new Pirate Leaders competing with Guybrush and LeChuck to find the secret.
+
+
+=== Plot ===
+Guybrush and Elaine's son Boybrush (Ava Hauser) is playing with his friend Chuckie (Courtenay Taylor) at an amusement park, re-enacting his father's adventures. At Boybrush's prompting, Guybrush decides to tell him the story of how he found the secret of Monkey Island.
+Having learned that LeChuck has obtained a map to the exact location of the secret, Guybrush travels to Mêlée Island in an attempt to gather a crew and ship to get there first, but the new Pirate Leaders Madison, Lila, and Trent refuse to back his venture. With his options limited, Guybrush obtains a magical eyepatch that disguises him as a zombie, allowing him to infiltrate LeChuck's crew before they shove off. Along the way, the potion used to guide the ship to Monkey Island is ruined, but Guybrush discovers the Pirate Leaders are also heading for Monkey Island and secretly completes their potion so LeChuck's ship can follow them. As they approach the Island, Guybrush takes LeChuck's map and replaces it with a fake, but accidentally removes his eyepatch and LeChuck throws Guybrush overboard.
+After washing up on Monkey Island, Guybrush follows the map but falls into a trap by the Pirate Leaders, who had intended it for LeChuck. As they have the real map but it is magically-encrypted, they agree to a truce to find the secret's location. With Guybrush's help, the map reveals the secret to be at the International House of Mojo on Mêlée Island. The Pirate Leaders betray Guybrush and throw him off a cliff before setting sail; LeChuck, realizing the deception, pursues them. Elaine arrives to help Guybrush, and they escape the island by rebuilding his old ship, the Sea Monkey. While at sea, LeChuck battles the Pirate Leaders before eventually agreeing to a truce to find the secret.
+Arriving at the International House of Mojo, Guybrush learns the secret is hidden inside a safe locked by five golden keys, which have been scattered. Following a series of clues, Guybrush travels the Caribbean to find each of the keys, frequently leaving a trail of destruction in his wake due to his single-minded obsession with the secret. In his absence, LeChuck and the Pirate Leaders attempt to use magic to open the safe instead, but they eventually turn on one another and LeChuck kills the Pirate Leaders. After obtaining the last key, Guybrush opens the safe, only to find a locked chest. LeChuck appears and steals the chest, taking it back to Monkey Island to perform the necessary ritual to open it and obtain the secret. Guybrush and Elaine follow, though Elaine repeatedly questions if the secret could live up to his expectations.
+Descending beneath Monkey Island, Guybrush follows the catacombs and opens a hidden door. He emerges in a theme park recreation of Melee Island, revealing it to be the true setting of all his adventures, with LeChuck and the others all being animatronics. Guybrush can open the chest containing the secret and find a novelty T-shirt inside. Boybrush finds this ending unsatisfying and questions its veracity, but Guybrush remains ambiguous in his answers. Elaine arrives and invites Guybrush to join her on a new adventure. The game offers multiple different post-credits scenes depending on the player's choices in the final sequence.
+
+
+== Development ==
+
+
+=== Origin and production ===
+
+Ron Gilbert, the creator of the Monkey Island series, worked on the first two Monkey Island games before leaving the development company, LucasArts, in 1992. He often dreamt of making a new Monkey Island game but did not own the intellectual property rights. Further Monkey Island games were developed without Gilbert by LucasArts and Telltale Games.
+In 2012, The Walt Disney Company acquired the rights to Monkey Island when it purchased Lucasfilm. At PAX 2019, Nigel Lowrie, founder of Devolver Digital, mentioned to Gilbert that he knew John Drake, who was in charge of licensing at Disney. Drake wanted to approach Disney about a new Monkey Island game. In December, Gilbert invited Dave Grossman, who had worked on the first two Monkey Island games, to work on a new installment.
+Gilbert and Grossman met in Seattle in January 2020 to discuss ideas, and felt confident that they could create a good game. Lowrie approached Drake to pitch the game and Disney was willing to talk about it. Gilbert had "lengthy conversations" with Disney to make sure his team would have creative freedom, allowing him to "build the game I wanted to build".
+Return to Monkey Island was developed for two years in secrecy. Gilbert said: "I did not tell anybody. If you were not actually working on this project, you didn't know about it. I didn't tell my best friend. I didn't tell my mother, I didn't tell my sister." The team worked remotely during the COVID-19 pandemic. At its peak, the development team consisted of 25 people. Compared to Gilbert's previous game, Thimbleweed Park (2017),  the team working was bigger mainly because there were more artists on staff, such as animators and a dedicated storyboard artist.
+
+
+=== Writing ===
+Return to Monkey Island begins after Monkey Island 2, which ended on a cliffhanger with Guybrush having become a child at an amusement park. Gilbert left LucasArts after completing Monkey Island 2. Though he said that the later games "did their best" to resolve the ending, he wanted to "tackle it head on".
+Gilbert described the position of Return to Monkey Island in the series' timeline as "amorphous". He and Grossman discussed whether the game should embrace the events of the other games. They attempted to follow the existing canon where possible, but ignored elements if it prevented them from telling a good story. Gilbert felt that some of the Monkey Island games had become too whimsical, and he wanted the new game to be a pirate adventure, focusing on Guybrush sailing the seas and visiting islands.
+Unlike the extemporaneous approach to writing that Grossman had early in his career, he worked things in more stages, working from the top down. He began with planning the big aspects and then moved on to the smaller details. To do this, he did a thumbnail pass where he tried to go through and quickly scribble out the entire game. During this process, jokes pop into his head, which he made note of. He believed that by taking this approach, it would preserve the freshness of humor without sacrificing the planning that was needed in guiding other aspects of the game, such as artwork and puzzle design.
+
+
+=== Art ===
+The art style differs from previous Monkey Island games. The team considered using pixel art, but did not want to make a "throwback" game. Gilbert said that they had a lot more freedom and flexibility to not make it a pixel art game. Searching for an art director, Gilbert recalled a drawing of a stylized Guybrush sent to him by the artist Rex Crowle in 2007, and discovered that Crowle had been a designer on the game LittleBigPlanet and the art director of Double Fine's Knights and Bikes. Gilbert hired Crowle to create an innovative style for Return to Monkey Island as the art director.
+Crowle, who had played The Secret of Monkey Island as a child, took inspiration from other Monkey Island games, as well as other 1990s LucasArts games such as Day of the Tentacle. For Return to Monkey Island, he defined a style reminiscent of a picture book or a pop-up book because it matched well with the main topics of the game: "We've taken something from all of the games, while making something new and specifically tailored to the story that Ron Gilbert and Dave Grossman wanted to tell. An art style has to connect with the core themes of the game you're making, its not an interchangeable thing that you apply like a Photoshop filter, and for this adventure a picture-book style was the right fit".
+
+
+=== Music and voice acting ===
+Composers Michael Land, Peter McConnell, and Clint Bajakian, who already worked on previous installments of the Monkey Island franchise, were hired to compose the game soundtrack. In an interview with Adventure Gamers, Dave Grossman pointed out how easy it was to work with musicians who already knew the franchise very well. Having them back for the sequel was beneficial because they were already familiar with what was expected of them. The rest of the team could simply sit back and watch them create, knowing that they would deliver quality work.
+Dominic Armato, the voice actor for Guybrush Threepwood in the previous games, was signed on to reprise the role and was happy to accept the offer. Gilbert met with Armato to have a chat about an unspecified "new game" and the voice actor was baffled when he discovered that the game in question was a Monkey Island game: "We got together, we had coffee, and I think he was very interested in the new game, almost kind of wondering whether maybe he could have a voice part in it. And then I told him that it was the new Monkey Island, and he was just floored".
+Alexandra Boyd and Denny Delk returned to voice Elaine and Murray the Talking Skull. Earl Boen, the original voice of LeChuck, retired from acting in 2017 and gave the developers his blessing to recast the role. Jess Harnell provided the new voice. Neil Druckmann, the co-president of Naughty Dog, has a voice cameo.
+
+
+=== Technical design ===
+The team spent time making Return to Monkey Island enjoyable with a controller without making the experience worse for players who use a mouse, which point-and-click adventure games typically use. One of the goals was "not distracting or detracting from what the mouse play is". The user interface differs from the clickable verbs or the pop-up action menu of The Curse of Monkey Island (1997). When the cursor stops over a screen hotspot, a brief message of what Guybrush is thinking appears, suggesting the action he will take if the player clicks.
+Gilbert revamped the game engine he had used for Thimbleweed Park. The development of his free game Delores: A Thimbleweed Park Mini-Adventure (2020), worked as a testbed for the new engine. The developers added camera zooms, pans, and pulls to draw attention to specific elements, which would have been difficult in the early 1990s.
+
+
+=== Marketing and release ===
+On April Fools' Day 2022, Gilbert announced on his blog that he was working on a Monkey Island game, surprising the industry. On April 4, Devolver Digital published a teaser video on their YouTube channel and opened the official website. The website was updated in June to show an example of the game's dialogue-based gameplay. Visitors could ask Stan, a regular character in the series, about the new game.
+The game was advertised on the official website as "the exciting conclusion of the Monkey Island series", which led to speculation as to whether it would be the final chapter in the series. This was refuted when the developers described it as marketing text not written by them.
+Starting from July 11, Gilbert and Grossman shared on Twitter a video clip of the game every Monday, calling the initiative "Monkey Island Monday". The clips revealed new locations, new characters and how the dialogue system and part of the user interface looked like.
+The game was released for macOS, Nintendo Switch, and Windows on September 19, 2022, which coincided with International Talk Like a Pirate Day. Preorders were opened on Steam and Nintendo eShop. As a pre-order bonus, players would get an in-game horse armor item that stays in their inventory and has no function, a humorous reference to a controversial downloadable content (DLC) for The Elder Scrolls IV: Oblivion. The game was later released for Linux on October 26, 2022, PlayStation 5 and Xbox Series X/S on November 8, 2022, and for iOS and Android on July 27, 2023.
+
+
+== Reception ==
+
+
+=== Pre-release ===
+In May 2022, after the first teaser video and a few screenshots of Return to Monkey Island were released, the art style drew criticism from fans online. Gilbert wrote a post on his blog explaining why the style was chosen and expressing his disappointment in the response.
+A gameplay trailer was released on June 28 as part of a Nintendo Direct event. This reignited the backlash, leading some people to insult and harass Gilbert on social media and his blog. As a result, Gilbert disabled comments in the blog and said that he would not talk further about Return to Monkey Island. Several developers publicly criticized the user behavior and supported Gilbert and his team, including Cory Barlog of Santa Monica Studio and Neil Druckmann of Naughty Dog.
+
+
+=== Critical response ===
+
+Return to Monkey Island received "generally favorable" reviews, according to review aggregator Metacritic. The website Pixel Bandits' review of the title lauded the game's commitment to the series, saying that "Return really captures the spirit of the original games and delivers an outstanding 21st century point and click adventure".
+Pixel also makes specific reference to the highly-changed art style, saying that "I thought I was going to hate the new art style, but when you get in game it's actually very fluid and well crafted". Rock, Paper, Shotgun described the visuals as "vibrant and lovely, capturing the spirit of the earlier games but in a storybook style that is extremely fitting for this new adventure". Polygon said: "The downright ugly polygonal visuals of Escape and Tales of Monkey Island have been replaced with a sort of Henry Selick aesthetic, like a living map populated by hinged paper dolls".
+Some reviewers acknowledged the game had a reduced difficulty level but was well paced. The drop of the nine-verb interaction grid, and instead going with the drag-and-drop system, limited some opportunities for comedy, but contributed to a seamless gameplay experience.
+
+
+=== Sales ===
+GameSensor noted that the initial month after the launch of the game on Steam saw Return to Monkey Island achieve sales figures of approximately $3 million. During this same period, the sales volumes of Return reached close to 100,000 units. Comparing the game's release to a previous game developed by Terrible Toybox, Thimbleweed Park, revealed that Return's revenue within its first month surpassed Thimbleweed Park's sales during a similar timeframe by almost sixfold; while the number of copies sold for Return exceeded that of the developer's previous game threefold. The remarkable sales performance of Return has established it as the fastest-selling game within the series.
+
+
+=== Accolades ===
+
+
+== Notes ==
+
+
+== References ==
+
+
+== External links ==
+Official website

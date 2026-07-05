@@ -1,0 +1,28 @@
+Game: The Riftbreaker
+appid: 780310
+Source: The Riftbreaker
+URL: https://en.wikipedia.org/wiki/The_Riftbreaker
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+The Riftbreaker is an action and real-time strategy video game developed and published by Polish company EXOR Studios. It was released for Microsoft Windows, PlayStation 5, and Xbox Series X/S on October 14, 2021.
+The player controls a human named Ashley navigating a machine called Mr. Riggs. Gameplay consists of the player building bases on a distant planet with walls, energy sources, mining resources, and defense turrets, among other structures, in order to secure a new home for humanity. At the same time, the player must use weapons crafted through research to engage in combat with enemy creatures that attack base structures.
+The game received positive reviews from critics for its mixture of base building strategy and intense action encounters.
+
+
+== Gameplay ==
+The player must explore the planet Galatea 37 to find resources that enable construction of crucial base buildings. These structures provide necessary functions such as research, energy, and ammunition. The research is guided by a tech tree where the player can specify what to research next. Different research tracks unlock newer and better weapons that the player can equip or better base structures such as plasma or artillery turrets. Eventually the player must warp to other locations on the planet to mine more rare elements such as uranium and titanium.
+Occasionally, the player will be warned of an imminent attack by the local fauna. A short period later, waves of creatures will attack the base, with the attacks becoming more difficult as the game progresses. As long as the player has built a portal, they can respawn there upon death while dropping a weapon at the location they died. However, there is a hardcore mode that means the game is over when the player dies.
+Cooperative multiplayer featuring Campaign Coop & Survival mode was introduced to the game on August 25, 2025. The co-op mode supports up to 4 players and includes a built-in server browser and dedicated server mode. Players can connect online or through a local LAN connection, with the game playable entirely offline in LAN mode. Every game mode and mission was specifically balanced to be enjoyed in both single-player and multiplayer modes. Co-op mode is currently only available in the PC version of The Riftbreaker.
+
+
+== Reception ==
+
+According to the Metacritic review aggregator, The Riftbreaker received "generally favorable" reviews. Travis Northup of IGN gave the game and 8 out of 10, declaring it to be a "fantastic blend of real-time strategy and bullet hell combat that provides an intense challenge and an addictive RPG loop." Lennard Fink of PC Games, in a 90 out of 100 review, found the game to be an "extremely well-done genre mix with massive battles and fantastic graphics." Rainer Hauser of Gamestar awarded the game 83 out of 100, recommending the game to those who like "both fast action and classic base building."
+
+
+== References ==
+
+
+== External links ==
+Official website

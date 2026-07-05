@@ -1,0 +1,47 @@
+Game: Stranded Deep
+appid: 313120
+Source: Stranded Deep
+URL: https://en.wikipedia.org/wiki/Stranded_Deep
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Stranded Deep is a survival video game developed and published by Australian studio Beam Team Games for Microsoft Windows, macOS, PlayStation 4, Nintendo Switch, Xbox One and Linux.
+A sequel, Stranded Deep 2, was announced in August 2024. It will be developed by North Beach Games Prague.
+
+
+== Plot ==
+Stranded Deep takes place in the Pacific Ocean, where a plane crash survivor finds themselves faced with some of the most life-threatening scenarios in a procedurally generated world. Players are able to explore Pacific islands, reefs, and bottomless ocean trenches filled with detailed biomes, and need to search for and develop the means to survive.
+
+
+== Gameplay ==
+
+The game features a dynamic weather and day-night cycle. Also featured is a building system, whereby players are able to settle on an island and construct a shelter or a raft with which to explore the ocean, and a crafting system, whereby resources can be harvested and combined in order to create equipment. Resources are limited, and therefore need to be managed. As supplies that players are able to carry are limited, items need to be prioritized for the task at hand.
+Players need to manage their vitals of health, hunger, thirst, and sleep, against the elements they face. Thirst is in particular an important component of survival. Hydration sources are scarce, with coconut water being the most common and easiest to obtain water substitute, but can cause diarrhea if the player drinks too much at once, leading to hydration rapidly going down completely. The player can eventually craft a water still, which will produce water over time from the evaporation of palm leaves or gathering water from rainstorms. Hunger is another challenge. Food can be obtained from many sources, including coconuts, fishing, and rations. Players are also able to search sunken shipwrecks and islands for interesting and rare equipment.
+The tropical ocean in the game is full of different life forms. This ranges from small fish, sea turtles, rays, lionfish, sea snakes, crown-of-thorns starfish, swordfish, whales, as well as the most dangerous enemies in the game - sharks. There are different types of sharks, some being harmless, while others are life threatening, like the great whites, hammerhead shark, and goblin shark. Sharks can directly attack the player, or they can also bump into the player's raft, potentially flipping it over. There are also three mythical sea creatures found in specific places in the world - a megalodon shark, a giant squid named Lusca, and a giant eel named Abaia. Each one, when killed, gives the player a trophy as a reward for killing it. They are considered the most challenging enemies in the game.
+As the player's plane crashes into the ocean, they are saved via an inflatable lifeboat found nearby. The lifeboat is equipped with a pouch containing a compass, as well as rations that the player can use. The lifeboat can also be used as a raft to travel between different islands. A key feature of rafts is anchoring them. This is because rafts can be carried into the open ocean by currents or storms if not anchored or dragged onto land. The player can collect components and materials later to craft their own raft by scavenging shipwrecks and the coastline of islands. The player-made rafts can differ in base, floor, and propeller used, which changes certain aspects of the raft like weight, speed, and sturdiness. Apart from rafts, the only other form of transportation is a gyrocopter, which can be created when the necessary components are found first.
+The game also features an official ending. The player can find an abandoned aircraft carrier stranded on a small island. On the ship there is a plane, which when repaired can serve as an escape from the Pacific. When the player repairs and boards the plane, a cutscene triggers, showing the player’s plane crashing into another plane, revealing how you came to be stranded at the start of the game, thus presenting the ending as a time loop.
+In the game, the player can also find easter eggs.  Some are associated with the 2000 movie Cast Away: on one of the islands, there is a volleyball with a bloody handprint on it, called Wollie, similar to Wilson from the movie; there is also a mail box washed on an island, loosely resembling the FedEx box from Cast Away.  Also discoverable is a remote standalone structure resembling the Maunsell Sea Forts, originally built by the United Kingdom to defend British estuaries, which the player can explore inside.
+Since the world of the game is procedurally generated, the initial island that the player lands on, as well as all the other islands, are randomly generated for each save file played. The game also features a "cartographer" mode, where the player can manipulate their world, as well as add and customize existing and new islands.
+The game was initially available only in single player, with a multiplayer mode added later on.
+
+
+== Release ==
+Telltale Games announced that it was to release the game on PlayStation 4 and Xbox One in October 2018, through its Telltale Publishing label. When Telltale Games announced its majority studio closure in September 2018, Beam Team Games stated that it was doing "everything it could" to launch the console versions on time. On 29 January 2020, Beam Team Games announced on their Twitter page that Stranded Deep's console release was scheduled to the end of March, but could be delayed until early April instead. On 21 April 2020, the game was officially released for PlayStation 4 and Xbox One.
+
+
+== Update history ==
+Stranded Deep was released as a full game for consoles only on 21 April 2020. The PC version was fully released 11 August 2022.
+On 29 April 2020, the console versions received update 1.02. The update fixed bugs and glitches, as well as refining some game play functions.
+Stranded Deep formed part of the offering for the May 2021 PlayStation Plus free game titles with Battlefield V.
+
+
+== Reception ==
+
+Stranded Deep received "mixed or average" reviews, according to the review aggregator platform Metacritic.
+
+
+== References ==
+
+
+== External links ==
+Official website

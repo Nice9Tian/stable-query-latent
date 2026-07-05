@@ -1,0 +1,13 @@
+shapez 2 is a top-down factory-building game focused on extracting, processing, and assembling geometric shapes. In the game, each shape is made up of building blocks that factories can take apart, stack, paint, and recombine in different ways. The core objective is to automate production, create distinct shapes, and solve the requirements of each goal by building efficient processing lines.
+
+The game centers on transforming abstract geometric shapes into more complex forms through actions such as cutting, rotating, stacking, and painting. As players deliver the required shapes, they unlock new technologies and expand their factory’s capabilities. Progress also involves learning from existing layouts, improving them, rebuilding when needed, and solving logistical challenges to make production lines more efficient.
+
+A key feature of shapez 2 is its multi-layer factory design. Factories can be built across multiple interconnected layers, allowing players to compact and optimize their layouts in a new dimension. The game also supports large-scale expansion across space platforms, starting from a single asteroid and growing into a multi-station space factory connected by space trains. Modular, blueprintable platforms make it possible to place hundreds of buildings with a single click.
+
+shapez 2 is designed as a pure factory-building experience. Buildings are free, resources do not run out, and there are no enemies or time limits. Players can delete, redesign, and rebuild without penalties and at their own pace, with complete freedom to revise even large, complex factory systems.
+
+The game includes trains for connecting distant stations, a research system with a tech tree for unlocking buildings, mechanics, and upgrades, and new shape mechanics with unique properties and logic. It also offers four game modes, including a hexagonal shape mode, a blueprint library for saving, loading, exporting, and sharing factory designs, fluids for processing shapes, animated open buildings that show what is happening inside, and undo/redo support for up to 50 operations.
+
+Visually, shapez 2 features an all-new 3D presentation set in a space environment. The game was rewritten in a new engine with performance in mind, with the goal of keeping large factories running smoothly even with the updated visuals.
+
+The Supporter Edition is available for players who want to show additional support for shapez 2. It includes two rollercoaster-inspired track pieces for space railways, 40 minutes of additional music, and the full soundtrack. The page notes that the supporter edition is primarily a way to support the game, with the included rail cosmetics and music tracks presented as bonus content.

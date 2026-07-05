@@ -1,0 +1,41 @@
+Game: En Garde!
+appid: 1654660
+Source: En Garde! (video game)
+URL: https://en.wikipedia.org/wiki/En_Garde!_(video_game)
+Match score: 6.56
+Retrieved: 2026-07-04
+--------
+En Garde! is a 2023 third-person action video game developed by Fireplace Games and published by Kepler Interactive. Players play as Adalia de Volador, a swashbuckler in a 17th-century setting. The game was released for Windows on August 16, 2023.
+
+
+== Gameplay ==
+En Garde! centers on fast-paced swashbuckling combat built around parrying, riposting, and lunging. Encounters emphasize "stylish" play. Successful defensive and offensive actions fill a Panache Meter, which provides access to stronger moves. Fights emphasize timing and spatial awareness.
+Environmental interaction is a core mechanic. Arenas feature objects that can be used for tactical advantage: barrels, crates, throwable items, and overhead fixtures allow players to stun, interrupt, or evade opponents.
+An optional Arena Mode offers repeatable challenges with modifiers and randomized enemy waves.
+Characters respond dynamically during encounters. Adalia and her opponents exchange contextual dialogue, which contributes to the game's comedic tone.
+The campaign is divided into story episodes. Each episode presents discrete objectives, location-specific encounters, and hidden elements to discover. Settings range from marketplaces to dungeons and palaces; each area introduces tailored combat spaces and environmental tools.
+
+
+== Development ==
+En Garde! originated as a final-year student prototype at Supinfogame Rubika, created by an eight-member team using Unreal Engine 4. The prototype featured a single playable scenario built around environmental interaction, theatrical swordplay, and acrobatic movement. It gained early recognition through several student-game awards, including a nomination in the Independent Games Festival student category and later drew attention through coverage by YouTube creator Jacksepticeye. The prototype was profiled in Game Developer's Road to the IGF series during its nomination.
+Following its festival visibility, the original team re-formed as Fireplace Games, founding the studio in Montpellier, France, in 2020. 
+The developers expanded the prototype's systems, rebuilt combat and environment mechanics for full production, and transitioned the project to Unreal Engine 5 and continued development on the commercial version after securing funding. Funding came from French public programs such as the CNC and Montpellier Méditerannée Métropole, as well as the Kowloon Nights investment fund.
+
+
+== Reception ==
+En Garde! received generally positive reviews from critics, who praised its swashbuckling tone, light-hearted presentation, and emphasis on environmental interaction during combat.
+
+
+=== Critical response ===
+The Guardian described the game as "fun, flamboyant, fabulous", calling it an "ultimate swashbuckling fantasy" and highlighting its theatrical combat and comedic style. Premortem Games similarly noted that En Garde! achieved "the right blend of cheesy, slapstick and endearing" elements, citing its use of interactive arenas and exaggerated swordplay as key strengths. Coverage in Gayming Magazine focused on the game's inspirations and characterization, discussing the portrayal of its bisexual protagonist and the use of camp, swashbuckling tropes.
+Christian Donlan of Eurogamer wrote that "the delights of En Garde! are so generous, so freewheeling that there's something for everyone. This is a third-person action game with a brilliant heroine, brisk, breezy platforming and rapier combat inspired by the likes of the Arkham games." Rachel Watts of Rock, Paper, Shotgun praised the game's gameplay, characters, and environment.
+Jordan Minor of PC Magazine praised the environment and gameplay, but criticized it for being somewhat repetitive. Andrew Farrell of CG Mag Online called it "short and disappointing".
+In an episode of the review series Zero Punctuation, published by The Escapist, reviewer Yahtzee Croshaw characterised En Garde! as "an indie swashbuckling simulator… which is, controversially, fun", but noted drawbacks: "there's only four missions and the environments don't change much… you'll be lucky to get a whole afternoon out of it."
+
+
+== References ==
+
+
+== External links ==
+Official website
+Student prototype (2018) at Itch.io

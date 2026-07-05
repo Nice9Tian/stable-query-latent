@@ -1,0 +1,34 @@
+Game: Tiny Glade
+appid: 2198150
+Source: Tiny Glade
+URL: https://en.wikipedia.org/wiki/Tiny_Glade
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Tiny Glade is a sandbox city-building game developed and published by Pounce Light. Initially released as a demo in June 2024 as part of Steam's Next Fest, the game was fully released on 23 September 2024 for Windows and Linux. Players can construct houses, castles, and other buildings from the medieval era, as well as decorate them and change their environment, like adding rivers and ponds. The game was nominated for the Steam Awards and the BAFTA Game Awards in 2024 and 2025 respectively. Various critics have considered it a relaxing and cosy game, but noted about the limited limited amount of content.
+
+
+== Gameplay ==
+Tiny Glade is a building simulator and sandbox. It does not include any tasks or story line that the player can follow and complete; it does not put any restrictions on the objects the player can use, unlike other games of the genre, where unlocking new items often requires certain in-game actions or spending certain resources.
+The player is given a certain area of a decent size, where they can add and change objects as well as influence environment, like changing heights, time of the day, or creating bodies of water. All objects in the game are medieval-styled and have 'warm' visuals. Players also have certain technical instruments, like camera, that allows to make photos of the creation with different modes, or the option of viewing the area in first-person mode.
+
+
+== Development ==
+
+Tiny Glade was developed by Pounce Light, a two-person Swedish indie studio headed by Anastasia Opara and Tomasz Stachowiak, and was made on a custom engine called Bevy - a modular game engine built in Rust. The trailer was announced in December 2022. Initially released as a free demo in June 2024, it received over 800,000 wishlists during its pre-release stage on Steam. The title was also the fourth most-played and the second most watchlisted demo in Steam's 2024 Next Fest and was nominated for the best self-published indie game in the Golden Joystick Awards in November 2024. The full game was released on 23 September 2024 for Microsoft Windows and Linux.
+
+
+== Reception ==
+
+On its release in September 2024, Tiny Glade received 'mixed or average reviews' on Metacritic with a score of 74 out of 100.  Fellow review aggregator OpenCritic has assessed that the game was recommended by 73% of critics. Some critics described it as a cosy game with pleasant and charming aesthetic and big area for creativity, but was also noted for its limited gameplay and content.
+A June 2024 pre-release review from Kiera Mills in Rock Paper Shotgun described Tiny Glade as a cosy, creative and charming game. After the release of the game, the same critic stated that "it feels like we've been here before" and compared it with Summerhouse, another diorama builder. Meanwhile, PC Gamer described the game as "unwaveringly orthodox", as "everything is awash in a pleasantly low-detail pastel goodness that begs desperately to be loved". IGN found it to be a sweet spot that "a small slice of flow state to pamper your brain" and makes "the real world seem very far away". However, IGN also noted that the game might have limited gameplay options. For the soundtrack, Loren Chandler of Shacknews finds it "so adorable" and has "delightful sound effects".
+
+
+=== Accolades ===
+
+
+== References ==
+
+
+== External links ==
+Official website

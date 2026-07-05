@@ -1,0 +1,77 @@
+Game: RoboCop: Rogue City
+appid: 1681430
+Source: RoboCop: Rogue City
+URL: https://en.wikipedia.org/wiki/RoboCop:_Rogue_City
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+RoboCop: Rogue City is a 2023 first-person shooter game developed by Teyon and published by Nacon. The game features an original storyline based on the RoboCop films, with Peter Weller reprising his role as the titular character. It was released for PlayStation 5, Windows, and Xbox Series X/S in November 2023. A macOS version was released in April 2025. The game received generally positive reviews from critics.
+A standalone expansion titled RoboCop: Rogue City ‒ Unfinished Business was released in July 2025. It received mixed reviews from critics.
+
+
+== Gameplay ==
+RoboCop: Rogue City is a first-person shooter game set in Old Detroit. Playing as RoboCop, the player must clear the city of criminals, conduct investigations, and can also issue both criminal and traffic citations. As the developers strived to make this game canon, it is set sometime after the events that took place in the film RoboCop 2. Anne Lewis, RoboCop's police partner from the original films, accompanies the player.
+The player is given various side quests throughout the game and can choose how to solve them, for example by selecting between different dialogue options. The outcome of these quests varies depending on the player's choices. For instance, the player can choose between using violence or a peaceful approach when seeking information from suspects. The overall storyline and ending are also altered depending on decisions made by the player. RoboCop's public trust score can be built up by interacting with citizens, also affecting gameplay.
+The player's primary weapon is RoboCop's Auto 9 gun, which has unlimited ammunition. The Auto 9 gun could be optionally tweaked as the game progresses to enhance performance in up to five standard domains. Additionally, various firearms dropped by enemies could be picked up by the player and used with a limited (and somewhat realistic) amount of ammunition. RoboCop is also able to remove the mounted gun from turrets, and will be limited to one hundred rounds of ammunition with that particular weapon. Items in the game's environments, such as exploding barrels and televisions sets, can also be flung around and used as weapons themselves. Due to RoboCop's metal exterior, he takes only minimal damage from small caliber gunfire, yet the larger and more specialized rounds shot by the mercenaries later in the game will cause significantly more damage. Conversely, a "Hint" is provided early on in the game advising the player that RoboCop does not take fall damage. The player can regenerate lost health or use enemies as human shields against gunfire.
+The player can buy different abilities with experience points gained by completing objectives and collecting crime evidence. Such abilities include a flashbang shockwave, a shield reducing incoming damage temporarily or a dash move. Time can also be slowed down briefly to kill enemies and clear an area faster. These abilities, as well as the Auto 9, can be upgraded over time. The player can also use a scanning ability to search for enemies, misdemeanors such as traffic violations, and disorderly conduct.
+
+
+== Story ==
+
+
+=== Setting ===
+The RoboCop franchise depicts a dystopian near-future Detroit. Impoverished and overrun with criminal activity, Detroit is being considered by the megacorporation Omni Consumer Products (OCP) for a radical redevelopment into what will be called Delta City. RoboCop: Rogue City is set between the films RoboCop 2 and RoboCop 3.
+RoboCop was originally Detroit Police Department officer Alex Murphy, who was brutally murdered by notorious career criminal Clarence Boddicker. Being legally dead, and with the Detroit police a privatized entity of OCP, he was then picked by Bob Morton, an OCP executive, to be converted into a heavily armored police cyborg. Gradually recovering his memory with the aid of Murphy's original partner, Anne Lewis, RoboCop hunts down Boddicker and his gang while at the same time thwarting the schemes of Dick Jones, OCP's second-in-command, who commissioned Boddicker to murder Morton, his rival.
+In RoboCop 2, Detroit's crime wave is exacerbated by the introduction of a designer drug called Nuke, which is supplied by the cult-like Cain. The police force, which is being gradually undermined by OCP, eventually follows through with threats of a strike. RoboCop is also struggling with memories of his past life and stalking his former family, which prompts OCP to consider production of a more advanced model called RoboCop 2. However, their attempts to replicate RoboCop using dead police officers repeatedly fail. After RoboCop manages to defeat Cain, an ambitious OCP scientist, Dr. Juliette Faxx, chooses Cain as a test subject, extracting his brain and putting it in RoboCop 2. This backfires spectacularly due to his Nuke addiction, forcing RoboCop to destroy him. Despite damages incurred, OCP suffers little public backlash from the project, instead using Faxx as the scapegoat.
+
+
+=== Characters ===
+Aside from the titular character (voiced by a returning Peter Weller) and some characters from the original movie – namely Anne Lewis (voiced by Kosha Engler), Sergeant Warren Reed, reporter Casey Wong and OCP's CEO known as "The Old Man" (voiced by Mark Holden) – RoboCop: Rogue City features an entirely new cast. Major characters include OCP employee Max Becker, OCP engineer Morgan and psychologist Olivia Blanche, the latter two assisting RoboCop technically and psychologically.
+Other characters include Pickles, a homeless police informant later revealed to be on Nuke withdrawal, rookie cop Ulysses Washington and reporter Samantha Ortiz, whose personal story arcs are influenced by RoboCop's direct actions or decisions.  Other characters include Soot, musician and leader of the Torch Heads gang, as well as Spike, head of the Street Vultures biker gang, both under the leadership of an up-and-coming crime boss known only as the "New Guy".
+
+
+=== Plot ===
+While rescuing hostages at the Channel 9 news studio from Soot and the Torch Heads, RoboCop suffers visions of his past life as Alex Murphy and hallucinates a female hostage as Murphy's wife, causing him to hesitate and forcing Lewis to directly intervene. As RoboCop's breakdown was captured on film and resulted in a wave of bad press, OCP assigns Max Becker as RoboCop's overseer, installing a monitoring chip in his head to evaluate his performance.
+As Sergeant Reed briefs his squad on the rising threat of the "New Guy", RoboCop is sent to locate and interrogate Soot. He and Lewis track Soot to an abandoned slaughterhouse where a Torch Head concert is in progress. As RoboCop apprehends Soot, Lewis is taken hostage by the New Guy, who kills Soot for drawing too much attention with the studio attack, while RoboCop mysteriously malfunctions again. The New Guy identifies himself as Wendell Antonowsky, brother of Emil Antonowsky, one of Clarence Boddicker's gang members. Criticizing RoboCop for his attachment to his human side, he shoots Lewis in the chest, leaving her comatose.
+Determined to seek justice for Lewis, RoboCop uncovers a connection between Wendell and the Street Vultures, raiding their territory by a steel mill and quarry. He discovers multiple corpses once reported stolen from the city morgue and hospital, including a police officer reported missing. RoboCop calls for backup, along with a ED-209 unit to storm the hideout, but the ED-209 malfunctions and attacks the police instead, allowing the Vultures to escape. Autopsies reveal that the bodies found in the quarry were brought there by the Vultures, and later had their brains extracted by Wendell. RoboCop tracks down and arrests Wendell as Lewis awakens from her coma. Meanwhile, the Old Man suffers a heart attack and later dies.
+In City Prison, RoboCop learns from Wendell he was hired by OCP for "Project Afterlife", the extracted brains being used as part of a mass resurrection program inspired by RoboCop and orchestrated by the Old Man. Mercenaries later attack the prison and free Wendell during a riot, while Becker takes over as OCP's new CEO. Becker unveils his Urban Enforcement Droids (UEDs) meant to replace the police force, which Wendell later hijacks in retaliation for Becker terminating Project Afterlife. As RoboCop once again tracks down Wendell and confronts him, he discovers that the monitoring chip installed by Becker is triggered by Wendell's lighter to degrade RoboCop's mind and prevent him from accosting Wendell. RoboCop removes the chip and pursues Wendell amidst the chaos caused by the gangs, mercenaries and hijacked UEDs. Tracking him down to the first construction site of Delta City, the pursuit ends with RoboCop finally killing him.
+RoboCop then receives a call that the OCP main office is under attack. He arrives to find Becker being held by a RoboCop 2, which plays a video message from the Old Man, revealing that he has uploaded his brain into RoboCop 2. The Old Man explains that he did it after being inspired by RoboCop and kills Becker by crushing his windpipe. RoboCop fights and defeats RoboCop 2 in a grueling battle that destroys the OCP building. In the aftermath, OCP is considered for buyout by the Japanese corporation Kanemitsu.
+
+
+== Development ==
+RoboCop: Rogue City features an original storyline based on the first three RoboCop films. The game was developed by Teyon, and is published by Nacon in partnership with Metro-Goldwyn-Mayer, which holds the rights to the franchise. The three companies worked together to ensure it is faithful to the films; the development team watched them multiple times to incorporate their satirical aspect, especially that of the first film.
+Rogue City was developed using Unreal Engine 5. Original RoboCop actor Peter Weller returned to provide his voice and likeness for the game. RoboCop's sluggish movements are also incorporated, despite first-person shooters generally using swift gameplay. Piotr Latocha, the game's director, said that reaching a balance on RoboCop's movements was one of the biggest design challenges on the project: "He's kind of slow and tankish, and we need to be true to the lore, but also we cannot be super slow and super heavy". Łatocha revealed in an interview that it took the team a total of three years to fully develop the game.
+
+
+== Release ==
+RoboCop: Rogue City was announced in July 2021, and the first gameplay trailer was unveiled a year later.
+Rogue City was initially scheduled to release in June 2023, but this was later pushed back three months, before being delayed further. The game was released for PlayStation 5, Windows, and Xbox Series X/S on 2 November 2023. A demo was released for PC (through Steam) on 4 October 2023. A version for Nintendo Switch was announced alongside the first gameplay footage in 2022, but was cancelled on 20 October 2023. It was the first console-based RoboCop video game since 2003's RoboCop. A macOS version was released on 30 April 2025.
+
+
+=== RoboCop: Rogue City ‒ Unfinished Business ===
+A standalone expansion titled RoboCop: Rogue City ‒ Unfinished Business was released on 17 July 2025. In this expansion, RoboCop must infiltrate OmniTower, a massive complex controlled by a group of elite mercenaries. The expansion also introduces new weapons and flashback missions that allows the player to play as Alex Murphy before he becomes RoboCop.
+
+
+== Reception ==
+
+
+=== Critical reception ===
+
+RoboCop: Rogue City received "generally favorable" reviews from critics for the PC and Xbox Series X/S versions, while the PlayStation 5 version received "mixed or average" reviews, according to review aggregator website Metacritic. In Japan, four critics from Famitsu gave the game a total score of 32 out of 40, with each critic awarding the game an 8 out of 10.
+Justin Koreis of IGN wrote that the game "absolutely nails the look and feel of its film inspiration in ways that nothing else has," calling it "the most authentic adaptation the series has ever seen." Noah Smith of PC Gamer criticized its "dull" storyline and "uneven" pacing. Michael McWhertor of Polygon found it to be lacking originality, instead relying on inspiration from the first two films. Oliver Mackenzie of Eurogamer praised the graphics, stating that the game made great use of Unreal Engine 5. Marcus Stewart of Game Informer stated that RoboCop: Rogue City "provides a respectable adventure that feels like a long-lost shooter of the early 2010s in mostly good ways." Several critics noted the presence of audio and visual glitches. VG247 ranked it the best shooter game of 2023, calling it the "only worthy follow-up to the original film that's ever been produced."
+
+
+=== Unfinished Business ===
+RoboCop: Rogue City ‒ Unfinished Business received "mixed or average" reviews from critics for the PlayStation 5 and Xbox Series X/S versions, while the PC version received "generally favorable" reviews, according to review aggregator website Metacritic.
+
+
+=== Sales ===
+In the United Kingdom, RoboCop: Rogue City debuted at fourth place in the physical charts. The next week, the game fell to 13th place, after a 64% decrease in sales.
+Rogue City exceeded Nacon's expectations and was the publisher's biggest launch, with the game reaching 435,000 players in its first two weeks since release.
+
+
+== References ==
+
+
+== External links ==
+Official website

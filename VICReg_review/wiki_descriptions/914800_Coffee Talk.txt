@@ -1,0 +1,67 @@
+Game: Coffee Talk
+appid: 914800
+Source: Coffee Talk (video game)
+URL: https://en.wikipedia.org/wiki/Coffee_Talk_(video_game)
+Match score: 7.00
+Retrieved: 2026-07-04
+--------
+Coffee Talk is a 2020 visual novel developed by Toge Productions. The game released on 29 January 2020 for Microsoft Windows, macOS, Nintendo Switch, PlayStation 4, and Xbox One, and in Japan for Nintendo Switch a day later on 30 January 2020, with a PlayStation 5 version released in October 2023 and ports for Android and iOS on 20 March 2026. The game follows a barista working in a coffee shop in a fantasy version of Seattle as they listen to the concerns of the coffee shop's various patrons and prepare drinks. The game features pixel art inspired by 1990s anime.
+A sequel, Coffee Talk Episode 2: Hibiscus & Butterfly, was released in April 2023. A spin off, Coffee Talk Tokyo, was released in May 2026.
+
+
+== Gameplay ==
+Coffee Talk is a visual novel as its gameplay primarily consists of reading dialogue. The player names and controls a coffee shop barista who converses with the shop's patrons. The game interrupts dialogue when the player has to brew drinks using ingredients in the shop to serve orders. Fulfilling patrons' orders serves as the only means of interaction with the characters available to the player. As such, the drinks made by the player can affect the game's plot. Accurately serving orders will further incline the patron to discuss about a topic, which includes themselves or their personal problems. 
+To brew a drink, the player chooses three ingredients in order: a base, a primary layer, and a secondary layer. The player can use more ingredients as the game progresses. Certain drinks allow the option to draw latte art. The player can dispose a finished drink up to five time per in-game day. The game's plot is set over the course of fourteen days. Each day acts as a vignette in which various characters visit the coffee shop and discuss their concerns with the barista and one another. Each in-game day is planned to take around 15 to 30 minutes to finish. They can return to a specific day if they accurately serve orders and complete a character's backstory. 
+The player character can access their smartphone at any time to view the social media profiles of the game's characters, reference a list of known drink recipes, read short fiction published in the game's fictional newspaper, and change what song is playing. The fictional newspaper's headlines. presented at the beginning of a day, provides further context on the characters' backstories.
+
+The game also has two additional game modes. In the Challenge mode, the player has to accurately serve orders within a time limit as order descriptions become more vague. The player can indefinitely brew drinks with no restrictions in Free Brew mode.
+
+
+== Plot ==
+The game follows a barista who is the owner and sole employee of Coffee Talk, the eponymous coffee shop. It is located in Seattle, Washington, in 2020, in an urban fantasy version of the real world populated by a broad variety of fantasy races, such as elves, orcs, mermaids, and others. Various members of these races serve as the shop's patrons. 
+Coffee Talk's characters include Freya, a journalist for the fictional newspaper The Evening Whispers, and an aspiring fiction writer; Jorji, a local cop who visits the coffee shop regularly; Rachel, a nekomimi and former member of a girl band who is trying to start a career as a solo musician; Hendry, Rachel's father and former big name in the music industry who wants to protect his daughter; Neil, an alien visiting Earth with the mission of breeding with its inhabitants; Hyde, an immortal vampire who works as a model; Gala, werewolf and veteran who worked as a body guard for Hyde and now tries to heal himself by healing others; Myrtle, a very work-oriented orc working on the fictional game "Full Metal Conflict"; Aqua, a mermaid girl who is very shy and extremely passionate about advancing technology, also an indie game developer and a fan of the "Full Metal Conflict" series; and a young couple consisting of the succubus Lua and the elf Baileys, whose families do not approve of their relationship due to their racial differences.
+
+
+== Development and release ==
+Coffee Talk was developed by Indonesian indie studio Toge Productions. According to Lasheli Dwitri, the person in charge of public relations at the indie studio, the goal with Coffee Talk was to create a medium where people can feel comfortable, similar to being in a cozy café with a cup of coffee. To create a "sense of belonging" with players from all over the world, the game features various real-life drinks, such as masala chai from India, teh tarik from Malaysia, and shai Adeni from Yemen. One of the reasons that Coffee Talk features a cast of fantasy creatures is to represent real-life experiences. Despite being fantasy characters, the studio tried to make the conflicts in the game as realistic as possible. Coffee Talk uses a brownish color palette to evoke a casual atmosphere. According to game artist Dio Mahesa, the game's art direction resembled PC-98 visual novels. The character designs were also inspired from 1990s anime such as Cowboy Bebop and Ghost in the Shell. The in-game smartphone was initially planned as a notebook that only lists character information.
+Japanese television show Midnight Diner, which revolves around a restaurant chef that only opens at midnight and his involvement in the customers' lives. The game is set in Seattle as Starbucks first opened in the city and for its rainy atmosphere, which sets the game's mood for Fahmi.
+The game was first conceptualized in 2017 during an annual Game Jam by Toge Productions. Mohammad Fahmi, the game's writer and designer, titled the game Project Green Tea Latte, which features two star-crossed lovers. Fahmi, the primary creator and developer of Coffee Talk, died in March 2022.
+A demo was published on Steam, Itch.io, and Game Jolt in 2018. In the same year, Toge Productions announced that the game would be released in 2019. The game was released on 29 January 2020 for Microsoft Windows, macOS, Nintendo Switch, PlayStation 4, and Xbox One. Toge Productions published the game on Microsoft Windows, macOS, and Nintendo Switch. Chorus Worldwide published the game on PlayStation 4 and Xbox One. Chorus Worldwide published Coffee Talk on iOS and Android on 20 March 2026 as announced on January 2026.
+
+
+== Critical reception ==
+
+Coffee Talk received "mixed or average" and "generally positive" reviews, according to review aggregator platform Metacritic. Fellow review aggregator OpenCritic assessed that the game received fair approval, being recommended by 71% of critics.
+Several reviewers praised Coffee Talk's pixel art and lo-fi music. Nintendo World Report's Jordan Rudek described that the game's pixel art does not have "a ton of variety" as it is primarily set in a shop. However, the character designs, seemingly inspired from anime, are unique and complement the character's personality. The character design also received positive reception from some reviewers for its detail and use of fantastical creatures such as werewolves and succubi. Moreover, the video and audio design was reminiscent of 1990s television shows such as Frasier and Friends for TheGamer's Sam Watanuki. The game's animation and camerawork, done through panning, and zooming, helped emphasize several scenes and set emotions, according to Rock Paper Shotgun's Sin Vega. Hardcore Gaming 101's Jonathan Kaharl compared the framing on the characters during arguments to a manga layout and described the soundtrack as "downplayed and soothing". Meanwhile, IGN Southeast Asia's Natasha Hasim found that the game's number of songs made the soundtrack seem repetitive and mitigated the impact of several scenes.
+The gameplay encourages experimentation to discover recipes for some reviewers. Hasim called the gameplay "fairly straightforward". Nintendo Life's Dom Reseigh-Lincoln found Coffee Talk's gameplay relaxing and satisying through deducing appropriate ingredients and its Free Brew mode. However, Rudek also found that the lack of an indicator of failing an order would exceed the difficulty of completing the game. Moreover, the controls on the PC and consoles using the analog stick, but not on the touchscreen Nintendo Switch, made it difficult to do latte art. The Free Brew and Challenge game modes strengthened the game's replayability for several reviewers.
+Some reviewers praised the game's dialogue or criticized its approach in handling sensitive topics. Game Informer's Kimberley Wallace also complimented the visual novel's dialogue and appreciated its discussion of social issues such as racism and crunch. However, the game seems to tackle the issues predictably and briefly through cliché scenarios that "unfold without many surprises" for Wallace. Coffee Talk mentions various subjects in its dialogue such as plastic waste, expensive privatized healthcare, and predators in the entertainment industry. However, it fails to confront these issues as it lacks focus or depth by presenting such topics in "throwaway sentences or single-screen headlines", Destructoid's Chris Moyse argued in a mixed review. Reseigh-Lincoln also opined that the game approaches sensitive topics without focus to avoid controversy.
+Toge Productions reported that Coffee Talk earned a gross revenue of around Rp 7.6 billion in February 2020. The game was an Indie Prize Nominee for Tokyo Game Show 2019. During the 24th Annual D.I.C.E. Awards, the Academy of Interactive Arts & Sciences nominated Coffee Talk for "Outstanding Achievement for an Independent Game".
+
+
+== Sequel and spinoff ==
+
+
+=== Coffee Talk Episode 2: Hibiscus & Butterfly ===
+
+A sequel, Coffee Talk Episode 2: Hibiscus & Butterfly, was announced on 31 August 2021. The full game was released on 20 April 2023 for Microsoft Windows, Nintendo Switch, PlayStation 4, and Xbox One.
+
+
+=== Coffee Talk Tokyo ===
+
+A spinoff, Coffee Talk Tokyo, was announced on 27 August 2024 in a Nintendo Indie World Showcase. The game was developed by Chorus Worldwide and was released on Nintendo Switch, Nintendo Switch 2, PlayStation 5, Xbox Series X/S, and Windows on 21 May 2026.
+
+
+== See also ==
+Tavern Talk, 2024 fantasy visual novel
+VA-11 Hall-A
+
+
+== Notes ==
+
+
+== References ==
+
+
+== External links ==
+Official website
+Coffee Talk at The Visual Novel Database

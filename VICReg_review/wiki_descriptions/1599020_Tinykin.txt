@@ -1,0 +1,50 @@
+Game: Tinykin
+appid: 1599020
+Source: Tinykin
+URL: https://en.wikipedia.org/wiki/Tinykin
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Tinykin is a puzzle-platform video game developed by Splashteam and published by tinyBuild. It was released on August 30, 2022, for Windows, PlayStation 4, PlayStation 5, Xbox One, Xbox Series X/S and Nintendo Switch. The game follows Milodane, a researcher who explores a mysterious planet and uncovers humanity's origins. During his journey, he encounters Tinykin, tiny critters with unique abilities that help him reach places and complete his objectives.
+Development initially began in 2017. Director Romain Claude developed it as Bubble Town for the Global Game Jam 2019. The project came from a jam theme "What home means to you". Claude, alongside his team, became interested in the project and decided to develop it further. The game was inspired by the Pikmin and Paper Mario series. The game received favorable reviews. It received an honorable mention for several awards at the Independent Games Festival.
+
+
+== Gameplay ==
+Tinykin is a 3D platformer with puzzle game elements, which features two-dimensional characters in a three-dimensional environment. Players control intergalactic astronaut Milodane, a researcher who must collect Tinykin, tiny colorful critters collected from eggs. Each Tinykin has a unique ability to help Milodane reach places and complete objectives. These include pink varieties, which can carry objects, red varieties that explode on impact when tossed, green varieties that stack vertically to form a ladder, blue varieties can use electricity, and yellow varieties create bridges. Each time when players meet a new variety an animated cutscene is shown.
+Milodane's abilities consist of making soap bubbles that can glide around, soapboard to hover or grind around and using Tinykin to progress. Players can collect pollen for exchange for an additional bubble. The game has no enemies or health bars, and the only way to die is from falling too far or going in water, making Tinykin a non-violent game. There are six main zones which are described after rooms of a house. A free update on December 20, 2022, added the ability to select and change an outfit for Milodane and added a Time Attack challenge mode for each zone, a mode that players race around the zones.
+
+
+== Plot ==
+Tinykin is set on the distant planet Aegis in the year 2748, after Earth has been abandoned. Milodane (who is almost microscopic sized) sets out on a mission to explore a mysterious planet, later established to be Earth, and uncover the secrets of humanity's origins. After crash-landing, Milodane is trapped in an enormous house, set in 1991. During his journey, he encounters a group of creatures called the Tinykin. Despite their reclusive nature, the Tinykin like Milodane and assist him in his quest by helping him find components. Ridmi introduces himself and shows them to a workshop with the components which he had been searching for ever since he was a child. Milodane and the Tinykin gain a deeper understanding of the components they have collected and how they fit together.
+Throughout their adventure, Milodane and his companions encounter a range of creatures, including ants and other insects who have built elaborate cities and their own cultures in each room of the enormous house they live in, each containing a component. In the process, they discover that the bugs revere a man named 'Ardwin', presumed to be the former human owner of the house.
+After collecting all the components, Milodane is about to return to Aegis, but the machine breaks. Milodane travels to the house's attic, 'The Last Refuge', where he meets Ardwin, who is in fact still alive. Now the size of a bug, and having kept himself alive for decades with robotic parts, he reveals he was a scientist responsible for humanity's exodus from Earth. His shrink ray went haywire and shrank the entire population of the planet, who fled to Aegis, leaving Earth to the bugs – who evolved alongside Tinykin and took over as the dominant species. Ardwin also reveals that the house is permanently stuck via a time-loop in 1991, where the technology is not sufficiently advanced for him to mend his escape ship.
+Returning to the workshop, Ardwin discovers they can use a bone dropped by Milodane's dog, Nevus, as the last component for the machine. Finally taking off, Milodane and Ardwin discover the truth: that since Earth's shrinkage, it has been added to a collection of bottled planets by an alien species, which watch over them with scientific interest (thus revealing Milodane and Ardwin's sizes to be microscopic). This was the reason for the time-loop. The ship then returns the heroes to Aegis, and Ardwin rejoins human civilization.
+
+
+== Development ==
+Tinykin is the second game developed by Splashteam, a studio founded by former Ubisoft Montpellier developers. Romain Claude received an advanced degree in game design and production management between 2006 and 2008. After Claude graduated, he became a designer at Ubisoft until 2012. After leaving Ubisoft, Claude began working on his first game Splasher alongside Richard Vatinel, a 2D artist and animator whom Claude met at school in 2006. During his work at Ubisoft, Claude developed a game engine with the XNA Framework.
+After developing his first game Splasher, Vatinel moved away from game development to focus on drawing and teaching. In 2018, he created Bubble Town as part of the Global Game Jam 2019. The creation of the project came from a jam theme "What home means to you". Claude and his team did not think there were enough games set in gigantic homes or toy shops. The team worked on Bubble Town and became interested in the feeling of exploration with a small group of followers. They decided "[they] should try to make a real game out of it."
+The project was originally known as Sbirz and was scheduled for a 2022 release on Steam. Sbirz begins with the adventures of Angus and the little creatures known as Sbirz which were divided into several categories. The team did not want the game world to be empty, so they populated it with civilizations of insects, and then they thought about how everyday objects would be used by an army of talking ants. Designing the house, the team was inspired by Dark Souls. Claude said, "they have a way of building the world that is connected."
+Tinykin's main gameplay inspirations are the Paper Mario and Pikmin series; the game setting was inspired by Honey, I Shrunk the Kids. The game has a number of ways different from Pikmin, such as the fact that the game mostly takes place indoors, and it is a 3D platformer inspired by Super Mario Odyssey, the Ratchet & Clank series and Fur Fighters. The Paper Mario series inspired the game to play into the blend of 2D and 3D aesthetics and narrative. 2D meets the 3D detail and art direction makes a strong impression. For the game's art, the team hired concept artist Jonas Sunberg, who designed the house.
+
+
+== Release ==
+Tinykin was announced with a trailer in June 2021 at the PC Gaming Show and received a good reception. According to Splashteam, people sometimes joke if "Pikmin 4 is still missing." At the Steam Next Fest, a demo was announced to be released in February 2022 for Steam. The game was also shown at the Media Indie Exchange showcase and PAX East in 2022; it's mixing of 2D visuals with 3D environments was well received. Revealed in June 2022 at the Future Games Show, the game's release date was August 30, 2022. The game was later updated for free on December 20, 2022.
+
+
+== Reception ==
+
+Tinykin received "generally favorable reviews" according to review aggregator Metacritic. GamePro ranked the game number 65 for the best Nintendo Switch games of all time. Polygon ranked the game number 48 for the best video game of 2022. Tinykin was also featured in the Independent Games Festival as an honorable mention for Excellence in Audio, Design and the Seumas McNally Grand Prize.
+GameSpot's Jess Howard noted that the game's rhythmic gameplay reminded her of 90s platformers. IGN Southeast Asia noted that the game's vibrant levels were "[outstanding]" and described it as "the spirit of Nintendo 64's [finest] 3D platformers." PCGamesN's Ken Allsop noted that Tinykin was one of 2022's most joyous game experiences. Metro GameCentral called it a "surprisingly good looking game."
+Tinykin became one of 2022's Must-Play Indie Games and the most beloved game of 2022 according to The Game Crater. Reviewers praised the game as "enjoyable" and considered the character design to be "adorable". Vice considered the collecting mechanism to be "refreshing", balancing curiosity and completionism.
+
+
+=== Accolades ===
+
+
+== References ==
+
+
+== External links ==
+Official website
+Tinykin at MobyGames

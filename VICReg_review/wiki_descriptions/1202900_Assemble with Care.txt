@@ -1,0 +1,21 @@
+Game: Assemble with Care
+appid: 1202900
+Source: Assemble with Care
+URL: https://en.wikipedia.org/wiki/Assemble_with_Care
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Assemble with Care is a 2019 puzzle video game developed and published by Ustwo. The game centers on an antique restorer who goes around a town fixing broken objects. The game released September 2019 for iOS, MacOS, and tvOS as a launch title for Apple Arcade. A Microsoft Windows version was released on March 26. 2020.
+In September and early October of 2023, the game's App Store version was changed from being an Apple Arcade game to becoming a standalone game.
+
+
+== Gameplay ==
+In the game the player repairs various devices in order to help the people of Bellariva, a fictional town in Spain. The repair sections are separated by interludes in which it sets up the protagonist's reasons for repairing the device.
+
+
+== Reception ==
+
+The game received mixed reviews from critics on Metacritic. CJ Andriessen, writing for Destructoid praised the touch controls and storybook presentation of the game. TouchArcade's Tyler Woodward enjoyed the stylized graphics and the game's story.
+
+
+== References ==

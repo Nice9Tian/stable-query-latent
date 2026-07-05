@@ -1,0 +1,84 @@
+Game: AdventureQuest 3D
+appid: 429790
+Source: Artix Entertainment
+URL: https://en.wikipedia.org/wiki/Artix_Entertainment
+Match score: 4.33
+Retrieved: 2026-07-04
+--------
+Artix Entertainment, LLC is an independent video game developer and publisher founded by Adam Bohn in October 2002. It is best known for creating browser-based role-playing video games—including AdventureQuest, DragonFable, MechQuest, and AdventureQuest Worlds—using Adobe Flash. Following the end of life of Adobe Flash Player in 2021, Artix developed a standalone launcher for personal computers that includes many of the company's popular Flash-based games, most of which continue to receive content updates.
+Artix released its first title for iOS and Android devices in March 2011 and its first 3D game, AdventureQuest 3D, in October 2016 with the Unity game engine.
+
+
+== Games ==
+
+
+=== AdventureQuest ===
+
+The first game by Artix Entertainment is AdventureQuest, released in 2002. Set in the world of "Lore", it is a single-player, online role-playing game (RPG). The gameplay, described as "purely combat" by the developers, allows players to complete quests and battle enemies using a variety of weapons, skills and items. Battles are turn-based and allow players to earn gold and experience points (XP). The game also includes events in which players can collectively impact the story of the game, although the game remains single-player and each player acts individually.
+Players choose an initial class of Fighter, Mage or Rogue, but can become other classes such as Knights or Paladins. While it is free-to-play, players may pay to upgrade their characters to "Guardians" and receive exclusive in-game benefits. In addition, there is an in-game currency called Z-tokens that can be purchased with real money and used to buy special items. In 2008, the game had 6.5 million players a month and over 90 sponsors for Z-token purchases.
+
+
+=== DragonFable ===
+
+After AdventureQuest gained popularity, Bohn developed a 2.5D game called ArchKnight and released it in 2005 exclusively for AdventureQuest Guardians, though it was incomplete. ArchKnight was later used as the basis for DragonFable, Artix Entertainment's second game, which was released to the public in June 2006. DragonFable originally served as a prequel to AdventureQuest, featuring crossover events and younger versions of various characters. Like AdventureQuest, DragonFable is free-to-play with an optional one-time fee for exclusive benefits, referred to as the character gaining a "Dragon Amulet".
+
+
+=== MechQuest ===
+
+Artix Entertainment's third game, MechQuest, was released in late 2007. Unlike Artix Entertainment's previous games, MechQuest is a science fiction RPG, although its gameplay is similar to that of AdventureQuest. Players pilot giant mechas in turn-based battles incorporating cooldown mechanics. Depending on the type of mecha, different upgrades and weapon slots are available. Players can also engage in melee combat and explore a game world with shops and NPCs. The game uses improved animations compared to AdventureQuest and features anime-style animations. It is also free-to-play with additional content available as a one-time purchase.
+
+
+=== AdventureQuest Worlds ===
+
+AdventureQuest Worlds, released in October 2008, is Artix Entertainment's fourth major game and first MMORPG. Like its predecessors, it uses 2D animation, although in a much simpler style to account for the increased server load. The game incorporates elements of all three previous games in its story. Unlike its predecessors, membership is not a one-time payment, but rather a regular monthly or yearly payment.
+Play is similar to many MMORPGs, with players being able to chat and fight both in-game monsters and other players, in limited areas. Characters can be customized in appearance and gear, and character classes are available to train in game. Combat is not turn-based as in Artix Entertainment's previous RPGs, but is real-time and allows for group battles. Special events take place often, with many holidays being celebrated in-game. Other special events include wars, in which players collaborate to defeat enough "waves" of monsters to win the war over several days, and live events with guest stars like Voltaire, One-Eyed Doll, George Lowe, Paul and Storm, Jonathan Coulton, the cast of Ctrl+Alt+Del, Ayi Jihu, ArcAttack, They Might Be Giants, Andrew Huang, Mia J. Park, The Crüxshadows, Dreamers, and Michael Sinterniklaas as the voice of Deady.
+
+
+=== EpicDuel ===
+In December 2009, Artix Entertainment opened a public beta for a new science fiction MMORPG, EpicDuel, which they acquired from Epic Inventions LLC, who were developing the game independently. EpicDuel's battle system is primarily based on player versus player gameplay. EpicDuel was fully released in August 2010.
+
+
+=== HeroSmash ===
+HeroSmash was a superhero-themed MMORPG based on the same engine as AdventureQuest Worlds. HeroSmash was originally titled SuperHeroQuest, but the word "SuperHero" is a trademark of DC Comics and Marvel Comics which prevented Artix from using the name. Players with active AdventureQuest Worlds memberships were able to play an alpha version of the game starting in December 2010. Public beta testing began in 2011. In 2014, due to a lack of player support, development ceased on HeroSmash but the company pledged to keep the game's servers running at a loss until they could no longer afford to do so. Following the end of life of Adobe Flash Player, HeroSmash was quietly shut down.
+
+
+=== AdventureQuest 3D ===
+Around 2012, Artix Entertainment began development on their first 3D game, AdventureQuest 3D.
+A kickstarter campaign for the game ran from November 2015 until New Year's Day 2016. The game was officially launched on open beta in October 2016.
+It features full cross-platform play, allowing players to access the game from a computer or mobile device. Like AQ Worlds before it, Adventure Quest 3D is also real-time and allows for group battles.
+The game was initially playable during its closed beta stage in web browser using Unity Web Player. Due to Unity Web Player being no longer supported by most browsers and Unity itself, the game was transferred to Steam for Mac and Windows in March 2016, and was released for mobile around late October.
+In August 2019, the game featured a virtual in-game concert with the nu metal band Korn. Special challenges and Korn-related items were also released within the game to coincide with the event. The in-game concert collaborations continued with rock bands Alice In Chains in November 2019 and Breaking Benjamin in February 2020.
+
+
+=== OverSoul ===
+A Player versus player and Player versus environment game where players possess characters and use skill cards to battle, Oversoul was created by Artix Entertainment's artist Milton Pool (better known as Nulgath or his earlier name Miltonius). Alpha testing took place from September 13 to October 31, 2012. The game is currently in beta testing phase and is available to all players.
+
+
+=== AdventureQuest Battle Gems ===
+Battle Gems is Artix Entertainment's first major mobile game released on iOS on March 18, 2014, and was followed by subsequent releases on Android and Facebook in the month of May. Battle Gems features Candy Crush like game play. Players are required to swipe over matching puzzle gems to launch battle attacks against monsters. Battle Gems features more than 150 fully animated monsters to fight, more than 450 quests to conquer, and various weapons, armor types, and pets to collect. The game is full of Artix Entertainment style puns, as well as recurring jokes from other Battleon games. Players can pay a one time fee to upgrade to the Founder status which, aside from giving them permanent status as Founder, also gives unlimited turns, unlimited energy (normally players can only fight a certain number of battles and then have to wait for it to refill), permanent gold boost (+30% gold earned), Skeleton key (unlocks everything players normally need gold keys for), and exclusive Dragon Knight armor, helm, weapon, and wings. Players can further link it to their master account and unlock the exclusive Dragon Knight class in AdventureQuest Worlds.
+
+
+=== AdventureQuest Dragons ===
+AdventureQuest Dragons is Artix Entertainment's second major mobile game developed in collaboration with French programmer "Orteil" who is best known for creating Cookie Clicker. AQ Dragons was released on Google Play Store and the App Store in December 2014, followed by a Web version in early 2015. AQ Dragons is an idle-game which features Cookie Clicker-styled gameplay. Players are required to tap on Dragon Eggs to hatch them and then collect gems (by tapping on them) in order to buy upgrades and evolve the baby dragons into titanic versions of themselves. Dragons features 12 different kinds of Dragons, each of which has their own artwork and animations along with their own story-lines and upgrades which the player can buy with their accumulated gems. The dragons need to be unlocked by means of Dragon Keys which are either available as part of the upgrades, or can be bought for a certain fee. AQ Dragons features a Founder Status much like Battle Gems which the players can upgrade to by paying a one time fee. Founder players are granted permanent Founder status along with a large number of Dragon Keys and access to special items in AdventureQuest Worlds.
+
+
+== Revenue ==
+Payment in Artix games consists mostly of a one-time payment, or subscription in the case of AdventureQuest Worlds and HeroSmash, which unlock extra content. Most games also have "secondary currencies" (microtransactions) which are gained through offers or from spending real world money. These currencies can be used to buy in-game items.
+In October 2010, the company launched its online shop, HeroMart.
+
+
+=== AExtras ===
+AExtras is a system of obtaining the previously payment-based secondary currencies in Artix Entertainment's games. It was first introduced in AdventureQuest Worlds before becoming available for all its major games and portal. In December 2010 it was discontinued in all but the Master Account System to encourage users to connect their accounts and earn rewards from there. Players can obtain free secondary currency or membership through the completion of third-party offers.
+
+
+== Other media ==
+In November 2010, Artix Entertainment published its first novel, The Dragon's Secret, written by AdventureQuest player Lyra Trice Solis.
+Artix Entertainment has also released three animated shorts. The first, Artix Vs. the Undead, was made as a teaser for the DoomWood storyline in DragonFable. The second short, Death from Above, was released as a sneak peek to the MechQuest storyline and was developed by J6 of the Artix Entertainment staff, and can be viewed in the game MechQuest. The third short labeled as Nulgath vs. Dage was created as a cutscene for OverSoul, a PvP orientated card game that follows Nulgath into another realm during the Nulgath vs. Dage War in AdventureQuest Worlds.
+
+
+== References ==
+
+
+== External links ==
+
+Official website

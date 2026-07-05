@@ -1,0 +1,31 @@
+Game: Cook, Serve, Delicious! 3?!
+appid: 1000030
+Source: Cook, Serve, Delicious! 3
+URL: https://en.wikipedia.org/wiki/Cook,_Serve,_Delicious!_3
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Cook, Serve, Delicious! 3 (stylized as 3?!) is a restaurant simulation game developed by Vertigo Gaming. It was released for Windows via Steam early access in January 2020, and was fully released on October 14, 2020 alongside versions for Nintendo Switch, PlayStation 4, and Xbox One, with a version for Amazon Luna releasing on October 20, 2020. It is the sequel to Cook, Serve, Delicious! 2.
+
+
+== Gameplay ==
+Cook, Serve, Delicious! 3 narratively follows the previous game in a dystopian America in 2042 that has been ravaged by war, which had caused the destruction of the former restaurant. Two search and recovery androids, Cleaver and Whisk (voiced by Twitch streamers Vana (Havana Mahoney) and Negaoryx (Emme Montgomery), respectively) find the chef (the player-character) still alive, and offer them their truck to use as a food truck to continue the restaurant. They become part of a national food truck championship, the Iron Speedway, as the game progresses. At the Iron Speedway (with announcers voiced by Northernlion and Kate Letourneau), the chef is challenged to complete several perfect runs while other competing food trucks attempt to sabotage their efforts.
+As with previous Cook, Serve, Delicious games, the player is challenged to make dishes to customer order at various prep and holding stations within the food truck. Prior to each day, the player assembles a menu of two to eight dishes, each dish having a point value from zero to five representing how difficult it is to prep. Certain days may require a minimum point value or specific number of dishes with a specific point value, or feature foods of a specific type or requiring a specific cooking step. After establishing a menu for the day, the food truck sets off for the day, making two or more stops. Prior to each stop, the player can use holding stations to cook ready-to-serve meals, and make special orders to prepare at the prep stations to serve once at the next stop. At each stop, the player either can serve completed dishes from the prep or holding stations, or make custom orders for certain dishes, but has a limited amount of time to serve all waiting customers. Preparing dishes requires a sequence of keyboard-and-mouse or controller actions, itemized on-screen, though with most dishes the customer may wish for custom preparation on their dish (such as condiments on a hamburger) which the player must follow. The player is ranked based on how many orders they serve both in a fixed time period once the order is placed, and to the custom preparation, and penalized for failing to complete orders or for missing key cooking steps like cooking meat. After completing the day, the player is rewarded with in-game currency that can be used to buy new recipes and improved equipment for the truck.
+Some gameplay changes are made in Cook, Serve, Delicious! 3 from past titles. With the food truck setting there are no longer any chores that must be completed. The player also has the opportunity to use one of the android drivers to serve off all completed orders while the player completes other orders. Each day can also be run in a "Chill" mode, reducing the number and rate of orders to be processed but reducing the potential rewards the player earns from completing a run. In addition to this main campaign mode, the game introduces a "Zen campaign" that is less intense in terms of timing demands.
+
+
+== Release ==
+It was released in early access on January 29, 2020 for Microsoft Windows, with a full release for Microsoft Windows, Nintendo Switch, PlayStation 4 and Xbox One, and Amazon Luna in October 2020. A month later, in November 2020, it was also released to macOS.
+
+
+== Reception ==
+
+Cook, Serve, Delicious! 3 received "generally positive" reviews, according to review aggregator Metacritic. Fellow review aggregator OpenCritic assessed that the game received strong approval, being recommended by 85% of critics.
+Emma Davies of PC Gamer wrote, "it's testament to CSD3's compelling nature that you'll want to keep tinkering with your menu to find that perfectly optimised spread to let you nail it...As moreish as a tube of Pringles, this is as fun to play as a quick snack as it is a full banquet."
+
+
+== References ==
+
+
+== External links ==
+Cook, Serve, Delicious! official website

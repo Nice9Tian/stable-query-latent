@@ -1,0 +1,41 @@
+Game: Cruelty Squad
+appid: 1388770
+Source: Cruelty Squad
+URL: https://en.wikipedia.org/wiki/Cruelty_Squad
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Cruelty Squad is a tactical first-person shooter, released in 2021, developed and published by Finnish indie studio Consumer Softproducts, managed by artist Ville Kallio, through the Steam distribution platform. In the game, the player takes on the role of a biologically-augmented assassin employed by the titular wetwork security company, tasked with performing black operations for its host conglomerate. The game is notable for its surreal, "sensorally aggressive" aesthetic, inspired by low-poly 3D games from the mid-to-late 1990s, such as LSD: Dream Emulator and Super Mario 64.
+Cruelty Squad is described by the developer as "an immersive power fantasy simulator with tactical stealth elements", and is often compared to late 1990s and early 2000s shooters such as Tom Clancy's Rainbow Six, Deus Ex, Perfect Dark, and Hitman: Codename 47. The game's theming has been described as anti-capitalist, anti-corporate, and a satire on the gig economy.
+The game was released in early access on Steam on 4 January 2021, and was fully released on Steam on 15 June 2021. Reviews were largely positive, with many reviewers appreciating the game's unique presentation, design, and combination of different mechanics and themes.
+
+
+== Gameplay ==
+The player chooses their weaponry and equipment before starting each of the 19 missions present in the game, and then must traverse open, sandbox-style levels to locate and neutralize targets. Health lost during combat can be regained by using certain equipment, consuming cooked giblets, or even eating corpses should the player die enough times on a level ("Power In Misery", the easiest difficulty level). While there is no penalty for killing civilians during a mission, silent and non-lethal solutions are also possible outside of the necessary killing of targets. During missions, the player can harvest organs from corpses as well as go fishing, then they can trade those organs and fish on a dynamic stock market for money, or explore Cruelty Squad's headquarters.
+
+
+== Plot ==
+Cruelty Squad is set in a dystopian corporatocracy where corporations possess overwhelming influence over police and government affairs. Technological advances allow people to be resurrected after death, rendering much of humanity immortal and cheapening the perceived value of life. Indiscriminate killings are commonplace, and armed security is a fixture of virtually every populated area. Human and animal organs are sold on the stock market, and invasive biological implants and augmented organs are used by security forces and assassins to aid in combat. Corporate contract killings are handled in part by Cruelty Squad, a wetwork security company working under the umbrella of a large conglomerate.
+After being discharged from the "SEC Death Unit", the player character receives a phone call from his handler, who offers him employment within Cruelty Squad. He is tasked to kill a number of people who have drawn the ire of conglomerate "higher-ups"; these include anti-corporate politicians, cultists, rogue police officers, delinquent employees, and rival CEOs. Eventually the handler attempts to put a hit out on the player in their apartment, forcing the player to escape other assassins and police officers, however the handler apologizes and claims it was a mistake. Later in the game, the player and his handler begin to turn on the higher-ups, not due to any real anti-corporate beliefs, but simply for the potential humor of the situation.
+The game features multiple endings depending on the player's discoveries. By activating the "Hope Eradicated" difficulty mode hidden within the Cruelty Squad headquarters, a sealed door opens, leading the protagonist to face a boss resembling themselves. Defeating this entity triggers the first ending.
+Alternatively, completing a series of secret levels concealed within paintings unlocks the final level, "Trauma Loop". Here, an entity known as the Limit Chancellor strips the protagonist of their weapons and augmentations. Successfully navigating this level without equipment leads to the game's final ending.
+
+
+== Development ==
+Cruelty Squad was produced within the Godot game engine. It was released on Steam on 15 June 2021.
+Prior to the development of Cruelty Squad, lead developer and artist Ville Kallio created and exhibited multiple artistic works consisting of comics and video art, as well as installations and standalone artworks for galleries. Notable museums he has exhibited include the Futura in Prague, and the SIC Gallery in Helsinki, Finland. Many of these previous artworks contain allusions to video games, as well as many ideas that would later become parts of Cruelty Squad. Kallio has said that his gallery work "never really felt like more than just a weird hobby" and that it was like "a black hole with no future", stating that going into game development felt sensible since his previous work had been heavily inspired by video games.
+Other than gallery pieces, Kallio has produced many video projects before the release of Cruelty Squad, such as "Adversalife" and "Venmo Combat" which was also a component of a multimedia art exhibition hosted at the SIC Gallery in Helsinki, Finland. Additionally, he worked on comics such as Hyper Prison-Industrial, Bio-whale, Corridorspace, and developed a second game titled Psycho Patrol R in 2025 through early access.
+
+
+== Reception ==
+
+Cruelty Squad received "generally favorable" reviews, according to review aggregator website Metacritic.
+James Brod of Third Coast Review described the game as "grislier than Hotline Miami" and recommended it to fans of "old school tactical shooters". Jake Tucker of NME declared Cruelty Squad to be the "most compelling game of the year", awarding it five stars out of five. Many outlets also commented on the harshness of the visuals, with Rock Paper Shotgun's Graham Smith dubbing them "sensorally aggressive". James Davenport of PC Gamer called it "some prime existential PC gaming horror."
+In June 2021, the protagonist of Cruelty Squad was added to the video game Brigador as a playable character, under the name "MT Foxtrot".
+
+
+== References ==
+
+
+== External links ==
+Cruelty Squad on Steam

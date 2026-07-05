@@ -1,0 +1,38 @@
+Game: Crab Game
+appid: 1782210
+Source: Crab Game
+URL: https://en.wikipedia.org/wiki/Crab_Game
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Crab Game is a free-to-play video game developed and published by Norwegian indie developer Daniel Sooman, also known as Dani. The game was initially released for Linux and macOS on Itch.io and for Windows on Steam on 29 October 2021; the Linux and macOS editions were later released on Steam on 16 November. Based on the Netflix series Squid Game, players compete with each other in minigames in order to be the last one alive.
+
+
+== Gameplay ==
+Crab Game is a competitive online first, and third person party game where players compete in various minigames based around childhood games. The player must avoid dying and be the last one remaining in order to win a cash prize; however, the game ends if there is nobody left. Players can attack others with various items, compete in various maps and game modes and communicate with each other through proximity chat. Players can also create servers with up to 40 players or join existing ones. While the game initially featured primarily Squid Game-inspired minigames, a series of content updates have expanded the game to have a variety of game modes and maps unique to Crab Game, with no discernible connection to the series.
+
+
+== Developer ==
+
+Daniel William Sooman (born 15 June 1997), known online as Dani, is a comedic Norwegian YouTuber and an indie game developer. As well as having released minor games, mostly to Android, he has developed Crab Game and Muck, and as of May 2026 is yet to release Karlson, his most awaited game.
+
+
+=== Video game and YouTube career ===
+Dani started making programming and indie game development videos in 2018. In late 2019, Sooman started the development of Karlson, also known as Karlson (3D), prompted by commenters challenging him to do so. Dani went on to create development log videos for Karlson like the ones that gained him his initial following on YouTube.
+In late 2020, during the surge in popularity of the games Fall Guys and Among Us, Sooman challenged himself to recreate the viral games within the span of one week. The games were not released to the general public, but were made available to Twitch streamers and YouTubers. Following the release of his video on the recreation of Among Us in 3D, he appeared playing this game along with many other famous YouTubers like MrBeast, Dream and Jacksepticeye.
+In June 2021, in response to a YouTube comment that claimed, in a similar way to the comment that started Karlson, that he was unable to make a survival and open world game, Sooman decided to create a Minecraft-styled, simplistic open world game titled Muck. The game was released on video game platform Steam. In October 2021, Sooman released Crab Game. In April 2022, Sooman released a video on his second YouTube channel, Dani2, where he talks about how the growing pressure and expectations for Karlson has caused him to be overwhelmed about continuing the games development, though he reassured his audience that he would finish Karlson some day. As of May 2026 he has not returned to any platform officially.
+
+
+== Development and release ==
+Crab Game was initially created in response to Squid Game's popularity and was named as such to avoid a cease and desist letter from Netflix. Developed in around two weeks, Crab Game was released on Steam for Windows on 29 October 2021. The game was released on Itch.io for macOS and Linux as Dani was unsure of their stability due to not being able to test them; said versions were later released on Steam on 16 November. Since its release, Crab Game has been receiving content updates consisting of new maps, more games, and better optimization for both slower computers and internet speeds. The game hasn't gotten an update since December 2021.
+
+
+=== DDoS attacks ===
+On 2 November 2021, xQc, a Twitch streamer, experienced a DDoS attack while playing Crab Game, causing him to lose his internet connection. Other Twitch streamers also experienced DDoS attacks, such as Sodapoppin and Nick Polom. Developer Dani confirmed the issues were caused by the old Steam networking code the game was using, which made the IP addresses of players public; he urged players to not join any public lobbies to prevent any further DDoS attacks. The issue has since been fixed.
+
+
+== Reception ==
+Crab Game was well-received upon its initial release, reaching an all-time peak of 283,315 players on Steam and over 211,000 viewers on Twitch. The game also quickly gained exposure on YouTube. In early 2023, the game experienced another peak in players after a group of VTubers played the game in a collaboration, reaching up to around 42,000 concurrent players. It was nominated for the "Better With Friends" category of the 2021 Steam Awards, but lost to It Takes Two.
+
+
+== References ==

@@ -1,0 +1,47 @@
+Game: The Lord of the Rings: Return to Moria
+appid: 2933130
+Source: The Lord of the Rings: Return to Moria
+URL: https://en.wikipedia.org/wiki/The_Lord_of_the_Rings:_Return_to_Moria
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+The Lord of the Rings: Return to Moria is a 2023 survival video game developed by Free Range Games and published by North Beach Games on October 24, 2023 for Windows. PlayStation 5 and Xbox Series X/S versions were released in December 2023 and August 2024 respectively. The game is based on the fictional world of Middle-earth created by J. R. R. Tolkien and takes place during its Fourth Age after the events of The Lord of the Rings novel. It follows a company of dwarves as they try to retake their homeland Moria and restore the long-lost ancient kingdom of Khazad-dûm. The game received mixed reviews from critics.
+
+
+== Gameplay ==
+Return to Moria is a survival video game, set within a procedurally generated version of the mines of Moria from J. R. R. Tolkien's Middle-earth setting. The game emphasizes survival mechanics, requiring players to navigate environments that are often engulfed in darkness. Players mine for materials such as iron, gold, quartz, gemstones, and mithril across three distinct mountains to create tools, weapons, armor, and structures. To sustain their characters, players must effectively manage hunger, sleep, body temperature, willpower, and noise levels. The mines are inhabited by orcs, cave trolls, and other mythical creatures. Players must engage in combat or employ stealth to survive and are encouraged to explore the mines to discover ancient items, such as swords that illuminate in the presence of orcs, and recover and rebuild ancient dwarven structures. The appearance of the dwarven characters can be customized through a character creation system.
+The game supports online cooperative multiplayer, allowing a single host to invite up to eight other players to join in exploring and surviving within their version of Moria.
+
+
+== Synopsis ==
+Set in the aftermath of Sauron's defeat, Return to Moria explores a post-apocalyptic scenario where players uncover the history of the dwarves and the legacy of their clans. The narrative delves into the impact of these events on the orcs and the wider world of Middle-earth.
+The introductory cinematic sets the stage with Gimli leading a company of dwarves to the Doors of Durin, only to lose contact with them, hinting at the adventures and challenges that lie within the mines.
+
+
+== Development ==
+The game is licensed by Middle-earth Enterprises. The developer, California-based Free Range Games, was inspired by games like 7 Days to Die, Stranded Deep, Subnautica, Valheim and The Forest.
+The team did extended research, held team book clubs and consulted with the Tolkien experts Corey Olsen, T. S. Luikart and David Salo, who also developed new Khuzdul phrases. They first assembled a small team of expressive concept artists, under art director Bradley Fulton to create 2D concept art. Game director Jon-Paul Dumont said, that they wanted the game to "recreate the grounded, real-world setting of Middle-earth" and that they "combined these two ideas: expressive character designs with realistic materials, lighting, and animation to create a world that feels real, inhabited by characters full of life." It also features a soundtrack of songs written and inspired by Tolkien.
+Gimli is voiced by John Rhys-Davies, who portrayed him in the 2000s films.
+
+
+== Release ==
+The game was first revealed along with a short cinematic trailer on June 10, 2022, at the 2022 Epic Games Summer Showcase. The game was originally planned to be released in spring 2023 and was eventually released on October 24, 2023 for Windows, with the PlayStation 5 release following on December 5, 2023. The Xbox Series X/S version was released on August 27, 2024. The Windows version was sold exclusively on the Epic Games Store until August 27, 2024, when it was released on Steam.
+
+
+== Reception ==
+
+The game received "mixed or average" reviews according to aggregator Metacritic, while the Xbox Series X/S version received "generally favorable" reviews.
+Eurogamer said "Though it doesn't stray far from the standard survival game formula and often lacks polish, The Lord of the Rings: Return to Moria offers a moody, atmospheric descent through Tolkien's world." GameStar said that it "tickles the Middle Earth nerve of every fan, but overstretches your patience with comfort shortcomings and technical problems."
+IGN said "There's a decent game in here somewhere, as the compelling progression loop and chaotic multiplayer capabilities can make for a really good time – I just can't give you many reasons to pick this survival game over the plethora of better options when it's only ever by-the-numbers at best." PC Gamer concluded that it was an "authentic and authentically grueling game."
+
+
+== See also ==
+Middle-earth in video games
+List of Middle-earth video games
+
+
+== References ==
+
+
+== External links ==
+Official website

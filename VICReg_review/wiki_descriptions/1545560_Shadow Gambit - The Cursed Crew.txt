@@ -1,0 +1,38 @@
+Game: Shadow Gambit: The Cursed Crew
+appid: 1545560
+Source: Shadow Gambit: The Cursed Crew
+URL: https://en.wikipedia.org/wiki/Shadow_Gambit:_The_Cursed_Crew
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Shadow Gambit: The Cursed Crew is a real-time tactics video game developed and published by Mimimi Games. The game was released for the PlayStation 5, Windows and Xbox Series X and Series S in August 2023. The developer Mimimi shut down shortly after the release of the game.
+
+
+== Story ==
+The game is set in an alternate version of the Golden Age of Piracy, in which a mysterious curse has revived the dead and granted them supernatural abilities. The player must assemble a cursed pirate crew to explore an island chain named the Lost Caribbean and steal magical artifacts from the Inquisition, which seeks to hunt down all the Cursed individuals.
+
+
+== Gameplay ==
+
+Shadow Gambit: The Cursed Crew is a real-time tactics video game played from an isometric perspective. The game features eight characters at launch. Each character in the game has their own unique abilities. For instance, Pinkus can briefly possess enemies and enter restricted areas, while Suleidy can distract enemies with plant spores, and spawn a bush anywhere in the game as a hiding spot for other players. Their magical abilities can also be further upgraded by collecting a resource named "vigour". Players will visit the game's various islands multiple times in order to collect Black Pearls and Soul Power, the two of which together can be used to resurrect other characters in the game. Characters, once resurrected, will join the player's crew.
+Each map in the game is an open region, and players can use a multitude of ways to approach their objectives. While there are multiple ways for players to enter an island, they must escape through "Tear Into The Below", a portal that magically transports the crew back to their ship, the Red Marley, which also serves as the game's  hub area. Enemies are alerted to loud noises and footprint, and players need to avoid enemies' sight, which is displayed as green cones of vision. Players can activate Shadow Mode, which briefly pauses the game, allowing players to issue commands to several characters and execute them at once. They can also use the environments to their advantage. For instance, a large boulder can be dropped onto an enemy, killing them without alerting nearby hostile units. The game also features a quick-save system, allowing players to quickly rewind time after making an undesired tactical error.
+
+
+== Development ==
+Shadow Gambit features a fantasy backdrop, allowing the team to significantly expand character skills. The game also features a more open-ended structure, as the player can recruit characters and complete missions in any order they want. 
+The game was developed by Mimimi Games as its first self-published game. Mimimi dubbed Shadow Gambit a "real-time stealth strategy" game. Internally codenamed "Project Süßkartoffel", it was developed with funds from both the German government and Kowloon Nights. Sweet Baby Inc. consulted on the game's script. The game was officially announced by Mimimi in January 2023. It was released for Windows PC, PlayStation 5, and Xbox Series X and Series S, on August 17, 2023.
+Soon after the game's release, on August 29, 2023, it was announced that Mimimi Games would be closing down due to the rising costs of development and not enough revenue being generated. On December 19, 2024, American publisher Hooded Horse announced that they had purchased the publishing rights for Shadow Gambit for all platforms, seeking to assist with the game's long-term availability.
+
+
+== Reception ==
+The game received generally favourable reviews according to Metacritic.
+
+
+== References ==
+Notes
+
+References
+
+
+== External links ==
+Official website

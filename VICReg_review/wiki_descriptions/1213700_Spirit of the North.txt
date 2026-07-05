@@ -1,0 +1,24 @@
+Game: Spirit of the North
+appid: 1213700
+Source: Spirit of the North
+URL: https://en.wikipedia.org/wiki/Spirit_of_the_North
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Spirit of the North is a third-person adventure game developed by Infuse Studio and published by Merge Games. It was released on November 1, 2019 for PlayStation 4, then on May 7, 2020 for Windows and Nintendo Switch. It was re-released as Spirit of the North: Enhanced Edition for PlayStation 5 and Xbox Series X/S on November 26, 2020 and June 29, 2021 respectively. The game contains no dialog or narrative, and is about a fox that gains the powers of a spirit after collapsing from exhaustion.
+Spirit of the North received mixed reviews from critics, who praised its art design and soundtrack, but predominantly criticized its gameplay and visual performance. The Enhanced Edition received similar reviews, mainly on account of its controls and gameplay. A sequel, Spirit of the North 2, was announced in October 2023 and released on May 8, 2025.
+
+
+== Reception ==
+
+The game received an aggregate score of 58/100 on Metacritic for its original Windows version, indicating "mixed or average reviews". Similarly, its Switch version received 59/100, and PlayStation 4 version, 67/100. The PlayStation 5 version received an aggregate score of 64/100.
+Joe Keeley of Adventure Gamers gave the game's Windows version 2/5 stars, saying that while it looked and sounded good, it was largely "disappointing", calling the movement "imprecise and fiddly".
+Ollie Reynolds of Nintendo Life gave the Switch version of the game 4/10 stars, comparing it to Journey in its execution, and praising its art style as "ambitious" and its soundtrack as "gorgeous". However, he said that its graphics suffered on Switch, and it had innate issues with the controls, saying that "the fox simply doesn't react to your inputs quickly enough" and calling jumping and swimming "infuriatingly sluggish".
+Henry Stockdale of Push Square gave the PlayStation 5 version 7/10 stars, saying that while it looks "gorgeous", the Enhanced Edition neglected to improve the elements that most needed an update, calling the controls still "stiff" and the re-release a "wasted opportunity" to fix the game's original issues.
+
+
+== References ==
+
+
+== External links ==
+Official website

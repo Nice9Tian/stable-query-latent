@@ -1,0 +1,69 @@
+Game: Tales of Arise
+appid: 740130
+Source: Tales of Arise
+URL: https://en.wikipedia.org/wiki/Tales_of_Arise
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Tales of Arise is a 2021 action role-playing game developed and published by Bandai Namco Entertainment. The seventeenth main entry in the Tales series, the game follows a man and a woman from the opposing worlds of Dahna and Rena and their journey to end the Renans' oppression of the Dahnan people.
+Developed by a team composed of both series veterans and newcomers, the aim was to revitalize the Tales series. Minoru Iwamoto, one of several artists who worked on Tales of Zestiria and Tales of Berseria, returns as both character designer and art director. The game is built using Unreal Engine 4. 
+Tales of Arise was originally scheduled to be released for PlayStation 4, PlayStation 5, Windows, Xbox One, and Xbox Series X/S in 2020, but was delayed to September 2021 due to internal quality issues and the ability to launch the game on more platforms. It is also the first game in the series with a worldwide simultaneous launch. Upon release, it received positive reviews from critics and won the award for Best RPG at The Game Awards 2021. It sold over 3 million copies by February 2024. On February 5, 2026, a Nintendo Switch 2 port of the game was announced, which was released on May 22, 2026.
+
+
+== Gameplay ==
+Like previous games in the series, Tales of Arise is an action role-playing game, although its gameplay has gone through alterations as part of its development goals while retaining the basic Tales battle system, dubbed the Linear Motion Battle System. The game has a large focus on evading and countering, with Tales of Graces, a 2009 entry praised for its combat, cited as inspiration. Unlike many previous titles in the series, the game does not feature local co-op control sharing of characters, with the development team deciding to focus on various interactions between characters in combat. This includes the addition of the "Boost Strike" feature, allowing multiple party members to perform destructive attacks together under certain conditions.
+
+
+== Story ==
+
+
+=== Setting ===
+Arise takes place in a setting divided between the medieval world of Dahna and the advanced world of Rena. Three centuries ago, the Renans based on Rena's artificial moon Lenegis invaded and conquered Dahna, enslaving the population and dividing the land into five isolated realms: the barren and fiery Calaglia, the dark and cold Cyslodia, the Elde Menancia plains, the Mahag Saar mountains, and the Ganath Haros rainforests. Periodically, the "Crown Contest" is held to decide which among the five Lords is chosen to become the next Renan Sovereign. 
+The Dahnan resistance against the Renan occupation is divided into four independent movements spread across the planet. The only realm that lacks a resistance cell is Ganath Haros, whose Lord subjugated the entire population, regardless of race.
+
+
+=== Plot ===
+
+In the realm of Calaglia, an amnesiac masked Dahnan slave nicknamed "Iron Mask" becomes involved in a resistance movement by helping save Shionne, an imprisoned Renan girl, and retrieve a Master Core she had stolen from the region's Lord. While evading their pursuers, Iron Mask pulls a blazing sword from the Master Core in Shionne's possession and repels the Renan forces. With help from the Crimson Crows, they confront and defeat Calaglia's Lord, Balseph; following the fight, the Iron Mask breaks, allowing the man to recall his name, Alphen. After liberating Calaglia, Alphen and Shionne form an alliance to liberate the regions controlled by the five Lords, gather the Master Cores they possess, and cure Shionne of a curse that harms those who touch her. 
+They, the Crimson Crows' leader Zephyr, and Rinwell, a member of another resistance group called the Silver Swords, travel to Cyslodia, ruled by the Lord of Light. Upon arrival, Zephyr is captured by agents serving the local Lord Ganabelt Valkyris, led by Zephyr's son Law. Having a change of heart once his father is sentenced to public execution, Law assists Alphen and the others in attempting to rescue him. After Zephyr is killed by Ganabelt, Law joins Alphen, Shionne, and Rinwell to avenge him and kill Ganabelt.
+With Cyslodia liberated, the party travels to Elde Menancia, a realm whose Lord, Dohalim il Qaras, abolished slavery and encourages Renans and Dahnans to coexist. However, they learn from the dying Migal, leader of the Golden Dust Cats, about a plot from Dohalim's aide Kelzalik to secretly drain the Dahnans' astral energy for his own gain by poisoning them. Accompanied by Migal's sister, the Dahnan knight Kisara, Alphen and the others stop Kelzalik's plans and Dohalim sentences him to exile before renouncing his Lordship and joining the party with Kisara. At the realm of Mahag Saar, the party discovers that the Dark Wings overthrew the local Lord, Almeidrea Kaineris, who went into hiding. While searching for Almeidrea, Shionne confesses that she aims to collect the Lords' Master Cores to create the ultimate Master Core, Renas Alma, and get rid of her curse. Learning that Almeidrea was captured, the party attends her public execution but discovers that she took advantage of the situation to trap and kill the Dark Wings while extracting their astral energy. As Almeidrea escapes, Rinwell recognizes her as the Lord who killed her parents.
+The party boards Almeidrea's battleship and defeats her in combat, but the Lord of Ganath Haros, Vholran Igniseri, kills Almeidrea before attacking Alphen. During the fight, the rest of Alphen's mask is destroyed, restoring his memories and sense of pain before Vholran captures Shionne and retreats. Once in safety, Alphen reveals that, three hundred years ago, he was a test subject for Renan experiments before the invasion. He was forced to take part in the "Spirit Channeling Ceremony" alongside Naori Imeris, a Renan maiden and ancestor of Shionne, using the Renas Alma. However, the ceremony failed, causing countless deaths. Naori put the mask on him to seal his memories before sending him to Dahna in a spaceship, his body preserved in cold sleep before he awakened one year ago. The party storms Vholran's castle and reunites with Shionne, who Vholran hexes to stop the party before Alphen frees her, and defeat Vholran, securing all the Lords' Master Cores. A mysterious being appears before the party, using a sixth Master Core in her possession to absorb the cores' astral energy and form the Renas Alma, before fleeing with it and Vholran's body.
+Over the following month, the party helps the citizens of Ganath Haros rebuild until a biomechanical structure sent by the Renans begins directly draining Dahna's astral energy and sending it to Rena's moon Lenegis. The party temporarily shuts the structure down to prevent Dahna's destruction and locates and restores Alphen's spaceship, using it to travel to Lenegis. There, they discover that Vholran is alive, but he and the Renas Alma are in the custody of the Helganquil, alien beings who are the true inhabitants of Rena and intend to use them to reenact the Spirit Channeling Ceremony, whose true purpose is to drain all Astral Energy from Dahna. They also learn that the human Renans living on Lenegis are descendants of Dahnans kidnapped from their home planet to take part in the Helganquil's plan to funnel Dahna's Astral Energy to Rena's Great Spirit, who had drained Rena's energy and killed most of its life.
+The party launches an attack on Rena and confronts and defeats the Great Spirit, destroying its core and retrieving the Renas Alma. However, when Alphen and Shionne begin the ceremony to seal it, Vholran attacks them, stealing the Renas Alma and challenging Alphen to a duel while Shionne seals the Great Spirit inside her body. Alphen defeats Vholran, who refuses to concede and commits suicide by destroying himself and the Renas Alma. Shionne asks Alphen to kill her to destroy the Great Spirit, but Alphen instead calls upon the Great Spirit of Dahna for aid. Together, they stop the destruction of both planets by fusing them into a single world while curing Shionne's curse. Sometime after the battle, life returns to normal and Alphen and Shionne marry.
+
+
+==== Beyond The Dawn ====
+One year after the fusion of Rena and Dahna and before Alphen and Shionne's marriage, they rescue a young girl named Nazamil from pursuers. As the daughter of a Renan noble and a Dahnan woman, she is shunned by both races amid increasing tensions between the displaced Renans and the now liberated Dahnans. The party takes Nazamil in and, while exploring an ancient Helganquil ruin, discover that she was experimented on by the Renans and obtained special powers like Alphen and Shionne. During an attack on the town of Niez, Nazamil uses her powers to  defend the inhabitants, but locals become frightened and attack her, angering Alphen and causing him to nearly kill them after losing control of his powers. Out of guilt for what happened, Nazamil flees.
+Nazamil returns several weeks later, having unlocked ancient technology and formed a cult called "Cal Beisel" whose members wear masks similar to Alphen's to suppress their aggressiveness, intending to force the population to wear them to achieve peace. The party attempts to dissuade her, but she feels rejected and puts on the Reigning Visage, the mask that controls the cult members, which begins to take over her mind. The party pursues Nazamil to Cal Beisel's headquarters and gets her to remove the mask and recover her consciousness, disabling the masks and liberating their wearers. Afterwards, Nazamil departs to search for her own happiness, promising to meet the party again someday. In a post-credits scene, Alphen seemingly proposes to Shionne.
+
+
+== Development ==
+According to producer Yusuke Tomizawa, development of Arise began before the announcement of the Definitive Edition of Tales of Vesperia in 2018. Beginning development under the codename "Arise", the aim was to reevaluate and evolve the Tales franchise formula. The game's title derived from its codename as it best exemplified both the game's story themes and the team's wishes. While previous Tales games used a dedicated in-house engine, Arise was built using Unreal Engine 4, allowing much higher graphical quality compared to earlier entries. Character models and movement were also improved, with the team aiming at the same level of quality found in 3D films and television. While the previous game Tales of Berseria had been a cross-generation game for PlayStation 3 and PlayStation 4, Arise was made exclusively for modern hardware. Tomizawa stated that, while the team was aiming for a level of quality that can be enjoyed globally, the game would not neglect its Japanese fans.
+Arise was developed by Bandai Namco Studios. The team included veterans going as far back as Tales of Phantasia, alongside newcomers who were passionate about the series. The art director and character designer was Minoru Iwamoto, who had worked on both Berseria and Tales of Zestiria. This was the first time the same person had filled both roles, and was part of Bandai Namco's move towards unifying the game's themes and artstyle. The world design went in a darker direction compared to earlier entries, both to further the series evolution and appeal to the Western market. Despite the overt focus on 3D graphics, 2D anime cutscenes are still planned as with previous entries. Similar to the previous games in the series, the anime sequences were produced by Ufotable, while the game's score was written by Motoi Sakuraba. The game's theme song is "Hibana" by Kankaku Piero, which marks the third time a theme song in the Tales series has had both an English version and a Japanese version. Piero also performs "We Still" as the theme song of the "Beyond the Dawn" DLC. Ayaka performs two songs for the game, "Blue Moon" for the game's grand theme song and her cover version of My Little Lover's "Hello, Again (Mukashi kara Aru Basho)" (Hello, Again 〜昔からある場所〜, Hello, Again ~A Place that has Been Around for a Long Time~) for the game's insert song.
+
+
+== Release ==
+Arise was revealed at E3 2019, although details of the game had leaked on the internet a few days before. The game was originally planned to be released in 2020 for PlayStation 4, Windows, and Xbox One, but was delayed to September 10, 2021, due to internal issues and the ability to launch the game on PlayStation 5 and Xbox Series X/S.
+On October 3, 2021, new downloadable content (DLC) was announced, including a crossover quest featuring Kirito and Asuna, the main characters of the Sword Art Online franchise (notably Sword Art Online: Alicization Lycoris), along with new costumes based on them.
+A story DLC titled Tales Of Arise: Beyond The Dawn was announced in September 14, 2023, and released on November 9, 2023. The story is set one year after the events of the original game and introduces a new character called Nazamil.
+
+
+== Reception ==
+
+Tales of Arise received "generally favorable" reviews from critics, according to review aggregator website Metacritic. 
+Tales of Arise won for Best RPG at The Game Awards 2021. During the 25th Annual D.I.C.E. Awards, the Academy of Interactive Arts & Sciences nominated Tales of Arise for "Role-Playing Game of the Year". IGN said it had the best story and gameplay of any Tales game since Tales of Symphonia.
+
+
+=== Sales ===
+In under one week on sale, Tales of Arise had shipped over 1 million units, becoming the fastest-selling entry in the series. By April 2022, the game had sold 2 million units. By February 2024, it had sold over 3 million units.
+
+
+== Notes ==
+
+
+== References ==
+
+
+== External links ==
+Official website
+Official European website

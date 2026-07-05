@@ -1,0 +1,31 @@
+Game: The Great War: Western Front
+appid: 2109370
+Source: The Great War: Western Front
+URL: https://en.wikipedia.org/wiki/The_Great_War:_Western_Front
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+The Great War: Western Front is a real-time strategy video game based on the First World War. Developed by Petroglyph Games and published by Frontier Foundry, the game was released in March 2023 for Windows PC.
+
+
+== Gameplay ==
+Players can choose to play as either the Central Powers or the Allied Powers, with both having unique gameplay features and abilities. In the real-time strategy segments of the game, players can spend gold and supplies in order to construct an intricate network of trenches, machine gun nests, artillery batteries, and observation balloons in the set-up phase of each combat engagement. They can place different military units and battalions along the trench. Once a battle has started, improving defense or introducing more units to the battle will cost the player more supplies. A battalion can be commanded and traverse across the no man's land to attack an opponent's trenches. A successful attack allows players to claim ownership of that trench, allowing players to advance forward. As the player progresses, they unlock weapons and technology such as tanks and chemical weapons. There are nine outcomes for each skirmish, ranging from great loss to great victory. If the players fail to advance and has nearly used up most of their resources, they can negotiate for a ceasefire, while the defenders can surrender so as to preserve resources and preventing further casualties.
+Players can access a theatre map to view their progress in the overall war. Each region in the Western Front has a certain number of "stars", indicative of how defensible it is. Stars can only be removed from a region once the player has achieved a decisive victory over their opponents. Achieving a minor victory would not aid the player in capturing a region, but it will deplete their opponent's "national will". A region regains its star in each turn if it has not been attacked, but the troops stationed there become fatigued. Players win by capturing all enemy capitals in the theatre map, or completely drain their opponents of their national will. If the player completely depletes their national will by taking heavy casualties in each skirmish, they will lose the game.
+
+
+== Development ==
+The Great War: Western Front is developed by Petroglyph Games, which previously worked on Star Wars: Empire at War and Command & Conquer Remastered Collection. Petroglyph and publisher Frontier Foundry announced the game in August 2022. It was released on March 30, 2023, for Windows PC.
+Discussing the game's setting, lead designer Chris Becker described the First World War as "a war of attrition and a battle of inches". As a result, the team worked to ensure that the major goal for the player is to maintain their national will rather than winning each individual battle. Players must be cautious when making tactical decisions, as achieving a victory may comes with a significant drain of their faction's national will. Petroglyph collaborated with Imperial War Museums to ensure that the game was authentic to its setting. According to the team, the game features a "persistent battlefield", as the actions of the players and the destruction caused by previous conflicts are visible when they revisit a battlefield. The in-game weather will change, affecting unit movement and artillery performance. The team hoped that players will develop new strategies through familiarity with the maps, allowing them to achieve victory at a lower cost.
+
+
+== Reception ==
+
+The Great War: Western Front received "mixed or average reviews", according to the review aggregator Metacritic.
+Rock Paper Shotgun felt the game captured the atmosphere of the First World War, but criticized the user interface as clunky and difficult to use, leading to strategic missteps, "often I screamed aloud at my men to stay in the fucking trench". PCGamesN praised the realism of the game, but wrote it could make the title frustrating to play, "Real-time battles most often result in frustrating stalemates that accomplish nothing beyond burning supplies and getting a lot of men killed". Vice enjoyed the research and development metagame present in The Great War, "Naturally, the most tactically transformative technologies, like tanks, require a ton of points so they represent several turns' worth of investment, which has a huge opportunity cost".
+
+
+== References ==
+
+
+== External links ==
+Official website

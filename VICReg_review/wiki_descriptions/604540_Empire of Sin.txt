@@ -1,0 +1,39 @@
+Game: Empire of Sin
+appid: 604540
+Source: Empire of Sin (video game)
+URL: https://en.wikipedia.org/wiki/Empire_of_Sin_(video_game)
+Match score: 7.22
+Retrieved: 2026-07-04
+--------
+Empire of Sin is a strategy and role-playing video game developed by Romero Games and published by Paradox Interactive. It was released on December 1, 2020, for Microsoft Windows, macOS, PlayStation 4, Xbox One, and Nintendo Switch. In the game, the player takes the role of one of several mob bosses inspired by real-life figures in Chicago during the Prohibition era. The player, acting through their boss character, must decide and direct the actions of their underlings to take over rival businesses such as clubs and brothels, recruit new members to their cause, and defend their empire against other bosses and the law in a bid to take complete control of Chicago's underworld.
+
+
+== Gameplay ==
+Empire of Sin is a real-time strategy game with the player taking the role of a crime boss in the Prohibition era starting in 1920, one year after the passage of the Eighteenth Amendment, and trying to gain control of Chicago by 1933 (when Prohibition is abolished). 
+The game starts with the player selecting a boss character, several of which are directly modelled on Prohibition-era criminals such as Al Capone, Dean O'Banion, and Stephanie St. Clair, while others, such as Goldie Garneau, are fictional but take inspiration from the era. Each boss can form a "crew" of up to 16 underlings from 60 potential ones to help manage their empire of criminal rackets, such as speakeasies, casinos, and brothels, protect them from the law and rival mafia gangs, deal with unforeseen problems (such as protestors shutting down a brothel or an undercover federal agent visiting a speakeasy), and work to extend their gang's influence by taking over the rackets of other bosses. Rackets can be upgraded with cash to improve their security, increase their profits, and better conceal themselves from potential enemies. Bosses must regularly consult their business ledgers through the in-game menu to track how well their rackets are operating and whether any adjustments or upgrades need to be made.
+The city of Chicago is divided into neighbourhoods, each of which has rackets controlled by other gangs, vacant properties that can be purchased and converted into rackets, and decrepit buildings occupied by small criminal gangs who must be wiped out in combat before the building can be put to use, ransacked for profit, smashed up to temporarily make it unusable, or razed to the ground so that no one can use it. As the boss steadily increases their control over a neighbourhood, they will attract the attention of rival bosses, who may try to extort money from the boss or attempt to seize their rackets. Deciding how to handle rivals—whether that involves forming alliances with them, paying or threatening them into backing off, or simply killing them and assuming control of their empires—is an important aspect of Empire of Sin.
+Alcohol is the most vital component of any boss' empire; without enough to sell, rackets will be unable to generate substantial profits. Each neighborhood has locations where speakeasies and breweries can be established to produce and sell alcohol, and the boss must invest considerable sums to protect them and increase their production capabilities. Alcohol can also be given to the player by allies or received as part of a reward for completing certain missions. Alcohol is graded by its quality, from low-quality "swill" that can be made cheaply but will not sell for much to "premium" and "top-shelf" alcohol that is more expensive and riskier to manufacture but can be sold for high prices.
+Taking over rackets or occupied buildings, as well as getting into shootouts with rival gangs or law enforcement officers, enters the boss and their crew into a turn-based strategy game similar to X-Com. Members of the crew must be positioned before they can attack or accept any of the player's orders, and can be armed with a variety of weapons, body armor, explosives, and healing items purchased from black market dealers. Combat is also impacted by various traits and perks the characters have, and may cause them to act differently from the player's orders. For example, a character with the "Hair Trigger" trait may fire their weapon out in the open rather than moving to cover when ordered. These traits can change over the course of a game; for example, an underling may become more accustomed to solving problems through violent means the more they are put in such conditions.
+The primary focus of Empire of Sin is to grow the boss' empire through conquest and effective management. Funds earned from rackets can be used to pay off cops, hire lawyers to keep underlings out of trouble, recruit advisors and underbosses who can reduce the player's workload by assuming some responsibilities of managing the empire, and plant moles in other gangs to disrupt their operations. The game is partially roguelike in nature as the rackets on the game's map reallocate for each playthrough, and new characters are generated with different perks each time. Some have compared Empire of Sin and its gameplay as a successor to the 1999 game Mob Rule.
+In addition to empire-building, each boss character has their own unique storyline, missions, and interactions that can be completed up until the end of the game. These offer insight and info on the characters and can enable them to earn special rewards.
+
+
+== Development ==
+Empire of Sin was developed by Romero Games with Brenda Romero as the lead designer. Brenda's past game development history which included the Wizardry video game series and board games based on historical scenarios, had given her great insights into role-playing games (RPG) and creating gameplay systems that focused on character interactions. The Prohibition era ideas behind Empire of Sin had been something she wanted to do for 20 years. This led to the pair seeking Paradox Interactive as their publishing partner given that Paradox is well known for historical simulation games.
+The game was first revealed as part of Nintendo's Direct presentation at E3 2019. It was released on Microsoft Windows, macOS, PlayStation 4, Xbox One, Nintendo Switch. While its initial release was planned for the second quarter of 2020, Romero Games announced the game would be delayed until December 1, 2020 for additional polish.
+
+
+== Reception ==
+
+
+=== Critical response ===
+
+Empire of Sin received "mixed or average" reviews on the PC, Xbox, and Switch versions and "generally unfavorable reviews" for the PlayStation 4 version, according to Metacritic.
+
+
+== References ==
+
+
+== External links ==
+Official website
+Official wiki

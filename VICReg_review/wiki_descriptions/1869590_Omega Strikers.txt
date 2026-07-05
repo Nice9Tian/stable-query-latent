@@ -1,0 +1,29 @@
+Game: Omega Strikers
+appid: 1869590
+Source: Omega Strikers
+URL: https://en.wikipedia.org/wiki/Omega_Strikers
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Omega Strikers is a free-to-play action sport video game by Odyssey Interactive. The game features short, three-on-three online multiplayer matches, in which players compete to score more goals than the opposing team. It was released on April 27, 2023 for Microsoft Windows, Nintendo Switch, iOS and Android,, May 2nd for PlayStation 5, May 5 for Xbox One and Xbox Series X/S, and on May 19 for PlayStation 4.
+
+
+== Gameplay ==
+Matches in Omega Strikers consist of two teams of three players, who fight to score by sending the Core, a large hockey puck, into the opponent's goal. The game is presented from a top-down perspective, with the whole playfield visible at once.
+Players can choose from a cast of characters, known as Strikers. Each Striker has a unique set of abilities which can be used to attack enemy players, move the Core, buff allies, debuff enemies, and more. When a character takes damage, their stagger bar decreases, and once it reaches 0 it becomes easier for their opponents to knock them back, or even off the field entirely for a short duration. Through interactions like scoring goals, knocking out enemies, making saves, etc., players obtain experience points that can power up strikers throughout the game. There are also various power-ups called "awakenings" that serve as upgrades throughout the game.
+
+
+== Development ==
+Omega Strikers is developed and published by Waterloo-based Odyssey Interactive, a studio composed of former staff of Riot Games.
+The game entered a Steam-exclusive closed beta testing phase on 16 September 2022, and transitioned to an open beta shortly after.
+On 3 November 2023, Odyssey Interactive announced that, due to high player turnover and an inability to grow the game, content updates for Omega Strikers would be wound down by the end of the year, with development focus shifting to a new game set in the same universe. This was later announced to be a battle royale game titled Byte Breakers.
+
+
+== Accolades ==
+
+
+== References ==
+
+
+== External links ==
+Official website

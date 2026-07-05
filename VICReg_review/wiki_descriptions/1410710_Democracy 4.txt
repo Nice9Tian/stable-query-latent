@@ -1,0 +1,55 @@
+Game: Democracy 4
+appid: 1410710
+Source: Democracy (video game)
+URL: https://en.wikipedia.org/wiki/Democracy_(video_game)
+Match score: 6.87
+Retrieved: 2026-07-04
+--------
+Democracy is a government simulation game that was first developed by Positech Games in 2005, with a sequel released in December 2007, a third game in 2013 and a fourth in 2022. The player becomes the president or prime minister of a democratic government. The player must introduce and alter policies in seven areas – tax, economy, welfare, foreign policy, transport, law and order and public services. 
+Each policy has an effect on the happiness of various voter groups, as well as affecting factors such as crime and air quality. The player has to deal with "situations", which are typically problems such as petrol protests or homelessness, and also has to make decisions on dilemmas that arise on each turn.
+
+
+== Gameplay ==
+After deciding which nation to play as, the player must win the support of various factions which make up the electorate, including the religious, patriotic, parents, capitalists, socialists, liberals, conservatives and others, and thus win the ensuing elections that take place. The player introduces policies and uses sliders to change the amount of government funding, level of a tax or generally the law and regulations in that particular area. 
+Because each individual person belongs to several factions (e.g.: a Poor Conservative Smoker who is a Patriot or a Rich, Socialist person who is also a Drinker), it is practically impossible to control all the voters. Before each general election, two promises are made by the player to the electorate (e.g.: reduce unemployment by 10%). If the player has not kept these promises by the next election, the people become annoyed and cynicism increases.
+To make policy changes, the player must spend political capital, which is earned by loyal ministers.
+The player must also try to balance the budget and pay off the country's debts without losing votes and causing tax evasion due to very high taxes.
+There are also many events, dilemmas and situations in the game which the player must deal with. An example of an event might be the curing of a disease, a dilemma may be whom to appoint as a senior judge and a situation may be high levels of pollution. An event happens, sometimes due to policies. However the player doesn't take part; they simply profit or suffer from it. A dilemma is an important decision which must be resolved for the turn to be ended and situations are ongoing conditions which must be dealt with or helped and enjoyed.
+
+
+== Modding ==
+The games designer has described the code behind the game as being based on a neural network. This has allowed the game to be very easily modded, and most of the 'game logic' in it is openly editable in simple text CSV files, allowing players to change the way the core mechanics of the game operate. A number of mods have been released for both the first and second game in the series, and are generally released on the Positech forum. Mods have included new countries (and real countries for Democracy 2) and the addition of factors such as inflation, as well as enhancement of the voter cynicism factor in Democracy 2.
+
+
+== Sequels ==
+
+
+=== Democracy 2 ===
+A sequel to the game was released in December 2007, which, while very similar to the original in terms of gameplay, differs in that it uses fictional nations. It has numerous new features, including cabinet ministers, more policy debates, and real-world statistical data. 
+
+
+=== Democracy 3 ===
+In October 2013, Democracy 3 was released. In late 2015, Positech announced an 'expandalone' for the game set entirely in Africa, with a different simulation model, music and graphics entitled Democracy 3: Africa.
+
+
+=== Democracy 4 ===
+The Alpha Release was made available in early August 2020. The United Kingdom, Germany and United States were initially the only selectable countries to play, with later development granting access to playing as Spain, Italy, Canada, Australia and France. The game was released on October 6, 2020 for early access on Steam and GOG.com with the final version being released on January 13, 2022. In addition to the aforementioned countries, Japan and South Korea are playable as well. Supplemental add-ons have been made giving each country unique dynamics with buffs and debuffs as well as new in-game events. Other added touches include making the game more mod friendly.
+Democracy 4 uses an in-house developed game engine coded in C++ using Visual Studio by two programmers in the UK, Cliff Harris and Jeff Sheen. Artwork, SFX and Music was provided by third parties. Uses some middleware for sound playback, and also to render vector artwork and Unicode fonts.
+
+
+== Release and reception ==
+The original game was released in 2007 in the United States by Tri-Synergy, with added events and policies, and a special mode in which the player controls a fictional nation. The game received "mixed" reviews, according to game aggregator Metacritic. Website Game Tunnel scored the game 8/10 overall, stating "losing a game of Democracy is almost as rewarding as winning your next election" and "there is always the motivation to do better next time". The website also awarded Democracy its own 2005 'Simulation Game of the Year' award. About.com rated the game 3.5/5 and said "Democracy does exactly what it sets out to do - get you thinking about how even small changes effect [sic] different groups of people".
+Democracy 3 also received "mixed" reviews, according to Metacritic. While Polish magazine CD-Action stated that the game "does much more for understanding democracy than any citizenship lesson," Daniel Schindel's critical review for Unwinnable noted several inaccuracies concerning the in-game effects of imposing death penalty, legalizing drugs, and strong labor laws. 
+A spin-off game, titled Democracy 3: Africa, was quietly released in early 2016. The game focused entirely on nations on the continent of Africa and added features to address the corruption, authoritarianism, military dictatorships, and female genital mutilation that is abundant on the continent. Players are tasked with fixing these issues, or regressing further into a dictatorship.
+In September 2018, Positech Games announced an updated version of the game, in the form of Democracy 4, which was released in early access in 2020. This title, as with the spin-off, Democracy: Africa, was produced by a joint venture between Positech Games and Stargazy Studios. In addition to Democracy: Africa, Stargazy previously provided translation and localization services for Democracy 3. New features added to Democracy 4 included simulated corruption, crackdowns on political freedoms and free speech, and authoritarianism. Events and decisions in the game were updated to reflect the passage of time between the release of Democracy 3 and Democracy 4.
+Two days before the 2024 United Kingdom general election, Julian Benson, writing in The Guardian, took key features from the three main election manifestos and ran them through a Democracy 4 simulation.  Benson used the built‑in defaults and demographics and attempted to match specific policies as closely as possible to the supported gameplay. The simulator steps forward every three months and policy changes are deemed to act without lag.  The overall picture that emerged, while not a prognosis, was far from encouraging, despite very different emphases in policy proscriptions from the three political parties referenced.
+
+
+== References ==
+
+
+== External links ==
+Democracy game homepage
+Developers homepage
+Red Marble Games homepage (Mac version)
+Tri-Synergy homepage Archived 2013-09-27 at the Wayback Machine

@@ -1,0 +1,29 @@
+Game: Cataclismo
+appid: 1422440
+Source: Cataclismo
+URL: https://en.wikipedia.org/wiki/Cataclismo
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Cataclismo is a 2025 real-time strategy tower defense video game developed by Digital Sun and published by Hooded Horse. The player is tasked with collecting resources and constructing a stronghold using a building system inspired by Lego during daytime, while defending against large hordes of enemies at night. It entered early access in July 2024 for Windows and was released in full on March 20, 2025.
+
+
+== Gameplay ==
+Cataclismo is a real-time strategy game with elements inspired by tower defense games. The game is set in a post-apocalyptic world in which a magical cataclysm created a suffocating poison mist that has spread all over the world. During daytime, players must explore and collect resources, construct fortresses and strongholds as well as training various types of troops. The game features a building system in which players can freely mix and match more than 100 building pieces to create towers, walls, and other defensive structures. Different environments and landscapes also provide various architectural challenges for the players. During daytime, players must also invest in technology to unlock new troop types, and expand their strongholds with new buildings, traps and facilities. Oxygen management is also important for maintaining a sustainable base.
+At night, the player's settlement will be attacked by large hordes of mutating enemies known as the "Horrors", which seek to destroy the citadel, the player's stronghold command center. Units will automatically attack enemies that are in close approximation to them, but players need to guide them to strategic positions in order to gain tactical advantages over the attackers. The defense buildings constructed will slowly crumble when they are damaged, and sometimes collapse completely, decimating both the player's allies and enemies. According to Digital Sun, the game will feature a campaign mode, as well as three gameplay modes: Creative, Survival and Skirmish. Strongholds constructed by players can also be shared online through Steam Workshop.
+
+
+== Development ==
+Cataclismo was developed by Digital Sun, the studio behind Moonlighter and The Mageseeker. Lego significantly influenced the game's building systems. According to the developer, Catalismo features 13 traditional buildings, but players can freely craft their building using the smaller building pieces, each of which has their own rules of stability. Height of a structure and the choice of materials also affect the sturdiness of a building. Following feedback from playtesters during Catalismo's early phase of development, the team made an effort to ensure the most effective buildings were also aesthetically pleasing by implementing a system that allowed players to place decorations which provide additional gameplay perks. The art styles of the game was inspired by works of Romanic painters such as Caspar David Friedrich and the works of Mike Mignola and Studio Ghibli, while the high-fantasy setting was inspired by Dark Souls. The RTS gameplay was inspired by Age of Empires II, Warcraft III: Reign of Chaos, and They Are Billions.
+Cataclismo was published by Hooded Horse, following Digital Sun's split with the game's original publisher Humble Games, which announced the title in May 2023. The studio launched a Kickstarter campaign for the game in October 2023, and the game reached its target fundings in a week. It was released through the early access program by publisher Hooded Horse on July 22, 2024. The full version of the game was released on March 20, 2025.
+
+
+== Reception ==
+Cataclismo received "generally favorable" reviews from critics, according to the review aggregation website Metacritic.
+
+
+== References ==
+
+
+== External links ==
+Official website

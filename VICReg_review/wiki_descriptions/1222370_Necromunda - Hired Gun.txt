@@ -1,0 +1,46 @@
+Game: Necromunda: Hired Gun
+appid: 1222370
+Source: Necromunda: Hired Gun
+URL: https://en.wikipedia.org/wiki/Necromunda:_Hired_Gun
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Necromunda: Hired Gun is a 2021 first-person shooter game developed by Streum On Studio and published by Focus Home Interactive. The game is based on Games Workshop's 1995 tabletop game Necromunda. It is set in the Warhammer 40,000 universe, and takes place on the mechanized planet of Necromunda, where the player works for various factions in the planet's criminal underworld.
+Necromunda: Hired Gun was released for PlayStation 4, PlayStation 5, Windows, Xbox One, and Xbox Series X/S on 1 June 2021. The game received mixed reviews from critics.
+
+
+== Gameplay ==
+
+Necromunda: Hired Gun is a first-person shooter game, where the player plays as a mercenary who is seeking to uncover a conspiracy involving a powerful gang in Necromunda's underworld. The game is linear, with stages that can be played through normally, later the player can take on contracts that require them to complete specific tasks in portions of the level.
+The player can choose multiple ranged weapons, with upgrades available for them. The player can execute an enemy using a melee finisher if they're within a certain range. The game focuses on maintaining momentum, with the player able to use a grappling hook, dash around enemies and wall run. The game has platforming sections scattered throughout the game that require the use of these abilities. The game features stealth mechanics where the player can sneak past enemies to avoid detection. The player has a combat dog, which can be used to spot and attack enemies, and can be upgraded to improve its abilities and to gain new ones. The end of each level culminates in a boss fight.
+Martyr's End is the central hub area, where players gain access to levels and can pick out contracts. The hub serves as the area where much of the game's story and side quests exist. The player can also purchase weapons, abilities and upgrades at the shops around the area.
+
+
+== Plot ==
+
+Necromunda: Hired Gun starts with the titular Hired Gun (unnamed, appearance selected by the player) partnering up with two other bounty hunters to find a bounty dubbed the Silver Talon seeking refuge with the Escher gang, charged with having murdered an upper spire Guilder named Veerax. The Hired Gun's partners are killed and they themselves are ambushed by the Silver Talon before being rescued by Kal Jerico, an upper spire bounty hunter who has the Hired Gun implanted with a cerebral cybernetic stolen from agents of the Silver Talon. Kal Jerico then sets the player out on the Silver Talon's trail before tasking him with protection of a Guilder, none other than Veerax' brother, whom the underworld of Necromunda has placed a bounty on. After getting the Guilder to safety with the Palanite Enforcers, the player tracks down the Silver Talon, sparking a gang war in the process to destroy the Silver Talon's network of allies.
+The player, Jerico, and a Dome Runner named Jado soon corner the Silver Talon in a corpse-starch factory, where the Silver Talon is revealed to be a disgraced highborn scion named Yelena. Ten years prior, the Silver Talon had been funneling illegally-obtained longevity-granting archeotech to her noble house, only for the house to turn on Yelena, forcing her to take refuge in the underhive under the moniker of the Silver Talon with Jerico's help. While Jerico claims that the betrayal was the result of the Silver Talon going too far in her methods, the Silver Talon instead claims that she was merely a scapegoat for her noble house to cover up its crimes, and the player's cerebral implant supposedly holds the evidence the she needs to prove her innocence and take over the house. In the subsequent battle, after an interruption by a highborn-contracted bounty hunter known as The Shadow, the player kills the Silver Talon, and Jerico allows them to claim the Silver Talon's bounty, parting on seemingly good terms. However, when the player returns to Martyr's End, the game's central hub, they find that Jerico has placed a bounty on them.
+
+
+== Development ==
+After the launch of their previous title, Space Hulk: Deathwing, Streum On Studio wanted to return to the speed focused gameplay that their earlier title E.Y.E.: Divine Cybermancy was known for. A producer stated on the setting "Necromunda has a lot of diversity of environments, which allowed us to create various atmospheres and experiences for the players." The team used these environments to build levels with a mix of platforming and gunfights. The developers also mentioned that they wanted to make the player use their abilities to explore, so good loot was placed in hard to reach spots that the player needed good platforming skills to get to.
+Martyr's End was designed with specific enemy placements in mind to "encourage the players to use their special moves" and to quickly allow players to clear enemies. The hub was designed to allow for story moments, and to give a player a break from the action focused gameplay. Necromunda: Hired Gun includes weapon customization, which the developers added in order to allow the player have more flexibility in how they approached combat. The game was designed to introduce players new to the franchise. Side contracts were added in order to allow more replay value.
+
+
+== Release ==
+Necromunda: Hired Gun was announced in March 2021. The game was released for PlayStation 4, PlayStation 5, Windows, Xbox One, and Xbox Series X/S on 1 June 2021.
+
+
+== Reception ==
+
+Necromunda: Hired Gun received "mixed or average" reviews from critics for most platforms, except for the PS4 version which received "generally unfavorable" reviews, according to review aggregator website Metacritic.
+VG247's Sherif Saed praised the game's combat, writing that "My desire to see what strange location the game was going to send me next kept me hooked on the main story thread, but it's the game's combat which made that journey exciting". He disliked how the game bound multiple actions to the same button, "Jumping into a wall, wall-running and jumping away all inexplicably use a single button. This finicky setup made it harder to pull off in the heat of combat than it needed to be, and stopped me from regularly mixing in wall-runs".
+Sean Martin, writing for PCGamesN, felt the story was a mixed bag, "In general, Hired Gun's plot and dialogue is all over the shop. By the end of the game I couldn't even remember why I was hunting Silver Talon in the first place". Martin also felt the customization system was largely pointless, "It lacks a character and equipment menu, for instance, and its customisation options are mostly stat-based. It doesn't feel like you can change much of interest in your build".
+IGN's reviewer for the game, Travis Northup was disappointed with the buggy state of the game, "You'll see yourself and others phase through the environment, slide around the level during melee animations before popping back into place, and even experience a hard crash or two... All of that really sucks the fun out of what should be a great time". Northup felt that the AI for enemies was poorly designed, as they ran straight at the player and didn't seem to make any interesting combat decisions. He also expressed disappointment with the story writing, "NPCs are equally shallow with precisely zero memorable characters or reasons to pay much attention to what's happening with the story".
+
+
+== References ==
+
+
+== External links ==
+Official website

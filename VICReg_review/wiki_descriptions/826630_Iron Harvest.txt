@@ -1,0 +1,67 @@
+Game: Iron Harvest
+appid: 826630
+Source: Iron Harvest
+URL: https://en.wikipedia.org/wiki/Iron_Harvest
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Iron Harvest is a real-time strategy video game developed by King Art Games and published by Deep Silver.  Players control mecha and infantry in a dieselpunk setting. The game was released for Windows on September 1, 2020; and for PlayStation 5 and Xbox Series X/S on October 26, 2021.
+
+
+== Gameplay ==
+The player can control mecha, infantry and hero units. The game is planned to feature over twenty missions and separate single-player storylines for each of the main three factions. The game has both multiplayer and skirmish modes.
+
+
+== Setting ==
+The game is set in the 1920+ alternate history universe created by the Polish artist Jakub Różalski, which was popularized by the board game Scythe. The 1920+ universe is inspired by the Polish–Soviet War of 1919–1921, and the game's theme has been described as "dieselpunk mecha". The story is focused on the conflict between three nations in Central and Eastern Europe — Polania, Rusviet and Saxony (based respectively on Poland, the Soviet Union/Russian Empire, and Imperial Germany) that occurs sometime in the 1920s, in the aftermath of World War I. The Operation Eagle DLC released in May 2021 adds another playable nation, Usonia (based on the United States).
+
+
+== Plot ==
+
+
+=== Polania Campaign ===
+Young Anna Kos lives with her scientist father Piotr in Polania, now occupied by the Rusviet army after a truce was signed with Saxony to end the Great War in which Anna's big brother Janek was killed. One day, Rusviet troops raid Anna's village looking for Piotr, a scientist whose prosthetic arm can disable mechs. He is captured by Colonel Lev Zubov, who intends to force him to access Nikola Tesla's Factory. Anna recruits fighters from the Polanian Resistance to rescue her father. They are joined by Anna's uncle Lech, the leader of the Resistance, but they are too late to save Piotr, who is mortally wounded from Zubov stealing his arm. Piotr tells Anna to warn his colleague Heinrich Steinmetz in Kolno before dying.
+Wanting to avenge her father, Anna joins Lech to spearhead a relief train into Kolno. where Anna is shocked to discover that the Resistance not only shipped in much-needed food supplies, but also weapons to arm the locals. Lech reveals that he plans for an armed uprising, provoking a Rusviet purge of the city, to unite Polania and push out the occupation. Anna balks at Lech's plan, and knocks him out when he attempts to martyr her. Meeting Heinrich, Anna helps him evacuate civilians in an airship, while she, Lech, and the Resistance stay behind to cover his escape.
+Capturing them both, Colonel Zubov reveals that he manipulated the Resistance into attacking Kolno and breaking the truce, as he is part of a faction called Fenris which seeks to restart the war. He executes Lech, but the Polanian Army led by Commander Michał Sikorski rescues Anna and forces Zubov to flee. Anna corners one of Zubov's lieutenants: to her shock, it is a still-living Janek, now a disfigured cyborg.
+
+
+=== Rusviet Campaign ===
+Janek reveals that four weeks prior, he was attending the peace negotiations as part of the Polanian security detail when the negotiations were attacked by Rusviet insurgents. Working together with Rusviet's chief of security Olga Morozova, they rescued Tsar Nicholas from his burning palace, but the palace collapsed on top of him, and he was presumed dead. Realizing that Fenris was behind the attack, Tsar Nicholas tasked Olga with eliminating them. Meanwhile, Janek, on the verge of death, was saved by Rusviet scientists working under Colonel Zubov, using salvaged Tesla technology to turn him into a cyborg.
+Olga, infiltrating the facility, informs Janek that Tesla came out of hiding to warn the leaders of the world about the existence of Fenris, whose sole purpose is to overthrow the current world order. She also revealed that she had swapped Janek's identity with one of Colonel Zubov's soldiers so he would receive life-saving treatment and become a mole within Colonel Zubov's inner circle. Following Colonel Zubov, she discovers that he and Tsar Nicholas' advisor Rasputin are both members of Fenris. Olga left to warn Kaiser Friedrich of Saxony while Janek remained with Zubov as they searched for Heinrich. Attacking a secret Saxonian missile base, they discover information about his and Piotr's locations in Polania.
+Back in the present, Janek insists on maintaining his cover to gather information about Fenris, even when Anna tells him about Piotr and Lech's deaths. Upon linking back up with Colonel Zubov, Janek helps capture Heinrich, who reveals that they need a transponder to enter Tesla's factory, but it will not protect them from the "Icarus Protocol". He then commits suicide with a bomb in his prosthetic eye before he can be interrogated further, Colonel Zubov, however, discovers that Piotr's prosthetic arm contains a transponder. Using it, Janek disables the defenses around the Factory, and Colonel Zubov's forces move in to capture Tesla. When Tesla offers to undo Janek's disfigurement, he turns on Zubov but his suit is disabled by a failsafe. However, before Zubov can execute Tesla, he is held at gunpoint by a Saxonian officer.
+
+
+=== Saxony Campaign ===
+Gunter von Duisburg, the Saxonian officer, recalls troubling memories while hunting. At the start of the war, Gunter accompanied Prince Wilhelm during Saxony's first offensive into Polania. While successful, the offensive suffered major setbacks due to unexpectedly strong Polanian resistance; the immense Saxonian casualties shocked Wilhelm, who became increasingly disillusioned with the war and hateful towards Rusviet. This culminated in him disobeying orders and using chlorine gas against the Rusviets, which Gunter criticized since it would invite similar retaliation and further escalation. On a later mission, Wilhelm snapped and gunned down some Rusviet prisoners, causing Gunter to knock him out, disgracing Gunter's career and position.
+In the present, Kaiser Friedrich summons Gunter to Dresden, having been warned about Fenris by Olga. However, bitter over the Kaiser scapegoating him for Wilhelm's actions, Gunter is reluctant to help. Eventually, he agrees due to their old friendship, but the Kaiser is murdered by Wilhelm with Gunter's gun; wanting to continue the war against Rusviet, he frames Gunter who is forced to flee. He recovers his old mech Brunhilde and, with the help of engineer Frieda Ruete, rescues his allied soldiers. With Saxony under Prince Wilhelm's control, Olga suggests that Gunter and his loyalists seek asylum in Tesla's Factory.
+Reaching the Factory, they find it already under attack by Colonel Zubov's forces. Gunter teams up with the Polanian army, Anna, and Sikorski to break through Zubov's forces and cause him to flee. Tesla warns them that the Icarus Protocol has already been triggered: a giant automated mech designed to destroy all technology it comes across. The Anna, Olga, and Gunter unite their forces to destroy the machine; Tesla despairs as, without Icarus, his factory is now vulnerable. However, the newly allied heroes the battle proved that people from the three nations can overcome their differences and work together for a common goal. Inspired, Tesla sets about rebuilding his Factory while the others resolve to continue fighting Fenris.
+
+
+=== The Rusviet Revolution ===
+Shortly after Colonel Zubov's attack on the Factory, a revolution erupts in Rusviet; rebels seek to depose Tsar Nicholas while loyalists try to suppress the revolt. The Tsar flees St. Petersburg to a countryside safehouse. Olga returns to Rusviet to save him from a Revolutionary attack and convince him that Rasputin and Fenris are behind the revolution. The Tsar decides to return to the capital to restore order to the country; on the way, he comes to realize that his supposed-Loyalist forces are just as cruel and ruthless towards Rusviet civilians as the Revolutionaries. Vowing to reform Rusviet, Tsar Nicholas enters a broadcast tower in St. Petersburg to make an address to the nation while Olga holds off Fenris forces. Rasputin ambushes and kills the Tsar, hijacking the broadcast to declare the Revolution victorious. Zubov, controlling the false loyalists "surrenders" to Rasputin's revolutionaries, putting Rusviet completely under Fenris' control. Olga is forced to retreat with as many truly-loyal Rusviet soldiers as she can find.
+
+
+=== Operation Eagle ===
+Amidst the Revolution, Usonian business interests in Alaska are seized by Rusviet troops. Admiral George Mason convinces the President to authorize a foreign intervention, sending his son Captain William Mason to lead the effort. The campaign is successful and Alaska is occupied by the Usonian army. Admiral Mason then decides to send William to Arabia, whose massive oil reserves would benefit Usonian industry. Arabia is currently occupied by Saxony, but the previous king and his two sons had been assassinated: the time is ripe for Usonia to send a covert force to intervene in the conflict and secure Arabia's oil supply. William, however, does not care for his father's business connections and is only interested in helping the Arabians overthrow their Saxonian oppressors.
+When William's airship is shot down in Arabia by the Saxonians, he is rescued by Princess Sita, the leader of Arabia's guerrilla Free Tribes. Her uncle, the current king, had murdered her father and brothers to secure a treaty with Saxony. Together, they rescue a delegation from Tesla's alliance led by Gunter, who offers to supply Sita with Tesla's automated mechs in return for oil. Sita remains skeptical about Usonia's aid, but William assures her he came to liberate, not occupy. They seize the strategic port city of Aqaba, securing a major propaganda victory for the Free Tribes. However, Admiral Mason arrives with forces aligned with Sita's uncle, who has decided to betray Saxony and sign a treaty with Usonia instead. Sita, Gunter, and their followers are arrested while William and his men are returned to Admiral Mason, who promises to make William the president of Usonia in return for his cooperation. Furious with his father's callous betrayal, William goes rogue with his men to rescue Sita and Gunter, allowing them to escape to the Factory. Despite risking being executed as a traitor, William returns to Usonia to expose his father and his business ties to a military–industrial complex: Gunter remarks this heroism may secure William's presidency in the eyes of the people.
+
+
+== Development ==
+The game was announced in 2016. The game had a successful crowdfunding phase in 2018 which raised over 1.5 million dollars. The 2018 schedule planned for the game release in the fourth quarter of 2019. However, in 2019, the release was pushed back to 2020. In March 2020 a beta version was made available, and in June a demo version of the game was released on Steam. The game was released for Windows on September 1, 2020.  PlayStation 5 and Xbox Series X/S on October 26, 2021.
+In December 2020 a DLC expansion Rusviet Revolution was released.
+On May 27, 2021, Operation Eagle was released.
+
+
+== Reception ==
+
+Reviewing the March 2020 beta version, Colin Campbell of Polygon praised the game for "mak[ing] smart use of units, cover and terrain", positively comparing the game to the Company of Heroes franchise. Likewise, in the same month, Seth Macy of IGN called the game "awesome", praising in particular "detail given to the mechanics of the brick building's collapse". In another early review for PCGamesN, Ian Boudreau commended the game for "staying close to its game design roots", also highlighting visuals, this time the realistic destruction of the wooden buildings.
+Following the game release, Toby Arguello in a review for Screen Rant said that "Iron Harvest doesn't revolutionize the RTS genre, but an amazing setting and solid gameplay make it a great addition to an often-ignored genre". Robin Meyer-Lorey reviewing the game for Game Rant wrote that it is "a high-quality RTS with a satisfying amount of content, but gameplay doesn't break out of the standard RTS mold". Rick Lane in a review for PC Gamer concluded that "a worthy spiritual successor to one of the best RTS games ever made". Conversely, in a review for Russian DTF, Daniil Kortez disparaged the game for its apparent negative stereotyping of Russians.
+All reviews also positively comment on the visuals related to Różalski's 1920+ dieselpunk and European scenery imaginary.
+In January 2020 the game won the "Best German Game" award at the Deutscher Entwicklerpreis, and the Developer King Art also won "Best Game Design" and "Best Sound Design" and was nominated for "Best Graphic" and "Best Story".
+
+
+== References ==
+
+
+== External links ==
+Official website

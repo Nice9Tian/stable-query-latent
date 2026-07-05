@@ -1,0 +1,38 @@
+Game: Hell Let Loose
+appid: 686810
+Source: Hell Let Loose
+URL: https://en.wikipedia.org/wiki/Hell_Let_Loose
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Hell Let Loose is a 2021 multiplayer tactical first-person shooter developed by Expression Games and Cover 6 Studios, and published by Team17. Players fight in iconic battles of the Western, North African and Eastern Fronts of World War II at the platoon level.
+The game was created and developed by Australian studio Black Matter, led by Maximilian Rea, who first announced it via a successful Kickstarter campaign in 2017 that raised a total of US$220,000. It was initially released for Microsoft Windows as an early access title on 6 June 2019, and fully released two years later in July 2021. It was later released for PlayStation 5 and Xbox Series X/S on 5 October 2021. In January 2022, Black Matter sold the game to its publisher Team17 for £31 million with the potential addition of £15 million based on the game's performance. Development was handed to Team17 shortly after December 2022, who then founded Cover 6 Studios in the beginning months of 2023 to work on development and potentially on the next game in the series. In April 2023, Team17 contracted the UK studio Expression Games to also continue development of the game.
+On 20 August 2025, a new Hell Let Loose title was announced. Titled Hell Let Loose: Vietnam, the game is set during the Vietnam War, with two primary factions―the North Vietnamese and American―fighting in the Vietnam War between 1965 and 1973.
+
+
+== Gameplay ==
+Matches are combined arms battles between two teams of either Germans, Americans, British, Soviets, and the Canadian Forces, or the German Afrika Korps and British 8th Army subfactions. Each team consists of multiple smaller rifle squads of six soldiers, armoured squads of three tank crewmen, recon squads of two soldiers, and artillery squads of three crewmen. As of October 2024, three game modes exist in the game: Warfare, Offensive and Control Skirmish. In all three modes, the map is divided into sectors that each team seeks to capture and control. The teams consist of 50 players each (so 100 players in total). In the Warfare mode, the game is won by either controlling all five sectors, or by controlling the majority of them when the timer runs out. In the Offensive mode, a defending team is in control of all sectors at the beginning of the match, and the objective for the opposing side is then to capture all of them within 30 minutes per objective. In the Control Skirmish mode, there is one centre objective that both teams seek to control before the timer runs out in a more condensed sized map.
+Communication is intended as a central gameplay aspect by the developers. Each unit is led by a single officer, who can communicate with other officers and the commander through a 'leadership' voice channel. Similarly, there are unit-only and proximity voice channels which are available for everyone. As an alternative to voice communication, there is also access to team-wide and unit-level text chat, which is only featured on the PC version of the game. There is also a ping system featured in the game, allowing players to mark things such as attacking points, pieces of equipment, artillery bombardment locations, enemy positions and points of interest. These different methods of communication allow for the effective relaying of information.
+The game features 14 different playable classes. With nine classes in infantry, this includes officer, rifleman, automatic rifleman, assault, support, anti-tank, machine gunner, engineer, and medic. In armoured units there are two classes, the tank commander and tank crewman. Recon units also have two classes, the spotter and the sniper. In addition to this, there is a commander role, who is in charge of not only the team and squads, but vehicle deployments, air strikes, and supply drops just to name a few.
+To supplement this, Hell Let Loose also features an RTS-inspired resource-based strategic meta-game. These orders cost resources, of which there are three types: munitions, manpower and fuel. Resource nodes can be built by engineers, using droppable supplies to increase resource production. These resource nodes can be destroyed if found and dismantled by the enemy team.
+
+
+== Development ==
+Hell Let Loose is developed on Unreal Engine 4. After about two years of initial development and testing following the launch of its Kickstarter campaign, the game released on Steam as an early-access title on June 6, 2019 — the 75th anniversary of the Normandy landings, which was then followed by a full release in July 2021. The game was also released for PlayStation 5 and Xbox Series X/S on 5 October 2021. Throughout the numerous updates to the game, the developers have also been constantly working on bringing the console and PC version of the game up to parity.
+
+
+=== Map design ===
+
+The game currently features 17 unique maps, covering many battles and environments across different years, each being based on historical WWII battles. These are all designed by combining satellite imagery, archival aerial photography and street-level recreation, with the exception of one map. Additionally, there are unique subfactions for specific maps. Currently, this only includes the German Afrika Korps and British 8th Army subfactions, which are present on the El Alamein and Tobruk maps. These map specific subfactions include unique loadouts, uniforms and weapons.
+
+
+== Reception ==
+
+Hell Let Loose received 'generally favorable' reviews for Microsoft Windows and Xbox Series X, and 'mixed or average' reviews for PlayStation 5, according to review aggregator Metacritic. On the Steam platform, the game holds a 'very positive' review score.
+PCGamesN has praised the use of teamwork in the game, writing that "A well-led assault on an enemy strongpoint involves covering the approach with a smokescreen... taking part in such an assault is a uniquely exhilarating experience that’s like nothing else I’ve felt in a shooter." On the other hand, PC Gamer, while enjoying the changes that made Hell Let Loose more lethal, still felt that the sound was not up to par, saying "My main nitpick is with sound... when everything is tuned correctly, a gun should be so loud that I can't hear my teammate over the radio. This is where Hell Let Loose kinda falls flat. No matter how much I mess with audio sliders, the game never gets loud enough for my liking."
+In July 2023, Team17 released a since-deleted trailer for the game's next update, 'Devotion to Duty'. Upon release of the trailer, it was met with poor reception in and out of the community, due to the trailer not showcasing actual gameplay like before, and the inclusion of multiple graphical and animation glitches. The game then became the subject of review bombing on Steam. As a result of the widespread criticism, both Cover 6 Studios and Team17 issued a joint apology, and announced plans to continue to improve the game on their Reddit page.
+
+
+== References ==
+
+"all hell breaks loose." Cambridge Dictionary. Retrieved December 11, 2024, from https://dictionary.cambridge.org/us/dictionary/english/all-hell-breaks-loose.

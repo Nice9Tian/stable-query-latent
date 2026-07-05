@@ -1,0 +1,9 @@
+This open-world survival game blends creature collection, base building, automation, and exploration in a harsh setting where resources are limited and danger is constant. Players live alongside mysterious creatures called **Xals**, which can be used in combat, assigned to work on farms or factories, traded, or even consumed as a survival measure.
+
+The game emphasizes difficult choices in a world shaped by scarcity and conflict. Hostile poachers roam the land, and survival requires careful decision-making. Players can ride Xals across land, sea, and sky to explore diverse environments, while also using them to gather resources, generate power, mine ore, or assist with daily production. Building is highly flexible, allowing large structures to be constructed with the help of an assigned workforce of Xals.
+
+Farming and automation are major systems. Some Xals specialize in planting, watering, or harvesting, making it possible to create an efficient and self-sustaining homestead. Factories can be built as well, where Xals continue working as long as they are fed. The game also includes dungeon-like areas that become more manageable with Xals fighting alongside the player, though sacrifices may be necessary to survive dangerous encounters.
+
+Progression includes breeding and genetics, where offspring inherit traits from their parents, encouraging experimentation with combinations of rare Xals to create stronger ones. There is also a crime-driven element: rare Xals can be found in protected wildlife sanctuaries, and capturing them can lead to quick profit if the player avoids being caught.
+
+Multiplayer support is included, with cooperative play for up to 4 players online and dedicated servers supporting up to 32 players. Players can also battle and trade with friends, making social play an additional part of the experience.

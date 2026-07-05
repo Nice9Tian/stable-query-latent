@@ -1,0 +1,315 @@
+Game: UFO 50
+appid: 1147860
+Source: UFO 50
+URL: https://en.wikipedia.org/wiki/UFO_50
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+UFO 50 is a video game collection developed and published by Mossmouth for Windows in September 2024 and for Nintendo Switch in August 2025. It features 50 unique games of varying genres and length. The games were a collaborative effort by six developers over the course of several years, its development akin to a game jam.
+UFO 50 was critically acclaimed, and was the highest rated PC-exclusive of 2024 on Metacritic. Critics applauded the amount of variety, experimentation, and consistent quality that the collection provided, although some wished specific entries were expanded as their own separate releases. It won Best Indie Game at the New York Game Awards and received several nominations for the category at various award ceremonies.
+
+
+== Gameplay ==
+UFO 50 is presented as a compilation of games similar to Cassette 50 and Action 52, developed by the fictional company UFO Soft for the fictional LX-I, LX-II, and LX-III series of video game consoles between 1982 and 1989. Half of the games feature a two-player mode, either versus or co-op. The main 50 games are playable from the start, with the hidden 51st game, Miasma Tower, accessible via inputting commands in the in-game terminal. 
+The order in which the games are presented is intended to show the history of UFO Soft's development slate, with some games having sequels, and others featuring cameos from previously released games. Each game also features short development notes informing their fictional creation.
+The games belong to genres including shoot 'em up, platformer, and role-playing, each with a twist. The games vary in length and scope, with some being described as "shorter, arcade-style experiences", while others "have narratives and expansive worlds to explore", with one (Grimstone) estimated to take upwards of 60 hours to complete fully.
+When a game is completed for the first time, its border on the game selection screen will change from blue to gold. A more challenging win condition is also revealed, which grants a red border upon completion (referred to as "Cherries" in-game). Each game additionally includes a unique gift that will appear on the garden screen when certain requirements are met.
+
+
+== List of games ==
+ 
+
+
+=== Overview ===
+Director credits explicitly stated when directly sourced; names of fictional UFO Soft employees in-game loosely correspond to each developer's identity, but not always, due to UFO 50's metanarrative, so they are not reliable credits.
+
+
+=== Barbuta ===
+
+Barbuta is the 1st game in the collection and released in August 1982. It is a puzzle platformer where the player explores a castle, with the ultimate goal to "liberate the castle". There are items and money scattered throughout the environment which the player can collect. The items affect the game in various ways.
+
+
+=== Bug Hunter ===
+Bug Hunter is the 2nd game in the collection and was released in February 1983. It is a strategy game, which takes place in a cave filled with wild bugs. The player character has to defeat enough bugs within a set number of "days" otherwise they will lose. The player navigates the 5x5 grid and attacks enemies by using "modules" - when all modules are used, the game advances to the next day. This reimburses the player with their modules, but new bugs may appear on the map and bugs left over from last day may evolve to their next form. When a bug turns into an egg, it must be defeated that day otherwise the egg hatches and bugs overrun the cave - resulting in a game over. The main challenge is to survive three rounds in a row.
+
+
+=== Ninpek ===
+Ninpek is the 3rd game in the collection and was released in April 1983. The game is an auto scrolling precision platformer, about two ninjas who have their sandwich stolen and they have to recover it. Players can double jump and shoot projectiles in a straight line to defeat enemies. Players also have a limited number of lives and losing all lives results in a game over. The game takes just under nine minutes to beat. Once the game has been beaten, a second loop begins which has more difficult enemy arrangements.
+
+
+=== Paint Chase ===
+Paint Chase is the 4th collection in the game and was released in October 1983. It is an arcade game where players control a car that leaves a trail of paint behind, and try to paint a maze / race track in their own color, while opponent cars paint the track in a different color. When the player car runs into an opponent car, the opponent car gets removed without affecting the player car, so it is often to the player's advantage to remove the opponent cars before they can paint much of the maze. There are various types of enemy units, which have various properties to challenge the player as they try to paint the maze in their color.
+Every level has a minimum percentage of the map that must be painted in order to progress to the next level, and each percentage of the map above that threshold that gets painted gets added to the player's score. At certain score thresholds, the player gains extra lives.
+
+
+=== Magic Garden ===
+
+Magic Garden is the 5th game in the collection and was released in February 1984. It is an arcade style game, where the player collects so-called "oppies", small characters that resemble jelly, and "save" them by bringing them to a delivery area. Upon collection, the oppies follow the player character in a tail that lengthens in a manner reminiscent of the classic game Snake, which disappears when the oppies are saved.
+The player must avoid running into this tail of oppies, as well as enemy oppies that spawn at regular intervals. Enemy oppies can also arise from friendly oppies not being in the delivery zone when the player tries to save them.
+Enemy oppies can be removed by drinking a potion, which puts them into a vulnerable state for a limited time, during which they are removed when the player touches them. Potions increase in potency the longer they are left on the map, with higher level potions making more enemy types vulnerable, giving more points for devouring enemies, and even increasing the spawn rate of the pink oppies on the board.
+The game is won when 200 oppies are saved.
+
+
+=== Mortol ===
+Mortol is the 6th game in the collection and was released in March 1984. It is a platformer where the player can sacrifice their current character to improve the state of the game. The player starts with 20 lives, and a limited number of extra lives can be collected in each level. Because the game continues from one life to the next, terrain that is destroyed or created in a previous life (including the bodies of the previous lives) can impact the gameplay during a current life. In this way, it is often necessary to sacrifice many lives in order to complete a level. The player may sacrifice their character using three different "rituals" - blowing up; flying horizontally across the screen (leaving a platform where the character contacts a wall), or turning into a cube of stone.
+Mortol has a sequel in the collection, Mortol II. (These two games were conceived of separately at the start of UFO 50's development by Jon Perry and Derek Yu, respectively, and were made into one series with common theming and story elements during development due to their shared mechanics. Fictionally, Benedikt Chun originally had the idea for Mortol, but Gerry Smolski directed the game because Chun was preoccupied at the time. Mortol II was Chun's chance to make the game in a manner more true to his original vision.)
+
+
+=== Velgress ===
+Velgress is the 7th game in the collection and was released in April 1984. It is a fast-paced platforming game where terrain crumbles away a short time after the player first stands on it. The player must climb 30 stories to complete each level, and a grinder rises as the player goes up, destroying any terrain, and killing the player if they fall into it. The grinder is the only way the player can lose the game, but various obstacles can stun the player and remove the player's ability to control their character, making it likely that the player will fall into the grinder. Players can collect coins to use at shops after each level to upgrade their character, such as ability to recover from stun faster.
+There is also a bird in each level that appears at around the halfway point and drops a key when killed. If the player collects all keys on the way through the game, a secret level will unlock that leads to the game's true ending.
+Velgress is the first game to feature Alpha, a recurring character in UFO 50.
+
+
+=== Planet Zoldath ===
+Planet Zoldath is the 8th game in the collection and was released in May 1984. It is an adventure game, the goal of which is to navigate an alien planet in order to find three pieces of a treasure map. The alien planet is randomized every time, requiring the player to improvise their exploration each time they play. Players can find various items that can be used for exploration and combat, but can only equip two at a time, requiring the player to leave items they aren't using on the overworld. The player can also find various types of resources on the planet, which can be traded to npcs for items. Certain things will always be standard across every playthrough: one npc type will be non-hostile and will have a treasure piece that they will trade for a random material, there will always be a dungeon that contains a treasure map piece, and there will always be a treasure map piece somewhere on the overworld.
+The game is notable for its main character. The main character of the game, Pilot, and his vessel, the Campanella, while both unnamed in the game itself, became the mascot for the fictional company UFOsoft and appear in several other games in the collection.
+
+
+=== Attactics ===
+
+Attactics is the 9th game in the collection and was released in June 1984. It is a strategy game, simultaneously real-time and turn-based. Two armies face off, automatically deploying units from opposite ends of the battlefield. Although structured in discrete turns, unit movements / swaps are entered under a short real-time timer, forcing the player to make rapid decisions.
+The game takes place on a 8-by-6 grid. Each turn, units move automatically forward and attack units directly ahead, with different unit types serving as ranged attack, defense, mobility, or area damage, among other roles. When a unit reaches the other side of the grid, it removes a flag on the castle wall, and the player wins when all their opponent's flags get removed.
+Attactics is the first game that was developed for UFO 50 after the project was conceived.
+
+
+=== Devilition ===
+Devilition is the 10th game in the collection and was released in September 1984. It is a puzzle game where the player must defeat hordes of invading demons by placing bombs and detonating them in a chain reaction. Different types of bombs have a distinctive geometric pattern in which they explode, so they must be placed strategically in relation to the demons and the other bombs in order to create the most effective chain reactions. Friendly townspeople also spawn on the board, and the player must avoid hurting them. If the number of townspeople is ever less than the number of demons after a round, then the player loses the game.
+Devilition is a remake of Derek Yu and Jon Perry's 1999 game Diabolika.
+
+
+=== Kick Club ===
+Kick Club is the 11th game in the collection and was released in September 1984. It is a platformer similar to Bubble Bobble, where players navigate a linear series of pre-authored single-screen levels, divided up into four worlds with ten levels each. The player character must defeat all the enemies on the screen, but cannot attack directly. In order to attack, the player must pick up a football (soccer ball), which can then be launched to damage the enemies. There is a total of 40 stages. The goal of the game is to complete all 40 levels while getting as high a score as possible.
+The player starts with 2 extra lives, which are lost on any contact with an enemy. If the player takes a hit with no remaining lives, the game is lost, and must be started from the very beginning. Players gain points in the game by picking up food items dropped by enemies, which vary in number of points received based on how quickly the player can retried the ball after enemies have been killed. If the ball is retrieved before it turns gray, the item value will not decreased, but if the ball is left alone long enough it will turn gray, and the value of items will return to its original state.
+
+
+=== Avianos ===
+Avianos is the 12th game in the collection and was released in February 1985. It is a strategy game, in a 4X style similar to Nobunaga's Ambition. Each turn, the player chooses one of three deity-ancestors to "pray to". Each ancestor grants a unique set of 3 actions that the player will benefit from that turn, in a specific order. There are 5 different ancestors, so not every ancestor is available each turn. There are two armies on the map, and the player controls one army, with the aim of wresting control of castles away from the other army, in order to win the game. There are 5 different unit types that the player can recruit and use in order to triumph in combat. The game is won once either player has kept control of three castles for two turns.
+
+
+=== Mooncat ===
+Mooncat is the 13th game in the collection and was released in March 1985. It is a platformer, noted for its non-standard and counterintuitive controls. The main character, an enigmatic creature not named in the game itself, is controlled by a "two button" system, where pushing any button on the d-pad moves the character left, and pushing either of the main buttons moves the character right. Jumps, dashes, and dives can be performed by combining the button presses correctly. The goal of the game is to navigate levels and reach one of three endings, which depend entirely on the route the player takes to get there. Warps can be found throughout levels that change the path that the creature takes to its goal. 
+The game is billed in-universe as a spiritual successor to Barbuta, the second entry of what would become an informal trilogy of games, ending with the later game Divers.
+
+
+=== Bushido Ball ===
+Bushido Ball is the 14th game in the collection and was released in April 1985. It is a sports game, where players control various samurai characters in a tennis-style match-up of trying to knock a ball past their opponents defense and off the screen. Each character has a secondary ability that can be deployed to assist with defending, as well as a unique super shot that can be used to break through an opponents defense.
+
+
+=== Block Koala ===
+Block Koala is the 15th game in the collection and released in May 1985. It is a Sokoban-style puzzle game, detailing the adventures of Koala Kid and Koalarana in their quest to return the water to their home that was stolen by the evil Flamingus. The game is split into levels, of which there are a total of fifty, which require players to solve Sokoban puzzles. Mechanics that complicate the puzzles, such as blocks whose numbers decay when they are pushed, or frogs who copy the movements of the player, are added as the levels go on. Only forty levels need to be beaten to complete the game.
+
+
+=== Camouflage ===
+Camouflage is the 16th game in the collection and was released in June 1985. It is a puzzle game, which sees the player controlling a lizard with the ability to change its color to hide in its surroundings. There are predators such as frogs, gators, and birds, which will eat the lizard if they can see it. Because the lizard cannot change its color and move at the same time, the player must carefully plan out the route to take in order to get to the end of the level, and optionally collect fruits and a baby lizard along the way. The overworld (level selection screen) has branching paths, so there are multiple ways to get to the final level and beat the game.
+
+
+=== Campanella ===
+Campanella is the 17th game in the collection and was released in August 1985. It is an arcade platformer, where the player controls the eponymous space ship Campanella to get through a series of levels with various obstacles. Horizontal movement is controlled by the d-pad / arrows, while vertical movement is managed by a thruster, controlled by one of the buttons. Inertia plays an important role in the Campanella's movement and control. Using the thruster to gain vertical momentum costs fuel, which runs out fairly quickly.
+Flying into a specific tile reveals a hidden coffee collectible in every level - collecting these is optional.
+The space ship Campanella is the titular UFO that the UFO 50 collection, as well as the fictional UFO Soft, gets its name from. The Campanella is featured as the spawn point for the character Pilot in the games Planet Zoldath and Pilot Quest. Campanella also has two direct sequels, Campanella 2 and Campanella 3, as well as a spin-off, The Big Bell Race. The Campanella is also featured to a lesser degree in other UFO 50 titles.
+
+
+=== Golfaria ===
+Golfaria is the 18th game in the collection and was released in September 1985. It is an open-world adventure game comparable to The Legend of Zelda, but with the twist that the player character is a golf ball, and is controlled similarly to other golf games. This aesthetic is reinforced by the player only being able to hit the ball a limited number of times before running out of strokes and having to start from the previous checkpoint. The goal of the game is to explore the overworld and collect the three pieces of the Holy Tee, giving the player access to the final boss. Items can be collected to aid in traversal, such as an item that gives the player "brakes" for greater control of movement or an item that lets the player go across sand freely.
+
+
+=== The Big Bell Race ===
+The Big Bell Race is the 19th game in the collection and was released in October 1985. It is a racing game, featuring the same physics, controls, and engine as Campanella. The game takes place on a series of race tracks, which the player must complete a loop around multiple times. The player aims to complete each race faster than the other racers. The player can take advantage of various items on the track in order to destroy the other racers, giving them an advantage. The game is won if the player comes in first place in the tournament consisting of a race around each race track.
+
+
+=== Warptank ===
+Warptank is the 20th game in the collection and was released in November 1985. It is a puzzle-action game, focusing on the adventures of a sentient tank who wishes to free his world from the influence of the "capsule world". In the game, the player controls a tank with the ability to warp to stand on whatever surface is opposite it. For example, the Warptank can warp from standing on the floor to "standing" on the ceiling; or go from being on one wall to being on the opposite wall. Using this maneuver, as well as side-to-side movement, the player must successfully navigate the level to reach the end. Between levels the player can navigate an overworld filled with npcs and secrets. The game has a total of 27 levels. Each level also has a secret coffee pickup that, if all are collected, unlocks a special final stage.
+
+
+=== Waldorf's Journey ===
+Waldorf's Journey is the 21st game in the collection and released in February 1986. It is a platformer about a walrus named Waldorf navigating his dangerous dreamscape. The player controls Waldorf with controls similar to a golfing game, launching him off of platforms and utilizing a limited "flapping" system to re-orient him while he's in the air in order to prevent him plummeting off screen. Players can collect shells as they travel the level, which act as both currency and a final scoring system.
+The game also has a two player battle mode, where players can go head-to-head with both playing as a walrus, where the goal is to knock the opponent off the bottom of the screen, using the same flinging mechanics as the main game.
+
+
+=== Porgy ===
+
+Porgy is the 22nd game in the collection and was released in March 1986. It is an underwater exploration game with a Metroidvania-like structure. Like many games in the Metroidvania genre, the player character, a submarine called Porgy, starts out very weak, with few powers, and a small fuel tank. This fuel tank determines how far the player can explore in each dive, as moving burns fuel. If Porgy takes damage from a creature, that will also reduce the amount of fuel in the tank. Porgy is refueled whenever it reaches one of two stations on the surface of the water.
+The player will find fuel tanks as they explore the ocean, allowing them to explore further and deeper. In order to collect the fuel tanks, in addition to other collectible items, the player must not only reach the item in the ocean, but must successfully return to a station without running out of fuel. If Porgy does run out of fuel, whether due to traveling too far, or taking damage from creatures in the ocean, then the item will return to its original location, and must be retrieved again in order to collect it (once an item is successfully delivered to the station, then it will not be lost again).
+A number of large creatures, called "roaming bosses" by the developers, roam the ocean. These can hinder the player's progress, but once defeated, they will not come back.
+The player must delve into the deepest and darkest parts of the ocean in order to discover what is going wrong in the ocean, and win the game. By collecting all items and defeating all bosses, 100% completion may be achieved.
+
+
+=== Onion Delivery ===
+Onion Delivery is the 23rd game in the collection and released in April 1986. It is a fast paced driving game where players control a delivery vehicle being driven by a three-eyed green alien (named Woogy) in a top down arcade control system similar to early Grand Theft Auto games. Players must deliver onions around the city while dodging kooky obstacles such as the garlic gang, rainstorms, and even an onion monster. Victory is achieved by surviving a full week on the job.
+
+
+=== Caramel Caramel ===
+Caramel Caramel is the 24th game in the collection and released in May 1986. It is a horizontal shooting game, in the cute-em-up style, where players control a sentient space ship traveling the galaxy while on vacation. The main unique mechanic is a special photography system, wherein the player can take a photo of enemy arrangements in order to freeze them in place and get more points from defeating them. These photographs can also be used to activate hidden secrets in the level.
+
+
+=== Party House ===
+Party House is the 25th game in the collection and was released in May 1986. It is as strategy game, the goal of which is to throw the best party of the summer. The game has the player manage a series of parties, and the list of guests invited to each party. As the player gains popularity, they can invite more and better guests to the party. Money can be used to buy a bigger house that can fit more guests. Most guests provide popularity and / or money to the player, but some also cause trouble. If 3 troublesome guests show up, without any way to mitigate that trouble, then the police arrive and end the party, and no popularity or money is scored for that round. The game ends after 25 nights. The player must invite special star guests, and have 4 stars in one party before time runs out, in order to win the game. The game has a campaign of five scenarios of set guest lists, which introduce the player to the various different units. After beating all five scenarios, the player can unlock a "streak" mode, where they can play randomized scenarios and try to win as many in a row as possible. 
+The design of Party House has been compared to deck building card games like Dominion.
+
+
+=== Hot Foot ===
+Hot Foot is the 26th game in the collection and released in August 1986. It is a sport game, styled after the famous gym class activity dodgeball but using beanie bags instead. Players choose two kids out of a roster, either freely or with the limitations of a "snake draft" mechanic, and play six rounds of the game against an NPC opponent. Players switch between the two characters they've chosen as opposed to playing both at the same time, with the computer controlling the other partner. Each character has a passive ability that changes how they play, as well as special throws and special items that alter the court. The game can be played single player, co-operatively, and in a versus mode.
+
+
+=== Divers ===
+Divers is the 27th game in the collection and released in December 1986. It is a turn-based role-playing game, where players control a party of three lizards (Dylan, Orlok, and Thyme) who are searching for treasure in a murky underwater environment and trying to reach the very bottom of the ocean. Players control the party as they swim through the overworld, and can enter combat when they make contact with enemies on the map. Combat occurs as a standard turn-based system, with an emphasis on discovering enemy weaknesses. Enemies will be weak to one of three different elemental types, arranged in a rock-paper-scissors triangle similar to games such as Fire Emblem. Items and weapons in game all have charges that will run out with use, requiring the return to the surface. Being on the surface repairs all items, allows the lizards to heal and rest, and gives access to a shop where currency and artifacts from the ocean can be traded for equipment. The game is the third and final entry in the Barbuta series.
+
+
+=== Rail Heist ===
+Rail Heist is the 28th game in the collection and released in February 1987. It is a puzzle-platformer and strategy game, themed after train heists in the wild west. Players control a thief who has to sneak through a train car, retrieve the money, and then escape the way that they came in. Every train car contains guards which will instantly shoot and kill the player if they are caught, requiring the burglars to use the environment and various items scattered throughout the level in order to achieve their goal. The game has 40 levels, all of which can be tackled in whichever way the player chooses. Once a level has been completed, players can achieve a various "stars" denoting special achievements, with one star being given if a level is completed in a certain time limit, one star if it is completed without killing any guards, and one star if every single guard is killed.
+
+
+=== Vainger ===
+Vainger is the 29th game in the collection and was released in March 1987. It is a Metroidvania-style platformer-action game. The player controls the R-Vainger unit, which is trying to discover the source of an infection that has disabled the space station where it has been in hibernation. Its movement system focuses heavily on the R-Vainger's main ability: to flip gravity. Players use this ability to navigate the space station, collecting mods that give the R-Vainger a greater variety of abilities and unlock more of the space station to explore. These mods can be attached to different parts of the R-Vainger's body, providing different benefits depending on where they are placed. Other items also include shield expansions to increase health, clone parts which provide more lives, and security access that opens certain doors. The R-Vainger's main goal is to defeat bosses around the map which guard keys that will allow entry to the final area.
+
+
+=== Rock On! Island ===
+Rock On! Island is the 30th game in the collection and released in April 1987. It is a tower-defense strategy game. Players control Zola, a cavewoman who is defending her people against raging dinosaurs which have turned mad because of the arrival of a mysterious stone from outer space. Zola travels through various levels, where the goal is to protect a tower from waves of attacking dinosaurs. Cavemen can be placed with various abilities that will automatically attack any dinosaurs that come near them. Zola herself can also take part in the action, with a weapon of her own that can be upgraded to be stronger and throw more quickly. Each tower has thirty health, and if that health runs out, Zola loses.
+
+
+=== Pingolf ===
+Pingolf is the 31st game in the collection and released in May 1987. It is a sport game that is a mixture of both golf and pinball. Players go through a course of 18 holes, navigating obstacles in order to achieve par on each hole. The control scheme is similar to many golf games, with the exception being that at any time while the ball is in the air the player can hit the "dunk" button, which sends the ball careening towards the ground. This can be used to bounce the ball off of various obstacles and bounce pads, furthering its travel across the course. The game can be played single player, as well as in a versus mode.
+
+
+=== Mortol II ===
+Mortol II, subtitled The Confederacy of Nilpis, is the 32nd game in the collection and was released in July 1987. The game is an adventure platformer, and the sequel to Mortol. The player must navigate a single expansive level in order to reach the heart of Nilpis Castle, and destroy it, saving Mortolia from evil once again. The level is non-linear, and there are multiple ways that the player can achieve their goal. The player must accomplish their mission while trying to lose as few lives as possible. Unlike the original Mortol, players start with 99 lives and cannot gain extra lives.
+Unlike the original Mortol, the player at the start of each life chooses between one of five character classes, each of which has only one way of being sacrificed (instead of the 3 in Mortol). The Warrior has a short-ranged attack, and turns to stone upon sacrifice. The Gunner has a long-range attack, and creates a permanent ammo refill when sacrificed. The Engineer has a moderate arced ranged attack, and can be sacrificed to create a downwards pipe. The Scout can double-jump in midair, has a medium-ranged attack, creates a portal from the starting location to where the Scout is sacrificed (there may only be one portal at a time, and making a second will remove the first). The Bomber blows itself up.
+
+
+=== Fist Hell ===
+Fist Hell is the 33rd game in the collection and released in August 1987. It is an arcade style beat 'em up. In Fist Hell, the player controls one of four different characters (Jay, Kat, Victor, or Amy) as they fight through a zombie invasion that has descended on the city in order to save Jay's mother. The four characters all have different stat layouts and fighting styles which can be used to fight through the game's five levels. Fist Hell also has a survival horde mode, which can be accessed by traveling to the left in the first level, where players can fight against waves of enemies to achieve a high score. The game can be played single player as well as co-operatively.
+
+
+=== Overbold ===
+Overbold is the 34th game in the collection and released in September 1987. It is an arcade shooter game in a twin-stick shooter style. Players control Alpha, the hero of previous UFO 50 game Velgress, who is competing in gladiatorial combat in order to raise money for a new ship. Between every round of combat, players can be "bold" by upping the number of enemies they will face, which will give them more money if they manage to survive. Players can use this money to then buy various upgrades for Alpha, increasing her survivability as well as her combat options. The goal of the game is to survive seven rounds and raise as much money as possible. 
+The player has a single player mode as well as a two-player competitive "chicken" mode, where players can take turns upping the ante until one declines, at which point their opponent must enter combat.
+
+
+=== Campanella 2 ===
+Campanella 2 is the 35th game in the collection and was released in October 1987. It is a roguelike game, where players must navigate their ship through a series of levels without dying, collecting upgrades along the way. It uses the same engine as the original Campanella, and controls in the same way for part of the game. The game features a different ship than the Campanella, known as the Big Belle, which is piloted by Isabell. Isabell's brother Pilot (the pilot of the Campanella) has gone missing, and Isabell must find him and free him. Campanella 2 distinguishes itself from Campanella 1 by allowing the Big Belle to land, allowing Isabell to exit the ship and explore on foot. There are two different on-foot modalities. Immediately after exiting the Big Belle, Isabell is rendered as a very small sprite, just a few pixels tall. In this modality Isabell is very fragile, dying immediately to any damage from enemies, or even from a fairly short fall. Upon entering a door, a more typical side-scrolling platforming modality is activated, and Isabell is rendered at a more normal size, and is less fragile.
+Another manner in which Campanella 2 distinguishes itself from Campanella 1 is that instead of featuring fixed levels, the levels in Campanella 2 are randomly generated for each run, making Campanella 2 similar to Spelunky (which was designed by UFO 50's Derek Yu, and whose soundtrack was composed by the Campanella series' director, Eirik Suhrke).
+
+
+=== Hyper Contender ===
+Hyper Contender is the 36th game in the collection and was released in January 1988. It is a fighting game with platformer elements, featuring a roster of 8 different characters which all control in different ways. Side-to-side movement is common to all characters, but instead of having a common jump movement, each character has a unique "Maneuver" ability which in some way or another allows the player to influence their vertical position. Each character also has a unique attack ability.
+Both the platforming elements and the diverse roster of characters have drawn comparisons to the Super Smash Bros. franchise.
+
+
+=== Valbrace ===
+Valbrace is the 37th game in the collection and released in January 1988. It is an adventure role-playing game. The game focuses on an unnamed knight, who has been stripped of all his equipment and consigned to the dungeon of a strange tower by the Abyss Lord, who he had arrived with the hope of defeating. Players navigate the tower in a first-person dungeon crawling view, dodging traps and trying to discover the staircase that will allow them to go to the next floor. When enemies attack, combat is done in real time utilizing a Punch-Out style control system. Players can dodge and attack at will, exploiting enemy "tells" that open them up to defeat. Players also find spells throughout the dungeon which can be deployed both in combat as well as during exploration, but require input memorization as they are not saved otherwise. Defeating enemies provides "essence", which the player can use to level up their stats at thrones, one of which can be found on every floor.
+
+
+=== Rakshasa ===
+Rakshasa is the 38th game in the collection and released in April 1988. It is a platformer where players control Jangi, a warrior who is trying to save his village from an invasion of demons and evil spirits. Due to the fact that Jangi was killed by one of the demons and mysteriously brought back to life, he can die as many times as he wishes. When he is killed by an enemy, the player enters a short minigame where they must help his spirit dodge obstacles and collect the shards needed to return him to life. The more he dies, more shards will be needed and more obstacles must be avoided. 
+The objective of the game is to help Jangi get to the end of each level, defeating enemies and bosses that bar his way. Various secrets and items can be found in the levels to make Jangi stronger, or lower the karmic effect of his deaths represented by a line of "skulls" in the HUD. The number of skulls that Jangi have will affect the levels in subtler ways, making them harder if he has too many.
+
+
+=== Star Waspir ===
+Star Waspir is the 39th game in the collection and released in August 1988. It is a vertical arcade shooter game. Players control one of three different pilots, each of whom have their own ship with a different firing style and possible sub-weapon, who have to fight against an invasion of an army of alien bugs. Navigating through five levels, ships must dodge waves of bullets and eliminate enemies, culminating in a boss. The main unique mechanic is the game's power up system, which requires players to collect pickups in the correct order for various benefits. Pickups are either an E or a G, and what they give depends on what the player spells (i.e. spelling EGG will provide a score multiplier). The pickups are always dropped in the order of E, G, G, cycling back to E after the second G.
+
+
+=== Grimstone ===
+Grimstone is the 40th game in the collection and was released in June 1988. It is an RPG with a western setting, including many references to the state of Texas. It is one of the largest games in the UFO 50 collection, with an expected playthrough time of around 15-20 hours. The game is styled after JRPGs of the era such as Dragon Quest or Final Fantasy. The player creates a party of four characters, who have been tasked with discovering why their home state has been dragged into Hell. Characters level up by fighting against enemies on the overworld as well as in dungeons. Combat is turn-based, including a QTE mechanic where hits are scored based on the player's timing. The setting of the game is Lonestar, the same setting that is depicted in the earlier UFO 50 game Rail Heist. Lava flows through the world the way rivers and oceans might flow through a typical landscape. Religious themes are referenced and brought to life in the world of Grimstone, with devils and angels walking the earth, as well as stand-ins for the Judeo-Christian God (Biggan) and Satan (Malus).
+
+
+=== Lords of Diskonia ===
+Lords of Diskonia is the 41st game in the collection and released in August 1988. It is a strategy game where two armies of disks do combat in a fantasy environment. The goal of the game is to entirely eliminate the opposing players army, forcing their surrender. Combat is done by shooting the disks at the opponent in a similar fashion to games like Carrom and Crokinole. The "type" of a disk will determine their size, health, and attack power, with larger units such as Ogres being larger disks and hurting opponents more, but being easier to hit and traveling less far than a smaller disk can. The "type" of disk also often gives them unique skills, such as Archers who can hit enemy disks from a distance, Vampires which drain the health of disks they hit, Fishmen who can travel across water safely, or Bards which can hit friendly disks in order to give them a boon. Between combat players navigate a map where they can travel to inns to purchase new units, gold mines to get currency, or acquire skill scrolls that give them passive benefits in battle. 
+The game has a campaign mode, where players go through ten seeded "wars", a "streak" mode where players can play randomized matches in an attempt to win as many in a row as possible, and a versus mode where two players can fight head to head.
+
+
+=== Night Manor ===
+
+Night Manor is the 42nd game in the collection and was released in September 1988. It is a point-and-click horror game. The game starts with the player character running into an obscure figure while driving home from a party (the party is implied to be from the game Party House). The player character blacks out, and wakes up locked in a room with several off-putting characteristics. The player must explore the house they are trapped in, and escape from a killer that attacks them. The player solves puzzles and finds items in order to eventually figure out the mystery of the house, and of the killer that is pursuing them. When caught by the killer, the player can escape and hide, activating a mini-game where the player must time button presses to mask their breath while the killer searches for them.  
+The backstory of what happened in the house previously is revealed through journal entries which the player finds throughout the game. Several corpses are scattered throughout the grounds. A series of four statues in the backyard stand in the back yard, with their mouths open "as if waiting to be fed". Each statue has a distinct inscription, forming the following poem when put together:
+
+
+=== Elfazar's Hat ===
+Elfazar's Hat is the 43rd game in the collection and released in October 1988 . It is an arcade shooter game, where a rabbit and a pigeon navigate a series of level in order to save their friends from their evil magician master Elfazar, who has made a deal with a nefarious being in order to increase his power. The player can collect cards with various symbols on them that are dropped by enemies. Matching the symbols of the cards provides the player with power-ups such as a shield, more health, better shooting, and even a small helper that adds to their firepower. Matching two symbols grants a less powerful version of the power-up, while matching three grants the best version. A short minigame can also be accessed by collecting secret gold tickets during levels. The mini-game, about helping a jumping pink blob dodge obstacles and collect coins, is the only way to get extra lives. The game can be played single-player and co-operatively.
+
+
+=== Pilot Quest ===
+Pilot Quest, subtitled Return to Zoldath, is the 44th game in the collection and was released in 1988. It combines the mechanics of the action-adventure game and idle game genres. The game starts with Pilot crashing the Campanella onto a foreign planet (indicated to be the same Planet Zoldath from the earlier game in the collection). Pilot must figure out how to use the various items, characters and ruined buildings in the starting space to improve their economy, eventually generating passive income that even gets produced as the player plays other games in the UFO 50 collection. By receiving meat from the huntress Parvina, Pilot can enter the Wild Zone, and survive longer in the Wild Zone with more meat. If Pilot stays too long in the Wild Zone without enough meat, then Pilot will collapse and lose everything that he was carrying with him (but items stored in the base remain).
+The Wild Zone has a strong resemblance to the original The Legend of Zelda game for the NES, and contains a number of references to that game. The exact layout of the Wild Zone is randomly generated for each playthrough of Pilot Quest, and remains the same from the start of the game until the game is completed (at which point later visits to the Wild Zone will have a new randomized layout). The overall structure of the Wild Zone remains the same across all playthroughs of Pilot Quest.
+Pilot Quest can be considered a sequel to game 8 in the collection, Planet Zoldath, with Pilot being the player character, spawning near the Campanella, with the planet Zoldath randomly changing from one visit to the next (though unlike in Planet Zoldath, the layout of Pilot Quest's world does not change when Pilot runs out of time in the Wild Zone; there are also many mechanical differences between the two games). Pilot Quest also shares much of its central IP with the Campanella series of games (Isabell from Campanella 2 also appears in Pilot Quest as a friendly character); but those games have a very different style of play from the Zoldath series.
+
+
+=== Mini & Max ===
+Mini & Max is the 45th game in the collection and released in February 1989. It is an adventure platform game, about a young girl named Mini and her dog Max who discover that they can shrink themselves into miniature and set out to explore the microscopic world inside of the closet that Mini's oldest sister has locked them in. The goal of the game is to escape the closet, which must be done by completing quests for NPCs around the world and collecting "shinies", a currency that has infiltrated the world of the closet after Mini smashed a plate and scattered its shards across the room. Mini can collect various items that increase her survivability and provide her more options for exploration, most notably a potion that allows Mini to shrink for a second time and enter an even more microscopic world of amoebas and germs hidden beneath the standard miniature world. As the player progresses through the game, the story of the miniature world progresses with them, and the state of the world inside the closet changes, unlocking new quests and new NPC interactions.
+
+
+=== Combatants ===
+Combatants (stylized as COMBAT ANTS on the game's title screen, with "combat" and "ants" as two different words), subtitled A Hill To Die On, is the 46th game in the collection and was released in March 1989. It is a strategy game where two colonies of ants fight against each other. The game involves the manipulation of a colony of ants in a real-time strategy style, with the player only controlling one ant at a time. The goal of each level is for the player to protect their own queen, and eliminate the opponent's queen. Food can be found on the map which, when fed to the queen, can create more ants. Ants can be either workers, who focus mostly on food collection, and soldiers, who focus on combat against the red ants.
+The "history" tab in UFO 50's menu (which chronicles the fictional history of UFO Soft and the development of its games) says: "Mr. [Tao] Nemuru created the vision for this highly innovative strategy game!".
+
+
+=== Quibble Race ===
+Quibble Race is the 47th game in the collection and released in April 1989. It is a strategy simulation game, where players bet on the shady sport of Quibble Racing. Between races, players can place their bets on which quibble they expect to succeed, as well as manipulate the race for their benefits. Such manipulations include purchasing tips on which Quibble is most likely to win, paying criminals to sabotage quibbles (even going as far as to kill them!), or paying to provide a benefit to the quibble that the player bets on. The player can also "sponsor" a quibble, paying money to get the ability to train them as well as getting a bonus if their sponsored quibble wins a race. The goal of the game is to have the most money out of all of the bettors after a "season" of races. Starting statistics for each quibble are the same across every race, meaning after enough plays the player is able to determine which quibbles are superior and can plan accordingly.
+
+
+=== Seaside Drive ===
+Seaside Drive is the 48th game in the collection and was released in May 1989. It is an arcade style shooting game. Unlike the other shoot 'em ups in the UFO 50 collection, Seaside Drive only allows the player to move along one axis - the road on the bottom of the screen. This is justified because the player character is a car driving along that road. The car can drift back and forth across the screen, which increases the charge of its main weapon. This encourages the player to drift as much as possible, as the increased lethality of the main shot is vital for destroying enemies quickly.
+The goal of each level is to survive the onslaught of oncoming enemies, which can be destroyed by shooting them, then defeating a final boss at the end of each level. By completing all the levels, the player wins the game.
+Seaside Drive is the only game in UFO 50 that was spearheaded by Ojiro Fumoto of Downwell fame (Fumoto played a supporting role in the development of some other UFO 50 titles). The drifting mechanic, where one button both moves the player backwards, and also charges up the player's weapon, is a continuation of Fumoto's minimalist game design style evident also in Downwell, where the design explores how multiple mechanics, such as movement and combat, can be fit into a single input mechanism.
+
+
+=== Campanella 3 ===
+Campanella 3 is the 49th game in the collection and released in June 1989. It is a arcade shooter game.
+Despite being part of the same series, Campanella 3 has little in common with the previous games Campanella and Campanella 2 and runs on a different engine. It is a pseudo-3D game, with obstacles appearing first in the distance, and getting closer as the Campanella flies closer to them. The Campanella can shoot both towards incoming obstacles, and well as sideways (up / down / left / right). All obstacles can be destroyed by shooting them, but can damage the Campanella by making contact with it. Each level consists of 3 "waves" of obstacles, followed by a boss fight.
+If the player plugs in a second controller and holds down both buttons during the game, they can also access minigames which can be played in the small monitor on the top bar of the screen. A total of 50 minigames are available to play, similar to the number of games in UFO 50 itself.
+
+
+=== Cyber Owls ===
+
+Cyber Owls is the 50th and final game in the collection and released in July 1989. The Cyber Owls are an elite team of four anthropomorphic owls who each have a distinct set of skills. Players must navigate a variety of levels, each with a different gameplay style tailored to the skills of one of the Cyber Owls. If a mission is failed, then that owl is captured, and a rescue mission must be completed in order to rescue that owl, and that owl's mission cannot be retried until they are rescued.
+
+
+== Story ==
+Within the game are references to the metagame and a secret storyline about the fictional game development studio UFOSoft. The hidden 51st game Miasma Tower was a game secretly developed by fictional developer Gregory Milk, which details the state of UFO Soft circa July 1989. In-universe, the UFO 50 collection is stated to be developed by Milk and never released officially, with the files found in an abandoned warehouse by the Mossmouth developers, as shown in the faux-cracktro of the game.
+
+
+== Recurring themes ==
+
+Many games in UFO 50 have recurring themes and references to each other, sometimes to the point of clearly being set in the same fictional universe. In addition to recurring fictional motifs, game design mechanics and programming are sometimes shared across games, as well as graphical and auditory game assets.
+
+
+=== The Campanella / Big Belle / Pilot / Isabell ===
+A number of games feature The Campanella, a red spaceship, (or its grey-colored lookalike, Big Belle) as a vehicle controlled by the player character. Closely related are Pilot and Isabell, siblings who fly in The Campanella and Big Belle, respectively. Other games contain them as minor references.
+"Big Belle" and "Campanella" are complementary names to each other, with "Campanella" meaning a little bell in Latin and Italian ("Campana" means bell, and "-ella" is a diminuitive suffix).
+Campanella, Campanella 2, and The Big Bell Race all use the same game engine for controlling The Campanella / Big Belle. Furthermore, the player controls The Campanella in Campanella 3, though the controls are different (with planar 2D motion to dodge obstacles as a common theme).
+
+
+=== Eggs ===
+Eggs are a recurring theme in UFO 50, often in abstract, potentially absurdist contexts. Many appearances of eggs are linked to the fictional UFO Soft developer Thorson Petter.
+
+
+== Development ==
+Derek Yu and Jon Perry had previously developed a number of freeware games together using Klik & Play under the name Blackeye Software, with notable titles being Trigger Happy, Diabolika (remade in UFO 50 as Devilition) and Eternal Daughter. In 2016, the two decided to work together again on a project, making smaller scale prototypes for ideas. These prototypes eventually spiraled into the concept for UFO 50: a large collection of small games. The idea to create a collection came from Yu's belief that these concepts for games, if expanded, would not perform well enough as standalone releases in the current marketplace.
+The first game in the collection to start development was Attactics, which was fully developed by Yu and Perry alone as a re-introduction into working together. Soon after, Eirik Suhrke was invited to join as both composer and designer, and the three started to brainstorm games on a private forum, with a majority of these concepts making their way into the final game. The number of games advertised in the collection (50) was chosen by Yu because "it was the first number I could think of that was completely undeniable... that would advertise itself with its own existence." Three additional developers joined at various parts of development: Ojiro Fumoto, who previously developed Downwell, spent a half-year on the team and directed Seaside Drive; Paul Hubans, who previously developed Madhouse, serving as the lead director for Night Manor; and Tyriq Plummer, who previously developed Catacomb Kids,  co-directing several of the collection's largest games including Valbrace. Every member of the team contributed design, writing, artwork, and programming to UFO 50, and provided work on the other's games.
+UFO 50 was developed in GameMaker. It was officially announced in 2017 and expected to launch in 2018. However, due to complications with development, the game received a number of delays. These complications included rewriting older parts of the game's "prehistoric" code (as described by Yu) and the simultaneous development of Spelunky 2 in 2020, causing Suhrke and Yu stepping away from the UFO 50 project entirely until Spelunky 2 was released. One result of these complications led to at least one game being scrapped entirely during development. After eight years of development (and six years after the expected release date), the game released on September 18, 2024.
+Every game in the collection imposes restrictions which could be found in games released during the era. These include using only a 32-color palette across each game, having a limited number of colors per sprite and having a set number of sound channels. Slowdown and sprite flickering, however, were not included as Yu believed that it would hinder the experience. A number of games across the collection reuse sound, assets and code. For instance, some of the Campanella games are stated to have been made in the same engine. Suhrke intentionally chose to not use NES-inspired sounds typically featured in other retro-inspired indie games, instead opting to use wavetable synthesis more similar to the TurboGrafx-16. Suhrke is UFO 50's sole composer and sound designer.
+
+
+== Marketing and release ==
+UFO 50 was revealed in 2017 on the Mossmouth YouTube channel, and was slated to be released the following year. An early version of UFO 50 was showcased during 2017's Pax West game convention, as well as the following year's Pax West. It was one of the games featured at Summer Game Fest's Day of the Devs livestream, where its final release date was announced to be September 18, 2024. It was released on Nintendo Switch on August 7, 2025, just after it was unveiled at the Indie World showcase that same day. On the same day, a physical Nintendo Switch version was announced to be released by Fangamer, releasing on February 20, 2026 by Fangamer.
+
+
+== Reception ==
+
+UFO 50 received "universal acclaim" according to the review aggregator website Metacritic, with an average score of 91 making it the highest-rated PC exclusive of 2024. 100% of critics recommended the game according to OpenCritic. Many reviewers chose not to give traditional scores due to its nature of being a collection of 50 individual games. DigitalTrends alternatively chose to score all 50 individually in their review.
+Most reviewers lauded UFO 50's variety, value, and experimentation. Eurogamer's Christian Donlan extensively praised the experimentation and variation of games in the collection, calling it a "dazzling piece of creative audacity". Simon Parkin of The Guardian described the collection as "a preposterously ambitious undertaking". Edge wrote that when one game "holds your undivided attention for an extended span, it must be something special indeed, and of those, UFO 50 has more than its fair share". The New York Times compared UFO 50 to "an ingeniously retro advent calendar" while Metro's GameCentral specifically praised that the games advertised were "not WarioWare or anything like it", being "50 fully formed games". Polygon's Grayson Morley lauded the metafiction linking the games of the collection chronologically, highlighting the evolution of "brutal" mechanics found in Barbuta to the life-based mechanics found later in Mortol and Mortol II, in addition to the "UFO Soft" narrative.
+In contrast, PC Gamer's Kerry Brunskill remarked that they would have rather seen some games in the collection "stand on their own merits" as standalone releases, with others being "a little too retro for their own good". Digital Trends' Giovanni Colantonio praised the game for its experimentation, but admitted there were "a handful of duds in the batch". The A. V. Club's William Hughes recommended the collection, remarking that "there are extremely good games in here, some worth more than the asking price" but "many games in the collection feel torn between their desire to stay retro-hard and being genuinely fun".
+Games in UFO 50 that were singled out by multiple reviewers as being exceptional include Mortol, Party House, Rail Heist,  Night Manor, and Mini & Max.
+
+
+=== Awards and nominations ===
+
+
+== Notes ==
+
+
+== References ==
+
+
+== External links ==
+Official website

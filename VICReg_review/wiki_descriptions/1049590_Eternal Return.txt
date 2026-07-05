@@ -1,0 +1,26 @@
+Game: Eternal Return
+appid: 1049590
+Source: Eternal Return (video game)
+URL: https://en.wikipedia.org/wiki/Eternal_Return_(video_game)
+Match score: 7.31
+Retrieved: 2026-07-04
+--------
+Eternal Return (formerly Eternal Return: Black Survival) is a multiplayer battle royale game developed by Nimble Neuron and published by Kakao Games. The game was released in early access on October 14, 2020. Eternal Return features a mix of multiplayer online battle arena gameplay with survival game elements. A player can choose one of the many characters already released and is pitted against 21 other players with their two teammates to survive and battle on an island called Lumia, with the last player standing being the winner. The game is available for Microsoft Windows via Steam.
+
+
+== Gameplay ==
+24 players are spawned onto an island and are set against each other. The map, Lumia Island, has 16 distinct areas. The game uses battle royale mechanics, marking different areas of the map as restricted areas in lieu of the traditional closing circle. Players collect materials from various containers, slain animals or other players, or from various unique points around the map to create stronger weapons or equipment. There are multiple playable characters with different skills and abilities, similar to multiplayer online battle arena games. The final player or team alive is crowned the winner.
+The game's launch had the solos and duos game modes removed due to not having sufficient player base to fill multiple queues, Only Squads [Teams of 3] and Cobalt Protocol [4v4] modes were left permanently enabled.  
+Lone Wolf, a solo event game mode, makes scheduled temporary rotations into the game. It consists of 18-players with custom rules and a faster pace.
+
+
+== Plot ==
+Eternal Return is set on Lumia Island, a secluded island with various named zones. A scientific organization known as AGLAIA is hosting an experiment with human test subjects to further evolve and create an elite species of humans. After each experiment, the test subjects have their memory wiped.
+
+
+== Development ==
+Eternal Return is developed by South Korean company Nimble Neuron and is developed in Unity.
+In 2021, the developer partnered with Kakao Games to publish Eternal Return in Korea. In 2021, a music video featuring K-pop group aespa was created for the domestic launch of the Kakao Games client. In July 2024, the partnership with Kakao games ended.
+
+
+== References ==

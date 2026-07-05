@@ -1,0 +1,46 @@
+Game: Tomb Raider I-III Remastered Starring Lara Croft
+appid: 2478970
+Source: Tomb Raider I–III Remastered
+URL: https://en.wikipedia.org/wiki/Tomb_Raider_I%E2%80%93III_Remastered
+Match score: 6.32
+Retrieved: 2026-07-04
+--------
+Tomb Raider I–III Remastered is a 2024 collection of action-adventure games developed and published by Aspyr. It is a remastered compilation of the first three games in the Tomb Raider series originally developed by Core Design: Tomb Raider (1996), Tomb Raider II (1997), and Tomb Raider III (1998). 
+Tomb Raider I–III Remastered was released for Nintendo Switch, PlayStation 4, PlayStation 5, Windows, Xbox One, and Xbox Series X/S on 14 February 2024, and was later ported to Nintendo Switch 2, iOS, and Android on 12 March 2026. The collection of games received generally favourable reviews from critics. It was followed by Tomb Raider IV–VI Remastered on 14 February 2025.
+
+
+== Gameplay ==
+
+Tomb Raider I–III Remastered is a collection of remasters of the first three games in the Tomb Raider series: Tomb Raider, Tomb Raider II, and Tomb Raider III. Each game features archaeologist-adventurer Lara Croft as she travels through a series of ancient ruins and tombs in search of ancient artefacts, and is presented from a third-person perspective. Like in the original games, Lara is equipped with two pistols with infinite ammo by default and can run, walk (which prevents her from falling off ledges), look around areas, jump forwards and backwards, shimmy along ledges, roll, swim through bodies of water, and move blocks. The collection includes new features across all three games, such as options to choose between enhanced and original graphics and classic and modern control schemes, as well as camera lock-on, health bars for boss battles, photo mode, and over 200 achievements.
+
+
+== Development and release ==
+
+In 2018, Realtech VR, who had previously developed remasters of the first two Tomb Raider titles for iOS and Android, announced plans to release remasters of the first three games on Steam. However, these were cancelled when Square Enix, the franchise owner at that time, stated the PC remasters had never been approved, with videos posted by Realtech VR being pulled in the aftermath, and later the mobile versions. In 2022, after acquiring Tomb Raider among several other assets from Square Enix Europe, Embracer Group expressed interest in sequels, remakes, and remasters of established franchises, including Tomb Raider.
+Tomb Raider I–III Remastered was revealed on 14 September 2023 during a Nintendo Direct, and was announced to be released for the Nintendo Switch, PlayStation 4, PlayStation 5, Windows, Xbox One, and Xbox Series X/S on 14 February 2024 (coinciding with the canonical birthday of the series' main protagonist Lara Croft). It includes three expansion packs from the original games: Unfinished Business, The Golden Mask, and The Lost Artifact. The game was developed and published by Embracer subsidiary Aspyr, who had previously ported the first six Tomb Raider games to macOS in the 2000s, in partnership with current series developer Crystal Dynamics and Saber Interactive. In January 2024, the developers promised that it would have "plenty more to share soon". Following the announcement of the physical release of The Lara Croft Collection (a collection of Lara Croft and the Guardian of Light and Lara Croft and the Temple of Osiris for the Switch), Crystal Dynamics confirmed in May 2024 that Tomb Raider I–III Remastered would receive a physical release from Limited Run Games, which was released on 18 October 2024, after having previously set for 24 September of that year. The remaster was later ported to Nintendo Switch 2, iOS, and Android on 12 March 2026.
+Aspyr, having wanted to revisit the original Tomb Raider titles but always debated "the right approach", knew they would use the original source code and engine, allowing players to switch between the original look and new visuals for all three games. In late 2022, Aspyr contacted Tomb Raider co-creator Paul Douglas, who located the original source code and assets to assist with the ports. Product Director at Asypr, Chris Bashaar described I–III Remastered as a love letter to all of their "memories of these games, but it's also truly fascinating to see how far hardware pushed in the '90s to make Tomb Raider work". Timur "XProger" Gagiev, developer of the unofficial Tomb Raider open source engine OpenLara, was brought in to serve as technical director for the remaster, allowing him to "assemble a dream team of true fans" to work on the project, aided by "source code for [Tomb Raider's] Mac ports" provided by Aspyr. For the modern controller settings, the team took inspiration from Crystal Dynamics' first rebooted Tomb Raider trilogy: Legend, Anniversary, and Underworld. As a result, the way Lara controls in-game changes significantly; the player can rotate the camera with the mouse or right stick and the character's movement is direction-dependent based on camera position. The original tank controls are available to players via a menu toggle. The team added health bars for boss fights as the games' minimal UI can be considered "frustrating for tougher bosses with massive amounts of health", as well as replacing 2D sprites of in-game items with 3D models.
+For the art of I–III Remastered, Aspyr worked closely with Crystal Dynamics on art updates, such as "baked and real-time" lighting effects, graphics toggle, and adding new models, environments, and enemies. According to Crystal Dynamics, the team used an artificial intelligence program to upscale textures for the remaster. Bashaar further stated, "Our philosophy here was rather straightforward; we want the games to look the way they did in your mind. We knew we were on the right track in our early playtests because some playtesters didn't even know they were playing with the modern art toggled on." A one-time content warning was added by Crystal Dynamics to the start of I–III Remastered, which warns players about what it describes as "offensive depictions of people and cultures rooted in racial and ethnic stereotypes". The warning explains that rather than "removing this content", they have chosen to present it in its original, unaltered form in the hopes that they may "acknowledge its harmful impact and learn from it".
+
+
+== Reception ==
+
+
+=== Critical reception ===
+Tomb Raider I–III Remastered received "generally favourable reviews" for PlayStation 5 and Xbox Series consoles, while the Nintendo Switch and Windows versions received "mixed or average reviews", according to review aggregator website Metacritic.
+Critics praised the updated visuals, new gameplay features, and overall faithfulness to the original games. Christian Donlan of Eurogamer wrote that the games had undergone remodelling with updated textures, models, and objects while retaining the original geometry; the modern elements blend well, resembling the classic Tomb Raider aesthetic, with Lara Croft reminiscent of her appearance in the first Crystal Dynamics games, upgraded yet maintaining her "fantastical character". Tiago Manuel of Destructoid commended the game's photo mode and the option to switch between classic and upgraded graphics. Sammy Barker of Push Square also highlighted Lara's character model, calling it "arguably the biggest achievement". Ellie Gibson of The Guardian wrote that the remaster "preserves enough of the games' treasured elements to keep purists happy."
+The game was criticized for its modern control schemes, art direction, and glitches. Barker called the game's modern controls "annoying" and noted its lack of a rewind function as a "glaring oversight". Manuel found some of the enemy models "goofy-looking" which "kills the vibe a bit". Zac Bowden of Windows Central, while calling it "an [almost] perfect return to the 90s era of gaming", noted that the game, in remaining faithful, retained the original sounds with "no further edits", as well as retaining the original full-motion video (FMV) cutscenes which were upscaled with AI for the remaster. Ash Parrish of The Verge also criticized the game's retained tank controls for being "a clunky, awkward mess" but was less critical of the lighting, while Carrie Lambertsen of Screen Rant was very critical of the game, calling it "more of a port than a remaster". John Walker of Kotaku found the new controls "disastrous" and called its updated textures "smoother, but pretty ugly".
+
+
+=== Sales ===
+In the United Kingdom, the physical release of Tomb Raider I–III Remastered debuted at fourth place on the all-formats sales chart in its first week.
+
+
+== Notes ==
+
+
+== References ==
+
+
+== External links ==
+Official website
+Tomb Raider I–III Remastered at MobyGames

@@ -1,0 +1,41 @@
+Game: HighFleet
+appid: 1434950
+Source: HighFleet
+URL: https://en.wikipedia.org/wiki/HighFleet
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+HighFleet, styled as HighFleet: Deus in Nobis (Latin for "God within us") is an action-adventure strategy video game developed by Konstantin Koshutin and published by MicroProse. The game involves the player commanding a fleet of metal airships on the dieselpunk post-apocalyptic world of Elaat in an attempt to seize a rebellious region rumored to have access to a nuclear reactor. The working title for the game was "Hammerfight 2" (after Koshutin's previous game), as the game was in development for more than a decade.
+
+
+== Setting ==
+HighFleet takes place in a Dune-inspired post-apocalyptic future where humanity has returned to feudal-style governments on a ravaged planet, known contemporarily as Elaat, following an event known as The Catastrophe. The Catastrophe was believed to have occurred thousands of years before the events of the game, when humanity blew up the Moon (called Kharu by historians of the Romani Empire) with nuclear weapons, causing it to shatter and impact the surface, destroying the climate and wiping out all traces of advanced technology and artificial intelligence. Due to The Catastrophe, the predominant form of combat in the world of Elaat is performed with large metal airships powered by methane, with political tides being determined by naval strength.
+The events of HighFleet take place 214 years after the founding of the Romani Empire, the most powerful nation in the known world, led by the House of Sayadi. In 207, the Lord-Governor of Khiva, a city in the desert region of Gerat, rebelled and founded the breakaway Republic of Gerat, supported by an alliance of anti-Sayadi Great Houses called the Gathering. Since that time the two polities have waged the Gathering War; the Gerati have advanced to the heart of the empire and only the Imperial Fleet prevents the Romani capital from falling.
+The setting of Gerat is based on the Middle East and Central Asia, with the Gathering War and the circumstances around it being heavily inspired by the Soviet-Afghan war. The land of Gerat is split between two major ethnic groups, the Romani and Elaim. The Romani are from the core of the Empire, located to the south of Gerat, and are often at odds with the native Elaim. The conflict between the Imperial and Gerati cultures features prominently throughout the game and has the chance to affect major plot elements.
+
+
+== Plot ==
+The game opens with a Romani expeditionary fleet approaching Gerat to capture Khiva and its rumored nuclear reactor; only two other reactors are known to have survived the Catastrophe. The force is led by the player character, heir to the Imperial throne Grand Duke Mark, Admiral Daud and General Pyotr. As the fleet reaches Gerat, the Imperial cruiser Sevastopol arrives with news that the imperial capital has been hit by a Gerati nuclear weapon. Daud advises abandoning the offensive and returning to the capital. Pyotr supports proceeding as planned, reasoning that the Romani situation is now so desperate that the Gerati can only be forced to make peace by capturing the Khiva nuclear reactor. The offensive continues, with the cruiser Diana detached to reestablish contact with the Empire. As the fleet advances it has the opportunity to recruit local  military leaders ("Tarkhans") and their forces.
+The Grand Duke may take on the guise of a religious prophet during encounters which unlocks additional choice options. In an early encounter, the Grand Duke inherits a "qoda" − an excerpt from a pre-Catastrophe religious text written in a dead language — from an aging tribal leader ("doyen"). The Grand Duke understands the language; he may attribute the ability to either the Sayadi preserving the knowledge or to a miracle. The expedition may eventually be described as a religious pilgrimage to secure a "sacred Ark"". In a later event where the sun fails to rise, the Grand Duke may claim that it is a sign of the end of the world as predicted by local religion and that the expedition's success will save the world; more prosaic options are a solar eclipse and dust from nuclear warfare in the Empire.
+Diana returns with news that the emperor is alive, and the Empire and the capital are still fighting. Pyotr suppressed orders to return to the capital and gave misleading advice to push the Khiva offensive. The Grand Duke may have Pyotr arrested − leaving him with only Sevastopol and hired mercenaries as Daud takes the fleet back to the capital − or Pyotr kills Daud.
+Upon reaching the outskirts of Khiva, the Lord-Governor invites the Grand Duke to an optional meeting far from the city. The Lord-Governor may be persuaded to defect if the Grand Duke is a prophet, otherwise a duel with the Lord-Governor's ship results.
+The fleet captures Khiva and discovers not only the nuclear reactor but a large nuclear weapons factory and stockpile as well. The fleet refuses the Gathering's demand to leave the city and defends the city against nuclear-armed Gathering ships. Afterwards, Pyotr suggests visiting the Khiva nuclear reactor control room, which he recalls has a pillar inscribed with a qoda.
+
+
+== Gameplay ==
+The majority of the gameplay takes place in a top-down view of the strategic map. Here the player may command their fleet, detect enemies with sensors, radio interception, and code-breaking, intercept enemies with missiles and jets, and salvage wreckage. Players must also consider fuel while moving around the map, and the morale of their crew.
+When the player fleet engages with an enemy fleet, or when aircraft / missiles engage a target, the game switches to real-time combat resembling "simcade" games (where controls are simple like an arcade game but the gameplay itself is nuanced like a simulation game). Before combat, the player will select ships to directly fight enemy ships. The AI can control up to three ships on screen at a time, and any more will be queued to spawn after the destruction of one onscreen. Meanwhile, the player will only be given one at a time, to make up for the inefficiencies of the AI and the standard ship designs, as well as allow the player to control the ship granularly, having control directly over its movement and aim. When a combat is initiated by a missile or jet, the attacking party cannot control any aspect of the combat except ordering aircraft to disengage. The defender can control ships to defend themselves with whatever they have, or to potentially evade the attack itself.
+Ship designs can also be edited in a large variety of ways. Outside of the campaign mode, players may create new ships in the ship editor and test them out before using them in the campaign.
+Along with plot development and randomly generated events, the player may meet Tarkhans in cities. Tarkhans allow the player to acquire more ships and gain special assets when appealed to via a diplomacy system. The Tarkhan interactions consist of a set of dialogue options where the player must pick the right choices based on the Tarkhan's interests.
+
+
+== Reception ==
+
+The game received "mixed or average" reviews on Metacritic. Reviewers praised the immersive interface and combat and the intricacy of systems such as the ship building and intelligence gathering mechanics. However, many also criticized the steep learning curve and, at the time of launch, an inability to change graphical settings, keybindings, or difficulty levels.
+
+
+== Sources ==
+
+
+== External links ==
+Official Website

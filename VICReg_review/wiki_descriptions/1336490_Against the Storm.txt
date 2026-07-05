@@ -1,0 +1,33 @@
+Game: Against the Storm
+appid: 1336490
+Source: Against the Storm (video game)
+URL: https://en.wikipedia.org/wiki/Against_the_Storm_(video_game)
+Match score: 7.53
+Retrieved: 2026-07-04
+--------
+Against the Storm is a 2023 city-building video game developed by Eremite Games and published by Hooded Horse.  Unlike traditional city-building games, it incorporates elements of roguelike games and has a short playtime with goals players must achieve.
+
+
+== Plot ==
+The game is set in a fantasy world eternally ravaged by the "Blightstorm". The only safe haven in this world is the Smoldering City, ruled by the Scorched Queen. Occasionally, the storm subsides and the Scorched Queen sends her viceroys to establish settlements with the purpose of gathering supplies for the Smoldering City until the Blightstorm hits again, destroying all settlements in the process.
+
+
+== Gameplay ==
+When the storm subsides, a "calm" period begins and players are tasked with building villages around the Smoldering City before the storm grows stronger again. These villages attempt to push back the forest that corrupts anything in it. Players must gather resources from the forest and craft them into goods, such as food, fuel, building materials, etc. The maps, resources, population, and available buildings are all procedurally generated. 
+The villagers are divided into seven different species: Humans, Beavers, Harpies, Lizards, Foxes and the DLC exclusive Frogs and Bats, each with their own necessities and specialties and each village is populated with three species only. Each village is given tasks it must complete, which can be complicated by the lack of easy access to required resources. Villagers may abandon the village due to discontent or die by hunger, decreasing the available workforce, which is replenished by clearing events or by caravans which arrive every year. If players maintain villagers' happiness and complete the tasks, they gain reputation. The player must fill the Reputation gauge completely to clear the map before the "Queen's Impatience" gauge fills completely and the Queen recalls players to her city, but gaining reputation points also make the Impatience gauge recede a little, extending the time. Like modern roguelite games, players retain unlocked abilities, which can be used to make building the next village easier. 
+Once the calm ends, the storm destroys all settlements, and a new map is generated. Aside from building settlements, players are challenged to gather "seal fragments" which they can use to enter a special map where they can reforge a seal to earn extra rewards. Once a seal is reforged by the first time, the storm grows weaker, extending the calm period.
+
+
+== Development ==
+Against the Storm was initially released on early access in October 2021. Publisher Hooded Horse released Against the Storm for Windows on December 8, 2023. An expansion, titled Keepers of the Stone was released on September 26, 2024. The expansion introduced new biomes and a new species, among other additions.
+The game was released for Nintendo Switch, PlayStation 4, PlayStation 5, Xbox One and Xbox Series X and Series S on June 26, 2025.
+
+
+== Reception ==
+
+Against the Storm received "universal acclaim" on Metacritic. Fellow review aggregator OpenCritic assessed that the game received "mighty" approval, being recommended by 95% of critics. The game won Best Design at the Taipei Game Show 2024 and was nominated for Strategy/Simulation Game of the Year at the 27th Annual D.I.C.E. Awards. The game had sold over a million copies on Steam as of May, 2024.
+Eurogamer gave the game a perfect score and described it as a "rare gem" and "one of the most novel and well-crafted city builders". PC Gamer described the game as "one of the most clever, engaging, and endearing strategy games", and particularly liked how the game's premise upended traditional genre tropes for a city-building game. PCGamesN said it has "a brilliant mix of roguelike, strategy, and small-scale city building".
+Rock Paper Shotgun praised its combination of city-building and roguelite elements, which they found surprisingly compatible.  They also enjoyed how the cities have definite goals for success and a brief playing time of about an hour, unlike traditional city-building games.  They concluded that it is "one of this year’s best" and designated it a "Bestest Best".  Ars Technica likened it to a "rogue-ultralite" for its coziness and praised the depth, strategic options, and replayability.  Sports Illustrated praised what they felt was "a unique blend of genres" and said it condenses the best parts of city-building games into a short and addictive experience.
+
+
+== References ==

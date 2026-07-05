@@ -1,0 +1,24 @@
+Game: Soulstice
+appid: 1602080
+Source: Soulstice (video game)
+URL: https://en.wikipedia.org/wiki/Soulstice_(video_game)
+Match score: 6.72
+Retrieved: 2026-07-04
+--------
+Soulstice is an action-adventure hack and slash video game developed by Italian studio Forge Reply. It was released for PlayStation 5, Xbox Series X/S and Windows in 2022 and for PlayStation 4 in 2023.
+
+
+== Gameplay ==
+Soulstice is a fast‑paced action hack and slash game in which players control two sisters, Briar and Lute, who share a single body as a Chimera warrior. The gameplay revolves around managing both characters simultaneously: Briar performs melee attacks and combos against enemies, while Lute uses her mystical abilities to support combat and manipulate the battlefield. Weapons and abilities can be unlocked and upgraded throughout the game, and players can switch between different weapons on the fly to perform varied and stylish combo chains. The game also features puzzles, exploration of ruined environments, and a mix of enemy types that require strategic use of both characters’ skills to overcome. Combat encounters are designed to be challenging and diverse, with boss fights and enemy groups that encourage players to master the synergy between Briar and Lute. 
+
+
+== Reception ==
+The PlayStation 5 and Xbox Series X/S releases scored 72 out of 100 on Metacritic, while the Windows version received 68 out of 100. One of the most raised issues was the impossibility to move the camera.
+
+
+== References ==
+
+
+== External links ==
+Official website
+Soulstice on MobyGames

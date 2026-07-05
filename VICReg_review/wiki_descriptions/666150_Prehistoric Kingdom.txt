@@ -1,0 +1,142 @@
+Game: Prehistoric Kingdom
+appid: 666150
+Source: Prehistoric Kingdom
+URL: https://en.wikipedia.org/wiki/Prehistoric_Kingdom
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Prehistoric Kingdom is an upcoming construction and management simulation video game developed by Blue Meridian and published by Crytivo. The game allows players to build a zoo to exhibit dinosaurs and other extinct wildlife. The game was made available under Steam's early access program on April 27, 2022 for Microsoft Windows and macOS, and is also available on the Epic Games Store. It is scheduled for full release in 2027.
+British naturalist Nigel Marven provided a voiceover during the tutorial (which has since been removed) and provides facts about all in-game species.
+
+
+== Gameplay ==
+Prehistoric Kingdom is a business simulation game, where players build a zoo composed of dinosaurs and other extinct animals. The player can build enclosures to house the animals and must take care of their needs.  This includes providing animals with food, water, and the proper foliage.
+The player must also meet the needs of the guests visiting the park, using modules (restaurants, bathrooms, etc.) to satisfy their guests' needs.
+The game features a modular building system, allowing the player to use small props and other pieces to create buildings such as a hatchery or a guest facility. Players can precisely move, rotate, and scale individual pieces to create unique structures. These creations can also be uploaded to the Steam Workshop for other players to download.
+Staff are a major part of gameplay. There are currently four staff types currently in-game. These are the keeper, cashier, vet and laborer. Keepers support the animals side of management, stocking feeders and cleaning up dung. Cashiers support the guest side of management, selling food and other goods to guests. Laborers support the logistics side of management, transporting goods to modules. Vets ensure that your animals are healthy and free of diseases.
+There are currently 80 individual species of animals available in the game, including 55 dinosaurs and 14 extinct mammals, in addition to a few other animals such as turtles, snakes, and early amphibians. The designs of the animals aim to be scientifically accurate.  To discover and de-extinct new animals, players must assign dig teams to dig sites found all across the world.  These teams bring back DNA material which is added to an animal's viable genome. Once the genome is complete, animals are then created in the Animal Nursery (a module).
+
+
+== Animals ==
+Prehistoric Kingdom features 80 individual species and 61 genera of prehistoric animals. These animals roam the world, eating, drinking, and resting, as well as performing basic idle behaviors (scratching, roaring etc.). The animals also have social requirements, and will naturally form packs and herds around a leader.  In addition, all species except for the smallest "Vivarium" animals (such as Microraptor, Archaeopteryx, and Tiktaalik) have a full ontogeny system; with seamless growth from young to fully grown adult, in addition to being able to breed naturally.  The list of animals below is the full current roster and confirmed upcoming lifeforms.
+
+
+=== Dinosaurs ===
+
+
+==== Marginocephalians ====
+Nasutoceratops (N. titusi)
+Pachycephalosaurus (P. wyomingensis and P. spinifer)
+Pachyrhinosaurus (P. canadensis, P. lakustai, and P. pertorum)
+Protoceratops (P. andrewsi)
+Psittacosaurus (P. sp., P. mongoliensis, and P. sibiricus)
+Styracosaurus (S. albertensis)
+Triceratops (T. horridus and T. prorsus)
+
+
+==== Ornithopods ====
+Charonosaurus (C. jiayinensis)
+Dryosaurus (D. altus)
+Edmontosaurus (E. annectens and E. regalis)
+Iguanodon (I. bernissartensis)
+Lambeosaurus (L. lambei)
+Leaellynasaura (L. amicagraphica)
+Muttaburrasaurus (M. langdoni)
+Ouranosaurus (O. nigeriensis)
+Parasaurolophus (P. cyrtocristatus and P. walkeri)
+Ugrunaaluk (U. kuukpikensis)
+
+
+==== Thyreophorans ====
+Ankylosaurus (A. magniventris)
+Scelidosaurus (S. harrisonii)
+Stegosaurus (S. stenops and S. ungulatus)
+
+
+==== Sauropodomorphs ====
+Apatosaurus (A. ajax)
+Argentinosaurus (A. huinculensis)
+Brachiosaurus (B. altithorax)
+Brontosaurus (B. excelsus)
+Camarasaurus (C. grandis, C. lentus, and C. supremus)
+Plateosaurus (P. gracillis and P. trossingensis)
+
+
+==== Theropods ====
+
+
+=== Mammals ===
+
+
+==== Artiodactyls ====
+Megaloceros (M. giganteus)
+Bison (B. latifrons and priscus) (Upcoming)
+
+
+==== Carnivorans ====
+Panthera (P. atrox and spelaea)
+Smilodon (S. fatalis and populator)
+Ursus (U. spelaeus)
+
+
+==== Proboscideans ====
+Mammuthus (M. primigenius)
+
+
+==== Xenarthrans ====
+Peltephilus (P. ferox)
+
+
+==== Perissodactyls ====
+Coelodonta (C. antiquatatis)
+Elasmotherium (E. sibiricum)
+Juxia (J. sharamurenensis)
+Paraceratherium (P. bugtiense and transouralicum)
+Sinotherium (S. lagrelli)
+
+
+=== Therapsids ===
+
+
+==== Dicynodonts ====
+Diictodon (D. feliceps)
+
+
+=== Reptiles ===
+
+
+==== Crocodylomorpha ====
+Simosuchus (S. clarki)
+
+
+==== Squamata ====
+Titanoboa (T. cerrejonensis)
+
+
+==== Testudines ====
+Sahonachelys (S. mailakavava)
+
+
+=== Tetrapodomorphs ===
+
+
+==== Elpistostegalians ====
+Tiktaalik (T. roseae)
+
+
+==== Stegocephali ====
+Diplocaulus (D. magnicornis)
+
+
+== Palaeobotany Plants ==
+
+
+== See also ==
+Jurassic Park: Operation Genesis
+Jurassic World Evolution
+Jurassic World Evolution 2
+Jurassic World Evolution 3
+Parkasaurus
+
+
+== References ==

@@ -1,0 +1,35 @@
+Game: Cozy Grove
+appid: 1458100
+Source: Cozy Grove
+URL: https://en.wikipedia.org/wiki/Cozy_Grove
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Cozy Grove is a 2021 life simulation game developed and published by Spry Fox. It was released on iOS, macOS and tvOS through Apple Arcade in March 2021, alongside versions for consoles and Windows in April 2021. The player character, a Spirit Scout, is tasked with soothing restless spirits.
+
+
+== Gameplay ==
+Cozy Grove is a life simulation game taking place on an island. The player character, whose appearance and apparel can be customized,  is tasked with helping spirits, most of whom are anthropomorphic bears, enter the afterlife by completing tasks, that differ depending on the character. The game involves scavenging and crafting for items. The game takes place in real time, with no option to skip or forward time. Every day has a new set of tasks for the player.
+
+
+== Development ==
+Cozy Grove was inspired by Animal Crossing. Spry Fox CEO David Edery said he wanted to create a game that is somewhat similar to an iteration of Animal Crossing's formula, but has more focus on story.
+
+
+== Release ==
+Cozy Grove was released for Apple Arcade on March 19, 2021, and for the Nintendo Switch PlayStation 4, PlayStation 5, Windows, and Xbox One on April 8, 2021. Several free updates were later released that added more content.
+A DLC, New Neighbears, was released on April 26, 2022, and added four new spirits as well as a butterflies as a capturable creature.
+A sequel, Cozy Grove: Camp Spirit, was released on June 25, 2024, exclusively  for iOS and Android. It was published by Netflix after its acquisition of Spry Fox in 2022.
+
+
+== Reception ==
+
+Cozy Grove received "mixed and average" reviews according to the review aggregation website Metacritic.
+During the 25th Annual D.I.C.E Awards, it was nominated for Family Game of the Year, losing to Ratchet & Clank: Rift Apart.
+
+
+== References ==
+
+
+== External links ==
+Official website

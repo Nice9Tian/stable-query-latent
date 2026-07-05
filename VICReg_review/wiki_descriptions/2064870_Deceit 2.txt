@@ -1,0 +1,77 @@
+Game: Deceit 2
+appid: 2064870
+Source: Deceit 2
+URL: https://en.wikipedia.org/wiki/Deceit_2
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Deceit 2 is a free‐to‐play online social deduction horror video game developed and published by World Makers. It is the sequel to the original Deceit, expanding on its blend of social deduction mechanics and survival horror elements.
+
+
+== Gameplay ==
+In Deceit 2, players are assigned one of several roles at the start of each match:
+Innocents: Tasked with completing map-based objectives (such as locating keys to escape) while remaining alert to suspicious behavior. There are 6 Innocent roles distributed amongst the players. 2 of these players will be "Human" 4 of these players will receive one of the remaining roles: 
+
+Human (Humanity: Regains Sanity during the "day" phase)
+The Guardian (Protection: Can protect players from banishment inside the inbetween)
+The Warden (Deathmark: Can mark a player for death which instantly banishes them)
+The Inquisitor (Inquistite: Can track players footsteps, as well as check any activated Weak Points)
+The Seer (Identify: Can view players inside the inbetween)
+The Observer (Observe: Can view available tasks and view who completed a task)
+The Purifier (Purify: Can deactivate a weak point)
+The Medium (Seance: Can view up to 3 banished players roles)
+Terrors: Players in this role transform into monstrous beings, known as "Terrors", and attempt to eliminate the Innocents while disguising themselves among the group. 2 players will be randomly chosen to be a Terror. Players can select from the following Terrors:
+
+The Experiment (a.k.a. "Terror")
+The Wyrtorn (a.k.a. "Wolf")
+The Vespal (a.k.a. "Vampire")
+The Morgus (a.k.a. "Monkey")
+The Imposter (a.k.a "Alien")
+Cursed: These players add an element of chaos by disrupting both the Innocents and the Infected, sowing confusion among teammates. Only 1 person is randomly selected to be a cursed player. Cursed players can choose from the following roles:
+The Mimic (Can select a banished player's role*)
+The Chemist (Can poison all other players, resulting in a win if all players are poisoned)
+The Soulbound (Can select another player to be on converted to cursed)
+The Phantom (Once banished by vote out, respawns with an infinite ammo gun that can instantly banish anybody)
+The Voidstalker (Has to secretly plant timed bombs on the other subjects)
+*Choice must be made within 2 1/2 minutes of game time before it is chosen randomly between all available options
+Gameplay performs akin to other social deception games. The Innocent must complete 45 tasks between themselves in order to receive a key, where one player must use the key to unlock the escape. The Terrors look like humans however, should be trying to activate weak points in order to speed up progress into the inbetween. Once the inbetween phase begins, The Innocent and The Cursed all must run, hide, and evade the Terrors who are hunting them. The game ends when one team is left alive, or once players escape.
+Real-time communication—often via in-game voice chat—is essential as players deduce who may be betraying their team. The game supports cross-platform multiplayer, allowing a diverse global player base to engage in its high-stakes social deception.
+Players have described this game as being a hybrid of both Among Us and Dead by Daylight.
+
+
+== Plot ==
+Set within the dark corridors of Milhaven Asylum, the narrative of Deceit 2 centers on an occult ritual gone catastrophically wrong. In 1979, an ill-fated ritual annihilated nearly an entire family, leaving a sole survivor condemned to an endless "Ritual of Deceit" at the hands of a mysterious Game Master. Throughout the game, players navigate a labyrinth of secrets and treachery, striving to discern friend from foe as they attempt to escape their nightmarish prison.
+
+
+== Development ==
+Developed as a follow-up to the original Deceit, Deceit 2 builds upon its predecessor's core gameplay of social deduction combined with horror elements. World Makers focused on:
+
+Expanding the range of playable roles and abilities to create varied gameplay scenarios.
+Enhancing atmospheric tension with improved graphics, sound design, and narrative depth.
+Incorporating community feedback through regular updates and seasonal events to refine game mechanics and address technical issues.
+
+
+== Release ==
+Deceit 2 was first released for Microsoft Windows on September 14, 2023, via Steam as a free‐to‐play title. Console versions followed with the PlayStation 5 launch on April 3, 2024, and the Xbox Series X/S release on April 9, 2024.
+
+
+== Reception ==
+Deceit 2 has received mixed reviews from critics and players:
+
+On PC, the game holds a Metacritic score of 48/100, with critics noting technical issues and a lack of innovation compared to the original.
+User reviews on platforms such as Steam are divided—while the atmospheric design and social dynamics have been praised, concerns remain regarding game balance and performance.
+Continuous developer updates and community engagement have contributed to maintaining interest despite the criticisms.
+
+
+== See also ==
+Deceit (video game)
+Social deduction game
+Survival horror
+
+
+== References ==
+
+
+== External links ==
+Official website 
+Deceit 2 on Steam

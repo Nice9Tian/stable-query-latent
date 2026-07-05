@@ -1,0 +1,30 @@
+Game: Spelunky 2
+appid: 418530
+Source: Spelunky 2
+URL: https://en.wikipedia.org/wiki/Spelunky_2
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Spelunky 2 is a 2020 platform video game developed by Mossmouth and BlitWorks and published by Mossmouth. It is the sequel to Spelunky (2008) and was released for PlayStation 4 and Windows in September 2020, for Nintendo Switch in August 2021, for Xbox One and Xbox Series X/S in January 2022, and for PlayStation 5 in March 2025. The game received critical acclaim upon release.
+
+
+== Gameplay ==
+Like its predecessor, Spelunky 2 is a 2D platform game. In the game, the player assumes control of Ana, the daughter of the explorer from the first game, who visits the Moon in order to find her missing parents. Ana must navigate deadly caves filled with hostile enemies and traps to collect treasures. When Ana dies, she will have to start from the beginning of the game unless the player unlocked tunnels (shortcuts) and lose all of her items, and the game is rearranged through procedural generation to present new challenges and paths. There are also 19 other characters that can be unlocked from wooden coffin-shaped boxes found in each area. Each level also features an additional "backlayer" which can be explored by the player. New areas, such as the lava-themed Volcana, are introduced. The game features a new liquid physics system, in which fluid will flow naturally throughout a level. In addition, the game introduces new monsters, traps, and ridable mounts. The game also supports four-player online multiplayer, with the introduction of both cooperative and competitive multiplayer modes.
+
+
+== Plot ==
+The game's story concerns Ana Spelunky, the daughter of previous Spelunky protagonist Guy Spelunky, as she ventures to the Moon to find her missing parents. Like the first game, the story and aesthetics draw inspiration from several ancient cultures, featuring mythological figures like Olmec, Kali, Osiris, Lamassu, Tiamat, and Hundun.
+
+
+== Development ==
+Derek Yu, the creator of the first game, returned to develop the sequel. He partnered with BlitWorks, the developer of the PlayStation ports of the first game, for the game's programming. Yu needed to outsource the game's development to BlitWorks because of the sequel's larger scope. Yu intentionally ensured that the game would not be radically different from the first Spelunky as he felt that sequels should be "extensions of the previous games", and that fans of the first game would feel like they are playing a "continuation". New features were added to the game, while the original gameplay loop was refined and remixed. Yu strived to create a game world that feels like a "living, breathing place" in order to keep new players engaged. To achieve this, he added a lot of lore and backstory for the world and the characters. The story, which focuses on the themes of family and kinship, is mostly delivered through journal articles in the game's world and the Base Camp where Ana can interact with the characters she has encountered during her adventure.
+Sony Interactive Entertainment announced the game at Paris Games Week in October 2017. Initially set to be released in 2019, the game was released for PlayStation 4 and Windows in September 2020. The game was also released for Nintendo Switch on August 26, 2021, along with the first Spelunky game. A version for Xbox One and Xbox Series X/S was released on January 13, 2022, and also available as part of Xbox Game Pass. It was announced and released on the PlayStation 5 on March 6, 2025.
+
+
+== Reception ==
+
+The game received generally favorable reviews when it was released, according to review aggregator Metacritic, with an average score of 87. The PC version received universal acclaim, with an average score of 91. Writing for The A.V. Club, William Hughes praised how the game embraced the success of the original game and seamlessly incorporated new features such as the turkey mounting system. Chris Plante, in his review for Polygon, praised the game as an improvement on its predecessor and said "everything is just a little different, another stroke that proves perfection is imperfect". Mitchell Saltzman of IGN called the game "a masterpiece that improves upon its predecessor in ways I never even would have imagined".
+It was nominated for Best Indie at The Game Awards 2020.
+
+
+== References ==

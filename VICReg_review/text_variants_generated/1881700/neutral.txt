@@ -1,0 +1,13 @@
+**Undawn** is a free-to-play open-world survival RPG for mobile and PC developed by LightSpeed Studios and published by Level Infinite. Set four years after a worldwide disaster, the game places players in a shattered world overrun by infected, where survival depends on adapting to both environmental hazards and hostile survivors.
+
+Built in Unreal Engine 4, Undawn features a seamless open world with realistic details and changing weather conditions. Players must contend with rain, heat, snow, and storms while monitoring survival indicators such as Hunger, Body Type, Vigor, Health, Hydration, and Mood. These conditions change in real time as the environment shifts. The game combines PvP and PvE, creating a survival experience where players face threats from infected creatures as well as other humans.
+
+The game’s world spans a large map with distinct areas including plains, mines, deserts, swamps, and abandoned cities. These regions contain varied ecosystems with animals, plants, and weather systems. Exploration is a core part of the experience, with interactive environmental items, embattled strongholds, dynamic weekly events, and side quests offering additional activities. Players are expected to learn crafting, use different weapons, build shelters, and search for survival buddies while staying alert for infected attacks at any time.
+
+Undawn also includes a base-building system centered around a massive 1-acre manor. Players can build and customize their homebase to their own specifications, using a free building system with more than 1,000 types and styles of furniture and structures. Bases can grow over time, and players can form alliances with other outposts to defend against infected threats and keep their homes safe.
+
+Social and faction-based play are also important. Players can trade weapons and resources with others, customize their characters’ appearance and outfits, and join the Raven Squad. In the post-disaster world, survivors are divided into factions such as the Clowns, Eagles, Night Owls, and Reivers, which compete for territory. The game’s faction conflicts and survival struggles shape the experience across both day and night.
+
+Combat and equipment options are broad. In addition to standard weapons and armor, players can use melee weapons, drones, decoy bombs, auto turrets, and other tactical gear. More than 50 types of vehicles are available for supply runs and travel across the world, with environment-specific tactics playing a role in dealing with infected zones and other threats.
+
+Overall, Undawn presents a survival-focused open-world RPG built around exploration, resource management, base building, faction conflict, and combat in a post-apocalyptic setting.

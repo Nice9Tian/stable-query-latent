@@ -1,0 +1,29 @@
+Game: Wayfinder
+appid: 1171690
+Source: Wayfinder (video game)
+URL: https://en.wikipedia.org/wiki/Wayfinder_(video_game)
+Match score: 6.72
+Retrieved: 2026-07-04
+--------
+Wayfinder is a 2024 action role-playing video game developed and published by Airship Syndicate. The game was released in October 2024 for PlayStation 5, Windows, and Xbox Series X/S.
+
+
+== Gameplay ==
+Wayfinder is an action role-playing video game played from a third-person perspective. The game can be played solo, though it also supports three-player cooperative multiplayer. There are eight different characters for players to choose from, with each having their own unique skills and attack styles. Set in the world of Evenor, the game's story revolves around a group of "Wayfinders" who must find ways to stop the spread of an unknowable threat called the Gloom. The game includes three large open world zones, and randomized dungeons named "Lost Zones". Completing these zones will reward players with better gears and resources.
+
+
+== Development ==
+The game was developed by Airship Syndicate, the studio behind Ruined King and Darksiders Genesis. Originally, the game was set to be published by Digital Extremes and about 100 people worked on the game by March 2023. The game was released as an early access title on August 15, 2023. While it was envisioned as a free-to-play title when it was released in full, players must choose from one of four paid Founders' Pack in order to access the early access version. The publishing division of Digital Extremes was shut down in November 2023, with the rights to the game being transferred back to Airship Syndicate. Airship Syndicate briefly delisted the game from sales in early 2024 to remove microtransactions and the game's always-online requirement and introducing various gameplay adjustments as an attempt to move away from its original live service aspiration. The relaunched version, known as Wayfinder: Echoes, was made available for purchase again on June 11, 2024. It was released in full as a paid product on October 21, 2024 for PlayStation 5, Windows, and Xbox Series X and Series S.
+
+
+== Reception ==
+
+The PC version of Wayfinder received "mixed or average" reviews from critics, according to the review aggregation website Metacritic. Fellow review aggregator OpenCritic assessed that the game received fair approval, being recommended by 50% of critics.
+Shawn Robinson from Destructoid was surprised by the gameplay changes introduced by the team following the game's initial launch, adding that it was a worthy experience for players who were interested in action RPG or MMO games.
+
+
+== References ==
+
+
+== External links ==
+Official website

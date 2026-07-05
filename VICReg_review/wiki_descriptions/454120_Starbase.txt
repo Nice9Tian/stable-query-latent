@@ -1,0 +1,24 @@
+Game: Starbase
+appid: 454120
+Source: Starbase (video game)
+URL: https://en.wikipedia.org/wiki/Starbase_(video_game)
+Match score: 6.56
+Retrieved: 2026-07-04
+--------
+Starbase is an upcoming massively multiplayer online role-playing game for Microsoft Windows currently in development by Frozenbyte. It was revealed in May 2019 and released on Steam early access in July 2021. The game is voxel-based and set in space where players play as robots that can mine asteroids and design spaceships.
+
+
+== Gameplay ==
+The sees players controlling a humanoid robot within deep interstellar space, populated mostly by small asteroids and large scale space stations. The player starts out at a large space station in orbit of a gas giant planet where they can perform various jobs at the station and be paid in credits. Credits are the universal currency in Starbase that allows players to buy various goods and services including starship components and various types of equipment for their robot such as firearms, backpacks and armour.
+
+
+== Development ==
+Starbase was initially announced on Frozenbyte's official website on 28 May 2019 alongside an official trailer for the game. The game had been in the making for five years prior to the announcement and the game was initially described as a "massively multiplayer online game with gameplay focused on building, designing spaceships and stations, exploration, resource gathering, trading and combat."
+On 16 December 2020, Starbase began to seek out more users to participate in a closed alpha test after failing to release in 2020 as originally anticipated. Starbase was planned to be released as an early access title on 17 June 2021 but the release was delayed. The game was released on Steam early access on 29 July 2021.
+
+
+== References ==
+
+
+== External links ==
+Official website

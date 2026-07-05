@@ -1,0 +1,54 @@
+Game: Deceive Inc.
+appid: 820520
+Source: Deceive Inc.
+URL: https://en.wikipedia.org/wiki/Deceive_Inc.
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Deceive Inc. is a first-person shooter video game developed by Sweet Bandits Studios and published by Tripwire Interactive in 2023.
+
+
+== Gameplay ==
+Players control a spy competing against other teams of spies to retrieve a package.  Gameplay blends elements of hero shooters and extraction shooters.  Each player has a holographic projector that can hide their identity.  As long as they do not shoot, players can hide as a non-player character, and in some cases camouflage into an object.  Shooting or being shot reveals their identity. To retrieve the package, players need to disable vault terminals to open the map's vault.  To gather higher-tier resources, players can masquerade as a VIP, which allows them access to otherwise forbidden areas, though this stands out to other players.
+
+
+== Characters ==
+The game currently has eleven playable characters split into different classes that indicate their playstyle: 
+
+Chavez, a Vanguard who fights with a six-round revolver and an expertise that grants him invincibility for a short time.
+Ace, a Tracker who wields a sniper rifle and an expertise that allows her to trail enemy targets she aims at.
+Squire, a Vanguard who wields a silenced pistol and an expertise that allows him to scan the area around him for loot.
+Madame Xiu, a Scoundrel who uses a rapid-fire crossbow and has an expertise that lets her teleport to a selected character.
+Hans, a Disruptor who carries a hand-mounted shotgun with the ability to fire a large orb that slows enemies and disables their expertise.
+Cavaliere, a Tracker who wields dual pistols and the ability to track down enemies by investigating items they have recently interacted with.
+Larcin, a Scoundrel who has a pocket pistol and the ability to go invisible for short periods of time.
+Yu-Mi, a Disruptor who carries a slingshot that can fire special pellets that destroy enemy gadgets, disables their disguises and slows them down.
+Red, a Scoundrel who uses a classic assault rifle with an expertise that allows her to instantly regain her cover and debuff enemies.
+Sasori, a Tracker who uses darts and a wakizashi with the ability to coat them in crippling poison for a short time.
+Octo, a Disruptor who uses an intel-powered semi-automatic rifle and other intel-based abilities to get the upper hand on his opponents.
+Vigil, a Vanguard who wields a pistol and has the ability to use different gadgets that create smoke, detect enemies, or jam interactable objects.
+
+
+=== Classes ===
+The game's characters are split into four separate classes, which described in-game as follows:
+
+Vanguards are "well-rounded, self-reliant fighters that can get through the thick and thin".
+Trackers focus on "finding, singling out, and hunting down targets".
+Scoundrels are "sly, cunning, and use dirty tricks to get ahead of the competition".
+Disruptors are "experts at controlling space and disturbing the flow of fights".
+
+
+== Development ==
+Developer Sweet Bandits Studios is based in Quebec City, Canada. Tripwire Interactive released the game for Windows, PlayStation 5, and Xbox Series X/S on March 21, 2023.
+In December 2024, it was announced the game would no longer receive updates. The developer claimed they were unable to get Deceive Inc. "in a state in which it could thrive" and could no longer continue developing the game.
+
+
+== Reception ==
+On Metacritic, the PC and Xbox Series X/S versions received positive reviews, and the PlayStation 5 version received mixed reviews. Fellow review aggregator OpenCritic assessed that the game received fair approval, being recommended by 53% of critics. PC Gamer called it a "creative blend of sneaking and shooting that will have squads coming back for more".  NME said it is "a fantastic multiplayer game" that fans of the genre will enjoy despite its confusing progression system.  Shacknews called it "creative, both visually and conceptually" and "a blast to experience, just as long as you have friends at the ready".  Push Square said it is "a solid starting point with a great premise" but needs better gunplay and more content.
+
+
+== References ==
+
+
+== External links ==
+Official website

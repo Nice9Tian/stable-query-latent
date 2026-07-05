@@ -1,0 +1,51 @@
+Game: DYSMANTLE
+appid: 846770
+Source: Dysmantle
+URL: https://en.wikipedia.org/wiki/Dysmantle
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Dysmantle (stylized as DYSMANTLE) is a 2021 action role-playing, survival, and adventure video game developed and published by Finnish studio 10tons. The game was released in early access for Windows on November 6, 2020, before its full release for Windows and macOS on November 16, 2021. It was later released for PlayStation 4, PlayStation 5, Xbox One, Xbox Series X/S, Nintendo Switch, iOS, and Android.
+Set on a post-apocalyptic island, Dysmantle follows a survivor who emerges from an underground shelter into a world overrun by hostile creatures. The game centers on exploration, combat, crafting, and the destruction of environmental objects to gather resources. It received generally positive reviews from critics, who praised its gameplay loop, exploration, and progression systems, while noting that its narrative and survival mechanics were comparatively light.
+
+
+== Gameplay ==
+Dysmantle is played from a top-down perspective and combines elements of open-world exploration, action role-playing, survival, crafting, and adventure games. The player controls a survivor exploring a large island after emerging from an underground shelter. The main objective is to find a way to escape the island while uncovering its history and surviving hostile creatures.
+A central mechanic is the ability to destroy most objects in the environment. Objects such as furniture, fences, appliances, streetlights, and other structures can be broken down for crafting materials once the player has tools strong enough to damage them. Each breakable object has a health value and a required damage threshold, which encourages the player to upgrade tools and revisit earlier areas once stronger equipment is available.
+The game includes melee and ranged combat, dodging, traps, and limited-use equipment that refreshes when resting at campfires. Campfires also serve as rest points and upgrade locations. Unlike many survival games, Dysmantle does not rely on hunger or thirst meters, and weapons do not degrade through use. Progression is based on gathering resources, gaining experience, crafting permanent weapons and tools, cooking recipes for stat increases, unlocking new regions, and solving puzzles.
+Additional activities include farming, fishing, hunting, building outposts, activating towers, clearing areas of enemies, and exploring tombs and other underground locations. The game supports single-player and local cooperative multiplayer through shared or split-screen play.
+
+
+== Plot ==
+Dysmantle begins after the player character leaves an underground shelter following years of isolation. The outside world has collapsed, and the island is inhabited by hostile creatures rather than human survivors. The player must scavenge the remains of civilization, craft equipment, and explore the island in search of a way to escape.
+The story is delivered through exploration, radio broadcasts, notes, environmental details, and quests. Critics noted that the narrative is relatively light compared with the game's crafting and exploration systems.
+
+
+== Development and release ==
+Dysmantle was announced by 10tons in January 2019 as an open-world action role-playing game planned for PC, PlayStation 4, Xbox One, and Nintendo Switch. The game entered Steam Early Access on November 6, 2020.
+The full version was released for Windows and macOS through Steam and GOG on November 16, 2021. PlayStation and Xbox versions followed on January 19, 2022. The Nintendo Switch version was released on March 31, 2022. The iOS version was released on May 19, 2022, and the Android version was released on August 23, 2022.
+
+
+== Downloadable content ==
+Three paid downloadable content expansions were released for Dysmantle.
+Underworld was first released on Steam on August 24, 2022, and later released across Steam, GOG, PlayStation, Xbox, Nintendo Switch, Android, and iOS on November 17, 2022. The expansion adds a new underground open-world map, quests, enemies, weapons, recipes, and additional building options.
+Doomsday was released on April 19, 2023. The expansion adds a hidden archipelago, a new main questline, side quests, puzzles, enemies, tools, wearable items, trinkets, materials, and recipes.
+Pets & Dungeons was released on Steam on October 18, 2023, and later released for Xbox, PlayStation, iOS, and Android on December 13, 2023. It adds pet companions, dungeons, puzzles, combat challenges, pet-related items, new gear, and expanded open-world areas. 10tons described the expansion as the final chapter in the Dysmantle saga.
+
+
+== Reception ==
+
+Dysmantle received generally positive reviews from critics. On Metacritic, the PC version received a score of 77 out of 100, based on three critic reviews.
+Daniel Weissenberger of GameCritics scored the game 8 out of 10, praising the hand-crafted open world, progression curve, and the way destructible environments were tied directly into crafting and exploration. He wrote that the narrative was comparatively light but considered the core destruction and crafting loop satisfying.
+Peter Hunt Szpytek of GameSkinny scored the game 7 out of 10, describing its mechanics as somewhat shallow but praising its exploration, character progression, and gameplay loop. Campbell Bird of 148Apps gave the mobile version 4.5 out of 5 stars, praising the balance of its survival systems and noting that it avoided some common genre frustrations, such as hunger and thirst meters or weapon durability.
+
+
+== Sales ==
+By May 2025, Dysmantle had sold over two million copies across all platforms. 10tons announced the milestone alongside a limited-run physical edition for PlayStation 5 and Nintendo Switch.
+
+
+== References ==
+
+
+== External links ==
+Official website

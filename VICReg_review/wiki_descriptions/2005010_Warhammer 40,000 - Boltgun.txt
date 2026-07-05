@@ -1,0 +1,36 @@
+Game: Warhammer 40,000: Boltgun
+appid: 2005010
+Source: Warhammer 40,000: Boltgun
+URL: https://en.wikipedia.org/wiki/Warhammer_40,000:_Boltgun
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Warhammer 40,000: Boltgun is a 2023 first-person shooter video game developed by Auroch Digital and published by Focus Entertainment. It is set in the Warhammer 40,000 universe. It was released on May 23, 2023 for Windows, Nintendo Switch, PlayStation 4, PlayStation 5, Xbox One and Xbox Series X/S. A sequel, Warhammer 40,000: Boltgun 2, is in development.
+
+
+== Gameplay ==
+Warhammer 40,000: Boltgun is a single-player first-person shooter in which the player controls a Space Marine battling against Chaos Space Marines and Chaos daemons. Its gameplay and artistic style are heavily influenced by first-person shooters from the 1990's such as Doom with some promotional material referring to the game as a "boomer shooter", but the developers have highlighted their inclusion of modern gaming features like the use of modern enemy behaviour AI.
+
+
+== Story ==
+Taking place on the Forge World Graia several years after the events of Warhammer 40,000: Space Marine, the player takes the role of Malum Caedo, a Sternguard Veteran Space Marine of the Ultramarines Chapter sent by the Inquisition to Graia on a mission of great importance. Since the Ork and Chaos invasions from years before, the Inquisition has kept Graia closely watched for further threats. Inquisitor Seibel of the Ordo Malleus reveals that rogue Techpriests of Graia have experimented with the remains of the late Inquisitor Drogan's Power Source, and the experiments have resulted in the opening of a warp rift that have allowed the Forces of Chaos to once again invade the Forge World.
+Malum Caedo and his squad are tasked with retrieving the Power Source with the aid of a Servo Skull belonging to Drogan. When the Ultramarines make planetfall, their drop pods are severely damaged during the descent and crash land on the planet's surface, leaving Malum as the sole survivor. As Malum fights his way through the Chaos Forces, it is discovered that the enemy's leader, a Chaos Sorcerer known as Tumulus Samael of the Black Legion, seeks the power source for his nefarious plans. The sorcerer has already managed to obtain information to the location of the power source fragment and Malum races to stop him.
+When Malum reaches the vault containing the power source, Tumulus Samael appears and gloats that he has already taken the power source. The sorcerer and his minions attack the Inquisitor's Ship above Graia and use the power source to enlarge the warp rift that threatens to engulf Graia and the entire sector. Malum fights his way through the space station before finally reaching Tumulus Samael, and after a gruelling fight, manages to slay the sorcerer. Inquisitor Seibel arrives and retrieves the power source. Without the power source, the warp rift begins to close, but Inquisitor Seibel warns that there are still many chaos forces left on Graia, and Malum prepares for the trials he has yet to face.
+
+
+== Development ==
+The game was announced at Warhammer Skulls 2022 on 1 June 2022. On 11 April 2023 it was announced via the Warhammer Community page that the game is set to release on 23 May 2023, and that Rahul Kohli will voice the protagonist Malum Caedo.
+
+
+== Reception ==
+
+On Metacritic, Warhammer 40,000: Boltgun received positive reviews on Windows and Xbox.  On Switch and PlayStation 5, it received mixed reviews.
+PC Gamer praised the soundtrack as feeling true to the setting, "Both the occasionally haunting atmosphere and breakneck combat are reinforced by an incredible arrangement of sludgy guitars, thumping industrial beats, and monastic chants and harpsichords". GameSpot liked Auroch Digital's interpretation of the titular weapon, writing that "[t]he Bolter roars with an emphatic racket, and each pull of the trigger packs an almighty punch, ferociously propelling these explosive rounds". While criticizing Boltgun's level design as being confusing, Destructoid enjoyed the power fantasy, "There are many first-person shooters out there with a philosophy built around making you feel powerful, but I don't think any have nailed it quite like Boltgun". Ars Technica reviewer noted that the game has "zero" ludonarrative dissonance.
+IGN disliked the enemy AI, saying that it made certain encounters trivial, "For many people, especially challenge-seekers, the braindead AI is where this game will risk losing them". Polygon wrote that the visuals captured the essence of 40K, "The abyss of Chaos looks downright disturbing, even captured through an old-school lens".
+
+
+== Sequel ==
+On May 22, 2025, Warhammer 40,000: Boltgun 2 was announced with a gameplay trailer. It is set to be released in 2026 by Big Fan Games, a label of Devolver Digital.
+
+
+== References ==

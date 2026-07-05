@@ -1,0 +1,45 @@
+Game: Dark and Darker
+appid: 2016590
+Source: Dark and Darker
+URL: https://en.wikipedia.org/wiki/Dark_and_Darker
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Dark and Darker is a multiplayer action role-playing game developed by Ironmace. Set in dark fantasy, the game was released into early access on August 7, 2023.
+
+
+== Gameplay ==
+Dark and Darker is a first-person hybrid between a Dungeon crawl and a role-playing game with a dark medieval fantasy setting. The game blends elements from role-playing systems such as Dungeons & Dragons, roguelikes, and multiplayer video games such as DayZ, and has been described by Polygon as belonging to the extraction shooter genre.
+Players can select one of ten character classes (fighter, barbarian, rogue, ranger, wizard, cleric, bard, warlock, druid, and sorcerer). The game features PvPvE (player versus player versus environment) gameplay, where players engage in combat against monsters to obtain valuable items while remaining vigilant against potential threats from other players. The environment gradually becomes more dangerous, eventually killing all remaining players who have not escaped the playable area. Surviving a match allows players to extract loot for use in future matches. If the player is killed, they lose all of their possessions and equipment. If the player successfully navigates through the dungeon and survives, they can store their acquired loot in a designated storage area for future use or potential sale. The game allows players to exchange items amongst themselves using in-game currency or other valuable items.
+Several updates during the early access phase of the game have introduced new features, including a marketplace for selling/buying in-game items, gear-based matchmaking to balance PvP interactions, a religion system that grants in-dungeon bonuses, and multiclassing.
+
+
+== Development and release ==
+South Korean company Ironmace developed Dark and Darker. A demo was first released in February 2023 as an alpha playtest during Steam Next Fest. Developer Ironmace expected the game to release into early access in April or May, with a full launch in Q4. However, that release was delayed on May 9 due to a legal dispute with Nexon.
+The game was released into early access on August 7, 2023, through Chaf Games and Ironmace's own website. Later that month, the developer announced the game would be coming to mobile devices through a deal with PUBG Mobile-maker Krafton.
+On January 4, 2024, the Game Rating and Administration Committee rated Dark and Darker as 19+ rating. In March 2024, Ironmace announced that Dark and Darker would release on the Epic Games Store.
+In June 2024, the game added free-to-play accounts, though players can upgrade to a paid account to unlock more features and exclusive items. Steam users have criticized this free to play option, calling it a demo.
+In December 2024, the game allowed "Legendary Status" to be purchased via a DLC, instead of by the game's in game currency known as Redstone Shards.
+
+
+=== Former mobile version ===
+A mobile version of the game (iOS and Android), developed by the Korean game company Bluehole subsidiary of Krafton, was announced for early access release in Canada and the US on February 4, 2025. On the release day, the game topped the North American iOS App Store RPG chart.
+A few months later, the mobile version was changed to a completely new title called Abyss of Dungeons, described to be an evolution of the former mobile version of Dark and Darker.
+
+
+== Legal issues ==
+On February 16, 2023, it was reported the South Korean video game company Nexon alleged that Dark and Darker had similarities to an ongoing development of a game that was tentatively titled P3 internally. It alleged that P3 assets were leaked onto an external server by developer Ju-Hyun Choi (also known as SDF on The Dark and Darker Discord), project team leader for P3 and the latter suggested that their teammates quit Nexon and work on a game similar to P3. Choi was fired in August 2021 and was part of half of the twenty-member P3 project team who would subsequently join Ironmace. Ironmace was founded in October 2021 by Terence Park Seung-ha (also known as Terence on the Dark and Darker Discord), who was also a member of the P3 project team.
+Since the disbandment of the P3 development team, the core of the development work was reworked into another game tentatively titled P7. Ironmace denied the allegations, stating that the game genre could not be copyrighted and the game was created from ground up using Unreal Engine assets and handmade code.
+On March 8, 2023, the police raided Ironmace's office in Seongnam in search of evidence over the allegations. On March 24, 2023, Nexon issued a cease and desist notice to Ironmace to pause development of Dark and Darker in relation to the allegations. On March 26, 2023, the game was delisted from the Steam online game store after Nexon filed a DMCA notice.
+However, on April 14, 2023, Ironmace announced its fifth public playtest of the game, with the game and subsequent patches distributed through BitTorrent links instead of Steam. On the same day, Nexon filed a copyright infringement lawsuit against Ironmace in the United States, in response to which Ironmace claimed that the issue lies between Nexon and just one Ironmace employee and it should be settled in South Korea.
+On April 20, 2023, Ironmace requested that Steam reinstate Dark and Darker on its store, claiming that the copyright infringement claims by Nexon were "meritless." On August 17, 2023, the American court case was dismissed. As of June 7, 2024, the game is back on Steam again as free-to-play.
+In February 2025, a Seoul court determined that Ironmace did not infringe on Nexon's copyright, but did infringe on trade secrets by leaking internal data. As such, Ironmace was ordered to pay ₩8.5 billion Won (roughly $5.9 million) in damages.
+On June 17, 2025, Epic Games sent out an email to owners of the game saying, "We removed Dark and Darker from sale on the Epic Games Store on March 5 in consideration of a court decision in Korea between Nexon and the game's publisher, Ironmace. On November 1, 2025, we will be removing Dark and Darker from your library, at which point it will no longer be playable via the Epic Games Store." Refunds will be issued to anyone who purchased the Legendary Status upgrade, but not the game's premium currency.
+
+
+== References ==
+
+
+== External links ==
+Official PC version website
+Official Abyss of Dungeons website (former mobile version)

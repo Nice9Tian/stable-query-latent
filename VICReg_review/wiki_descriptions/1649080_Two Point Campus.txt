@@ -1,0 +1,33 @@
+Game: Two Point Campus
+appid: 1649080
+Source: Two Point Campus
+URL: https://en.wikipedia.org/wiki/Two_Point_Campus
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Two Point Campus is a business simulation game developed by Two Point Studios and published by Sega. It is a successor to Two Point Hospital (2018) and tasks the player with building and managing a university campus. The game was released for Linux, macOS, Nintendo Switch, PlayStation 4, PlayStation 5, Windows, Xbox One and Xbox Series X/S on 9 August 2022. The game received positive reviews upon release. A successor, Two Point Museum, was announced in August 2024 and released in March 2025.
+
+
+== Gameplay ==
+
+In Two Point Campus, the player must build and manage a university campus. The player must build various educational rooms such as classrooms, lecture halls and libraries, as well as organizing different cultural events and extra-curricular activities. The player also must appoint staff, such as lecturers, teaching assistants and janitors.
+In addition to maintaining the operation of the campus, the player will also need to take care of the well-being of the students. If a student enjoys their nightlife too much, they may not attend classes in the following day. The pupils fall into different archetypes, and their personalities are procedurally generated. Unlike Two Point Hospital, in which patients leave the hospital once they are cured, the students in Campus will stay for a much longer time. Each in-game year lasts for around 20 minutes. Graduation ceremonies will be held, and a new cohort of students will arrive. These students would interact with each other and develop relationships with other characters in the game. Each student also has their own specific needs, and they will either succeed, fail or drop out of school depending on how they were guided during their time in the campus.
+Like Two Point Hospital, the game is set in Two Point County, and some characters from Hospital also return in Campus. At the beginning of the game, the player is given a plot of land and players can freely plan out and build the campus, lay down paths, and place decorations both inside and outside of the campus. The game features a sandbox mode where the players can build their school freely. A clean environment would attract more students, which would then bring the player more income. Financial management remains an important gameplay pillar, as constructing new buildings and maintaining the happiness of the students would all cost money. As with Hospital, the game features a light-hearted tone and allows players to set up various exotic courses such as "Knight School", in which students study ancient literature and learn to become a medieval knight.
+
+
+== Development ==
+Two Point Campus is the successor of Two Point Hospital and the second game developed by British developer Two Point Studios. The studio was inspired by Animal House, Pitch Perfect, Grease and Harry Potter. The team added a "trait" system, which allows students to form relationships. The team believed that by allowing players to see how the students evolve throughout the in-game academic years, they will start to care for them. The team was influenced by other simulation games, such as The Sims series. According to game director Gary Carr, "the byproduct we want is when you say goodbye to your first enrollment, if we can make you have a little tear in your eye as you're waving them off into the great wide world, that's awesome". The game features city-building game mechanics more extensively than Hospital as the team wanted to cater to players who are more interested in building creatively than actually managing the campus.
+Two Point Campus was announced on 10 June 2021, though it was leaked via the Xbox store on 31 May. Two Point Studios invited the community to provide input for the game through the Games2Gether program, which was created by fellow Sega development studio Amplitude. Two Point Campus was originally set to be released for Linux, macOS, Nintendo Switch, PlayStation 4, PlayStation 5, Windows, Xbox One and Xbox Series X and Series S on 17 May 2022. Two Point Studios announced in April 2022 that the team had delayed the game's release date to 9 August 2022.
+Two Point Studios supported the game with several downloadable content packs, each introducing new courses, maps, student types, and decoration items. The first pack, titled Space Academy was released on 6 December 2022. The second pack, School Spirits, was released on 15 March 2023. The third DLC pack, titled Medical School, was released on 17 August 2023.
+
+
+== Reception ==
+The game received generally positive reviews upon release, according to review aggregator website Metacritic. The game was nominated for "Best Sim/Strategy Game" at The Game Awards 2022, and British Game at the 19th British Academy Games Awards.
+It was the second best-selling boxed game in the UK in its week of release, behind Horizon: Forbidden West. By September 2022, the game had attracted more than 1 million players across all platforms.
+
+
+== References ==
+
+
+== External links ==
+Official website

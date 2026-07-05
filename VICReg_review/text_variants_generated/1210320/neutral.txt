@@ -1,0 +1,9 @@
+Potion Craft: Alchemist Simulator is a sandbox alchemy game with a distinctive visual style inspired by medieval manuscripts and medical books. It focuses on hands-on, physical interactions with ingredients and equipment, and gives players a range of approaches for completing tasks and running their potion shop.
+
+In the game, players work with a variety of ingredients, including leaves, flowers, berries, roots, fruits, minerals, and mushrooms. Potion-making involves planning a recipe, grinding ingredients in a mortar and pestle, mixing them in a cauldron, heating the coals, boiling and stirring, and adding a base such as water or oil. The game emphasizes learning the process first and then mastering it through experimentation.
+
+A central system is the Alchemy Map, where players carefully plan routes to combine different effects and discover new recipes. The game also encourages practical judgment, since not every potion makes sense for every customer.
+
+Each day, townsfolk visit the shop seeking help with their problems, and players choose what to sell them. These choices have consequences and can affect relationships, wealth, and influence. Players may attract guilds, befriend or oppose notable figures, and shape the future of the town over time. The game also supports roleplaying different character styles, from a noble artisan to a greedy weasel or an occult dark master.
+
+Ingredients can be purchased from traveling merchants, with haggling offering a chance to reduce the cost, or they can be grown by the player. On top of potion crafting and shop management, the game includes customization options for potions: players can change bottle shape, label type, icon, colors, name, and label description, then arrange the finished potions on shelves and tables in the shop.

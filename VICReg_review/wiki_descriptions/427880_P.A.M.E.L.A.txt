@@ -1,0 +1,33 @@
+Game: P.A.M.E.L.A.
+appid: 427880
+Source: P.A.M.E.L.A.
+URL: https://en.wikipedia.org/wiki/P.A.M.E.L.A.
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+P.A.M.E.L.A. is a science fiction first-person shooter open world survival horror video game by Canadian company NVYVE Studios for Microsoft Windows. The game takes place in a science fiction, utopian city called Eden, that includes areas such as malls, courtyards, and residential condos. The gameplay is that of an open world sandbox, and contains no set path for the player to follow, forcing the player to find their own way to survive. The game also contains role-playing game-like progression, and a story to be discovered in the game world.
+The game's central theme revolves around the darkness created by mankind's misguided pursuit of perfection, and the cost it has to the people living in the game world. The player assumes the role of a Sleeper, woken up from cryosleep by Eden's Artificial Intelligence Pamela. Together they must survive through and discover what happened to bring about the fall of the floating utopia.
+P.A.M.E.L.A. was Greenlit on Steam by the community on October 1, 2015, after receiving a significant amount of press coverage. The game was released on 9 March 2017 in an Early Access state on Steam. On 18 June 2020 the game left early access as version 1.0 was released.
+
+
+== Gameplay ==
+In P.A.M.E.L.A., the player wakes up from cryosleep in Eden, a utopian city. Events have unfolded in the city which caused the population to be infected with a disfiguring disease, making them unpredictable and sometimes hostile to the player. The player must scavenge for supplies such as food and water to avoid starvation and dehydration, as well as find equipment to aid them in combat. The world includes a full day/night cycle, which forces the player to adapt their strategies depending on the time of day.
+Eden contains many different areas, including residential apartments, shopping areas, and outdoor courtyards. There are also several NPC factions in the game, which utilize a personality-based AI system to result in various behaviors towards each other and the player. The player is also assisted by Pamela, Eden’s AI overseer, who can aid the player in combat and exploration.
+
+
+== Development ==
+P.A.M.E.L.A.’s development began in late 2014, with the Unity 5 game engine.
+The development team initially consisted of 4 team members. In March 2015, the game was announced at the Game Developers Conference, accompanied by an announcement trailer. In September 2015, the development team size had increased to 6, and a new trailer was released which revealed new areas and NPCs.
+On September 21, 2015, P.A.M.E.L.A. was posted on Steam Greenlight. After reaching the #1 ranking on the service within 48 hours, the game was Greenlit ten days later on October 1, 2015
+The game was still in early access phase as of August 2019 with promises of groundbreaking features such as "story missions" and "bug fixes", this update came in the form of an update article released in August, a mere five months from their previous update, and a strong indication that the game will be released "before the end of 2018."[6]
+On June 18, 2020, version 1.0 of P.A.M.E.L.A. was released on Steam and GOG. “We are all very excited to finally share with our community the full release and story mode for P.A.M.E.L.A. Over the years, all of the support and positive feedback from our fans has encouraged us to make the best full release that we could make and we could not thank you all enough. We cannot wait for everyone to get to experience this story mode full access version of P.A.M.E.L.A.” said Marvin Maalouf, President and CEO of NVYVE Studios.
+
+
+== References ==
+
+
+== External links ==
+Official website
+P.A.M.E.L.A. Greenlight Page
+P.A.M.E.L.A. Steam Page
+P.A.M.E.L.A. GOG Page

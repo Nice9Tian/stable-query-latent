@@ -1,0 +1,82 @@
+Game: The Callisto Protocol
+appid: 1544020
+Source: The Callisto Protocol
+URL: https://en.wikipedia.org/wiki/The_Callisto_Protocol
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+The Callisto Protocol is a 2022 survival horror game developed by Striking Distance Studios and published by Krafton. It was released for PlayStation 4, PlayStation 5, Windows, Xbox One, and Xbox Series X/S on December 2, 2022. The game was directed by Dead Space series creator Glen Schofield and is considered a spiritual successor to the series. 
+The story follows Jacob Lee (Josh Duhamel), a starship captain who survives a crash landing on the Jovian moon Callisto, only to be captured and incarcerated against his will in a high-security prison. He is subsequently forced to fight for survival when a mysterious illness sweeps the prison, and gradually learns the dark secrets of his captors. Gameplay has players exploring a series of levels, gathering resources and collecting data logs while fighting off infected prisoners.
+Development of The Callisto Protocol began with the formation of Striking Distance Studios in June 2019. The game received mixed reviews from critics and failed to meet the sales expectations of Krafton.
+
+
+== Gameplay ==
+In The Callisto Protocol, players assume the role of Jacob Lee from a third-person perspective. Jacob's health is indicated by an implant on the back of his neck called a "C.O.R.E. Device". Health can be replenished with injectable packs found throughout levels. Jacob can use weapons to combat enemies, as well as a melee system to dodge enemy attacks while looking for openings to strike and kill them. Both combat styles can be mixed up, providing greater variety when facing enemy types. Jacob can collect and review audio logs during gameplay.
+While enemies do take great damage from headshots, they are not guaranteed to be killed by removal of their head, therefore dealing damage to both the limbs and head as well as exposing and destroying their tentacles before they mutate is mandatory to dispatching them.
+
+
+== Plot ==
+In 2320, Jacob Lee (Josh Duhamel) and Max Barrow (Jeff Schine) are contract freight transporters working for the United Jupiter Company (UJC). The two decide to retire after ferrying one last shipment between Europa and the UJC-operated Black Iron Prison on Callisto. Shortly after leaving Black Iron in their ship, the Charon, they are boarded by the Outer Way, a terrorist group purportedly responsible for a massive biological attack on Europa, and the ship crash-lands back on Callisto. Max is killed, leaving Jacob and Outer Way leader Dani Nakamura (Karen Fukuhara) as the only survivors. They are recovered by Black Iron Prison security head Captain Leon Ferris (Sam Witwer) and incarcerated on the orders of Warden Duncan Cole (James C. Mathis III). After an intake process, Jacob awakens to find the prison overrun by hostile "biophages", inmates afflicted with an unknown disease. He encounters Elias Porter (Zeke Alton), a prisoner who claims to have an escape plan. After freeing Elias, Jacob fights and leaves Ferris to die at the hands of biophages.
+Elias convinces Jacob to locate a hacker in the Special Housing Unit to summon a ship for their escape. The hacker is revealed to be Dani, but she refuses to join them. On their way to the hangar, Jacob and Elias are intercepted by a partially-infected Ferris and are ejected onto Callisto's surface; Elias suffers fatal injuries in the process. Dani appears in a half-track and recovers Elias' memories of Black Iron and decides to assist Jacob as the biophages mutate and become more dangerous. After Dani fails to find evidence of the UJC illegally smuggling bioweapons in the wreckage of Charon, the two make it to the hangar where they summon a ship. Cole intervenes and shoots down the ship, causing it to crash into and destroy the hangar.
+With their method of escape gone, Jacob and Dani decide to confront Cole. The two make their way through the ruins of Arcas, Callisto's original colony before it was abandoned, and the Black Iron Prison built over it. They find a lab holding a dead creature that the original Arcas miners unearthed, and learn the biophages originated from larvae that were found in the creature. Seeing its potential for accelerating evolution, the UJC harvested the creature's larvae and began experimenting with it on humans, causing an outbreak in Arcas; one biophage, Subject Zero, retained his intelligence before the UJC destroyed the colony. After Jacob and Dani fend off an encounter with Ferris, Dani becomes infected. Returning to Black Iron, Jacob is knocked out by a security robot and imprisoned.
+Jacob is freed by the prison doctor, Dr. Caitlyn Mahler (Louise Barnes), who reveals that Cole ordered her to experiment on Black Iron prisoners to find a subject compatible with the alien infection and replicate Subject Zero with a Subject Alpha. Mahler tells Jacob that Dani can be cured by extracting the Alpha's DNA to synthesize an antidote. When Jacob inquires about the Europa outbreak, Mahler admits that a diluted version of the infection was released; the incident inspired Cole to initiate the Callisto Protocol, causing an outbreak in Black Iron by releasing Mahler's test subjects to create the Alpha. Mahler provides Jacob access to Dani's memories, where Jacob learns that Dani's sister was killed in the Europa outbreak. He recovers his own memories showing he was aware that the UJC was using his ship to smuggle larva samples, but he ignored this due to the payments he was receiving.
+Jacob confronts Cole, who is revealed to be a member of the secretive group called Kallipolis, which is attempting to find a way to advance human evolution. Cole then pits Jacob against Ferris, now mutated into the Alpha. Jacob defeats Ferris and extracts his DNA. Cole attempts to convince Jacob to turn over the DNA, asserting its value in safeguarding humanity's survival, but Jacob uses it to cure Dani attackers. Enraged, Cole activates the prison's self-destruct countdown and boasts that he has gathered enough data to carry out the Protocol. Jacob puts Dani in the last remaining escape pod along with an alien larva sample, giving her the evidence she needs to expose the UJC's experiments. Despite Dani’s protests, Jacob launches her escape pod and stays on the moon out of guilt for being an accessory to the outbreaks on Europa and Callisto. Mahler contacts Jacob and informs him of a possible escape as the self-destruct was temporarily postponed, before he is seemingly attacked by Ferris followed by fade to black. 
+
+
+=== Final Transmission ===
+Shortly after the end of the main game, Jacob wakes up in the middle of Black Iron, having lost his memories on the outcome of his apparent encounter with Ferris. Mahler then contacts Jacob and informs him that there is a transport ship they can use to escape the prison, but they must recover her data drives first, as they contain the necessary evidence to expose Cole and Kallipolis’ crimes. After recovering the drives, Jacob makes his way through the prison, but notes that the layout is different from what he remembers and he suffers hallucinations. As he nears the transport, he encounters Mahler's escaped biomechanical experiments combining security robots with biophage flesh, one of which kills Mahler. Her infected corpse is revived as a biophage, which Jacob is forced to fight and kill. Jacob then finally reaches the escape ship, though he is confused that it is the Charon, having been inexplicably rebuilt. Regardless, Jacob boards the Charon and uses it to escape Callisto.
+In reality, it is revealed that Jacob's escape was actually a dying dream. He had been mortally wounded after helping Dani escape, with Mahler recovering his body and keeping him on life support so that she can use his implant's connection with Dani's to transmit all of her evidence and research data. Once the data is finished transmitting, Jacob finally succumbs to his wounds and Mahler accepts her own imminent death as Black Iron collapses.
+
+
+== Development ==
+The origins of The Callisto Protocol began with the formation of Striking Distance as a studio within PUBG Corporation (now PUBG Studios) in June 2019, helmed by Glen Schofield, who had previously co-created the Dead Space series at Visceral Games. The studio was created to expand the PUBG: Battlegrounds universe by creating a narrative driven game. Schofield said that when he met with PUBG Corporation where they explained their goal to expand the PUBG narrative, he already had the concept for The Callisto Protocol in mind and presented that to them and worked with them to fit his idea into their universe. However, by May 2022, Schofield stated that the game had grown to be its own story and is no longer connected to PUBG, though there remain small nods to the latter.
+Schofield wanted to keep the game grounded in reality to some degree, and thus selected a potentially human-colonizable location like Callisto as the setting. The moon has been theorized to have a subsurface ocean of water, which Schofield believed could offer a mystery to tie into the game.
+
+Others working on the game included Steve Papoutsis, who co-developed the Dead Space series and led the series following Schofield's departure from Visceral; Scott Whitney, a designer on the Dead Space series; and Christopher Stone, the animation director for the former series. Of the 150 employees of Striking Distance, Schofield said that about 25 to 30 former coworkers from Visceral Games and Sledgehammer Games are part of Striking Distance worked on The Callisto Protocol. Several journalists commented on thematic and gameplay similarities to the Dead Space series. The game appears to include the same type of diegetic interface that Dead Space had used by a holographic indicator on the back of the prisoner's neck that indicates their health status and other attributes to the player. Schofield said that the comparisons to Dead Space reflect on his style of game, and while he still wanted to create something different, the allusions and inspiration from Dead Space fell out naturally from his creative approach. Josh Duhamel provides the voice and motion capture for main protagonist Jacob Lee. At Comic-Con 2022, it was revealed that Karen Fukuhara and Sam Witwer joined the cast. Fukuhara plays Dani Nakamura, leader of the resistance group The Outer Way, while Witwer portrayed Leon Ferris, the captain of the Prison Guard. In addition to providing voices, the cast performed with motion capture technology. Fukuhara commented that, prior to acting in motion capture, the development team would "show us what the room would look like on artwork that they had done". 
+The Callisto Protocol was designed for the PlayStation 5 and Xbox Series X/S, in addition to other platforms. Schofield stated his intent was "really trying to make the scariest game on next-gen platforms" in the same way that Dead Space had been considered on its release for the PlayStation 3 and Xbox 360. He stated that the game takes advantage of new lighting techniques and 3D audio systems offered by the new consoles, as well as haptic feedback that the PlayStation 5's DualSense controller provides, to create deep immersion for the player in the game. Striking Distance Studios Chief Technical Officer Mark James said the game was developed with "maximum realism" in mind. It was developed using Unreal Engine 4. Krafton and Striking Distance partnered with Skybound Entertainment for the game's distribution, as Skybound saw potential for expanding the concept through other media. 
+In September 2022, Schofield released a tweet outlining development on the game that some interpreted as a glorification of crunch culture. This led to online backlash, including from Bloomberg reporter Jason Schreier, who had reported on crunch culture in the past. Schofield later deleted the tweet and issued an apology. In an interview with Inverse, Schofield took responsibility for crunching his staff, and promised that crunch is "not a thing that happens in our next project or any future project."
+The game's development and marketing costs was reported to be 200 billion won (£132m/ US$161.5m).
+Following the release of The Final Transmission DLC in June 2023, Striking Distance announced in August it would lay off 32 employees to "realign the studio’s priorities." 
+In 2024, Schofield revealed that the game had been released three months sooner than had been planned due to demands from Krafton, leading to the removal of four bosses and two enemy types from the game. Development was further affected by the COVID-19 pandemic in 2020 and the resignation of 49 developers in 2021. 
+In February 2025, it was reported that most of the studio's developers had been laid off.
+
+
+== Release ==
+On October 27, 2022, the Japanese release was canceled when the game did not get a CERO rating due to the game's violent content and the developer refused to make the necessary changes. The game was released for PlayStation 4, PlayStation 5, Windows, Xbox One, and Xbox Series X/S on December 2, 2022. 
+Striking Distance released the story-based DLC The Final Transmission on PlayStation on June 27, 2023 and PC and Xbox on June 29. The add-on picks up the story following the game's main campaign.
+
+
+== Related media ==
+
+
+=== Prequel podcast ===
+A six-episode prequel fiction podcast titled The Callisto Protocol: Helix Station was released from November 3 to December 1, 2022. Starring Gwendoline Christie and Michael Ironside, it features Christie as Percy, a professional skiptracer hired to track down an escaped criminal inside a now derelict space station in which she used to live alongside her partner Kane (voiced by Ironside), only to encounter dangerous life forms.
+
+
+=== Spin-off game ===
+A spin-off game titled [REDACTED] was released on October 31, 2024 for Windows, PlayStation 5 and Xbox Series X and Series S. It is a roguelike video game played from an isometric perspective. In the game, the player assumes control of a prison guard in Black Iron who must reach the last escape pod while battling against infected inmates.
+
+
+== Reception ==
+
+
+=== Critical reception ===
+
+The Callisto Protocol received "mixed or average" reviews from critics, according to review aggregator website Metacritic.
+Several publications noted that The Callisto Protocol suffered from stuttering and performance issues, primarily affecting the PC version; as a result, the game received "mostly negative" user reviews on Steam upon release. The same day, the game received an update that alleviated shader compilation stutter, with further optimization patches being promised by the developers. Glen Schofield later said that the technical issues were the result of a "clerical error" from the game's development team.
+PCGamesN was highly positive of the game, feeling it excelled at balancing horror and action, though felt that the story was unremarkable.
+
+
+=== Sales ===
+At release, The Callisto Protocol reached seventeenth place in sales in the United States. In the United Kingdom, the game was the sixth best-selling retail game in its week of release. The game failed to meet the sales expectations of Krafton, who expected sales of five million units, but lowered their estimate to reaching two million units sold within 2023; in response, investors in Krafton lowered their target stock prices.
+
+
+=== Awards ===
+The Callisto Protocol was nominated for two awards at the 21st Visual Effects Society Awards, as well as a nomination for Outstanding Achievement in Art Direction at the 26th Annual D.I.C.E. Awards.
+
+
+== References ==
+
+
+== External links ==
+Official website

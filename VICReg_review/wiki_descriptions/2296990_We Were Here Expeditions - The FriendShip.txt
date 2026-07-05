@@ -1,0 +1,66 @@
+Game: We Were Here Expeditions: The FriendShip
+appid: 2296990
+Source: We Were Here (series)
+URL: https://en.wikipedia.org/wiki/We_Were_Here_(series)
+Match score: 6.72
+Retrieved: 2026-07-04
+--------
+We Were Here is a series of cooperative first-person adventure video games, created by the Dutch studio Total Mayhem Games.
+
+
+== Premise and gameplay ==
+The We Were Here games are cooperative first-person adventure games with puzzle elements. In each game there are two players who take on a different role. They must work together to solve puzzles, generally while in different rooms and unable to see the other. Each player has a walkie-talkie to communicate with the other, which is what allows them to solve the puzzles they face.
+
+
+== History ==
+
+The first We Were Here was developed by the Dutch studio Total Mayhem Games as part of a student project while studying at the Rotterdam University of Applied Sciences. It was a student entrant for the Independent Games Festival 2018, and won the Best Indie Game Award in 2017 at the Indigo showcase in the Netherlands. It was released for free on Steam in February 2017.
+The original We Were Here was first released on PC on February 3, 2017, with the sequel We Were Here Too releasing on February 2, 2018. An Xbox One version of We Were Here was released in September 2019, and We Were Here Too for Xbox One was released on October 2 the same year. The third game We Were Here Together was released on PC on October 10, 2019, and Xbox One on June 5, 2020.
+All three games were released on PlayStation 4 on February 23, 2021. We Were Here was released as a free to download on PlayStation Store from February 9 until February 22, as part of the release date announcement.
+
+
+=== We Were Here (2017) ===
+We Were Here is a cooperative first-person puzzle video game developed by Total Mayhem Games from The Netherlands, released for free on February 3, 2017, on Steam for PC. Two players take the role of Antarctic explorers who have become split up in an old castle, called Castle Rock. They must solve puzzles by communicating via walkie-talkies. It was released on Xbox One on September 16, 2019, and was featured in Xbox Games with Gold. The game also released on Nintendo Switch on September 18, 2025, and can be played on the Switch 2 through backwards compatibility.
+
+
+=== We Were Here Too (2018) ===
+We Were Here Too was the first commercial release by Total Mayhem Games. The gameplay is similar to the original We Were Here, with two players who are split up and must solve puzzles by communicating via walkie-talkie. The game was released on February 2, 2018, on Steam for PC, and on October 2, 2019, for Xbox One. It was also released on Nintendo Switch on September 18, 2025, and can be played on the Switch 2 through backwards compatibility.
+
+
+=== We Were Here Together (2019) ===
+We Were Here Together was released on October 10, 2019, on Steam for PC, and on June 5, 2020, for Xbox One. In a twist on the series' usual gameplay, players spend some of the game in the same area together, where they can both visit the same locations. There are new locations including the base camp where their expedition began, ice caves, and Antarctic outdoors. Working together is still required to progress. The game released on Nintendo Switch, and Nintendo Switch 2 through backwards compatibility, on October 9, 2025.
+
+
+=== We Were Here Forever (2022) ===
+We Were Here Forever was announced for PC, PlayStation 4 + 5, and Xbox One + Series X|S. It was released on May 10, 2022, for PC only, on Steam and the Epic Games Store. The console versions for Xbox and PlayStation were released on January 31, 2023, and included a crossplay update for the PC version, allowing players from all three platforms to play together. We Were Here Forever was the first game in the series to support crossplay. The game has new areas, puzzles, and an improved interface.
+
+
+=== We Were Here Expeditions: The FriendShip (2023) ===
+We Were Here Expeditions: The FriendShip released for PC, Xbox, and PlayStation on September 14, 2023. The game shadow launched for free until October 13, 2023 on Steam, the Epic Games Store, and the PlayStation Store, offering a free permanent access to players. Additionally, Xbox users had the opportunity to try out a free 10 hour trial version. Like the other games in the series, We Were Here Expeditions: The FriendShip follows a two-player cooperative gameplay format but it introduces a new element as well: replayable puzzles where players can earn bronze, silver or gold medals. The game is notably less narrative-focused than the previous titles of the series. However, it continues the series' support of crossplay, allowing players on different platforms to play the game together.
+
+
+=== We Were Here Tomorrow (2026) ===
+Where Are We? was the coverup for We Were Here Tomorrow. A small cinematic teaser revealed that the game will follow the same style of co-op adventure as previous installments in the series, but further details were unknown until a small group of fans discovered a trail leading to a date and name: IGN. On the date found, IGN finally announced We Were Here Tomorrow. Necessary changes have since been made to the Where Are We? Steampage to reflect this discovery, hence why this game can no longer be found on the popular distributor's website and in its application. We Were Here Tomorrow was announced for PC, PlayStation 5, and Xbox Series X/S on February 26, 2026. It is scheduled to be released in 2026.
+
+
+== Plot ==
+The series tells the story of the tragedy surrounding a King and his endless hunger for power. King Bartholomeus was the ruler of Castle Rock, the main setting throughout the series. He and his wife, Queen Leonora, had three daughters and two sons. Princess Charlotte and Prince Phillip died early on in their childhoods, and Prince Jan died in battle, leaving just Princess Katherine and Princess Emilia. With three of her children dead, Queen Leonora withdrew to her room, only allowing her maids and remaining daughters to see her. Furthermore, Emilia's husband, Valdemar, was slain in battle alongside Prince Jan, and Emilia blamed her father for his death.
+Although he was once a highly respected leader, King Bartholomeus's mental state rapidly declined in light of these events. He had several affairs in an attempt to have a male heir and fell deeply in love with a woman he writes to under the name of "C". Despite his attempts, King Bartholomeus was unsuccessful in finding someone to continue his legacy. Noticing his King's increasing desperation to maintain power and control, the Court Jester suggested that they should search for a way to gain immortality. Together, he and the King worked to achieve this goal by developing a ritual that could grant immortality, presumably at the expense of human life. By creating a glowing knife and a soul stone, the King could infuse a person's life force in the soul stone and use it to live forever. It is unclear exactly what happens at this point, but it is heavily implied that the Jester tricks the King and steals the immortality for himself.
+Years had gone by and the King had still not achieved immortality. In his final years, a demon offered the King a contract that would allow him to be immortal by living within the walls of Castle Rock itself. Blinded by power, the King signed this contract and inadvertently sentenced his entire kingdom to an eternity in cold and darkness. On top of that, his anger for the Jester led him to place a curse that forces him to remain in the castle forever. 
+Prominent families within the kingdom quietly worked alongside the two Princesses to devise an escape plan. They created a device called the Astrolabe that could create a portal to escape the kingdom altogether. Upon using it, all of the King's subjects fled, except for the two sisters. Their souls remained in the castle together, ensuring that the Astrolabe's parts would be hidden and never used by the King or Jester. 
+There are two instances in which the Jester attempts to use the players to break his curse and escape. The first time occurs in We Were Here Together in which the Jester gains back both the soul stone and glowing knife. He attempts to use its power to break free of his curse, but Princess Katherine helps the players in ensuring that the curse stays active and the Jester cannot escape. The second time occurs in We Were Here Forever in which the Jester severs King Bartholomeus's name from his contract with the devil. The players, desperate for their own escape, find the parts of the Astrolabe and rebuild it, only for the Jester to harness its power in the final moments. With freedom on the other side of the portal, the Jester carries the Kings name beyond the Castle grounds. With this, Castle Rock begins to fall apart, and the fate of the Jester, the King, and the two sisters is left a mystery.  
+
+
+== Reception ==
+
+In their review of We Were Here Too, Adventure Gamers described the first game as noble, saying that "though bite-sized, it offered a neat concept and was well received".
+We Were Here Too received "mixed or average" reviews, with outlets largely praising the puzzles and core gameplay, but noting that the game was fairly short. Adventure Gamers found that "solving puzzles co-operatively is very satisfying", but criticized the game for being short and lacking detailed story. Vgames praised the puzzles and atmosphere, but also found it short and lacking replay value. PLAY! Zine described the puzzles and communication gameplay as strong points, but criticized the story and some technical issues.
+We Were Here Together received "mixed or average" reviews for console and "generally positive" reviews for PC. The puzzles and core gameplay were well received, and critics appreciated the game being longer than its predecessors. However, the narrative part of the game was largely seen as underwhelming or distracting. Adventure Gamers praised the puzzles and communication gameplay, while encountering some technical issues and finding the story unclear. Game Watcher described it as 'a must-play for fans of both co-op adventures and challenging puzzles', while also noting some technical issues. Games.cz called it 'by far, the best installment of the whole series' but criticised its story as weak.
+We Were Here Forever received "generally favorable" reviews, with critics praising its tight co-op design while criticizing its sometimes unbalanced puzzle design.
+
+
+== References ==
+
+
+== External links ==
+Official website

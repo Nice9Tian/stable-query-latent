@@ -1,0 +1,40 @@
+Game: V Rising
+appid: 1604030
+Source: V Rising
+URL: https://en.wikipedia.org/wiki/V_Rising
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+V Rising is a 2024 action role-playing survival game developed and published by Stunlock Studios. It was first released in early access for Windows in May 2022, and was officially released two years later, with a PlayStation 5 version released on June 11, 2024. Within a week, it had surpassed one million sales.
+
+
+== Gameplay ==
+V Rising is set in an open world, split into seven biomes, where the player controls a recently awakened vampire. The player gathers materials, makes and upgrades their equipment, and builds a castle that acts as their home. To unlock access to more advanced materials and equipment, players must defeat bosses found throughout the world. To survive, players must meet needs and avoid hazards specific to vampires, such as regularly consuming blood and avoiding the sun. 
+Players consume blood from enemy non-playable characters (NPCs) by performing a specific action once the NPC is near death. Every NPC is assigned a particular category of blood based on their faction, and a Blood Quality, which is randomly assigned when an NPC spawns. Blood categories grant the player particular benefits, functioning similarly to character classes. Blood Quality determines the potency and range of the benefits.
+V Rising features a day-and-night cycle. Once the player is in direct contact with sunlight for longer than a few seconds, they will begin to take damage. It will only stop when the player steps into a shadow, enters a roofed area, or dies. Garlic functions similarly, except it applies a negative status effect that gets worse the longer the player is exposed to it. The status effect increases the damage the player takes and decreases the damage the player deals.
+All five biomes have claimable areas where players can build castles. Claiming an area is achieved by placing an item known as a Castle Heart. Once placed, it must be supplied with an in-game currency called Blood Essence, or it will decay. A decaying Castle Heart will make structures vulnerable to attackers and render crafting stations unusable. For a structure built by the player to be classified as a castle, which includes a roof to protect against the sun, the walls must be stone, and flooring must be installed. Players can freely move objects within the borders of their claimed area (with some exceptions), including storage containers and crafting stations, even if they contain items. The Secrets of Gloomrot update allowed players to add multiple floors to their castle with a maximum of six.
+V Rising game sessions are hosted on servers that are either player versus environment (PvE) or player versus player (PvP). For PvP, there are three variations: standard, full loot, and duo. Standard introduces typical PvP mechanics, such as attacking castles and players fighting and looting one another. Full loot is similar to standard but also allows taking a defeated players equipment, with such equipment being directly tied to player progression. Full loot also allows full castle destruction, requiring the previous owners to start over. Duo is similar to standard with the only difference being factions cannot exceed two members.
+
+
+== Development ==
+V Rising is developed by Stunlock Studios in the Unity game engine. On release an ongoing internet connection was required to play, but a hot fix removed the requirement allowing play while offline. On May 17, 2023, the first major update titled Secrets of Gloomrot was released on Steam. It introduced the ability to create multi-level castles, added items called "jewels" that augmented spells, introduced a "domination" mechanic for horses allowing them to be summoned by the player at will, among other changes.
+Version 1.0 was released on May 8, 2024, ending the game's Early Access period. This version included new bosses, biomes, and additional cosmetic items as well as the completion of the main story line. However, the developers state this will not end the game's development. The full release of the Windows version included optional paid downloadable content based on the Castlevania series, with the protagonist able to dress up as various characters in the series and battle Simon Belmont in an optional boss fight.
+A PlayStation 5 version was released on June 11, 2024.
+Version 1.1, titled Invaders of Oakveil, was released on April 28th, 2025. It features a new zone, a new enemy faction, a new boss, and reworks to several systems related to player gameplay customization. 3 new weapons are included in the update, of which are throwing daggers, claws, and a dual-bladed staff. Additionally, player-built arenas and organized duels to facilitate recreational PvP combat will be added. It also brings in 2 new player castle structures and an expansion to an existing structure, those being a castle-wide vault storage system, stables to store horses, and expanding the prison structure to allow creature blood to be drained. The update also brings official support for Valve's Steam Deck.
+In late March 2026, Stunlock Studios announced that they considered the game to be "complete", with no plans for future content updates. The studio confirmed that they were instead working on their next game, which is to be set in the same universe as V Rising. 
+
+
+== Reception ==
+
+IGN's early access review thought that the crafting aspects of the game were time-consuming, but praised the boss design and action role-playing combat.
+
+
+=== Sales ===
+Following its early access, V Rising sold over 500,000 copies in the first three days, 1 million copies after the first week, and 1.5 million after the second. By January 2023, the game had sold three million copies. In January 2025, V Rising had surpassed five million copies sold worldwide, and by November of that year, that total rose to six million copies.
+
+
+== References ==
+
+
+== External links ==
+Official website

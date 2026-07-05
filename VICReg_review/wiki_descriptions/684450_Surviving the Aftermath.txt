@@ -1,0 +1,35 @@
+Game: Surviving the Aftermath
+appid: 684450
+Source: Surviving the Aftermath
+URL: https://en.wikipedia.org/wiki/Surviving_the_Aftermath
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Surviving the Aftermath is a city-building game developed by Iceflake Studios, which is now a division of the game's publisher, Paradox Interactive.  Players build a city in a post-apocalyptic setting, which includes elements of survival games.  It follows Surviving Mars and is followed by Surviving the Abyss, all of which were published by Paradox.
+
+
+== Gameplay ==
+Surviving the Aftermath takes place in a post-apocalyptic world.  The nature of the disaster is configurable and affects the difficulty of the game.  The map is procedurally generated.  After establishing a settlement, the player begins attracting colonists.  Most of them are automated, but some have specialist skills and can be directly controlled.  These colonists can explore the map and scavenge for resources. Random events can cause further disasters or force the player to make decisions.  Over time, the player unlocks new technologies, which allow them to create new buildings.
+Three downloadable content expansions have been released.  Shattered Hope introduces a mechanic where pieces of the Moon, which has been shattered, fall to the Earth; New Alliances adds new diplomatic options when encountering other colonies; Rebirth adds terraforming and a fungal infection that turns the wildlife hostile.
+
+
+== Development ==
+The developers, the Finnish studio Iceflake, intentionally avoided aspects of the post-apocalyptic genre that they considered cliched, such as mutants and zombies. On October 19, 2019, Paradox announced it was out for early access at PDXCON. Paradox released it on Windows, Nintendo Switch, PlayStation 4, Xbox One on November 16, 2021.  Shattered Hope was released in November 2022.  The second DLC, New Alliances, was released in June 2022.  The Rebirth DLC was released in March 2023.
+
+
+== Reception ==
+
+
+=== Early access previews ===
+In 2019, shortly after the early release, PC World said it "mostly feels like a reskin of Surviving Mars" and that the content available at that time was thin.  PC Gamer called its design "surprisingly conservative" compared to Surviving Mars but said that it adds some twists to the standard city-building formula.  In 2020, 4Players described the game as having a less bleak atmosphere than Frostpunk and said the current version was already a fun city-building game.  Around the same time, Rock Paper Shotgun recommended it to fans of Fallout 4's settlement building element.  While the reviewer praised Iceflake's responsiveness to the community, he felt releasing the game unannounced probably complicated the game's development and made it harder for Iceflake to grow a community in an increasingly crowded field.
+
+
+=== Post-release reviews ===
+Surviving the Aftermath received mixed reviews on Metacritic.  The Finnish version of Gamereactor said it is not revolutionary but is a fun game for those who wish more of a focus on city-building than survival.  NME described the game as "competent enough" but said it focuses on quantity over quality and has an uninspiring setting.  PCGamesN said its strengths are its explorable world map and configurable events.  Though they said it starts off well, GameStar faulted the game's replayability and story.
+
+
+== References ==
+
+
+== External links ==
+Official website

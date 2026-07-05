@@ -1,0 +1,65 @@
+Game: Crusader Kings III
+appid: 1158310
+Source: Crusader Kings III
+URL: https://en.wikipedia.org/wiki/Crusader_Kings_III
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Crusader Kings III is a grand strategy role-playing video game set in the Middle Ages, developed by Paradox Development Studio and published by Paradox Interactive as a sequel to Crusader Kings (2004) and Crusader Kings II (2012), featuring similar gameplay, centred around historical bloodlines and dynasties. The game was released on PC on 1 September 2020 and on the Xbox Series X/S and PlayStation 5 on 29 March 2022 in most regions. The game received favourable critical attention, and has sold over 3 million copies as of September 2023.
+
+
+== Gameplay ==
+
+Like its predecessors Crusader Kings and Crusader Kings II, Crusader Kings III is a grand strategy game and dynasty simulator set in the Middle Ages. Players begin as a character in either 867, 1066, or 1178, playing as a ruler of certain lands, or a landless character of a certain dynasty or family. The game map is significantly more detailed than in Crusader Kings II, incorporating Europe, parts of Africa, as well as new areas like China, Japan, Indonesia and various neighbouring areas. Each region is separated into many titles of different status, presented in rank descending order: Hegemonies, Empires, Kingdoms, Duchies, Counties and Baronies. Baronies – the lowest rank of the title – are bounded to a certain settlement like cities or tribes; the amount of maximum counties the character should hold is defined by a certain number of "domain", exceeding which is fraught with negative effects for the character's entire country. In order to prevent, exceeding the domain number, the player can give any of their held titles to other characters.
+Each character has a combination of six skills: Diplomacy, Martial, Stewardship, Intrigue, Learning and Prowess, all defining how good this character is in a corresponding field. Skills can be affected by various traits, like aspects of personality (laziness, greed, arrogance, calmness, etc), education (in certain skill like learning or intrigue, automatically given to all characters when they reach adulthood) and genetically inherited traits (like gigantism, natural poor or strong health, albinism). Each trait might also provide serious changes to the game, affecting many different factors aside from character's skills; making choices that go against a character's traits will increase the character's stress, reaching a certain level of which might result in negative and even lethal outcomes. Characters are also able to select one of six lifestyles to follow, with each lifestyle having three skill trees that allow characters to enhance skills related to that lifestyle.
+All counties have their own type of government that can be changed under certain conditions and uniquely affect gameplay: feudal, tribal, wanua, nomadic, clan, mandala, meritocratic, celestial, ritsuryō, sōryō or administrative. Republics, herder and theocracies government types exist but are unplayable and used only by non-player characters (NPCs). Every county and character also has a changeable culture or religion bound to them. Each of these concepts is grouped by historical origin and provides certain bonuses for its lands and people. For culture, it is defined by Traditions (single bonuses, like specialisation on a certain terrain or unique society structure) and Ethos (one, total way of life of the culture like 'stoic' or 'communal'), while for religion it is defined by Tenets (practices like megalithic building or asceticism) and Doctrines (stances towards issues like homosexuality and female clergy).
+Characters always control at least three types of resources: Prestige, Gold and Piety, with some regional resources like Influence and Treasure being specific for certain government types. Gold is used to build new buildings, buy mercenaries and personal items for the character, hire servants that provide useful bonuses, or host events like hunts or feasts. Prestige is used for various social interactions, sometimes together with gold, as well as for declaring war on other rulers to conquer a certain title. Piety is used for different interactions with religion, including changing and creating new ones.
+Upon the death or deposition of a player's character they continue to play as that character's heir unless that character lacks any viable heir in which case the game will end. Overall, players develop a dynasty over the centuries, with the game ending in 1453, though the time limit can be turned off in the settings. The heads of dynasties are able to use a new resource known as Renown to assert their control over their house, as well as unlocking special bonuses that are applied on all members of the dynasty.
+Levies are represented primarily by low-quality infantry composed of peasants. Characters will need to hire men-at-arms in order to field higher-quality soldiers, such as crossbowmen, heavy infantry and cavalry. Characters can make other characters from their court or realm with high combat skills (prowess) into powerful knights.
+Unlike preceding games in the series, characters have full-body, 3D-rendered models. These character models can be customised with clothes and headwear by clicking the Barbershop button in the character menu. The characters' models change slightly to represent their age, status, health and traits.
+
+
+== Development ==
+
+Game director Henrik Fåhraeus commented that development of the game commenced "about 1 year before Imperator", indicating a starting time of 2015. Describing the game engine of Crusader Kings II as cobbled and "held together with tape", he explained that the new game features an updated engine (i.e. Clausewitz Engine and Jomini toolset) with more power to run new features.
+As is the case with many of Paradox's unreleased and currently supported works, the developers publish a weekly developer diary. Each post focuses on a single aspect of the game, such as government types, user interface, governments, war, etc., how this aspect of the game will be handled in Crusader Kings III, and how it is different from Crusader Kings II. A monthly update video is also published on the Paradox Interactive YouTube channel, summarizing all of the changes which have been made in that month's developer diaries.
+
+
+=== Downloadable content ===
+
+
+=== Mods ===
+Third-party mods for Crusader Kings III are available on the Steam Workshop. These mods can add new game mechanics or make graphical improvements. Some mods include the total conversion mod A Game of Thrones, which is set in the world of the novel series A Song of Ice and Fire; The Fallen Eagle, which changes the game's timeline to the fall of the Western Roman Empire; Warcraft: Guardians of Azeroth 2 (Reforged), which is set in the Warcraft video game series; and Realms in Exile, which is set in the world of the novel The Lord of the Rings.
+
+
+== Release ==
+The game was released on 1 September 2020 and is available through Steam and Xbox Game Pass for PC. The game is available in two editions: the Base Game Edition, which includes the base game and a pre-order bonus, and the Royal Edition, which includes the base game and an expansion pass. The expansion pass contains a collection of additional content packs and the first expansion.
+Crusader Kings III was initially rejected by the Australian Classification Board, reportedly over complications regarding the game's classification. However, the Australian Classification Board denied having contact with Paradox Interactive, who claimed they sought classification through the third party distributor Plaion, formerly Koch Media. The game was eventually cleared and released in Australia six days after its initial release, on 7 September 2020. Because of its delayed release, the pre-order bonus window was extended to 21 September exclusively for Australian Steam users.
+A console version of the game was released on PlayStation 5 and Xbox Series X and Series S on 29 March 2022. The game was made available on Xbox Game Pass on the same day.
+
+
+== Reception ==
+
+Crusader Kings III received "generally favorable" reviews for PlayStation 5 and Xbox Series X/S according to review aggregator platform Metacritic; the PC version received "universal acclaim". Leana Hafer of IGN wrote that the game "is a superb strategy game, a great RPG, and a master class in how to take the best parts of existing systems and make them deeper and better"; scoring it 10/10 in her review. Lauren Aitken from VG247 also gave the game a perfect score, writing it is "just as bonkers, unpredictable and enthralling as its predecessor."
+David Wildgoose of GameSpot praised the procedural narratives of the game saying that they are rarely as affecting and poignant as they are here; on the other hand, as a negative point, he wrote that "when the story engine isn't firing, your actions can feel rote and uninspired".
+The console port of the game has been criticized by players due to being "unplayable" during the late-game due to technological bottlenecks, frequent crashes, overheating, and other limitations to console capabilities. Paradox and Lab42 have been working to fix these issues by removing the 3D models in family trees and more frequent clearing of the game's cache. Because of Lab42 struggling to develop the console version of the game, they were later replaced by Dragon lake.
+
+
+=== Sales ===
+The game sold more than 1 million copies within 1 month of release. It was the seventh best-selling game in September 2020 in the US, and had the highest launch month sales for any Paradox Interactive title. In March 2022, Paradox Interactive announced that Crusader Kings III had sold over 2 million units worldwide. In September 2023, Paradox Interactive announced that Crusader Kings III had sold over 3 million units worldwide. As of April 2025, Crusader Kings III has sold over 4 million copies worldwide.
+
+
+=== Accolades ===
+In December 2020, Crusader Kings III was nominated in the Best Sims/Strategy category at The Game Awards, but lost to Microsoft Flight Simulator. In April 2021, Crusader Kings III also received a nomination for Strategy/Simulation Game of the Year at the 24th Annual D.I.C.E. Awards, again losing out to Microsoft Flight Simulator.
+
+
+== Notes ==
+
+
+== References ==
+
+
+== External links ==
+Official Crusader Kings website
+Crusader Kings III Developer Diaries
+Wiki for Crusader Kings III

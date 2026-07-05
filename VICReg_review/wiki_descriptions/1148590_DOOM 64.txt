@@ -1,0 +1,60 @@
+Game: DOOM 64
+appid: 1148590
+Source: Doom 64
+URL: https://en.wikipedia.org/wiki/Doom_64
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Doom 64 is a 1997 first-person shooter game developed and published by Midway Games for the Nintendo 64. It is the second spin-off in id Software's Doom series after Final Doom (1996), and the fourth game in the series overall.
+Doom 64 was developed from 1994 by Midway Studios San Diego under supervision of id Software, the main developer of the Doom franchise, and was tentatively titled Doom: The Absolution. It uses a customized version of the Doom engine, enabling new kinds of level geometry, and dynamic colored lighting. The game features new sprite graphics for weapons and monsters.
+Doom 64 received positive reviews from critics, who praised its graphics, level design, soundtrack, and atmosphere, although some criticized the lack of new gameplay elements compared to the previous games of the series. It gained a cult following, with several fan-made PC source ports and mods. A remaster was developed by Nightdive Studios and published by Bethesda Softworks for Nintendo Switch, PlayStation 4, Windows, and Xbox One in March 2020, and for Stadia in May 2020.
+
+
+== Gameplay ==
+
+Doom 64's gameplay is similar to that of earlier Doom games. The player must advance through 28 story levels (and 4 secret levels) by battling demons, collecting weapons and keys, and activating switches to reach the level's exit while surviving deadly ambushes and traps. The Doom engine and gameplay elements were customized, and all visual assets such as weapon and monster graphics are unique to Doom 64.
+
+
+=== Weapons ===
+All the weapons from Doom II are present, but with new sprites and sound effects. The chainsaw has two blades instead of one, the fists have bloodstained gloves instead of brass knuckles, the plasma gun has an electric core that emits a sparking sound, the rocket launcher has a small kickback, the shotgun's priming handle is at the grip instead of under the barrel, and the double-barreled super shotgun reloads faster and causes kickback.
+There is also a new weapon, unofficially called the Unmaker, which uses hitscan but looks like a projectile weapon. It uses the same cell ammunition as the plasma gun and BFG 9000. It had originated in the Doom Bible in 1992, and was planned for the original Doom in 1993. Its appearance in Doom 64 is its only official appearance prior to Doom Eternal, in which it is spelled "Unmaykr". Three ancient artifacts hidden throughout the game's levels may be collected to upgrade the weapon. The first artifact increases the fire rate, the second artifact adds a second laser, and the third artifact allows the weapon to fire three simultaneous lasers which can automatically aim separately from one another, allowing the player to attack up to three different enemies at once with huge amounts of rapid damage.
+
+
+=== Enemies ===
+Most of the enemies found in Doom and Doom II are present in Doom 64 with similar behavior and attributes. However, the revenant, arch-vile, spiderdemon, and "heavy weapon dude" enemies are not present. Midway added one new monster to Doom 64, the nightmare imp, a variant of the imp from the original game. A unique final boss, the Mother Demon, was also created. Many of the existing enemies received substantial visual redesigns.
+
+
+== Plot ==
+Following the Doom Marine's success at thwarting Hell in Doom, Doom II: Hell on Earth, and in the Final Doom storyline, a quarantine is established on the U.A.C. research installations with apocalyptic levels of radiation. For years, the installations stood abandoned, until a barely-functioning satellite monitoring one of them sends a message back to Earth. This message indicates that a "single entity with vast rejuvenation powers" was masked by the radiation and escaped detection. The entity was able to resurrect the demons by altering "decaying dead carnage back into corrupted living tissue". As the only experienced survivor of the Doom episodes, the Marine is sent in alone to exterminate them.
+However, the Marine realizes the demons have planned to lure him back into Hell. They are nonetheless unable to defeat him, and with the Unmaker, he eventually battles and kills the Mother Demon. The game ends with the Marine, no longer capable of having a normal life following his encounters with Hell's forces, deciding to remain in Hell forever to ensure no demon ever rises again.
+In the Lost Levels from the 2020 remaster, the story continues as the Mother Demon was revealed to have a sister called the "Resurrector". It banishes the Marine back to a UAC base, forcing him to fight his way back to Hell to stop the Demons. It branches the storyline between the original games with the 2016 reboot of Doom and Doom Eternal.
+
+
+== Development ==
+Doom 64 was developed by Midway Games at its San Diego studio. id Software, the primary developer of the Doom franchise, supervised the project. Development began in late 1994. Its tentative title of The Absolution was changed to Doom 64 for brand recognition, and reused as the name of the last level. Midway wanted to include every demon from the original games into the final product, along with extra levels. However, deadlines and storage size constraints of the Nintendo 64 Game Pak cartridges led them to them exclude the levels and a few demons. Midway stated that a multiplayer mode was not included because Nintendo did not provide the necessary resources for multiplayer programming. Midway justified the decision based on alleged slowdown during split-screen multiplayer in other games on the console and the competitive nature of the mode. A Midway representative stated, "Everyone knows that the best part of playing multiplayer is not knowing where your opponent is and with a four-player split-screen, everyone can easily see where their opponents are."
+The environments were built from 3-dimensional polygon models, and the enemies were created by pre-rendering sprites with SGI workstations. The Nightmare Imp was originally developed for the PlayStation version of Doom and appeared in a near-complete beta of the game, but was removed just prior to release for unknown reasons. It debuted in Doom 64 instead.
+Doom 64 was slated to be a North American launch game, but near the deadline id Software expressed dissatisfaction with many of the level designs, so Midway postponed the game until April 1997 while redesigning the levels. Nintendo's then-recent decision to remove the ability to run over animals from the Nintendo 64 version of Cruis'n USA raised concerns about the possibility of censoring Doom 64, but Midway vice president of software Mike Abbot said Nintendo had not voiced any concerns about the game's violent content. He pointed out that Cruis'n USA was perceived by the public as a family game, while the Doom series was targeted towards mature gamers, making violent content less of a concern.
+The music and sound effects were composed by Aubrey Hodges, who had created the original sound effects and music for the PlayStation version two years earlier. The original Doom 64 team was working on a potential sequel titled Doom Absolution designed only for two-player deathmatches soon after the first game was released, but canceled it. Because id Software was impressed with the team's work on Doom 64, they were assigned to the Nintendo 64 version of Quake at this time.
+Doom 64 was shipped to retailers by Midway on March 27, 1997, and released on April 4.
+
+
+== Reception ==
+
+By the time Doom 64 was released, the original Doom had been converted to nearly every platform capable of running it. Critics agreed that Doom 64 was by far the best-looking Doom to date, exceeding even the PC version. They were enthusiastic about the level designs, deeming them imaginative and much more challenging than those of the original Doom. A Next Generation critic remarked that "even the most skillful Doom fans will have their hands full. And pushing door switches often causes whole rooms to rearrange and fold out into new shapes."
+However, most reviewers said that the new graphics and levels were not enough to keep the game from feeling like yet another port of the original Doom. Peer Schneider of IGN concluded, "Make no mistake about it, this is the best update to Doom so far—but if you've played the PC, PSX, SNES, Mac, Saturn, etc versions to death, you can do without this one." GamePro disagreed with the majority on this point, stating that "Doom 64 pumps the tried-and-true corridor-shooter formula full of life, with another challenging, intense experience that showcases the system's capabilities." They rated it a perfect 5.0 out of 5 in all four categories: graphics, sound, control, and fun factor. Shawn Smith of Electronic Gaming Monthly instead regarded the lack of advancements in the basic Doom gameplay as a positive: "Some of you may want to see your space Marine jumping around or swimming underwater. Purists wouldn't want these features added because Doom wasn't about that stuff. I'll have to agree with the purists."
+Most critics praised the game's musical score for its atmospheric effect. Schneider and GamePro were both pleased with how well the analog control works, but Jeff Gerstmann of GameSpot said it was off and said of the game overall, "On paper, Doom 64 sounds better than the original could ever hope to be, but the end result feels more like a bastardization of the original." Comparing it to contemporary Nintendo 64 shooter Turok: Dinosaur Hunter, Schneider and GamePro both remarked that Doom 64 has less freedom of exploration and depth of control, but is more intense and "anxiety-filled".
+Doom 64 has garnered a cult following, with multiple fan-made PC source ports compatible with PC WAD files. Most prominently, Doom 64 TC (2003) is a massive collaborative PC fan port led by Samuel Vilarreal to add numerous enemy variants and levels; and Doom 64 EX (2008) is a source port to re-create the original experience made by Vilarreal, who had worked on Doom 64 TC and a Nintendo DS port of Doom 64. Patrick Klepek from Kotaku described it as the most underrated Doom game. The game has also been praised for its unique level design that some consider the best in the series, and for its darker and more sinister tone, in contrast to the aggressive action of Doom and Doom II.
+
+
+== Remaster ==
+A remaster of Doom 64 for the PC, Nintendo Switch, PlayStation 4, and Xbox One by Nightdive Studios was released on March 20, 2020, and for Stadia on May 12, 2020. It was included as a bonus for pre-orders of Doom Eternal, which was released almost simultaneously.
+The re-release includes The Lost Levels expansion, additional missions intended "to connect 'old' Doom to 'new' Doom". The Doom Marine is forced out of Hell by the Resurrector, the Mother Demon's sister, and must fight his way back to Hell to slay the creature.
+
+
+== Notes ==
+
+
+== References ==
+
+
+== Further reading ==

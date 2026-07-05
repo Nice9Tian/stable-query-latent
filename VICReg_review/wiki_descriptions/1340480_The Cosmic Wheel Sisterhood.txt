@@ -1,0 +1,33 @@
+Game: The Cosmic Wheel Sisterhood
+appid: 1340480
+Source: The Cosmic Wheel Sisterhood
+URL: https://en.wikipedia.org/wiki/The_Cosmic_Wheel_Sisterhood
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+The Cosmic Wheel Sisterhood is a 2023 narrative adventure game developed by Deconstructeam and published by Devolver Digital.  Players control an exiled witch who designs her own tarot deck and performs divinations for other witches.
+
+
+== Gameplay ==
+
+After making a prediction that angers the leader of her coven, an immortal witch named Fortuna is banished to an asteroid for a thousand years.  After 200 years, she makes a bargain with an otherworldly creature to regain some power.  This allows her to design her own deck of cards, which she uses for tarot card reading.  Players can design these cards in an in-game editor, choosing and manipulating various props, backgrounds, and characters.  The assets used to design the cards have costs based on the classical elements (air, earth, fire, and water).  Other witches begin coming to Fortuna to have their fortunes told using her cards.  Players can, through dialogue choices, interpret the cards and learn more about these people.  Depending on the divinations players make during these interactions, they can acquire more of each elemental resource.  Fortuna's previous life can also be revealed through flashbacks, which involve minigames.  Players can also learn more about the world by researching in Fortuna's library.  Eventually, players can influence who the new coven leader is during an election by calling upon their newfound friends and taking advantage of what they have learned about the coven.
+
+
+== Development ==
+Developer Deconstructeam is based in Valencia, Spain. Devolver Digital released The Cosmic Wheel Sisterhood for Windows and Switch on August 16, 2023.
+
+
+== Reception ==
+
+The Cosmic Wheel Sisterhood received "generally favorable" reviews, according to review aggregator Metacritic, while 88% of critics recommend the game, according to OpenCritic. In Japan, four critics from Famitsu gave the game a total score of 34 out of 40, with one critic awarding the game a perfect 10.
+Rock Paper Shotgun said it is a "splendid, engrossing blend of visual novel and card creation game".  GamesRadar called it "nothing short of superb" and one of the richest visual novels of the past few years.  While praising the writing, they said its examinations of posthumanism and player choice breathed new life into them.  Eurogamer called it an "enchanting, emotionally charged visual novel" and positively compared it to Barbie, though they said it "occasionally feels like a beginner's Plato's Republic".  Siliconera enjoyed the branching narrative and how different playthroughs had different stories.  They said designing cards will likely be fun for both artistic people and those who lack artistic skill.  However, they found the election a bit long.
+Hardcore Gamer felt the fun of creating tarot cards was enough by itself to recommend the game, though they also praised the plot, characters, and music.  They concluded that it is "an amazing narrative journey exploring fate, politics, isolation, friendship and more".  Although they said some gamers may not like being locked into their decisions, Nintendo Life called The Cosmic Wheel Sisterhood "a spellbinding narrative experience" and praised how the narrative changes according to player choices.  Commenting on the card creation element, they said it is "vibrant and indulgent" and presented in a "truly authentic manner".
+The game was nominated for Best Storytelling at the 2023 Golden Joystick Awards.
+
+
+== References ==
+
+
+== External links ==
+Official website
+The Cosmic Wheel Sisterhood at The Visual Novel Database

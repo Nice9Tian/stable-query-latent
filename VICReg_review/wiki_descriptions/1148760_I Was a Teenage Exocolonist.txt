@@ -1,0 +1,48 @@
+Game: I Was a Teenage Exocolonist
+appid: 1148760
+Source: I Was a Teenage Exocolonist
+URL: https://en.wikipedia.org/wiki/I_Was_a_Teenage_Exocolonist
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+I Was a Teenage Exocolonist is a 2022 role-playing partial visual novel video game developed by Northway Games and published by Finji. The player starts the game as a ten-year-old, going through events that affect the colony until the game ends when they turn twenty. The game was released on Microsoft Windows, macOS, Linux, Nintendo Switch, PlayStation 4, and PlayStation 5 in August 2022.
+
+
+== Gameplay ==
+When the player starts Exocolonist, they can customize their character, picking traits that affect the rest of the game, like their name, gender, and physical presentation, alongside choosing a childhood friend and childhood toy. The game takes place over ten years, from the beginning of age ten to the beginning of age twenty, with players having to choose an activity to do during each month of the planet's seasons. There are five seasons: Quiet, Pollen, Dry, Wet, and Glow. The first four seasons each have three months, while the Glow season is only one month, each, aside from Glow, mimics the winter, spring, summer, and fall cycle. Some of the activities one can choose include learning about the military, studying in the engineering hub, or exploring the planet outside of the main colony settlement.
+Players engage in a card mini-game that determines stat increases during the activities they choose, as well as if the player succeeds at their activity for the month, or in other card mini-game battles unrelated to a monthly task such as story progression. The player acquires cards through events, each of which is a "memory" with a unique skill bonus associated with it. These stat increases open up new options or make it easier to win the card game. The cards come in 4 types: emotional, physical, mental, and wild. Combos between certain types or the number on the card make it easier to win the mini-game. 
+Outside of that, players can make decisions that determine if characters live or die depending on the activity they choose. There are 7 'saveable' characters. The player can build friendships with other colonists by giving them gifts or doing activities with them, which opens up the possibility for romance, only achievable with 10 of the 27 characters. The player also has a score that measures where they fall on a spectrum of "loyalty" or "rebellion," depending on the choices the player makes. At the end of the character's twentieth year, the game comes to a close, and the player will have the ability to "start a new life." While replaying the game, the player can make new choices using knowledge gained from prior playthroughs.
+There are 29 possible "endings" to the game; which one the player gets will be determined by the choices they made for character interactions and monthly activities. There are standard 'career' endings, such as farmer or teacher, and special endings, which requires deviation from the story to obtain. The career endings are determined which activities the player does the most throughout their playthrough. 
+
+
+== Setting ==
+The planet the colonists settle on after going through a wormhole is called Vertumna, named by the colonist's leader, Eudicot, who explains that she named it after the Roman god Vertumnus, god of season and bountiful harvest. The planet itself has 5 different areas, the Prosaic Plains, the Valley of Vertigo, the Western Wrestling Ridge, and the Subaqueous Swamp, each with their own terrains, being bromidic snow, a lush mushroom-covered forest, dry and dangerous canyons, and a hazardous bog with just as hazardous animals. 
+The planet has an extensive history of intelligent life before the events of the game, the leftovers of the ancient civilization being the Gardeners, a group of regenerating shapeshifters made to protect the planet from any harm, including the newly budding human colony. These Gardeners do have the option to be stopped and negotiated with, depending on the route the player takes, or not seen at all. They are a massive, although, unseen threat to the humans, especially during Glow season, which is known to be dangerous as the season seems to make the local animals go crazy and attack the colony, later found to be a product of the Gardener's control on the animals. 
+The planet has bizarre weather such as 'acid snow,' mushroom trees, thick, almost unbreathable pink pollen, and trees that thrive on electric currents in the water they grow in. The animals are just as strange, like the sheep-like floatcow that occasionally float due to helium in their bodies, pink unisaurs that resemble something akin to a dinosaur, among other strange xenofauna. 
+
+
+== Plot ==
+After wars, droughts, and global warming on Earth led it to be difficult to inhabit, a group of colonists built a ship and set course to a wormhole to take them to Vertumna IV, which is a 20-year voyage. The player, born halfway through the 20-year journey, starts on the spaceship Stratospheric, which soon reaches the wormhole. The player grows dizzy upon approaching it and falls into a coma.
+When they awake, the ship has landed on the planet found on the other side of the wormhole, and has been disassembled into a colony with different departments for the player to learn and gain skills from during each distinct month.  
+Midway through the game, the colony is nearly destroyed by the alien life endemic to Vertumna, and a new militaristic group from Earth arrives on their own ship, the Heliopause, to take control of the Stratospheric. Towards the end of the game, the player has the option of ousting the military governor via coup and stopping the takeover of Vertumna by other colonizers or letting them remain.
+The main 'goal' of the game is up to how the player wishes to approach it. They can find ways to stop the attacks from happening, romance some of the 10 dateable characters, or learn more about the world and its history, which is kept from the player unless they choose to dig into the dialogue. The best ending is considered to be the "Peace on Vertumna" ending, in which the player negotiates with the Gardeners at the end of their 19th year to stop the attacks and let the colony grow in harmony with the planet and the Gardeners. 
+
+
+== Development ==
+The game started development in 2017. A developer noted that an important part of the early years was making sure "the characters feel natural, and giving you gameplay hooks to hold on to while interacting with them". The game's focus on giving the player impactful decisions to make was enabled by "thousands of conditional statements" to ensure that it could adapt. Exocolonist's story consists of eight hundred events that can be triggered on and off depending on whether player has met certain requirements. The early game deaths were presented without much foreshadowing and drama to capture how a ten-year old experiences loss. The game's dialogue system was built in a custom scripting system known as Exoscript. The game uses a mix of 3D objects and 2D billboards that face the camera to give depth to scenes.
+
+
+== Reception ==
+
+I Was a Teenage Exocolonist received "generally favorable reviews" on Switch and PS5, and "universal acclaim" on PC, according to the review aggregation website Metacritic. Fellow review aggregator OpenCritic assessed that the game received "mighty" approval, being recommended by 100% of critics.
+Destructoid liked the memories system, saying it worked both as a gameplay mechanic, "but also mimics how our memories work in real life quite beautifully". Nintendo Life enjoyed the art style, but criticized how the story lacked consequences: "Apparent jeopardy is usually overcome straightforwardly, and when our choices did seem to have gone badly wrong, the consequences just evaporated". Polygon praised the game's approach to gender, liking how "your character's gender expression can be changed at any point in the game, and it doesn't affect who you can romance".
+
+
+=== Accolades ===
+
+
+== References ==
+
+
+== External links ==
+I Was a Teenage Exocolonist at The Visual Novel Database

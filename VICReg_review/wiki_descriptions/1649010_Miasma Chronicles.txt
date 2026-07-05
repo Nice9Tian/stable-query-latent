@@ -1,0 +1,31 @@
+Game: Miasma Chronicles
+appid: 1649010
+Source: Miasma Chronicles
+URL: https://en.wikipedia.org/wiki/Miasma_Chronicles
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Miasma Chronicles is a tactical role playing video game developed by The Bearded Ladies and published by 505 Games in 2023.  It is set in a post-apocalyptic version of the United States and blends turn-based tactics with stealth game mechanics.
+
+
+== Gameplay ==
+The United States is devastated by something called miasma, which transforms or kills living things.  More than a century later, a woman leaves her son, Elvis, in the care of a robot named Diggs.  Elvis has a glove left behind by his mother that can control the miasma.  Players control Elvis as he seeks out his mother and attempts to learn more about the miasma.  Miasma Chronicles is a tactical role-playing game.  Players explore the game in real time using mechanics from stealth games.  Enemies have a visible cone of vision, which allows players to determine whether they will be seen.  Combat is turn-based and tactical.  Players can recruit another non-player character to join Elvis and Diggs.  Progressing through the game allows characters to be customized through skill trees that can give new abilities and bonuses, which are subject to cooldowns.  Miasma Chronicles has four difficulty levels, which are designed to let players customize how much of a challenge they want.  The rules of the tactical combat can also be optionally simplified, such as making targeting easier and de-emphasizing random chance.
+
+
+== Development ==
+Lee Varley, the game director, wanted to explore the concept of a world that trusted in large corporations and eccentric billionaires to solve their problems.  Varley said the post-apocalyptic scenario allowed him to comment on why this might be bad idea.  Other themes he wanted to address were climate change, surrendering civil rights, and wage slavery.  Influences include Japanese role-playing games on the PlayStation.  Setting the game in the United States came about because The Bearded Ladies wanted to make the setting more accessible to worldwide audiences, some of whom missed out on Swedish allusions in one of their previous games, Mutant Year Zero: Road to Eden.  The producer, Mark Parker, said he sometimes argued with Varley over the game's mood and atmosphere.  Varley favored a more serious approach, while Parker preferred a more humorous take.  Parker said they used this creative friction to make the game better.
+Varley had previously worked on Mutant Year Zero, which he purposefully made difficult.  He later came to regret this because some players who enjoyed the story had trouble winning the tactical battles.  Miasma Chronicles was designed so that these players could lower the difficulty settings and not have such a frustrating experience.  Compared to Mutant Year Zero, the stealth elements were rebalanced so that sniping at enemies before initiating combat is important but not mandatory.  To reduce player frustration over missed shots, The Bearded Ladies experimented with scaling the damage done instead of an all-or-nothing system based on percentages.  After being unsatisfied with the lack of spontaneity, they settled on a difficulty setting that reduces the effects of random chance and makes some shots a 100% certainty.
+505 Games released Miasma Chronicles for Windows, PlayStation 5, and Xbox Series X/S on May 23, 2023.
+
+
+== Reception ==
+
+On review aggregator Metacritic, the Windows version of Miasma Chronicles received mixed reviews, and the PlayStation and Xbox Series X/S versions received positive reviews.  
+Rock Paper Shotgun praised the tactical aspects, which they said "demonstrates a strong understanding of what makes turn-based tactics games tick".  However, they criticized what they felt was poor writing, dated humor, and a lack of innovation compared to Mutant Year Zero: Road to Eden and Corruption 2029.  Shacknews enjoyed the story and found it relevant.  They also praised the game's customizable difficulty levels and stealth aspects, which they said added a fun puzzle layer.  Both Rock Paper Shotgun and Shacknews criticized what they felt was slow progress in gaining new abilities and a reluctance to let players use fun abilities.  Push Square wrote that Miasma Chronicles has a lot of potential, but it "lacks polish in a few key areas".  They criticized the story for not matching the quality of the characters and lore, and they experienced bugs in the PlayStation 5 version that they said "sour[ed] the experience for us somewhat".  Eurogamer's reviewer called Diggs "the most racist stereotype of a video game character I have encountered in years" and said he ruined what she felt was already a middling game.
+
+
+== References ==
+
+
+== External links ==
+Official website

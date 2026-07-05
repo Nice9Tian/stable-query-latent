@@ -1,0 +1,46 @@
+Game: Pinball FX
+appid: 2328760
+Source: Pinball FX (2007)
+URL: https://en.wikipedia.org/wiki/Pinball_FX_(2007)
+Match score: 6.80
+Retrieved: 2026-07-04
+--------
+Pinball FX is a pinball machine video game for the Xbox 360.  It was developed by Zen Studios and published by Microsoft Game Studios.  It was released on April 25, 2007 via the Xbox Live Arcade service.  The game features three tables, with six more available as downloadable content, leaderboards and online multiplayer.  A sequel to the game, Pinball FX 2 was released on October 27, 2010.
+
+
+== Gameplay ==
+
+Pinball FX utilizes the same basic rules as a physical pinball machine, albeit in a virtual environment.  As with a traditional pinball machine, the player fires a steel ball onto the playfield using a plunger.  Once the ball is in play the player controls the flippers and can nudge the machine to influence the path of the ball.  Each of the game's tables become more complex as the game advances, opening new paths and opportunities.
+The game allows use of the Xbox Live Vision camera to operate the flippers and to video chat with Xbox Live opponents.  It also features leaderboards and online multiplayer for up to four players.  Multiplayer games are won by being the first to achieve the set high score, which can be adjusted from 10 to 100 million points. Penalties can also be set for losing a ball with players losing anywhere from 5 to 25 percent of their score when a ball is lost.
+
+
+=== Tables ===
+Pinball FX was initially released with three tables: Speed Machine, a racing-themed table, Extreme, which features a skateboarding theme, and Agents, adorned with secret agents and spy gadgets.  A fourth pirate-themed table entitled Buccaneer was released October 31, 2007 as a free download.  Five additional paid content tables were released prior to the release of the game's sequel, Pinball FX 2.  The first table was released on January 16, 2008.  Entitled Nightmare Mansion it features a campy, horror movie theme.  The second paid table features characters from The Rocky and Bullwinkle Show and was released April 2, 2008.  A third table featuring characters, sounds and music from Super Street Fighter II Turbo was released November 12, 2008.  Earth Defense, the fourth table, features an alien invasion theme.  It was released September 21, 2009  The fifth and final table, Excalibur, was released January 27, 2010.  This table features a theme based on King Arthur and the Knights of the Round Table.
+
+^aFree downloadable content
+^bPaid downloadable content
+^cAlso available on other major Zen Studios pinball games
+
+
+== Development and marketing ==
+
+Pinball FX was first revealed to the press November 7, 2006 at a Microsoft press event in San Francisco.  It was then shown at the Game Developer's Conference on March 6, 2007.  It was released for the Xbox 360 via the Xbox Live Arcade service on April 23, 2007.  The game has been delisted from Xbox Live Arcade as all content can be imported into Pinball FX 2.  If players wish to have the original tables but did not own the game, they can buy the Pinball FX Classic pack for Pinball FX 2, which contains the three original tables plus the Buccaneer table.
+
+
+== Reception ==
+
+Pinball FX received mixed reviews from critics.  On the aggregate sites GameRankings and Metacritic, it holds a score of 70.56% and 69/100, respectively.  The game was a commercial success, selling over 362,000 copies as of July 28, 2010. Eurogamer's Dan Whitehead described the game as "a fantastic virtual pinball engine", comparing it to Pinball Dreams.  PinballAddicts praised the cost-to-value ratio, stating "at around US$10 you really can't go wrong." GameZone's reviewer stated Pinball FX was "a visual treat and a solid challenge."
+GameSpot's Jeff Gerstmann praised the addition of online multiplayer, stating that it "has some neat ideas that keep things interesting a bit longer." Eurogamer's Dan Whitehead was more critical, stating use of the Xbox Live Vision camera was "an oddly remote and distant way of playing." GameZone's reviewer disagreed, noting that use of the camera set the game apart from other titles.  The reviewer further praised the game's sound effects, saying that they "carried the game forward."
+Pinball FX's physics system was a common point of criticism among reviewers.  While some praised the physics, others felt the system had issues.  Dan Whitehead of Eurogamer felt the physics were precise.  The reviewer from GameZone agreed, stating they "handled very well."  "For the most part the physics in Pinball FX hold up, but there are a few issues that harm the overall experience" stated Hilary Goldstein of IGN. Jeff Gerstmann felt that the "ball movement never feels realistic."
+Reviewers were critical of the variety in the game.  Hilary Goldstein of IGN felt the game did not have enough features, stating it had "three mediocre boards, a couple-hundred Achievement Points, and little else." Jeff Gerstmann of GameSpot also criticized the variety, calling the table designs "generic", adding that they "grow old quickly." GamePro's Will Herring agreed, saying that the tables were "a little blander than might have been hoped for."
+
+
+== Sequels ==
+This was the first game in the Pinball FX series. Pinball FX 2 was released between 2010 and 2014, with releases for PlayStation platforms called Zen Pinball 2. Pinball FX3 was released in 2017, and Pinball FX was released in 2023 for Windows and all major consoles after an early access period on Epic Games in 2022.
+
+
+== References ==
+
+
+== External links ==
+Official website

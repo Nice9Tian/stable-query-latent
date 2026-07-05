@@ -1,0 +1,13 @@
+In this post-apocalyptic survival game, the world has been transformed by an alien contamination known as **Vexdust**, which has infected humans, animals, plants, soil, and water alike. Players take on the role of a **Metoid**, a special survivor able to endure the corruption and wield its power. The experience can be played solo or cooperatively, with the core premise centered on surviving, building, fighting, and uncovering the truth behind the catastrophe.
+
+A major part of the game is survival in the wilderness. Players begin stranded in an unknown location and must contend with hostile creatures, scarce food, and contaminated resources. Eating polluted food or drinking dirty water reduces **Mind Integrity**, and when this drops, maximum health is also lowered. This creates a constant tradeoff between immediate survival and long-term safety, making basic resource management an important mechanic.
+
+Combat is another central pillar. The world is filled with enemies that were once human, as well as bosses from another dimension. Defeating them can yield valuable items and help reduce the spread of Vexdust pollution. The game emphasizes that these battles are not only for personal survival, but also for the remaining survivors in the world.
+
+Weapon customization is extensive. Players can collect and craft roughly 100 firearm blueprints across seven categories. Loot frequently provides new options, and weapons can be modified with different parts and perks. This allows players to tailor firearms to their preferences and continuously improve their loadout over time.
+
+Base building is also a major feature. Using a **Territory Core**, players can construct their own home and choose between a compact, practical setup or a larger, more elaborate structure with multiple rooms and facilities. The game also allows the territory to be relocated at any time, adding flexibility to building and settlement planning.
+
+The narrative includes exploration of the origins of Vexdust and what it ultimately wants. Players can investigate human settlements, interact with multiple factions, and decide whether to engage with groups that are friendly, helpful, violent, or hostile. The game presents these choices as part of a broader journey through a broken world where solitude and cooperation both have meaningful roles.
+
+A newer update adds a fresh PvE scenario called **The Way of Winter**, introducing the **Temperature** survival mechanic to make conditions even harsher. In this mode, players collaborate to build and upgrade the **Thermal Tower**, explore a new map, face powerful bosses, secure new deviations, and access additional content.

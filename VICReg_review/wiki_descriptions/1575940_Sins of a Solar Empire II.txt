@@ -1,0 +1,36 @@
+Game: Sins of a Solar Empire II
+appid: 1575940
+Source: Sins of a Solar Empire II
+URL: https://en.wikipedia.org/wiki/Sins_of_a_Solar_Empire_II
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Sins of a Solar Empire II is a 2024 science fiction real-time strategy  4X video game developed by Ironclad Games and published by Stardock Entertainment for Microsoft Windows operating systems. It is a sequel to the 2008 video game Sins of a Solar Empire.
+
+
+== Development ==
+Ironclad Games first began considering a sequel to Sins of a Solar Empire following the release of the game's final DLC in 2018. They began development of a sequel, Sins of a Solar Empire II, in 2021.
+For the sequel, Ironclad Games wished to overcome technical limitations, such as a lack of multithreading, that the original game faced. The new game engine, called the "Iron Engine", was developed for 64-bit, multi-core computers to support tens of thousands of ships without noticeably impacting performance.
+The developers of Sins of a Solar Empire II first released the game as an early access technical preview so that they could receive feedback from players during development. Multiplayer support was added to the technical preview in February 2023.
+
+
+=== Release ===
+Sins of a Solar Empire II was first made available as an early access title on the Epic Games Store in October 2022. In early 2023, several months after the initial release, Stardock removed the early access tag from the listing in the Epic Games store. Stardock, however, chose not to market the release or release the game on Steam until the game had reach content parity with Sins of a Solar Empire: Rebellion. The game released on Steam on August 15, 2024.
+
+
+=== Updates and downloadable content ===
+On March 27, 2025, a free update for Sins of a Solar Empire II entitled Total Subjugation released for the game. The update reintroduced population and allegiance mechanics from the first game, and also added new ship, planet, and moon types. The first paid DLC for the game, entitled Paths to Power, also released on the same day. The DLC added 10 scenario maps to the game.
+
+
+== Reception ==
+
+Substantially similar gameplay and the improved engine compared to the original game meant that public response was mixed.
+The game was also criticized for its use of AI-generated images in the tech tree and character portraits.
+
+
+== References ==
+
+
+== External links ==
+Official website
+Sins of a Solar Empire II at MobyGames

@@ -1,0 +1,28 @@
+Game: The Entropy Centre
+appid: 1730590
+Source: The Entropy Centre
+URL: https://en.wikipedia.org/wiki/The_Entropy_Centre
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+The Entropy Centre is a puzzle video game developed by Stubby Games and published by Playstack.
+
+
+== Gameplay ==
+The game's protagonist, Aria, wakes in a lunar facility.  An AI named Astra explains to her that the Earth is about to explode.  With Astra's help, Aria attempts to build up enough entropy that the facility can reverse time and prevent the Earth from exploding.  Aria does this by solving various puzzles on the facility using Astra's limited ability to reverse time.
+
+
+== Development ==
+Developer Daniel Stubbington was influenced by Portal and Tenet.  The Entropy Centre was released on Windows, PlayStation 4 and 5, Xbox One and Series X/S on November 3, 2022.
+
+
+== Reception ==
+On Metacritic, the Windows and PlayStation 5 versions of The Entropy Centre received positive reviews; the Xbox Series X version received mixed reviews.  Although Game Informer greatly enjoyed the puzzles, they felt that the narrative elements were not paced as well.  IGN's reviewer enjoyed the first 10 hours, but subsequent puzzles struck her as not creative enough.  Conversely, Push Square felt "everything is constantly updated and feels fresh".  However, they criticized the game's asset reuse, which they felt made interiors look indistinguishable.
+MCV/Develop nominated The Entropy Centre for most innovative gameplay of 2022.
+
+
+== References ==
+
+
+== External links ==
+Official website

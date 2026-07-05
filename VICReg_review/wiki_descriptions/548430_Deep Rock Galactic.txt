@@ -1,0 +1,64 @@
+Game: Deep Rock Galactic
+appid: 548430
+Source: Deep Rock Galactic
+URL: https://en.wikipedia.org/wiki/Deep_Rock_Galactic
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Deep Rock Galactic is a cooperative first-person shooter video game developed by Danish studio Ghost Ship Games and published by Coffee Stain Publishing. Following its early access launch on February 28, 2018, the game was fully released on May 13, 2020 for Microsoft Windows and Xbox One. It was later released for PlayStation 4 and PlayStation 5 in January 2022, and for Xbox Series X/S in September 2022.
+Deep Rock Galactic is set on the alien planet of Hoxxes IV, whose caves are rich in precious minerals but filled with hostile wildlife and environmental hazards. The player controls a dwarf miner employed by Deep Rock Galactic, an intergalactic mining corporation, to extract valuable resources and operate a variety of heavy machinery. Players can team up with up to three other dwarves on missions deep below the planet, where they must navigate procedurally generated caves and complete objectives while fighting swarms of alien enemies.
+The game received positive reviews from critics, who praised its class-based gameplay and atmosphere. The game has sold over eight million units as of January 2024 and has been part of the Xbox Game Pass subscription service since November 2020. It was also available to PlayStation Plus subscribers during the month of its release.
+
+
+== Gameplay ==
+Deep Rock Galactic is a cooperative first-person shooter. Gameplay primarily centers around missions that take place in fully destructible, procedurally generated cave systems; each with varying terrain generation, objectives, hazards, and enemies depending on the selected biome and mission type. Upon landing in a cave via an orbital drop pod, players must complete a mission objective, such as mining resources or repairing abandoned equipment. While doing so, they must fight hostile aliens, manage a limited supply of ammunition, and navigate the maze-like environment. Once the objective is completed, players can start an extraction sequence, where players must backtrack through the cave to an escape pod in order to safely exit along with all collected resources. Optional secondary objectives are also available, such as collecting a number of specific objects or mining enough of a unique mineral, offering players additional credits (in-game currency) and experience. Players can play missions solo or with up to three other players. Before starting each mission, players choose one of four playable classes: Scout, Engineer, Gunner, and Driller. Each class has a unique loadout of weapons and tools, giving them varied capabilities in combat and navigation. By working together to take advantage of how their different capabilities interact, teams can more efficiently navigate a cave, complete objectives, and fight enemies. As an example, the Engineer class can shoot platforms onto cave walls, while the Scout class has a personal grappling hook. In order to mine a difficult-to-reach mineral deposit high up on a wall, an Engineer could shoot a platform beneath the deposit, which a Scout could then grapple onto for safe access to the deposit. When playing solo, players can choose to be accompanied by a flying robot called APD-B317 (nicknamed "Bosco"), which assists with objectives and combat. For instance, when playing solo, a player could command Bosco to mine the aforementioned difficult-to-reach mineral deposit for them.
+The game features various progression systems, such as new weapons, equipment upgrades, and cosmetics, that can be purchased using credits and crafting minerals obtained from missions. By completing challenges, players can also acquire perks; these give dwarves additional abilities, such as increased running speed. Since 2021, there have been seasonal events in which players can unlock items via a free battle pass-like system. Players have the option to switch active seasons at any moment outside of a mission, including having no active season. All of the unique rewards each season contains can be obtained by playing through its corresponding season.
+
+
+=== Game modes ===
+
+Deep Rock Galactic has a total of 10 game modes, also referred to in game as missions:
+
+Mining Expedition: The first mission type unlocked, players are tasked with mining a certain quantity of the mineral Morkite and extracting.
+Egg Hunt: Pockets of organic alien matter spawn around the cave, housing eggs that players must collect and deposit. Extracting an egg can trigger a wave of enemies.
+On-site Refining: Wells of liquid Morkite must be connected with pipelines to a central refinery and pumped until the refinery is full, while players repair the pipelines during timed failures.
+Salvage Operation: Set in a previously explored cave, players must repair storage robots and an abandoned drop pod left behind from a previous mining crew in order to extract.
+Point Extraction: A central platform is dropped into the cave the players spawn in (replacing the usual robotic pack mule), where they must collect, carry, and deposit large bright blue gems embedded in the cave walls.
+Deep Scan: Added in the Season 5 update, players must locate and mine precious Morkite Seeds that are found in geodes deep underground. To pinpoint their location, the player must locate Resonance Crystals and construct scanners atop them. Next is an escort stage where the players must protect the Drillevator, a vertical drill, from the hostile lifeforms of Hoxxes IV as it drills its way into the geode. Once the geode is dry of resources, the players will ascend to the caverns with the use of specialized jet boots.
+Escort Duty: An Ommoran Heartstone lies at the end of a cave system, where a large autonomous drill robot must be protected from enemies en route to the Heartstone. This is followed by a survival sequence where players must protect the drill once more as it extracts the core of the Heartstone, which they must deposit to extract.
+Elimination: Players must seek and eliminate Glyphid Dreadnoughts, which are boss variants of the common Glyphid enemy.
+Industrial Sabotage: added in the Season 1 update, this mission sees players disable the force field of a large security robot known as the Caretaker by hacking its power generators. This prompts a multi-stage fight with the Caretaker; upon its destruction, the data rack it was protecting (belonging to a corporate rival) becomes available to deposit.
+Heavy Extraction: Added in the Season 6 update, players must locate multiple Resinite Masses and dig around them to loosen them. They then attach rockets onto the Resinite Mass and press a button to send them up to the space rig.
+Each mission type can be played on six different difficulties, called hazard levels. Each level increases enemy health, damage, and spawn volume and frequency. Missions can also have one of three mission lengths and cave complexity modifiers, which gives players a longer objective and makes the cave bigger and more complex respectively. There are also randomly assigned modifiers that a mission can have up to two of. These modifiers are broken into two categories, being Anomalies and Warnings, with Anomalies typically having good or neutral effects, and Warnings having negative effects but offering more experience to compensate.
+In addition to standard missions, there are two special mission types, referred to as Deep Dives and Elite Deep Dives. In these, a randomly generated sequence of three missions in an ascending difficulty is created, with the biome, mission type, modifiers, and layouts being almost entirely random. All three missions must be completed consecutively, although resources are carried over between each of the three missions. In addition to credit and experience rewards, players receive special items called Matrix Cores, which are used to unlock weapon modifications and cosmetic items. However, these can only be collected once per mission per week, resulting in a total of six Cores if both the Deep Dive and the Elite Deep Dive are completed.
+
+
+== Development ==
+Deep Rock Galactic is the first game developed by Ghost Ship Games. The team has stated that they took inspiration from both Minecraft and Left 4 Dead, and felt that a problem with Left 4 Dead was that it was unbalanced for new players who wanted to play with veterans, instead wanting to design a game where all teammates would be on even footing regardless of experience.
+Deep Rock Galactic entered early access on February 28, 2018, where it stayed for two years prior to its full release in 2020. Ghost Ship Games used the early access model to gather community feedback in order to determine which features to prioritize. The low-poly art style was chosen for its efficiency in adding content. The most difficult part of development was creating the procedural world generator. Deep Rock Galactic used Unreal Engine for development and was made with the engine's Blueprint scripting for quick iteration.
+The full version of the game was released on May 13, 2020. Post-launch, the game continues to be developed, with intermittent updates adding new biomes, equipment, and accessories. Since November 4, 2021, Ghost Ship Games has begun releasing content in themed season updates, adding new enemy types, equipment, missions, and cosmetics.
+
+
+== Reception ==
+
+The early access version of Deep Rock Galactic was received positively by critics, who praised the game's atmosphere and challenging levels. Multiple reviewers compared parts of the experience to Left 4 Dead. Following Early Access, the full version of Deep Rock Galactic received "generally favorable reviews" according to review aggregator platform Metacritic.
+Nic Reuben of Rock, Paper, Shotgun liked how the game's classes meshed together, saying that "each class is both viable and enjoyable". Matt Miller of Game Informer appreciated how the unique secondary objectives gave the game a risk/reward dynamic. Phil Iwaniuk, writing for PC Gamer, enjoyed the tension that the exfiltration phase brought to each mission, and the persistent upgrades that let the player customize their dwarf. Leana Hafer of IGN praised the distinct abilities of each of the dwarves and the low-poly visual style, but criticized the game for its connection issues, saying "About one in every five missions, I’d run into connection issues that could cause other players to lag severely and disconnect."
+Ghost Ship Games had stated that Deep Rock Galactic had sold over 2 million units by January 2021, 3 million sales by November 2021, 4 million copies by June 2022, 5.5 million copies by January 2023, and 8 million copies by January 2024.
+
+
+=== Accolades ===
+
+
+== Spin-offs ==
+A Kickstarter for Deep Rock Galactic: The Board Game was successfully funded in early 2022. Following favorable reception, two additional Kickstarter campaigns were successfully funded, the first featuring the Space Rig and the Biome expansions in 2023, and the second featuring the Horrors of Hoxxes and the Rival Incursion expansions in 2025.
+A spin-off video game, Deep Rock Galactic: Survivor, was announced in March 2023. In contrast to the original, the title is a Vampire Survivors-inspired top-down shooter developed by Funday Games. It was released in early access during 2023.
+Another spin-off, Deep Rock Galactic: Rogue Core, was announced in October 2023. Much like the original, it will be a co-op procedurally-generated first-person shooter, but with rogue-lite elements in place of standard progression, focusing on a four-dwarf squad assigned to investigate the loss of mining activity within Hoxxes' core sectors. The game entered a state of closed alpha in May 2025, and was released into Early Access as of May 20, 2026
+
+
+== References ==
+
+
+== External links ==
+
+Official website
+Official wiki

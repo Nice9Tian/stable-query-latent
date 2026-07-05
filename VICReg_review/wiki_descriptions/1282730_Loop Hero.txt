@@ -1,0 +1,45 @@
+Game: Loop Hero
+appid: 1282730
+Source: Loop Hero
+URL: https://en.wikipedia.org/wiki/Loop_Hero
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Loop Hero is a roguelike video game developed by Russian studio Four Quarters and published by Devolver Digital in 2021. The game takes place in a randomly generated world where the player changes the world by placing cards instead of directly controlling a character. The game was initially released in March 2021 for Linux, macOS, and Windows.
+
+
+== Gameplay ==
+
+Each expedition begins with the hero following a pre-generated path in an empty landscape. Slimes periodically spawn along the path which, when encountered, the hero automatically fights and kills. As the hero kills enemies, the player receives landscape cards. Landscape cards allow the player to place various terrain features around the hero's path, such as mountains, meadows, forests, and buildings. Each terrain feature results in a different effect such as restoring health to the player at the end of every day, increasing the player's movement speed, or periodically spawning enemies. Placing terrain features next to each other can also modify their effect. For example, if enough mountains are placed together, they combine and provide additional health, while also spawning a new enemy type that will fight the hero.
+In addition to landscape cards, killing enemies can also yield new equipment for the hero as well as resources. The player can equip items to increase the hero's attack, defense, health regeneration, and other attributes.  Resources are saved in the player's inventory to be used at a later stage. At the conclusion of each circuit around the path, the player is given the option to retreat from the expedition back to their original starting base. At the base, the player can use the resources they acquired on the path to construct new structures in their base, such as a kitchen or a blacksmith.
+Most of the game takes place on one of the randomly generated paths, with the player working to upgrade the hero's equipment and strategically placing terrain elements in an effort to survive increasingly difficult enemies. As the hero places landscape cards on the path, the boss meter rises and a final boss spawns at the path's exit point. If the player successfully defeats the boss, the story progresses. If the player is defeated while fighting enemies, they lose 70% of their resources and are forced to retreat to their base to start over from scratch.
+
+
+== Plot ==
+The game begins after the world has ended, with the introductory dialogue explaining that an evil lich obliterated reality and all of the things in it. The hero awakens in a small camp on a path and sets out to try and rebuild his world. Along the way, he encounters other survivors who either assist him in trying to reconstruct the world or who, in despair, consider it lost and attack him in an effort to further their own survival.
+However, as the hero defeats the Lich and his followers, he discovers that the end of reality is being instigated by God himself, Omega. Omega explains that his previous incarnation, Alpha, created the universe as well as humanity, and took a particular liking to them. On a whim, Alpha decided to descend to one of his worlds to appear personally to humans. However, to his shock and amazement, the primitive human he met attacked him with a spear in an effort to protect his family. Intrigued by humanity's defiance against him, Alpha allowed himself to be killed by the human, and was reborn as Omega, now determined to destroy the universe to re-experience the sensation of death.
+The hero battles and is able to defeat Omega, and it is revealed that one of companions, Yota, was actually the Goddess of Probability who has been secretly aiding him all this time. Defeated, Omega congratulates the hero and explains that it will take a thousand years for him to reincarnate back into Alpha to create a new universe. The hero promises to keep rebuilding his world in Alpha's absence so that his descendants will be ready to greet him upon his reincarnation. Yota then tells the hero that he has the option of retiring to his village to rebuild the world, or travel to alternate worlds where the hero failed so that he can save them from Omega.
+
+
+== Development and release ==
+Loop Hero was initially borne out from an idea the Four Quarters team had in early 2019 when discussing zero-player games; one of their team members built a game with a hero wandering in a loop while the player built around it. They did not do much with this idea until the Ludum Dare game jam in October 2019, which had the theme "Start with nothing". The earlier prototype idea worked well to the theme, though the final game they produced for Ludum Dare did not win as it wasn't very polished. Four Quarters recognized that they had the foundings of a good game, spent more time with the Ludum Dare version and were able to secure Devolver Digital for publication and support. Since then, most of their development had been focused on balance of the game due to the number of different sub-systems within the game. They were able to use a demo of the game offered on Steam as part of one of the first major large-scale balance tests, and which they planned to continue after the game's release. The game released for Linux, macOS, and Windows on March 4, 2021. A Nintendo Switch version released on December 9, 2021. Versions for Xbox One and Xbox Series X/S released on April 4, 2023. A mobile version released for Android and iOS on April 30, 2024. Following the Russian invasion of Ukraine, the developer encouraged piracy of Loop Hero in countries where sanctions prevented purchase.
+
+
+== Reception ==
+
+Loop Hero  received "generally favorable" reviews, according to review aggregator website Metacritic. Critics praised the freedom to create unique worlds and the 80's aesthetic of the game. Ben Kuchera of Polygon praised the experimentation that the looping system allowed. Ian Boudreau of PCGamesN appreciated how the deck building mechanics allowed the player to constantly vary up their playstyle. Evan Lahti, writing for PC Gamer, enjoyed the surprises that different card combinations could create, although he thought the lack of new ones hurt the later game. Sam Machkovech of Ars Technica enjoyed the game's take on the idle genre, and how the player had to make difficult choices on their abilities.
+
+
+=== Accolades ===
+Loop Hero was nominated for "Best Independent Game" at The Game Awards 2021. It was also nominated for "Outstanding Achievement for an Independent Game", "Outstanding Achievement in Game Design", and "Strategy/Simulation Game of the Year" at the 25th Annual D.I.C.E. Awards. Loop Hero's mobile port also won the award for Best Foreign Mobile Game at the 2025 Pégases Awards.
+
+
+== See also ==
+Please, Don't Touch Anything, the first game from Four Quarters
+
+
+== References ==
+
+
+== External links ==
+Official website

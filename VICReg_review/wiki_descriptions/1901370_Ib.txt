@@ -1,0 +1,45 @@
+Game: Ib
+appid: 1901370
+Source: Ib (video game)
+URL: https://en.wikipedia.org/wiki/Ib_(video_game)
+Match score: 4.60
+Retrieved: 2026-07-04
+--------
+Ib is a 2012 adventure horror game developed and published by kouri for Windows. Players control the titular character from a top-down perspective trapped in an eldritch art museum, where they meet the characters Garry and Mary. Together, they attempt to escape the museum and return to the real world.
+Ib was the debut game of its creator, who developed it using the RPG Maker 2000 game engine. The original game was released as freeware available for download from the developer's personal website. A remake using the RPG Maker MV engine with updated graphics, music, and mechanics was published by Playism for Windows in April 2022, for Nintendo Switch in March 2023, and for PlayStation 4 and PlayStation 5 in March 2024.
+The game is considered a cult classic and an influential title among indie horror adventure games. Upon release in 2012, Ib was a critical success, and quickly became popular both in Japan and internationally. The remake received generally favourable reception.
+
+
+== Gameplay ==
+Ib is a single-player adventure horror game. Players control Ib, the title character of the game, from a top-down perspective as she navigates and tries to escape a surreal art gallery. The gameplay consists of examining and interacting with objects in the world, collecting items, and solving puzzles. There are enemies, but no combat. Instead of fighting, players must evade enemies by escaping into other sections of the gallery. Getting caught depletes the player character's health, represented in the form of petals of a red rose. Once health reaches zero, the player loses.
+Ib is a silent protagonist, and dialogue between characters is sparse. The gameplay is non-linear; players can achieve different endings depending on the choices made and actions taken throughout the game.
+
+
+== Plot ==
+
+A young girl, Ib, is visiting an art gallery with her parents. While examining a strange painting, a sudden power outage ensues, the gallery's doors lock, and other visitors disappear. Guided by a trail of paint splatters, she is lured inside another painting and finds herself within a surreal painting-like "fabricated world". Making her way through the otherworldly realm, she comes across a collapsed figure on the ground. After successfully reviving him, the figure introduces himself as Garry. Like her, he is also trapped inside the gallery, and the two resolve to escape together.
+Later on, they encounter Mary, an eccentric girl around Ib's age, who joins the group. Soon after, the group gets separated by an emerging wall of vines, leaving Garry isolated. The player's perspective alternates between Garry and the duo, and the former uncovers the true nature of Mary as a painting and the game's antagonist. As Garry finally catches up with the pair, Mary turns hostile but is fought off, and the other two escape.
+From there, the plot diverges depending on the player's actions. As Ib and Garry continue to explore, Garry may die or become insane, with the latter triggering an immediate game over and the former forcing Ib to continue alone. The player will discover Mary's painting that they must then burn, effectively killing her. Failure to do so causes Mary to follow Ib back to the real world and be recognised by Ib's parents as their second child. Successfully burning the painting allows Ib to escape back to the real world. If Garry is alive, he will be either stripped of his memory and leave, or retain it and promise to meet Ib again before parting ways.
+
+
+== Development and release ==
+Ib was created by kouri, a Japanese indie game developer of whom little is known. It was developed using the RPG Maker 2000 game engine and initially self-published in February 2012 as freeware, available for download from the developer's personal website. Updates continued until June 2014, culminating in the release of the final version 1.07. Ib was kouri's first experience in game development; he chose an art gallery as the setting because he thought it would be an easy one and horror as a genre because he, mistakenly, thought he would never get tired of it.
+In November 2019, development started on a remake of the original game. According to the developer, this was due to popular demand, particularly from outside Japan, and a desire to update the game to conform with modern hardware standards. Created with the RPG Maker MV engine, the remake features updated graphics, gameplay mechanics, and a remastered soundtrack. Unlike its predecessor, the remake is not free and was instead published by Playism for Windows via Steam on 11 April 2022 and Nintendo Switch on 9 March 2023. It received an English localisation on 17 May 2023. A port to PlayStation 4 and PlayStation 5 was released on 14 March 2024.
+
+
+== Reception ==
+
+Ib has been described as cult classic and an influential title among indie horror adventure games. Critics have compared it favourably to older titles in the genre such as Yume Nikki and Corpse Party, and seen its influence in later entries such as The Witch's House. The game quickly became popular after its release, accumulating over a million downloads in Japan and a similar number internationally after receiving an English translation. The remake received "generally favorable reviews", according to the review aggregator website Metacritic, which calculated a weighted average rating of 82/100 for the Nintendo Switch version based on 11 critic reviews. Aggregator OpenCritic found that 89% of 10 critics recommended the remake.
+Critics identified the game's atmosphere as its main appeal. Joe DeVader of Nintendo World Report called it "genuinely creepy and off-putting", commending the use of silence and sudden sounds to catch players off guard. RPGFan's Des Miller saw clear inspiration taken from Lewis Caroll's Alice in Wonderland while finding the world much "darker, claustrophobic, and deadly" than the one Alice found herself in. Famitsu, on the other hand, found the atmosphere "cute yet eerie"; chilling but not overly frightening.
+Reviewers highlighted the game's simplicity and brevity. Miller regarded these aspects as integral to its allure and charm, arguing that "less is more". Shaun Musgrave of TouchArcade shared this sentiment, labelling Ib as a "very simple game with ... a lot of heart". Multiplayer.it disagreed, finding the "extreme" simplicity to be too much. Conversely, critics felt certain elements of the game were overly complex. Miller found some of the endings "largely impossible" to achieve without external help. Both Musgrave and DeVader agreed that, while generally well designed, at least one of the puzzles relied excessively on trial and error.
+
+
+== Notes ==
+
+
+== References ==
+
+
+== External links ==
+Official website (in Japanese)
+Official website (remake)

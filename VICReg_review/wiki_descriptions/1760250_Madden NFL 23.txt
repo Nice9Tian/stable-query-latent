@@ -1,0 +1,38 @@
+Game: Madden NFL 23
+appid: 1760250
+Source: Madden NFL 23
+URL: https://en.wikipedia.org/wiki/Madden_NFL_23
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Madden NFL 23 is a 2022 American football video game developed by EA Tiburon and published by EA Sports. Based on the National Football League (NFL), it is the 33rd installment of the Madden NFL series and follows the release of Madden NFL 22.
+Madden NFL 23 was released in August for PlayStation 4, PlayStation 5, Windows, Xbox One, and Xbox Series X/S. It marked the series debut on the Epic Games Store. Former head coach and broadcaster John Madden, whom the game was named after, is the cover star in honor of his death in December 2021. The game received mixed reviews from critics, though they generally declared it an improvement from previous games.
+The online servers for the game will be shut down on July 13, 2026.
+
+
+== Gameplay ==
+The franchise mode featured new additions, including free agency tools and additional trade factors. The PS5 and Xbox Series X/S versions of the game included new defensive animations, including mid-air collisions and tackle assists, as well as a more precise passing mechanic on offense. The game also features player-locked touchdown camera views, additional player silhouettes body types, and improved stadium details.
+In July 2022, EA set up a phone line where gamers could call to complain about a player's rating being too low.
+Madden Ultimate Team also received several notable improvements. The introduction of the new Field Pass system allows players to earn up to date rewards throughout the year. New Field Passes come out with each major program, season, and every two weeks the Competitive Field Pass releases new rewards for players to earn.
+
+
+== Development and release ==
+
+John Madden (who last appeared on the cover of Madden NFL 2000), was announced as the cover star on Madden Day (June 1, 2022; the same day that the series' first installment, John Madden Football, was released) in honor of his death on December 28, 2021. The cover of the next-gen version is a picture of Madden celebrating his victory as the head coach of the Oakland Raiders at Super Bowl XI. The All-Madden Edition is based on the cover of the series' first game, John Madden Football, made by Chuck Styles.
+
+
+== Reception ==
+
+Madden NFL 23 received "mixed or average" reviews from critics, according to Metacritic.
+In its 7.0/10 review, IGN wrote: "Madden NFL 23, though, provides a glimpse of a light at the end of the tunnel with a handful of smart enhancements to animations, AI, and passing mechanics that make subtle but meaningful improvements to the moment-to-moment football on the field… After playing Madden NFL 23 I finally have a little optimism that the series is on the right path — maybe not an emphatic 'Boom!', but clear forward progress for a series that so desperately needs it." Also giving the game a 7/10, GameSpot said: "This year's Madden is a lot like the past decade of Madden in that it suffers a number of self-inflicted wounds and returns features that were unpopular in years prior. However, it's crucial to reiterate, on the field, Madden genuinely feels great for the first time in a long time. The changes to Franchise are helpful but not revolutionary, the MUT Field Pass system is promising but janky at launch, and other modes are largely forgettable… The improvements on gameday make Madden 23 a flawed game, but clearly an improvement in the series' most important way: the actual playing of football." GamesRadar+ gave the game 3 out of 5 stars, saying: "Some fun improvements make this playable – yet Madden still features too much carryover. Not just from last year, but the last decade." Shacknews rated it 3 out of 5 stars calling it "a poor pro football simulator".
+
+
+=== Save file issues ===
+On December 26, 2022, players began experiencing issues connecting to Madden NFL 23' Connected Franchise Mode (CFM). CFM has remained a mainstay in Madden NFL since Madden NFL 99 (1998), and was rebranded in Madden NFL 25 (2013). EA resolved the issue on December 28, although from a time period ranging from December 28 to December 29, any player that logged in would have their save files corrupted. EA was able to recover 40% of save files corrupted as a result of server issues, but many players reported that their developed franchises were suddenly gone.
+
+
+== References ==
+
+
+== External links ==
+Official website

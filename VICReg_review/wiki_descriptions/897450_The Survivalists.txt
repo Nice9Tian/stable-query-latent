@@ -1,0 +1,31 @@
+Game: The Survivalists
+appid: 897450
+Source: The Survivalists
+URL: https://en.wikipedia.org/wiki/The_Survivalists
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+The Survivalists is a 2020 sandbox survival video game developed and published by Team17. It was released for iOS, macOS, Nintendo Switch, PlayStation 4, tvOS, Windows and Xbox One on 9 October 2020.
+
+
+== Gameplay ==
+The Survivalists is a sandbox survival on a desert island which is set in the same universe as The Escapists. Players must build a home, craft items, hunt for food and raid temples for loot whilst monkeys can be recruited to build and fight for the player. The ability for players to farm was added in 2021. Co-operative gameplay with up to four players is also supported.
+
+
+== Development and release ==
+At the Nintendo Indie World Showcase in December 2019, The Survivalists was first announced with a planned release date for 2020 on Nintendo Switch, PlayStation 4, Windows and Xbox One.
+In June 2020, a limited-time beta was released on Steam. The game was released on 9 October 2026 on all platforms alongside a version for iOS, macOS and tvOS via Apple Arcade.
+In February 2021, an update added farming and the ability to repair and change items to the game. The Frostbite Fortress DLC was released in March 2026 and added a new biome, a deadly labyrinth and new equipment and potion mechanics.
+
+
+== Reception ==
+
+The Survivalists received "mixed or average" reviews from critics on PC, Nintendo Switch and Xbox One whilst it received "generally favourable" reviews from critics on PlayStation 4, according to review aggregator site Metacritic. 
+PC Games rated it 4/10 and was critical of the game compared to its predecessors. Nintendo Life rated the game 6/10 and wrote: "As an entry-level take on the principles it's pretty good, but even the least experienced survivor will reach endgame gear quickly and find there's just not a whole lot left to do."
+
+
+== References ==
+
+
+== External links ==
+The Survivalists at Team17 official website

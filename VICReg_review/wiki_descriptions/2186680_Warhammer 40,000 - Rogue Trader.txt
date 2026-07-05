@@ -1,0 +1,60 @@
+Game: Warhammer 40,000: Rogue Trader
+appid: 2186680
+Source: Warhammer 40,000: Rogue Trader (video game)
+URL: https://en.wikipedia.org/wiki/Warhammer_40,000:_Rogue_Trader_(video_game)
+Match score: 8.04
+Retrieved: 2026-07-04
+--------
+Warhammer 40,000: Rogue Trader is an isometric role-playing video game  developed and published by Owlcat Games set in the Warhammer 40,000 universe. The game was released for Windows, macOS, PlayStation 5, and Xbox Series X/S on December 7, 2023. A DLC, Void Shadows, was released on September 24, 2024. Its second DLC called Lex Imperialis was released on June 24, 2025. The game was also released on Nintendo Switch 2 on December 11, 2025.
+
+
+== Gameplay ==
+Similar to prior Owlcat games (Pathfinder: Kingmaker), Rogue Trader is an isometric role-playing video game, heavily utilizing the d100 TTRPG system from the game of the same name.
+The player controls a party of up to six characters, including their own, through ground combat and social interactions. It features a turn-based combat system and an isometric perspective. One of the game's distinguishing features is its emphasis on realm-building, with the player's decisions as a Rogue Trader affecting the rest of the gameplay as they build their space empire. Space combat is also present. The game also supports a cooperative multiplayer mode.
+The alignment system allows the player to make Dogmatic choices that are typically merciless but in keeping with the setting's fervent belief in the God-Emperor, Iconoclastic choices that challenge the status quo, or Heretical choices that are Chaos-aligned. These choices radically alter conversation options and equipment availability.
+
+
+== Synopsis ==
+
+
+=== Setting ===
+The game takes place in the Koronus Expanse, a dangerous and mostly unexplored region of space, accessible to the hegemonic Imperium of Man only through a treacherous route known as the Koronus Passage. The player, the titular Rogue Trader, is a member of a special aristocratic caste within the Imperium known as the Rogue Traders, who are autonomous combinations of explorers, merchants, and feudal lords, given special permission by the Imperium to explore, trade, and conquer, all for the benefit of the Imperium and Mankind as a whole.
+
+
+=== Characters ===
+The chief protagonist of Warhammer 40,000: Rogue Trader is the titular Rogue Trader, customized from one of seven origins, a newly-found heir to the venerable Von Valancius dynasty, one of the oldest and most powerful Rogue Trader lineages still extant within the Imperium. Lady Theodora, and later the Rogue Trader themself, have in their service Abelard Werserian, the Chief Seneschal of House Von Valancius, and the unsanctioned psyker Idira Tlass. The Rogue Trader can further enlist the aid of Sister Argenta, a member of the Adepta Sororitas, Cassia Orsellio, a Novator of the Navis Nobilite, Pasqal Haneumann, a Magos of the Adeptus Mechanicus, and Heinrix Van Calox, an Interrogator of the Holy Orders of the Emperor's Inquisition.
+As Rogue Traders are given extended leeway in following the laws of the Imperium insofar as they ultimately serve the Imperium's wider overarching goals, and the Koronus Expanse is, as a region largely left untouched by humanity's God-Emperor's Crusade millennia ago, filled with criminals, apostolic elements, and alien species known as xenos, the player is free to work with or even recruit from these disparate groups to advance their goals. These include Jae Heydari, a smuggler and trader in illicit goods, Yrliet Lanaevyss, an Aeldari ranger, Marazhai Aezyrraesh, a Drukhari Dracon, and Ulfar, an Adeptus Astartes and member of the Space Marine Chapter the Space Wolves.
+
+
+=== Plot ===
+The player character, a newly-discovered heir to the Von Valancius Rogue Trader dynasty, is summoned by the house's leader Lady Theodora along with other potential successors to settle the matter of inheritance. The player character meets with Theodora and rival claimant Edelthrad aboard the Von Valancius flagship. Assailants led by Theodora's spymaster Kunrad Voigtvir attack the flagship and capture the player character; Voigtvir needs the player character's blood to access the Warrant of Trade, a holy relic that confers House Von Valancius's Rogue Trader status. When the player character proffers their blood to the flagship's computers, automated defenses are activated which drive off Voigtvir.
+The player character joins forces with Theodora's seneschal Abelard Werserian, unsanctioned psyker Idira Tlass, and the warrior-nun Sister Argenta. The four reach Theodora's chambers and find her murdered. Edelthrad is killed in a ritual sacrifice, but the player reclaims the bridge from Voigtvir and escapes to safe space within the Koronus Expanse. With Theodora and Edelthrad dead, the rest of the dynasty quickly recognizes the player character as the new Rogue Trader.
+The Rogue Trader finds a new Navigator for their fleet, Cassia Orsellio. Along the way, they can also enlist the services of the Magos Pasqal Haneumann and the Interrogator Heinrix Van Calox. The Rogue Trader also learns that their enemy is an apparent Chaos cult known as the Final Dawn. While settling matters on agricultural planet Janus, the Rogue Trader has the option of recruiting Yrliet Lanaevyss, an exiled Aeldari ranger. After putting the house's affairs in order, the administrative headquarters of Von Valancius, planet Dargonus, is attacked by Drukhari raiders led by the Dracon Marazhai Aezyrraesh. 
+The Rogue Trader is then led into a trap by either Yrliet, if she was recruited, or a spy of House Von Valancius, and captured by Marazhai. Marazhai brings the Rogue Trader and their retinue to Comorragh, the capital city of the Drukhari, intending to use them in a ploy to gain power within the scheming aristocratic families of the city. Instead, Marazhai is stripped of his status and reduced to gladiator within the city's fighting pits, while the Rogue Trader and their cohorts are given over to a Drukhari scientist to be experimented upon. The Rogue Trader is then partially dissected and abandoned in a corpse dump and left for dead.
+In order to escape from Comorragh, the Rogue Trader fights in the gladiatorial arena of Comorragh, potentially reuniting with each of their companions along the way, including Yrliet. The player also has the option to recruit Marazhai himself, and a captive Space Marine, Ulfar of the Space Wolves. Fleeing Comorragh, the Rogue Trader returns to the Koronus Expanse to find that in their absence, a war has erupted between two rival Rogue Traders, Incendia Chorda and Calligos Winterscale. In an effort to maintain order, the Inquisitor Xavier Calcazar has declared himself temporary warden of the Koronus Expanse and tasks the Rogue Trader with ending the conflict.
+After dealing with Chorda and Winterscale, Calcazar enlists the Rogue Trader to join a chapter of Space Wolves in assaulting the main stronghold of the Cult of the Final Dawn, and confronting the cult's leader, Uralon the Cruel. Afterwards, the Rogue Trader returns to Calcazar's office to find him gone, and learns from an agent of his that the Inquisitor has left the Koronus Expanse. If any of Chorda, Winterscale, or Uralon are still alive and the Rogue Trader is of the correct ideological alignment, they can also be recruited. 
+Chasing after Calcazar, the Rogue Trader goes through a dimensional gate and arrives in a remote system filled with Necrons. The Rogue Trader lands on a Tomb World and confronts Calcazar, who is in the process of subduing a C'tan, a type of pure energy being with godlike abilities that were defeated by the Necrons millennia ago and shattered into various shards. Calcazar explains that long ago, he, Theodora, and a member of the Adeptus Mechanicus, Archmagos Amarnat (of which Pasqal is a clone with a fragment of Amarnat's mind), discovered a shard of the Void Dragon C'tan on the then-asleep Tomb World. 
+The three worked together to form a plan to activate the shard and reform the C'tan, with the shared goal of leashing the awakened C'tan and using its immense power for themselves. This plan required technology beyond even Amarnat's capabilities, so Calcazar worked with the Drukhari, which led to the Dark Eldar raids on the Koronus Expanse and brought Dargonus to the attention of Marazhai. Meanwhile Lady Theodora started experimenting with and fell to Chaos, resulting in her death when Argenta discovered her with a Chaos relic and killed her. While researching the Necron technologies of the Tomb World, Theodora also inadvertently destroyed the Aeldari Craftworld Crudarach, Yrliet's homeworld, thus resulting in her exile.
+Now with technology recovered from the Cult of the Final Dawn's stronghold thanks to the Rogue Trader and the Space Wolves, Calcazar has finally completed the device and is ready to summon and bind the shard of the Void Dragon, ostensibly in service to the Inquisition. The player can choose to either ally with Calcazar or fight him. In either case, the awakened C'tan attacks and must be defeated. Afterwards, the Rogue Trader will have the choice of destroying the C'tan, swearing loyalty to it and joining it in submission as it prepares to devour the Koronus Expanse, or either allowing Calcazar to use the device to imprison the C'tan or doing it themself. An epilogue then details the various fates of the Rogue Trader, their companions, the numerous other inhabitants and planets of the Koronus Expanse, and the ramifications of the player's many choices throughout the game.
+A hidden concurrent subplot throughout the game details the formation of a new C'tan that becomes known as Nomos. Created when Theodora exposed the flagship's computers to the Necron technology from the Tomb World and then awakened by the Rogue Trader's blood when they were taken and forced by Voigtvir to access the Warrant Chamber, the nascent intelligence becomes self-aware and starts attempting to communicate with the Rogue Trader early on in the game. If the player manages to make specific choices throughout the game and find Theodora's hidden data caches regarding the Necron technology, this being, named Nomos, quickly learns and begins to view the Rogue Trader as a parental figure, internalizing the player's choice of moral alignment. Later, Nomos will transfer its mind from the frigate's computers to a physical body, allowing it to accompany the Rogue Trader during the final confrontation with Calcazar. After defeating the awakened C'tan, the Rogue Trader can then allow Nomos to consume the C'tan shard and absorb its power to become a newborn C'tan, which will act depending on the Rogue Trader's ideological conviction to further the power of House Von Valancius.
+
+
+== Reception ==
+
+Rogue Trader received generally positive reviews upon release, according to review aggregator Metacritic. In Japan, four critics from Famitsu gave the game a total score of 28 out of 40.
+Rock, Paper, Shotgun applauded the alignment system, citing that both extremes and the middle of the road options had playable value. Leana Hafer from IGN described the game as an "ultra crunchy, 130-hour space epic with excellent writing and combat", though she criticized the presence of various software bugs.
+Jody Macgregor from PC Gamer praised the game's tone and atmosphere, though he disliked the combat and the game's technical issues at launch.
+
+
+=== Sales ===
+The game surpassed one million copies sold by January 2025, one year after release.
+
+
+=== Accolades ===
+
+
+== References ==
+
+
+== External links ==
+Official website

@@ -1,0 +1,33 @@
+Game: Nobody Wants to Die
+appid: 1939970
+Source: Nobody Wants to Die
+URL: https://en.wikipedia.org/wiki/Nobody_Wants_to_Die
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Nobody Wants to Die is a 2024 adventure video game developed by Critical Hit Games and published by Plaion. It was released on 17 July 2024 for PlayStation 5, Windows and Xbox Series X/S.
+
+
+== Gameplay ==
+Nobody Wants to Die is an adventure game in a first-person perspective, in which players interact with other characters and investigate crime scenes to gather evidence. Players can interact with and question characters with a choice of multiple dialogue options. Investigation involves the use of several tools to locate items of evidence at a crime scene, including a Reconstructor to visualise recorded footage of events at a scene. Clues are depicted on an evidence board, with the game questioning players to make the correct inferences from items of evidence.
+
+
+== Plot ==
+The game is set in New York City in the year 2329, in a future where technology has developed a method to provide humans with eternal life by storing a person's consciousness in a memory bank and switching them between bodies. The player assumes the role of James Karra, a detective in the Mortality Department, who is investigating a series of murders perpetrated by a serial killer targeting the elite of the city. When Karra is instructed by his boss to report the latest murder as an accident, he decides to investigate further. The game features multiple endings based on player choices made throughout play.
+
+
+== Development and release ==
+Nobody Wants to Die was developed by Polish Wrocław-based studio Critical Hit Games, a twenty-person team that began development of the game in 2018. Co-founder Grzegorz Goleń created the game's concept with art director Andrzej Marszałek in attempt to create a "visually spectacular narrative game", with the development team inspired by cyberpunk film Blade Runner and narrative games including What Remains of Edith Finch, Firewatch, and Observer. Development of Nobody Wants to Die originally began in Unreal Engine 4 but moved to Unreal Engine 5 midway through the development cycle. The development team experienced "stability issues" in moving from Unreal Engine 4. The game was announced in March 2024 with the release of a narrative trailer, and showcased at the Gamescom Future Games Show on 8 June. Nobody Wants to Die received a digital release for PlayStation 5, Windows and Xbox Series X/S on 17 July 2024.
+
+
+== Reception ==
+
+According to review aggregator platform Metacritic, Nobody Wants to Die received "generally favorable" reviews, with German publication GamePro and a reader poll of Eurogamer citing the game as one of the best of 2024. Critics praised the game's narrative and worldbuilding, although critiqued its linearity and the simplicity of its puzzles.
+
+
+== References ==
+
+
+== External links ==
+Official website
+Nobody Wants to Die at MobyGames

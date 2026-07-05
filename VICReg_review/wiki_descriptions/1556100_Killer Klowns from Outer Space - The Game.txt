@@ -1,0 +1,59 @@
+Game: Killer Klowns from Outer Space: The Game
+appid: 1556100
+Source: Killer Klowns from Outer Space: The Game
+URL: https://en.wikipedia.org/wiki/Killer_Klowns_from_Outer_Space:_The_Game
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Killer Klowns from Outer Space: The Game is a 2024 asymmetrical survival horror game developed by IllFonic and Teravision Games. It is based on the 1988 film Killer Klowns from Outer Space. The game was available for pre-order on May 28, 2024, and was released on June 4, 2024 as a digital release and on October 15, 2024 as a physical release.
+
+
+== Gameplay ==
+
+Killer Klowns from Outer Space: The Game is an asymmetrical survival horror game with up to ten people able to play in one 15-minute match.
+Three players are selected to control the Klowns, whose objectives are to trigger the detonation of the Klownpocalypse. The other seven players control the humans, whose objectives are to escape the map alive. In order to escape, humans must locate at least one of the four escape routes scattered across the map (Klownpocalypse Bunker, Boat Repair, Klown Tech Portal, Gated Condemned Exit) and then collect the necessary items to activate them (Sparkplug, Gas Can, Key Card, Gate Key). These escape routes can be temporarily blockaded by the Klowns with a layer of cotton candy, which must be manually removed by the humans. The gate will remain active until too many people stand or run on the bridge in front, in which case it will give way and block the escape route. The other exits will only allow a set number of players to escape and are blocked shortly after opening.
+Klowns can attack humans with weapons such as the mallet or the popcorn bazooka, and the humans can fight back by damaging the Klowns with their own weapons or using items such as airhorns to stun them. Humans can also run slightly faster than the Klowns, providing a means of escape.
+If a Klown captures a human inside of a cotton candy cocoon, the Klown can pick them up and carry them to one of the Lackey generators scattered throughout the map. Once all of the generators are fully powered by the cocoons, the Klownpocalypse is triggered, which will eliminate all remaining humans. (The Klownpocalypse can also be triggered by the counter running to zero.) The match only ends when all humans have either escaped or died; thus, while some humans may escape and finish early, those still inside must keep playing. Players who have escaped or died have the ability to cycle through the remaining players' points of view as a spectator, play mini-games in order to win low-level items for the remaining players, or return to the main menu.
+When there are 30 seconds left in the game, the Terenzi brothers will crash through an exterior wall of the map in their ice cream truck, providing a fifth escape route for any remaining humans.
+
+
+== Settings ==
+Five primary maps are available: Downtown, The Suburbs, Top of the World, Amusement Park, and Clown Summer Camp. A sixth map, Waterfront Pier, was added for free on August 22, 2024. On October 29, 2024, a seventh map was released: the Crescent Cove Mall.
+Launching the game in a private match without any other players will trigger an offline mode where the player takes control as a Klown and the humans are bots.
+The game also features customization options, skins and unlockable cosmetics for characters.
+
+
+=== Characters ===
+There are five playable Klown classes in the game: Ranger, Tracker, Hunter, Tank, and Brawler. Each Klown comes equipped with two weapons and three skills. There are five playable human classes in the game: Athletic, Rebellious, Heroic, Resourceful, and Tough.
+
+
+== Development ==
+The game was developed by IllFonic and Colombian studio Teravision Games. Since release, the game has continued getting content updates like free maps as well as unlockable and paid cosmetics. These cosmetics include guest appearances by Tom Savini and Elvira.
+The game has a planned physical release for consoles on October 15, 2024.
+
+
+== Reception ==
+
+Killer Klowns from Outer Space: The Game received "mixed or average" reviews, according to review aggregator Metacritic.
+Alex James Kane of RogerEbert.com wrote: "I didn't expect to be charmed or wowed by a game starring murderous clowns. But this is a polished, smartly designed experience that iterates on the asymmetrical-horror formula in some impressive ways."
+Kenneth Seward Jr. of Game Informer gave the game a mostly positive review, writing: "In its current state, Killer Klowns From Outer Space: The Game is a good asymmetrical multiplayer game. The gameplay mechanics that help balance the competitive roles reinforce the lessons IllFonic has learned over the years, while its comical nods to the film and impressive graphics showcase the respect given to the source material."
+
+
+== See also ==
+List of horror video games
+
+Dead by Daylight
+Evil Dead: The Game
+Friday the 13th: The Game
+Identity V
+Predator: Hunting Grounds
+Propnight
+The Texas Chainsaw Massacre
+
+
+== References ==
+
+
+== External links ==
+
+Official website

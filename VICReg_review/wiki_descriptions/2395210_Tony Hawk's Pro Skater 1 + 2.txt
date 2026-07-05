@@ -1,0 +1,74 @@
+Game: Tony Hawk's Pro Skater 1 + 2
+appid: 2395210
+Source: Tony Hawk's Pro Skater 1 + 2
+URL: https://en.wikipedia.org/wiki/Tony_Hawk%27s_Pro_Skater_1_%2B_2
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Tony Hawk's Pro Skater 1 + 2 is a 2020 skateboarding video game developed by Vicarious Visions and published by Activision. It was released for PlayStation 4, Windows, and Xbox One on September 4, 2020, PlayStation 5 and Xbox Series X/S on March 26, 2021, and Nintendo Switch on June 25 of the same year. It is a remake of the first two games in the Tony Hawk's series: Tony Hawk's Pro Skater (1999) and Tony Hawk's Pro Skater 2 (2000), which were originally developed by Neversoft. It was the first major console game in the series since Tony Hawk's Pro Skater 5 (2015) and is Vicarious Visions' final work as a subsidiary of Activision before it was merged into Blizzard Entertainment on January 22, 2021.
+The game received very positive reviews from critics who praised the graphics, diverse roster, nostalgic soundtrack, and gameplay, though some criticized the multiplayer mode and limited number of levels. The game became the fastest-selling game in the franchise, selling one million copies within the first two weeks. A successor, Tony Hawk's Pro Skater 3 + 4, was released on July 11, 2025 and was developed by Iron Galaxy.
+
+
+== Gameplay ==
+
+Tony Hawk's Pro Skater 1 + 2 is a skateboarding video game played in a third-person view with its gameplay oriented towards classic arcade games. The goal of most modes of the game is to achieve a high score or collect certain objects. The player must complete objectives to unlock levels to progress through the game. To score points, the player has to successfully perform and combine aerials, flips, grinds, lips, and manuals, with successful executions adding to the player's score. The point value of the trick is based on time maintained, degrees rotated, number of tricks performed in sequence, performing tricks on specific landmarks on the map, and the number of times the tricks have been used. Successful tricks add to the player's special meter, which, once full, allows for the execution of special tricks which are worth a great deal more than normal tricks. Bails (falling off the skateboard due to poor landing) attain no points for the attempted trick sequence and reset the special bar to empty.
+Even though the game is a remake of only the first two entries, Pro Skater 1 + 2 features tricks introduced in later games up to Tony Hawk's Underground such as reverts, spine transfers, wall plants, as well as the abilities to perform enhanced tricks such as double flips and to switch between certain trick types such as grinds, lips and manuals in one sequence. It is possible to set the controls back to only featuring maneuvers possible in the original games. The player can create their own skater and skate park with the Create-A-Skater and Create-A-Park modes. The game includes both local split screen and online multiplayer. The game offers a progression system which allows players to complete specific challenges to reach a higher level and unlock new items in the game's store.
+
+
+=== Featured pro skaters and characters ===
+The game features 21 professional skateboarders, as well as three original characters. All of the pro skateboarders from the first two games have returned for the remake, appearing as their current age; the "Digital Deluxe Edition" offers 1980s-skins for some skaters. The remake includes several new and younger pro skateboarders, some of which, such as Nyjah Huston, Riley Hawk, and Lizzie Armanto, had already appeared in the later Tony Hawk games. When putting together the roster, specific attention was paid to represent ethnic and gender diversity, leading to the inclusion of transgender skater Leo Baker, as well as several other skaters of different ethnicities and sexual orientation. Jack Black provides his likeness and voice as "Officer Dick", a playable secret character who was also in the original games. Additional secret characters include an alien as well as the skeleton Ripper, the mascot of Powell Peralta. Pro Skater 2's original secret character, Spider-Man, did not return due to licensing issues. Skaters marked with "^" are new to the series, while skaters marked with "†" were originally featured in different games of the series.
+
+
+==== Notes ====
+^a unlockable
+^b Digital Deluxe Edition only
+
+
+== Development ==
+Pro Skater 1 + 2 is a remake of the first two games of the Tony Hawk's series: Tony Hawk's Pro Skater and Tony Hawk's Pro Skater 2. Trying to capitalize on the growing popularity of skateboarding as a sport, the Tony Hawk's series of video games started in 1999 with Pro Skater, which was followed by Pro Skater 2 in 2000. Both games, especially Pro Skater 2, were extremely well received critically and commercially, spawning one of the most commercially successful video game franchises of the 2000s, releasing games on a yearly basis for over a decade. However, the original licensing deal between Tony Hawk and Activision expired in 2015 after the release of the poorly reviewed Pro Skater 5, abandoning the franchise for almost five years. Pro Skater 1 + 2 is the first game released by Activision since the deal ended, while Hawk partnered with Maple Media to release the independent mobile game Tony Hawk's Skate Jam in 2018.
+In May 2020, Activision announced Tony Hawk's Pro Skater 1 + 2 which was developed by Vicarious Visions, who previously worked on ports for several Tony Hawk games, using Unreal Engine 4. According to Vicarious Visions' chief operating officer Simon Ebejer, the studio obtained Neversoft's original handling code and layered it to modernize the handling, as well as consulting with former employees. The team worked on the level geometry to make sure the player's skating lines were the same from the original games. Further, the team had redone all the art assets for the game's 19 levels to prepare it for 4K resolution but otherwise keep the game familiar to players. Vicarious Visions studio head Jen Oneal confirmed that most of the licensed songs from the first two games would return. Three tracks from the original two games are not present, while 37 new tracks have been added.
+The game is noted to be Vicarious Visions' final work as a subsidiary of Activision before being merged into Blizzard Entertainment on January 22, 2021. According to both Tony Hawk and former Vicarious developer Andy Gentile, there were plans to remaster the third and fourth games in the Tony Hawk series, but when Vicarious was merged under Blizzard, Activision looked for other third-party developers to pursue the remasters, but found no one else was skilled as the Vicarious team, so these remasters were dropped. Behind the scenes, the project was revived and on March 4, 2025, a new remake titled Tony Hawk's Pro Skater 3 + 4 developed by Iron Galaxy was announced after weeks of teasing on social media, which was released on July 11 of that same year.
+The game was released for PlayStation 5 and Xbox Series X/S on March 26, 2021, while a Nintendo Switch version was released on June 25 of that year.
+The game changes the name of the "mute grab" aerial trick to the "Weddle grab" so as to honor its original creator, Chris Weddle, according to Hawk.
+In keeping with the lockdowns and other preventative measures imposed by the COVID-19 pandemic during the time of its release, the game also incorporated indirect references to COVID-19 and its impact on society, particularly in the reimagined "School" level where the campus is noticeably devoid of any human activity and video billboard messages pertaining to health and safety measures implemented during the pandemic are being played.
+
+
+== Marketing ==
+Since its announcement trailer in May 2020, the game was extensively marketed by Activision. To achieve this, Activision opened several social media accounts for the game on Instagram and YouTube, among others, where additional trailers and endorsement videos by the featured skaters were published until and after the game's release. Reminiscent of the first entry in the series, a new "Warehouse Demo" was released on August 14 for all people who had pre-ordered the game.
+The game was made available with several special editions, including the "Digital Deluxe Edition", which included additional skins, skateboards, clothing options, as well as an additional secret character, Ripper; the "Collector's Edition" also offered an actual skateboard as well as other physical merchandise.
+
+
+== Reception ==
+
+
+=== Critical reception ===
+Tony Hawk's Pro Skater 1 + 2 received "generally favorable" reviews, except for the PlayStation 5 version, which received "universal acclaim", according to review aggregator platform Metacritic. OpenCritic determined that 97% of critics recommended the game. IGN called it a "tremendous turnaround" from Tony Hawk's Pro Skater 5, and stated that it was "difficult to believe that they share even a shred of DNA", while Game Informer noted that the newest entry ensured the series had a "bright future" once again.
+In his review for Destructoid, Chris Carter lauded Vicarious Visions for their attention to detail and named the game the most accomplished HD release of the series yet, calling it "genius" to introduce all the mechanics from later games all at once and incorporate them into the level, thus far surpassing Tony Hawk's Pro Skater HD, also citing the vastly improved graphics and visual updates to the levels when compared to the latter. Writing for Game Informer, Brian Shea had the same feelings towards the game, claiming that, "by masterfully blending old with new, [the game] lands on a sweet spot", listing its truthfulness to the originals while at the same time adding new content, such as new skaters, songs, and improved controls, as the game's biggest strength. In a detailed comparison of the old games to the remaster, GameSpot also noted the new challenge system, immense amount of unlockable cosmetics, and the omission of unnecessary maneuvers introduced in later games as factors that added immense replay value. Furthermore, the game's soundtrack received universal acclaim for its nostalgic value while at the same time incorporating well-chosen new additions. The diverse roster was also lauded, in which Sports Illustrated called the game "a beacon of diversity and representation".
+Several reviews were critical of the multiplayer, citing a lack of options and gameplay modes. Shea noted that the multiplayer "wears thin fast due to repetitive objectives and an inability to play some of the local multiplayer offerings", claiming that due to this he was unable to play more than a few rounds at a time. Carter also named the limited amount of levels as a point of critique, claiming that adding stages from Pro Skater 3 would have added significantly more variety and replay value. Another repeatedly criticized aspect was the long loading times when entering or restarting a level.
+
+
+=== Sales ===
+Tony Hawk's Pro Skater 1 + 2 became the fastest-selling game in the franchise, selling 1 million copies in the first two weeks. In the United Kingdom, the game was the biggest launch for the franchise since 2003's Tony Hawk's Underground and was the second biggest launch in the franchise overall.
+
+
+=== Accolades ===
+The game won the Best Sports/Racing award at the 2020 Gamescom Awards and the 2020 The Game Awards, while at the 24th Annual D.I.C.E. Awards, the game won Sports Game of the Year. It was also nominated for Best Multiplayer Game and Xbox Game of the Year at the 2020 Golden Joystick Awards. The game was nominated for the remake categories "Outstanding Game, Classic Revival" and "Refreshing Revive" at the 2021 NAVGTR Awards, and the 2021 Dreamies, respectively. Furthermore, it was nominated for "Excellence in Audio Design" at the 2021 SXSW Gaming Awards.
+
+
+=== Modifications ===
+Following the original cancellation of the remasters of the third and fourth games, a fan-made total conversion called THPSPro was released by modder bAstimc which aimed to port levels from subsequent games in the series to Tony Hawk's Pro Skater 1 + 2. A version of THPSPro for Pro Skater 3 + 4 was released in 2025.
+
+
+== See also ==
+Tony Hawk's Pro Skater 2x, a 2001 Xbox-exclusive enhanced re-release of Tony Hawk's Pro Skater and Pro Skater 2 by Treyarch
+Tony Hawk's Pro Skater HD, a 2012 remake of Tony Hawk's Pro Skater, Pro Skater 2 and (via downloadable content) Pro Skater 3 by Robomodo
+
+
+== References ==
+Notes
+
+References
+
+
+== External links ==
+Official website

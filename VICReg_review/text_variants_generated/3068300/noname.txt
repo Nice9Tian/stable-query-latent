@@ -1,0 +1,3 @@
+This bishoujo-style visual novel is set in a fictional high school for disabled children in modern Japan, where a young protagonist’s life changes dramatically after a congenital heart defect forces him to transfer schools following a long hospitalization. As he adjusts to his new surroundings, he begins to build friendships and may also find romance, depending on the choices made along the way.
+
+The story is presented in first-person perspective and follows a traditional text-and-sprite visual novel structure, using an ADV-style text box. It features five main narrative routes, each centered on a different female character and unfolding a storyline specific to that route.

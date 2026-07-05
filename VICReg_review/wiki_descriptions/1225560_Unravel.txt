@@ -1,0 +1,58 @@
+Game: Unravel
+appid: 1225560
+Source: Unravel (video game)
+URL: https://en.wikipedia.org/wiki/Unravel_(video_game)
+Match score: 6.36
+Retrieved: 2026-07-04
+--------
+Unravel is a puzzle-platform game developed by the Swedish company Coldwood Interactive and published by Electronic Arts. It was announced on 15 June 2015 and released in February 2016 for PlayStation 4, Windows, and Xbox One. The game centers on Yarny, a small anthropomorphic creature made of yarn the player navigates through the environment, utilizing the unraveling yarn which makes up Yarny to solve puzzles, avoid dangerous creatures, and traverse obstacles.
+Unravel received a favourable reception upon release, with many critics in agreement that the game's visuals, protagonist, soundtrack, and overall tone were among its strong suits. Some raised criticisms concerning the controls, variety of puzzles, and platforming. A sequel, Unravel Two, was released in June 2018.
+
+
+== Gameplay ==
+
+The game centres around its protagonist Yarny, an apple-sized creature made of red yarn. It explores the world around it that makes small everyday things look large due to its small size. By using the yarn from its body, Yarny creates rope to form bridges, pull things, and swing from items. Yarn is the main medium used to solve complex puzzles. As Yarny moves, the twine which it is made of unravels, creating lines that the player must use to solve puzzles to progress. This also serves as a challenge because walking Yarny too far will unravel it into a slim frame, unable to reach further. This frame can be refilled by interacting with balls of red yarn in the game environment. On this mechanic, Sahlin has stated, "It's always fun to play with physics. It's not just about solving puzzles. It's also a big part of how you move. Sometimes it's just traversing, navigating. Since you always leave this trail behind you, you can always grab it and climb on it and swing on it. You can do these really cool things when you combine stuff."
+
+
+== Story ==
+During the game's introduction, an old woman is seen looking out her window, before she adjusts a picture of a baby and picks up a ball of yarn. As she proceeds upstairs, a lone ball of yarn rolls out of shot. Yarny, an anthropomorphic creature made of red yarn, and the game's protagonist, then walks into shot, and is looking around in wonder at the environment. Through various picture frames in the house, Yarny can visit environments that were significant in the home owners' lives, and discover their memories about the places; the initial memories are happy, such as visiting the sea shore, or hiking in the mountains, but eventually darker memories are revealed: the rural forest area is industrialized, which in turn causes accidents with toxic waste, and people start moving to the city. A memory also reveals that the old woman's husband died from a heart attack.
+At the end of each level, Yarny finds a red yarn badge it collects on the cover of a photo album in the house, which then fills with photos of the memories encountered along the way. On the final two levels, however, Yarny only finds one half each of a heart-shaped badge. On the final level, played in a cemetery, Yarny struggles its way through a snow storm to find the final half of the badge, but it slips from its hands, and jumping after it, Yarny unravels completely, with only a red thread of yarn remaining in its place. The badge piece is then picked up by a human hand.
+Yarny awakens in a camping backpack, holding the missing piece; it quickly runs home to place it on the photo album. Startled by a child entering the room, Yarny feigns to be inanimate again, and once the child leaves, it places the missing piece on to its final place on the photo album cover, which it then opens up to reveal the final passage and the end credits.
+According to Sahlin, the yarn that makes up Yarny represents love, and the character unravels as they travel away from what they love.
+
+
+== Development and release ==
+
+Although developer Coldwood's previous works received unfavorable critical reception, Unravel reportedly showed enough promise for EA's DICE to arrange a publishing deal with EA. Subsequently, Unravel was announced at EA's E3 2015 conference by the game's developer and creative director, Martin Sahlin. During the game's presentation, Sahlin was noted to have "reacted to his on-stage appearance like most of us would: with shaking hands and a warbling voice." Sahlin's nervous and excited presentation of Unravel was met with a positive reception from the conference's audience. Following the announcement, Sahlin became the focus of well-circulated appreciative posts and fan art on social media website such as Twitter and Tumblr.
+The game itself, especially its aesthetic, was also well received after its announcement; VG247 claimed Unravel was, "the most visually-impressive game EA showed". Initial reactions to the game also drew comparisons to Limbo and Sony's LittleBigPlanet series. On 14 December 2015, EA announced that the game would launch worldwide on 9 February 2016.
+The game's backgrounds and puzzles are inspired by the landscape of Umeå, Sweden; Sahlin drew inspiration for the game after creating a Yarny doll out of tire wire and yarn during a family camping trip in northern Sweden. Sahlin has elaborated, "We live in the sticks. It's a very small town, very far north, close to the Arctic circle. There's not a lot of people, but a whole lot of countryside. I wanted to share some of that, some of the places that I love. I think you don't really see enough of that in video games. You tend to see more fantastical stuff." The game was developed on Sony's PhyreEngine.
+On 21 January 2016, EA abandoned the Unravel trademark after their application was rejected by the United States Patent Office. Despite this, the company confirmed that the game would retain the title Unravel.
+
+
+=== Soundtrack ===
+The Unravel soundtrack was composed by Frida Johansson and Henrik Oja. It was inspired by folk music and traditional instruments. It was released on June 24, 2016.
+
+
+== Reception ==
+
+Unravel received "favorable" reviews according to the aggregating review website Metacritic.
+Caitlin Cooke of Destructoid scored the game a 10 out of 10, summarizing her review with: "Unravel cherishes the best moments in life while recognizing the hard battles we sometimes face as families, all wrapped up within delightful gameplay and stunning scenery. The atmosphere is so compelling that I couldn't help but feel like a piece of my own story was wrapped up in the game with the rest of the photo album. It's rare but a special thing when a game manages to impart a story that touches strings deep in the heart, and Unravel manages to meet and exceed this feat."
+In awarding the game an 8.5 out of 10, Electronic Gaming Monthly's Spencer Campbell commended the developer's ability to create a story that intertwines with the gameplay without compromising in quality, and called the game "a surprisingly deep puzzler with an unmeasurable amount of charm." He specifically praised the puzzles for making use of real-world objects and the story for feeling emotional. Campbell acknowledged the game's short length but said that those who judge the game only on length are missing out.
+Game Informer's Jeff Marchiafava scored the game a 7.75 out of 10 and wrote: "The satisfying platforming, thoughtful story, and adorable protagonist make [Unravel] a worthwhile journey." Marchiafava commended the game's visuals and overall aesthetics for giving the player motivation to finish the game, even if the gameplay becomes repetitive. He also praised the soundtrack for wonderfully bolstering the game's themes.
+Game Revolution's Peter Paras gave the game a 3 out of 5. He praised the protagonist Yarny for being "loveable" all throughout the game and called the visuals "top-notch". Paras disliked the inconsistent design of the puzzles, the "clunky" controls, and the need to backtrack after running out of yarn, which he described as the game's "worst aspect".
+Rob Crossley of GameSpot praised the overall presentation of the game, which he thought was its defining feature, but criticized the amount of depth to the actual gameplay mechanics. He scored the game a 7 out of 10 and summarized his review with: "Unravel's wonderful sights and sounds won't escape your own memory so soon. But assessed purely on gameplay, it's everything I tend to fear about indie projects; Beautiful, heartfelt, but like Yarny himself, not robust enough."
+Louise Blain for GamesRadar scored the game a 4.5 out of 5, saying: "Unravel's appeal goes far beyond pretty levels. Beautiful, poignant and with an iron grip on your heart, Yarny manages to effortlessly deliver a wonderful platformer and a bittersweet message." Even though she criticized the later levels for not being as robust as other levels, Blain praised the puzzle mechanics, soundtrack, protagonist, and the visuals.
+IGN's Daniel Krupa scored the game an 8.3 out of 10, writing: "Unravel took me on a surprisingly thoughtful and reflective journey, which encouraged me to appreciate the small and the insignificant with every step. As a puzzler it has charm due to Yarny's engaging skills, but as a platforming experience it's less remarkable. But to judge it solely on these mechanical aspects would be to overlook its greater achievement: the way it provokes subtle and complex emotions through the use of nature and nostalgia. It all makes for a sincere, warm-hearted, and extremely likeable adventure."
+Arthur Gies of Polygon scored the game a 6 out of 10 and wrote: "There's an emotional core to Unravel that's difficult to overstate, and it's hard to ignore how strong a character the little red spool of textiles manages to become despite not speaking at all. Unravel wants to say something, and I admire it for that. But it can be hard to shine a light on the bigger-picture things Unravel does well when it gets so many basic things fundamentally tangled up."
+Tom Sorry from VideoGamer.com scored the game a 7 out of 10 and wrote: "Unravel is thoroughly enjoyable, lovely game, but it falls short of being something to be truly cherished. It's smart but not often enough, gorgeous but emotionally distant, and at times feels a tad unfair with how it dishes out frustration. There's a lot of love here, but also a fair chunk that is simply just OK."
+
+
+== Sequel ==
+In May 2016, EA Executive Vice President Patrick Söderlund announced that they had extended their contract with Coldwood Interactive, and that they would be involved in publishing their next project. EA later confirmed that the development team was working on a sequel set within the Unravel universe. On June 9, 2018, Unravel Two was formally announced at the EA Play Presentation; the game was released the same day.
+
+
+== References ==
+
+
+== External links ==
+Official website

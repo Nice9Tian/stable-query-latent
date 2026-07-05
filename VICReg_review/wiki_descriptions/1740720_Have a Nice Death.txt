@@ -1,0 +1,32 @@
+Game: Have a Nice Death
+appid: 1740720
+Source: Have a Nice Death
+URL: https://en.wikipedia.org/wiki/Have_a_Nice_Death
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Have a Nice Death is a 2023 action game developed by Magic Design Studios and published by Gearbox Publishing.  Players control Death as he fights against unruly subordinates.
+
+
+== Gameplay ==
+Players control the CEO of Death Incorporated, a personification of death. It is a side-scrolling action game with platform game and roguelite elements, such as permadeath and procedural generation of levels. Players must defeat workers who have become out of control, including boss fights against some of Death's major subordinates. Players can optionally choose to make their character stronger for less challenge and more power-ups. Players can unlock abilities that persist through deaths, potentially allowing them to reach further after each session. Players start with a scythe as a weapon. In each game, two additional weapons or spells are randomly selected, which they can also use. A shop allows players to purchase on weapon of their choice.
+
+
+== Story ==
+Since the dawn of time, Death has roamed the realm of the living collecting and reaping the souls of the dead. However, as a millennium went by, he has grown bored of the same gimmick over and over again. To make his job easy, he summons beings known as "The Sorrows" to do his job for him by bringing pollution, gluttony, disease, addictions, natural disasters, and war to the mortal world, all while Death does the paperwork at his newly found business of Death Inc, located deep within the underworld. Unfortunately, the Sorrows begin to spiral out of control by competing each other of reaping as many souls they could collect, resulting the company overflowing with even more paperwork. Having no other choice, Death once again dons his cloak and scythe to travel to each department floor and stop his Sorrow executives from creating more chaos inside Death Inc.
+After dealing with all the Sorrows and ceasing their uncontrollable work behavior, Death finally decides to take a long deserved vacation on a quiet beach, however he is encountered by Life, his business rival of Life Inc who challenges his role as CEO of his company due to believing he has become "selfish" for wanting a vacation while she takes her job very seriously, the two begin to battle with Death winning as the victor while Life retreats and swears she'll get her revenge and ownership of Death Inc. As Death enjoys his long overdue vacation, his intern Pump Quinn (an employee with a regenerative pumpkin head) happily does his infinite amount of paperwork until he returns to work.
+
+
+== Development ==
+After entering early access in March 2022, Gearbox Publishing San Francisco released it for Windows and Switch on March 22, 2023.  It was released for the PlayStation 4 and 5 and the Xbox One and Series X/S on December 5, 2023.
+
+
+== Reception ==
+Have a Nice Death received positive reviews on Metacritic.  GamesRadar called it a difficult game that is a delight to play.  IGN said it is "a punishing but satisfying roguelike" and praised the humor.  Shacknews found it "fun and rewarding", though they criticized what they felt were repetitive level design, a confusing user interface that describes weapons' attacks, and repetitive humor.  Though calling the game "beautiful" and praising the battle mechanics, Polygon felt the story's focus on portraying the protagonist, a cruel boss, as sympathetic caused them to dislike progressing through the story.  Slant Magazine called their early runs exhilarating but said the lack of variety eventually makes playing the game feel like work.
+
+
+== References ==
+
+
+== External links ==
+Official website

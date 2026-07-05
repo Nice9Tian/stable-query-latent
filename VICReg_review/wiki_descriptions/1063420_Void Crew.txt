@@ -1,0 +1,54 @@
+Game: Void Crew
+appid: 1063420
+Source: Void Crew
+URL: https://en.wikipedia.org/wiki/Void_Crew
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Void Crew is a 2024 roguelite video game developed by Danish developer Hutlihut Games and published by Focus Entertainment. The game is set in space with players controlling astronaut-like characters to complete missions. It was released for Windows on Steam in early access on September 7, 2023, before fully releasing on November 25, 2024. The game would later release for Xbox Series X and Series S and PlayStation 5 on September 4, 2025 with full cross-platform play support.
+
+
+== Gameplay ==
+Players control a character - cloned astronauts called "ectypes" - and work for a mysterious god-like presence called METEM, who has laid down principles of survival for the remains of humanity. The players are sent out into space (pilgrimages) on customizable spaceships to take on a collective of enemies called The Hollow, all the while maintaining their ship, gathering resources and leveling up.
+Players can choose between several different roles on the ship: Pilot, Gunner, Engineer or Scavenger, and each of these have their own set of skills needed to complete missions. Players complete tasks to maintain the ship, such as repairing damaged systems and going EVA to collect supplies and make hull repairs.
+The game is a roguelite, meaning each mission successfully completed will allow the player to upgrade their characters or their ship. Once a mission is chosen, a timer starts, meaning players have to complete the mission in as little time as possible. 
+
+
+== Development ==
+
+
+=== Early access ===
+Void Crew was released for Windows in early access on September 7, 2023, with an exclusive gameplay announcement video by YouTuber Jesse Cox, who played the game with the developers. According to an interview between Danish gaming media Arkaden and CEO Benjamin Lund, the Early Access period was essential to building up community and shaping the game. Players were able to provide the developer with explicit and implicit feedback, which meant that the team also discovered new ways of playing the game that they hadn't thought of themselves.
+Rock Paper Shotgun reviewed the game the same month as it released. They commented on the fact that the game tried "for a curious blend of jolly party game and macabre theocracy work simulator", and praised the fun they had deciding on who gets to be the captain. However, they mentioned that it would take something extra for it to be one of the better space games, giving examples of adding PvP or PvE.
+DualShockers also reviewed the game the following month, and praised the game for its complexity of tasks, depth and tension created, as well as for ensuring consistent surprises many hours into the gameplay.
+The game was in early access for just under two years.
+
+
+=== 1.0 release ===
+The 4th of September 2025 marked the full PC release of Void Crew, but the Hutlihut team also announced a 'shadowdrop' of the game to Playstation 5 and Xbox Series X/S with full crossplay. The team had been working with Swedish game studio Piktiv, who were in charge of porting the game to consoles and integrating the crossplay feature.
+
+
+== Reception ==
+
+
+=== Release ===
+Void Crew received "generally favorable" reviews on the review aggregator Metacritic with an overall score of 80.
+PC Gamer wrote that Void Crew "is basically the best Firefly game ever made", but that they were disappointed by the Scavenger role, which they felt was not defined enough to matter for the gameplay.
+Gaming Nexus wrote that while Void Crew channels the same rush of energy that comes from working with friends, citing Overcooked or Deep Rock Galactic as similar games, the difficulty curve was surprisingly high, and that to fully enjoy it, you have to have a team which is practiced. However, playing solo proved an impossible feat, and "stripped the game of its core identity", but the game has a well-designed matchmaking system that allows for playing with strangers, even though the game leaves little room for error in terms of teamwork.
+The above points on the Scavenger role and the single-player experience is echoed in Arkaden's review of the game, whose overall conclusion was that Void Crew has a solid gameplay, a balanced amount of micromanagement in the ship maintenance, and a satisfying progression system.   
+Both Gaming Nexus and GLHF on Sports Illustrated highlights the dissatisfying flying mechanic, which they feel does not relay the sensation of zero-gravity.
+
+
+=== Accolades ===
+Void Crew won a "Grand Winner" award at the NYX Game Awards, in addition to a "Indie - PC Game" award by the same organization. The game was also nominated in two categories, Best Debut and Best Game Design, at Spilprisen 2024, the Danish game awards.
+In 2025, Void Crew was nominated for and won "Best Multiplayer Game" at the 17th edition of Unity Awards, which celebrates games created with Unity's tools and platform.
+
+
+== Notes ==
+
+
+== References ==
+
+
+== External links ==
+Official website

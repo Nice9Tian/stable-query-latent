@@ -1,0 +1,14 @@
+Game: GTFO
+appid: 493520
+Source: GTFO
+URL: https://en.wikipedia.org/wiki/GTFO
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+GTFO is an acronym for "Get the fuck out", which is commonly used in SMS language.
+GTFO may also refer to:
+
+GTFO (film), a 2015 American documentary on gaming
+"GTFO" (Mariah Carey song), 2018
+"GTFO" (Genesis Owusu song), 2022
+GTFO (video game), a 2019 co-op horror first-person-shooter game

@@ -1,0 +1,30 @@
+Game: Momodora: Moonlit Farewell
+appid: 1747760
+Source: Momodora: Moonlit Farewell
+URL: https://en.wikipedia.org/wiki/Momodora:_Moonlit_Farewell
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Momodora: Moonlit Farewell is an indie Metroidvania video game developed by Bombservice and published by Playism. It was originally released on January 11, 2024 for Microsoft Windows.  Moonlit Farewell is the 5th game in the Momodora series and continues the story from Momodora III with returning protagonist Momo Reinol.  The game features Metroidvania gameplay similar to the previous game in the series, Momodora: Reverie Under the Moonlight.
+
+
+== Gameplay ==
+Momodora: Moonlit Farewell is a 2D side-scrolling Metroidvania.  The player controls priestess Momo Reinol as she explores an interconnected series of areas.  As she explores, she collects items which make her more powerful, and unlocks new abilities which can be used to access different areas of the game world.  Much of the gameplay involves fighting monsters and bosses.  Like the previous game in the series, Momo can perform melee attacks with a leaf, and long ranged attacks using a bow.  New gameplay features in Moonlit Farewell include a stamina system that limits how much the player can sprint and dodge, and a "sigil" system where the player can equip a limited number of sigils that provide unique gameplay effects.
+A free game update added a new post-game boss fight, boss rush mode, and an updated fishing minigame.
+
+
+== Plot ==
+Protagonist Momo Reinol's home village of Koho is attacked by demons, and she sets out to track down the culprit, and recover the magical bell that was used to summon the demons.  Moonlit Farewell is set 5 years after Momodora III and concludes the ongoing story of the series.  Reoccurring series protagonist Isadora Doralina also appears in the game, but is not a playable character.
+
+
+== Reception ==
+
+Momodora: Moonlit Farewell received an 84/100 aggregate review score on Metacritic, indicating "generally favorable reviews".
+Daniel Bueno from Siliconera rated the game 9/10 saying, "While the game doesn't do anything new with the Metroidvania genre, Moonlit Farewell delivers a simple, elegant and polished adventure with tight platforming, fun and elegant combat, and a fabulous art style." Joseph Luster from Destructoid praised the game's pixel art and soundtrack, and described the bosses as "pretty simple but fun to fight."
+
+
+== References ==
+
+
+== External links ==
+Official website

@@ -1,0 +1,54 @@
+Game: Iron Lung
+appid: 1846170
+Source: Iron Lung (video game)
+URL: https://en.wikipedia.org/wiki/Iron_Lung_(video_game)
+Match score: 6.72
+Retrieved: 2026-07-04
+--------
+Iron Lung is a 2022 submarine simulation horror game developed and published by David Szymanski. The player controls an unnamed convict who explores an ocean of blood on a desolate moon in a small, rusty submarine nicknamed the "Iron Lung".
+It was released for Windows on March 10, 2022, with a Nintendo Switch port released on December 19, 2022. It was later released for the PlayStation 5 on October 15, 2025, and Android on December 12, 2025. Iron Lung received generally positive reviews.
+A film adaptation by Markiplier was released on January 30, 2026, with Szymanski assisting with the screenplay and making a cameo appearance. The film was a commercial success, but received mixed reviews from critics.
+
+
+== Gameplay ==
+
+The player controls a first-person silent protagonist who pilots a midget submarine. The gameplay is set entirely within the one-room submarine, with little room to move. The submarine is controlled using its navigational equipment at the front. The submarine's heading and position are displayed with a minimalist interface. The submarine lacks any viewing ports, and the player cannot exit it, forcing them to use their map and the submarine's camera to navigate. At certain points, the player must use the submarine camera to take photographs, which reveal surroundings and details about the area the player is in. Events occur throughout Iron Lung, including scripted decreases in oxygen and pressure which do not affect gameplay.
+Iron Lung also includes optional cheat codes that affect the visuals, such as a "rave mode" with colorful lights and a "Markiplier mode" that replaces most textures with the face of popular YouTuber Markiplier.
+
+
+== Plot ==
+
+In a future where humanity has colonized space, an event known as "The Quiet Rapture" causes all stars and habitable planets in the universe to inexplicably disappear, leaving only individuals aboard space stations or starships alive. To secure the survival of humanity, a surviving colony launches an expedition to a desolate moon that has recently formed an expansive ocean of human blood, believed to hold vital resources desperately required to sustain human life. The player character is a convict sent to navigate the trenches of the blood ocean in a small submarine known officially as the SM-13, nicknamed the "Iron Lung", to verify the existence of the resources. The Iron Lung has been modified to ensure it survives the pressure and depth of the ocean: the main hatch is welded shut and the forward viewport has been encased in metal, leaving the low-quality camera on the front of the vessel as the player's only way of seeing outside. The player is promised freedom upon their return to the surface, but a note left by a previous occupant of the submarine warns them otherwise, claiming that being selected to pilot the Iron Lung is essentially a death sentence.
+The player navigates the Iron Lung through treacherous and narrow caves and trenches. Using the submarine's camera, the player takes photographs of points of interest scattered around the map. The photographs reveal increasingly unusual features such as plant growth, rock formations which defy explanation, large unidentified skeletons, and artificial structures resembling building facades. In one photograph, the player sees a large face in the background; upon taking another picture, the face disappears. As the Iron Lung draws closer to one point of interest, an orb of light, the vessel shakes violently. At another point, the presence of living organisms within the blood ocean is confirmed to the player when they capture the eye of a massive, unidentified sea monster, which then attacks the Iron Lung in retaliation, causing a significant leak. As the player attempts to reach the camera controls at the final point of interest, a large, frogfish-like creature smashes through the back of the submarine with a loud roar, destroying it and killing the player.
+A post-game text entry reveals that there is no current method of retrieving the remains of the Iron Lung or the photographs taken by the player, meaning their mission was ultimately in vain. Despite this, the text remains optimistic, asserting that humanity will find a solution to the Quiet Rapture somewhere in the universe.
+
+
+== Development and release ==
+Iron Lung was inspired by a visit Szymanski made to a Loch Ness museum in Scotland  with his wife. The core concept centered on a cramped, one-person submarine submerged in a body of water, where the player's primary means of observing the environment is through "ultrasound" like images rather than a direct viewport. This mechanic was designed to foster atmospheric tension by forcing players to interpret vague shapes, creating uncertainty as to whether they were encountering monsters or inanimate objects.
+Iron Lung was released for Windows on March 10, 2022, with a Nintendo Switch port released on December 19, 2022. It was later released for the PlayStation 5 on October 15, 2025, and Android on December 12, 2025.
+
+
+== Reception ==
+Iron Lung received generally positive reviews, with reviewer Aaron Boehm of Bloody Disgusting praising its "oppressive" atmosphere and "exceptional sound design". Renata Price of Vice News wrote that its atmosphere evoked the "systemic death spiral at the heart of capitalism". Zoey Handley of Destructoid praised its horror concept, arguing it could only be fully realized in an "interactive medium" like video gaming. In December 2023, Szymanski faced criticism online for increasing the price of Iron Lung by two dollars, and sales dropped after the price adjustment.
+
+
+=== Increase in popularity ===
+In June 2023, following the implosion of the Titan submersible, Iron Lung experienced a surge in popularity and sales, with some comparing aspects of the video game with the real-world circumstances of the five victims onboard Titan, such as the inability to open the submersible from the inside. Szymanski expressed his discomfort at the increased sales in multiple tweets, first posting a weekly sales chart from Steam with the words "This feels so wrong" and further remarking that the thought of Titan's occupants being trapped in a similar scenario was "pretty horrific, even if it was their own bad decisions."
+
+
+== Film adaptation ==
+
+On April 21, 2023, American YouTuber Mark Fischbach, known online as Markiplier, announced he would be adapting Iron Lung into a horror film. Fischbach, who had previously played Iron Lung on his channel, announced the film would be self financed, star himself alongside co-star Caroline Rose Kaplan, and use his own script. David Szymanski also confirmed that he had been involved with the film since pre-production, assisting with its screenplay and being on set during filming, and that he was set to have a small cameo in the film. The Iron Lung film marks Fischbach's directorial debut, and he also co-produced it alongside Will Hyde and Jeff Guerrero. A teaser trailer was released alongside the announcement, and an official trailer was later uploaded to Fischbach's YouTube channel on October 14, 2023. The final trailer was released December 5, 2025.
+The film was released in the United States, Canada, the United Kingdom, Australia, New Zealand, and in other territories across Europe on January 30, 2026. It is also said to release soon in the Philippines, Malaysia, and in other territories across Southeast Asia. The film was a commercial success, grossing $50 million against a $4 million budget, and received mixed reviews from critics. On February 4, 2026, it was announced that there are plans for the Iron Lung film to be released on DVD and Blu-ray, as well as having it be available to purchase or rent digitally.
+The film was officially released digitally on Youtube on May 29, 2026. Available for rent and purchase.
+
+
+== See also ==
+Dusk (video game)
+List of underwater science fiction works
+
+
+== Notes ==
+
+
+== References ==

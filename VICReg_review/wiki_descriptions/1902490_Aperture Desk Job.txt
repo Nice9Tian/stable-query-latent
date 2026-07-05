@@ -1,0 +1,38 @@
+Game: Aperture Desk Job
+appid: 1902490
+Source: Aperture Desk Job
+URL: https://en.wikipedia.org/wiki/Aperture_Desk_Job
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Aperture Desk Job is a 2022 action game developed and published by Valve. Set in Aperture Science of the Portal games, the player controls a character who inspects products while in front of a desk with a monitor that resembles the Steam Deck console, and while being aided by an artificial intelligence (AI) core. J. K. Simmons reprises his role as Cave Johnson while Nate Bargatze voices Grady, the AI core.
+The game was designed to showcase the features and controls of the Steam Deck, and was released on Steam on March 1, 2022. Valve also made the game playable on Windows with a requirement to own a game controller. The game received praise for its story and sense of humor, and its demonstration of the controls of the handheld.
+
+
+== Gameplay ==
+
+Aperture Desk Job is an action game in which the player controls a character that is employed at Aperture Science, a fictional company in the Portal series. The gameplay consists of product inspection aided by Grady, an artificial intelligence (AI) core with similar characteristics to those maintenance cores in the earlier Portal games. 
+Most of the game takes place in front of a desk with a monitor as an in-world representation of the Steam Deck console. A few different scenarios are used to test different functions of the controls, such as using a microphone, a shooting segment making use of gyroscopic control, or a situation where the player must write their name making use of the Steam Deck's touchscreen. The game can be completed in approximately 30 minutes.
+
+
+== Plot ==
+The player starts work at Aperture Science as a product tester at a desk that, from that point on, they seem incapable of leaving. A core named Grady (Nate Bargatze) arrives and tasks the player with testing toilets. A defective toilet destroys a transport pipe filled with ammunition, filling the cistern with bullets, which the toilet then fires off. Inspired, Grady decides to try to pitch a new idea to the heads of Aperture.
+Six months later, Grady introduces a turret cobbled together from weapon parts and the shell of a toilet. He urges the player to test it out, and the player ends up destroying the warehouse. Grady leaves the player to take the fall while he attempts to improve the design of the turret. Eighteen months later, the player is released from Aperture Prison, and Grady has become a parole officer assigned to monitor them. Grady enthusiastically urges them back to work to test his new and improved turret on appliances stolen from the Housewares Department. He claims that he has organized a meeting with CEO Cave Johnson (J. K. Simmons), and as they journey to Johnson's office on the 80th floor, Grady fantasizes about spending the money they are going to make on paying back the loan sharks he used to fund the turret's development. They are suddenly attacked by appliances modeled into turrets by Housewares engineers. The player battles through an onslaught of appliance turrets, before using the desk's inbuilt rocket propulsion system to speed them to the top floor.
+Upon reaching Johnson's office, Grady reveals that he lied about organizing the meeting and that he suspects Johnson is a recluse, given that no one has seen him in years. Upon entering his office, it's revealed that Johnson no longer exists as a physical being—he was stricken with a terrible disease years prior and had his consciousness uploaded into a supercomputer designed to look like a giant statue of his head. Having lived this way for years, he begs the player to kill him; the player and Grady oblige by using the turret to, at first, try to destroy the head's clay shell before eventually shutting off the power supply. Initially, this seems to work, only for the backup power to turn Johnson back on, prompting him to fire the two. However, the weight of his head and damage caused by the player cause him to fall through the floor all the way to the bottom of the building.
+Months later, Grady and the player have entered into a witness protection program, having informed on Grady's loan sharks, and now go by "Gary" and "Charlie". The two of them still 'work' in the damaged Aperture building, with the player 'testing' toilets that simply fall off the conveyor belt into a hole in the floor caused by Johnson's falling head. The head, along with several other toilet turrets, is briefly given power by an advanced device created by a colony of praying mantises that infest the building, and together they perform a choir song over the closing credits.
+
+
+== Development and release ==
+Aperture Desk Job was developed and published by Valve on the Source 2 engine as a tech demo for the Steam Deck, which runs on SteamOS, a Linux distribution. Gabe Newell, the president of Valve, had previously denied in an interview with Edge that the company would create a special game for the Steam Deck and that Valve would instead focus on making Dota 2 and Counter-Strike: Global Offensive more efficient on the new console. Valve, however, unexpectedly announced the game on February 25, 2022, the day when Steam Deck was released. Despite being created as a tech demo for the Steam Deck, Valve also made it playable on Windows platforms, though with a requirement to use a game controller. 
+The game shows off the controls and characteristics of the Steam Deck. Greg Coomer, who worked on designing the Steam Deck, said that Valve created Aperture Desk Job for the same reason they created The Lab for Steam VR, to show off the features of the console. Aperture Desk Job has been compared to Valve's previous tech demos, The Lab and Aperture Hand Lab. The game features the voices of Nate Bargatze as Grady, J. K. Simmons reprising his role as Cave Johnson from Portal 2, and Debra Wilson as the Prison Warden and Announcer. The game was released for free on Steam on March 1, 2022.
+
+
+== Reception ==
+Rock Paper Shotgun ranked Aperture Desk Job as one of the best games for the Steam Deck. Matt Leone of Polygon praised Valve for creating a game to show off their new console. Regarding the game's controls, Andrew King of TheGamer commended the game's graphics and compared the desk moving along a straight axis to a rail shooter game feeling.
+Reviewers praised the game's humor and story, with Christopher Livingston of PC Gamer noting that it contains references to previous Portal games and "a surprising number of callback jokes". Writing for Rock Paper Shotgun, Alice Bell commended the game's narrative, the AI core, visual design, and subtle "bits of visual storytelling". Adrian Werner of Gamepressure compared the game's humor as being distinctive like in previous Portal games. Bell also complimented the expansion of the story of Cave Johnson in the game, while James Archer of Rock Paper Shotgun praised the inclusion of Nate Bargatze and J. K. Simmons as voice actors.
+
+
+== Notes ==
+
+
+== References ==

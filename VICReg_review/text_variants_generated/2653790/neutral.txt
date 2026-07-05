@@ -1,0 +1,7 @@
+The Exit 8 is a short walking simulator set in an endless underground passageway. The player’s goal is to observe the surroundings carefully and reach “The Exit 8” by identifying anomalies along the way.
+
+The core rule is simple: if an anomaly is found, the player must turn back immediately; if no anomaly is found, the player should continue forward without turning back. This observation-based structure is the central gameplay mechanism.
+
+The game is inspired by Japanese underground passageways, liminal spaces, and back rooms. It is designed as a brief experience, with an estimated play time of 15 to 60 minutes. The game is available in Japanese and English.
+
+The options menu includes graphics settings, mouse sensitivity, camera shake, and other adjustable settings. For players sensitive to motion, the page notes that reducing camera shake, increasing camera acceleration, adjusting camera sensitivity, disabling motion blur, and lowering the overall preset to Low may help reduce discomfort.

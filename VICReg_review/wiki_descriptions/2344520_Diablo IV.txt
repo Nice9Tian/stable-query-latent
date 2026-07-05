@@ -1,0 +1,118 @@
+Game: Diablo IV
+appid: 2344520
+Source: Diablo IV
+URL: https://en.wikipedia.org/wiki/Diablo_IV
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Diablo IV is a 2023 action role-playing game developed and published by Blizzard Entertainment. It is the fourth main installment in the Diablo series. Announced at BlizzCon 2019, the game was released on June 5, 2023 for the PlayStation 4 and PlayStation 5, Xbox One and Xbox Series X and S, and Microsoft Windows. Players create a character from one of eight playable classes—Barbarian, Sorcerer, Druid, Rogue, Necromancer, Spiritborn, Paladin, or Warlock—and use their skills to complete quests through combat.
+Staple features returned from previous installments in the franchise, such as a focus on replayable, procedurally generated dungeons and loot-focused character-building, while also featuring mechanics new to the series, including an open world and player versus player combat.
+Diablo IV received generally positive reviews from critics, who praised the game's narrative and atmosphere. As of September 2024, it has surpassed one billion dollars in total revenue. Its first expansion, Vessel of Hatred, was released in October 2024, and its second expansion, Lord of Hatred, was released in April 2026.
+
+
+== Gameplay ==
+The core formula for the series' gameplay revolves around gradually obtaining stronger equipment by defeating increasingly difficult enemies. Enemies are fought using different character class skills which can be customized by equipment and talent trees. This concept is used to progress through the story and quests. Enemies are split into monster families which are defined by a theme, combat style, and their location. Each family contains different archetypes that hold different roles allowing for synergies of specialty abilities between family members. To differentiate between them, they have unique silhouettes, stances and weapons.
+Creative director Sebastian Stepien explained that the goal was to create a more "grounded" story than Diablo III. In order to achieve this, the plot revolves around the simple folk of Sanctuary rather than "politics, kings, or another high-fantasy theme."
+The playable character's effectiveness in combat is determined by their attributes and their boosts from equipped items. Offensive attributes include attack and critical chance which increase damage output. Defensive stats include elemental resistance and defense which increase how much damage can be taken. Diablo IV introduces three new attributes: Angelic, Demonic, and Ancestral Power. Angelic and Demonic Power alter the duration of beneficial and negative effects respectively. Ancestral Power increases the chance of effects being applied to another entity. Weapons and gear have increasing rarity which are a general indicator of their power. The rarest items have unique effects that alter more than just the character's parameters. In an interview with lead game designer Joe Shely and senior producer Tiffany Wat, it was revealed that trading and crafting will be available in the game but will be limited to resources outside of the most powerful items. Limited-time seasons return to the game, which add "season-specific" items, characters, events and content to keep the game fresh for players to enjoy.
+Microtransactions are included in the form of cosmetic items. The game cannot be played offline and requires an internet connection.
+The player's viewpoint is an overhead isometric view, as opposed to third person or first person view.
+
+
+=== Character classes ===
+
+Eight classes have been announced. The Barbarian, Sorcerer, and Druid were announced at BlizzCon 2019, while a fourth, the Rogue, was announced at BlizzCon 2021. A fifth class, the Necromancer, was announced in 2022. A sixth class, the Spiritborn, comes with the first expansion pack, Vessel of Hatred, which was released in 2024. The seventh and eighth classes, the Paladin and the Warlock, come with the second expansion pack, Lord of Hatred, which was released in 2026. 
+
+The Barbarian (voiced by Ray Chase and Laila Berzins), which appears in Diablo II and Diablo III, has the ability to switch between weapons while in combat.
+The Sorcerer (voiced by Joseph Balderrama and Maya Saroya), returning from the first game and Diablo II, is an elemental mage-type character wielding fire, ice, and lightning magic.
+The Druid (voiced by Andrew Morgado and Courtenay Taylor), returning from Diablo II, can shapeshift between human, werewolf, and werebear forms, and possesses earthen and storm magic.
+The Rogue (voiced by Andres Williams and Anna Koval), returning from the first game, is a quick-moving combatant that alternates between bladed melee or ranged combat with a bow.
+The Necromancer (voiced by Jesse Burch and Elle Newlands), returning from Diablo II and Diablo III, utilizes dark magic for summoning and attacks.
+The Spiritborn (voiced by Stephen Fu and Dawn Bennett), an entirely new class, calls upon the unique strengths of four spirit guardians (Centipede, Eagle, Gorilla, and Jaguar).
+The Paladin (voiced by Keston John and Sasha Sloan), returning from Diablo II, chooses among four oaths that offer different styles of play (Juggernaut, Zealot, Judicator, and Disciple).
+The Warlock (voiced by Din Mayfield and Arianna Ratner), an entirely new class, wielding the power of hellfire, summoned demons, and eldritch magic.
+Character appearance is customizable rather than being tied to a class. These include choosing a character portrait and the skin color of their character. Mount appearances can also be customized. Skill trees exist, allowing for ability customization.
+
+
+=== Environment ===
+Players are able to traverse through seven regions within the Diablo series' world of Sanctuary.
+
+The Fractured Peaks are snowy mountains that have deep cave systems.
+Scosglen is a forested coastal area, home to druids, werewolves, and drowned-type enemies.
+The Dry Steppes consist of withered plains so harsh that the inhabitants have turned to cannibalism.
+Kehjistan is a war-ravaged desert wasteland containing the ruins of a once-prosperous civilization.
+Hawezar is home to witches, and has a swamp-type setting.
+Nahantu encompasses verdant jungles teeming with dangerous wildlife.
+Skovos features oceanic surroundings and aquatic horrors.
+Hell is also a playable area. Procedurally generated dungeons are included, and consist of random layouts of interior and exterior environments. Dungeons are separately instanced, therefore non-party players will not appear. Sanctuary is a fixed area, therefore it does not have the procedurally-generated maps seen in the game's dungeon.
+The game world is an open world setting; traveling between different regions or dungeons has no loading screens. Additionally, each region can be completed in any order as decided by the player. In order to support these new changes, enemies are scaled to the player (or the party leader in multiplayer) and the story is non-linear. Hardcore mode is present in the game. Select areas within each region have player interactions restricted until sufficient milestones in the story are reached, and such progress will be synced to that of the party leader. Over-world areas have non-party player interactions such as PVP, and boss events that passing players can join. Player population in the world will shift depending on the area. Large settlements will display large populations, and to enforce a sense of desolation, more wild zones will change the number of players shown to others.
+When questioned about Diablo IV's atmosphere, ex-game director Luis Barriga stated: "We want users to feel like they're in a medieval city." For the first time in the series, all assets are standard 3D game assets and terrain has elevation. This allows for in-game cinematics, and environment interaction.
+
+
+== Synopsis ==
+
+
+=== Setting ===
+Set in the Diablo series' world of Sanctuary, Diablo IV takes place 50 years after the events of Diablo III: Reaper of Souls. Cultists have summoned the main antagonist and daughter of Mephisto, Lilith (Caroline Faber). After the events of previous games, the forces of demons and angels have been depleted, allowing an opening for her to establish power in Sanctuary.
+Thousands of years before the game's events, Lilith and the angel Inarius (Gabe Kunda) created the realm of Sanctuary to provide refuge for those who wished to escape the eternal conflict between the High Heavens and the Burning Hells. This demon-angel relationship led to the birth of the Nephalem, a race that the protagonist falls under; neither Angel nor Demon, but a distinct combination of both. Those in Sanctuary believed that this power would bring attention to their shelter and, as a result, the inhabitants spoke of destroying them. Lilith, not wanting her children to be killed, destroyed any that opposed her, causing Inarius to banish her to the void.
+
+
+=== Plot ===
+The player character, known as "the Wanderer", is drugged by villagers corrupted by Lilith and fed petals of her blood, creating a connection to her. After escaping, the Wanderer meets Lorath Nahr (Ralph Ineson), one of the last Horadrim (returning from Diablo III: Reaper of Souls) and explains the prophecy of Lilith's return. The angel Inarius believes he alone can fulfill the prophecy by killing Lilith, which will allow him to return to Heaven. Aided by a young woman named Neyrelle (Judy Alice Lee), the Wanderer enters the sanctum of Rathma, the first Nephalem and founder of the Necromancers. Inside, Rathma's spirit (Scott Whyte) reveals he had a key to Hell. When Inarius demands the key from him, Rathma refuses, and Inarius kills him; Lilith later finds the key. The Wanderer then journeys to Scosglen to meet another Horadrim named Donan (James Goode), who had defeated a demon called Astaroth (David Lodge) with the aid of two Druids years before. Lilith corrupts the two Druids to find Astaroth's prison and frees him, in exchange for safe passage through Hell. Astaroth possesses Donan's son Yorin (Thierry Mabonga), who dies when the demon is defeated. Donan recovers the Soulstone used to trap Astaroth, and prepares to alter it in order to trap Lilith.
+Rejoining Lorath in the Dry Steppes, the Wanderer pursues Lorath's former apprentice Elias (Anthony Howell), who summoned Lilith to Sanctuary. Though Elias cannot be killed, the Wanderer and Lorath retrieve an artifact called the Sightless Eye to discover Lilith's plan: To summon the Lesser Evils to empower humanity against the Prime Evils. She also intends to consume the essence of her father Mephisto (Steve Blum) while he is weak, and use his power to conquer Hell. Elias uses a witch named Taissa (Cherise Boothe) as a vessel to summon Andariel, the Maiden of Anguish, who is defeated by the Wanderer. Seeking to break Elias' immortality, the Wanderer and the Horadrim journey to the swamps of Hawezar. Elias had claimed knowledge from an enchanted "Tree of Whispers", but failed to pay the price – his own head – for that knowledge. Learning that Elias has contained his life essence in his own severed finger, the Wanderer destroys it, before finally defeating Elias; the spirits of the Tree then claim Elias' head.
+From the Tree, Lorath learns of a gateway to Hell beneath the city of Caldeum, opened using Rathma's key. In Caldeum, the Wanderer defeats another reformed Lesser Evil, Duriel, the Lord of Pain. Inarius goes ahead into Hell to confront Lilith, who kills him. Donan is mortally wounded, and Lorath remains behind, leaving the Wanderer and Neyrelle to pursue Lilith to Mephisto's Cathedral of Hatred. Mephisto himself, having appeared as a bloodied wolf throughout the Wanderer's journey, urges them to focus on Lilith, but Neyrelle chooses to use the Soulstone to contain Mephisto instead, believing him to be the greater threat. The Wanderer then faces Lilith and defeats her. As she dies, Lilith warns that without her, there could be no victory over the Prime Evils.
+With both creators of Sanctuary dead, the party returns home. Neyrelle ventures off on her own with the Soulstone, knowing the Prime Evils are coming, and hoping to find a way to defeat them for good.
+
+
+== Development ==
+After the 2014 release of Diablo III: Reaper of Souls, Josh Mosqueira conceptualized Diablo IV under the code name Hades, brainstorming that the game would have over-the-shoulder combat similar to the Batman: Arkham series, permadeath, and multiplayer. Upon the July 2016 departure of Mosqueira from Blizzard, this first iteration of the game was cancelled, restarting development.
+Diablo IV was announced on November 1, 2019, at BlizzCon 2019, and was planned to be released for PlayStation 4, PlayStation 5, Windows, Xbox One, and Xbox Series X/S. Development of the PC and console builds happened simultaneously. Diablo IV's game director was Luis Barriga, who worked on Diablo III: Reaper of Souls, and World of Warcraft: Legion. Blizzard Entertainment president Mike Ybarra stated that Diablo IV took more than 6 years to develop.
+Game designer Jesse McCree stated that the aesthetic of the game was inspired by that of heavy metal. Their artistic direction tried to achieve an aesthetic between that of the second and third game in the series, with the darkness of Diablo II and the hand-painted feel of Diablo III and medieval fine art. John Mueller, Diablo IV's art director, has stated that both the old masters and more modern artists, such as Frank Frazetta and Gerald Brom, serve as inspiration for the game. The development team drew on past editions of Diablo to design characters. For example, the Rogue was intended to capture the high dexterity gameplay of the second game's Assassin and the third game's Demon Hunter.
+As of July 2021, Barriga and McCree were no longer employed at Blizzard following the California Department of Fair Employment and Housing v. Activision Blizzard lawsuit.
+Following the departure of interim co-lead Jen Oneal, Blizzard announced that Diablo IV would not be released in 2022, citing high employee turnover. Blizzard further announced that the game would be monetized by selling cosmetic items and its season pass, as opposed to selling item upgrades like in Diablo Immortal. On June 12, 2022, a 2023 release was announced. During The Game Awards 2022 event, Blizzard announced that the game would release on June 6. Subsequently Blizzard clarified that it would be released on starting on June 5, with early access starting on June 1, depending on time zone.
+Users of the open beta have reported issues with playing on a Nvidia RTX 3080 Ti graphics card with has resulted in the game running poorly with frequent overheating and crashing. Some users have reported that the game has caused their graphics card to stop working. Both Blizzard and Nvidia reported in March 2023 that they were working to resolve the issue.
+On January 15, 2024, Microsoft Gaming announced that Diablo IV will be added to Game Pass on March 28, 2024.
+
+
+== Marketing and release ==
+Before the announcement, there was evidence for an imminent announcement in a description for a Diablo artbook. In celebration of the Diablo IV announcement, BlizzCon 2019 virtual ticket holders received a set of in-game cosmetic wings based on the wings of Lilith. The game was promoted at The Game Awards 2022 with a new trailer and a performance of "Lilith" by singer Halsey.
+Blizzard Entertainment has announced open access beta weekend for Diablo IV, from March 17–19 in early access for those who have pre-ordered the game, and March 24–26 for everyone. On April 20, Blizzard Entertainment announced the second open access beta weekend for Diablo IV, known as the "Server Slam", this time from May 12–14.
+Blizzard Entertainment announced on June 1, 2023 the "Lilith (Diablo IV Anthem)" music video by Halsey and Suga from BTS. It was released on June 5.
+
+
+=== Vessel of Hatred ===
+
+Diablo IV's first expansion pack, Vessel of Hatred, was announced at BlizzCon 2023. It is set in the region of Nahantu and features a new playable class, the Spiritborn. The expansion pack was released on October 8, 2024.
+
+
+=== Lord of Hatred ===
+
+The second expansion pack, Lord of Hatred, was announced at The Game Awards 2025. It will add the region of the Skovos Isles and feature the Paladin and Warlock as new playable classes. Significant gameplay changes were also announced. It was released on April 28, 2026.
+
+
+== Reception ==
+
+
+=== Critical reception ===
+
+Diablo IV received "generally favorable" reviews for the Windows and PlayStation 5 versions, and "universal acclaim" for the Xbox Series X version, according to review aggregator Metacritic. Windows Central called Diablo IV "Blizzard's magnum opus" and "Blizzard's most important, pivotal game since World of Warcraft, exceeding all expectations." The game was praised for its atmosphere, storytelling, visuals, level design, and overall improvements to the gameplay over its predecessor. Travis Northup of IGN called it "a spectacular sequel". He commended the gameplay, improvements made over Diablo III, and the uniqueness and customization options of the character classes, but criticized the repetition in the game's opening act, and some technical issues. PCGamesN praised the visuals and aesthetic, writing "It's creepy, yet somehow beautiful". While liking the endgame, Ars Technica felt the skill trees presented fewer options for upgrades than in Diablo III.
+Alessandro Barbosa of GameSpot wrote that the game's story was "moving and engrossing", particularly praising the handling of Lilith, the game's main antagonist. Barbosa thought that the game put a larger emphasis on companions than in previous Diablo installments, and highlighted the moment-to-moment action of the game as one of its strongest points. However, he criticized the boss fights in some of the game's more common dungeons for lacking in complexity, calling them less interesting than those encountered in the main story.
+Polygon disliked the dungeon-crawling aspect of the game, feeling that it became repetitive fairly quickly, saying "The procedurally generated dungeons don't vary much in layout and feel like missed opportunities to have fun with randomized architecture". VG247 praised the game's soundtrack as "exceptional; equal parts haunting and daunting, just like its traumatised world".
+
+
+=== Sales ===
+On June 6, 2023, Blizzard Entertainment announced that Diablo IV became the fastest-selling game in Blizzard Entertainment's history. Diablo IV generated $666 million in revenue within the first five days after launch, and reached 12 million players by August 2023.
+The PlayStation 5 version of Diablo IV was the second bestselling retail game during its first week of release in Japan, with 24,375 physical units being sold. The PlayStation 4 version sold 8,524 units in Japan throughout the week and was ranked at number five on the weekly all-format video game sales chart. In total, Diablo IV sold 41,839 retail units across all platforms during its first week of release in Japan. It was the sixth best-selling video game in the US in 2023.
+
+
+=== Awards ===
+
+
+== Notes ==
+
+
+== References ==
+
+
+== External links ==
+Official website
+Diablo IV at MobyGames

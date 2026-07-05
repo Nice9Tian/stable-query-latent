@@ -1,0 +1,51 @@
+Game: Manor Lords
+appid: 1363080
+Source: Manor Lords
+URL: https://en.wikipedia.org/wiki/Manor_Lords
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Manor Lords is a medieval city-builder and real-time tactics video game developed by Grzegorz "Greg" Styczeń from Slavic Magic and published by Hooded Horse. The game was released into early access on April 26, 2024, and was the most-wishlisted game on Steam prior to its release, with over two million wishlists.
+
+
+== Gameplay ==
+Inspired by late 14th-century Franconia, Manor Lords is a city-building game which includes real-time tactical warfare. The game can also be considered a colony simulation. There are five different modes in Manor Lords, titled Rise to prosperity, Restoring the peace, On the edge, A duel and Fractured Realm. Rise to prosperity is a combat-free mode, while the other modes include a varying amount of combat and enemies. The game offers a degree of customizability; players are able to adjust in-game values such as starting position, maps, threats.Additionally, players can also edit their character, name, and coat of arms from a wide variety of provided options. Manor Lords is normally viewed from a birds-eye perspective but it includes a third-person camera mode that allows players to roam their streets.
+
+
+=== City-Building ===
+According to the developer, the game aims to provide organic city building. The city-building aspects focus on expanding an initially-small settlement through gathering resources, managing supply chains and expanding trade networks, while also managing threats to the settlement's internal cohesion. The roads are almost always curved and houses can be built without the interference of fixed or handmade zoning grids found in SimCity and Skylines games. Building mechanics are motivated by the growth of real medieval towns and villages, where major trade routes and the landscape influenced how settlements shaped and developed. Players must also navigate the unique demands and opportunities of each in-game season. Buildings and workplaces must be maintained to operate efficiently, adding a layer of long-term planning to city management. Detailed and realistic castle construction and fortifications allow players to add defence and aesthetics, improving both gameplay and settlement growth.
+
+
+=== Resource and Financial Management ===
+In addition to city-building, the game has a complex financial system in place. The game's emphasis on in-depth historical accuracy means players must manage six types of taxation, and balance quick growth with environmental effects such as weather and the possibility of environmental degradation including soil exhaustion and deforestation. Players are asked to balance a system of imports and exports of various goods, a yearly King's tax, bandit raids and loot, and taxes and tithes on villagers that impact satisfaction values and determine the money that the 'lord' gets to keep their manor and village running.
+
+
+=== Medieval Warfare ===
+On top of bandit skirmishes, some modes of the game include territorial expansions, fights against AI enemies and lords and other opponents or a boss fight against an expanding 'Baron' territory. The game offers historically accurate options of renting temporary troops with various equipment and skill levels, an opportunity to train and equip a personal retinue, or arm villagers to fight off enemies. Players may command real-time tactical battles, taking into consideration fatigue, weather conditions, and equipment. Additionally, the game features a robust diplomacy system to communicate with other AI and programmed lords, using influence or threats to sway their actions. 
+
+
+== Development ==
+Grzegorz "Greg" Styczeń is the creator of Manor Lords through his studio Slavic Magic. In the early years, development was funded in part through donations on Patreon. In 2021, Styczeń also received a grant from Epic Games through their Epic MegaGrants program. The game was initially developed with Unreal Engine 4.
+Releasing an announcement trailer in July 2020, Styczeń initially aimed for the game to be wishlisted 14,000 times on Steam. However, anticipation grew steadily, with Manor Lords being wishlisted over two million times by January 2024, overtaking Hades II shortly before release to become the most-wishlisted game on Steam, with over three million by release.
+The game was originally planned to be released in late 2023, but was delayed to the following year because Styczeń felt it needed "more bugfix and polish". Manor Lords was released for early access on 26 April 2024. Styczeń released a statement a week before release which attempted to temper expectations, highlighting that the launch was early access, that Manor Lords was the first game he had developed, and that it was not intended to be a rival to Total War or role-playing games like Kingdom Come: Deliverance.
+In June 2024, it was announced that Manor Lords would switch to Unreal Engine 5, and the switch was completed by August 22 in version 0.7.987.
+On October 2nd, 2025, after a nine-month hiatus, an update was released which overhauled both the internal code and gameplay at large. It includes two new gamemodes, four new maps, and a revamped perk system.
+
+
+== Reception ==
+Reception to initial demos, such as one showcased at the Xbox Partner Preview in late October 2023, was very positive, with praise directed especially at the game's complex nature. Matt Jarvis of Rock Paper Shotgun compared its various aspects to the established franchises of Total War, Crusader Kings, and Age of Empires, calling it "hugely ambitious" and "filled with potential". The game has been noted for its relatively high degree of historical accuracy. However, Styczeń has stated in interviews that in some cases considerations of gameplay superseded concerns of historical exactness.
+Manor Lords has received criticism for its quickly consumable content and there being no proper objective in the game. Leana Hafer from IGN states that the game is unfinished – she points out the lack of endgame challenge and ways to test its RTS battles definitively. Robert Purchese from Eurogamer states that one of the biggest missing pieces for him is any kind of story, or stories coming from the people he's responsible for in the game. Aleksa Stojković says that the combat is the thing he likes doing the least in Manor Lords. Mitch Gassner points out that with too many unfinished components, Manor Lords does not have the power to keep people playing for weeks. Ravi Sinha says that the policies should be expanded; suggests adding random events and the like to the game to reduce some of the boredom of long waits.
+
+
+=== Sales ===
+Manor Lords has been a commercial success, selling over one million copies during its launch weekend and surpassing three million sales by February 2025.
+
+
+=== Accolades ===
+
+
+== References ==
+
+
+== External links ==
+Official website

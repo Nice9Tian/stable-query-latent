@@ -1,0 +1,46 @@
+Game: Vampire: The Masquerade - Bloodhunt
+appid: 760160
+Source: Vampire: The Masquerade – Bloodhunt
+URL: https://en.wikipedia.org/wiki/Vampire:_The_Masquerade_%E2%80%93_Bloodhunt
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Vampire: The Masquerade – Bloodhunt was a free-to-play battle royale game developed and published by Swedish developer Sharkmob. It was based on the tabletop role-playing game Vampire: The Masquerade, and was part of the larger World of Darkness series. The game was released on April 27, 2022 for Windows and PlayStation 5, and shut down four years later on April 28, 2026.
+
+
+== Overview ==
+Vampire: The Masquerade – Bloodhunt is a battle royale game set in the streets and on the rooftops in Prague, in the World of Darkness. It takes place following a vampire gathering in the city, after which war between the vampire sects broke out and the Second Inquisition became involved. Players take the roles of vampires who try to survive the sect war, battling both each other and an entity who tries to exterminate vampires. They can choose to fight on their own or in a team, and use ranged weapons, melee weapons, and vampiric powers. Players also need to conceal their identities as vampires from humans, a practice called the Masquerade.
+
+
+== Gameplay ==
+Similar to battle royale games, the matches in Bloodhunt are designed for up to 45 players on a large-scale urban map, with players either going solo or partnering in squads of three using pre-made characters with distinctive abilities. The goal is to be the last vampire alive in each match, employing a combination of conventional firearms and supernatural powers.
+
+Match Structure: Each match begins with players (as vampires) dropping into the city. Up to 45 players may join a match, either alone or in a team of up to three. Combat continues until only one player or team remains (the last vampire or team standing).
+Vertical map and structure: Bloodhunt's arena is highly vertical. Players can climb any building and leap between rooftops, creating a multi-tiered battlefield of rooftops and streets. This verticality allows for dynamic pursuits and ambushes, for example, a player can drop from a ledge to trick a follower.
+Clans and Archetypes: Before each match, a player chooses one of six character archetypes based on three Vampire clans (two archetypes per clan). The Brujah archetypes (tank-style) have abilities like forcefield shockwaves and enhanced self-healing; Toreador archetypes (support-style) can teleport short distances and heal allies; and Nosferatu archetypes (stealth-style) can briefly vanish and detect wounded enemies. These vampiric powers complement the weapons gameplay, each archetype's ability provides a tactical advantage but is not the main source of damage.
+Human NPCs and resources: The streets of Prague are populated with non-player humans and loot vehicles. Feeding on ordinary human NPCs restores the player's health (and grants small buffs) – though doing so emits a “ping” that reveals the vampire's location to nearby enemies. Some humans have special “resonant” blood; consuming them grants longer-lasting bonuses (such as faster power cooldowns or boosted abilities).
+Team Composition: In team (trio) mode, squads are restricted to one member of each clan, encouraging balanced team roles. For example, a trio can include at most one Brujah, one Toreador, and one Nosferatu archetype. This rule prevents teams from stacking identical abilities and ensures each clan's strengths contribute to the squad.
+Combat and equipment: Players can find and use a variety of guns, melee weapons, and other gear during a match. Conventional weapons (rifles, shotguns, swords, etc.) deal most of the damage in fights, while vampiric powers modify movement or provide utility. Producer David Sirland explained that “it is about the weapons and shooting, but the [vampire] powers allow you to do that in different ways… Your damage comes from weapons, essentially”.
+Gameplay thus combines fast-paced shooter combat with supernatural movement and abilities, all set atop the nocturnal rooftops of World of Darkness–style Prague.
+
+
+== Development ==
+Bloodhunt was developed by Sharkmob, a Tencent-owned game developer based in Malmö and London, founded in 2017 by former staff from Massive Entertainment and IO Interactive, as one of three video games they are developing simultaneously. The game is an adaptation of White Wolf Publishing's 1991 tabletop role-playing game Vampire: The Masquerade, and was known internally under the codename Tiger [Project Lonely Fish]. Because of the source material, the developers did research on the Vampire: The Masquerade setting to see how to create an event and location that could enable battle royale gameplay while going against the setting's established lore as little as possible, and portraying Prague accurately to how it appears within the World of Darkness setting.
+The game was announced in October 2020 with a teaser trailer, following the leak of a video of the game, and was released in an early-access version for Windows on September 7, 2021. The full game was released on April 27, 2022, for both Windows and PlayStation 5, and is as of January 2024 free-to-play.
+One year after launch, Sharkmob ended further development on Bloodhunt on May 15, 2023. The servers for the game remained live until April 28, 2026.
+
+
+== Reception ==
+
+Vampire: The Masquerade - Bloodhunt received "generally favorable" reviews, according to review aggregator Metacritic.
+PC Gamer and Destructoid considered the project odd for its combination of the battle royale genre and the Vampire: The Masquerade setting, with PC Gamer calling it "baffling to fans and non-fans alike". Game Informer called it intriguing and full of potential, however, and PC Gamer said that they thought the game could turn out well considering the development staff's experience.
+
+
+== Notes ==
+
+
+== References ==
+
+
+== External links ==
+Official website

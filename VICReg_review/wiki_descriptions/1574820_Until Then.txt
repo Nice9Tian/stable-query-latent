@@ -1,0 +1,67 @@
+Game: Until Then
+appid: 1574820
+Source: Until Then
+URL: https://en.wikipedia.org/wiki/Until_Then
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Until Then is a 2024 adventure game developed by Polychroma Games and published by Maximum Entertainment. Set in the fictional city of Liamson in the Philippine National Capital Region, the game follows Mark Borja and his moments of déjà vu months after the events of a global catastrophe known as "The Ruling", which caused widespread damage and casualties across the country. The game is presented as a visual novel in a 2.5D sidescroller, featuring pixel art in a three-dimensional environment.
+The game began development in 2020 with a team headed by director Mickole Klein Nulud. The developers focused on Filipino representation as part of its development, while also creating a universal and cinematic experience within the game's visual novel format. It was released on June 25, 2024, for Linux, PlayStation 5, and Windows, while a port for the Nintendo Switch was released on June 26 the following year. A port for Xbox Series X/S was also released on April 23, 2026. Upon its release, the game received positive critical reception, who highlighted its interactivity, narrative, and Filipino representation. A paid story expansion, Until Then: Afterimages, was released on June 18, 2026.
+
+
+== Gameplay ==
+
+Until Then is a side-scrolling adventure game with pixel art graphics, featuring 2D sprites in a 3D space. It is also described as a visual novel, though with more interactive elements compared to conventional games in the genre. The player controls Mark Borja, a high school student who lives alone in his family's home as his parents work overseas. The player can move left and right in the current environment and interact with specific objects to advance the game's story. At specific moments in the game's story, the player can interact with a smartphone, which includes a messaging app and a social media platform, where the player can choose to like and share posts made by other characters in the story. When messaging, the player is required to press any key on the keyboard to slowly type out the message to be sent by Mark, either predetermined or chosen by the player.
+The game also features several minigames, like skewering fish balls by timing the skewer's position and force; singing on a videoke machine by pressing the correct keys once they reach the top of the screen; and painting by clicking and dragging specific patterns on the screen.
+
+
+== Plot ==
+
+
+=== Act One ===
+In February 2014, a series of natural disasters known as "The Ruling" caused widespread destruction worldwide, including parts of the Philippines. However, the city of Liamson in the national capital remained largely unaffected.
+Mark Borja, a high school student at Liamson, lives alone with his parents working abroad. He and his classmate Louise experience bouts of déjà vu that make their memories unreliable. He meets two new transfer students, Kate and Nicole—the latter whom he feels oddly familiar with. At a hospital with Louise and her friend Sofia, Mark hallucinates and sees the halls become dark and twisted. Later, at a funfair with his friends, Cathy and Ridel, he remains uneasy from the earlier incident, only calming down after meeting Nicole. She tells Mark that her family were victims of the Ruling and that they moved to the capital for a better life.
+Mark decides to join the school’s piano club and signs up for the upcoming auditions. While practicing, he plays an unfamiliar composition, which is revealed to have been written by Nicole for her best friend Jake, who disappeared years earlier. She agrees to be Mark's piano instructor, and they begin to practice for the auditions. Nicole's mother thanks Mark for inspiring Nicole to play the piano again, after having stopped since Jake disappeared. Meanwhile, Louise theorizes that their déjà vu, the mysterious student disappearances, and the Ruling are caused by parallel universes colliding and interacting with theirs. Nicole withdraws from the auditions, and Mark, while accompanying her to her destroyed hometown, lashes out at her for being unable to let go of her past. Realizing his hypocrisy, he comes to terms with his mother's disappearance right before the start of the Ruling, later revealing this to Cathy and Nicole.
+Cathy goes missing after her parents forcefully take her home from prom. Mark chases after her, but she is hit by a truck while trying to reach him. Years later, Mark listens to a recording left by Cathy, in which she reveals her abusive home life, and plays against her recorded racing gameplay. The game hits a false ending, and a butterfly lands on Mark's hand, resetting time back to the day of his commute at the start of the game.
+
+
+=== Act Two ===
+The game continues similarly yet differently from the first playthrough. Sofia is mysteriously absent; Nicole's parents tell Mark about their past as victims of the Ruling before the funfair; and Mark reveals the truth about his mother earlier to Cathy and Ridel. At a café, Mark finds Louise performing the double-slit experiment with anomalous results. Those anomalies occur at "hotspots"—areas significantly affected by the Ruling or its victims. After one of his audition practices, Kate warns Mark not to trust Nicole, saying she is someone who cannot move on.
+Cathy later confesses her home situation to Mark, and she, Mark, and Ridel spend Christmas Eve together. After Mark and Nicole perform in the auditions, she shares her childhood with Jake, who is revealed to be Kate's brother. At another hotspot, the double-slit pattern suddenly fluctuates rapidly, causing Mark, Nicole and Louise to briefly disappear and experience alternate versions of their lives. Afterward, they monitor the experiment to detect future fluctuations.
+On prom night, Mark again chases after Cathy when she runs from her parents, despite Louise and Nicole warning him that the fluctuations are intensifying. He finds her, but she and Louise abruptly vanish. In denial and with Nicole's failed attempts to convince him to move on, Mark returns to the café and waits for the anomalous double-slit pattern to reappear. Time resets once more as the butterfly lands on his arm.
+
+
+=== Act Three ===
+Mark and Nicole both retain their memories after a series of resets. Louise suggests that their interactions are the source of the fluctuations. Following another reset, they attempt to avoid each other, but a chance meeting at the hospital pulls them into a distorted reality. Noticing that a hotspot disappears whenever they make eye contact within it, they travel to different hotspots and repeat the process.
+With each cycle, Mark and Nicole experience parts of each other's childhood and Liamson falls into further chaos. In one cycle, they fail to maintain eye contact when Nicole runs in with Kate at the destroyed hometown. After numerous resets, Mark awakens in an evacuation center, unable to find Nicole. The world gradually fades, leaving both of them alone in a dark void.
+They witness pivotal moments from each other’s lives leading up to Jake’s and Mark’s mother’s disappearances. In an otherworldly space, they are greeted by Jake and Mark’s mother, appearing as two butterflies. The spirits explain that each timeline was an attempt to give them better lives after their disappearances, but in every one, they continued searching for them. As the spirits pass on, Mark and Nicole reunite, finally learning to let go and say goodbye.
+The Ruling is undone, and they live separate ordinary lives with no memory of each other. The game ends with Mark and Nicole arriving at Tadhana Café with their respective dates, while the two butterflies watch from outside before flying away. In a post-credits scene, Mark visits his mother's grave, and he and his father come to terms with her death.
+
+
+== Development ==
+Polychroma Games, an indie game studio based in the Philippines headed by game director Mickole Klein Nulud, started active development on the game in 2020 during the COVID-19 pandemic using Godot Engine. The development team consisted of 10 core people, with additional contributions from others. A demo version of the game was released as part of the Steam Next Fest in February 2024. The release of the game was slated for May 23, 2024, but was delayed weeks before release. After announcing another release slated for June 23, it was pushed back another two days before finally being released on June 25, 2024, for Linux, PlayStation 5, and Windows. The game was later released for Nintendo Switch on June 26, 2025, and on Xbox Series X and S on April 23, 2026.
+The setting for Until Then is based on Metro Manila in the Philippines in 2014. Due to travel restrictions from the pandemic, the game's artists relied on Google Earth and memory for inspiration on creating the game's setting, falling back to usual Filipino architecture for generic locations. Manila was chosen as the basis for the game's setting as it best represented the experiences of the developers growing up in the Philippines. Despite the setting, Nulud wanted the setting to be universal for the story to "reach into people's hearts". As a result, the game makes many references to Filipino culture while ensuring that "everyone would appreciate the main story itself." It also features references to the Katipunan LRT-2 station, Quezon Memorial Circle, and numerous parodies of Filipino business names. Liamson Integrated School, the high school of Mark and his classmates, was based on Rizal National Science High School, where Nulud graduated. This high school setting was chosen to evoke nostalgia among players, according to Nulud and senior environmental artist Pia Demanawa. Both Nulud and Demanawa also focused on "communication" as one of the main themes of the game, while writer Mariel Tuble described it as "coming to terms with change, loss, and the passage of time." Nulud and Tuble describe the game as a "cinematic experience" albeit with interactive elements.
+The game also drew inspiration from Life Is Strange, Night in the Woods, The Last Night, Your Lie in April, and films by Makoto Shinkai. As development progressed, the team found new inspiration, such as with films by Ryusuke Hamaguchi. Initially, the characters' sprites were designed with equal pixel density to background sprites. This was eventually changed to "have more real estate with poses and expressions", according to Demanawa.
+On February 27, 2026, Polychroma announced a DLC for Until Then named Afterimages, which adds two new chapters to the game. It was released on June 18, 2026.
+
+
+== Reception ==
+
+Until Then received "generally favorable" reviews according to review aggregator Metacritic. Fellow review aggregator OpenCritic assessed that the game received strong approval, being recommended by 90% of critics.
+Prior to its final release, reviewers provided generally favorable reviews for the game's Steam Next Fest demo. Katharine Castle of Rock Paper Shotgun praised the game's "gorgeous mix of expressive pixel art and 3D environments." She also commended the games interactivity, along with Hope Bellingham of GamesRadar+, who was "amazed by how interactive it was." Thomas Kent of Hardcore Gamer praised the game for its "compelling narrative that explores the intricacies of teenage life." Castle and Kent both also praised the game's environment and sound design.
+Ed Thorn from Rock Paper Shotgun highlighted the game's story and progression and commended the game's interactivity. John Cal McCormick of Push Square praised the game's "authentic portrayal of teenage life" and "well paced story", giving the game an 8 out of 10 rating. Jason Rodriguez of Eurogamer described the game as "a coming-of-age story, a tale of love and loss, friendships and fears" and lauded its references to Filipino pop culture. However, Rodriguez also criticized the language used in the game, which is written in English, describing some dialogue as "using more 'Western' terms instead of the local vernacular". Mitchell Demorest of Slant Magazine shared this concern, writing that "some phrases [come] off too literal", while also raising issues with the game's pacing.
+Rodriguez and Jess Reyes of IGN both cited Until Then as a significant example of Filipino representation in video games. Reyes recalled Josie Rizal of the Tekken franchise as a popular yet dated example, while Rodriguez noted the game's "full-on Pinoy representation" since Anito: Defend a Land Enraged. Bellingham, Castle and George Yang of GameSpot compared the game to A Space for the Unbound, another adventure game which also featured an emotional story presented in pixel art style.
+
+
+== Notes ==
+
+
+== References ==
+
+
+== Further reading ==
+Rodriguez, Jason (June 26, 2024). "'Until Then' showcases Filipino culture and creative storytelling devices". Rappler. Retrieved August 11, 2024.
+
+
+== External links ==
+Official website

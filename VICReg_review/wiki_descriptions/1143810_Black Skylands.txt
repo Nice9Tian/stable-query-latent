@@ -1,0 +1,16 @@
+Game: Black Skylands
+appid: 1143810
+Source: Black Skylands
+URL: https://en.wikipedia.org/wiki/Black_Skylands
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Black Skylands is an action-adventure top-down shooter video game developed by Russian indie video game company Hungry Couch Games and published by tinyBuild.  It entered early access for Windows on 9 July 2021 and was released 15 August 2023 for Windows, Nintendo Switch, PlayStation 4, PlayStation 5, Xbox One, and Xbox Series X/S.
+It is set in the fictional floating continent of Aspya, revolving around the adventure of female protagonist called Eva. As a daughter of the head of her clan, Eva defends the land of Aspya from a band of raiders and mysterious creatures called The Swarm appearing from the storm. Black Skylands allows players to customize their weapons and airship, build their base, reclaim lands and expand their territory, and explore dungeons, including randomly generated ones.  It has an open world. Black Skylands has been described by reviewers as a mix between Hotline Miami, Sunless Skies, and Stardew Valley.
+
+
+== References ==
+
+
+== External links ==
+Official website

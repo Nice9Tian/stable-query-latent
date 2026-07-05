@@ -1,0 +1,29 @@
+Game: Rebel Inc: Escalation
+appid: 1088790
+Source: Rebel Inc. (video game)
+URL: https://en.wikipedia.org/wiki/Rebel_Inc._(video_game)
+Match score: 6.60
+Retrieved: 2026-07-04
+--------
+Rebel Inc. is a strategy video game developed and released by Ndemic Creations for iOS in December 2018. It was later ported to Android in February 2019. A Microsoft Windows and macOS version was released on Steam as Rebel Inc: Escalation in October 2019. The goal of the game is to stabilize a region of a country while preventing insurgents from seizing control.
+
+
+== Gameplay ==
+The player assumes control of an operation tasked with stabilizing a war-torn region of a country. Players work with a monthly budget to provide the population with services, jobs, infrastructure, and other such amenities in order to gain their support. Eventually, an insurgency begins within the region and the player must finance military initiatives to put it down. Later on, peace can be negotiated with the insurgent leaders. The game features many strategic elements, such as budgeting, random events, peace negotiation, balancing civilian and military initiatives, counter mechanics such as inflation, corruption, and local concerns. The game features several governors that have different abilities such as the Warlord that uses a personal militia in warfare or the Economist that helps prioritize the player's income, but gives its entire budget annually. The game features multiplayer modes such as VS & Co-Op modes, as well as a Campaign mode. The game's Campaign mode, released in 2020, is about adapting insurgency and other tactics for counterinsurgents. The game has a collection of custom scenarios as well as a creator to make them. Each region of the game has different geographical conditions. The player has to invest in civic initiatives to improve their reputation and stabilize the country, although the more initiatives are taken, the more corruption and inflation increase. The regions of the game are inspired by the geography of Afghanistan. The game also requires the player to develop infrastructure as well as the creation of jobs in industries. Other game mechanics include investing in education, creating an army and building roads. The game contains a governance tab, in which governmental and financial anti-corruption measures can be created.
+
+
+== Development ==
+The game was released on December 8, 2018 on iOS devices. A version of the game for Android devices was released on February 11, 2019. On October 15, 2019, a Windows PC version called Rebel Inc: Escalation was released. In an update of the game, version 1.8 added another region called "Opium Trail", which is about preventing opium trade. Some of the game simulations were inspired by the political situation in Afghanistan. In 2020, Ndemic Creations started a beta tester program for Android and iOS devices in order to bring the campaign mode to these devices.
+The game has received several free updates as well as paid DLC.
+
+
+== Reception ==
+Mike Holmes of Gamereactor gave Rebel Inc. a 9/10, "appreciating the depth, involvement, great pacing, varied gameplay, very interesting subject matter, and excellent value for money, but finding the winning strategies too easy to fall back on". Dick Page of Pocket Tactics gave it five out of five stars, finding it an "initially obtuse but ultimately highly rewarding spiritual sequel to one of the greatest mobile successes". He also gave it a 9/10 rating. In a 148.apps review Campbell Bird described the game as "fun, but if the player finds a strategy that works in the game, it is applicable in basically every part of the game".
+Rebel Inc. received praise from Said Tayeb Jawad, a diplomat who then served as ambassador of Afghanistan to the United Kingdom. Jawad called the game "sophisticated and engaging".
+
+
+=== Downloads ===
+Along with Plague Inc., it was one of the most downloaded games on the App Store in 2020. It was also one of the most downloaded paid games on iOS devices in Hong Kong.
+
+
+== References ==

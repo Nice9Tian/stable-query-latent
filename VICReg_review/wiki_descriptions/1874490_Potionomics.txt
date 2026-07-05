@@ -1,0 +1,38 @@
+Game: Potionomics
+appid: 1874490
+Source: Potionomics
+URL: https://en.wikipedia.org/wiki/Potionomics
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Potionomics is a simulation video game developed by Voracious Games and published by Xseed Games. It combines aspects of business sim, life sim and dating sim. It was released on October 17, 2022, for Windows. The game was well received by critics, who commended its complex gameplay and its graphical style, but were disappointed at its lack of any voice acting.
+
+
+== Gameplay ==
+Potionomics is a simulation video game. Set in a fantasy universe, it revolves around a witch named Sylvia who inherits her uncle's potion shop, along with debt she must pay off. To do this, she trains for a potion competition that will repay the debt, while running the potion shop for money, ingredients, and to prevent the shop from being repossessed. The game incorporates elements of dating simulators, as the player can build relationships with other vendors, deck building games as the player plays a minigame to bargain with customers over the prices of potions, and business simulation, as the player must manage their shop.
+The game is turn-based; each day is divided into six time units, which the player can use to run their shop or perform other actions. The game's actions primarily revolve around brewing and selling potions. The player can take actions to obtain ingredients for potions, either from merchants or from heroes. Ingredients are then used to brew potions based on a system of balancing ratios of components of ingredients, called magimins. Rarer ingredients, and more categories of magimins, are required to brew more complex potions and to win the competition. Potions take a certain number of time units to brew, but the player can take other actions during this time.
+
+
+== Soundtrack ==
+The soundtrack to Potionomics is written by Greg Nicolett and includes various collaborations with artists like Artemisia, Patti Rudisill, Joni Fuller, Tina Guo, Kristin Naigus, and Ro Rowan. The soundtrack consists of 50 songs including character themes, background music, and event tracks. The Original Game Soundtrack spans for 1 hour and 38 minutes, each of the 50 tracks averaging about 2 minutes. The soundtrack contains music from a variety of genres from dubstep to bossa nova, combining both orchestral and electronic elements. The overall soundtrack is described as “whimsical” and “catchy” and elicits a sense of magic and fantasy even among those who have not played the game.
+
+
+== Development and release ==
+Potionomics was initially released on October 17, 2022, for Windows.
+On October 22, 2024, a console edition for PlayStation 5, Xbox Series X and Series S, and Nintendo Switch, titled Potionomics: Masterwork Edition was released, accompanied by an update that introduced more difficulties, gamemodes and voice acting.
+
+
+== Reception ==
+
+Potionomics received an aggregate score of 80/100 from Metacritic, indicating generally favorable reception.
+Tom Sykes of PC Gamer rated it 87/100 points, particularly commending its card-based haggling battles as "light, brisk, yet packed with charm", but calling its potion-brewing "exhausting". He compared the game's dating aspects to Persona, calling the game's other vendors "expressively animated" and their dialog "comfortably tropey". However, he expressed dislike of the game's lack of voice acting in comparison to its graphics, saying that he felt like he was "playing on mute". Overall, he described the game as "extremely cohesive" despite its "seemingly disparate" parts, saying it was unique for combining the various genres together.
+Liam Richardson of Rock Paper Shotgun called the game's animation a "particular highlight" and regarded its backgrounds as "beautiful", describing its card game as the most enjoyable aspect. He stated that the game was "stressful" and "a touch too difficult" overall, but that its aspects combined "neatly". Bob Richardson of RPG Fan rated the game 74/100 points, comparing it to Recettear in gameplay. While calling the game "complex and deep" and saying it exceeded his "modest" expectations, he nevertheless described its gameplay as its weakest aspect, saying that it became "stale" and repetitive halfway through, and describing it as overly long. Noting that potion-making was a "laborious" process, he stated that he wished the game was "less intense".
+Robin Bea of Inverse called Potionomics the best sim game of 2022, and the game won the audience award at the 2023 Independent Games Festival.
+Potionomics: Masterwork Edition was also reviewed by Nintendo World Report, PSU, and Siliconera, who considered it superior to the original version.
+
+
+== References ==
+
+
+== External links ==
+Official website

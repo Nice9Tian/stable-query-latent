@@ -1,0 +1,32 @@
+Game: Beacon Pines
+appid: 1269640
+Source: Beacon Pines
+URL: https://en.wikipedia.org/wiki/Beacon_Pines
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Beacon Pines is a narrative adventure video game developed by Hiding Spot Games, and published by Fellow Traveller. The game was released on September 22, 2022, for Microsoft Windows, Nintendo Switch, and Xbox One (via Game Pass).
+Narrated by Kirsten Mize and set in the titular town, the storybook-based exploration game follows Luka uncovering the mysterious secrets of his hometown alongside his friends Rolo and Beck.
+
+
+== Gameplay ==
+Beacon Pines is a narrative-focused game where the goal is to end the story with a happy ending. The player will come across "Turning Points", moments in the story where the players actions changes the outcome of the story. The choices are limited by the amount of words (called "Charms") the player has picked up. The player is encouraged to explore the branching timeline to get different charms to get further in the story.
+
+
+== Plot ==
+Luka VanHorn is a 12-year-old deer boy who lives in Beacon Pines with his grandmother after his father died when he was six, and his mother mysteriously disappeared. He hangs out with his best friend Rolo Cotter, a liger. While awaiting the town's upcoming annual Harvest Festival, the pair stumble onto some strange happenings at the abandoned warehouse in the woods near their treehouse. Along with the new girl in town, Beck Moedwil, the trio seeks to unravel the mysteries of what exactly is going on in their town.
+Beacon Pines is a small town known for its agricultural sector and its fertilizer plant, Valentine's Fertilizer, owned by the eponymous Valentine family. In the town's heyday, Valentine's produced a miraculous fertilizer that caused crops to grow bountifully and quickly. Beacon Pines' economy grew rapidly around the fertilizer sales. However, 6 years before the start of the main story, Sharper Valentine, patriarch of the Valentine family, suddenly died. Then, Beacon Pines was hit with an event known as the "Foul Harvest", a particularly bad harvest season where all crops in the area inexplicably died. In subsequent years, even with continued use of the fertilizer, harvest yields were extremely underwhelming, causing an economic recession. The town blamed the Valentine family for their woes, and the factory eventually shut down, accelerating the recession. Eventually, a new company, Perennial Harvest, came into town, moved everyone out for a week to conduct various "decontamination" activities to restore the environment, and then moved everyone back in.
+Luka and his friends eventually learn that their town is actually not the original Beacon Pines. The Beacon Pines they currently live in is a near perfect copy of the original town, provided by Perennial Harvest, while the original Beacon Pines is located a short distance away, encased in a localized permanent winter. The cause of this permanent winter is "The Source", an underground reservoir of a mysterious substance, dubbed Tempus Liquamine, that Valentine's Harvest had used to create their famed fertilizer. Tempus Liquamine is capable of affecting the passage of time on living beings, causing rapid growth and aging. However, it does so by draining heat from the surrounding environment in a volatile manner, and overuse of the fertilizer eventually caused the Foul Harvest. Perennial Harvest later discreetly relocated Beacon Pines to a new location to avoid the oncoming deep freeze. Prior to the Foul Harvest, Luka's father, a doctor, realized that an epidemic had begun, as the farmers in Beacon Pines were all suffering similar symptoms related to the rapid aging effects of the fertilizer. He died under mysterious circumstances while investigating the cause of the epidemic, presumably at the hands of Sharper Valentine. Luka's mother, Eleanor, had been investigating his death ever since. However, a few months before the main story began, Eleanor accidentally aged several decades while investigating the old Valentine's warehouse, allegedly from exposure to The Source. Left with little choice, she decided to return to town under the guise of Luka's grandmother to continue her investigation, and eventually planned to blow up The Source with explosives, seeing it as an existential threat to her family and community at large.
+Eventually, events culminate at the Harvest Festival, where the game has multiple endings. A few end with the town being frozen over instantaneously in a massive cold wave, caused by Eleanor's successful bombing of The Source. In the penultimate ending, where Eleanor abandons her plan to destroy The Source, Sharper Valentine reveals that he never died, but rather had been working with The Source to reverse aging. His first attempt in doing so caused him to become a child again, so he faked his death and took on the name Solomon, something not even his own adult children, who had adopted "Solomon" per their father's alleged Last Will, were aware of. Sharper had since organized events and prioritized research that would restore his body, explaining that Perennial Harvest was actually his company all along, founded to continue research on The Source. Sharper further claims he had finally achieved immortality and that he will effectively be ruling Beacon Pines forever. He then drinks a perfected aging potion that returns him to his adult form. However, in the true ending, Beck taints Sharper's perfected aging potion with her Unlucky Penny, causing Sharper to become a baby instead. With Sharper's memories gone and social power effectively erased, his children re-adopt "Solomon" (with the intention to raise him to be a better and kinder man) and begin working with the town to restore their environment and economy without relying on The Source.
+
+
+== Reception ==
+
+Beacon Pines received "generally favorable" reviews, according to review aggregator Metacritic. Fellow review aggregator OpenCritic assessed that the game received strong approval, being recommended by 85% of critics.
+
+
+== References ==
+
+
+== External links ==
+Official website

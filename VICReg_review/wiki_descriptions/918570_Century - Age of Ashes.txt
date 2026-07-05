@@ -1,0 +1,31 @@
+Game: Century: Age of Ashes
+appid: 918570
+Source: Century: Age of Ashes
+URL: https://en.wikipedia.org/wiki/Century:_Age_of_Ashes
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Century: Age of Ashes is a 2021 free-to-play aerial combat video game developed and published by Playwing Bordeaux and released on December 2, 2021 for Microsoft Windows and on March 10, 2022 for Xbox Series X/S. It launched for Xbox One on July 12, 2022, and for PlayStation 4 and PlayStation 5 on September 26, 2022. Mobile versions of the game for iOS and Android released on June 21, 2023.
+
+
+== Gameplay ==
+Set in a dark fantasy world, Century: Age of Ashes is a third person multiplayer arena battle video game in which the player can mount dragons and fight with them. In the game, players have to choose between three classes before each game, each with its unique design, abilities and customisation: Marauder, Windguard, Phantom and now the Stormraiser. The Marauder is a skilled hunter that can mark its prey. The Windguard is a supporting class that can shield its allies and the Phantom is a stealthy assassin that can cloak itself. Each class is bound to a specific kind of dragon.
+The game currently includes three 6 versus 6 game modes: Gates of Fire, a “capture the flag” like game mode, Carnage, a team deathmatch game mode, and Spoils of War. Spoils of War is a new game mode that was announced in November 2021. A 3 versus 3 game mode is also available.
+During a game, players can fly across the maps, shoot the enemy team using Fireball, Dragonbreath or different skills unique to each class, and dodge enemy attacks.
+
+
+== Development ==
+Century: Age of Ashes has been developed by Playwing Bordeaux since 2017. Pascal Barret, art director, and Emmanuel Nouaille, creative director of the game came up with the idea in 2014. Their goal was to create an aerial dragon fighting game with a competitive aspect. They started working on the game on the Unreal Engine 3 with a small team and resources, before being approached by Playwing in 2017. The game has since shifted to a development on the Unreal Engine 4.
+Century: Age of Ashes was announced during the 2020 Game Awards ceremony. The game was originally scheduled to release via Early Access in February 2021, but was delayed to April 2021.  After their second closed beta, the developers decided to postpone the release of the game following beta feedback.
+A new trailer for the game was featured during the 2021 Gamescom, announcing a release date of December 2, 2021, and introducing the addition of baby dragons, as well as a new game mode.
+
+
+== Reception ==
+The PC version received "mixed or average" reviews according review aggregator Metacritic.
+
+
+== References ==
+
+
+== External links ==
+Official website

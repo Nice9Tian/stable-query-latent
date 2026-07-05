@@ -1,0 +1,19 @@
+Game: Hellish Quart
+appid: 1000360
+Source: Hellish Quart
+URL: https://en.wikipedia.org/wiki/Hellish_Quart
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Hellish Quart is an early access sword fighting video game by Polish developer Kubold. The game features duels of two sword wielding players or NPCs who fight until the opposing player or enemy is severely injured or killed.
+The sword fighters are from 17th century Europe and the game uses 3D scans of authentic Eastern European clothing. The game also includes an unfinished chapter based campaign mode which features Jacek, a Polish mercenary. 
+The game's development is led by Jakub Kisiel (an ex-senior animator for The Witcher 3: Wild Hunt), who was inspired by the 1997 game Bushido Blade.
+Although the game is set in 17th Century Poland-Lithuania, it also features an option to play as modern fencers in HEMA gear.
+
+
+== References ==
+
+
+== External links ==
+Hellish Quart official website
+Hellish Quart on Steam

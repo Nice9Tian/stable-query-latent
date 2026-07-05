@@ -1,0 +1,33 @@
+Game: Per Aspera
+appid: 803050
+Source: Per Aspera
+URL: https://en.wikipedia.org/wiki/Per_Aspera
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Per Aspera is a city-building game developed by Tlön Industries and published by Raw Fury for Windows on December 3, 2020. The player takes the role of AMI, an artificial intelligence with the objective of terraforming Mars for human colonization.
+
+
+== Gameplay ==
+The game features a branching nonlinear story and multiple endings.
+
+
+== Release ==
+Per Aspera was announced in June 2019 at the PC Gaming Show. An expansion pack, Green Mars, was released on October 21, 2021. A second expansion, Blue Mars, was released on May 2, 2022. A third expansion, Home, was released on January 23, 2023. The game was released on Meta Quest 2 on February 9, 2023.
+
+
+== Reception ==
+
+Per Aspera received "generally favorable" reviews according to review aggregator Metacritic. Fellow review aggregator OpenCritic assessed that the game received strong approval, being recommended by 86% of critics.
+Davide Pessach of Italian Eurogamer said that "Per Aspera is a very interesting colony builder narrative game that has a stellar esthetic, a very engaging story and a super cast of actors. The gameplay is fluid, rewarding and rich of surprises and references to cool tech (both fictional and kinda realistic). If you like the genre and the setting you will have a blast."
+Jonathan Bolding of PC Gamer summarized: "Per Aspera's novel adaptation of nonlinear narrative to fit a strategy game goes over surprisingly well. Combined with a novel terraforming mechanic, slick aesthetics, hard science chops, and classic genre gameplay, this one is definitely worth the time."
+Martynas Klimas of PC Invasion said that "Per Aspera reaches for lofty heights, but I could never shake the impression that the difficulties I encountered were more because of the game breaking down rather than Mars being a hostile place. But who knows, patches do wonders these days."
+In 2021, the Academy of Interactive Arts & Sciences nominated Per Aspera for Strategy/Simulation Game of the Year during the 24th Annual D.I.C.E. Awards.
+
+
+== References ==
+
+
+== External links ==
+Official website
+Per Aspera at Tlön Industries

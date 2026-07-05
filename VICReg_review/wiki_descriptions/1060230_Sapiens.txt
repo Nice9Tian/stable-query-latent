@@ -1,0 +1,36 @@
+Game: Sapiens
+appid: 1060230
+Source: Sapiens (video game)
+URL: https://en.wikipedia.org/wiki/Sapiens_(video_game)
+Match score: 6.36
+Retrieved: 2026-07-04
+--------
+Sapiens is an action-adventure and text-based game set in an open world environment and played alternatively in flip-screen and first-person perspective. One of the earliest representatives of the survival game genre, it is set in a fictionalisation of Prehistory. Developed by Didier Guillion and Olivier Guillion, it was published by Loriciel in 1986 on Thomson MO5, ported to Amstrad CPC (1986), Atari ST (1987), and DOS (1987). Myriad Online, the company created by the Guillion brothers, published a Mac OS and Microsoft Windows port in 1996, recompiled in 2017.
+
+
+== Synopsis ==
+The game is set in 100,000 BC during the end of the Paleolithic period in Europe. It takes place in a procedurally generated open world filled with different types of flora and fauna such as savannas and tundras. Players customize a Neanderthal avatar by naming it, assigning it a gender, choosing its hairstyle and dresscode. The RPG aspect also entails customizing five parameters at game start (agility, strength, charisma, vitality, resistance), while gender defines different aptitudes. By default, the player incarnates Torgan, a hunter-gatherer warrior from the tribe of the Light-Footed. The game plot, influenced by J.-H. Rosny aîné's writings as well as The Quest for Fire, features several missions and reaches a climax when the player takes the lead of its tribe. The player hunts in unknown territories and faces neighbouring hostile tribes, hunts down cave bears and wolves, collects water from streams and healing plants.
+
+
+== Gameplay ==
+As the game starts, Hognor, the tribe leader orders the player to gather food to feed the tribe. If they fail displaying due respect and accepting the task, the player will undergo a bastinado. Once set on their quest, the player alternates between the side-view to explore, forage, hunt and meet other characters, and the landscape view, first-person perspective, progressing through a wide scenery in order to reach the different goals set by the tribe leader. The player can take Non-player characters allies on his quest, as well as tame wild animals which serve as companions for the player and can assist them in combating enemies. Non-player characters will also task the player to rescue tribe-mates and perform other tasks which improve the village, as well as provide free crafting materials. The game also features a dynamic weather system and day-night cycle. When flint is present in the inventory, the player is also given the opportunity to craft flint tools through a dedicated submenu. Since the task is made hard by design, it is also possible to skip it altogether and retrieve handaxes or spears from fallen opponents. After fighting, the player must use natural remedies, ointments and plants to heal. When hungry, they must eat proteinic food in order to avoid starvation; when tired, they must sleep, and when they wake up, they will be thirsty, and hence must reach a water stream to quench their thrist and they can fill their wineskins if available in their inventory.
+
+
+== Reception ==
+Sapiens received immediate critical and popular success. Although information about the foreign sales is scarce, after being translated in English, the game was exported to the USA. The  Atari ST version of Sapiens received the Tilt d'or / « Most original software » award from Canal+ in 1987.
+The Games Machine felt that the plot and implementation were "quite original" and that the graphics were "very effective and polished" and that the game was "quite easy to get into".
+Computer and Video Games could not tell how to solve problems or find a winning strategy, and that the game play "did not make itself apparent", and found that actions taken by the player have "no immediately effect on progress".
+
+
+== References ==
+
+
+== External links ==
+Interview de Didier et Olivier Guillion sur Ex0097, Novembre 2018
+Interview de Didier et Olivier Guillion sur Logiciels Thomson, Juin 2005
+Interview de Didier et Olivier Guillion sur Amstrad.eu, Septembre 2003
+Interview de Didier et Olivier Guillion sur Thomsonistes, Octobre 1998
+Interview de Didier et Olivier Guillion sur le magazine Amstard n°2, Octobre 1986
+Sapiens sur Emu Nova
+Sapiens at MobyGames
+Sapiens (1/3), Sapiens (2/3), Sapiens (3/3), articles de Didier Guillion sur le blog de Myriad-online

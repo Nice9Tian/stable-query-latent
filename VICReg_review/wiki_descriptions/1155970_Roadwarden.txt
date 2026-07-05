@@ -1,0 +1,29 @@
+Game: Roadwarden
+appid: 1155970
+Source: Roadwarden
+URL: https://en.wikipedia.org/wiki/Roadwarden
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Roadwarden is a 2022 text-based role-playing and interactive fiction adventure video game for Windows, macOS, Linux, and Nintendo Switch. Developed by Moral Anxiety Studio, the game is set on a peninsula with multiple independent human settlements and features typical role-playing video game themes such as monsters and travelling bandits. The game centers on the player character, the "roadwarden", who is tasked with establishing trade and helping to secure the remote, dangerous peninsula, as well as investigating the disappearance of the previous roadwarden. Windy Meadow - A Roadwarden Tale, a game set in the same world, was released October 16, 2023.
+
+
+== Gameplay ==
+The player controls a person who has been hired by a merchants' guild to serve as a "roadwarden" for a remote peninsula, in an attempt to bring commerce, unify the tribes in the peninsula, and establish trade with the merchants' guild. The player is also tasked with securing the roads between settlements and ensuring the safety of their inhabitants. In the standard difficulty setting, the player is given up to 40 in-game days to complete their mission, before returning to their home city of Hovlavan.
+Roadwarden features a sectioned layout, with an illustration pane on the left which shows a map or illustration of the area the player currently occupies, and features fog of war which blocks out as-yet unexplored areas. The right pane features text and offers clickable dialogue and action choices based on the situation, and occasionally allows the player to type in word prompts as well. The rightmost section of the game window displays the player's stats: the current date and amount of time until dusk, vitality, nourishment, armor, appearance and pneuma (mana, for players who choose a magic-based character). Roadwarden also has ambient music which matches the mood of the story and changes often.
+The player can choose between multiple character classes such as a fighter, a mage, or a scholar, each with unique knowledge and options in different situations, as well as biographical information such as the player's in-game religion which affects interactions with NPCs in the game.
+The game uses an open-world travel system and allows the player to explore the game world at their own pace, mapping it as they go along. The player can collect quests in typical RPG fashion, which are displayed in the players journal, along with any developments in the quests' plot. As the game contains survival elements, the player will have to balance nutrition, health, personal hygiene and currency (referred to as "dragon bones" or "rings") in order to be successful. Currency is often needed for items, weapons, and lodging and boarding for the player and their horse.
+Roadwarden also employs random chance-based choices, indicated by a die icon in front of the choice. The game does not display the odds of a favorable outcome, and instead relies entirely on prose to describe the outcome.
+A typical day in the gameplay loop will feature exploring, dialogue, occasional combat, and then finding a safe place to rest and recuperate before nightfall.
+
+
+== Reception ==
+Roadwarden has been met with positive reviews, featuring an initial score of 85 out of 100 on review aggregator Metacritic. RPGFan positively describes the game as: "A bold and distinct world, all pieces and parts work wonderfully well together, outstanding writing", and states that its only major criticism is that some decisions are not ultimately reflected in the ending, citing a sense of discontinuity. TheGamer compares it to the games Disco Elysium and Citizen Sleeper, noting that "capitalism is a constant and overbearing presence". PC Gamer refers to playing the game as being similar to reading a fantasy novel.
+
+
+== References ==
+
+
+== External links ==
+Official website
+Roadwarden at The Visual Novel Database

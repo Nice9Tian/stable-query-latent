@@ -1,0 +1,29 @@
+Game: Potion Permit
+appid: 1337760
+Source: Potion Permit
+URL: https://en.wikipedia.org/wiki/Potion_Permit
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Potion Permit is a 2022 video game developed by MassHive Media and published by PQube.
+
+
+== Gameplay ==
+Gameplay consists primarily of action role-playing elements, with minigames used to represent certain complex actions, such as creating a potion. Additional gameplay elements come from the foraging system, as well as socialization with non-player characters (NPCs).
+
+
+== Development ==
+Potion Permit was developed in Bandung, Indonesia by the studio MassHive Media, having been inspired by Stardew Valley, Moonlighter, and other games. The game was announced in September 2020.
+The game was released for Microsoft Windows, Nintendo Switch, PlayStation 4, PlayStation 5, Xbox One, and Xbox Series X/S on September 22, 2022, and on Amazon Luna on September 23, 2022.
+The mobile version was released on February 6, 2024.
+
+
+== Reception ==
+
+Potion Permit received "mixed or average" reviews, according to review aggregator Metacritic.
+GameSpot praised the aesthetics and narrative of the game, though it also noted issues with the depiction of some character traits. Nintendo Life similarly praised the aesthetics of the game in their review, additionally making a positive note of the mini-games, while critiquing the low difficulty of the game.
+GameSpot, Destructoid and Push Square both noted the presence of a large number of bugs as a detracting point. TouchArcade noted that the performance issues on Switch hardware could lead to issues in timing critical minigames.
+At the 2025 Pégases Awards, Potion Permit was nominated for Best Foreign Mobile Game.
+
+
+== References ==

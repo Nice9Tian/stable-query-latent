@@ -1,0 +1,67 @@
+Game: Amazing Cultivation Simulator
+appid: 955900
+Source: Amazing Cultivation Simulator
+URL: https://en.wikipedia.org/wiki/Amazing_Cultivation_Simulator
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Amazing Cultivation Simulator (了不起的修仙模拟器) is a Wuxia top-down construction and management simulation video game developed by GSQ Games and published by Gamera Games. It was initially released to early access in Chinese in 2019, was fully released on November 25, 2020, and was later localised and released for English-speaking consumers in Q4 2021. 
+Being of Xianxia genre, it involves running a Taoist sect and demonstrates Buddhist and Taoist philosophy. Gameplay-wise, it draws heavily from the likes of RimWorld and Dwarf Fortress. Originally only available in Chinese in early access, its systems have been described as very complex and in-depth.
+The game was released on Steam in early access on January 11, 2019, with a full release on November 25, 2020. It incorporates many elements from Chinese mythology, including Wuxia and Xianxia genres, Taoist religious philosophy, and Feng shui. The goal of the game is to cultivate disciples' Qi in order to defeat legendary creatures and uncover hidden mysteries.
+In 2023, it was added to Xbox Game Pass.
+
+
+== Mobile release ==
+A mobile version of Amazing Cultivation Simulator was officially released in mainland China on December 20, 2023, via TapTap and local app stores. The international version launched globally on June 3, 2025, on both the App Store and Google Play. The mobile edition features a full touchscreen interface and supports both English and Simplified Chinese. It preserves the core gameplay mechanics of the PC version and uses a one-time purchase model rather than in-app monetization.
+
+
+== Gameplay ==
+The game consists primarily of managing a sect, comparable to a colony in "colony management" video games. The game has a top down, two-dimensional view. Gameplay mechanics include 'cultivating' the sect's disciples, eventually ascending to immortality, balancing Feng shui of rooms and cultivators, trading, spreading your influence across the map, fending off invading hostile forces and subjugating powerful monsters.
+The game has two save-modes. In addition to normal, "Immortal" acts as Amazing Cultivation Simulator's "hardcore" mode, disabling manual saving and many useful in-game indicators.
+The game is set in the fictional Tiancang era. The player's is tasked with rebuilding the "Taiyi sect" after it was attacked, resulting in its master and most of the disciples being lost. The game has a tutorial that the player must play through the prologue stage of in order to unlock the main game. If the player chooses to play through the rest of the tutorials, they will be introduced to a variety of basic mechanics.
+The main game that the English localization calls "Classic" is a free play mode where the player can adjust a variety of options to change the difficulty of the game. There is also a creative mode where the player can freely build without the survival mechanics.
+
+
+== Plot ==
+The player takes on the role of the surviving member(s) of the recently destroyed Taiyi sect, attempting to rebuild while taking revenge on its mysterious assailants. Depending on the players actions, they may discover clues about and eventually solve the mystery of their late sect's fate.
+
+
+== Development ==
+
+The game was developed by Chinese indie studio GSQ Games.
+
+
+=== Modifications ===
+Players of the Steam published edition are able to install modifications (known as "mods") either through the Steam Workshop or directly from the game's built-in mod management feature, that acts as a middle man between the user and the workshop. Players of the GOG.com published Digital rights management-free version can also install mods but must procure and install them manually. The game has an active modding community, the majority of which is in Chinese.
+
+
+=== Downloadable content ===
+On November 25, 2020, the first downloadable content (DLC), Deep in the Bamboo Forest, was released alongside the 1.0 update. It introduced a new location, a playable panda race, domestic pets, themed furniture, and a fishing minigame.
+On August 31, 2021, the second DLC, Immortal Tales of WuDang, was released with the 1.2 update. This expansion added a new sect based on the Wudang tradition, a cultivation law, unique items, and additional construction options.
+In October 2024, a major free update titled Heavenly Chaos (v1.26) was released, introducing a late-game balance overhaul, new Qi deviation effects, and advanced Heavenly Dao mechanics. This was followed by multiple minor patches, with the latest version (v1.268) released in January 2025.
+
+
+== Sequel ==
+A sequel titled Amazing Cultivation Simulator 2 is currently in development. It was originally slated for release in 2023 but was postponed to 2024 due to engine upgrades and expanded development scope. As of mid-2025, no official release date has been confirmed, though developer updates on Steam and social media indicate continued progress. The sequel is expected to include a reworked cultivation system, improved graphics, and deeper sect diplomacy mechanics.
+
+
+== Reception ==
+
+The game has received mixed reviews from critics. The game received a 73/100 on review aggregator platform Metacritic, indicating "Mixed to average reviews" based on 4 critic reviews. John Krebs of Gamer Nexus rated the game 8.8/10, describing it as bringing "a massive learning curve" that creates "an amazing amount of opportunity and re-playability" and emphasised the discoveries to be made and all around game value in game hours to be played. Jan Slavík of Games.cz rated it 9/10 and summarised it as a "diamond hidden under unappealing skin". Eric Ace of Cubed3 rated it 5/10, citing the game's borrowed mechanics from both Animal Crossing and hardcore strategy as its weakness: "there is very little overlap between those games or gamers".
+
+
+=== Revenue ===
+On November 17, 2020, Steven Messner wrote for PCGamer that Amazing Cultivation Simulator had sold over 700,000 copies in China.
+The publishers Gamera Games has said "that during its time in early access when it was only available in China it sold over 700,000 copies."
+
+
+== See also ==
+Dyson Sphere Program
+Volcano Princess
+
+
+== References ==
+
+
+== External links ==
+Official website

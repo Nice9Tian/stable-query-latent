@@ -1,0 +1,48 @@
+Game: Idol Showdown
+appid: 1742020
+Source: Idol Showdown
+URL: https://en.wikipedia.org/wiki/Idol_Showdown
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Idol Showdown is a 2023 fighting game developed by Besto Games. It is a freeware fan game featuring VTubers from Hololive Production as the playable fighters.  The game received positive reception on release, and the developers announced plans to continue adding additional characters to the game in updates.
+
+
+== Gameplay ==
+Idol Showdown is a 1 on 1 fighting game where two players battle to knock each other out.  At the start of a match, each player selects a main playable fighter, as well as a secondary assist character who can be summoned to perform additional attacks during battle.  Each character is based on a Hololive VTuber, and has a unique set of attacks and special moves.  Fighters can perform light, medium, and heavy attacks which can be chained together into combos.  During a match fighters also charge up a “superchat” meter, which can be used to activate special "super" moves.
+Idol Showdown is a multiplayer game that can be played online or locally.  It also features single player modes where players can fight against AI controlled opponents.  This includes a tutorial mode where players can practice each character's moves, an arcade mode where players have to win several consecutive fights, and "Virtual Frontier" mode where the player faces a series of fights with random modifiers and items appearing to modify the gameplay experience.
+
+
+== Characters ==
+
+There are so far 12 playable characters and 14 "collabs", characters who provide assist moves, available in the game. Several other Hololive members appear in the game in other features.
+
+
+=== Fighters ===
+
+
+=== Collabs ===
+
+
+=== Boss characters ===
+
+
+== Development ==
+Besto Games spent 2 years developing Idol Showdown. The game utilizes rollback netcode for its online multiplayer. Despite being an unofficial fan game, some of the VTubers featured in the game offered to record voice lines for their respective in-game characters.
+
+
+== Release ==
+Idol Showdown was first revealed in a gameplay trailer on March 22, 2023. The game was released on Steam on May 5, 2023.  The game launched with 8 playable characters including 7 current Japanese VTubers from Hololive, and retired Hololive member Kiryu Coco. The developers announced plans to add 3 additional playable characters in future updates.  At Evo 2023 Usada Pekora was revealed to be the game's 9th fighter. Her character was added on August 11, 2023.
+On 15 November 2023, Cover established their own publishing label for fangames named Holo Indie to better support fangame creators. Idol Showdown, one of Cover's directly cited inspirations for the establishment of the Holo Indie brand, joined the brand on 17 March 2024.
+On 31 February 2025, the developers announced Hakui Koyori as the next fighter. Her character was added into the game on 5 June 2025.
+
+
+== Reception ==
+Elliot Gostick from Siliconera rated the game 7/10 saying, "Idol Showdown is a beginner friendly fighting game and a love-letter to Hololive's streamers and community. But it may have limited appeal outside that demographic." PCGamesN's Ken Allsop praised Idol Showdown saying, "I'm already impressed by the game's catchy pixel art style and soundtrack. I hop into the game's tutorial mode and am immediately struck by its comprehensive instructions, responsive feel, and overall mechanical depth." Austin Wood of Games Radar reported the game was downloaded 200,000 times in its first weekend, and received a 95% positive rating from user reviews.
+
+
+== References ==
+
+
+== External links ==
+Idol Showdown on Steam

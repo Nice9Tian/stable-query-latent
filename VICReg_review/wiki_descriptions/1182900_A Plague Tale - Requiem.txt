@@ -1,0 +1,56 @@
+Game: A Plague Tale: Requiem
+appid: 1182900
+Source: A Plague Tale: Requiem
+URL: https://en.wikipedia.org/wiki/A_Plague_Tale:_Requiem
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+A Plague Tale: Requiem is a 2022 action-adventure video game developed by Asobo Studio and published by Focus Entertainment. The game is the sequel to A Plague Tale: Innocence (2019) and the second installment in the A Plague Tale series. It follows siblings Amicia and Hugo de Rune as they search for a cure to Hugo's blood disease in Southern France while fleeing from soldiers of the Inquisition and hordes of rats spreading the black plague. It was released for the Nintendo Switch (cloud version), PlayStation 5, Windows, and Xbox Series X/S on 18 October 2022. It received generally positive reviews from critics. At The Game Awards 2022, it received five nominations including Game of the Year. Resonance: A Plague Tale Legacy, a prequel following the character Sophia, is set to release in 2026.
+
+
+== Gameplay ==
+Requiem is an action-adventure game played from a third-person perspective. In the game, the player assumes control of Amicia and must face off against both hostile humans and hordes of rats that are spreading the black plague. Gameplay is largely similar to the first game, though the combat system is significantly expanded. Amicia is equipped with weapons such as a knife to stab enemies, a sling that can be used to throw rocks, and a crossbow which allows her to defeat armoured opponents. Crossbow bolts, throwing pots, and rocks can be combined with alchemical mixtures. In addition to Ignifer and Extinguis, which allows the player to light and extinguish flame, respectively, the game introduces tar, which increases the radius of the light source, and can be used to ignite enemies.
+Locations are also larger in Requiem, giving the player additional options to progress. Stealth is expanded in Requiem. Unlike in Innocence, Amicia will not die after being hit once by enemies. She can also return to stealth after she was discovered by enemies, and counter their attacks if she gets too close to them. Amicia's brother Hugo, who has a connection to the plague, can use an ability named "Echo" which reveals the locations of enemies through walls. Hugo can also control the hordes of rats to overwhelm enemies. Similar to the first game, the rats, which are light-averse, play a huge role in the game. Amicia and Hugo must stay in the light, or they will be devoured by the rats. Amicia can use the rats to her advantage, manipulating them to solve puzzles, or even lure them to kill enemies.
+The game also features a progression system in which the player will be awarded additional skills and abilities. Stealth players will unlock skills that allows them to sneak around more efficiently, while those who prefer a more lethal approach will unlock additional combat skills. The player's gear and equipment can also be upgraded at workbenches.
+
+
+== Plot ==
+In June 1349, six months following the events of the first game, siblings Amicia (Charlotte McBurney) and Hugo de Rune (Logan Hannan), along with their mother Beatrice (Lucy Briggs-Owen) and her apprentice Lucas (Kit Connor), seek refuge among an organization of alchemists called the Order. A hostile group of survivalist beekeepers attack the siblings, causing the Prima Macula to reawaken in Hugo. The group hides in a fortified town in Provence where Beatrice enlists the aid of Order representative Vaudin (Antony Byrne) to treat Hugo; the treatments only exacerbate his condition, resulting in the town being swarmed by rats and left in ruins. Vaudin is killed while the others escape on a boat bound for the Order's headquarters in Marseille.
+Unwilling to see Hugo locked up as the Order's test subject, Amicia takes Hugo and leaves Beatrice and Lucas to seek an island of which Hugo has recurring dreams, hoping it will lead to a cure for the Macula. Along the way, they are pursued by Provence soldiers, as well as mercenaries led by the disgraced knight Arnaud (Harry Myers). Arnaud offers to arrange transport to the island from Hugo's dreams, La Cuna. They sail to the island on the ship of Arnaud's smuggler friend Sophia (Anna Demetriou).
+Arriving at La Cuna, the group discovers that the residents, led by Count Victor (Alistair Petrie) and Countess Emilie (Ellie Heydon), worship a pagan deity called the Child of Embers. Arnaud tries to coerce Hugo into summoning rats to attack Victor — whom he blames for the death of his son — but Amicia intervenes, and Arnaud is arrested. Amicia deduces that the Count and Countess are unknowingly worshipping a previous Macula carrier as the Child. With Sophia, they delve into an ancient Order temple, following the history of the carrier, Basilius, and his protector, Aelia. Entering a chapel where Aelia was imprisoned after rebelling against the Order, the group encounters a cult of slavers who offer human sacrifices to the Child; Hugo summons rats to kill the slavers. The group discovers that there is no cure and there never was; Basilius was imprisoned underground by the Order to contain the Macula, and Aelia died before she could reach him. Without Aelia, Basilius gave in to the Macula and unleashed the Justinian Plague. Amicia realizes the Macula showed Hugo the dream to lure him into its clutches, and they flee the prison as it collapses under a horde of rats.
+Amicia and Hugo return to Victor's castle and reunite with Beatrice and Lucas. Amicia reasons that, if they are there to support Hugo, the Macula will remain dormant. However, Victor reveals Emilie believes Hugo is the Child — a myth Victor invented for Emilie, who is infertile — so they must kill Hugo's old family and adopt him. After Emilie kills Beatrice in a ritual sacrifice, Hugo summons a horde of rats which devours Emilie and destroys much of the island. Amicia's group rescues Arnaud before escaping on Sophia's ship, with Victor in pursuit. Victor wounds Amicia and captures Hugo while the rest are forced overboard. On shore, Arnaud sacrifices himself to allow Amicia to kill Victor, but they are too late to prevent Hugo, who believes Amicia to be dead, from giving himself over to the Macula. A cloud blots out the sun, allowing the rats to spread unchecked and destroy Marseille. Amicia and Lucas enter the ruined city and sink into a phantasmic reality created by the Macula. Here, Hugo's voice tells Amicia that, having now fully merged with the Macula, the only way to stop the rats is to kill him. Hugo is killed by Lucas if Amicia refuses to do so.
+One year later, Amicia has a home in the mountains, and Lucas is continuing his alchemy studies elsewhere. Amicia prepares to journey with Sophia to find the next Macula carrier and protector so that she can help guide them. Before she leaves, she pays her respects to Hugo's grave.
+In a post-credits scene set in the modern era, a child is on a ventilator, with signs of the Macula on its skin.
+
+
+== Development ==
+Requiem was developed by French video game development company Asobo Studio. Similar to the first game, the game is set in Medieval France during the mid-14th century. To ensure the authenticity of the locations, the team collaborated with Roxane Chila, a doctor in Medieval History, and browsed both Wikipedia and other specialized websites for additional information. They also drew inspirations from the personal experiences of some of their team members. The team decided early on that the game would have a different colour palette when compared with its predecessor. As a result, the setting of the game was moved from the gloomy, war-torn Aquitaine to Provence, which is more colorful and vibrant. According to lead writer Sébastien Renard, this created a "sharper contrast between the harsh reality of the medieval setting, in which terrible events are happening, and beautiful, sometimes uncharted environments". To create additional opportunities for puzzle-solving, the game introduces several new locations including harbours and marketplaces, in Requiem. The voice actors speak British English, whereas in the previous game, they spoke English with a French accent.
+A Plague Tale: Requiem was announced by Asobo Studio and publisher Focus Entertainment during Microsoft's E3 2021 press conference. The game competed for the Tribeca Games Award and was included as an official selection. The game was released on 18 October 2022 for the PlayStation 5, Windows, and Xbox Series X/S. The release of a new generation of consoles allowed the game to render more than 300,000 rats at once. A cloud-only version was also to be released for the Nintendo Switch on the same day.
+
+
+== Soundtrack ==
+
+The original soundtrack of A Plague Tale: Requiem, is composed by Olivier Deriviere, recorded at Estonian Public Broadcasting Studio and released under Black Screen Records. The soundtrack is an orchestral arrangement, including performers like Eric-Maria Couturier and the Estonian Philharmonic Chamber Choir. It was published on multiple platforms on the same day as the game's release. Alongside cello as a principal instrument, a diverse array of medieval musical instruments, such as medieval guitar, bagpipes, lute, flute, nyckelharpa, and viola de gamba were used. A 40-minute concert was performed on 24 November 2022 and broadcast on the official YouTube channel of the publisher of the game, Focus Entertainment.
+According to Olivier Deriviere's official channel on Spotify and shazammed tracks, following the main theme, which shares its name with the game, specific tracks like "No Turning Back" and "Brother" have resonated with more audiences. The lyrics of "Ô ma belle lune" (English: O my beautiful moon) are written by Olivier Deriviere and are featured in both the first and last tracks of the A Plague Tale: Requiem Original Soundtrack. The composer created a walkthrough on YouTube in which he explained the in-game music in detail.
+
+
+== Reception ==
+
+A Plague Tale: Requiem received "generally favorable" reviews from critics, according to review aggregator website Metacritic.
+
+
+=== Sales ===
+In the United Kingdom, the game was the fifth best-selling retail game in its week of release. On 4 November 2022, Focus Entertainment announced that the game had reached over 1 million players. On 21 November 2023, it was announced that the game had reached 3 million players.
+
+
+=== Accolades ===
+
+
+== References ==
+
+
+== External links ==
+
+Official website 
+A Plague Tale: Requiem at IMDb 
+A Plague Tale: Requiem at MobyGames

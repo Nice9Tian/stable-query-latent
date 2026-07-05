@@ -1,0 +1,62 @@
+Game: Town of Salem 2
+appid: 2140510
+Source: Town of Salem
+URL: https://en.wikipedia.org/wiki/Town_of_Salem
+Match score: 7.57
+Retrieved: 2026-07-04
+--------
+Town of Salem is an online multiplayer game with social deduction, role-playing and strategy elements. It was developed and published by indie game developer BlankMediaGames, and released on December 15, 2014. Early alpha and beta versions were browser-based and free-to-play. On October 14, 2018, the game was released for iOS and Android mobile devices after a successful and long-supported Kickstarter fundraiser.
+Town of Salem is reportedly the largest online version of the classic social deduction party game Werewolf, with over 7 million registered users as of 2019.
+Town of Salem 2 was announced on April 23, 2023. It was released on Steam Early Access on May 26, 2023, and fully released with a free demo on July 26, 2023.
+The Town of Salem IP is now owned by the video game publisher Digital Bandidos as of August 5, 2024.
+
+
+== Gameplay ==
+The game is based on the party game Mafia (also known as Werewolf), in which players are secretly assigned roles belonging to teams of an informed minority and uninformed majority. Both teams seek to eliminate the other for control of the town. The chief strategy of the game is to survive and accomplish win conditions. Players use a combination of role abilities, teamwork, communication, deduction and deception to facilitate their victory.
+In the base-game, there are three role alignments: Town, Mafia and Neutral. Each player is randomly assigned a role, which determines their goal for the game. The Mafia's goal is to kill all the townspeople, while the Town's goal is to find and eliminate the Mafia before they can do so. Neutral roles have their own unique goals which may or may not conflict with the Town and Mafia.
+A match consists of rounds that cycle between night and day. Most roles have a unique ability which they can use during the night, such as protecting another player or learning their identity. The Mafia may kill during the night, and all players have the opportunity to write notes in their will.
+During the day, the wills of players that died the previous night are revealed. Then, players use what they have learned to accuse someone of being evil. If that player is found guilty, they are publicly lynched and their will is revealed. The game continues until one side achieves their win condition.
+
+
+== Development ==
+BlankMediaGames LLC was founded in 2014 by Josh Brittain and Blake Burns. A Kickstarter campaign began on February 14, 2014, to develop Town of Salem. After thirty days, the fundraiser raised $17,190 with a goal of $15,000. The game was released that year, and reached 800,000 active monthly users by 2016.
+On September 13, 2014, the developers started a fundraiser for a Steam release, with a goal of $30,000. The fundraiser finished in 35 days, raising $114,197 from 7,506 backers. The Steam version was released on December 14. The web version of Town of Salem was free-to-play, while the Steam version was not.
+On November 3, 2018, the free web version transitioned to a paid model. Accounts that were previously obtained for free were grandfathered in and remained active. BlankMediaGames stated that the reason for this change was to combat spam and bot attacks plaguing the game.
+As of March 2020, nine game modes are available. The game is for groups of 7-15 players, and features 50 different roles (including those from The Coven expansion pack).
+As of July 2024, as developing company BlankMediaGames has been acquired by publisher Digital Bandidos, ownership and control of the game has passed to the publisher. It announced partnership with developer BlankMediaGames in August 2024, with the aim of bringing Town of Salem 2 to mobile.
+
+
+=== Ports ===
+On March 31, 2016, another Kickstarter fundraiser began after the release of a mobile beta version of the game. The fundraiser sought to support further development towards a finished mobile version. On September 28, 2018, after two years in development, a launch trailer for the mobile game was released on YouTube. The game, now using a Unity base code, was released free-to-play on the Apple App Store and Google Play on October 14. It featured an extensive overhaul of the UI to one that was more ergonomic, had more and improved animations, and better graphics.
+On April 2, 2019, BlankMediaGames announced development of a Unity version of the web browser and Steam games due to the discontinuation of Adobe Flash Player in 2020. The opt-in beta version became available only on Steam on July 24. On October 28, 2019, the Steam Unity client was officially released. The formerly free-to-play Flash-based web version was still available for several months afterward. On May 28, 2020, the browser-based client was also updated to use the Unity engine.
+
+
+=== Town of Salem – The Card Game ===
+On April 15, 2016, fundraising began for a card game version of Town of Salem. It raised $389,005 from 9,551 backers in 30 days, surpassing its of goal of $10,000.  The card game is more akin to the original Mafia party game, in which players close their eyes during nighttime and take turns using their abilities with the help of a human moderator.
+
+
+=== The Coven ===
+On May 16, 2017, the expansion pack The Coven was announced. The expansion added a new faction, the Coven, fifteen new roles, and three new game modes. Two roles from the expansion, the Ambusher and Hypnotist, were eventually added to Classic on October 20, 2020. The expansion pack released in June 2017 for $10, with a 50% discount for players who purchased the game through Steam.
+
+
+=== Data breach ===
+A data breach that affected over 7.6 million Town of Salem accounts was exposed in an email to security firm DeHashed on December 28, 2018. The breach involved a compromise of the servers and access to a database which included 7,633,234 unique email addresses. The database also contained IP addresses, passwords and payment information. Some users who paid for premium features also reportedly had their billing information and data breached. Investigative reporter Brian Krebs linked the hackers to Apophis Squad, a gang who made bomb threats against thousands of schools and launched distributed denial-of-service (DDoS) attacks.
+
+
+=== Town of Salem 2 ===
+Town of Salem 2, the sequel to Town of Salem, was announced on April 23, 2023, for release on Steam only. The sequel removes the Mafia faction in favor of the Coven, with most Mafia roles being merged into the Coven. A new player faction, the Apocalypse, opposes both the Town and Coven, with the Plaguebearer and Juggernaut roles from the original game's Coven expansion incorporated into this new faction with two roles completely new to the game.
+The Apocalypse, is referencing The Four Horsemen of the Apocalypse, Pestilence, Famine, War and Death. In the game, The Apocalypse's goal is to be the last faction left standing, done so by transforming into upgraded versions of their roles via specific conditions, some of which end the game immediately if they are not lynched by the end of the day.
+The sequel offers more customization options, with players being able to purchase interior and path decorations for their houses in the shop, as well as move their character around freely in the lobby and after death in-game. Communication is improved, with the ability to tag players, keywords, and roles in chat, aiding in the discussion during the day. Town of Salem 2 released for iOS and Android devices on March 26, 2024.
+On a Steam blog post, BlankMediaGames revealed that Town of Salem 2 matched its predecessor's all-time high concurrent Steam user count, reaching over 3,700 concurrent players. The developers also revealed that sales for the game exceeded that of Town of Salem's Coven DLC and its mobile port launch.
+As of January 29, 2025, BlankMediaGames and Digital Banditos has announced (both in their Official 'Town of Salem Games' Discord Server, and in their Steam Blog post) that "Town of Salem 2 will launch on current-generation PlayStation, Xbox, and Nintendo Switch consoles later this year".
+
+
+== Reception ==
+In 2020, PC Gamer named Town of Salem one of the best free-to-play browser games. They described it as difficult to explain, but easy to get the hang of. Matt Cox of Rock, Paper, Shotgun described the game as "an online hidden role game with no friends or eyeballs, and a whole load of bullshit." Cox went on to criticize the game for being too complicated, and said that the experience "feels empty" due to the lack of face-to-face interaction.
+
+
+== References ==
+
+
+== External links ==
+Official website

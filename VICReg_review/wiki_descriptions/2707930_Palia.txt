@@ -1,0 +1,44 @@
+Game: Palia
+appid: 2707930
+Source: Palia
+URL: https://en.wikipedia.org/wiki/Palia
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Palia is a life simulation massively multiplayer online game developed and published by Singularity 6. The open beta was launched in August 2023 on Windows, and on Nintendo Switch in December 2023. Versions for PlayStation 5 and Xbox Series X/S were released in May 2025.
+
+
+== Gameplay ==
+Players work to become members of the Kilima Village by gathering and crafting materials. Player skills include fishing, foraging, hunting, mining, insect catching, cooking, furniture making, gardening, and ranching. Kilima Valley is the hub area with Bahari Bay having higher-leveled resources and server-wide events based on the day/night rotation. 
+
+
+== Setting ==
+The player characters are humans who have suddenly arrived in the world of the Majiri, the predominant species in the game, and join their villages.
+
+
+== Development ==
+Palia is developed by Los Angeles-based studio Singularity 6 and was announced on June 3, 2021. An open beta for Windows was made available on August 10, 2023. A Nintendo Switch version was released on December 14, 2023. The game was released on digital storefront Steam on March 25, 2024. The game continued to receive content updates once a month until early 2026, when updates switched to an irregular schedule to prepare for the release of the upcoming Royal Highlands Expansion. 
+One month after the game's release, Singularity 6 laid off 49 employees, or 35 percent of its staff. Another 36 employees (40% of the workforce) were laid off in May 2024, making this the third round of layoffs since September 2023. In July 2024, Daybreak Game Company acquired Singularity 6 and Palia.
+On May 13, 2025, the Elderwood update introduced a new forest region known as the Elderwood with new quests, unique materials, and creatures, expanding the game's exploration and crafting opportunities.
+The Royal Highlands Expansion was announced on March 10, 2026 and will include a new region called the Royal Highlands. The expansion came out on May 12th. Palia also announced it had crossed 10 million players at the same time. 
+
+
+== Reception ==
+
+
+=== Open beta ===
+Marshall Cass for Polygon has said that Palia's success relies on its update schedule. Lauren Morton for PC Gamer said while it isn't "quite there yet", its foundation is solid. Stewart Marcus, writing for Game Informer, stated it has a strong foundation and potential. Sam Loveridge for GamesRadar+ said Palia "has everything I want" from a life sim. Tyler Edwards writing for Massively Overpowered stated the MMO depth and execution isn't good enough.
+As of April 21, 2026, Palia's total player count has surpassed 10 million players.
+
+
+== References ==
+
+
+== Further reading ==
+Northup, Travis (August 2, 2023). "Palia Is Like the Bizarre Lovechild of World of Warcraft and Animal Crossing". IGN.
+Cogswell, Jess (August 2, 2023). "Palia Is A Cozy MMO Version Of Animal Crossing And Stardew Valley". GameSpot.
+Henry, Colin (December 19, 2023). "A fresh first impressions: Checking out Palia for the first time on Switch". massivelyop.
+
+
+== External links ==
+Official website

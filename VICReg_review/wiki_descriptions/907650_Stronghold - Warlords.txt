@@ -1,0 +1,25 @@
+Game: Stronghold: Warlords
+appid: 907650
+Source: Stronghold: Warlords
+URL: https://en.wikipedia.org/wiki/Stronghold:_Warlords
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Stronghold: Warlords is a 2021 real-time strategy video game developed and published by Firefly Studios for Windows. Unlike the previous entries of the Stronghold series, which were focused on Europe during the Middle Ages, Stronghold: Warlords is set in East Asia, with campaigns based on historical events of China, Vietnam, and Japan. It was the last game Firefly Studios released as an independent entity before being acquired by Devolver Digital three months later.
+
+
+== Gameplay ==
+One of the key differences in gameplay compared to the previous games is the introduction of warlords, 8 neutral AI-controlled lords who each have different benefits available after subjugation by either military force or diplomacy. After coming under the player, the warlords can provide shipments of resources, provide forces, attack an enemy lord on command or rank up, by expending diplomacy points. Diplomacy points can be accrued over time, which is sped up by constructing some new buildings introduced in this game. This is also the first game in the series to have introduced gunpowder.
+
+
+== Release and reception ==
+
+The game was announced at E3 2019, with a release date of 29 September 2020, but was delayed til January 9, 2021 due to the COVID-19 pandemic, and finally released at 9 March 2021, after further delays due to problems in the game's multiplayer mode.
+The game received "mixed" reviews according to the review aggregation website Metacritic.
+
+
+== External links ==
+Stronghold: Warlords Official Website
+
+
+== References ==

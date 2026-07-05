@@ -1,0 +1,44 @@
+Game: Home Safety Hotline
+appid: 2357910
+Source: Home Safety Hotline
+URL: https://en.wikipedia.org/wiki/Home_Safety_Hotline
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Home Safety Hotline is a 2024 horror puzzle video game developed by Night Signal Entertainment. In the game, the player works for the titular Home Safety Hotline, providing callers with correct information on how to deal with ordinary and supernatural household hazards. The game was created by independent developer Nick Lives, who was inspired by the bestiaries from Dungeons and Dragons and the mythology of legendary creatures. Released on 16 January 2024 for Windows, the game received generally positive reviews, with praise directed to the game's concept, visual presentation, and narrative, and criticism about the game's length and difficulty level.
+On 20 September 2024, Night Signal Entertainment also released Seasonal Worker, a DLC themed around the Christmas holiday period. A wide variety of calls and information were added into the game as well.
+On 8 April 2026 it was announced that a movie inspired by the game would be made, directed by Michael Matthews and produced by Steven Schneider, Roy Lee, and Kameek Lucas Taitt, based on a screenplay by Nick Tassoni.
+
+
+== Gameplay ==
+
+Home Safety Hotline takes place on a simulation of a fictitious operating system. On the desktop, the player can read emails, watch videos, and begin a shift operating the titular Home Safety Hotline. The player clocks into shifts using the Hotline menu, where they take calls from the Hotline and hear audio clips from callers describing a household problem and provide the appropriate response from a list of hazards in the menu. If the player provides a caller with an incorrect response, they will receive a returning call depicting the outcome of the player's failure to resolve a problem. The percentage of correct guesses is provided to the player at the end of a shift. If players fall short of a number of correct guesses, they will receive a disciplinary call, and if they continue to answer incorrectly, their employment with the Hotline will be terminated, resulting in the employee turning into a mouse, after which the game will then end. Players unlock more listed hazards over time. As the game progresses, the Hotline will encounter network errors, which disrupt the player's access to information. Upon completing the game, the player is able to access an art book created by the developer, featuring concept art and background information on the game's creation.
+
+
+== Plot ==
+Set in 1996, the player is recruited to be a responder on the Home Safety Hotline, a service that responds to callers enquiring about household hazards by providing safety instructions. They are onboarded by Carol, their manager. At first, callers report ordinary household annoyances, including household pests such as cockroaches and mice. The Hotline also receives prank calls and unrelated enquiries. Over the player's shifts, more supernatural hazards begin to be reported by callers including household Hobbs, boggarts and nymphs.
+After a number of days, the Hotline corporate invites the player character to undertake a trial as part of a process named the "descension", in which riddles are presented to the player. If the player is successful, Carol contacts the player and informs them they have received a promotion, transporting them to a forest, revealing herself to be a fae and crowning them as the new Junior Supervisor of the Home Safety Hotline.
+If the player makes too many mistakes, Carol terminates the player's employment and transforms them into a mouse.
+
+
+=== Seasonal Worker ===
+In the week leading up to Christmas, a Home Safety Hotline employee named Rebecca returns for a special week of the year leading up to Christmas. A phenomenon called "the Twilight", resembling an aurora borealis, arrives above earth and, if it feeds on enough despair or sadness, will consume all life. Thus, correct information is more important than ever; instead of the threat of being terminated, incorrect information brings down the overall cheeriness. New pests, mundane and supernatural, are accompanied by a disruption by a sentient rodent mastermind called the Mouse King. Carol invites Rebecca to take part in the office party after Christmas; if the cheeriness is kept above a critical level, Rebecca, Carol, and the other employees enjoy the party together.
+
+
+== Development ==
+Home Safety Hotline was created by Night Signal Entertainment, the studio of independent developer Nick Lives, and developed over the course of three years from 2020. Lives stated the game aimed to recapture the experience of reading through the fictional bestiaries of the Monster Manual in the Dungeons and Dragons series of role-playing games. After creating and abandoning a prototype using this concept, Lives revisited the idea several years later when discovering the analog horror subgenre. He began work on a game under the working title The Lunar Archives, inspired by the aesthetic of "90s media formats", including the user interface of Windows 95's operating system, and the game Hypnospace Outlaw. The monsters included in the game were a mixture of Lives's own creation and existing mythological entities, with additional inspiration from the SCP Foundation series of fiction and the horror artwork of Trevor Henderson and Eduardo Valdés-Hevia. Lives created imagery for the game by importing source photography into Photoshop and transforming them into digital paintings, exporting the imagery at a reduced level of quality to meet the game's 90s aesthetic. Sound designer David Johnsen similarly utilised low-fidelity sounds and voice recordings to imitate the audio from on a computer from that era.
+Renamed to Home Safety Hotline, the game was announced alongside the release of a demo in June 2023 at the Steam Next Fest, and showcased in late 2023 at the DreadXP Indie Horror Showcase and the Double Fine Day of the Devs. The game was released on Steam on 16 January 2024. Following release, the developers released an update to the game introducing a new "endless score-based game mode" titled Call Trainer, unlocked after completing the main game.
+
+
+== Reception ==
+
+Home Safety Hotline was received with "generally favorable" reviews upon release, according to review aggregator website Metacritic. On OpenCritic, the game has a 100% approval rating. Critics praised the game's visual presentation. Edge described the game's interface as a "potent setting for horror", with its grainy imagery and green-tinged hue viewed as evocative of a "haunted quality". Describing the title as "analog horror at its finest", Aaron Boehm of Bloody Disgusting enjoyed the game's "stylistic flourishes" and "well done" videos. Kyle Leclair commended the presentation and interface to have a "perfectly-captured old-school PC feel", praising its "low-tech" simplicity for allowing the focus of the game to be on its narrative. Cass Marshall of Polygon found the subtle distortions of the interface and sound effectively conveyed a "strong sense of wrongness and unease" and helped "ratchet up the tension".
+Reviewers generally praised the game's horror concept and narrative. Marshall highlighted the game's "deliciously unsettling" and "very effective" premise, citing the reliance on "slow, creeping realizations" about the "perfectly off and disturbing" experiences of individual callers. Leclair commended the game's "black comedy" and "stellar writing", finding it to feature "cleverly designed supernatural phenomena" and strike a balance between comedy and horror. Ed Smith of PCGamesN lauded the game as "scary, funny and unique". Joshua Wolens of PC Gamer enjoyed the game's tone, stating its "off-kilter banality" was "well done". While Boehm highlighted the game's "clever" concept and "unique style and tone", he considered some of the narrative elements to be short of "compelling or cohesive" and did not "connect in some way that revealed something about the world at large". Similarly, Alice Bell of Rock Paper Shotgun praised the "brilliant framing" and "excellent" writing style of the game's index entries but found various plot threads to end unresolved.
+Several reviewers noted the gameplay's scope and difficulty were limited. Edge commented that the game had "modest parameters" and may have benefited from more "mechanical variety". Leclair noted that the game lacked challenge and was "relatively short in length", finding the difficulty to decrease over time due to the unique qualities of the supernatural entities. Boehm found the gameplay loop to be "relatively simple" and wished it had "more polish", stating that the game lacked features such as searchable terms or direct feedback on whether the player provided a successful answer.
+
+
+== References ==
+
+
+== External links ==
+Home Safety Hotline at MobyGames

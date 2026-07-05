@@ -1,0 +1,25 @@
+Game: Until You Fall
+appid: 858260
+Source: Until You Fall
+URL: https://en.wikipedia.org/wiki/Until_You_Fall
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Until You Fall is a 2020 hack and slash roguelike video game developed and published by Schell Games. In it the player plays as a Rune Knight who has to fight back The Calamity. The full game released for Microsoft Windows on October 27, 2020, while ports for PlayStation 4 and Oculus Quest followed two days later.
+
+
+== Development ==
+Schell Games spent time tuning each weapon in order to give them each a unique playstyle and weight.
+During development, the core gameplay of attacking and blocking came together quickly, but the team was unsure of the gameplay systems supporting the combat. Schell Games scrapped systems like weapon durability, being able to loot enemies, holsters, and weapon throwing; they felt the mechanics slowed down the core gameplay.
+The game refocused on empowering the player, with a developer stating "Something we knew early on was that, when our combat was in full swing, the player would feel incredibly heroic. The combination of wide swings and blocking choreography encourages the player to stand (or sit) up straighter, completely losing any sense of VR-shyness we saw in some of our early playtests. So…why not lean into that feeling of power?" Schell Games redesigned the mechanics in order to support this focus around empowerment, with features that didn't support the idea being cut, and mechanics like dashing and weapon summoning becoming essential to combat.
+Discussing how to make the combat more bombastic, the team stated "Because wider/bigger swings deal more damage in our game, we needed to encourage players to take larger swings... To achieve this, we clearly delineated three levels of feedback – small, standard and big. These thresholds of effort ensured players would play in a way that not only encouraged them to lean into the fantasy, but it also helped prevent players from potentially injuring themselves." The sound design, graphics and haptic feedback were used in order to "reinforce the power fantasy" that Until You Fall was trying to create.
+A rogue like structure was chosen because the developers felt it allowed the player to master their combat at their own speed, learning mechanics that helped them master combat through repeated playthroughs.
+
+
+== Reception ==
+
+Until You Fall received generally favorable reviews from critics, according to the review aggregation website Metacritic. Fellow review aggregator OpenCritic assessed that the game received "mighty" approval, being recommended by 100% of critics.
+UploadVR praised the weapon variety, feeling that it helped "encourage various playstyles and experimentation to get the most out of its combat". Road to VR liked the game's combat and the way combat markers were used, saying that they "Not only does this approach leave room for meta-game strategy—like which weapons you use and how you use them—it also allows the game to carefully set the 'pace' of combat to make it both challenging and rewarding". Destructoid enjoyed the freedom the Oculus Quest provided, writing "I was enthralled. Playing this on a tethered headset is fun, but the freedom of the wireless Oculus Quest is just unreal and adds so much. You can walk or look around unfettered, which is supremely useful when there's multiple enemies at the gates of your visor".
+
+
+== References ==

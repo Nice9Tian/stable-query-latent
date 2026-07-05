@@ -1,0 +1,44 @@
+Game: Viewfinder
+appid: 1382070
+Source: Viewfinder (video game)
+URL: https://en.wikipedia.org/wiki/Viewfinder_(video_game)
+Match score: 6.87
+Retrieved: 2026-07-04
+--------
+Viewfinder is a puzzle video game developed by Sad Owl Studios and published by Thunderful Publishing. The game was released for PlayStation 5 and Windows in July 2023, and for PlayStation 4 in December 2023. It released for Xbox Series X/S in August 2025 and for Nintendo Switch in December 2025.
+Viewfinder received generally positive reviews from critics.
+
+
+== Gameplay ==
+Viewfinder is based on mapping the images contained in photographs or other two-dimension works onto the three-dimensional space of the game's world, creating new geometries and layouts. These are used to solve puzzles and access teleporter devices at the end of each level. The player may be required to power the teleporter using batteries, or activation of other power devices, before using the teleport. The player later gains a Polaroid-style camera, and can use images taken in the same manner as other photographs. 
+
+
+== Story ==
+The game is presented as part of a simulation used by a handful of researchers that were using the space to try to discover the means to revitalize plant life on Earth, as in the real world, all flora has been wiped out leaving the world without a viable source of oxygen. The player character, who works with a partner in the real world, explores the simulation, working through the puzzles, to try to find clues of the research that was being done, with the help of an artificial intelligence cheshire cat named Cait. The player-character finds that the scientists had failed in their grand experiment, and must force the simulated world to shutdown in order to leave the simulation, destroying the past work. However, as they leave, they encounter a seedling, which they still possess when they leave the simulation, giving hope for Earth's future.
+
+
+== Development ==
+
+Viewfinder started off as an experiment by indie game developer Matt Stark around November 2019. Stark posted a video to social media showing the ability to dynamically take a photograph in a game world and then place that photo to overwrite the world with the contents of the photo. At the time, while the player could explore the placed area from the photo, they could not interact with objects within that world. Later in January 2020, Stark was able to show the ability to interact with items within the photo, as well as using multiple photos. This initial work drew attention across social media, leading Stark to begin considering a game that utilized the "Polaroid Effect" as he called it.
+By June 2021, Stark had developed the basis of Viewfinder to establish a studio, Robot Turtle, to build out the game, along with support from another game developer, Robot Teddy. The team took influence from other puzzle games such as Portal, including the means that Portal used to slowly introduce new mechanics to the player.
+At the same time, they did not want to make the Polaroid Effect too gimmicky and instead have a more cohesive experience for the player.
+Robot Turtle was acquired by Thunderful Publishing in October 2021, leading to Thunderful to provide publishing support for Viewfinder. During this transition, Robot Turtle was renamed to Sad Owl Studios.
+The game was formally announced for a 2023 release on PlayStation 5 and Windows at The Game Awards 2022. Viewfinder was released for PlayStation 5 and Windows on July 18, 2023, and for PlayStation 4 on December 12, 2023.
+
+
+== Reception ==
+
+Prior to release, Viewfinder won the UKIE UK Game of the Show held at the 2021 Gamescom.
+Viewfinder has received "generally favorable reviews" according to review score aggregator Metacritic.
+The game averaged an 84.95/100 based on scores from publishers (Excluding Polygon).
+Critics generally praised the puzzle mechanic but considered the game to be on the short side.
+
+
+=== Accolades ===
+
+
+== References ==
+
+
+== External links ==
+Official website

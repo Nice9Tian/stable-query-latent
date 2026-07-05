@@ -1,0 +1,20 @@
+Game: The White Door
+appid: 1145960
+Source: The White Door
+URL: https://en.wikipedia.org/wiki/The_White_Door
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+The White Door is a puzzle video game developed by Dutch studio Rusty Lake. It was released on Steam and iOS on January 9, 2020 and on GOG.com on April 14, 2020.
+The White Door's story follows Robert Hill, who wakes up in a mental health facility having lost his memory. The player needs to follow a set of instructions and puzzles to find about the background of the main character and help him restore his memory.
+
+
+== See also ==
+Cube Escape
+
+
+== References ==
+
+
+== External links ==
+Official website

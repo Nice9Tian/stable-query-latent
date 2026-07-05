@@ -1,0 +1,7 @@
+This is a first-person horror experience built around voice input, where any scream, gasp, or even whimper into the microphone causes the run to restart. Presented with a retro found-footage aesthetic inspired by 1990s camcorder recordings, the game challenges the player to survive a night in a dense wilderness without dying or making a sound that triggers failure.
+
+Its central mechanic is unusual: time only advances when the player moves, creating a tense balance between caution and progress. The forest is filled with unpredictable scares, so each attempt can unfold differently thanks to dozens of dynamic events. The result is a playthrough structure that emphasizes uncertainty, with the environment continually trying to catch the player off guard.
+
+Exploration is a major part of the experience. Players search a large, haunted forest for various locations and hidden relics, each contributing to the atmosphere and the sense of a scattered history beneath the surface. Along the way, they must also manage batteries to keep the recording running, since losing power ends the game. The forest is not empty, either: hostile hunters roam the area, forcing players to watch for danger at all times.
+
+Overall, this is a survival horror game focused on silence, observation, and pressure, designed to create a highly reactive and replayable experience. The microphone requirement makes the player’s own reactions part of the challenge, turning every scare into a possible failure.

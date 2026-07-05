@@ -1,0 +1,62 @@
+Game: Men of War II
+appid: 1128860
+Source: Men of War II
+URL: https://en.wikipedia.org/wiki/Men_of_War_II
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Men of War II is a real-time tactics video game developed by Ukrainian studio Best Way and published by Fulqrum Publishing. As a direct sequel to Men of War, the game features new mechanics and modes and is set on the Eastern and Western Fronts of World War II.
+
+
+== Gameplay ==
+Men of War II retains the series' signature blend of real-time tactics and strategy. The game features both single-player and multiplayer modes. Players command units across various scenarios, emphasizing tactical maneuvers, resource management, and strategic planning. The game includes several campaigns, each set in different theaters of World War II, providing a diverse range of missions and objectives.
+
+
+== Features ==
+Men of War II is a real-time tactics game in which players complete military objectives. It focuses entirely on military tactics and special operations and does not feature base building, research, or resource gathering. 
+
+
+=== Direct Control ===
+Men of War II allows a player to directly control any soldier or manned vehicle/gun that he owns. Movement is controlled with four directional keys and a stance toggle, while the unit aims/faces toward the on-screen mouse cursor and fires when the player clicks his mouse button.
+
+
+== Campaigns ==
+
+
+=== Soviet Campaign ===
+The campaign focuses on the Third Reich's invasion of the USSR on the Eastern Front, and Soviet army has to defend own country. Last mission is in cercanies of Kyiv.
+
+
+=== German Campaign ===
+The campaign is set in the final days of war in 1945, and focuses on Feldwebel Ludwig Mueller and his comrades-in-arms, who defend own country despite not having sympathy for Nazi regime.
+
+
+=== US Campaign ===
+In this campaign, American forces are encountering desperate resistance from the Third Reich during the "Falaise Pocket" operation. A seasoned soldier, Randy Howard, does not take the newly arrived young officer Karl Young seriously, but the more they fight side by side, the more their characters and true motives are revealed.
+
+
+=== Historical campaigns and bonus missions ===
+"Operation Bagration" is a historical Soviet campaign dedicated to the Belarusian offensive.
+"Operation Overlord" is a historical American campaign about battles for control of northern France and the subsequent liberation of Paris. The bonus missions are a collection of challenging scenarios with no particular continuity.
+
+
+=== Multiplayer ===
+Multiplayer in Men of War II allows players to engage in battles against each other or cooperate in completing missions. The game supports up to 5-player co-op mode, enabling players to join forces and tackle single-player missions together. Various game modes, including classic and realism settings, cater to both casual and hardcore players.
+
+
+== Development ==
+The original makers of Soldiers: Heroes of World War II, Faces of War, and Men of War released Men of War II: Arena, based on a heavily improved GEM engine. The servers were shut down in September 2021 as development shifted to a full-feature sequel of the original Men of War. Development on Men of War II began in 2021 with the intention to create a polished successor to the original game. 
+The game was officially announced for Windows by Best Way and publisher Fulqrum Publishing at the Golden Joystick Awards 2021 in August. It was originally set to be released in 2022, but due to the Russian invasion of Ukraine, the development process has been extended, and the final release was delayed few times to May 15, 2024.
+
+
+== Reception ==
+
+Men of War II has received "mixed or average" reviews, according to review aggregator website Metacritic. OpenCritic determined that 47% of critics recommend the game.
+IGN Italy called it the "deepest" and "most realistic" real-time strategy game despite noting some techinal issues. Charlie Intel described the game a "stellar" addition to the series, and recommended to all fans of RTS games. PC Gamer described the game a "flawed" but "rewarding" gem for RTS fans, but criticized some new additions that they felt to be unnecessary. GamesHorizon described the game as "hard and frustrating" but deeply satisfying when you get the strategy right and achieve victory. Shacknews praised the single-player campaign as being "impressive and expansive", with a more well-developed plot than many other games in the genre.
+
+
+== References ==
+
+
+== External links ==
+Official website

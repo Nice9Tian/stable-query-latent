@@ -1,0 +1,31 @@
+Game: The Wandering Village
+appid: 1121640
+Source: The Wandering Village
+URL: https://en.wikipedia.org/wiki/The_Wandering_Village
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+The Wandering Village is a city-building game developed by Stray Fawn Studio, based in Zurich. The game was in development for six years and entered early access on Steam, where it remained for nearly three years. It was released on 17 July 2025, for Windows, macOS, Linux, Nintendo Switch, PlayStation 4, PlayStation 5, Xbox One, and Xbox Series X/S. A DLC called the The Last Leviathan is scheduled to be released in 2026.
+
+
+== Gameplay ==
+In The Wandering Village, the player builds a village on the back of a large dinosaur called Onbu (Japanese for 'piggyback ride'). Onbu wanders through various biomes in a world covered by toxic spores. The player must continually respond to the changing environment to ensure the survival of the village. The player has a limited ability to control Onbu's movement using a giant horn, but the creature does not always follow the player's instructions. The plot centers on building a radio tower to establish contact with other villages and discover the cause of the world's post-apocalyptic state. The game was inspired by Nausicaä of the Valley of the Wind and influenced by the games of Impressions Games.
+
+
+=== Plot ===
+In a world filled by toxic spores, a village survives on the back of a large, wandering creature called an Onbu. The village is led by two elders: Waltraud and Theodor. The game begins with the elders handing over leadership of the village to the player. The elders guide the player through a tutorial and instruct them to rebuild and upgrade an old radio antenna, which allows the village to communicate with the outside world and begins the story.  
+A scientist named Nona makes contact via radio and instructs the player to collect special seeds, which have the ability to rescue the world from the toxic spores that plague it. The player meets and completes quests for various non-player characters, who give the player seeds in return. After gathering five seeds, Nona instructs the player to find two ingredients from old labs used to activate the seeds. Visiting the second lab, the player encounters the corpse of another Onbu, who has been abused by humans. At one point, Waltraud dies from an illness. 
+Once the player and Theodor collect both ingredients and reach Nona's lab, they discover that she is really an Onbu who was using a human hologram to communicate with them. Nona was imprisoned in a tank by humans and hooked to the machines there. She also explains that the humans' abuse of the Onbus is what caused the toxic spores in the first place and that the seeds that they collected are Onbu spores, which must be planted in the Onbu's homeland so new Onbus can be born and eliminate the toxic spores. With the player's help, the machine that Nona is held in is deactivated, finally allowing Nona to die in peace and her body disappears.
+The player and Theodor head to the Onbu's homeland where they plant the seeds, causing the fungi generating the toxic spores to slowly die, restoring the world to its healthy state. The Onbu then burrows underground as it enters eternal slumber, leaving the village aboveground. Theodor is grateful for the player's efforts. As a new village is built in the restored world, a newborn Onbu rises from the ground.
+
+
+== Reception ==
+The PC version of The Wandering Village received "generally favorable" reviews from critics, according to the review aggregation website Metacritic. Fellow review aggregator OpenCritic assessed that the game received strong approval, being recommended by 63% of critics.
+A 2022 Rock Paper Shotgun review of The Wandering Village in early access called it a "top-tier management sim" and "gorgeous and captivating". It praised several aspects of the game, such as the wandering mechanic and tech tree options, but noted a lack of worldbuilding. The review also noted that The Wandering Village includes some "ruthless" tech options, such as actions which allow the player to extract food and fertilizer by harming Onbu. A 2024 Rock Paper Shotgun article explained that these options had been expanded by community vote to allow feeding villagers to Onbu, which makes the village form a sacrificial cult; that same article described the game as "wholesome". In 2025, Nintendo Life also criticized the story as "a bit thin" and the lack of variety in buildings, while praising the game for having multiple gamemodes. A 2025 review by Engadget called it "one of Steam's coziest games" and noted that its user reviews on Steam were largely positive. Reviewers at PCGamesN saw a late-2024 economy update as adding depth to the game and, on release, praised its animation style. Push Square praised the game mechanics of The Wandering Village for lending itself well to multiple playthroughs and different styles of play.
+
+
+== References ==
+
+
+== External links ==
+Official website

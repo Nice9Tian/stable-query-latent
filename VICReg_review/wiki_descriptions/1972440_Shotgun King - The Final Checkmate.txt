@@ -1,0 +1,21 @@
+Game: Shotgun King: The Final Checkmate
+appid: 1972440
+Source: Shotgun King: The Final Checkmate
+URL: https://en.wikipedia.org/wiki/Shotgun_King:_The_Final_Checkmate
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Shotgun King: The Final Checkmate (also referred to as simply Shotgun King) is a 2022 roguelike turn-based tactics video game developed by French studio Punkcake Délicieux and published by Headbang Club for Microsoft Windows. The game puts the player in the role of a tyrant black king chess piece whose workers have left him for the popular, nicer white king piece. To reclaim their pieces, the king piece carries and uses a shotgun, which is used against the pieces. As the game continues, the player will also receive randomly-selected cards which will allow the player to upgrade their shotgun or gain special abilities.
+The game was released on Steam on May 12, 2022. The game was ported to Nintendo Switch, PlayStation 4, PlayStation 5, Xbox One, and Xbox Series X/S on August 24, 2023.
+
+
+== Gameplay ==
+
+Shotgun King is a roguelike turn-based tactics video game. The player controls a sole black king chess piece armed with a pump shotgun. Each turn, the player chooses whether to attack white pieces or move on their turn before each white piece moves at once. The final goal of each stage is to destroy the white king piece; extra white pieces are added over time. The game's main mode, known as "Throne Mode", consists of twelve stages. At the end of each stage, the player is able to choose from one of three pairs of cards; one of these cards will grant the player an advantage (e.g. an upgraded shotgun) and the other will grant the enemy team an advantage (e.g. an additional queen). Additional modes are unlocked after the completion of Throne Mode, including harder versions of Throne Mode, "Endless Mode" where the twelve stage limit is removed, and "Chase Mode" where hordes of enemy pieces swarm the player.
+
+
+== Release and reception ==
+Shotgun King was released on May 12, 2022, for Steam. On August 24, 2023, the game was released for Nintendo Switch, PlayStation 4, PlayStation 5, Xbox One, and Xbox Series X/S. Physical releases of the Nintendo Switch and PlayStation 5 versions were initially set to release in early 2024, but were delayed and eventually released on April 25, 2025 by Red Art Games. The game released to generally positive reviews from critics. The game has a Metacritic score of 82/100 for Nintendo Switch based on 4 critic reviews and 75/100 for PlayStation 5 based on 5 critic reviews.
+
+
+== References ==

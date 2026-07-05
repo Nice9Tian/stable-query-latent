@@ -1,0 +1,43 @@
+Game: Granblue Fantasy Versus: Rising
+appid: 2157560
+Source: Granblue Fantasy Versus: Rising
+URL: https://en.wikipedia.org/wiki/Granblue_Fantasy_Versus:_Rising
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Granblue Fantasy Versus: Rising is a 2D fighting game developed by Arc System Works and published by Cygames. It is a sequel to Granblue Fantasy Versus, and was released worldwide on December 14, 2023, for PlayStation 4, PlayStation 5, and Windows.
+
+
+== Gameplay ==
+Granblue Fantasy Versus: Rising introduces new mechanics to the game, including new Dash Attacks and an updated Auto Combo (now named as Triple Attack).
+The netcode has been updated to include rollback and crossplay.
+Rising also features lobby-based minigames, called "Grand Bruise Legends!", based on Granblue Fantasy's ongoing webcomic series, Grand Blues!, such as "Rising Royale" and "Gold Brick Hoarder".
+
+
+=== Playable characters ===
+
+All characters from the first game return. Additionally the base roster includes four new characters, with the DLC roster currently consists of seven characters, and Lunalu serves as a primary random slot.
+
+Some of these new characters were originally winners of 2022 additional character polls who were meant to be DLC in the first game. The first season consists of six characters, and one of them initially starts out as a non-playable main antagonist of the base game's storyline, while another being an original character who is created for this game. Granblue Fantasy Versus: Rising also marks the first time an Arc System Works-developed game features third-party guest characters, followed by Guilty Gear Strive.
+
+
+== Development and release ==
+Game director Tetsuya Fukuhara expressed a desire for a sequel to be produced. It was uncertain on whether the first Versus will get a PlayStation 5 upgrade with minor updates, but ultimately it was decided to direct a sequel, which was later announced at GBVS Cygames Cup Special in January 2023, which was expected to be released in the same year. Originally scheduled to be released on November 30, 2023, the game's launch date was pushed back to December 14 for additional fine-tuning.
+
+
+=== Downloadable content and updates ===
+DLC fighters are included in season passes:
+
+The Character Pass Part 1 was released in mid-January 2024. The main antagonist of the base game's storyline, Lucilius, became playable on the first day of the Character Pass Part 1 release date, alongside five other DLC characters of the first season in 2024, with one of them being a guest character: 2B from Square Enix's Nier: Automata, who previously guest appeared in Bandai Namco's Soulcalibur VI, was released in late February; Vane and Beatrix, who were previously non-playable in the previous game were respectively released in late April and May; the new original character Versusia (whose true identity is Rein, Gran and Djeeta's time-displaced mother) in August; and Vikala in October. Between mid-January and late February, a new stage, in-game features and improved online lobby were added. Furthermore, Icarus' voice actor, a veteran player of both The King of Fighters and Granblue Fantasy, Mitsuhiro Ichiki, appeared as a lobby avatar as "Yukichi", his player name in The King of Fighters and Granblue Fantasy, as an unlockable from the Rupie Shop for 10 Rupies on December 25. In addition to new online lobby minigame, lobby avatars, such as Bloody-Blood Stabby Man (Feower's Grand Blues variant), were added as a Battle Pass reward for the first round and Id from Granblue Fantasy: Relink as a bonus for linking that game's save data. Other features such as weapon skins, character colors, character illustrations, music, stickers, badges, bonus storyline, "Grand Bruise Legends!" game modes and other contents were added between April and Autumn, in addition to a new unidentified game mode.
+Around the same time as the completion of Character Pass 1's DLC characters in EVO 2024, the second pass was also announced. The first character of the second season is Sandalphon, who was released in February 2025; followed by Galleon the Gold in late May; Wilnas the Vermillion in August 2025; Margaret "Meg" Bluemarine in Autumn 2025, and Ilsa in Winter 2026. Additionally, EX versions of the characters  like Gran, Djeeta and Narmaya were announced in August 2025 during EVO 2025.
+Narmaya was the first to receive a DLC costume as a Battle Pass reward for the first round, followed by other characters who are chosen to have DLC costumes in later rounds, or as separate DLC costumes, including those which are part of certain DLC passes. It is also confirmed that there will be a collaboration with Uma Musume Pretty Derby consisting of an avatar version of the characters; Special Week, Tokai Teio, Silence Suzuka and Mejiro McQueen, as well as Gold Ship from the previous game, with the latter character being unlockable from the Rupie Shop in the base game for 564 Rupies. Furthermore, collaboration characters from Princess Connect! Re:Dive (Pecorine, Kokkoro, Karyl and Sheffy) and Shadowverse (Arisa, Luna and Rowen) arrived throughout 2024.
+
+
+== Awards and nominations ==
+
+
+== References ==
+
+
+== External links ==
+Official website

@@ -1,0 +1,57 @@
+Game: Barotrauma
+appid: 602960
+Source: Barotrauma (video game)
+URL: https://en.wikipedia.org/wiki/Barotrauma_(video_game)
+Match score: 6.87
+Retrieved: 2026-07-04
+--------
+Barotrauma is a survival-horror role-playing submarine simulator developed by Finnish studio Undertow Games and published by Daedalic Entertainment. Following an early access beta phase that began in 2019, the game was released for Windows, macOS, and Linux in March 2023.
+Barotrauma is a side scrolling game that takes place in the distant future, on a submarine traversing the inhospitable oceans of Europa, one of Jupiter's moons. The player is assigned a job on the submarine, and must coexist with other crew members aboard the vessel. Certain game modes may include the role of a traitor, which can increase the level of suspense in the game.
+
+
+== Gameplay ==
+
+Barotrauma largely takes place inside submarines submerged beneath Europa's ocean. At the start of each game, players are assigned a job, which may provide them access to specialized traits and equipment. The submarine's crew are given a mission, which may involve hauling cargo from one outpost to another, hunting hostile undersea wildlife, or recovering alien artifacts, among many other tasks. The players are then free to act at their own discretion for the duration of the round, with few, if any, additional objectives provided by the game itself. Outposts positioned at the end of a level serve as areas of downtime that offer different services, depending on their type. These outposts are common in early biomes, but get rarer the further players get in the game, although new stations can appear in empty areas if a nearby beacon station is activated.
+Barotrauma also contains a faction system, with completed missions increasing or decreasing reputation with relevant factions. The game contains 4 factions in total, with 2 of the factions, the Europa Coalition and the Jovian Separatists, being major factions, and the 2 others, the Children of the Honkmother and the Church of the Husk, being minor.
+The game has a 2D side-view perspective and features a complex simulation of multiple systems within the submarine, including oxygen levels, power, weapons, and hull integrity.
+Various hazards will frequently jeopardize the submarine's voyage, such as hostile fauna, pirates, parasite outbreaks, and player-controlled traitors. Player incompetence can also be a source of disaster, as improperly-maintained ship equipment (such as nuclear reactors or oxygen generators) can quickly render the submarine inoperable. Crisis management is a recurrent theme in moment-to-moment gameplay, as players are implicitly encouraged to use their job skills to both avoid and mitigate disaster.
+In the event that the submarine's hull is damaged, water will begin to flood the vessel, which damages submarine structures and significantly impedes player movement; without appropriate equipment, a player trapped in a flooded segment of the sub is liable to suffocate, or in areas with high water pressure, be crushed via barotrauma. As the submarine effectively functions as a lifeline for its crew, an irreparably-damaged vessel often signals the end of a round.
+The game provides both single-player and multiplayer modes, allowing players to choose whether they want to connect online or go it alone with an AI-controlled crew. The primary game mode is a campaign, where players are tasked with reaching the mysterious Eye of Europa, but other gamemodes include ship-on-ship combat, battle inside of an outpost, an editor for creating custom submarines and a sandbox mode where there is no objective.
+The game's core gameplay loop revolves around cooperation among the players to maintain life support systems, repair the submarine, and ward off enemy attacks. To enhance their chances of survival, players can craft equipment and upgrade their submarines using a complex crafting system.
+
+
+== Roles ==
+In Barotrauma, players can take on various roles aboard the submarine, each with its own set of responsibilities and duties. These roles are necessary to keep the submarine functioning, and to ensure the crew's survival.
+The roles available in the game include:
+
+The Captain: The Captain is responsible for overseeing the mission and providing orders to the crew. They are responsible for steering the ship through the treacherous waters of Europa. The Captain is usually also responsible for managing the crew's morale, assigning tasks to keep everyone busy and focused on the mission.
+The Engineer: The Engineer is responsible for managing the submarine's power systems and ensuring its structural integrity. They must monitor the submarine's power consumption, adjust the reactor output, and repair any damaged systems. They are responsible for the safety of the nuclear reactor, and to ensure it is provided with enough power without being overloaded.
+The Mechanic: The Mechanic is responsible for maintaining the submarine's machinery such as engines, pumps and doors, as well as repairing hull breaches. They can use welding tools and plasma cutters effectively, and they can also fabricate advanced mechanical items and devices.
+The Medical Doctor: The Medical Doctor is responsible for the crew's health and well-being. They must monitor the crew's vital signs and treat any injuries or illnesses that may arise. The Medical Doctor must also manage the submarine's medical supplies and toxins, along with manufacturing them from raw materials.
+The Security Officer: The Security Officer is responsible for the submarine's defense against hostile creatures and potential traitors among the crew. They must attack any oncoming monsters using the ship's external weapons, keeping them from breaching into the ship. The Security Officer must also keep an eye on the crew's behavior, identifying any suspicious activity and taking action to stop it.
+The Assistant: The Assistant is a general role that can help out wherever needed. They must perform tasks such as repairing the submarine's systems, managing resources, and assisting other crew members in their duties. The Assistant must also be prepared to take on any other role if needed.
+Each role is essential, and players must work together to succeed in their mission. In multiplayer, each player can choose to take on a specific role, allowing for coordinated teamwork and specialization to achieve success.
+
+
+== Development ==
+Lead developer Joonas Rikkonen, who had previously developed SCP – Containment Breach, cited the online role-playing game Space Station 13 as the biggest single source of inspiration for Barotrauma, praising its emergent gameplay and emphasis on human interaction. However, he also critiqued Space Station 13's unintuitive user interface and various technical issues; with Barotrauma, Rikkonen sought to create a game that "built on the foundation of SS13" while "smoothing some of the rougher edges". Rikkonen also drew heavy inspiration from "Pressure", a game concept anonymously posted to 4chan's video games board.
+Development on Barotrauma began in 2014, under the working title Subsurface. From 2015 to 2018, pre-alpha builds of Barotrauma were freely released to the public for testing and feedback. Following the 2019 commercial release, future versions of Barotrauma were made exclusive to Steam, and the unsupported free version was retitled Barotrauma Legacy.
+In 2017, the source code for Barotrauma was publicly released under a limited license to facilitate the creation of community mods. The source repository continues to be updated in tandem with the commercial release. Barotrauma was Greenlit on Steam in February 2017.
+In 2018, Undertow Games partnered with FakeFish Games to jointly develop Barotrauma, turning the solo project into one developed by nearly a dozen individuals. In early 2019, Undertow Games signed Daedalic Entertainment, a German games publisher, to handle Barotrauma's publishing and marketing.
+Barotrauma was released onto early access on June 5, 2019, with initial plans for the full release later in the year. The game would remain in early access indefinitely until January 2023, when the full release date was announced as March 13, 2023. The developers host a public development roadmap on their Trello page.
+In June 2025, Undertow Games, FakeFish, and Daedalic announced Barotrauma: Home & Harbor, the game's first major expansion, scheduled for release in 2026. The expansion introduces outpost ownership and base building, expands faction gameplay, and adds a new faction known as the Descendants.
+
+
+== Reception ==
+Barotrauma was voted "Best Hardcore Game" at Game Connection Europe 2018, where it was also nominated in three other categories.
+
+
+== See also ==
+List of underwater science fiction works
+
+
+== References ==
+
+
+== External links ==
+Official website

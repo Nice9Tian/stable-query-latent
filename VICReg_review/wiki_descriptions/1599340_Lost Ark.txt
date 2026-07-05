@@ -1,0 +1,47 @@
+Game: Lost Ark
+appid: 1599340
+Source: Lost Ark (video game)
+URL: https://en.wikipedia.org/wiki/Lost_Ark_(video_game)
+Match score: 6.56
+Retrieved: 2026-07-04
+--------
+Lost Ark is an online MMO action role-playing game developed by Smilegate RPG, a South Korean video game company. It was revealed in South Korea on November 12, 2014 by Smilegate. On the first day of launch, the number of concurrent users was 250,000, and within the next week, the number of concurrent users exceeded 350,000. The game can be played in environments that support DirectX 9 or higher. The Focus Group Test (FGT) was conducted behind closed doors in August 2015, the first CBT (Closed Beta Test) was held on August 24, 2016, the second CBT was held on September 15, 2017, and the final CBT was held on May 23, 2018, and the open beta test was conducted on November 7, 2018, and the official release was conducted on December 4, 2019.
+It was released in Europe, North America and South America on February 11, 2022 by Amazon Games. It achieved the second-highest concurrent player count of all games ever played on Steam with over 1.3 million players. This led to long queues and a new server region for Europe was introduced.  Lost Ark cost around US$85 million to develop. The game received generally favorable reviews.
+
+
+== Gameplay ==
+
+Lost Ark is primarily focused on player versus environment (PvE) and exploration (questing, achievement/collectible hunting, crafting, etc.). It features player versus player (PvP) elements as well. Players start by creating customizing their character, by choosing their appearance and from one of the six archetype classes — Warrior, Martial artist, Gunner, Mage, Assassin, Specialist — followed by one of their advanced classes. Reaching level 50 unlocks access to tiered endgame dungeons and raids, at which point most further progress is tied to the character's gear score.
+
+
+=== Classes ===
+Originally, 18 characters were introduced, but only 12 of them were released. Since then, the number has increased to 26.
+
+
+=== Combat System ===
+The responsive and action-oriented combat system in Lost Ark is widely acclaimed as one of its defining features. It emphasizes the creation of fluid combos by chaining together various skills and attacks to effectively damage adversaries. With each class offering a diverse array of skills, players can experience distinct gameplay dynamics, as they adapt their abilities to combat sequences. Through the game's skill tree system, players can progressively unlock and enhance their character's abilities, enabling personalized customization to align with individual playstyles. This not only enhances the complexity of combat but also empowers players to refine their skills in accordance with their preferences.
+
+
+== Development and release ==
+Lost Ark's development began in 2011 under the codename "Project T". The game uses Unreal Engine 3. It originally only supported DirectX 9 but was updated to also support DirectX 11 prior to the western release in 2022.
+Lost Ark was fully released in South Korea on December 4, 2019, and in North American, South American, and European regions on February 11, 2022, with Amazon Games serving as the global publisher. Users that pre-purchased one of four founder's packs could play 3 days early on February 8, 2022. The game was initially unavailable in Belgium and the Netherlands due to the countries' stringent loot box regulations, with the latter later reversing its decision. Within twenty-four hours of its release, Lost Ark became the second most played game on Steam.
+In 2021, there were plans between Smilegate and game publisher HappyTuk to launch Lost Ark in Taiwan. In January 2023, the Taiwanese servers' launch was put on hold, and moved to a May 30, 2024 release date. The game's Japanese server was closed down on March 20, 2024.
+
+
+== Reception ==
+
+Lost Ark received "generally favorable" reviews according to review aggregator platform Metacritic.
+PC Magazine praised Lost Ark's combat, writing, "Abilities look good, sound sufficiently powerful, and feel great to use. You can’t help but feel like a combat god when you divekick a crowd, and blast fodder monsters into bloody chunks." Despite enjoying some of the minigames, Rock Paper Shotgun disliked the game's structure and felt, compared to other MMOs, Lost Ark had little to offer: "Some may relish the chores, the gradual progress of the EXP bar, and the allure of shiny loot rewards... Yet, there's nothing I've seen so far in the game's questing and progression that makes it stand out from the competition." PC Gamer liked the combat abilities, but criticized the story: "Lost Ark can be a captivating adventure, which makes it a shame that the main story is simply not that compelling. The central cast of characters are a largely one-dimensional carousel of exhaustingly noble heroes and villains." The Western release was also criticized for its high volume of bots.
+
+
+== Notes ==
+
+
+== References ==
+
+
+== External links ==
+Official website (in German, English, Spanish, French, and Portuguese)
+Official website (in Korean)
+Official website (in Mandarin Chinese)
+Official website (in Russian)

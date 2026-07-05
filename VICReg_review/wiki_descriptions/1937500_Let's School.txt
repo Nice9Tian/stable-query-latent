@@ -1,0 +1,25 @@
+Game: Let's School
+appid: 1937500
+Source: Let's School
+URL: https://en.wikipedia.org/wiki/Let%27s_School
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Let's School  is a campus management simulation video game developed by Pathea Games. It was released for PC in July 2023 and for PlayStation 4, PlayStation 5, Xbox One, Nintendo Switch and Xbox Series X and Series S in July 2024.
+
+
+== Gameplay ==
+Let's School is a campus management simulation game, offering a blend of simulation and strategy. In the game, the player assumes control of a school principal, who must build the campus from scratch, design the curriculum for each form, recruit teachers, and manage crises. The game features both a career mode which guides players towards their objectives, and a sandbox mode which allows them to build their school with little to no limitation.
+
+
+== Development and release ==
+The game was developed by Pathea Games,  best known for My Time at Portia. It was originally released as a PC game in 2023. It initially started as a passion project for a member of Pathea Games, though the studio moved members of the Portia team to assist the game's development.
+It was released for the PlayStation 4 and 5, the Xbox One and Xbox Series X and S, and Nintendo Switch  on July 16, 2024.
+
+
+== Reception ==
+According to Metacritic, Let's School  received "mixed or average" reviews.
+Stephanie Liu from Siliconera wrote that "while Let's School is a lot of fun and has a lot of cute ideas, its implementation can sometimes be rough", and added that its "charm doesn't last long before it becomes a monotonous routine". Jade Sayers from Push Square felt that the game "misses out on any humanity by treating the school purely as a business", turning an otherwise enjoyable game into "another cog in the machine, taking away any individuality and losing the benefit of having the setting in a school environment by treating school life as purely transactional".  Trent Cannon from Nintendo Life described the game as a "deep, engaging – if a bit soulless – simulator".
+
+
+== References ==

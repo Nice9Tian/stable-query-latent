@@ -1,0 +1,46 @@
+Game: Yes, Your Grace
+appid: 1115690
+Source: Yes, Your Grace
+URL: https://en.wikipedia.org/wiki/Yes,_Your_Grace
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Yes, Your Grace is a role-playing strategy video game developed by Brave at Night and published by No More Robots. It was officially released for Microsoft Windows and macOS on March 6, 2020, for Nintendo Switch and Xbox One on June 26, 2020, and for Xbox Series X/S as one of its launch titles on November 10, 2020. Yes, Your Grace focuses around managing a small kingdom, where the player must manage a finite amount of resources. The game went through a multi-year development cycle, where it was heavily influenced by winter conditions in Poland. It received generally positive reviews from critics.
+
+
+== Gameplay ==
+Yes, Your Grace is a management game about ruling a kingdom. It focuses around the player character, King Eryk of Davern, and rests heavily on binary choices about how to respond to various events in their Kingdom. Gameplay is organized into weekly rounds, with events presented as from visitors to their royal court. The player must manage money and supplies, while also managing the military, and a limited number of generals, witches and hunters.
+
+
+== Plot ==
+King Eryk rules the kingdom of Davern with his wife Queen Aurelea and his daughters Lorsulia, Asalia, and Cedani. However, all is not well in Davern as Eryk has so far been unable to father a son, risking a succession crisis if he were to pass away. In addition, King Beyran of the neighboring barbarian nation of Radovia threatens to invade Davern if Eryk does not marry Lorsulia to him. In desperation, Eryk arranges for Lorsulia to be married to Prince Ivo of Atana, a large and wealthy kingdom more than capable of fighting off Radovia. Ivo and his father King Talys arrive in Davern for the wedding, only for Talys to die from a poisoned drink. Ivo accuses Eryk of the murder and threatens to declare war, forcing Eryk to pin the blame on one of the partygoers. With justice served, the wedding continues and the alliance is secured.
+Despite the alliance with Atana, Eryk comes to learn that Ivo cannot be fully trusted, as he is a cruel and sadistic man who regularly abuses Lorsulia. In order to better prepare for the Radovian invasion, Eryk sets about securing the loyalty of his nobles and improving the kingdom in order to build his own army. Once the Radovian army arrives, Eryk rallies whatever forces he has been able to muster and engages in battle. However, during the battle, Atana's promised reinforcements do not arrive, forcing Eryk to fight on his own. The battle eventually ends in a victory when a fortuitous avalanche crushes the Radovians, but Eryk's forces suffer heavy casualties and his nobles decide to pull their support.
+Meanwhile, Ivo uses the avalanche as a pretext to accuse Davern of practicing witchcraft and has Lorsulia burned at the stake, and promises to send his army to crush Davern. Eryk is forced to appeal to other kings from neighboring nations for support. Meanwhile, Beryan and the surviving Radovians arrive in Davern. It is revealed that they are simply refugees fleeing a civil war in their home country. Eryk can decide whether to have Beryan and the Radovians executed or spare them and allow them to settle in Davern. Eryk may also decide to conduct a magical ritual to ensure that his and Aurelea's next child will be a boy, though there is a risk that Aurelea or the child will die if the ritual is performed incorrectly.
+Eventually, Ivo leads his army to Davern and lays siege to Eryk's castle. Depending on how well Eryk made his preparations, his forces may suffer light or heavy casualties, and his family may be killed during the siege. The siege is eventually broken and Ivo is captured. Eryk comes to realize that it was Ivo who poisoned Talys at the wedding. Eryk was Ivo's actual target, but the cups were accidentally switched and Talys was killed instead. Eryk is then left to choose whether to execute or imprison Ivo.
+If Eryk made the wrong choices or failed to adequately prepare for the attack, he will lose his family during the siege and Davern will fall into chaos when he eventually dies without an heir. If Eryk made the right choices and made all the necessary preparations, all of his family will survive and he leads Davern into a new golden age that will be secured by his son.
+
+
+== Development ==
+Yes, Your Grace was originally inspired by the 2013 game Papers, Please and the 2012 game Crusader Kings II. Development of the game began with a campaign on Kickstarter in 2015. The game was in development for five years, and for the majority of the development cycle it was being developed in a village in Poland. The relative remoteness of the village was a significant factor in development, as the landscape and the harshness of winters had a substantial impact on game design.
+
+
+== Release and revenue ==
+Yes, Your Grace was released on Steam and GOG.com on March 6, 2020, with it making $600,000 in its release weekend, a number considered a success. The game's success was attributed to an effective trailer, as well as the availability of translations into numerous different languages on release. The Nintendo Switch and Xbox One ports were released on June 26, 2020, while Xbox Series X/S port was released on November 10, 2020 as a launch title for both consoles.
+
+
+== Reception ==
+
+Yes, Your Grace received generally positive reviews from critics. Nicole Carpenter, writing in Polygon, spoke positively of the game, praising its slow pacing and ability to counter savescumming.  Paul Tamayo, writing in Kotaku, gave a positive review, declaring the game to be a "fun anxiety outlet" and a "really cool throwback", while criticising some situations in the game for feeling like "conservative radio nightmare simulations". Luke Kemp of PC Gamer also gave a positive review, praising the game's writing and finding that its animation was especially good, while criticising it for having "distracting" shifts in its atmosphere. Rob Mundy of Nintendo Life gave the game 7/10 stars, praising the game's writing and depiction of medieval life, while finding that it could feel "unfairly punishing".
+Chris Bratt, writing in PCGamesN also gave the game 7/10, praising the characterisation of the relationship between King Eryk and his family, while finding that the game lacked truly impactful decisions, as he found that most major events were somewhat railroaded. Rob Gordon of Screen Rant gave a mixed review, finding that the game's plot "shined" and praising its characterisation, while also finding that the game's abundance of binary choices in events led to frustration, as in his view relatively minor things took up too many resources.
+Malindy Hetfield, writing in Eurogamer, gave a negative review, stating that the game did not inspire any feelings towards its characters, and also that it was both mechanically frustrating and suffered from tone inconsistencies, though she praised the game's visuals.
+
+
+== Sequel ==
+A sequel titled Yes, Your Grace: Snowfall was announced in June 2023 and was released on May 8, 2025, on Steam. Console ports for Xbox Series, Xbox One, and Switch are set to be released later in 2025.
+
+
+== References ==
+
+
+== External links ==
+Official website

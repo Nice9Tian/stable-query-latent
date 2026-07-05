@@ -1,0 +1,28 @@
+Game: Starship Troopers: Terran Command
+appid: 1202130
+Source: Starship Troopers: Terran Command
+URL: https://en.wikipedia.org/wiki/Starship_Troopers:_Terran_Command
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Starship Troopers: Terran Command is a real-time strategy video game developed by The Artistocrats and published by Slitherine Software in 2022.
+
+
+== Gameplay ==
+Set in the Starship Troopers franchise, players defend a remote mining colony against an invasion of insectoid aliens.  Terran Command includes elements of both the 1997 film, such as the satirical criticism of militarism, and 1959 book, such as the powered armor.  In combat, the Terran forces focus mostly on powerful ranged attacks, and the aliens have greater numbers, mobility, and strong melee attacks.  Players can only control the Terran forces.  As players progress through the campaign, more powerful units become available.  Units that survive several attacks gain special abilities.
+
+
+== Development ==
+Slitherine Software released it for Windows on June 16, 2022.  It had previously been slated for release in 2020 and March 2023.
+The first expansion, Raising Hell, released on November 16, 2023 and the game continues to receive semi-regular updates, such as challenge modes and the now-included scenario editor. The Steam release of the title includes full Workshop support, and a small but dedicated community actively makes content for the game. The second expansion, Urban Onslaught, was released on June 18, 2024.
+
+
+== Reception ==
+Starship Troopers: Terran Command received mixed reviews on Metacritic. IGN called it "a competent asymmetrical RTS" but criticized the lack of multiplayer or a scenario editor because they felt the first half of the campaign was unchallenging.  Rock Paper Shotgun said that to get more than a moderate recommendation, there would have to be more content or satirical commentary influenced by the films.  Though NME said the developers "absolutely nailed the look and feel of the game", they felt it "just isn't that much fun to play".
+
+
+== References ==
+
+
+== External links ==
+Official website

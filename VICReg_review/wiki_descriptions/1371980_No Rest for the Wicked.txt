@@ -1,0 +1,40 @@
+Game: No Rest for the Wicked
+appid: 1371980
+Source: No Rest for the Wicked (video game)
+URL: https://en.wikipedia.org/wiki/No_Rest_for_the_Wicked_(video_game)
+Match score: 7.80
+Retrieved: 2026-07-04
+--------
+No Rest for the Wicked is an upcoming action role-playing video game developed and published by Moon Studios. The player assumes control of a holy "Cerim" warrior who must travel to the island of Isola Sacra to investigate a plague named the "Pestilence". The game was released for Windows through early access in April 2024, and in full for PC and PlayStation 5 in October 2026. Full versions of the game are also set to be released for Nintendo Switch 2 and Xbox Series X/S at a later date.
+
+
+== Gameplay ==
+No Rest for the Wicked is an action role-playing video game played from a top-down perspective. At the beginning of the game, the player can create their own player character. Players will collect a variety of weapons in the game, and gear is divided into different rarities. Each weapon also has its own unique movesets, and can be enhanced with runes to further boost its combat capabilities. Gameplay is similar to a Soulslike game. Players can strike an enemy with their weapons, parry, dodge-roll, and block attacks, though all of these actions will consume stamina. The armor worn by the player character will also affect the player's moveset. For instance, players wearing a set of agile armor will be able to perform a fast quickstep, which allows players to evade attacks without consuming a lot of stamina. Focus will gradually accumulate during combat, allowing players to unleash a special attack once a certain threshold of Focus is reached. If the player character dies, they will respawn at the closest Cerim Whisper point. While the player's health is fully restored, enemies which have already been slain remain dead, while the health of wounded enemies will not regenerate. As players progress in the game, they will gain attribute points, which can be spent on seven different domains (namely health, strength, stamina, dexterity, faith, intelligence and focus) to enhance the player's combat performance. The game also has a "soft class" system, allowing players to experiment with different playstyles freely in the game.
+Players will eventually reach the settlement of Sacrament. The city will eventually evolve as the player progresses and completes side objectives, therefore unlock additional rewards and opportunities. Players can also purchase and decorate their own house in the city. Resources collected in the wilderness can be used to craft new gears, furniture for the player's house, or contribute these resources to build town improvements. Players have to explore off the beaten path in order to find hidden chests and materials. Players can also participate in activities such as fishing and farming while not completing missions. Once the player completes the main campaign, they can access endgame content named "Cerim Crucible", allowing players to test their skills against the game's toughest enemies. Both 4-player cooperative multiplayer and player-versus-player competitive multiplayer modes are also planned.
+
+
+== Premise ==
+The player assumes control of a Cerim, a group of holy warriors imbued with magical abilities, who must purge the "Pestilence", a plague which has transformed the locals of Isola Sacra into dangerous and mindless monsters. Along the way, the Cerim becomes entangled in political conflicts between the rulers of the kingdom, and the rebels who seek to overthrow it.
+
+
+== Development ==
+Moon Studios, which had a team of 80 people, served as the game's lead developer. When the game was revealed in December 2023, Gennadiy Korol, co-founder of the studio, revealed that they had been working on the game for six years. The studio first began working on the project following the release of Ori and the Blind Forest: Definitive Edition, though full production quickly stopped as the studio was not "ready to take on online multiplayer, PvP, a full-blown RPG in 3D" at the time. Only a small team continued to work on the project while the bulk of the studio worked on Ori and the Will of the Wisps. Production of the game officially began in 2018. Elements from the Ori games, such as its interconnected worlds, were carried over to this game. The team experimented with basic town management mechanics with the "Wellspring Glades" section from Will of the Wisps, before significantly expanding them with No Rest for the Wicked. The game is powered by a customized Unity engine.
+According to Thomas Mahler, the game's creative director, combat in the game was designed to be "visceral". The system was animation-driven, and players need to observe the combat animation of enemies in order to identify the best timing to strike and dodge. Combat in the game was inspired by FromSoftware's games, Monster Hunter, and fighting games. The stamina system was added to the game to deter players from mindlessly spamming attacks, and instead encourage to strategize and plan their attacks before striking. The visuals of the game was designed to be similar to that of a painting, particularly inspired by Italian artist Caravaggio, with emphasis on contrasting lightning and shadows, as well highly saturated colors. The team intentionally avoided pursuing photorealistic visuals for the game, believing that it may dilute the game's identity, and avoided adopting a cel-shaded visual style as the team wanted the game to be detailed and "immersive". A Song of Ice and Fire and Shakespearean tales inspired the game's world and story. With No Rest for the Wicked, the team wanted to shift from "smaller, allegorical" stories from the Ori games, to "an epic fantasy saga" with actual humans who have their own story arcs and conflicts. Mahler named Diablo and Path of Exile as the game's potential competitors in February 2023.
+To speed up workflow, the development team used a simplified manager that allows them to change settings on the go, including NPC stash, with a minimalistic UI that is easy to handle. Thomas has expressed his thoughts on the use of AI, stating that his team does use AI as a tool to speed up workflow, but reassuring that no generative AI is being used to create art or assets. He gave examples of their staff using an AI management tool to help organize their demands more efficiently, or to aid clean-up programming lines of code.
+
+
+== Release ==
+Private Division, a division of Take-Two Interactive specializing in publishing video games from smaller developers, announced that it had partnered with Moon Studios for the development of their next game in July 2020.  It was officially announced at The Game Awards in December 2023. The game was released via early access for Windows PC on April 18, 2024. At its launch, the game included the opening chapters for the game, while subsequent updates continue to introduce new story chapters, gameplay mechanics and multiplayer modes. Version for PlayStation 5 and Xbox Series X/S is also set to be released after the game's early access launch. In November 2024, Take-Two announced that they would sell off Private Division to an unknown buyer, though the rights to the game would stay with Take-Two, which would continue to support the game's development. In March 2025, Moon Studios announced that they had acquired the publishing rights of the game from Take-Two Interactive.
+In June 2026, it was announced during Sony's State of Play that No Rest for the Wicked will leave early access in October 2026 and will launch for PC and Playstation 5, with a version for Xbox Series X/S and a newly announced version for Nintendo Switch 2 following at a later date.
+
+
+=== Sales ===
+In January 2026, No Rest for the Wicked surpassed one million copies sold for its Steam Early Access release, according to an announcement by Moon Studios.
+On February the 4th 2026 No Rest for the Wicked surpassed one and a half million copies sold for its Steam Early Access release, according to another announcement by Moon Studios.
+
+
+== References ==
+
+
+== External links ==
+Official website

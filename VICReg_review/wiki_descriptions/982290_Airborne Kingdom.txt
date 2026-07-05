@@ -1,0 +1,28 @@
+Game: Airborne Kingdom
+appid: 982290
+Source: Airborne Kingdom
+URL: https://en.wikipedia.org/wiki/Airborne_Kingdom
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Airborne Kingdom is a city-building video game developed by The Wandering Band.  Players build and maintain a mobile, flying city.  It was released for Windows and macOS in 2020, and Freedom Games published ports to consoles in late 2021.
+
+
+== Gameplay ==
+Players control a culture who have rediscovered the lost plans for a flying city that can visit and trade with Earthbound cities.  The city begins as a flying town center, and players build from there.  Heavy buildings increase the need for lift, and construction must be balanced to avoid tilting the city.  Buildings can also generate drag, requiring more propellers.  Coal and other resources from the ground are necessary to keep the city running properly.  To harvest them, players can send workers in airplanes.  Citizens are initially made happy by providing for basic necessities, but they later begin asking for cultural buildings and luxuries.  Players can perform tasks for Earthbound cities, such as finding items that they need, and receive immigrants as a reward.  The happier the city is, the more immigrants it gets.  The ultimate goal is to unite these cities as your allies.  When this goal is reached, players can optionally start on a new map with scarcer resources.  A free DLC released in 2022 adds a tundra landscape, which worsens the city's efficiency and removes all food, water, and coal from the land below.  The city's look is based on a steampunk version of architecture from the Islamic Golden Age.
+
+
+== Development ==
+Airborne Kingdom released on Windows and macOS on December 17, 2020.  Freedom Games published ports to Nintendo Switch, PlayStation 4, PlayStation 5, Xbox One, and Xbox Series X/S on November 9, 2021.
+
+
+== Reception ==
+
+The PC version of Airborne Kingdom received positive reviews on the review aggregation wbebsite Metacritic.  Fellow review aggregator OpenCritic assessed that the game received strong approval, being recommended by 63% of critics.  Rock Paper Shotgun said it is "a true breath of fresh air" and praised its use of steampunk and Islamic architecture, which they said went deeper than surface-level aesthetics.  PC Gamer called it a "smart, hypnotic city builder that won't leave you tearing out your hair".  PC Gamer generally enjoyed the game's relaxing gameplay, though they said the campaign to unite the world was a bit easy.  Although describing it as a "lovely, mildly experimental city sim", Eurogamer said it does not explore the negative implications of its imperialism.  Nintendo Life recommended Airborne Kingdom to fans of city-building games who are looking for a unique setting, but they said it may disappoint those seeking a complex simulation.  They also suggested that strip-mining the world below was a missed opportunity for more narrative commentary.  TouchArcade, who enjoyed the unique setting, also suggested more worldbuilding would have made the game better.  Though both sites recommended the game overall, TouchArcade and Nintendo Life said the game's user interface on Switch could be improved.
+
+
+== References ==
+
+
+== External links ==
+Official website

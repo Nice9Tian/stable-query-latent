@@ -1,0 +1,27 @@
+Game: Before We Leave
+appid: 1073910
+Source: Before We Leave
+URL: https://en.wikipedia.org/wiki/Before_We_Leave
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Before We Leave is a city-building video game developed by Balancing Monkey Games and released by Team 17.
+
+
+== Gameplay ==
+Before We Leave is a non-violent city-building game with elements of 4X gameplay.  Players control a group of people, called Peeps, who leave a bunker.  After exploring the area, players guide the Peeps as they rebuild on the ruins of a fallen civilization.  Maintaining happiness levels by providing for the Peeps' needs increases their efficiency, decreasing the amount of time required for actions taken.  The game's ultimate goal is for the Peeps to build up their society enough to launch themselves into space and colonize other planets.  To do this, the Peeps must contend with space whales.
+
+
+== Development ==
+Developer Sam Barham previously worked in the New Zealand software industry on educational tools.  When one of his games competed in a fundraising competition run by the New Zealand Game Developers Association, it attracted funding from an investor, which  Barham used to hire a team. In 2019, Barham transitioned into working on the game full time.  The game is not strictly non-violent; players pointed out that the space whales could be considered violent.  Barham did not intend for the game to be a comment on violence in video games, but he wanted to use his game as a vehicle for social change.  The game was released exclusively on the Epic Game Store in May 2020 with 50 000 sales by December 2020, and was released on Steam on 14 May 2021. It was released on the Xbox Series X and S and Xbox One in November 2021, on the PlayStation 4 and 5 in April 2022, and on the Nintendo Switch in August 2022.
+
+
+== Reception ==
+Before We Leave received mixed reviews on Metacritic.  Ian Evenden of PC Gamer called it a "cute little city-builder with big ambitions".   Nicole Carpenter of Polygon said the game was initially relaxing and fun but became increasingly stressful, for both her and the Peeps, as expansion caused pollution and unhappiness in the Peeps' society.
+
+
+== References ==
+
+
+== External links ==
+Official website

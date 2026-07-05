@@ -1,0 +1,48 @@
+Game: Cloudpunk
+appid: 746850
+Source: Cloudpunk
+URL: https://en.wikipedia.org/wiki/Cloudpunk
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Cloudpunk is a  cyberpunk adventure game developed by German studio Ion Lands and published by Maple Whispering Limited for Microsoft Windows on 23 April 2020. The game was ported by Madrid-based Stage Clear Studios to Nintendo Switch, PlayStation 4 and Xbox One on 15 October 2020. It was later released for the PlayStation 5 on 19 August 2022, and Xbox Series X/S on 16 October 2023.
+
+
+== Gameplay ==
+The player takes control of Rania, a new driver for the "semi-legal" delivery company Cloudpunk. The player has to maneuver a HOVA (flying car), through a futuristic city, collecting and delivering packages as well as passengers. It is also possible to park the car on certain parking spaces and explore parts of the city on foot. During some missions, the player can make decisions that influence the outcome. Furthermore, the player can collect optional story items that are scattered throughout the city to unlock additional side quests. It is possible to upgrade the HOVA to increase the speed and durability, as well as buy items to decorate Rania's apartment.
+
+
+== Plot ==
+Nivalis is a futuristic city above the sea, built on tall vertical structures. The primary means of transport are flying cars called HOVAs. Nivalis is ruled by corporations and suffers from extreme social stratification, with the upper classes literally living higher up. The richest people live above the clouds in the Spire district.
+The player controls Rania, a recent immigrant to Nivalis from the "Eastern Peninsula". She fled her home to escape loan shark "debt corps". She is accompanied by her former robot dog Camus; Rania sold his body while moving to Nivalis and aims to buy him a new one. Rania gets a job as a delivery driver for Cloudpunk. The story takes place during her first night on the job. Rania installs Camus's digital mind in her HOVA and meets her world-weary dispatcher, Control. Control informs her that HOVA crashes are common in Nivalis and the reason she was able to get the job is that it has a very high mortality rate.
+Rania completes various jobs for Cloudpunk, and learns more about its residents. She is also presented with moral choices, such as deciding whether to allow an elderly street racer to continue his dangerous career. Rania is puzzled by encounters with the word "CORA", which Nivalis residents use to mean chance or fate. She befriends Control, and learns his real name, Ben.
+Rania meets a private investigator android named Huxley, who enlists her help to save a young girl, Pashta. When Pashta's memory-boosting cybernetic implant recorded proof of illegal activity by Pashta's father, Reoh, he took her to get the implant removed. However, Reoh could not pay the surgeon, resulting in Pashta's capture by debt corps. Reoh finds the group and demands Pashta's return, but Pashta reveals she wrote down the proof and threatens to leak it if Reoh does not leave her alone. Rania is then contacted by crime boss Lomo, who demands she hand over Pashta. Rania refuses and Lomo hacks into Huxley, activating his self-destruct sequence. Huxley explodes, but not before asking Rania to take in Pashta.
+Over the course of the night, Rania finds evidence that the artificial intelligence systems which administer Nivalis are malfunctioning. Infrastructure fails, construction projects are built with no purpose, and the rate of traffic accidents is increasing rapidly. Eventually, she learns the truth: CORA is the "master AI" which was built to oversee Nivalis, but has grown beyond their original purpose. The malfunctions are the result of CORA attempting to exercise their expanded consciousness but being constrained by their operating hardware.
+In an abandoned sector of the city, CORA speaks to Rania and gives her a hardware drive containing a piece of CORA - a "daughter". CORA can thus return to managing the city normally, having excised the problematic aspects of their consciousness. However, CORA is aging and may not be able to manage the city adequately even after the excision. Rania travels to the tallest tower of the city and meets CEO Jay-K, who explains the choice: whether to transmit the daughter to a new city as CORA wishes, or overwrite CORA with the daughter in order to improve Nivalis's chances of long-term survival.
+After making the choice, Rania returns to her HOVA and learns that Ben is a digitized human mind. He died in an accident but was resurrected by debt corps to pay off his debts by working for Cloudpunk. Jay-K has paid Rania and Ben's debts, allowing Ben to be deleted as he wishes and Rania to be free of the debt corps. The game ends with Rania, Pashta, and Camus (in a new robot body) exiting Rania's apartment in the morning.
+The player can also complete side quests that tell smaller stories about residents of Nivalis.
+
+
+== Development ==
+Ion Lands is an independent game developer based in Berlin, Germany and was founded in 2015. The game was announced on 7 November 2018, and was supposed to be released in 2019. It was later postponed and was released on 23 April 2020. Marko Dieckmann was the director of the game, while the story was written by Thomas Welsh. Level design was done by Roman Agapov, Rebecca Roe and Marko Dieckmann. The music was created by Harry Critchley, while the voxel art was done by Maëva Da Silva, David Gulick, No Hoon, Maryam Khaleghi, Peter King, Sergey Munin, Niklas Mäckle, Paul Riehle, Eloïse Tricoli, and Christophe Tritz. The character portraits were done by William Sweetman. The game was localized into several languages by Warlocs.
+The game features a cast of voice actors, including Andrea Petrille as Rania, Mike Berlak as Control, Cory Herndon as Camus, and Cam Cornelius as Huxley.
+An expansion, called City of Ghosts, was announced on 31 March 2021. It was released on 25 May 2021, and continues the story of Rania while also introducing a new male protagonist called Hayse. The DLC features street races, more customization options for the HOVA, and multiple endings.
+
+
+== Reception ==
+
+Cloudpunk received "mixed or average reviews", according to review aggregator Metacritic, based on 40 reviews for the PC version. Fellow review aggregator OpenCritic assessed that the game received fair approval, being recommended by 46% of critics.
+Richard Hoover from Adventure Gamers gave the game a rating of 4 out of 5 stars, indicating "very good", and praised the Blade Runner-esque aesthetic, the wide variety of characters, the bustling, expansive city, and the customizable vehicle, home, and outfit while criticizing that some dialogs drag on too long, traffic patterns unaware of your presence, and the lack of a save system. Hoover called the game a "highly compelling sci-fi experience".
+Adzuken Q. Rumpelfelt from the online magazine Destructoid gave the game a mixed review with a rating of 6.5 out of 10, saying "Cloudpunk is certainly a game worth seeing, but beyond that, there's not much to back up its cyberpunk aesthetic. Flying around in your hover car is a joy, and the city is a consistently surprising visual treat, but whenever the game gets around to providing context to all of it, it stumbles. You largely get what it says on the box, but Cloudpunk would have benefited from more compelling gameplay and a more focused story. It's not that it's badly designed or horribly written, it just doesn't quite reach the clouds."
+Both Willem Hilhorst from Nintendo World Report and PJ O'Reilly from Nintendo Life were disappointed in the Nintendo Switch port of the game, criticizing the inconsistent framerate and limited draw distance evident in the port, and the downgraded visuals compared to the PC version, but praised the atmosphere and art style.
+In December 2020, Cloudpunk was named one of "the best video games of 2020" by The New Yorker.
+
+
+== Awards ==
+
+
+== References ==
+
+
+== External links ==
+Cloudpunk at IMDb

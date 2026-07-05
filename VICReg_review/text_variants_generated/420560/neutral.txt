@@ -1,0 +1,9 @@
+*Firefighting Simulator - The Squad* is a firefighting simulation game that lets players experience fire response up close as part of a major US city’s firefighting team. Set across a detailed 15,000-acre townscape inspired by the North American West Coast, the game features more than 40 deployment locations and missions in areas such as industrial districts, suburbs, and downtown.
+
+Players operate faithfully reproduced Rosenbauer America fire trucks, including vehicles such as the TP3® Pumper and the T-Rex® hydraulic platform, and can drive them through the city in cockpit view. The game also includes authentic firefighting equipment from well-known North American manufacturers, such as helmets, firefighter boots, breathing apparatus, Cairns®, MSA G1® SCBA, and HAIX® gear.
+
+Firefighting Simulator supports both single-player and cooperative multiplayer. In co-op mode, up to four players can work together to fight fires and rescue civilians, with each player free to take on the role they prefer. In single-player mode, the player leads an experienced firefighting team and uses an intuitive command UI to assign tasks to AI colleagues while actively participating in the action.
+
+The simulation emphasizes realistic fire behavior and destruction, with advanced systems covering water, smoke, heat, back drafts, flashovers, grease fires, and ignition sources such as electronics, chemicals, and explosions. A complex physics system models the spread of fire and resulting damage dynamically.
+
+The game includes a comprehensive tutorial, radio communications, and character recordings in English, along with subtitles in several languages. It also features faithfully recreated engine sounds for added atmosphere. Additional support includes standard steering wheels and gamepads. With multiple solutions for each of its 40 deployment locations and day-and-night scenarios, the game offers strong replay value.

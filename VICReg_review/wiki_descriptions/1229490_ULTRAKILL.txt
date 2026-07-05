@@ -1,0 +1,42 @@
+Game: ULTRAKILL
+appid: 1229490
+Source: Ultrakill
+URL: https://en.wikipedia.org/wiki/Ultrakill
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Ultrakill  is an upcoming first-person shooter game developed by Arsi "Hakita" Patala and published by New Blood Interactive. It was released on Steam through early access for Microsoft Windows on 3 September 2020. The game uses retro-style graphics reminiscent of video games from the early PlayStation consoles and combines modern movement mechanics like those of Titanfall and Doom Eternal with gameplay elements from action games like Devil May Cry.
+
+
+== Gameplay ==
+
+Ultrakill is a fast-paced first-person shooter with an emphasis on movement and stylish techniques. The player must make their way through an interpretation of Dante's layers of Hell, with three acts each made up of three layers being divided into multiple levels. As of February 2026, only Act I and Act II have been fully released, with only the first two layers of Act III being available.
+The player battles enemies using an arsenal of weapons, having a primary and alternate attack, and various robotic arms. These have unique interactions with each other, evoking the combination attacks of games like Devil May Cry. Many of the advanced techniques in the game are a result of combining various elements of the player's arsenal. To encourage aggressive gameplay, the player can heal by absorbing the blood of enemies through close-range combat or parrying enemy attacks. The player's performance is judged by a "style meter", similar to games such as Devil May Cry. The style meter rewards the player for performing advanced and flashy moves, as well as encouraging aerial maneuvering and quickly swapping between weapons.
+At the end of each level, the player's style ranking is combined with time taken and number of kills to determine a letter grade for that run. Achieving an S rank in all three categories without dying throughout that run will earn the player a P (Perfect) rank, the highest possible rank for a level.
+In addition to the main campaign, Ultrakill provides various secret levels parodying other video game genres. The game has an endless survival mode called "The Cyber Grind" where players can compete against other players' high scores, and a sandbox mode in which the player can spawn enemies and various objects. Achieving a P rank in all levels of an act allows the player to access the act's "prime sanctum", each containing a secret boss fight.
+
+
+== Plot ==
+Long before the events of the game, God had created humanity, trying to make them follow his word as law, but couldn't make a mind without free will, wasting uncountable cycles of creation pursuing this goal. In a fit of rage towards his creation, God created Hell, but found himself unable to unmake it after realizing what he had done. Overcome by guilt and regret, he eventually disappeared, leaving Heaven without a ruler.
+In the future, humanity has gone extinct from unknown causes after a centuries-long period of warfare known as the Final War and a second shorter period known as the New Peace. The Final War led to an arms race which brought upon the invention of blood-powered machines as soldiers, and to a climate catastrophe that caused the Sun to be blotted out, eventually ending the war and leaving humanity without natural resources. During the New Peace, humans discovered Hell, starting expeditions to find new resources, up until their eventual extinction.
+Due to the exhaustion of blood sources on Earth, several blood-fueled machines have descended into Hell in search of blood. Among them is the player character, a prototype machine developed shortly before the end of the Final War, known as V1, capable of self-repairing by absorbing blood during combat. Throughout its journey, V1 fights husks (physical manifestations of damned souls), demons, angels, and competing machines while traveling further down the layers of Hell. In the Limbo layer, V1 fights V2, another V prototype built with stronger plating instead of blood-absorption for function in the New Peace, which escapes after being defeated. After defeating the husk of King Minos in the Lust layer, the first act culminates in a fight in Gluttony against the archangel Gabriel, the newly appointed Judge of Hell. Following his defeat at the hands of V1, the Council of Heaven, who have begun to rule Heaven in God's absence, declare Gabriel a traitor due to his loss and strip him of his holy light, leaving him with 24 hours to live to destroy V1.
+V1 continues its descent into Hell, having a rematch with V2 in the Greed layer that ends in V2's death, and killing the Leviathan in the Wrath layer. Gabriel returns at the end of the second act in the Heresy layer, enraged due to his previous loss. Gabriel is defeated again, but is relieved rather than enraged, as V1 is the first adversary to present him with a real challenge. After the battle, he reflects on his losses and realizes the Council of Heaven has lost their way in the absence of God and has been using him to carry out their own agendas. He vows to act on his own terms, and proceeds to execute the members of the council and displays one of their severed heads to the citizens of Heaven, sealing his own fate as well.
+V1 continues its massacre and travels to the Violence layer, where it defeats the Minotaur and an Earthmover, a type of giant war machine from the end stages of the Final War, which resulted in the climate catastrophe. After that, V1 enters the Fraud layer, where it faces Providences (similar to Seraphs) and Powers, angels that have ventured into Hell in search of Gabriel after his massacre of the Council of Heaven. During its time in Fraud, Hell toys with V1's perception of the world and its fear of death, particularly via the Mirror Reaper, a husk that lives inside mirrors and briefly appears holding a V1 puppet before it gets killed by the machine. Eventually, V1 finds and kills the winged demon Geryon, before awakening inside a theater, with all of the demons and angels as props in the backstage.
+
+
+== Development ==
+Arsi Patala, who goes by the name Hakita, began development in February 2018. An early demo of Ultrakill was released in August 2019, with the game being picked up by New Blood Interactive in May 2020. It released through early access in September of that year.
+On 24 February 2025, the game received a near-complete overhaul in the "ULTRA_REVAMP" update, featuring new graphics for most layers, technical improvements, new "Encore" levels featuring different themes for each layer (such as the industrial setting of the Prelude having been frozen over), and music from King Gizzard & the Lizard Wizard. The technical updates were done in preparation for the development of the Fraud layer, with the developers stating in a Steam blog post that "much of ULTRAKILL's codebase was very messy, especially the enemy behaviors. So much so that not only would it make it harder for us (and modders) to work on the game in the future, but even for us to do some of the new things we wanted to do in Layer 8".
+
+
+== Reception ==
+Ultrakill was praised for its movement mechanics and authenticity towards earlier arena shooters and first-person shooters. Christopher Livingston of PC Gamer described Ultrakill as faster and "even more metal than Doom Eternal" and commended the game for its verticality. It was also described as "[moving] like turbo Doom Eternal", in another PC Gamer article by Dominic Tarason, who noted that it "looks like a PSX game". It was also reviewed by Peter Glasgowski of TheGamer, who wrote that "...Ultrakill ticked off every box for me." On 15 May 2024, the game had achieved 100,000 Steam reviews with a 98% approval rating.
+On 8 December 2022, Ultrakill gained official controller rumble support, under the guise of being sex toy support. Its developer released an official mod called UKbutt, adding support for a plugin called buttplug.io. The mod was created by Ultrakill programmer PITR and buttplug.io lead Kyle "qDot" Machulis. New Blood CEO Dave Oshry remarked that "at no point when originally testing or discussing the game with Hakita or anyone at [New Blood] were any of us like 'they're gonna want sex'." The mod was met with positive user reviews.
+
+
+== References ==
+
+
+== External links ==
+Official website (redirects to Steam)
+Official wiki

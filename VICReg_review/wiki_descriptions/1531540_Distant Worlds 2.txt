@@ -1,0 +1,27 @@
+Game: Distant Worlds 2
+appid: 1531540
+Source: Distant Worlds 2
+URL: https://en.wikipedia.org/wiki/Distant_Worlds_2
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Distant Worlds 2 is a 4X video game developed by Code Force and published by Slitherine Software. It was released for Windows on March 10, 2022 and is the sequel to the 2010 video game Distant Worlds.
+
+
+== Gameplay ==
+The gameplay and core mechanics are nearly identical to its predecessor Distant Worlds, with the main differences being: a shift from a strictly top down 2D perspective to a 3D point of view, the removal of orbital mechanics, the default automation of previously manual actions, and various UI changes to improve accessibility to the game (although in function they remain nearly identical). Players establish a space-faring empire and manage it in pausable real-time. The game is very customizable and operates on a grand scale where empires can comprise hundreds of planets. The game can be automated to take care of micromanagement or systems that players find tedious, such as ship design, research, or war. Players can, for example, tell the game what kinds of fleets they want built, what kinds of strategies they should use, and set rules of engagement, such as automatically seeking out pirates and attacking them. The game can be configured to require authorization for these decisions or to simply report them with the option of a veto, allowing one to completely automate the game and simply watch. The civilian economy can not be directly controlled by the player, but it can be indirectly guided by choices such where mining stations are established.
+
+
+== Development ==
+CodeForce said that the game was "rebuilt from the ground up" from the first game because of the aging game engine, which was 32 bit and did not support 3D graphics. At launch, only seven species were playable (all of which were species seen in Distant Worlds) with the remaining 10 being NPC exclusive and also originating from Distant Worlds. This reduction in playable species was stated to be due to the studio's inability to pay for the cost of creating unique 3D assets for the remaining species at the time. Since release some of these species have been slowly re-introduced as playable factions via DLC. Slitherine released the game on March 10, 2022. Bug fixes and patches have been released steadily since the game was launched to address a wide variety of issues, many of which have were gamebreaking (several significant and widespread bugs at launch caused regular crashes or outright prevented the game from starting on some hardware). Steam Workshop support was also added within a few months of release. At release the story for each of the playable species was also incomplete (or in some cases missing entirely or unable to be properly experienced due to bugs); since release the overall galactic story common to all species has become a retelling of the story seen in the original Distant Worlds, with development still ongoing as of December 2023.
+
+
+== Reception ==
+Distant Worlds 2 received positive reviews on Metacritic.  Sin Vega of Rock Paper Shotgun wrote that the game has "a lot of potential" but needs work balancing and patching bugs before it can be wholeheartedly recommended.  Writing for PC Gamer, Fraser Brown called the game "an elaborate space opera as interested in minutiae as it is with the big picture".  Brown praised the game's customizability and automation, which he said "allow you to create the 4X you want to play".  Comparing the game's ability to be automated to an ant farm, Wargamer reviewer Matt Bassil wrote, "The individual parts are functional, but the whole is quite spectacular." Immediately after launch the game had an average monthly player base of 1820.2, but lost nearly three quarters of its player base just one month later and has been steadily losing players since (with it having an average of just 109 players per month as of December 2023).
+
+
+== References ==
+
+
+== External links ==
+Official website

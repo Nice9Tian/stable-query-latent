@@ -1,0 +1,11 @@
+**Sub Rosa** is a multiplayer first-person shooter that stands out for its tense negotiations, double-crosses, and occasional high-speed car chases. Set up around competition, trust, and betrayal, the game combines action and strategy in a way that rewards both smart business decisions and quick reflexes.
+
+The game is currently in an extended and indefinite Early Access period, so players are encouraged to watch gameplay or do some research before buying. That said, its core experience is clearly defined and built around conflict-driven multiplayer modes with strong social dynamics.
+
+In **World Mode**, multiple corporations compete for money and power by controlling different colored disks through either clean trades or violent acquisitions. Both cash and disks are highly valuable, and they can be used to buy guns, cars, equipment, and clothing that help support a company’s success. Players can prosper through smooth transactions and clever dealings, or they can take a more aggressive route—though survival is always a factor, since a faster trigger only helps if you remain the last one standing.
+
+**Round Mode** expands on this formula in a round-based structure. It follows a five-day work week, and each corporation’s cumulative money over those days determines its final standing at the end of the round. This mode keeps the competitive business struggle central while adding a clear time-based progression to each session.
+
+**Eliminator Mode** shifts the focus into a hidden-role experience. One player is secretly chosen as the Eliminator and must kill the player assigned as the Savior. The Savior does not initially know their role, but another player is selected as the Protector, who does know and can periodically track the Savior. This allows the Protector to meet up with the Savior and explain their importance. Everyone else, including the Savior, appears as a Civilian and must either survive the round by avoiding the Eliminator or work together to eliminate them using a grenade.
+
+With its mix of tactical shooting, corporate competition, and social deception, **Sub Rosa** delivers a distinctive multiplayer experience built on tension, opportunism, and the constant possibility of betrayal.

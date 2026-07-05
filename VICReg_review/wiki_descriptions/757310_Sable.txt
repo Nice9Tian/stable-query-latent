@@ -1,0 +1,63 @@
+Game: Sable
+appid: 757310
+Source: Sable (video game)
+URL: https://en.wikipedia.org/wiki/Sable_(video_game)
+Match score: 5.86
+Retrieved: 2026-07-04
+--------
+Sable is an open world exploration video game developed by Shedworks and published by Raw Fury. It was released on 23 September 2021, for Microsoft Windows, Xbox One, and Xbox Series X/S, and released on PlayStation 5 on 29 November 2022.
+Players control Sable, a young girl who embarks on a coming-of-age rite of passage: a search for an appropriate mask and return to her nomadic clan. Exploring the ruined desert planet of Midden, Sable encounters several characters who help her find her place in the world, as well as giving her several tasks that often involve solving puzzles and platforming through rock formations or ancient ruins.
+
+
+== Gameplay ==
+Sable is an open world exploration video game, in which the player can roam and adventure in a non-linear way. The game has no combat or set storyline, since the narrative is explored through NPC dialogue and environmental cues, such as remnants of an ancient civilization left to interpretation. It emphasizes simple puzzle-solving and discovery, traversing sand dunes and ruins. Platforming mechanics are put into place through a stamina gauge that allows for running and climbing, as well as the ability to glide in mid-air.
+Parts of the game are customizable, such as Sable's hoverbike and clothing, including the story driven masks. Both hoverbike parts and clothing items can be acquired either by simply exploring the game's world, or by completing quests given by an array of characters, which often revolve around collecting small materials such as bugs or fruit. While clothing is purely cosmetic, with the exception of a few masks, different hoverbike parts affect how the player traverses the world of Midden, with different parts offering several degrees of maneuverability, acceleration and top speed.
+
+
+== Development ==
+Daniel Fineberg and Gregorios Kythreotis began development on Sable in 2017, working in a shed belonging to the latter's parents. The two-person indie development team is known as Shedworks. Writer Meg Jayanth also contributed to the game, while musician American singer-songwriter, Michelle Zauner, using the name of her band Japanese Breakfast, provided the game's soundtrack.
+The game's concept came from the planet Jakku on Star Wars: The Force Awakens. Its art style was inspired by the sci-fi works of Jean Giraud (who is commonly known under the name Mœbius). The game was also inspired by The Legend of Zelda: Breath of the Wild. Each of the game's environments are hand-crafted. An extensive art book titled Sable Design Works was published by Lost in Cult in 2024.
+The game premiered at the E3 2018 PC Gaming Show, where it was nominated for Best Independent Game. Originally scheduled for 2019, the game was twice delayed for a 2021 release. Its release was supported by Raw Fury and Microsoft. The game was showcased at the 2021 Tribeca Film Festival, where it competed for the inaugural Tribeca Games Award.
+
+
+== Reception ==
+
+
+=== Critical reception ===
+Sable received "generally favorable" to "mixed or average" reviews, according to review aggregator website Metacritic.
+Jonathan Peltz, writing for Wired, praised the game as "[...] gorgeous and endlessly GIF-able". Alice Bell of Rock Paper Shotgun, credited the game for looking "[...] fabulous in the flesh" and managing to meet the aesthetic expectations set by trailers and teased content. However, she faulted the game for a number of small irritations, including clunky driving mechanics and difficult navigation, comparing these to the annoyances caused by grains of sand in reality. Inverse's Tomas Franzese praised the game for its relaxing qualities. The Washington Post liked the game's approach to the post-game, saying that it adopted "one of the most easygoing approaches to an endgame I’ve come across in an open-world game".
+PC Gamer's Natalie Clayton enjoyed the various points of interest placed throughout the world, describing it as "enigmatic" and "memorable". GameSpot praised the writing of the title, especially praising how it helped normalize characters, "The writing is a strong point, too, namely because it's relatively understated. These characters are just regular people going about their lives, and this is reflected in their personable dialogue". Game Informer liked the side content of the game, noting how it created "narrative variety" and made use of unexplored parts of the map. The Guardian felt the open-ended nature of Sable's world and narrative helped set it apart from other open world games, saying that, "There are whispered points of interest, but there is no wearying to-do list, and as such your journey and destination are uniquely, wonderfully personal".
+
+
+=== Awards and accolades ===
+
+
+== Potential adaptation ==
+In October 2021, Raw Fury announced that they had entered in a first-look deal with dj2 Entertainment to develop adaptations of games including Sable, Night Call, and Mosaic for film and television.
+
+
+== Soundtrack ==
+
+Sable (Original Video Game Soundtrack) is a soundtrack album by American indie rock band Japanese Breakfast for the 2021 video game Sable. It was released digitally by Sony Masterworks and Dead Oceans on 24 September 2021, with CD copies released on 29 October 2021, and vinyl set for release on 1 April 2022. The album was preceded by the single "Glider" on 27 August 2021.
+Michelle Zauner, the band's lead singer and songwriter, was contacted by Fineberg directly to compose the soundtrack, as he was aware of her enjoyment of video games. Zauner began writing the score with concept art and some written descriptions of places in the game for inspiration and guidance. The game's developers sought someone who had not previously composed a video game soundtrack in the hopes of avoiding stylistic conventions associated with scoring games. Zauner has called the song "Better the Mask", written for the game, her "favorite song [she has] ever written as an artist.".
+
+
+=== Composition ===
+The soundtrack of Sable consists mainly of ambient-tinged songs with "new age-inspired instrumentals that nicely conjure the environmental landscapes and moods of the game play". It combines synthesizers, guitars, and both digital and analogue percussion to craft "textured and deeply enveloping soundscapes". "Glider" and "Better the Mask" are two traditional indie pop tunes, with the later inspired by 1970s singer-songwriter music. The score is mainly location-based with different tracks differentiating the in-game cycle of night and day.
+
+
+=== Critical reception ===
+Matt Collar of AllMusic said that the album "evoke[s] the poignant lyricism of a Hayao Miyazaki anime soundtrack" and praised Zauner's "ability to translate wide-eyed filmic emotions into pop magic." Pitchfork writer Zhenzhen Yu called the score "Not so much an album as the nerve system of a narrative" and said that it would be "best experienced alongside the physical act of in-game exploration."
+
+
+=== Charts ===
+
+
+== References ==
+
+
+== Further reading ==
+
+
+== External links ==
+Official website

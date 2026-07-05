@@ -1,0 +1,28 @@
+Game: Magicraft
+appid: 2103140
+Source: Magicraft
+URL: https://en.wikipedia.org/wiki/Magicraft
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Magicraft is an action roguelike video game developed by Wave Game and published by Bilibili. Released in November 2024, the game combines spell-crafting mechanics and procedurally generated levels that has drawn comparisons to titles like Noita, Hades, and The Binding of Isaac.
+
+
+== Gameplay ==
+Magicraft features twin-stick shooter combat with a focus on modular spell creation. Players combine:
+
+Spells: Over 100 base abilities including projectiles, laser beams, and summoning magic
+Wands: Customizable weapons with unique mana pools and slot configurations
+Relics: 80+ passive items that modify gameplay (e.g., automatic spellcasting, explosion modifiers)
+Key systems include:
+
+Spell chaining where modifiers affect subsequent abilities in a wand's slot sequence
+A room-based progression system similar to Hades, offering choice between combat encounters and upgrades
+Permanent unlocks including new character skins and wand slots
+
+
+== Reception ==
+As of Feb 7th 2025, the game received a "Very Positive" rating on Steam based on 10,930 reviews. Critics praised the game's build diversity but noted occasional balance issues with late-game relics. The Steam Deck compatibility received particular praise for control optimization.
+
+
+== References ==

@@ -1,0 +1,71 @@
+Game: Paradise Lost
+appid: 982720
+Source: Far Cry Instincts
+URL: https://en.wikipedia.org/wiki/Far_Cry_Instincts
+Match score: 4.00
+Retrieved: 2026-07-04
+--------
+Far Cry Instincts is a 2005 first-person shooter game developed and published by Ubisoft for the Xbox. A remake of the original Microsoft Windows version of Far Cry, Instincts is less open-ended and more linear, due to the console's reduced processing power which prevents the full rendering of the Windows version's vast islands and landscape. However, Instincts adds new multiplayer modes, weapons, and 'feral abilities', the latter being reflected in the modified storyline. Ports of the game for the PlayStation 2 and GameCube were also planned, but were ultimately cancelled. Instincts received generally positive reviews from critics.
+A sequel, Far Cry Instincts: Evolution, was released for the Xbox in 2006. Far Cry Instincts: Predator, a compilation of Instincts and Evolution for the Xbox 360, was released alongside Evolution. An arcade version of Instincts developed by Global VR was released in 2007 under the title Paradise Lost.
+
+
+== Gameplay ==
+
+Being a remake, Far Cry: Instincts' gameplay is identical to that of the PC version of Far Cry. However, because of the Xbox's technical limitations, the game is more linear and does not offer the same level of freedom. Instincts introduces several features absent from the original Far Cry, most notably the "Feral Abilities" and a trap system that allows the player to create a booby trap by wrapping a spiked tree branch around nearby foliage. When an unsuspecting NPC walks by, they are killed by the branch-whip. Claymore mines are also available, and can be set up in the paths of enemies for devastating results. These traps can be employed in multiplayer as well.
+There is also a map editor that allows the player to create their own maps with access to many vehicles, guns, buildings, and trees, as well as the ability to change the landscape. Water cannot be added; it is at a constant height and a player can choose whether or not water is accessible by making the land higher or lower. They may upload the maps and use them on Xbox Live to play against friends. While Xbox Live for the original Xbox was shut down in 2010, Far Cry Instincts is now playable online using replacement online servers for the Xbox called Insignia.
+
+
+== Plot ==
+After being dishonorably discharged from the United States Navy for his illegal actions, Jack Carver (voiced by Stephen Dorff) became a gunrunner in Manhattan, until he was forced out of business by a gang, who performed a hit on a Mafia heir, using weapons supplied by Jack. Consequently, a price was put on his head by the Mob, and he was forced to flee the United States and settle in Micronesia. Here, Jack purchased a used boat from a government auction and started another business: ferrying tourists and diving clubs around the area. Eventually, a journalist named Valerie Cortez offered Jack a large sum of money for taking her to a remote archipelago known as "Jacutan". Jack accepted the job, albeit with caution.
+The game begins as Jack and Val arrive at Jacutan. After Val takes off on her own with a jet ski, Jack's boat is destroyed by UH-60 Black Hawk helicopters, forcing him to take cover inside a nearby wrecked Japanese aircraft carrier. After acquiring a headset, Jack begins to communicate with a mysterious man calling himself "Doyle", who reveals that Val is an undercover CIA agent and came to Jacutan to rescue him. Doyle has been on a mission to expose the works of a mad scientist named Dr. Krieger, who is working on a serum to enhance one's physical abilities and "unlock" hidden animal traits in them.
+Doyle convinces Jack to find and rescue Val, who has been captured by Krieger's mercenaries. While covering Val, Jack himself is captured by Krieger's right-hand man, ex-Apartheid Colonel Richard Crowe, and taken to Krieger, who notes Jack's resourcefulness and tenacity and remarks that he would make a good test subject. Jack is injected with Krieger's serum and is to be transported to an observation area when he recovers prematurely and escapes. To his shock, Jack discovers that he now has "feral abilities", such as increased speed, night vision and a violent melee attack. However, along with these powers comes an implant designed to regulate the serum's effects and allows for specialized weapons to be used against Jack.
+Doyle commands Jack to find him so that the implant can be removed. Along the way, Jack must prevent a mercenary computer programmer from deciphering Val's pocket PC, which would blow Doyle's cover. Descending into an old World War II-era Japanese bunker to stop the decryption, Jack is cornered by the mercenaries as he attempts to escape. He retreats through an old underground mining complex and follows Doyle's instructions to the main research facility. Jack then makes his way to the facility, where he discovers the extent of Krieger's work and the mutant monsters he has created. While in the facility, Jack discovers Crowe is gathering the mutants for an unknown purpose. After finally meeting with Doyle and having the implant removed, Jack begins to exhibit an uncontrolled evolution (represented in-game by Jack's adrenaline bar now decreasing with each use of one of the powers, and the ability to carry mounted weapons like a .50 caliber machine gun).
+As Jack escapes the research facility, he discovers that Crowe has taken Doyle and the mutant serum and has unleashed the mutants in a plot to betray Krieger. Jack must fight through the middle of a war between Crowe's mercenaries, the feral mutants and an elite group of special forces under Krieger's personal command, under orders to "sanitize" Crowe's troops. Rescuing Doyle, Jack discovers that Crowe has injected himself with a quadruple dose of the serum Jack received and without an implant. Assuming control of the "Alpha" creatures, the most powerful and intelligent mutants with abilities similar to Jack's own, Crowe has gone straight to Kreiger's base of operations. Jack follows him and fights his way to Krieger's mansion atop an active volcano, where he battles and defeats the physically deformed Crowe. Krieger, in a last-ditch effort to use the Alphas against Jack, realizes that they now view Jack as their leader due to his victory over Crowe. The mutants turn on Krieger and kill him, viewing him as a threat to Jack, and thus allow him to escape as the volcano erupts.
+Jack is able to retreat onto a Black Hawk piloted by Val and Doyle, who promise to pay for a new boat to replace his destroyed one. Doyle also promises that they "can do one better" and slides a metal case to Jack, who opens it and laughs cryptically at the unseen contents as the helicopter flies away.
+
+
+== Sequel and remakes ==
+
+
+=== Evolution ===
+
+A sequel to Far Cry Instincts, sharing the same name except for the addition of the subtitle Evolution, was released for the Xbox on March 28, 2006. In addition to a new single-player campaign, which is considerably shorter than that of Far Cry Instincts, the game also features new weapons and vehicles, a bonus multiplayer mode, and an expanded map-maker. Evolution is not backward compatible with the Xbox 360, and maps that are created on the Xbox version of Instincts cannot be transferred to the Xbox 360 version.
+The storyline of Evolution picks up sometime after the events of Instincts. Jack is hired by a woman named Kade for an arms deal between pirates and the government in Micronesia. However, the deal is ambushed by rebels led by a native Chieftain named Semeru, who along with his elite warriors, exhibit the same feral abilities as Jack, who is framed for the attack. After fleeing to a safehouse with Kade, Jack is confronted by Doyle, who is here for damage-control. He offers Jack and Kade amnesty in exchange for their help in destroying a refinery controlled by the rebels. After successfully doing so, Doyle is wounded and Kade is captured by the rebels. Jack saves Doyle, due in part to him knowing the way out of the jungle, but while finding transport, Doyle is also captured. After tracking Doyle's blood through the jungle and a base built in the forest canopy, Jack finds Doyle dead at the footsteps of a mountain temple. Jack then makes his way through the temple where he encounters Semeru again. Semeru taunts Jack, saying that without focus or devotion, he is just a fake with powers he does not deserve, before revealing that Kade offered to give him part of the money from the deal in exchange for letting her go. However, Semeru refused to release her unless she helped him kill Jack. Semeru then overpowers Jack before Kade stabs the latter with a knife laced with a poison that neutralizes his feral abilities. Despite losing his powers, Jack is able to defeat Semeru, who dies after being impaled on bamboo rubble. Jack then confronts Kade, who pleads that she did not know what else to do to save herself. Instead of killing Kade, Jack gives her back the money from the deal, saying "Save your tears. In another time I would've done the same. It's all too... human".
+A Wii remake of Evolution, titled Far Cry Vengeance and featuring additional levels, weapons, vehicles, and changed controls, was released on December 12, 2006, in North America, January 5, 2007, in Europe, and February 28 in Australia.
+
+
+=== Predator ===
+
+Far Cry Instincts: Predator was released for the Xbox 360 simultaneously with Evolution. It includes graphically enhanced versions of both Instincts and Evolution.
+
+
+=== Paradise Lost ===
+Paradise Lost is a rail shooter arcade game port of Far Cry Instincts developed by Global VR and published by Ubisoft in 2007. Its light guns are similar to those of Aliens: Extermination. Players use stationary turrets armed with rockets and grenades as power-ups.
+
+
+== Reception ==
+
+
+=== Far Cry Instincts ===
+
+Far Cry Instincts received "generally favorable" reviews, according to review aggregator Metacritic.
+
+
+=== Evolution ===
+
+Evolution received "generally favorable" reviews, according to review aggregator Metacritic.
+
+
+=== Predator ===
+
+Predator received "generally favorable" reviews, according to review aggregator Metacritic.
+
+
+== References ==
+
+
+== External links ==
+Official website via Internet Archive
+Far Cry Instincts at MobyGames
+Far Cry Instincts: Evolution at MobyGames
+Far Cry Instincts: Predator at MobyGames

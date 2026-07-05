@@ -1,0 +1,47 @@
+Game: Dinkum
+appid: 1062520
+Source: Dinkum (video game)
+URL: https://en.wikipedia.org/wiki/Dinkum_(video_game)
+Match score: 6.13
+Retrieved: 2026-07-04
+--------
+Dinkum is a 2025 survival life simulation game designed by Queensland-based indie developer James Bendon and published by Krafton for Windows and Nintendo Switch. In the game the player collects resources to build a town on a remote island inspired by the Australian outback. The game was the first commercial title of Bendon, who developed the game over an eight year process, drawing inspiration from Australian landscapes. 
+An early access version of the game was published in 2022. Upon release, Dinkum was commercially successful and received generally positive reviews, with praise directed towards the game's environmental design and range of gameplay features, although views were mixed on the degree the game was an innovation or repetition of other life simulation titles such as Animal Crossing or Stardew Valley.
+
+
+== Gameplay ==
+
+The objective of Dinkum is to explore and expand a small town by undertaking various activities, including farming, mining and fishing. Gameplay is set on a randomly generated island map, featuring four environments: a cold, desert, bushland and tropical biome. 
+The game features survival elements, with most actions depleting energy that must be replenished by food or sleep, otherwise the player character will pass out. 
+Players build their town by constructing new buildings, sourced from materials using tools to extract natural resources from around the island. Mining allows players to use a pickaxe or hammer to collect Shiny Stones, from which ores can be extracted using a Stone Grinder to use in construction or sell for profit. 
+Players can farm by acquiring a shovel or hoe to dig holes and till soil, and then planting seeds found from throughout the island. Farming allows players to acquire produce to cook food using a cooking station, sell for profit, or plant trees for construction materials.
+
+
+== Plot ==
+The player was born in South City, a cold, industrial city, and accepts a notice from an old lady named Fletch seeking assistance for an expedition to a remote island, named by the player. The player leaves for the island on an airship. Upon arriving at the island, Fletch instructs that she needs the player's help to populate the island. 
+
+
+== Development and release ==
+Dinkum was created by Australian indie developer James Bendon, a Queensland-based graphic designer and illustration graduate. Dinkum was created by Bendon over an eight-year development process starting in November 2017, quitting his career in retail to develop the game. Having minimal development background, Bendon taught himself 3D modelling and programming in the game's Unity engine. 
+The game's title is a derivative of fair dinkum, a common Australian slang term meaning something genuine or authentic. The environmental design was inspired by the Australian landscape, including red soil and eucalyptus for an "Australian feel". 
+Announced alongside the release of a game trailer at the IGN Expo in June 2022, an early access version of the game was released on 14 July 2022.
+Dinkum was released on Steam on 23 April 2025, with the full release including an update introducing a Creative Mode that allows free building and removes gameplay restrictions. In September 2025, a Nintendo Switch version was announced at Nintendo Direct for release on 6 November 2025.
+
+
+== Reception ==
+
+Dinkum received generally positive reviews, with many critics comparing the game's design to life simulation titles including Stardew Valley and Animal Crossing. 
+In Japan, four critics from Famitsu gave the game a total score of 32 out of 40, with each critic awarding the game an 8 out of 10.
+Digitally Downloaded praised the game's early access version's "wholesome and good-natured" tone, highlighting the "organic" and "genuine" use of the Australian setting as a "love letter to [Australia's] unique natural aesthetics". 
+Shaun Cichacki of Vice commended the game's "quality and quantity", citing its "polish", the variety of its "massive" world, and gameplay features as "astounding" for a title developed by one person.
+Ashley Bardhan of Kotaku felt the game was "by no means reinventing the wheel", but praised the game as "cute and compact" its "original" environment and "enjoyably repetitive and flexible" gameplay. Similarly, describing the game as an "iteration and innovation" of previous life simulation titles, Leah Williams of Games Hub considered Dinkum was "at its best when it breaks away and explores new themes and mechanics", citing a greater range of activities and faster pace.
+The game received criticism for its omission of indigenous Australians in its setting, with Bendon stating that the game was intended to be set in an imitation of Australian environment, and considered it "inappropriate to take elements from [Indigenous] culture" as a non-Indigenous person.
+Bendon stated that Dinkum was a commercial success and exceeded sales expectations, with the game selling over 350,000 units in the first month of early access, and over one million units by September 2025.
+
+
+== References ==
+
+
+== External links ==
+Official website 
+Dinkum at MobyGames

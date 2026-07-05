@@ -1,0 +1,5 @@
+*Vesper Twelve* is a real-time, top-down interactive thriller built around an accessible click-and-drag interface. It places the player in a tense domestic setting where an evening meant to be romantic abruptly collapses into violence after a police detective forces his way into the home, accuses the protagonist’s spouse of murder, and ends the night in death.
+
+The core premise centers on a repeating twelve-minute time loop. After each fatal sequence, the player is sent back to the exact moment the front door is opened, forced to relive the same events again and again. Progress depends on using knowledge gained from previous loops to alter decisions, anticipate outcomes, and eventually break free from the cycle.
+
+The experience is structured as a psychological thriller with a tightly confined setting and escalating tension. Its design emphasizes observation, experimentation, and timing, while its atmosphere draws on dreamlike unease, claustrophobic suspense, and a fragmented narrative structure.

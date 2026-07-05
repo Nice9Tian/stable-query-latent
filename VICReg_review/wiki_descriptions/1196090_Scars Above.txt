@@ -1,0 +1,28 @@
+Game: Scars Above
+appid: 1196090
+Source: Scars Above
+URL: https://en.wikipedia.org/wiki/Scars_Above
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Scars Above is an action-adventure / third-person shooter video game developed by Mad Head Games and published by Prime Matter in 2023.
+
+
+== Gameplay ==
+After examining a structure in Earth's orbit with her crew, scientist Kate Ward wakes alone on an alien planet.  Players control Ward as she attempts to learn what happened and how to return.  Scars Above is an action-adventure game played from a third-person perspective.  Ward must battle her way through the hostile creatures on the alien planet using weapons and utilities that she crafts.  Ward can heal herself and recharge her devices using alien monoliths, but doing so requires her to backtrack and fight through enemies that she previously defeated.  The monoliths are also checkpoints that she returns to when she dies.
+
+
+== Development ==
+Mad Head Games is a game development studio with offices in Belgrade, Novi Sad, and Sarajevo.
+Prime Matter released it for PlayStation 4 and 5, Xbox One and Series X/S, and Windows on February 28, 2023.
+
+
+== Reception ==
+Scars Above received mixed reviews on Metacritic.  IGN said it "shows a lot of potential" but the overpowered weaponry and gadgets cause it to become boring.  NME praised its Soulslike combat but said the exploration and puzzles were at times confusing.  Hardcore Gamer called it "almost aggressively unoriginal" that "rarely, if ever, takes any sort of risks".  Push Square praised what they felt was a likeable protagonist and interesting premise, but they disliked the animations, combat, variation among enemies, and environmental design.
+
+
+== References ==
+
+
+== External links ==
+Official website

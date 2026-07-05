@@ -1,0 +1,35 @@
+Game: Industries of Titan
+appid: 427940
+Source: Industries of Titan
+URL: https://en.wikipedia.org/wiki/Industries_of_Titan
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Industries of Titan is a city-building video game developed by Brace Yourself Games.  Players build a colony on Saturn's moon Titan.  It includes elements of real-time strategy games, but these can be disabled.
+
+
+== Gameplay ==
+In the future, humanity has colonized Titan, one of Saturn's moons.  Players manage a corporate-controlled colony.  Their colonists consist of citizens, who make money for players by being forced to watch advertisements, and employees, who are drones that perform work.  The ruins of nearby failed colonies can be searched for resources, and once players accumulate enough resources, they can build factories.  Some factories and buildings cause a NIMBY effect or pollute, and cleaning pollution can change Titan's atmosphere, reducing efficiency.  Players also must defend their colony from armed rebels using elements of real-time strategy games, though these attacks can be disabled.  A tech tree allows players to unlock more buildings and options, including spaceships to defend their colony.  A campaign challenges players to gain a seat on the corporate council.
+
+
+== Development ==
+Additional development was done by the Malaysian company Streamline Studios.  After entering early access in April 2020, Industries of Titan was released on January 31, 2023.
+
+
+== Reception ==
+
+
+=== Early access ===
+In a review published by Eurogamer, Rick Lane said it has "the potential to be one of the best" management games if it avoids overbroad parody of cyberpunk-themed capitalism.  PC Gamer and Rock Paper Shotgun said that it was very barebones in 2020 and ran out gameplay quickly.  However, they said it had enough potential to be worth watching.  These early versions lacked campaigns or a tech tree.
+
+
+=== Release version ===
+After playing the final release version, PC Gamer wrote that Industries of Titan "starts strong and has some bold ideas", but they felt Brace Yourself Games focused on the wrong gameplay elements by not making the city-building deeper and putting too much effort into the rebel attacks.  Rock Paper Shotgun called it "probably the prettiest strategy game ever" but said it gives the "persistent feeling that it's far less than the sum of its parts".
+
+
+== References ==
+
+
+== External links ==
+Official website
+Industries of Titan at Metacritic

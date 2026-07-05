@@ -1,0 +1,33 @@
+Game: Besiege
+appid: 346010
+Source: Besiege (video game)
+URL: https://en.wikipedia.org/wiki/Besiege_(video_game)
+Match score: 6.36
+Retrieved: 2026-07-04
+--------
+Besiege is a vehicle-building sandbox video game based around medieval siege engines, developed and published by Spiderling Studios. It was released for Windows, macOS and Linux in February 2020 at the conclusion of a five-year long early access phase. A console version for Xbox One and Xbox Series X/S was released in February 2022, and an expansion pack titled The Splintered Sea was announced in April 2024. A version for PlayStation 4, PlayStation 5 and Switch was released on December 12, 2024. The game has received widespread praise, citing the wide range of experimentation available to players.
+
+
+== Gameplay ==
+
+Besiege allows the player to build various vehicles and contraptions within a medieval fantasy setting with few limitations beyond a player's own skill and creativity. Basic components include wooden blocks and different types of wheels, with further options including complex mechanical components, cannons, bombs, stones, or hot-air balloons. Later updates would also introduce components such as timers, logic gates, or proximity detectors to automatically simulate player inputs. In addition to an open-ended sandbox mode, the game features a single-player campaign with a total of 55 levels spread over four themed islands; Each level features a unique environment and objective, ranging from puzzles based around manipulating magical artifacts to combat encounters requiring the player to defeat enemies (usually medieval-styled troopers) or destroy buildings.
+An update in December 2017 added a level editor, allowing to create custom map environment, and multiplayer capabilities, such as pitting the vehicle creations against each other, or players destroying buildings of one another. With these additions, players developed systems to run tournaments similar to the television show BattleBots, pitting their Besiege creations in one-on-one matches with others to try to take the other out. 
+Besiege also supports modding through Steam workshop, where players can add and share their created vehicles, maps, custom skins for details, completely new details and other minor in-game mechanic changes, increasing the capability of the editor.
+
+
+== Development ==
+The game was first released for Linux, OS X and Windows via early access on 28 January 2015 before officially releasing on 18 February 2020. A console version is set to be released for Xbox One and Xbox Series X/S on 10 February 2022. It features reworked user interface, photo mode, and a different Workshop for sharing user creations. However, it does not have the multiplayer or level editor functionality of the PC version. The iOS and Android port was released on November 18, 2025.
+Spiderling Studios announced Besiege: The Splintered Sea, the first ever expansion pack for the game, on April 9, 2024, slated for release on May 24. The Splintered Sea adds water physics and buoyancy mechanics to the game, with 10 new maritime levels and new blocks allowing players to build sailboats or submarines.
+Another DLC, titled Besiege: The Broken Beyond was announced on February 10, 2026, and takes the place beyond the environment of the planet, allowing players to exit the atmosphere and use their built vehicle to explore space using relevant blocks and mechanisms; instead of medieval warriors and pirates, The Broken Beyond will feature fights with aliens. The DLC is planned to be released on June 22.
+
+
+== Reception ==
+PC Gamer praised the "fun concept, superb creation tools, and finely crafted puzzles" of Besiege, offering an impressive amount of content for its price, and featuring unique and creative gameplay, with each problem being possible to solve in many different ways. The game collected about 50,000 reviews on Steam, with more than 95% of them being positive.
+Marsh Davies of Rock, Paper, Shotgun highlighted the "robust" alpha version of the game, comparing its "bouncily caricatured" science to a 12th-century version of Kerbal Space Program. Davies also praised Besiege's stylized graphics and sound and its "weak-at-the-knees beautiful" user interface. Rock, Paper, Shotgun later published a review of the release version by Jay Castello, who admired the game varieties that kept her engaging and trying to construct the new better siege engines. Jay criticised the lack of guidance in the main game, but noted the game's strong community support with mods, guides, and tricks available online.
+
+
+== References ==
+
+
+== External links ==
+Official website

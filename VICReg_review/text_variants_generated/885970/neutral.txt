@@ -1,0 +1,9 @@
+**Total War: ROME REMASTERED** is a remastered edition of the classic strategy game set in the Roman era. It includes the **Alexander** and **Barbarian Invasion** DLCs, and also provides a copy of the original **ROME: Total War Collection** if the player does not already own it.
+
+The remaster focuses on visual and gameplay updates while preserving the core experience of the original game. Its graphical improvements include **4K optimization**, **ultra-widescreen support**, and **native UHD resolution support**. The visual upgrade also covers **re-modelled buildings and objects**, along with environmental effects such as **dust clouds** and **heat haze**. Campaign maps have been refreshed with **new high-resolution models**, and units have been **remodelled and retextured** for battlefield presentation.
+
+ROME REMASTERED also adds several modern features. The in-game camera has been improved with **map rotation** and a **wider zoom level** in Campaign mode. New **heat maps** and **icon overlays** help present gameplay information such as diplomacy and security. In battle, players gain additional control through a **new tactical map**, **unit displays**, and **range markers**.
+
+The game also expands on its mechanics. Players can now field **16 additional factions** that were previously locked, bringing the total to **38 playable factions**. It also introduces **cross-platform multiplayer** between **Windows, macOS, and Linux**, allowing players to use their chosen faction against friends across those platforms. A new agent type, the **Merchant**, has been added as well. Merchants can be sent around the world to **create trade links**, **access resources**, and **buy out rivals**, supporting income generation and economic dominance.
+
+*Note: ROME: Total War Collection is only playable on Windows. 4K enhancements require the Enhanced Graphics Pack.*

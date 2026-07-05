@@ -1,0 +1,41 @@
+Game: Rhythm Doctor
+appid: 774181
+Source: Rhythm Doctor
+URL: https://en.wikipedia.org/wiki/Rhythm_Doctor
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Rhythm Doctor is a 2025 one-button rhythm game developed by 7th Beat Games. Set in a hospital, the player must defibrillate patients in sync with their heartbeats. The game has received favorable reviews.
+
+
+== Gameplay and plot ==
+In the game, the player takes the role of an intern at Middlesea Hospital who remotely operates an experimental defibrillator in which the player must press a single button in sync with the patients' heartbeats. The intern observes the hospital through security cameras, and is represented in-game as an elongated arm. While the hospital staff can talk to the intern, the intern cannot, a situation that IGN described as "part of this world but not of it".
+While the core gameplay consists of pressing the button every seventh beat, later levels introduce challenges like polyrhythms, irregular time signatures, silent beats, and visual distractions like static and moving game windows. Each level begins with a tutorial on new mechanics and audio cues, and some come with a harder "Night Shift" variant. The game also supports a level editor, with community-made levels being hosted on Steam Workshop.
+
+
+== Development ==
+Rhythm Doctor was conceived by then-university student Hafiz "Fizzd" Azman, with an early prototype being made in 2011. The decision to use a single-button control scheme was inspired by Nintendo's Rhythm Heaven's two-button scheme, allowing it to be played without sight entirely. With the help of his friend Winston Lee, Fizzd released a free browser-only demo in 2012 on the online forum TIGSource. The demo, built in Adobe Flash, was praised by Indiegames.com, Eurogamer, and Destructoid. By popular request, a level editor was added, sparking the creation of hundreds of community levels, some of which the developers paid to be included to the main game.
+In 2014, Rhythm Doctor became a nominee for the 'Student Showcase' category at Independent Games Festival, a part of annual Game Developers Conference, motivating the duo to continue developing the game. Fizzd recalled he submitted the required trailer with only seconds to spare. At that GDC, the duo met Giacomo Preciado, who later joined 7th Beat Games.
+The team released its first title A Dance of Fire and Ice in 2019. In February 2021, Rhythm Doctor entered early access on Steam. The game was fully released on December 7, 2025. 7th Beat Games has collaborated with other rhythm games like Muse Dash to create collab levels.
+
+
+== Reception ==
+The game received generally favorable reviews from critics. Multiple reviewers noted the game's difficulty, even during its demo phase. Many praised its ability to tell a touching story even as a rhythm game, with This is Game describing it as musical-like.
+
+
+=== Accolades ===
+
+Source
+
+
+== See also ==
+List of music video games
+
+
+== References ==
+
+
+== External links ==
+Official website
+2012 forum post by Fizzd announcing the game
+Talk by Fizzd during 2021 Taipei Game Developers Forum

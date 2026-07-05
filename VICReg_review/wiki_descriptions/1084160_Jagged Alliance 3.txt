@@ -1,0 +1,38 @@
+Game: Jagged Alliance 3
+appid: 1084160
+Source: Jagged Alliance 3
+URL: https://en.wikipedia.org/wiki/Jagged_Alliance_3
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Jagged Alliance 3 is a 2023 tactical role-playing video game developed by Haemimont Games and published by THQ Nordic, initially for Windows, but later released on PlayStation 4, PlayStation 5, Xbox One and Xbox Series X/S. The game is the fourteenth entry in the Jagged Alliance series, and the first mainline entry game since Jagged Alliance 2.
+The game's story takes place in the fictional African country of Grand Chien, in which a rogue paramilitary force has kidnapped its president, leading several groups to take advantage of the chaos this caused for their own good, and forcing the president's daughter to seek outside help to rescue her father. To this end, the player hires a variety of different mercenaries, each with their own strengths and weaknesses, to fight back against the paramilitaries, meeting a variety of different characters and exploring different regions including jungles, savannah plains, settlements, and highlands, and engaging in a variety of different quests.
+A strategic map allows players to send squads of mercenaries to different areas of Grand Chien, or to conduct different operations such as repairing items, training militia, or treating wounds. A tactical screen is used when mercenaries explore a sector of the map, engaging enemies in turned-based combat or eliminating them out of combat through stealth, with players able to give individual mercenaries their own orders in and out of combat, such as crouching, unlocking a door or container, shooting an enemy, talking to an NPC, and so forth. The game features a variety of real-world weapons, which can be modified to enhance their capabilities with add-ons such as shortened barrels, different gun stocks, suppressors and scopes, along with armour and various items such as grenades, crowbars and first aid kits.
+Jagged Alliance 3 took several years to move beyond the concept stage, switching between different developers, before development began in 2021. The final version received positive reviews from critics.
+
+
+== Gameplay ==
+Played from an isometric perspective, Jagged Alliance 3 is a turn-based tactics video game in which the player issues commands to a squad of mercenaries. Each member of the player's squad has their own unique backstories and personalities. The game features a roster of 40 mercenaries, including several returning characters such as Vicki Waters, Ivan Dolvich and Fidel Dahan. Weapons can be customized and the mercenaries can aim at individual body parts of an enemy. They can also be looted for their resources. Players can access a dynamic campaign map, which will provide more context about each individual turn-based battle, and how the enemy forces react to them as they attempt to retake these territories. Players will gain intel as they progress, thus unlocking additional side missions and opportunities. As the mercenaries level up, they will also unlock new skills and abilities. The game features a cooperative multiplayer mode.
+
+
+== Synopsis ==
+The fictional country of Grand Chien has been in chaos following the kidnapping of its president by a rogue paramilitary force known as "the Legion". With their remaining resources, the president's daughter hires a group of elite mercenaries with help from the Adonis Corporation, who will attempt to rescue the president and bring order to the country.
+
+
+== Development ==
+Jagged Alliance 3 was first announced in 2004. Strategy First and Game Factory Interactive initially partnered with Russian studio MiST Land South to produce a sequel to the game. However, a year later, Strategy First withdrew the title from MiST Land South and began developing the title internally. In December 2006, Strategy First outsourced Jagged Alliance 3 again. The publisher, along with Russian developers Akella and F3games, were to create the game, setting an approximate release date of late 2008. As of October 2008 the game had been delayed again and Akella's website was displaying a release date of Q1 2010, but the studio also stopped developing the game in 2009.
+On March 9, 2010, German outfit bitComposer Games (now bitComposer Interactive) picked up the rights to the PC strategy series and started "preliminary development" on the third full game for release in 2011.
+In August 2015, Nordic Games acquired the rights from bitComposer during their insolvency.
+On September 17, 2021, during the THQ Nordic 10th Anniversary Digital Showcase Jagged Alliance 3 was announced for PC, now in development by Haemimont Games, the developer of the Tropico series. Haemimont Games initially pitched a spin-off project to THQ Nordic, but the publisher was very impressed by the studio's work and instead recruited them to create a mainline sequel instead. THQ Nordic recognized that previous attempts at reviving the series had received a very mixed reception and Jagged Alliance 3 was designed to cater to the "hardcore" fans of the series. Unlike other strategy games such as the XCOM series, Jagged Alliance 3 will not inform players regarding the chance to hit an opponent or their responses to attack. The team believed the franchise should be about responding to unpredictable and chaotic combat situations, and an over-abundance of information may cause players to be too cautious and calculating. The game was released on July 14, 2023 for Windows, and on November 16, 2023 for PlayStation 4, PlayStation 5, Xbox One, and Xbox Series X/S. Modding tools were released for the game in February 2024.
+
+
+== Reception ==
+
+Jagged Alliance 3 received "generally favorable reviews", according to review aggregator Metacritic.
+
+
+== References ==
+
+
+== External links ==
+Official website

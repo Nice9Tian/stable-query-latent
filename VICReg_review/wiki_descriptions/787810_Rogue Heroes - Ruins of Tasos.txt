@@ -1,0 +1,27 @@
+Game: Rogue Heroes: Ruins of Tasos
+appid: 787810
+Source: Rogue Heroes: Ruins of Tasos
+URL: https://en.wikipedia.org/wiki/Rogue_Heroes:_Ruins_of_Tasos
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Rogue Heroes: Ruins of Tasos is an action-adventure game developed by Heliocentric Studios and released by Team 17 in 2021.
+
+
+== Gameplay ==
+When a great evil rises in the world of Tasos, its goddesses seal it in four dungeons.  The goddesses send heroes into the dungeons to defeat the evil forces once it rises again.  Players control one of those heroes, which can be any of six character classes.  Rogue Heroes is an action-adventure game in the style of The Legend of Zelda, which was a major influence on the developers.  It incorporates some roguelite features, such as procedural generation of dungeons, but it does not have permadeath.  Upon dying, the player is teleported back to town, where they can spend their loot.  The game has an overworld that can be explored, and the player's town can be extensively upgraded by trading in their loot.
+
+
+== Development ==
+The idea for Rogue Heroes came when Josh Gump, a programmer at Heliocentric Studios, was experimenting with procedurally generated dungeons in the style of the Zelda series.  To keep the dungeons from becoming a random mess of interconnected rooms, they used templates to make the rooms more interesting.  Each template has variations and becomes less likely to be seen again once encountered.  Later in the development, they added cooperative multiplayer after seeing that feature missing from other Zelda-inspired games.  The game was successfully crowdfunded in 2018.  Team 17 released the game for Windows and Nintendo Switch on February 23, 2021.
+
+
+== Reception ==
+Rogue Heroes received positive reviews on Metacritic for both Windows and Nintendo Switch. Daniel Tack wrote in Game Informer that the Windows version is "simple yet satisfying" and "pixelated comfort food" for fans of its inspirations. Reviewing the Nintendo Switch version, P. J. O'Reilly of Nintendo Life wrote that it is "a delightful Zelda-inspired roguelite that's chock full of secrets, surprises, and some top-notch dungeon crawling action". Nintendo World Report's reviewer, Joel A. DeWitte, wrote, "This is a no-brainer for classic Zelda fans or anyone looking for co-op fun, and it's absolutely been the best gaming experience so far for me in 2021." In his review for Pocket Tactics, Sean Martin said the single-player component is not "especially engrossing", but he recommended it for the co-operative multiplayer.
+
+
+== References ==
+
+
+== External links ==
+Official website

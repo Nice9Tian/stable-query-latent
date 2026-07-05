@@ -1,0 +1,41 @@
+Game: Medal of Honor: Above and Beyond
+appid: 1402320
+Source: Medal of Honor: Above and Beyond
+URL: https://en.wikipedia.org/wiki/Medal_of_Honor:_Above_and_Beyond
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Medal of Honor: Above and Beyond is a 2020 first-person shooter virtual reality game developed by Respawn Entertainment and published by Electronic Arts. The game was released on December 11, 2020. It is the first release in the Medal of Honor video game series since 2012's Medal of Honor: Warfighter.
+As part of its Gallery mode, Above and Beyond includes the short documentary Colette, which won the Academy Award for Best Documentary Short Subject at the 93rd Academy Awards. While not mentioned by name in the Academy citation, Medal of Honor: Above and Beyond is the first video game to receive an Oscar nomination for its content.
+
+
+== Gameplay ==
+The game takes place in North Africa, Free France, Norway, and Nazi Germany during World War II, taking the franchise back to its roots. Protagonists in the game include an OSS officers, US Army Air Force pilots, US Navy sailors, US Marines, US Army soldiers, and French Resistance fighters – who all fight against Wehrmacht (Heer, Luftwaffe, Kriegsmarine, and Afrika Korps), Waffen-SS, Gestapo, and other Nazis. The game also features multiplayer modes.
+
+
+== Development ==
+Respawn Entertainment served as the game's developer. The core team of the studio previously worked on Medal of Honor: Allied Assault. Medal of Honor: Above and Beyond was not initially planned to be a VR game, but the developers pivoted to Oculus Rift after meeting and discussing the game with Facebook executives. It was released for the Oculus Rift and Steam VR on December 11, 2020. Oculus added that it was one of the most expensive productions ever released for VR platforms. The game was built using the Unreal Engine.
+
+
+== Gallery ==
+As players progress in the game, they gain access to the Gallery, a collection of short documentaries featuring veterans of World War II. While filming the documentaries for the Gallery mode, Respawn partnered with Honor Flight to bring the veterans interviewed to the locations of many historic events they experienced and interviewed them there. Vignettes of the Gallery, which includes more than 90 minutes of footage, premiered at short film festivals such as the Big Sky Documentary Film Festival in 2020.
+
+
+=== Colette ===
+
+Colette is a 24-minute short documentary directed by Anthony Giacchino and produced by Alice Doyard and Annie Small as an installment in the Gallery series. The film follows former French Resistance member Colette Marin-Catherine as she travels to Germany for the first time in 74 years. Her visit is inspired by a young history student who enters her life and convinces her to visit the Mittelbau-Dora concentration camp where her brother died at the hands of the Nazis.
+Of the Gallery shorts, Colette garnered particular recognition for its cinematic value. It won the award for Best Short at the Big Sky Festival, making it eligible for submission to the American Academy of Motion Picture Arts and Sciences for awards consideration. Subsequently, Colette was nominated for the Academy Award for Best Documentary Short Subject at the 93rd Academy Awards, the first film produced by a video-game studio to receive an Oscar nomination, and it would later win the award.
+
+
+== Reception ==
+
+Above and Beyond received "mixed or average" reviews from critics according to review aggregator Metacritic, with an average of 67 out of 100. Fellow review aggregator OpenCritic assessed that the game received weak approval, being recommended by 35% of critics.
+It was listed by Valve as one of the bestselling games on Steam throughout the month of December 2020.
+
+
+== References ==
+
+
+== External links ==
+
+Official website

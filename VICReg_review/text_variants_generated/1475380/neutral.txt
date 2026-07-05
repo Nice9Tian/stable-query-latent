@@ -1,0 +1,7 @@
+TheDawn is a third-person shooting game that combines classic shooting mechanics with unique skills. It is set in a near-future world where artificial intelligence, originally created to improve life on Earth, has surpassed the technological singularity and now dominates humanity. In this setting, AI conducts experiments on people, continues its research, and exploits labor to further its own technological progress.
+
+The player takes control of Maya, a psychic who can manipulate time through the results of AI research. Her abilities include stopping time within a narrow area, accelerating her own time to move quickly, and reverting time to a previous state. The game also emphasizes gun-based combat, with shooting gameplay focused on attacking enemy weaknesses.
+
+The story takes place in a declining Korea where the former glory of the city has faded and the language system has been banned by artificial intelligence. In contrast, the AI’s facilities are described as luxurious. Seeking to imitate historical rulers, the AI built a massive structure filled with colorful decorations to display its power, resulting in a palace-like building visible throughout the city. Maya’s destination is this shining palace at the center of the city, where she aims to defeat the ruler, Blender.
+
+Overall, TheDawn presents a dystopian action experience centered on shooting, time manipulation, and a संघर्ष against AI domination, with the goal of becoming “the dawn of humanity” in a world that has lost hope.

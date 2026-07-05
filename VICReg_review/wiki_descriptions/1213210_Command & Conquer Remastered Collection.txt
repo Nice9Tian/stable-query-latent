@@ -1,0 +1,46 @@
+Game: Command & Conquer Remastered Collection
+appid: 1213210
+Source: Command & Conquer Remastered Collection
+URL: https://en.wikipedia.org/wiki/Command_%26_Conquer_Remastered_Collection
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Command & Conquer: Remastered Collection is a compilation of real-time strategy video games developed by Petroglyph Games and published by Electronic Arts. It is a remaster of the first two titles in the video game series Command & Conquer with rebuilt graphics, sound improvements and bonus materials. It was released on June 5, 2020, for Origin and Steam. A physical edition intended for collectors was released by Limited Run Games.
+The compilation includes remasters of the first two Command & Conquer games originally developed by Westwood Studios, Command & Conquer (1995) and Red Alert (1996), along with their expansion packs and content that had been exclusive to console ports. It features 4K graphics, remastered music, upscaled full motion video cinematic footage, enhanced sidebar UI, modern online features, and an unlockable gallery of unused and "making of" content.
+The source code for the original Command & Conquer and Red Alert was released on June 2 (three days before the game's release). This code, which was used to create the remastered games' back-end game engine, allows people to create game mods that can be played through the games' built-in mod loading system.
+
+
+== Gameplay ==
+
+Command & Conquer: Remastered Collection is a collection of remasters of the first two Command & Conquer video games: Tiberian Dawn and Red Alert. It includes three expansion packs: The Covert Operations, Counterstrike, and The Aftermath as well as additional content from the console ports, totaling about 100 campaign missions.
+
+
+== Synopsis ==
+
+Command & Conquer: Remastered Collection consists of two games: Command & Conquer: Remastered and Command & Conquer: Red Alert - Remastered. They contain the same plot as their original counterparts, with visual changes and upscaled full motion video cinematic footage.
+
+
+== Development ==
+During EA Play 2018 Electronic Arts presented Command & Conquer: Rivals, and subsequently received feedback that gamers would want another PC release in the Command & Conquer franchise. They contacted Petroglyph Games, which was founded by previous programmers of Westwood Studios (developers of the original Command & Conquer video game), who said they welcome the collaboration. The whole development process was marked by close collaboration between the studios responsible for developing the game and the community surrounding the franchise. At first, the team was not sure whether to create a remake or a remaster of the original game, but because of the popularity of remasters such as Age of Empires: Definitive Edition they decided to do a remaster. Petroglyph opted to use the original game engine from 1995 to keep the game as familiar as possible, with minor tweaks and bugfixes where needed. One such improvement was a port of Red Alert's artificial intelligence to the original game, because of similarities in the codebase. The graphics and animations were updated by Lemon Sky Studios in Malaysia. During development Petroglyph Studios frequently contacted the franchise community about feedback on art and direction of the production, to a point where they recruited some of the top figures in the community (including modders, competitive players, shoutcasters, etc.) in a private Discord server for continuous feedback. The box art for the game was also previously made by a community member, and later commissioned by Petroglyph for the game. The multiplayer component of the game was rebuilt from scratch. Achievements and a  level editor have also been added.
+The team had intended to do high-definition remasters of the full motion video cutscenes in preparation for the release, but were unable to locate the original master videotapes of the high-resolution footage, which had been considered lost. A search for backup tapes yielded a collection of tapes that contained hours of B-roll footage and a collection of tapes that had been simply copied over from the low-resolution CD-ROM video files. Despite the lack of available high-quality footage, the team then decided to remaster the cutscenes from the PlayStation video files, seeking help from the community on AI upscaling techniques. The game launched on Steam and Origin on June 5, 2020.
+
+
+=== Music ===
+
+Command & Conquer: Remastered Collection contains the original music of the games, remasters of those tracks, and some music that was either cut or lost for the original titles, done by Frank Klepacki. In addition, Klepacki, along with the fan band The Tiberian Sons, remixed and performed 22 more tracks specifically for the remaster, based on their performance at MAGFest 2019, featuring tracks from the first two games, as well as a few tracks from later games (Renegade, Tiberian Sun, Red Alert 2, the expansion Yuri's Revenge, and Red Alert 3).
+
+
+== Reception ==
+
+Command & Conquer Remastered Collection received "generally favorable reviews", according to review aggregator Metacritic. Fellow review aggregator OpenCritic assessed that the game received "mighty" approval, being recommended by 92% of critics.
+Alex Battaglia of Digital Foundry wrote that "Command and Conquer Remastered plays, looks, and sounds great". Ben Kuchera of Polygon wrote that it was "a respectful but surprisingly full-featured dive back into the world of Command and Conquer". Destructoid's Chris Moyse described the game as "a masterclass in how to re-energise a classic title". 
+
+
+== Notes ==
+
+
+== References ==
+
+
+== Further reading ==
+The Remarkable Story Behind Command & Conquer's Remastering (YouTube). Noclip. July 6, 2020. Retrieved July 15, 2020.

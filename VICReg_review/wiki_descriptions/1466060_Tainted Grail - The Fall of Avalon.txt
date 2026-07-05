@@ -1,0 +1,48 @@
+Game: Tainted Grail: The Fall of Avalon
+appid: 1466060
+Source: Tainted Grail: The Fall of Avalon
+URL: https://en.wikipedia.org/wiki/Tainted_Grail:_The_Fall_of_Avalon
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Tainted Grail: The Fall of Avalon is an open-world action role-playing video game developed by Questline and published by Awaken Realms. Set in a dark fantasy reimagining of Arthurian legend, the game was released in early access for Windows on March 30, 2023, with a full release on May 23, 2025, for Windows, PlayStation 5 , and Xbox Series X and Series S.
+
+
+== Plot ==
+After a plague called the Red Death ravaged the distant Homelands, Arthur Pendragon led survivors to conquer Avalon, the domain of the Fore-Dwellers, ageless four-armed beings who controlled the Wyrdness, a primordial force capable of creating anything from monsters to entire domains. After many sacrifices, humanity emerged victorious, suppressing the Wyrdness using Menhir totems designed by Merlin, and establishing Camelot.
+600 years later, long after Arthur's death, the Menhirs are fading, the Wyrdness is spreading, and the Red Death returns. Those afflicted are quarantined on an offshore asylum, the player character among them. Freed by a warrior named Caradoc, they become bound to a piece of Arthur's powerful soul, curing their disease and allowing them to traverse the Wyrdness. Caradoc aims to destroy Arthur's soul and end the cycle of destruction, but aids the player in locating the remaining fragments of Arthur bound to his sword Excalibur, his shield, and his crown.
+Lost in a storm, the player arrives in the south of Avalon. While hunting for the fragments, they must also navigate bandits, the undead, the plague, and an imminent war between Kamelot and the disparate Dál Riata tribes, as well as the kingdom's tense relations with the Horns of the South garrison and the city of Cuanacht. With each fragment found, Arthur's past becomes clearer: outmatched against the Fore-Dwellers, Arthur and Merlin performed desperate human experiments, including on the undying, disillusioned Caradoc, and even on Arthur himself. The King, once noble in intent, grew obsessed with achieving victory and leaving a lasting legacy, regardless of the cost.
+After finally collecting the fragments, the player learns from Archdruid Orrin about one more piece: Arthur's humanity, a fisherman named Hob. However, broken by failure and sacrifices, Hob begs to be allowed to die as a man. The player then has multiple choices:
+
+If siding with Caradoc, Arthur's soul is destroyed, leaving the throne empty and the land in uncertainty, but free of the cycle. Any other choice makes Caradoc fight the player.
+If siding with Orrin, Arthur is made whole again, but at the cost of the player's life, and their sacrifice is honored. Any other choice makes Arthur's furious soul fight the player.
+If the player takes the place of Arthur's humanity, with the power of his soul, they reforge Avalon, attempting to learn from Arthur's mistakes.
+If giving Arthur's soul to another to serve as the human part, the player witnesses the rebirth of the nation with what time they have left; without Arthur's power, the Red Death soon takes them. One of eight potential NPCs can be chosen for this role, depending on quest outcomes.
+A secret ending can be achieved using an item called the Weaver Life Spindle, which, in the lengthy process of obtaining it, reveals that Arthur was the human reincarnation of the Prince, a Fore-Dweller fascinated with human mortality. When the Fore-Dwellers murdered him in fear that he would side with humanity against them, the bereaved Fore-Dweller Queen created the Red Death, which, along with visions, forced Arthur to return. Using the Spindle, Arthur is restored as a Fore-Dweller, the Red Death is eliminated, and the Wyrdness calms. His legend fades, and Avalon returns to a stronger, more natural state.
+
+
+== Gameplay ==
+Tainted Grail: The Fall of Avalon is played primarily from a first-person perspective, though an optional third-person mode is available, which is mostly intended for accessibility. Players begin by creating a character with visual customization options. Initial character statistics are influenced by player responses during an introductory interrogation sequence. Players can use a variety of melee weapons, ranged weapons, and magic spells. Options include equipping two-handed weapons or dual-wielding one-handed weapons.
+The game is set in a large open world divided into three main zones. Over 200 side quests are available, with player decisions leading to different narrative outcomes and affecting relationships with in-game characters and factions. The game incorporates various systems, including crafting, fishing, alchemy, cooking, house decoration, farming, and sketchbook journaling. At night, a phenomenon known as "Wyrdnight" can occur, during which the Wyrdness intensifies and summons stronger enemies. The estimated playtime is 50-70 hours, with the main story campaign lasting approximately 25 hours.
+
+
+== Development ==
+Tainted Grail: The Fall of Avalon is based on the Tainted Grail universe, created by Polish fantasy writer Krzysztof Piskorski for a board game of the same name, which was a major Kickstarter success in 2018. Awaken Realms, the publisher, previously released Tainted Grail: Conquest, a deck-building roguelike, in 2020, also set in the same universe. According to reviewers, The Fall of Avalon draws notable inspiration from The Elder Scrolls series.
+The Fall of Avalon was developed by Questline, a Polish video game developer. The game was first announced with an aim for an early access release in late 2022. It launched into Early Access as planned and saw its full 1.0 release on May 23, 2025, for Windows, PlayStation 5, and Xbox Series X/S. On Windows, it is available from GOG and Steam. The game is developed in Unity 6.
+In December 2025, a paid DLC expansion titled Sanctuary of Sarras was released.
+
+
+== Reception ==
+
+Critical reception for Tainted Grail: The Fall of Avalon was mostly positive, with reviewers praising its world design, exploration gameplay, and narrative. It was described as a "fun but familiar" open-world RPG and frequently compared to The Elder Scrolls series.
+The game also faced technical issues, such as visual glitches, bugs related to quest indicators, and problems with item looting. Character models were described by some as having a "Play-Doh skin" appearance and looking  "expressionless" and low-fidelity. However, some aspects of the character models, such as the hair, were considered "really impressive" by IGN. The quality of dialogue performances was noted as varied, and some environments, like caves, were found to become visually repetitive over time. According to Slant Magazine's Niv Sultan, the impact of player choices diminishes after joining certain factions.
+
+
+== Notes ==
+
+
+== References ==
+
+
+== External links ==
+Official website

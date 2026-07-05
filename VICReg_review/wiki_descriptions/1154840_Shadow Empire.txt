@@ -1,0 +1,30 @@
+Game: Shadow Empire
+appid: 1154840
+Source: Shadow Empire
+URL: https://en.wikipedia.org/wiki/Shadow_Empire
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Shadow Empire is a strategy video game developed by French studio VR Designs and published by Slitherine Software.  It combines gameplay from computer wargames and 4X games in a setting of post-apocalyptic conquest.
+
+
+== Gameplay ==
+After a galactic republic collapses, its many worlds plunge into a dark age.  Players take the role of a warlord from a post-apocalyptic society that has risen from the ruins of one of these worlds.  Players first generate their world, which can range from small moons to large planets.  Worlds are procedurally generated, either randomly or by tweaking parameters, such as whether the player wants a breathable atmosphere.  These options can have a strong effect on the world and may preclude certain strategies.  If the conditions for abiogenesis are not met, fossil fuels may not exist, and a thin atmosphere could preclude the use of aircraft.
+Once satisfied with the world, players design their society and its ideals.  Management of this society uses elements of role-playing video games.  Players appoint staff, who have their own skillsets and personalities, to run various parts of their society's bureaucracy.  The player's actions can have strong effects on the player's staff and various factions in their society, such as angering generals enough to ignite a civil war or causing lasting resentment among civilians from violently suppressing a labor strike.  More complex actions are represented by cards, which can be played to gain diplomatic or governmental bonuses.  The most beneficial cards can be gained by voluntarily subjecting one's empire to catastrophes.
+Some aspects of research are randomized.  Technology levels start low, with improvised weapons, though highly advanced technology can be found in the ruins of civilizations from before the dark age.  Once technologies are rediscovered, custom units can be designed using these advances.  During war, logistics are important, and supply chains must be maintained.  Like traditional board wargames, it uses counters and a hex map.
+
+
+== Development ==
+Developer Victor Reijkersz had made several historical wargames previous to Shadow Empire.  He decided on a post-apocalyptic science fiction setting because it opened up what he said was "a great canvas to have more immersive procedural games".  To increase immersion, Reijkersz wanted to give each planet a distant history and back story when procedurally generating it.  Shadow Empire took Reijkersz four or five years to complete solo.  The game was first released on June 4, 2020.
+
+
+== Reception ==
+
+Shadow Empire received generally favorable reviews from critics, according to the review aggregation website Metacritic.  Joe Fonseca of Wargamer called it "the Alpha Centauri of today, only better" and recommended it fans of 4X games and complex computer wargames.  In his review for PC Gamer, Jonathan Bolding wrote, "Ambitious in the extreme, Shadow Empire is a unique sci-fi wargame that's a little lost in its own details."  Bolding criticized the game's opaque complexity, which he said made parts of the game seem like a black box.  Sin Vega of Rock Paper Shotgun wrote that it is "the best and most compulsively playable serious wargame I've ever played for a solid month."
+
+
+== References ==
+
+
+== External links ==
+Official website

@@ -1,0 +1,30 @@
+Game: F1 Manager 2023
+appid: 2287220
+Source: F1 Manager 2023
+URL: https://en.wikipedia.org/wiki/F1_Manager_2023
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+F1 Manager 2023 is a sports management game developed and published by Frontier Developments. It is the official racing management simulation game of the 2023 Formula One, Formula 2, and Formula 3 championships, and the second installment in Frontier Developments' F1 Manager series. The game was released for PlayStation 4, PlayStation 5, Windows, Xbox One and Xbox Series X/S on 31 August 2023.
+
+
+== Gameplay ==
+
+F1 Manager 2023 features a new race replay mode, allowing players to recreate certain moments from the season. The game also includes all 23 tracks in the season, including the Losail International Circuit of the Qatar Grand Prix and the Las Vegas Strip Circuit of the calendar newcomer Las Vegas Grand Prix. Six sprint races are featured. Sky Sports F1 commentators David Croft return as a commentator in the game, meanwhile Karun Chandhok joins to narrate the key moments in the game.
+
+
+== Development and release ==
+F1 Manager 2023 is the second title in the F1 Manager series, with Frontier Developments returning to develop and publish the game. It is developed with Unreal Engine 5. As with the previous game, Denuvo anti-tamper technology was implemented on the title. The game was released on PlayStation 4, PlayStation 5, Windows, Xbox One and Xbox Series X/S platforms on 31 August.
+
+
+== Reception ==
+
+F1 Manager 2023 received "generally favorable" reviews according to review aggregator Metacritic.
+
+
+== References ==
+
+
+== External links ==
+
+Official website

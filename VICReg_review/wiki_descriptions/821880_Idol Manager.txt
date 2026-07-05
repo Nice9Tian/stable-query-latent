@@ -1,0 +1,34 @@
+Game: Idol Manager
+appid: 821880
+Source: Idol Manager
+URL: https://en.wikipedia.org/wiki/Idol_Manager
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Idol Manager is a business simulation game developed by Glitch Pitch and published by Playism. It was initially released on Microsoft Windows on 27 July 2021, with the ported versions of Nintendo Switch, PlayStation 4 and PlayStation 5 available on 25 August 2022.
+
+
+== Gameplay ==
+Idol Manager provides a free-play mode and a story mode. The story mode features three difficulties and multiple endings. In the video game, players take on the role of a business manager, who is responsible for the daily trainings and commercial activities of Japanese idol groups. The game also features random events, allowing players to navigate through PR disasters and defuse tensions between group members.
+
+
+== Development and release ==
+Idol Manager was revealed at E3 2020. It was developed by Glitch Pitch, an indie game studio located in Russia, and published by the Japanese independent video game publisher Playism. The in-game images and cover art are created by Pixiv artists. The game was launched on 27 July 2021 for Microsoft Windows via Steam. The Nintendo Switch, PlayStation 4 and PlayStation 5 versions were released on 25 August 2022.
+
+
+== Reception ==
+
+Idol Manager received "mixed or average" reviews for the Microsoft Windows version according to review aggregator Metacritic.
+Tilly Lawton of Pocket Tactics rated the game an 8 out of 10, praising the game is fascinating and in good combination with its visual novel aspects, but wrote the game is "not for everyone" and pointed out the UI system of the game is somewhat inconvenient.
+Allen Kesinger of COGconnected gave 89 out of 100, also praising the game's Gal-game art style, but criticized the game's buggy UI as well.
+
+
+== Legacy ==
+A sequel focusing on VTubers, Idol Manager: Virtual Venture, was announced on May 10, 2026 and is slated for a 2027 early access release on Steam.
+
+
+== References ==
+
+
+== External links ==
+Official website

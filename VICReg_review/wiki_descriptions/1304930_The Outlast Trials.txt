@@ -1,0 +1,70 @@
+Game: The Outlast Trials
+appid: 1304930
+Source: The Outlast Trials
+URL: https://en.wikipedia.org/wiki/The_Outlast_Trials
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+The Outlast Trials is a 2024 psychological survival horror video game developed and published by Red Barrels. It serves as a prequel to both Outlast (2013) and Outlast 2 (2017) and revolves around test subjects who are involuntarily recruited in a mysterious Cold War experiment.
+First announced  in October 2019, the first-person game was originally scheduled for release in August 2021, but was delayed due to the COVID-19 pandemic. A closed beta was available from October 28 to November 1, 2022, until it was finally released via early access for Microsoft Windows on May 18, 2023, and fully launched for Windows, PlayStation 4, PlayStation 5, Xbox One, and Xbox Series X/S on March 5, 2024. The Outlast Trials received generally positive reviews from critics.
+
+
+== Gameplay ==
+Like its predecessors, The Outlast Trials is a first-person game. While the game supports four-player cooperative multiplayer, players can also complete the game in a single-player mode. The player must complete several objectives while evading enemies and traps such as noise-makers or electrified grates on the floor; a secondary objective can be completed to obtain a bonus to the player's grade, received at the end of each trial. Based on this grade, the player character gains experience points and the player can select a new ability or upgrade with each level up. The player also gains in-game currency, which they can spend on cosmetic items. The Project Relapse update, released on  the 22nd of April 2025, allows players to participate in Project Relapse (see below), by choosing to reset a character that has reached the maximum level back to level 1, in return for being able to obtain an ability or upgrade of the player's choice permanently, even through future resets; and additionally a cosmetic reward. The game also features six distinct abilities players can select and use during the trials, represented as technological devices called "rigs". These abilities include seeing items and enemies through walls, healing the user and other player characters within an area of effect, placing smoke bomb mines to blind enemies, throwing a device to temporarily stun enemies, or placing reinforced barricades on doors to slow down pursuers.
+The player character has access to a pair of night-vision goggles that allows them to navigate dimly lit areas. The goggles need to be regularly recharged with a scarce battery resource. Players can pick up various useful items, such as anti-psychotic drugs, lockpicks, and healing items. Bricks and glass bottles can be either thrown to distract and lure enemies away from the player, or they can be thrown at an enemy to briefly stun them and stiffle their attacks. Despite this, stealth remains as the preferred way to progress through a trial, as outright combat is not an available option. In the early game, players are limited to carrying only to up three items at a time, with up to two additional inventory slots unlockable to players later in their progression.
+Most trials have modifiers known as "variators" applied to them, to increase the difficulty of the game. The effects of these variators can include: a larger number of enemies who also are more alert and aggressive than usual, or more locked and barricaded doors being present. The Project Nostophobia update, released on the 1st of July  2025, introduces a variator of the same name (which means "a fear of returning home") that causes the battery for the player character's night-vision goggles to deplete faster than normal, prevents the player from using a "rig", while also removing throwable bricks and bottles and most traps from the trial; among other changes. This was an attempt by the developers to make the gameplay similar to that of Outlast.
+
+
+== Plot ==
+In 1959, at the height of the Cold War, the Murkoff Corporation begins a deceptive recruitment program to gather volunteers who are then kidnapped and transported to the Sinyala Facility in Arizona. Referred to as "Reagents", the subjects are involuntarily processed through a medical exam in which they have night-vision goggles affixed to their head, and are then forced to undergo an "Initiation Trial" in which  they meet the facility's director, Dr. Hendrick Joliet Easterman.
+As Easterman directs them to destroy their own public and private records, the Reagents complete the trial by avoiding failed test subjects, who have become psychotic  and violent, and are known as the "Experimental Population", also referred to as "Ex-Pops".  Reagents are then allowed access to the "Sleep Room," where they listen to Easterman's radio broadcasts and reflect between trials. They also meet engineer Cornelius Noakes, nurse Emily Barlow, and various Sleep Room denizens while assisted by a fellow Reagent named Dorris Ritter, who no longer partakes in the trials and instead provides contraband goods to other subjects.  
+The trials the Reagents undergo become increasingly dangerous as they sometimes encounter the so-called "Specialist Ex-Pops," a subset of "Ex-Pops" that possess specific abilities and behaviors to kill or disrupt Reagents. Examples of these include the "Pitcher", who attacks the Reagents by throwing Molotov cocktails and the "Night Hunter", who, like the player characters, is equipped with night-vision goggles and who stalks and pursues the Reagents in the darkened areas of the trials. Reagents are also forced to go against the "Prime Assets", Ex-Pops that hold dominion over the trials' themed environments. Prime Assets include disgraced children's television series' host Phyllis "Mother Gooseberry" Futterman, sadistic ex-police sergeant Leland Coyle, depraved drug-dealing gangster Franco "Il Bambino" Barbi, conjoined incestuous aristocrats Otto and Arora Kress, and masochistic stealthy priestess Liliya Bogomolova. 
+
+
+=== Rebirth ===
+After completing the trials, Reagents who are deemed ready for release from the Sinyala facility can participate in a process known as "Rebirth", where they must complete a final trial before being released to the world. During the trial, they are also assigned documentation with new identities before being given a code word through tuning multiple frequencies. After they open a final door to escape, Reagents fall into a dark infinite space where they walk on water as they approach a glaring light in the distance. 
+This trial features five different endings, one of which is randomly shown to the player with each playthrough:
+
+Reagents will awaken tainted in blood in a hotel room in Cuba. Eventually, a phone will ring and when picked up, Easterman's voice will say the code words heard in the final trial, causing the Reagents to black out as the screen fades to black.
+Reagents will awaken with their hands taped to the wheel of a speeding car in Saigon as it crashes in front of a building where a Vietnam-USA Friendship Conference is taking place. While the Reagents notice an explosive strapped to their chest, they struggle in vain as it detonates.
+Reagents will awaken in a house in China, with a man overdosing in a bed next to them. Someone knocks on the door and, when the Reagents answer, Easterman's voice will say the code words, causing a phantom-like entity known as the "Skinner Man" to attack them.
+Reagents will awaken in the jungle of Republic of the Congo as they face a group execution. Soviet personnel interrogate the group, demanding to know who is an American spy, how would they deliver a poison, and how would they reach Patrice Lumumba. After an interrogator translates the code words, the Skinner Man approaches the Reagents, causing them to black out. The Reagents regain consciousness while brutally killing one of the soldiers, as they are surrounded by corpses, before being shot dead.
+Reagents will awaken in the subterranean laboratory of Mount Massive Asylum in Lake County, Colorado as they are hooked up to the Morphogenic Engine (which first appeared at the end of Outlast) by Rudolf Wernicke, who had occasionally observed them from the Sleep Room. While other scientists question the Reagents' suitability as candidates for the experiments, Wernicke believes they may actually be "for other use". The Reagents soon begin to feel the Walrider overtaking them before hearing the code words as the screen fades to black.
+
+
+=== Escape ===
+In the Amelia Escape Update, released on April 8, 2025, a sixth trial and ending were added. Amelia Collier - a vengeful Reagent who successfully escaped from the facility - contacts the Reagents, and orchestrates an escape plan by sending them through the corpse disposal train. After traversing the biohazard facility and having their equipment painfully removed, several Reagents escape into the Sinyala canyon, walking toward the sunset, before the closing credits are shown. This ending is no longer available as of the Project Relapse Update.
+
+
+=== Relapse ===
+The Project Relapse Update was released on April 22, 2025, and its storyline builds on that of the Amelia Escape Update: As punishment for the Reagents who have escaped the facility, Easterman suspends "Rebirth" and initiates "Project Relapse" to make Reagents more dependent on the therapy. Amelia was captured and chained up in the Sleep Room as a warning for any Reagents who attempt to escape.
+
+
+=== Diarchy ===
+The Season 4 update to the game, released on July 14, 2025, reintroduced the Rebirth trial, with the possibility of playing through it in co-operative mode as a new addition. This version plays out like a normal trial, but with further objectives that involve the player collecting boxes said to contain the Reagent's personal records and tuning radios to hear code words. 
+After completing the trial, the player will see a short scene of Dr. Easterman repeating the code words, then a film reel set in 1960s USA, which is accompanied by a voiceover that describes the Reagents as assassins, fanatically devoted to the Murkoff Corporation's cause, believing that their goals are their own. Finally, the player is shown a newspaper, whose headline connects the Reagents to an assassination, or a politically significant accident.
+
+
+=== Invasion ===
+On October 21, 2025, an additional mode titled Invasion was added to the game, forming an  element of the overarching plot as Easterman's punishment for Reagents after attempting escape. In the mode, 1-4 players take control of Reagents, as in usual trials, and 1-4 players become "imposters". Imposters mimic the appearance and cosmetics of Reagents in the trial and are tasked with hurting them and impeding their progress. The Reagents' objectives remain the same in each trial.
+
+
+== Development ==
+In December 2017, Outlast 3 was announced though no time frame or target platforms were confirmed. During this announcement, Red Barrels said that because they could not easily add downloadable content for Outlast 2 due to its structure, they have a smaller separate project related to Outlast that will release before Outlast 3. Red Barrels also described the game as a "TV series"; the development team of the game had around forty people.
+The Outlast Trials was teased in October 2019 as a prequel to both Outlast and Outlast 2, focused around test subjects for the Murkoff Corporation in a mysterious Cold War experiment. Red Barrels co-founder David Chateauneuf said "the proof-of-concept is now complete and the game's team is now in development mode".
+
+
+=== Marketing ===
+On December 4, 2019, Red Barrels released a teaser image of the game. On June 13, 2020, a teaser trailer was released, announcing a release for 2021. However, it was announced in August 2021 that the game has been delayed to 2022 due to the COVID-19 pandemic. To help pass the time, Red Barrels released a series of "Behind The Scenes" videos on their official YouTube channel. A closed beta for the game was available from October 28 to November 1, 2022. 
+While the game was only confirmed for Microsoft Windows, the game would also be released for undisclosed PlayStation platforms "in the future". On March 10, 2023, it was announced that the game would be released in early access on May 18. On December 8, it was announced that the game would leave early access on March 5, 2024, and also launch on PlayStation 4, Xbox One, Xbox Series X/S, and PlayStation 5. In September 15, 2023, Red Barrels released The Murkoff Collection, a comic series that ties in with the story of the main game.
+
+
+== Reception ==
+The Outlast Trials received "generally favorable" reviews from critics. The PC port received “Mixed or Average” reviews, according to the review aggregator website Metacritic. The review aggregator OpenCritic assessed that the game received fair approval, being recommended by 62% of critics.
+
+
+== References ==
+
+
+== External links ==
+Official website

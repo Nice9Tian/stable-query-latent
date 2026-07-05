@@ -1,0 +1,21 @@
+Game: Circuit Superstars
+appid: 1097130
+Source: Circuit Superstars
+URL: https://en.wikipedia.org/wiki/Circuit_Superstars
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Circuit Superstars is a racing video game developed by Original Fire Games and published by Square Enix Collective. The early access version was launched for Windows via Steam on March 5, 2021, and the game fully released on Windows and Xbox One on October 12, 2021.  The game released for PlayStation 4 on January 27, 2022, and was released on June 21, 2023 on Nintendo Switch. The game features tracks and vehicles from numerous eras of motorsport.
+
+
+== Gameplay ==
+Circuit Superstars is a top-down racing game where one to twelve drivers compete in single races or tournaments. Players may choose to race against AI drivers offline or against human players online. The game supports split screen gameplay for one to four players in both online and offline modes.
+The game blends the arcade racing genre with realistic driving physics. Players drive vehicles that interact realistically with different driving surfaces and they must account for fuel, tire wear, and vehicle damage in order to drive effectively. The game features a unique pit stop system that gives players full control over their vehicle in the pit lane, allowing for strategies such as exiting early to beat other players back onto the track.
+In the in-game garage, players can customize the liveries of their vehicles and driver. The game features a progression system that rewards players with cosmetic items as they level up.
+
+
+== References ==
+
+
+== External links ==
+Official website

@@ -1,0 +1,53 @@
+Game: Workers & Resources: Soviet Republic
+appid: 784150
+Source: Workers & Resources: Soviet Republic
+URL: https://en.wikipedia.org/wiki/Workers_%26_Resources:_Soviet_Republic
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Workers & Resources: Soviet Republic is a 2024 city-building and construction and management simulation developed and released by the Slovak game studio 3Division. 
+
+
+== Gameplay ==
+The gameplay heavily emphasizes on intense logistics management and brutalist city design, requiring the proper infrastructure, staff, and vehicles in order to produce the goods of the state. Players can build factories to produce those goods, and can export them to other nations for profit by transporting them to the nations' customs houses that are located at the border. Players may choose from an empty or populated map (the difference is that populated maps already have some road infrastructure and villages with population). One may enable or disable additional mechanics in games such as complex education, utilities, seasons, among others. 
+Citizens have two main factors: health and happiness. If happiness is too low, they escape the country. If their health is too low, they die. These can be resolved by building medical infrastructure, ensuring a steady food supply, as well as building cultural buildings such as theaters, sports fields, pubs, and on populated maps, religion. Players can use two currencies: rubles and dollars. If you do not have the resources or manpower to build or create products, you can import them with rubles at Eastern customs houses, or with dollars at Western customs houses.
+
+
+=== Tutorials ===
+There are three sets of tutorials currently in the game: 
+
+Basic mechanics (construction, supply chains, law and order)
+Transportation (public transport, international trade, aircraft and ships)
+Energy and networks (utilities and seasons)
+
+
+=== Campaigns ===
+There are currently two campaigns in the game, which guide the player on building their Soviet Republic while learning separate tutorials. The first campaign takes place in a coastal valley area, where the player learns how to setup resource extraction, produce basic resources, and public services.[currently unaware of second campaign] 
+
+
+=== Workshop ===
+Workers and Resources: Soviet Republic also has a Steam workshop where players can make new building/vehicle textures, scripts, or even entire new maps.
+
+
+== Development and release ==
+Workers & Resources: Soviet Republic was developed based on the previous success of other similar games in the genre, including Cities: Skylines and Transport Fever. Unlike previous games, the focus of Workers & Resources: Soviet Republic was to simulate the economic systems of Communist states, particularly the Eastern Bloc economies during the Cold War era, with the game being set between the 1960s and the 1990s; there is no ending time limit. 
+The game was first released in early access on Steam on 15 March 2019. In February 2023, the game was removed from Steam due to a DMCA takedown issued by a content creator over the rights to a realistic mode that the fan had conceived, which 3Division had planned to incorporate with credit in a later release of the game. The legal issue was resolved by early March 2023 and the game was brought back to Steam.
+The game was announced as leaving early access with the release of version 1.0 on 20 June 2024. The first DLC, Biomes, was released alongside the full version of the game, which adds tundra, desert and tropic landscapes all with unique challenges such as limited agriculture, transport issues, and limited logging.
+The second DLC for the game, World Maps, adds 10 maps, all of them being based on the landscape of Austria, United Kingdom, Czech Republic, East Germany, Estonia, France, North Korea, Poland, the Central Atlantic coastline of the USA and Yugoslavia. The DLC was released on 13 December 2024.
+The third DLC, Early Start, was released on 22 May 2025. It gave players the ability to begin the game in 4 new decades, 1920S, 1930s, 1940s or 1950s. Along with 4 new starting times, there was a host of new vehicles and buildings befitting the time period.
+
+
+== Reception ==
+Workers & Resources received mostly positive reviews from both critics and players during early access; some criticized the game's lack of tutorials in the early stages.
+
+
+== See also ==
+List of city-building video games
+List of video games developed in Slovakia
+
+
+== References ==
+
+
+== External links ==
+Official website

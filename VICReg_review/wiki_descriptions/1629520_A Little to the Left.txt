@@ -1,0 +1,35 @@
+Game: A Little to the Left
+appid: 1629520
+Source: A Little to the Left
+URL: https://en.wikipedia.org/wiki/A_Little_to_the_Left
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+A Little to the Left is a 2022 puzzle video game developed by Canadian independent studio Max Inferno and published by Secret Mode. The game was initially made for the GMTK Game Jam but was later expanded to a full game.
+A Little to the Left received positive reviews from critics.
+
+
+== Gameplay ==
+In each level, the player must drag and drop objects to clean up an unorganized space. Some puzzles have more than one answer. Completed puzzles are represented with stars, and for puzzles with more than one answer, the stars appear partially filled. 
+
+
+== Development ==
+The game was initially made for the GMTK Game Jam 2020. In the game jam, contestants had 48 hours to produce a game following the theme Out of Control. After the event, developers Annie Macmillan and Lukas Steinman established Max Inferno in 2021. It was planned to release by October 2021.
+According to Macmillan, she and Steinman developed A Little to the Left as a side project. They were approached by publisher Secret Mode, who would expand the game's prototype.
+
+
+== Release ==
+The game was released for Windows and macOS on November 8, 2022, and for Nintendo Switch on November 9. Max Inferno had planned to release A Little to the Left in December, but due to it being developed ahead of time, it was released alongside both ports. Within a year of release, the game had received a million sales. After Alice O'Connor of Rock Paper Shotgun described that one of the puzzles had an unclear solution, Max Inferno added the Let it Be feature to allow players to skip levels. "Cupboards and Drawers," an expansion pack to the original game, was released June 27, 2023. The DLC focusses on home organization.
+
+
+== Reception ==
+
+On Metacritic, A Little to the Left has a "generally favorable" for its PC, Nintendo Switch, and Xbox Series X ports. On OpenCritic, the game has a 69% approval rating.
+
+
+== References ==
+
+
+== External links ==
+Official website
+A Little to the Left at MobyGames

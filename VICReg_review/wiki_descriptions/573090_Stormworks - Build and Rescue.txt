@@ -1,0 +1,79 @@
+Game: Stormworks: Build and Rescue
+appid: 573090
+Source: Stormworks: Build and Rescue
+URL: https://en.wikipedia.org/wiki/Stormworks:_Build_and_Rescue
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Stormworks: Build And Rescue is a simulation video game developed and published by the British studio Geometa (Formerly known as Sunfire Software). The game was released as an early access title in February 2018 for Windows and Mac and is receiving frequent updates through Steam. The game left early access on September 17, 2020.
+
+
+== Gameplay ==
+
+Stormworks is played in a randomly generated open world physics playground, composed mostly of ocean and small islands which lie off the coast of Scotland. The game centers around the theme of running a coastguard rescue service with a variety of vehicles, which the player can build on a 'Workbench' with an assortment of blocks, engines, sensors and special equipment. As the player explores the world, the in-game map is created, in which they can fast travel to locations they've discovered. These vehicles, ranging from airplanes and helicopters to boats, terrestrial vehicles, and trains can be used by the player to complete various diverse missions to earn in-game currency. It currently has three modes: Career, Classic, and Custom. In the Custom gamemode, players can choose from an array of settings in the custom menu, which can be located in the pause menu.
+
+
+=== Career mode ===
+In Career mode, players are given control of a starting island that contains a small boatyard, a simple boat and a small house. Players will need to complete missions to earn money to build new vehicles.
+The player can travel to other islands and buy them when they have enough in-game currency. These purchasable islands usually provide a larger building space or specialized building space (e.g. Terminal Camodo has an exclusive railyard where trains can be built). Within career mode, there are a lot of variables including enabling first-person play only and having limited fuel, or changing daylight hours. A small challenge within career is that crude oil can be bought to later be refined to then be sold for money.
+
+
+=== Classic ===
+Classic is intended to resemble the Career mode during the Early Access. Classic behaves like Career mode, with the main difference is that components have to be unlocked using research points before they can be used in vehicles. Also, the entire map is cloaked, and the area has to be explored before it's shown on the map.
+
+
+=== Custom mode ===
+Custom, sometimes called creative mode, is a sandbox gamemode where players are not limited by resources; they can create vehicles using the editor without limits and can be granted access to all islands instantly, allowing for very large vehicles to be built early game. After recent updates, it has been made possible for players to choose their default bases, including a Heliport, Mainland (Airport or Harbor base) Island with a small boatyard among other bases.
+The game also supports the Steam Workshop to download and upload community-made vehicles, game mods, and missions and loads them directly into the game. In the 1.0 Update, the mode was renamed from Creative to Custom mode.
+Creative mode also unlocks the custom menu, that allows you to change the time, weather and all other things at will. You can use this menu to spawn entities such as the kraken or the megalodon. You can spawn many disasters such as tsunamis, whirlpools, tornados, and volcanic eruptions from one of two volcanos in the game.
+
+
+=== Conquest mode ===
+Conquest mode was added with the addition of the first paid DLC. This mode can be activated in the creation menu, and can be combined with career or creative mode. This adds the ability to weaponize vehicles, and a more combat oriented experience, alongside the rescue missions. The DLC added both player held and vehicle mounted weapons, like autocannons and machine guns.
+
+
+=== Missions ===
+There are a variety of missions, ranging from delivery missions to rescue and firefighting missions. The missions are generated over time and will expire when their time limit has been reached; if a player has no active missions they can return to their house and sleep until new missions appear. A 'bed' component is also available which can be mounted on vehicles where the player can go to sleep.
+Some missions will require either specific components or vehicles to complete them. Firefighting missions will require a vehicle that can tackle the blaze, and large evacuation missions will require vehicles with a large enough capacity to escort all the stranded characters to safety.
+With the release of the 1.0 Update, missions were changed to be procedurally generated and the mission editor used for player made missions was changed from a simple system, to a system utilizing Lua for spawning vehicles, objects, and items in the mission.
+
+
+=== Building ===
+
+The building in Stormworks works on a voxel-based building system. Players build vehicles out of cube and wedge shaped components, inspired by toys such as Lego Technic. Buoyancy is calculated by the size and shape of the hull, fuselage, or body. Once a player has created the structure of their vehicle they will need to add components such as engines, rudders and pilot seats and program them using a system of logic gates. Engines, batteries, lights, and other electric components must be connected into a network via nodes. A logic network also works via nodes and allows to trigger different actions via inputs, such as buttons, levers and steering wheels, as well as present information via gauges and computer screens. There is minimal UI and most data is presented via player-built devices. Piping networks can be built to transfer fuel, water, coolant and oil to power engines, fight fires and empty flooded ship chambers, for example. Driveshaft networks (in the game the pipes and the driveshafts are represented by the same part types) allow to transfer torque from engines to wheels/tracks/propellers and control torque with gearboxes and clutches. Torque can be converted into electricity and vice versa. Microcontrollers are special parts which contain logic sub-networks and/or execute Lua code to allow for more complex behaviour. Players can even create simulated computers with touchscreens and custom programs. Vehicles can be connected to buildings and other vehicles to transfer fluids and power, as well as data and logic.
+The game has support for land, sea, air, space and vehicles along with submarines and trains, with specific components such as aerofoils and gyro to support the different types of vehicles.
+These vehicles can be created on Workbenches, which are usually found on either the default island or other special islands which can be bought using in-game currency. The other random islands (e.g. Hospital Island or NPC oil rigs) do not have a workbench. In addition to vehicle workbenches, some islands have workbenches that spawns in vehicles and make them static, meaning they have no buoyancy physics and cannot move. This allows players to create custom bases without having to worry about them moving around or heavily lowering performance in large creations.
+
+
+=== Gameplay Modding Update ===
+With v1.15.0 update developers added component, physics and, gameplay modding. The new modding support in Stormworks provides players with opportunities to create and customize content. It introduces a Lua API for components and allows additional engine values to be exposed through the engine values text file.
+
+
+== Reception ==
+Stormworks: Build and Rescue Beta and Early access has received some positive attention largely comparing it to similar titles such as Kerbal Space Program, "Yes, as it turns out. Stormworks: Build & Rescue doesn't just want to take the Space Engineers/Kerbal Space Program idea and throw it somewhere in the North Sea – it demands precision in all things."
+Stormworks: Build and Rescue has also been covered by Rock Paper Shotgun and PCGamer.
+The newspaper The Guardian spoke positively of the game in an article about job simulation games. A fan described it in an interview as "the most brutal game I've ever played... It is my favourite game."
+
+
+== DLC ==
+Since its official release, 3 downloadable content (DLC) packs have been released for Stormworks: Build and Rescue.
+
+
+=== Search and Destroy ===
+The Search and Destroy DLC, released on the 5th of October, 2021, adds a combat focus to the game by adding modular vehicle and handheld weapons as well as a new game mode and new enemies to the game. The new modular vehicle guns added to the game come in multiple different calibers of both cannons and auto-cannons that come a variety of, modular, individually placed parts. New vehicle warheads are also added that come in many sizes and forms. The new handheld weapons that are added consist of multiple firearms and explosives. The new "conquest" game mode that is added to the game lets the player fight against the new enemies in an attempt to kill them and capture islands. 
+
+
+=== Industrial Frontier ===
+The Industrial Frontier DLC, released on the 13th of October, 2022, adds new southern desert islands, new ore mining, processing, and selling, and new land animals. The new southern islands, named the Meier Isles, is a new arid biome that is 400 square kilometres (150 sq mi) in size and has extensive rail and road. The Meier Isles also have mines and quarries that feature new metal ores that can be mined, processed at new industrial facilities, and sold for money at a new metal trading yard. The new land animals added include dogs, or "stormwoofs", that the player can interact with.
+
+
+=== Space ===
+The Space DLC, release on the 12th of October, 2023, adds space travel and rocketry to the game. New liquid fuel rocket engines are added to the game, as well as components for life support, space navigation, and attitude control. The new space travel mechanics let the player travel to orbit and a new moon planet that is 900 square kilometres (350 sq mi) in size and features craters, canyons, and caves. The Space DLC also adds new missions for the player to carry out in space, earning them money.
+Along with the expansion came a rework of the video game's physics, which inadvertently broke a significant portion of the game's user-made Steam Workshop content and sparked major outrage amongst its player base on its related social media sites. These issues were fixed days later with a series of bugfixes. There were issues such as steam-based and other related builds not working correctly, aerial vehicles not flying due to lack of power from engines or from lack of aerodynamic lift, and many user created boats being unable to float at all.
+
+
+== References ==
+
+
+== External links ==
+Official website

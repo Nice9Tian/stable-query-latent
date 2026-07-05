@@ -1,0 +1,33 @@
+Game: ΔV: Rings of Saturn
+appid: 846030
+Source: ΔV: Rings of Saturn
+URL: https://en.wikipedia.org/wiki/%CE%94V:_Rings_of_Saturn
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+ΔV: Rings of Saturn is a space flight simulation game developed by Poland-based studio Kodera Software and released on 21 July 2023 after being in early access for several years. Embracing concepts of hard science fiction, the game focuses on asteroid mining, with physics-based mechanics.
+
+
+== References ==
+
+
+=== Notes ===
+
+
+=== Citations ===
+
+
+=== Sources ===
+"ΔV: Rings of Saturn". Koder makes Games. Retrieved 25 May 2025.
+Dawe, Liam (21 July 2023). "ΔV: Rings of Saturn is a game for real space nerds". GamingOnLinux. Retrieved 25 May 2025.
+Dawe, Liam (28 May 2021). "An interview with Kodera Software, creator of the hard sci-fi ΔV: Rings of Saturn". GamingOnLinux. Retrieved 25 June 2025.
+Vega, Sin (21 July 2023). "ΔV: Rings Of Saturn review: turns asteroid mining lead into space game gold". Rock Paper Shotgun. Retrieved 25 May 2025.
+Bolding, Jonathan (23 July 2023). "The best game about space mining is finally finished". PC Gamer. Retrieved 25 May 2025.
+Amer, Hatem (14 April 2021). "ΔV: Rings of Saturn Review: For The Inner Geek In Some Of Us". WhatIfGaming. Retrieved 25 May 2025.
+Roriz, Davide (13 June 2020). "ΔV: Rings of Saturn Preview". bonusstage.co.uk. Archived from the original on 16 August 2024. Retrieved 25 June 2025.
+Tarrobago, Abish (24 July 2023). "A Realistic and Challenging Space Mining Game; Demo Available｜Game8". Game8｜The Top Gaming and App Walkthroughs Straight from Japan!. Retrieved 25 May 2025.
+Mander, Jim (21 February 2025). "ΔV: Rings of Saturn". Substack. Retrieved 25 May 2025.
+
+
+== External links ==
+Official website

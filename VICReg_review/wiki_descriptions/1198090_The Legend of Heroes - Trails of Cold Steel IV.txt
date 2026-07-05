@@ -1,0 +1,40 @@
+Game: The Legend of Heroes: Trails of Cold Steel IV
+appid: 1198090
+Source: The Legend of Heroes: Trails of Cold Steel IV
+URL: https://en.wikipedia.org/wiki/The_Legend_of_Heroes:_Trails_of_Cold_Steel_IV
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+The Legend of Heroes: Trails of Cold Steel IV is a 2018 role-playing video game developed by Nihon Falcom. The game is the ninth installment of the Trails series, itself a part of the larger The Legend of Heroes series, and follows Trails of Cold Steel III (2017) as the final entry of the Erebonia arc.
+Trails of Cold Steel IV was released for the PlayStation 4 in Japan in September 2018 and worldwide in October 2020, with ports for Nintendo Switch, Windows and Stadia released in April 2021. A PlayStation 5 port was released in February 2024. A sequel, Trails into Reverie, was released in 2020.
+
+
+== Gameplay ==
+The gameplay of Trails of Cold Steel IV is similar to previous Trails games, being a turn-based Japanese role-playing video game. Gameplay is based on that of Trails of Cold Steel III, with many features returning. Several changes compared to the previous Trails of Cold Steel games include modifications to the Order and Break systems. Some characters were given weaker Orders that are upgradeable by finding treasure chests that lead to "trial" battles with fixed characters that can be used. Mini-games include blackjack, poker, and other puzzle games.
+
+
+== Plot ==
+Two weeks after the events of Trails of Cold Steel III, Chancellor Giliath Osborne has taken control of the Erebonian Empire and intends to start a war with Erebonia's neighboring country, the Calvard Republic. Meanwhile, Class VII flees to Eryn, a secret village of witches, where they form a plan to rescue Rean Schwarzer, captured by Osborne after losing control of his Spirit Unification power. During their rescue mission, they learn that Rufus Albarea has awakened the seventh and final Divine Knight El-Prado. After rescuing Rean, Class VII is joined by allies from within and outside of the Empire to stop the Great War.
+During the course of the story, Class VII, while resolving numerous incidents across western Erebonia caused by either political issues, the Great Twilight or Ouroboros's plans, uncovers the mysteries surrounding the Divine Knights, their Awakeners, and the dark history of the Empire. After the Ebon Knight Ishmelga was corrupted by humanity's malice, it became an evil sentient being, manipulated the Gnomes, and spread the curse to control humanity, causing many tragedies and forcing the reincarnated Dreichels, Giliath Osborne, to become its Awakener in return for saving his son Rean. Since then, Osborne has been planning to destroy the Great One and its curse. Class VII eventually face Osborne and Ishmelga and emerge victorious.
+In the normal ending, Rean absorbs Ishmelga into Valimar but is unable to contain it, so he along with Crow Armbrust, Millium Orion and their Divine Knights sacrifice themselves to destroy it. In the true ending, Rean expels Ishmelga out of himself and Valimar; Ishmelga then transforms into the Great One, but is defeated and destroyed by the combined efforts of Rean, Class VII, and all of their allies. After the battle, Valimar and the Divine Knights sacrifice themselves to use the remaining power of Sept-Terrions within them to grant Crow, who became an immortal after dying in the civil war and was expected to die permanently after the destruction of the curse, and Millium, who became the Sword of the End, a new lease on life. The Great War ends on its second day, and the Imperial Army returns to Erebonian borders.
+After the post-war issues have been resolved, including an end to the Erebonian occupation of Crossbell, Class VII transfer Millium's soul from the sword into a backup body and together with their allies attend the wedding of Prince Olivert and Scherazard Harvey.
+
+
+== Development and release ==
+Plans for a fourth Trails of Cold Steel game were revealed in an interview with Nihon Falcom president Toshihiro Kondo in November 2017, where he stated that Trails of Cold Steel III was originally intended to conclude the story arc but Falcom found it difficult to satisfactorily wrap up the story without a fourth entry. Like the previous Trails of Cold Steel entries, it was developed using the PhyreEngine game engine. The Nintendo Switch version was ported by Engine Software and the Windows version by PH3 Games.
+Initially scheduled for late 2018 for the PlayStation 4, the game was released in Japan on September 27. A limited edition was also sold in Japan. Localization into English was handled by NIS America. It was released for the PlayStation 4 in North America and Europe on October 27, 2020, and November 6 in Australia and New Zealand. A port for the Nintendo Switch was released in Japan on March 18, 2021, and later for North America, Europe, and Oceania in April. Windows and Stadia versions were released on April 9, 2021. A PlayStation 5 version bundled with Trails of Cold Steel III was released in the west on February 16, 2024. In Japan, the PlayStation 5 version was bundled alongside III and Reverie on August 21, 2025.
+
+
+== Reception ==
+
+The Legend of Heroes: Trails of Cold Steel IV received "generally favorable" reviews according to review aggregator Metacritic.
+
+
+== Notes ==
+
+
+== References ==
+
+
+== External links ==
+Official website

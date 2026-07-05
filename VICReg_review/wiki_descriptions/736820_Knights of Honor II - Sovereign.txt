@@ -1,0 +1,27 @@
+Game: Knights of Honor II: Sovereign
+appid: 736820
+Source: Knights of Honor II: Sovereign
+URL: https://en.wikipedia.org/wiki/Knights_of_Honor_II:_Sovereign
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Knights of Honor II: Sovereign is a grand strategy wargame developed by Black Sea Games and published by THQ Nordic. It is a sequel to 2004's Knights of Honor.
+
+
+== Gameplay ==
+Knights of Honor II is designed to be an accessible entry point for newcomers to the grand strategy genre.  Like the Crusader Kings games, players manage an empire, including the military, diplomatic relations, economy, religious affairs, and the lives of the peasants.  Decisions can affect how the various factions react, including the possibility of rebellions and assassination attempts.  Different scenarios are available in the 12th century, 13th century, and 14th century.  Battles play out in real-time like a real-time strategy game, or players can let the game itself manage the battle.
+
+
+== Development ==
+Developer Black Sea Games is based in Bulgaria. THQ Nordic released Knights of Honor II: Sovereign for Windows on December 6, 2022.
+
+
+== Reception ==
+Knights of Honor II: Sovereign received positive reviews on Metacritic.  Digitally Downloaded praised its accessibility, which they said did not sacrifice gameplay.  They said it provides an enjoyable and easy to learn bridge between the highly abstracted Civilization  series and Paradox's Crusader Kings series.  IGN Italia said it provides a complex and layered game to both new and old players.  
+
+
+== References ==
+
+
+== External links ==
+Official website

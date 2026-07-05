@@ -1,0 +1,31 @@
+Game: FAR: Changing Tides
+appid: 1570010
+Source: Far: Changing Tides
+URL: https://en.wikipedia.org/wiki/Far:_Changing_Tides
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Far: Changing Tides (stylized as FAR: Changing Tides) is a 2022 adventure puzzle video game developed by Okomotive and published by Frontier Foundry. The game is the successor to Far: Lone Sails (2018), and it was released for Windows, Nintendo Switch, PlayStation 4, PlayStation 5, Xbox One and Xbox Series X and Series S in March 2022.
+
+
+== Gameplay ==
+Similar to Lone Sails, Changing Tides is a side-scrolling adventure video game in which the player assumes control of an unnamed driver of a large boat as they explore a post-apocalyptic world. While the game does not feature any combat scenario, the player character must drive the boat and manage its sail, solve environmental puzzles, and gather resources. The ship can be upgraded to include a steam engine, and the player must keep the ship powered by burning fuel, and prevent the engine from overheating by spraying water on it. Eventually, the ship will turn into a submarine which opens up new paths for players to navigate the world. The game does not have a failed state, though some decisions made by players may damage the ship or cause the ship to lose momentum. Players may also need to repair the ships using the resources they have discovered in the game's world and may occasionally need to leave the ship and solve simple environmental puzzles in order to remove obstacles that are blocking the way.
+
+
+== Development ==
+Far: Changing Tides was developed by Swiss developer Okomotive, which consisted of a team of around ten people. Both director Don Schmocker and composer Joel Schoch returned for the project. Okomotive described Changing Tides as a "companion title" to Lone Sails, meaning that players do not need to play Lone Sails in order to understand the story of Changing Tides. Unlike the first game which is set in a world in which the ocean have dried up, Changing Tides is set in a post-apocalyptic world in which cities and civilizations have been flooded. 
+Like Lone Sails, the team spent a lot of time developing on the game's environmental storytelling. The side-scrolling perspective allows the team to tightly control the story they wanted to tell. The game had a minimum amount of text, and the player is expected to solve puzzles with little to no handholding. According to Schmocker, this helped the player to develop a bond between them and their ship. Schmocker further added that designing the environment is more difficult in Changing Tides because it features a wide variety of landscapes such as lakes, rivers, and oceans. The larger variety of landscapes meant that each location needs to be more visually distinct and the team had to fill the world with more color when compared to that of Lone Sails. Because the game had no text, the story of the game and the background of the game's world are mostly communicated through the designs of various environmental assets.
+Okomotive and Frontier Foundry, the publishing label of Frontier Developments, announced the game during E3 2021. Originally set to be released in late 2021, it missed its original release window and the game was delayed.  It was released for Windows, Nintendo Switch, PlayStation 4, PlayStation 5, Xbox One and Xbox Series X and Series S on March 1, 2022.
+
+
+== Reception ==
+
+Far: Changing Tides received "generally favorable" reviews for most platforms according to review aggregator website Metacritic; the PC version received "mixed or average" reviews. Fellow review aggregator OpenCritic assessed that the game received strong approval, being recommended by 83% of critics.
+Brian Hobbs of Adventure Gamers heavily lauded the quality of the game's environments, set pieces, ship mechanics, soundtrack, and climax while taking minor issue with finicky controls and occasionally slow-paced gameplay. Vikki Blake of Eurogamer recommended the game, writing, "It turns out Far: Changing Tides is every bit as bewitching as its predecessor thanks to its stunning presentation, haunting soundtrack, and wholly unique gameplay and puzzle mechanics." Ben Reeves of Game Informer was impressed by the puzzles, player freedom, and score, likening the pace of the game to "...the best moments of a long car ride, where you soak in nature's beauty." Tom Marks of IGN gave the game a 7 out of 10, stating, "It's still an absolutely gorgeous and at times almost meditative roadtrip across a world full of stunning vistas and clever puzzles...efforts to make it a more mechanically varied journey, while successful, also inadvertently tip the balance of the original's formula from peaceful to tedious at times." Roland Ingram of Nintendo Life praised the Switch port of the game, stating that the graphics remained crisp and fluid on the handheld, and went on to deem its mechanics "...a cut above the predecessor, FAR: Lone Sails." Tom Sykes of PC Gamer liked the realistic feel of the boat and deemed the title a worthy experience, writing, "Between stretches of hectic boat management, and after the occasional head-scratching puzzle, these moments of pure sailing are a just—and hugely satisfying—reward." Graham Banas of Push Square praised Far: Changing Tides' art direction, soundtrack, sound design, and final moments while criticizing its slower pacing, balance of activities, and unchallenging puzzle design. TJ Denzer of Shacknews found the puzzle design, machine interactivity, immersive soundtrack, minimalist world, and gameplay depth to be exemplary, but criticized the game's shorter length, abstract sense of progression, and occasionally idling gameplay.
+
+
+== References ==
+
+
+== External links ==
+Official website

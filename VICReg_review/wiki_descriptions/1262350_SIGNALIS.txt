@@ -1,0 +1,43 @@
+Game: SIGNALIS
+appid: 1262350
+Source: Signalis
+URL: https://en.wikipedia.org/wiki/Signalis
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Signalis is a 2022 survival horror video game developed by German studio rose-engine and published by Humble Games and Playism. The player controls a female android named Elster as she aims to solve supernatural mysteries after waking up in a hostile mining facility.
+The game was designed to replicate the graphics and gameplay of fifth generation video games, drawing inspiration from the Silent Hill and Resident Evil series. Additional aesthetic influence came from traditional artworks and films that contain themes of memory. Signalis was released for Windows PC, Nintendo Switch, PlayStation 4, and Xbox One on October 27, 2022. It received generally positive reviews upon release, winning and being nominated for several awards, including Best Narrative of the year and Best Indie Game of the year at Fear Fest: Horror Games Awards 2023.
+
+
+== Gameplay ==
+
+The core gameplay consists of top-down shooter elements from a top-down 2.5D perspective, with occasional puzzle elements. Puzzles vary from manipulating switches and dials, to searching for certain radio frequencies. 
+Difficulty and thematic elements are enhanced through the use of resource management as a gameplay and narrative mechanic. Elster is limited to six items on her person, including weapons, ammunition and key items for use in puzzle-solving and unlocking doors. In the fashion of Resident Evil, another survival horror series, there are safe rooms that allow the player to save progress and store their items for future use.
+
+
+== Synopsis ==
+Signalis is set in a retrofuturist world, in a planetary system reminiscent of the Solar System that is governed by the totalitarian Eusan Nation, which remains at war with the Eusan Empire, from which it has revolted. The Nation employs Replikas, "biosynthetic clones manufactured to emulate model workers and soldiers". Also within the game are humans, or Gestalts, defined in-universe as "a person that is not a Replika".
+The player character, Elster, is a ship technician Replika unit who awakens from suspended animation in the wreck of her crashed scout shuttle and sets out to look for the human pilot of her ship. Entering a vast mining facility, she must puzzle out the strange, possibly supernatural plague which has killed most of the staff and survive the remaining "Corrupted". As Elster searches for her shipmate, she uncovers lost memories and forgotten relationships as she enters a recursive time loop. The game has themes of lesbianism throughout the story, as it is slowly revealed that Elster is in search of her female Gestalt lover. The game features multiple endings depending on the choices of the player.
+
+
+== Development ==
+The game was developed by the two person German studio rose-engine, with development beginning in 2014. Additional help was brought on through external composers. The game was released across multiple platforms on October 27, 2022. The game was published by Humble Games and Playism.
+Narratively and in structure Signalis is influenced by the Silent Hill and Resident Evil series. Aesthetically the game takes inspiration from the graphics of the fifth generation of video game consoles, particularly from the original PlayStation. A CRT mode further mimics the mise-en-scène. Additional aesthetic influence comes from more traditional artwork, such as The Shore of Oblivion by Eugen Bracht as well as Arnold Böcklin's Isle of the Dead. Visual influences are also taken from anime such as Neon Genesis Evangelion. Literary influences include "The Festival" by H. P. Lovecraft and The King in Yellow by Robert W. Chambers. The game's music was co-composed by 1000 Eyes and Cicada Sirens. In February 2024, rose-engine collaborated with the band Health to create a music video for their song "Don't Try" featuring gameplay footage from Signalis.
+
+
+== Reception ==
+
+Signalis received "generally favorable" reviews, according to review aggregator Metacritic, and 85% of critics recommended the game, according to OpenCritic. Critics generally praised the atmosphere and environmental storytelling of the game, although the limited inventory and combat received criticism.
+Many reviewers offered praise of the overall game, while noting individual aspects they felt held it back. The Verge noted issues with a few puzzles, but praised the overall game. GameSpot called aiming in the game "unreliable", while Nintendo Life critiqued that the boss fights of the game were not well suited to the combat system. PC Gamer briefly criticized the game's inventory system, yet rated Signalis a 92%, saying the game "joins that coveted pantheon as one of the best in the (sci-fi horror adventure) genre (...)."
+
+MetalSucks described the game as "a dark love story caught up in a retrofuture survival horror masterwork". Signalis was included on Polygon's list of the 50 best games of 2022, at spot number 12. Willa Rowe, in a review published by Inverse, referred to the game as the "best horror game of 2022".
+
+
+=== Accolades ===
+
+
+== References ==
+
+
+== External links ==
+Official website

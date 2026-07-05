@@ -1,0 +1,49 @@
+Game: Genesis Noir
+appid: 735290
+Source: Genesis Noir
+URL: https://en.wikipedia.org/wiki/Genesis_Noir
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Genesis Noir is an adventure game developed by Feral Cat Den and published by Fellow Traveller Games. The game follows the main character, No Man, as he visits different parts of the universe while trying to save his love. The game was released on Windows, macOS, Xbox One and Nintendo Switch on March 26, 2021.
+A sequel, titled Nirvana Noir, is currently under development.
+
+
+== Gameplay ==
+
+Genesis Noir is a point-and-click adventure game, played out across a number of vignettes. The player is prompted to move their character or interact with the scene through various on-screen prompts.
+
+
+== Plot ==
+Genesis Noir plays as a metaphorical narrative between a film noir-style detective movie and aspects of the creation and potential destruction of the universe. It plays out the events of the Big Bang as a metaphor for a broken romance between No Man (representing time) trying to stop Golden Boy (representing energy) from killing Miss Mass (the mass of the universe).
+No Man, a watchmaker, has fallen into depression after breaking up with Miss Mass, a nightclub singer. He tries calling her and hears her crying for help, and racing to her apartment finds that she is about to be shot by Golden Boy, the saxophone player from her band. After touching the spent bullet casing with a strange spiral marking, No Man finds he can pause time, and determines he can stop Golden Boy's bullet by creating a black hole. He then proceeds to track down more of the spiral symbols through events that would occur without the black hole and turn them golden; these are told through various vignettes that follow the creation of the universe and stages of life on Earth to obtain these. Among these, No Man befriends the Huntress, the Ronin, the Musician, and the Scientist. Further, these vignettes reveal that Golden Boy has found his fame through Miss Mass, and became jealous of when No Man started a relationship with her.
+Eventually collecting enough spirals, No Man converts their energy to create a black hole that begins consuming all of reality. A white figure, an amalgamation of the Huntress, Ronin, Musician, and Scientist, appears to comfort No Man and shows him he can see all the possibilities in time, and that he does not have to save everyone. With this revelation, No Man returns to the point where he first had his encounter with Miss Mass and forces himself to turn away, changing the timeline to allow Golden Boy to kill Miss Mass, and allowing the universe to be created.
+
+
+== Development ==
+According to the creative lead Evan Anthony, the idea of Genesis Noir came about around 2013 after he and Jeremy Abel, the game's technical lead, had read Italo Calvino's Cosmicomics. They spent about two weeks in 2014 to create the initial prototype for the game. The prototype got a positive response from other members of the indie game community, leading them to plan out expanding the game. The early prototypes for the game was created in Unity which had various animation issues, leading to the development team to switch to Unreal Engine in 2015. They continued to work part time on the game through 2016, after which they had enough personal funds to continue full time development on the game.
+The game was originally announced with a teaser in February 2017. A Kickstarter for Genesis Noir was launched on January 17, 2018, with a funding goal of $40,000. The game was originally set to be released in fall 2020, but was delayed to early 2021.
+In addition to Calvino's works, the game's art style was influenced by animation studios Buck, Giant Ant, and Golden Wolf, artwork by Kevin Huizenga and Marc-Antoine Michel, and the video game Windosill.
+The game's music is provided by Skillbard, a London-based duo that has provided compositions for other indie game developers.
+
+
+== Reception ==
+
+
+=== Critical reviews ===
+
+Genesis Noir received "generally favorable reviews" on Metacritic, ending up with a score of 77 based on 18 reviews for the PC version and a score of 81 for both the Nintendo Switch as well as the Xbox One version.
+Malindy Hetfeld of Eurogamer praised the game's visuals, writing that "The art style itself may not look like much in still images, but brilliant whites, beautifully smooth animations and occasional yellow accents combine into something overall quite memorable. There is simply no other game that looks like Genesis Noir right now." Hetfeld also enjoyed how the game taught the player using visual cues instead of tutorials. "It never tells you what to do... You're completely left alone to work out how to proceed, and the fact that this is even possible with zero hand-holding feels like a substantial game design achievement to me."
+Rock Paper Shotgun's Nate Crowley noted that there wasn't much actual gameplay in Genesis Noir "there's not that much playing in this game... It is, in essence, an animated film, with bits where you borrow the main character in order to tackle strange, cosmic minigames." Crowley liked the aesthetic of the game, writing that the visual style was unique, comparing its unique art style favorably to Spider-Man: Into the Spider-Verse. He additionally criticized some of the game's puzzles as being confusing. "there were some failures of intuitive design, where I was left aimlessly clicking around the screen".
+Nintendo Life gave the Nintendo Switch version of the game 5 stars out of 10, calling it "a bad way to play a good game" while citing the awkward control scheme, visual and audio glitches, and poor performance as issues that hindered the port's quality.
+
+
+=== Awards and nominations ===
+
+
+== References ==
+
+
+== External links ==
+Official website
+Genesis Noir at IMDb

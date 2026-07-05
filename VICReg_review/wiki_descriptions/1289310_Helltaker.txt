@@ -1,0 +1,49 @@
+Game: Helltaker
+appid: 1289310
+Source: Helltaker
+URL: https://en.wikipedia.org/wiki/Helltaker
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Helltaker is a 2020 freeware indie puzzle-adventure game with dating-sim elements designed by Polish developer Łukasz Piskorz, also known as "vanripper". It was released in May 2020 for Microsoft Windows, macOS, and Linux, and is described as "a short game about sharply dressed demon girls".
+
+
+== Gameplay ==
+
+The player proceeds through a series of puzzle stages with the end goal of reaching a demon girl, answering her question appropriately, and incorporating her into the player's demon harem. Each puzzle stage involves pushing stones and skeleton soldiers around a two-dimensional top-down grid akin to Sokoban while keeping within a set turn limit, while also avoiding spike traps and collecting key items. After reaching the goal, the demon girl for that particular stage will ask a question in which the player must infer the correct answer based on her personality, and an incorrect answer may result in a bad ending such as death, or the player being brought back to the beginning of the stage.
+The final boss level (featuring the demon Judgement, the High Prosecutor) includes phased bullet-hell-like mechanics with chains across the screen.
+
+
+== Plot ==
+Narrated by Beelzebub, the plot follows the player character, known only as "The Helltaker", in his descent to Hell to acquire a harem of demons. He gradually convinces multiple demons to join, including Hell's ruler, but the harem becomes increasingly dysfunctional as time passes, with the Helltaker admitting that all he can offer is "coffee, turn based strategies and chocolate pancakes". The final level, "Epilogue", shows the harem on Earth, with one of two endings; the "Regular Ending", in which the Helltaker opens the front door of the house to police outside; and the "Abysstaker Ending", where the Helltaker opens a portal utilizing three stone tablets, which have a set of moves inscribed on each of them that the player must start to perform in the middle of the carpet located in the Helltaker's house in the epilogue. The player can collect them in three of the stages during the main game.
+vanripper has posted comics on his Twitter account that canonically take place before the "Epilogue", as well as some that take place after the "Abysstaker Ending". A level pack, called Examtaker, featuring harder stages and a continuation of one of the comic arcs, was released in 2021 to celebrate the game's one year anniversary.
+
+
+== Characters ==
+The Helltaker - A buff muscular man who ends up in Hell trying to build a harem of demon girls.
+Azazel/Loremaster - A curious angel who traveled there to study and collect info on Demons. In the bonus chapter Examtaker, Azazel stays in hell and becomes the new ruler.
+Beelzebub - A self-absorbed demon who was banished to the Abyss by Lucifer. She also serves as the narrator of the game.
+Cerberus - A excitable triple-bodied demon who has one soul living within and controlling all three of them.
+Judgement - A loud demon who identifies as the High Prosecutor of Hell. She also serves as the final boss fight in Helltaker.
+Justice - A chill demon who engorges the Helltaker on his journey.
+Lucifer - A demon who is the queen and CEO of hell, In Examtaker she serves as a maid under Loremaster (Azazel).
+Malina - A sour demon in hell who is the younger sister of Zdrada. She likes turn-based strategy games and is an alcoholic.
+Modeus - A lustful demon with an insatiable sex drive. She makes an appearance in the game Monster Prom 2: Monster Camp.
+Pandemonica - A tired demon who serves as the customer service representative in Hell.
+Zdrada - A mean-spirited smoker demon who is Malina's older sister.
+
+
+== Development ==
+
+Łukasz Piskorz, known on Twitter as "vanripper", developed the entirety of the game by himself over an estimated one-year period and was the game's artistic director. According to Piskorz, Helltaker is somewhat reminiscent of the Leisure Suit Larry video game series, as the main characters of both games have characteristics reminiscent of each other.
+The game can be played for free and includes an art book and the recipe for the pancakes, which can also be bought separately as a means of supporting the developer.
+Although the video game is only officially available in English, Piskorz has supported the translations made by the community, explaining how to make them and making one in Polish himself.
+An additional chapter was added to the game on May 11, 2021, in celebration of the game's first anniversary.
+On July 1, 2020, a fanmade port for the Nintendo Switch, authorized by Piskorz, was released via GitHub. On September 7 of that same year, it was followed by a fanmade port for the PlayStation Vita.
+
+
+== Legacy ==
+Piskorz went on to develop another short freeware game, Awaria, with Mittsies as composer and similar romance elements as Helltaker, though it is entirely an action game. The game's female protagonist volunteers as an engineer in a dystopian, subterranean industrial facility of unknown purpose, hoping to romance and kiss the ghosts of former female recruits who succumbed to its hazards.
+
+
+== References ==

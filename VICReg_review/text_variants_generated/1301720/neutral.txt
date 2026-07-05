@@ -1,0 +1,5 @@
+Escape Room - Der kranke Kollege is an escape room game that simulates a real-world escape room experience. The player begins in a locked room and must find a way out as quickly as possible by inspecting, combining, and interpreting objects to uncover new clues and solve puzzles. By observing the environment carefully, players also uncover a haunting story.
+
+The game features free movement in 3D, many objects to inspect, tricky puzzles, and a hint system. It supports both single-player and multiplayer co-op for 2 to 6 players.
+
+The store page lists two rooms: Room 1, “The Sick Colleague,” which is currently being renovated, and Room 2, “Barbara’s Secret.” It also mentions that players can visit the Discord for help and updates.

@@ -1,0 +1,36 @@
+Game: Encased: A Sci-Fi Post-Apocalyptic RPG
+appid: 921800
+Source: Encased
+URL: https://en.wikipedia.org/wiki/Encased
+Match score: 3.91
+Retrieved: 2026-07-04
+--------
+Encased: A Sci-Fi Post-Apocalyptic RPG, is an isometric turn-based RPG developed by Dark Crystal Games and inspired by computer role-playing games such as Fallout and Wasteland as well as the classic and influenctial Soviet era science fiction novel Roadside Picnic by Arkady and Boris Strugatsky. The game was released in early access on Microsoft Windows on September 26, 2019, and its full release was on September 7, 2021.
+
+
+== Gameplay ==
+The gameplay is inspired by classic computer RPGs such as Fallout. It features a turn-based combat system with an isometric camera view. One of the game's distinguishing features is its emphasis on storybuilding, with the player's decisions affecting the rest of the gameplay in one way or another.
+Character customization is a key feature, along with a reputation system where a character's reputation can change due to player choice. While the player begins with only one character of their creation, various companions can also join them along the way.
+
+
+== Plot ==
+The story take place in an alternative history version of the 1970s. A huge building called the Dome was discovered in a remote, created by unknown beings called the Forefathers.
+In the labyrinths below the Dome, there are many amazing examples of advanced technology and strange artifacts protected by automatic defence systems, traps and anomalies. Aside from that, the special field of the Dome does not allow those who got inside to leave it. Research of the Dome is carried out by CRONUS Corporation, an international organization founded by the governments of the most influential world powers. CRONUS is divided into five departments called Wings, each of which reports to its own leader, has its own specialization and history.
+
+
+== Development ==
+May 18, 2018 Encased development was announced by Russian studio Dark Crystal Games. After the game's announcement, Dark Crystal Games were considering additional funding avenues. This ended in the September 2018 launch of the Kickstarter campaign, that was aiming to expand the game content, not funding it
+The full release was on September 7, 2021. Under the wing of Prime Matter Publishing, a subsidiary of Koch Media.
+The developers have published a roadmap with plans for further content development for the game through the spring of 2022.
+
+
+== Reception ==
+
+Encased received mixed reviews on Metacritic.  Jeuxvideo praised the game's faithfulness to its inspirations but said the combat was too rooted in old-school gameplay. Alberto Naso of Eurogamer Italia praised the storytelling and visuals, but also felt the combat was lacking.
+
+
+== References ==
+
+
+== External links ==
+Official website

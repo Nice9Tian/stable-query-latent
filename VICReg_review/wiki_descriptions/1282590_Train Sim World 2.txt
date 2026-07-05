@@ -1,0 +1,149 @@
+Game: Train Sim World 2
+appid: 1282590
+Source: Train Sim World
+URL: https://en.wikipedia.org/wiki/Train_Sim_World
+Match score: 7.62
+Retrieved: 2026-07-04
+--------
+Train Sim World (abbreviated to TSW) is a series of train-simulation games developed by Dovetail Games. There have been eight iterations, including the initial Train Sim World: CSX Heavy Haul in 2017, after which came the Xbox One exclusive Train Sim World: Founders Edition in 2018. Train Sim World was released the same year, followed by Train Sim World 2020 in 2019 and Train Sim World 2 in 2020. Since the release of Train Sim World 3 in 2022, there has been a new release every year.
+The key people involved with the Train Sim World branch of Dovetail Games include executive producer Matt Peddlesden, senior community manager Alex Gate, community managers Jamie Ringwood and Harriet Morris, and associate designers Michael Alexander and Joe Burgess.
+
+
+== Releases ==
+Train Sim World allows players to walk around the game world in a first-person mode. This mode is utilised in tutorials, scenarios and services in which the first-person mode is required to complete tasks such as refuelling, navigating, doing different types of train driving services or changing switches. It was developed in Unreal Engine 4.
+
+
+=== Train Sim World: CSX Heavy Haul ===
+Released on 16 March 2017, CSX Heavy Haul consisted of one playable route: Sand Patch Grade, based in the United States.
+
+
+=== Train Sim World: Founders Edition ===
+Released in 2018, the second version was Founders Edition, which was available on Xbox One, containing Great Western Express (GWE). It featured three routes, plus the Sand Patch Grade from CSX Heavy Haul.
+
+
+=== Train Sim World ===
+Later in 2018, the third version, titled Train Sim World, was released on Microsoft Windows, Xbox One and PlayStation 4, featuring three routes: Great Western Express: London Paddington–Reading, Rapid Transit: Dessau Hauptbahnhof–Markkleeberg-Gaschwitz and Northeast Corridor: New Rochelle–Newark Liberty International Airport, as well as Sand Patch Grade for the Windows version only.
+Players who originally owned Train Sim World: CSX Heavy Haul were automatically updated to Train Sim World, with the existing game being renamed and the new downloadable content (DLC) being added to that. GWE was remastered and released in February 2026.
+
+
+=== Train Sim World 2020 ===
+
+The fourth version, Train Sim World 2020, was released for Microsoft Windows, Xbox One, and PlayStation 4 in 2019, featuring four routes: Great Western Express, Long Island Rail Road (Penn Station–Hicksville, Hempstead Branch, Atlantic Terminal, Belmont), Main-Spessart Bahn (Aschaffenburg Hauptbahnhof–Gemünden (Main); by Rivet Games) and Northern Trans-Pennine (Manchester Victoria–Leeds route add-on), as well as Sand Patch Grade for Windows only. 2020 featured a Digital Deluxe edition containing, as a bonus route, Caltrain's Peninsula Corridor (San Francisco 4th and King Street–San Jose Diridon route add-on).
+On 12 December 2019, Dovetail Games released the East Coastway add-on. In addition to the Brighton to Eastbourne route, there is a branch route between Lewes and Seaford. The release includes the Class 377/4 and the Class 66. Further add-on routes included Rhein-Ruhr Osten (Wuppertal Hauptbahnhof–Hagen Hauptbahnhof), Ruhr-Sieg Nord (Hagen Hauptbahnhof–Finnentrop), Haupstrecke Rhein-Ruhr (Bochum Hauptbahnhof–Duisburg Hauptbahnhof), Tees Valley Line (Darlington–Saltburn), West Somerset Railway (Minehead–Bishops Lydeard), and Canadian National Oakville Subdivision. Several individual locomotives were also released as DLC, including the Class 20 Chopper and the former East German DB BR 143 and DB BR 155.
+Players who originally owned Train Sim World were automatically updated to Train Sim World 2020, with the existing game being renamed and the new DLC being added to that version. Despite this version adding the year to the tile, it was the only release to do so, with Dovetail later abandoning the existing release model used by Train Simulator.
+
+
+=== Train Sim World 2 ===
+
+The fifth version, Train Sim World 2, was announced on 9 June 2020, with an original planned release date of 6 August 2020. The announcement promoted new features, including the Livery Editor and Scenario Designer. There were two new routes and multiple trains planned for its release: the ICE 3M and Bombardier Talent 2 running from Köln Hauptbahnhof–Aachen Hauptbahnhof, branded as Schnellfahrstrecke Köln-Aachen, and the London Underground 1972 MK2 Stock, with the Bakerloo line. The game also came with Sand Patch Grade route (Cumberland–Rockwood), featuring the AC4400CW, GP38-2 and SD40-2 locomotives. While the route was not new, it had been updated for Windows and was also available on PlayStation 4 and Xbox One with major optimisation to the consoles. The Deluxe Edition also included East Coastway as a Preserved Collection route.
+The Preserved Collection allows players to import their previously owned Train Sim World and Train Sim World 2020 bundled routes and DLC into the new game. This meant players could continue using them without the need to pay for them again. Dovetail Games announced the game would be delayed on 16 July, with a rescheduled release date of 20 August, back from the original 6 August. This was to allow them to make Preserved Collection add-ons compatible with their new Scenario Designer. They confirmed that content from this category will not be compatible with their new Livery Designer, due to a change in the way they develop trains, although such compatibility might be provided in a future upgrade (this has since been confirmed; Livery Designer compatibility for East Coastway was included in a February 2021 patch, with more routes to follow). They also announced, within one of their community questions-and-answers livestreams, that their Northeast Corridor route add-on, as well as their Amtrak SW1000R and CSX GP40-2 loco add-ons, were not going to be part of the Preserved Collection due to technical issues.
+Dovetail Games unveiled their first roadmap on 18 August, which presented their plans for future additions to the game, as well as the timeline for the additional Preserved Collection add-ons.
+Train Sim World 2 was released to the public on 20 August 2020. More DLC followed: Haupstrecke München–Augsburg: LGV Méditerranée: Marseille–Avignon, Southeastern High Speed: St Pancras–Faversham, Clinchfield Railroad: Elkhorn–Dante, Hauptstrecke Hamburg–Lübeck and Scottish City Commuter (Cathcart Circle) together with Isle of Wight: Ryde Pier Head–Shanklin and Arosalinie: Chur–Arosa (both from third-party developer Rivet Games) and Union Pacific Cane Creek: Thompson–Potash (from third-party developer Skyhook Games). The Cathcart Circle Line received an AI addition, to layer in the Avanti West Coast Class 390 Pendolino, with the release of Train Sim World 5 in 2024. The game also included locomotive DLC from all versions, including: DB BR 182, MP36PH-3C, C40-8W, Class 465, DB BR 101, MP15DC, M3 and Diesel Legends of the Great Western (Class 52, Class 101 and Class 08).
+In November 2021, Dovetail released a Sherman Hill: Cheyenne to Laramie route, based in Wyoming. It included the EMD SD70ACe and EMD SD40-2 diesel locomotives in a Union Pacific livery. The SD40-2 was previously released with Sand Patch Grade.
+On 19 July 2022, Rivet Games and Dovetail Games released BR Class 484: Isle of Wight 2022, a train and route DLC featuring the Isle of Wight and the BR Class 484, going from Ryde Pier Head to Shanklin.
+
+
+==== Train Sim World 2: Rush Hour ====
+
+Train Sim World 2: Rush Hour was a season pass containing three routes and came with a free update to the passenger system within Train Sim World 2. It was released on 4 May 2021, and included three new routes: the Boston Sprinter (Boston–Providence), London Commuter (Brighton–Victoria) and Nahverkehr Dresden (Dresden–Riesa). The routes were released between August and October 2021.
+Boston Sprinter released on 19 August 2021. It covered 47 miles (76 km) between Boston and Providence and included the Amtrak ACS-64 and the MBTA (Massachusetts Bay Transport Authority) F40PH-3C. The CTC-3 Coaches and Cab Car were also included. The CSX GP38-2 from Sand Patch Grade was also layered onto Boston Sprinter; however, there are no extra services.
+Nahverkehr Dresden released on 9 September 2021. It spanned the 34 miles (55 km) line between Riesa and Dresden, and also included the 14-mile (23 km) fast line which runs parallel to the main route. The 3.1-mile (5.0 km) branch to Großenhain and 5.6 miles (9.0 km) to Meißen Triebischtal were also included. The route includes the DB BR 442 'Talent 2', DB BR 143, DB BR 146.2, MRCE BR 185 and DB BR 363 as the primary trains, along with the fourth-generation Doppelstockwagen coaches and cab car. The DB BR 101 DLC and DB BR 406 ICE 3M were layered on and included intercity and ICE services that use the fast line.
+London Commuter released on 7 October 2021. It represented the 50-mile (80 km) Brighton Main Line between London Victoria and Brighton, along with the 7-mile (11 km) Quarry Branch and 1 mile (1.6 km) of the North Downs Line (with Reigate being the end). The route includes the Class 377 and Class 387. The Class 375 and Class 465 were layered on from the Southeastern High Speed DLC, providing Southeastern AI services out of London Victoria and diverted services between East Croydon and Redhill (Class 375). The Class 166 and Class 43 were also layered on from Great Western Express, including Great Western Railway services to Redhill and Gatwick Airport from Reigate (Class 166). The Class 43 runs diverted AI-only services past Clapham Junction.
+On 11 November 2021, Rush Hour was taken off sale on all stores; however, the three routes could still be bought separately, or as a bundle, in the Rush Hour Deluxe Edition of Train Sim World 2. The Deluxe Edition also included the base routes, Sand Patch Grade, Schnellfahrstrecke Köln-Aachen and the Bakerloo line.
+
+
+=== Train Sim World 3 ===
+
+The sixth installment, Train Sim World 3, was announced on 9 August 2022, with its official release date on 6 September 2022, although it released to pre-orders on 2 September 2022. It featured three routes that were available to pre-order: Schnellfahrstrecke: Kassel–Würzburg, an extended version of the Southeastern High Speed route, which included Ashford International and Dartford, and the last pre-order route was Cajon Pass. New weather features, such as Dynamic Weather and volumetric clouds, were also added in; passengers were also able to change clothes based on the weather and season, including the use of umbrellas. Like TSW 2, Preserved Collection was brought back and all routes playable in TSW 2 were playable in TSW 3, renamed as "Train Sim World Compatible" add-ons.
+More DLC followed in 2022, such as Birmingham Cross-City, Bahnstrecke Bremen–Oldenburg, and a fictional Christmas-themed route called "The Holiday Express Runaway Elf".
+
+DLC available as of July 2023 for Train Sim World 3 included Amtrak's Acela as a locomotive for Boston Sprinter with Northeast Corridor from New York to Trenton, including the NJ Transit ALP-46, and Amtrak ACS-64, including the return of the Metroliner Cab Car, with both released on 21 February 2023.
+Linke Rheinstrecke from Koblenz to Mainz featuring the DB Class 103 and DB Class 110 was released on 16 March 2023.
+The Peak Forest Railway Ambergate–Chinley and Buxton add-on, released on 9 May 2023, included the LMS Fowler 4F, LMS Stanier Jubilee and LMS Stanier 8F, portraying the route from Ambergate to Chinley and branch line to Buxton as it was in 1963.
+The Glossop line from Manchester Piccadilly to Hadfield and Glossop, featuring the Class 323 in Northern livery, was released on 27 June 2023.
+The Thameslink Class 700/0 was released on Southeastern High Speed as a separate loco add-on on 11 July 2023.
+Third-party content such as a steam railtour for West Cornwall Local: Penzance - St Austell–St Ives and ScotRail Express: Edinburgh–Glasgow (both developed by Rivet Games), Niddertalbahn: Bad Vilbel–Stockheim (developed by TrainSimGermany) and the Midland Main Line section from Leicester to Derby and Nottingham (developed by Skyhook Games) were available.
+
+
+=== Train Sim World 4 ===
+
+Train Sim World 4 was the seventh installment in the Train Sim World series, announced on 22 August 2023, and officially released on 26 September 2023. This version of the game included three routes: the Antelope Valley Line, the East Coast Main Line from Peterborough to Doncaster, and S-Bahn Vorarlberg.
+The Deluxe Edition included the Flying Scotsman in a preserved state as part of its centenary. It also included the Railpool DB BR 193 Vectron for an upgraded version of the Nahverkehr Dresden route add-on.
+Just Trains's first route for Train Sim World was the Blackpool Branches: Preston–Blackpool and Ormskirk, set in 1986, from Preston to both Blackpool North and Blackpool South, included along with the freight-only Fleetwood branch line. Also included is the branch to Ormskirk. Motive power included the Class 142 and Class 47/4.
+Berninalinie: Tirano–Ospizio Bernina, developed by Rivet Games, was released in January 2024. It included the Rhaetian Railway ABe 8/12 electric multiple unit (EMU). It features 24 miles (39 km) of the 38 miles (61 km) of the full route (from St. Moritz to Tirano), including twelve of the 22 stations.
+Rivet also released Fife Circle Line in March. The Levenmouth Rail Link was added as a free upgrade in November 2024.
+In April 2024, LIRR Commuter: New York–Long Beach, Hempstead & Hicksville was released, including the M9 EMU, which was brought into service in 2019. The route included 57 miles (92 km), which was an additional 15 miles (24 km) of the Long Beach Branch compared to the original TSW 2020 release of the original Long Island Rail Road add-on. An additional ten stations were added, bringing the total to 37.
+
+
+=== Train Sim World 5 ===
+
+The eighth iteration of Train Sim World was announced on 20 August 2024, and was released on 17 September, one year on from the release of Train Sim World 4. For existing users, the base game is a free upgrade, which was initially available for thirty days from the release date, but was extended to early 2025. During that window, a starter pack was available, containing the Training Centre, Livery Designer, Free Roam, Formation Designer and Scenario Planner.
+The Standard Edition includes:
+
+West Coast Main Line between London Euston and Milton Keynes (50 miles (80 km) and 28 stations, featuring the Class 350/1 (without the London Northwestern Railway livery or trademarks, due to licensing restrictions), Southern Class 377/2 EMUs, DB Cargo BR Class 66 and FKA wagons, and London Underground 1972 MK2 Stock). Developed by Rivet Games.
+Frankfurt–Fulda Kinzigtalbahn line (64 miles (103 km) and 24 stations, featuring the DB BR 411 ICE T, DB BR 423, DB BR 146.2, DB BR 114 and DB BR 193 Vectron, DOSTO and cab car, and Kijls, Sggmrss and Habbiins freight wagons)
+Los Angeles–San Bernardino Metrolink line (57 miles (92 km) and 16 stations, featuring the MP36PH-3C, Metrolink F125, Rotem cars and cab car, and Bombardier cars in two livery options)
+The Deluxe and Special editions include the three aforementioned routes, plus:
+
+Avanti West Coast Class 390 Pendolino EMU (9- and 11-car variants)
+FlixTrain DB BR 193 Vectron (the third variant of the Vectron in the Train Sim World series) and Talbot coaches
+Cajon Pass
+The Special Edition adds one route from Train Sim World 2 (the Bakerloo Line), three from Train Sim World 3 (the Kassel–Würzburg line, the Northeast Corridor Line's New York–Trenton route, and the Bahnstrecke Bremen–Oldenburg line) and one from Train Sim World 4 (the Suffragette Line, also known as the Gospel Oak to Barking line (or GOBLIN)).
+Train Sim World 5 also includes a Conductor Mode, Route Hopping, Fast Travel and an updated Live Map.
+
+Just Trains's second route for the Train Sim World series was the 90-mile (140 km) Preston–Carlisle stretch of the West Coast Main Line, including Shap Summit. Set in the late 1980s, it also features the Morecambe branch line from Lancaster. The British Rail Class 87 was included, as was both the three-car variant and the two-car variant of the Class 101. The Class 47 and the Class 08 were also included with the route. Those who owned Blackpool Branches could also play the Class 142 on this route.
+Incredible Trains released its first route, London Overground Mildmay line: Stratford–Willesden Junction, in March 2025. Also in March 2025, Dovetail Games released the Thomas & Friends DLC and a few days later, the Spoorlijn Zwolle–Groningen, which was the first Dutch route to be released on Train Sim World.
+In May 2025, Frankfurt S-Bahn was released, on PC and Gen 9 consoles, featuring lines S1, S8 and S9.
+Alan Thomson Simulation released Manchester Airport Commuter in July 2025, including the line from Manchester Piccadilly to Alderley Edge via Manchester Airport and Stockport.
+
+
+=== Train Sim World VR: New York ===
+Dovetail Games's first foray into virtual reality, Train Sim World VR: New York, was announced on the same day as Train Sim World 5. Developed in partnership with Just Add Water, the game will allow the Harlem Line route to be played on the Meta Quest. It released on 31 March 2025.
+
+
+=== Train Sim World 6 ===
+
+The ninth iteration of the series, Train Sim World 6, was announced on 8 July 2025, and was released on 30 September. The three base routes were NJ Transit's Morristown Line, from Hoboken and New York Penn to Dover, New Jersey; the Exeter-to-Plymouth and Paignton Riviera Line in Devon, England; and Germany's Bahnstrecke Leipzig-to-Dresden route. The latter was an extension of the older Dresden-to-Riesa featured in TSW2: Rush Hour.
+In October, the 53-mile (85 km) section of the West Coast Main Line between Birmingham and Crewe was released by All Aboard Studios. This DLC features two more subclasses of the Class 350, namely the 350/2 and 350/3.
+November brought two new DLCs, the first being Cargo Lines Vol. 5: Nuclear, which includes the Class 20 in plain blue DRS livery plus the new FNA-D Nuclear Flask Wagon. The second release brought the Transport for Wales (TfW) Class 142 in the transition livery from Arriva Trains Wales to TfW. The pack also included the Class 150 and Class 153 in the Arriva livery, as well as a new timetable and layers.
+In February 2026, a remaster of Great Western Express was released, bringing an updated map as well as current core features of TSW6. It also added underground and Heathrow Connect using the Class 350, and trains released since TSW 2 were added as layers. Around the same time, the Koln-to-Aachen remaster was released, adding current TSW 6 features as well as well as a lighting update and trains which run the route. An East Coastway remaster followed. This added all current TSW 6 standards as well as adding updates to route and new stations. In addition, the Class 377/3 and Class 171 were added as a paid add-on.
+March saw the release of the Metro-North Railroad: New York to Stamford add-on, featuring the M8 EMU. Also released in March was the Medway Valley line linking Strood and Maidstone. This featured the Class 375. The last release of March was the Class 90 DLC. The train is featured in the DB and Freightliner liveries.
+During April 2026, the DB BR 147 Locomotive was released. In May 2026, a Great British Railways-liveried British Rail Class 802 was released, produced in collaboration between Dovetail Games and the UK Government ahead of GBR's commencement of operations in 2027.
+All Aboard Studios's third DLC, the West Coast Main Line Trent Valley: Milton Keynes to Crewe, was released in June 2026. It includes the Class 807 Evero. Also in June, Just Trains released their third TSW route: the 50-mile West Coast Main Line: Preston to Crewe, via Warrington Bank Quay and Wigan North Western, set in 1986 and 1987.
+
+
+=== Thomas & Friends: Wonders of Sodor ===
+
+Characters from Thomas & Friends were introduced as DLC to Train Sim World 5 in 2025. A standalone spin-off game, Thomas & Friends: Wonders of Sodor was announced in early 2026. The game will include elements from the television series and the original Railway Series books, with narration in scenario play imitating the television series style and was released for PlayStation 4, PlayStation 5, Windows, Xbox One, and Xbox Series X and Series S on March 17, 2026, followed by a Nintendo Switch version on June 9. At launch, Thomas & Friends: Wonders of Sodor became a viral phenomenon on social media.
+
+
+== Editing tools ==
+Train Sim World 2 introduced a livery editor and a scenario editor, with further plans on adding features to the current toolset. Train Sim World 4 adds an editor for routes, locomotives and gameplay.
+
+
+=== Unreal Engine 4 editing tools ===
+Originally, there were plans to bring Unreal Engine 4-based editing tools to Train Sim World. In a September 2018 studio update, it was revealed that the tools would be the same as that used by Dovetail Games to create content, allowing users to create routes, locomotives, wagons, coaches, scenarios and services. However, it would not have been possible to edit existing routes released by Dovetail Games at launch. It was planned for an open beta of the editing tools to be released. Dovetail Games also planned on creating a series of video tutorials for the editing tools.
+However, during a Train Sim World 2 Q&A livestream held on 11 June 2020, the developers announced that tools related to Unreal Engine 4 would not be released to the general public. Community managers further confirmed this on Dovetail Games's forums, arguing that "additional considerations make a public release impossible". However, the tools are available to third-party developers.
+As part of the release of Train Sim World 4, a beta version of the Unreal Engine 4-based editor was introduced for PC players via the Epic Games Store. The editor allows users to create custom routes, trains, and other assets. However, due to limitations, custom content is not available for console players.
+
+
+== Reception ==
+
+
+=== Train Sim World ===
+
+The PlayStation 4 and Xbox One versions of Train Sim World were released to "mixed or average" reviews, according to the review aggregator Metacritic.
+
+
+=== Thomas & Friends: Wonders of Sodor ===
+Thomas & Friends: Wonders of Sodor gathered viral attention, with its announcement for PlayStation on X reaching 5 million views by the time the game released. Reviewers frequently noted the compromises in adapting the simulator mechanics of the Train Sim World series into a child friendly format for Thomas & Friends. In a negative review from WayToManyGames the title was criticized "Instead of being a kid-friendly game, it is the same simulator-heavy, and overly punitive Train Sim World, but clunkier, buggier, and with possibly the worst tutorial mode in the history of gaming." In a review for PCGamesN the title was praised for capturing nostalgia, but was likewise criticized for not striking a better balance between a complex train simulator experience and accessibility for young players.
+
+
+== Notes ==
+
+
+== References ==
+
+
+== External links ==
+Official website

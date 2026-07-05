@@ -1,0 +1,35 @@
+Game: Exo One
+appid: 773370
+Source: Exo One
+URL: https://en.wikipedia.org/wiki/Exo_One
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Exo One is a sci-fi adventure video game developed by Australian developer Exbleative and published by Future Friends Games for Xbox One, Xbox Series X/S, and Microsoft Windows via Steam, Epic Games Store, and Microsoft Store. The game launched on November 18, 2021. It launched on PlayStation 4 and PlayStation 5 on June 27, 2024.
+
+
+== Gameplay ==
+Premising humanity's first mission outside the Solar System, players take control of an alien spacecraft and travel across the surface of surreal worlds.  The craft utilizes three modes of movement: rolling, gliding, and flying, to gather momentum and propel forward, enabling players to explore the skies or dive into the oceans of a particular planet. Exploration is highlighted by a hypnotic electric guitar soundtrack as well as a vocal narration delving into the game's story.
+
+
+== Plot ==
+The game starts with a view from a window of an orbiting craft, observing a flyer down in Jupiter's atmosphere. The "Jupiter Flyer" appears to encounter a problem, leading to the death of all the crew members aboard. The player (commander) watches this from said orbiter. After this, he returns to Earth alone, only to find that hours later, Earth received an alien signal giving instructions on how to build a spacecraft: Exo One. The player claims the signal was meant for them, but the people in charge of the craft wouldn't allow the player to pilot Exo One due to the player's mental state. Someone else ends up piloting the ship, and it fails to launch. The player repeats the claim that Exo One only works with him. An informant ends up telling the player that the spacecraft is stored in a hangar in a desert, so the player steals said craft and starts to travel across planets using alien technology in order to try to bring the original "Jupiter Flyer" crew back. In the end of the game, an orange light creates a space-time singularity, which the player utilizes to travel back in time to where the "Jupiter Flyer" disaster happened. After allowing the crew to survive, you stay on Jupiter with Exo One, and the players fate is undecided. 
+
+
+== Development ==
+Influenced by momentum-based titles like iOS mobile game Tiny Wings, as well as atmospheric indie adventure Journey, lead developer Jay Weston began full-time work on Exo One in early 2016, and launched a successful Kickstarter campaign for the project in 2017. In addition, Tim Mcburnie served as a conceptual artist for the game, musician Rhys Lindsay provided the soundtrack, while programmer David Kazi assisted Weston with coding.
+
+
+== Reception ==
+
+Exo One received "generally favorable" reviews, according to review aggregator Metacritic.
+
+
+== Notes ==
+
+
+== References ==
+
+
+== External links ==
+Official website

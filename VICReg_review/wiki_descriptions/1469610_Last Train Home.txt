@@ -1,0 +1,51 @@
+Game: Last Train Home
+appid: 1469610
+Source: Last Train Home (video game)
+URL: https://en.wikipedia.org/wiki/Last_Train_Home_(video_game)
+Match score: 7.39
+Retrieved: 2026-07-04
+--------
+Last Train Home is a real-time strategy video game developed by Ashborne Games and published by THQ Nordic. Released on November 28, 2023, the game is set in the aftermath of World War I and follows a group of Czechoslovak Legionaires attempting to return home across war-torn Russia while managing combat, resources, and crew morale aboard an armored train.
+
+
+== Story ==
+The story is set during the Russian Civil War and is loosely based on historical events surrounding the Revolt of the Czechoslovak Legion. Following the end of World War I, thousands of Czechoslovak soldiers find themselves stranded deep within Russia after the collapse of the Austro-Hungarian Empire and the outbreak of internal conflict.
+Cut off from their homeland, the Legionnaires attempt to travel east across Siberia along the Trans-Siberian Railway in order to reach Vladivostok and return to Europe. Throughout the journey, the group must navigate hostile forces, political instability, harsh weather conditions, and internal challenges such as dwindling supplies, fatigue, and morale. The narrative blends historical events with fictionalized characters and scenarios, emphasizing leadership decisions, survival, and the human cost of war.
+
+
+== Gameplay ==
+Last Train Home is described as survival real-time strategy video game. Players control a train on Trans-Siberian Railway and a group of Czechoslovak soldiers with the task to get home. In order to survive the lengthy voyage, players have to manage the train and its crew. There are various obstacles on the way during which the players control soldiers during combat operations. Points of Interest - such as lakes, forests and settlements - serve as means to replenish supplies and trade goods on the way. In combat missions, players must fight against enemies that outnumber their units which forces them to use various tactics such as stealth and explosives to even the odds.
+The train is controlled on an overhead map of the current chapter, where simulation happens in real-time. The player's crew can be individually assigned to maintain and repair the locomotive and its specialized carriages (e.g. a driver and a stoker must be present, so that the locomotive is operational), as well as grouped into squads to interact with map elements and take part in fights. Deployed squads require time to reach their destinations, allowing them to interact with a Point of Interest when reached. Cars can also be outfitted with upgrades that provide resistance against the elements, improve working conditions and make more room for accommodating additional troops, for example. Resources may be obtained from encounters and combat scenarios. 
+Much of Last Train Home's challenge lies in satisfying various needs and the effects of certain events, as well as the ability to keep the train well-supplied. Moving the train forward requires coal as fuel, while the crew requires food and military equipment for missions. The durability of cars also deteriorates over time, as well as blockades and certain events may necessitate bringing the train to a halt in order to carry out works. To combat these, upgrades can be installed on each individual car.
+With each story chapter, gameplay also gets progressively more difficult, as resources become scarcer and winter becomes harsher, facilitating the need to manage stocks properly and protect the crew against the biting Siberian cold. Later on, the Red Army will also be hunting the Legion, eventually conducting strikes against the train if it spends too much time not moving.
+In addition to resource management, the train's crew and its needs must also be managed to ensure smooth operation. Crew members have health, morale and stamina, which may be reduced due to unfortunate events and suffering combat wounds, as well as spending time working and being away from the train. Furthermore, soldiers may suffer injuries, traumas and exhaustion if any of the above values get very low, reducing their attributes or work efficiency, or preventing them from being deployed altogether. Soldiers may recover over time by spending time in their living quarters away from work, or through the use of consumables.
+Crew members and their abilities are defined by attributes, traits and available roles, which may improve or worsen after certain actions and events. Combat roles (such as grenadier, machine gunner and medic) define what kind of weapon loadout and abilities a soldier may equip for combat encounters, while train roles (such as worker, cook and doctor) allow working in specialized cars and the locomotive. As a crew member takes part in activities and duties, they gain experience toward their character and current role, which in return improves their base efficiency on the train, or grant new abilities for combat. Eventually, crew members may take on multiple roles, making them more versatile for filling in desired roles. Traits also have significance in encounter outcomes and efficiency for gathering resources.
+In a combat scenario, the squad taking part in the mission must complete various objectives, then exit the level in designated areas. Soldiers can be controlled in a traditional real-time strategy manner, by issuing them move, stop or attack commands. The entire level is shrouded in Fog of War, reducing visibility to areas that units and capturable watchtowers reveal. Unit sight is affected by terrain and buildings, blocking line-of-sight. Some obstacles can be used as cover, mitigating damage taken from explosives and chance to hit from enemy projectiles. Foliage such as trees and bushes may be used to hide units. Resource stashes may also be present that are added to the player's train inventory upon pickup.
+While the player has full control over their squad, enemy units (mostly those of the Red Army) possess individual intelligence that are either stationary, or follow pre-defined patrol routes. Hostiles may check out areas where they have spotted a player unit, or become alerted to unit movement, gunfire and explosions. More soldiers may form temporary groups, seeking cover and responding with their own firepower, pursuing the Legion soldiers. Enemy awareness is gradually reduced as friendlies cease combat and leave their sight. Silent Mode can be activated for player troops in order to make them harder to detect, at the expense of lower movement speed.
+
+
+== Development ==
+Last Train Home was in development since 2020. It was announced on 11 June 2023 during PC Gaming Show 2023. The game includes live-action actors such as Karel Dobrý as Captain Langer (loosely inspired by František Langer). It draws inspiration from the video games Original War and Commandos.
+On 9 October 2023 Ashborne Games released a demo version while announcing that the game would be released on 28 November 2023. The demo version was part of Steam Next Fest, during which it became the 12th most played demo.
+
+
+== Reception ==
+Last Train Home received "Generally Favorable Reviews" from critics on Metacritic receiving 80% from 29 reviews. The game also received 92% recommendation on review aggregator OpenCritic. The game was review bombed by Russian and Chinese nationals for perceived historical inaccuracy and for depicting the Bolsheviks as evil.
+After its release, the game ranked among the ten best-selling games worldwide on Steam, and in the Czech Republic and Slovakia, the game was on the first place.
+At the 2023 Czech Game of the Year Awards, Last Train Home won the Czech game of the year award and Player's Choice award.
+
+
+== Proposed ban in Russia ==
+On 14 August 2024 it was reported that Russian prosecutor's office demands ban of Last Train Home in Russia claiming that the game does not correspond to the "traditional values of contemporary Russian society, contains false information about the activities of the state authorities of the time and glorifies the representatives of the Czechoslovak legions".
+
+
+== References ==
+
+
+== Further reading ==
+Bolding, Jonathan (2023-12-12). "Last Train Home review". PC Gamer. Retrieved 2024-08-22.
+Vega, Sin (2023-11-27). "Last Train Home review: freezing to death in the Russian Civil War shouldn't be this entertaining". Rock Paper Shotgun. Retrieved 2024-08-22.
+
+
+== External links ==
+Official website

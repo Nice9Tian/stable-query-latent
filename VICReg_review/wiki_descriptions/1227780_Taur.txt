@@ -1,0 +1,11 @@
+Game: Taur
+appid: 1227780
+Source: Taur
+URL: https://en.wikipedia.org/wiki/Taur
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Taur may refer to:
+
+A class of fictional hybrid creatures with a humanoid upper part and four-legged animal lower part
+Taur (video game), a 2020 action-strategy video game

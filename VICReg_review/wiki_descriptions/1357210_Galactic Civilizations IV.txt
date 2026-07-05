@@ -1,0 +1,31 @@
+Game: Galactic Civilizations IV
+appid: 1357210
+Source: Galactic Civilizations IV
+URL: https://en.wikipedia.org/wiki/Galactic_Civilizations_IV
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Galactic Civilizations IV is a 4X turn-based strategy video game developed by Stardock for Microsoft Windows. It features standard 4X space gameplay such as colonizing a galaxy, engaging in space combat, and discovering new technology and alien species. As the fourth entry in the Galactic Civilizations series, the game adds an artificial intelligence assistant, a scoring system, and a larger galaxy organized into multiple sectors of tile-based maps. The game entered early access in 2021, promising to learn from other 4X games including Stellaris, Endless Space, and Distant Worlds.
+Upon its release on April 26, 2022, Galactic Civilizations 4 received mixed reviews from game journalists. A few positive reviewers felt the game was enjoyable despite its lack of novelty, while more critical reviews compared it unfavorably to its contemporaries in the genre.
+
+
+== Gameplay ==
+Galactic Civilizations 4 is a 4X space turn-based strategy game, and the fourth game in the Galactic Civilizations series. Like other 4X space games, players explore a galaxy, colonize planets, engage in space combat, and discover new technology and alien species. To make this edition of the series more accessible, the game introduces an artificial intelligence assistant called Space Clippy. This is the first game in the series to expand the galaxy to multiple sectors of tile-based maps, with sectors connected by space highways. Players initiate combat by moving their fleets to the same tile as enemy fleets. Players win the game by accumulating points, as a reflection of the player's success across military and non-violent achievements. The game has been frequently compared to other 4X space games, especially Stellaris.
+
+
+== Development ==
+Stardock announced Galactic Civilizations 4 in early 2021, promising to expand the series with a bigger map, revamped systems, and more emphasis on story and characters. As the company developed concepts similar to other modern space strategy games, the studio announced plans to bring the game to early access later that year. Stardock announced that the game would provide the biggest galaxy yet seen in the series, by organizing the map into multiple sectors. By early 2022, CEO Brad Wardell shared that "one of the reasons I think GalCiv IV is turning out so well is that we have no shame," saying that their team would "borrow/inspire/steal as needed" from other 4X games including Stellaris, Endless Space, Distant Worlds, Civilization VI, Old World, and Humankind. The company soon revealed that the game would be ready for release on April 26, 2022.
+
+
+== Reviews ==
+
+Galactic Civilizations 4 received "mixed or average" reviews according to review aggregator Metacritic.
+Wccftech praised the gameplay with "plenty to enjoy here, but this game may not quite have the gravitational pull needed to separate you from your 4X favorites", citing "a lack of guidance, bloated tech trees, and some other minor lingering issues". PCGamesN said that the game is "nothing novel, but Stardock's latest release builds on classic strategy mechanics while giving them a contemporary, intergalactic twist."
+On the more critical side, PC Gamer says that Galactic Civilizations 4 "just doesn't have much of a hook compared to other space 4X games", comparing it unfavorably to Stellaris. Jason Rodriguez from PC Invasion said that "it's hard to enjoy longer playthroughs", describing how "poor UI, lack of informative tooltips, and odd queueing problems caused unnecessary headaches". Kris Cornelisse from IGN described the game as "a bland, derivative and soulless 4X strategy that fails to deliver anything we haven't seen much better in this space already".
+
+
+== References ==
+
+
+== External links ==
+Official website

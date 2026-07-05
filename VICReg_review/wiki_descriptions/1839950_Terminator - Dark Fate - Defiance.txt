@@ -1,0 +1,126 @@
+Game: Terminator: Dark Fate - Defiance
+appid: 1839950
+Source: List of Terminator video games
+URL: https://en.wikipedia.org/wiki/List_of_Terminator_video_games
+Match score: 5.05
+Retrieved: 2026-07-04
+--------
+Starting in 1991, video games based on the Terminator film series have been released throughout multiple console generations. The films generally focus on humans attempting to prevent the rise of Skynet, an artificial intelligence. In the future, Skynet will wipe out most of humanity with help from its army of Terminator machines.
+The first Terminator game was released for DOS in July 1991, and is based on the original film, The Terminator (1984). Other games based on the first film and its sequel, Terminator 2: Judgment Day (1991), were released over the next two years. Subsequent films also received game adaptations, and several non-film based games have also been released.
+
+
+== The Terminator (1984 film) games ==
+Several video games titled The Terminator were released, each of them based on the 1984 film of the same name. By 1988, Danish company Robtek had acquired the license to create games based on the film, but it subsequently went into receivership before any game could be released.
+By mid-1989, development was underway by Sunsoft on a Terminator game, which would be released for the Nintendo Entertainment System (NES). However, Sunsoft lost the license and eventually published the game as Journey to Silius in 1990. Sunsoft reportedly lost the Terminator license because the game did not follow the plot of the film, instead focusing solely on Kyle Reese as he battles Skynet's machines in the future. Gameplay footage had been shown at the Winter Consumer Electronics Show in 1989, and the footage would resurface 30 years later.
+
+
+=== DOS version ===
+
+The Terminator is a DOS action-adventure game based on the first movie. In mid-1990, Bethesda Softworks announced a deal with the Hemdale Film Corporation to create computer video games based on The Terminator. Bethesda Softworks developed and published the game in July 1991. It was the first game based on the Terminator film series.
+
+
+=== Sega versions ===
+
+A shoot 'em up game, titled The Terminator, was developed by Probe Software and published by Virgin Games. It was released in 1992, for several Sega consoles: the Mega Drive/Genesis, the Master System, and the Game Gear.
+Another shoot 'em up game, also titled The Terminator, was released for the Sega CD. It was developed and published by Virgin Games in 1993. The graphics and music took advantage of the Sega CD's capabilities, and the game includes the use of full motion video from the film.
+
+
+=== Nintendo versions ===
+
+A side-scrolling action game titled The Terminator was released for the Nintendo Entertainment System (NES) in December 1992. Gameplay consists of platforming and driving stages, with Kyle Reese as the player character. It was sublicensed by Bethesda Softworks, developed by Radical Entertainment, and published by Mindscape. Nintendo Power called it an "uneven, jerky" experience with "awkward" controls and "blocky graphics". Gary Whitta of Computer and Video Games (CVG) was also critical of the graphics, and considered the gameplay outdated with no originality. He rated it 61 out of 100, while MegaFun rated it 55 out of 100.
+Another side-scrolling action game, also titled The Terminator, was released for the Super Nintendo Entertainment System (SNES). It was developed by Gray Matter and published by Mindscape in April 1993. The SNES version also puts the player in control of Kyle Reese. It features levels based on the film, including the future war in 2029, and the police station and nightclub in Los Angeles 1984. It also includes several driving levels.
+CVG rated the SNES version 70 out of 100. The magazine criticized the graphics, stating that they resembled an 8-bit game rather than the 16-bit capability of the SNES. CVG also criticized the difficulty, stating that checkpoints are placed too far apart. N-Force found the gameplay boring and exceedingly difficult, rating the game 55 out of 100. Nintendo Power considered the game an improvement over Mindscape's NES version. The magazine praised the graphics and music, while MegaFun found the graphics dreary and the sound monotonous, rating the game 58 out of 100. Reviewers for GameFan were critical of the game but praised its driving levels.
+
+
+=== Mobile game ===
+
+A mobile game, The Terminator, was released in 2003. It is a shoot 'em up developed and published by In-Fusio.
+
+
+== Terminator 2: Judgment Day (1991 film) games ==
+Several video games based on Terminator 2: Judgment Day were released between 1991 and 1993.
+
+Terminator 2 (computer game), an action game with side-scrolling and top-down perspective levels. Published by Ocean Software and developed by Dementia. It was first released in August 1991 for the ZX Spectrum. It was subsequently published for the Amiga, Amstrad CPC, Atari ST, Commodore 64, and DOS.
+Terminator 2: Judgment Day (arcade), a shooter game produced by Midway Manufacturing Company for arcades and released in October 1991.
+Terminator 2 (Game Boy video game), an action-adventure game developed by Bits Studios for the Game Boy. It was published by LJN in November 1991, and includes six levels.
+Terminator 2 (8-bit video game), a side-scrolling action game. Originally released on NES in 1992, it was ported to the Sega Game Gear and Master System in 1993. It was developed by Software Creations and published by LJN on NES and by Flying Edge on Sega systems. The NES version consists of five levels, including a motorcycle level which is omitted from the Sega versions.
+Terminator 2 (16-bit video game), an action-adventure game developed by Bits Studios for the Sega Genesis and Super NES. Both versions were released in 1993; the Genesis version was published by Flying Edge, while the Super NES version was published by LJN. The game includes a mix of side-scrolling levels and driving levels, the latter viewed from an overhead perspective.
+Terminator 2D: No Fate, a game developed by Bitmap Bureau and published by Reef Entertainment for PlayStation 5, PlayStation 4, Nintendo Switch, Xbox One, Xbox Series X and Series S, and PC, released in 2025. The game features multiple playable characters across a variety of gameplay styles, including shooting, beat 'em up, and stealth.
+
+
+=== Pinball game ===
+
+A pinball game designed by Steve Ritchie and released by Williams Electronics in 1991.
+
+
+=== Terminator 2: Judgment Day – Chess Wars ===
+A chess game developed by IntraCorp and published by Capstone Software for MS-DOS in 1993. Characters from Terminator 2: Judgment Day act as chess pieces. White is the "human" side, with the T-800 as king, Sarah Connor as queen, two John Connors as bishops, two Miles Dysons as knights, and soldiers in green uniforms as rooks and pawns. Black is the "machines" side: gray-colored robots with metal skeletons, without the T-1000. The pieces are not taken on the chess board but in futuristic battlefield settings resembling the scenes of the man-machine war from the movie. The player can choose from several game types and difficulty settings. The game rates the player in accordance with the United States Chess Federation scale.
+Computer Gaming World stated in 1994 that Chess Wars was one of "a host of imitations and look-alikes" of Battle Chess. The magazine reported that it crashed so often that the chess engine could not be evaluated because no game was completed, the SVGA graphics were "unimpressive", transitioning between the board and battles was "painfully slow" and the pieces were poorly animated, and falsely claimed to have 4500 chess openings when it lacked an opening library. Computer Gaming World concluded that T2 Chess Wars and Star Wars Chess "are examples of marketing at its best (or worst, depending on your point of view)".
+
+
+=== Slot game ===
+
+Developed by Isle of Man-based betting software developer Microgaming and released in June 2014, this video slot game is a 5-reel online slot machine with a free spins bonus feature and a T-1000 theme. Microgaming CEO Roger Raatgever said, "We've taken the core elements of the iconic Terminator 2 film to create an online slot that does the brand justice. Visually it is stunning and it has a fitting game mechanic that is completely unique to the online gaming market. Our operators and their players will be awestruck by our creation; we are incredibly excited about the game launch today."
+
+
+== Terminator 3: Rise of the Machines (2003 film) games ==
+Several games are based on Terminator 3: Rise of the Machines. The first game, titled after the film, was released in 2003. It is a first-person shooter game with elements of hand-to-hand combat in the third-person perspective. It was developed by Black Ops and published by Atari for PlayStation 2 and Xbox.
+Another first-person shooter game, Terminator 3: War of the Machines, was also released in 2003, for Microsoft Windows. In 2004, Terminator 3: The Redemption was released for several consoles.
+
+A pinball game was also manufactured by Stern Pinball for release in 2003. It was designed by Steve Ritchie and includes voice acting by Arnold Schwarzenegger as the Terminator. It is similar to the pinball game Terminator 2: Judgment Day, also by Ritchie.
+
+
+== Terminator Salvation (2009 film) games ==
+A third-person shooter action game titled Terminator Salvation, based on the film of the same name, was released in 2009.
+
+An arcade game based on the film, developed by Play Mechanix and published by Raw Thrills, was released in 2010. It is a light gun game featuring next-generation graphics. Two players can cooperate simultaneously using machine gun-styled light guns to blast terminators, drones, and other enemies while pushing a button on the magazine well of the gun in order to reload.
+
+
+== Terminator Genisys (2015 film) games ==
+
+For the 2015 film Terminator Genisys, two mobile games were released.
+Terminator Genisys: Revolution, also called Terminator Genisys: Guardian, was developed and published by Glu Games, and released in June 2015. It is a free-to-play third-person shooter with micro-transactions that include new characters and weapons. Jon Mundy of Pocket Gamer called it "another shallow movie tie-in, high on action, spectacle, and (especially) IAPs, but low on depth and content". A game, based on Terminator Genisys: Revolution, was also shown in select theaters prior to the showing of the film, with viewers aiming their mobile phones at the screen to shoot Terminators.
+In June 2016, Skydance Media granted Plarium the rights to develop a new mobile game based on the film. The game, Terminator Genisys: Future War, was released in May 2017. It is an MMO strategy video game, set during the future war between humans and Skynet. Jessica Famularo of Pocket Gamer criticized the grinding gameplay and minimal storyline, and called it the "Terminator game you neither wanted nor asked for".
+
+
+== Terminator: Dark Fate (2019 film) games ==
+
+Terminator: Dark Fate is an MMO strategy video game developed by Firefly Games and Camel Games for Android and iOS. It is based on the 2019 film of the same name. Firefly Games began working on the game in 2017, after being contacted by the film's production company, Skydance Media. The game was released on October 18, 2019, and a global release occurred on November 8, 2019.
+In the game, the player commands a group of Resistance fighters who must defend against machine attacks. The player can expand the group's Resistance base and can also form alliances with other players. The player is guided by characters from the film. The game is free-to-play but utilizes in-app purchases in exchange for various resources.
+Terminator: Guardian of Fate, a virtual reality game by VRstudios, was also launched in November 2019, as a tie-in to Dark Fate. The game is exclusive to the Dave & Buster's chain, debuting at 130 locations across the U.S. It uses HTC Vive headsets and supports up to four players. Like the film, it features the return of Linda Hamilton as Sarah Connor, though in a voice-over role. In the game, Connor and players travel together in a vehicle to evade a terminator.
+Another game, Terminator: Dark Fate – Defiance, was released on PC on February 21, 2024. It is a real-time strategy game that takes place after Judgment Day, during the war between humans and the A.I. known as Legion. The player assumes the role of a commander in the Founders, a group consisting of ex-U.S. military personnel. A multiplayer mode also features two additional teams: the human resistance and Legion. Slitherine Software is the game's developer and publisher, in collaboration with Skydance. There has also been 2 DLC's released, We Are Legion, which saw the player take on the role of Legion, and Uprising, a conquest mode with the player taking back sectors from Legion, Marauders, Integrators and working with The Movement. There is also a new DLC releasing in 2026 called Evolution.  The game received "mixed or average" reviews according to Metacritic, with a score of 72 out of 100. Alex Avard of Empire found the quality of Terminator games to be inconsistent, but wrote that Dark Fate – Defiance, with its "tightly designed" gameplay, "may have just helped to raise that historically low bar a little bit higher." Jon Bolding of IGN criticized the game's difficulty.
+
+
+== Non-film based games ==
+Several games, not based on any particular film, have been released since 1992.
+
+The Terminator 2029 is a DOS action-adventure game developed and published by Bethesda Softworks in 1992.
+RoboCop Versus The Terminator was released for a number of platforms beginning in 1993. It is based on the comic book series of the same name.
+The Terminator: Rampage is a first-person shooter game released for the PC by Bethesda Softworks in 1993. It is the third Terminator game made by Bethesda, following The Terminator and The Terminator 2029.
+The Terminator: Future Shock is a first-person shooter game developed and published by Bethesda Softworks in 1995.
+Skynet is a computer game, initially intended as a multiplayer patch for The Terminator: Future Shock, before being adapted into a standalone product. The game was developed by Bethesda Softworks and released in 1996.
+The Terminator: Dawn of Fate was developed by Paradigm Entertainment and published by Infogrames in 2002.
+The Terminator: I'm Back! is a shoot 'em up mobile phone game developed and published by In-Fusio in 2004.
+Terminator Revenge is a mobile phone platform game developed by Kiloo and published by In-Fusio in 2006. The game takes place in the year 2020. The player assumes the role of a Terminator. The objective of the game is to prevent scientists from using leftover Terminator parts in their experiments.
+Terminator: Resistance is a first-person shooter action video game released in November 2019. The game primarily focuses on the original future war that is depicted in The Terminator and Terminator 2: Judgment Day.
+Terminator: Survivors is an upcoming survival game developed by Nacon. It was announced in July 2022 and is set after the first two films, featuring an original story that takes place after Judgment Day and before the rise of John Connor's human resistance. The game is set in an open world and will focus on salvaging supplies and resources to manage and improve a base of operations, while fighting off Skynet's machines and other humans. It will include single-player and cooperative game modes.
+
+
+== Other video game appearances ==
+Terminator characters have also made appearances in non-Terminator games.
+
+The Terminator appears in WWE 2K16 as a pre-order exclusive.
+The Terminator appears in Mortal Kombat 11 as a guest playable character voiced by Chris Cox, with his default appearance based on the "Carl" unit in Terminator: Dark Fate. The character became available as downloadable content in 2019, either through an individual purchase or the Kombat Pack 1 bundle.
+Sarah Connor and the Terminator are featured in the 2019 video game Gears 5 as playable characters in the multiplayer portion of the game.
+A Terminator endoskeleton was featured as a hunter in the asymmetrical online shooter game, Deathgarden, as downloadable content following its 2019 relaunch as Deathgarden: Blood Harvest.
+In 2020, Tom Clancy's Ghost Recon Breakpoint released an online crossover game event featuring missions and enemies from the original Terminator film.
+In 2021, the Terminator and Sarah Connor became playable characters in the online game Fortnite.
+In 2022, the Terminator and T-1000 were added to Call of Duty: Warzone as operator skins.
+The T-1000 appears as a guest playable character in Mortal Kombat 1, releasing in March 2025 as downloadable content.
+
+
+== References ==
+
+
+== External links ==
+Terminator games at MobyGames

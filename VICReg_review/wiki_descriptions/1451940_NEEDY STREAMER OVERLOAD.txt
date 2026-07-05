@@ -1,0 +1,77 @@
+Game: NEEDY STREAMER OVERLOAD
+appid: 1451940
+Source: Needy Streamer Overload
+URL: https://en.wikipedia.org/wiki/Needy_Streamer_Overload
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Needy Streamer Overload is a 2022 denpa-inspired visual novel video game created by Japanese developer Xemono and published by WSS Playground for macOS, Microsoft Windows, and Nintendo Switch, and by Alliance Arts Inc. for PS4 and PS5. The player takes on the role of a manager for a female livestreamer, making decisions for her so that she can achieve her goal of reaching one million followers within a month. The game was initially titled Needy Girl Overdose, but this was changed for the English release, while the game kept its original title in Japan.
+An anime television series adaptation produced by Yostar Pictures aired from April to June 2026.
+
+
+== Gameplay ==
+
+The player interacts with the protagonist Ame exclusively through a pastel-themed Windows 95–esque user interface, selecting her daily tasks via desktop icons, monitoring her stats via the Task Manager, and conversing with her through an instant messenger service called JINE. Each day is divided into noon, dusk, and evening timeslots, and various actions can take up one or multiple of these timeslots. Ame can only livestream during the evening, as that is the time of day when stream viewers are most active. During Ame's livestreams, the player takes on the role of a content moderator responsible for deleting or promoting viewer comments within the stream's live chat. After streaming or concluding various activities, the player is able to obtain a glimpse of Ame's thoughts and mood via her posts on Tweeter.
+Alongside follower count, Ame has three stats which the player will need to monitor, namely stress, affection (towards the player), and mental darkness. Should certain attributes become too high or low, Ame will begin to display adverse effects. Activities that the player can choose for Ame may involve searching for new stream ideas, spending time together, sleeping, or abusing prescription and illicit drugs. Each of these activities affects Ame's stats in differing ways.
+At release, there were originally 22 different endings to the game, which are encountered based on the player's choices. Additional endings were added in an October 28, 2022 update coinciding with the game's Nintendo Switch release.
+
+
+== Setting ==
+Ame (あめちゃん, Ame-chan) is a mentally ill young girl with a needy personality, who has dropped out of school and confined herself at home, living together with the self-insert player protagonist. In order to pay for rent, and to meet her parasocial attention needs, Ame decides to commence livestreaming on the internet, where she takes on the online persona of "OMGkawaiiAngel" (超絶最かわてんしちゃん, Chōzetsu saikawa tenshi-chan; lit. 'transcendental cute angel'), or "KAngel" (超てんちゃん, Chōten-chan) for short, interacting with her stream viewers as she dons her wig, makeup, and cute outfit. The protagonist, affectionately called P-chan (ピちゃん, pi-chan), is tasked with managing her day-to-day life as she increases her follower count.
+
+
+== Development ==
+Game development began in June 2020 under the initial title Needy Girl Overdose. The title of the game for its English-language and Chinese-language releases were later changed to Needy Streamer Overload and "主播女孩重度依賴" (pinyin: zhǔbō nǚhái zhòngdù yīlài; lit. 'the streamer girl is heavily reliant') respectively; the reason for the title change was not disclosed. During the development process, the game was prototyped in Figma, and then built using the Unity engine. The game was initially scheduled for release during Spring 2021; eventually a release date of June 5, 2021 was announced, however was later delayed by the developers, citing the need for additional quality improvements. This seven month delay was later explained to have allowed the further implementation of additional game event scenarios, and a three- to four-fold increase in the number of animations. The game's dialogue has a wordcount of over 140,000 in the original Japanese script.
+Nyalra (にゃるら), who had previously written various literature focused on mental illness, was responsible for the planning and writing of the game, while illustrator Ohisashiburi (お久しぶり) was responsible for the character designs. The game's art direction heavily draws influence from vaporwave aesthetics and retro pixel art from the PC-98 era, along with 1990s-era bishōjo games. There were originally four different female characters with unique personality traits planned during the early stages of development; however, it was eventually decided that the final game would only feature a single heroine, combining various personality traits into the one character.
+Following the commercial success of the game's initial download-only Windows release, a Nintendo Switch port was announced in May 2022, including a Japan-exclusive physical release fanart book and a CD of the game's soundtrack. The Switch version was released on October 27, 2022, alongside a major update including new endings and text across platforms.
+On November 7, 2025, game developer Xemono revealed that WSS Playground has suspended the distribution of royalties with Xemono since May 2023, paying a portion of the agreed-upon revenue share only after legal action was initiated by Xemono's lawyers, and terminated their revenue sharing contract with Xemono on July 1, 2025. The developer also claimed that producer Daichi Saitō (斉藤大地) from WSS Playground made unfair demands towards them, and that their development studio will cease all further involvement with the Needy Streamer Overload franchise.
+
+
+=== Music ===
+The game's theme song is "Internet Overdose" by producer Aiobahn and vocalist KOTOKO, composed and produced in a denpa song style. The song is available as a playable track in the music rhythm games Muse Dash and Arcaea, as part of their respective collaboration updates. The theme has also charted on the Spotify "Japan Viral 50" chart. On March 16, 2023, a sequel titled "INTERNET YAMERO", also produced by Aiobahn and sung by KOTOKO, was released on YouTube, Spotify, and other music streaming and distribution platforms.
+On April 4, 2022, publisher WSS Playground announced that in addition to being sold via online music distribution services, the game's soundtrack would also be released on 12-inch vinyl record format, which was released on June 29, 2022.
+
+
+== Reception ==
+
+
+=== Sales ===
+Needy Streamer Overload sold over 100,000 copies during its first week of release, with a Steam rating of "overwhelmingly positive" based on more than 5,800 user reviews during the first month. As of September 2023, the game has sold over 1.2 million copies on Steam, with 51% of sales coming from Chinese Steam users. The Nintendo Switch version sold 11,693 copies within its first week of release in Japan, making it the tenth best-selling retail game of the week in the country. As of November 2025, it has sold more than three million units.
+
+
+=== Critical response ===
+
+Among Japanese reviews, IGN Japan notes that the game has merit as a work of satire intended at picking apart modern livestreaming culture and toxic relationships, and praises the game's art and presentation, but criticises the limited choices and gimmicks available to express the player character, arguing that the player is not allowed to become properly aware of any consequences from their interactions with Ame. Ame is criticised as more of a "male nerd's delusion" of what girls are like, rather than how women realistically behave. Meanwhile, Dengeki Online suggests that despite the gratuitous use of mentally disturbing content, Needy Streamer Overload is a good game full of expressiveness that can only be delivered through games as a medium, and players unfamiliar with internet culture may not fully appreciate what the game attempts to portray, and ITmedia writes that although the game has a few rough areas and bugs which detract from the experience, the game is a title with a high degree of precision, closely satirising the intended audience's internet addiction while at the same time acknowledging how it forms part of their identity.
+Throughout the rest of Asia, a review published by United Daily News in Taiwan compares the game progression experience of Needy Streamer Overload to that of Undertale, in reference to how the player learns more and more about Ame during each subsequent playthrough to unlock all the endings. Acknowledging that the game's themes may be too heavy for some audiences, it claims that the game is a "masterpiece" for players who enjoy the premise of exploring menhera issues and are fans of denpa culture, and praised the official Chinese language localisation of the game, especially in regards to its use of Chinese internet memes. Conversely, South Korean gaming magazine Inven criticises the game's short length and the repetitive nature of progressing multiple playthroughs to unlock each ending, claiming that unlike other "raising simulators" such as Princess Maker which feel rewarding as the game goes on, Needy Streamer Overload does not have as much of a sense of accomplishment, although it also praised the game's chiptune soundtrack and overall atmosphere.
+An English-language review from Rice Digital focused on analyzing the game's commentary on contemporary social media and livestreaming culture, noting the game's popularity among VTubers, and remarks that there is no single correct way to play the game.
+
+
+=== Accolades ===
+Needy Streamer Overload won the "Most Stream-friendly Game" and "Best New Characters" awards at the 2022 Indie Live Expo Awards in Japan. The game was also one of two runner-up titles receiving honourable mention for the Game Designers Award at the 2022 Japan Game Awards.
+
+
+== Anime adaptation ==
+
+An anime television series adaptation was announced on November 10, 2025. It is produced by Yostar Pictures and directed by Masaoki Nakashima, with character designs by Kenji Saikai, Akari Takei, and Kaito Shimizu, and music by Aiobahn +81, Sasuke Haraguchi, and DÉ DÉ MOUSE. The series aired from April 5 to June 28, 2026 on Tokyo MX and other networks. A theatrical cut of the anime was screened at Theatre Shinjuku in Tokyo and Theatre Umeda in Osaka on March 6, 2026. The opening theme song is "Internet Angel" performed by "KAngel" ("Chōten-chan"), while the ending theme song is "Levitation" performed by Tatsuya Kitani. Aniplex of America licensed the series and streamed it on Crunchyroll, while Plus Media Networks Asia has licensed the series in Southeast Asia.
+In a statement made on Twitter on the day of the anime's announcement, Nyalra revealed that he will not be involved in the promotion of the anime series, and alleged that WSS Playground had withheld wages and had engaged in power harassment against him, with the company currently still in negotiations with his lawyer. He stated that the company threatened to halt production of the anime unless he was removed from involvement in the project, that a planned music event for KAngel featuring unreleased new songs for the anime was cancelled as a result, and that he was medically diagnosed with an adjustment disorder and depression over the span of the dispute. WSS Playground released a response to Nyalra's statement, disputing his recollection of events and claiming that he had been adequately compensated for his work.
+
+
+=== Episodes ===
+
+
+== Legacy ==
+A manga anthology titled KAngel! Needy Girl Overdose Official Anthology (超てんちゃん！ NEEDY GIRL OVERDOSE 公式アンソロジー) began serialisation on ComicWalker and Nico Nico Seiga from December 23, 2022 onwards, featuring illustrations from Ui Shigure, Ohisashiburi, and 11 other artists. A manga adaptation written by Itaru Bonnoki and illustrated by Nata Ōkura, titled Needy Girl Overdose: Run with My Sick, began serialization on Akita Shoten's Manga Cross manga website on March 21, 2023.
+A typing game spin-off named Needy Streamer Overload: Typing of the Net was released on January 21, 2025.
+
+
+== Notes ==
+
+
+== References ==
+
+
+== External links ==
+Game official website
+Anime official website (in Japanese)
+Needy Streamer Overload at The Visual Novel Database
+Needy Streamer Overload (anime) at Anime News Network's encyclopedia

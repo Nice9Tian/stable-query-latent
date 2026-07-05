@@ -1,0 +1,42 @@
+Game: Gloomhaven
+appid: 780290
+Source: Gloomhaven (video game)
+URL: https://en.wikipedia.org/wiki/Gloomhaven_(video_game)
+Match score: 6.87
+Retrieved: 2026-07-04
+--------
+Gloomhaven is a turn-based strategy role-playing video game, developed by Flaming Fowl Studios and published by Asmodee Digital. It is an adaptation of the tabletop game by the same name. Following two years of early access, Gloomhaven was released for Windows on October 20, 2021 and macOS on November 25, 2021. The game was ported to Nintendo Switch, PlayStation 4, PlayStation 5, Xbox One, and Xbox Series X/S in September 2023.
+
+
+== Gameplay ==
+As an adaptation of the tabletop game Gloomhaven, the video game is a card-driven, turn-based, tactical strategy game.  Players assume the role of a band of mercenaries exploring dungeons, killing monsters, and fulfilling quests. Each player controls a character or characters each with a unique class of abilities and attacks, selected through a card deck specific to that class. Players take turns engaging and defeating enemies without being defeated themselves.
+Players start by adding two to four characters, known as mercenaries, to start a "guild". Each mercenary has their own set of cards that determine the class and style of play for that character. Six mercenaries are available from the start of the game, with more being unlocked as the player progresses through the storyline. The gameplay takes place within individual dungeon scenarios. The goal is to complete the scenario's main objective, such as defeating all the enemies in the dungeon or surviving a certain number of rounds, as well various side missions, and attempting to complete the primary objective for each mercenary, that reward the player with gold, perks, or experience.
+
+Being a card-based game, each mercenary in Gloomhaven has a unique set of cards that determine all actions that can be made throughout a scenario, including attacking, moving, and looting. At the beginning of a turn, the player selects two cards for the characters. Each card has an initiative number associated with it, that determines the order in which all characters on the board will move, including enemies. Cards have two sections, a top and a bottom half. When executing an action, the player selects which of the two available actions on the card they would like to perform. If selecting the top from one card, the bottom must be selected from the other, and vice versa. Enemies in the scenarios act in a similar manner, each with their own initiative number, and set actions to perform. 
+At the end of the round, used cards will be discarded and cannot be used again until the character "rests". When resting, a card will be "burned" and is unusable for the rest of the scenario, with few exceptions for specific class types. When a character burns all their cards, they cannot make any more moves and are defeated. In this respect, cards act as a timer, limiting the number of round a player can perform in a given scenario. Cards can be enhanced with objects and powerups such as adding additional damage to attacks or increases distance for moving. As players advance and gain experience in the scenarios, mercenaries will level up unlocking new cards or enhancements to existing cards. In addition to this, players return to the city in-between scenarios where items can be purchased with earned gold to gain an advantage.
+The game features two distinct game modes. In the Campaign mode, players can play through the full game as the tabletop version. In this mode, players explore about the vicinity of the titular city, Gloomhaven including all scenarios from the original board game and 95 missions to complete. Guildmaster mode, on the other-hand, is specific to the digital version of the game. It includes 160 missions, tutorial for the game, as well as an altered progression system from the original board game. Both Guildmaster and Campaign modes can be played in single player or multiplayer formats. Guilds and characters are not transferable between the game modes.  In addition to the two traditional game modes, Gloomhaven also features a sandbox mode which unlocks all player characters from the start and consists of procedurally generated dungeons.
+
+
+== Development ==
+Gloomhaven was first announced at Gen Con 2018 as an adaptation of the tabletop game, developed by Flaming Fowl Studios which consisted mainly of former employees of the British development studio, Lionhead, which closed in March 2016. The game would be published by Asmodee Digital. The studio would be working alongside the creator of Gloomhaven, Isaac Childres, to create a game that was modeled after the physical game's theme and mechanics rather than an exact replica. Asmodee Digital previously supported video game adaptations of other tabletop games.
+Gloomhaven was first released into early access on July 19, 2019 for Windows. The game initially released with 4 playable characters, a limited number of enemies and classes, and notably lacked a co-op or multiplayer mode. Subsequent updates included an online cooperative mode in 2019 and additional missions in 2021. 
+On October 20, 2021, Gloomhaven left early access. It launched with the full campaign found in the Gloomhaven tabletop game and the 'Guildmaster' mode. The game was released for macOS on November 25, 2021. On May 17, 2022, the first paid DLC for the game was released, Jaws of the Lion, based on the tabletop expansion of the same name. Jaws of the Lion included 25 additional scenarios, new characters, enemies and a new storyline. On September 22 Flaming Fowl released the second DLC Solo Scenarios: Mercenary Challenges that includes 17 missions, each dedicated for a specific mercenary.
+On May 19, 2022, it was announced that Saber Interactive would be porting the game to consoles in 2023. Versions for Nintendo Switch, PlayStation 4, PlayStation 5, Xbox One, and Xbox Series X/S are scheduled to release on September 18, 2023.
+The game was included as one of Epic Games Store's free games of the week on September 22, 2022. This free release coincided with the release of the Solo Scenarios: Mercenary Challenges.
+
+
+== Reception ==
+
+Gloomhaven was released to mostly positive reviews. Reviewers praised the game's adaptation of the original source material and noted the game's difficulty. PC Gamer praised the game's depth and an engaging campaign, but criticized the lack of quality of life features and noted occasional performance issues. Rock Paper Shotgun called the game a "loving and skillful adaptation" of the board game. TheGamer praised Gloomhaven's visuals, saying, "level of detail is astonishing". Polygon said the game retained "the essential assets" of the board game and it had been "masterfully translated to the PC", calling it "one of the most satisfying turn-based dungeon crawlers of 2021".
+Gloomhaven received a nomination for Strategy/Simulation Game of the Year at the 25th Annual D.I.C.E. Awards.
+
+
+== Notes ==
+
+
+== References ==
+
+
+== External links ==
+Official website
+Flaming Fowl Studios website

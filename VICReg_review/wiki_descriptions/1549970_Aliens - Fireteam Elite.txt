@@ -1,0 +1,43 @@
+Game: Aliens: Fireteam Elite
+appid: 1549970
+Source: Aliens: Fireteam Elite
+URL: https://en.wikipedia.org/wiki/Aliens:_Fireteam_Elite
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Aliens: Fireteam Elite is a 2021 third-person shooter game developed by Cold Iron Studio in collaboration with Disney's 20th Century Games (under the name of 20th Century Studios). It is a standalone sequel to the original Alien trilogy, and was accompanied by the prequel novel Aliens: Infiltrator by Weston Ochse.
+A sequel titled Aliens: Fireteam Elite 2 is set to be released in summer 2026.
+
+
+== Gameplay ==
+Although based on the second film, the game's story is a sequel to the Alien trilogy, set 23 years after the original films. The player assumes the role of a Colonial Marine on board the UAS Endeavor, a spaceship tasked with responding to a distress call from the outer colonies. The game has seven character classes: Gunner, Demolisher, Technician, Doc, Phalanx, Lancer and Recon. The game contains four story campaigns with three missions each, and the player is accompanied by two allies who can be controlled by another player or by an AI. There are five levels of difficulty and twenty types of enemies, and weapon customization and character progression are present within the game. Local co-op is not available, though online matchmaking can be public or private. There are plans for post-launch DLC, but there are no loot boxes or microtransactions.
+The gameplay seen in the reveal trailer and in a hands-off demo has been compared to the Left 4 Dead duology.
+
+
+== Plot ==
+During year 2202, the USS Endeavor suddenly receives a distress call from the previously thought-destroyed Katanga refinery station orbiting the planet LV-895 and moves in to investigate, sending a fireteam of Colonial Marines to board the station. The Marines discover that the station has been overrun by Xenomorphs. They manage to rescue the sole survivor of the station, Weyland-Yutani scientist Dr. Timothy Hoenikker. Hoenikker reveals that Weyland-Yutani discovered Xenomorph eggs as well as a mutagenic substance dubbed the "Pathogen" on LV-895, and have been secretly breeding Xenomorphs and experimenting with the Pathogen before the Xenomorphs broke containment.
+Determined to find answers, the Marines head down to the surface of LV-895, where they discover alien Engineer ruins that were being studied by Weyland-Yutani. They make contact with another Weyland-Yutani survivor, Cynthia Rodriguez, and head over to stage a rescue despite her insisting she is safe. The Marines fight their way through Xenomorphs and Weyland-Yutani combat synthetics until they reach the Weyland-Yutani facility, where they discover Rodriguez is actually a Mother AI called SN/TH/YA. Since SN/TH/YA has gone rogue, the Marines shut her down, but not before she activates "Asset Zero". The Marines travel further into the ruins and find that Asset Zero is an intact Engineer starship loaded with Pathogen that SN/TH/YA has arranged to send back to Earth. Realizing the danger the ship poses, the Marines sabotage its power source to prevent it from lifting off.
+The Marines are sent back to Katanga to manually overload the station's fusion power core and destroy the Xenomorph hive on board. While they succeed, they are forced to flee when they anger the Hive's Xenomorph Queen, and narrowly escape the station before it explodes.
+Despite the mission's success, Xenomorphs and large stores of Pathogen are still on the surface of LV-895, and both Weyland-Yutani and rival corporation Hyperdyne Systems are sending forces to claim the planet. The Endeavor and its Marines remain to prevent the Xenomorph infestation from spreading and the Pathogen from falling into the wrong hands.
+The prequel to the game is the novel Aliens: Infiltrator by Weston Ochse, published by Titan Books. The novel tells the backstory of the events that lead up to the beginning of the game.
+
+
+== Development and release ==
+Cold Iron Studios was founded in 2015 by a team consisting of former Cryptic Studios employees, who had previously made titles such as City of Heroes and Star Trek Online. It was acquired by FoxNext Games in March 2019. FoxNext was a mobile game publisher, and intended to use Cold Iron's new Aliens game to expand its portfolio to include larger scale AAA projects. FoxNext was later acquired by Disney, which sold off the studio to Scopely, which then subsequently sold Cold Iron to Daybreak Game Company.
+The game was released on August 24, 2021, on PlayStation 4, PlayStation 5, Windows, Xbox One, and Xbox Series X and Series S. The first paid expansion, titled Pathogen, was released on August 30, 2022. The expansion introduces three new missions, eight new weapons, additional outfits, perks, emotes and accessories, as well as new enemy types inspired by those from Alien: Covenant.
+
+
+== Reception ==
+
+Aliens: Fireteam Elite received "mixed or average" reviews, according to review aggregator Metacritic. Fellow review aggregator OpenCritic assessed that the game received fair approval, being recommended by 34% of critics.
+IGN gave the game a positive review, saying that "there's plenty of wild shootouts with swarms of xenomorphs" in the game, "but some awkward pacing and repetitive level design prevents it from being a classic." Eurogamer praised the way the xenomorphs attacked the player, feeling their ability to come from any direction added to the tension, "This means that even when you feel safe—and trust me, that won't be often—you won't be, because no matter how fortified your holding position is, some little gremlin will get through your defences sooner or later". Alyssa Mercante of GamesRadar+ felt the lack of cutscenes and character animations hurt Aliens, "while the voice acting here is surprisingly good, the Marines simply shift through some cycling animations as they chat, their faces frozen in an uncanny caricature of humanity".
+Game Informer disliked the repetitiveness of levels, feeling that the title was lacking different objectives that could make missions distinct. GameSpot enjoyed the perk system, describing it as making "spending time with each individual class rewarding". PCMag, praised the visuals as "cinematic", but criticized the audio design for being "generic" and "grating". PC Gamer liked the Challenge Cards, the card based modifier system, writing that they made each mission "chaotic and rewarding".
+Destructoid's Chris Carter criticized the AI of co-op bots, saying they ranged from "somewhat responsive and formidable to 'I literally won't shoot an enemy attacking you until you do, which triggers the behavior'." Kotaku felt the game's pathfinding was poor, leading enemies to charge from the same few points towards the player. Polygon liked the balancing of Aliens, feeling the soldiers' lack of power helped make fights more interesting, mentioning that "the uncertainty makes victories far more satisfying".
+The game was the best-selling retail game in the UK in its week of release. The PlayStation 4 version of Aliens: Fireteam Elite was the twenty-first bestselling retail game during its first week of release in Japan, with 2,919 physical copies being sold across the country. The PlayStation 5 was the 30th bestselling retail game in Japan throughout the same week, with 2,077 physical copies being sold.
+
+
+== References ==
+
+
+== External links ==
+Official website

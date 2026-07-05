@@ -1,0 +1,42 @@
+Game: Roots of Pacha
+appid: 1245560
+Source: Roots of Pacha
+URL: https://en.wikipedia.org/wiki/Roots_of_Pacha
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Roots of Pacha is a 2023 farm life sim indie video game set in the Stone Age developed and published by Soda Den, funded as a Kickstarter campaign. It allows up to four players to play online together.
+The village offers activities such as fishing, farming, wild animal domestication, cave exploration and romantic relationships. Overall it was inspired by the Stardew Valley and Story of Seasons series. The game is heavily influenced by book "The Clan of the Cave Bear" by Jean M. Auel. It was released for PC, Mac and Linux on April 25, 2023. It was released for Nintendo Switch, PlayStation 4 and PlayStation 5 on November 28, 2023 and Xbox One and Xbox Series X/S on July 31, 2024.
+
+
+== Plot ==
+
+The player character and their clan migrate following the spiritual guidance of the Clan's spiritual mother-goddess, Pacha. The player creates and customizes their character and meets Vuak, the clan shaman, who guides the clan during its quest for a new home. Upon finding the revered Pacha Tree, the clan decides to settle near it. The player subsequently develops ideas in conjunction with the rest of the clan, coming up with various technological innovations and laying the foundations of civilization.
+
+
+== Gameplay ==
+The gameplay in Roots of Pacha, which takes place in the Stone Age, is generally based on making discoveries and coming up with ideas. When players donate goods they have collected or produced, such as fish, meat, harvested crops, and ores, they earn contribution points. Contribution points function as currency and also contribute to the clan's technological advancement by causing new ideas to be generated.
+
+
+== Development ==
+
+Roots of Pacha, developed by Soda Den, a small studio consisting of two brothers Timo (Creb) and Joni (Berkza), was funded through a Kickstarter campaign, and Crytivo stepped in as a publisher in 2021.
+
+
+=== Release ===
+Roots of Pacha was released for Windows and macOS via Steam on April 25, 2023. During development, there were also plans to release it for PlayStation and Xbox consoles, as well as for the Nintendo Switch.
+The game was eventually delisted from Steam. On May 13, Soda Den said on Twitter that they were having a dispute over the rights of the game with Crytivo, and that the publisher had authorized Valve to remove it without the Soda Den team's consent. However, some hours later, Crytivo responded that, two days after the game was published, the developers had contacted them about canceling their contract, which would end a revenue-sharing agreement between both parties. Both Soda Den and Crytivo announced their efforts to restore the game and to end the dispute. According to Valve's guidelines, a conflict between teams would have their game page removed until it is settled. 
+On May 26, Soda Den published a joint statement with Crytivo, announcing that Roots of Pacha is returning to Steam and has taken over the publishing rights.
+
+
+== Reception ==
+
+Roots of Pacha received "generally favorable" reviews, according to review aggregator Metacritic.
+PC Gamer's Lauren Morton referred to the game as "my favorite Stardew Valley–like game". Andrea Shearon, also writing about the game for PC Gamer, wrote that Roots of Pacha "brilliantly iterates on a genre famous for finding joy in the monotonous and mundane." Sam Loveridge, writing for GamesRadar+, praised the game's originality, stating that it "manages to feel unique and refreshing, mostly because of its setting and its approach to progression."
+
+
+== References ==
+
+
+== External links ==
+Official website

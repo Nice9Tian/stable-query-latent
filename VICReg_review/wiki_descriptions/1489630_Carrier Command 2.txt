@@ -1,0 +1,26 @@
+Game: Carrier Command 2
+appid: 1489630
+Source: Carrier Command 2
+URL: https://en.wikipedia.org/wiki/Carrier_Command_2
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Carrier Command 2 is a real-time strategy game developed by Geometa and published by MicroProse on Steam. The game is a remake of the 1988 Carrier Command, also by MicroProse. Players, in single or multiplayer, control an aircraft carrier and compete against an enemy carrier for the control of strategic islands. The game was released in 2021 along with a VR edition.  
+
+
+== Development ==
+Carrier Command 2 was announced in 2020 by MircoProse, who described the game as a "modern and ambitious" remake of Carrier Command, a game published by the company in 1988. The sequel was developed by Geometa, a Godalming, England-based studio whose only other work is Stormworks: Build and Rescue. A previous remake of the original game was Bohemia Interactive's Carrier Command: Gaea Mission, which was released in 2013.
+The game was released on 10 August 2021 as part of a lineup of retro-themed simulators from MicroProse. A separate VR edition, named Carrier Command 2 VR, was bundled with the base game. Geometa did not initially intend on making a VR game, but did so after numerous players requested it. Compared to the base game, the VR mode was rushed as the studio lacked experience in the field and treated it as a secondary project.
+
+
+== Gameplay ==
+
+The concept is based on the original Carrier Command, where a player controls an aircraft carrier and competes against an identical aircraft carrier for the control of various islands. Each island is defended by units hostile to both sides. If captured, an island can manufacture weapons, replacement parts, or other supplies used to capture more islands or attack the enemy carrier. Each carrier is equipped with aircraft and amphibious vehicles that can be used to launch attacks; each unit can be manually or automatically controlled. The first-person player controls the ship and units from an interactable 3D bridge of the aircraft carrier which features monitors that controls each system. For instance, one monitor can be used to spot enemy targets while another is used to order supplies. The premise is used for both a single-player campaign and multiplayer. Up to nine players can crew an carrier in a co-op mode or against another team of players. Campaigns can be customized by changing the number of islands, players, and enemy carriers.
+
+
+== Reception ==
+While the game was praised for revisiting the concept and providing a freedom of choice, a common complaint was that the game is too difficult to manage for one player. The number of tasks encourage cooperation and multiplayer despite single-player being default. In addition, controlling units was criticized for being frustrating and both the user interface and carrier bridge difficult to navigate.
+Carrier Command 2 VR had an incredibly poor release on Steam with a "mostly negative" rating after a week. Most of the criticism regarded various technical issues due to a lack of testing by Geometa. Many of the problems were described as "simple" and addressed in several patches after the release.
+
+
+== References ==

@@ -1,0 +1,44 @@
+Game: Dungeonborne
+appid: 2448970
+Source: Dungeonborne
+URL: https://en.wikipedia.org/wiki/Dungeonborne
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Dungeonborne was a free-to-play multiplayer dark fantasy action role-playing game developed and published by Mithril Interactive for Windows. The game used first-person dungeon crawling, player versus environment combat, player versus player combat, extraction mechanics, and battle royale elements.
+The game was first shown as Project Crawl before it was renamed Dungeonborne. It received press coverage during Steam Next Fest in February 2024 because of its links to the same fantasy extraction genre as Dark and Darker. Dungeonborne entered early access on Steam in July 2024.
+In February 2025, Mithril Interactive said that new account registration and in-game purchases would stop on February 28, 2025. The servers were shut down on May 28, 2025.
+
+
+== Gameplay ==
+Dungeonborne was a first-person extraction dungeon crawler. Players chose a fantasy class and entered dungeons alone or in groups. During each run, they fought monsters, fought other players, gathered loot, and looked for a way out.
+The game used a risk-based loot system. Players could bring weapons and armor into a dungeon. If they escaped, they kept the loot from the run. If they died, they lost the gear they carried.
+The match structure also used battle royale elements. PC Gamer described the main loop as a dungeon run where players gathered treasure while a ring closed around the map and pushed them toward danger. GamesRadar+ compared the game to Dark and Darker, but said the demo had slow attacks, class balance issues, connection issues, and rough edges.
+
+
+== Development and release ==
+Mithril Interactive first showed the game under the title Project Crawl. The studio later renamed it Dungeonborne.
+A public demo was available during Steam Next Fest in February 2024. At that time, several outlets compared the game to Dark and Darker, another first-person fantasy extraction game.
+A final public playtest was held in July 2024. PC Gamer reported that the playtest reached 14,448 concurrent players on Steam. The game entered early access on July 18, 2024.
+
+
+== Monetization ==
+Dungeonborne received criticism for its auction house system after its early access launch. PCGamesN reported that players needed premium currency to list items on the auction house. Mithril Interactive later changed the system from a seasonal purchase to a one-time purchase after players raised concerns about the cost and the way the system had been explained.
+
+
+== Reception ==
+Pre-release coverage was mixed. GamesRadar+ described the Steam Next Fest demo as a "primitive but promising" take on the same genre as Dark and Darker. The article praised the tension of the extraction loop, but criticized the slow combat, slow object interactions, and rough state of the demo.
+PC Gamer wrote that Dungeonborne had a chance to gain players while Dark and Darker was not available on Steam. The same article also noted player complaints about connection issues and class balance during the demo period.
+Massively Overpowered gave a more critical view of the early access version. The article said the game had strong class ideas and a clear fantasy setting, but criticized its extraction mode, slow combat, limited maps, and lack of strong reasons to keep playing.
+
+
+== Shutdown ==
+On February 28, 2025, Mithril Interactive announced that Dungeonborne would be retired. New account registration and in-game purchases were disabled the same day. The studio said that the servers would shut down on May 28, 2025.
+PC Gamer reported that the shutdown came less than a year after the game entered early access. PCGamesN reported that the game had been removed from Steam and that players had cited balance problems, strong enemies and items, slow updates, and poor communication from the developer as common complaints before the shutdown.
+
+
+== References ==
+
+
+== External links ==
+Official website

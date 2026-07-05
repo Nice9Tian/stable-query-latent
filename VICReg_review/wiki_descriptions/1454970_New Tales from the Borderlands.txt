@@ -1,0 +1,45 @@
+Game: New Tales from the Borderlands
+appid: 1454970
+Source: New Tales from the Borderlands
+URL: https://en.wikipedia.org/wiki/New_Tales_from_the_Borderlands
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+New Tales from the Borderlands is a 2022 graphic adventure game developed by Gearbox Studio Québec and published by 2K. A spin-off of the Borderlands series and a successor to Tales from the Borderlands (2014–2015), the game was released in October 2022 for Nintendo Switch, PlayStation 4, PlayStation 5, Windows, Xbox One, and Xbox Series X and Series S.
+
+
+== Gameplay ==
+Similar to Tales from the Borderlands, it is a graphic adventure game in which the player must move the game's protagonist around the world's environment, explore their surroundings, complete quick-time events, and make narrative choices that may change the outcome of the story.  Each character has their own unique gadgets. Anu has a high-tech glasses which allow her to scan objects; Octavio can browse other people's social media pages and hack into their devices; Fran can freeze enemies using her hoverchair.
+
+
+== Plot ==
+
+
+=== Characters and settings ===
+New Tales from the Borderlands is set about a year after the events of Borderlands 3, and introduces a cast of new characters, including three playable protagonists: Anuradha “Anu” Dhar (Michelle Rambharose), an altruistic scientist; Octavio Wallace-Dhar (Diego Stredel), Anu's adopted brother who is seeking fame and fortune; and Francine “Fran” Miscowicz (Lucia Frangione), the owner of a frozen yogurt store who uses a hoverchair for mobility. The player must guide the three protagonists, each with their own hopes and dreams, as they fight against Tediore agents, as well as monsters and criminals that roam the planet. The trio must also work together as they seek a Vault that may change their lives forever. Major non-playable characters include: L0U13 (Temapare Hodson), an assassination bot allied with the three protagonists; Rhys Strongfork (Ray Chase), CEO of Atlas and previously one of the two playable protagonists of Tales from the Borderlands; and Susan Coldwell (Samantha Ferris), CEO of Tediore. Weapon salesman Marcus Kincaid (Bruce DuBose) returns as the narrator of the game, while Fiona Dillon (Laura Bailey), the other playable protagonist of Tales, makes a cameo appearance in the ending.
+
+
+=== Synopsis ===
+Atlas scientist Anuradha Dhar attempts to present her invention, a non-lethal ray gun utilizing Eridium to mimic Siren powers, to her boss, Rhys Strongfork, but the device is rejected and she is fired from her job. Just as she returns to her office, the Atlas space station is under siege by Tediore forces, who are attempting to acquire a Vault Key from Rhys. Anu escapes to Promethea using Rhys' car. Meanwhile, on Promethea, Anu's estranged adopted brother, Octavio Wallace-Dhar, also struggles to survive the Tediore invasion alongside his friend, assassination bot L0U13. Anu and Octavio later reunite at Fran's Frogurt, a failing frozen yogurt shop owned by Octavio's boss, Francine Miscowicz. After Tediore forces decimate the shop while looking for Octavio, the three of them agree to ally and find out Tediore's plan.
+Anu, Octavio, and Fran follow Tediore troops to the sewers, where they discover a Vault entrance. Upon entering, they are forced to face the Vault's guardian, the Devourer. With their combined efforts, they defeat the Devourer and retrieve a green shard from its body, which they later learn has healing capabilities. On Octavio's suggestion, the trio signs up for the reality game show Sink or Swim to pitch the shard, combined with Anu's ray gun, as an invention, in order to win the prize money and start their own business. Though Anu nearly loses her life while making her sales pitch, they manage to win the competition with backing from an angel investor. Anu later learns, however, that Tediore had put a bounty on her head, having recovered her ID card from the Vault. Tediore forces later attack the shop and kill Anu, though Octavio is able to revive her using her ray gun. However, Anu is temporarily possessed by an unknown entity, who demands to be reunited with their "twin".
+Octavio contacts the angel investor to seek refuge, to which they agree. However, it turns out to be a trap as Tediore's CEO, Susan Coldwell, reveals herself as the angel investor in disguise. After capturing the trio and L0U13, Coldwell makes a presentation to other mega-corporation CEOs, revealing that the green shard is one-half of a full Anahatium shard, and that she was in possession of the other half; with both shards, Coldwell can power up a superweapon capable of torturing others by killing and resurrecting them repeatedly. As she demands the other corporations to merge with Tediore by choice or force, the entity within Anu becomes enraged and breaks free from containment, while also fusing the green shard with Anu's body. Coldwell detains them once more, and instructs her scientists to remove the shard from Anu.
+Octavio, Fran and L0U13 manage to break free on their own and reunite with each other, then later find Anu, who had a conversation with the shard's spirit entity while in coma. They learn that Coldwell had constructed a gigantic-sized version of Anu's ray gun. After L0U13 sacrifices himself, the trio moves on and confronts Coldwell, who uses her super gun on the entirety of Promethea. Anu is faced with a choice: to merge with the shard and become a corporeal entity, killing her mortal form and gaining the power to defeat Coldwell, or resist the shard and work with Octavio and Fran. Regardless of the choices, Coldwell is killed and the Anahatium shard is fully reunited, as it flies away into space, and Promethea's population is restored.
+Depending on the player's choices, there are several possible endings, which are reliant on the bond between the playable protagonists. There are three endings in which each of the three protagonists dies; another ending in which they survive but go their separate ways; or an ending in which they survive and start a new business together, alongside all of their friends on Promethea as well as a rebuilt L0U13. Meanwhile, it is revealed that Marcus Kincaid is narrating the story to Fiona Dillon, a con artist and Vault Hunter, who deduces where the Anahatium shard ends up next.
+
+
+== Development ==
+The original Tales from the Borderlands was developed by Telltale Games, which was shut down in 2018. Gearbox Studio Quebec, which was opened in 2015, served as the game's lead developer. The team spent at least two and a half years developing the game. As the Gearbox team did not have experience developing a game featuring a branching narrative, they hired several key members of the original game's development team to help them understand how to write an interactive story which can respond to the choices and decisions made by players. The studio also hired Lin Joyce, a doctor in interactive fiction, to serve as the game's lead writer. While the game initially had a larger cast of characters, many actors were unable to complete motion capture work for the game. As a result, the writing team had to modify the game's script to focus on the three core characters, resulting in a more "intimate" story.
+Gearbox considered New Tales from the Borderlands a "standalone product", and a spiritual successor to Tales from the Borderlands. It features a cast of new characters and a self-contained story, so that players will not need to have played other games in the series to fully understand the story. However, the game also features returning characters, including Rhys Strongfork, CEO of Atlas and one of the two protagonists from the original Tales, and his employee Lor from Borderlands 3. Its art also looks closer to that of Borderlands 3 than the original Tales, and the game is powered by Unreal Engine 4. New Tales from the Borderlands retains the episodic structure of the original game, but all five episodes were released at once, similar to Life Is Strange: True Colors.
+Gearbox Software CEO Randy Pitchford announced a successor to Tales from the Borderlands at PAX East in April 2022. The game was officially unveiled at Gamescom in August 2022 by Gearbox and series publisher 2K. It was released on October 21, 2022, for Nintendo Switch, PlayStation 4, PlayStation 5, Windows, Xbox One, and Xbox Series X and Series S. The Deluxe Edition bundled the game with the original Tales, while players who pre-ordered the game would gain access to an in-game collectible, in-game credits, and cosmetics for the three protagonists.
+
+
+== Reception ==
+
+New Tales from the Borderlands received "mixed or average" reviews, according to review aggregator Metacritic. Critics criticized the dated gameplay formula and the lack of impact of choices, while reactions to the story and writing were mixed.
+
+
+== References ==
+
+
+== External links ==
+Official website

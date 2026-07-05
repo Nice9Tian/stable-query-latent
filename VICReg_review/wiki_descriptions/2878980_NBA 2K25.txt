@@ -1,0 +1,40 @@
+Game: NBA 2K25
+appid: 2878980
+Source: NBA 2K25
+URL: https://en.wikipedia.org/wiki/NBA_2K25
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+NBA 2K25 is a 2024 basketball video game developed by Visual Concepts and published by 2K. Based on the National Basketball Association (NBA), it is the 26th installment in the NBA 2K series and is the successor to NBA 2K24 (2023) and the predecessor to NBA 2K26 (2025). The game was released for Nintendo Switch, PlayStation 4, PlayStation 5, Windows, Xbox One and Xbox Series X/S on September 6, 2024. It was also released for iOS, macOS and tvOS through Apple Arcade on October 3, 2024.
+
+
+== Development ==
+The game was announced on July 11, 2024 and is the first instance in the NBA 2K series that features cover art with both NBA and WNBA players on the same release, with the All-Star Edition featuring Jayson Tatum of the Boston Celtics and A'ja Wilson of the Las Vegas Aces. The Standard Edition has Tatum, WNBA Edition has Wilson, and the Naismith Hall of Fame Edition features Vince Carter, who led a crop of inductees scheduled to enter the month after this game was released. This will be the first installment of the series where the PC edition will have all of the features of the home console editions, minus cross-play support, which is only on PlayStation 5 and Xbox Series X/S. Additionally, in the Season 3 update, the PC version received Easy Anti-Cheat to help combat hackers. NBA 2K25 has ProPlay, a technology introduced in the predecessor NBA 2K24, which turns real NBA footage into animations in-game for players. Using ProPlay, 9,000 new animations were added. The game additionally features a new dribble engine and a new defensive movement system. An additional paid DLC mode, Gravity Ball, was added in Season 2 on October 22.
+
+
+== MyCareer ==
+The NBA 2K25 Next Gen City is split into two affiliations, Rise and Elite. Each affiliation offers five 3v3 courts and three 2v2 courts. The Elite courts are located on the bottom right of the map and are pirate-themed. The Rise courts are located on the top right of the map and are robot factory-themed. This 2K offers 72 different takeovers and 14 takeover abilities. Takeovers have five levels, which gradually boost with strong performances on the court.
+
+
+== Additional changes ==
+NBA 2K25 introduces Legend Badges and additional attributes beyond your builds cap. In MyCareer, stamina has been removed from the builder and is now earned through working out at a Gatorade facility. Also, the acceleration rating has been replaced with agility. The badge regression introduced in NBA 2K24 has been removed. It also introduced the "Steph Era" in the MyNBA mode, which starts in the 2016–17 NBA season, where Kevin Durant makes his debut for the Golden State Warriors.
+
+
+== Reception ==
+
+The PlayStation 5, Xbox Series X, and PC versions of NBA 2K25 received "generally favorable" reviews on review aggregator Metacritic, with the PlayStation 5 version having a 79/100, the Xbox Series X version having a 77/100, and the PC version having a 76/100.
+It was nominated for "Best Sports / Racing Game" at The Game Awards 2024, as well as for "Sports Game of the Year" at the 28th Annual D.I.C.E. Awards.
+By August 2025, the game had sold 11.5 million units.
+
+
+== See also ==
+2024 in basketball
+2024 in video games
+
+
+== References ==
+
+
+== External links ==
+Official website 
+Press release by 2K Games

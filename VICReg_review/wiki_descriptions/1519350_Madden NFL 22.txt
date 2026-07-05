@@ -1,0 +1,27 @@
+Game: Madden NFL 22
+appid: 1519350
+Source: Madden NFL 22
+URL: https://en.wikipedia.org/wiki/Madden_NFL_22
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Madden NFL 22 is an American football video game based on the National Football League (NFL), developed by EA Tiburon and published by Electronic Arts. It is the 32nd installment of the long-running Madden NFL series, and was released for Microsoft Windows, PlayStation 4, PlayStation 5, Xbox One, Xbox Series X/S, and Stadia. NFL quarterbacks Patrick Mahomes of the Kansas City Chiefs and Tom Brady of the Tampa Bay Buccaneers, who played against each other the previous season in Super Bowl LV, were both featured on the cover of the game, the first joint cover since Madden NFL 10. 
+Like recent previous installments of the series, the game received mixed reviews from critics, with praise for the attempts to improve Franchise mode but criticism at glitches and the lack of innovation elsewhere. This was the last Madden game released before the death of John Madden, the franchise's namesake. In May 2025, it was announced the game's online services would shut down on October 20, 2025.
+
+
+== Cover art ==
+Both Tom Brady (Madden NFL 18) and Patrick Mahomes (Madden NFL 20), who both participated in Super Bowl LV, were announced as co-cover athletes in June 2021, the second time for both players. Considered to be the "greatest Madden cover of all time", since both players had the GOAT (Greatest of All Time) status, with Brady as the all-time "GOAT" and Mahomes as the "Kid" or "Baby GOAT", Madden 22 is the second time in the franchise's history two NFL players shared the cover of the game, after Troy Polamalu and Larry Fitzgerald were on the cover of Madden NFL 10.
+
+
+== Features ==
+In previous years, the series had received specific criticism towards the lack of features and updates to the franchise mode, especially when compared to the likes of previous installments from older generations of consoles like Madden NFL 2005. EA released a statement saying Madden 22 would feature "more detailed staff management and skill tree progression systems, with a comprehensive weekly game strategy that integrates into [player's] gameplan" and will have various other updates added throughout the NFL season. Brandon Gaudin and Charles Davis return as the game's commentators as has been the case since Madden NFL 17. The game will also feature a "home field advantage" system, with each stadium giving the home team a certain ability once enough momentum credit is built up, such as opposing teams' stamina being drained faster at Empower Field at Mile High or offensive audibles possibly not going through at Arrowhead Stadium. In Face of the Franchise The Rich Eisen Show was added. In Season 1 of post-launch content, Superstar KO added college football rules, with players choosing a team and offensive and defensive playbooks on top of the traditional Superstar KO rules and teams from the mode at launch. On January 14, 2022, the second Nickelodeon cross-promotion content, as a tie-in to the January 16, 2022 broadcast, included content from SpongeBob SquarePants, Rugrats and Teenage Mutant Ninja Turtles in The Yard mode. Alan Roach, who has been the PA announcer for the Super Bowl, the Pro Bowl and the NFL International Series, as well as the Minnesota Vikings, will be once again serving as the announcer.
+
+
+== Reception ==
+
+Madden NFL 22 received "mixed or average" reviews from critics, according to Metacritic.
+GameSpot gave the game 7.0/10, writing: "When everything's working as intended, Madden 22 marks a recent high point for the series. The gameplay doesn't move the needle much mechanically, but changes to the AI make for a more interesting and varied challenge, while Gameday Atmosphere and Momentum bring every team's fans to life to palpable effect. With Franchise making the moments between these games more engaging, it's relatively easy to sink hours into building a team to challenge for the Super Bowl. It's just unfortunate that this comes with the caveat that technical problems might prove to be the biggest obstacle standing in your way."
+In its 6.0/10 review, IGN wrote: "Madden NFL 22 is a grab bag of decent – if frequently underwhelming – ideas hurt by poor execution. Face of the Franchise, to put it mildly, is a mess. Homefield advantage is a solid addition, but it doesn't quite capture the true extent of real on-field momentum swings… In short, if you're hoping for a massive leap forward for the series on the new generation of consoles (or on the old ones), you're apt to be disappointed."
+
+
+== References ==

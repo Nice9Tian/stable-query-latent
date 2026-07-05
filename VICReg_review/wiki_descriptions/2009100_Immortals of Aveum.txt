@@ -1,0 +1,51 @@
+Game: Immortals of Aveum
+appid: 2009100
+Source: Immortals of Aveum
+URL: https://en.wikipedia.org/wiki/Immortals_of_Aveum
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Immortals of Aveum is a 2023 first-person shooter game developed by Ascendant Studios and published by Electronic Arts. The game was released for PlayStation 5, Windows, and Xbox Series X/S on August 22, 2023. It received mixed reviews from critics and sold poorly, which led to Ascendant Studios laying off almost half their staff.
+
+
+== Gameplay ==
+Immortals of Aveum is played from a first-person perspective. The game features around 25 spells, ranging from offensive and defensive magic divided between red, blue, and green types. Additionally, the game features a talent tree with over 80 nodes. At normal difficulty, the game can be completed in 12–16 hours, while full completion at the highest difficulty requires roughly 25 hours of playtime.
+
+
+== Plot ==
+Following a successful pickpocketing, thieves Jak (Darren Barnet) and Luna return to their hideout in the city of Seren, only to find their friend Caleb has been severely injured. During Jak and Luna's attempt to steal medicine, Sandrakk launches an attack on Lucium, the last of the Five Kingdoms of Aveum to resist invasion by the kingdom of Rasharn. Following Luna's death in battle, the Grand Magnus of the Immortals, Kirkan, recruits Jak to defend Lucium in the ongoing Everwar because of his abilities as a Unforeseen Triarch Magnus capable of wielding all three colors of magic: red, blue, and green.
+As Kirkan mentors Jak to draw magic from the Shrouded Realm, she explains that Sandrakk has already forced the armies of Oremen, K'ley, and Kalthus into the "Wound," a pit at the center of Aveum. Following five years of fighting on the front lines, Jak is selected to join the Immortals of Aveum under Devyn and Zendara, but he is disillusioned by Kirkan revealing that magic drawn from Aveum's ley lines expands the Wound.
+Sandrakk succeeds at using a binding stone to control the five Fonts, which the Pentacade created to anchor the Shrouded Realm's magic. To avoid Sandrakk's power enlarging the Wound, the Immortals seek Kirkan's exiled predecessor, Grand Magnus Thaddeus, for a potential weakness of the binding stone. Traveling to the sky islands of Oremen, Devyn and Jak meet Kenzie, who leads them to Thaddeus' journals that reveal his current location in Kalthus' Mount Dresnyr. Jak befriends Rook, leader of the Aelori, who brings him to Thaddeus' hideout. However, before Thaddeus can fully explain the binding stone, he is attacked by The Hand, Sandrakk's lieutenant, who is revealed to be Luna.
+Kenzie guides the Immortals to the Shrineforge, where Aveum's Aristeyan precursors produced the binding stones. Despite being tasked with destroying the binding stone, Jak asks for Sandrakk's ability to control the Aristeyan artifact. When the Immortals' surveillance finds Jak telepathically communicating with Luna, Devyn threatens to expel him. However, Sandrakk teleports from Kalthus' Font into the Immortals' Palathon Vault, where the binding stone is being stored. In the ensuing fight, Devyn is killed and Jak is knocked unconscious. He awakens one month later in Seren with Luna explaining that Sandrakk has blocked access to the ley lines. Once Jak realizes his connection to the binding stone allows him to still access magic, he restores the Immortals' abilities. After defeating Sandrakk's new lieutenant, Morbane, Jak and Luna find the Wound expanding from the magic used to restrict Aveum's abilities.
+Upon boarding the enemy ship, Jak finds Sandrakk and Kirkan collaborating on a plan to travel to the Shrouded Realm and kill the Pentacade. When the Pentacade retaliates, Sandrakk uses the binding stone to teleport to Kalthus and pull the Pentacade into Aveum to weaken its powers, while Jak is teleported to Mount Dresnyr. Jak learns that when the Aelori were slaughtered by humans, it upset the balance of magic. After Jak convinces Zendara that the Aelori can repair the Wound, she stakes her right to lead the Immortals as Queen of Kalthus, as Kirkan surrendered Lucium to Rasharn.
+After Luna and Jak defeat Sandrakk, Jak recalls Sandrakk mentioning that Immortals can sacrifice themselves to produce healing magic similar to the Aelori and chooses to detonate himself near the Pentacade. The ending reveals that Zendara has negotiated peace with the Aelori and that the Pentacade revived Jak for defeating Sandrakk. Jak wonders why he still bears the mark if the binding stone was destroyed. Luna goes off to the Shrouded Realms and finds the binding stone still intact, and hears Devyn behind her asking for help because he's lost.
+
+
+== Development and release ==
+Ascendant Studios was founded in 2018 by a group of veteran Dead Space and Call of Duty game developers. Immortals of Aveum was the studio's first major game release.
+Immortals of Aveum was first announced at The Game Awards 2022 by Ascendant Studios under Electronic Arts' EA Originals publishing program. The development team expressed a focus on balancing the game's fun and challenge, developing a strong story, and creating memorable characters. The game uses Unreal Engine 5 and was directed by former Dead Space creative director Bret Robbins. The game was one of the first non-Epic published Unreal Engine 5 game to use all its new features including Nanite micro-geometry, ray-traced Lumen lighting, and virtual shadowmaps.
+Delayed from an initial release date of July 20, 2023, the game was released for PlayStation 5, Windows, and Xbox Series X/S on August 22, 2023.
+A former employee estimated that the game's development cost about $85 million and EA spent $40 million on marketing and distribution.
+
+
+== Reception ==
+
+
+=== Critical response ===
+Immortals of Aveum received "mixed or average" reviews from critics for the PC and PS5 versions, while the Xbox Series X/S version received "generally favorable" reviews, according to review aggregator website Metacritic. In Japan, four critics from Famitsu gave the game a total score of 32 out of 40, with each critic awarding the game an 8 out of 10. The game was subject to various technical issues.
+
+
+=== Sales ===
+In mid-September 2023, Ascendant Studios' CEO Bret Robbins announced layoffs of roughly 40 developers, which represented 45% of the studio's staff at the time, due to Immortals of Aveum's poor sales. As the game was delayed from July 2023 to late August, it competed with Armored Core VI and Starfield, which both performed much better financially. Six months later, most of the remaining staff—around 30 employees—was placed on furlough in April 2024.
+
+
+=== Accolades ===
+Immortals of Aveum was nominated in the category of Outstanding Visual Effects in a Real-Time Project at the 22nd Visual Effects Society Awards.
+
+
+== References ==
+
+
+== External links ==
+
+Official website

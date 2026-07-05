@@ -1,0 +1,29 @@
+Game: The Past Within
+appid: 1515210
+Source: The Past Within
+URL: https://en.wikipedia.org/wiki/The_Past_Within
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+The Past Within is a 2022 adventure video game developed and published by Dutch studio Rusty Lake.  It is a cooperative multiplayer game where two people must share clues to solve puzzles.  It was initially released for Android, iOS, macOS, and Windows.  A Nintendo Switch version was released in 2023.
+
+
+== Gameplay ==
+
+Two players cooperate to solve puzzles. One player is in the past, and the other in the future. The Past Within features asymmetrical gameplay: both players must solve different puzzles, and they can neither see nor interact with the other person's puzzles. Clues in one time can affect puzzles in another, and actions taken by future-based player affect the past-based one. To complete the game, they must communicate effectively and describe each other's clues and puzzles. Players can switch roles and play again with a different set of puzzles. The game does not require an internet connection.
+
+
+== Development ==
+Rusty Lake, the studio behind the game, originally intended The Past Within to be a single-player game with puzzles both inside a 3D box and outside of it. During playtesting, they were inspired to partition the puzzles so they were self-contained. Rusty Lake released The Past Within for Android, iOS, macOS, and Windows on November 2, 2022. They released a Nintendo Switch version on July 6, 2023.
+
+
+== Reception ==
+The Past Within received mixed reviews on Metacritic.  On release, Sam Loveridge of GamesRadar praised its inventiveness and said it was already on her list of the best games of 2022.  In his review for Eurogamer, Matt Wales said the teamwork mechanic "conjures something memorable and unique".  Pocket Gamer's review, Will Quick, called it "an exciting and creepy mystery" with gameplay rarely found on mobile devices.  However, Quick criticized its replay value.  Rebecca Jones of Rock Paper Shotgun described it as "a satisfying couple of hours of good communication and cooperative puzzle solving".
+It was nominated for best innovation and best game design at the 2023 Dutch Game Awards.
+
+
+== References ==
+
+
+== External links ==
+Official website

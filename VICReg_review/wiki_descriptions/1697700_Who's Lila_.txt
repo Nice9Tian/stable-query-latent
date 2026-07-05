@@ -1,0 +1,47 @@
+Game: Who's Lila?
+appid: 1697700
+Source: Who's Lila?
+URL: https://en.wikipedia.org/wiki/Who%27s_Lila%3F
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Who's Lila? is a 2022 point and click psychological horror video game developed by Russian independent game developer Garage Heathen, released in February 2022. Described as a "reverse-detective adventure", the game is an adventure game notable for using the manipulation of facial expressions as the means that the player uses to communicate with characters in the game.
+
+
+== Gameplay ==
+
+Who's Lila is an adventure game played in two sections across a split-screen user interface. On the left-hand side of the screen, the player controls movement and interaction with the game world. On the right-hand side, the player manipulates a close-up representation of their face. During opportune moments in dialog with characters, the player influences the response given, or reactions to the player, by manually manipulating parts of their face using the cursor. The game uses a "neural network-powered emotion detection" to determine one of seven emotions represented: happy, scared, surprised, sad, angry, disgusted, or neutral. Player choices are complicated by the use of a time limit and moving facial features to add challenge to expressing the desired emotion, although an 'easy mode' provides players with the option to remove these from the game.
+Who's Lila? also integrates elements similar to an alternate reality game as players complete puzzles using elements extraneous to the game, including the use of information from social media pages depicting fictional characters, and a separate program to run parallel to the game to unlock certain events. The game also features nonlinear gameplay requiring players to restart the game multiple times, with previous endings being depicted by tarot cards that can be used with a character in the game to offer additional insight on the mysteries of the game. The game features 15 endings, although additional hidden endings are available.
+
+
+== Plot ==
+The game opens with main character William Clarke, an 18-year old living by himself in an apartment complex, explaining to the player he finds it "difficult to express emotions", and that he "has to make a conscious decision each time [he] moves a [facial] muscle." The game then opens up with multiple story branches and endings, most of which have a surreal, Lynchian tone, and many portraying flashbacks told out of order, making it difficult to fully comprehend the full story.
+The "main route" of the game involves William going to school, where the player is informed that classmate Tanya Kennedy has been missing for days, and William was the last person to have been seen with her at a party. Naturally, William is therefore the primary suspect. While the player is initially led to assume William, a socially awkward teenager without many friends, is simply being accused wrongly, it is gradually made obvious that William isn't as innocent as first thought. He ends up killing Tanya's friend Martha to silence her accusations, and is arrested and interrogated at the end of the game by the police after they found Tanya's remains in trashbags outside his apartment.
+Clues in the game reveal to the player they have not been playing as William, but rather as a malevolent entity named Lila, who possessed and took control of William's body prior to the events of the game, and is presumably the true culprit behind Tanya's disappearance. After a certain ending is achieved, "William"/Lila is contacted by Detective Yu, a man who is curious about Lila's nature, identity, and prior role in William's life. After initially encountering Yu, each ending the player achieves unlocks a bonus cutscene where Yu and Lila discuss various topics related to the central mysteries of the game, like Tanya's disappearance, William's psyche and backstory, and what, or who, Lila actually is.
+
+
+== Development ==
+Garage Heathen released a demo version of Who's Lila on 11 August 2021, and on 2 February 2022 announced a release date of the game for 23 February of that month. A soundtrack featuring music from the game was released on 25 March.
+
+
+== Reception ==
+
+Who's Lila? received positive reception from gaming publications, with Rock Paper Shotgun citing the game as one of the publication's "favorite games of 2022", and described as the "most unique indie game" of the year, with praise directed towards the novelty of its facial manipulation mechanic and its horror themes.
+Critics praised the innovative approach to interaction through manipulating facial expressions. Rock Paper Shotgun noted the mechanic was "both incredibly clever and incredibly creepy", with the "face-pulling (proving) to be both a clever part of the plot and a genuine source of tension." Calum Fraser of Alpha Beta Gamer noted the game was "very unique" and "the facial expression manipulation isn't just a gimmick - it's an integral part of the gameplay that has a big effect on how others react to you." Cass Marshall of Polygon stated she "had fun yanking William's face into increasingly silly expressions...there's nothing quite like the joy of having him bare his teeth and pull his eyelids back and have it register as a friendly smile." Joel Couture of Indie Games Plus stated the "conversational tool" was "unique" and "endlessly enjoyable", although noting the feature "did sometimes break the mood of the game just a tiny bit".
+Who's Lila? also received praise for its merits as a horror game. Cass Marshall of Polygon stated the game was "horror at its best - an unfurling, increasingly distressing mystery that risks engulfing the characters and town around it". Writing for TheGamer, Khee Hoon Chan praised the game's "bold and interesting concept", stating "the eeriness of its one-bit horror does persist hours later due to its unsettling, cryptic scenes, and its central mystery is compelling enough that you'll want to revisit the horrors in Who's Lila over and over again." Meredith McNally stated that the visual style was an additional element that contributed to the atmosphere of the game, with the "limited palette (doing) wonders for the mood of the game overall, especially when it changes in key moments", and praising the facial mechanic as offering "interesting effects", with "the ability to watch Will's automatic expressions in certain scenarios" being "incredibly eerie."
+Many critics noted that Who's Lila? raised themes as a surrealist and psychological horror game. Many critics raised comparisons between the game and the work of David Lynch, with the game advertised as directly inspired by the filmmaker's work. Khee Hoon Chan of TheGamer stated that the game raised interesting questions around "the anxieties and horrors of social interactions", including "what our reliance on facial expressions (says) about social interactions", expressing a wish the game would explore these themes more profoundly. Further discussing the performance of "being human", Lin Virgil Hansley of DreadXP states the game "brings me to feel a (very real) attachment to this game...there are people who struggle to interact socially because emotions and empathy don't come as naturally to them...knowing people like this, even sometimes feeling these things myself, Who's Lila? is a game that oddly makes me feel understood." Meredith McNally of Comic Book Reviews stated the paranormal subject matter of Who's Lila? explores themes that "no other games have dealt with" and the "unique subject matter pushes (the game) into the forefront of the indie sphere".
+
+
+=== Accolades ===
+Who's Lila? was shortlisted as a finalist for the 'Best Overseas Game' category of the 2022 indiePlay China Indie Game Award.
+
+
+== See also ==
+Ditherpunk
+
+
+== References ==
+
+
+== External links ==
+Who's Lila? at MobyGames

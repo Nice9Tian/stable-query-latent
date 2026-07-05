@@ -1,0 +1,33 @@
+Game: POOLS
+appid: 2663530
+Source: Pools (video game)
+URL: https://en.wikipedia.org/wiki/Pools_(video_game)
+Match score: 5.86
+Retrieved: 2026-07-04
+--------
+Pools is a 2024 horror walking simulator developed by Finnish developer Tensori for Windows, macOS, iOS and Linux. It is an interactive adaptation of the liminal space phenomenon "The Poolrooms", which gained popularity online since 2020. The game is set in a vast, labyrinthine pool complex.
+
+
+== Gameplay ==
+Pools is split into seven chapters of approximately 10 to 30 minutes' play time each. The game is presented as a VHS found footage piece. Should the player die, such as by falling into a deep pit, the VHS will rewind to a moment just beforehand. There is no story.
+Like other walking simulators, the level of interactivity is limited, with the player simply exploring the environment on foot, swimming, or using water slides. There are no monsters or antagonists that attempt to attack the player, which the developers make clear on the Steam page; tension is drawn instead from the atmosphere and aesthetics of the environment itself. There are no puzzles, though the environment can be maze-like at times. There are small visual cues to aid the player, such as the puddles left behind after leaving a pool. These can act as breadcrumbs to warn the player if they are going in circles. Each of the chapters have defined exits which are used to progress.
+
+
+== Development ==
+
+Developer Tensori is based in Jyväskylä, Finland. The game was inspired by liminal space imagery. The "Poolrooms" branch of this movement is credited to the digital artist Jared Pike, who developed a series of images under the Dream Pools series from 2020 to 2024. The developers have acknowledged influence from Pike, along with other artists working in the space, including Mortain Colors, Matt Studios and Andrew Quist. Quist's game Anemoiapolis (2023) was a liminal space horror game which featured a water park themed level, and was well known within the movement.
+Pools originated as an experimental game project developed in the team's free time. A trailer was launched as an IGN exclusive on April 11, 2024. Ahead of the launch, Tensori head Antti Järvinen was interviewed by PC Gamer and discussed an overcautiousness in AAA development when working with new concepts. He pointed out in contrast that Pools does diverge from the swimming pool theming in its later chapters.
+On April 21, 2025, a free content update was released adding a new chapter. This was followed by a free VR update on May 25. Versions for the App Store and PlayStation 5 have been announced for November 2025, with the latter including support for PlayStation VR2.
+
+
+== Reception ==
+
+The game was received positively. Eurogamer described it as "beautiful, and very doomy. It's like navigating a very strange burial chamber". Destructoid discussed the fact that the Steam page informs players that there will be no monsters–that even while knowing this fact the imagination will still play tricks on the player. Fandom Wire spoke highly of the environment, noting that "Even just the simplicity of the white tiled texture that covers the walls and floors becomes hypnotic after staring at it for an extended period of time to the point that you can almost smell the chlorine." The Gamer journalist Mike Drucker referred to it as "The creepiest game I've played all year", adding that it was at times "oddly relaxing". Game Grin was positive about the game, noting the intensely scary atmosphere. They acknowledged that the game is about two hours in length and only playable once, but that "you will treasure it nonetheless".
+Some reviewers have questioned whether the game should be considered a horror title. Given that there are no monsters or threats, the tone of the work is subjective. Kotaku journalist Willa Rowe, a former competitive swimmer, described a nostalgia for early morning swim practices that the game evoked. "There are some rooms in POOLS that feel almost directly lifted from my brain like I'm wandering into memories. It's not the unsettling experience the game is intended to be for most players, but something more personal and just as enthralling."
+
+
+== References ==
+
+
+== External links ==
+Official website

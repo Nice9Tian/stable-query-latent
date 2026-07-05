@@ -1,0 +1,23 @@
+Game: Empyrion - Galactic Survival
+appid: 383120
+Source: Empyrion - Galactic Survival
+URL: https://en.wikipedia.org/wiki/Empyrion_-_Galactic_Survival
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Empyrion - Galactic Survival is an open-world sandbox adventure game. It was released via early access on 5 August 2015 by Eleon Game Studios.
+
+
+== Gameplay ==
+New players crash land on an alien planet, where they must survive a hostile environment full of strange creatures, environmental hazards like acid rain or irradiated fog. They start out with a weapon/gathering tool, flashlight, and a bit of food depending on difficulty. Players need to forage to find rarer materials and food to stay alive. Using a portable constructor they can create with their advanced armor suit, they can build a variety of objects and components for advanced crafting, including bases, hoverbikes, ground hovercraft vehicles, and spaceships. As of the 1.10 update, players can build hoverbikes, hover vessels, small vessels, and larger capital vessels. In multiplayer, the planets are persistent worlds, and players can interact with each other, including trading and player versus player combat.
+
+
+== Development ==
+Empyrion was designed to focus on making exploration interesting.  In an interview, the team referenced a German proverb that translates to "the journey is the reward".  Comparing their game to No Man's Sky, Eleon said they wanted to make exploration fun first, then work on expanding the game to support a massive number of planets. A rotating number of player-created schematics for bases and ships are featured in-game, and surveys determine what features Eleon prioritizes. The game left early access alpha in 2020.
+
+
+== References ==
+
+
+== External links ==
+Official website

@@ -1,0 +1,28 @@
+Game: Wizard with a Gun
+appid: 1150530
+Source: Wizard with a Gun
+URL: https://en.wikipedia.org/wiki/Wizard_with_a_Gun
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Wizard with a Gun is a 2023 twin-stick shooter video game developed by Galvanic Games and published by Devolver Digital.  It includes elements of survival games, such as collecting resources and base-building.  It is available for Windows, PlayStation 5, and Xbox Series X/S.
+
+
+== Gameplay ==
+Players control a wizard who is attempting to stop the forces of chaos from destroying their world.  Wizard with a Gun is a twin-stick shooter where each level is procedurally generated.  Players can collect resources that are used for crafting and upgrading their wizard tower.  Players can upgrade their pistol to better weapons, including a submachine gun and shotgun, all of which shoot magic bullets.  Players can choose from different spell effects, such as elemental damage, charm, fear, and knock-back.  The goal is to defeat bosses who hold powerful artifacts before time runs out.  In cooperative multiplayer, the number of chaos monsters is increased.  Defeating these enemies increases the time limit.  It is played from an isometric point of view.
+
+
+== Development ==
+Developer Galvanic Games is based in Seattle. Devolver Digital published Wizard with a Gun for Windows, PlayStation 5, and Xbox Series X/S on October 17, 2023.  A port to the Nintendo Switch is undated.
+On May 13, 2024, the game received its free Better Together update, which added four-player co-op and customizable difficulty settings. Galvanic Games closed down in June 2024.
+
+
+== Reception ==
+Wizard with a Gun received "mixed or average" reviews, according to review aggregator website Metacritic.  PC Gamer said that while it "expand[s] on the groundwork" of Enter the Gungeon, the combat "feels unpolished".  They said the "tight gameplay loop" of incremental progress toward better loot and crafted weapons kept them "persistently engaged", though.  IGN called it "an entertaining co-op action game" but said that the cooperative multiplayer made the game a bit too easy given how much bonus time could be harvested from the increased number of chaos monsters.  They also found some of the magic bullets to be uninteresting or underpowered, and they called the ending "an extremely anticlimactic affair".  TechRadar praised how customizable the wizards are, the different ammo types, and the exploration, but they felt the emphasis on crafting took away from the combat.  They also felt the maps were a sometimes too large and said the game balance could be frustrating.  Shacknews said it is "a competent shooter that has a lot of potential", but they criticized the controls, the way the lore was presented, and what they felt was a barren endgame.  Hardcore Gamer felt Wizard with a Gun "doesn't live up to its full potential as a survival game" because the time limits cut down on the resource gathering and exploration.  However, they praised the twin-stick combat, exploration, and customization, which they said "makes for an awesome journey".
+
+
+== References ==
+
+
+== External links ==
+Official website

@@ -1,0 +1,40 @@
+Game: Gray Zone Warfare
+appid: 2479810
+Source: Madfinger Games
+URL: https://en.wikipedia.org/wiki/Madfinger_Games
+Match score: 3.50
+Retrieved: 2026-07-04
+--------
+Madfinger Games is a Czech publisher and developer of video games headquartered in Brno. Known as the authors of a series of games Dead Trigger, Samurai, Shadowgun, and many others. The studio is made up of experienced developers who have worked on games such as Mafia: The City of Lost Heaven, Vietcong, and Hidden & Dangerous 2.
+
+
+== History ==
+Before Madfinger Games was formed, its members worked at 2K Czech. The company itself was founded in 2010, and the following year they began releasing their first games, including 15 Blocks Puzzle, the BloodyXmas arcade game, and the first game in the Samurai series, Samurai: Way of the Warrior for iOS mobile platforms.
+With the appearance of their studio in 2010, they began to develop and release the sequels of Samurai: Way of the Warrior: Samurai II: Vengeance and Samurai II: Dojo, which at that time became the most popular games among iOS and Android users. In 2011, a new game Shadowgun was released, which became the first of multiple first-person shooter games made by the developers. This was also warmly received by iOS and Android users, and later the game was released for Amazon Kindle, BlackBerry, GameStick, and OUYA. In December of the same year, a small plot add-on Shadowgun: The Leftover was released for the game.
+A year has passed since the debut of Shadowgun and the developers decided to continue releasing shooters, but now with elements of survival. This is how the first Dead Trigger appeared, released on 26 June 2012, for iOS and Android. A year later, Dead Trigger 2 was released, which expanded all the facets of the new series. Shadowgun was not forgotten either, and in the same year, 2012, the multiplayer spinoff, Shadowgun Deadzone was released. It became a spin-off to the original Shadowgun, and, in addition to iOS and Android, was released for PC, Facebook, and macOS.
+In 2015, due to the appearance of cheating on the main servers of the game, the PC and macOS versions were discontinued, leaving only three platforms. At the end of December 2018, access to iOS users was terminated, followed by Android in March 2019. It was then that the developers announced the closure of the project from 1 April 2019, thanking and rewarding all players with 200 thousand gold (one of the in-game currencies).
+On 22 March 2018, a new multiplayer project Shadowgun Legends was released, announced in August 2016, which is a continuation of the original Shadowgun and the spin-off Shadowgun Deadzone. Another Shadowgun War Games project has been announced for 2019. There is no further mention of the Dead Trigger series after the release of Dead Trigger 2.
+In 2023, Madfinger Games previewed their immersive tactical first-person shooter video game Gray Zone Warfare, which was released in its early access stage in 2024.
+
+
+== Games ==
+15 Blocks Puzzle – 2009
+Samurai: Way of the Warrior – 2009
+BloodyXmas – 2009
+Samurai II: Vengeance – 2010
+Shadowgun – 2011
+Dead Trigger – 2012
+Shadowgun: Deadzone – 2012
+Dead Trigger 2 – 2013
+Monzo – 2014
+Unkilled – 2015
+Shadowgun Legends – 2018
+Shadowgun War Games – 2020
+Gray Zone Warfare – 2024
+
+
+== References ==
+
+
+== External links ==
+Official website

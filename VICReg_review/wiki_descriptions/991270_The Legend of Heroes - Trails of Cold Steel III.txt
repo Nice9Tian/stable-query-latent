@@ -1,0 +1,49 @@
+Game: The Legend of Heroes: Trails of Cold Steel III
+appid: 991270
+Source: The Legend of Heroes: Trails of Cold Steel III
+URL: https://en.wikipedia.org/wiki/The_Legend_of_Heroes:_Trails_of_Cold_Steel_III
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+The Legend of Heroes: Trails of Cold Steel III is a 2017 role-playing video game developed by Nihon Falcom. The game is the eighth installment of the Trails series, itself a part of the larger The Legend of Heroes series, and follows Trails of Cold Steel II (2014).
+Trails of Cold Steel III was released for the PlayStation 4 in Japan in September 2017 and worldwide in October 2019. Ports for Nintendo Switch, Windows, and Amazon Luna were released in 2020, with a port for Google Stadia following in April 2021. A PlayStation 5 port was released in February 2024. A sequel, Trails of Cold Steel IV, was released in 2018.
+
+
+== Gameplay ==
+The gameplay of Trails of Cold Steel III is similar to the previous two Trails of Cold Steel games, being a traditional Japanese role-playing video game with turn-based battles. An emphasis was made on speeding up battles, including making transitions into battle scenes more seamless, and being able to map out more battle commands to specific buttons rather than various menus; however, battles are still primarily menu-based. The game contains a new system called "Brave Order" which lets players expend a new resource built up during battle called "Brave Points" to get special effects such as buffs or heals. The new "Break" system was also added, which adds a "Break Gauge" bar to enemies. Attacking an enemy depletes its break gauge bar, and when fully depleted the enemy is weakened for one turn.
+
+
+== Plot ==
+The story begins two years after the events of Trails of Cold Steel II, and several months after the Northern War between the Imperial Army of Erebonia and the Northern Jaegers of North Ambria, which resulted in the annexation of North Ambria into Erebonia. Rean Schwarzer, now an instructor at Thors Military Academy's Branch Campus, is the homeroom teacher of the new Class VII, consisting of Juna Crawford (an exchange student from Crossbell), Kurt Vander (a member of Vander family formerly guarding the Royal family), and Altina Orion (a member of the Intelligence Division and younger sister of Millium Orion). They are later joined by Ash Carbide from Raquel (who is later revealed to be an orphan of Hamel), and Musse Egret (a noble lady who is actually the heir of house Cayenne).
+While teaching his students, Rean is ordered by the Imperial government to resolve numerous conflicts arising across Erebonia (mainly caused by Ouroboros, who are trying to retake their 'Phantasmal Blaze Plan' stolen by Chancellor Osborne) as part of the campus's field exercises, assisted by his former classmates of the old Class VII. On their missions, they learn that Rutger Claussell (the Jaeger King and Fie's foster father) and Arianrhod the Steel Maiden (an anguis of Ouroboros who is actually Lianne Sandlot, an Erebonian historical figure), who were both presumed dead, are actually alive and the Awakeners of two of the Divine Knights, Zector and Argreion respectively.
+The group also learn more about the origins of the Divine Knights, chiefly that they are the fragments of the Great One, a being created when the Sept-Terrions of Fire and Earth fused into one after an intense battle between the two. The Kins of Fire and Earth worked together to contain the unstable Great One (giving birth to the seven Divine Knights), but were unable to contain its curse, which influenced Erebonia for many centuries and corrupted the people of the empire, leading to tragedies such as the Attack of the Dark Dragon, the Dark Ages, the War of the Lions, the Hamel tragedy, the Hundred Days War with Liberl, the annexation of Crossbell, and the Northern War. The groups later changed their names; the Kin of Fire became the Witches of the Hexen Clan (including Class VII member Emma), and the Kin of Earth became the Gnomes; the latter eventually cut ties with the former.
+During a party in the Imperial Palace, Rean learns of his origins; while serving as a brigadier general in the army, Osborne rose up against the officers who were setting up the Hamel tragedy to start a war with Liberl. This led to his home being set ablaze, killing his wife and mortally wounding Rean. Osborne gave his heart to Rean to save him and later left him in the Schwarzer's care. Meanwhile, Ash, who is being manipulated by the curse, shoots the Emperor. This leads Rean and both generations of Class VII to realize that Ouroboros, the Gnomes, and Osborne are plotting to unleash the curse of the Great One and start the Great Twilight, an event that heralds the return of the Great One and the end of the world.
+The members of Class VII resolve to stop them; during their battle with Osborne's forces, Jusis learns that his brother Rufus Albarea, the Imperial Governor of Crossbell and the primary member of Osborne's Ironbloods, is actually his illegitimate cousin who was adopted by the family to save face. While fighting against the "Nameless One", a creature containing the power of the Great One's curse, Millium sacrifices her life to protect Rean and her sister Altina. Her death causes Rean to lose control of his Spirit Unification power and slay the Nameless One in a rage, releasing the curse across Erebonia and beginning the Great Twilight. The story ends as the Divine Knights assemble and Osborne prepares to capture Rean.
+
+
+== Development and release ==
+Intentions to create a third Trails of Cold Steel game were announced in December 2015. Initial planning began in early 2016, though the development team was divided on which platforms the game should release for. On one hand, the PlayStation Vita was preferred, due to its larger installed base in Japan, and prior entries in the series being released there, but the team also wanted to consider using the much more powerful PlayStation 4, which would greatly help with the game's scope. Full-scale development began around mid-2016. Like the previous Trails of Cold Steel entries, it was developed using the PhyreEngine game engine. The game was officially revealed in December 2016. Unlike previous two entries, no Vita or PlayStation 3 versions were developed. It was mentioned in the shareholder's meeting that a deciding factor in developing the game for the PS4 was to help ensure higher international sales for the game as the PS4 had a much larger userbase in most countries outside of Japan at the time. This premise was reiterated by Falcom president Toshihiro Kondo:
+
+"Foreign sales have reached a point with both the Trails and Ys series and  where we can't ignore them from a development angle anymore. Ys: Memories of Celceta, for example, sold more outside of Japan than it did inside of Japan. Because Vita has kind of been on the decline for a while outside of Japan, and because the PS4 userbase is pretty established elsewhere, we have begun shifting toward PS4 development".
+Initially scheduled for Q3 2017, it was released in Japan for the PlayStation 4 on September 28. Localization into English and French was handled by NIS America rather than Xseed Games, who localized the first two Trails of Cold Steel games. The announcement that NIS America was taking over caused some concern among fans, due to the issues with the initial localization of Ys VIII: Lacrimosa of Dana. This concern was settled after confirmation that key localization staffs of the first two Cold Steel games were involved. Initially set for a September 2019 release for PS4 in North America and Europe, it was later delayed to October 22. A Nintendo Switch port by Engine Software was released in Japan on March 19, 2020, in North America and Europe on June 30, and in Oceania on July 7. A Windows port by Engine Software and PH3 Games was released on March 23 the same year. A version for Amazon Luna was released on October 20, 2020. A Stadia version was released on April 1, 2021, while a PlayStation 5 version bundled with Trails of Cold Steel IV was releasedin the west on February 16, 2024. In Japan, the PlayStation 5 version was bundled alongside IV and Reverie on August 21, 2025.
+
+
+== Reception ==
+
+After the positive reception of the first two Trails of Cold Steel games, journalists were generally enthusiastic for the prospect of a third entry; however, many lamented the lack of a Vita version.
+The Legend of Heroes: Trails of Cold Steel III received "generally favorable" reviews according to review aggregator Metacritic. Reviewing the North American release, Nintendo Life called it an "excellent addition to the series", although they said it had slow pacing at times.
+
+
+=== Sales ===
+Trails of Cold Steel III debuted as the best-selling game in its week of release in Japan, selling 87,261 copies. This was a significant drop from the 151,781 units Cold Steel II had sold in its first week. Media Create attributed this decline to the lack of a PlayStation Vita version. Despite this, Dengeki's sales reports still estimated that approximately 80% of the game's physical stock was sold at launch; Falcom announced that the game had the highest digital game sales in the series, as of October 2017.
+
+
+== Notes ==
+
+
+== References ==
+
+
+== External links ==
+Official website
+NIS America portal

@@ -1,0 +1,29 @@
+Game: Star Renegades
+appid: 651670
+Source: Star Renegades
+URL: https://en.wikipedia.org/wiki/Star_Renegades
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Star Renegades is a tactical roguelite game developed by Massive Damage and published in 2020 by Raw Fury.  It combines influences from JRPGs and roguelite games.
+
+
+== Gameplay ==
+Star Renegades combines influences from tactical role-playing games, roguelite games, and JRPGs.  An army of cyborgs invades multiple dimensions, destroying solar systems.  Players control the defenders of one such solar system.  If they fail to defeat the cyborg army, players must restart the campaign from the beginning in another dimension.  However, players can buy unlockable rewards, allowing their next team to start with better characters and abilities.  New abilities and characters can also become unlocked by encouraging romances between teammates.  The children born of these unions share special abilities from both parents.  Enemies who survive battles against the player are tracked, similar to the Nemesis system in Middle-earth: Shadow of Mordor.  These enemies can gain advantages or disadvantages based on the player's gameplay.
+
+
+== Release ==
+Star Renegades was released for Windows on September 8, 2020; for Xbox One and Nintendo Switch on November 19; and PlayStation 4 version was scheluded for November 25. The PS4 release was delayed to January 2021 due to "severe issues". The PS4 version was released eventually on March 10, 2021.
+
+
+== Reception ==
+
+While commenting on the game's numerous influences, Alex Spencer wrote in PC Gamer that other games implement specific features better than Star Renegades but "there's plenty here to like".  Brendan Caldwell of Rock Paper Shotgun wrote that "what it lacks in elegance, it makes up for in frenzy, noise, and a zealous insistence to stuff every possible idea into a bright, stupid world".  In his review for Game Informer, Daniel Tack said that Star Renegades is "closer to a classical roguelike" than the typical roguelite given its difficulty.  Although he said it sometimes seems "blatantly unfair", Tack said the game is worth replaying to finally win.  Though he also felt the game's difficulty can make it off-putting, GameSpot reviewer Mike Epstein wrote, "No matter how many hours I spent in Star Renegades, every run, every battle, every turn felt like a new captivating puzzle to solve."  Jarrett Green of PCGamesN felt the game's replayability was not as strong as other roguelites because the number of new unlockables was exhausted too early.  He concluded, "This is a fun, fresh take on classic JRPG tropes and modern roguelike design, but it needs more to sustain interest from run to run."
+Reviewing the game on the PlayStation for Push Square, Stephen Tailby wrote, "It might struggle to concisely convey all its systems, but give it some time and there's a deep, challenging game to sink your teeth into."  Nintendo World Report critic Jordan Rudek enjoyed the game but said its bugginess on the Switch kept him from recommending it.  Nintendo Life called it "a gorgeous, deep, challenging, and thoroughly gripping release that successfully delivers a fun and enjoyable experience", though reviewer Mitch Vogel said there were some technical issues holding it back.
+
+
+== References ==
+
+
+== External links ==
+Official website

@@ -1,0 +1,28 @@
+Game: Partisans 1941
+appid: 1227530
+Source: Partisans 1941
+URL: https://en.wikipedia.org/wiki/Partisans_1941
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Partisans 1941 (Russian: Партизаны 1941) is a real-time tactics video game developed by Alter Games and published by Daedalic Entertainment in 2020.  Players control Soviet partisans fighting against invading German troops during World War II.
+
+
+== Gameplay ==
+The game has many similarities to Commandos 2. Players control a group of  Soviet partisans during Operation Barbarossa, Nazi Germany's invasion of the Soviet Union. The enemy soldiers have cones of vision that the partisans must stay out of to maintain stealth. The partisans are equipped with tools for distraction and silent killing alongside more conventional and louder weapons. In contrast to Commandos 2, this game features a resource management sub-game. The partisans don't start off fully equipped and have to scavenge weapons from their enemies. More partisans can be unlocked, each of whom has specialties.
+
+
+== Development ==
+It was developed in Russia.  Daedalic Entertainment released it on October 14, 2020.  Alter Games released paid DLC in April 2021 that adds seven missions that are separate from the campaign and a horde mode where players attempt to survive against waves of attacking Nazi soldiers.
+
+
+== Reception ==
+
+Partisans 1941 received "mixed or average" reviews from critics, according to the review aggregation website Metacritic. Fellow review aggregator OpenCritic assessed that the game received strong approval, being recommended by 62% of critics. PC Gamer enjoyed how the stealth elements were important but not so much that they turned it into a puzzle game that is instantly lost as soon as the partisans are detected, which they called "a winning formula".  Comparing it to Desperados III, Rock Paper Shotgun said it is less flashy but is immersive, has an interesting setting, and includes fun management elements.  Wargamer praised the combat and said it "offers a great, if simple, stealth experience".  They were less enthused about the story and said some maps were not as well designed as the XCOM or Company of Heroes games.
+
+
+== References ==
+
+
+== External links ==
+Official website

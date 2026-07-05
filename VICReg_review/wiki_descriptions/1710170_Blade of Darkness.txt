@@ -1,0 +1,70 @@
+Game: Blade of Darkness
+appid: 1710170
+Source: Severance: Blade of Darkness
+URL: https://en.wikipedia.org/wiki/Severance:_Blade_of_Darkness
+Match score: 6.64
+Retrieved: 2026-07-04
+--------
+Severance: Blade of Darkness is an action-adventure game developed by Rebel Act Studios and originally published by Codemasters. The game was released in North America and Europe for Microsoft Windows in February 2001, receiving generally favorable reviews. A remastered version was released on Steam and GOG in October 2021, and one year later on Nintendo Switch through the Nintendo eShop, marking the debut of this game on any home console. It was released for PlayStation 4, PlayStation 5, Xbox One and Xbox Series X/S in March 2023.
+
+
+== Gameplay ==
+The four characters start their adventure at different locations but eventually go along the same route. The ultimate goal of the game is to obtain Ianna's Sword, kill the evil necromancer Dal Gurak and then descend into the Abyss for the final confrontation with the Chaos Child. This final skirmish is only accessible to players who have collected all of the runes from the previous levels which collectively empower Ianna's sword with the goddess' blessing. To achieve the magical sword the players have to make sure they have collected six well-hidden magical runic tablets before entering Dal Gurak's tower. The six runes speak about the time of creation (similar to ancient Zoroastrian myths). In addition to the runes, murals and memorials also shed some light on the events preceding the main storyline. The short cutscenes between levels also provide brief insights into the plot.
+As the player progresses through the game, experience points are earned, which enables them to increase in level and gain new special attacks and abilities which are executed via combinations of buttons and direction keys, much like a beat'em-up game. Some of these special attacks are weapon-specific and can deal huge amounts of damage or hit multiple foes at one time. The game features a relatively advanced body slash system. Once severed, body parts from enemies can be picked up and used as weapons.
+The game was shipped with a level editor, which enabled fans to create custom levels and modifications to the game.
+
+
+== Synopsis ==
+
+
+=== Setting ===
+The individual levels of the game bear a resemblance to diverse environments from the Middle East, Europe, Africa and South America under fictitious names or names with slightly changed spelling.
+
+
+=== Plot ===
+The Lord created Chaos and divided it into two parts, the Light and the Darkness. He gave to them life and thought, and so were born the Spirit of Light and the Prince of Darkness. But the Prince held the unspoken desire of supplanting his Father. He learned the secret language of Creation and tried to create a new being. But the newborn would not accept the commands of the Prince of Darkness, and growing stronger, took part of his own essence and created terrible monsters and demons. The Lord and the Spirit of Light tried to stop it, and they waged a great war. Gradually, the being was weakened and finally defeated, but after this, the Father was exhausted and withdrew into the depths of the Universe.
+The younger gods, proud of the victory, completed the creations of their father, giving shape to the Sun, the Moon and the Earth. However, the Prince of Darkness attempted to corrupt the souls of the fledgling race of man, amidst the confusion of a new war incited by dark creatures of his own creation. The Earth was in a moment of extreme danger, so one of the younger daughters, Ianna, cast a powerful spell that expelled the gods from their dwelling place and kept the Earth closed to them. The Spirit of the Light went to the Sun and from there protected the Earth during the day. Ianna went to the Moon, to protect it during the night. Thus began the cycle of Day and Night, and a new age of balance was born over the Earth. But all of the gods' creations remained, leaving mankind to contend alone against the diabolical fiends.
+The struggle continued for many years until a young hero emerged to defy the Darkness. He was chosen by Ianna to wield the Sacred Sword and fought the Evil in its own lair. The Darkness was defeated, but the hero was mortally wounded, and his friends buried him with his Sword in the Temple of Ianna. After that, they hid four magical gems, which unlock his tomb, where the sword is kept.
+But all that was long ago.  Now, something strange is happening. The signals are clear. Foul creatures are awakening from their dormancy and spreading terror and destruction. The Darkness has returned, and the end is near. A new hero is needed, a chosen one who will wield the Sword, and destroy the Enemy forever.
+This "Blade of Darkness" in the game title is in fact, the "Sword of Ianna" when it is possessed by the forces of darkness (as shown in the intro video). It is liberated and becomes the Sword of Ianna when the hero comes and imbues it with the six magical runes.
+
+
+=== Characters ===
+Severance is set in a high fantasy setting with a swords and sorcery theme. It features four playable characters: Tukaram, a barbarian; Naglfar, a dwarf; Sargon, a knight; and Zoe, an amazon. Each character starts on a different map, has different preferences and selection of weapons, and has different strengths and weaknesses in terms of abilities and combat traits.
+
+
+== Development ==
+According to lead designer Jose Luis Vaello, the initial concept for Severance was to make a game that borrowed "sword and sorcery" elements found in movies like Conan the Barbarian, and mythical literature as The Lord of the Rings. The game was developed by 20 people. An Xbox enhanced port directly by Rebel Act was in development, with working title Ultimate Blade of Darkness, but the project was scrapped during early stages due to poor sales of the original Windows version.
+
+
+== Reception ==
+
+The game received "generally favorable reviews" according to the review aggregation website Metacritic. Jim Preston of NextGen called it "the kind of fun that only comes from kicking an orc's ass, once you've sliced it off." Human Tornado of GamePro said, "Despite the so-so sounds and demanding controls, Blade of Darkness is an entertaining action/adventure game where it pays to keep your wits honed and your sword sharpened."
+It received high marks for its graphics, particularly the lighting effects of real-time shadows. Character animation was done via motion capture. The texturing was very well done, although the game does not utilize larger texture sizes (anything above 256x256, whereas other games already used 1024x1024 resolution with texture compression in 2000–2001). The soundtrack of the game allegedly contains non-copyrighted samples, which were also used in many commercials, soap operas and other media worldwide. Overall, a relatively powerful computer for its time (the minimum requirements were a P2 400 MHz and 64MB of RAM) was required to fully experience all of the features. This game is the first and only game that can perform water reflection wave effects only using DirectX 7.0 hardware (Geforce 2 or Radeon 7500; perhaps even Nvidia RIVA TNT is enough to perform water effects at the same quality level like in DirectX 8 or higher).
+The game launched with a shipment of 20,000 units to retailers in Spain and 250,000 in the rest of Europe, a record for a Spanish game. While the game reached global sales above 300,000 units by 2001, and ultimately surpassed 500,000 sales, it fell below Rebel Act's expectations. It was unsuccessful in the U.S. and in Spain, selling below 20,000 units in the latter country despite high anticipation.
+
+
+== Legacy ==
+The game failed to become popular, mainly due to bad marketing. Other reasons for the relatively low sales were the untimely publication (neither the code nor the storyline had been finalized) and the lack of gameplay difficulty levels - the game proved to be too difficult on "factory" defaults for many players. Nonetheless, it did establish a large cult following that still exists today.
+Contemporary reception deems the game a "pioneer" within the soulslike subgenre, due to its high difficulty, dark fantasy world, and similar gameplay mechanics. Also highlighted is the fact that Blade of Darkness was released 8 years before Demon's Souls.
+
+
+=== Re-release ===
+For a few years, it was uncertain which company had the distribution rights to the game, as Codemasters lost the rights in 2014, and the game was retired from digital distribution. During 2021, a small publisher called SNEG signed it with the original Rebel Act founders, and they released an updated version on Steam and GOG in October 2021. A Nintendo Switch port of this remaster was released digitally through the eShop on 24 November 2022, published by Qubic Games. On 15 March 2023, it was released for PlayStation 4, PlayStation 5, Xbox One, and Xbox Series X/S.
+
+
+== See also ==
+Blades of Fire
+
+
+== Notes ==
+
+
+== References ==
+
+
+== External links ==
+Official website at the Wayback Machine (archived January 23, 2008)
+Blade of Darkness at Giant Bomb
+Severance: Blade of Darkness at MobyGames
+Severance: Blade of Darkness at IGDB.com

@@ -1,0 +1,30 @@
+Game: The Invincible
+appid: 731040
+Source: The Invincible (video game)
+URL: https://en.wikipedia.org/wiki/The_Invincible_(video_game)
+Match score: 7.31
+Retrieved: 2026-07-04
+--------
+The Invincible is a 2023 adventure video game developed by Starward Industries and published by 11 Bit Studios. It is an adaptation of Stanisław Lem's 1964 novel The Invincible. The game was released for PlayStation 5, Windows and Xbox Series X/S on November 6, 2023.
+
+
+== Gameplay ==
+The game is an adventure video game played from a first-person perspective. In the game, the player assumes control of astrobiologist Yasna (voiced by Daisy May), who must explore the planet Regis III for her missing crewmates while facing an unknown threat. Yasna has access to several tools, such as a scanner and a handheld telescope that can be used to identify objects and aid her survival in the alien landscape. The developer described the game as a "branching narrative with an emphasis on player choice". Other characters include astrogator Novik (voiced by Jason Baughan), who guides Yasna throughout her journey on Regis III.
+
+
+== Development ==
+The Invincible has been developed by Polish independent developer Starward Industries, which was founded in 2018. Members of the team had experience working for triple-A game development companies such as CD Projekt RED and Techland. The game is an adaptation of The Invincible, a science fiction novel written by Polish author Stanisław Lem. The team chose to adapt this novel because they felt that the book is "stunningly picturesque" and that it "reads as a ready-made movie script". Despite this, the game is not a one-to-one adaptation. While the story is largely the same and the game features several returning characters, the game's main cast of characters, including the playable protagonist, are original. For the game's art style, the team was heavily influenced by atompunk aesthetics, citing works from Chris Foss, Chesley Bonestell, and Syd Mead as their inspirations. In addition, the team also researched on Soviet designs of spaceships, vehicles and tools to fit the game's retro-futuristic style. The game is set on a planet that is very similar to the sandstone bulwark known as the Ennedi Plateau in the Sahara desert.
+The game was described to be a science-fiction thriller for its use of emotional suspense rather than a straightforward horror game. Firewatch served as one of the team's inspirations, especially how gameplay was handled during conversations with other non-playable characters. Road 96 was also an important influence, as it showed that there was "space for narrative experiences that are more mature and philosophical". The game's director Marek Markuszewski added that the game's narrative was "unhurried" but "very intense", and that the tone of the game was "bitter, but not without a spark of hope for the future".
+Starward Industries officially announced the game in September 2020 and was set to be released in 2021. In June 2022, Polish publisher 11 Bit Studios, the company behind This War of Mine and Frostpunk, announced that it had partnered with Starward Industries to serve as the game's publisher and debut the game's first gameplay video. The game was released for Windows PC, PlayStation 5 and Xbox Series X and Series S on November 6, 2023.
+
+
+== Reception ==
+
+According to review aggregator website Metacritic, The Invincible received "mixed or average" reviews.
+
+
+== References ==
+
+
+== External links ==
+Official website

@@ -1,0 +1,27 @@
+Game: Friends vs Friends
+appid: 1785150
+Source: Friends vs Friends
+URL: https://en.wikipedia.org/wiki/Friends_vs_Friends
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Friends vs Friends is a 2023 deck-building first-person shooter video game developed by indie studio Brainwash Gang and published by Raw Fury. The game was released on Microsoft Windows on May 30, 2023, followed by PlayStation 5 and Xbox Series X/S on September 1, 2025.
+
+
+== Gameplay ==
+Players control one of several anthropomorphic animals who bought cursed trading cards, which cause the animals to fight in 1v1 or 2v2 deathmatches.  Each animal has unique skills.  Players must have a deck of at least 25 cards and are further limited by a maximum cost.  At the start of each battle, the combatants are randomly dealt several cards, which give bonuses, such as powerful weapons or causing the opponent to suffer a penalty.  Battles go for up to five rounds, and the winner is the first one to win three rounds.
+
+
+== Development ==
+Friends vs Friends is developed by Brainwash Gang, an independent game development studio from Spain. The game was first announced in August 2022 at Gamescom for Windows and consoles, albeit no specific consoles or release date was given. In May 2023, Raw Fury announced that the game would be released on Windows by the end of the month.
+
+
+== Reception ==
+Hardcore Gamer said it is "quick to learn, quick to play" and fun.  El Español praised the originality and art, but they said some cards are unbalanced.  Although they enjoyed the lack of microtransactions, they said progress was a bit slow as a result.
+
+
+== References ==
+
+
+== External links ==
+Official website

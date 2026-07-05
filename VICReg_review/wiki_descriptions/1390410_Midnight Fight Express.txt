@@ -1,0 +1,27 @@
+Game: Midnight Fight Express
+appid: 1390410
+Source: Midnight Fight Express
+URL: https://en.wikipedia.org/wiki/Midnight_Fight_Express
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Midnight Fight Express is a 2022 beat 'em up video game developed by Jakub Dzwinel and published by Humble Games.  Players fight through 41 levels of 3D motion-captured enemies using melee weapons and firearms.
+
+
+== Gameplay ==
+Players fight a city full of criminals and corrupt cops.  Unlike traditional beat 'em up games, Midnight Fight Express features 3D motion-capture graphics and an isometric point of view.  Players fight both melee and with firearms.  As the game progresses, they can use increasing numbers of combos and cinematic finishing moves, which are based on real martial arts.  Finishing moves are different based on the situation, such as when fighting someone who is against a wall or lying prone.  A hundred weapons are available.  Players fight their way through 41 different levels, ranging from construction sites to cramped elevators.  Upon completing each level, players unlock a new perk on a skill tree that helps them in combat, such as disarming foes while blocking.  Additional challenges become available when replaying a completed level.
+
+
+== Development ==
+Jacob Dzwinel, a developer in Poland, designed Midnight Fight Express himself.  Humble Games released it for Windows, Xbox One, and PlayStation 4 on August 23, 2022, and for Switch on September 20, 2022.
+
+
+== Reception ==
+Midnight Fight Express received positive reviews on Metacritic.  GameSpot praised the combat, gameplay, and level design, but they said there is too much poorly written dialogue, which slows down the pacing of the fun combat sequences.  NME greatly enjoyed the first half of the game, but they felt it became silly as it went on, as players faced off against zombies and robots and fought in levels that were clearly inspired by pop culture.  Though they enjoyed some of the challenging later fights, they felt some levels were not as fun because fun perks became less useful.  VG247 praised its mixture of new gameplay design with classic elements.  Both VG247 and Shacknews recommended Midnight Fight Express on the strength of how it can make players feel as though their custom-made character is the start of his own action film.  It won the hidden gem award at the 2023 Central & Eastern European Game Awards.
+
+
+== References ==
+
+
+== External links ==
+Official website

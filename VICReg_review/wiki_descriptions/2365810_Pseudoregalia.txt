@@ -1,0 +1,31 @@
+Game: Pseudoregalia
+appid: 2365810
+Source: Pseudoregalia
+URL: https://en.wikipedia.org/wiki/Pseudoregalia
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Pseudoregalia is a 2023 platform game by indie developer rittzler. The player controls Sybil, an anthropomorphic goat-like creature, who finds herself trapped in a castle in a dream realm. It is stylistically influenced by fifth generation era video games of the late 1990s, utilizing low-poly graphics.
+
+
+== Gameplay ==
+
+Pseudoregalia is a 3D platform game/Metroidvania hybrid, where the player character, Sybil, is tasked with making her way through the Castle Sansa. The game's environment is structured in an open-ended manner, with many alternate movement paths that can be made available to the player by upgrading certain abilities. The character movement emphasizes fluidity and responsiveness, with a focus on running and jumping. The game is relatively short, and is possible to complete within a few hours.
+
+
+== Plot ==
+Sybil, upon arriving in a mysterious castle's dungeon through the use of a golden mirror, expresses vague concern about her punctuality and an unknown goal. As she travels through the labyrinthine structure, various NPCs and Signposts point to a far off tower with a princess in need of saving.
+After obtaining all 5 Major Keys, and the upgrades required to reach them, Sybil is able to open the door at the top of said tower where the princess awaits. However, upon reaching her chamber, the Princess attacks Sybil and is soon after defeated. Afterwards, the castle collapses and it is revealed that the events previous were only a dream being had by someone who seems to know the Princess, who thanks Sybil for waking him up and wishes her luck on her next adventure.
+
+
+== Development ==
+The initial version of Pseudoregalia was developed in around three weeks as a submission for the Metroidvania Month 19 Game Jam, which took place between February and March 2023. The original version, which won first place in the game jam, was released for free via itch.io. An extended, "full" version of the game was made available to purchase via Steam on 28 July 2023. According to the developer, the production of the extended version took four months, and since then, there has been an update adding an in-game map. The developer plans to release future updates for the title as well.
+
+
+== Reception ==
+Following its release, the game sold 28,000 copies by September 2023, a result the developer found unexpected. By August 2024, it sold 200,000 copies and had 10,000 reviews on Steam.
+Pseudoregalia received acclaim from various professional outlets ahead of and following its release on Steam. Rock Paper Shotgun praised the flexibility of motion it offered, describing it as "super-slick" and "[looking] absolutely fantastic in motion". William Hughes described it for The A.V. Club as "an indie gaming winner" and as a reminder that "having satisfying gameplay can overcome almost any other issues". Dustin Bailey of GamesRadar+ stated that it looked like "an incredibly well-crafted game laser-targeted at my gaming wheelhouse".
+Try Hard Guides rated it 9.5/10, calling it a "truly a one of a kind game", while also praising the gameplay, soundtrack and graphics. Entertainium described the short length of the game as making "[it] very focused, always able to put its best foot forward instead of ever dragging even slightly".
+
+
+== References ==

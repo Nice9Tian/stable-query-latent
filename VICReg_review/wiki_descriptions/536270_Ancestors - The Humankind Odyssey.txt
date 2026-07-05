@@ -1,0 +1,38 @@
+Game: Ancestors: The Humankind Odyssey
+appid: 536270
+Source: Ancestors: The Humankind Odyssey
+URL: https://en.wikipedia.org/wiki/Ancestors:_The_Humankind_Odyssey
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Ancestors: The Humankind Odyssey is a survival game developed by Panache Digital Games and published by Private Division. It was released for Microsoft Windows, PlayStation 4, and Xbox One in August 2019. It was directed by Patrice Désilets. Set in prehistoric Africa, players control hominin species within the evolutionary lineage of modern humans, and are tasked to ensure their survival and facilitate their evolution.
+
+
+== Gameplay ==
+
+Ancestors: The Humankind Odyssey is a survival game played from a third-person view. In the game, players control a member of a hominid clan and have to manage the player character's health by eating, drinking, and sleeping. The game starts in a jungle in prehistoric Africa, an open world filled with threats including Machairodus, Metridiochoerus, Crocodylus thorbjarnarsoni, Adcrocuta hyenas, African rock python, giant miocene otters, African buffalo, and more. Players can climb trees, and will suffer injuries if they fall down or are attacked by predators. As players progress, new areas are opened up for players to explore. When a hominid is exploring new locations or being hunted by predators, it will enter a state of "fear". Fear can be controlled by performing rewarding actions, like crafting tools, eating, or conquering new locations, that accrue dopamine. If the hominid is scared for too long, its dopamine will deplete and it will descend into a state of hysteria.
+While the world is dangerous, the apes can use their heightened senses to listen to various sounds, such as that of a predator, a lost clan member, or an outsider which can be recruited to the player's clans. The hominid can use its intelligence to pinpoint the locations of different items of interest and make new discoveries such as identifying new food or tools. As players continue to make new discoveries, the hominid become more intelligent and capable, and new skills such as using leaves to make bedding and medicinal plants to heal themselves are unlocked. If the player character dies, players will shift to controlling another clan member. If all clan members die, the lineage becomes extinct and players need to restart the game.
+The goal of the player is to ensure the hominid clan's survival as it slowly evolves and becomes a new species. As the clan grows, players can switch to play as other characters such as an infant, an adult, an elder, and a mother or father carrying their child. As the clan slowly expands, the player character can perform social tasks like calling members of the clan to hunt and explore together, or migrating across the map to settle down in a new home. When an ape is sleeping, players can unlock new abilities by developing the hominid's neural system, which functions as a skill tree. These skills, such as the ability to use both hands and stand upright, facilitate evolution. As hominids undergo procreation, unlocked skills are passed on to future generations. The game is 40 to 50 hours long, and it documents the clan's evolution across eight million years.
+
+
+== Development ==
+
+The game was developed by Panache Digital Games, a studio opened in 2014 by game director Patrice Désilets after he left Ubisoft. Désilets focused on creating a toolbox for his new studio, which allowed characters to interact with the environment extensively. The team intended to create a game set in prehistory so they did not need to build vast cities for players to explore. According to Désilets, he was "bored of the whole 10,000 BC [setting]", so he opted to create a game set ten million years in the past. To better study the setting, Désilets read books about paleoanthropology, though some elements were exaggerated. The team avoided getting inspirations from films or other pop culture media to ensure that the game was unique instead of derivative.
+Désilets designed the game to allow players to explore the game's various systems and features, which prompted them to use their instincts to look for solutions. The game does not have a structured narrative campaign, as Désilets hoped that players can craft their own experiences. The team avoided including a mini-map as part of the game's head-up display as the team wanted to encourage players to have the curiosity to freely explore the game's world. Désilets envisioned the game as the first part of a trilogy, and that this first title will end when the player character reaches a stage that resembles Lucy.
+The game was announced at Reboot Develop 2015 in Dubrovnik by Désilets. Initially, the game was episodic, in which each chapter enabled players to "relive the greatest moments of mankind with a documentary twist". The decision was a financial one because the studio was small and it lacked sufficient funds to build a huge game. However, the plan was scrapped after Private Division, a new publishing label dedicated to supporting independent game developers, agreed to publish the game. The game was released for Microsoft Windows on August 27, 2019 via the Epic Games Store due to an exclusivity deal that would last for a year. The PlayStation 4 and Xbox One versions were released on December 6 of the same year. It was also released on the Steam store in August 2020.
+
+
+== Reception ==
+
+The game received mixed reviews from critics according to review aggregator Metacritic.
+Destructoid enjoyed the use of the evolution in the title, and how it prompted players to explore and use items in unique ways, "The evolution mechanic encourages you to use every type of tool in every conceivable way and leave no area of interest unexplored, which is great". While criticizing the progression as obtuse, IGN liked the visuals, writing, "Animations are a highlight, and the way they move and interact feels lifelike and authentic". PC Gamer felt that the controls were unnecessarily difficult to use, "When I want to use my senses to investigate something, I need to stop moving completely. Then I need to make sure I'm not close to any rock, stick, plant, or food item or I'll get the prompt to interact with that item instead of the prompts to use my senses".
+Game Informer appreciated the game's scope, but was frustrated with the repetition present in Ancestors' gameplay, "Sharpening that stick for the 20th time is little more than a chore. An overwhelming sense of tedium sets in". Polygon liked the long form progression of the title, "death isn't a tragic event in Ancestors; it's an inevitability, and it will come sooner the more I try to stretch my understanding of the world around me. Then, in the next generation, my clan will understand a little more, and will be able to stretch even further".
+The game was nominated for "Best International Indie Game" at the Pégases Awards 2020.
+The game had sold 1.5 million copies by April 2023 and a reached 2 million sold copies by April 2024.
+
+
+== References ==
+
+
+== External links ==
+Official website

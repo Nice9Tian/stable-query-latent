@@ -1,0 +1,38 @@
+Game: Mega Man Zero/ZX Legacy Collection
+appid: 999020
+Source: Mega Man Zero/ZX Legacy Collection
+URL: https://en.wikipedia.org/wiki/Mega_Man_Zero/ZX_Legacy_Collection
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Mega Man Zero/ZX Legacy Collection is a video game compilation based on Capcom's Mega Man series. It compiles emulated versions of 
+all four games in the Mega Man Zero series, originally released between 2002 and 2005 for the Game Boy Advance, along with both entries in its sequel series Mega Man ZX, originally released between 2006 and 2007 for the Nintendo DS. Like other Mega Man Legacy Collection entries, it also includes various enhancements and behind-the-scenes materials. The compilation was released in 2020 for Nintendo Switch, PlayStation 4, Windows, and Xbox One.
+
+
+== Overview ==
+Like the other Legacy Collections, Zero/ZX Legacy Collection includes both the Japanese versions and the North American versions of each game. The collection adds an optional checkpoint system, which can be enabled to save the player's progress in each stage, along with a new "Casual Scenario" mode, which reduces the difficulty and adds additional assists. Another new mode, "Z Chaser", is a speedrunning mode that challenges players to finish a level before a ghost opponent does. Additionally, a new "Link Mode" was added for ZX to recreate the original release's ability to connect to Mega Man Zero 3 and Mega Man Zero 4 via the DS's GBA slot; by choosing which game to link to before starting play, players can battle four additional bosses from each game. The modification cards that were unlocked with the Nintendo e-Reader in the original Japanese release of Zero 3 are included, which are listed in the collection as "ZZ Cards" and are unlocked in groups by completing achievements. The collection also includes an in-game gallery and a music player.
+
+
+=== Included games ===
+
+
+== Release ==
+Zero/ZX Legacy Collection was first announced on August 27, 2019, for release on Nintendo Switch, PlayStation 4, Windows, and Xbox One. The compilation was originally planned to launch on January 21, 2020, in North America and Europe, and January 23, 2020, in Japan, but it was delayed by one month for quality assurance reasons. The game was ultimately released on February 25, 2020, in North America and Europe, and February 27, 2020, in Japan. Ten additional remixes for the music player were available as a pre-order incentive, and were later released as free downloadable content the following August.
+
+
+== Reception ==
+
+All versions of Mega Man Zero/ZX Legacy Collection received generally favorable reviews from critics, according to the review aggregation website Metacritic. Fellow review aggregator OpenCritic assessed that the game received strong approval, being recommended by 91% of critics.
+
+
+== See also ==
+Mega Man Zero Collection, a previous compilation of the Mega Man Zero series
+
+
+== Notes ==
+
+
+== References ==
+
+
+== External links ==

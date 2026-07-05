@@ -1,0 +1,39 @@
+Game: Torchlight III
+appid: 1030210
+Source: Torchlight III
+URL: https://en.wikipedia.org/wiki/Torchlight_III
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Torchlight III (formerly Torchlight Frontiers) is an action role-playing game and the third game in the Torchlight series. It is developed by American studio Echtra Games and published by Perfect World Entertainment for Microsoft Windows, PlayStation 4, Xbox One, and Nintendo Switch in October 2020.
+
+
+== Gameplay ==
+Torchlight III is a dungeon crawler where the player controls a character in a high fantasy world. From an isometric, top-down view, the player controls their character to move about the game's world, using hack and slash with a variety of weapons, magic spells, and skills to fight monsters, collect new items and treasure, and sell and buy items in a centralized town to improve their character's abilities.
+Initially, Torchlight III, as Torchlight Frontiers, had been a massively multiplayer online game, introducing large surface levels that allow players to join to fight monsters that respawn over time, and travel between the game's primary dungeons, many of which are procedurally generated. Players would have been able to party together to explore these dungeons. To balance players' overall abilities, the game would have used item-based experience levels rather than player-based levels. Players with high-level items entering a dungeon with lower-level players would have their items temporarily weakened to the lower levels while in the dungeon. With the change to Torchlight III, the game is expected to be more of a linear approach as from the first two Torchlight games, but will still support both offline and online play.
+
+
+== Development ==
+
+
+=== Series background ===
+The Torchlight series was originally developed by Runic Games; the first game, Torchlight, was a single-player only game released in 2009, and its sequel, Torchlight II, released in 2012, added in cooperative play between (up to) six players. Runic was founded by several video game industry veterans with experience from dungeon crawlers like Diablo, Hellgate: London, and Fate, many of whom had been at Flagship Studios at the time of its closure in 2008. Flagship had been developing Mythos, another action RPG but with significant massively multiplayer online (MMO) components. With Runic, the company wanted to "finish what they started" with Mythos, but to redevelop all portions of the game, lore, and art for this title. With only fourteen employees to start, Runic decided to stay closer to their roots and develop a single-player game without an online component so as to get a product out faster and then build upon that in the future; this ultimately became Torchlight. On release of Torchlight, Runic's Max Schaefer asserted that it was a first step toward a planned Torchlight MMO. Torchlight II represented a partial step toward the MMO, giving them the opportunity to expand and test multiplayer elements.
+During Torchlight II's development, Perfect World Entertainment invested US$8.4 million into Runic Games, gaining a majority control of the studio. This investment was targeted toward the development of the Torchlight MMO that the studio has previously presented.
+In 2014, studio co-founders Travis Baldree and Erich Schaefer left Runic Games, ultimately forming Double Damage Games and releasing Rebel Galaxy. While Runic had grown under Perfect World's investment, Baldree and Schaefer wanted to get back to smaller scale development, the reason for their amicable departure. Co-founder Max Schaefer (Erich's brother) recognized that both developers were part of the critical team behind Runic's development, and with their departure, they had to rethink their plans for the Torchlight MMO. This required them to shift away from the action RPG genre into a new type of game, ultimately released as Hob, a puzzle-driven adventure game.
+Schaefer was still keen on the Torchlight MMO, but with the direction the studio had taken with Hob, he decided to leave Runic games along with additional programmers to try to fulfill this vision. He founded Echtra Games, a developer under Perfect World, in 2016, hired a number of developers with background in the action RPG area, and was able to get the rights for Torchlight through Perfect World. Ultimately, Perfect World closed Runic Games in November 2017, although they did state that news about Torchlight would be made in the future.
+Torchlight Frontiers was first announced on August 9, 2018, and early versions of the game were available to play at the 2018 Gamescom trade show and PAX West later that month. The game was anticipated to launch on Microsoft Windows first, with releases on PlayStation 4 and Xbox One to follow.
+In January 2020, Echtra and Perfect World announced that Torchlight Frontiers had been rebranded to Torchlight III, and had dropped several of the planned MMO-like aspects in favor of a more linear progression in the game. Schaefer said "During development, you often discover what type of product a game was meant to be and we found Torchlight Frontiers was meant to be a true successor to Torchlight I and II. Based on this and extensive feedback from our Alpha testers, we decided it was time to take the game back to its roots and model it after the classic Torchlight games that action RPG fans have come to love." The companies affirmed the game would no longer be free-to-play but would instead be a premium title, with plans for a Microsoft Windows release in mid-2020. A closed alpha period launched in January 2020, with an early access version of the game released on Steam on the 13th of June 2020.
+Zynga acquired Echtra Games in March 2021 for an undisclosed sum. As a result, Echtra completed one last update for the game in May 2021 and then turned over the game and IP to Perfect World to allow the publisher to seek developers to continue the game's development.
+
+
+== Reception ==
+
+Torchlight III received "mixed or average" reviews according to review aggregator Metacritic. Review outlets unanimously deemed the game an inferior one compared to prior entries in the franchise.
+Destructoid gave the game a six out of ten, calling its campaign "forgettable" while writing, "If you’re the kind of player who got deep into Torchlight II mods or spent countless hours crafting your ideal character builds, you’re almost certainly going to feel under-served in Torchlight III". Push Square acknowledged that the game's visuals and core gameplay were fine, but that the title felt "overly familiar and crushingly linear". PC Gamer noted that Torchlight III was technically sound, but called the dungeons "cookie cutter" and ultimately concluded that "what was missing [was] more than what was there". RPGamer noted that the process for online multiplayer was "frustrating" and called its limitations a "glaring annoyance". Nintendo Life praised the game for its rewarding gameplay loop, lengthy endgame, and replayability while criticizing its technical issues and calling its Fort system "underutilized". CGM and Shacknews reviewed the game more positively, praising the game's simplistic nature and the co-op mode, calling it accessible and appealing, though both criticized the level creation system, technical issues, and boss fights.
+
+
+== References ==
+
+
+== External links ==
+Official website

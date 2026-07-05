@@ -1,0 +1,15 @@
+Game: Carto
+appid: 1172450
+Source: Carto
+URL: https://en.wikipedia.org/wiki/Carto
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Carto may refer to:
+
+Carto (video game)
+Cardiac electrophysiology
+Carto (company)
+R v Carto, lawsuit
+Willis Carto (1926–2015), political advocate
+Carto, the default rendering layer of OpenStreetMap

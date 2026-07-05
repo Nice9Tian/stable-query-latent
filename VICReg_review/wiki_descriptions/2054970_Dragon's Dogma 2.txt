@@ -1,0 +1,61 @@
+Game: Dragon's Dogma 2
+appid: 2054970
+Source: Dragon's Dogma 2
+URL: https://en.wikipedia.org/wiki/Dragon%27s_Dogma_2
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Dragon's Dogma 2 is a 2024 action role-playing game developed and published by Capcom. The sequel to Dragon's Dogma (2012), the game is set in a fantasy-themed world parallel to the first game. Players control a customizable character through the game's open world while hunting a dragon that chose them as the "Arisen" amid a geopolitical conflict by completing quests and gaining new equipment on the way with the aid of allies known as "Pawns".
+Dragon's Dogma 2 was released for PlayStation 5, Windows, and Xbox Series X/S on March 22, 2024. A version with additional content, Dragon's Dogma 2: Dark Arisen, will be released on October 9, 2026 on PlayStation 5, Windows, Xbox Series X/S, and Nintendo Switch 2. The game received generally positive reviews from critics and sold 4 million units by November 2025.
+
+
+== Gameplay ==
+
+Dragon's Dogma 2 is an action role-playing game played from a third-person perspective. The player takes on the role of a character called the "Arisen", a hero marked by a dragon whom they must defeat. The player explores the world they live in, taking on quests, and fighting monsters, while being caught up in a geopolitical conflict between two kingdoms. To assist in this, the Arisen relies on allies called "Pawns", non-playable characters who join the player's party. These characters are AI-controlled, but function like player-controlled avatars, able to assist in fights, provide information on enemies, and give guidance to active quests. Players can each create and customize their avatar and their own Pawn character with different genders, appearances, and race. In addition, players can recruit two additional Pawns that have been created by other players.
+Both the Arisen and Pawns each operate under a "vocation" – a class that defines what abilities and equipment they can use in combat, with different strengths and weaknesses. Vocations are split between basic, advanced and hybrid, the latter only accessible to the Arisen; furthermore, only the Arisen and their Pawn can change vocations. The game features several different vocations to choose from; several from Dragon's Dogma make a return, whilst Strider and Ranger have been changed to Thief and Archer respectively. New hybrid vocations are included, including Mystic Spearhand, a variation of Mystic Knight, with characters able to utilize a bladed quarterstaff-like weapon called a duospear, and the Trickster, who uses spells that can confuse enemies and enhance Pawns in battle. Working with vocations improves them, unlocking additional abilities that can be acquired for use in combat.
+Dragon's Dogma 2 is set in a seamless open world that is four times larger than the map in the first game, and is a parallel world to that of the previous title. The world is split between two major kingdoms, Vermund and Battahl, populated with humans, the catlike beastrens, and elves. Fast travel is available through ferrystones and oxcarts, with Dragon's Dogma 2 allowing players to set up camps at night at campsites around the game world. Emergent events may occur, forcing players to react and adapt, such as making use of destructible environments to defeat enemies, with a day–night cycle that impacts what creatures are encountered and how strong they are.
+
+
+== Plot ==
+The story of Dragon's Dogma 2 begins in a mining site, where the player character, who is assumed to be a Pawn, is forced to clear rubble alongside other Pawns. When the camp is attacked, the player escapes with the help of a mysterious figure called the Pathfinder. The Pathfinder reveals the player is not a Pawn, but the Arisen, and after they make their escape they eventually reach a ruined town called Melve. A flashback reveals how the player fought the Dragon here, and was chosen by the Dragon to become Arisen.
+The Arisen is said to be the only person able to summon and command Pawns and slay the Dragon, after which they become the king of the land of Vermund, until they die and the Dragon comes again. There are many people who pretend to be Arisen, and since there already is an Arisen to be crowned soon, the player is assumed to be a pretender. The player is escorted by soldiers to the capital city, Vernworth, where they meet Brant, the captain of the palace guard. Brant believes the player is the real Arisen, and that their current regent-to-be is an impostor. Brant gives the player several quests to gain the trust of the people. When all quests are completed, Brant will take the Arisen and their Pawn to interrupt the coronation of the false Arisen, with the intention to use the Pawn as proof that the player is the true Arisen. As they approach the doors, the Pawn suddenly becomes unable to enter the palace, and the plan is called off.
+Brant sends the Arisen to go to the neighboring country of Battahl. Here, the player learns of Godsway,  which is the crystallized souls of former Arisen, and it has the ability to mentally control Pawns. This Godsway is being researched by Lord Phaesus, head of the Forbidden Magicks Research Lab. Phaesus wants to use the Godsway to control the Dragon, so he might learn how to permanently end the cycle. Then the player is called back to Vermund, after being informed a mysterious shrine rose from the seafloor. In this shrine they meet Rothais, a former Arisen who actually slew the Dragon, but grew mad with paranoia and refused their further duties as Arisen. Rothais gives the player the Godsbane Blade, forged from his own soul.
+The player takes this blade with them back to Battahl and meet Ambrosius, a researcher working for Phaesus. Ambrosius refines the Godsbane Blade to be usable, and then refuses to give it back. However, the Pathfinder shows up again and they change Ambrosius mind with a wave of their hand. The Pathfinder sends the Arisen after Phaesus in order to stop him. 
+When the Arisen reaches Phaesus, he is protected by the false Arisen and his mind-controlled Pawns. Phaesus uses his own Godsway staff to summon the Dragon, but the Dragon he summons is only a weak imitation. The real Dragon shows up, kills Phaesus' summoned Dragon, and challenges the Arisen to a final fight. If the player accepts, they climb on the Dragon's back, and the following sequence they crawl around there as the Dragon flies towards his chosen arena. A fight follows, the Arisen kills the Dragon, and they are crowned king. The player can walk around the throne room, but when they sit down on the throne the game ends.
+However, the Pathfinder is also present in the throne room. If the player approaches them, the Pathfinder asks them if they are not satisfied with the ending, and vanishes into the crowd. If the player pursues them, the Pathfinder will send them back to the flying sequence before the final fight. The player can let it play out and fight the Dragon again, or they can use the Godsbane Blade on themselves, after which both the Arisen and the Dragon fall into the ocean. Beneath the ocean, the Arisen meets the Pathfinder, who blames them for being selfish and dooming the whole world. All the water in the world is sucked up into the sky, forming a mass of red clouds that rain down fire.
+The Pathfinder explains this is the world without the cycle they had so carefully maintained for ages. The player's decision to kill themself broke the cycle, and now the world is approaching its end, because it cannot exist without a script to follow. The player then goes to find out what happened on their own, and when they reach the previously underwater shrine Rothais resided, it is strangely untouched by the red clouds. The water has vanished, revealing a whole town. The player is tasked with telling the different kingdoms and towns of the safe haven, as well as slaying specific monsters to postpone the end. When all those monsters are killed, a red beam appears in the shrine. Touching this beam starts a cutscene where the red clouds come together and form an enormous dragon. The player's Pawn also suddenly transforms into a shadow-like dragon, and attacks the player, then picks them up and flies them up towards the dragon. The Pawn drops the player on its back, and the player has to climb towards the dragon's neck, where another cutscene starts. The Pawn flies at the dragon's head and claws its eyes open, making it flip over and fling the Arisen into the sky. They fall back down towards the dragon's chest, and the Pawn makes a hole so the Arisen can reach the dragon's heart. The Arisen uses the Godsbane Blade to kill the dragon and finally break the cycle.
+
+
+== Development ==
+Dragon's Dogma 2 was directed by Hideaki Itsuno. One of the main goals for the team was to introduce improvements to the gameplay mechanics of its predecessor, and include features that were cut due to technology not being readily available at the time. As a result, Itsuno added that "the sequel may not include as many things that feel completely new or different, but will be more polished and enhanced in order to achieve a more immersive RPG and action adventure for the player". For instance, the team had written more dialogue for the pawns to address feedback from players. The human kingdom of Vermund is inspired by medieval  Europe, with the feline region being inspired the Byzantine Empire. According to Itsuno, the team was inspired by Grand Theft Auto V while creating the world and emergent gameplay.
+
+
+== Release ==
+Dragon's Dogma 2 was announced by Capcom in June 2022. It was revealed with a trailer at a PlayStation Showcase in May 2023. A Dragon's Dogma 2 showcase was held in November 2023, which announced that the game would release for PlayStation 5, Windows, and Xbox Series X/S on March 22, 2024. A version with additional content, Dragon's Dogma 2: Dark Arisen, will be released on October 9, 2026 on PlayStation 5, Windows, Xbox Series X/S, and Nintendo Switch 2. The Dark Arisen content will also be available for owners of the standard edition.
+
+
+== Reception ==
+
+
+=== Critical reception ===
+Dragon's Dogma 2 received "generally favorable" reviews from critics, according to review aggregator website Metacritic, with 92% of critics recommending the game, according to OpenCritic. In Japan, four critics from Famitsu gave the game a total score of 32 out of 40, with each critic awarding the game an 8 out of 10.
+The game was praised for refining its predecessor's gameplay, its dynamic and dense game world, and emergent narrative. The pawn system received attention and applause. Criticism targeted the game's performance, low enemy variety, and poor AI for allies.
+The availability of microtransactions as well as optimization issues resulted in mixed reviews on Steam. PC Gamer's Harvey Randall called the inclusion of microtransactions "bafflingly silly", noting that many items are easily acquired just by playing the game. IGN's review thought that their presence in a single-player game was frustrating but did not affect their overall opinion of Dragon's Dogma 2.
+
+
+=== Sales ===
+In Japan, Dragon's Dogma 2 sold 68,592 units during its first week, making it the second best-selling game behind Princess Peach: Showtime!. Dragon's Dogma 2 had sold 2.5 million units worldwide by April 2, 2024. The game had sold 3 million units by May 28, 2024. It had sold 3.7 million units by March 31, 2025. It was the twelfth best-selling game in the US in 2024.
+
+
+=== Accolades ===
+Dragon's Dogma 2 won the Award for Excellence at the Japan Game Awards 2024. The Selection Committee praised the game for "exploration elements unique to the open world and a high degree of freedom".
+
+
+== Notes ==
+
+
+== References ==
+
+
+== External links ==
+Official website

@@ -1,0 +1,32 @@
+Game: Bear and Breakfast
+appid: 1136370
+Source: Bear and Breakfast
+URL: https://en.wikipedia.org/wiki/Bear_and_Breakfast
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Bear and Breakfast is a 2022 management sim video game developed by Romanian studio Gummy Cat and published by Armor Games. It was released on the 28th of July 2022 for Microsoft Windows, with a Nintendo Switch version released on September 15th of the same year. The PlayStation version was released on December 12th 2023. The game follows the exploits of Hank, a bear who opens a bed and breakfast. Its gameplay mixes elements of classic management games with narrative passages and branching dialogues.
+Bear and Breakfast was met with mixed reviews by critics, who praised its art style, atmosphere and characters, but criticized its restricting gameplay and pacing.
+
+
+== Gameplay ==
+In Bear and Breakfast, the player controls Hank, a bear who comes into possession of a dilapidated bed and breakfast which he must fix and operate in order to cater to human clients. The purpose of the game is to maximize guest satisfaction by building and decorating various rooms and facilities. As the game progresses, so do the demands of guests, with wealthier and more sophisticated clients requiring larger and better furnished rooms.
+The game consists of around a dozen areas which can be unlocked by completing quests and advancing the main story. Other mechanics employed by the game include resource management, crafting, and a card-based cooking minigame.
+
+
+== Development ==
+Bear and Breakfast is the debut game of Bucharest-based studio Gummy Cat. In development since 2019, the game was first announced in August 2020 during Nintendo's Indie World showcase as a PC and Switch timed-exclusive. Initially planned for a 2021 release, it was delayed until the following year after Gummy Cat experienced various production setbacks including the effects of the COVID-19 pandemic and being targeted by a cryptocurrency scam. It was finally released on 28 July 2022 for PC with Armor Games as publisher, while the Switch launch was further delayed by issues with the controller settings and the team's reluctance to repeat the work crunch that preceded the game's PC release. The Switch version was released on 15 September 2022. The PlayStation version was released on December 12th 2023, both for the PlayStation 4 and 5. 
+Bear and Breakfast uses the Unity engine. According to Gummy Cat, their influences included games like The Guild (2002), Theme Hospital (1998) and Sierra-published city-builders like Caesar III (1998).
+
+
+== Reception ==
+
+Bear and Breakfast received "mixed or average" reviews according to review aggregator Metacritic. Fellow review aggregator OpenCritic assessed that the game received strong approval, being recommended by 59% of critics.
+Bear and Breakfast was praised for its art style, music, humour and cozy atmosphere, but also received criticism aimed at some of its gameplay mechanics, particularly its pacing, the lack of player freedom and the integration of narrative-driven elements in the management sim formula. In its review, Rock Paper Shotgun commended the game's "whimsical charm", but also described it as holding a "wealth of untapped potential", criticizing the way in which it rarely allows the player to freely explore and expand, likening this approach to a "well-intentioned but suffocating bear hug". Similarly, The Guardian described it as a "management game that's obsessed with managing its players, rather than letting them exercise control". Conversely, GameSpot felt that the main gameplay loop "has a satisfying rhythm to it and a challenging complexity" and lauded both the game's "delightful management system" and its accessibility.
+
+
+== References ==
+
+
+== External links ==
+Official website

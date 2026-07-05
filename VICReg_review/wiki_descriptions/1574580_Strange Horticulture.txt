@@ -1,0 +1,48 @@
+Game: Strange Horticulture
+appid: 1574580
+Source: Strange Horticulture
+URL: https://en.wikipedia.org/wiki/Strange_Horticulture
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Strange Horticulture is a 2022 video game by British independent developer Bad Viking, published by Iceberg Interactive for Windows, Nintendo Switch,  macOS and Xbox One. Described as an "occult puzzle game", Strange Horticulture involves the discovery and identification of a fictitious herbarium of plants for sale to a range of mysterious and unscrupulous customers. Gameplay involves the completion of puzzles by matching the details of customer requests of plants to their descriptions, opening up access to more plants and identifying information.
+Released in January 2022, Strange Horticulture received praise from critics, with particular praise directed towards its immersive and intimate gameplay and the design and tone of its setting. The game appeared on several year-end lists as one of the best games of the year and got nominated for the "Excellence in Design" award at the 2022 Independent Games Festival.
+A standalone sequel, Strange Antiquities, was released for Windows and Nintendo Switch on 17 September 2025.
+
+
+== Plot ==
+In the small town of Undermere, the player inherits from their late uncle a store named Strange Horticulture, renowned for selling to customers botanic remedies carrying mystical and occasionally dangerous effects. Members of the town visit the store to seek plants to use for their own ends, including Bethany Coleman, a member of a nature-worshipping sisterhood in the nearby woods, the Arduinna, whose matron has died, Reuben Ward, an officer investigating the murder, Ennis Aleford, a hermit from a mysterious cult known as the Seeds of Redemption seeking to summon a creature called the Woken Dendrew, and Forest Vair, a hunter bent on sabotaging the hermit's plans. How the player chooses to assist or hinder characters through the plants they provide them influences a branching storyline which ultimately determines the fate of the characters in the game.
+
+
+== Gameplay ==
+
+Players organize and classify an unidentified collection of plants to complete puzzles based on requests made by customers to the store. To assist in identification, players have access to the Strange Book of Plants, an incomplete guide to the horticulture in the game that partially identifies plants by characteristics such as the scent, shape of leaves and petals, and remedial properties. Successfully providing a customer with the correct plant allows the player to unlock further pages in the book, opening up further opportunities to identify and use plants in the game. Some requests possess multiple options to provide characters with plants that carry different effects, providing players with choices that will influence later events in the game. 
+Players are also able to discover new plants and progress the story by exploring locations on a grid-based map. To do so, players accumulate the "will to explore" by completing customer requests and watering plants. Players decode clues to discover the location of new plants or events, such as finding co-ordinates from the description of locations on the map. A labelling system also assists players in providing notes on certain plants for future reference. In the later stages of the game, the player is also able to engage in alchemy, creating elixirs and antidotes by combining the properties of several plants.
+
+
+== Development ==
+Strange Horticulture was developed by developer Rob Donkin and artist John Donkin, brothers based in the United Kingdom who had previously developed flash games from 2009 and founded Bad Viking in 2011 to develop larger projects.  Development of Strange Horticulture was inspired by the idea of pairing "witchcraft meets gardening", which the brothers expanded upon, through influences including the Terry Breverton botany book Complete Herbal, to develop ideas for the design of plants in the game. The brothers approached the design of the game by having "plants be the way (the player) interacts with the game world", with "plants that we designed gameplay elements around and gameplay elements that prompted the question: How can we use a plant here?" 
+The design of the game world was inspired by the brothers' experiences visiting fells in the Lake District in the United Kingdom, which they used to build the setting of Undermere and the surrounding area. The brothers were encouraged to develop an ingame map of the world based upon their experiences with board games, including the 1981 gamebook Sherlock Holmes: Consulting Detective and Gloomhaven, stating the inspiration "came from legacy games...where you open the box and there's lots of little boxes inside (that) you're not allowed to open, so you're like: What do they do? What does this envelope do?" 
+The game was released in 2022 for Windows on 21 January, for Nintendo Switch on 28 July, and for macOS on 22 November.
+
+
+== Reception ==
+
+
+=== Reviews ===
+
+Critical reception of Strange Horticulture was positive, with review aggregator Metacritic indicating the game received "generally favorable" reviews, with an average score of 83 out of 100 based on 11 reviews.
+Many critics praised the gameplay of Strange Horticulture, in particular its encouragement of immersive and tactile interaction with the game world. Writing for Polygon, Nicole Carpenter praised the "active sense of organization and the tactile feel of research and plant care", stating, "it's so easy to become engrossed in this world."  Alice Bell of Rock Paper Shotgun noted the game is "so immersive" and "fun to try and fully inhabit being that weird plant enthusiast in the grotty old plant shop," praising the game as "quiet, meticulous, delightful, dark and beguiling." Edge praised the "transportive quality" of the game, noting the "tactile interface and effective sound design (which) generate a powerful sense of place." 
+Reviewers of Strange Horticulture were mixed on the merits of the slow pace of the gameplay. Alyse Stanley stated in The Washington Post that "the gameplay itself (stocking shelves, chatting with customers, watering plants) is tedious, but it's the kind of tedium that's easy to get lost in as you vibe along with the serene-but-slightly-spooky atmosphere." Heidi Hawes of WayTooManyGames stated "even with all the creepy mysteries to unearth, the vast majority of the game itself is simply not that interesting," finding the "repetitive main gameplay loop...often boring," and observing the "entirety of the score is one somber melody played on a nonstop loop...(compounding) the feeling of monotony after a while." Writing for Game Critics, Damiano Gerli stated "the gameplay loop could have used some more finesse," noting "players will either find it quite relaxing or intensely boring, depending on one's tolerance for slow-paced puzzlers."
+
+
+=== Accolades ===
+Strange Horticulture appeared on many publications' year-end lists as one of the best games of 2022, including Polygon, Rock Paper Shotgun, and PC Gamer, who named the game as the best puzzle game of the year. Strange Horticulture was also nominated for an "Excellence in Design" award at the 2022 Independent Games Festival.
+
+
+== References ==
+
+
+== External links ==
+Official website 
+Strange Horticulture at MobyGames

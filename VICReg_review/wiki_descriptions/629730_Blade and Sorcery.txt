@@ -1,0 +1,45 @@
+Game: Blade and Sorcery
+appid: 629730
+Source: Blade & Sorcery
+URL: https://en.wikipedia.org/wiki/Blade_%26_Sorcery
+Match score: 7.20
+Retrieved: 2026-07-04
+--------
+Blade & Sorcery is a simulation sandbox game developed and published by French independent studio WarpFrog, exclusively made for virtual reality. It is considered notable for using full physics simulation to drive its combat and environmental interactions. The game was initially released in early access on December 11, 2018, for PCVR, and as the Oculus Quest and PICO 4 version, Blade & Sorcery: Nomad, on November 4, 2021. It later left early access and was fully released for PCVR on June 17, 2024, while Blade & Sorcery: Nomad was released on October 28, 2024.
+
+
+== Blade & Sorcery: Nomad ==
+Blade & Sorcery: Nomad is the ported version of Blade & Sorcery to standalone virtual reality headsets; this includes each of the Meta Quest line of headsets except the original, along with a lesser-known release on the PICO 4 headset. It has nearly the same gameplay as the PCVR version, but it has limitations such as lower quality graphics, lower quality physical simulations, and less AI enemies able to be simulated at one time. It was released on the 10th version (released October 24, 2021 for PCVR, also referred to as u10) of Blade & Sorcery on November 4, 2021. And, as previously mentioned, had its full release on October 28, 2024.
+
+
+== Gameplay ==
+Blade & Sorcery main focus is its melee combat, although it also offers a distinct magic system and ranged weapons such as bows and arrows. There are 5 magic types which are: fire, lightning, gravity, body, and mind magic. The player spends most time fighting various enemies, the primary enemies being ranged enemies who use magic or bows, and melee enemies who use weapons such as swords and clubs. The game has 2 game modes, the progression-based Crystal Hunt, and the more limitless Sandbox Mode; in both game modes, the main combat areas are dungeons, where the player fights through procedurally generated rooms until they reach the end and arenas, where the player fights waves of enemies.
+
+
+=== Physics ===
+Blade & Sorcery uses physical simulation to power its combat; weapons do damage and pierce enemies and different surfaces based on momentum, and enemies use ragdoll simulation, allowing the player to dynamically interact with enemies by grabbing or hitting them. In addition to this, the game has different objects the player can pick up using their hands or telekinesis (an ability that allows players to pick up and launch objects from a distance), that can also be used to attack enemies. Some props, such as pots and wooden chairs, will fracture through sufficient force. The game also features swinging props, such as hanging lanterns, that allow the player to grab onto and swing off of them.
+
+
+=== Game modes ===
+Crystal Hunt is a game mode introduced in the 1.0 update of the game. It introduces lore through various notes scattered throughout the game's different areas. Upon making a save, you can start with a background in one crystal or none, which will give you the tier one version of the crystal after you start the game in the players home, besides backgrounds, the player starts without armor, weapons, or skills other than telekenesis. Throughout the game they will earn currency by beating dungeons and arenas, which give coins and sellable valuables; by using these coins they can buy better weapons and armor to use against enemies. They can also unlock new magical abilities through "prismatic crystals" such as fire, gravity, lightning, etc., or use them improve their character's general abilities. To unlock prismatic crystals (of which 6 can be obtained), the player needs to fight through dungeons to collect pieces of a map so they can go to a special dungeon (called a "Dalgarian Dungeon") and obtain them from a boss enemy called a "golem". The golem's official name is Helkalis, however the Blade and Sorcery community tends to call it "Hector." Each prismatic crystal has 3 tiers which unlock new skills based on the prismatic crystal. Each tier has 4 skills, a “tierbound” skill which is free and 3 other skills which require a certain amount of crystal shards, which you can get in a dungeon or for completing a dungeon. The amount of crystal shards you need for each non-tierbound skill is equal to the tier of the upgrade multiplied by three. Ex, a tier three skill is 9 crystal shards.
+Sandbox Mode is the first game mode introduced in Blade & Sorcery. In this game mode the player can also fight in arenas and dungeons, however, there is no progression or currency. From the beginning of the game, the player has access to all magic skills and abilities, and a book that allows them to spawn whatever they want, including weapons, armor, and different physics props that could be found in the game.
+
+
+=== Areas ===
+Arenas were the first area type introduced into the game. There are various different arena maps that one can go to, such as the aptly named Canyon, Town Square, and Arena. In Sandbox Mode, the player can choose what kind of waves spawn, whether they are infinitely spawning, if they are ranged or melee only, etc. In Crystal Hunt the player will randomly be given arenas on the map that they have the option to go to. In these arenas, they do not have options on wave spawning, instead needing to fight predetermined waves of enemies, and are then rewarded with currency for finishing.
+Dungeons were introduced into Blade & Sorcery in the u10 update. The dungeons are procedurally generated using different sets of rooms depending on the dungeon map. To complete these areas, the player needs to make it to the final room, where they can return home. In most of these rooms, enemies are loosely spread around; however, certain rooms function like arenas where the player is unable to pass until they kill rapidly spawning waves of enemies. The player has several different options on how to pass enemies, such as using stealth to sneak past enemies; or facing enemies head on with some of the variety of weapons in the game. In Crystal Hunt, the player can find different types of valuables in loot rooms and rewards at the end of the dungeon; the rewards at the end also contain the maps needed to go to the previously mentioned Dalgarian Dungeons for progression.
+
+
+== Development ==
+Blade & Sorcery started development in 2016 as a multiplayer project in Unity called "Sorcering"; a teleport-only game where the player fought waves of the undead using magic. The developer, KospY, had previously worked on mods for Kerbal Space Program and Fallout 3 which helped him learn Unity and how to program. He chose to develop for VR out of an interest in the emerging technology and the prospects VR allowed in innovation for more experimental games. This led to the decision of making a game that was a full physics simulation sandbox first and foremost, the first of its kind in VR. The decision to add melee combat came afterwards, and grew organically when the physics simulation proved to be engaging and lend itself to innovative melee combat in VR.
+The original multiplayer concept design for Sorcering was abandoned when it became evident that high lag with physics made it unsatisfying to fight other players, instead of NPCS, and the small VR user base made it hard to justify a multiplayer only VR game. After two years of creating the prototype, KospY left his job and started working full-time on the project which now became Blade & Sorcery. He used the extra time to rewrite the game's code from scratch, making the codebase easier to use and run faster. The new direction of the game would be a single-player game, focusing on melee and magic built on the physics simulation sandbox KospY had created. He later talked about the process, "It took me nearly 6 months, but I don't regret any of it whatsoever; and Blade & Sorcery is now a good foundation to build upon it."
+When asked about being a solo dev, he said the greatest challenge was not being able to focus on multiple things at once, instead having to work on one feature at a time. The visuals were inspired by games such as The Elder Scrolls V: Skyrim and Dark Messiah. Not being an artist, KospY originally used premade assets for the game and tried to choose ones that fit the game the best. As the WarpFrog team grew, piece by piece store-made assets were replaced with custom built ones, with the most dramatic graphical changes appearing at Update 8.
+
+
+== Reception ==
+
+
+=== Accolades ===
+
+
+== References ==

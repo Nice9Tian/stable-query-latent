@@ -1,0 +1,30 @@
+Game: Star Trucker
+appid: 2380050
+Source: Star Trucker
+URL: https://en.wikipedia.org/wiki/Star_Trucker
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Star Trucker is a role-playing video game developed by Monster and Monster and published by Raw Fury. In the game the player plays as a driver of a truck that travels in outer space. It was released in 2024 for Windows and Xbox Series X/S and received positive reviews. A version for PlayStation 5 followed in 2025.
+
+
+== Gameplay ==
+In Star Trucker the player assumes the role of a truck driver. The truck, modeled after American semi-trailer trucks of the 1970s, is a vehicle that travels in outer space, which players use to haul bulk cargo in the form of containers. It is equipped with sci-fi equipment, including a warp drive, maglock, space suit, and more. The vehicle uses three-axis control and is powered by large batteries, which are also used to power other components of the truck.
+Similar to other role-playing games, the objective of the game is to earn money and reputation while progressing the story. A typical mission has four parts: accepting tasks and purchasing equipment from space stations, collecting the cargo located in the middle of space, driving the truck and passing through warp gates, and dropping off the cargo at the destination.
+Along the journey there are various locations the player can visit, such as gas stations, convenience stores, upgrade shops, and weighing stations. There are also asteroids scattered throughout the world, which damage the truck's hull and internal components if collided with. When a component breaks, on-truck systems begin to malfunction, which leads to events including loss of gravity, blackout, low oxygen, and broken batteries.
+
+
+== Development and release ==
+The game was created by indie developer Monster and Monster and published by Raw Fury. A game demo was released on Steam on February 17, 2024, and the full game was made available on September 3 for Windows and Xbox Series X/S. A version for PlayStation 5 was released on June 10, 2025.
+
+
+== Reception ==
+Star Trucker received positive reviews from critics upon release, who praised the game for its relaxing gameplay and creativity, but also criticized its relatively simple truck systems.
+
+
+== References ==
+
+
+== External links ==
+
+Official website

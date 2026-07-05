@@ -1,0 +1,40 @@
+Game: Thymesia
+appid: 1343240
+Source: Thymesia
+URL: https://en.wikipedia.org/wiki/Thymesia
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Thymesia is a 2022 soulslike action role-playing video game developed by Taiwanese indie studio OverBorder Studio and published by Team17. It was released on August 18, 2022 for Microsoft Windows, PlayStation 5 and Xbox Series X/S, alongside a cloud-based version for Nintendo Switch; a cloud-based Amazon Luna version followed on September 15, 2022. The game's combat and plague-themed setting draw heavily on FromSoftware's Bloodborne and Sekiro: Shadows Die Twice.
+
+
+== Gameplay ==
+Thymesia is a single-player third-person action role-playing game in which the player controls Corvus, a sword-wielding figure clad as a plague doctor. Combat emphasises fast, aggressive engagement and does not use a stamina bar; the player can dodge, parry and attack freely, with most actions instead gated by short cooldown frames.
+Each enemy has two health values displayed within a single bar: a white "true" health value that can be permanently reduced only by Corvus's claw attack, and a green "wound" value that regenerates over time if not finished off. Standard sword strikes create wounds, leaving the white value unchanged; the claw harvests the wound to do real damage. The design was inspired by the medieval practice of bloodletting and is intended to push the player toward aggressive play.
+A central mechanic is the "plague weapon" system: by executing enemies, Corvus can copy their weapon (knife, greatsword, whip, flying daggers, scythe and others) for one-shot use, with permanent versions unlockable in a talent tree tied to "memory shards" earned through combat and exploration. Defensive options include a deflect-style parry and a thrown-feather ranged attack that can interrupt enemy combos.
+
+
+== Plot ==
+The game is set in the Kingdom of Hermes, a once-prosperous realm that attempted to use alchemy to weaponise and contain a plague but instead saw its citizens mutate into hostile creatures. The player controls Corvus, an amnesiac figure who must revisit fragmented memories of the kingdom to recover his identity and the source of the plague. The narrative is conveyed primarily through environmental detail and short memory vignettes; the game has multiple endings determined by player choices.
+
+
+== Development ==
+Thymesia is the debut commercial project of OverBorder Studio, a Taiwanese independent developer of approximately seven people at the time of release. The project was directed by Mu-En Lee, who also served as lead programmer, with Ross Huang as lead designer and Yung-Chuen Su as writer. The game was built on Unreal Engine 4.
+The combat system was conceived from the start as a fluid soulslike interpretation; according to Huang, the team began work before Sekiro was announced and spent roughly four years iterating on the combat loop, including more than a year tuning the dual-health enemy display. Huang has stated that the title is intended to evoke the Greek concept of memory and the trial-and-error rhythm of soulslike progression, the in-fiction explanation for Corvus repeatedly reviving being that he is recalling alternative memories rather than dying.
+A "plague vision" mechanic — letting the player see plague spread through the environment to track enemies and uncover secrets — was cut from the final release due to time constraints.
+
+
+== Release ==
+Thymesia was first announced in March 2021 with a planned PC release date of December 7, 2021, which was subsequently delayed. A free demo was released on Steam from May 2 to 9, 2022; based on player feedback from the demo, the studio adjusted attack wind-up animations, character responsiveness and enemy attack hitboxes, and the release was pushed from August 9 to August 18, 2022.
+
+
+== Reception ==
+Thymesia received mixed reviews from critics, with aggregate scores in the 60s and 70s on Metacritic across the PC, PlayStation 5 and Xbox Series X|S releases. Critics generally praised the plague-weapon system, dual health design and combat pace, while criticising the short main campaign, limited enemy variety and inconsistent parry timing.
+IGN wrote, "Thymesia's aggressive combat can be enjoyable, but it's an adventure that's easily forgettable otherwise." GameSpot described it as "a small, smart, and rewarding Souls-like experience" despite some elements that "don't gel." Wccftech called the combat "fluid and stable" and singled out the plague weapon variety as a highlight. GameCritics gave the game 8 out of 10, praising the progression mechanics while noting the limited campaign length.
+
+
+== See also ==
+Soulslike
+
+
+== References ==

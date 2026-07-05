@@ -1,0 +1,45 @@
+Game: Tetris Effect: Connected
+appid: 1003590
+Source: Tetris Effect
+URL: https://en.wikipedia.org/wiki/Tetris_Effect
+Match score: 6.33
+Retrieved: 2026-07-04
+--------
+Tetris Effect is a block-dropping arcade-styled puzzle video game developed by Japanese studios Monstars and Resonair and published by Enhance Games. The game was released worldwide exclusively for the PlayStation 4 on November 9, 2018, and features support for the PlayStation VR. A Microsoft Windows version, with support for Oculus Rift and HTC Vive, was released exclusively on the Epic Games Store on July 23, 2019. A version for the Meta Quest standalone VR headset was released on May 14, 2020.
+The game garnered high praise from critics and was named Game of the Year by several publications. An enhanced version, named Tetris Effect: Connected, was announced for Xbox One, Xbox Series X/S and Windows 10 during Xbox Games Showcase on July 23, 2020, and was released on November 10, 2020. The expansion was made available for existing platforms in August 2021. Versions for Nintendo Switch and Amazon Luna were released in October 2021 and August 2022, respectively. A PlayStation 5 version, with support for the PlayStation VR2, was released on February 22, 2023.
+
+
+== Gameplay ==
+
+As in the original Tetris game, the player must place tetrominos into a playfield to create complete lines, which are then cleared from the playfield. Tetris Effect adds themes and music across thirty different stages with gameplay tied to the beat of the music. A new "Zone" mechanic allows players to "stop time", allowing the player to clear more than four lines at once, not possible in conventional Tetris games. The game also includes a meta-game leveling system that leads to new challenges for players as they progress.
+
+
+== Development ==
+Tetris Effect has been in development since 2012, and is inspired by the phenomenon of the same name, where after playing Tetris for a long period of time, players would continue to see falling Tetris blocks for some time after quitting the game. Co-producer Tetsuya Mizuguchi had wanted for many years to produce a music-based game around Tetris, but its licensing had been held by Electronic Arts, making it difficult to use. Around 2012, Mizuguchi began discussing with Henk Rogers, the founder of The Tetris Company which now owns the rights to Tetris, about developing a version of Tetris set to music with a "zone" that players would achieve while playing, leading to the start of the game's development. The game was released on November 9, 2018, on PlayStation 4 compatible with the PlayStation VR headset. A Microsoft Windows version, with support for Oculus Rift and HTC Vive VR systems, launched exclusively on the Epic Games Store July 23, 2019, followed by Oculus Quest on May 14, 2020.
+
+
+=== Connected ===
+A version for Xbox Series X/S, Xbox One and Windows 10 via the Microsoft Store was announced on July 23, 2020. Titled Tetris Effect: Connected, it was released on November 10, 2020, and was also made available to Xbox Game Pass subscribers at launch. This version includes a new cooperative multiplayer mode, as well as the new competitive mode that pays homage to the first console versions of Tetris with its simplified visual style and stricter rules similar to those used during the Classic Tetris World Championship. Connected was released on Steam on August 18, 2021, and was made available as the free multiplayer expansion for existing PlayStation 4 and PlayStation VR, Epic Game Store and Oculus Quest versions on the same day. The Nintendo Switch port was released on October 8, 2021, the same day the console's OLED model was released.
+A physical release of Connected for Xbox Series X/S, PlayStation 4 and Nintendo Switch produced by Limited Run Games was made available for preorder on June 17, 2022, and preorders ended on July 31, 2022. The game was made available for Amazon Luna on August 26, 2022. A PlayStation 5 version of the game was released on February 22, 2023. It was also upgraded to Unreal Engine 5 to take advantage of the PlayStation VR2.
+
+
+== Music ==
+Tetris Effect utilizes a vast array of songs alongside its visuals, all of which were original compositions by Hydelic, with multiple tracks, notably "Connected (Yours Forever)" including vocals from Kathleen. The original soundtrack released in 2020, and to coincide with the updated release with Connected, an additional album was released in 2021.
+
+
+== Reception ==
+
+Upon launch day, Tetris Effect was met with "critical acclaim" with many critics praising new game modes, the soundtrack, the visuals, and VR integration, with some critics calling it as a fitting love letter to Tetris.
+The game won the award for "Best VR/AR Game" at the 2018 Game Critics Awards. It was nominated for the same category at The Game Awards 2018, and won both the Coney Island Dreamland Award for Best Virtual Reality Game and the Tin Pan Alley Award for Best Music in a Game at the New York Game Awards. The Academy of Interactive Arts & Sciences also nominated Tetris Effect for "Outstanding Achievement in Original Music Composition" at the 22nd Annual D.I.C.E. Awards. The game won the awards for "Game, Puzzle" and "Original Light Mix Score, Franchise" at the National Academy of Video Game Trade Reviewers Awards, whereas its other nomination was for "Graphics, Technical". It also won the award for "Excellence in Musical Score" at the SXSW Gaming Awards, whereas its other nomination was for "Excellence in SFX"; in addition, it was nominated for "Best Audio", the "Innovation Award", and "Best VR/AR Game" at the Game Developers Choice Awards, for "Best Interactive Score" at the 2019 G.A.N.G. Awards, and for "Audio Achievement" and "Music" at the 15th British Academy Games Awards, and won the award for "Best Audio" at the Develop:Star Awards. The game was also nominated for "Best Audio", "Best VR/AR Game", and "PlayStation Game of the Year" at the 2019 Golden Joystick Awards. During the 24th Annual D.I.C.E. Awards in April 2021, the Academy of Interactive Arts & Sciences nominated the Connected version for "Online Game of the Year".
+Eurogamer named Tetris Effect its game of the year for 2018, writing "It's a game of utter purity, a contemporary take on a timeless classic, and a genuinely inspiring and uplifting experience. It doesn't care about the zeitgeist, because it is, in itself, the history and the future of video games rolled into one. It's Tetris Effect." The game was also deemed the best game of 2018 by Giant Bomb.
+Tetris Effect sold 4,372 units in Japan during its first week of release.
+
+
+== Notes ==
+
+
+== References ==
+
+
+== External links ==
+Official website

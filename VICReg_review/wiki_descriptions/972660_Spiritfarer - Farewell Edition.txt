@@ -1,0 +1,44 @@
+Game: Spiritfarer: Farewell Edition
+appid: 972660
+Source: Spiritfarer
+URL: https://en.wikipedia.org/wiki/Spiritfarer
+Match score: 5.38
+Retrieved: 2026-07-04
+--------
+Spiritfarer is an indie management sim and sandbox action game developed and published by Canadian studio Thunder Lotus Games. It was released for Microsoft Windows, macOS, Linux, PlayStation 4, Nintendo Switch, Xbox One, Android and Stadia in August 2020. The main character, Stella, becomes a "Spiritfarer" whose job is to ferry the spirits of the deceased to the afterlife, accompanied by her cat, Daffodil. The game revolves around a series of quests given to Stella by the spirits aboard her ship.
+It received generally positive reviews from critics praising its slow-paced gameplay, detailed animation, orchestral musical score, emotional depth, and unique themes, and had sold over a million units by December 2021. Following the game's initial release, Thunder Lotus supported Spiritfarer by adding new content via free updates; upon the final update on December 13, 2021, it was retitled Spiritfarer: Farewell Edition. The game was released for iOS and Android via Netflix on October 2022.
+
+
+== Gameplay ==
+
+The core gameplay consists of the player, in the role of Stella, meeting the needs of the spirits aboard their ship with food and completing tasks for them, as well as building new additions to their ship. This leads to the player collecting materials while on their journey to build kitchens, gardens, and other amenities to help the spirits feel more at home. New ship sections are placed on a square grid and can be stacked on top of one another, with more room becoming available as the player upgrades the ship's capacity.
+As they progress through their given tasks, the player uncovers more of each spirit's backstory, culminating in their crossing over to the afterlife through the Everdoor, a gateway into the afterlife to which the player must ferry them. The characters that Stella meets throughout the game unlock mini-games to play for materials and in-game currency. These games are often relevant to the spirit's character traits and backstory, such as collecting a creature's offspring alongside the maternal grandmother character, Alice. The game also has vendors that sell items such as seeds for the player's gardens and ingredients to use in various dishes, some of which are specifically requested by the spirit passengers.
+
+
+== Plot ==
+The player takes the role of Stella, accompanied by her pet cat Daffodil, who takes over from the mythological Charon as the new Spiritfarer, a ferrymaster who must sail the sea to find spirits, grant their last wishes, and finally take them to the Everdoor, a gateway to the afterlife. In order to assist with her journey, Charon gifts both Stella and Daffodil with the magical Everlight.
+After Charon passes through the Everdoor, Stella procures a ship of her own and begins travelling the world, picking up spirits and helping them fulfill their last wishes while befriending them along the way. As she picks up more spirits and collects resources, Stella expands the ship and its capabilities further. However, Stella must eventually begin sending the spirits to the Everdoor, helping them pass on from this world. Each of them gives an emotional sendoff as they thank Stella for everything she has done for them, leaving her a spirit flower to remember them by. As Stella sends off more spirits, she begins occasionally encountering Hades, in the form of a giant owl. Hades shows Stella images of what was apparently her past life as a palliative care nurse, taking care of terminally ill patients before falling terminally ill herself. Hades then questions Stella's motivations, wondering whether her desire to help spirits is altruistic or simply a selfish means to ease her insecurities. As Stella sends more spirits to the Everdoor, butterflies begin to gather in increasing numbers on the bridge of her ship, eventually forming a humanoid figure; this is not another spirit, but a personification of the voice of her sister, Lily, talking to Stella while Stella is unconscious in her hospital bed, remembering old memories, good and bad. Stella chases the fragmented conversations she hears from her sister, wanting to hear her, to see her one last time.
+Eventually, Stella sends off the last spirit through the Everdoor and she has one final confrontation with Hades. Hades reveals that Stella's body is on the verge of death in the real world, and it is now her time to pass through the Everdoor. With her purpose fulfilled, finally ready to move on herself and accept death, Stella sails back to the Everdoor with Daffodil one last time. As she passes through the Everdoor, Stella hugs Daffodil close to her, and, like the spirits before them, they both become a constellation in the sky.
+
+
+== Development ==
+Creative director Nicolas Guérin mentions that the game's stories are based on his own experiences of loss. He wanted to make a game that handled death in a way that felt more personal and intimate, referencing the loss of family and loved ones. The original concept had the game take place on a train instead of a boat, but the team decided that it did not really fit what they wanted. Changing seasons were also discussed but then scrapped because the scope of putting that into the game was much too large and served little importance to the game as a whole. Farming sections were much larger too, putting the original concept closer to competing simulation games like Harvest Moon and Stardew Valley. Thunder Lotus made the decision to tone it back, making the resource collecting portions not as time consuming and setting it apart from those competitors. The game is also padded with stories from the spirits that measure up to 90,000 words at the time GameSpot published the interview with Guérin on July 28, 2021. Guérin also mentioned doing research at end-of-life care facilities for a month as well as asking staff for Spiritfarer personal stories of loved ones to help flesh out the characters that were already in the works. The characters were designed first and then given raw personality traits, such as being attuned with their inner animal or more human in nature. The game itself is described as a construct of Stella's mind and how she develops her views and understanding of death. Guérin mentions that this is also shown in the landscapes of the islands as the game flows and Stella travels the map.
+
+
+== Reception ==
+
+Spiritfarer received "generally favorable reviews" for the PC version, according to review aggregator website Metacritic.
+IGN's Tom Marks rated the game 9/10 and gave it the Editor's Choice award, comparing the game to a combination of Animal Crossing and an action platformer. He stated that, while the game "tackle[s] the heavy topic of death and those left behind in its wake", it is nonetheless "colorful" and "feel-good". He called the campaign "full of charming characters with somber, touching stories", though stating that "not all the characters are as impactful as others". He stated that the backtracking got "tiresome" and the formula of the game became predictable, with mundane tasks becoming "repetitive fast" if the player attempted to optimize their efficiency, but that the game forcing beloved characters to leave was emotionally affecting.
+Rachel Watts of PC Gamer rated the game 85/100, saying that it is a "wholesome life-sim" that "deals with the topic of death and compassion with masterful balance". However, she criticized the "purposeful vagueness" about the nature of the afterlife and its inhabitants as "muddl[ing] the clarity of the characters' intentions". Eric Van Allen of USgamer rated the game 4/5, saying its writing is "warm, funny and charming", and the game is "best enjoyed in small pieces".
+It was nominated for Games For Impact and Best Indie Game at The Game Awards 2020. It was also a finalist for the Nebula Award for Best Game Writing and the Hugo Award for Best Video Game. During the 24th Annual D.I.C.E. Awards, the Academy of Interactive Arts & Sciences nominated Spiritfarer for "Outstanding Achievement in Animation".
+Thunder Lotus announced that by December 2021, the game had sold one million copies.
+
+
+== Notes ==
+
+
+== References ==
+
+
+== External links ==
+Official website

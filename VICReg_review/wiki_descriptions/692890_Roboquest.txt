@@ -1,0 +1,31 @@
+Game: Roboquest
+appid: 692890
+Source: Roboquest
+URL: https://en.wikipedia.org/wiki/Roboquest
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Roboquest is a 2023 rogue-lite first-person shooter video game developed by French indie developer RyseUp Studios and published by Starbreeze Studios. The game entered early access for Windows via Steam in 2020 and received a full release for Windows via Steam and the Epic Games Store, as well as releases on the Xbox One and Xbox Series X/S on November 7, 2023. The game was released for PlayStation 4 and PlayStation 5 on May 27, 2025.
+
+
+== Gameplay ==
+Roboquest is a first-person shooter with rogue-lite elements and is playable in single-player or two-player co-op. Players can choose between 6 unlockable classes to tackle runs on different difficulty levels. Players collect various items, gadgets, and objects during runs to assist them in-game or to purchase permanent upgrades at Basecamp. Each run features a level-up system where players are awarded upgrades. These upgrades can be synergized to create powerful builds.
+The campaign includes branching paths, randomized bosses/encounters, and secret levels to encourage replayability. Players recharge health, purchase run upgrades, and trade weapons in safe rooms; typically located at the beginning and middle of levels.
+
+
+== Development and release ==
+In April 2024, the Arsenal Update launched. The update included new weapons, NPCs, summons, and a training range map.
+In June 2024, the Super Update was released. The update includes a new playable character class (SuperBot), new weapon (Captain McSlice), new level (Harmony Square), and five new in-game achievements related to SuperBot. An update/crossover with Motion Twin's Dead Cells was released in August 2024. The update features The Collector as an NPC and also includes new items pulled from Dead Cells. In November 2024, the Endless update was released. The new "Endless" mode shortened the levels and scaled rewards. In addition, enemies got buffs each level via a "glitch" system. Duo boss fights were also added to this mode.
+The game was announced for release on PlayStation 4 and PlayStation 5 in the "first half of 2025". It was later announced that the game was scheduled for release on May 27, 2025. The developers announced in May 2025 that the title would no longer receive new content updates. The developer further clarified the game was never meant to be "games as a service".
+
+
+== Reception ==
+
+Roboquest received "generally favorable" reviews according to review aggregator Metacritic. OpenCritic determined that 88% of critics recommend the game. Critics gave praise to the game's soundtrack. GamingAge complimented the controls and gunplay.
+
+
+== References ==
+
+
+== External links ==
+Official website (archived)

@@ -1,0 +1,109 @@
+Game: Ready or Not
+appid: 1144200
+Source: Ready or Not (video game)
+URL: https://en.wikipedia.org/wiki/Ready_or_Not_(video_game)
+Match score: 7.11
+Retrieved: 2026-07-04
+--------
+Ready or Not is a 2023 tactical first-person shooter video game developed and published by Ireland-based VOID Interactive and released first for Microsoft Windows, and later for the PlayStation 5 and Xbox Series X/S. Ready or Not follows the operations of a police SWAT team in the fictional American city of Los Sueños in the midst of a violent crime wave.
+Ready or Not was released through Steam early access on December 17, 2021, before it was officially released on December 13, 2023. The game was well-received for its atmosphere and gameplay and has been considered a spiritual successor to the similar SWAT series by Sierra Entertainment. A console port of the game for PlayStation 5 and Xbox Series X/S released on July 15, 2025.
+
+
+== Gameplay ==
+
+In Ready or Not, the player leads an American police tactical unit within the Los Sueños Police Department (LSPD) against criminals and terrorists. The player can also assume the role of an HRT agent (depending on the edition of the game). The player deals with various types of situations, such as robberies, mass shootings, sex trafficking, drug busts, and illicit pornography rings. As a tactical shooter, realism is a central pillar of gameplay, with both players and enemies being killed in only a few shots; therefore, tactical strategies and careful planning are emphasized.
+The player is given a wide selection of rifles, submachine guns, shotguns, and handguns to choose from, with various options for attaching optics, scopes, muzzle devices, and overbarrel or underbarrel attachments. Equipment such as stun grenades, stinger grenades, fiberscopes (known as the "optiwand" in-game), ballistic shields, and breaching devices are key items available for the player and their team to equip and use.
+As the player is part of a police unit, apprehending suspects alive is greatly encouraged; therefore, a variety of less-lethal weapons such as tasers, riot guns, and pepper spray are available as alternatives to lethal force, and players are awarded more points for arresting suspects instead of incapacitating or killing them. However, some less-lethal weapons such as beanbag shotguns can incapacitate or kill people depending on how it is used. In order to score the highest grade (S) on a mission, all suspects and civilians must be detained alive & conscious. 
+All weapons and equipment are available to the player at the beginning of the game. The player can unlock further cosmetic items when they complete specific requirements, such as completing a specific mission with a minimum required grade, or beating the game on Ironman mode. Players can also unlock evidence for each mission which provides more context to the specific missions they score on. The higher the player scores on the mission, the more evidence is available for that mission.
+In single player, the player commands a squad of four SWAT members which is split into two "elements", designated "red" and "blue". The player can command the entire team, "gold", at once to perform actions, or order elements separately from each other. AI teammates will follow the instruction of the player, such as breaching a room, but will also act independently without player input in some situations such as shooting active threats and arresting suspects.
+Suspects have a variety of behaviors when encountered by the player such as faking their deaths when shot, pretending to surrender and then pulling out a weapon, committing suicide using a firearm, and using bystanders as human shields. Their equipment can vary from using knives and old handguns, to being equipped with body armor and automatic firearms. On some levels, suspects may attempt to retreat and make their way to a weapons cache to arm themselves or hide by crawling under objects or through holes in walls. Suspects with knives may also rush the player in an attempt to stab them. Suspects can bleed out if shots hit body areas with arteries (such as the legs).
+
+
+=== Modes ===
+
+Missions are played in single player with AI teammates, or cooperatively with up to 5 players through online multiplayer. A competitive player versus player was available before it was cut after the 1.0 release.
+Four singleplayer modes are available at the start, those being the Commander, Quick Play, Ironman Mode, and Training.
+Training is a tutorial that takes place in the firing range of the LSPD station that teaches players the basics of the game, such as using basic equipment and how to issue commands.
+Commander is the main single player mode. The player manages a SWAT team and after every mission, the mental states of officers will deteriorate. Mental state deterioration rate depends on a variety of factors, such as killing suspects instead of arresting them or if a fellow SWAT team member dies. Team members can be sent to therapy by the player or forced into therapy if their mental state gets too low, making them unavailable to deploy for some time. Only three team members can be in therapy at once. If a team member fails to have their stress levels reduced, they will resign. If individual team members are used for long enough, they will eventually unlock a trait which will alter the team dynamic such as increasing the overall accuracy of the team or making suspects more likely to surrender.
+Ironman Mode is the same as Commander Mode; however, if the player dies their entire progress is reset from the beginning.
+Quick Play removes the management system from Commander, but otherwise plays the same. Since the management system is removed, team members will not have access to traits.
+
+
+== Plot ==
+Ready or Not is set in the city of Los Sueños, California (based on Los Angeles), in an alternate United States experiencing major social and economic decline; Los Sueños is particularly affected by the decline which, by the mid-2020s, results in massive spikes in violent crime and extremism. The player character, Commander David “Judge” Beaumont, is assigned to lead the Los Sueños Police Department's elite SWAT team, D-Platoon. The game does not have a linear plot, but multiple levels are interconnected with each other through environmental storytelling to provide an overarching story.
+In 2025, LSPD SWAT stops a group of methamphetamine addicts who commit robberies to fuel their addictions. In response, SWAT raids a meth stash house and learns Los Locos Del Pacificos, a street gang connected to drug cartels, is responsible for the meth distribution.
+Later, SWAT responds to an alleged homicide and hostage situation committed by an online streamer, revealed to be a swatting; however, the team is attacked by gunmen in his apartment complex. SWAT arrests the streamer after finding evidence of illegal crypto mining, child sexual abuse material possession, voyeurism, and illegal firearms.  Police investigations connect Mindjot, an unscrupulous free speech absolutist data hosting service, to the child pornography scheme. SWAT raids Mindjot's heavily guarded data center, and seizes numerous servers. Evidence recovered from the raid traces the CSAM production to a youth "talent agency" called Brixley Talent Time, which SWAT also raids. The LSPD learns that the entire operation is financed by Amos Voll, a mentally unstable pornographic film director. SWAT raids Voll's mansion during a birthday party for his daughter. During the raid, SWAT discovers evidence seized from a secret basement that Voll uses adult pornography to launder his activities while engaging in child exploitation, murder, and incest.
+"The Left Behind," a group of disillusioned anti-government veterans, target presidential candidate Senator Fremont for proposing cuts to the Department of Veterans Affairs, but their assassination attempt fails, attracting the attention of SWAT. Fremont and his family are placed into protective custody by the Secret Service, but The Left Behind activates sleeper agents within his Secret Service security detail who attempt to kill Fremont, but SWAT intervenes and saves him. Elsewhere, Gerard Scott, a schizophrenic former agent of the United States Intelligence Agency (based on the Central Intelligence Agency) who is unusually familiar with Judge, bombs a police station on the outskirts of Los Sueños, prompting SWAT to raid his fortified cabin and apprehend him.
+Some time later, "The Hand", a radical Islamist terrorist group, commits a mass shooting at the Neon nightclub in retaliation for U.S. airstrikes against them in Yemen. SWAT intervenes and arrests Zahir "Quadamah" Asadullah, the leader of The Hand's American wing, but prison guards brutalize him in custody and he is transferred to Coastal Grove Medical Center, which The Hand promptly attacks to free Quadamah; SWAT deploys to defeat the terrorists, defuse bombs they placed in the hospital, and recapture Quadamah.
+LSPD detectives and Federal Investigation and Security Agency (based on the Federal Bureau of Investigation) Inspector Jack Adams are attacked by Los Locos, an organized drug cartel. SWAT secures the scene, a post office, and apprehends Adams on FISA's orders for weapons trafficking. Later investigations uncover a Los Locos smuggling operation using tunnels under the Mexico–United States border, and SWAT deploys alongside BORTAC to clear the tunnels and end the smuggling operation. SWAT also stops a mass shooting at Watt Community College and defeats the "Carriers of the Vine", a pagan misandrist cult led by Elaine Raskin, who is revealed to be part of a psychological operation somehow involving Judge.
+Later, SWAT raids a Vietnamese-American family linked to Los Locos for producing 3D printed firearms and learns that the source of their weapons is a car dealership used as a front by Los Locos and the Russian mafia. Detectives and an undercover agent move on the dealership but are fired upon; SWAT deploys to defeat the criminals, finding the undercover agent dead, as well as documents related to a human trafficking operation at Port Hokan. There, the LSPD, FISA, and the ATF conduct a joint raid on the port, but in the LSPD's sector of responsibility, SWAT uncovers a group of human trafficking victims in a container. Judge tries to rescue them, but FISA insists that SWAT leaves the victims where they are and overlook them, citing a larger investigation. Judge reluctantly acquiesces and continues with the raid.
+
+
+== Development ==
+Development began in June 2016 and a reveal trailer was released on YouTube on May 3, 2017. An alpha version  of the game was made available on August 19, 2019 for owners of the Supporter Edition under a non-disclosure agreement. Supporters and select YouTubers were invited to a PvP test in April 2020 and were allowed to publish footage. The game was released on Steam Early Access on December 17, 2021. 
+At The Game Awards 2023, VOID Interactive announced that 1.0 would be released on December 13, 2023. The full release included missions dealing with swatting and illegal crypto mining. The 1.0 release also addresses overhauls to the effectiveness of less-lethal equipment, mental health in law enforcement, inter-agency cooperation, and officer personality traits. Similar to SWAT 3, Ready Or Not 's 1.0 release included sophisticated AI that performs actions such as restraining suspects and taking cover autonomously rather than relying on player input.
+Four additional DLCs for the game were released later after the game’s release out of early access. The first, released on July 23, 2024, titled Home Invasion, contains new maps, along with new weapons. The second, released on December 10, 2024, titled Dark Waters, contains additional maritime maps, along with new weapons and new mechanics. Los Suenos Stories, the third, released along with the game's release to consoles on July 15, 2025, with two new missions. This DLC also removed and censored certain topics in the game, including nudity on some characters and detailed child exploitation that could be seen on computer monitors and in photographs in some levels. The fourth DLC, Boiling Point, was released on March 12, 2026 and contains three missions, new weapons and cosmetic items, multiple bug fixes.
+
+
+=== Publishing issues ===
+A partnership with Team17 to publish the game under their label was announced on March 22, 2021. On December 20, 2021, VOID Interactive announced that their partnership with Team17 had ended and that they would no longer be publishing the game. Speculation suggested that this was due to the developers teasing a school shooting level on Reddit one day prior, although this was denied by VOID.
+On June 16, 2022, Ready or Not was delisted from Steam after a takedown request was issued against the game for trademark infringement relating to a level set in a nightclub. Though media reports suggested it was connected to the level's release date—June 12, the anniversary of the 2016 Pulse nightclub shooting (VOID did not comment on why this date was chosen)—it was noted that the name of the in-game nightclub, "Pryzm", was also the name of a British nightclub chain owned by Rekom UK. The game returned to Steam on June 18 with the infringing elements removed.
+
+
+=== Console censorship ===
+On June 27, 2025, after the announcement of Ready or Not for consoles, VOID Interactive announced visual changes to the game, toning down dismemberment and nudity due to stricter rules for publishing games on consoles, though the Windows version was also affected. The changes were negatively received by the players, who called the actions censorship, though some noted that the removed content could still be modded in. The backlash resulted in the Steam version of the game getting review bombed. VOID later provided comparison images, clarifying that they "only made changes where absolutely required" and that "the game’s tone, atmosphere, and graphical impact remain intact"; the statement did not appease the fans. Despite the community backlash, Ready or Not quickly became the most pre-ordered game on the PlayStation Store. The visual changes were introduced for Windows in a patch released on July 15. In less than an hour after release, a mod called "Uncensored or Not" that reverts the changes was published on Nexus Mods and amassed almost 7,000 downloads in the first 24 hours.
+
+
+== Downloadable content ==
+
+
+=== Home Invasion ===
+Home Invasion released on July 23, 2024. The release also upgraded Ready Or Not to Unreal Engine 5.  
+The DLC missions are available to play once all of the base game missions are completed. Three missions are included, which take place after Los Sueños has experienced a Category 5 hurricane. Three new weapons and multiple customization items are also included.
+The DLC missions are as follows:
+
+Dorms: A dilapidated dorm building has been taken over by homeless people and drug addicts, and the building needs to be cleared out.
+Narcos: An undercover agent has been compromised, and must be rescued from the Los Locos Del Pacificos cartel.
+Lawmaker: Eco-terrorists have taken an oil lobbyist and his family hostage in his home.
+
+
+=== Dark Waters ===
+Dark Waters released on December 10, 2024. The second DLC, in addition to new marine-themed maps, contains updates to clothing, a new aerial thermal camera mechanic, new animations, new AI behaviors, and new weapons.
+The DLC missions are as follows:
+
+Mirage at Sea: A son of a Qatari oligarch buys a yacht named The Seraglio. A woman being held against her will on the yacht calls 911.
+Leviathan: An oil rig is attacked by the United Planet Front, an eco-terrorist group.
+3 Letter Triad: A Latin American pirate group, Los Navegantes del Caos (The Navigators of Chaos), meets the Black Sentinel mercenary group at the abandoned Elysian Hotel. The meeting concerns a "high-value" trade.
+
+
+=== Los Sueños Stories ===
+Los Sueños Stories released on July 15, 2025, coinciding with the games release to consoles. While not a traditional paid DLC, it functions similarly in the game, being accessible to players after completion of the main series of missions. Alongside two new maps, it also added various new weapons, a difficulty system, and a career record. The update received backlash from players due to concerns around censorship, changes to graphics quality, and other issues.
+The update missions are as follows:
+
+Hunger Strike: Members of two gangs meet at a fast food restaurant, resulting in a gun battle and subsequently a hostage situation. Calls from employees and a manager imply there was some level of planning to the event.
+Stolen Valor: An officer goes missing in the same area as the meth stash house, and a range of evidence points towards one apartment block.
+
+
+=== Boiling Point ===
+Boiling Point released on March 12, 2026. The DLC focuses on multiple attacks by the Mariposa Lily Organization or MLO, a terrorist organization consisting of former and current military personnel, government workers, and more. The DLC features three missions, along with new cosmetic items.  In addition, the DLC releases multiple new weapons and attachments, including the G18-C automatic pistol, S2011-P semi-automatic pistol, RTWC-6.5 battle rifle, and new magnification optics and illuminator attachments, which can be used by all players regardless of DLC ownership. New missions include new gameplay mechanics, including lethal gas and a new CQB suspect type in some levels.
+The DLC missions are as follows:
+
+No Good Deed: A local community fundraiser organized by 'Lucia Torres' in attendance with the Californian Governor and the Mayor of Los Sueños turns bad as the Los Navigantes Del Caos engage in a mass shooting on 'Blackwood pier' involving chemical weapons; the appearance of Blackwood pier is based on that of real life Santa Monica Pier.
+All Gods Burn: The Black Sentinel use the ensuing chaos of ongoing riots as a cover to attack the 'Unity Trust Banc' with conventional explosives and chemical agents.
+A New America: As Los Sueños falls into social, economic and political breakdown, rioters surround the city hall as armed suspects seize the upper floors, planting explosives and attacking police.
+
+
+== Reception ==
+Ready or Not received "generally favorable reviews", according to review aggregator website Metacritic. It was the best selling game on Steam in the week after its release, and has been favorably described as a spiritual successor to the SWAT series and early Rainbow Six games.
+Ethan Gach, writing an early review for gaming website Kotaku, called Ready or Not a "tactical horror game", "an unsettling SWAT fantasy" and "edgy copaganda", he criticized the game's realism as "effective enough to disturb but too shallow not to descend into farce, or worse, Blue Lives Matter cosplay with fascist overtones and alt-right dog whistles". Gach highlighted supposed references to alt-right memes such as the use of "Jogger" as a racist euphemism (in reference to Ahmaud Arbery), citing a pillbox in the game with the words "Redpill" and "NOGGINJOGGERS" labelled. VOID responded to Gach's review, denying any connection to extremism, saying that the alleged dog whistles were coincidental, and stating they would remove the references in question.
+In its review of the Home Invasion DLC, PC Gamer praised the gameplay and weapon additions while criticizing alleged class bias surrounding the Dorms level, in which the player forcibly evicts homeless people taking shelter from a hurricane.
+
+
+== References ==
+
+
+== External links ==
+Official website
+VOID Interactive January 7, 2023 AMA (Afterparty AMA)
+VOID Interactive April 22, 2023 AMA
+VOID Interactive Law Enforcement AMA August 2, 2024

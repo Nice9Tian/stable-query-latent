@@ -1,0 +1,28 @@
+Game: Escape the Backrooms
+appid: 1943950
+Source: Escape the Backrooms
+URL: https://en.wikipedia.org/wiki/Escape_the_Backrooms
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Escape the Backrooms is a cooperative horror video game developed by Fancy Games and Blackbird Interactive and published by Secret Mode. It was officially released on 23 October 2025, for Windows, after an early access version released on 11 August 2022. The game was released on PlayStation 5 and the Xbox Series on 28 May 2026.
+
+
+== Gameplay ==
+Set in the Backrooms, a fictional liminal space location, up to four players can explore the 30+ unique levels which range from levels original to the game and those adapted from other sources, in particular recreating shots and aesthetics from Kane Parsons' "The Backrooms (Found Footage)" and his subsequent web series, including the Async organisation, whose main workers the players play as.
+Players begin in the yellow-colored level 0 and explore to find exits of it and each subsequent level. Players can sprint and find items such as flashlights and food on most levels. Players can use the food items to manage sanity, a tracked stat that results hallucinations when below 15%, and death of the player if it drops to zero.
+Players encounter entities throughout the game, most of which are a threat. The most common entities are "smilers," which are found in the dark, "skin stealers," which can resemble a player character, and "hounds," which are dog-like creatures with human faces. Most entities can be avoided or fought off.
+The game also features different difficulty settings, ranging from "easy" to "nightmare". 
+
+
+== Development and Release ==
+Developed by Fancy Games and Blackbird interactive, Escape the Backrooms released in early access on 11 August 2022, published by Secret Mode on Steam. The game left early access on 23 October 2025. After the full release of the game, a separate release for Playstation and Xbox came out on 28 May 2026. The game debuted on all tiers of Xbox Game Pass upon release.
+
+
+== Reception ==
+
+The game received a largely positive reception from players, with it being praised for its amount of content, sound design and enjoyable multiplayer experience. It was described as one of the six best horror games that may have been missed by players in 2022 by Luiz H. C. of Bloody Disgusting. After the full Windows release, the game surpassed 30,000 concurrent players in under two days. 
+Mark Delaney of GameSpot rated the game a 6/10. He described the gameplay loop as "sparse," though enjoyed the appearance and experience of finding new levels.
+
+
+== References ==

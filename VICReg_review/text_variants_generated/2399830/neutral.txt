@@ -1,0 +1,11 @@
+ARK: Survival Ascended is a next-generation dinosaur survival game that reimagines ARK from the ground up using Unreal Engine 5. Set on a mysterious island, players awaken into a vivid prehistoric world and are encouraged to survive, explore, craft, build, and fight their way to dominance. The game centers on forming tribes, taming, training, breeding, and riding hundreds of species of dinosaurs and other primeval creatures while managing the challenges of a living ecosystem.
+
+The game features a complete visual and technical overhaul, with redesigned artwork and worlds built to take advantage of Unreal Engine 5 technologies such as fully dynamic Global Illumination, advanced mesh streaming, dynamic water, and fully interactive physical foliage. Environmental details are reactive and physically simulated, with creatures, objects, and destruction affecting water, grass, trees, and structures in visible ways.
+
+ARK: Survival Ascended includes access to ARK’s worlds, including Scorched Earth, Aberration, Extinction, ARK Genesis Part 1, ARK Genesis Part 2, and more. At launch, The Island, Scorched Earth, Aberration, and The Center are available, with additional expansion worlds planned to arrive regularly at no extra cost.
+
+Survival progression remains central to the experience. Players must monitor food, water, temperature, and weather while gradually expanding their base, harvesting resources, building structures, farming crops, and customizing their appearance. Exploration is used to uncover the nature of The Island and the other worlds beyond it.
+
+The game also includes a broad set of quality-of-life updates, including redesigned user interfaces, dynamic navigation for creature pathfinding, Wild Babies, Photo Mode, new camera systems, a new map system, a tracking system, new structures and items, and new creatures.
+
+ARK: Survival Ascended supports cross-platform modding, allowing players to download and play custom content such as maps, creatures, items, and game modes through an in-game mod collection. It also supports cross-platform multiplayer, with public online servers for up to 70 players, private sessions for up to 8 players, and local split-screen for 2 players.

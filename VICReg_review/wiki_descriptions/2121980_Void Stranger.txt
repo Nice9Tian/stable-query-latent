@@ -1,0 +1,63 @@
+Game: Void Stranger
+appid: 2121980
+Source: Void Stranger
+URL: https://en.wikipedia.org/wiki/Void_Stranger
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Void Stranger is a 2023 sokoban-style puzzle video game created by independent Finnish developer System Erasure. Players control a character descending to the bottom of a labyrinth while solving puzzles to progress. The game features layered secrets and mechanics that gradually change the gameplay. The game is known for its difficulty, as well as the complexity of its storyline.
+The game was developed as a two-man collaboration between Eero Lahtinen and Antti Ukkola after completing their first game ZeroRanger in 2018. It was inspired by a variety of mostly Japanese series and games. The game had a largely positive reception.
+
+
+== Gameplay ==
+
+Void Stranger is a two-dimensional sokoban-style puzzle video game with a monochromatic color palette and chiptune sounds. Players assume the role of a lone character who, after falling to the first floor of a dungeon, must make their way to its bottom. The dungeon has over 200 tile- and turn-based levels of increasing difficulty, with their main tool being a magical rod that can rearrange floor tiles. Falling in a pit or getting hit by an enemy causes the player to use one of the locust idols found in treasure chests throughout the game to save their life. If the player is hit without any locust idols, they are given the choice to start from the beginning of the game or continue, albeit with infinite retries.
+The initially simple gameplay gets increasingly complex as the game progresses and the player discovers new mechanics and secrets hidden in the labyrinth.
+
+
+== Plot ==
+
+
+=== Gray's Story ===
+The game begins with a cold opening cutscene of what appears to be a black hole enveloping the Earth, displaying the developers' logo, followed by a cut to a woman named Gray jumping into a mysterious and perfectly square hole. 
+Gray quickly acquires the void rod, which enables the main gameplay mechanic of picking up and moving tiles.
+Gray progresses through a long series of puzzle rooms in an enigmatic dungeon, which is initially known as The Void.
+At times, Gray encounters different hard-to-explain characters and scenes that range from whimsical to eldritch.
+Some of these characters hint towards a deeper backstory involving seven ancient Void Lords that rule the different realms of the dungeon.
+There are also hints towards unconventional methods of traversing The Void. 
+Gradually-spaced cutscenes throughout the game reveal information about Gray's story before entering the dungeon.
+Gray, formerly an outlaw with no memory of her past, becomes the guardian of Lily, a princess with rebellious tendencies. When Lily is manipulated into an arranged marriage with Johann, a king who secretly seeks power through sacrifices to the Void Lords, Gray intervenes. Betrayed by Johann, Gray escapes imprisonment and confronts him during the wedding ceremony. Lily, realizing the truth, makes a desperate contract with the Void Lords to protect Gray, sacrificing herself and vanishing into the Void. This reveals the backstory of the game's opening: Gray ventures into the Void to rescue Lily.
+After, navigating its labyrinthine depths and uncovering remnants of the Void Lords' history, she reaches the Void's end, and is forced to choose between saving Lily or Lily's unborn child. Choosing the child, Gray is transported to modern times.
+
+
+=== Lillie's Story ===
+In the second campaign, you play as Lily's child, who Gray names Lillie.
+Lillie is raised by Gray in modern Finland, and grows into a defiant young woman unaware of her true origins. After Gray's death, Lillie discovers she was adopted and finds herself drawn into the Void, pushed by the enigmatic Void Lord, Cif. Unlike Gray, Lillie struggles with her purpose in the Void but forms meaningful connections, including one with Ninnie, a tragic companion lost along the way. At the Void's end, Lillie confronts her doubts about Gray's love and sacrifices herself, only to be saved by Add, who reveals deeper truths about the Void. Lillie is reunited with Lily, bringing closure to Gray's mission.
+
+
+=== Cif's Story ===
+In the third campaign, you play as Cif, a mysterious Void Lord with ties to the creator of the Void Lords, Add. Cif seeks to uncover the secrets of the Void and find her missing companion, Bee. Along the way, Cif confronts other Void Lords and learns of Lev's plan to seize control of DIS's heart. Her journey reveals Add's role in creating the Void Lords and their ultimate departure from the Void's cycle. Cif's story provides key insights into the Void's history and sets the stage for the true ending.
+
+
+=== DIS Route/True Ending ===
+The plot of Cif's story, and more-obscure hints throughout the other campaigns, reveals that the game is set in a universe shaped by the advanced civilization of ancient humanity. This civilization created powerful research facility known as DIS, home to reality-warping technology, that would eventually become The Void. Over 70,000 years ago, a comet struck Earth, wiping out most of humanity and leaving DIS in ruins. The surviving remnants of humanity, transformed into immortal beings called Void Lords, sought to preserve DIS and its purpose. However, internal conflict among the Void Lords led to their downfall, with their creator, Add, splitting their essence and becoming a mortal human named Gray.
+The final ending of the game requires the player to complete the Void with key items and conditions, likely requiring intimate knowledge of the game's secrets. In the DIS route, Gray or Lillie descend into the heart of DIS after transforming the Void Rod. They face Bee, Cif, and finally Lev, who reveals their plan to seize DIS's power. Lev uses Mon's locusts to regain their true form, betrays and kills Mon, and blackmails Add—restored to their Void Lord form—into giving up the memory of the Void Lords' creation by threatening Lily's life. Lev then gains control of DIS's ancient mech to destroy Add, but Lily intervenes, halting the mech.
+Furious, Lev opens a portal to 70,000 years ago to erase Add from history. Add and Lily fuse into a single being, pursuing Lev into space. After a final battle, Add defeats Lev. If the player spares Lev, they express fleeting peace before fading away. Add returns Lily to Earth, freeing humanity from DIS and the Void Lords' influence. The endings show either Gray or Lillie cherishing memories of loved ones, symbolizing peace and the end of the Void Lords' tragic cycle.
+
+
+== Development and release ==
+Void Stranger was created by independent Finnish video game developer System Erasure, a collaboration between Eero Lahtinen and Antti Ukkola. Void Stranger is the second game by the studio, which was founded in 2008 and published its first title, ZeroRanger, in 2018.  Development started in 2019 and the game was publicly revealed in October 2020. It was released for Windows via Steam on 1 September 2023.
+The development of the game was started by Ukkola, who was the game's main programmer and the sole artist and writer, while Lahtinen still continued to update ZeroRanger after its launch. After some trial-and-error while exploring the GameMaker engine he discovered what would become the main gameplay mechanic of the game. He then chose a monochromatic color palette for its simplicity and practicality, and to keep the workload more manageable. The game's music, composed by Lahtinen, was designed with the game's puzzle genre in mind so that the player would not grow too irritated listening to the same song when stuck in a puzzle.
+The game was influenced by a variety of mainly Japanese video game series, with Antti Ukkola crediting the cyberpunk series Battle Angel Alita, dark fantasy manga Berserk and Made in Abyss, the Finnish animated show Moomins, and the 1991 roguelike game Cave Noire as his main inspirations.
+
+
+== Reception ==
+The game had a largely positive reception, with critics directing praise toward its puzzle design, gradually changing gameplay, and soundtrack.
+Jordan Helm of Hardcore Gamer found the game's puzzles and unforgiving mechanics to be "not an easy endeavor", but nonetheless very rewarding. For him, however, the main appeals of the game were the layered reveals and secrets that gradually change the initially innocent-seeming gameplay, comparing one "incredible rug-pull" in particular to the main reveal of the 2016 puzzle game The Witness. This sentiment was shared by PC Gamer's Dominic Tarason who found the gameplay "mesmerising" and praised the "fantastic" soundtrack. Dia Lacina of Paste enjoyed the game's approach to dungeon crawling with fast and "blitzable" puzzles and found the game "as good as dungeon crawling gets".
+
+
+== References ==
+
+
+== External links ==
+Official website

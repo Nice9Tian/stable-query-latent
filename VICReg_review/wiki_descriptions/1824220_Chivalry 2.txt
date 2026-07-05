@@ -1,0 +1,36 @@
+Game: Chivalry 2
+appid: 1824220
+Source: Chivalry 2
+URL: https://en.wikipedia.org/wiki/Chivalry_2
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Chivalry 2 is a 2021 multiplayer hack and slash action video game developed by Torn Banner Studios and published by Tripwire Interactive. The sequel to Chivalry: Medieval Warfare (2012), the game was released on June 8, 2021, for Windows, PlayStation 4, PlayStation 5, Xbox One and Xbox Series X and Series S.
+
+
+== Gameplay ==
+Chivalry 2 is a combat oriented multiplayer action game played from either first-person or third-person perspective, either on foot or on horseback for the first time in the series.
+In the game, players are equipped with various medieval melee weapons such as war hammers, maces, long swords, and battle axes. Players can also use ranged weapons such as bows and arrows, crossbows and javelins. New weapons can be found in weapon caches in a map. Players have three basic melee attack patterns: slash, overhand slash, and a stab, which can be chained together. The attacks can also be charged to make a heavy attack, which is slower but deals higher damage. Players also need to block hostile attacks, and with the right timing, they can stagger their opponents, counter, and parry their attacks. Players must be aware of how they swing their weapons, as friendly fire may occur following an unplanned strike. Players can also pick up the severed heads and limbs of any player on the battlefield and use them as weapons. They can also throw their melee weapons at their enemies, though this may leave the player defenseless.
+All team-based modes pit the Agatha Knights, who wear blue and white, and the Mason Order, who wear red and black, against each other. The Tenosian Empire, a third faction, was released in a later update. The game includes team deathmatch and a team objective mode, which supports a maximum of 64 players, as well as a free-for-all deathmatch mode. In team objective mode, one group must break into the opposite team's castle and, depending on the map, destroy an ultimate objective, escort a player-controlled duke to a safe zone, eliminate the enemy duke, or kill all remaining enemy players, while another group is tasked with defending the castle. The battle is divided into various phases, with each phase having their own unique objectives. On certain maps, once attacking players successfully storm the castle, the top players in either the attacking or defending team (depending on the map) can become the duke and gain various gameplay perks. Each phase of the battle is timed, and if the invaders fail to complete the objectives within the time period, the defenders win the match.
+A "brawl mode" was introduced on October 26, 2021, that is essentially a free-for-all mode of up to 40 players allowing strictly the use of unconventional weapons such as a fish, chair, bottles, a rolling pin, bread and a turkey leg. As of June 12, 2022 the game has become available on the Steam store alongside its initial Epic Games Store release on PC. As of October 4, 2022 the game has become available on Xbox Game Pass.
+After 10 major updates, "Regicide" was announced to be the game's final major update. It was released on May 22, 2024. Two months later the creative director wrote an update post titled "The Path Ahead for Chivalry", where he hinted at more Chivalry games to come.
+
+
+== Development ==
+Torn Banner Studios started developing the game in 2017. According to Torn Banner, the game was not designed to be a sword fighting simulation game, and that combat would be similar to a "bar fight more than a fencing match", as players can use whatever they find in the battlefield as their weapons. Monty Python was often cited as the inspiration for this feature. The main goal during the game's development was to increase its scale, as the player count was significantly increased to 64. The gameplay and the structure of the team objective mode, which features these large-scale battles, was inspired by Game of Thrones and The Lord of the Rings, as the team described it as a "fluid, cinematic experience."
+Chivalry 2 was announced at E3 2019 by publisher Tripwire Interactive during the PC Gaming Show. An open beta was launched on May 27, 2021, and lasted until June 1. The game was released for Microsoft Windows via the Epic Games Store as a one-year exclusive, PlayStation 4, PlayStation 5, Xbox One, Xbox Series X and Series S on June 8, 2021, with cross-platform play supported. Deep Silver served as the game's retail publishing partner.
+
+
+== Reception ==
+
+Chivalry II received "generally favorable" reviews according to the review aggregation website Metacritic. Fellow review aggregator OpenCritic assessed that the game received strong approval, being recommended by 85% of critics.
+Leana Hafer of IGN praised the battle of Chivalry 2, writing, "An axe-cellent compromise between hack-and-slash fun and skill-based medieval melee makes Chivalry 2's 64-player medieval brawls a ton of fun." PC Gamer liked how the game balanced the combat alongside the comedy describing it as "a brilliant mix of high skill and low comedy, and the best medieval combat game out there."
+PCGamesN enjoyed the maps, comparing the design and scale of the areas to "Hollywood blockbusters" and "Monty Python". Rock Paper Shotgun's Brendan Caldwell felt that the classes offered a variety of different playstyles but criticized the deathmatch mode, commenting that they "lack the heroic (or disastrous) moments of the objective-based battles, and some are underwhelmingly short".
+On August 18, 2021, Torn Banner announced that the game had sold one million copies. After its Steam release, it generated a further 300,000 copies sold within 10 days of its release.
+
+
+== References ==
+
+
+== External links ==
+Official website

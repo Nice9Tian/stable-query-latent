@@ -1,0 +1,38 @@
+Game: NBA 2K24
+appid: 2338770
+Source: NBA 2K24
+URL: https://en.wikipedia.org/wiki/NBA_2K24
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+NBA 2K24 is a 2023 basketball video game developed by Visual Concepts Austin and published by 2K. Based on the National Basketball Association (NBA), it is the 25th installment in the NBA 2K franchise, the successor to NBA 2K23 and the predecessor to NBA 2K25. The game was released on September 8, 2023, for Windows, Nintendo Switch, PlayStation 4, PlayStation 5, Xbox One and Xbox Series X/S. The NBA 2K24 Arcade Edition was released on iOS, macOS and tvOS through Apple Arcade on October 24, 2023. The online servers for the game were shut down on December 31, 2025.
+
+
+== Cover athletes ==
+NBA Hall of Famer Kobe Bryant is on the cover of the Standard and Black Mamba Editions, while WNBA player and New York Liberty guard Sabrina Ionescu is on the WNBA cover of the game.
+
+
+== Features ==
+NBA 2K23 introduced various eras in the MyNBA mode. All of those eras return with the addition of the "LeBron era" which begins in the 2010-11 NBA season when LeBron James teamed up with Dwyane Wade and Chris Bosh on the Miami Heat. The presentation graphics in this era are based on the ones from NBA 2K10, albeit with the score bug being placed in the bottom right instead of the top, along with the UI fonts being changed. In addition Mamba Moments are the equivalent to the Jordan Challenge in 2K23, but now players can play and recreate some of Kobe Bryant's most memorable and exciting moments of his career. Furthermore, the song "Roundball Rock" by John Tesh was featured in the 1990s (Jordan era), as well as scenarios in the 1990s in Mamba Moments, and is featured in the game's 2K Beats soundtrack in the current gen version.
+
+
+=== ProPLAY ===
+ProPlay is a new type of technology that translates NBA footage into 2k24 gameplay as opposed to solely using motion capture like in the past games of the franchise. NBA players worked with 2K to replicate the moves they use on the court over a season. With Proplay, jumpshots, dunks, layups, dribble moves, pass animations, signature movements, inbound passes, and other minor details will all be upgraded. Game director Mike Wang said one of the benefits is to increase to animation accuracy of retired or deceased players, which was tougher to do with motion capture.
+
+
+=== Additional changes ===
+For the first time in NBA 2K history, 2K24 allows for cross-platform play, although it is only available on the PlayStation 5 and Xbox Series X versions of the game. Over 100 new dribble moves were added which can be done by flicking the stick and gets rid of the need for complex inputs. Takeovers also received a change by allowing the player to boost stats such as shooting or finishing when triggering takeover.
+The 25th Anniversary Edition included 12 months of NBA League Pass in supported regions until September 13, 2023, with redemptions expiring on December 1, 2023, and codes expiring on December 31, 2023.
+
+
+== Reception ==
+
+The PlayStation 5 and Xbox Series X versions of NBA 2K24 both received "mixed or average" reviews on the review aggregation website Metacritic, with the PlayStation 5 version having a 68/100 and the Xbox Series X version having a 67/100. 2K24 came under fire for its aggressive microtransactions, which IGN highlighted in their review of the game, saying, “NBA 2K24 scores big with gameplay, but its microtransaction tactics feel like a costly turnover.”
+2K24 became the second worst reviewed game on Steam upon its release behind only Overwatch 2 in large part to the continued increase in microtransactions in the franchise, which resulted in 2K's parent company Take-Two Interactive being sued. One of the big changes in the game is the redesigned market which allows players to purchase any MyTeam card, which resulted in complaints calling 2K24 "pay-to-win". The PC version of the game was also criticized for not including the new technology to improve animations like the PS5 and Xbox Series X/S versions have. In addition, Steam users reported recurring bugs and errors, many of which were said to have carried over from NBA 2K23. Despite many negative reviews, many critics have argued that the game has very "authentic" gameplay. According to Ben Volmer of IGN, the on-court experience is “fantastic,” and feels like a genuine "NBA experience". Volmer singled out new features such as "ProPLAY,” which allows 2K to take real in-game footage and transfer it into the game-animations, writing that it made the game "stronger than ever".
+
+
+== References ==
+
+
+== External links ==
+Official website

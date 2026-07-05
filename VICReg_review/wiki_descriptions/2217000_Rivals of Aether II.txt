@@ -1,0 +1,43 @@
+Game: Rivals of Aether II
+appid: 2217000
+Source: Rivals of Aether II
+URL: https://en.wikipedia.org/wiki/Rivals_of_Aether_II
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Rivals of Aether II, formerly known as Rivals 2, is a 2024 platform fighting video game that serves as a direct sequel to Rivals of Aether (2017). Unlike its predecessor, which featured 2D pixel art graphics, it is played in 2.5D and utilizes 3D models—additional mechanics are also added, including the ability to shield and grab, while mechanics such as the parry return from Rivals of Aether.
+The game is intended to have improved single-player and casual-oriented content compared to Rivals of Aether, though appealing to competitive players is the primary focus of development—several mechanics were added to make the game feel more familiar to veteran players. The game was released for Microsoft Windows, via Steam, on October 23, 2024.
+
+
+== Gameplay ==
+
+Rivals of Aether II adds several new mechanics—including the ability to generate a shield able to block incoming attacks, the ability to grab others, even while they are shielding, and the ability to "pummel" during a grab with either a short attack or a slower attack with a stronger attack with a unique secondary effect for each character. Further mechanics include the ability to grab ledges and attack while hanging from them and the ability to attack while knocked down. Mechanics such as parries also return from the first game.
+
+
+=== Characters ===
+Rivals of Aether II featured ten playable characters at launch, including eight returning characters from Rivals of Aether. As of April 7, 2026, the game features 16 characters, 5 of which are newcomers. These include characters who were playable in spinoff entries, such as Dungeons of Aether protagonists Fleet and Slade; and characters who previously made non-playable appearances, such as Loxodont and Galvan. In 2023, Aether Studios ran a "Workshop Character Creation Contest" for players hoping to get their creation to be part of the Rivals 2 roster; the contest's winner, an anthropomorphic wrestling insect character named La Reina, was announced in July 2024, and was added to the game in January 2026. Aether Studios has confirmed that all future post-launch fighters will be added for free, and that they intend to eventually include the remaining non-guest characters from the original game. At Evo 2026, it was announced that the eponymous character of Yacht Club Games' Mina the Hollower (2026) would be appearing as a guest character. It was also announced that some of the forthcoming characters would be "Remix Rivals", fighters who share most of their moveset with another character, which have been compared to "Echo Fighters" in Super Smash Bros. Ultimate (2018).
+New characters are marked below in bold:
+
+
+== Development ==
+During Aether Studios' annual April Fools' Day "Rivals Direct" in April 2022, the sequel was announced as simply Rivals 2 initially; however, in September 2024, it was changed to Rivals of Aether II to avoid confusion with Marvel Rivals. The game is intended to have improved single-player content compared to Rivals of Aether that aims to allow casual players to transition into more dedicated players, though competitive play is the priority of the designers—they intend to have the game be prominently featured at Evo.
+The addition of the shield mechanic was added to make the game feel more familiar to those who play platform fighting games, and the grab was likewise added as a counter to the shield. Ledges were also added to Rivals of Aether II because the developers felt that it would make the game feel more familiar to veterans in addition to making it more approachable for newcomers.
+
+
+== Marketing and release ==
+A closed beta testing period for the game was originally planned for 2023, but was pushed back to early 2024.
+In November 2023, a Kickstarter campaign was launched, seeking to crowdfund US$200,000 to increase the development team's size and ensure a 2024 release on Windows. Initial funding was reached very shortly after launch, and the Kickstarter went on to raise over US$1.07 million, adding four additional characters to the launch roster as stretch goals. It was also stated that the game would be released on "as many platforms as possible".
+In June 2024, it was announced at IGN Live 2024 that Offbrand Games, a new game publisher founded by YouTube streamers Ludwig Ahgren and Jason "Thor" Hall of Pirate Software, would be assisting publishing the game as their first release.
+
+
+== Accolades ==
+
+
+== Notes ==
+
+
+== References ==
+
+
+== External links ==
+Official website

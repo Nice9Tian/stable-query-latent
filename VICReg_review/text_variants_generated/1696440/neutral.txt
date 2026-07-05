@@ -1,0 +1,15 @@
+The Matchless KungFu is an open-world RPG set in a WuXia-inspired world, offering players the freedom to create their own martial arts story. The game emphasizes role-playing, exploration, and simulation, allowing players to travel across the wilderness, lead a group, or shape a personal path through the world.
+
+A major feature of the game is its world generation system. Players can build small custom worlds from the ground up, with each land block containing its own environment, resources, creatures, or clans. The game also supports larger generated worlds with extensive land masses for players to explore and challenge. In this setting, each playthrough can be different, and the game encourages multiple lives and different character builds.
+
+Combat in The Matchless KungFu is centered on martial arts techniques and a customizable skill deck. Players can unlock and use different moves to defeat enemies in a stylish way, or choose alternatives to direct combat. The game also includes a “verbal combat” system, where players can unlock techniques to defeat opponents through conversation rather than physical fighting.
+
+The Meridian system adds another layer of martial arts progression. It allows characters to practice different Inner Kungfu styles, gain buffs, and handle inner wounds, hidden diseases, illnesses, and other debuffs. The game presents this as a wuxia-style self-cultivation system, letting players develop their character in ways familiar to martial arts fiction.
+
+The game also includes extensive building and life-simulation elements. Players can construct and manage places such as taverns, springs, jails, and homes, and make their structures serve different functions. A blacksmith shop can be used to create an equipment production line. NPC interactions are an important part of the experience, with options to team up with friends or family, interact with loved ones, pray for children, and raise offspring.
+
+Beyond household life, the game allows players to build clans and sects, recruit disciples, manage sect facilities, and oversee land taxes. Players can give orders to followers, imprison enemies, and even interact with animals in destructive or playful ways, such as burning houses or petting animals. Animals can also be tamed for practical roles: monkeys can beg, horses can be ridden and used with carriages, and snakes can help with lockpicking.
+
+Stealth is another available path. Players can train stealth abilities, combine special equipment and skills, and become a master thief in the martial world. Overall, The Matchless KungFu is presented as a highly flexible wuxia sandbox where players can define a character, build a life, and experience the world in many different ways.
+
+The developers state that version 1.0 is available and uses a new save data structure, recommending that players delete old save data and begin a new save for the best experience. They also note that the game will continue to receive updates and future development, with translations manually checked in the current version and more languages planned later.

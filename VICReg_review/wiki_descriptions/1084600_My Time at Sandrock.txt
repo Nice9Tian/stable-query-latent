@@ -1,0 +1,67 @@
+Game: My Time at Sandrock
+appid: 1084600
+Source: My Time at Sandrock
+URL: https://en.wikipedia.org/wiki/My_Time_at_Sandrock
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+My Time at Sandrock is a 2023 farm life sim role-playing video game developed by Pathea Games and published by PM Studios and Focus Entertainment. It is the sequel to the 2019 video game My Time at Portia and is set in a desert, 300 years after an event that destroyed modern technology.  The game was praised for its coziness, but was criticized for experiencing technical issues at launch. A sequel, My Time at Evershine, is in development.
+The game was announced in October 2020 and funded through a Kickstarter campaign, and was scheduled for an early access release in March 2021. However, this was delayed due to the need for a local rating certification. The game was eventually released into early access on May 26, 2022, for Windows, before full release on November 2, 2023, for Windows, Nintendo Switch, PlayStation 5, Xbox One and Xbox Series X/S, followed by a PlayStation 4 version on September 13, 2024.
+
+
+== Gameplay ==
+
+Players build up the town, farm, mine, gather resources, craft items, accept side quests (known as commissions), and explore dungeons as well as the ruins of old-world cities. Combat is based on hack and slash mechanics. Because the game is set in a desert environment, players and residents are asked to conserve water. Most machines consume water, which is stored in a water tank. This is needed to prevent them from overheating. Cutting down trees is discouraged, and doing so can result in penalties. Players can also socialise with and romance 21 non-player characters. Sandrock combines elements of farm life sims and role-playing video games.
+
+
+== Plot ==
+
+
+=== Setting ===
+The setting, like that of My Time at Portia, takes place in a post-apocalyptic world 300 years after the Day of Calamity, an event that destroyed earlier civilizations and most modern technologies.  In its aftermath, people rebuilt society and eventually form the Alliance of Free Cities and a military organization known as the Civil Corps. The Alliance is engaged in conflict with a tyrannical empire called Duvos, which seeks to obtain ancient technology and expand its territory.
+
+
+=== Story ===
+The player arrives in Sandrock to take over for a retiring builder named Mason. There, they meet several townsfolks such as Mi-an, another builder; Yan, the guild commissioner; Trudy, the mayor; Matilda, the town minister; and Pen, a local superhero.
+The player helps with various tasks around town such as repairing a lift at a mine, rebuilding an outdoor stage destroyed by a sandstorm, and rescuing a scientist named Qi from some ruins. At one point, a bandit named Logan robs a train and escapes from a sheriff named Justice working for the Civil Corps. After fighting off Geeglers (lizard-like monsters) attacking the moisture farm, the player rebuilds it. The player helps Justice infiltrate the Geeglers' hideout and confront their leader, who intends to invade Sandrock. The confrontation ends with the leader falling down an old bridge and the surviving Geeglers fleeing into the desert. The bridge is later rebuilt by the player with the help of Mint, a returning character from Portia. The player is later tasked to rebuild the water tower, which was destroyed by Logan.
+The player works with a few NPCs finding materials from an old submarine to build algae machines to help improve the farm. During a demonstration of the farm's new plants, Matilda is kidnapped by Logan and the player works with two other NPCs to rescue her, though Logan escapes. The player later helps catch Andy, a boy who works for Logan. Musa, another returning character from Portia, arrives to investigate Sandrock, but when he deems it is unable to survive following an accident, the player is tasked with ensuring the town's future; once successful, Musa agrees to help support Sandrock. The player also helps convince two townsfolks to not leave town.
+The player helps Justice and Pen rescue mole people from Bandirats and a hostile robot called the Magic Mirror. They also learn that Lumi, the Bandirat princess who had deflected from her people, is a friend of Logan's. After defeating the Rat Queen, she escapes while the Magic Mirror is taken into custody. Trudy then establishes a partnership with the mole people with the help of a mole named Ged. During their search for Logan, the player falls down a cliff and is believed to have died. Having actually survived, the player confronts Logan. Grace, a chef who works at Sandrock's inn, arrives and reveals that she is an Alliance agent and is helping Logan, also revealing that Logan is really innocent and that Pen is responsible for the recent attacks. Grace is also after a Duvos spy named "Tiger" and reveals that water is being deprived from Sandrock, while Logan explains that his crimes are to actually avenge his deceased father, who was killed by Duvos. With the help of Logan's goat, the player returns to town to confirm to the townsfolks that they are still alive. The player works with Grace to infiltrate a hidden facility where they learn that Pen, Yan, and Miguel, the church pastor, are responsible for the water depriving plot and are working for Duvos.
+Later, after Logan's sidekick Haru is caught, Miguel and Pen attempt to frame the player for the entire incident, but Logan arrives and exposes their plan. The player, Logan, and Justice defeat Pen with some help from Andy and a girl named Elise. They then apprehend Yan with some unexpected help from a foreman named Rocky. After interrogating the criminals, Grace attempts to communicate with Duvos by pretending to be Tiger to find out more about their plans, but this leads Duvos to launch an attack on Sandrock. Matilda is revealed to be Tiger, who helps the Duvos agents take over Sandrock, and the player is forced to work for them while supervised by a Duvos soldier named Stev. Logan and Ged rescue the player and help free the townsfolk. They then confront and defeat the Duvos soldiers and their commander. Noticing that Duvos' airship is still here, the player heads to its location with the help of Elise's giant bird friend Daisy, accompanied by Grace, Logan, and Justice. They discover that Duvos is looking for powerful engines belonging to ancient ships called Starships hidden in an old facility, and that the water depriving scheme was a front for this operation. The player fights and defeats Pen and Matilda, who is sent flying into space and seemly dies from lack of oxygen. Alliance jets arrive and attack the Duvos airship, forcing Duvos to retreat. Logan also turns himself in to atone for his actions. After the villains are taken into custody, Yan's twin brother Wei takes over as the new commissioner, a resident named Burgess becomes the new minister, the reformed Magic Mirror is released to work in Sandrock, and Grace leaves town.
+Sometime later, the player rescues a friendly Geegler named Larry, who is now the leader of his people, and Logan is now tasked with dealing with monsters. The player continues to do additional missions such as helping Logan catch men who are pretending to be him, building a school, constructing a plumbing system, building a tunnel that connects to Portia, and constructing an amusement park. At one point, the player meets their parents. When plans to grow trees that can block the sandstorms arise, the player goes with Logan, Larry, and a biologist named Nia to a facility that Larry's people are staying in to get the algae needed to grow them. They confront Larry's evil cousin Gary, who attempts to take over as the Geeglers' new leader and invade Sandrock, but is defeated. Grace returns to Sandrock after retiring. After helping with one final project: building an airship made from the Starship engines to use as a tourist attraction, Trudy expresses graduate for the player's help in restoring Sandrock.
+
+
+== Development ==
+The sequel to My Time at Portia was announced by Chinese studio Pathea Games in October 2020, funded through a Kickstarter campaign. The campaign attracted nearly 10,000 backers from more than 160 countries, and raised $524,770. The game was initially planned for release in early access in March 2021 followed by a full release in summer 2022. in March 2021, the early access launch was delayed due to the need to obtain a local rating certification. After a long delay, early access was eventually released on May 26, 2022, by PM Studios for Windows.  During early access, the Knives Out update was released in April 2023, which introduced minigames, new weather, a narrative, and weddings. The game was fully released on November 2, 2023, for PlayStation 5, Xbox One, Xbox Series X/S, and the Nintendo Switch. The original deadline was September 26, 2023, but was delayed to improve the game's quality. The game was later released for the PlayStation 4 on September 12, 2024.
+The Windows version has co-operative multiplayer. The developers released two downloadable content expansions in 2024. Cross-platform play has been available since June 2024.
+
+
+== Reception ==
+
+On Metacritic, My Time at Sandrock received positive reviews for Windows and PlayStation 5, and the Switch version received mixed reviews. Various critics praised the game as entertaining. Some liked its cozy nature, while others praised how the game has a variety of available activities. An early access review from Rock Paper Shotgun described it as "a compelling and lusciously detailed life simulator" and praised the gameplay loop.
+Several reviewers reported technical issues with the game moments after release. Despite these issues, IGN called it "a joy" and better in almost every way than My Time at Portia. They found the dungeons and combat a bit basic but said the rest of the game makes up for them, as well as the fact that they appreciated the extra challenge with managing water. Nintendo Life called it "reasonably enjoyable" but criticized the graphics, performance issues on the Switch, software bugs, and what they felt was "a lack of a distinct identity". Digitally Downloaded has also reported on the technical issue and that the game is so laggy that players "can make a coffee in the time that it takes to actually load the thing" However, Nintendo Life said that the patches had fixed some of the technical issues since the launch.  Nintendo World Report also experienced performance issues on the Switch but recommended it on the strength of its gameplay loop and enjoyable world.
+VG247 said it combines the best parts of Harvest Moon and Stardew Valley, and felt like stepping "onto one of Animal Crossing: New Horizons' dream islands for a day".  Although they felt the concept is not new, they praised the characters, story, and gameplay. TouchArcade's review for the Nintendo Switch stated that the game felt "like one of the best sequels in the genre with how much it improves".
+
+
+== Sequel ==
+In September 2024, Pathea Games has announced another sequel for the My Time series entitled My Time at Evershine. It has reported that the new game will feature better multiplayer after Sandrock "may have failed to deliver on its promises of a fully fleshed-out multiplayer mode".
+
+
+== See also ==
+Coral Island, another farm sim that released shortly after My Time at Sandrock, set on a tropical island
+Fae Farm
+Roots of Pacha
+Sun Haven
+
+
+== References ==
+
+
+=== Notes ===
+
+
+=== Sources ===
+
+
+== External links ==
+Official website
+My Time at Sandrock at MobyGames

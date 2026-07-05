@@ -1,0 +1,37 @@
+Game: The Universim
+appid: 352720
+Source: The Universim
+URL: https://en.wikipedia.org/wiki/The_Universim
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+The Universim is a 2024 indie simulation god game developed and published by Crytivo for Microsoft Windows, MacOS, and Linux. Designed by Alexander Koshelkov, it has the player take the role of God to guide the development of civilization throughout the ages. Development was funded by a Kickstarter crowdfunding campaign in April  2014. The Universim was released in early access for Steam in 2018.
+
+
+== Synopsis ==
+The Universim is a planet management game where the player takes the role of the "Creator", and guides the development of civilization. Each planet is randomly generated and can be colonised given enough time and technology. Initially the game starts in the Stone Age where the player needs to build basic shelters and invent fire. Buildings and society evolve as civilization progresses unlocking new buildings and technologies. Firstly an Epicenter must be built and other buildings will be developed around it. Standard housing is built automatically but the location of special buildings like Power Plants and Farms has to be specified by the player.  Resources such as food, clothing and power must be managed in order to speed up development, survive long winters and cope with natural disasters. Eventually you can guide your civilization past the Modern era to the Space era where it is possible to colonize other planets and harvest valuable resources from these planets.
+Each planet on Universim is dynamic and evolves throughout the game. There is weather simulation including changing seasons and natural disasters. Meteor crashes and forest fires can wreak havoc upon civilizations, while long winters can slow development. Many planets have alien inhabitants, some are friendly but others are not and have to be defended against. Your citizens, known as "Nuggets", have the ability to make their own decisions and do things their own way; this can create dangerous problems and even lead to wars which the player can attempt to stop. As well as managing development the player also has to keep their civilization loyal and under control. The players influence is based on two elements which are Power and Wrath. Power comes from successful completion of tasks and allows the player to alter the world e.g. change the weather. Wrath is generated when the Nuggets fail to complete tasks, this allows the player to unleash destruction on the world to scare the Nuggets into action.
+
+
+== Development ==
+In April 2014, Crytivo Games started a Kickstarter campaign for The Universim aiming to raise $320,000, which raised a total of $387,345.
+On June 13, 2014, PayPal put a minimum reserve of $1 million on the Crytivo Games account which meant none of their funds could be accessed until their account reached a balance of $1 million. By May 15, 2015, they took to Twitter in an attempt to break PayPal's silence and access their pledged funds.
+In June 2015, Crytivo Games brought The Universim to E3 to advertise the game and get feedback from the public.
+A pre-alpha version of the game was released on September 15, 2015, and was available to anyone who bought access to the alpha tier of the game. This preview included a mainly spectator version of the game where players could explore a planet and construct several different buildings. The total gameplay time was about 20 minutes. On August 2, 2016, the alpha version was released after a major update. The alpha version includes more control over the population (referred to as "Nuggets"); most of the Stone Age buildings and mechanics are present, some in-depth functionality like injuries and healthcare are in place, and in-game tutorials were added.
+Adding new buildings and technologies with each update, Crytivo added the Medieval era in October 2017, Modern era in December 2018, and the Space era in December 2021.
+The Universim was designed using a custom engine referred to as Prometheus, which in turn is based upon the Unity Engine.
+On January 22, 2024, The Universim was fully released, adding a complete storyline and space exploration.
+
+
+== See also ==
+Black & White
+Godus
+Populous
+
+
+== References ==
+
+
+== External links ==
+Official website
+The Universim at IMDb

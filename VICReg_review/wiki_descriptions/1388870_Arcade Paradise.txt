@@ -1,0 +1,34 @@
+Game: Arcade Paradise
+appid: 1388870
+Source: Arcade Paradise
+URL: https://en.wikipedia.org/wiki/Arcade_Paradise
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Arcade Paradise is a business simulation video game developed by Nosebleed Interactive and published by Wired Productions. It was released August 11, 2022, for Microsoft Windows, Nintendo Switch, PlayStation 4, PlayStation 5, Xbox One, and Xbox Series X/S and October 13, 2022, for Amazon Luna and Google Stadia. The player character grows a struggling laundromat business into a thriving arcade. It received mixed to generally favorable reviews from critics. Metacritic aggregate scores range from 72 out of 100 for Windows, and 83 out of 100 for Switch.
+
+
+== Gameplay and synopsis ==
+
+Set in 1993, the player controls Ashley Goldman, whose father, Gerald, is the owner of King Wash laundromat. Ashley is left to run the laundromat while Gerald is away. They discover arcade games in the back room, and realizes these machines could bring in more money than the laundromat itself. As Gerald does not approve or believe in this potential, Ashley sets out to prove him wrong by building out the arcade space in secret with the help of their sister Lesley and others. As the popularity of King Wash increases, Ashley purchases additional arcade machines, eventually converting the laundromat into a full arcade.
+Arcade Paradise is an adventure game that combines elements of business simulation with occasional quick time events. The player character is controlled from a first-person perspective. Players collect money by completing tasks such as doing laundry, taking out the garbage, cleaning chewing gum from surfaces, cleaning the toilet, and emptying the coin hoppers from the various machines. The player must also balance their health and work life. For example, if the player does not return home at night they may faint from lack of rest. Arcade games provide income through their use and popularity with customers. Players can adjust the cost to play each game, the game's difficulty, and other features to attempt to maximize profit. Additional arcade machines can also be purchased, with 35 games in total available for the base game, and additional games made available through downloadable content. Games range from early vector graphics to 32-Bit graphics, and genres include racing, puzzle, action, and more. Each arcade game is fully playable, and some feature local multiplayer for 2–4 players.
+
+
+== Development and marketing ==
+Arcade Paradise was unveiled at Electronic Entertainment Experience 2021 (E3 2021). It was first released August 11, 2022, for Microsoft Windows, Nintendo Switch, PlayStation 4, PlayStation 5, Xbox One, and Xbox Series X/S, followed by Amazon Luna and Google Stadia on October 13, 2022, Newcastle upon Tyne-based developer Nosebleed Interactive purposely chose a boring job for the player character to further the draw to arcade games. Their initial idea was for the game to be set in a video rental store, but found that it was too idealistic for the situation. They also considered a pizzeria, but finally settled on a laundromat when they found the King Wash Laundromat asset pack for the Unreal Engine. While the laundromat assets were developed for Unreal Engine, the game itself uses the Unity game engine. Doug Cockle, known for his voice acting as Geralt of Rivia from The Witcher video game series, provides the voice of the player character's father, Gerald.
+Multiple downloadable content packages were released for the game. On December 15, 2022 Arcade Paradise added its first licensed arcade game Kung Fury: Street Rage, which was a companion game to the 2015 film Kung Fury. A second pack containing three games was released on February 13, 2023. The arcade games can be purchased as two separate packs, or individually.
+
+
+== Reception ==
+
+Arcade Paradise received mixed to generally favorable reviews from critics. Metacritic aggregate scores range from 72 out of 100 on Microsoft Windows to 83 out of 100 on Nintendo Switch. Fellow review aggregator OpenCritic assessed that the game received strong approval, being recommended by 73% of critics. It was featured as part of GameSpot's Best of 2022 feature. Digital Trends' Giovanni Colantino called it "2022's most underrated game. Matt Gardner of Forbes' said that Arcade Paradise was the "love letter it promised to be." The Escapist's Jesse Galena called it a hidden gem.
+Reviewers generally praised the game's overall narrative and contrast between working in the laundromat and playing video games. Eurogamer's Christian Donlan noted that "Arcade Paradise, particularly in the early hours, is constructed in such a manner that it delivers a sense of games as something you steal time for." Shaun Musgrave of TouchArcade noted that there were lots of small details that helped to envelop players into the world narrative. Oli Welsh of Polygon said the game was about "work-life balance, [...] the work you do to survive, and the work you do for love." In a contrasting view, and speaking specifically of the narrative, Nintendo Life's Lowell Bell said that the element of being centered on "a lazy young adult proving to their father they can run a successful business will never really grip you".
+The individual arcade games themselves were acclaimed by critics. TouchArcade's Shaun Musgrave as fascinated by the "video games that weren't", referencing that as of the game's release all of the games were created specifically for Arcade Paradise. Sammy Barker of Push Square noted that "the sheer density of content alone means you’ll never get bored." Pure Xbox's Fraser Gilbert called the arcade machines "enjoyable and in-depth", and noted that it was exciting when a new machine could be added to the collection. Polygon's Oli Welsh felt that the games "nail the surreal, throwaway, half-twee, half-deranged innocence of early gaming."
+
+
+== References ==
+
+
+== External links ==
+
+Official website

@@ -1,0 +1,33 @@
+Game: King Arthur: Knight's Tale
+appid: 1157390
+Source: King Arthur: Knight's Tale
+URL: https://en.wikipedia.org/wiki/King_Arthur:_Knight%27s_Tale
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+King Arthur: Knight's Tale is a tactical role playing video game developed and published by NeocoreGames.  It was released for Windows in 2022, and PlayStation 5 and Xbox Series X/S in 2024.  It is a dark fantasy retelling of Arthurian legend in which players control Mordred. A stand-alone expansion, King Arthur: Legion IX, was released on May 9, 2024.
+
+
+== Gameplay ==
+Mordred dies killing King Arthur, but both return from the afterlife.  When Arthur is corrupted by evil forces, the Lady of the Lake tasks Mordred with stopping him.  Players control Mordred as he fights through the corrupted denizens of Avalon via turn-based tactical combat.  Three more knights from a roster of twelve can accompany Mordred.  Other knights can be added to the roster, but this requires removing an existing one.  Knights can be upgraded through skill trees, and titles bestowed upon them can increase their loyalty and give them special abilities.  Between battles, players can recuperate and upgrade their chosen castle, including Camelot.  Knights can optionally be sent on quests, which makes them temporarily unavailable to join Mordred.  Depending on choices made during quests, players move their kingdom along a graph with two axes representing Christianity vs paganism and tyranny vs benevolence.  These choices can affect the loyalty of knights, each of whom has their own preferences.  Knights who do not go out on adventures can be trained at the castle, gaining experience points based on how well upgraded the training yard is.  A player versus player mode is available.
+
+
+== Plot ==
+Following the Battle of Camlann, the Lady of the Lake brought the dying King Arthur to the land of Avalon. However, for unknown reasons, the former King of the Britons returns as a tyrannical despot, cursing Avalon with dark magic and unleashing an army of both undead and monsters in their wake. With little to no power to stop the collapse of her homeland, the Lady decides to gambit with a risky plan: to resurrect the very man who killed Arthur at Culledan with his own life: Mordred, son of Morgause.
+Over the course of the campaign, Mordred has the option of recruiting the assistance of several major characters throughout the history of Britannia up until the reign of Arthur, ranging from the numerous Knights of the Round Table and other prominent figures such as Morgan, Merlin or Morgause herself or that of the fey. He is also pitted against the corrupting presence of Arthur's new armies of darkness and other refugees from Britain, such as the Picts and even the reanimated remains of the infamous Ninth Legion of the former Roman Empire.
+After Arthur is defeated, Mordred learns that the entire conflict was a plot by the Fomorians, giant monsters from Celtic mythology and the original rulers of Avalon. Now that Avalon was ripe for the taking, Mordred must now defend his new Kingdom against these terrible foes.
+
+
+== Development ==
+King Arthur: Knight's Tale was funded on Kickstarter in 2020, entered early access in January 2021 and released for Windows on April 26, 2022.  Console versions are planned but undated.  In November 2022, a skirmish mode was added to the game for free.  At the same time, two paid DLC were released that add more skirmishes. Versions for PlayStation 5 and Xbox Series X/S were released on February 22, 2024.
+
+
+== Reception ==
+King Arthur: Knight's Tale received positive reviews on Metacritic.  IGN praised the game's depiction of playing as a heavily armored knight in tactical combat, but they said that the battles eventually became repetitive and felt like filler.  Eurogamer felt that the default difficulty level had all the requisite tactical options but lacked depth and challenge, making the battles seem boring.  RPGFan called it "a feast with meaty tactics, a sumptuous story, and luscious visuals".  RPGamer enjoyed the tactical combat, but they said the grimdark atmosphere can make the game feel oppressive and repetitive.
+
+
+== References ==
+
+
+== External links ==
+Official website

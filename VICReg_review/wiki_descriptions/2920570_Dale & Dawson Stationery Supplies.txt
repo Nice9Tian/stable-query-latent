@@ -1,0 +1,24 @@
+Game: Dale & Dawson Stationery Supplies
+appid: 2920570
+Source: Dale & Dawson Stationery Supplies
+URL: https://en.wikipedia.org/wiki/Dale_%26_Dawson_Stationery_Supplies
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Dale & Dawson Stationery Supplies is a multiplayer social deduction video game developed and published by Striped Panda Studios for Windows.
+
+
+== Development ==
+The game was released on 30 August 2024 through Steam.
+
+
+== Gameplay ==
+Players perform tasks in an office space and can be assigned one of three roles at the beginning of a round. Specialists perform positive tasks, while slackers perform negative tasks. The goal of the specialists is for the manager to fire all of the slackers. The slackers can win a round if enough specialists are fired, or if they perform enough tasks to outperform the specialists.
+If a manager does not fire an employee in a certain timeframe, then they are automatically fired and replaced by another player.
+
+
+== Reception ==
+The game gained popularity through the social media platforms YouTube and Twitch. Trevor Ford of TheGamer selected it as a nominee for the website's game of the year award.
+
+
+== References ==

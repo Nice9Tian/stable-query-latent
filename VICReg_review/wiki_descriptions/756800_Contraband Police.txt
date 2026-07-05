@@ -1,0 +1,25 @@
+Game: Contraband Police
+appid: 756800
+Source: Contraband Police
+URL: https://en.wikipedia.org/wiki/Contraband_Police
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Contraband Police is a video game developed by Crazy Rocks Studios and published by PlayWay, released in March 2023 for Microsoft Windows. Two years prior a demo version, called Contraband Police: Prologue was published. The game was also released for PlayStation 5 and Xbox Series X/S on 7 November 2025.
+The premise of the game is working as a border guard and head of the border post, in a fictional communist country called Acaristan in 1981 (in some cases the game can go onto other years).
+
+
+== Gameplay ==
+The player performs the duties of a border officer. He is responsible for checking entrants' documentation and searching for contraband. The player will also deal with terrorists raiding the border post or smugglers attempting to flee when illegal items are found. Moreover, he will occasionally have to perform field missions, which range from intercepting contraband to investigating crimes. 
+An endless mode has been added in March 2024 as a part of the Anniversary Update.
+
+
+== Reception ==
+Contraband Police was positively received on release, with Metacritic aggregating reviews as "generally favorable" out of 10 critic reviews. A review from Eurogamer Poland commented: the game is a "great combination of simulation and action elements", and its "lackluster visuals spoil the experience a little, but it's still worth giving this game a chance, because exploring its various gameplay mechanics is a lot of fun". Polygon observed that the game was a "surprise hit on Steam" and assessed it as "a little janky but deeply compelling".
+
+
+== See also ==
+Papers, Please
+
+
+== References ==

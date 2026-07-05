@@ -1,0 +1,30 @@
+Game: Killer Frequency
+appid: 1903620
+Source: Killer Frequency
+URL: https://en.wikipedia.org/wiki/Killer_Frequency
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Killer Frequency is a 2023 first-person horror-adventure game developed and published by Team17. The game takes place in a small town in 1987, where players control a successful radio host who acts as an impromptu radio dispatcher when a serial killer returns to terrorize the town's residents. The player must take calls from the survivors and solve various puzzles to help them escape the killer. It received mostly positive reviews from critics, who praised its gameplay and comedy horror elements.
+
+
+== Overview ==
+Killer Frequency is a first-person adventure game with murder mystery elements. The game takes place in 1987 with aesthetics based heavily on 1980s nostalgia, including neon color palettes and a wood-paneled environment. The art style has been described as reminiscent of cel shaded animation. The plot is inspired by slasher films, and the game includes references to numerous horror films including The Fog, Friday the 13th, and the Scream franchise. 
+Players take the role of Forrest Nash (Josh Cowdery), a formerly popular DJ and radio host from Chicago who relocated to the small town of Gallows Creek after his career declined. Forrest must become an impromptu dispatcher when The Whistling Man, a serial killer, returns to terrorize the town 30 years after his supposed death.
+Throughout the game, the player character takes calls from victims of the slasher and instructs them on how to escape by solving puzzles and problems that they face. Players must successfully complete these puzzles using clues and information found around the studio to prevent the victims from being killed. Aaron Riccio of Slant Magazine described its mechanics as "sort of reverse escape room where you provide the vital hints to help others get out alive." The survival of the victims and outcome of the game depends on the player's choices and ability to solve these puzzles.
+
+
+== Development ==
+The game was Team17's first virtual reality game. On June 1, 2023, the game was released on PC, PlayStation 5, Xbox Series X and Series S, PlayStation 4, Xbox One, Nintendo Switch and Quest 2.
+
+
+== Reception ==
+Killer Frequency received "generally favorable" reviews, according to review aggregator website Metacritic. Critics praised the game's balance of tension and campy, comedy horror. Softpedia awarded the game 4 out of 5 stars, praising the quality of its voice acting and gameplay, but criticizing the final act as being "rushed". Reyna Cervantes of Bloody Disgusting praised the game's use of the slasher genre, comparing it favorably to horror films such as The Texas Chainsaw Massacre 2. Rachel Watts, writing for Rock Paper Shotgun, praised Killer Frequency's gameplay and puzzle elements.
+
+
+== References ==
+
+
+== External links ==
+Official website
+Killer Frequency at IMDb

@@ -1,0 +1,37 @@
+Game: UBOAT
+appid: 494840
+Source: Uboat (video game)
+URL: https://en.wikipedia.org/wiki/Uboat_(video_game)
+Match score: 5.86
+Retrieved: 2026-07-04
+--------
+Uboat (Stylized as UBOAT) is a submarine simulator video game, released by Deep Water Studio and being published by PlayWay S.A. The game is inspired by the game mechanics of Fallout Shelter, XCOM, and also the movie Das Boot. Like other submarine simulation games, such as the Silent Hunter series, the player is put in command of a German U-boat during World War II.
+
+
+== Development ==
+Initially, development of the game started in 2016 with a Kickstarter campaign to provide funding for the project. The original goal of the project was to raise CA$20,000 to fund the project but the campaign managed to raise CA$38,000 from 1,511 backers. The team developing the game are reportedly "a mix of young open-minded people and old hands at game development". Significant amounts of the game had already been completed in 2017 and according to the then most recent developer diary the game was "getting more and more full of shape". Originally, release was planned for 2017, but was delayed to the first quarter of 2019. A beta was released to Kickstarter backers on October 14, 2018 and was updated frequently since then. However, it remained in beta until August 2, 2024, when it saw its full release. The game was called Uboot during the first few years of development. 
+On 17 April 2026, a DLC called Type IX: Distant Coasts released, adding the Type IX in three variants: A, C, and C/40.
+
+
+== Overview ==
+Uboat gives players command of Type II and Type VII submarines during World War II. The player is not in charge of the submarine itself but in fact "in charge of the men controlling the submarine" as a U-Boat captain. The player has to manage the morale, discipline and trauma of the crew and make sure all the crew come back alive at the end of a mission. The crew are also made up of individuals who each have their own individual stories and personalities. According to Rock, Paper, Shotgun, "Everything has been created down to the tiniest of details to make sure WWII buffs get what they want, and realistic and modern graphics are promised as well." The developers have also developed precise and historically accurate interior of the ship to further enhance gameplay and give the player the ability to take control of certain tasks on the ship themselves such as firing torpedoes, using radios and piloting the submarine.
+
+
+== Release ==
+Uboat released on 30 April 2019 in early access to the public, some Kickstarter contributors who had received the game earlier during beta and alpha testing were released from non-disclosure agreements and allowed to post videos and media of the game. It was not yet published in 2019. In 2016, a macOS version was planned but the game is currently for Windows only. A 1.0 version was released on 2 August 2024 and is now available on the Steam catalogue.
+Uboat released on consoles in 2025, coming to Xbox Series X/S on August 27 and PlayStation 5 September 17.
+
+
+== Reception ==
+Reception for the game is currently generally positive. Polygon writer, Charlie Hall, wrote that "there's a brilliant experience lurking in its depths". He praised the effort the developers had gone to making an authentic experience, but stated concerns about how early access the release was and that the game lacked game-play due to large amounts of bugs.
+
+
+== See also ==
+Submarine warfare
+
+
+== References ==
+
+
+== External links ==
+Official website

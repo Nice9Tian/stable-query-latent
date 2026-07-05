@@ -1,0 +1,32 @@
+Game: Peglin
+appid: 1296610
+Source: Peglin
+URL: https://en.wikipedia.org/wiki/Peglin
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Peglin is a roguelike video game developed by Red Nexus Games and published by IndieArk and BlitWorks Games. It was released for PC on April 25th of 2022, on iOS and Android on April 11 of 2023, and Nintendo Switch on August 27th of 2024, once the full version became available. 
+The game contains Pachinko-like gameplay that the player uses to progress through the game and defeat the final boss. Players must carefully balance their own attacks and health as the game uses turn-based RPG between the protagonist and monsters.
+
+
+== Gameplay ==
+Users begin as a small, green goblin designed in pixel-art graphics who uses orbs to blast through different levels of bouncing pegs. There are four different goblin classes: Peglin, Balladin, Roundrel, and Spinventor. Peglin is the base class, and the other three are unlocked through gameplay. Each class has its own ability.
+Players fight through popping pegs by shooting orbs. Different orbs have various effects, and the game uses deck-building techniques as players strategically choose and discard which power-ups they would like. There is an element of luck as orbs bounce at varying angles on pegs. As pegs are hit, damage points add up and are distributed to targeted enemies. While the pegs are in a formation on the bottom half of the screen, the green goblin and oncoming enemies are on the top half. Some pegs have their own effects, such as a green 'R' that resets the board while the yellow '!' creates a critical hit and will deal greater damage. Players earn coins as they pop pegs and can use this in-game gold to upgrade orbs' abilities.
+Every individual run has its own randomly generated map. The player progresses through increasingly difficult floors in a dungeon crawl as enemies are defeated. Once a level is completed, an orb will also be thrown to decide which path to take as they progress further down the floors. Some floors are designated for giving loot or battles. Others have random scenarios that the goblin character faces that influences gameplay. These scenarios are typically non-combat related and are focused on what narrative choices the gamer makes.
+Relics are collected throughout the game which will give the player a permanent power-up. A synergy within the deck can be found as players select specific orbs and are granted relics. Players face ordinary enemies and significantly harder bosses, with main bosses appearing at the end of every stage. Once the game is completed, the player will begin to unlock the multi-stage Cruciball that hits its peak at level 20. Each stage grants the run a negative effect, making each re-run of Peglin increasingly difficult. 
+Players can access the Encirclepedia which gives additional information on monsters.
+
+
+== Development ==
+Canadian indie game studio Red Nexus Games was founded in 2015 and created Peglin during the COVID-19 pandemic. Designer and game studio founder Dylan Gedig has called it a "pandemic-built game", hoping that it would give "something a little lighthearted for us and our friends to play test, to help make everything go by easier." Peglin was originally brainstormed during a 48-hour game jam with Gedig and Peglin's artist. The event's theme was "Fall", so the duo focused on pinball and pachinko gameplay. The pair wanted something lighthearted and was first inspired by the style of Angry Birds and Brick Breaker. The rough prototype was titled Goblin Drop.
+Gedig then decided to develop the game further. A team of four built Peglin to its full early release, including himself, another developer, an artist, and a composer. As design of the game progressed, the team settled on gameplay inspired by Peggle and Slay the Spire. The soundtrack was inspired by Crash Bandicoot and Donkey Kong Country. Since its release, the team has since grown as Red Nexus Games plans to update Peglin and add more gameplay. 
+Peglin was originally released as a PC game and was in early access on Steam for around a year. 400,000 copies were sold of the early access version in its first year. An unauthorized user released a mobile version as the game grew in popularity, and this was eventually taken down. Following this controversy, Red Nexus focused on porting the game for IOS and Android while Peglin was still in early access. The game made its official 1.0 release on August 27, 2024. It was featured as a timed Nintendo Switch exclusive game during Nintendo's 2024 Indie World Showcase the same day as the 1.0 release. 
+On March 16th, 2026 Peglin received a large update bringing it to version 2.0. This update included new items, enemies, music, and an entire fourth act.
+
+
+== Reception ==
+Peglin won best design at the 2022 Taipei Game Show, an event where developers show off their games to attendees.
+TouchArcade gave Peglin's Early Access a 4.5/5 stars.
+
+
+== References ==

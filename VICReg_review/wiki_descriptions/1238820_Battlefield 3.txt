@@ -1,0 +1,158 @@
+Game: Battlefield 3
+appid: 1238820
+Source: Battlefield 3
+URL: https://en.wikipedia.org/wiki/Battlefield_3
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Battlefield 3 is a 2011 first-person shooter game developed by DICE and published by Electronic Arts. It is the twelfth installment in the Battlefield series and a sequel to Battlefield 2 (2005). The game was released on Microsoft Windows, PlayStation 3 and Xbox 360 in October 2011. The campaign takes place in various locations and follows the stories of two characters, Henry Blackburn, a U.S. Marine and Dimitri Mayakovsky, a Spetsnaz GRU operative.
+Development on the game began in 2009 after the release of Battlefield 1943. DICE employed an upgraded version of the Frostbite game engine to present realistic and engaging graphics. An open beta was presented forty-eight hours before it was released to gamers who pre-ordered Medal of Honor Limited Edition.
+Following its announcement, Battlefield 3 received much anticipation and hype. The game received mostly positive reviews from critics who praised its multiplayer and graphics, but criticized the campaign and cooperative modes. It sold 5 million copies in its first week of release, becoming one of the biggest launch titles of 2011. The game's sequel, Battlefield 4, was released in 2013.
+
+
+== Gameplay ==
+
+Battlefield 3 features the combined arms battles across single-player, co-operative and multiplayer modes. It reintroduces several elements absent from the Bad Company games, including fighter jets, the prone position and 64-player battles on PC. To accommodate the lower player count on consoles, the ground area is limited for Xbox 360 and PS3, though fly space remains the same.
+The game features maps set in Paris, Tehran (as well as other locations in Iran), Sulaymaniyah in Iraq, New York City, Wake Island, Oman, Kuwait City, and other parts of the Persian Gulf. The maps cover urban streets, metropolitan downtown areas, and open landscapes suited to vehicle combat. Battlefield 3 introduces the "Battlelog"; a free cross-platform social service with built-in text messaging, voice communications, game statistics, and the ability to join games that friends are already playing (though both players need to be on the same platform).
+
+
+=== Cooperative ===
+A demo featuring the new co-op mode was featured at Gamescom 2011. Split screen is not available. Battlefield 3's new Battlelog social network, DICE noted, would be tied to all co-op matches, allowing players to try to beat friends' scores and to track their performance. Participating in co-op mode allows the player to collect points that unlock additional content that can be used in multiplayer.
+
+
+=== Multiplayer ===
+
+Battlefield 3's multiplayer matches see players take on one of four roles: Assault, Support, Engineer and Recon. The Assault class focuses on assault rifles and healing teammates. The Support class focuses on light machine guns and supplying ammunition. The Engineer class focuses on supporting and destroying vehicles. The Recon class focuses on sniping and spotting enemies. The mechanics of the weapons have been changed to utilize the new engine: compatible weapons may have bipods attached which can then be deployed when in the prone position or near suitable scenery, and provide a significant boost to accuracy and recoil reduction. Suppressive fire from weapons blurs the vision and reduces the accuracy of those under fire, as well as health regeneration. The Recon class can put a radio beacon anywhere on the map and all squad members will be able to spawn on the location of the beacon.
+Several game modes are present, including Conquest, Rush, Squad Deathmatch, Squad Rush and for the first time since Battlefield 1942, Team Deathmatch. However, more game modes are available through the purchase of extra downloadable content packs. The PC version of Battlefield 3 is by default launched via a web browser from the Battlelog web site. A server browser is present in console versions of the game.
+The servers for the PlayStation 3 and Xbox 360 versions of the game, along with Battlefield 4 and Battlefield Hardline were shut down on November 7, 2024.
+
+
+== Synopsis ==
+In March 2014, U.S. Marine Sergeant Henry Blackburn (Gideon Emery) of the 1st Recon Marines is deployed to Sulaymaniyah, Iraqi Kurdistan with his fellow squadmates Private First Class Jack Chaffin (Tony Denman), Lance Corporals David Montes (Ronan Summers) and Christian Matkovic (William Meredith), Staff Sergeant Steve Campo (Eric Loren), and Captain Quinton Cole (David Harewood), under the squad callsign Misfit 1-3. While on a mission to defuse an IED, Chaffin is wounded in an ambush by the People's Liberation and Resistance (PLR), an Iranian paramilitary group, moments before an earthquake devastates the city, though the squad successfully manages to escape. The next day, the PLR stages a coup d'etat in Iran, causing the United States to launch an invasion. 
+In October, after the U.S. Navy conducts an airstrike on Mehrabad Airport, Misfit is deployed into Tehran to perform battle damage assessment and apprehend the leader of the PLR, Faruk Al-Bashir (Ray Haratian). While investigating an underground bank vault in the target's suspected location, the squad learns that the PLR has acquired Russian suitcase nukes, with two of the three devices missing. Being overrun, Misfit requests backup from an M1 Abrams column, callsign Anvil 3 of the 1st Tank Battalion, including Sergeant Jonathan Miller. Miller facilitates Misfit's helicopter extraction, but his tank is disabled and overrun while the crew awaits the arrival of a Quick Reaction Force. Knocked out and taken prisoner, Miller is executed by Al-Bashir and a mysterious individual named Solomon (Mark Ivanir), with the event being filmed and posted on the Internet.
+In November, Misfit manages to capture Al-Bashir, who is fatally wounded when they cause his escape vehicle to crash. In his dying moments, Al-Bashir reveals Solomon's plan is to detonate the nukes in Paris and New York City. From Al-Bashir's cellphone, Misfit gets a lead on Russian arms dealer Amir Kaffarov (Endre Hules), who was working with Solomon and Al-Bashir. They attempt to capture Kaffarov from his villa in northern Iran, but come into contact with a Russian paratrooper battalion, also after Kaffarov, and are forced to engage them. In the ensuing battle, Campo and Matkovic are killed in an enemy strafing run. Meanwhile, a Spetsnaz GRU squad led by Dimitri "Dima" Mayakovsky (Andre Sogliuzzo) assaults Kaffarov's villa. Kaffarov tries to bribe the squad but is beaten by Dima. Blackburn arrives at the villa and finds Dima with a deceased Kaffarov. Dima reveals Solomon's plot to Blackburn and requests his cooperation to prevent "a war between [their] nations." Meanwhile, Cole arrives on the scene and Blackburn is forced to shoot him before he can kill Dima, resulting in Blackburn's arrest and interrogation by the CIA in Hunters Point, Queens.
+During Blackburn's captivity, Dima's squad attempts, but fails to stop the attack on Paris, and the nuke detonates, killing 80,000 people. Meanwhile, the CIA do not believe Blackburn's story since Solomon is a CIA asset, and there is no concrete proof of his involvement in the terrorist attacks. They instead believe that Russia is responsible for the attacks and that Dima has tricked Blackburn. After Montes is also brought into interrogation, he and Blackburn break out of captivity to stop the attack in New York. Evading police, Blackburn manages to sneak into a hijacked Long Island Rail Road train full of Solomon's men and explosive charges. He fights his way to the front car, where Solomon ambushes him. In the melee, Blackburn gains the upper hand by activating the detonator to the charges, causing the train to crash. Blackburn pursues Solomon through the sewers and up to street level. Having obtained a vehicle, Montes picks up Blackburn and engages Solomon and the PLR in a brief vehicular chase, ending with both cars crashing in Times Square. As a bewildered crowd watches on, Solomon shoots Montes. Still, Blackburn manages to kill Solomon by bludgeoning him to death with a brick in the ensuing brawl and prevents the nuclear bomb from detonating.
+The epilogue reveals that Dima survived the Paris detonation, albeit suffering from radiation poisoning. He writes about the efforts of both himself and Blackburn to stop Solomon's plan "to set fire to the world." A knock comes from his door and Dima gets up to presumably defend himself.
+
+
+== Development ==
+Battlefield 3's lead platform was originally the PC until it was switched to consoles midway through development. The Xbox 360 version of Battlefield 3 is shipped on two discs due to the disc size limit; however, the PS3 version ships on one Blu-ray Disc. It is the first game in the series that does not support versions of Windows prior to Windows Vista as the game only supports DirectX 10 and 11. The PC version was exclusive to EA's Origin platform, through which PC users also authenticate when connecting to the game; however the game eventually arrived on Steam in June 2020.
+Battlefield 3 debuts the new Frostbite 2 engine. This updated Frostbite engine can realistically portray the destruction of buildings and scenery to a greater extent than previous versions. Unlike previous iterations, the new version can also support dense urban areas. Battlefield 3 used a new type of character animation technology called ANT that has been used in EA Sports games such as FIFA, but for Battlefield 3 is adapted to create a more realistic soldier, with the ability to transition into cover and turn the head before the body, as well as "drag fallen comrades into safety and mount weapons on almost any part of the terrain". EA stated that Commander Mode was unlikely to be included, which was met with some criticism on the EA forum.
+
+
+=== Wii U version ===
+On 7 June 2011, during Nintendo's E3 2011 press conference, John Riccitiello of EA games expressed interest in Nintendo's upcoming system, the Wii U. Patrick Liu, the executive producer of Battlefield 3, stated that DICE currently have no games in development for the Wii U and a port for the console "probably won't happen".
+
+
+=== Beta ===
+The open beta commenced on 29 September 2011, for all platforms, and ended on 10 October 2011. 48 hour early access was granted to players who bought the Tier 1 edition of Medal of Honor or pre-ordered the digital version of Battlefield 3: Limited Edition through Origin.
+
+
+=== Soundtrack ===
+
+A soundtrack album was released on 24 October 2011, one day before the game was released. It is available on iTunes and Amazon. The music was composed by Johan Skugge and Jukka Rintamäki.
+
+
+=== Easter eggs ===
+Battlefield 3 and its five DLC packs contain numerous Easter eggs. Hiding in obscure areas of the game are references to other Electronic Arts games and franchises including Mirror's Edge and Mass Effect. Some sources suggested other Easter eggs pointed to future Battlefield games or DLC packs. During the firefight in the mall trying to protect Al-Bashir, the store in which they are defending Al-Bashir has copies of games on the shelf and one game being titled "Frostbite" which references the engine used by Battlefield 3. A wall on the multiplayer map "Wake Island" featuring the number 2143 and a futuristic hovercraft on a different map in the End Game DLC have been said to suggest a follow-up to 2006's Battlefield 2142 is in the works.
+Several dinosaur Easter eggs—such as a flying pterodactyl on the map "Nebandan Flats" and tyrannosaurus skulls or toy statues on various maps—have led others to believe a dinosaur-related game or DLC would be released in the future. The idea of a dinosaur-related minigame originated from fan feedback through social media outlets prior to Battlefield 3's release. Neither of these possible upcoming games has been confirmed by EA.
+
+
+== Marketing and release ==
+
+Battlefield 3 was revealed on 3 February 2011 by Game Informer. The coverage included information on building the game and interviews with the developer DICE, as well as three trailers: a teaser and the first two parts in a series of gameplay from the level "Fault Line". Several other trailers were released showing different aspects of the game, including both single and multiplayer, as well as emphasizing the new engine. On 16 August 2011, co-op gameplay and a "Caspian Border Multiplayer Gameplay Trailer" were shown at Gamescom 2011 illustrating the co-op mode and the first footage of air combat, respectively.
+Trailer releases gained momentum in the week before the release of the game. EA released a multiplayer trailer which showed the variety of maps available in multiplayer, with short scenes of actual gameplay. It also featured shots of a map that is included in the "Back to Karkand" downloadable content (DLC). EA released a launch trailer, showing off the various missions in the single-player campaign.
+EA CEO John Riccitiello stated that Battlefield 3 is aimed at competing with the Call of Duty series. EA planned on spending over $100 million on a marketing campaign for Battlefield 3. Electronic Arts stated that Battlefield 3 is "flat out superior" to Call of Duty. EA has said it is going on the "offense" in regards to its marketing on Battlefield 3, saying that it started its campaign early to establish a "beachhead". Anyone who had watched a trailer for the upcoming film Act of Valor through the official Battlefield 3 website could receive free downloadable dogtags for use with any version of the game.
+For marketing and distribution to Japan, EA worked with Sega's Japanese branch to distribute the game nationwide. In January 2017, the game was made backwards compatible with the Xbox One (alongside Battlefield: Bad Company 2) and was subsequently added to the EA Access service.
+The game was delisted from the PlayStation 3 and Xbox 360 storefronts on July 31, 2024 and online servers were shut down on November 7, 2024 for both platforms.
+
+
+=== Pre-order promotion ===
+All pre-orders of the Limited Edition grant free access to the "Back to Karkand" DLC pack, a reference to the "Strike at Karkand" map (a popular Battlefield 2 map), to include four maps brought over from Battlefield 2, ten new weapons, four new vehicles, five new achievements/trophies, and a new addition to the series, "Assignments". The maps from the expansion pack will be: Strike at Karkand, Gulf of Oman, Wake Island, and Sharqi Peninsula.
+Pre-ordering at selected retailers and Origin included the "Physical Warfare Pack", granting access to time-based exclusive weapons and items; including a light machine gun, a sniper rifle accessory, and armor-piercing ammunition. Also included is launch day access to the DAO-12 semi-automatic shotgun, which other players can unlock through game play. Pre-order at select retailers also provide the "SPECACT Kit Upgrade", the "Dog Tag Pack" and Battlefield 3 gear for the player's console avatar. Pre-ordering at Origin gave players a shotgun and beret for Battlefield Play4Free, and 48 hour early access to the Battlefield 3 beta.
+Originally the "Physical Warfare Pack" was to be exclusive to pre-orders, but fan reaction to this was negative, causing EA to clarify that it would be made available to all players for free later in the year. On 2 September 2011, a trailer for the Physical Warfare Pack was released on YouTube showing all the content included within the pack in action in-game.
+All the content except the "Back to Karkand" pack was available from day one. The pack was released on 6 December 2011 for the PlayStation 3, and a week later for the Xbox 360 and PC.
+
+
+=== Online pass ===
+To access the game's online multiplayer mode on consoles, players need to activate an online pass. New copies of the game include one online pass for the original owner of the game to access the multiplayer; however, if a player buys a used copy or rents the game, they must purchase an online pass separately, or access a 48-hour trial via the official game site. When asked why the developers implemented the pass system, game designer Alan Kertz replied, "because servers cost money, and used games don't make developers any money." Some of the online pass codes were invalid from the time of purchase, which EA responded to by telling affected consumers to ask the retailer for a replacement code.
+
+
+=== Downloadable content ===
+
+
+==== Back to Karkand ====
+The first DLC pack, "Back to Karkand", was announced before launch and was released on 13 December 2011 for PC and Xbox 360, while PlayStation 3 owners received it a week earlier. It was priced at US$15 but was free for all users who purchased the limited edition. It features four maps remade from Battlefield 2, three new vehicles and ten new weapons.
+
+
+==== Close Quarters ====
+At GDC 2012 DICE revealed it would release three more DLCs. The second DLC, "Close Quarters" arrived in June 2012 featuring four new infantry-oriented maps, ten new weapons, HD Destruction, ten new assignments, five unique Dogtags, and a new game mode, Conquest Domination, a Conquest mode adapted for smaller spaces.
+
+
+==== Armored Kill ====
+The third DLC, "Armored Kill" arrived on 4 September 2012 for premium PlayStation 3 users and 11 September for Xbox 360 and PC users. The DLC was made available for non-premium PlayStation 3 and Xbox 360 users on 25 September 2012. Armored Kill included new vehicles, specifically tanks, ATVs, and mobile artillery, as well as new vehicle-oriented maps and what is called "the biggest map in Battlefield history".
+
+
+==== Aftermath ====
+A DLC titled "Aftermath" was revealed in a trailer for Battlefield 3 Premium. It was released to PlayStation 3 Premium subscribers on 27 November 2012 and to PC and Xbox 360 Premium subscribers on 4 December 2012. "Aftermath" was released to non-Premium subscribers on PlayStation 3 on 11 December 2012, and on PC and Xbox 360 on 18 December 2012. A video released by DICE games revealed that there would be a crossbow, with customizable scopes and various bolts before its release.
+
+
+==== End Game ====
+The fifth DLC, "End Game", was released for PlayStation 3 Premium members on 5 March 2013 and to PC and Xbox 360 Premium members on 12 March 2013, then to non-Premium PlayStation 3 players on 19 March 2013 and to PC and Xbox 360 players on 26 March 2013. It was developed in conjunction with Visceral Games.
+
+
+=== Novel ===
+Andy McNab penned a tie-in novel titled Battlefield 3: The Russian, which follows the story of GRU Spetsnaz commando Dmitri "Dima" Mayakovsky and his involvement against the PLR, as well as his connection to the antagonist, Solomon. McNab also served as the game's consultant on military tactics. The novel was released on 25 October 2011.
+
+
+== Reception ==
+
+
+=== Critical reception ===
+
+Battlefield 3 received mostly positive reviews. IGN gave it a score of 9.0 out of 10.0 for all platforms, and praised the graphics and multiplayer game, but criticism for the occasional glitches of the game engine, it still gave the game a mostly positive review: "Regardless of the narrative missteps or the occasional glitches, Battlefield 3 offers an unforgettable, world-class multiplayer suite that's sure to excite shooter fans."
+Joystiq awarded the game 4.5 out of 5 stars, stating that the campaign was "tactically linear" and that the A.I. within the game were "murderously un-fun to fight". Complaints were also made of the multiplayer aspect, stating that destruction was less than expected: "It's not Bad Company 2, and levels won't start out intact and end looking like the surface of the moon the way they often did in that game." They did, however, praise the multiplayer experience as "unmatched", stating that this should be the sole reason to buy the game.
+GameSpot gave Battlefield 3 a score of 8.5 out of 10 across all platforms. They praised the deep multiplayer mode, great variety of vehicles, many well-designed environments, and a great reward system for team play. The cooperative mode was viewed favorably; the only criticism on the cooperative missions was that "there aren't more of them to keep you busy".
+Official Xbox Magazine gave the game 9 out of 10, commending the game for its multiplayer mode, but criticizing the solo campaign. Similarly, Official Xbox Magazine (UK) gave the game 8 out of 10, applauding its multiplayer gaming and calling it "The most expansive, refined Battlefield multiplayer yet".
+
+
+=== Controversies ===
+
+
+==== PlayStation 3 exclusive content ====
+During Sony's E3 2011 press conference, Jack Tretton of Sony Computer Entertainment of America announced that the PlayStation 3 version of the game would be bundled with a free copy of Battlefield 1943, however, at launch, the game was not included. EA then said that Battlefield 3 PlayStation 3 owners would receive timed-exclusive DLC for the game instead. On 20 November 2011, Law firm Edelson McGuire took EA to court on behalf of disappointed gamers. The complaint focused on EA's communication of the change of plan, second proposal with early DLC that had already been announced. Shortly after being threatened with being taken to court over its failure to deliver the free game as announced at E3 2011, EA announced they would offer owners of the PlayStation 3 version of Battlefield 3 a free downloadable copy of Battlefield 1943.
+
+
+==== Other responses ====
+A scene in which the player is prompted to kill a rat that is attacking their character was criticized by People for the Ethical Treatment of Animals (PETA). In a press release issued by the organization's German office, it claimed that the game "treats animals in a sadistic manner". The release also went further on to say that the scene can have "a brutalising effect on the young male target audience".
+The reproduction of various scenes in Battlefield 3 are highly accurate of their real-life counterparts such as the Grand Bazaar. Iran reacted to the scenes set within Iran by banning the sale of the game. As the game had not been officially released in the country, the authorities were strictly enforcing the prevention of the distribution of pirated copies of the game. This came after Iranian gamers had protested the release of the game and called for an apology.
+
+
+=== Sales ===
+According to EA, Battlefield 3 garnered 3 million pre-orders by the day of its release. The pre-order total makes it "the biggest first-person shooter launch in EA history", according to the publisher. Two days after launch, EA CEO John Riccitiello announced via a conference call to investors that Battlefield 3 had already shipped 10 million units within a week of release, with 3 million of those being pre-orders. Electronic Arts stated that the title sold 5 million units within the first week of availability, easily becoming its fastest-selling game. After one month, EA chief financial officer Eric Brown announced Battlefield 3 had sold 8 million copies, and that the publisher had shipped 12 million copies of the game to retailers, 2 million more than it shipped for launch week. Peter Moore, the high-profile COO of EA, insisted that Battlefield 3 successfully captured a slice of Call of Duty: Modern Warfare 3's market share. On 29 June 2012 EA revealed that the game had sold 15 million copies.
+In the United States, Battlefield 3 was the top selling game in the month of October, and the third best selling title in November. Overall, the game was the fourth best selling title of 2011.
+In Japan, Battlefield 3 had sold around 123,379 copies for the PlayStation 3 and 27,723 copies for the Xbox 360 when it was released. In the first week, the game had sold 18,792 copies for the PlayStation 3 for a total of 142,171 copies. The PlayStation 3 version later sold 8,094 copies for a total of 150,265 copies.
+
+
+=== Awards ===
+Best Shooter, 2011 IGN People's Choice Award
+Best Multiplayer Game, 2011 IGN People's Choice Award
+Best Xbox 360 Shooter, Best of 2011 IGN Award & 2011 IGN People's Choice Award
+Best Xbox 360 Multiplayer Game, Best of 2011 IGN Award & 2011 IGN People's Choice Award
+Best PS3 Shooter, 2011 IGN People's Choice Award
+Best PS3 Multiplayer Game, Best of 2011 IGN Award & 2011 IGN People's Choice Award
+Best PC Shooter, Best of 2011 IGN Award & 2011 IGN People's Choice Award
+Best PC Multiplayer Game, Best of 2011 IGN Award & 2011 IGN People's Choice Award
+During the 15th Annual Interactive Achievement Awards, the Academy of Interactive Arts & Sciences awarded Battlefield 3 with "Outstanding Achievement in Sound Design", along with nominations for "Action Game of the Year" and outstanding achievement in "Art Direction", "Connectivity", "Online Gameplay", and "Visual Engineering".
+
+
+== Notes ==
+
+
+== References ==
+
+
+== External links ==
+
+Official website
+Battlefield 3 at IMDb

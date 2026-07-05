@@ -1,0 +1,125 @@
+Game: Age of Wonders 4
+appid: 1669000
+Source: Age of Wonders 4
+URL: https://en.wikipedia.org/wiki/Age_of_Wonders_4
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Age of Wonders 4 is a 2023 4X turn-based strategy video game developed by Triumph Studios and published by Paradox Interactive. It is the sixth game in the Age of Wonders series, following Age of Wonders: Planetfall.
+
+
+== Synopsis ==
+
+
+=== Plot ===
+At the end of Shadow Magic the warring Wizard Kings and Shadow Demons were banished from Athla. Thus the Third Age of AoW III was a lower-magic era. The Human Commonwealth's renaissance empire filled the power vacuum of the banished archmages.
+When wizards such as Yaka, Karissa, and Nimue left Athla in search of riches in the Shadow Realm, Merlin sealed their return path. They became stuck in the void between realms. The Torment of Shadows left them scarred and mentally warped. They were corrupted for centuries in the Eldritch domains. Yet some claimed new domains and followers in faraway realms. The scheming Shadowborn helped the Wizard Kings escape their otherworldly prisons and return to Athla to establish themselves as gods over mortals.
+The Fourth Age heralds a new beginning where magical forces flow freely again. The returning Wizard Kings first preyed on bountiful and harmonic realms to hone their skills. They are no longer limited to their original mortal form and can create vastly different followers. A new mortal ruler rises to protect the Fields of Rebirth from the invasion. The mortal champion is ascending to Godirhood on Athla and challenged by old Wizard Kings who reclaim the realms from which they were banished. The mortal champion must prepare by mastering forbidden arts and rallying the population for an unparalleled confrontation in the universe. The conflicts occur on Athla and other worlds within the Astral Sea. Only by ascending to Godir can the mortal champion save the people from the dangers beyond the World Gates. The fate of all Godir in the Astral Sea is threatened by an unfolding grand plot in Magehaven.
+
+
+=== Setting ===
+AoW 4 takes place on Athla and other worlds in the Astral Sea. Athla is one of the oldest worlds, with great natural beauty and magical potency due to the convergence of Astral Flows. Through the ages, Athla had a pivotal role in the shaping of the cosmos with important battles of conquest and many Godir originate from this planet. The Elven Court of House Inioch was sacked by the first Athlan humans. In the Fourth Age, the Ascended Champion who joined the Pantheon of Godir at Magehaven, starts on the Valley of Wonders in the Blessed Continent on Athla. The Ascended Champion must build a new home for their tribe in the Valley of Wonders and overcome a clash with the returning Wizard Kings who seek power across the realms of the Astral Sea.
+All worlds beyond Athla are connected through the vast ethereal ocean called the Astral Sea. Some of these distant worlds are explorable by the mortal champions and claimable as their own. The ascended Mortal Champions and Wizards become godlike Godir capable of traveling between the worlds and create followers. The gathering of Godir on Magehaven became known as the Pantheon. Magehaven is a world in the Astral Sea where the Godir hold their forum of dispute and council. An unbreakable spell protects all living creatures and souls in Magehaven. Each Godir is part of the grand Pantheon of the Astral Sea. The most important alliances are the lawful Covenant and the conniving Shad’rai. The Covenant want to uphold ancient agreements of peace and stability. The chaotic Shad'rai believe no power should be hidden and invade worthy realms for domination. The Godir built magic portals called World Gates to allow near-instant access to new realms.
+
+
+== Gameplay ==
+AoW 4 is a turn-based strategy game set within a high fantasy universe. The core 4X-based gameplay is similar to the prequels with a plethora of improvements, new systems and deep customization. There are 2 turn systems options: Classic Turns and Simultaneous Turns. In Classic Turns mode, each player plays their turn in order. In Simultaneous Turns mode, all players play their turns simultaneously. However, battles have the classic "wait for your turn" style.
+
+
+=== Factions ===
+Each faction consists of a race and a Ruler. There are 20 official factions in the base game -- eleven led by mortal Champions of their faction, and nine led by Wizard Kings from abroad -- but you can build one yourself. Factions are defined by their starting race's physical form, culture, and traits, and by their first magical Tome. There are 10 physical forms in the base game -- Human, Dwarfkin, Elfkin, Feline, Goblinoid, Halfling, Molekin, Orcoid, Ratkin, and Toadkin -- and 36 traits. Rulers are defined by their origin (either Champion or Wizard King in the base game), with Wizard Kings being slightly freer in their customization than Champions. There are new faction creation and evolution systems, and an enhanced avatar character creator. The player's faction embodies their traits. Players can determine the research, build and evolution paths of their factions.
+
+
+=== Realms ===
+There are multiple official realms with distinct portal visions; The Fields of Rebirth, Valley of Wonders, The Crystalized Sands, Paradise Plains, The Infinite Forest, The Vacant Throne, The Husklands, The Frostbreeze Valleys. The Tiers indicate the difficulty level. The Valley of Wonders is the first story realm about the Rise of the Godir. The new realm creation options enable the player to customize and create new realms. There are a variety of traits such as geography, climate, inhabitants, environmental effects, rule modifiers, free city and unit modifiers. However, there is no map editor to design the shape of continents or islands.
+
+
+=== Narrative ===
+The new narrative engine adds encounters, diplomacy and events reactions to players. There are also story missions and narrative events. However, there is no linear story campaign with missions. The player can set Bounties which are optional quests with rewards for other Rulers.
+
+
+=== Cities ===
+The city domain expands based on population growth. Each province has optional improvements. Cities have separate queues for structures and units. Imperium is the resource for empire management.
+
+
+=== Combat ===
+The turn based combat has a new morale system, and clearly defined unit roles. There are many new units and abilities. The new siege system adds preparations and options for defenders.
+
+
+=== Tomes ===
+The game's tech tree is organized into groups called Tomes. There are over 50 tomes of magic, mostly divided into 6 affinities to the cosmic powers: Order, Chaos, Nature, Materium, Astral, and Shadow. Each affinity is opposed to a certain other affinity (Order and Chaos, for example), and focuses on a certain damage type more than the rest (such as physical damage for Materium).
+Each tome modifies your faction's affinity, which is also modified by culture, society traits, and narrative actions taken throughout the game. In turn, your affinity determines what Hero perks, empire perks, and higher-tier tomes you can obtain, and also affects how other factions receive you. Different affinities are better-suited to different victory options; both Chaos and Materium are well suited for Military, Nature is well suited for Expansion, Astral is well suited for Magic, Order is roughly suited for both Military and Expansion, and Shadow is roughly suited for both Expansion and Magic.
+
+
+=== Victory ===
+There are generally four ways to win a game, though the Empires & Ashes DLC adds a fifth:
+
+The Military Victory requires conquering all other Rulers in the game, either by conquering their Throne Cities and defeating them in battle, or by vassalizing them. In the case of the former, the order of action is very important; if a faction's Ruler is defeated first, other factions have 3 turns to take their Throne City, or else the Ruler will return from the Astral Void.
+The Expansion Victory requires holding a certain percentage of the realm's provinces, whether directly or through vassals with a high opinion of you, and is attained by building "Beacons of Unity" in provinces belonging to three different Cities. Once all three are built, the player receives a special action to light them; this gives other players and internal rebels 15 turns of notice, during which they can interrupt the victory by claiming one of the Beacons for themselves.
+The Magic Victory requires binding a certain amount of the realm's "Gold Ancient Wonders", special landmarks on the map occupied by dangerous foes. Binding an Ancient Wonder is different from merely claiming it, and requires an expensive spell from a third-tier magical Tome. Once enough Gold Ancient Wonders are bound, the player may summon an "Age of Magic" from one of the game's six fifth-tier magical Tomes. Like with the Expansion Victory, the realm has 15 turns to interrupt your Magic Victory, in this case by either defeating your Ruler or conquering one of your bound Gold Ancient Wonders; however, during those turns, you receive a number of powerful boons related to your fifth-tier Tome's affinity. This victory type was somewhat different at first, requiring powerful province improvements instead of Ancient Wonders; it was reworked two months after the release, to "lure the players out into the world" and make it less defensive.
+The Score Victory is issued to whomever has the highest score, once the current game runs out of turns. Points are earned by performing well militarily, diplomatically, economically, and in regard to expansion and magical research. In story realms, this victory type is disabled; however, some story realms have special victory conditions.
+AoW 4 also has "Allied Victories" as an optional setting, rewarding cooperative play. With Allied Victories enabled, all direct allies of the winner will also win. However, allied provinces don't count towards the Expansion Victory, and allies' bound Gold Ancient Wonders don't count towards the Magic Victory.
+
+
+== Development and release ==
+AoW 4 was announced on January 19, 2023 for the PlayStation 5, Windows, and Xbox Series X/S. It's powered by an upgraded Creator Engine which was also used for all the previous titles of Triumph Studios. Development took nearly 4 years. The central theme of AoW 4 is creation. AoW III's lower magic era has autumn hues, renaissance, and industrialization. In contrast, AoW 4 has fresh spring hues, early medieval/fantasy, creation and high magic. The art style has more fresh, green and blue tinted color palettes. The game launched on May 2, 2023.
+
+
+=== Music ===
+Michiel van den Bos composed the nearly 2 hours long OST of AoW 4. It consists of mostly completely new music material with a few nods to legacy AoW songs. On May 15, 2023, a lo-fi soundtrack of AoW 4 composed and mixed by Van den Bos was released on YouTube. It includes some classic AoW 1 and 3 songs. Van den Bos made 6 additional songs for the Empires & Ashes expansion.
+
+
+== Downloadable content ==
+Multiple DLC have been released for the game. Each one is optional and can be installed on the base game in any order.
+
+
+=== Expansions ===
+
+
+==== Empires & Ashes ====
+The first expansion of AoW 4 released on 7 Nov, 2023. It added the Avian form, the militaristic Reaver culture, four tomes, the Seals of Power victory mechanic, two story missions, an ancient wonder and an infestation location, wildlife units and mounts, and six music tracks by Van den Bos. The free Golem Update was released simultaneously for all players. It features the Item Forge, and reworks for core systems such as form traits.
+
+
+==== Eldritch Realms ====
+The second expansion released on 18 June 2024. It added new features: the Umbral Abyss map layer, the Eldritch Sovereign ruler type, three tomes (Tentacle, Corruption and Cleansing Flame), an event system with mini-crises, two forms (Insectoids and Syrons), two story realms, two mounts, three realm traits, three realm templates, five pre-made rulers, and six music tracks by Van den Bos.
+
+
+=== Content packs ===
+
+
+==== Dragon Dawn ====
+The Dragon Dawn content pack released on 30 June 2023. This DLC added Dragon Lords, the Lizardfolk form, the Dragon Ruler godir origin, additional tomes, and the Ashen War realm. The Wyvern Update was also released for all players. It includes new traits, Cavalry and mounted units, and world map improvements.
+
+
+==== Primal Fury ====
+The Primal Fury content pack added the forms Lupine and Goatkin, the Primal culture, new tomes, the Stormwreathed Isles realm, four Achievements, four new mounts and more, on 27 February 2024. The Wolf Update is free for all players and includes War Bounties, Hero Recruitment, a Necromancy overhaul, Pantheon Expansion and QoL improvements.
+
+
+==== Ways of War ====
+The Ways of War content pack was released on 5 November 2024. It features the Oathsworn Culture with warrior codes, intrigue events with betrayals and assassinations, 2 new forms (Simians, Ogrekin), 4 new tomes (Discipline, Shades, Calamity, and Prosperity). Additionally there's new mounts, music, ancient creature lines, realm templates and an interface skin.
+
+
+=== Rise from Ruin ===
+Rise from Ruin content pack was released on 9 March 2026. It added a new Culture, Physical Form, and new environmental challenges designed around a new nomadic playstyle.
+
+
+== Reception ==
+
+
+=== Critical reception ===
+Age of Wonders 4 received a "generally favorable" reception from video game publications on release, according to the review aggregation website Metacritic. PCGamesN said: "This is undoubtedly the best 4X game I've played in years, delivering top-notch exploration, combat, and diplomacy alongside a rewarding and dynamic customisation system." Polygon said: "Age of Wonders 4 is good fun as a solidly entertaining amalgamation of familiar things I love." PC Gamer called the game "A flavourful and inventive 4X".
+
+
+=== Sales ===
+The game sold 250,000 copies in less than a week by 9 May 2023. There were 42,826 peak concurrent Steam players on 1 May 2023.
+
+
+=== Awards ===
+AoW 4 won the Best Game award at the Dutch Game Awards in 2023. The judges said AoW 4 is an excellent continuation of the series, innovative within the strategy genre and combines old and new mechanics to create a masterpiece. It was added to the Collection of Sound & Vision for preservation.
+
+
+== References ==
+
+
+== External links ==
+Official website

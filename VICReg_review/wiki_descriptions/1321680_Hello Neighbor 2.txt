@@ -1,0 +1,90 @@
+Game: Hello Neighbor 2
+appid: 1321680
+Source: Hello Neighbor
+URL: https://en.wikipedia.org/wiki/Hello_Neighbor
+Match score: 7.60
+Retrieved: 2026-07-04
+--------
+Hello Neighbor is a stealth horror game originally developed by Dynamic Pixels, now developed by Eerie Guest Studios and published by tinyBuild. Initially released as public alphas from 2016 to 2017, it received a full release for Windows and Xbox One on 8 December 2017, later for PlayStation 4, Nintendo Switch, iOS and Android on 26 July 2018, and for Xbox Series X/S and PlayStation 5 on 27 March 2026.
+The player controls Nicky Roth, who witnesses strange happenings at the house of his next-door neighbor, Theodore Peterson. His goal is to successfully sneak into the basement of the house to uncover a dark secret while avoiding being caught by Theodore. One of the main selling points of the game was the neighbor's artificial intelligence (AI) that changed behavior based on the player's past actions, such as setting bear traps along the player's path in a previous attempt, putting water bucket traps above doors the player has used and setting up surveillance cameras in areas the player has consistently visited.
+While the initial alpha versions of Hello Neighbor were received positively, the final product was met with largely negative reviews. The gameplay, puzzles, control scheme and technical performance were heavily criticized, but the story elements and characters were praised. The game spawned a franchise, beginning with a prequel, Hello Neighbor: Hide and Seek, released in December 2018. Two multiplayer spin-offs, Secret Neighbor and Hello Engineer, were released in October 2019 and October 2021, respectively. A standalone sequel, Hello Neighbor 2, was released in December 2022. A second sequel, Hello Neighbor 3, is in development.
+
+
+== Gameplay ==
+In Hello Neighbor, the player character has moved into an old house across the street from a mysterious neighbor who is behaving abnormally and seems to be keeping a secret in his basement. The player's task is to find the details and brutal secrets of the neighbor's house and solve a series of puzzles to collect the item(s) needed to unlock and access his basement. As the player explores the neighbor's house, they must not be spotted by the mysterious neighbor, or they will be chased down, and if the player is not quick enough to hide or escape, they will be captured and be sent back out onto the street. The player can stun the neighbor by throwing objects at him for an easier escape. If the player is caught or suffers a serious injury, they will be sent back to their own house and will have to break in again. Upon starting again, the player must be more careful, as the neighbor will deduce movements from the last attempt and set up traps. The player can use the game settings to turn on "friendly" neighbor mode, preventing the neighbor from setting these traps and causing him to be less aggressive in his pursuits. However, he is still to be avoided at all costs.
+The game is divided into four acts: Act 1 to 3 and Act Finale. The game is played in a first-person perspective; the player must aim a reticle at certain objects to interact with them or to throw or use a held item (for example, throwing a ball at a window or aiming a crowbar at nails to remove them). Up to four items can be kept in an inventory space. Items of the same kind cannot be stacked together in one slot. The controls are, of course, different on different platforms.
+
+
+== Plot ==
+
+Act 1 begins in 1996. A boy named Nicky Roth is playing on the street of Raven Brooks when he passes by the home of his neighbor, Theodore Peterson. Nicky hears screaming and approaches Theodore's window to witness him forcing what appears to be a child into his basement, but is caught and ejected by Theodore. From here, Nicky manages to sneak into Theodore's house, avoids his pursuit and enters the basement to discover it's been turned into a complex maze. Nicky finds a heavily locked door, but is captured by Theodore and locked inside a desolate room.
+Some time later, in Act 2, Nicky manages to escape his cell with the help of Theodore's son, Aaron, and escapes the basement only to find that Theodore has erected a massive fence around his property to prevent anyone from entering or escaping. Nicky is forced to solve several puzzles to find a way to escape Theodore's property. After crossing the fence Nicky flees back to his home escaping Theodore, who, hearing a loud crash, does not give chase and instead simply stares at Nicky before locking up his house.
+Act 3 takes place in 2015. A now adult Nicky is evicted from his apartment and he decides to return to his old family home. He discovers that Raven Brooks has heavily decayed in the intervening period: his house is in disrepair while Theodore's home is nothing but a pile of ruins. Returning home Nicky is haunted by a shadowy creature ("The Thing") but believes himself to be hallucinating. After going to sleep, Nicky is awoken by a child's scream and discovers the ruins of Theodore's house has become a massive surreal complex. Nicky navigates the house and is repeatedly forced to confront his fears and The Thing. Eventually, he enters the basement which has also become larger and more exaggerated and is once again chased by Theodore.
+Act Finale has Nicky reach the depths of the basement where he finds a cardboard representation of Aaron and a giant version of Theodore with a replica of the house on his back. Nicky knocks over the giant Theodore and enters the house where his younger self is being attacked by The Thing. Nicky is able to defend himself from The Thing, growing larger and ultimately defeating the entity. Afterwards Nicky sees Theodore in a small two-room house where he has barricaded himself in against a smaller Thing.
+Theodore sees Nicky and runs desperately towards the window as if to ask for help, but then sighs and turns away from Nicky, leaving his Thing boarded up in the other room. Unable to help Theodore, Nicky leaves through an exit door and wakes up from the dream. Afterwards, Nicky goes outside to unload his car and properly move in to his childhood home.
+
+
+== Development ==
+Russian studio Dynamic Pixels started development of Hello Neighbor in May 2014. The game was released as an alpha build in 2015. It was later approved for sale as an early access game by the Steam Greenlight program and a Kickstarter campaign was launched to fund further development but ultimately failed to reach its goal of $100,000, only raising $12,809. However, the studio later signed a deal with tinyBuild to fully fund and publish the project. The pre-Alpha version of the game was released on 29 September 2016. The Alpha 1 version of Hello Neighbor was released on 26 October 2016. Alpha 2 was released on 22 November 2016. Alpha 3 was released on 22 December 2016. Alpha 4 was released on 4 May 2017.
+The game went into its beta phase on 25 July 2017. For Halloween 2017, a promotional mod was released including multiple elements from the indie game Bendy and the Ink Machine. The mod includes a black and yellow tint, ink, music from the game, and multiple appearances of Bendy. The game was originally set for a full release on 29 August 2017, but was delayed until 8 December 2017.
+The game was released for Microsoft Windows and Xbox One on 8 December 2017. A timed Microsoft exclusive, Hello Neighbor was later ported to the Nintendo Switch, PlayStation 4 and mobile devices. The mobile versions of the game are only supported on a limited number of devices and come with a free trial that allows players to play through Act 1, with the option to unlock the remaining two Acts and the Finale with an in-game purchase.
+
+
+== Reception ==
+
+Review aggregator website Metacritic reports "generally unfavorable reviews" for Hello Neighbor on all platforms. Criticism was directed towards the gameplay, control scheme and technical performance, though it was praised for its story aspects and art style.
+
+
+== Sequels ==
+
+
+=== Games ===
+In July 2020, tinyBuild acquired the development team from Dynamic Pixels to establish a new studio by the name of Eerie Guest Studios and invested US$15 million into the Hello Neighbor series.
+
+
+==== Hello Neighbor: Hide & Seek ====
+A prequel to Hello Neighbor, titled Hello Neighbor: Hide & Seek, was announced during PAX West in August 2018, and released on 7 December 2018, on the same platforms as the original game, including non-Microsoft systems. Set several years before the events of the original game, Hide & Seek deals with the events in Theodore Peterson's life that caused him to become a recluse.
+
+
+==== Secret Neighbor ====
+Secret Neighbor, a multiplayer spin-off of Hello Neighbor, was announced on 10 June 2018 and released on 24 October 2019 for Xbox and PC. 
+
+
+==== Hello Engineer ====
+Hello Engineer, a multiplayer machinery-building construction game set in the Hello Neighbor universe, was announced on 20 October 2020. A gameplay reveal trailer was released four days later. In Hello Engineer, the Rescue Squad explore an open world based on the abandoned Golden Apple Amusement Park and must collect scrap to build various machines while avoiding Mr. Peterson's attempts to catch them. The game was released for the cloud gaming service Google Stadia on 26 October 2021,  and was fully released on 17 August 2023 for PlayStation 4, Xbox One, Nintendo Switch and Microsoft Windows via the Steam marketplace.
+
+
+==== Hello Neighbor Nicky's Diaries ====
+Hello Neighbor Nicky's Diaries (also known as Hello Neighbor: Diaries in promotional material) is a mobile spin-off to the first Hello Neighbor, and was released in 11 regions on 22 June 2022, as a test launch. The game was released globally on 6 December 2023.
+It was originally intended as a "Mobile Expansion", which had the player going around in "Weeks" to complete "Daily" tasks which hinted at the future of the franchises, being one of the first places more info about the Guest was shown, this build is still available on iOS in some countries to this day.
+The game recaps the events of the first Hello Neighbor book, Missing Pieces, and was intended to get content updates to recap the other 2 books in the Nicky Trilogy, however this never happened, as DeMagic has since been shuttered, with no new updates being released since launch.
+
+
+==== Hello Neighbor 2 ====
+A new Hello Neighbor game initially titled Hello Guest was later revealed to be the Pre-Alpha of Hello Neighbor 2 and on 23 July 2020, it was announced as the sequel to the original game. On this same day, Alpha 1 was also released, with Alpha 1.5 releasing on 26 October 2020. The sequel was announced to be available for Microsoft Windows and Xbox Series X/S. On 10 December 2021, it was announced that a closed beta would be released on 7 April 2022, which would only be available to those who pre-ordered the game. On 10 February 2022, it was announced that Hello Neighbor 2 would also release on PlayStation 4 and 5. tinyBuild announced that the full game was expected to release on 1 December 2022 for anyone who bought early access with the games deluxe edition before releasing publicly on 6 December 2022, which it did.
+
+
+==== Hello Neighbor: Search and Rescue ====
+A VR title in the Hello Neighbor franchise titled Hello Neighbor: Search and Rescue was announced on 3 November 2022. The game is made by Steel Wool Studios in collaboration with tinyBuild. The game was released on the PlayStation VR2, Meta Quest 2, and PCVR Headsets via the Steam Storefront on 25 May 2023, with a PlayStation VR version releasing on 24 November 2023.
+
+
+==== Hello Neighbor 3 ====
+In November 2024, TinyBuild and Eerie Guest Studios announced that Hello Neighbor 3 was in development. In April 2026 Eerie Guest Studios released a Pre-Alpha for it, before which they made three prototypes along with dev logs posted to their YouTube channel. As of June 2026, there's no confirmed release date yet, and there is currently a version of Hello Neighbor 3 on Steam.
+
+
+== Other media ==
+
+
+=== Animated series ===
+An animated series made for television based on Hello Neighbor was announced on 17 April 2020, with a pilot episode releasing on YouTube the same day for YouTube members, with the extended cut releasing for everyone in June of the same year. The pilot was watched by more than 11 million viewers within the first week, which to tinyBuild's CEO Alex Nichiporchik, "demonstrated the strength of Hello Neighbor as a franchise".
+
+
+=== Film adaptation ===
+On November 8, 2024, the YouTube channel of tinyBuild announced that a film adaptation of Hello Neighbor is in development with BoulderLight Pictures. Tyler MacIntyre, who co-wrote the story for Five Nights at Freddy's (2023) and Tragedy Girls (2017; for which he also directed and co-wrote the screenplay), will be writing the script, and tinyBuild CEO Alex Nichiporchik and Welcome to Raven Brooks co-creator Jonathan Joyce will be the producers, though its film distributor is unknown.
+
+
+== References ==
+
+
+== External links ==
+Official website

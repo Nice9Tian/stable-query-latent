@@ -1,0 +1,51 @@
+Game: Close to the Sun
+appid: 968870
+Source: Close to the Sun (video game)
+URL: https://en.wikipedia.org/wiki/Close_to_the_Sun_(video_game)
+Match score: 7.47
+Retrieved: 2026-07-04
+--------
+Close to the Sun is a first-person horror adventure video game developed by the Italian video game producer Storm in a Teacup and published by the British company Wired Productions. Developed using the Unreal Engine, the game was released on 2 May 2019 for Microsoft Windows and versions for the PlayStation 4, Xbox One and Nintendo Switch, ported by Warp Digital, were released on 29 October 2019. A version for Amazon Luna was made available on 5 December 2022.
+In the game, the player guides a journalist named Rose Archer, who seeks to save her sister, Ada. Set in an alternate reality in 1897, the two prominent inventors Nikola Tesla and Thomas Edison fight for technological predominance on the globe. Close to the Sun almost exclusively takes place on the colossal sea cruiser Helios; operated by Tesla, it serves as a hub for the world's most successful scientists and inventors.
+The game was noted for its many similarities with the BioShock series. It received praise for its story and graphics, but received criticism for its gameplay.
+
+
+== Gameplay ==
+Game play focuses on acquiring inventory objects and solving puzzles, interspersed with chase sequences where the player runs away from a killer or monster.
+
+
+== Synopsis ==
+
+
+=== Setting ===
+The game takes place in an alternate 1897, during a technological arms race between Nikola Tesla and Thomas Edison.
+Most of the game takes places on the Helios, a gigantic ocean liner named after the Greek god of the sun, intended by Tesla to serve as a "haven for the greatest scientific minds". The Helios is the largest ship in the world, containing laboratories, personal quarters, gardens, an internal rail system, and a large Tesla Tower. The ship is owned and managed by Tesla's fictional company "Wardenclyffe," named for the official name of the historical Tesla Tower, "Wardenclyffe Tower."
+Information about the setting can be gleaned through documents such as letters and newspapers scattered through the ship. These documents hint at growing tensions between Tesla and Edison, Tesla's paranoia, and various scientific breakthroughs. Flies, rats, carrion birds, and a destroyed environment contrast with a grandiose style.
+
+
+=== Plot ===
+The game opens with protagonist Rose Archer boarding the Helios after receiving a mysterious letter from her sister Ada, who works on board as a lead researcher. Included with the letter is a strange communication device, which various characters use to communicate with Rose throughout the game. Upon entering the seemingly deserted front lobby, Rose becomes trapped when the doors lock, revealing that the ship is under quarantine.
+While traveling through the ship, Ada uses the communicator to contact Rose. Ada denies sending the letter to Rose. They decide to meet in Ada's room. Upon entering the living quarters, Rose discovers the mutilated bodies of several scientists, as well as the words, "Time is not a River" and "The Circle must be Broken" scrawled on the walls in blood. Ada reveals that there was an accident in one of the experiments aboard the ship, which had to do with time. She also reveals the game is set in a one-electron universe, and that the ship's seemingly endless supply of electricity was being pulled from time itself. Ada also decides that the letter must have been sent by a future version of herself, using her research.
+As she travels through the ship, Rose sees glowing gold figures that appear to be visions of the past, showing daily life on the ship before the accident. Rose also converses with a man named Aubrey, who is trapped in the Engine room and requests her help, but Rose will only help him if she can do it while helping her sister. Aubrey reveals that he talks to the corpses he's trapped with, including one named "Benny".
+While attempting to reach Ada's room, Rose discovers that Ada's friend Loretta has committed suicide after sabotaging the experiment on the orders of a mysterious blackmailer. Upon reaching Ada's room, her sister informs her over the communicator that she has become trapped in the biology lab, and that Rose needs to a notebook with her research. Rose finds the notebook, only to then be trapped within the room by Tesla who claims to be trying to manage the situation. Aubrey is able to unlock the door, and in return, Rose promises to save him. On her way to the onboard rail system, she witnesses a man kill another scientist with a knife. Aubrey calls him Ludwig and instructs Rose on how to escape through a nearby rail-station and onto a rail-car. However Ludwig sees Rose and begins to chase her. He shows knowledge of who she is and blames her for the current predicament, despite Rose having no prior knowledge of him. Rose escapes him onto a rail-car.
+The rail-car derails, forcing Rose to travel to the biology labs on foot. On her way, she encounters a strange blue mist that Aubrey calls "Exotic Energy", derived from the time-electricity experiments. Rose then witnesses a monster killing two scientists, and the monster chases after her. Aubrey saves her. He calls the monster a "Time Anomaly", calls them "antibodies" within time, and says they can only appear in the presence of Exotic Energy.
+Rose finds herself near an observation deck to the surgery area and briefly reunites with Ada, however Exotic Energy begins to flood the room. Ada directs Rose to find her second notebook containing the rest of her research, which she has hidden in the theater, before a Time Anomaly kills her. Rose makes her way to the Theater where visions of Ada and Tesla direct her towards the second notebook.
+Just as Rose finds the notebook, she once again encounters Ludwig. Escaping, she accidentally lures Ludwig onto a section of a broken bridge and he falls into a fire to his death. She then reaches the engine room. Aubrey ambushes Rose upon her arrival, revealing that he was listening in on her conversations with Ada, and that he was responsible for the flood of Exotic Energy that caused Ada's death, motivated by jealousy over her position and his demotion from scientist to engineer. He wanted to take Ada's research, use it to seal the rift caused by the experiment, and use his heroics to return to Tesla's good graces. Rose threatens to kill him, causing him to flee. An injured Rose is set upon by more Time Anomalies.
+Rose is rescued by Tesla, who is able to drive off the Time Anomalies. He tends to her wounds and leaves when she regains consciousness, believing that Ada's research is beyond Aubrey's understanding and that he will only make the rift worse. He asks Rose to climb the Tesla Tower and confront Aubrey. As Rose makes her way to the tower, she passes through the surgery but discovers that Ada's body is missing. She then sees a vision of herself carrying Ada's body into a garden.
+Aubrey diverts power from other parts of the ship in an attempt to close the rift, but only makes things worse. Rose begins her ascent of the tower and distracts Aubrey long enough for Tesla to arrive and try and fix the problem. Ludwig appears just as Rose arrives, severely injured but alive. He stabs Rose in the hand and kills Aubrey, declaring his intention to break the circle. Ludwig tries to kill Tesla as well, but Rose saves Tesla by electrocuting Ludwig to death. Tesla orders Rose to escape with Ada's research.
+Rose is able to flee the tower before its collapse, and Tesla contacts her, revealing that even he does not understand how he survived. He directs Rose to his personal escape pod, which ejects from the sinking ship. The game ends on a cliffhanger with Rose in the pod and Tesla saying that Ada's research is the key to everything and that they will be able to save her.
+
+
+== Reception ==
+
+Close to the Sun received "mixed or average" reviews, according to review aggregator Metacritic.
+IGN reviewed the game positively, writing, "While the sometimes-obtuse puzzles and slow pacing can cause frustration and repetition, this is a harrowing and thoughtfully designed adventure from start to finish." Adventure Gamers praised the unique setting, visual design, voice acting, and alternate history backstory, while criticizing the slow movement speeds, lack of substantial player interaction, technical issues, and overreliance on jump scares and clunky chase scenes.
+Push Square similarly awarded the PS4 port with 6/10 stars, appreciating the environment design, thick atmosphere, and intriguing setting while disliking the narrative climax and the game's inability to remain engaging.
+Nintendo Life gave the Switch port 5/10 stars and loved the world and tense atmosphere but cited the technical sacrifices, poorly executed premise, and lack of scariness as major drawbacks. Nintendo World Report gave the port a 6/10, lauding the art direction, jump scares, tense sequences, and engaging premise, and took issue with poor story execution, chase sequences, and technical issues exclusive to the port.
+
+
+== References ==
+
+
+== External links ==
+Official website

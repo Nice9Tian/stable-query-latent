@@ -1,0 +1,36 @@
+Game: Patrick's Parabox
+appid: 1260520
+Source: Patrick's Parabox
+URL: https://en.wikipedia.org/wiki/Patrick%27s_Parabox
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Patrick's Parabox is a puzzle video game created by indie developer Patrick Traynor. Originating as a short demo built in 2020, the game was expanded and released on 29 March 2022 for PC, followed by a release on the Nintendo Switch and PlayStation 5 on 26 July 2023. The game centers around playing with infinity and recursion by pushing boxes into and out of other boxes, sometimes in and out of itself, in order to finish the level by putting boxes into their spaces.
+
+
+== Gameplay ==
+
+In each level, the player is presented with a puzzle containing boxes and marked spaces. One of the boxes represents the player and it can be controlled. Movement in the game is Sokoban-like where the player moves and pushes boxes around. In addition to this, the player can also enter and exit boxes. If a box is pushed into another box that has an opening on its edge, the box will shrink to fit inside. Conversely, if a box is pushed towards an open edge of the box it is currently in, it will grow and move outside of the box. In some levels, it is possible for a box to contain itself leading to recursion. Because of this, there are ways to create a paradox, such as pushing a box outside of itself. To win the level, all the marked spaces must be covered by boxes and the player must end up on the space marked as the player's goal. The levels follow a main "path" in the game along with side levels as optional challenges. The game contains 364 levels.
+
+
+== Development and release ==
+The idea for the game first came to Traynor when he was part of the game development club at UC San Diego. It started as a Sokoban-like stealth game with a co-op mechanic where one player can push blocks around while the other player is shrunken-down and can move inside the blocks. Traynor picked up this idea four years later and decided to code it up for any number of layers as a programming challenge. The core concepts of the game were inspired by juner's Sokosoko on itch.io. During development, the game lent itself to a "traditional puzzle game format", where each puzzle introduces a new concept and builds upon previous concepts.
+The game was developed with Unity. The graphics and animations of the game were designed by Traynor, and the music was composed by Priscilla Snow.
+A demo version of the game was released on 16 June 2020. Patrick's Parabox was released on 29 March 2022 for Microsoft Windows, Linux, and macOS, followed by a release for the Nintendo Switch and PlayStation 5 on 26 July 2023.
+
+
+== Reception ==
+
+Patrick's Parabox won the "Developer Choice" award at the 2019 IndieCade Festival. It also won the "Excellence in Design" award at the 2020 IGF Awards. According to review aggregator Metacritic, it received "generally favorable" reviews.
+Eurogamer writer Edward Hawkes said that the game was "morish, and captivating and never monotonous" and Katharine Castle of Rock, Paper, Shotgun described it as an "infinitely pleasing puzzle game." The game also received positive reviews on PCGamer and Kotaku.
+
+
+== References ==
+
+
+=== Primary sources ===
+In the text, these references are preceded by a double dagger (‡):
+
+
+== External links ==
+Official website

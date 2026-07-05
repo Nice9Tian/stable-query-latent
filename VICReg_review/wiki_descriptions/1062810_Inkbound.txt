@@ -1,0 +1,25 @@
+Game: Inkbound
+appid: 1062810
+Source: Inkbound
+URL: https://en.wikipedia.org/wiki/Inkbound
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Inkbound is a 2024 turn-based tactics video game where one to four players fight through a series of monster encounters. Encounters are turn-based; on each turn players can move their character up to a certain distance, and receive a certain amount of mana to use on abilities. The game is presented in an isometric view, and each turn players are given perfect information on what actions enemies will take and how much damage they will deal. Each encounter is time-limited by a circle that shrinks each turn.
+Developed and published by Shiny Shoe, who previously developed Monster Train (2020), Inkbound was released into early access in May 2023, and was fully released on 9 April 2024 for Windows. Inkbound received "generally favorable" reviews. Critics praised the balance, pace, and variety of gameplay, while being more critical of the art and interface.
+
+
+== Gameplay ==
+Inkbound is a turn-based, role-playing and roguelike game for one to four players. Players control Needless, servants of a library world, who fight monsters in order to rewrite history. These monsters are fought in a series of turn-based encounters, on each turn players can move their character up to a certain distance, and receive a certain amount of mana to use on abilities. Players are given perfect information on what actions enemies will take and how much damage they will deal. Each encounter is time-limited by a circle that shrinks each turn.
+
+
+== Reception ==
+
+Inkbound received "generally favorable" reviews according to review aggregator Metacritic. 90% of critics recommended the game, according to OpenCritic.
+
+
+== References ==
+
+
+== External links ==
+Official website

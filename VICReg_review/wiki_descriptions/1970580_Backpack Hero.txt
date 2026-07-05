@@ -1,0 +1,29 @@
+Game: Backpack Hero
+appid: 1970580
+Source: Backpack Hero
+URL: https://en.wikipedia.org/wiki/Backpack_Hero
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Backpack Hero is a roguelike video game developed by Jaspel and published by Jaspel, IndieArk, and Different Tales. It was released in November 2023 for Windows, macOS and Linux (via Steam, GOG and Epic Games Store) and Nintendo Switch. Ports for PlayStation 4, PlayStation 5, Xbox One, and Xbox Series X/S, were released on June 11, 2024. Described as an "inventory management roguelike", the gameplay revolves around how well the player organizes their bag, which is based on a grid system similar to the briefcase in Resident Evil 4. Backpack Hero launched to generally positive reception.
+The game was Initially funded via Kickstarter and made available for early access on August 15, 2022.
+
+
+== Gameplay ==
+Backpack Hero's "face of the game" and first playable hero is Purse, a rat. The game features five different playable characters, each with different gameplay. Resources gathered in dungeons can be spent in a town on the overworld in order to upgrade buildings and unlock new characters.
+
+
+== Development ==
+The game was funded on Kickstarter for US$223,893, out of a US$20,000 goal. Main developer Jasper Cole stated that the game drew inspiration from Slay the Spire, Into the Breach and XCOM. He cited the original Deus Ex and its grid-based inventory as an additional inspiration. It was initially created as a game jam game, but when its popularity drastically increased, he quit some of his jobs in order to work on it full-time.
+The game launched for Windows, macOS and Linux via Steam Early Access in August 2022, and spent over a year in development before being released in full in November 2023, when the game would also be released on GOG.com and ported to the Nintendo Switch. Home console ports for PlayStation and Xbox followed in June of the following year. 
+Since launch, the game has continued to receive updates, mostly focused on bug fixes and balance adjustments, with occasional content updates. 
+
+
+== Reception ==
+
+The PC and Nintendo Switch versions of Backpack Hero both received generally favorable reviews from critics, according to the review aggregation website Metacritic. Fellow review aggregator OpenCritic assessed that the game received fair approval, being recommended by 64% of critics.
+Robert Purchese of Eurogamer said he was "impressed" by Backpack Hero, calling it "very charming" with "friendly pixelated characters". He called the gameplay initially "a bit awkward", but having a great deal of tactical opportunity once the player learned more about it. He noted his desire for backpacks in video games "to be visible again". Sorrel Kerr-Jung of Destructoid praised the game, calling it "one of the most inventive deckbuilders" she had ever played. She criticized the game's actual combat as "bland and repetitive", but also noted that "it may feature the best inventory management system ever", making each pickup feel like a puzzle. She stated that each playable character reinvented the game by drastically modifying the gameplay, saying that the game was "richer and more engaging than plenty of full games" even before its city-building aspect had been added.
+Jared Nelson of TouchArcade said that the game's concept was "anything but boring", expressing his wish that the game was released on mobile platforms in the future. Jonathan Bolding of PC Gamer said he "quite enjoyed" the game, saying he liked how combos were built.
+
+
+== References ==

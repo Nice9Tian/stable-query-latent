@@ -1,0 +1,33 @@
+Game: Jupiter Hell
+appid: 811320
+Source: Jupiter Hell
+URL: https://en.wikipedia.org/wiki/Jupiter_Hell
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Jupiter Hell is a roguelike video game developed by ChaosForge and published in 2021 by Hyperstrange.  It is a spiritual successor to DRL and adapts first-person shooter gameplay to a tactical roguelike.
+
+
+== Gameplay ==
+Players control a marine, technician, or scout on a demon-infested science base on the moons of Jupiter.  The labs are procedurally generated and tile-based, shown from a top-down perspective.  Combat is turn-based and tactical.  Multiple weapons are available, each of which has different strengths, such as stopping power, accuracy, and ammunition capacity.  A queue controls whose turn it is.  Shooting, reloading, and other actions push one's next action later in the queue depending on their cost.  Fast players or enemies who perform low-cost actions may act multiple times before their opponents.  Cover provides protection, but players are encouraged to move around.  Characters can be customized through skill trees.
+
+
+== Development ==
+ChaosForge previously developed DoomRL, which reimagined the first-person shooter Doom as a traditional ASCII-based roguelike.  DoomRL was renamed to DRL after Zenimax, Doom's rights-holder, complained.  Jupiter Hell is a spiritual successor to DRL, using a similar premise in an original setting with 3D graphics.  Zenimax's cease and desist letter about DoomRL, which was sent during Jupiter Hell's Kickstarter crowdfunding campaign in 2016, ignited widespread coverage on high-profile gaming websites, but ChaosForge said it did not translate into nearly as much interest as the existing community built up around DoomRL.  Jupiter Hell entered early access in August 2019 and was released on August 5, 2021.
+
+
+== Reception ==
+Jupiter Hell received positive reviews on Metacritic.  RPGFan made it an editor's choice and said "while being any good at it requires a time commitment, the rewards are exhilarating".  NME called it "a must-have for strategy fans and curious Doom fans alike". Bloody Disgusting said the mash-up of genres "works well" and "provides a compelling game" whether played in short bursts or long-term.
+
+
+== Jupiter Hell Classic ==
+
+ChaosForge announced a spinoff to Jupiter Hell in August 2024 titled Jupiter Hell Classic, built off of the DRL engine. This announcement was also paired with the first DRL release in over 11 years. Jupiter Hell Classic is billed as both a total conversion and expansion pack of DRL and a demake of Jupiter Hell with added features at both the game and engine level.
+The first release of Jupiter Hell Classic was released on August 15, 2025 as an early access game on Steam.
+
+
+== References ==
+
+
+== External links ==
+Official website

@@ -1,0 +1,41 @@
+Game: Wasteland 3
+appid: 719040
+Source: Wasteland 3
+URL: https://en.wikipedia.org/wiki/Wasteland_3
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Wasteland 3 is a role-playing video game developed by inXile Entertainment and published by Deep Silver. It is a sequel to Wasteland 2 (2014) and was released for Microsoft Windows, PlayStation 4 and Xbox One on August 28, 2020. A Linux and macOS port was released on December 17, 2020.
+
+
+== Gameplay ==
+Wasteland 3 is a squad-based role-playing video game featuring turn-based combat. Played from an isometric perspective, the game features synchronous and asynchronous multiplayer. In the game, players need to make various choices, which have different impacts on the game's world and the story. The game introduces a vehicle that the players can use to traverse the world. The main campaign can be played cooperatively with another player.
+
+
+== Plot ==
+
+Wasteland 3 is set in the frozen wastelands of a post-apocalyptic Colorado. The player takes control of two members from Arizona Ranger Team November, who survived after their unit was ambushed while on a mission in Colorado. The two survivors are subsequently forced to work with the local ruler, known as the "Patriarch", in order to earn his support for the Arizona Rangers - after the last game, and the choice between Highpool and Ag Center, the Rangers are struggling to keep order in the face of increasingly severe shortages of food and water.
+Once arrived and settled, the rangers are informed by the Patriarch that they are to hunt down and rein in his three heirs, who have gone wild and begun fighting each other to succeed him, as well as fight to preserve his rule over the many settlements and scattered populations that make up Colorado. However, as the story unfolds, the rangers discover the extent of the Patriarch's brutality, and are contacted by Angela Deth (a returning NPC from previous Wasteland games) who asks for their help in sparking a rebellion against the Patriarch. Player must then decide whether to uphold the original bargain or work to free Colorado and potentially endanger the future of Arizona.
+
+
+== Development and release ==
+Wasteland 3 was announced by inXile Entertainment in September 2016. Wasteland 3 was developed using the Unity game engine. The development team is composed of people who worked on Torment: Tides of Numenera (2017). As with Wasteland 2, inXile chose to crowdfund the development of the game. Unlike their previous Kickstarter projects, inXile chose to use equity crowdfunding service Fig. The crowdfunding campaign launched in October 2016, and concluded a month later with over $3 million raised.
+The game was scheduled to launch on Linux, PlayStation 4, Windows and Xbox One in Q4 2019. After Xbox Game Studios acquired the company, inXile hired more staff for the game's development and delayed its release date to early 2020. The game's budget was three times more than Wasteland 2. The additional budget was mostly spent on implementing conversational scenes and hiring voice actors. It was delayed again due to inXile's remote working conditions from the COVID-19 pandemic, while the Mac and Linux versions were postponed to an undisclosed date due to developer's "decision to focus Wasteland 3's initial release on Windows 10, Xbox One, and PlayStation 4". The game was eventually ported to Linux and macOS in December 2020.
+Two expansions, titled Battle of Steeltown and Cult of the Holy Detonation, were released on June 3, 2021, and October 5, 2021.
+
+
+== Soundtrack ==
+The soundtrack received special attention from inXile's Brian Fargo when he hired Mary Ramos, known for her work as Quentin Tarantino's music supervisor to create music for Wasteland 3. Inspired by the idea of future civilizations not having context for the meaning or intent of a piece of music or lyrics they might find, the soundtrack includes post-apocalyptic versions of the Welcome Back (Kotter) and Green Acres theme songs, Wang Chung's "Everybody Have Fun Tonight", as well as American anthems and bible hymns. Mark Morgan (Wasteland 2, Fallout, Fallout 2) returned to add his unique take on an atmospheric score for the post-apocalypse.
+
+
+== Reception ==
+
+The game received generally positive reviews upon release, getting a score of 85/100 from critics on review aggregator platform Metacritic. By December 2021, the game had attracted more than 2 million players.
+It was nominated for the category of Best Role Playing at The Game Awards 2020, as well as "Role-Playing Game of the Year" at the 24th Annual D.I.C.E. Awards, but lost both to Final Fantasy VII Remake.
+
+
+== References ==
+
+
+== External links ==
+Official website

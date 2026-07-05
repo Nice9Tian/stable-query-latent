@@ -1,0 +1,32 @@
+Game: Steelrising
+appid: 1283400
+Source: Steelrising
+URL: https://en.wikipedia.org/wiki/Steelrising
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Steelrising is an action role-playing video game developed by Spiders and published by Nacon. The game was released for Windows PC, PlayStation 5, and Xbox Series X and Series S in September 2022.
+
+
+== Gameplay ==
+Steelrising is an action role-playing video game played from a third-person perspective. As the player progresses and defeat enemies, they will collect Anima Essence, which can be used to upgrade weapons and skills. Upgrading the character can only be done at "Vestal" checkpoints found throughout the world. The Vestal checkpoints allow the player character to rest to replenish their health. The player is encouraged to play aggressively, as stamina refills after a brief cooldown. The game features an "Assist mode", which allows the player to manually adjust various factors of gameplay in order to lower the difficulty.
+
+
+== Story ==
+In an alternate version of the French Revolution, King Louis XVI has created an army of clockwork automatons (Automats) and rules Paris with fear. Marie Antoinette implores her Automat bodyguard, Aegis, to leave and find her surviving children, as well as what has happened with King Louis. Aegis manages to find Gilbert du Motier, Marquis de Lafayette, who is attempting to rally a group of the National Guard, but they have been slaughtered by a Titan, a massive Automat built by Louis and the Comte. Aegis first attempts to find her creator, whose workshop has been ransacked, before being directed to find several high ranking members of the Estates-General, who appear to have all been marked for death by Louis. Other real-life historical figures who appear in the game's story include Maximillien Robespierre, Jacques Necker and Alessandro Cagliostro.
+
+
+== Development ==
+Steelrising was developed by French studio Spiders, which previously released titles including The Technomancer and GreedFall. According to CEO and lead writer Jehanne Rousseau, the gameplay of Steelrising was heavily inspired by the Soulsborne games. Publisher Nacon announced the game in July 2021. It was originally set to be released in June 2022, though it was subsequently delayed to September the same year. 
+
+
+== Reception ==
+
+According to review aggregator website Metacritic, Steelrising received "mixed or average" reviews.
+
+
+== References ==
+
+
+== External links ==
+Official website

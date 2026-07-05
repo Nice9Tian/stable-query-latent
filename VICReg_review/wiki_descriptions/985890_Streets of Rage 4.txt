@@ -1,0 +1,59 @@
+Game: Streets of Rage 4
+appid: 985890
+Source: Streets of Rage 4
+URL: https://en.wikipedia.org/wiki/Streets_of_Rage_4
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Streets of Rage 4 is a 2020 beat 'em up game developed by Dotemu, Lizardcube, and Guard Crush Games and published by Dotemu. The game is a continuation of Sega's Streets of Rage trilogy, originally released for the Sega Genesis during the 1990s. It was released for Nintendo Switch, PlayStation 4, Windows, Xbox One, Linux, and macOS, in 2020, for Stadia in 2021, and Android and iOS in 2022. Streets of Rage 4 received generally positive reviews and sold over 2.5 million copies by April 2021. An expansion, Mr. X Nightmare, was released in July 2021.
+
+
+== Gameplay ==
+Carrying on the style of gameplay from previous entries in the Streets of Rage series from the early 1990s, Streets of Rage 4 is a side-scrolling beat 'em up in which up to four players locally or two players online fight against waves of enemies, aided by disposable weapons and item pickups. Alongside standard attacks, throws, and Blitz Moves, each player character has a set of special attacks that can be performed at the cost of some health. In this game, however, players can restore health spent on a special attack by performing successive follow-up attacks without getting hit. Each player character also has unique super combo, "Star Moves", which can be performed by collecting Stars in each level. A new combo system is introduced, along with the ability to juggle opponents against walls and other players, allowing players to earn extra points by stringing together long combos without getting hit. Each character has unique traits, such as Max's wall jump and grappling jump, Shiva's weapon parry mechanics and aerial rave/air combo, and Floyd's long-range grapple.
+The main gameplay mode, Story Mode, sees players going through each level as the story is told, with a stage select unlocked after clearing Story Mode. Set ten years after the events of Streets of Rage 3, the story features the playable characters fighting to free Wood Oak City from the control of the Y Twins, the children of previous series antagonist Mr. X. Players have a limited number of lives depending on the difficulty setting, but can earn more by earning a certain number of points. If all players lose all of their lives, they will have to retry the level from the beginning, with the option to use assists that add extra lives and Star Moves at the cost of a reduced score. Upon clearing a level, players receive a rank based on how many points they scored. Points earned goes towards a lifetime score, which goes towards unlocking bonus player characters from past games, presented in pseudo 16-bit style. The game also features Arcade Mode, which tasks players with clearing the entire game with limited lives, a Boss Rush Mode and a competitive Battle Mode, which lets two players fight against each other. The game also features a retro audio option, featuring music tracks from both the Mega Drive/Genesis and Master System/Game Gear versions of the first two games.
+The base game features five main playable characters; series veterans Axel Stone and Blaze Fielding; Adam Hunter, who originally appeared in the first Streets of Rage game and is unlocked through playing the story; and new characters Cherry Hunter, Adam's daughter, and Floyd Iraia, a part-cybernetic apprentice of Dr. Zan. 16-bit versions of characters from the original trilogy, including Max Thunder, Skate, Dr. Zan, and Shiva, can be unlocked by raising the lifetime score. These characters feature move sets based on the games they came from (e.g., SOR3 Axel can run, unlike the SOR1 and SOR2 versions of the same character). The Mr. X's Nightmare DLC adds three additional characters who appear as bosses in the main story; Max Thunder and Shiva, who were originally playable in Streets of Rage 2 and Streets of Rage 3 respectively, and brand-new character Estel Aguirre. The SOR3 version of Roo can also be unlocked through a cheat code.
+
+
+== Plot ==
+Ten years after Mr. X's death, Wood Oak City faces the rise of a new Syndicate, led by Mr. X's children, the twins Mr. and Ms. Y. Axel Stone and Blaze Fielding, along with Adam Hunter's daughter Cherry Hunter and Dr. Zan's apprentice, Floyd Iraia, fight the Syndicate around the streets until they are arrested under false accusations. As they break out from their cell, they are approached by Mr. Y, who reveals that the police force is working for him and offers them a deal to join his side, but they refuse. The heroes are chased and surrounded by police officer Estel Aguirre, but Adam appears and helps them escape.
+Following a hint to Chinatown, the heroes meet Shiva and learn from him that the Syndicate has a plan to control the entire city using a hypnotic signal they developed. Confronting the twins in their hideout, the heroes fight and defeat a brainwashed Max, making him come to his senses. Ms. Y attempts to brainwash them as well but Estel, realizing that the heroes are telling the truth, help them escape. The heroes then stop a music show arranged by the Syndicate to spread their signal across the city and chase after their enemies to their main base in an island, where they fight and defeat the Y twins. The twins are arrested and the heroes part ways, returning to their ordinary lives.
+
+
+== Development ==
+Upon completing development on Wonder Boy: The Dragon's Trap, a 2017 remake of 1989's Wonder Boy III: The Dragon's Trap, Lizardcube artist Ben Fiquet wanted to make a remaster of the original Streets of Rage games using the same techniques. However, the game's programmer, Omar Cornut, had moved onto a personal project, so Fiquet and publisher Dotemu approached Sega about creating a full sequel to the series instead. Sega agreed, licensed the franchise to Dotemu and production on the game began at the beginning of 2018, with the game publicly announced that August. The game was co-developed by Guard Crush Games, using a modified engine from their Streets of Fury game, with a core development team of five members across the three companies. Each playable Streets of Rage 4 character has approximately 1,000 frames of animation, with enemies having between 300 and 400 frames each. Seaven Studio ported the game for Nintendo Switch and PlayStation 4 while BlitWorks ported it for Windows 10 and Xbox One.
+
+
+=== Music ===
+
+The game's score was primarily composed by Olivier Deriviere, with additional compositions from Yuzo Koshiro, Motohiro Kawashima, Yoko Shimomura, Keiji Yamagishi, Harumi Fujita, XL Middleton, Scattle, Das Mörtal, and Groundislava. The soundtrack is structured so that Deriviere wrote the primary themes, while each boss fight's theme was written by one of the guest composers. Koshiro was not a part of the project from the start, but joined in June 2019 after playing a demo of the game at BitSummit, an indie game showcase in Japan. He cited fan requests and how the game was coming along as reasons for joining. Hideki Naganuma was also originally set to contribute, but dropped out of the project due to scheduling conflicts before being replaced by Fujita. The game includes the ability to switch the soundtrack to that of Streets of Rage and Streets of Rage 2.
+The game's soundtrack was released digitally by Mutant Ninja Records and physically by Brave Wave Productions alongside the game on April 30, 2020, with a limited vinyl release produced by Limited Run Games. A CD soundtrack is included with certain physical releases of the game. Tee Lopes composed the soundtrack for the Mr. X Nightmare expansion.
+
+
+== Release ==
+The game was released for Nintendo Switch, PlayStation 4, Windows, and Xbox One on April 30, 2020. A limited physical release for the Nintendo Switch and PlayStation 4 versions by Limited Run Games was made available as both a standard edition with reversible box art and a classic edition with a steelbook case and a Genesis-style clam-shell case. A limited-edition version including a CD soundtrack, a 7-inch statue, a chicken stress ball, and an artbook has also been offered. Another physical release for Nintendo Switch, PS4, and Xbox One was being planned by Signature Edition, releasing the game in both a standard version include keyrings and an art booklet and a signature edition with a CD soundtrack, enamel pins, and a bandana. Following the announcement of other physical editions, Dotemu and Limited Run Games announced that all orders of their physical editions would include a complimentary soundtrack CD, as well as free Steam keys for those who ordered the limited edition.
+Downloadable content (DLC) titled Mr. X Nightmare was released on July 15, 2021. The DLC adds three additional player characters who are also bosses in the game's main storyline; the current incarnations of Streets of Rage 2 characters Max Thunder and Shiva, and a newcomer Estel Aguirre, and a survival mode in which players fight through waves of enemies to unlock new moves and weapons, as well as the Streets of Rage 3 incarnation of Roo. The DLC features additional music tracks composed by Tee Lopes. A free update adding additional color pallets, a training mode, and a "New Mania+" difficulty was released alongside the DLC, along with a version of the game for Google Stadia. Another free update released on March 10, 2023, added co-op moves and a custom survival mode for the DLC. Retail releases of the Nintendo Switch and PS4 versions were released by Merge Games Ltd. on September 24, 2021. A mobile port for Android and iOS, developed by Playdigious, was released on May 24, 2022.
+
+
+== Reception ==
+
+Streets of Rage 4 received "generally favorable" reviews, according to review aggregator Metacritic. Leo Faierman of The Sydney Morning Herald wrote that "the visuals, sounds and mechanics aren't as envelope-pushing in 2020 as the originals were in the early '90s, but the balance between embracing nostalgia and reformulating the brawler for the current decade is struck wonderfully". Heidi Kemps of GameSpot opined the game "looks great, sounds great, and plays very well" and that even "if the experience is relatively short, it's the sort of game you and your buddies can easily enjoy playing and re-playing".
+Michael Huber of Easy Allies stated that Streets of Rage 4 masterfully revitalized the series, describing the combat and soundtrack as high points, but criticized the online components at launch. Dale Driver of IGN wrote that "it's still a very conservative update to the quarter-century-old format that feels like a slave to the past". Joe Juba of Game Informer agrees that it "feels like an homage to the '90s, but it's also stuck in that era".
+
+
+=== Sales ===
+The game reached number 14 in the UK sales charts. It also reached 20th on the US downloads chart. By September 2020, the game had sold over 1.5 million digital copies worldwide. As of April 2021, the game has sold over 2.5 million copies worldwide.
+
+
+=== Awards ===
+It received a "Gold" award from Famitsu. Polygon listed Streets of Rage 4 among the 22 best games on the Switch. It was nominated for Best Action Game at The Game Awards 2020, but lost to Hades. It received a Pegase Award in the 2021 edition for best music. In 2023, Time Extension included the game on their top 25 "Best Beat 'Em Ups of All Time" list. They called it the best game in the series.
+
+
+== Notes ==
+
+
+== References ==
+
+
+== External links ==
+Official website 
+Streets of Rage 4 at MobyGames

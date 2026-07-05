@@ -1,0 +1,44 @@
+Game: Somerville
+appid: 1671410
+Source: Somerville (video game)
+URL: https://en.wikipedia.org/wiki/Somerville_(video_game)
+Match score: 6.87
+Retrieved: 2026-07-04
+--------
+Somerville is an adventure video game and the debut title by the independent studio Jumpship. The studio's co-founder, Dino Patti, previously co-founded Playdead and worked on Limbo and Inside as executive producer on both games. The game was released on Microsoft Windows, Xbox One, and Xbox Series X/S in November 2022. It was released for PlayStation 4 and PlayStation 5 in August 2023. It received mixed reviews upon release.
+
+
+== Gameplay ==
+Similar to Limbo and Inside, Somerville is an adventure game played from a third-person perspective with platform game-like elements and physics-based puzzles. The game is presented without dialogue or narration, instead using the setting, environments, and animations to tell the story. The player controls the father of an everyday family as an alien invasion begins, and must guide the family across various environments, some of which are patrolled by alien creatures and machines. The father character can perform some actions with the environment such as pushing open gates or pulling carts, and over the course of the game, gains alien powers that, when he is also touching a light source, allow him to interact with a strange alien substance that can be instantly liquified or solidified in the presence of the light source.
+
+
+== Plot ==
+One evening, a man, a woman, their young son, and their pet dog return to their rural home after an outing. As they sleep in front of their TV, massive obelisk-like alien vessels descend from the skies. The vessels are made from a substance that reacts to different kinds of energy: blue energy softens and dissipates it, red energy hardens it, and purple energy attracts and repulses it. A human military organization launches a counterattack against the invaders, and the battle between both sides rains destruction across the land. The man and his family attempt to flee, but retreat to their basement when their car is destroyed by an alien projectile. Shortly afterward, a human soldier wearing a suit of alien technology hurtles into their house. In his dying moments, the soldier reaches out to the man, who clasps his hand and is imbued with the power to manipulate the blue alien energy. The man is rendered unconscious from the experience.
+It is daylight when the man awakens. The battle ended some time ago, and the alien vessels still dominate the skies. The man's wife and son are gone, but his dog remains. Using the blue energy, the man and dog make their way out of the ruins of the house and venture into the desolate countryside. Eventually, the man is separated from his dog, but soon finds another ally, a second human soldier who wields red energy. The red soldier assists the man as they enter a mine, but when a catwalk collapses, he is fatally injured while protecting the man from the fall into the chasm below. Before the soldier dies, he gives the man his red energy ability. The man emerges from the mine and is swept down a river to a small town. He is found by other survivors taking shelter in the storage rooms beneath a grocery store, and is reunited with his family and dog.
+The family leaves the building and sets off through the town, but hostile alien constructs pursue them. They are defended by a third human soldier who uses purple energy to shoot the constructs. The soldier guides them to a church, and they climb to the top of its bell tower, where an aircraft sent by the military organization arrives to pick them up. Unfortunately, an alien vessel notices them and fires at the tower; the soldier and the man manage to board the aircraft, but it is forced to depart prematurely to avoid destruction. The woman, child, and dog are left behind as the alien constructs overrun the tower.
+The man is taken to the undersea headquarters of the military organization. A scientist has the man utilize the red and blue powers in a series of tests in front of an audience. It is implied that the three soldiers were a strike force originally intended to assault the main alien vessel, and the man is being tested to see if he can adequately replace the dead red and blue soldiers. The facility suddenly comes under attack. The man and the purple soldier enter a cannon that harnesses their powers to launch them at an opening in the main alien vessel.
+The man awakens in his home alongside his family, as if the previous events were merely a nightmare, but he soon discovers that he is in a simulation generated within the main alien vessel. Exploring deeper inside the vessel, the man comes across pods holding other people in similar simulations, and frees them. He also frees the purple soldier and gains his ability. At one point, the man comes upon a bench where a simulacrum of his family is gathered. He may sit down on the bench, which results in his death, or continue onward. At last, the man enters a vast chamber, where countless other people stand before a trio of alien entities. The entities summon another simulation of the man's house and family. There are three outcomes depending on how the man responds. First, he may enter the simulation, surrendering to the aliens to be with some semblance of his lost family again; the post-credits scene shows the false house surrounded by a still sea, and it is unlit and seemingly devoid of life. Second, he may ignore the offering, and appears to sacrifice himself to destroy the alien entities and defeat the invasion; the post-credits scene shows the dog sitting alone in front of the family's now-overgrown house, with fallen alien vessels crumbling around it, and as an unseen craft approaches the house from above, the dog looks up and wags its tail. Third, he may summon a cell holding his family, and sacrifice himself to release them.
+Over the course of his journey, the man sees alien orbs communicating with each other. When the man repeats these signals, the alien entities let the man reunite with his family and transport them all back to the house, with the spaceships starting to return to space.
+
+
+== Development ==
+
+Dino Patti was a co-founder of Playdead, the studio behind major independent successes Limbo and Inside. Following Inside's release in 2016, Patti left Playdead, stating he felt he had helped bring the studio to a point where it could stand on its own.
+On June 27, 2017, Patti announced that he had formed Jumpship along with UK film animator Chris Olsen, and that they were working on a game titled Somerville. The announcement was accompanied by the first teaser trailer for the game. Olsen started preliminary work on Somerville in 2014, and development of the game expanded after Olsen formed Jumpship with Patti as executive producer. The game was described as a "sci-fi action adventure that chronicles the lives of key individuals in the wake of a global catastrophe".
+More details about the game were featured during Microsoft's presentation at E3 2021, including the planned 2022 release date for Microsoft Windows, Xbox One, and Xbox Series X and Series S. Olsen stated that many gaming outlets mislabelled Somerville as a puzzle-platformer based on this trailer and apparent similarities to Limbo and Inside, but he said the game lacks both puzzle and platforming type elements, and was not confined to 2D-like movement. Instead, Olsen claimed the concept of the game was too difficult to describe beyond being a science fiction adventure game.
+Somerville launched on November 15, 2022. The same day, the Thunderful Group announced it was finalizing the acquisition of Jumpship for an undisclosed sum, with Thunderful saying that Jumpship will "retain creative autonomy as it continues to create top-class story-driven narrative games".
+
+
+== Reception ==
+
+
+=== Critical response ===
+Somerville has received "mixed or average" reviews on Metacritic.
+The Academy of Interactive Arts & Sciences nominated Somerville for Outstanding Achievement in Audio Design at the 26th Annual D.I.C.E. Awards. 
+
+
+== References ==
+
+
+== External links ==
+Official website

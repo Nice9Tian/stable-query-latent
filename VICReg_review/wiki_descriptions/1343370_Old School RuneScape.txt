@@ -1,0 +1,86 @@
+Game: Old School RuneScape
+appid: 1343370
+Source: Old School RuneScape
+URL: https://en.wikipedia.org/wiki/Old_School_RuneScape
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Old School RuneScape (OSRS) is a massively multiplayer online role-playing game (MMORPG) developed and published by Jagex. It was released for Windows and macOS on 22 February 2013 as a version of RuneScape based on an August 2007 backup found in Jagex's archives. Although initially created as a restoration of an older version of RuneScape, the game has since developed into a separately maintained live game, with most new content and major changes decided through in-game player polls.
+Set in the fantasy world of Gielinor, Old School RuneScape uses point-and-click controls and player-directed progression through skills, quests, combat, trading and social play. The game has a limited free-to-play mode, while full access requires membership. A mobile version for Android and iOS was released in October 2018 and supports cross-platform play with the desktop version.
+Old School RuneScape has received generally positive reviews, with critics noting its sandbox structure, nostalgia and long-running live development. It won the 2019 British Academy Games Award for EE Mobile Game of the Year and the Develop:Star Award for Best Mobile Game. The game's economy and community have also attracted coverage, including reports on real-world trading, gold farming and community responses to proposed monetisation-related partnerships. In August 2025, it reached a record of more than 240,000 concurrent players. In November 2025, Jagex released Sailing, the game's first new skill.
+
+
+== Gameplay ==
+
+Old School RuneScape is set in the fantasy world of Gielinor. The player controls a human avatar in a persistent world, interacting with NPCs, objects and other players primarily through point and click controls and right-click context menus. The game does not use fixed character classes; progression is instead based on gaining experience points in individual skills and completing quests for rewards.
+Skills include combat, gathering, crafting and support activities. Players may choose their own goals, such as training skills, completing quests, fighting monsters, trading items, participating in minigames, or engaging in player-versus-player combat. PC Gamer described the game as a sandbox MMORPG that begins with minimal direction and relies heavily on player-set goals.
+The game also offers optional modes that change the standard rules. Introduced on 13 October 2014, Ironman accounts take on restrictions intended to make progression more self-sufficient: standard Ironman accounts cannot trade with other players, while Ultimate Ironman accounts also cannot use banks. Deadman Mode is a separate game server with open-world player-versus-player combat, accelerated experience rates and death penalties that include loss of possessions and drained levels.
+
+
+== Development and release ==
+
+In February 2013, in response to the declining player base and negative reception of updates to the then-current version of RuneScape, Jagex CEO Mark Gerhard announced a poll on the creation of a version of the game based on an August 2007 backup found in the company's archives. The poll was created to gauge subscriber interest in running the older version as a parallel game.
+The poll received 449,351 votes, which met the threshold Jagex had set to launch the project but fell short of the 500,000-vote reward tier. Jagex nevertheless incorporated several proposed incentives from the higher tier, including player voting on new content, improved bot protection and no additional fee beyond existing membership. Old School RuneScape was released for Windows and OS X on 22 February 2013. At launch, it was only playable by accounts with a membership subscription; limited free-to-play access was added in February 2015.
+
+
+=== Post-release development ===
+Old School RuneScape receives regular patches and new content. With the exception of game balance and integrity changes, updates are polled in-game and are implemented only if they meet a player-approval threshold; Jagex lowered the pass threshold from 75 percent to 70 percent in 2022. Some fan suggestions have been put to polls and later added to the game.
+Major additions since launch have included the God Wars Dungeon, Fossil Island, the continent of Great Kourend, raids, clan support tools, Varlamore and Sailing. Varlamore, a major region, was released in three parts between March 2024 and July 2025: Part One, The Rising Darkness and The Final Dawn. Sailing, released in November 2025, was the first new skill added to Old School RuneScape.
+
+
+=== Client releases and third-party plugins ===
+After a preview at the 2018 Game Developers Conference, a mobile cross-play port was released for Android and iOS devices on 30 October 2018. In under two weeks, it exceeded one million installs. Old School RuneScape was released on Steam on 24 February 2021.
+
+In September 2021, Jagex blocked 117Scape's HD Plugin, a third-party mod that improved the game's visuals while retaining its style, shortly before its planned launch. The decision led to player protests, and Jagex later reached an agreement with the developer that allowed the mod to be released.
+
+
+== Competitive and temporary modes ==
+Old School RuneScape has several competitive or time-limited modes that use separate worlds, modified progression rules or tournament formats. Jagex has used Deadman Mode for competitive tournaments; in 2016, PC Gamer covered the second Deadman Mode Invitational, in which about 2,000 players competed for a US$10,000 prize and the finale drew about 90,000 Twitch viewers. Later that year, PCGamesN reported that the fourth Deadman Invitational was organised with ESL UK and also offered a US$10,000 prize.
+At RuneFest 2019, Jagex announced Leagues, a temporary game mode for Old School RuneScape. PCGamesN reported that the first league, Twisted League, would begin on 14 November 2019, last for two months, and challenge players to complete tasks under different rules. The Trailblazer League began on 28 October 2020; PCGamesN described it as a two-month league in which players used fresh accounts, completed tasks, unlocked areas and earned points for relics. In 2025, Jagex ran Grid Master, a shorter temporary event inspired by Clan Bingo and Leagues, from 15 October to 12 November.
+
+
+== Reception ==
+
+
+=== Critical reception ===
+Review aggregator Metacritic characterised the iOS version's reviews as generally positive. PC Gamer gave Old School RuneScape a score of 77 out of 100 and called it a "massive but compelling time sink".
+Coverage of the game's longevity has frequently emphasised its nostalgia and continuing development. PC World called it a "nostalgic experience". Rock Paper Shotgun said "there's something lovely about a company being just as enthusiastic about where their game is headed as where it came from". The Cambridge News wrote that, since its resurrection, the game had continued to embrace and expand on its origins. GamesIndustry.biz wrote that the game's continuing growth suggested its appeal went beyond nostalgia alone.
+
+
+=== Awards and nominations ===
+The game was nominated for the Heritage and Best Role-Playing Game awards at The Independent Game Developers' Association Awards 2018 and 2019, and won EE Mobile Game of the Year at the 15th British Academy Games Awards. It also won Best Mobile Game at the Develop:Star Awards, where it was nominated for Best Innovation. It was also nominated for Game of the Year and Best Live Ops at the Pocket Gamer Mobile Games Awards.
+
+
+=== Player population ===
+Old School RuneScape reached one million users in October 2013. In August 2025, it broke its concurrent-player record with more than 240,000 players online; GameSpot reported a peak of 241,016 concurrent players on 3 August 2025, while noting that Jagex confirmed the record without publishing its own data.
+
+
+== Business model ==
+Old School RuneScape, like RuneScape, has a limited free-to-play mode; full access requires membership. Membership can be purchased directly from Jagex or through Old School Bonds, tradable in-game items redeemable for membership.
+
+
+== Controversies ==
+
+
+=== Monetisation and real-world trading ===
+In 2019, proposed partnership promotions for Old School RuneScape drew backlash from players who feared they could lead to microtransactions or pay-to-win mechanics. Jagex ended the related polls early, said the results were overwhelmingly negative, and stated that it would not add microtransactions to Old School RuneScape.
+The rules of RuneScape prohibit players from engaging in the real-world sale or purchase of in-game items, gold, or services. Some players have nevertheless farmed Old School RuneScape gold for sale on third-party websites. Polygon, Slate and The Economist have reported on Venezuelan players using gold farming as a source of income during the country's economic crisis. In 2019, The Economist reported that one million in-game gold coins could sell for about US$0.50. Polygon reported mixed community reactions, including sympathy for players in difficult circumstances and concern about the effect of gold farming on the game economy and community. The site also reported that Venezuelan and Spanish-speaking players had been targeted by other players because of their perceived role in gold farming.
+
+
+=== Pride events ===
+In June 2017, Jagex added an LGBT pride-themed event to Old School RuneScape. The event, in which players collected pieces of a rainbow to create a rainbow scarf, drew backlash from some players who considered it political or out of place in the game's fantasy setting. Jagex said in response that the event was intended to support its LGBT players and that it did not represent a political statement.
+Pride-themed content later returned to Old School RuneScape, with MMORPG.com reporting that official Pride events had run since 2022. In 2025, Jagex did not release new official in-game Pride content for either RuneScape or Old School RuneScape; PC Gamer and MMORPG.com reported that the decision drew criticism from employees and players. A Jagex spokesperson said existing Pride content from previous years would remain available and that the company supported community-led Pride marches.
+
+
+== See also ==
+Brighter Shores
+
+
+== References ==
+
+Further reading
+
+
+== External links ==
+Official website
+Official wiki

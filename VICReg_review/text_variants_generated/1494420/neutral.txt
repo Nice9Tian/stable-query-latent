@@ -1,0 +1,5 @@
+Silica is a crossover of FPS and RTS set in photorealistic battles between humans and aliens. Players can join the conflict on the ground or take command as the battlefield commander, choosing between direct combat and top-down strategic control.
+
+The game emphasizes combined arms warfare on the sandy dunes of planet Baltarus. Players can operate both land and air vehicles to compete for control across the battlefield. As an RTS commander, players coordinate large-scale operations and use tactical decision-making to manage the flow of battle.
+
+Silica also highlights realistic unit scale, with infantry squads, colossal harvesters, and massive buildings presented in proportions designed to reflect their size. The result is a large-scale combat experience that combines first-person action, strategy, and vehicle-based warfare.

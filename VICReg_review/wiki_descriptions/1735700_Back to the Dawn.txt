@@ -1,0 +1,54 @@
+Game: Back to the Dawn
+appid: 1735700
+Source: Back to the Dawn
+URL: https://en.wikipedia.org/wiki/Back_to_the_Dawn
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Back to the Dawn is a 2025 indie role-playing video game developed by Metal Head Games and published by Spiral Up Games. The early access version of the game was released for Windows and Xbox Series X/S in late 2023. Nintendo Switch and Nintendo Switch 2 obtained the game with no early access version in early 2026 . At this time, the game exclusively featured the story of Thomas the Fox, but with the full release of the game on 18 July 2025 a second playable character was added: Bob the Panther, an undercover intelligence agent.
+Back to the Dawn is a story-driven game where the player can play as either Thomas the Fox or Bob the Panther. For both characters, the story starts with their imprisonment at Boulderton Prison and follows their journey in the jail over the next 21 in-game days. Time management is a central gameplay mechanic. In-game time only passes when the player undertakes an action, so the player will have to carefully pick and choose the activities they do, the conversations they have, and the amount of sleep they get per night. The ending of the story varies significantly based on which actions the player takes throughout their time at Boulderton, with several different endings for either character.
+
+
+== Gameplay ==
+Back to the Dawn does not feature a conventional health bar. Instead, it features a Body bar and a Mind bar. When either reaches 0, the player character dies. When either gets low (the default threshold is under 30) and the player goes to sleep they awake the next day severely debuffed. Body is generally affected by physical actions, while Mind is affected by story decisions and events.
+Both characters need to make decisions based on the time of day. In-game time only transpires if the player undertakes an action, and all actions require energy. Energy is gained by sleeping and a small selection of items, as well as resting. However, resting during the day risks valuable investigation time, meaning that the player is heavily compelled to get enough sleep every day. This is made difficult by the fact that nighttime is the only time for the player to explore the prison unhindered and work on securing their escape route. Therefore, players must ensure that they don't waste time or energy throughout the day and the night. Due to the rigid schedule of the prison, most days feature the same 24-hour cycle. 
+The daytime is generally spent balancing work, side hustles, inmate activities, socializing and investigating, while the nighttime is generally spent investigating escape routes and learning more about the prison and the staff. Both are essential for a good ending, and nighttime activities tend to take a lot of planning, daytime coordination and energy, so it is important to start working on securing escape routes early on in a playthrough, even before the player has all the evidence they need.
+The player has a Strength, Agility, Intelligence and Charisma stat, as well as items that can affect these stats. Many choices and actions in Back to the Dawn feature virtual dice rolls that determine the success or failure of an action. These dice rolls are affected by the player's "stats" and equipment, but also by their skills. Skills are acquired in various different ways, but the most powerful skills tend to be tied to the player's interactions with fellow inmates. Inmate skills can only be acquired once the player is acquainted with them, meaning that socialisation is a key part of the gameplay. Getting to know the right inmates might mean the difference between a successful and a failed run. The best way to get acquainted with the inmates quickly is to talk to them and to give them gifts. Gifts can only be given once a day and every inmate likes different things, usually hinted at through their personalities and dialogue.
+The challenge of Back to the Dawn is for players to manage their time, money and energy in such a way that they can gain the information and skills that they need in time before the 21-day limit. The existence of a New Game+ mechanic which retains the player's skills and friendships with other inmates, alongside the fact that the player will know which leads to pursue and which friendships are most worth pursuing leads to a second playthrough that is, on average, much more forgiving than the initial playthrough. 
+On February 9 Metal Head Games released the V2.0 patch that added Champion Mode, a version of the game that is meant to be a more challenging version of the base game, intended for veteran players.
+
+
+== Plot ==
+The plot of Back to the Dawn varies significantly between characters, but the gameplay for both characters is focused around Boulderton Prison. For Thomas, the game features detective-like elements but is mainly a prison-break game. For Bob, the detective aspect is the focal point of the gameplay.
+Additionally, Boulderton prison features many activities which require money. The main ways for Thomas and Bob to earn money is through working in the prison, or doing odd jobs for the prison's inmates and gangs. The prison features three gangs; the Sharp Tooth Gang, the Black Claw Gang and the Big Foot Gang. Thomas can join one of three, or none of the gangs, while Bob is a member of the Sharp Tooth Gang from the start. 
+
+
+=== Thomas the Fox ===
+Thomas the Fox's story follows Thomas, an investigative reporter for SparrowTV. After interviewing a victim of a pollution scandal that is alledged to involve the mayor Thomas is visited by Angelo the Wolf, the mayor's campaign manager. Angelo offers Thomas a briefcase full of money to not investigate or report on the scandal any further. If Thomas accepts the money the game ends immediately and triggers a special ending. If Thomas refuses the money Angelo will plant drugs in his car and frame him for narcotrafficking and the actual game will start. Thomas is imprisoned for three years, with the mayoral elections a mere 3 weeks away. Since the incumbent mayor is running for re-election Thomas has to prove his innocence within 21 days so he can expose the mayor's corruption before the elections. The problem is that Thomas does not have any hard evidence of the mayor's involvement in the scandal, so in addition to only having 3 weeks to break out of prison, if Thomas wants to expose the mayor, he must also use his skills as a reporter while in prison to uncover the truth. It is possible to escape the prison without exposing the mayor, which will trigger different endings. If Thomas manages to break out before reaching the 21-day limit the game will progress into its final Act, regardless of which day Thomas breaks out. Failing to break out in time triggers the ending with the most negative consequences for Thomas.
+
+
+=== Bob the Panther ===
+Bob the Panther is an undercover domestic intelligence agent, sent to Boulderton to track down a person codenamed "Fenrir." Bob initially assumes Fenrir is a (male) criminal, but through his investigation discovers that Fenrir is the codename for a woman named Fenra, who is unlawfully detained and forced to undergo medical experiments in a secret laboratory. Bob discovers that the reason he was tasked with finding Fenra was because her blood contains proteins that can be used to make a deadly pathogen. He is tasked with extracting her, but if that proves too difficult the Bureau wants Bob to kill her. Bob now faces several difficult decisions as neither the intelligence agency or the prison want what's best for Fenra, and Bob is forced to choose between being loyal to the Bureau, helping Fenra, or betraying both Fenra and the Bureau. 
+
+
+== Bam DLC ==
+When creating a "New Game" file in Back to the Dawn, the character select screen actually shows a blacked out third option next to Thomas and Bob, hinting at potential expansions or future content involving a third protagonist. Unlike with Bob's character, completing the story with Thomas or Bob, or both, does not unlock this third character, as it is not currently in the game. On February 9, 2026 it was confirmed that this blacked out third option will be the grey cat character Bam, a supernatural investigator within the prison, as part of a DLC.
+
+
+== Development ==
+Back to the Dawn is the first game released by Shanghai-based developer Metal Head Games and published by the Singapore-based Spiral Up Games. Spiral Up Games specialises in globalisation; helping non-Chinese titles penetrate the Chinese market and vice-versa.
+Development started in 2019, and an early access version of the game was made available to the public in 2023, with the full PC release of the game occurring on 18 July 2025. The unvoiced game is available in English, Chinese, Japanese, Russian and Korean, with voice acting on the Chinese version releasing alongside the Nintendo Switch port launch in March 2026.
+
+
+== Reception ==
+
+The Windows version of Back to the Dawn amassed "generally favourable" reviews from critics, according to the review aggregation website Metacritic. The "retro" 2.5D pixel art-style graphics, "gritty" story and challenging gameplay have all received critical acclaim. The main criticisms of the game stem from the in-universe time limit of 21 days for both characters. Fellow review aggregator OpenCritic assessed that the game received strong approval, being recommended by 87% of critics.
+In concluding his review for Shacknews, Lucas White opined that Back to the Dawn is "a fascinating game at first glance, due to its uncanny mix of prison, animals, and laid back music", though it lacked personality.
+
+
+== References ==
+
+
+== External links ==
+Back to the Dawn at Spiral Up Games
+Back to the Dawn at Cloud Leopard Entertainment

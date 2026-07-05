@@ -1,0 +1,45 @@
+Game: Easy Red 2
+appid: 1324780
+Source: Easy Red 2
+URL: https://en.wikipedia.org/wiki/Easy_Red_2
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Easy Red 2 is a tactical shooter indie video game set during World War II combining both first-person shooter and third-person shooter mechanics, developed by Italian indie developer Marco Amadei published by the Italian indie studio Corvostudio di Amadei Marco, also known as Corvostudio. It is the second game in the Easy Red series. It was released for Microsoft Windows and Linux on 10 November 2020, released for Steam on 6 January 2022 and later releases on multiple console platforms.
+The game combines first-person and third-person shooter mechanics with large-scale battlefield gameplay and features infantry, artillery, ground vehicles, and aircraft combat. Players fight in iconic battles of the Western, North African, Eastern, Pacific, Italian fronts of World War II at the squad level.
+
+
+== Gameplay ==
+Easy Red 2 is an objective-based shooter set on large maps inspired by World War II battlefields. Players may freely switch between first-person and third-person perspectives and can take control of infantry soldiers or vehicles, including tanks, transport vehicles, and aircraft. Combat emphasizes combined-arms gameplay, with infantry, vehicles, and air units operating simultaneously. The game supports both single-player and multiplayer modes. In single-player mode, players fight alongside AI-controlled allies, while multiplayer modes include cooperative gameplay against AI opponents and player-versus-player matches. An in-game editor allows players to create and share custom missions and maps, extending replayability. It currently has 4 DLCs: Stalingrad, France 1940/Bulge 1944, Normandy, Shanghai/Nanking.
+
+
+=== Campaign ===
+Unlike traditional narrative-driven shooters, Easy Red 2 does not feature a single continuous storyline. Its single-player content consists of standalone missions based on World War II battles and military operations. These missions are supported by AI-controlled allies and focus on tactical objectives rather than scripted events.
+Players can switch soldiers or units during missions, allowing flexibility in how objectives are completed. The campaign structure prioritizes large-scale engagements and player agency over linear storytelling.
+It has a training campaign to learn in-game mechanics before players play the frontline campaigns. Its campaigns are set in different fronts during World War II, like the Battle of Anzio, the Battle of Stalingrad, Operation Overlord, Battle of the Bulge, etc.
+
+
+=== Multiplayer ===
+Easy Red 2 includes a multiplayer mode designed to reflect the large-scale combined-arms structure of the single-player experience. Cooperative multiplayer allows multiple players to participate in missions together against AI-controlled forces, with players coordinating infantry movement, vehicle usage, and objective completion across large battlefield maps. The maps used in the multiplayer is the same used in singleplayer missions. This mode emphasizes teamwork and coordination rather than individual performance.
+Competitive multiplayer features player-versus-player matches in which opposing teams compete to capture and hold objectives. Matches take place on expansive maps and retain access to infantry units, armored vehicles, and aircraft, allowing multiple styles of play within the same match. The inclusion of vehicles and aircraft distinguishes the multiplayer experience from smaller-scale arena shooters and expands the game’s emphasis on battlefield scale.
+
+
+== Development ==
+Easy Red 2 was developed by Italian game designer Marco Amadei under the independent studio Corvostudio di Amadei Marco. According to the developer, the sequel was created to address technical and design constraints of the original Easy Red (2017). Unlike its predecessor, which used a smaller scale of combat and more limited environments, Easy Red 2 was rewritten largely from scratch to support larger maps, more complex AI behavior, expanded vehicle systems, and improved performance. The game was developed using the Unity game engine, which allowed it to support cross-platform deployment and frequent updates across PC and console systems.
+Development of Easy Red 2 began soon after release of the original in 2017, with early access builds being made available prior to the full launch in 2020. The developer cited community feedback and player suggestions as factors influencing the design of systems such as vehicle controls, infantry squad behavior, and mission creation tools.
+Following its initial release in November 2020, Easy Red 2 received continuous updates that expanded its roster of factions, weapons, vehicles, and maps. While initially launched for Windows, console versions were later released for Xbox, PlayStation, and Nintendo Switch. One of its latest updates, Update 2.0.4, released on 22 February 2026, introduced previews for an upcoming Hungary DLC alongside reworked animations and new equipment customization options.
+
+
+=== Map design ===
+The game features 16 campaigns and over 100 maps based on historical World War II battles. Players are assigned to specific historical divisions within missions, which affects the unit types and equipment available during gameplay.
+
+
+== Reception ==
+Gry-Online praised its gameplay, describing it as a budget version of Battlefield.
+
+
+== References ==
+
+
+== External links ==
+Official website

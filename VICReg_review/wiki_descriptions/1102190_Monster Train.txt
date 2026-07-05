@@ -1,0 +1,32 @@
+Game: Monster Train
+appid: 1102190
+Source: Monster Train
+URL: https://en.wikipedia.org/wiki/Monster_Train
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Monster Train is a roguelike deck-building game developed by American studio Shiny Shoe and published by Good Shepherd Entertainment. It was initially released on May 21, 2020, for Windows, followed by releases on Xbox One on December 17, 2020, iOS on October 27, 2022, and PlayStation 5 on July 25, 2024. A Complete Edition of the game titled Monster Train First Class was released for Nintendo Switch on August 19, 2021. The game received positive reviews, being nominated in the category of Best Strategy/Tactics Game at IGN Best of 2020, as well as Strategy/Simulation Game of the Year at the 24th Annual D.I.C.E. Awards.
+A sequel, Monster Train 2, was released on May 21, 2025, by Big Fan Games, a label of Devolver Digital who acquired Good Shepherd Entertainment.
+
+
+== Gameplay ==
+The game has a vertical field, a train with 4 floors, with a pyre on the top floor. The enemies will try to reach the pyre to destroy it, and the player must protect it to achieve victory. For this, the player will use several cards that can summon monsters or activate special effects to defeat the invaders, but the player can only summon their creatures in the train's first three floors.
+
+
+== Reception ==
+According to review aggregator website Metacritic, Monster Train received "generally favorable reviews". Dan Stapleton of IGN wrote that the game is "a ticket to dozens – if not hundreds – of hours of challenging and surprising roguelike deckbuilding runs, thanks in large part to its mechanically diverse set of decks and the way they interact with each other when combined in different ways", and in his verdict, scored the game 9/10. Cody Peterson from Screen Rant wrote "Monster Train is an enjoyable deck building roguelike game that manages to reinvent both genres with some interesting new game mechanics", giving the game a 4 out of 5 star rating.
+
+
+=== Awards ===
+The game was nominated to IGN Best of 2020 list, in the category of Best Strategy/Tactics Game for the year 2020, which was ultimately awarded to Crusader Kings III. During the 24th Annual D.I.C.E. Awards, the Academy of Interactive Arts & Sciences nominated Monster Train for "Strategy/Simulation Game of the Year", which was ultimately awarded to Microsoft Flight Simulator.
+
+
+== Sequel ==
+Monster Train 2 was announced in February 2025 to be published by Devolver Digital under its publishing label Big Fan Games. It was released on May 21, 2025 for the Nintendo Switch, PlayStation 5, Windows, and Xbox Series X/S. 
+
+
+== References ==
+
+
+== External links ==
+Official website

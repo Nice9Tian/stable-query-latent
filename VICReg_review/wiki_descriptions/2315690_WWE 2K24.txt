@@ -1,0 +1,49 @@
+Game: WWE 2K24
+appid: 2315690
+Source: WWE 2K24
+URL: https://en.wikipedia.org/wiki/WWE_2K24
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+WWE 2K24 is a 2024 professional wrestling sports video game developed by Visual Concepts and published by 2K. It is the twenty-fourth overall installment of the video game series based on WWE, the tenth game under the WWE 2K banner, and the successor to WWE 2K23. It was released on March 8, 2024 for PlayStation 4, PlayStation 5, Windows, Xbox One, and Xbox Series X/S.
+WWE 2K24 received generally favorable reviews upon release, with critics considering it to largely consist of incremental improvements and refinements over its predecessor. The follow-up title, WWE 2K25, was released on March 14, 2025.
+
+
+== Gameplay ==
+
+Like its predecessor, WWE 2K24 features arcade and simulation wrestling gameplay. Several gimmick matches have returned to the franchise, such as ambulance, casket, gauntlet, and special guest referee matches. The "Backstage Brawl" mode was updated with a larger variety of weapons and four-player multiplayer. New combat features include "Super Finishers"—which allows players to use all three of their finisher charges at once to perform a higher-powered move, the ability to dive onto groups of opponents, and new types of objects as weapons such as microphones and trash cans.
+The Showcase mode, entitled "Showcase... of the Immortals", is themed around notable matches from the history of WrestleMania, including recreations of their respective arenas (such as the WrestleMania 39 arena), from Ricky Steamboat vs. Randy Savage at WrestleMania III for the WWE Intercontinental Championship to Roman Reigns vs. Cody Rhodes at WrestleMania 39 for the Undisputed WWE Universal Championship (WWE and Universal belts), which culminates with a fictional 30 man Royal Rumble match at the WrestleMania X arena featuring all of the superstars featured in the showcase to determine the "Champion of WrestleMania". It incorporates archive footage mixed into gameplay, and also features segments narrated by various WWE performers, including Hulk Hogan, Seth Rollins and Cody Rhodes, and this showcase is hosted by Corey Graves. The actual in-ring cutscenes featured not only Mike Rome's recordings as the ring announcer, but Samantha Irvin's recordings during certain matches, since Irvin is a new ring announcer to the series, besides those from WrestleMania 39. Alongside Irvin, Alicia Taylor also joins as a new ring announcer to the series as well.
+MyGM mode is similar to 2K23, but adds additional features such as the ability to purchase permanent upgrades to production, scout for talent, and conduct trade offers between brands following events. It also features four new managers (Paul Heyman, Ted DiBiase, Teddy Long and William Regal) and a new brand, ECW. MyUniverse was similarly updated with additional features, including more types of run-ins, and support for double title and loser leaves town matches. The in-game tutorial is revamped with various lessons focusing on different mechanics in the game, featuring various superstars that are training here at the WWE Performance Center, all culminating with a practice session between Cody Rhodes and Roman Reigns, with an option to pin Reigns to end the session. It also featured an introduction video to the revamped tutorial from Cathy Kelley and Coach Drew Gulak. MyRise mode on 2K24 features two campaigns, the men's division campaign "Undisputed", and the women's division campaign "Unleashed". Undisputed follows "The Dark Horse", a newly crowned Undisputed champion who attempts to escape the shadow of Roman Reigns. Unleashed follows "The Captain", a wrestler from the independent circuit who was recently signed to WWE.
+
+
+== Development ==
+In May 2023, during an annual quarterly earnings call held by 2K's holding company Take-Two Interactive, WWE 2K24 was announced as an upcoming title set to be released in March 2024 fiscal year.
+The game was officially announced on January 22, 2024, for a release on March 8 for PC, PlayStation 4, Xbox One, PlayStation 5, and Xbox Series X/S. Cody Rhodes was announced as the cover star of the standard edition, while Rhea Ripley and Bianca Belair were announced as the cover stars of the deluxe edition. A "40 Years of WrestleMania" Edition was also announced, with its cover featuring a collage of current and past WWE performers.
+
+
+== Release ==
+The game was released on March 8, 2024. In the United States, all copies of the game include a one-month trial of Peacock. Pre-order bonuses included a digital copy of WWE 2K23, and a Nightmare Family pack with four characters (Stardust, "Undashing" Cody Rhodes, Dusty Rhodes, and Billy Graham) and three gold MyFaction cards (including "Bruised" Cody Rhodes (from Hell in a Cell 2022) as a Mattel WWE Elite Series action figure, and Rhodes' dog Pharaoh as a manager). The "Deluxe" edition added early access beginning March 5, the season pass, and perks such as the ability to immediately unlock the entirety of the game's roster, a "Mega-Boost" for custom wrestlers in MyRise mode, and alternate outfits for Bianca Belair and Rhea Ripley. 
+The "40 Years of WrestleMania Edition" is a superset of the "Deluxe" edition that also adds a WrestleMania XL stage in both Day and Night variants, unlocks the entire roster in 2K Showcase mode, and also adds alternate outfits and MyFaction cards for Charlotte Flair, Randy Savage, Rey Mysterio, Rhea Ripley, and Triple H based on their most notable WrestleMania appearances.
+In tribute to his death earlier in the year, a Bray Wyatt-themed DLC was released in October 2024, which adds Wyatt's "Eater of Worlds" persona as a Mattel WWE Elite Series action figure, a new version of Wyatt's "The Fiend" persona that was intended to be used upon his return, an updated version of Bo Dallas' "Uncle Howdy" persona, The Fiend's Universal Championship belt, and a Firefly Fun House manager card for MyFaction. The game was also re-issued at retail as the "Bray Wyatt Edition" (which includes the Bray Wyatt DLC and all other bonus and DLC content), and in a digital "Bray Wyatt bundle" (which includes the base game and the Bray Wyatt DLC).
+The online servers for the game will be discontinued on March 31, 2026.
+
+
+== Reception ==
+
+WWE 2K24 received "generally favorable reviews", according to review aggregator Metacritic. On OpenCritic, the game received a "strong" rating according to 85 percent of critics' recommendations.
+Mark Delaney of GameSpot noted that WWE 2K24 made "appreciable, albeit not revolutionary, improvements to last year's solid foundation across the board", including more "fluid" chaining of moves and Super Finishers, albeit noting that hair physics were still "janky", and the animations associated with top rope moves were still prone to "warping" that "betray the otherwise commendable level of realism" in the game's presentation. He also noted incremental improvements to MyGM and MyUniverse modes, and the WrestleMania showcase to be akin to a "playable WrestleMania documentary" that blends archive footage with in-engine gameplay, but felt that it needed more interviews to help "contextualize" the matches.
+IGN similarly noted that "you'll need to sift through 2K24 with a fine-toothed comb to find significant differences between this and last year's edition", observing that the majority of the roster (besides Bayley) were visually accurate to their real-life appearances and had fewer "outdated" gimmicks, new combat options such as Super Finishers and small objects such as microphones as weapons, and AI improvements. The return of gimmick matches such as gauntlet, ambulance, casket, and special guest referee matches were also noted. The Showcase mode was panned for being "full of fights that are simply not as special as they are presented to be", abrupt mixing of live-action archive footage, and exclusion of certain matches. In conclusion, it was felt that "there are enough new little features added to every inch of this iteration that make it well worth climbing back into the ring. Old enemies still have their number, though, such as making its docuseries Showcase mode feel good to actually play, creating a more consistent tone and pacing in MyRise, and getting more of the current day roster up to the high visual bar that’s currently only hit by its most popular superstars."
+It was nominated for "Best Sports / Racing Game" at The Game Awards 2024.
+
+
+== Awards and nominations ==
+
+
+== Notes ==
+
+
+== References ==
+
+
+== External links ==
+Official website

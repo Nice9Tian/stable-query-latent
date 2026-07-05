@@ -1,0 +1,37 @@
+Game: Panzer Corps 2
+appid: 1072040
+Source: Panzer Corps 2
+URL: https://en.wikipedia.org/wiki/Panzer_Corps_2
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Panzer Corps 2 is a computer wargame developed by Flashback Games and published by Slitherine Software for Windows on March 19, 2020. It is a sequel to Panzer Corps.
+
+
+== Gameplay ==
+Panzer Corps 2 is a World War II turn-based strategic wargame played on a hex grid. It features a 60-mission branching campaign, including an alternate history, all from the German perspective. New features in the sequel are 3D graphics, animations, more than 1000 different units, and an undo system. There is co-op and player versus player multiplayer, either via online, hotseat, or play-by-mail methods.
+
+
+== Expansions ==
+There are several expansions to Panzer Corps 2, including Axis Operations 1944, 1945, and 1946. They require the base game Panzer Corps 2 and go into each front and battle of World War II with more detail.
+
+
+== Release ==
+Panzer Corps 2 was announced on March 8, 2017. Seven downloadable content (DLC) packs have been released.
+
+
+== Reception ==
+
+Panzer Corps received "generally favorable" reviews according to review aggregator Metacritic. Fellow review aggregator OpenCritic assessed that the game received strong approval, being recommended by 78% of critics. Many compared the game to the Panzer General series.
+Jonathan Bolding of PC Gamer summarized: "Panzer Corps 2 is ultimately a fun, robust, and quite pretty wargame. It has a lot to recommend it, but it truly excels in no particular category. Despite all this work it still falls into the complexity-over-substance trap of so many wargames in the past 20 years."
+Luke Plunkett of Kotaku said the game has "[a] fantastic mix of puzzle-like engagements with spacious strategic manoeuvring" but called the final missions "bullshit" and the encirclement system "kinda broken".
+Tim Stone of Rock Paper Shotgun gave a negative review and said: " [...] loyalty to its predecessors means most of the time it feels more like a tough military puzzle game than an insightful simulation of mid-20th Century warfare."
+Bill Gray of Wargamer gave a positive review, saying: "If you liked Panzer General and the original Panzer Corps, then PC2 is a must buy." Joe Fonseca reviewed the Axis Operations 1941 expansion also for Wargamer: "Staying true to Panzer Corps 2's tried-and-tested formula, Axis Operations 1941 brings unique scenarios and a refreshing setting to the WW2 wargame, making it a no-brainer for fans of the series."
+
+
+== References ==
+
+
+== External links ==
+Panzer Corps 2 at Flashback Games
+Panzer Corps 2 at MobyGames

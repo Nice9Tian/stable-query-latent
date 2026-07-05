@@ -1,0 +1,5 @@
+appid,game_name,filename,status,source_title,source_url,match_score,extract_chars,extract_words
+1016950,Blood Bowl 3,1016950_Blood Bowl 3.txt,ok,Blood Bowl 3,https://en.wikipedia.org/wiki/Blood_Bowl_3,8.00,16240,2804
+1000410,WRATH: Aeon of Ruin,1000410_WRATH - Aeon of Ruin.txt,ok,Wrath: Aeon of Ruin,https://en.wikipedia.org/wiki/Wrath:_Aeon_of_Ruin,8.00,8468,1388
+1000030,"Cook, Serve, Delicious! 3?!","1000030_Cook, Serve, Delicious! 3_!.txt",ok,"Cook, Serve, Delicious! 3","https://en.wikipedia.org/wiki/Cook,_Serve,_Delicious!_3",8.00,4295,722
+1000360,Hellish Quart,1000360_Hellish Quart.txt,ok,Hellish Quart,https://en.wikipedia.org/wiki/Hellish_Quart,8.00,818,136

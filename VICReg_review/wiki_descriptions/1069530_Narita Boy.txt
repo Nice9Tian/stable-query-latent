@@ -1,0 +1,30 @@
+Game: Narita Boy
+appid: 1069530
+Source: Narita Boy
+URL: https://en.wikipedia.org/wiki/Narita_Boy
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Narita Boy is a 2021 action-adventure video game developed by Spanish  team Studio Koba and published by Team17. The game is an action platformer that follows the titular Narita Boy as he tries to save the Digital Kingdom from the Stallions. The game was released on March 30, 2021 for Windows, macOS, Nintendo Switch, PlayStation 4 and Xbox One, and for Amazon Luna on April 29, 2021.
+
+
+== Gameplay ==
+Narita Boy is a 2D platformer with Metroidvania elements, as the player explores the Digital Kingdom using their abilities to travel across the level. In each level the player must find "Techno-Keys" which allow the player to access new areas.
+There are also various story segments throughout the game, where the player relives the Creator's memories and learns about why he created the Digital Kingdom.
+
+Combat revolves around using the game's Techno Sword in order to defeat enemies, called Stallions. The player can do a standard melee attack by pressing a button, or hold it down in order to do a stronger attack. In combat, the player can also dodge, which avoids enemy attacks, and allows the player to get behind enemies. Alongside these moves, the Techno Sword can be used as a shotgun as a high-damage attack.
+Throughout Narita Boy, the player gains access to various abilities such as the Wild Fire attacks. They come in three different colors, which allows the player to do increased damage to enemies of the same color, but also decreases the player's resistance to attacks. Each Wild Fire ability also allows the player to summon one of three NPC companions to fight by the player's side in combat.
+
+
+== Development ==
+Narita Boy was funded through Kickstarter in 2017, raising €160,946. Eduardo Fornieles, Narita Boy's director, states that his childhood experiences in Spain and his time spent living in Japan influenced the story and the aesthetic of the game. When discussing the game's mix of technology and natural environments the director added, "I find beauty in the mix between organic and non-organic." The game was initially set to launch in December 2018, but was delayed to Spring 2021. The game launched on March 30, 2021.
+
+
+== Reception ==
+
+Narita Boy received "mixed or average" reviews according to Metacritic, except for the PlayStation 4 version which received "generally favorable" reviews.
+Rachel Watts of PC Gamer praised the world building of the Digital Kingdom, noting how the game used spirituality in the world. They also praised the segments where the player relives the Creator's memories saying, "These flashback moments are quietly reflective and act as a great counterbalance to all the satirical '80s macho power-fantasy present throughout the rest of the game." Ollie Reynolds, writing for Nintendo Life, enjoyed the game's combat and mentioned how each ability gave the combat more depth.
+Edge enjoyed the game's music and its retro art style, but felt that the gameplay did not live up to the standards of Narita Boy's audio and visuals. Mitchell Saltzman of IGN appreciated the visuals of the game, but strongly disliked Narita Boy's gameplay, writing "Narita Boy is at best serviceable, with hollow exploration filled with constant backtracking, simple puzzles, and combat that never really evolves in ways that make tougher enemies any more fun to fight."   
+
+
+== References ==

@@ -1,0 +1,18 @@
+Game: Lunacid
+appid: 1745510
+Source: Lunacid
+URL: https://en.wikipedia.org/wiki/Lunacid
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Lunacid is a 2023 indie first-person action role-playing video game developed and published by KIRA LLC. The game was released on October 30, 2023, for Windows. Lunacid is inspired by the King's Field series and similar games, with purposely low-detail graphics resembling those of a PlayStation title. Set in a dark fantasy world, the player character, implied to be accused of thievery, is banished into the Great Well, an underworld of sorts from which none have returned alive. They resolve to reach the bottom and confront the Dreamer, a sleeping ancient creature.
+A prequel taking place thousands of years prior to the events of Lunacid, titled Lunacid: Tears of the Moon, was released on April 12, 2025.
+
+
+== Reception ==
+The game received positive reviews from critics, who praised its graphics, soundtrack and level design, though they called its combat overly basic. On Metacritic, it received "generally favorable" reviews, with a Metascore of 82 and a User Score of 8.8.
+James Galizio of RPG Site was largely positive about Lunacid, saying that it stood on its own when compared to its inspirations. He lauded its non-linearity, saying that he was taken in by its gameplay loop. However, he described melee combat as "clunky" and did not like the boss fights, which he described as having "inflated HP" unless hit with powerful spells.
+Marco Bortoluzzi of The Games Machine gave the game the same score. He called it charmingly old-school but noted that its game balance heavily favored magic builds. Kerry Brunskill of PC Gamer called the game "a perfect example of how to do PS1 nostalgia right", saying that it "truly captured the spirit of [its] chosen era".
+
+
+== References ==

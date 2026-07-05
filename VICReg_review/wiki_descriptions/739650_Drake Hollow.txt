@@ -1,0 +1,33 @@
+Game: Drake Hollow
+appid: 739650
+Source: Drake Hollow
+URL: https://en.wikipedia.org/wiki/Drake_Hollow
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Drake Hollow is a 2020 survival adventure video game developed by The Molasses Flood and published by Curve Digital for the Xbox One. Players assume control of various youths who are transported to a metaphysical realm known as The Hollow, where they encounter Drakes, a race of anthropomorphic vegetable folk. Players attempt to complete various missions on different maps to collect resources, build fortifications around defensive objectives that are meant to protect Drakes from monstrous invaders, and construct weapons and traps to engage in combat with waves of hostile creatures that attempt to destroy the player's base. 
+The game was released to generally positive reviews. A port to Microsoft Windows was released on October 1, 2020. Publishing rights were moved to CD Projekt after its acquisition of The Molasses Flood; it was the final released game to be released by the studio before its closure.
+
+
+== Gameplay ==
+The gameplay of Drake Hollow bear some similarities to The Molasses Flood's previous game The Flame in the Flood, as well as Fortnite: Save the World. Its core gameplay loop involve players finding and caring for Drakes who take shelter at the player's base of operations. In order to adequately maintain Drake settlements and successfully defend them against attacks by corrupted monsters, players must venture out into the game world to gather resources and create supply routes. The game has two game modes, campaign and sandbox. It can be played both in single-player or cooperatively with up to four players in multiplayer mode.
+
+
+== Development and release ==
+Drake Hollow is developed by Boston-based video game company The Molasses Flood. It was originally meant to be a sequel to their previous game The Flame in the Flood, but a decision was made to turn the game into a standalone product during the initial stages of development due to the many additions and changes that have been made. A key difference between both games is that the player's goal in The Flame in the Flood is to survive all kinds of environmental hazards, whereas in Drake Hollow players must save other beings through the game's survival mechanics.
+Drake Hollow was originally scheduled for release in July 2020, but was announced as being delayed indefinitely a few days before its confirmed release date. The Xbox One version of Drake Hollow was later released on August 28, 2020, and was simultaneously added to Xbox Game Pass on the same day. The PC version of Drake Hollow was released for Windows on October 1, 2020.
+
+
+== Reception ==
+
+The Xbox One version of Drake Hollow received generally favorable reviews according to review aggregator website Metacritic. Fellow review aggregator OpenCritic assessed that the game received fair approval, being recommended by 36% of critics. Brendan Lowry from Windows Central gave the Xbox version of Drake Hollow a positive review and found it to be an overall enjoyable experience, even though he was frustrated by its endgame content. Nicholas Mercurio from Eurogamer Italy assessed Drake Hollow to be a simple survival game title that offers little in terms of innovation, but manages to competently present a number of unique elements as part of its gameplay experience. He was impressed with the game's art direction and visual design for the Drake creatures, in particular their resemblance to actual vegetables. In their review of the PC version of Drake Hollow, CD-Action criticized the game's "weak story, repetitive gameplay, and unvaried combat", but drew a favorable comparison to the early access title Ooblets and recommended it as a competent co-operative survival game for casual players.
+
+
+== Notes ==
+
+
+== References ==
+
+
+== External links ==
+Official website

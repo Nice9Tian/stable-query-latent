@@ -1,0 +1,40 @@
+Game: Darwin Project
+appid: 544920
+Source: Darwin Project
+URL: https://en.wikipedia.org/wiki/Darwin_Project
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Darwin Project is a free-to-play multiplayer online battle royale game developed and published by Scavengers Studio. It was released on January 14, 2020 for Microsoft Windows, Xbox One, and PlayStation 4.
+
+
+== Plot ==
+Darwin Project takes place in a dystopian post-apocalyptic landscape in the Northern Canadian Rockies. As preparation for an impending ice age, a new project- half science experiment, half live-entertainment- is launched. Players are dropped into an arena, initially armed with only an axe and a bow, and have to gather resources and survive along with 9 others. Players must craft items such as campfires and arrows and upgrade their weapons (axe and bow) using resources in order to survive and fight until only one player remains, winning the game.
+
+
+== Gameplay ==
+Ten prisoners are spawned into a snowy arena made up of seven tiles, each including different environments from tree houses to lava-filled zones and more. The game is run by the eleventh player, The Show Director, who is equipped with powers to make the game more interesting for the ten prisoners fighting for their lives. Each player can choose to play as a male or female prisoner. They are equipped with an axe, a bow and arrows. They can also choose three pieces of equipment from among bear traps, cage traps, snowballs, hooks, gliders, and tripwires. Players can use electronics that can be granted by the show director, or rewarded by getting the first kill of the game. The electronics are used to make powers for the prisoners to give them advantages in fighting or fleeing. Players can choose how to play throughout the arena by choosing different variations of builds. Builds include arrow type, the equipment used, electronic powers equipped (three per player), axe type, a cloak, and boots, all of which will also change the play style of each prisoner.
+
+
+== Development ==
+The development team behind Darwin Project has 18 members. The game was revealed at PAX East 2017 and officially announced at Microsoft's E3 2017 press conference. Multiple alpha and beta tests have occurred on PC.
+On 24 April 2018, the game was made into an early access free-to-play title.
+On 14 January 2020, the game was released on Steam, PlayStation 4 and Xbox One.
+On 13 May 2020, Scavengers Studio announced that they would stop any further development on the game, while keeping servers opened at least up to the end of 2020.
+On 20 November 2020, the studio announced that the servers in two regions (EU-Central and US-East) would stay open. Players from around the world can still play the game in these two regions.
+
+
+== Reception ==
+
+Darwin Project received mixed reviews from critics, according to review aggregator Metacritic.
+
+
+== See also ==
+Season: A Letter to the Future, another game by the same studio
+
+
+== References ==
+
+
+== External links ==
+Official website

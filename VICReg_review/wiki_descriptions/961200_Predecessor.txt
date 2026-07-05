@@ -1,0 +1,57 @@
+Game: Predecessor
+appid: 961200
+Source: Predecessor (video game)
+URL: https://en.wikipedia.org/wiki/Predecessor_(video_game)
+Match score: 7.00
+Retrieved: 2026-07-04
+--------
+Predecessor is a free-to-play multiplayer online battle arena (MOBA) game developed and published by Omeda Studios. The game started its buy-to-play early access phase on 1 December 2022. A free-to-play open beta launched on 28 March 2024. The game was fully released on 20 August 2024.
+
+
+== Gameplay ==
+Predecessor is a multiplayer online battle arena (MOBA) video game in a third-person perspective. The game features symmetrical maps, with bases located at opposing ends. Players aim to dismantle the core within the adversary's base to achieve victory. The game map is divided into four primary zones: Offlane, Jungle, Mid Lane, and Duo Lane. Defensive towers are strategically positioned along each lane, automatically engaging and neutralizing adversaries within their designated range, thereby safeguarding the allied bases. Each lane consists of two defensive towers and an inhibitor structure. The demolition of these key structures by a team results in the spawning of more formidable minions within the respective lane.
+Within a match, ten participants are divided into two opposing teams, each comprising five players. Each player controls a single character. Upon acceptance of the match invitation, individuals are prompted to specify their preferred role. This information is visible to teammates, fostering a collaborative effort toward constructing a balanced team composition. However, instances may arise wherein multiple players express a preference for the same role. In such scenarios, the game mechanics intervene, automatically assigning one player to the desired role while the other is allocated an available alternative. Every character is equipped with a basic attack, and possesses four unique abilities. These abilities serve various purposes, such as executing offensive or defensive maneuvers and providing passive enhancements.
+As players obtain in-game currency through the completion of in-game objectives, they may purchase items from the shop. These items can modify character abilities in various ways, including enabling teleportation to new locations, granting invisibility, manipulating time, and other effects. Moreover, experience is received to increase a character's attributes, such as strength, attack speed, and health.
+
+
+== Development ==
+Predecessor is the first title by UK-based developer Omeda Studios, which was founded in 2020 by Robbie Singh, Andrea Garella, and Steven Meilleur. In 2021, Omeda was granted funding from Epic Games through their Epic MegaGrants program. The initial funding of $2.2 million was designated towards the development of Predecessor. Omeda was inspired by Epic Games' multiplayer online battle arena (MOBA) title Paragon (2016), which was discontinued in 2018. Steve Superville, Paragon's creative director, joined Omeda Studios as an advisor in June 2021. Not only did Predecessor draw inspiration from Paragon, it used assets directly from Paragon that were released by Epic Games Studios to be used by other development studios  Paid Early Access for the PC was accessible on the Epic Games Store and Steam from 1 December 2022. On 5 December 2023, a closed beta was opened for North American and European players on the PlayStation 4 and PlayStation 5.
+It uses the Unreal Engine 5.
+
+
+== The worlds ==
+
+
+=== Ashkarath ===
+Ashkarath is one of the worlds in Predecessor where different heroes originate from. Ashkarath itself being a world of fire and hatred, the realm consisting mostly of obsidian plains and Sulphur skies (Predecessor, n.d.-a). Prominent heroes that trace origins to this place include Revenant and Akeron.
+
+
+=== Axion Prime ===
+Axion Prime is another of the worlds within the lore of Predecessor. Axion Prime is a world of neon lights, advanced technology, and cybernetic enhancements (Predecessor, n.d.-b). The planet itself is riddled with crime and is very cyberpunk styled; this being reflected in the heroes that originate from here, those being Twinblast, Skylar, Shinbi, Phase, Murdock, Dekker, and Crunch. 
+
+
+=== Equinox ===
+Equinox is a tidally locked planet where half of the planet is perpetually locked in darkness and the other half is perpetually locked in daylight; these regions called Nyxthra and Everburn respectively (Predecessor, n.d.-c). While life does not really thrive in these regions, it does thrive in the twilight zone between them (Predecessor, n.d.-c). The hero list that trace origins to this world are quite diverse, including The Fey, Revenant, Rampage, Morigesh, Kira, Khaimera, Iggy and Scorch, Howitzer, Grux, Grim.EXE, Gadget, Drongo, and Countess. 
+
+
+=== The Orbital Cage ===
+The Orbital Cage is a massive prison located above the orbit of Axion Prime. With itself being the main holding ground for rogue AI, criminals, and bioweapons (Predecessor, n.d.-d). The Orbital Cage is described as inescapable with augmented soldiers patrolling its halls (Predecessor, n.d.-d). While there are not many heroes that trace their origins here now, their potential leaves it wide open for more in the future, for the time being the ones that draw their origins here are Riktor and Lt. Belica. 
+
+
+=== Velrune ===
+Velrune is a very distinct world among the others in Predecessors lineup, it being a world where advanced technology and magic begin to meet (Predecessor, n.d.-e). Making many of the heroes from this world seemingly inspired by medieval fantasy. Heroes from this world include Greystone, Terra, Sparrow, Serath, Narbash, Mourn, Kwang, Gideon, Aurora, and Argus. 
+
+
+=== Sylmara ===
+Sylmara is a much lower tech world than we are used to so far, with many of its characters and design featuring stark similarities to ancient Asian cultures. The world itself being a world of magic, ancient forests, spirits and deep traditions (Predecessor, n.d.-f). Heroes from this world include, Boris, Zarus, Yurei, Yin, Wukong, Renna, Kwang, and Feng Mao. 
+
+
+=== Aresium ===
+Aresium is a world that has been locked in a centuries long war against an extraterrestrial threat (Predecessor, n.d.-g). Because of the length of the conflict, warfare technology surged forward and many of the heroes that originate from this world are cybernetically enhanced soldiers in some way (Predecessor, n.d.-g). Those heroes include Boris, Zinx, Wraith, Steel, Muriel, and Kallari. 
+
+
+== References ==
+
+
+== External links ==
+Official website

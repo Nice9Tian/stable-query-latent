@@ -1,0 +1,58 @@
+Game: A Way Out
+appid: 1222700
+Source: A Way Out
+URL: https://en.wikipedia.org/wiki/A_Way_Out
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+A Way Out is a 2018 cooperative action-adventure video game developed by Hazelight Studios and published by Electronic Arts. It is the second video game directed by Josef Fares after Brothers: A Tale of Two Sons. The game does not have a single-player option; it is playable on local or online split screen co-op between two players.
+A Way Out was released for PlayStation 4, Windows, and Xbox One on March 23, 2018. The game received positive reviews from critics and sold over 13 million units by April 2026.
+
+
+== Gameplay ==
+
+A Way Out is a cooperative action-adventure game played from a third-person perspective. It is specifically designed for split-screen cooperative multiplayer, which means that it must be played with another player through either local or online play while both players' screens are displayed next to each other. In the game, players control Leo and Vincent, two convicted prisoners who must break out of prison and stay on the run from authorities. As the story of both protagonists is told simultaneously, their progress may not be synchronized, which may result in one player being able to control their character, while another is watching a cutscene. Players need to cooperate with each other in order to progress, and each situation can be approached differently, with both characters taking different roles. For instance, during an early segment of the game, the player controlling Vincent needs to distract a nurse and guard, so the player controlling Leo can find a chisel needed to aid their escape. These roles are not fixed, so Leo and Vincent can swap their roles in another playthrough. Players can interact with many non-playable characters, and there are dialogue options for players to choose.
+The game offers a "play free online" model such that players will be able to join online sessions (hosted by the player's friends) whether or not the joining player owns the actual game.
+A Way Out includes several minigames such as an arcade video game titled as Grenade Brothers, arm wrestling, banjo and piano duet, baseball, basketball, bottle shooting, Connect Four, darts, horseshoes, spearfishing, wheelchair wheelies; and exercises such as chin-ups, dips, push-ups, sit-ups and bench presses.
+
+
+== Plot ==
+In 1972, Vincent Moretti (Eric Krogh) is incarcerated and sent to prison for fraud and murder. In jail, he meets Leo Caruso (Fares Fares), who has been inside for six months for grand theft, assault and armed robbery. While in the cafeteria, a thug sent in by crime boss Harvey tries to murder Leo, but Vincent intervenes, resulting in both of them being sent to the infirmary while the thug is beaten to death after stabbing and killing a prison guard. While in the infirmary, Leo requests Vincent's help to steal a chisel from the office. Vincent complies. After the theft, Vincent senses that Leo is planning an escape and offers to help. Leo initially refuses, but begrudgingly agrees to collaborate when Vincent reveals he has a grudge with Harvey.
+Leo and Vincent make progress on their escape plan, stealing sheets to make a rope and smuggling a wrench to open a grating. Using teamwork and gathered tools, the two escape from the jail on a rainy night. After evading the police in the wilderness, the two find an empty camp and fish to make food. Vincent reveals that he was once a banker and Harvey had him launder money before murdering his brother as a warning and framing Vincent for the murder. Leo starts telling his story but is interrupted when a police helicopter flies by, causing both to start moving again. They find an old couple's house, and the two steal new clothes, a shotgun and a truck before evading the pursuing police in the vehicle and, after crashing, a rowboat. After surviving a waterfall, the duo finds civilization, after which Leo reveals he and Harvey had stolen a valuable gem, the Black Orlov, but when Leo tried selling it, Harvey betrayed him by killing their buyer and escaping with the gem, leading to Leo's incarceration.
+At a trailer park in the city, Leo confirms the safety of his wife Linda and his son Alex, before going to a construction site with Vincent. They find Ray, one of Harvey's underlings who works as a construction foreman, and, after a chase, capture and torture him to learn Harvey's location, which is Mexico. Plotting revenge against Harvey, the duo robs a gas station to buy guns from an arms dealer, Jasmine. When the two leave, Jasmine betrays them by giving their location to Harvey. At a telephone booth, Vincent calls Emily, a pilot, and convinces her to fly them to Mexico. He learns from her that his wife, Carol, had just gone through childbirth. The duo agrees to go to the hospital, and they encounter a hitman sent by Harvey, who they manage to subdue. They go to the hospital and Vincent gets to see his newborn daughter Julie, but are forced to leave as police officers surround the building. Leo is captured but manages to escape thanks to Vincent's help.
+The next day, Vincent and Leo meet Emily at her hangar and she flies them to Mexico. When the two of them make their way to Harvey's mansion, a firefight ensues. After fighting Harvey's guards and eventually Harvey himself, the two overpower Harvey, force him to return the Black Orlov and, after he attempts to take one of them hostage, kill him. Escaping with the Black Orlov, Vincent and Leo return to the United States on Emily's plane, but are surrounded by police upon landing. An officer takes the Black Orlov from Leo and hands Vincent a gun, revealing that both Vincent and Emily are undercover FBI agents; Leo and Harvey's Black Orlov deal had actually been a sting operation, and the dealer killed was Vincent's brother, Gary.
+Feeling betrayed, Leo subdues Vincent, takes him hostage and hijacks a police car to escape. While trying to avoid a police roadblock, he crashes the car into water. Both escape the submerged vehicle, Leo stealing a boat while Vincent is picked up by Emily in a police helicopter. After a chase where Vincent tries to destroy the engine of the boat, Leo jumps off before it crashes into fuel tanks and runs into a portside warehouse. Emily lands the helicopter and both she and Vincent chase Leo inside. Leo manages to ambush Emily, taking her gun away and ordering her to leave as the fight is between him and Vincent. The gunfight ends with both men injured, unarmed, and exhausted on the top of the roof. Seeing one of their guns nearby, both try to reach it, but only one is able to and shoots the other. The two share a final moment of friendship before the person shot dies from their injuries.
+
+If Vincent survives, he informs Linda of Leo's death before returning to Carol, making amends to save their marriage and raise their daughter by revealing he resigned from the FBI.
+If Leo survives, he takes Vincent's apology letter and delivers it to Carol, then proceeds to leave town with his family while Vincent's funeral is taking place.
+
+
+== Development and release ==
+A Way Out was developed by Hazelight Studios, a small team of developers in Sweden led by film director Josef Fares. Both Fares and several members of his team previously worked on the acclaimed title Brothers: A Tale of Two Sons from Starbreeze Studios. Production of the game began in the second half of 2014. The design philosophy for the game is that the team wanted to create a cooperative game that is unique and different. As a result, the team opted not use the traditional drop-in and drop-out cooperative format featured dominantly in mainstream cooperative games, and instead, the team decided to create a full game that must be played cooperatively with another player. According to Fares, the game was his passion project and he cancelled an upcoming feature film in order to devote more time to working on the game. The game uses Unreal Engine 4. About 30–35 people worked on the game.
+Despite the game's heavy focus on multiplayer, the game was described as an "emotional adventure". As a result, cutscenes will play out even during online play to ensure that players can understand the story of the other character. The game features a wide variety of gameplay sequences from stealth to driving to ensure that players are often presented with different gameplay situations and generally make the game and its characters more interesting. To make the two protagonists more realistic, the team ensured that Leo and Vincent have distinct personalities and that they have different opinions and responses while interacting with the game's world. Fares Fares, a Swedish-Lebanese actor and Josef Fares' older brother, plays Leo.
+The title is part of publisher Electronic Arts' EA Originals program, dedicated to funding small independent games. The partnership came to fruition when Patrick Söderlund, the executive vice president of Electronic Arts, approached Fares personally for collaboration after being impressed by Brothers. EA offered $3.7 million for the development of the game and gave Fares and his team complete creative control over the game's development. According to Fares, all revenue from sales of the game will go back to Hazelight. The formation of Hazelight Studios and the partnership between Hazelight and EA was officially unveiled at The Game Awards 2014. The game's title and gameplay was revealed at Electronic Entertainment Expo 2017 during EA's press conference. The game was released for PlayStation 4, Windows, and Xbox One on March 23, 2018.
+
+
+== Reception ==
+
+
+=== Critical reception ===
+
+A Way Out received "generally favorable" reviews from critics, according to review aggregator website Metacritic. 
+
+
+=== Sales ===
+A Way Out sold over 1 million units in two weeks. By August 2019, the game had sold 2 million units. Josef Fares revealed in January 2021 that it had sold over 3.5 million units. By June 2024, it had sold over 9 million units. By March 2025, it had sold over 11 million units. As of April 2026, A Way Out has sold over 13 million copies globally.
+
+
+=== Accolades ===
+
+
+== Notes ==
+
+
+== References ==
+
+
+== External links ==
+Official website

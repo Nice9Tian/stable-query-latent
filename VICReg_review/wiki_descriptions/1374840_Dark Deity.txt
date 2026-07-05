@@ -1,0 +1,41 @@
+Game: Dark Deity
+appid: 1374840
+Source: Dark Deity
+URL: https://en.wikipedia.org/wiki/Dark_Deity
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Dark Deity is a tactical role-playing video game developed by Sword & Axe LLC and published by indie.io. It was funded by Kickstarter, and released on June 15, 2021, on the Steam platform for Microsoft Windows. It was later released for Nintendo Switch on March 17, 2022. It follows a group of military academy students in a fantasy universe who are suddenly conscripted into the army years prior to their normal graduation due to the onset of war in the kingdom.
+The game garnered positive reviews on PC and mixed reviews on Switch, with reviewers praising its overall gameplay, character artwork, and amount of class choices, but criticizing its map graphics and design, menu layout, performance issues and bugs, while calling its story and similarity to the Fire Emblem series lacking in originality.
+
+
+== Plot ==
+The game starts in the Delian Kingdom, where the ruler, King Varic, has started an ill-prepared war. He forcibly conscripts all the students in the Brookstead Military Academy, even if they are not yet ready to graduate. Four students—Irving, Garrick, Maren, and Alden—are among those recruited, and become embroiled in war. As the story progresses, a more shadowy conflict unfolds involving nefarious figures searching for ancient magical artifacts known as Eternal Aspects, which also have the gameplay purpose of adding unique modifiers to characters' stats.
+
+
+== Gameplay ==
+The gameplay consists of moving units around on a grid-based battlefield. Characters utilize an "Advantage system" where they all carry four different weapons that target different enemy weaknesses. These weapons can be upgraded using Class Tokens, which is essential for the game. Weapons have 4 tiers that require different rarities of Tokens to upgrade. Upgrading a weapon twice will advance it to the next tier.
+The game foregoes the use of permadeath or casual modes as seen in Fire Emblem. When characters are defeated in battle, they remain playable, but gain a permanent wound that costs them a random stat point. This still punishes players permanently for losing a character, but lets players decide to continue fighting if they decide that the tradeoff is worth it. Due to the lower penalty for losing units, the game's difficulty is balanced to be challenging.
+Characters can have support conversations that increase their affinity for other characters, with thirty playable characters in total.
+
+
+== Development ==
+Dark Deity was first conceptualized by Chip Moore and Dylan Takeyama, who came up with the concept while in college. The developers had the goal to match a retro gameplay style with an updated modern look, scaling down high-resolution character art to lower-resolution sprites. They created the game in GameMaker and launched a successful Kickstarter. It was later surprise-launched on Steam.
+
+
+== Reception ==
+
+Dark Deity received "generally favorable" reviews for PC according to review aggregator Metacritic, with critics citing its gameplay, art and story; the Nintendo Switch version received "mixed or average" reviews. OpenCritic assessed that the game was recommended by 50% of critics.
+Audra Bowling of RPGFan rated the game 91/100 and gave it the Editor's Choice award, comparing it to Fire Emblem but saying that it diverged in key ways, and calling it an enjoyable addition to the strategy RPG genre. She criticized the game's lack of a tutorial and minor technical issues, also calling the story "standard fantasy fare", but saying that it served its purpose and that she enjoyed the game's tongue-in-cheek moments.
+Graham Russell of Siliconera rated the game 8/10, calling it a small game that "cuts clear corners", but calling the battle sprites and animations "on-point and nostalgic".
+
+
+== Sequels ==
+A sequel for the game, Dark Deity 2, was released on March 24, 2025. Dark Deity 3 was announced in June 2026.
+
+
+== References ==
+
+
+== External links ==
+Official website

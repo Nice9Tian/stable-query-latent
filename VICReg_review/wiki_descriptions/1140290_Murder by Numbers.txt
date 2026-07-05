@@ -1,0 +1,35 @@
+Game: Murder by Numbers
+appid: 1140290
+Source: Murder by Numbers (video game)
+URL: https://en.wikipedia.org/wiki/Murder_by_Numbers_(video_game)
+Match score: 7.53
+Retrieved: 2026-07-04
+--------
+Murder by Numbers is a visual novel video game developed by Mediatonic and published by The Irregular Corporation. The game follows TV actress-turned-detective Honor Mizrahi and her robot companion SCOUT as they find themselves involved in several murder cases. Players must investigate areas for clues and complete nonogram-style logic puzzles to progress the story.  It was released in March 2020 for Nintendo Switch and Windows, and in March 2021 for Stadia.
+
+
+== Gameplay ==
+Murder by Numbers is presented in a visual novel style, similar to the Ace Attorney series. Players are tasked with questioning witnesses and suspects and investigating areas for clues. Investigating brings up nonogram puzzles, which the player must solve to uncover a piece of evidence, which can then be presented to witnesses to advance the story. These nonogram puzzles are solved similar to many other computer-based nonogram puzzles, such as the Picross series, giving the player the ability to mark spaces that should be filled and those that should be empty as a method to track their work and make deductions towards solving the puzzle. A player can make any number of mistakes as they progress without penalty in most puzzles, but may ask for hints towards a solution. Some sections will require the player to complete a series of smaller nonogram puzzles within a time limit and without using "empty space" markers or hints. Players can choose between normal or easy difficulty settings, the latter of which automatically displays hints and crosses out rows that have been completed.
+The story is split into four cases, each with a Detective Rank that starts at F and increases as the player solves puzzles. Scoring enough points raises the rank and unlocks bonus puzzles outside of the main story, with more points awarded for playing on normal difficulty and not using hints. Earning an S rank in a case and clearing all of the unlocked bonus puzzles unlocks optional story sequences detailing SCOUT's backstory.
+
+
+== Plot ==
+In 1996, Honor Mizrahi is an actress co-starring on the TV detective show Murder Miss Terri. After she is fired from her job, she comes across SCOUT, a robot who was thrown away in a trash heap and has lost most of his memories. Honor discovers that the show's showrunner has been murdered. While initially suspected by LAPD detective Gerry Cross, Honor solves the mystery behind the murder with SCOUT's help, though the murderer seemingly commits suicide. Honor soon finds herself involved in more murder mysteries, working alongside SCOUT to solve them as he tries to regain his lost memories.
+
+
+== Development ==
+Murder by Numbers was developed by Mediatonic, an independent United Kingdom-based studio. The game was designed and written by The Swords of Ditto writer Ed Fear, with character designs by Hatoful Boyfriend creator Hato Moa. The game's musical score was composed by Phoenix Wright: Ace Attorney composer Masakazu Sugimori, with singer-songwriter Bright Light Bright Light providing vocals for the game's main theme.
+The game was released on the Nintendo Switch on 5 March 2020, on Windows on 6 March 2020 and on Stadia on 23 March 2021.
+
+
+== Reception ==
+
+Murder by Numbers was generally well received by critics on both platforms, according to review aggregator Metacritic, and Polygon included it in their feature on the best video games of 2020.
+
+
+== References ==
+
+
+== External links ==
+Official website
+Murder by Numbers at The Visual Novel Database

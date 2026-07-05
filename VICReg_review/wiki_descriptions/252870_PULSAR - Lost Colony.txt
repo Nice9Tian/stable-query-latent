@@ -1,0 +1,68 @@
+Game: PULSAR: Lost Colony
+appid: 252870
+Source: PULSAR: Lost Colony
+URL: https://en.wikipedia.org/wiki/PULSAR:_Lost_Colony
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+PULSAR: Lost Colony is a science fiction space exploration video game by independent developers Leafy Games, LLC. The video game was greenlit on Steam Greenlight on October 3, 2013, and was later funded successfully on Kickstarter on October 31, 2013. The game was released in an Alpha state on February 25, 2014, and was later available on Steam's Early Access program following an official release on June 23, 2021.
+
+
+== Overview ==
+PULSAR: Lost Colony is a game about space exploration, in which a procedurally generated galaxy is created with a ship of the player's choice. They may warp to several systems and upgrade/repair their ship when encountering a system with a trading post. Combat is also in this game, as the player can attack and board enemy ships. There are several classes to choose from in this game such as: Captain, Pilot, Engineer, Scientist, and Weapons Officer. The game has a single-player and multiplayer available, both modes are exactly the same as it is now. Multiplayer is mainly co-op as you can play with your friends and cooperatively destroy enemy ships, beam down to planets, and board enemy ships.
+This game includes four playable factions: The Colonial Union, W.D. Corporation, The Alliance of Gentlemen, and The Fluffy Biscuit Company. In the future, other factions will be added, including a "secret faction" known as the Polytechnic Federation. The developers plan to tie in the factions with the story.
+The game also currently includes three playable races The Humans, The Sylvassi, and The Robots. Unlike The Sylvassi, and The Robots, The Humans require oxygen, and they have a special ability allowing them to be revived once per jump. The Sylvassi are immune to extreme cold and have a special ability to be able to go invisible for a short time, however they have a lower base health than The Humans and are extremely weak to high temperatures. The Robots have a still lower base health than The Sylvassi however they are immune to all hazardous environments except radioactive, and they can be repaired with a repair gun.
+
+
+== Features ==
+As of 2013 PULSAR: Lost Colony features are the following
+
+Single-player and Multiplayer
+Five Player Co-Op Online or LAN
+Single-player/Multiplayer AI Bots that work with you
+Four Factions
+Five Classes
+Soundtrack
+Procedurally generated galaxies
+Planets
+Crew Permadeath
+
+
+=== Planned Features as of 2013 ===
+When the Kickstarter page for PULSAR: Lost Colony was created on October 2, 2013, they highlighted several features that were planned if their funding goals were achieved. The funding goals were achieved as highlighted on their website. These are the features that are planned
+
+Enhanced Soundtrack
+Sector Commanders
+Custom/Mega Galaxies
+Two Additional Secret Ships
+Community-Designed Player Hub
+As of 2024, the game was fully active and available. One update in late 2024 addressed various features of game play.
+
+
+== Gameplay ==
+The core gameplay revolves around exploring a procedurally generated galaxy, while completing optional missions for credits. There are light RPG elements as well, in the form of classes that earn experience points and talent points.
+These classes consist of a captain, a Pilot, an Engineer, a Scientists, and a Weapons Officer. There can only be one member of each class in the five person crew. Each role is responsible for the various functions required to operate the ship: 
+
+The Captain oversees the crew and makes command decisions such as setting a course, accepting or refusing orders and can refit the ship while near a station. The Captain can also unlock critical or dangerous systems, such as the emergency blind jump.
+The Captain also has the ability to upgrade Talents for their crew.
+The Pilot is responsible for maneuvering the ship, including navigating around objects, aligning the ship towards a target beacon, evasive maneuvers during combat and repair yard docking. Though the Pilot can fly in first-person perspective, it is one of only two that have exterior view modes as part of their role (the other being the Weapons Specialist). It is important to note that any member of the crew can fly the ship so long as the ship's helm is unoccupied.
+Upgrade paths include Evasion, Personal Combat Training, and Navigation.
+The Scientist utilizes the ship's sensors to scan contacts and planets. They can discern if a planet requires an exosuit, type and number of life forms aboard ships or planet-side (though this does not detect robots) and begins play with a hand-held scanner. They also perform research by collecting samples from planets and putting them in the ship's Atomizer. Samples will then generate one type of research point. When the right number and combination of research points have been generated, new talents can be researched. Scientists also run the communications screen, execute beneficial programs from the ships computer (and broadcast harmful viruses to enemy ships) and can act as ship's medic.
+Upgrade paths include Hacking, Medical, and Advanced Research.
+The Weapons Specialist manages the weapons on the ship, this includes guns, turrets, and nuclear armament. Weapons Specialists are usually the ones that mans the turrets on ships, although any member of the crew can currently use turrets.
+Upgrade paths include Nuclear Technology, Laser Armaments, and Advanced Armory.
+The Engineer has the job of continual maintenance and repair of vital ship systems, as well as preventing the engines from overheating and controlling ship power flow. They also charge the warp drive and engage the ship into warp speed.
+Upgrade paths include Engine Improvements, Reactor Power Management, and Automated Repair Tools.
+In a recent update the Captain has the ability to Upgrade paths/perks which the entire crew receive (Note: this is not the same as the skills the crew assign for themselves.)
+
+
+== Development ==
+In July 2012, Leafy Games, LLC was created. Shortly after the founding of the indie studio they started their first project, PULSAR: Lost Colony, after several attempts at prototypes for a new game. They released their first development log or "devlog" on their Official YouTube Channel on August 2, 2013, titled "PULSAR: Lost Colony - Video Devlog #0" which marked their first public showcase of the game. Since then they have updated the game several times with new features. They have added features for each station for the roles of Captain, Engineer, Scientist, and Weapons Officer such as: commands delivered by the Captain to the players/bots, ship cores which must be monitored at all times by the Engineer, and viruses/scans delivered by the scientist, and new weapons/turrets have been added to ships. The developers have also added new ships to the game, and planets. The game is scheduled to go into Beta later this year as the game is now in Pre-Beta.
+Following the release of the Alpha, players were able to redeem their keys on Steam. Because the game was greenlit, it is on Steam Early Access. The developers post a developer log on their channel, and only recently started scheduling them to every one to two weeks.
+
+
+== References ==
+
+
+== External links ==
+Official Web site

@@ -1,0 +1,24 @@
+Game: The Guild 3
+appid: 311260
+Source: List of THQ Nordic games
+URL: https://en.wikipedia.org/wiki/List_of_THQ_Nordic_games
+Match score: 3.37
+Retrieved: 2026-07-04
+--------
+Founded in June 2011, THQ Nordic is an Austrian video game publisher based in Vienna that acts as the primary publishing arm of Swedish holding company Embracer Group. THQ Nordic GmbH, originally Nordic Games GmbH, changed its name to THQ Nordic in 2016 to better reflect its games portfolio. The company publishes original games, ports and remasters of older intellectual property it has acquired, and licensed games based on third-party properties.
+
+
+== Games published ==
+
+
+== Games distributed ==
+
+
+== Notes ==
+
+
+== References ==
+
+
+== See also ==
+List of Deep Silver games

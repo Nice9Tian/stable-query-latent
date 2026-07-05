@@ -1,0 +1,34 @@
+Game: Age of Empires III: Definitive Edition
+appid: 933110
+Source: Age of Empires III: Definitive Edition
+URL: https://en.wikipedia.org/wiki/Age_of_Empires_III:_Definitive_Edition
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Age of Empires III: Definitive Edition is a real-time strategy video game developed by Tantalus Media and Forgotten Empires and published by Xbox Game Studios. It is a remaster of the 2005 game Age of Empires III, celebrating the 15th anniversary of the original. It features improved visuals, a remastered soundtrack, two new game modes, and four new civilizations, plus African and Mediterranean-themed downloadable content as of June 2022. The Mediterranean expansion introduces the Italians as a playable civilization, which was planned for the original version of the game but did not appear. It includes all previous expansions from the original game. It was released on October 15, 2020 for Windows.
+
+
+== Gameplay ==
+The core gameplay elements are shared heavily with the original, but Definitive Edition builds upon it. The remaster includes new 4K Ultra HD graphics, rebuilt 3D assets, improved destruction animations on buildings, a spectator mode, an overhauled and scalable UI, mod support, new server-based online multiplayer with cross-network play, new maps, and remastered sounds and music. It features two new civilizations, the Incas and the Swedes, along with two new game modes, The Art of War and Historical Battles. It includes all previous expansions from the original game (The WarChiefs, The Asian Dynasties).
+The AI was improved, and a new "extreme" difficulty level was added. The number of cheats AI uses in the original game was reduced. The new AI can micromanage now, it is better at picking units, reading the map, reading its opponent's army, making well-rounded army compositions, retreating from lost battles, and hit-and-run tactics on the highest levels.
+
+
+=== Expansions ===
+An expansion pack adding the United States civilization was announced on April 10, 2021 and released on April 13. For a limited time, players could unlock it for free by completing 50 challenges, each themed around a US state.
+A second expansion pack, The African Royals, was announced on July 20, 2021 and released on August 2. The African Royals expansion adds two new civilizations, the Ethiopians and the Hausa, as well as three new Historical Battles, 15 new African maps, 5 new indigenous African civilizations to ally with, and 11 new achievements.
+An expansion pack adding the Mexico civilization was announced on November 22, 2021 and released on December 1. In addition to the new civilization, several historical battle scenarios were added to the game centered around both the Mexican civilization and the United States civilization, as well as 10 new achievements and additional content for the American civilization.
+Another expansion pack, Knights of the Mediterranean, was announced on May 12, 2022 and released on May 26, adding both Italian and Maltese (Knights Hospitaller) civilizations. It also added 30 new random maps, 9 new minor civilizations called Royal Houses, 8 historical maps, two new game modes (Diplomacy and Tycoon) and 25 new achievements.
+
+
+== Release ==
+On August 21, 2017, at Gamescom, Microsoft announced Age of Empires III: Definitive Edition. On August 20, 2019, Microsoft announced Age of Empires III: Definitive Edition was in development by Tantalus Media.
+On January 23, 2020, Microsoft announced that the closed beta would begin in early February. Each beta session will include a small piece of the game. Larger closed beta sessions will be dedicated to multiplayer and matchmaking. Campaign beta sessions will be limited to a very small group of players and only certain missions. The first closed beta session began on February 11, 2020, and ended on February 19, 2020. The second closed multiplayer session began on March 31 and ran through April 7, 2020.
+On August 27, 2020, Microsoft revealed the announce trailer at Gamescom. The game was released on Steam, Microsoft Store, and Xbox Game Pass on October 15, 2020.
+
+
+== Reception ==
+
+Age of Empires III: Definitive Edition received "generally favorable" reviews according to review aggregator Metacritic with a score of 75/100 from 46 reviews. Fellow review aggregator OpenCritic assessed that the game received strong approval, being recommended by 71% of critics. Windows Central's Samuel Tolbert praised the new graphics and campaign changes but criticized the AI path finding.
+
+
+== References ==

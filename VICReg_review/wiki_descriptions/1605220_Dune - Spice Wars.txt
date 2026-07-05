@@ -1,0 +1,33 @@
+Game: Dune: Spice Wars
+appid: 1605220
+Source: Dune: Spice Wars
+URL: https://en.wikipedia.org/wiki/Dune:_Spice_Wars
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Dune: Spice Wars is a 4X real-time strategy video game developed by Shiro Games and published by Funcom. In the game, the player tries to dominate the planet of Arrakis diplomatically or militarily. The title is set in the Dune universe, it was released in early access in April 2022 and was fully released in September 2023.
+
+
+== Gameplay ==
+
+Dune: Spice Wars is a 4X real-time strategy game set on the desert planet of Arrakis. Certain tiles have resources like spice and minerals, and unique tiles such as the polar ice caps can produce large amounts of water for the player. The deep desert serves the same purpose as oceans do in other titles, being impassible by troops unless you have certain research done. Spice Wars has seven factions: House Atreides, House Harkonnen, House Corrino, House Ecaz, House Vernius, the Smugglers and the Fremen. Each Faction is represented by a different leader and has different bonuses. The player can select councilors at the start of the game to give additional bonuses. Once the player recruits agents, they can invest them in different factions and areas of research. For example, putting in agents in Harkonnen might allow to carry out operations against them, while adding agents to Arrakis would allow the player to research sites. Sandworms can pop up around the desert and eat units, a warning is given before it happens. Sietches are found throughout the desert, and can be allied with or destroyed.
+The player uses ornithopters in order to scout out the desert and the sites within it. The player can upgrade their main base and the towns they control with different buildings in order to produce resources. Enemy bases are defended by a certain number of troops, and once those are destroyed, the player can lay claim to a village if they have the required authority. The player can research different technologies in the skill tree, ranging from military to economic. The player can only expand and survive if they have enough solari, military power, water and authority to retain control over their dominion. Spice can be used for diplomacy and trade, and in order to retain standing with the Landsraad, the player must pay a tax after a certain number of in-game days. Failing to pay the spice tax will reduce a players standing within the Landsraad and as a result, reduce the number of votes available to their faction.  The Landsraad convenes every couple weeks, and the player can choose what issues are voted on, and whether they or their enemies receive certain buffs or debuffs.
+
+
+== Development ==
+Dune: Spice Wars was released on April 26, 2022, in early access. In June 2022, a patch was released and roadmap details about future factions and gameplay expansions coming in the near future. The game initially released with single player gameplay, with multiplayer being added at a later date with several different game modes available. Version 1.0 of the game was released on September 14 2023.
+As for the game's art, the lead artist spoke about keeping distance from previous Dune adaptions, "We tried to keep some distance from the previous Dune material out there because we really wanted to have our own take on it and express our own style". The game is mainly based on the books for world inspiration.
+
+
+== Reception ==
+
+The full release of Dune: Spice Wars received "mixed or average reviews" according to review aggregator, Metacritic. Fellow review aggregator OpenCritic assessed that the game received strong approval, being recommended by 67% of critics.
+While finding the AI inept, IGN enjoyed the changes to water management from early access, "Running a surplus of water, though, increases both the maximum supplies your units can carry and their recharge speed at friendly settlements, so keeping your industrial operations minimal translates into freer movement across the planet". PC Gamer wrote that the game did a poor job capturing the nuances of the Dune universe with its RTS trappings, "Its Byzantine conspiracies and Shakespearean clashes between familial loyalty and personal drive are—unsurprisingly—missing from such a conservative approach to a genre". Eurogamer also wrote that the game, outside of a few minor exceptions, felt "like Dune dressing for traditional strategy mechanics". Rock Paper Shotgun enjoyed managing the CHOAM system, choosing how much spice went to storage versus the company, "It's a nifty system that forces you to either keep expanding or exploit the spice you already have to its limits".
+Dune: Spice Wars was awarded with "Strategy/Simulation Game of the Year" at the 27th Annual D.I.C.E. Awards.
+
+
+== References ==
+
+
+== External links ==
+Official website

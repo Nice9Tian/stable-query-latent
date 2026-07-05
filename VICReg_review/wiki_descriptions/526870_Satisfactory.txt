@@ -1,0 +1,55 @@
+Game: Satisfactory
+appid: 526870
+Source: Satisfactory
+URL: https://en.wikipedia.org/wiki/Satisfactory
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Satisfactory is a 2024 factory simulation game by Coffee Stain Studios for Windows, Xbox, and PlayStation. The player (referred to as "pioneer") is dropped onto an alien planet with a handful of tools and must use the planet's natural resources to construct increasingly complex factories. The initial goal is to construct a space elevator, through which the Pioneer begins supplying the megacorp the player works for (FICSIT Inc.) with increasingly numerous and complex components for their unknown, but stated to be prudent, purposes. These exports unlock access to new technology that in turn unlocks a new tier of manufacturing and refinement machines to support the production of the next phase of parts to be delivered to FICSIT.
+Satisfactory was made available for early access on 19 March 2019. By January 2024, the game had sold 5.5 million copies. The full version of the game was released on 10 September 2024 for PC, and was released on PlayStation 5 and Xbox Series X/S on 4 November 2025.
+
+
+== Gameplay ==
+Satisfactory is played from the first-person perspective and features cooperative multiplayer. The player takes the role of a FICSIT Pioneer who is sent to a resource-rich planet to collect and refine resources. They must build out an automated factory and supporting infrastructure. The ultimate goal is the mass-manufacture of Project Assembly parts which are sent to FICSIT using a space elevator. The player spawns on a pre-designed map in one of four locations, and must explore on foot or by vehicle to find resources and lift the fog of war on their map. FICSIT guides the player through a series of tiers, each completed by collecting resources and crafting a specified number of components. Each tier unlocks new equipment, blueprints, and technologies, allowing the player to expand and upgrade their factory. As players advance through tiers, automation becomes necessary to produce the large quantities of complex items that FICSIT requires. Conveyor belts, pipelines, and vehicles are unlocked at various stages and are used to transport resources and components. The player must also build and upgrade a power grid to run their factory, which also requires the manufacture and/or harvesting of power-generating components and/or materials.
+
+
+== Plot ==
+The player character, an unnamed female FICSIT employee known as a Pioneer, is dropped onto the surface of MASSAGE-2(AB)b from orbit via a drop pod controlled by FICSIT's AI, ADA. The pod's orientation is interrupted by a cryptic message. Despite a malfunction with all the pod's parachutes, the Pioneer manages to land safely, one of only a few Pioneers in the region to have successfully done so. The Pioneer finds herself without memories, claimed by ADA to be due to retrograde amnesia. Following an onboarding program to refresh the Pioneer's knowledge, she is able to build the HUB, her home base. The Pioneer then constructs a space elevator to commence what ADA refers to as "Project Assembly". ADA reveals that it is actually part of a larger plan known as the Save the Day Program, intended to save Earth. While she does not explain why Earth is in danger, she later implies it is due to corporations' short-sighted destruction of the environment for profits, causing the planet to start becoming uninhabitable.
+Finding mysterious alien artifacts known as Mercer Spheres and Somersloops advances a secondary plot line involving a nameless alien intelligence that attempts to speak to the Pioneer via telepathy. While ADA at first believes the abnormal brainwaves when collecting the artifacts to be a sign of brain damage, she eventually realizes it is an attempt to communicate, and uses the Pioneer as an organic conduit to speak to the alien. She gradually deciphers the alien's cryptic speech, and the alien assists ADA and the Pioneer in developing a pocket dimension storage system known as the Dimensional Depot, which can transfer the data of materials to and from the alien's dimension using a dimensional rift it calls a "window". While the alien suggests making it a "door", ADA comments that it would be dangerous or deadly to the Pioneer. If enough artifacts are found, ADA gains enough knowledge to communicate directly with the alien without the use of the Pioneer, and the alien cuts off communication with the player.
+When the Pioneer has finished all the Project Assembly phases, the nature of Project Assembly is revealed to be a starship being constructed via the elevator's orbital platform. The Pioneer assists in launching the ship, and it deploys its warp drive system to exit the star system. ADA leaves along with it, though she creates an exact duplicate of herself to remain on the planet, and gives the Pioneer a promotion, implying their continued work for FICSIT.
+
+
+== Development ==
+Satisfactory was first announced at E3 2018. Coffee Stain Studios tested the game through closed alpha test in mid-2018, before releasing it into open early access release in March 2019, initially with a year-long period of exclusivity on the Epic Games Store. The game was originally built using Unreal Engine 4 as the studio had past experience with it for their previous titles of Sanctum and Goat Simulator. By November 2023, Coffee Stain migrated the game to Unreal Engine 5, which provided improved performance and a more stable foundation for future updates, as well as a new lighting system, vehicle and sound overhauls, and additional granular keybind options. The game's world is not procedurally generated, and is instead a number of hand-crafted biomes covering an estimated 30 square kilometres (12 mi2) area. The map is far larger than the open worlds that Coffee Stain has created in previous games.
+
+
+=== Full release ===
+Satisfactory was officially released out of early access on 10 September 2024 for PC via Steam and Epic Games Store. Updated content in this release included modifications of the locations of resource nodes and the cost of recipes, game optimization and server improvements for multiplayer play.
+
+
+== Reception ==
+
+
+=== Critical response ===
+
+Satisfactory received "universal acclaim" from critics, according to review aggregator Metacritic.
+Rock Paper Shotgun compared the building element of Satisfactory to Wube Software's Factorio.
+
+
+=== Sales ===
+Within three months of its early-access release, over 500,000 copies had been sold. By July 2020, more than 1.3 million copies had been sold, while reaching 5.5 million sales by January 2024. Based on data collected by Simon Carless in mid-2021, Satisfactory had made at least US$11.5 million in revenue, surpassing the amount that Epic Games had assured as a minimum payout to Coffee Stain.
+
+
+=== Awards ===
+Satisfactory was named the PC Game of the Year at the 2024 Golden Joystick Awards.
+
+
+== Notes ==
+
+
+== References ==
+
+
+== External links ==
+Official website 
+Official wiki

@@ -1,0 +1,9 @@
+Ghosts of Tabor is a hardcore extraction-based VR FPS PvPvE survival game set around scavenging, looting, combat, and survival. Players must manage survival systems such as health, hunger, and thirst, using food, water, and healing items to stay alive during raids.
+
+The game features multiplayer exploration across a variety of maps, including environments such as Island of Tabor and Missile Silo. These locations support intense shootouts, sniper encounters, and simultaneous PvP and PvE threats, requiring players to avoid both other players and armed AI while searching for resources.
+
+A key part of the experience is looting and progression. Players can collect a wide range of items, including gear, weapons, attachments, ammo, medical supplies, food, and water. They can raid alone or in squads, then try to reach an extraction point to leave with their equipment and loot.
+
+Ghosts of Tabor also includes trading and crafting systems. Players can buy and sell through vendors, trade with AI and other players, complete missions to unlock special goods, and craft equipment and different types of ammo. Weapons range from handguns to assault rifles, and players can customize their weapons and build out their arsenal.
+
+The safehouse serves as a personal space where players can display collected weapons, armor, and gear in a large armory. With its mix of survival mechanics, looting, crafting, vendor progression, and extraction-based combat, Ghosts of Tabor offers multiple playstyles, from aggressive squad play to stealthy solo raiding.

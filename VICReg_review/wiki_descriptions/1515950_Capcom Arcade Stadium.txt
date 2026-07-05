@@ -1,0 +1,51 @@
+Game: Capcom Arcade Stadium
+appid: 1515950
+Source: Capcom Arcade Stadium
+URL: https://en.wikipedia.org/wiki/Capcom_Arcade_Stadium
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Capcom Arcade Stadium is a 2021 video game compilation developed and published by Capcom. It includes 32 arcade games originally published by Capcom between 1984 and 2001. It comes with a single free game, and the others require individual purchases. It was initially released on Switch, then on PlayStation 4, Windows, and Xbox One, and later Amazon Luna. A second compilation, Capcom Arcade 2nd Stadium, was released in 2022.
+This was preceded in 2013 by Capcom Arcade Cabinet for PlayStation 3 and Xbox 360.
+
+
+== Overview ==
+
+
+=== Capcom Arcade Stadium ===
+Capcom Arcade Stadium features 1943: The Battle of Midway as a free inclusion, with the remaining 31 games purchasable as downloadable content (DLC). Ghosts 'n Goblins was made individually purchasable, and the rest were initially grouped into three packs of ten games. Each pack spans a particular time period: Dawn of the Arcade (1984–1988), Arcade Revolution (1989–1992), and Arcade Evolution (1992–2001). In October 2021, the games also became individual purchases. In June 2022, Street Fighter II  was made free to download until July 2022 to celebrate the game's first anniversary, Capcom's 39th anniversary, and the upcoming release of Capcom Arcade 2nd Stadium.
+The games run in an emulator which adds the abilities to rewind gameplay, select difficulty, adjust game speed, and use nostalgic visual filters to simulate vintage arcade CRT screens. Minor graphical alterations to the Street Fighter II games include the removal of the Rising Sun Flag in E. Honda's stage due to its association with Japanese war crimes, and the replacement of the flag of Hong Kong with the flag of the China for Fei Long in the character selection screen due to the handover of Hong Kong occurring after its original release. In May 2021, Capcom released paid DLC enabling an invincibility cheat for each game. A physical release is set to be distributed by Limited Run Games in 2026.
+
+
+==== Games ====
+
+
+===== Dawn of the Arcade (1984–1988) =====
+
+
+===== Arcade Revolution (1989–1992) =====
+
+
+===== Arcade Evolution (1992–2001) =====
+
+
+=== Capcom Arcade 2nd Stadium ===
+
+In May 2021, Capcom announced the expansion of the collection, and invited fans' suggestions through Twitter. On April 11, 2022, Capcom announced a sequel called Capcom Arcade 2nd Stadium, which was released on July 22, 2022, for Nintendo Switch, PlayStation 4, Windows, and Xbox One. The collection features 32 new games, including SonSon as a free inclusion, and Three Wonders as a launch bonus for pre-orders and early purchases of Capcom Fighting Collection. Like its predecessor, Limited Run Games has announced a physical release for 2026.
+
+
+==== Games ====
+
+
+== Reception ==
+
+Upon Capcom Arcade Stadium's initial December 2020 announcement, Comic Book Resources found it to be an improvement over the 2013 predecessor Capcom Arcade Cabinet for the PlayStation 3 and Xbox 360, by almost doubling the library. However, it lamented the trend of emulation "retreads" from Nintendo and Capcom: "The downside is that these companies have normalized the practice of re-selling consumers classic games every console generation, and that's a price gamers shouldn't have to pay."
+Although noting that several of the games have been available in previous compilations such as Capcom Beat 'Em Up Bundle, Nintendo Life praised the selection of shoot 'em ups in Capcom Arcade Stadium, which includes the console debuts of games such as Progear and 1944: The Loop Master.
+As of December 2023, 1.8 million units of Capcom Arcade Stadium had been sold and 1.2 million units of Capcom Arcade 2nd Stadium had been sold.
+
+
+== References ==
+
+
+== External links ==
+Official website

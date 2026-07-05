@@ -1,0 +1,27 @@
+Game: Rabbit and Steel
+appid: 2132850
+Source: Rabbit and Steel
+URL: https://en.wikipedia.org/wiki/Rabbit_and_Steel
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Rabbit and Steel is a 2024 action roguelike video game. Gameplay involves one to four players taking on a series of bossfights, with mechanics inspired by MMORPG raids and bullet hell games. The game is structured into runs, and players unlock upgrades and equipment during those runs in a roguelike fashion. The game was the second game of solo developer mino_dev, who released it for Windows on 9 May 2024.
+Reviewers considered that Rabbit and Steel distilled MMO raid mechanics well, praising its gameplay loop and accessibility.
+
+
+== Gameplay ==
+Rabbit and Steel is an action roguelike game for one to four players, where players take on a series of bossfights. The game draws inspiration from and uses many mechanics of raids in MMORPGs such as Final Fantasy XIV and World of Warcraft. Each bossfight has a set of mechanics; in multiplayer these mechanics require group coordination, such as moving into and out of shapes, avoiding bombs placed on certain players, or being forced to group up. In single-player, the coordination mechanics are replaced by bullet hell-style attacks the player must dodge.
+Each player controls a rabbit that has access to four abilities, each with a cooldown and various special effects. Abilities also share a global cooldown. Using abilities in the correct order is an important part of gameplay. In roguelike fashion and unlike in MMOs, rabbits do not level up in a persistent manner. Instead, in each run, players receive loot drops that allow them to upgrade their abilities and improve their character for that run. Each run takes players through several zones; at the end of each run, there is a metaprogression system: players can unlock new rabbit classes and gear based on their performance.
+
+
+== Development and release ==
+Developer mino_dev is an Atlanta, United States-based solo indie developer. They previously developed Maiden and Spell, a bullet hell fighting game they compared to Touhou Project. Rabbit and Steel was their second project, begun in November 2021. It used code and characters from Maiden and Spell, combined with ideas from Final Fantasy XIV raids. Mino_dev also cited Hades as an inspiration, citing its weapon upgrades as the inspiration of the game's ability upgrades.
+The game was released on 9 May 2024 on Steam for Windows. DLC titled Rabbit and Steel: Extra Mode was released on 6 February 2026.
+
+
+== Reception ==
+Reviewers considered that Rabbit and Steel captured the essence of MMO raids well, and commented on the game's accessibility to solo players and those without the time required for MMOs. Alex McHugh of PCGamesN said that the game "understand[s] the mechanics of raiding", praising its depth while commenting that it avoided the logistical difficulty of raiding in MMOs.  Massively Overpowered's Sam Kash complimented the gameplay loop, saying that it "really clicks". Kash also praised the game's support for local multiplayer and its easier "cute" difficulty, which they considered to make the game accessible for families and a larger set of players.
+Rabbit and Steel sold over 125,000 copies in its first two weeks.
+
+
+== References ==

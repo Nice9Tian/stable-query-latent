@@ -1,0 +1,20 @@
+Game: Rotwood
+appid: 2015270
+Source: Rotwood
+URL: https://en.wikipedia.org/wiki/Rotwood
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Rotwood is a beat 'em up video game developed and published by Klei Entertainment. The game was released on Windows through Steam's early access program on April 24, 2024. The game was later released for Nintendo Switch 2 and Windows on March 3, 2026.
+
+
+== Gameplay ==
+Rotwood is a beat 'em up video game set in a 2.5D environment. The game allows players to fight against corrupted beasts with a wide range of gears and weapons, both of which can be upgraded extensively. Each character has access to light and heavy attacks, though movements can be chained together to form combos. Rotwood is divided into different biomes. To unlock the next biome, all the boss characters in the preceding biome must be defeated. Players will be offered upgrade choices after the completion of each biome, which enables them to become more efficient in combat in subsequent enemy encounters. The game supports four-player cooperative multiplayer.
+
+
+== Development ==
+Rotwood was announced by Klei Entertainment in June 2022. It was released through Steam's early access program on April 24, 2024. The early access version of the game includes four biomes and four weapon classes at launch. It attracted more than 200,000 players by April 28. Klei expected the game to remain in early access for about one to two years.
+In July 2024, the game was announced for iOS and Android, to be published by Netflix, Inc. amid other Klei games entering Netflix. Those versions were cancelled by Netflix in January 2025 after a structural change at their games division.
+
+
+== References ==

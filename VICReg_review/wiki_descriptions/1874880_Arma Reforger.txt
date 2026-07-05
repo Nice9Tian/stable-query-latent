@@ -1,0 +1,34 @@
+Game: Arma Reforger
+appid: 1874880
+Source: Arma Reforger
+URL: https://en.wikipedia.org/wiki/Arma_Reforger
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Arma Reforger is an open-world tactical shooter game developed by Bohemia Interactive, released in early access for Microsoft Windows and Xbox Series X/S in May 2022, with full 1.0 launch in November 2023, and later released for PlayStation 5 in December 2024. The game is set in the late Cold War period on the fictional mid-Atlantic island nation of Everon during a conflict between the United States, Soviet Union, and Everonian guerrilla fighters. Reforger runs on the Enfusion engine, a game engine developed in-house by Bohemia Interactive, and serves as a test bed for the engine before its use in the upcoming Arma 4. Reforger has sold over 2 million copies as of April 2025.
+
+
+== Gameplay ==
+
+Arma Reforger is a realistic tactical shooter featuring accurate and deadly weapons that are affected by external ballistics and recoil. Gameplay is set on expansive open world maps (officially "terrains") featuring photorealistic land and water environments. The game takes place in 1989 on the fictional mid-Atlantic island nation of Everon, characterized by pine forests, pastoral farmland, villages, military installations, and scattered cities. Players can control soldiers from the United States, the Soviet Union, and guerrilla fighters from the native Freedom and Independence Army (FIA).
+Reforger's late Cold War setting offers simpler weapons and equipment than the previous installments of Arma; thus, modern equipment like thermal sights, drones, and GPS receivers are absent. Players can equip body armor and helmets to better protect against bullets and explosives. Load-bearing equipment and backpacks allow the player to carry ammunition, explosives, and other equipment, and player mobility is affected by the weight of the gear carried. The game's medical system allows players to use medical equipment, bandages, morphine, and IV-therapy fluids like saline to heal injuries to themselves and teammates. Handheld and manpack radios have realistic communication ranges. Reforger primarily focuses on infantry combat, but offers a selection of usable vehicles, including armed and unarmed military trucks, light armored fighting vehicles, military helicopters, and civilian passenger vehicles.
+Like the older Arma games, Reforger has a single-player campaign featuring 5 missions. Co-op missions (called Combat Ops) can be played solo. The Conflict multiplayer game mode pits two or three of the game's factions against each other for control of settlements across the game's terrains, while Capture & Hold focuses on shorter, more intense firefights for individual locations. Tutorials are available to familiarize new players with the game's mechanics and weapons.
+Player-generated content is actively supported by the developers. Players can create custom missions to be played alone or with other players, and the Game Master mechanic allows one or several players to alter game sessions in real time. Reforger also has official tools to create mods, as well as an official workshop to distribute them to other players. In 2025, Bohemia Interactive hosted the Make Arma Not War competition to encourage development of mods for the game, with over $100,000 in prizes offered. Winners are set to be announced in November 2025.
+
+
+== Game modes ==
+
+Conflict:   A large-scale PvPvE (Player vs Player vs Environment) mode where US and Soviet forces fight for control of islands  Everon, Arland and Kolguyev with the AI FIA  defending/contesting points.
+Combat ops:
+PVE (Player vs Environment) mode for solo or cooperative play focusing on small-team tactics like sabotage and supporting local resistance, featuring dynamic objectives and survival elements. 
+
+Game Master:
+A real-time scenario editor allowing players to create and host unique combat encounters for others, offering immense flexibility. 
+
+
+== Reception ==
+
+Reforger received favorable reviews, a 6/10 from IGN. 
+
+
+== References ==

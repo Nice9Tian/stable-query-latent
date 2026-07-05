@@ -1,0 +1,51 @@
+Game: Vampire: The Masquerade - Shadows of New York
+appid: 1279630
+Source: Vampire: The Masquerade – Shadows of New York
+URL: https://en.wikipedia.org/wiki/Vampire:_The_Masquerade_%E2%80%93_Shadows_of_New_York
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Vampire: The Masquerade – Shadows of New York is a visual novel video game developed by the Polish studio Draw Distance, and released on September 10, 2020, as a stand-alone expansion to their 2019 game Coteries of New York. It is based on the tabletop role-playing game Vampire: The Masquerade, and follows Julia of the vampire clan Lasombra, who investigates the death of the Anarch movement's local leader. Throughout the game, the player makes decisions that cause the narrative to branch.
+
+
+== Gameplay ==
+
+Vampire: The Masquerade – Shadows of New York is a visual novel, in which the player reads dialogue and narration, set to background images and character portraits, and makes decisions by selecting different choices. These cause branches in the narrative, leading to two different endings, with multiple playthroughs required to see everything; they also shape the player character's personality and outlook. Taking the role of a vampire of clan Lasombra, the player investigates a death and explores New York, making connections with other characters while needing to satiate their character's blood thirst. As a Lasombra, they can use shadow-related abilities, and can communicate with inhabitants of the Other Side.
+
+
+== Synopsis ==
+
+
+=== Setting ===
+The game is set in New York, in the World of Darkness, several months after the previous game, Coteries of New York. It takes place following the events of the Vampire: The Masquerade tabletop game's sourcebook Chicago by Night, in which the vampire clan Lasombra, former rulers of the Sabbat sect, left the Sabbat and joined forces with its enemy the Camarilla, who are working on keeping the existence of vampires a secret from humans.
+The player takes the role of the Lasombra vampire Julia, a dissociative immigrant woman who is an outcast within the Camarilla, and who has been tasked with investigating the death of the Anarch movement's New York leader.
+
+
+=== Plot ===
+In June 2019, Julia Sowinski, a struggling investigative journalist, is informed that her investigation into Double Spiral will be buried. She is subsequently fired from her job. On her way home, she is Embraced and turned into a vampire by a member of Clan Lasombra, who is revealed to have orchestrated Julia's personal and professional downfall as a test.
+By March 2020, Julia has been made the Lasombra representative in New York City, a position with little actual power or privilege, under the supervision of Sheriff Qadir al-Asmai. She has also moved in with her human best friend and lover, Dakota. When the Anarch Baron Douglas Callihan is found dead under mysterious circumstances, Julia is tapped as the investigator of the case by the Camarilla Primogen Council as a gesture of good faith. Arriving at Callihan's office, she finds a card inside his pocket with four names on it: Agathon, Hope, D'Angelo and Tamika.
+Julia is unable to locate Agathon, but a secret diary he left behind suggests that he had become aware of a secret scheme involving High Regent Aisling Sturbridge, his mentor; Thomas Arturo, a prominent member of the Camarilla; and Callihan. Julia proceeds to question Hope, who has since taken over and reformed Double Spiral. Hope claims that the list of names came from her sire, information broker Carter Vanderweyden. Vanderweyden categorically denies his involvement. Julia then stumbles into Tamika, who has been in hiding and exacting revenge on government agents targeting vampires. Tamika reveals that Torque, her ex-lover and the presumptive new leader of the Anarchs, has betrayed his revolutionary roots and was working with the opportunistic Callihan. In return, Julia uses her connections to smuggle Tamika out of the city.
+Qadir and Julia discover D'Angelo, now a broken man and a drunkard, hiding inside his own detective agency. D'Angelo reveals that the four people on the list, through their frequent employment, became aware of a conspiracy involving multiple sects in the city, after which they either disappeared or were forced into hiding or seeking protection. Back at Callihan's office, D'Angelo assists Julia with her investigation and discovers that the office has been wired by the powerful and elusive information broker Kaiser. Julia manages to reach Kaiser, who berates her for her relentless drive despite no one actually wanting the mystery solved. Sensing a setup, Julia wrestles Kaiser out of the moving limo and subdues him. She then has the option to either walk away or torture him for information. If she does the latter, Kaiser reveals that all parties—the Camarilla, Torque and Callihan—were working together, and that the Council and Torque collectively took part in Callihan's murder after he outlived his usefulness.
+Julia is shocked to discover that Dakota has been dressing up as her and trying to live through her. She lashes out at Dakota over the state of their relationship, and the argument ends with Dakota storming out of the apartment. Qadir presents the results of the investigation to the Council in Julia's stead, offering a narrative in which Callihan, with his empire crumbling and him fading into irrelevance, chose to take his own life by exposing himself to sunlight. Everyone present is satisfied with the explanation. Julia's response and the game ending vary, depending on the previous choices she makes.
+If Julia has taken a more aggressive, cynical and deceptive approach during the course of the game, she chooses to weave together a narrative that implicates everyone present. She then threatens to go public with it and blackmails the Council into offering her the Primogen title and associated privileges, and setting Carter Vanderweyden up as a scapegoat. A condition of her advancement is Dakota's death, which does not bother her. If Julia has taken a more peaceful, optimistic and honest approach, she chooses to accept the cover-up. Returning to her apartment, she makes up with Dakota, and they decide to head for the West Coast as the city is no longer safe for Julia to stay. Julia is uncertain of what the future holds for them, but remains somewhat hopeful.
+
+
+== Development ==
+Shadows of New York was developed by Polish studio Draw Distance, and is based on the fifth edition of the tabletop role-playing game Vampire: The Masquerade. It was developed as a stand-alone expansion to Draw Distance's earlier game Coteries of New York, and as such features some returning characters, but has an independent story, and features new locations and music. Newly added characters include ones brought over from the tabletop game's sourcebooks, such as New York by Night.
+While Coteries of New York was designed as an introduction to the setting, with a focus on introducing basic concepts and different vampire clans, Shadows of New York was written as a more personal story with themes of personal and political horror, while still developed both for Vampire: The Masquerade fans and newcomers to the series.
+
+The soundtrack was composed by Karolina "Resina" Rec, and includes vocals, cello, and electronic sounds. The developers described her compositions as haunting and moody, which they thought made for a good fit for the setting and story. Although she had composed for theater and film before, it was her first video game project; she described it as leaving a lot of room for experimentation, and noted that the game's genre meant that the music played a central role, with a lot of variety in the tracks. Seeing Vampire: The Masquerade's musical identity as having been defined in the 2004 video game Vampire: The Masquerade – Bloodlines, Rec intended to build on that and update it for 2020.
+The game was announced by Draw Distance in April 2020 with a trailer, and was released simultaneously for Linux, MacOS, Microsoft Windows, Nintendo Switch, PlayStation 4, and Xbox One on September 10, 2020. The PC versions were also released in a "deluxe edition" that includes an artbook and a soundtrack album. A physical "collector's edition" that collects both Coteries of New York and Shadows of New York, and includes an artbook and a vinyl soundtrack, is planned for release in Q1/Q2 2021 for Nintendo Switch, PC, and PlayStation 4, but has been repeatedly delayed. The game's soundtrack was also released digitally and on vinyl in 2020 by Coastline Northern Cuts. It was released physically in September 2023 in regular and collectors editions, but omitting the soundtrack in the latter.
+
+
+== Reception ==
+
+Shadows of New York was met by "mixed or average" reviews from critics, according to the review aggregator Metacritic. Review aggregator OpenCritic assessed that the game was recommended by 23% of critics.
+
+
+== References ==
+
+
+== External links ==
+Official website
+Vampire: The Masquerade – Shadows of New York at The Visual Novel Database

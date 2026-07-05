@@ -1,0 +1,33 @@
+Game: Stormgate
+appid: 2012510
+Source: Stormgate
+URL: https://en.wikipedia.org/wiki/Stormgate
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Stormgate is a 2025 real-time strategy video game developed by Frost Giant Studios.
+
+
+== Gameplay ==
+Stormgate is a real-time strategy game set in a post-apocalyptic world. As standard for the genre, players concurrently gather resources, build bases and troops, and upgrade assets. The game is free-to-play with free and monetized content. It was developed to make a typically complex genre accessible to new audiences while providing the option of balanced, competitive one-on-ones for more advanced players.
+
+
+== Development ==
+Former Blizzard developers Tim Morten and Tim Campbell founded Frost Giant Studios in October 2020 with intention to build an accessible real-time strategy game. Morten previously was StarCraft II: Legacy of the Void's production lead, and Campbell had been Warcraft III: The Frozen Throne's campaign lead designer. They raised nearly $5 million in seed funding, an additional $5 million in March 2021, and $25 million in its January 2022 Series A funding. Frost Giant debuted Stormgate in June 2022. A closed beta started during December 2023. Stormgate became available for early access on Steam on July 30, 2024, and was fully released on August 5, 2025.
+One of the developers is the mother of Nick Plott.
+In April 2026, Frost Giant announced that the game will discontinue online support and issue an offline patch, due to its host having been acquired by an artificial intelligence company and permanently ceasing its game server services as a result.
+
+
+== Reception ==
+
+Reviewing Stormgate for IGN, Leana Hafer wrote: "Stormgate still has a long road ahead of it, but it's already a special game, combining the familiar and the fresh into a satisfying RTS experience."
+
+
+== Notes ==
+
+
+== References ==
+
+
+== External links ==
+Official website

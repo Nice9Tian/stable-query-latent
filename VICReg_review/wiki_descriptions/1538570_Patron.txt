@@ -1,0 +1,28 @@
+Game: Patron
+appid: 1538570
+Source: Patron (video game)
+URL: https://en.wikipedia.org/wiki/Patron_(video_game)
+Match score: 6.13
+Retrieved: 2026-07-04
+--------
+Patron is a survival city builder video game developed by Overseer Games and published on 10 August 2021.
+
+
+== Gameplay ==
+The game is a medieval city builder in the similar vein of Banished, RimWorld and The Settlers. In the game, the player collects resources in order to create and expand its own medieval town with farms, production plants, residential houses and other objects. The game stresses its intricate social systems in the form of needs, perspectives of each of the town's inhabitants. It also includes a research tree to keep up with technological advancements as time passes by.
+Clicking a house in the town will show number of residents, happiness, income and other contents of the house. The user can switch production and assign a role to their residents. If the player's citizens are not properly taken care of, they will move out of the city.
+
+
+== Development ==
+Since its initial release, the developer issued a patch that included all of the community requested features and quality of life improvements, such as being able to manually position the town hall. A free demo of the game is made available.
+
+
+== Reception ==
+On Metacritic, the game currently holds a score of 71, based on 6 reviews.
+
+
+== References ==
+
+
+== External links ==
+Official website

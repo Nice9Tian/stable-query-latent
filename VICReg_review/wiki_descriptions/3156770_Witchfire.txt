@@ -1,0 +1,24 @@
+Game: Witchfire
+appid: 3156770
+Source: Witchfire
+URL: https://en.wikipedia.org/wiki/Witchfire
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Witchfire is an upcoming first-person shooter video game developed and published by The Astronauts. The game was released for Windows PC in early access in September 2023, and is set to be released in full in 2026.
+
+
+== Gameplay ==
+Witchfire is to be an action-oriented, skill-based first-person shooter game with no cutscenes. It will also feature elements commonly found in roguelike games.
+
+
+== Development and release ==
+During the initial development, beginning towards the end of 2015, the game was being designed as a post-apocalyptic, science fiction survival simulator code-named "Astro Project 2", before turning into a dark fantasy first-person shooter. Witchfire was officially revealed at The Game Awards 2017. The Astronauts announced in January 2022 that Witchfire would be released via early access in late 2022. However, in October 2022, it was announced that the early access date was postponed to early 2023. The game was released for Windows PC through the Epic Games Store on September 20, 2023. The full version of the game is set to be released in 2026.
+As of 2019, the development team has nine full members with three contributors. The game is unrelated to the director Adrian Chmielarz's earlier Doom-style Painkiller (2004) and was influenced by FromSoftware's Dark Souls and Bungie's Destiny series. Its art direction inspirations include works of American landscape painters such as Thomas Hill, Albert Bierstadt, and Frederic Edwin Church.
+
+
+== References ==
+
+
+== External links ==
+Official website of The Astronauts, including a weekly-updated Witchfire development blog

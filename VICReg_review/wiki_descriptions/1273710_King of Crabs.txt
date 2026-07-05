@@ -1,0 +1,30 @@
+Game: King of Crabs
+appid: 1273710
+Source: King of Crabs
+URL: https://en.wikipedia.org/wiki/King_of_Crabs
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+King of Crabs is a 2020 battle royale video game from Robot Squid and Spilt Milk Studios for Microsoft Windows, Android and iOS.  The game has been praised as "Fortnite with crabs."
+
+
+== Gameplay ==
+
+Players control a crab in a tidepool filled with other marine life such as lobsters, turtles, shrimp, and other crabs. Players can eat these other creatures in order to grow larger.  As the player's crab grows larger, they gain attack and defense and become able to eat increasingly larger creatures. Players can also pick up weapons like swords and baseball bats, shields in the form of turtle shells and garbage, and extra lives from crates that appear around the map.
+The goal of each match is to be crowned the "King Crab" by defeating and eating other players and NPC opponents in combat. Each match can have up to 100 players in it. Outside of individual matches, players can spend coins earned in game to unlock new crabs, upgrade their current crab, or acquire new costumes.
+The game also features a "friendly" PVE mode in which players work together to defeat computer controlled opponents.
+
+
+== Development ==
+Founded in 2018, King of Crabs is the first game to be released by British indie studio Robot Squid. The game went through a rapid development cycle, with the developers moving from a prototype to a full market release in just a year. The developers wanted to "authentically capture the behaviour of crabs within a world where crustaceans rule and anything goes." In addition to developing the game itself, the development team also created its own server-side technology, which added to the complexity of the development process.
+
+
+== Reception ==
+King of Crabs launched to mixed reviews with reviewers praising the creative concept behind the game but criticizing the game's gameplay as tedious and lacking in replay value.  Eurogamer gave an overall positive review and described the game as "Fortnite with crabs" and "a dazzler," complimenting it as "the best crab-based Battle Royale" released to date.  Other reviewers, such as Pocket Gamer, criticized the game as "a joyously silly concept in search of great game to back it up."
+
+
+== References ==
+
+
+== External links ==
+Official website

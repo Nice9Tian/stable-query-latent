@@ -1,0 +1,45 @@
+Game: Unpacking
+appid: 1135690
+Source: Unpacking (video game)
+URL: https://en.wikipedia.org/wiki/Unpacking_(video_game)
+Match score: 6.72
+Retrieved: 2026-07-04
+--------
+Unpacking is a 2021 puzzle video game developed by Australian independent developer Witch Beam and published by Humble Bundle for Microsoft Windows, macOS, iOS, Android, Linux, Nintendo Switch, Xbox One, PlayStation 4, and PlayStation 5. The game received positive reviews, and won several awards, including two BAFTA Games Awards, a D.I.C.E. Award for Outstanding Achievement for an Independent Game, and Game of the Year by Eurogamer.
+
+
+== Gameplay ==
+The game is divided into stages named by the years in which they take place: 1997, 2004, 2007, 2010, 2012, 2013, 2015, and 2018. In each stage, the player unpacks a female character's possessions from boxes into a new dwelling. Each unpacked item must be fit into the living space, learning the unseen and unnamed protagonist's life story through her possessions and the places she lives. Some items have designated places they must be put into in order to complete the stage. There are a total of 35 rooms across all dwellings.
+
+
+== Development ==
+
+Unpacking was developed by Witch Beam, an independent game studio based in Brisbane, Queensland, Australia. The studio was founded in 2013 and had previously released Assault Android Cactus, a twin-stick shooter, in 2015. The game was first conceptualised by Wren Brier when she moved in with her partner, Witch Beam co-director Tim Dawson, in early 2018. She found that unpacking unlabelled boxes, not knowing what is stored inside, was an experience that could be translated into a video game. The two participated in the Stugan games accelerator program in Sweden, and the game entered full production in early 2019.
+Unpacking is mostly a wordless experience, with the narrative mainly told through objects the player unpacks from boxes.
+The sound design includes over 14,000 foley effects, with multiple pick-up and placement sound effects unique to each item.
+
+
+== Release ==
+While Witch Beam managed most of the game's social media channels, the team recruited Victoria Tran, the community director of Among Us, to help operate Unpacking's Discord server and TikTok account. The team initially expected development of the game to take about a year and a half, though actual production of the game took twice as long. Unpacking was released for personal computers, Nintendo Switch and Xbox One on 2 November 2021. Versions for PlayStation 4 and PlayStation 5 were released on 10 May 2022. Physical versions of the game, published and distributed by Limited Run Games, were available for preorder between 29 March and 1 May 2022. The game was ported to iOS and Android on 24 August 2023.
+
+
+== Reception ==
+
+Unpacking received "generally favorable" reviews, according to review aggregator Metacritic. The game received positive reviews from Rock Paper Shotgun, GameSpot, Eurogamer, Nintendo Life, IGN, Kotaku, and TouchArcade. It sold over 100,000 copies across all platforms in its first ten days. GamesRadar+ praised it for its innovative narrative, and it was awarded a Can I Play That? award for its accessibility. Unpacking also won 2 IGDA Global Industry Game Awards in 2022, one for 2D Animation and another for 2D Environment Art.
+
+
+=== Awards ===
+Unpacking was named one of the best video games of 2021 by The New Yorker, Los Angeles Times, Forbes, the Financial Times, CNET, and NME. Eurogamer selected Unpacking as their Game of the Year.
+With Gayming Magazine, it won Best LGBTQ Indie Game and Authentic Representation Award, and was nominated for Game of the Year.
+
+
+== Clones ==
+In January 2022, Unpacking Master was released, a clone of Unpacking published by SayGames on iOS and Android. The app quickly topped the top downloads chart on App Store. The app was criticised for copying Unpacking's mechanics and room layouts, as well as having excessive in-game advertising and being aggressively marketed on TikTok. Witch Beam acknowledged the clone, stating on the Unpacking's official Twitter account that Unpacking Master "is not [their] game" and calling the situation "demoralising". Following the backlash, Apple removed the app from the App Store, while the Google Play version was delisted by SayGames themselves. CEO of SayGames Egor Vaihanski stated that the resemblance between the two games "goes way beyond the game title" and that they "apologise for [their] lack of research prior to launching the game", wanting to "get in touch" with Witch Beam for a potential resolution.
+In December 2024, Wren Brier reported that there were numerous clones of Unpacking on the Nintendo eShop, which were deceptively marketed as DLC for the original game.
+
+
+== References ==
+
+
+== External links ==
+Official website

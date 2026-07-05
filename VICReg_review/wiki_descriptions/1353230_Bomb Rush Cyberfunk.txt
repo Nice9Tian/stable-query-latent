@@ -1,0 +1,60 @@
+Game: Bomb Rush Cyberfunk
+appid: 1353230
+Source: Bomb Rush Cyberfunk
+URL: https://en.wikipedia.org/wiki/Bomb_Rush_Cyberfunk
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Bomb Rush Cyberfunk is a 2023 action-adventure platform video game developed and published by Team Reptile. The game was released digitally for Nintendo Switch and Windows on 18 August 2023. It was then released digitally for PlayStation 4, PlayStation 5, Xbox One, and Xbox Series X/S on 1 September 2023. It was also released physically for Nintendo Switch, PlayStation 5, and Xbox One/Series X on 5 December 2023.
+The player controls a member of a youth gang, the Bomb Rush Crew, as they use inline skates, skateboards, and bicycles to traverse the fictional city of New Amsterdam, spraying graffiti, challenging rival gangs, and evading authorities to control all five boroughs of the city. The cel-shaded art style, music, general gameplay, and aesthetic all draw heavy inspiration from the 2000s video games Jet Set Radio and Jet Set Radio Future, published by SEGA for their Dreamcast and Microsoft's Xbox consoles, respectively. The music for the game is composed by various indie artists, as well as notably including several tracks from Hideki Naganuma, the composer for the Jet Set Radio series.
+Bomb Rush Cyberfunk received positive reviews from critics, who praised its gameplay, visuals, and soundtrack. However, they were divided on its similarity to Jet Set Radio, with some appreciating its faithfulness to its inspirations, and others calling it unoriginal, alongside criticism for its combat and simple tricking mechanics.
+
+
+== Gameplay ==
+The gameplay of Bomb Rush Cyberfunk involves the player traversing the fictional city of New Amsterdam on either a skateboard, inline skates, or BMX bike, and performing tricks. The player character also receives a superpowered backpack which can be used for faster traversal. Players will grind around the fictional city while placing graffiti on buildings to increase their gang's reputation (denoted in the game as REP). By increasing their REP, the player can challenge rival gangs to take control of each of the five boroughs of New Amsterdam.
+
+
+== Plot ==
+
+
+=== Setting ===
+Bomb Rush Cyberfunk takes place in the fictional city of New Amsterdam, where human implant technology has advanced to the point where humans are capable of switching body parts, both organically and cybernetically, at will. The city is famous for its writers (a term for graffiti artists), who perform various vandalism acts in a race to become All City (a term for an individual or group who has successfully painted over all five boroughs of New Amsterdam, making their name "known through all city"), opposed by the police force who uses all means necessary to apprehend them.
+Before the start of the story, three of the best writers in New Amsterdam, known as the "Big 3", ruled over the city. They are DJ Cyber, the city's best DJ; Faux, who is infamous for having a clean criminal record despite his various vandalism acts; and Felix, who is famous for being the only writer who never used a boostpack. Among the three, Felix is known as the only person who has become All City, but shortly after, he's mysteriously killed, leaving a power vacuum and causing chaos in the city, as all five crews raced to become All City themselves.
+The story revolves around the members of Bomb Rush Crew, a group of up-and-coming writers, as they aim to become All City.
+
+
+=== Synopsis ===
+Faux (Teun Vogelaar), who was caught by the police and placed in a cell, is awoken by a man breaking out of his cell. The man introduces himself as Tryce, and says he wants Faux to join his crew. He agrees to help Faux out of prison, stating that he will take all of the help he can get. Shortly after, they are ambushed by Lieutenant Irene Rietveld. Tryce works on an escape route, while Faux drives off Rietveld. They make their way out, and while escaping see a man in a robed costume and full-head mask fighting several police officers, who pulls out a vinyl record and throws it at Faux's neck, decapitating him.
+Faux is awakened in Tryce's new gang's hideout, and is now fixed with a red cybernetic head. He has lost all memories, personality, and sense of self associated with the brain he had prior to being decapitated. Tryce explains that Faux was killed, and that a friend of the gang hooked him up to a standard issue cyberhead. He introduces the third member of their gang, a female skater named Bel. Bel suggests that Faux now be referred to as Red, as he is no longer the same person he was previously.
+Tryce identified the man who decapitated Faux as DJ Cyber, and that he must still have Faux's head. Tryce told Red that Faux was a prominent writer in New Amsterdam, and part of a group of the City's best writers known as the Big 3, along with DJ Cyber and another individual known as Felix. Among the three, Felix is known as the only person who has become All City, but was killed mysteriously, leaving a power vacuum and causing chaos in the city, as all other crews raced to become All City themselves. Red, along with Tryce and Bel, head out to New Amsterdam, with the goal of obtaining Faux's head and becoming All City.
+As the crew conquers New Amsterdam's boroughs, and fend off several ambushes from the police, who escalate their tactics to the point of lethal force, the crew learns more about the conspiracies in New Amsterdam; such as the fact that Faux's head is actually in the possession of the police force as the CPU for Project Algo, a supercomputer created by New Amsterdam PD's Chief Inspector Berlage to eliminate all crimes; and a human head encased inside Red's supposedly cybernetic head.
+By the time the Bomb Rush Crew conquers four boroughs and Red defeats DJ Cyber in a one-on-one battle, it is revealed that Red was actually Felix all along, and Faux killed Felix because, on top of his jealousy, Felix knows that Faux's father is a corrupt cop, and the reason he managed to never get caught is because he has been using his father's influence to pin all of his crimes on other writers. DJ Cyber has been trying to help Felix to remember his past, and killed Faux back in the police station as retaliation for him murdering Felix. DJ Cyber also revealed that Faux has been using Project Algo to feed misinformation to the police (essentially mind controlling them) in order to systematically kill all writers and become "All City King". Meanwhile, Faux, using Project Algo, kills Berlage, detains Rietveld for standing up to him, and brainwashes the entire police department to hunt down all writers in New Amsterdam.
+As the crew conquers the final borough and defeats DJ Cyber's crew, Faux appears in a giant mech, and after a brief scuffle Faux transforms into a mechanical abomination that rips Felix's head off of his old body. As Felix's head is slowly dying, Rietveld, who escaped custody, arrives with Felix's old body and re-attaches his head to it, finally reviving the legendary writer in both body and mind. The crew then work together and defeat Faux once and for all.
+Back in the hideout, the crew celebrates becoming All City with a dance party, with DJ Cyber looking over them from a distance and warning them that they will not be All City for long, remarking that "this ain't over".
+
+
+== Development and release ==
+Bomb Rush Cyberfunk was developed by Dutch studio Team Reptile, who previously developed and published Lethal League, and its sequel Lethal League Blaze.
+Bomb Rush Cyberfunk was initially revealed as a timed exclusive for the Nintendo Switch at Nintendo's Indie World Showcase on 11 August 2021, with a 2022 release date. On 31 August 2022, the game was delayed until 2023. On 19 April 2023, Team Reptile announced an official release date of 18 August 2023.
+Bomb Rush Cyberfunk was released digitally for Nintendo Switch and Windows on 18 August 2023. The game was then released digitally for PlayStation 4, PlayStation 5, Xbox One and Xbox Series X/S on 1 September 2023. It was also released physically for Nintendo Switch, PlayStation 5 and Xbox One/Series X on 5 December 2023.
+
+
+== Soundtrack ==
+The soundtrack of Bomb Rush Cyberfunk features various indie artists, including Hideki Naganuma, who created the soundtrack for the Jet Set Radio series, and Klaus Veen, who previously composed music for Lethal League. Other contributors include Ethan Goldhammer, Sebastian Knight, 2 Mello, and Grrl.
+
+
+== Reception ==
+
+Bomb Rush Cyberfunk received "generally favorable" reviews from critics, according to review aggregator website Metacritic. The game was praised for its gameplay, visuals, and faithfulness to Jet Set Radio.
+Lucas White of Shacknews praised the variety of the skating trick system, calling it "tons of fun", but also criticized it as he felt its simplicity encouraged button mashing. White additionally criticized the "awkward" combat, but praised the story, saying it "goes to some strange places" and helped to distinguish the game from Jet Set Radio with its themes. By contrast, Blake Hester of Game Informer, while also saying the gameplay was fun, considered Bomb Rush Cyberfunk overly derivative and repetitive, calling it a "blatant copycat" and criticizing its similarity to Jet Set Radio, as well as its perceived lack of originality. In The Guardian, Luke Winkie also criticized the trick system and combat while acknowledging the game's quality of life improvements over Jet Set Radio, and also praised the "luscious" visuals and soundtrack, but overall deemed the game "a throwback, for better or worse."
+
+
+== Follow-up ==
+Team Reptile announced a follow-up entitled Hyperfunk in September 2025. Trailers and releases suggest that Hyperfunk will be focused more on speed and kinetics than Bomb Rush Cyberfunk.
+
+
+== References ==
+
+
+== External links ==
+Official website

@@ -1,0 +1,110 @@
+Game: SpellForce: Conquest of Eo
+appid: 1581770
+Source: SpellForce
+URL: https://en.wikipedia.org/wiki/SpellForce
+Match score: 5.43
+Retrieved: 2026-07-04
+--------
+SpellForce is a real-time strategy and role-playing series created by Phenomic and currently owned by THQ Nordic. The first release was published by JoWooD Productions and Encore Software in 2003 and  THQ Nordic in 2017.
+
+
+== Setting and plot ==
+
+The games take place on a planet called Eo, a high fantasy world ruled by near-immortal mages (collectively known as The Circle) and inhabited by various sapient races, such as humans, dwarves, (dark) elves, orcs and trolls. The mages used servants called rune warriors, summoned from magical monuments, to keep peace.
+Several years before the start of the first game in the series, the mages discovered an ancient text describing the Convocation: a dangerous, but supposedly power-granting ritual. They started fighting amongst themselves, rune warriors being their main weapons of war. When the planets and stars aligned, enabling the start of the ritual, each of the 13 of the most powerful mages performed the ritual; however, unable to control the power, the world was shattered.
+Where once stood great continents of Fiara, Urgath and Xu, now only small pieces of land remain, centered around magical towers created by Aonir, the Star God.
+The first game in the series begins with a reappearance of one of the Circle mages: Rohen. He summons a Rune warrior (the protagonist) to save the world.
+
+
+== Gameplay ==
+The role-playing game aspects of SpellForce games parallel games such as Diablo, Diablo II, and Sacred in character development, skill trees, equipment customization, and top-down isometric viewing. However, the capacity to control multiple heroes often makes the gameplay comparable to that in the Baldur's Gate or Neverwinter Nights video games.
+The real time strategy aspects of SpellForce games mirror the Warcraft fantasy real time strategy games. These include the ability to control several separate factions such as "The Realm" (humans, elves and dwarves), "The Pact" (dark elves, gargoyles and shadows), and "The Clans" (orcs, trolls and barbarians). Each faction has its own individual troop and building types.
+SpellForce games have several game modes, including campaign mode (expositional), skirmish mode (real time strategy based), and free play (similar to campaign mode but without an overarching plot). SpellForce can also be played cooperatively or competitively in multiplayer mode.
+
+
+== Games ==
+
+
+=== SpellForce: The Order of Dawn ===
+
+SpellForce: The Order of Dawn is the first game of the franchise, developed by Phenomic. It was first published by JoWooD in Europe on November 28, 2003 and by Encore Software in North America on February 11, 2004.
+
+
+==== SpellForce: The Breath of Winter ====
+On March 1, 2004, JoWooD announced the first SpellForce expansion pack named SpellForce: The Breath of Winter. The expansion pack features over 40 hours of new single player campaign gameplay.
+
+
+==== SpellForce: Shadow of the Phoenix ====
+Shadow of the Phoenix was released on November 12, 2004. The expansion pack continues the storyline from The Order of Dawn and The Breath of Winter and enables the player to continue playing with a previous game character by raising the character's level limit to 50. The pack also includes upgrades for the game's Titan units.
+
+
+=== SpellForce 2: Shadow Wars ===
+
+SpellForce 2: Shadow Wars is a 2006 real-time strategy and role-playing video game, developed by Phenomic and published by JoWooD Productions. It is the second major installment in the SpellForce series.
+
+
+==== SpellForce 2: Dragon Storm ====
+
+SpellForce 2: Dragon Storm is an expansion to SpellForce 2: Shadow Wars and was released in 2007.
+
+
+==== Anniversary and Platinum Editions ====
+"SpellForce 2 - Anniversary Edition" was released 29 October 2009. It included the first two parts: Shadow Wars and Dragon Storm. It does not include Faith in Destiny or Demons of the Past.
+"SpellForce - Platinum Edition" was released 3 November 2009. It contains all three of the parts: The Order of Dawn, The Breath of Winter and Shadow of the Phoenix.
+
+
+==== SpellForce 2: Faith in Destiny ====
+
+The "Digital Extras" were released 19 June 2012 along with the core game.
+Three scenario DLCs were released:
+
+17 October 2012: Flink's Secret Diary
+18 January 2013: The Golden Fool
+15 February 2013: The Last Stand
+The "Faith in Destiny Scenario Bundle" was sold 17 December 2012 in advance of the second and third, gaining access to their impending release.
+
+
+===== SpellForce Complete Collection =====
+In October 2012 (following the June 2012 release of Faith in Destiny, part 3 of SpellForce 2) Nordic released a so-called "complete collection".
+The name was quickly invalidated by the scenario DLCs which it was missing, years before the release of the more obvious contradiction Demons of the Past.
+
+
+==== SpellForce 2: Demons of the Past ====
+SpellForce 2: Demons of the Past is an expansion to SpellForce 2.
+
+
+===== SpellForce Complete =====
+SpellForce Complete was released 4 December 2015 and, unlike the previously released Complete Collection, did include the Demons of the Past expansion. The name still became outdated in 2017 since it does not include the SpellForce 3 series. Despite this, it's still sold under the misleading name by some companies.  It includes the contents of "SpellForce - Platinum Edition" combined with "SpellForce 2 - Anniversary Edition" as well as the two SpellForce 2 games missing from the Anniversary edition - Faith in Destiny (including the digital extras and 3 scenarios) and Demons of the Past.
+
+
+=== SpellForce 3 ===
+
+SpellForce 3, the third and latest major entry in the series, was released in December 2017. The game was developed by Grimlore Games and published by THQ Nordic. The story of SpellForce 3 takes place before the events of The Order of Dawn in the fantasy world of Eo. The first glimpses of the game were seen during Gamescom 2014 in Germany, where Nordic Games first released gameplay of the game, as reported by German online magazine PCGames.de.
+
+
+==== SpellForce 3: Soul Harvest ====
+
+SpellForce 3: Soul Harvest is a standalone expansion released on 28 May 2019.
+
+
+==== SpellForce 3: Fallen God ====
+SpellForce 3: Fallen God is a standalone expansion released on 3 November 2020.
+
+
+==== SpellForce 3: Versus Edition ====
+SpellForce 3: Versus Edition is a free-to-play version, released simultaneously with the Fallen God expansion. Much like Blizzard's free version of Starcraft 2, it allowed online multiplayer while excluding the offline single-player campaign missions.
+
+
+==== SpellForce 3: Reforced ====
+SpellForce 3: Reforced is an upgraded version of SpellForce 3. On 6 December 2021, the version was officially released and made available as a free upgrade to owners of the original version.
+
+
+=== SpellForce: Conquest of Eo ===
+Spellforce: Conquest of Eo, a turn-based strategy role-playing game developed by Owned by Gravity and published by THQ Nordic, was officially released on February 3 2023. It received "generally favorable reviews" according to review aggregator Metacritic, based on 11 reviews for Windows.
+
+
+== References ==
+
+
+== External links ==
+Official website

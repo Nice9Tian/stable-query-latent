@@ -1,0 +1,41 @@
+Game: Homeworld 3
+appid: 1840080
+Source: Homeworld 3
+URL: https://en.wikipedia.org/wiki/Homeworld_3
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Homeworld 3 is a real-time strategy video game developed by Blackbird Interactive and published by Gearbox Software. The game was released on May 13, 2024.
+
+
+== Gameplay ==
+Homeworld 3 is a 3D real-time strategy game set in space. According to the developers, following the responses to partner surveys, the game boasts an extensive campaign mode, giving solo gameplay an important role. As with the other games in the franchise, combat gameplay is built around an effective 3D ballistics system. One of the new major gameplay features is huge megaliths and trenches; massive space structures that will add coverage strategies for small spacecraft. The game includes a new co-op mode that "will fuse Homeworld's RTS gameplay with a roguelike structure".
+
+
+== Plot ==
+After their victory over the Vaygr (as played out in Homeworld 2), Hiigara entered a golden age that lasted for over a century, with the discovery of a vast hyperspace gate network developed by an ancient race known as the Progenitors. However, a new danger known simply as "the Anomaly" began to emerge in deep space, causing disruptions in the network. Karan S'jet, the original Fleet Command, led a fleet to investigate and disappeared without a trace. Twenty years later, Karan's chosen successor, Imogen S'jet, becomes Fleet Command for a new Mothership, the Khar-Kushan.
+Almost immediately upon its launch, the Khar-Kushan is informed by the commanders of the Hiigaran Navy that an unknown threat is weaponizing hyperspace in the Anomaly. Using the functioning parts of the gate network, the Khar-Kushan sets a course for Noctuua-27, believed to be the source of the Anomaly, but is diverted and severely damaged while en route. While en route to a Progenitor repair facility, the mysterious enemy is revealed as the Incarnate, using salvaged Progenitor technology and bound to the will of a "Queen". They also recover a frigate from the lost fleet and discover an encoded message from Karan to Imogen, giving the location of her Mothership, the Khar-Sajuuk. The Incarnate Queen makes contact with Imogen, identifying herself as an ancient being called Tiaa'Ma, who seeks to use the power of hyperspace to bend reality to her will, and invites Imogen to join her. After the Mothership is repaired, Imogen follows the coordinates to the Khar-Sajuuk, finding the ship encased in an ice field. Karan is found alive, and explains to Imogen that they must break Tiaa'Ma's control over hyperspace by bringing her what she wants: the three original Hyperspace Cores developed by the Progenitors (discovered in the first two games).
+The Khar-Kushan travels alone to Noctuua-27, where Imogen deceives Tiaa'Ma into believing she is joining her cause, allowing her to get close enough to her "temple", a massive gate-ship called the Lament. Imogen summons Karan and the fleet and delivers the three Cores, combining their power with the Khar-Kushan's synthetic cores to trap the Lament in hyperspace, while Karan sacrifices herself to join Tiaa'Ma in "shared oblivion". The result overloads the Khar-Kushan's hyperspace drive and disables the gate network. Though stranded in deep space and cut off from contact with Hiigara, the fleet chooses to follow Imogen as their Fleet Command.
+
+
+== Development ==
+The Homeworld series dates back to 1999. Following THQ's purchase of intellectual property rights to the franchise, further developments were halted after the release of Homeworld 2 in 2003. The franchise was dormant until 2013 when its rights were bought from THQ by Gearbox Software.
+The announcement of Homeworld 3 follows the release of the Homeworld Remastered Collection, as well as the prequel Homeworld: Deserts of Kharak. The Remastered Collection's positive critical reviews and as well as the Deserts of Kharak's sales performance were enough to convince publisher Gearbox and the affiliated development studio Blackbird Interactive to follow up with the creation of a new game, in direct continuity with the original saga.
+The development of the game started around 2017 and, despite being already fully funded by Gearbox, Blackbird Interactive launched a successful mixed crowdfunding/investment campaign on Fig in late 2019 which went on to generate the highest donation average in the platform's history. Along with this campaign, the team allows contributors to take part in exclusive surveys, in order to determine which elements of the original trilogy were most appreciated and hence guide future development.
+Some key personnel from the original development studio Relic (now working for Blackbird Interactive) are among the teams developing the game, namely design director Rob Cunningham, score creator Paul Ruskay, and Homeworld Cataclysm's writer Martin Cirulis. The number of people working on the game is about 40.
+Gearbox was acquired by Embracer Group in February 2021. As a result, Gearbox had to cancel the investment portion of the Fig campaign in June 2021, prior to obtaining money from those that had pledged to invest. No change was made to those that backed the game through the crowdfunding mechanism.
+On June 10, 2022, it was revealed that Homeworld 3 has been delayed to the first half of 2023 and on August 23, during Gamescom, the first gameplay trailer was released. In May 2023, the game was delayed to February 2024. On December 1, 2023, Gearbox announced that the game would be released on March 8, 2024. On February 7, 2024, the developers stated the release would be delayed to May 13.
+Blackbird Interactive has adjusted the release timeline for Homeworld 3, announcing that two DLC packs will now launch in November 2024, earlier than the planned 2025 date. Alongside these paid expansions, free updates will include additional gameplay features and improvements to the War Games mode, enhancing ship mechanics and resource management. New factions are also set to be introduced. However, concerns have emerged that this accelerated schedule could impact long-term post-launch support for the game. On November 18, 2024, Blackbird Interactive announced that the update, released three days later, would be the game's last.
+
+
+== Reception ==
+
+Homeworld 3 received "generally favorable" reviews from critics, according to the review aggregation website Metacritic. Fellow review aggregator OpenCritic assessed that the game received strong approval, being recommended by 70% of critics. CGMagazine wrote that "Homeworld 3 balances incredibly technical gameplay with streamlined mechanics that is easy to get into, but difficult to master." However, IGN Italia was disappointed, claiming that it has an "abysmal story".
+On the Steam platform, however, user ratings have been categorized as Mostly Negative.
+
+
+== References ==
+
+
+== External links ==
+Official website

@@ -1,0 +1,55 @@
+Game: World of Warplanes
+appid: 790710
+Source: World of Warplanes
+URL: https://en.wikipedia.org/wiki/World_of_Warplanes
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+World of Warplanes (WoWp) is a free-to-play aerial combat massively multiplayer online (MMO) game developed by Persha Studia and published by Wargaming.net. The game was originally released in November 2013 in CIS countries, North America and Europe. It was relaunched as World of Warplanes 2.0 in October 2017 in the same countries, achieving significantly better reception.
+
+
+== Gameplay ==
+
+World of Warplanes (or "WoWp" for short) features over 300 aircraft, namely military and prototype aircraft from Germany, the Soviet Union, the United States, Japan, the United Kingdom, France, and China. It allows players to choose from 5 main warplane classes: fighters, multirole fighters, heavy fighters, ground attack planes, and bombers. In addition to this, Premium aircraft are also available. Each nation's tech tree introduces squadrons of planes ranging from Tier I entry-level 1930s biplanes all the way up to Tier X late 1940s jet-powered aircraft. All warplanes can be unlocked and upgraded through a continued gameplay progression.
+It is possible to upgrade your aircraft with various weapons, engines, equipment, and consumables. The game features 4,635 possible aircraft configurations, which along with customisation options, such as camouflage, allows the player to create planes that are uniquely configured with specific needs in mind, such as increased speed or ruggedness. Battles in World of Warplanes unfold at dozens of unique maps, most of which are based on real-world landscapes. Unlike similar games in the genre, World of Warplanes does not feature limited ammunition in-game, instead implementing a system where bombs and rockets have cool-downs before they can be reused, and overuse of guns results in overheating, limiting the rate of fire and accuracy of overheated guns.
+Aircraft of each class in the same tier vary in flight characteristics and firepower across nations. For example, a Soviet or a Japanese fighter of the same tier will be more horizontally maneuverable than its German or American counterpart but would have limited vertical manoeuvrability and would be more fragile. WoWp features an aircraft comparison system to assist players in understanding the differences in capabilities between different aircraft. The official website has a History of Aviation section, where one can find additional information on specific planes. Available tech trees expand as development continues on WoWp. New nations and additional aircraft for each nation’s tech tree have been gradually introduced post-launch.
+
+
+=== Game modes ===
+The basic game features mixed PvP/PvE combat sessions in two basic scenarios: Conquest and training battles.  Training Mode is a sandbox environment for new players and teams, helping them test tactics, new planes, and practice shooting at static and flying targets. No experience or credits are earned in training mode.
+In Conquest, the objective is to capture sectors via "capture points", which are earned through destroying enemy aircraft and bot defense aircraft and ground targets.
+As of Update 2.0, respawning has been added into WoWp, thus further differentiating WoWp from other Wargaming titles, which often do not feature respawning. The primary game mode has been changed to 'Conquest', in which two teams of opposing players accumulate points by capturing territories on the game map, which can be accomplished by destroying enemy aircraft or ground fortifications within capture zones. Different capture zones have different effects on gameplay. For example, the 'Airfield' and the 'Military Base' zones both help to accumulate points towards a team's score, but differ in function. 'Airfield' zones provide an extra spawn point for players, reducing travel times for players occupying 'Airfield' zones. 'Military Base' zones also routinely bombard enemy zones with rockets, enabling faster capture of enemy zones. When a team has earned a noticeable point advantage, players would be warned of the 'squall line' event, wherein players can no longer respawn upon being shot down. The victor of the game is the team that has accumulated more points in the time limit of the game, or when all enemy players are permanently killed after the arrival of the 'squall line' gameplay event.
+Players are graded on their performance in battle via a personal score, which increases when players carry out activities specific to their aircraft type in battle. For example, fighters earn more personal points more effectively when engaging in maneuvering combat with other fighters and bombers earn personal points more effectively by destroying ground targets. A higher personal score generally reflects a greater skill on the part of the player, and higher-scoring players earn more in-game credits than their poorer-scoring teammates. Medals and awards are also provided to players who accomplish specific tasks in battle, such as shooting down a certain number of enemy aircraft in a sortie. Tokens are awarded to players who earn medals, and an in-game tracker maintains a record of the medals that a player has earned in-game. Earning medals determines the amount of experience earned.
+
+
+=== Economic system ===
+The economic system in World of Warplanes is similar to World of Tanks and other Wargaming titles. The game features four primary types of in-game currency: credits, experience, tokens (since version 1.9.4), and gold (other kind of tokens were a temporary in-game currency used instead of gold during open beta testing stage).
+
+
+== Development ==
+
+Wargaming's plan to develop a flight combat MMO action game was first conceived during the early stages of World of Tanks development. World of Warplanes was announced at E3 in 2011, less than two months after the World of Tanks release in Europe and North America. Development was assigned to Persha Studia, the development center of Wargaming based in Kyiv, Ukraine. The game went from concept to a playable prototype in only two months. Early alpha testing began August 2011.
+Wargaming showcased the first public World of Warplanes trailer at Gamescom in August 2011. Wargaming first showed a closed demonstration of the alpha version to journalists at the IgroMir in October 2011. American aircraft were the first planes to be added to the World of Warplanes tech tree.
+
+World of Warplanes alpha test started recruiting test players on February 23, 2012. World of Warplanes closed beta test began May 30, 2012. The game received over two million applications within the first three months of testing. World of Warplanes was selected as Europe’s "Most Wanted Online Game" at the European Games Awards in 2012.
+On April 4, 2013, the non-disclosure agreement was lifted for the beta test players, allowing beta testers to share their thoughts, screenshots, and in-game videos. At that time, the game offered six battle arenas and over 80 aircraft models from USSR, the USA, Germany, and Japan. World of Warplanes’ open beta testing started on July 2, 2013.
+On October 10, 2017, a video titled "World of Warplanes 2.0. New Game Mode" was released on World of Warplanes official YouTube channel, signalling the release of World of Warplanes 2.0. It features an updated and revamped version of the game, including a reworked gameplay system and an upgrade to the game's graphics.
+With the World of Warplanes 2.0 release came a new publishing and marketing team. In 2018, they began working with British metal band Iron Maiden and their lead singer Bruce Dickinson. WoWp obtained a music license from Sanctuary Records for the iconic track "Aces High". WoWp remade the Aces High music video using the game's graphics engine and shared and promoted it on WoWp websites, Facebook groups and YouTube channels. WoWp also made an exclusive Iron Maiden Spitfire plane which was available for free in game through Jun-Aug 2018 to synch with the band's Legacy of the Beast European tour. There was an Iron Maiden themed hangar and special events during the same time period. As well as being the singer for Iron Maiden, Bruce Dickinson is a pilot and military aviation history buff who regularly captains Iron Maiden's converted charter aeroplane, Ed Force One, during their world tours, and still runs an aircraft maintenance and pilot training company. Bruce agreed to be an ambassador for WoWp and made himself available to film a series of WoWp video diaries at Hendon RAF Museum.
+
+
+== Reception ==
+
+The original World of Warplanes received mixed to negative reviews and held a Metacritic score of 69 out of 100.
+In March 2016, Wargaming CEO Viktor Kislyi acknowledged in an interview that World of Warplanes had failed to meet expectations saying, "...we can't call that a success." It was with this in mind that significant changes were made in the development team and the new 2.0 version made.
+The release of World of Warplanes 2.0 received generally positive reviews, and received a score of 8 in a review on Gamereactor from Marco Vrolijk, with the implementation of the respawn mechanic (which had been absent in previous versions of World of Warplanes), the introduction of the 'Conquest' gamemode and the upgraded graphics being praised the most. However, Vrolijk noted that the game was not suited for simulator enthusiasts. James Barber from military.com commented that WoWP 2.0 had “better graphics, bigger explosions" and was "a lot more fun to play". Inside-Indie scored it at 88%.
+
+
+== References ==
+
+
+== External links ==
+
+Official website (America)
+Official website (Europe)
+Official website (Russia)
+Official wiki

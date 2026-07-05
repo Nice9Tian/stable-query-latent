@@ -1,0 +1,53 @@
+Game: Osiris: New Dawn
+appid: 402710
+Source: Osiris: New Dawn
+URL: https://en.wikipedia.org/wiki/Osiris:_New_Dawn
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Osiris: New Dawn is an open world sci-fi survival video game developed by Fenix Fire. The game was published by Reverb Triple XP until December 15, 2020 when it was announced that the publishing rights were purchased by Fenix Fire Entertainment. It was released onto Steam's early access program in September 2016, with a full release for Windows in January 2023.
+
+
+== Gameplay and plot ==
+
+Osiris: New Dawn is an open world Sci-fi Survival set in the year 2078, during which humans are starting to venture into interstellar travel. The player is sent to the Gliese 581 planetary system by the United Nations of Earth (U.N.E.) as a member of the second colonization team with the task of studying the planets for habitability. During the journey, the spacecraft malfunctions because of the light speed travel and consequently crashes onto a deserted planet, which becomes the player's starting destination. In order to survive, the player must build a base while trying to overcome the harsh, unpredictable conditions.
+The game features both single-player and multiplayer gameplay in an open world environment. The game's single-player campaign can be played offline as well. To aid navigation in the early parts of the game, players start with jet boots, along with other items.
+
+
+== Development ==
+
+
+=== Pre-release ===
+Osiris: New Dawn was developed by Fenix Fire Entertainment, a two-man team. Development started five years before it was first shown at the 2016 PAX West convention, where a single-player demo was presented. Fenix Fire's lead developer, Brian McRae, mentioned in an interview that instead of setting out with the desire to make a survival game, he started by addressing the setting. He took inspiration from many science fiction movies, including Prometheus (2012), Gravity (2013), and The Martian (2015). McRae said he hates survival games. The team's first priority was to make the player feel immersed in the game's environment. McRae said he wanted the player to feel "pushed and inspired by the [survival] systems", and referenced The Martian when he said players will have to "Matt Damon yourself out of it". When Osiris: New Dawn was compared to No Man's Sky, one of the developers said that unlike No Man's Sky, which was criticized by many for not living up to promises, they "want people to know what they're getting".
+
+The game was published by Reverb Triple XP, an initiative of Reverb Communications, until December 15, 2020 when it was announced Fenix Fire Entertainment had purchased the publishing rights. The developers said Reverb helped with the crafting elements of the game. The developers mentioned they were from a "Nintendo background", and said they liked the ease of use in Nintendo games and how people were able to "just jump right in and everything is intuitive". McRae said it was an amazing feeling being able to share the game with people who shared their "fascination with near-future space exploration".
+On September 16, 2016, it was announced that Osiris: New Dawn was going to be released onto the Steam Early Access program. It was released on September 28, 2016, and the developers had plans to release the full version sometime in 2017, along with PlayStation 4 and Xbox One versions.
+
+
+=== Early access release ===
+The game was released onto Steam's early access program on September 28, 2016, accompanied by a new trailer.  When it was released, the developers were still working on refining and broadening the gameplay. In a press release, Brian McRae said the game's release was the "very beginning of this epic journey", and noted their plans to continue to update and expand the game based on player's feedback. Since the initial Early Access release, many features have been added to the game, including craftable spaceships. One of the biggest additions to the game during early access so far was the "Prometheus II Unearthed" update, which was released on April 27, 2017. The update added a large amount of new content, including more explorable areas, more weapons, and more enemies. In March, McRae told PC Gamer that around 85% of the content suggested by the community had not yet been added to the game. He mentioned plans to add the ability to build "complex space stations" and possibly being able to build biospheres on a space station allowing players to grow food.
+
+
+== End of Development ==
+On April 23rd, 2025 the developer posted an update, officially ending development of the game with a promise, that Multiplayer servers would continue to say online.
+
+To the Osiris: New Dawn Community,
+After an incredible journey, we're officially sunsetting development on Osiris: New Dawn.
+Over the years, your passion, feedback, and support helped shape something truly ambitious. Our team members have since moved on to new chapters, but the memories—and the worlds we created and explored together —will always remain.
+The servers will continue to stay online for those who wish to explore, survive, or simply revisit old adventures.
+Thank you for being part of this expedition.
+— Fenix Fire
+
+
+== Reception ==
+While in Early Access, Osiris: New Dawn was awarded the "PAX West Best Survival Game" from MMOGames and the "PAX West Best Indie MMO" from MMORPG. While the game was in early access, it received mixed reviews from critics. On the day it was launched on Steam, the game rose to the top of the current best sellers.
+However, during post release, there was much user-generated fallout over the game being largely unfinished and full of bugs, despite being declared otherwise. Within the first month of official release, the game began receiving large amounts of negative reviews, comparable to the amount received during the game's initial Beta launch in 2016, and continued to receive as such in the following weeks.
+On January 30, 2023, Fenix Fire issued a Steam announcement post addressing the future plans of the game while also expressing their sentiments. However, the post was largely negatively received, with many players criticizing the company for lack of direction, financial dishonesty, irresponsibility, and poor game quality. The post was later deleted at an unknown point, and the game continued to receive a massive influx of negative reviews. Many of these reviews labeled the game as "abandonware," with some containing inflammatory comments and accusations against the company.
+At an unknown time between the announcement and May 24, 2023, the game was officially removed from Steam. However, the game still appears to be downloadable from Fenix Fire's official website.
+
+
+== References ==
+
+
+== External links ==
+Official website

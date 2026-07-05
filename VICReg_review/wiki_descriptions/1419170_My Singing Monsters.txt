@@ -1,0 +1,99 @@
+Game: My Singing Monsters
+appid: 1419170
+Source: My Singing Monsters
+URL: https://en.wikipedia.org/wiki/My_Singing_Monsters
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+My Singing Monsters is a 2012 Canadian video game franchise developed by Big Blue Bubble. The first game of the series was published and released with the help of Canada Media Fund (CMF) on September 4, 2012, for Apple iOS. Ports of the game for other operating systems were later released, including versions for Android, Amazon Kindle Fire, Barnes & Noble Nook, Steam, and PlayStation Vita. Since its release, My Singing Monsters has grown into a multimedia franchise, with a prequel, several spin-off games, books, live events, series and a board game. On May 12, 2021, Big Blue Bubble announced that the series would be releasing its first console title, My Singing Monsters: Playground, on November 9, 2021.
+
+
+== My Singing Monsters ==
+
+In My Singing Monsters, players collect and breed many different types of anthropomorphic Monsters, each of which has a unique musical line that is either sung or played on an instrument. Each one of these Monsters has at least one element, such as fire, air, water, plant, earth, or cold, which determines on what Island it can be placed. Breeding two Monsters of different elements will create a new Monster species. Each Island possesses a unique set of available Monsters that together play a certain musical theme. Monsters that are present on an Island will generate various types of in-game currency, which can, in turn, be used to acquire more Monsters, buy decorations, build structures, remove obstacles, and bake food for the Monsters to level up and generate more currency at a faster rate. There are also achievements and goals to direct gameplay with in-game currency as rewards. It is also possible to buy currency such as Coins, Diamonds, Treats, Relics, Keys, Shards or Tickets using real money. Certain currencies may be obtained for free by completing third-party offers.
+Islands are the various places that Monsters inhabit, with the first Island being Plant Island. Most Islands follow the method of buying four single Element Monsters, and then breeding those into even more Monsters (i.e. Plant Island, Cold Island, Air Island, Water Island, Earth Island, Fire Haven, Fire Oasis, Light Island, Psychic Island, Faerie Island, Bone Island). Other Islands require teleporting Monsters from another Island (i.e. Ethereal Island, Gold Island, Magical Sanctum, Seasonal Shanty, Shugabush Island, Mythical Island, Magical Nexus, Paironormal Carnival).
+Other Islands have the player buy the Monsters as "statues" or "vessels", then zap Monster eggs from the breeding structures on other Islands into one of the statues to wake it up and hence, unlock its song and its ability to earn currency (i.e. Wublin Island, Celestial Island, Amber Island).
+Ethereal Workshop involves the player attuning specific combinations of elemental Meebs before being "synthesized" in the Synthesizer, in order to create Triple, Quad and Quint-Element Ethereal Monsters.
+The Colossingum is a combat-styled Island where the player can complete fifty main quests and/or limited ones to level up their Colossingum level, or battle other players using the versus feature. Upon completing such quests, players will also be able to collect Costumes and Trophies.
+Composer Island is where players can create their own songs with the natural Monsters and the ethereal Ghazt (the latter can only be obtained on that Island if the player owns My Singing Monsters: Composer).
+Version 2.0.0 added Mirror Islands for the Natural Islands which function as a secondary version of the associated Island, but have moderately different musical arrangements and alternate designs to their regular counterparts, that are mostly covered in pink sinews, similar to that of cobwebs. Version 4.5.0 added Mirror Magical Islands, with each having remnants of the Outer Islands they represent in Dawn of Fire (i.e. Light Island as Party Island, Psychic Island as Space Island, Faerie Island as Cloud Island, Bone Island as Cave Island). 
+The distinction of My Singing Monsters from other simulation games is the "building" process of making music that is primarily driven by the use of the eponymous musical monsters. Players make their own decisions on what determines the "perfect" Island by selectively picking Monsters that they determine would improve their game overall through a combination of design, sound and in-game currency generation. Some special Monsters or Decorations are more difficult to unlock, often requiring exclusive currencies, special events (such as holidays and in-game sales), "Wishing Torches", or other special methods in order to obtain or activate them.
+Several Monsters sing in nonsensical gibberish such as the Mammott (bum), Fwog (wow), and Toe Jammer (doo). Some sing fractured or short lines in English (such as the PomPom (hey) and (come on let's go), Shugabush (yeah), and Hoola (yippity yay), and others play real-world or fictional instruments (such as the Quibble (piano), Bowgart (cello), Shellbeat (drums), Strombonin (trombone), Zynth (analog synthesizer), and Incisaur (vibraslap)). There are also special Monsters known as "Werdos" that sing actual lyrics (the Parlsona, Tawkerr, Stoowarb, Maggpi and Charkoll), as well as the Ethereal Quint, BeMeebEth, Brump, and for the most part bbli$zard and T-Pirainha.
+The Monsters are often designed as exaggerations of real-world animals or objects (such as the Fwog (frog), T-Rox (tyrannosaurus), Blarret (ferret), Nitebear (bear) and Mimic (parrot)), cartoon caricatures of monsters from folklore and mythology (such as the Epic Blabbit (jackalope) and Dragong (dragon)), fusions of living creatures and instruments (such as the Floogull (flugelhorn/seagull) and Sox (saxophone/fox)), resemblances to real-world people (such as the Shugabush (Kristian Bush), Charkoll (CG5), bbli$zard (bbno$)), and T-Pirainha (T-Pain) or representations of the Monster's in-game elemental makeup (such as Kayna (Fire), Clackula (Bone) and Potbelly (Plant)). The rest are original designs, with their names or sounds referencing real-world terminology (such as the Gaddzooks, referencing the word "Gadzooks" and Yooreek, referencing the phrase "Eureka", or eRmA gUrDy referencing the instrument that plays its sound, the hurdy-gurdy).
+Some monsters work uniquely. For example, the Wubbox is hatched in a box form and must have all of the main Monsters on the island "boxed" into it to power it up. Similarly, the Titansouls on the Magical Islands are also hatched in a flower form, requiring four monsters of each rarity be "linked" in order to wake the colossal up.
+Most Monsters have "Rare" and "Epic" variants, both only available during specific timeframes. Rare Monsters can be bought either from the Starshop with Starpower or the "Monsters" section of the Market with Diamonds, or they can be bred with the same breeding combination as the Commons, and Epics have unique breeding combinations and are more difficult to obtain. Besides the variants of the Wubbox, all Rare and Epic monsters have the same sound and design as their Common counterpart.
+In addition, Seasonal Monsters are only available during their respective Seasonal Events (such as the Punkleton during Spooktacle (Halloween), Clavavera during BeatHereafter (Day of the Dead), Gobbleygourd during Feast-Ember (Thanksgiving), Yool during Festival of Yay (Christmas), Carillong during Crescendo Moon (Lunar New Year), Schmoochle during Season of Love (Valentine's Day), Ffidyll during Cloverspell (Saint Patrick's Day), Blabbit during Eggstravaganza (Easter), Viveine during Echoes of Eco (Earth Week and Arbor Day), Spurrit during Perplexplore (Museum Day), Monculus during Life-Formula (Game creation turned into a part of the story), Whiz-bang during SkyPainting (Pride Month) Hoola during SummerSong (Summer Break), Boo'qwurm during MindBoggle (Back to School), Jam Boree during Anniversary Month (Anniversary of the game's release), and special "Out of Season" sales. Likewise, Fire Expansion Monsters are available on an alternating monthly basis and a few specific Seasonal sales (such as "Which Way is the Beach?" (SummerSong) and "Family Reunion" (Feast-Ember)).
+Other features like Tribal Island, top Islands, achievements, Torch lighting and Friends are also present, encouraging player engagement and interaction.
+Certain gameplay mechanics have been discontinued or replaced, such as the original Mine, which was replaced with the Mini-Mine that gives 1 diamond every 23 hours, available on almost every Island. There is also a Maximum Mine, available exclusively on both Plant Island and Mirror Plant Island if the player has made at least one in-app purchase, that gives 2 diamonds every 12 hours.
+As of Version 4.4.0, Mirror Islands do not use the same song as their normal island, such as Mirror Psychic Island having a different song as Psychic Island.
+As of Version 4.7.0, a series of hand-shaped islands called The Ethereal Islets allows the player to "sacrifice" a monster into a structure known as the Dish Harmonizer, which can produce two monsters, usually doubles, when Dish-Harmonization is complete. If the player obtains a single-, double-, triple-, and quad-elemental monster on the same Islet, on top of unlocking the Islet's Bass, they unlock a new feature called Dish Wish, which allows them to slightly increases the chance of obtaining a desired double- or triple-elemental monster. Once all Ethereal monsters on an Islet have been collected, A new feature, called the Primordial Counter, located in the Dish-Wish section, determents the chance of receiving a Primordial Monster by Dish Harmonizing a quad-elemental. Primordials are a special class of monsters that makes it possible for a monster's happiness to be affected by their likes placed anywhere on that Islet. There can be only one copy of a Primordial on an Islet.
+
+
+=== Monster Choir ===
+Monster Choir, the English-translated name for the Chinese (怪兽合唱团) and Korean (몬스터 합창단) versions of My Singing Monsters, are special versions of the game licensed to Yodo1 Games only for use in China and South Korea respectively. Monster Choir shares many similarities with the main game, but also features many differences, such as new Monster variants, a new minigame, and a VIP System. The Korean version uses a completely unique UI skin, while the Chinese version uses a similar UI as the main game before Version 2.0.0. Both versions have all features of the main game up to Version 1.3.2.
+Monster Choir was supported independently from Big Blue Bubble, and thus these versions were not listed on its website and were almost never mentioned by the developers. Monster Choir Korea had a Facebook page where updates were given. Its last post was posted in September 2015, and it was shut down in early 2023. It also has a YouTube channel that posted three trailers.
+The game servers themselves had shut down sometime in late 2020. Although downloaded applications (or "apks") can still be found on the internet, they can no longer connect to game servers, rendering it unplayable.
+
+
+== My Singing Monsters: Dawn of Fire ==
+My Singing Monsters: Dawn of Fire is a prequel of the original My Singing Monsters, set in a time when the element of Fire was born. Unlike the original game which introduced the Fire Monsters to players, the main song is on "the Continent", a supercontinent land that was formed similarly to Pangaea. The Monsters are depicted as babies on "the Continent", and the starter Monsters are Noggin and Kayna. There are five sections of the Continent, unlocked at different player levels and are based on the Natural Islands from the original game. Monsters in their young form are initially raised on the Continent, each of which plays a unique tune that contributes to the musical theme. Each Monster requests a unique set of "Crafting Items" that can be used to increase their level up to 20; filling these requests will reward in-game currency plus additional benefits that can unlock additional features of the game. At a certain level unique to each Monster, the young Monsters are able to permanently teleport to additional "Outer Islands" as adult Monsters, gaining new musical lines on an Island with a unique group of Monsters that produce an entirely different song. These include Party Island, Space Island, Cloud Island, and Cave Island. There is also one other Island, called Starhenge, which is the ancient version of Celestial Island from the original game. On September 23, 2025, 10 years after the worldwide release of Dawn of Fire, Wanderer Island released, being the first island in almost 9 years to be added in the game. It contains the special Monsters on The Continent which are the Mythical and Seasonal Monsters.
+Like the main game, Dawn of Fire also has seasonal events and Seasonal Monsters which are only available for certain times of the year; these being Spooktacle Junior, Festival of Yay Junior, Season of Love Junior, Eggs-Travaganza Junior and SummerSong Junior. Mythicals are present in the game, but can only be bred for a limited time. Dawn of Fire also introduced Prismatics, which are only available during certain events, and can be created by sending a Monster through the Prism Gate. Prismatics serve as the prequel's equivalent of Rare and Epic Monsters from the original game.
+
+
+== Other games ==
+
+
+=== My Singing Monsters: Composer ===
+My Singing Monsters: Composer serves as an app for composing custom songs using some, but not all, Monsters from the franchise. The player can edit the Monsters' sounds by placing their notes onto a grid, all while changing the key and tempo. This game also features Rare Instrumental Monsters, Dipsters,
+Core Seasonals (Punkleton, Yool, Schmoochle, Blabbit and Hoola), and Ethereals, which, except Ghazt, are not available on Composer Island in the original game.
+
+
+=== My Singing Monsters: Playground ===
+My Singing Monsters: Playground is a party video game, where players play with their friends or CPUs while competing in mini-games that are set in the Monster World. A total of seven characters from the My Singing Monsters franchise can be selected, with various costumes and decorations to unlock by completing mini-games. My Singing Monsters: Playground also has a physical version that is exclusive to the Nintendo Switch. The game was released on the Nintendo Switch, PlayStation 4, PlayStation 5, Xbox One, Xbox Series X and Series S, and on Steam, on November 9, 2021.
+
+
+=== My Singing Monsters: The Board Game ===
+My Singing Monsters: The Board Game is a board game based on the My Singing Monsters franchise. The board game was supported by Kickstarter from June 1 to 21 2021 and was designed by Sen-Foong Lim and Jay Cormier. There are two versions of the game; the Standard Edition, which includes all of the core components, and the Deluxe Edition, which includes nine painted Monster mini-figures, upgraded components, and an exclusive expansion that features the Werdo Monsters. The board game is a worker placement game, in which the player breeds Monsters to produce more coins than other players, and more board pieces (taking the form of in-game islands) can be added to increase the length and strategy of the game.
+
+
+=== Teaching Guide Grade 1-3: My Singing Monsters ===
+In 2018, Big Blue Bubble released an educational guide aimed towards elementary school children; Teaching Guide Grade 1-3: My Singing Monsters, which is intended to teach lessons about music using characters and concepts from the franchise.
+
+
+=== My Singing Monsters: Thumpies ===
+My Singing Monsters: Thumpies is a 2024 remastered remake of the 2010 game Thumpies. The game is a rhythm game, requiring the player to tap various objects in time to the bouncing Thumpie characters on-screen, to fill the Thump-o-Meter and achieve three stars. The game had a hard launch on Android and iOS devices on March 5, 2024, costing $4.99.
+
+
+=== Discontinued games ===
+
+
+==== Furcorn's Jelly Dreams / Jammer Splash! ====
+Furcorn's Jelly Dreams was a puzzle game featuring characters from the franchise, and was discontinued in 2017. This eventually was remade into Jammer Splash!, which featured Toe Jammer, and was also discontinued as well.
+
+
+==== My Singing Monsters: Coloring Book ====
+My Singing Monsters: Coloring Book was a digital coloring book by Big Blue Bubble themed around My Singing Monsters. The app was first released on December 15, 2016 on Android and iOS devices. It was discontinued on January 24, 2025.
+
+
+==== Other discontinued games ====
+Several other games from the franchise have also been discontinued, including My Mammott, My PomPom, Fling a Thing!, and My Singing Monsters: Official Guide. Fling a Thing! and the 2010 version of Thumpies were released prior to My Singing Monsters, and references to these games can be found throughout the My Singing Monsters series.
+
+
+== Notable collaborations ==
+On June 17, 2013, Big Blue Bubble collaborated with Disney Mobile to make My Muppets Show, a game featuring similar gameplay to My Singing Monsters, albeit with the Muppets instead. The game featured five stages which were the game's version of islands, each with their own songs, and Muppets were obtained by "digitizing" them with a machine called HARV-E. The game was discontinued and had its servers shut down on January 9, 2015.
+In July 2013, Big Blue Bubble announced that they had collaborated with artist Kristian Bush from American country music duo Sugarland to create a new set of Monsters, the Shugafam along with a new island called "Shugabush Island".
+In October 2013, Big Blue Bubble signed a deal with publishing house Egmont UK as its new strategic licensing partner.
+In July 2017, Big Blue Bubble announced that Wind Sun Sky Entertainment would adapt its mobile game My Singing Monsters into a multi-media franchise, beginning with an animated TV series and consumer products program. Skybound Entertainment would be the distributor in all territories worldwide, excluding Canada. While a series of figurines and plush toys were released in 2019, the series itself was cancelled shortly later after struggling to establish a proper plot.
+
+
+== Reception ==
+Kotaku described the original My Singing Monsters as a "clever combination of music and monster breeding", praising how the complexity of a song can become developed by the utility of breeding monsters, each monster revealing a new line to the song. However, Kotaku was "a bit disappointed" with the level of complexity added in Dawn of Fire, reporting that the new feeding system hinders progress towards the whole concept of unveiling the "musical nirvana".
+Gamezebo and 148Apps stated that they enjoyed the music in My Singing Monsters, but expressed dissatisfaction with the connection issues present at the game's release.
+The game won the People's Voice Award for "Best Music/Sound Design" at the 2020 Webby Awards. 10 diamonds were rewarded to all players who logged in that week.
+
+
+== References ==
+
+
+== External links ==
+My Singing Monsters Wiki

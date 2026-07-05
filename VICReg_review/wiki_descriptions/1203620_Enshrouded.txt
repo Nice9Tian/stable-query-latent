@@ -1,0 +1,35 @@
+Game: Enshrouded
+appid: 1203620
+Source: Enshrouded
+URL: https://en.wikipedia.org/wiki/Enshrouded
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Enshrouded is a survival and action role-playing game by Keen Games for Microsoft Windows. It launched in early access in January 2024 for PC, and is scheduled for a full release in October 2026 for PC and PlayStation 5, and in early 2027 for Xbox Series X and Series S.
+
+
+== Gameplay ==
+Enshrouded is a survival action role-playing video game played from a third-person perspective. It supports up to 16 players at once. The game's world is set in Embervale, an open world which can be freely explored by players. The overworld is where players can build their bases, gather resources, and craft new equipment and gear. Players will be able to summon friendly non-playable characters to their base, who will then provide players with new crafting recipes and quests. Players can also explore areas which are covered by a thick layer of fog named "the Shroud". These areas are dangerous as they are filled with hostile monsters, and players can only stay within it for a limited period of time before their character dies; however, players can find valuable loot and treasure chests which regenerate regularly in the Shrouded area. 
+Like other survival games, players need to manage their hunger and thirst level; however, hunger and thirst only affect the player character's efficiency in combat. Drinking water boosts the player's endurance, while eating food boosts their constitution. Enshrouded also has a sleep mechanic. Players can use a variety of weapons to defeat enemies, and they can dodge and parry hostile attacks. As players progress in the game, they will unlock new talents, further boosting their combat capabilities and allowing players to specialize in one of three Archetypes: Melee Focused, Magic Focused, and Ranged Focus. Each archetype has four specialties such as Barbarian, Wizard, or Hunter. They will unlock a glider and a grappling hook, both of which aid their traversal in the game's world. If the player character dies in the game, players will keep all of their equipped gear and crafted items, and only lose all of the raw resources they have collected.
+
+
+== Development ==
+Enshrouded is being developed and published by German studio Keen Games, which previously developed Portal Knights. The developers drew inspirations from games such as The Legend of Zelda: Breath of the Wild and Valheim. While the combat was influenced by "Soulsborne" games, it was not designed to be as challenging. It was envisioned as a "welcoming" game for players who are unfamiliar with the survival game genre.
+Keen announced the game in May 2023. An eight-hour demo for the game was released during Steam Next Fest in November 2023. Enshrouded was released via Steam's early access model on January 24, 2024. A full release of the game is scheduled for Autumn 2026. A technology roadmap announced in January 2026 included a "console release" for the 1.0 version. The full game is set to be released on October 15, 2026 for Windows and PlayStation 5, and in early 2027 for Xbox Series X and Series S.
+
+
+== Reception ==
+
+
+=== Critical reviews ===
+
+
+=== Player statistics ===
+Enshrouded sold one million copies within a week of its early access launch in January 2024. In August 2024, the player count increased to three million. The latest count by January 2026 was five million players.
+
+
+== References ==
+
+
+== External links ==
+Official website

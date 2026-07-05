@@ -1,0 +1,48 @@
+Game: American Arcadia
+appid: 1249040
+Source: American Arcadia
+URL: https://en.wikipedia.org/wiki/American_Arcadia
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+American Arcadia is a 2023 puzzle-platformer game developed by Out of the Blue and published by Raw Fury. The game follows Trevor Hills (Yuri Lowenthal) as he tries to escape his simulated hometown, Arcadia, with the help of stage technician Angela Solano (Krizia Bajos).
+
+
+== Gameplay ==
+American Arcadia features two playable protagonists, Trevor Hills and Angela Solano. Throughout, it switches between the two characters, changing how it is played: as Trevor, it is presented as a side-scrolling 2.5D platformer, whereas as Angela, the game is a 3D first-person puzzle-solver.
+While playing in Trevor's perspective, the player can use Angela's abilities to remotely interact with electric equipment, such as lights and elevators; during these sections, a CCTV camera overlay is shown. At one point, the player is simultaneously in control of both characters, and has to coordinate to avoid being seen by enemies as Trevor while choosing the correct answers to questions as Angela.
+
+
+== Plot ==
+Before the events of American Arcadia, six Arcadia-born citizens escaped from the city in January 1992, known as The Arcadia Six Breakout. 
+The game presents the plot as a documentary, focusing on the experiences of Trevor Hills, a 28-year-old man who lives a normal life, and Angela Solano, a Walton Media stage technician. 
+Nine days before the events, Trevor's friend Augustus "Gus" Rainey is missing. He is selected as another Edge Travel Grant winner, where winners are sent to vacation to holiday places outside of Arcadia. In the following days, Trevor is repeatedly reminded through hijacked audio devices to "Don't be a fool". 
+On the day of the events, Trevor is selected as another winner in the travel grant. As he enters an elevator, an unknown person under the pseudonym Kovacs from the screens warns him to not accept the travel grant and run towards the backstage of Arcadia. There, Trevor discovers that every citizen within Arcadia, including himself is part of a reality television show that thousands of cameras track and record to every digital streaming platform, led by host Vivian Walton. Individuals who do not receive positive reception from a lack of viewership are presumably killed, through the Edge Travel Grant. Trevor navigates the backstage and skyscrapers, but travel agents find him and chase him down. He flees through many obstacles and jumps into a pool, before escaping through the cities' monorail, where he arrives at Grand Hotel Cygnus. 
+Three days before the events, Kovacs smuggles an access badge inside a suitcase for Trevor to use in the hotel. With the help of Kovacs, he navigates the hotel to a suite room where he obtains the badge. Trevor returns to the surface to enter a bus towards the Arcadia Central Station, but it breaks down at the last minute where travel agents chase Trevor down. As Kovacs tries to help Trevor, a phone call from the pseudonym Number Six, one of the Arcadia Six, warns that the chief of security, Marcus Javert will be entering their office. Trevor evades the travel agents through hiding behind crowds, whilst Kovacs is interrogated by Marcus and Anastasia. During the interrogation, Trevor discovers Kovacs' name to be Angela Solano, and Trevor leaves in a replacement bus towards the Arcadia Central Station. 
+Trevor arrives at the station, where visitors enter and exit from Arcadia for tourism purposes through a train. However, "The Jingle", an auditory signal Arcadia's residents have been conditioned to feel comfort from, plays as he attempts to leave, which immobilises him. Marcus finds him and sends Interceptors to chase Trevor down. With the help of Angela, he escapes by going outside the station and enters a mall, hiding inside an arcade. Meanwhile, Walton Media is under lockdown due to Trevor's escape; All employees must have their phones scanned for security purposes. Inspired by steganography, Angela transfers her phone's data into a VHS tape retrieved from a storage room, and wipes the data from her phone. She returns home and reconnects with Trevor, leaving the mall with a rental car. However, Angela’s supervisor, Kendra Tomlin, arrives to her home for inspection, causing Angela to hide evidence relating to the Arcadia Six and Trevor’s escape. After Kendra leaves and Trevor passes a field of transmitters emitting the Jingle with the aid of Angela, he is then run off the road by Interceptors. Trevor makes his way to the edge of the Arcadia Dome on foot, only for the bridge to the edge has been retracted, and Marcus and an Interceptor to catch up to Trevor, the latter tases him after surrendering.
+Trevor is able to escape his captivity from Walton Media through a sewer thanks to Angela. From there, he is guided by her and Number Six to Old Arcadia, the original prototype for Arcadia. Angela and Number Six are able to alter the Jingle to instead make him significantly more brave. However, instead of escaping as Number Six demands him to, he decides to return to Arcadia to press a failsafe button at the top of the Arcadia Spire to free everyone.
+As Trevor climbs the Spire while being pursued by Interceptors, Angela discovers Marcus is only an actor and steals his credentials to gain access to the Spire to help Trevor. Reaching the top, Trevor pushes the failsafe button only for Vivian to reveal Trevor’s escape was only just a pilot for spinoff show ‘Escape From Arcadia’. Vivian also reveals she was Number Six and that she was another one of the Arcadia Six who returned to Walton Media due to her experiences in the outside world.
+Trevor is given two choices; sell out and assure the American Arcadia audience of his ‘safety’ or publicly rebel against Walton in a futile resistance. However, Trevor instead chooses a third option (encouraged by Vivian accidentally repeating a phrase often used by Angela) and decides to loudly cuss out the American Arcadia audience and tells them to leave him alone.
+In the credits, it is revealed that a free Trevor now lives a quiet life, he and Angela started media company Solano Hills Productions and that Walton Media is flourishing. Finally in the post-credits, as Trevor and Angela prepare to release a documentary regarding Walton Media's actions, they discover that Escape From Arcadia is ripping off aspects of Trevor's own escape.
+
+
+== Development and release ==
+American Arcadia is developed by Spanish indie studio Out of the Blue, which previously developed  Call of the Sea.
+Out of the Blue released a trailer in April 2022, and a demo was presented at the Tribeca Festival Games Spotlight. On November 15, 2023, American Arcadia was released. 
+
+
+== Reception ==
+
+American Arcadia received "generally favorable" reviews from critics, according to the review aggregation website Metacritic. On OpenCritic, the game has a "strong" approval rating of 94%.
+
+
+== See also ==
+The Truman Show, a film with a similar concept
+
+
+== References ==
+
+
+== External links ==
+Official website
+American Arcadia at MobyGames

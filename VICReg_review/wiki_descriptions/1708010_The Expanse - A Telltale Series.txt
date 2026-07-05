@@ -1,0 +1,34 @@
+Game: The Expanse: A Telltale Series
+appid: 1708010
+Source: The Expanse: A Telltale Series
+URL: https://en.wikipedia.org/wiki/The_Expanse:_A_Telltale_Series
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+The Expanse: A Telltale Series is an episodic adventure game co-developed by Telltale Games and Deck Nine. Its five episodes were released between July and September 2023 for PlayStation 4, PlayStation 5, Windows, Xbox One and Xbox Series X/S, with a version for Nintendo Switch released in April 2026. It is a prequel to Alcon Entertainment's television series The Expanse.
+
+
+== Gameplay ==
+The game is played from a third-person view. The player can move around various environments, and use point and click actions to interact with objects. Non-player characters (NPCs) can also be interacted with, triggering dialogue choices that change the trajectory of story events and will affect how other character view the player, helping to determine the ending of the game.
+The player controls Camina Drummer, the XO of Artemis, an independent salvage vessel traveling across the Solar System before the events of the original series. The ship's crew scavenges abandoned starships for valuable parts and cargoes using zero gravity equipment, with the main story revolving around a wrecked ship with a highly valuable cargo, and the consequences of their decision to take it.
+
+
+== Development and release ==
+On December 9, 2021 (2021-12-09), the game was originally announced at The Game Awards 2021. On May 17, 2023, the first episode was announced for July 27, 2023, with four additional episodes to be released every two weeks thereafter. On July 24, 2023, a bonus episode, "Archangel", featuring Shohreh Aghdashloo's character., was announced at San Diego Comic-Con and it was released on November 20, 2023. A Nintendo Switch version was released on April 16, 2026.
+
+
+== Reception ==
+
+The Expanse: A Telltale Series received generally favourable reviews, according to Metacritic.
+GameSpot praised the game's writing, narrative design, Cara Gee's performance as Drummer, character-driven gameplay, and visual animations, but criticised the zero-g movement and collectible mechanic. Similarly, IGN also lauded Gee's performance, writing, and visuals but opined that it "struggles to find engaging mechanics outside of its dialogue scenes, relying too heavily on quicktime events and mediocre movement challenges."
+
+
+== References ==
+
+
+== Bibliography ==
+Lewis, Claire (June 1, 2023). "The Expanse: A Telltale Series Is A Love Letter To Fans Of The Franchise". GameSpot. Archived from the original on June 1, 2023. Retrieved June 16, 2023.
+
+
+== External links ==
+Official website

@@ -1,0 +1,31 @@
+Game: Last Epoch
+appid: 899770
+Source: Last Epoch
+URL: https://en.wikipedia.org/wiki/Last_Epoch
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Last Epoch is a time-travel themed, loot-based hack and slash action role-playing game developed and published by Eleventh Hour Games.
+
+
+== Plot ==
+The game is set in the world of Eterra across several timelines.
+
+
+== Development and release ==
+In April 2018, a free playable demo was released as part of Last Epoch's Kickstarter drive. In April 2019, the game's beta was made available via Steam Early Access. In December 2019, the title's full release, originally planned for April 2020, was rescheduled to the fourth quarter of 2020. In October 2020, the developers announced the cancellation of the Mac client for the game. In their announcement, they cited anticipated difficulties arising from Apple's transition to computers powered by ARM-based processors. In December 2020, Eleventh Hour Games announced that Last Epoch's release was delayed until 2021.
+In September 2024, the studio announced they would no longer be updating the Linux client. There was controversy surrounding this decision as, initially, the post had failed to mention the Linux client at all.
+In March 2023, a multiplayer beta was launched. On February 21, 2024, the game was released to the public in three editions: Standard, Deluxe, and Ultimate. The launch had more than 250,000 concurrent online players.
+
+
+== Reception ==
+Last Epoch's 2018 Kickstarter campaign managed to successfully reach its goal, ultimately raising over $250,000.
+As of March 22, 2024, it had sold 2,135,257 copies and reached 264,708 peak concurrent users on Steam.
+
+
+== References ==
+
+
+== External links ==
+Official website
+Last Epoch at Kickstarter

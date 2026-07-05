@@ -1,0 +1,30 @@
+Game: Ara: History Untold
+appid: 2021880
+Source: Ara: History Untold
+URL: https://en.wikipedia.org/wiki/Ara:_History_Untold
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Ara: History Untold is a turn-based grand strategy game developed by Oxide Games and published by Xbox Game Studios. The game was announced during Xbox and Bethesda Showcase 2022. It is about building and leading a nation throughout alternate history. The game was released for Microsoft Windows on September 24, 2024.
+
+
+== Gameplay ==
+Ara: History Untold is a turn-based grand strategy game. The game allows players to build and lead a nation through an alternate history. The game features a dynamic living world where players can explore new lands, develop arts and culture, conduct diplomacy, and engage in strategic warfare. The game world is filled with multiple biomes and cultures, and citizens react dynamically to various conditions such as health, sickness, war, and peace. Players can construct numerous improvements, from forges to libraries, and monumental architectural triumphs. The game offers a non-linear technology tree and a national crafting economy. All players’ actions are executed at the same time. Players can engage in diplomacy, form alliances, and manage military forces. It supports both synchronous and asynchronous multiplayer modes.
+The soundtrack was composed by Michael Curran, Geoff Knorr, and Jonathan Peros, and consists of over seven hours of original music based on nation type, era, and game state. Each theme consists of five distinct layers that dynamically fade in and out based on data from game. 
+The latest update, Invisible Hand, released in November 2024, introduces a refined economy system, terrain-based combat mechanics, new unit upgrades, the historical leader John A. Macdonald, a balanced world map, and expanded modding support.
+
+
+== Development ==
+The game is being developed by Oxide Games, an American video game developer based in Lutherville-Timonium, Maryland, using their in-house engine, Nitrous Engine, which was used to develop Ashes of the Singularity. Some Oxide Game members used to work at Firaxis Games, the development studio of the Civilization franchise, Ara: History Untold in many ways is similar to this series. The game was first announced in 2022 at the Xbox Bethesda showcase. In June 2024, Oxide Games officially announced that the game will launch on September 24, 2024, for Windows.
+
+
+== Reception ==
+
+Ara: History Untold received "generally favorable" reviews from critics, according to review aggregator Metacritic, and 67% of critics recommended the game, according to OpenCritic.
+
+
+== References ==
+
+
+== External links ==
+Official website

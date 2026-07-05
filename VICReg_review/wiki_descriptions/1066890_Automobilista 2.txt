@@ -1,0 +1,24 @@
+Game: Automobilista 2
+appid: 1066890
+Source: Automobilista 2
+URL: https://en.wikipedia.org/wiki/Automobilista_2
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Automobilista 2 is a sim racing video game created by Brazilian video game developer Reiza Studios, under the lead of Renato Simioni. The game was initially released as an Early Access title on March 31, 2020, via Steam, with the official V1.0 release taking place on June 30, 2020. Automobilista 2 features a wide variety of cars and tracks. Its main focus is on Brazilian content, which includes licensed Brazilian racing series such as Stock Car Brazil and Copa Truck. There is also an emphasis on Formula racing cars of many different eras, and includes licensed and generic vehicles. Other racing classes represented in Automobilista 2 include, but are not limited to: Retro touring cars, 1990s American open-wheel cars, GT3 and karts. Automobilista 2 supports VR, triple screen and full motion racing simulator setups.
+
+
+== Gameplay ==
+Automobilista 2 has a total of 59 track locations with 189 layouts, including historic configurations. The game supports virtual reality (VR) gameplay. The game has a combined total of 175 cars, including downloadable content.
+
+
+== Development ==
+Automobilista 2 is built on the Madness engine, developed by Slightly Mad Studios for the Project CARS series. Automobilista 2 inherited the Seta tyre model, which is a physical tyre model. The Seta tyre model simulates the carcass, the tread and the heat of the tyre, which allows for a wide variety of tyres to be simulated with realistic handling properties. Automobilista 2 also features Livetrack 3.0, which allows for dynamic simulation of the race track's surface. This includes the 'rubbering in' and heating/cooling effects as vehicles drive over the racetrack, and allows for simulation of rain and puddles to affect the track depending on its geometry.
+Automobilista 2 includes several improvements over Project CARS 2 in terms of vehicle physics, force feedback, audio, and the implementation of Livetrack 3.0. Automobilista 2 allows players to select any date and time between the present and 1979, and the game will automatically feature climatic conditions, such as temperature, wind, and rainfall, as it was at the time. These conditions affect the vehicle handling in a realistic way. The trackside foliage will also adjust, depending on time of year chosen.
+
+
+== References ==
+
+
+== External links ==
+Official website

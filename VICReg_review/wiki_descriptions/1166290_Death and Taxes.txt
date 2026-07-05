@@ -1,0 +1,32 @@
+Game: Death and Taxes
+appid: 1166290
+Source: Death and Taxes (video game)
+URL: https://en.wikipedia.org/wiki/Death_and_Taxes_(video_game)
+Match score: 7.39
+Retrieved: 2026-07-04
+--------
+Death and Taxes is a 2020 simulation video game by Leene Künnap, an Estonian indie game developer, and published by their company, Placeholder Gameworks, on February 20, 2020 on Steam. The player takes the role of a Grim Reaper, who must bureaucratically decide the fates of humans, specifically whether they will live or die. The game shares its ideology with the death-positivity movement, trying to open the discussion of death in a light-hearted way. On March 18, 2020, Placeholder Gameworks uploaded the game code under the MIT License on GitHub.
+
+
+== Gameplay ==
+
+The gameplay of Death and Taxes focuses on the work life of a Grim Reaper on an office job. The main objective of the player is to make difficult decisions to determine who could be saved from death and who is destined for certain doom, while keeping the game's fictional world in balance. Each human the player decides the fate of is given a short description about who they are; based on this, certain people living or dying can affect the world in various ways; the outcome of the game depends on the player's decisions. The player is given instructions on how they are supposed to make these decisions by their overseer, Fate, but the player may choose to ignore these instructions. Players can also customise their workspace and appearance with the money they earn. The game attempts to help people relate more easily to themes of death, to see them in a new perspective and to offer the player a chance for self-reflection.
+
+
+== Reception ==
+
+
+=== Critical reception ===
+Death and Taxes was met with positive reception. Alice Bell of Rock Paper Shotgun called it "very funny" and praised the "really fun story running through." Journalists from TechRaptor reviewed it as "a short, fun game with plenty of replay value." Many positive comparisons were drawn between the game and Papers, Please, which initially served as an inspiration for it. The game has been noted for containing lots of "thoughtful" messages to the player, with deep themes of morality and how people act in the performance of duties in the pursuit of personal wealth being raised.
+
+
+=== Awards ===
+Death and Taxes won the third place at the 2018 Game Camps Kotka competition.
+
+
+== References ==
+
+
+== External links ==
+Official website
+Death and Taxes on GitHub

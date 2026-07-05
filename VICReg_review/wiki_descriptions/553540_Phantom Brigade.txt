@@ -1,0 +1,24 @@
+Game: Phantom Brigade
+appid: 553540
+Source: Phantom Brigade
+URL: https://en.wikipedia.org/wiki/Phantom_Brigade
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Phantom Brigade is a turn-based tactics video game originally developed by Tetragon Works, but currently being developed by Brace Yourself Games after they acquired the indie studio. Initially in early access on Epic Games Store since November 2020, the full game was released on February 28, 2023. The premise of the game is that the player commands a squad of mechs who obtained a secret prototype weapon that lets them see briefly into the future. The game plays out in a semi-real-time manner with turns being separated into segments of a few seconds each. The player can predict what happens during these turns and set up moves that then play out in real time.
+
+
+== Development ==
+The game was first announced at PAX West 2017.
+The game's developers decided that the game would not be fully turn-based and play out in real time, in order to "capture that energy you get in a mech anime [...] but have that actually be the gameplay", according to the game's creative lead and designer, Adelaide Jenkins. She stated that while she found games like Front Mission 4 to be "hype" in their cutscenes, the gameplay was "very much traditional turn-based". The game features procedural damage for both the environment and mechs (based on direction).
+
+
+== Reception ==
+Luke Plunkett of Kotaku compared the game to a hybrid of XCOM and MechWarrior Tactics, saying that it "looks amazing" and that he was "excited to see how this giant mechanical ballet looks after a few more months". Mike Williams of USgamer stated that he initially compared the game to Front Mission due to its turn-based gameplay, a comparison that the developers agreed with. Saying that "god dammit, I want more mech strategy games", he called Phantom Brigade the highlight of the PAX West 2019 show. Alex Connolly of Wargamer.com called the game "what we've all been pining for since Square Enix dropped the ball by a) not officially releasing Front Mission 5: Scars of the War in the West and b) allowing Front Mission Evolved to be, well, Front Mission Evolved".
+
+
+== References ==
+
+
+== External links ==
+Official website

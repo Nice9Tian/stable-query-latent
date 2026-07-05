@@ -1,0 +1,30 @@
+Game: Hylics 2
+appid: 1286710
+Source: Hylics 2
+URL: https://en.wikipedia.org/wiki/Hylics_2
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Hylics 2 is a 2020 role-playing video game developed by Mason Lindroth. It is the sequel to the 2015 game Hylics. Set in a surreal and intentionally absurd collection of islands, the protagonist Wayne must stop the resurrection of the tyrant king Gibby by his minions. Battles take place in a turn-based role-playing game format, similarly to its predecessor, but gameplay in the overworld is expanded upon, prominently featuring 3D platforming elements, with extra inclusions of 2D platforming and first-person dungeon crawling sections. The game was acclaimed for its unique claymation visuals and psychedelic funk score composed by Lindroth and Chuck Salamone.
+
+
+== Gameplay ==
+
+Hylics 2 is a turn-based RPG with similarities to traditional JRPGs. It takes place in a surreal and absurd world, with some horror elements. The player character Wayne assembles a party of characters, fights enemies, explores a 3D world, and finds hidden treasure. Exploration across each island is done in an airship, which has been compared to Final Fantasy. Unlike the first game, the sequel contains 3D platforming elements, and contains a segment of dungeon-crawling in first-person. The player can dodge enemies with a variety of moves. The player characters gain more flesh (hit points) by putting the meat of dead enemies and Waynes in a meat grinder. When all party members' flesh hits 0, the player dissolves.
+
+
+== Plot ==
+The plot of the game involves Wayne attempting to stop the resurrection of the first game's antagonist, the tyrant king Gibby, by his minions. It is revealed that there are many versions of Wayne in the world of various shapes and designs.
+
+
+== Development ==
+
+The game is a sequel to the 2015 RPG Hylics, both developed by Mason Lindroth. The sequel's plot contains motifs of the first game, but can be understood without playing the first game. While the first game was developed in RPG Maker VX Ace, the sequel was developed in the Unity engine, allowing for the visuals and gameplay to be further fleshed out. Hylics 2 uses a psychedelic claymation visual style, a relatively rare animation technique in games. Behind-the-scenes photos of the process were released in 2023. Lindroth supported the sequel's development with a public fundraising campaign on GoFundMe. The game's psychedelic funk score was made by Mason Lindroth and Chuck Salamone.
+The game was announced with a trailer in January 2018, with a planned release date for later that year. Another trailer was released in November 5th, and by then, the release date had shifted to summer 2019. After a final trailer on June 3rd, the game was released on June 22, 2020 on the Steam and Itch.io platforms for Microsoft Windows and MacOS.
+
+
+== Reception ==
+The game was acclaimed upon its release, with significant praise being given to its visual style. Rock Paper Shotgun writer Alice O'Connor claimed the game had some of the best visuals and music in gaming. The visuals were compared to the video game Clayfighter, artist Bruce Bickford's works, and the movie Fantastic Planet, while the score was compared to Frank Zappa's music. The in-game models, animations, and battles were considered improved from the first game. In 2021, PC Gamer named Hylics 2 as having one of their favorite title screens in gaming. Early user reviews criticized elements of the platforming as clunky, and the length of battles as being paced poorly.
+
+
+== References ==

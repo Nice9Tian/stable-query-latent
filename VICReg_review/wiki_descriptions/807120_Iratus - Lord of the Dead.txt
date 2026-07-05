@@ -1,0 +1,30 @@
+Game: Iratus: Lord of the Dead
+appid: 807120
+Source: Iratus: Lord of the Dead
+URL: https://en.wikipedia.org/wiki/Iratus:_Lord_of_the_Dead
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Iratus: Lord of the Dead is a tactical role-playing game developed by Unfrozen and published in 2020 by Daedalic Entertainment for Microsoft Windows, macOS, and Linux.
+
+
+== Gameplay ==
+Players take the role of Iratus, a necromancer who desires to raise hordes of undead and escape from a dungeon.  Iratus works his way up from the bottom of the dungeon to the surface.  He starts able to create simple creatures, such as skeletons and zombies, from defeated foes.  As he gains power, more complicated creatures become possible, such as banshees and vampires.  The creatures gain experience in combat and special abilities are unlocked as they gain experience.  Combat uses turn-based tactics and is viewed from the side, as in Darkest Dungeon. Heroes attacked in combat can be driven insane, at which point they may flee, turn against their teammates, or become more difficult to kill.
+
+
+== Development ==
+The combat in Iratus was inspired by Darkest Dungeon, and the central concept of playing an evil character came from Dungeon Keeper.  For other gameplay elements, the developers cited Slay the Spire and Disciples II.  The artwork was inspired by Heroes of Might and Magic V, "The Demon Seated", Dungeon Keeper, and the works of H. P. Lovecraft.  The game was successfully crowdfunded in June 2018, entered early access in July 2019, and was released on April 24, 2020.  The DLC Wrath of the Necromancer was released on October 28, 2020, and adds another dungeon level, more creatures, and new items.
+
+
+== Reception ==
+
+On Metacritic, a review aggregator, Iratus: Lord of the Dead received positive reviews.
+During the game's early access phase, several online magazines posted their impressions.  Andy Kelly of PC Gamer wrote the game seems like a simple turn-based tactics game at first, but the monsters' number of special abilities gives it depth.  Kelly cited these combat mechanics, and the "lavish artwork", as making it fun enough to overcome the game's derivative nature.  Writing for Rock Paper Shotgun, Sin Vega said that she enjoyed the combat, but the game's stand-out feature is crafting new monsters.  Commenting on the game's difficulty, RPGamer's reviewer, Pascal Tekaia, called it "a polished, meaty dungeon-crawler for the slightly masochistic crowd".  Tekaia praised the tactical options available during combat and recommended it for fans of Darkest Dungeon.
+After the game was released, PC Gamer took another look at it.  Steven Messner compared the horror elements negatively to Darkest Dungeon but praised the crafting system, extensive skills, and tactical options in combat.  In particular, Messner said that "unlocking new units and discovering all the ways they complement each other is really fun".  Jeuxvideo described it as "a solid alternative" to Darkest Dungeon.
+
+
+== References ==
+
+
+== External links ==
+Official website

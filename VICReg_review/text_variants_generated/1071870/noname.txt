@@ -1,0 +1,9 @@
+This game presents a cooperative adventure centered on two small humanoid robots, who travel side by side through a series of challenges and environments. The experience can be played alone or with another player, with an emphasis on communication, timing, and coordination.
+
+Its control system is intentionally simple but distinctive: each leg is controlled separately using two sticks or the left and right mouse buttons. This design allows for basic movement such as walking and sliding, while also supporting more advanced interactions like operating machinery and cutting wood. The mechanics are built around mastering this unusual form of locomotion, turning movement itself into the main source of challenge and play.
+
+The journey takes place across a range of visually varied locations on an unnamed planet, including forests, valleys, waterfalls, and icy mountains. These areas are described as beautiful and mysterious, with secret paths and puzzling routes leading toward important planetary objectives.
+
+Customization is also part of the experience. Players can collect treasures and purchase playful hats, then dress their robots in different styles. Matching appearances with a partner is encouraged as a fun way to enhance the cooperative adventure.
+
+Beyond the main stages, the game also supports user-created content. Players who have finished the available levels can build their own using a workshop feature, share them with the community, and try levels made by others. Overall, the game combines physics-based movement, co-op problem-solving, exploration, customization, and community creation into a lighthearted journey.

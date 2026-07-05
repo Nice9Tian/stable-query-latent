@@ -1,0 +1,59 @@
+Game: Shadow Tactics: Aiko's Choice
+appid: 1579380
+Source: Shadow Tactics: Blades of the Shogun
+URL: https://en.wikipedia.org/wiki/Shadow_Tactics:_Blades_of_the_Shogun
+Match score: 6.00
+Retrieved: 2026-07-04
+--------
+Shadow Tactics: Blades of the Shogun is a stealth-oriented real-time tactics video game developed by Mimimi Productions and published by Daedalic Entertainment. The gameplay is similar to that of the Commandos and Desperados series. It was released on December 6, 2016, for Microsoft Windows, macOS and Linux, in July 2017 for PlayStation 4 and Xbox One, for Amazon Luna on October 20, 2020, and was released on March 18, 2026 for Nintendo Switch 2. 
+A standalone expansion for the game titled Aiko's Choice was released in December 2021. It has five missions on new maps but adds no new gameplay features.
+
+
+== Gameplay ==
+
+Shadow Tactics: Blades of the Shogun is a stealth-oriented real-time tactics game inspired by the Commandos and Desperados game series. The player commands a small team and performs various acts of espionage, sabotage and assassination, such as infiltrating heavily guarded fortresses and eliminating enemies from within, killing/capturing special targets, stealing important documents, overhearing conversations to collect information, or rescuing other characters. Enemy guards have a visible cone of vision which the player must evade to remain undetected. Missions generally require the player to methodically eliminate enemies between them and the objective without raising the alarm; players can lure guards into ambushes, kill them with traps or staged accidents, or simply knock them out for a small amount of time. The player can move the bodies of slain or unconscious guards to hide them in bushes, empty rooms, barrels and wells so that they would not be found. If a player character is spotted or a dead body is discovered by the enemy, the alarm will be raised and additional patrols will be deployed to secure the area. In addition to guards, the player must also watch out for hostile civilians, who cannot attack but will alert any nearby guards of their presence, as well as birds and standing water, which make noise that guards can hear. Some missions incorporate environmental elements such as snow and darkness, which alter normal enemy behavior.
+Each mission also includes a set of "badges" for the player to earn. Two are for finishing the mission under a set period of time and for completing it on "Hardcore", the most difficult mode. Other badges are awarded for feats such as performing unique kills, not harming enemies, or not using certain skills.
+
+
+=== Character abilities ===
+All the team members have a "healing" skill that restores health but can only be used once, and a matchlock pistol with limited ammunition (Mugen has a more powerful "hand cannon" that can kill enemy samurai). In addition, with the exception of Takuma, each character possesses a close-range attack skill that can either kill or knock out enemies. Beyond that, each hero has unique abilities:
+
+Hayato has a shuriken with which he can kill enemies (except samurai) at a distance with little noise. He can also throw rocks to distract enemies. Like Yuki and Aiko, he can climb vines, jump from rooftops, and use a grappling hook wherever a hook-ring is present.
+Mugen has a "Storm Wind" area attack that can kill up to three enemies at a time, but has no effect on samurai. He can also lure guards from their posts with a bottle of sake, but straw hat guards and samurai will ignore it. Mugen is the only character who can efficiently kill enemy samurai in a head-on confrontation, either with his sword or his especially powerful pistol.
+Yuki can lay a trap that kills anyone, except for samurai, who walks into it. She also has a flute with which she can lure nearby guards to her position.
+Aiko can steal clothes and disguise herself as a priestess or a geisha, allowing her to walk freely around the map (although samurai can see through her disguise). She can distract enemy guards with casual banter while disguised, and also throw sneezing powder that temporarily shrinks a guard's cone of vision.
+Takuma has a scoped rifle with which he can kill enemies at great distance and with no noise, but his ammunition is limited. He also has a pet tanuki which he can send to distract enemy guards by growling, and carries a small number of grenades that can stun or kill enemies. Like Mugen, he cannot swim or climb walls, and his wooden leg makes noise when he runs.
+
+
+== Plot ==
+The game is set in feudal Japan. The shogun has unified Japan after years of war. However, a mysterious warlord known only as "Kage-sama" has emerged, jeopardizing the country's stability. The Shogun turns to Oshiro Mugen, a samurai in his service, and assigns him to uncover Kage-sama's true identity and bring him to justice. Mugen subsequently recruits four other allies to assist him: Hayato, a cynical ninja; Yuki, a clever, inquisitive young outcast and thief; Aiko, a female ninja and Mugen's paramour; and Takuma, a veteran sharpshooter and alchemist.
+The group investigates the corrupt daimyo Lord Yabu, suspecting him of being Kage-sama due to his involvement in the production and smuggling of illegal weapons, but when Mugen decides to have him assassinated without the Shogun's permission, it triggers a rebellion of soldiers loyal to the Shogun's former ally, General Okkoto. The Shogun reprimands Mugen for acting rashly, but allows him nonetheless to deal with Okkoto. Defeated, the general commits seppuku with Mugen's help after providing the group with a map that leads to a secret encampment in the marshlands where Kage-sama is hiding.
+The group goes to apprehend Kage-sama, but quickly learn that their target is a decoy and the "encampment" is a trap: the true Kage-sama is none other than Lord Noboru, the Shogun's younger brother and right-hand man. Noboru reveals that he opposes his brother's peaceful rule, fearing that it will make warriors like him obsolete. He intends to seize power and plunge Japan back into endless war. Holding Mugen's companions hostage, Noboru forces the samurai to lead him to the secret refuge of Ryunosuke, the Shogun's heir, and Noboru's son Masaru stabs Ryunosuke dead. Mugen's companions escape captivity, but a guilt-ridden and dishonored Mugen commits suicide, though not before Aiko tells him that she is bearing his child.
+After learning that Mugen's companions have survived, Noboru convinces the Shogun that they killed his son; to clear their names, the group abducts Masaru from a bathhouse in Kyoto and sneak their way past the Shogun's men to deliver him personally to their superior. Masaru tries to lie, but the Shogun, noting that only he and Mugen knew about his son's hiding place, forces him to tell the truth. Leaving Masaru to be put to death for his crimes, the group infiltrates Noboru's castle to kill him with the blessing from the Shogun. When they corner Noboru, he attempts suicide. The player can choose to let him do it, or execute him themselves.
+Having avenged Mugen, the four comrades are released from their service to the Shogun and go their separate ways. Aiko later gives birth to Mugen's son, whom the Shogun adopts as his heir, allowing his legacy to endure.
+
+
+=== Aiko's Choice ===
+The events in the standalone expansion Aiko's Choice take place shortly after Okkoto's death and before the group leaves to confront Kage-sama in the marshlands.
+While the shogun's agents are in their hideout at Nagoya planning their next move, they are ambushed by armed men, led by the kunoichi Lady Chiyo. Lady Chiyo is Aiko's old mentor, now employed by Kage-sama, and has been ordered to deal with Aiko and her allies. Chiyo has Takuma and Yuki taken away while leaving Aiko, Hayato, and Mugen to be killed. The three manage to escape and rescue Yuki from Chiyo's men, but learn that Takuma has already been taken to a nearby archipelago on a Portuguese ship. During the voyage, Takuma escapes from his cell and discovers crates of foreign gunpowder and arms intended for Kage-sama's troops. He marks the crates before finding a place to hide for the night.
+Aiko and the others reach the archipelago; through signals sent between Takuma and Yuki, they learn about the marked crates. The group rescues Takuma while destroying the smuggled cargo before it leaves the island. He informs them that while listening to the conversations of his guards, he uncovered Lady Chiyo's location: the city of Matsuyama. Mugen and Aiko go on a private mission and steal documents from a samurai revealing his orders to recruit young women for Lady Chiyo. Aiko uses this information to determine that her old mentor's plan is to reopen the Hana Gakuen, a school for kunoichi formerly controlled by the fallen Sakura clan, and where Aiko herself was trained.
+The group infiltrates the Hana Gakuen, where Aiko personally assassinates Lady Chiyo. The evening, while the others are preparing to enjoy dinner, Aiko secretly meets with Lady Chiyo, who explains that Kage-sama had come to her hoping to exploit the Sakura clan's former allegiance to him; angered by his deceit and wanting to be left alone, Lady Chiyo had arranged for Aiko and her allies to sabotage Kage-sama's smuggling operation before using her kunoichi training to fake her own death. Aiko acknowledges her gratitude for Lady Chiyo's help, but cannot forgive her entirely for endangering the lives of her friends. Lady Chiyo then gives her the chance to either kill her or let her go free. Afterwards, the group finishes their dinner and goes to sleep, while Mugen and Aiko discuss their future together.
+
+
+== Reception ==
+
+Shadow Tactics: Blades of the Shogun received "generally favorable" reviews according to review aggregator website Metacritic. Rock, Paper, Shotgun found the game better than Commandos 2 and Desperados: Wanted Dead or Alive. The game received three Deutscher Entwicklerpreis awards (best German game, best PC/console game, best game design).
+The expansion Shadow Tactics: Blades of the Shogun - Aiko's Choice received "generally favorable" reviews according to review aggregator website Metacritic.
+
+
+== Board game ==
+A board game version of the PC game was published by Antler Games after being crowdfunded on Kickstarter in 2019.
+
+
+== References ==
+
+
+== External links ==
+Official website
+Shadow Tactics: Blades of the Shogun at IMDb
+Shadow Tactics: Blades of the Shogun at MobyGames

@@ -1,0 +1,86 @@
+Game: Enlisted
+appid: 2051620
+Source: Enlisted (video game)
+URL: https://en.wikipedia.org/wiki/Enlisted_(video_game)
+Match score: 6.56
+Retrieved: 2026-07-04
+--------
+Enlisted is a freemium squad-based multiplayer tactical first-person shooter developed by Darkflow Software and published by Gaijin Entertainment. The game is set during World War II and revolves around major battles fought across all fronts of the war. It was an Xbox Series X/S launch title and timed console exclusive. On March 2, 2021, the closed beta went live on PlayStation 5. On April 8, 2021, the game was released on PC as an open beta test.
+
+
+== Gameplay ==
+Enlisted is squad-based, with each player controlling an infantry squad or a vehicle's crew. Players control a squad of 3–9 soldiers (represented by a real life division of their respective military, such as the 1st Infantry Division and the 2nd New Zealand Division) of varying classes, equipped with class-restricted weapons such as rifles, submachine guns, machine guns, sniper rifles, mortars, anti-tank weapons, or flamethrowers; alternatively, players may control the crew of a tank or plane, at least one of which must always be equipped for use in the menu. Players control one of the soldiers in their squad, and can give orders to or switch between the other AI soldiers in their squad. The player's squads, soldiers, and weaponry can be managed in the main menu, where squads can be equipped and upgraded, soldiers and weapons can be purchased, game modes and factions can be switched, and several other aspects of the game can be customized or controlled.
+Players battle in large maps based on major World War II battles on the Eastern Front, Western Front, North African Campaign and the Pacific Theater in battles such as the Normandy landings, Invasion of Normandy, the Battle of the Bulge, the Battle of Moscow, the Battles of Rzhev, the Battle of Tunisia, the Battle of Guadalcanal, the New Georgia campaign, the Solomon Islands campaign, the Burma campaign, the Soviet Invasion of Manchuria, and the Battle of Berlin. Players are divided into two teams representing the Allies and the Axis. There are four nations to choose from: the United States, the Soviet Union, Germany, and Japan. Each faction has 5 Battle Ratings (BR). Some factions also have smaller factions incorporated under them (the UK, Free France, Australia, New Zealand and China, currently under the US tree. Italy and Romania currently under the German tree, and the Chinese communists are currently under the Soviet tree. There is also a Type 95 Ha-Go light tank for Japan that belongs to the Kingdom of Thailand, an M4A2 Sherman for the United States named Bomb that belongs to Canada, and a Tiger 1 for Germany that belongs to Hungary). When matchmaking, the player will be matchmaking with the BR above and below. For example if the player is matchmaking in BR II that person can play with BR I and BR III players. Battle Rating III players however have the potential to either play in low BR matches (BR II), or high BR matches (BR IV). In Enlisted, BR V is the highest, and BR V players can be matched with BR IV players. 
+
+
+=== Matchmaking options ===
+Squads – Standard default matchmaking, where players spawn with their full squads.
+Lone Fighters – Modified matchmaking, where players do not spawn with their squads; instead the player selects individual soldiers from their squads to spawn as. If a soldier is killed, they will be unavailable for the rest of the match, and another soldier must be selected; to compensate, spawn numbers are increased. Most of the HUD is hidden in this mode. Lone Fighters is no longer a standard mode of play but is still available in custom matches.
+Custom - Custom maps & game modes created by the Enlisted community which include both unique weapons from past events and in some cases brand new weapons modded in by the community. It can also be used to play privately with your friends.
+Tutorial - levels for basic gameplay, tanks, planes, and engineers are also available, as is a shooting range containing all of the weapons in the game.
+Practice - Enlisted's practice mode helps players improve their skills and learn game mechanics. While it lacks full multiplayer, it provides a safe space to practice. There's an area for infantry squads with a trench for trying out extra weapons and targets to shoot at, and a tank shooting range, where you can use explosion packs or anti-tank weapons. For planes, your aircraft automatically spawns in the sky, where you can drop bombs or shoot rockets at vehicles and attack barrage balloons or bomber formations.
+
+
+=== Game modes ===
+Conquest – Both teams fight to control three control points (or five if it is on the "Large" version of certain maps) on a map. Each team is represented by a colored bar that depletes as long as the enemy team has two or more points controlled. The match ends when one team's bar fully depletes.
+Invasion – One team attempts to take a series of five control points on a large map, while the other attempts to defend each point. Each point is played sequentially; if the defenders lose a point, they must retreat to the next point. Attackers are restricted to 1000 respawn tickets (including AI soldiers). Additional tickets can be obtained by capturing control points or by shooting down barrage balloons in certain maps. The match ends when the attackers run out of tickets, the match runs out of time, or the defenders lose all of their control points.
+Assault – One team must defend a series of control points from the other team. However, two points must be captured at a time to progress, and the points can be captured by either team, allowing the defending team to delay the enemy or push back. There are 2 objectives in each sector and 3 sectors total. The attackers gain tickets for each sector taken. Some sectors on a few maps have 1 point.  The attacking team lose if all their tickets run out or if they run out of time. The defenders lose if all control points are taken by the attackers.
+Destruction – One team must defend a series of control points from the other team. However, instead of regular control points that must be captured, the attacking team must plant explosives at each point and destroy them. These explosives can be removed by the enemy, so the attackers must defend their explosives once planted. There are 2 objectives in each sector and 3 sectors. The attackers gain tickets for each sector taken. Some sectors on a few maps have 1 objective. The attacking team lose if all their tickets run out or if they run out of time. The defenders lose if all objectives are destroyed by the attackers.
+Confrontation – Both teams fight to control a series of control points. Each point is played sequentially, and the front line shifts with each point captured; however, both teams are on the offensive and can recapture lost points. The match ends when a team runs out of tickets or loses all of their control points.
+Armored Train Escort - This game mode is only accessible in custom matches, and is not playable in regular public matches. One team defends an armored train, while the other attempts to capture it. The defending team has to stay on the train for it to move, utilizing machine guns and tank turrets mounted onto the train to prevent the attackers from getting on board. The attacking team must stop the train by being the majority on board or by killing all the defenders. For the defenders to win, they must cover 1 km with the train. For the attackers to win, they must kill the defenders enough times to drain all their respawn tickets. At the halfway mark, the defenders gain extra respawn tickets.
+
+
+=== Classes ===
+Enlisted features 16 different classes, each filling various different roles in order to support their team.
+
+Anti Tank - Uses an anti tank rifle, such as the PTRS-41, rocket launcher, such as the Bazooka, and other anti tank weaponry in order to take out armored targets.
+APC Driver - Can drive armored personnel carriers. However, this is misleading, since most of the non-premium trucks available to drive do not come with armor, like the GAZ AAA or the Studebaker. The vehicles also serve as respawn points.
+Assaulter - Uses submachine guns, shotguns and assault rifles like the AS-44 and the StG 44 to engage enemies at close range.
+Attack Pilot - Pilots light bombers and ground attack aircraft.
+Engineers - Can build spawn points, ammo boxes, machine gun positions, defensive fortifications, anti tank guns, and anti aircraft guns.
+Fighter Pilot - Pilots fighter planes, seaplanes and interceptors.
+Flame trooper - Operates flamethrowers like the ROKS-3 and the Flammenwerfer 41 to engage the enemy at close range and clear out buildings.
+Guerilla - Carries extra TNT charges into battle. Can also go beyond normal battlefield area further into enemy territory. Guerrillas start the game with only a submachine gun or a shotgun. Guerrillas can only use assault rifles if they capture them.
+Machine Gunner - Uses machine guns like the Vickers-Berthier and the MG 42 to engage enemies.
+Medic - Can drop a medical box and can heal teammates and squadmates. Medics start the game with only a submachine gun or a shotgun. Medics can only use assault rifles if they capture them.
+Mortarman - Soldier that uses mortars to bombard the enemy from afar.
+Paratrooper - Drops out of an aircraft and lands at a zone that the player has selected. At the landing zone, paratroopers can pick up additional weapons from a supply box which vary depending on battle rating. This class is entirely premium.
+Radio Operator - Uses a radio to call in artillery, bombing runs, and rocket artillery.
+Rider - Drives a motorcycle to quickly reach objectives. The motorcycle carries supplies and also have a sidecar with a machine gun.
+Rifleman - Soldier that uses bolt-action and automatic rifle and semi automatic rifles like the Kar98k, Mosin-Nagant, and M1 Garand among many others to engage enemies at mid to long range. It is also the default class.
+Sniper - Uses scoped rifles to engage enemies at a distance.
+Tanker - Can drive tanks in order to support infantry.
+Saboteur - Uses a disguise to disguise themselves as enemy soldiers to go behind enemy lines.
+
+
+== Development ==
+Gaijin Entertainment and Darkflow Software first announced the game in 2016 as a crowdfunded title. Two campaigns focusing on the Battle of Moscow and the Invasion of Normandy were announced. The game was advertised as a "first person shooter decided by the fans, for the fans" and that "they will have direct input into what we create, including things like campaigns, game modes, even which platforms after PC we will support"; other campaigns would be unlocked if the game's funding goals were met. Funding tiers at the highest levels would allow contributors to choose which campaign would be added next.
+The first public play test occurred in April 2020 on PC. In November 2020, ray-traced global illumination and DLSS was added to the game. On May 20, 2021, the Battle of Berlin campaign was partially released in a public beta test, followed by the Tunisia campaign. On December 4, 2023, all campaigns were changed to create 4 nations to play as. On December 16th, 2025 the "Far Eastern Front" major update occurred, which allowed players to participate in the Soviet Invasion of Manchuria. The game still receives updates and a Battle Passes to this day, with usually 9-10 Battle Passes per year.
+
+
+== Release ==
+At E3 2018, Microsoft confirmed that the game would be released on the Xbox and would be part of the Xbox Game Preview for that year. The first public play test occurred in April 2020 on the PC and in October of the same year, Microsoft announced that Enlisted would be part of the Xbox Series X/S launch lineup and a timed console exclusive. On March 2, 2021, the closed beta went live on PlayStation 5. Nvidia confirmed the game's PC release. On April 8, 2021, the game was released on PC as an open beta test. On October 4, 2021, Enlisted was released on PlayStation 4 and Xbox One, albeit with only the Moscow, Normandy, and Tunisia campaigns. All six campaigns have since been released on all platforms. The merge occurred in December 2023 for all players. There was a Steam release of Enlisted: Reinforced available on March 28, 2024, for approximately 16 to 18 hours of sale, from their blog, "symbolizing the recent massive changes to the game, and how far the community and Enlisted has come since its initial release." After the Early Access release window, sales on Steam were pulled, and a Steam News post citing an unoptimized back end system and a whole litany of bug issues. On July 16, 2024, the game was once again relisted upon Steam for free simply as Enlisted, with newfound bug fixes allowing for one of the releases larger pain points so far: Account linking. Technical limitations and updates will make this a "Temporary feature," but the goal is to hold out as long as possible. The base game is also playable through their in-house launcher.
+
+
+== Reception ==
+XboxEra gave Enlisted a 5/10 rating, saying the game's best elements were "mediocre", and its worst elements "truly dreadful". XboxEra praised the gun handling, but criticized the game's uncomfortable controls, generic soundtrack, and poor performance. Heavy criticism was given to the game's slow player progression system, in which each item must be purchased individually for each soldier in each squad, calling the system pay-to-win.
+A review by Penny Arcade praised Enlisted, calling it "an absolute blast" and "the best WWII shooter", praising the game's "'Matrix' style encounters where the player might die only to come into consciousness in another body".
+GLN gave Enlisted a 7.8/10 rating, saying "the game's visuals are "detailed and realistic", and the game is impressive because it offers an "engaging gameplay experience". GLN praised the level design, but criticized the game's matchmaking system, animations, and bugs and glitches.
+
+
+== See also ==
+War Thunder
+Day of Infamy
+Post Scriptum
+Hell Let Loose
+War Thunder Mobile
+
+
+== Notes ==
+
+
+== References ==
+
+
+== External links ==
+Official website

@@ -1,0 +1,9 @@
+Moonbreaker is a turn-based strategy and tactical skirmish game developed by Unknown Worlds, the team behind the Subnautica series. It is presented as a digital miniatures experience set in an expansive sci-fi universe created by best-selling sci-fi and fantasy author Brandon Sanderson.
+
+The game focuses on approachable, turn-based competitive gameplay with a tabletop-inspired style. Players lead Units in fast-paced strategic skirmishes against other players, against AI opponents, or in the single-player roguelike adventure mode called Boss Run. The game emphasizes quick-to-learn, tactical battles that can be replayed in different ways.
+
+A major part of Moonbreaker is roster building. Units have distinct abilities, playstyles, and personalities, and no two Units or Rosters are the same. Players can create multiple Rosters made up of different Units to explore new tactical combinations and team dynamics.
+
+Another central feature is Unit painting. The game includes digital painting tools intended to recreate the experience of painting miniature figures, while avoiding the limitations of physical materials. Tools such as undo, mask, and zoom are included to support detailed customization and player expression.
+
+Moonbreaker also places emphasis on its setting and lore. The world of The Reaches features varied characters and cultures, and players can learn more through audio dramas by author Dan Wells, fully voiced in-game dialogue performed by professional voice actors, and an unlockable Codex that expands on the game’s background and story.

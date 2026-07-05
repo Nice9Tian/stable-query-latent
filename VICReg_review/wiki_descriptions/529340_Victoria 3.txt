@@ -1,0 +1,44 @@
+Game: Victoria 3
+appid: 529340
+Source: Victoria 3
+URL: https://en.wikipedia.org/wiki/Victoria_3
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Victoria 3 is a 2022 grand strategy video game developed by Paradox Development Studio and published by Paradox Interactive. It is a sequel to the 2010 game Victoria II and was released on 25 October 2022.
+
+
+== Gameplay ==
+Victoria 3 spans world history leading up to, during and following its namesake, the Victorian era, from 1836 to 1936, and allows the player to control any one of over 100 countries that existed during that time period. The game, however, does not allow players to control all regions in the game, as many of these are made up of what the game calls "decentralized nations", that typically represent regions inhabited by tribes lacking a central government.
+The game focuses on politics, demographics, and economic development, with gameplay focusing on appealing to and appeasing interest groups, who represent various social groups with different ideologies such as the Devout, Industrialists, and Rural Folk to name a few. The game presents a Marxist view of history as political affiliation is based on economic status, with designer Mikael Andersson stating, "It's no secret that Victoria 3 is in many ways the Historical Materialism Simulator."
+Though it can be considered a sandbox title, the main goal of the game is to modernize the controlled nation through industrialization. This is achieved chiefly through building mines and factories throughout the player's nation and increasing the capacity for construction. Supplemental mechanics towards this goal include trading on the world market, researching important technologies such as the Atmospheric Engine, and introducing liberal laws such as Free Trade and Laissez-Faire.
+Another system in the game is Diplomatic Plays, which borrows heavily from Victoria II's crisis system. When attempting to force other countries to concede land or open markets, players will present a target country with a demand detailing what they desire, which will result in the target country having the opportunity to demand concessions from the aggressor. Following this exchange of demands, a timer will begin counting down as both sides have a chance to mobilize troops and attract potential allies by offering spoils or obligations. If no diplomatic resolution is reached before the timer runs out, war will be declared. Designer Mikael Andersson explained that this system was designed with the intent to tone down the role of warfare by making diplomacy equally as capable. The aforementioned decentralized nations, however, cannot be targeted by diplomatic plays and are primarily interacted with via colonization, which slowly absorbs the decentralized into the colonizing nation.
+
+
+== Development ==
+In the lead up to the game's announcement, Victoria 3 was seen as a meme by the Paradox fanbase due to players constantly asking about it, only to be ignored, with many joking that it would never see a release or that any mention of the number "three" from an official Paradox source meant that the game was on the way. The game was announced on 21 May 2021.
+Martin "Wiz" Anward served as director of the game's development. In April 2022, a beta version of the game was leaked online. Victoria 3 was released on 25 October 2022.
+
+
+=== Downloadable content ===
+
+
+== Reception ==
+
+Victoria 3 received "generally favorable reviews" according to review aggregator Metacritic.
+Destructoid enjoyed the new tutorial, feeling it intuitively taught players game mechanics and "nearly all concepts that you [would] come into contact with during your time in Victoria".
+PC Gamer praised the new economic systems, saying it led players to use real world strategies, and adding: "You can run a deficit for a few years, then build up a reserve, or nearly bankrupt yourself fighting world wars before entering years of austere recovery".
+IGN criticized Victoria 3's new war mechanics, stating: "I respect Victoria 3's decision not to focus on war [...] But that doesn't change the fact that armed conflicts can be very fiddly and confusing".
+PCGamesN, among other things, liked the overhauled colonialization system, stating: "Victoria 3's colonisable regions are controlled by indigenous people [...] it allows for colonised people to be granted independence and then played as a sovereign nation for the rest of the game".
+Eurogamer felt the economic mechanics stopped players from hoarding too much money, making the later game more interesting. They wrote: "Economies in Victoria 3 are based upon the gold standard, and if your gold stockpiles are too high, it devalues your currency. Hence, you need to find ways to either spend or temporarily lose money, such as increasing construction, reducing taxes, or getting involved in a nice, expensive war".
+Kotaku disliked the economic micromanagement, saying "it also started to get a bit dull once the routine of Victoria 3 set in".
+
+
+=== Accolades ===
+
+
+== References ==
+
+
+== External links ==
+Official website

@@ -1,0 +1,44 @@
+Game: Party Animals
+appid: 1260320
+Source: Party Animals (video game)
+URL: https://en.wikipedia.org/wiki/Party_Animals_(video_game)
+Match score: 7.22
+Retrieved: 2026-07-04
+--------
+Party Animals is a multiplayer physics-based brawler/party video game developed by Recreate Games and published by Source Technology. The game was released for Windows, Xbox One, and Xbox Series X/S on September 20, 2023. A PlayStation 5 port was released on January 23, 2025.
+
+
+== Gameplay ==
+Party Animals is a physics-based competitive brawler game where players play as various animals including puppies, kittens, ducks, bunnies, sharks, dinosaurs and even unicorns. Animals can punch, toss, jump, kick, and headbutt each other. They are also able to pick up an assortment of weapons. Upon taking a certain amount of damage, players are temporarily knocked out. In most cases, they recover and return to the fight, unless they are tossed off the map or into various hazards.
+Party Animals offers 3 modes and 23 maps. The game modes are Last Stand, Team Score, and The Lab mode. In Last Stand, players attempt to be the last animal standing while eliminating other players; Team Score divides 8 players into teams of 4, with each team competing to complete an objective; The Lab also has 2 teams of 4, but teams will instead attempt to eliminate the other team just like Last Stand.
+
+
+== Characters ==
+Party Animals has a base pool of 45 characters from which players can choose. Nemo, a corgi character in the game, is its mascot. Many animal names, such as "Barbie" for a gorilla and "Bacon" for a pig, incorporate contrast and dark humor into the game. There are also many other characters, including Underbite the lizard, Tiagra the tiger, Macchiato the cat, Otta the otter, Morse the moose, Harry the duck, Coco the alligator, Carrot the rabbit, Valiente the cow, Moonmoon the owl, Hachi the shibu inu dog, Uni the unicorn, Garfat the cat, Lloyd the goose, Max the husky dog, Levi the cat, Googoo the pigeon, Karatan the rhino, Curtis the iguana, Lou the beagle dog, Fluffy the golden retriever dog, Sparky the bull terrier dog, Hammer the hammerhead shark, Bruce the great white shark, Bob the bear, Yurusa the bat, Kiko the cat, Kato the husky dog, Tuskarr the walrus, Lotus the dragon, Sunny the bulldog, Snow the samoyed, Kola the koala, Dundun the pallas cat, Spike the hedgehog, Shin the Elephant, Gopher the marmot, Dodo the dodo bird, Maneki the lucky cat, Sam the german shepherd dog, Fuguee the red panda, and Fubao the panda. They have also done several collaborations with characters from other media- including Ori and Naru from Ori and the Blind Forest, Cabbage Dog from Vegetable Fairies, The Lamb from Cult of the Lamb, and Om Nom from Cut the Rope.
+
+
+== Development ==
+Party Animals was developed by Recreate Games, a game studio founded by Luo Zixiong, the former design director at Smartisan. The game was first teased on Twitter in September 2019. Open demos of the game were available to the public in June and October 2020 for short periods of time. Developers revealed in a July 1, 2020 press release that the game will be released on consoles in the future.
+On May 25, 2022, the developers released an update stating that "the game is still in development and the target release date is hopefully within 2022, with possible delays due to quality and compliance approvals."
+During Summer Game Fest on June 8, 2023, the developer announced the game's release date of September 20.
+
+
+== Reception ==
+
+Party Animals received "generally favorable" reviews from critics, based on 16 reviews listed at review aggregator Metacritic. Critics wrote favorably on its gameplay and visuals. On Steam, user reviewers at launch were "Mostly Negative" due to its monetization mechanics, which aggressively priced in-game skins, and lack of an offline mode, which contradicted the game's description. The developers responded that a mistranslation resulted in the erroneous description for the game.
+During the Steam Game Festival: Autumn Edition in 2020, the game's playtest reached a concurrent player peak of 135,834, making it the fourth most played game on Steam. It amassed a large numbers of viewers on Twitch, having over 113,000 viewers watching gameplay streams.
+
+
+=== Criticism ===
+On May 13, 2026, the official Party Animals X account announced a contest for making a movie using artificial intelligence, saying that the winner would get $75,000 in cash, the contest drew negative criticism and later the game became a subject of review bombing, with the game's page on Steam gaining negative reviews recently, calling the game and company a "sellout" and "AI slop embracer".
+
+
+=== Accolades ===
+
+
+== References ==
+
+
+== External links ==
+Official website 
+Recreate Games Website

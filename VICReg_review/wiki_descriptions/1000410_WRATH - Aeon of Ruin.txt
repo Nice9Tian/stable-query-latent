@@ -1,0 +1,48 @@
+Game: WRATH: Aeon of Ruin
+appid: 1000410
+Source: Wrath: Aeon of Ruin
+URL: https://en.wikipedia.org/wiki/Wrath:_Aeon_of_Ruin
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Wrath: Aeon of Ruin is a 2024 first-person shooter developed by KillPixel Games and Slipgate Ironworks and published by 3D Realms and Fulqrum Publishing. It is built on a modified version of the Quake engine, making it the first major game release on that engine in nearly 20 years. The first episode was released on Steam Early Access on November 22, 2019, and was fully released on February 27, 2024.
+
+
+== Gameplay ==
+The game continues in the tradition of 1990s first-person shooters like Doom, Blood, Hexen, and Quake; both thematically and in terms of fast-paced combat.  To the classic first-person shooter formula, Wrath adds light role-playing elements.  Players can collect items and skills to upgrade the Outlander's abilities, which aid in exploration as well as combat.
+Rather than a linear progression of levels, the game features three hub-worlds for the player to explore, each with its own central theme.  From the hubs players can access five levels (15 in total), each with a unique design based on the central hub theme. 3D Realms describes an "Open level design philosophy, where each level has multiple paths with all loop back into the main path to make each level feel more expansive."  Within individual levels, the player must battle through a plurality of enemies and bosses.
+The game features a unique save system based on Soul Tethers.  As in Quake, the player can choose to save at any point in the game.  However unlike Quake, the ability to save is a consumable resource.  Players must find Soul Tethers and then may use them to save before or after a particularly difficult section, for example.  Soul tethers can be carried between levels, which allows players to accumulate an abundance of saves. There are also occasional shrine placements within levels that act as checkpoint saves.
+There are nine weapons, ranging from a wrist-mounted blade to high-powered projectile weapons, each with alternate firing modes. Ammunition is discovered in-world or looted from the bodies of the fallen.  For example, the Retcher and Fangspitter are fed by pulling cysts and teeth from the corpses of enemies.  Such guns usually aren't as effective against the enemy type that provides the ammo, pushing the player to strategically select weapons based on the situation.
+There are ten artifacts which can give offensive or defensive enhancements. For example, the Cruel Aegis which grants short-term invincibility but nearly wipes out the Outlander's health points.
+At launch, Wrath was meant to feature basic deathmatch multiplayer modes based on QuakeWorld netcode. 3D Realms stated that additional multiplayer modes would be added post-launch, including a 4-player co-op campaign. However, the final game does not contain any multiplayer modes, being exclusively a single player game.
+
+
+== Plot ==
+The game puts the player in control of the Outlander, a mysterious figure adrift upon the Ageless Sea.  He finds himself on the shores of a dying world where he is approached by the Shepherd of Wayward Souls, who tasks the Outlander with hunting down the Guardians of the Old World.  Once angelic protectors, the Guardians have fallen into corruption and are responsible for the destruction of this frightening and dangerous place.
+
+
+== Development ==
+Wrath: Aeon of Ruin began as an independent project by Jeremiah 'KillPixel' Fox.  After discovering the Quake modding community, he recognized the potential to use the freely available Quake engine development tools to create a new game. Wrath was conceived as a game that "draws heavily from the combat of Doom, the interactivity of Duke Nukem 3D, the spatial awareness of Quake, and the darker theme of Hexen." Wrath took shape as a modern game built with retro technologies, as opposed to a retro-styled game built with modern technologies, which was popular at the time. With this concept in mind, Fox quit his job and began developing the game himself with the help of a part-time coder.
+Several years into development, Fox was attracted to the 3D Realms Discord channel after viewing the trailer for Ion Maiden, which he considered to be the closest competition for Wrath. Eventually, Fox posted a short video of a weapon prototype which caught the attention of the company's management. 3D Realms Vice President Frederik Schreiber contacted Fox and brought him on board to continue developing Wrath with a professional team. Composer Andrew Hulshult (Quake Champions) was brought on to score the game, and Bjørn Jacobsen (Eve Online, Cyberpunk 2077) to do the sound design.
+The choice of building Wrath on the (now antiquated) Quake engine presented somewhat of a problem for the company. Modern game developers generally lack expertise in the Quake engine development tools. To fill this skill gap, 3D Realms recruited from the Quake modding community. Modeler Daniel “Chillo” Wienerson and mapper Romain “Skacky” Barrilliot are among those who have joined the development team.
+According to Fox and Schreiber, the selection of the Quake engine is not intended to be needlessly self-limiting. Speaking to Game Revolution, Schreiber explains, "We're not trying to make or look anything that feels retro, we're just trying to make a fantastic first-person shooter that includes elements that Quake did so [well]." To Destructiod, Fox adds, "[We're] not just trying to imitate [Quake], but exceed it and expand on it. We're not disregarding all of the advances made in shooters." To meet these goals for the project, Wrath is built on the DarkPlaces engine, which features many enhancements to the original Quake engine. For example, levels can be more open and include massive, sprawling rooms that would have been too much for home computers in the late 1990s. Textures are more detailed, and the game caps the framerate at 666 fps.
+Wrath developers announced their intention to have mod support. According to Fox, well documented and easily available modding tools were always an important aspect of the project, inspired by his own history using the free Quake development tools. Following the game's release, the QuakeC and engine code for the game was uploaded to GitHub.
+
+
+== Release ==
+Wrath was originally intended to release into Early Access with the first episode in "Summer 2019".  Though the Early Access game would require a full price purchase, using the first episode as a teaser is reminiscent of the Shareware model that was common in the 1990s. However, the planned date was pushed back to make it "bigger and better," with the eventual release on November 22, 2019, featuring two of the five levels in Episode 1 and a roadmap for the completion of the first episode leading up to the full release. Being based on the open source DarkPlaces engine, the game's source code was also released under the GPLv2 via GitHub in November 2019.
+With the second Early Access content update on March 28, 2020, the release roadmap was updated to push the expected final release into early 2021. At the same time a "big box" physical release of the game was announced with a Founder's Edition containing the game on CD, the soundtrack, artwork, and metal figurines, among other pack-ins. The Founder's Edition is limited to 500 copies. The full version was later pushed to 2022 in August 2021. A further delay to Q2 2023 was announced in November 2022. However on June 26, 2023, after failing once again to meet the deadline, it was announced that the game would remain in early access for the remainder of 2023, with the full release being delayed until further notice. On September 30, 2023, it was announced that the full game would be released on February 27, 2024.
+
+
+== Reception ==
+The initial Early Access release, though still in development, received praise in the gaming press for the graphics and level design.
+Following its release, the game received a mostly positive reception from gaming outlets. Rock Paper Shotgun described the game as being "a solid shooter that remembers how [90s shooters] actually played and why they worked." Gaming Bolt praised the weapon selection and fast pace of the action, and was particularly impressed by the large scope of the levels. Eurogamer's review was more mixed, praising the game's combat and atmosphere, but highlighting issues with the game's pacing and excessive length of some of its levels.
+
+
+== References ==
+
+
+== External links ==
+Official website DEAD LINK as of June 2025
+Wrath: Aeon of Ruin at 3D Realms
+KillPixel Games

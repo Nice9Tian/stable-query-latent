@@ -1,0 +1,52 @@
+Game: Five Nights at Freddy's: Into the Pit
+appid: 2638370
+Source: Five Nights at Freddy's: Into the Pit
+URL: https://en.wikipedia.org/wiki/Five_Nights_at_Freddy%27s:_Into_the_Pit
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Five Nights at Freddy's: Into the Pit is a 2024 2D adventure game developed and published by Mega Cat Studios. Part of the Five Nights at Freddy's franchise created by Scott Cawthon, it was released for Windows on August 8, 2024, and later for PlayStation, Xbox, and Nintendo Switch. The game departs from the mainline series’ first-person perspective, featuring retro-inspired 16-bit pixel art, hand-drawn 2D animation. The title is based on the Fazbear Frights book series, expanding the narrative universe of the franchise.
+Players control Oswald, a young boy who discovers a magical ball pit that transports him through time to different periods in Freddy Fazbear's Pizza. The game emphasizes stealth, exploration, and puzzle-solving, with multiple endings influenced by player choices, collectibles, and optional minigames.
+Five Nights at Freddy's: Into the Pit received generally favorable reviews, with critics praising its story and stealth mechanics, while noting minor bugs and a relatively short campaign. Its success has sparked speculation about future Five Nights at Freddy's adaptations by Mega Cat Studios.
+
+
+== Gameplay ==
+Five Nights at Freddy's: Into the Pit is a 2D horror adventure game. The game emphasizes exploration, puzzle-solving, stealth, and evasion across a linear five-day and five-night campaign. Players control Oswald, a young boy who navigates interconnected areas including his home, school, library, a mill, the present-day Jeff's Pizza, and the 1985 Freddy Fazbear's Pizza accessed via time travel through a magical ball pit. During daytime, Oswald collects items, solves point-and-click style puzzles, and interacts with NPCs for hints or trades.
+Nighttime segments focus on evasion, with threats from animatronics such as Spring Bonnie, Freddy, Bonnie, and Chica. A flashlight illuminates dark areas, and a noise meter tracks actions that can alert enemies. Stealth mechanics allow hiding under beds, tables, in lockers, vents, or suits, sometimes triggering first-person quick time events to avoid detection. Players can also distract animatronics with noise-makers or bait. Detection results in a jumpscare and respawn at the last checkpoint.
+Optional gameplay features include repairing arcade machines to play minigames, earning tickets for prizes or puzzle aids, and uncovering hidden minigames, Easter eggs, and collectibles that influence multiple endings.
+
+
+== Plot ==
+The story follows Oswald, a child who discovers a ball pit that allows time travel within Freddy Fazbear's Pizza. Players navigate multiple locations, hide from animatronics, solve puzzles, and make choices affecting the fates of characters, with multiple endings. In his journey between the past and present, Oswald seeks not only to survive but also to save his father and several children, adding a rescue-driven objective to the narrative.  
+
+
+== Development ==
+Five Nights at Freddy's: Into the Pit was revealed in January 2024 following a leaked trailer. Series creator Scott Cawthon confirmed the project's authenticity on Reddit, noting it commemorates the tenth anniversary of the original 2014 Five Nights at Freddy's and that Mega Cat Studios had his approval. At the time of the leak, there were still limited official details available about the game.
+
+No need to keep it all hush-hush,” he wrote. “It's okay! Yes, I was trying to keep it a secret for a bit longer, but now that it's out, that's fine. This game has been in development for a really long time actually, and I'm really proud of the final product. It will be a 10th anniversary game!
+Development was led by Pittsburgh, Pennsylvania-based company Mega Cat Studios, known for WrestleQuest, with the project beginning approximately four years prior to release. The original Super Nintendo-style version was scrapped two years into production due to technical limitations, and the game was rebuilt from the ground up. 
+The final game features 16-bit retro-inspired pixel art, hand-drawn 2D animation, and side-scrolling gameplay. The team cited the Japanese horror game Clock Tower as an influence, emphasizing exploration, stealth, and evasion while retaining traditional series elements such as jump scares. Mega Cat Studios shared teaser imagery during development and engaged with fans to collect feedback.
+Speculation at the time of the leak suggested an August 2024 release to coincide with the franchise’s tenth anniversary.
+
+
+== Release ==
+Five Nights at Freddy's: Into the Pit was announced in June 2024 as part of the franchise's tenth anniversary. Mega Cat Studios revealed the game during the Guerrilla Collective showcase with a trailer featuring Oswald and the 2D pixel-art style. It was released on Steam for Windows on August 8, 2024, followed by PlayStation 4, PlayStation 5, Xbox One, Xbox Series, and Nintendo Switch on September 27, 2024. Physical editions were released on June 20, 2025.
+
+
+== Reception ==
+
+Five Nights at Freddy's: Into the Pit received "Generally Favorable" reviews according to review aggregator website Metacritic, assigning the Windows version a score of 87 out of 100 based on 7 critic reviews.
+Reviewers noted the game’s shift from the traditional first-person horror of the main FNAF series to 2D adventure and stealth gameplay, while retaining suspense and horror elements. ComicBook.com described the game as one of the stronger recent entries in the Five Nights at Freddy's franchise.
+Critics generally praised the game's atmosphere, narrative, and stealth mechanics, particularly highlighting the role of Spring Bonnie as an effective antagonist. The time-travel mechanic was cited as a unique feature distinguishing the title from previous series entries, and the game was considered accessible to both newcomers and franchise veterans.
+The audio design was also praised, stating that the soundtrack and sound effects contributed to the suspenseful atmosphere.
+
+
+== Future ==
+The success of Into the Pit led to speculation that Mega Cat Studios may adapt additional Five Nights at Freddy's stories in the future, coinciding with upcoming media releases.
+
+
+== References ==
+
+
+== External links ==
+Official website

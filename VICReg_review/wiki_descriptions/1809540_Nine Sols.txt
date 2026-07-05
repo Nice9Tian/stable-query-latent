@@ -1,0 +1,46 @@
+Game: Nine Sols
+appid: 1809540
+Source: Nine Sols
+URL: https://en.wikipedia.org/wiki/Nine_Sols
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Nine Sols is a 2024 action-platform game developed and published by Red Candle Games. The game is set in an Asian fantasy-inspired futuristic world which Red Candle Games describes as "taopunk", a combination of Taoism and cyberpunk, stating that “[they] had a clear goal of combining Taoism with cyberpunk, melding sci-fi elements with Eastern mythology." In gameplay, combat emphasizes the player deflecting attacks from enemies to build up energy to perform special attacks. It features a hand-drawn animation style. The game was released on Microsoft Windows and macOS on May 29, 2024, which was followed by home console ports on November 26. On the same day, a major patch was released, introducing a boss rush style gamemode called "battle memories".
+
+
+== Plot ==
+Five hundred years before the events of the game, the Tianhuo virus infected the Solarians, a race of cat-like aliens. With no cure in sight, their leaders, the Ten Sols, developed the Eternal Cauldron Project, in which Solarians could rest in a virtual reality system known as the Soulscape to delay the virus while they searched for a cure. However, the processing power to create the Soulscape required the brains of intelligent lifeforms, so the Solarians left their home planet of Penglai and embarked on a 500-year-long journey aboard the island-ship New Kunlun to the Solar System and its "pale-blue planet" , to kidnap and harvest the native "apemen". 
+Yi, the Tenth Sol and mastermind of the Eternal Cauldron Project, finds out that Tianhuo was accidentally synthesized by Eigong, his mentor and fellow Sol, in an attempt to discover immortality. After he discovers that the other Sols did not protest and hid this fact from him, he turns against them. Eigong is forced to silence Yi and leaves him to die, but he survives in a state of suspended animation due to a special connection with Fusang, a plant that produces vast amounts of energy that the Solarians harnessed for their technology, healing his injuries over the centuries. Yi awakens several hundred years later in Peach-Blossom village, an area within New Kunlun where the Solarians had kidnapped humans to breed as livestock. He befriends the human Shuanshuan and saves him during the brain-offering ceremony, which almost kills Shuanshuan, awakening the nine other Sols in the process. Yi seeks out the Sols throughout New Kunlun to exact revenge and to take their Sol Seals, which act as control codes for the Eternal Cauldron Project. 
+During his journey, Yi stays in the Four Seasons Pavilion, which is defended by the artificial intelligence system Abacus/Ruyi. Over time, more residents come to the Pavilion: Shennong, a skeptical human who realizes the truth behind the village and brings Shuanshuan to the Pavilion; Chiyou, a former battle robot who gained sentience and became a scholar and merchant; Shanhai 9000, a reserved robot assistant who has its own personal agenda; and Kuafu, a Sol and close friend of Yi who decides to betray the Sols and upgrades Yi's weapons. Yi receives old messages from his sister Heng sent from Penglai, where she chose to remain when New Kunlun departed. 
+Yi also learns of the Eternal Cauldron Project's flaws after meeting Lady Ethereal, a Sol and the project's lead programmer. She tells him that the Eternal Dream simulation she created caused the Solarians to want to stay in the simulation, and those who left the simulation became insane and hostile to others. As well, the Empyrean District, where most of the hibernating Solarian population was housed, has been taken over by a mutation of the Tianhuo virus that causes Solarians to develop fleshy growths and exhibit high levels of aggression. Yi learns from the logs in the Tiandao Research Center that Eigong was responsible for the mutation: after constant failures to create a cure, she went insane and began to see the mutant strand as their salvation, as it essentially made them "immortal". After coming to this conclusion, she unleashed it on the slumbering Solarians in the Empyrean district.
+Yi defeats eight of the Sols and obtains their Sol Seals, which are then stolen from him by Eigong. Depending on the items collected and interactions made with various non-player characters during the game, there are two endings:
+
+In the Normal Ending (Home Sweet Home), Yi kills Eigong and obtains all the Sol Seals before taking control of New Kunlun, activating the Eternal Cauldron Project and returning to Penglai. Yi is shown alone, except for a handful of humans, including Shuanshuan, while Kuafu's fate is unclear. The remaining Solarians are still in hibernation, with human brains being used to power the virtual reality, and it is unknown if there will be a cure for the Tianhuo virus.
+In the True Ending (Shooting Star), after Yi deepens his connection with Shuanshuan and the other apemen, he works with Kuafu to allow them to return to Earth. He confronts a now-infected Eigong, who fuses with the Primordial Roots in a final attempt to spread the virus all across New Kunlun. Yi uses the Rhizomatic Bomb Arrow, sacrificing himself to destroy New Kunlun and end the Tianhuo for good. Meanwhile, the apemen are shown taking their first steps back on Earth along with Kuafu, Shennong and Shuanshuan who now wields the Mystical Nymph given to him by Yi as a way to remember him by.
+
+
+== Gameplay ==
+Nine Sols is a 2D action-platformer in which the player controls Yi, who aims to defeat the Nine Sols to get revenge. The focus is on melee combat mixed with side-scrolling platforming and deflection mechanics. Yi's basic attack is slashing with a sword, but he can also deflect enemy attacks, which allows him to absorb and accumulate Qi. Yi can then dash through his opponents to attach talismans powered by Qi, which can be charged before exploding. In addition to his sword, Yi also uses a bow for ranged combat. In regard to movement, Yi can run, jump, double jump, wall jump, dash on the ground and in the air, climb, wall run, and grapple.
+
+
+== Development ==
+The game was announced on March 22, 2022. Red Candle Games, a Taiwanese company behind Detention and Devotion, led the game's development. The game's combat was heavily inspired by Sekiro: Shadows Die Twice, Katana Zero, and Hollow Knight.
+The game's theme song, eponymously titled "Nine Sols", is performed by Taiwanese indie rock band Collage, with vocals in Taiwanese Hokkien and English.
+
+
+== Reception ==
+
+Nine Sols received "generally favourable" reviews, according to the review aggregation website Metacritic. Nic Reuben of Rock Paper Shotgun said he had mostly ignored platform games until Nine Sols, but its gameplay converted him into a fan of the genre. Despite Nine Sols's difficulty, he said it made him feel invincible, and he praised the game for being full of creativity.
+
+
+=== Accolades ===
+
+
+== Notes ==
+
+
+== References ==
+
+
+== External links ==
+Official website at the Wayback Machine (archived 2024-11-17)

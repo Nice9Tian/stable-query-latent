@@ -1,0 +1,40 @@
+Game: Cell to Singularity - Evolution Never Ends
+appid: 977400
+Source: Cell to Singularity
+URL: https://en.wikipedia.org/wiki/Cell_to_Singularity
+Match score: 5.86
+Retrieved: 2026-07-04
+--------
+Cell to Singularity (full title Cell to Singularity: Evolution Never Ends), is a free-to-play incremental idle simulation video game about the evolution of life on Earth, developed and published by the New York City-based studio Computer Lunch. The game presents a scientific progression of life from its origins to a hypothetical technological singularity using a clicker-based format.
+
+
+== Gameplay ==
+Cell to Singularity is an idle clicker game centered on incremental progression and educational themes. Players begin on a primordial Earth and generate a currency called "entropy" through tapping and automated systems. Entropy is used to unlock milestones, such as the formation of the Moon, DNA, multicellular life, and to purchase generator nodes representing organisms across the evolutionary tree, ranging from single-celled life to mammals and early humans, that inhabit in-game areas with low-poly 3D style, made specifically for them (for example, an underwater ocean area for underwater organisms like fish or sponges). Progress continues and the player continues to receive the currency while the game is inactive, consistent with idle game conventions.
+As progression reaches the emergence of human intelligence, a second currency, ideas, is introduced. This currency advances technological and cultural development through stages such as agriculture, industrialization, and information technology. The game thus features two parallel progression systems: biological evolution and human technological development.
+Reaching singularity, the point at which technological growth surpasses modern humanity, triggers a prestige reset. Within the game's narrative, this is framed as a reboot of the simulated universe overseen by an AI guide named Semblance. Players earn a meta-currency called Metabits, which can be invested in permanent upgrades through the Reality Engine, accelerating future playthroughs. This reset-and-upgrade loop forms the core structure of the game.
+Expansions introduce additional standalone simulations. Mesozoic Valley focuses on dinosaur evolution with separate mechanics and currencies, while Beyond centers on astronomy, allowing players to construct celestial systems using "Stardust". These modes operate independently while contributing to overall progression. Monetization includes optional advertisements and a premium currency, Darwinium, used to speed up progress. Most content is accessible without purchases, with in-app monetization primarily supporting ongoing development.
+
+
+== Development ==
+Computer Lunch was founded in 2009 by Andrew Garrahan and Kati Nawrocki. After completing several smaller projects, the studio developed Cell to Singularity as a science- and history-focused game inspired by the structure of nature documentaries. The developers identified the idle/incremental genre as a suitable framework for an educational experience with a gradual, exploratory pace. Development began around 2017, influenced by Garrahan's interest in natural history documentaries and the interconnected view of technology presented in James Burke's Connections series.
+The game entered early access on Google Play in 2018. A PC version was launched on Steam Early Access later that year. Official mobile releases followed on iOS in August 2019 and Android in April 2020. Subsequent free expansions expanded the scope of the simulation, including the Mesozoic Valley expansion (2019), which focused on dinosaur evolution, and the Beyond expansion (first released in November 2021), which introduced an astronomy and space exploration simulation. In June 2024, the game was adapted for WebGL to support desktop browsers. This release optimized the Mesozoic Valley expansion for web play, making the title available on various online gaming portals such as CrazyGames.
+In 2024, it was listed on the DualShockers list for Best Idle Games on Steam.
+In November 2025, a major update titled Reality Reboot overhauled the game's core mechanics and progression systems. Developed in partnership with indie studio Octocube Games, the update redesigned how players reset and upgrade the simulation.
+
+
+== Reception ==
+Cell to Singularity has generally received positive reviews. Katherine Franklin of Big Boss Battle described it as "a commendable delve into a fun representation of evolution on (and off) Earth." Michael Zegar of GamePressure compared its structure to Cookie Clicker and its themes to Spore and Plague Inc., noting that it frames the player as an overseer of evolutionary processes.
+The Beyond expansion received favorable coverage for extending the game's scope to astronomy. In a Pocket Gamer review, Catherine Ng Dellosa described the expansion as a departure from typical mobile titles and praised its relaxed pacing and educational focus. Reviewers also noted the appeal of unlocking scientific information tied to celestial objects. Limited-time events have similarly attracted attention for their educational themes. In March 2024, the game hosted an art-focused event titled Explore: Visual Art – The Power of Images, which explored visual art history from prehistoric cave paintings to modern internet culture. Whitehot Magazine described the event as an unconventional method of presenting art history through interactive media.
+
+
+== References ==
+
+
+=== Expansions (other simulations) ===
+Mesozoic Valley – Released in 2019, this expansion was presented as a large rock in the game, and players all around the world had to tap on the rock to crack it open. After 7 days, the rock revealed a fossil of a dinosaur and the Mesozoic Valley became available to play. This expansion is mainly about dinosaurs, with some examples of animals that lived alongside the dinosaurs in the Mesozoic Era. The game mechanics there work similarly to the main simulation, except the generators are manually activated at first until trait cards are unlocked. There are two trait cards per generator, each containing a fact about the dinosaur featured in the generator. The first trait card automates the generator, while the second one increases the payout.
+Beyond – The first phase of this astronomy-themed expansion was released in 2021, in the form of a nebula that players around the world had to tap to unlock. After 4 days, a black hole was revealed and the expansion became available to play. Beyond's game mechanics are similar to the Mesozoic Valley, but with a few differences. Starting with the Sun, the player progresses through the various planets, moons and other bodies that make up the Solar System, ending with Alpha Centauri. The second ongoing phase of this expansion takes the player to the reaches of the observable universe, featuring various astronomical objects in the Milky Way Galaxy and beyond. As of 2026, new episodes are still being released.
+
+
+== External links ==
+
+Official Website

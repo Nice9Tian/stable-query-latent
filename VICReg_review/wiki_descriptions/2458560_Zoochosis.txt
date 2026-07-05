@@ -1,0 +1,38 @@
+Game: Zoochosis
+appid: 2458560
+Source: Zoochosis (video game)
+URL: https://en.wikipedia.org/wiki/Zoochosis_(video_game)
+Match score: 6.72
+Retrieved: 2026-07-04
+--------
+Zoochosis is a survival horror video game developed and published by Clapperheads. It was announced on January 16, 2024 and released on September 30 on Windows. The game has drawn attention for its premise, focusing on a player's role as a zookeeper tasked with creating vaccines and curing mutated animals.
+The game was released on PlayStation 4 and PlayStation 5 on August 25, 2025.
+The game was released on Xbox One and Xbox Series X/S on October 24, 2025.
+
+
+== Gameplay ==
+In Zoochosis, players assume the role of Paul the zookeeper experiencing his first night shift, during which he discovers that the zoo's animals such as giraffes, zebras, elephants, moose, hippopotamuses, gorillas, penguins, wallabies, giant pandas, ostriches, rhinoceroses, and camels have started to mutate. Paul must then create vaccines, cure the mutated animals, and unraveling the mystery behind the zoo's epidemic.
+The developers have indicated that the game will feature several possible endings, which will vary depending on the player's decisions regarding which animals to rescue and which to avoid.
+Additionally, Zoochosis is played from the perspective of a bodycam, adding a layer of immersion to the experience.
+
+
+== Plot ==
+On September 6, 1991, Paul Connelly is down on his luck and failing to support his wife and daughter, which leads him to take a job at Pine Valley Zoo as the night zookeeper. His employer Oliver Metzger instructs him to observe the habitats and make sure he takes care of the animals when they get sick.
+As Paul begins his first night of work, he is shocked to learn that some of the animals have small parasites that will mutate them into monsters. Paul later finds out that Oliver injected him with a parasite as a way to "protect" him from being eaten, but he will begin to mutate if the mutant animals attack him. As he prepares animal feed meat (in which the zoo uses human flesh to ease the parasites), Paul finds journalist Sarah Watkins being prepared to be processed into feed. If he saves her, the duo can work together to find the source of the parasites and put a stop to Oliver's crimes.
+Sarah gains access to the zoo's computer system and learns that the zoo is actually a secret government research facility that contains the "Mother", the source of the parasites. Oliver has been luring zookeepers in and infecting them with the parasites since Mother can only feed on infected lifeforms. However, if they can synthesize a toxin from the blood of a female parasite and feed it to Mother, they can kill her, which would result in the death of all of the parasites she has given birth to and cure their hosts, including Paul. 
+There are numerous endings to the game, many of which result in Paul being fed to Mother or fully mutating and attacking Sarah and Oliver. However, the best ending, obtained when Paul nonlethally subdues all of the infected animals and extracts their parasites, has him create the toxin, which Sarah injects into Oliver before feeding him to Mother. Having survived the night, Paul takes Oliver's sports car to return to his family while Sarah exposes the illegal and unethical experiments being conducted at Pine Valley Zoo.
+
+
+== Reception ==
+
+
+=== Release ===
+Zoochosis received attention for its unique horror setting and concept. Edwin Evans-Thirwell of Rock Paper Shotgun praised the game as an "open homage to The Thing". PCGamesN likened it to "Resident Evil meets Planet Zoo", while Dread Central described the game as "The Thing meets a zoo".
+
+
+== References ==
+
+
+== External links ==
+
+Official website

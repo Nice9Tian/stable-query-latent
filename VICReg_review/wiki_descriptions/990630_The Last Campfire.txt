@@ -1,0 +1,29 @@
+Game: The Last Campfire
+appid: 990630
+Source: The Last Campfire
+URL: https://en.wikipedia.org/wiki/The_Last_Campfire
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+The Last Campfire is a puzzle video game developed and published by Hello Games. It was released for iOS, macOS, Nintendo Switch, PlayStation 4, Windows, and Xbox One on August 27, 2020.
+
+
+== Gameplay ==
+The Last Campfire is a puzzle game. The player assumes control of a soul named Ember, who must solve various environmental puzzles to help fellow forlorn souls who have lost hope to find their purposes. As the player saves all the Forlorns in an area, new areas will be unlocked. As players progress, they would meet and assist various non-playable characters, who will give Ember new items for solving puzzles. Players can play the game in "explore mode", which removes most of the puzzles in the game.
+
+
+== Development ==
+The game was created by Steve Burgess, Chris Symonds, and James Chilcott. They had all previously worked at Frontier Developments and released LostWinds and its sequel, Winter of the Melodias. The game was largely inspired by folk tales and story books, including those written by Brian Froud. The game was developed primarily for Apple's mobile devices, as the team programmed the game's control with touch screens in mind.
+The game was announced at The Game Awards 2018. It was released for Microsoft Windows via the Epic Games Store, PlayStation 4, Nintendo Switch, Xbox One and iOS via Apple Arcade on August 27, 2020. Hello Games released an update on April 9, 2021, introducing more puzzles and the ability to read the Wanderer's Diary and replay puzzles.
+
+
+== Reception ==
+
+The game received generally positive reviews upon release according to review aggregator website Metacritic. Fellow review aggregator OpenCritic assessed that the game received strong approval, being recommended by 81% of critics.
+
+
+== References ==
+
+
+== External links ==
+Official website

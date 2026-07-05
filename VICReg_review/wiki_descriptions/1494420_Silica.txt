@@ -1,0 +1,37 @@
+Game: Silica
+appid: 1494420
+Source: Silica (video game)
+URL: https://en.wikipedia.org/wiki/Silica_(video_game)
+Match score: 6.13
+Retrieved: 2026-07-04
+--------
+Silica is a 2023 science fiction real-time strategy shooter video game developed by Martin "Dram" Melichárek and published by Bohemia Interactive, released for Microsoft Windows in early access exclusively through the Steam distribution platform. Set in the 24th century on the exoplanet Baltarus, Silica follows a three-sided resource war over Balterium, a valuable mineral capable of power manipulation. The game features a hybrid of shooter gameplay and strategy gameplay, with both modes accessible based on the player's role in their faction.
+Silica originated as a mod for Emperor: Battle for Dune before being picked up by Bohemia Incubator in 2020. The game was released in early access on 3 May 2023. It received mixed reviews, but many reviewers deemed the game promising.
+
+
+== Gameplay ==
+Silica features a hybrid of first-person/third-person shooter and real-time strategy gameplay. The former is used when playing as an infantry unit, while the latter is used when playing as a commander. Infantry have multiple classes and vehicles available and must battle enemy units, while the commander must gather resources, build structures, and order units. Players can control whatever unit they have deployed at any time, with uncontrolled units and roles including the commander slot filled by artificial intelligence and, in multiplayer, other players.
+The game's two human factions, Sol and Centaurus, are armed with laser weapon and missile, with their combat largely relying on the use of vehicles ranging from combat rover to massive hovering tank. The alien faction uses a third-person perspective and plays differently compared to the human factions: their infantry is only capable of melee attacks and their units and structures are more vulnerable, but their technology tree is easier to climb with far stronger units late into the tree, promoting stealthy expansion as opposed to the more open and overt growth of the human factions. For all factions, the goal of the game is to either destroy the other opposing factions or gather as much of their targeted resources (Balterium for humans, alien biological strains for aliens) as possible before the match time limit ends.
+Silica has three game modes: Prospector Mode, an infantry-only mode where players must traverse a map in search of mining spots; Strategic Mode, where the factions compete for dominance on a single map while fighting, building, and mining; and Arena Mode, a battle mode where players fight in a free-for-all.
+
+
+== Premise ==
+In the 24th century, humanity develops teleportation as a new form of long-distance transportation, which they use to colonize space. One colonized planet, orbiting Proxima Centauri, is named Centaurus by its settlers. Earth, by now renamed Sol, maintains trade relations with Centaurus in the interests of peaceful coexistence. Sol sends out probes to locate more planets to colonize, and one probe discovers Baltarus, a seemingly lifeless and barren planet composed largely of deserts.
+Human prospectors teleport to Baltarus, where they discover "Balterium", an extremely powerful and valuable element capable of manipulating power, which the prospectors realize could be used to sustain humanity's energy demand for the foreseeable future. Sol launches large-scale mining operations to gather as much Balterium as possible, but this frustrates Centaurus, who find Sol is greedily taking all of the Balterium for themselves, and a resource war between the two planets breaks out on Baltarus. However, the conflict and mining activity awaken the inhabitants of Baltarus, a race of insectoid aliens who consider the humans invaders and attack both belligerents to expel them from the planet.
+
+
+== Development ==
+Silica originated in 2008 as a mod for the 2001 real-time strategy video game Emperor: Battle for Dune. It was a "passion project" for Martin "Dram" Melichárek, Silica's sole developer, who cited StarCraft and Dune as inspirations. Melichárek was formerly an employee of Bohemia Interactive, and was the lead developer of their 2017 simulation video game Take On Mars. In 2020, Silica was picked up by Bohemia Interactive's "Bohemia Incubator" program, which assists many indie game developers with development and publishing, and was developed into a standalone game. The game was announced on 6 April 2023, and entered early access on 3 May 2023.
+
+
+== Reception ==
+Silica received mixed but generally positive reviews during its early access release.
+Jon Bolding of IGN called Silica "an interesting take on a genre that has been often attempted but rarely perfected", highlighting the game's character and uniqueness as well as Melichárek's ambitious future plans for the game, but noting inconsistent damage and AI behavior among other issues. Marco Wutz of Sports Illustrated called the game "promising" and praised its gameplay, application of shooter and strategy elements at the same time, and well-designed division of labour between infantry and commanders that allowed everyone in a faction to cooperate. However, he criticized how the massive scale of the maps made travel very inconveniencing even in vehicles, though he noted planned future additions such as aircraft and transport vehicles could stymie this. Sportskeeda's Matthew Wilkins similarly praised the cross-genre mixture of strategy and shooter gameplay, and described the ability to control any unit as a "childhood dream come true".
+Ed Thorn of Rock Paper Shotgun opined that Silica—like other RTS–FPS hybrids—did not successfully "make the best of both worlds", citing confusing gameplay and combat being more about attrition than strategy as reasons why. However, he noted that as an early access release most of these issues would likely not reflect the final game, and added he enjoyed the alien faction and how unique and threatening they were compared to the "hollow" human factions. Dominic Tramonta of GameTyrant criticized the "lifeless" map design and the restriction of on-foot travel for most infantry segments, adding that the lack of checkpoints in missions made traveling through the maps "feel like a punishment". GGRecon's Tarran Stockton noted the lack of proper tutorials made the game confusing, and that the alien faction was difficult to succeed with while the human factions were often left wandering aimlessly through the game's large maps, though he commended how Melichárek was listening to players' concerns in development.
+
+
+== References ==
+
+
+== External links ==
+Official website

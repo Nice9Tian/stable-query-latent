@@ -1,0 +1,64 @@
+Game: Dungeon Defenders: Awakened
+appid: 1101190
+Source: Dungeon Defenders
+URL: https://en.wikipedia.org/wiki/Dungeon_Defenders
+Match score: 6.74
+Retrieved: 2026-07-04
+--------
+Dungeon Defenders is a hybrid multiplayer video game developed by Trendy Entertainment that combines the genres of tower defense and action role-playing game. It is based on a showcase of Unreal Engine 3 named Dungeon Defense. The game takes place in a fantasy setting where players control the young apprentices of wizards and warriors and defend against hordes of monsters. A sequel titled Dungeon Defenders II was released in 2015.
+
+
+== Gameplay ==
+Dungeon Defenders is a mix of tower defense, role-playing, and action-adventure where one to four (sometimes up to six) players work together to protect one or more Eternia Crystals from being destroyed by waves of enemies which include goblins, archers, orcs, kobolds, ogres and other creatures. The game features a number of levels, consisting of around five total waves, through its campaign mode, or other levels as part of challenges; some of these levels may feature a final wave that includes a boss battle against a unique foe. The player characters, known as "heroes", defend crystals by either magically creating, maintaining, and upgrading towers or other defensive elements that damage or divert the enemy monsters, or by using melee and ranged attacks to defeat enemies directly. On easier difficulties, players have an indefinite amount of time prior to a wave to study the level's map to see where monsters will come from and the type or number of monsters, to place traps and defenses, and to manage the characters' equipment. Traps and defenses are limited by the available mana that the character has - more mana can be obtained by defeating monsters or opening chests that appear between waves - as well as a total "defense units" for the level, limiting the number of traps that can be placed. The characters can be damaged by enemy attacks, and can be killed in battle but will respawn after a few seconds, unless hardcore mode is selected. If an Eternia Crystal has taken too much damage, it will be destroyed and the players will lose that level. Successfully defending a wave will earn the characters experience points based on the difficulty plus additional bonuses, namely preventing any damage to the crystals; preventing damage to your character; and only using weapons, pets, and/or character abilities to kill monsters. Successfully completing all waves of a level will earn the players a large banked mana boost. Monsters will also drop items that can be sold for additional banked mana.
+The difficulty of the level is set by the hosting player after choosing a level; the strength, number, and types of monsters that are faced are influenced by this selection and the number of players in the match, as well as the general quality of equipment that may be generated as rewards. The player has additional options, such as hardcore mode, which improves rewards, but prevents players from respawning during combat. On non-challenge levels, survival and "pure strategy" modes are unlocked after beating its campaign. These game modes have an extended number of waves which get progressively more difficult, but can yield better loot.
+For the classic campaign levels ("The Deeper Well" to "The Summit"), players must work through each level before unlocking the next. They may return to any already cleared levels to try to improve their performance, challenge the level at a higher difficulty, or simply to grind for better rewards.
+Characters are persistent for a player. The player can manage up to a finite number of characters, with 40 being the Steam version's limit, though they are kept separate between Trendy's ranked servers and for unranked play. The Steam version allows players to override their unranked characters with their ranked collection. Characters are selected from the available character classes: four were shipped with the game, while eight additional classes were added in the form of downloadable content on the Microsoft Windows version. Eight out of the twelve total classes have a unique set of defenses and a specific set of weapons that they can equip. The other four classes are gender counterparts to the original quartet. All classes have at least two special abilities exclusive to them.
+As the character levels up with experience, the player can allocate points among a range of characteristics affecting the character or the defenses they summon. Additional bonuses to these characteristics can come from the equipment the character is equipped with. New equipment can be purchased using banked mana either in the game's store or in other players' auctions or collected from killing monsters, opening chests, or beating the level. Banked mana can be spent to upgrade equipment, allowing the player to improve the bonuses that the equipment provides to the characters or item-specific attributes, like a weapon's base damage, secondary/elemental damage, attack rate, projectiles fired per volley, and projectile velocity. The player maintains separate inventories of equipment across the ranked and unranked servers, but this inventory will be common for all of the player's characters in that mode.
+
+
+== Release ==
+Dungeon Defenders was released on Xbox Live Arcade, PlayStation Network and PC in October and December 2011. Support for the Move accessory is included in the PlayStation Network version. The game supports cross platform play between the PlayStation 3 and the PlayStation Vita. In November there was a "development kit" released as free DLC which included the game's source code.
+
+
+== Reception ==
+
+
+=== Critical reception ===
+Dungeon Defenders received generally favourable reviews. At review aggregator website Metacritic, the game attained overall scores of 81, 80 and 77 out of 100 for PC, PS3 and Xbox 360 respectively.
+
+
+=== Sales ===
+Dungeon Defenders sold over 250,000 copies in first two weeks of release and over 600,000 copies by the end of 2011. By February 2012, the game's publisher reported over one million sales across Xbox Live, PlayStation Network, and Steam.
+
+
+== Dungeon Defenders: First/Second Wave ==
+First Wave is the mobile version of Dungeon Defenders, and was one of the first Unreal Engine 3 games available for iOS and the first available on Android, with a recent patch allowing cross-platform multiplayer gaming between the two mobile operating systems via GameSpy.
+Second Wave was a mobile version of Dungeon Defenders. It was free on Google Play, but paid on the App Store and featured a revamped menu system and improved controls.
+As of December 2012, it is no longer available from Google Play.
+
+
+== Dungeon Defenders Eternity ==
+Dungeon Defenders Eternity was released on 22 July 2014. It rebalanced the heroes and enemies of Dungeon Defenders and redesigned the loot system of the original game. It includes an early version of Playverse, the server system designed for Dungeon Defenders 2 to improve cross-platform support and discourage hacking. The game received predominantly negative reviews from customers from Steam due to the lack of a single player game and inclusion of micro-transactions on the first day of release.
+Eternity is no longer available for purchase on Steam.
+
+
+== Dungeon Defenders Redux ==
+Redux is a community-developed expansion mod for the Steam version of Dungeon Defenders. It was originally distributed through Discord until it got official Steam branch support from Chromatic Games in December 2020. The mod is accessible to all Microsoft Windows users who own the base game on Steam as a 'beta' branch. A player's vanilla ranked and Redux ranked saves are completely separate from each other.
+
+
+== Sequels ==
+A sequel titled Dungeon Defenders II was made available in beta period for Windows and PlayStation 4 at the 2013 PAX East convention, featuring similar gameplay to its predecessor. The game is free-to-play with microtransactions to unlock certain heroes that are otherwise unlockable through play. The game was released on Steam early access on December 5, 2014, and became available on PlayStation 4 on September 19, 2015. The game was fully released alongside a version for Xbox One on June 20, 2017.
+Another sequel, Dungeon Defenders: Awakened was unveiled by Chromatic Games in 2019, formerly Trendy Entertainment before corporate restructuring. It was initially backed by a successful Kickstarter in the same month. The game's narrative, while set after Dungeon Defenders II, returned to the art style and gameplay established by the first game, and featured several additional gameplay updates.
+Players that pre-ordered Awakened for any platform gained access to the beta version of the title, which launched in November 2019, on Microsoft Windows. The game launched in Steam's early access on February 21, 2020. and was fully released on May 28 the same year. A version for Xbox One was released on March 17, 2021, with another releasing for Nintendo Switch on August 4. It launched on PlayStation 4 on May 3, 2022.
+An action role-playing roguelite spin-off titled Dungeon Defenders: Going Rogue was developed and published by Chromatic Games and released in early access for Microsoft Windows on March 29, 2022. It is planned to release on Nintendo Switch, PlayStation 4, PlayStation 5, Xbox One, and Xbox Series X/S.
+
+
+== See also ==
+Dungeon Warfare 2
+
+
+== References ==
+
+
+== External links ==
+Official website

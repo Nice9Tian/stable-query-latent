@@ -1,0 +1,26 @@
+Game: Mechabellum
+appid: 669330
+Source: Mechabellum
+URL: https://en.wikipedia.org/wiki/Mechabellum
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Mechabellum is a 2024 auto battler video game developed by Game River and published by Paradox Interactive and Dreamhaven. Gameplay involves creating armies that fight each other over the course of several rounds. Developed beginning in 2022, the game was released in early access in 2023 and fully released for Windows in 2024. The game received positive reviews.
+
+
+== Gameplay ==
+Mechabellum is a auto battler, where players create armies that fight each other in an automated fashion. The game is structured into rounds: in each round, players are given supplies to buy and place units on a battlefield. Once placed, the units cannot be moved, nor can they be directly controlled. Supplies can also be used to purchase temporary and permanent upgrades. Winning a round decreases the opponent's HP.
+There are single-player, co-op, and multiplayer modes available.
+
+
+== Development ==
+Mechabellum was developed by Chinese studio Game River and initially published by Paradox Interactive. Developer Bearlike first conceived the idea behind the game in 2016. They cited Warcraft 3 custom maps as the main inspiration for the game, along with Command & Conquer, StarCraft, and other games. Development started in 2017, the developers received investment money in 2020, and they reached out to Paradox as a publisher in 2022.
+The game was first released in early access on 11 May 2023. It was fully released for Windows on 26 September 2024. Game River later parted ways with Paradox, and Dreamhaven took over publishing on 25 March 2025.
+
+
+== Reception ==
+Mechabellum was reviewed by Rock Paper Shotgun, PC Gamer, Eurogamer, PCGamesN, The Games Machine, and GameStar.
+Rock Paper Shotgun named it as one of their favorite games of 2024.
+
+
+== References ==

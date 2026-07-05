@@ -1,0 +1,11 @@
+Game: Need for Speed Most Wanted
+appid: 1262560
+Source: Need for Speed: Most Wanted
+URL: https://en.wikipedia.org/wiki/Need_for_Speed:_Most_Wanted
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Need for Speed: Most Wanted may refer to:
+
+Need for Speed: Most Wanted (2005 video game), developed by EA Black Box
+Need for Speed: Most Wanted (2012 video game), developed by Criterion Games

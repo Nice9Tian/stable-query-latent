@@ -1,0 +1,20 @@
+Game: Minishoot' Adventures
+appid: 1634860
+Source: Minishoot' Adventures
+URL: https://en.wikipedia.org/wiki/Minishoot%27_Adventures
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Minishoot' Adventures is a 2024 action-adventure twin-stick shooter video game developed by SoulGame Studio, a two-person team based in Toulouse, and published by IndieArk for Windows. On March 3, 2026, the game was ported to Nintendo Switch, Nintendo Switch 2, PlayStation 5, Xbox One and Xbox Series X and Series S.
+
+
+== Gameplay ==
+Structurally, Minishoot' Adventures borrows many design elements from The Legend of Zelda series. Examples of these similarities include boasting an open-ended map with many secrets to find, upgrades which allow the player to explore more of the map and featuring a top down camera perspective. The gameplay, by contrast, is more akin to that of a twin-stick shooter, where one analog stick controls the player ship and the other analog stick controls the direction which it fires its bullets.
+
+
+== Reception ==
+
+Minishoot' Adventures was widely praised by critics upon its release. Chris Reed of IGN noted that "Minishoot’ Adventures may just be a Zelda game with twin-stick combat, but that description sells it short. It's obvious SoulGame Studio has put an enormous amount of care and consideration into every detail, from upgrade frequency and enemy placement to boss behavior and world design. It takes all the right lessons from Nintendo's beloved franchise and puts them to good use in a new package."
+
+
+== References ==

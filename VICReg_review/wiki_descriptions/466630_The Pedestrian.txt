@@ -1,0 +1,32 @@
+Game: The Pedestrian
+appid: 466630
+Source: The Pedestrian (video game)
+URL: https://en.wikipedia.org/wiki/The_Pedestrian_(video_game)
+Match score: 7.31
+Retrieved: 2026-07-04
+--------
+The Pedestrian is a side scrolling puzzle-platform game developed and published by American studio Skookum Arts LLC. The game was originally released in January 2020 for Linux, macOS, and Microsoft Windows. In August 2020, a port for PlayStation 4 and PlayStation 5 was announced for January 2021, during a State of Play presentation. It later released for Xbox One and Xbox Series X/S in January 2022. It was eventually released on the Nintendo Switch in January 18, 2024.
+
+
+== Gameplay ==
+
+The player embodies a male or female Stick Figure, similar to those found on standardized exit signs, toilet signs, pedestrian traffic lights, etc. Though the game world is three-dimensional, the player character exists strictly within the 2D space created by the faces of various street and building signs, navigating between them as it makes its journey forward through various parts of New York City. The character may move left and right, jump a limited distance, drop through semi-solid floors, pick up certain objects and interact with doors and switches. Signs may feature such navigational obstacles as retractable platforms and columns, trampolines, deadly hazards, elevators, locked doors, and other similar elements common to many puzzle-based platformers.
+Early on, each sign features only one entrance and one exit, requiring the player to simply reach the exit in order to progress forward. The game then introduces the concept of multiple signs appearing together as a "set", allowing the player character to move between them through doors, ladders, and other types of portals. Beyond navigating each individual sign, determining which pair of doorways should be connected to each other to form a coherent pathway to the exit quickly becomes the meat of the gameplay. When multiple signs appear as a set, the player is also required to reorganize them on the 2D plane in order to properly connect doorways to one another. For example, a ladder down from one sign can only connect to the top of a ladder leading into another sign placed below it, never above it. Once the player character travels through a doorway between two signs in a set, the connection becomes permanent and cannot be changed without restarting the level. Some levels feature more complex variations on this theme, e.g. signs that cannot be moved at all, or have a limited range of movement.
+Interaction with various objects in the 2D space also becomes a key component of gameplay fairly early on: Crates can be pushed around in order to create a base for jumping to a higher platform; keys may be picked up in order to open locked doors; and immobile switches can be used to activate obstacles in various ways. At one point, the game introduces wires running between signs, requiring the player to locate a spool of wire to close electric connections in order to open the way forward. Similarly, various other objects may need to be located and placed in the appropriate positions in order to proceed. This eventually leads to levels with multiple branching pathways, in which the player must collect a number of different items to a central location, doubling back each time until all the necessary parts have been acquired.
+Players have an unlimited number of retries on each level. They re-spawn at a designated position (near the entrance to a sign or set of signs) if they die to a hazard, and may freely decide to reset a level to its initial state at the press of a button.
+
+
+== Development ==
+Development took longer than expected. After being unready to release the game even after delaying the release date, the developers changed the listed release date to "When it's finished."
+
+
+== Reception ==
+
+The Pedestrian received "generally favorable" reviews according to review aggregator Metacritic. Fellow review aggregator OpenCritic assessed that the game received strong approval, being recommended by 90% of critics.
+
+
+== References ==
+
+
+== External links ==
+Official website

@@ -1,0 +1,13 @@
+Le Mans Ultimate is the official game of the FIA World Endurance Championship and the 24 Hours of Le Mans, presenting the world of endurance racing as an evolving experience shaped by teamwork, speed, and competition. Built around the 2023 centenary season, it aims to recreate the current era of sportscar racing and to grow alongside the real-life FIA WEC series.
+
+The game features the latest Hypercars from manufacturers such as Toyota, Ferrari, Porsche, Cadillac, Peugeot, Glickenhaus, and Vanwall. In addition, players can compete in LMP2 and GTE classes, driving machines from brands including Aston Martin, Corvette, Ferrari, and Porsche. At launch, 12 cars are available, with more than 100 livery variations.
+
+Le Mans Ultimate also includes a selection of renowned circuits from the 2023 calendar: Autodromo Nazionale Monza, Circuit de Spa-Francorchamps, Sebring International Raceway, Bahrain International Circuit, Algarve International Circuit in Portimão, Fuji Speedway, and Circuit de la Sarthe in Le Mans. These tracks form the setting for the game’s endurance racing experience.
+
+The game uses the physics and handling simulation foundation of pMotor 2.5, as used and improved from rFactor 2, while adding quality-of-life improvements intended to make it more accessible. It offers selectable difficulty levels, adjustable assists for first-time players, and language support for English, French, Italian, German, and Spanish. The interface is designed to be clear and concise, with a readable HUD and broadcast-style track elements.
+
+Players can begin in either Offline Race Weekend or Online mode. Race Weekend allows players to choose a profile suited to their experience level: Beginner, Intermediate, or Advanced. From there, they can take part in Practice, Qualifying, and Race sessions, while adjusting time of day, session length, and weather conditions. The mode is also meant for learning tracks, refining car setup, and creating a personalized FIA WEC race weekend.
+
+Online play is powered by RaceControl and includes ranked Daily Races at launch. These races allow players to build Driver and Safety rankings, with future plans for higher-ranked races and exclusive events as the game continues to expand.
+
+Le Mans Ultimate also features Real Road 2.0 track evolution. Circuits begin in a green, low-grip state and gradually rubber in as cars run the racing line. Cars can move dust, dirt, and marbles off-line, and dynamic weather effects include rainfall, debris on windscreens, more realistic water flow, and puddle formation. Cars also accumulate dirt and debris over the course of a race, reinforcing the endurance-racing atmosphere.

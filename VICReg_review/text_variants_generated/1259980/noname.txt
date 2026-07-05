@@ -1,0 +1,11 @@
+This motorcycle racing title is designed for players who want a highly detailed and competitive two-wheel experience. It offers hundreds of officially licensed machines and dozens of tracks set across the world, with every environment and vehicle built from CAD data, laser scanning, and 3D scanning to achieve a high level of precision.
+
+The game features a progression-based structure that lets players move through regional events and advance toward professional leagues. Along the way, they can take part in a wide variety of race types and challenges, including standard races, skill tests, track sessions, and other events. The experience also includes the possibility of taking on official testing roles for major manufacturers, adding variety to the career flow.
+
+A dynamic weather system and a full day/night cycle change the conditions of each race, requiring players to adapt their approach. A dedicated endurance mode places extra emphasis on strategy through long races and animated pit stops, making consistency and timing important factors for success.
+
+Opponent behavior is driven by a machine-learning-based neural system, aiming to create more responsive and realistic AI competition. This is intended to make races feel more challenging and closer to competing against human riders.
+
+Customization is another major part of the experience. Players can choose from many official brands for rider gear and modify both the visual and mechanical aspects of their machines. A built-in graphics editor allows for free creation of helmets, suits, and vehicle liveries, with the option to share designs online or explore community-made creations.
+
+The game also includes online multiplayer with dedicated servers, focusing on stable and competitive races against other players.

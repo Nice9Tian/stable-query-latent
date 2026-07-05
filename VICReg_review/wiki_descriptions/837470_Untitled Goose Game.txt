@@ -1,0 +1,73 @@
+Game: Untitled Goose Game
+appid: 837470
+Source: Untitled Goose Game
+URL: https://en.wikipedia.org/wiki/Untitled_Goose_Game
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Untitled Goose Game is a 2019 indie puzzle stealth game developed by House House and published by Panic Inc. Players control a goose who bothers the inhabitants of an English village. Players must use the goose's abilities to manipulate objects and non-player characters to complete objectives. It was released on macOS, Nintendo Switch, and Windows on 20 September 2019, and PlayStation 4 and Xbox One on 17 December 2019.
+The idea for Untitled Goose Game originated from a stock photograph of a goose that a House House employee posted in the company's internal communications. Inspired by Super Mario 64 and the Hitman series, House House worked on combining stealth mechanics with a lack of violence to create humorous in-game scenarios. The game's unusual name came from a last-minute decision in preparing the title as an entry for a games festival. The music, curated by composer Dan Golding, uses short clips from six of Claude Debussy's Préludes. It has been described as "reactive music" because the clips are played after certain actions.
+Untitled Goose Game received positive reviews, with critics praising its gameplay and humour. The game received the D.I.C.E. Award for Game of the Year and the Game Developers Choice Award for Game of the Year, among other accolades. Dan Golding was nominated for an ARIA award for the music. By the end of 2019, Untitled Goose Game had sold more than a million copies.
+
+
+== Gameplay ==
+
+Set in a quiet English village, the game follows a domestic goose controlled by the player that can honk, duck down, run, flap its wings, and grab objects with its beak to bother villagers. The village is split up into multiple areas, each of which has a "to do" list of objectives, such as stealing certain objects or tricking humans into doing specific tasks. When enough of these objectives are completed, the goose is allowed to move on to the next area.
+After completing four areas, the goose enters a miniature model of the village. There, the goose steals a golden bell before going back through the previous areas while the villagers try to stop it. The goose deposits the bell into a ditch full of several other bells.
+There are several hidden optional objectives, many of which require traversing multiple areas or completing an area within a time limit. Completing all the optional objectives rewards players with a crown for the goose to wear. A co-operative multiplayer option, added in an update, allows a second player to control a second goose, both geese trying to accomplish the goals together.
+
+
+== Development and release ==
+
+Untitled Goose Game was developed by four-person indie studio House House, based in Melbourne, Australia. The game originated from a stock photograph of a goose that an employee posted in the company's internal communications. The team later realised that a game involving a goose protagonist had good potential. House House cited Super Mario 64 as the initial inspiration for the movement, wanting players to control a character who could run around in a 3D environment. Their previous game, Push Me Pull You, had 2D art with flat colours. They used a similar aesthetic in Untitled Goose Game by choosing to use low poly meshes, flat colours, and untextured 3D models.
+The game's playable character, the goose, was originally just a stock image, and the idea was that non-player characters (NPCs) would react to it. The developers implemented a system where the NPCs would tidy up after an item was moved. After restricting the field of view of the NPCs, the gameplay became stealth-focused. Instead of remaining hidden as in most stealth games, the goal was to have the mischief-making goose attract the attention of NPCs and not get caught. House House created a structure using missions with specific targets, similar to the mission structure in the Hitman series. House House member Jake Strasser stated "It has a set-up and a punchline. By removing the violence from it, we just let the situations exist as a joke." The team opted for an English village as the setting, as its "properness" was seen as "the antithesis of what the goose was all about", according to developer Nico Disseldorp. Developer Michael McMaster also stated that, "A major influence for the game was children's TV programming from the UK... Postman Pat, Fireman Sam, Brum, etc. This is probably where the 'storybook' feeling comes from."
+When the game was accepted at the Fantastic Arcade part of the Fantastic Fest in Texas, the developers had not yet named the game, and without any other ideas, they used the title of the gameplay video the publisher had used for the submission: Untitled Goose Game. The Untitled Goose Game title stuck with fans when the developers started to promote the game on social media. The only other title the developers had come up with was Some Like it Honk, but they never gave it serious consideration.
+Untitled Goose Game was published by Panic for macOS, Nintendo Switch, and Windows on 20 September 2019. The game is House House's second project, and like their debut, was supported by the government organization Film Victoria, who, as developer Stuart Gillespie-Cook described, assisted the studio in "making us sustainable and making us into a real studio."
+
+
+=== Music ===
+
+The trailer, scored by composer Dan Golding, features musical passages from six of Claude Debussy's Préludes, Minstrels. Comments on the trailer praised the apparent "reactive music" system where the music stopped and started depending on the action in the game, though House House later said this was a misconception, as the stops and starts were actually part of Debussy's composition. The positive reception to the trailer's music led House House to include Debussy's work as part of the soundtrack, and to develop a "reactive music" system for the game. To accomplish this, Golding sliced two versions of each prelude — one performed as written, and the other more slowly and softly — into 196 to 425 few-second sections, called "stems", categorised based on intensity. The game chooses a stem to play after a certain action is performed. Golding later cited inspiration from music to accompany silent films like L'Arroseur Arrosé and more specifically nickelodeon music.
+An official soundtrack was digitally released by Decca Records on 27 March 2020. It features both the regular and quiet versions of each track, as well as two original ones, called "Waltz For House House", which plays on the menu in the PlayStation 4 version, and "Untitled Goose Radio", which includes every track played from the in-game radio. A portion of the score was also released on vinyl by iam8bit, which was pressed with double grooves to emulate the randomness of the in-game music.
+
+
+=== Release ===
+
+The game was revealed in October 2017 with a trailer. The trailer gained viral popularity on social media sites, leading the team to recognise they had a popular concept on which to build.
+Following the initial trailer's release, Untitled Goose Game was present at the Game Developers Conference, PAX Australia, and PAX West (Prime) events in 2018. At E3 2019, the game was announced for PC on the Epic Games Store. A House House developer stated that Epic's offer of an exclusivity deal allowed the developers the stability to go from part-time to full-time. In October 2019, House House said that they were investigating porting the game to other platforms, including mobile devices. PlayStation 4 and Xbox One versions were released on 17 December 2019. The Xbox One version was included as a part of the Xbox Game Pass service. Physical releases for the PlayStation 4 and Nintendo Switch versions were produced by iam8bit and released on 29 September 2020. iam8bit also published the game's soundtrack on vinyl record for release the same day.
+A free update on 23 September 2020 added a co-operative mode for two players. This update was launched alongside the game's release on the Steam and itch.io storefronts. On 6 March 2023, Panic co-founder Cabel Sasser wrote that the publisher had submitted the game to the Apple App Store, but it was rejected because the reviewer "thought you couldn't skip the credits," and that after explaining they could be skipped by holding the spacebar, "It was then rejected for something else and at that point we just gave up."
+
+
+== Reception ==
+
+
+=== Critical ===
+
+Untitled Goose Game received "generally favorable" reviews according to review aggregator website Metacritic. Fellow review aggregator OpenCritic assessed that the game received strong approval, being recommended by 82% of critics. IGN gave the game an 8/10 rating and praised its silliness, stating, "Untitled Goose Game is a brief but endlessly charming adventure that had me laughing, smiling, and eagerly honking the whole way through." Game Informer praised the game for its silliness and creativity but felt that it was repetitive and too short. Destructoid positively compared the game to Shaun the Sheep, saying, "There's little dialog, plenty of antics, and humans who keep getting outsmarted by birds." Kotaku gave the game a positive review, commending the gameplay and how players find "an insidious joy in drawing out increasingly infuriated reactions from the small town's people". Conversely, The Atlantic published an article titled "Video Games Are Better Without Gameplay", using Untitled Goose Game as an example throughout. The author wrote that the game's task-based nature was more "chore" than curiosity; "The goose isn't really wreaking havoc, it turns out. The goose is running errands."
+The music received similarly positive reviews. GameSpot wrote that the soundtrack "is what really sells the goose's charms" and that it gave the gameplay a "feeling of farce ... reminiscent of a Buster Keaton film." The Guardian related the pairing of quick music with comedic actions to the cartoon Looney Tunes. IGN said the music gave the chases a "Benny Hill-style ridiculousness." Untitled Goose Game drew similar attention as Goat Simulator, both sharing the nature of being chaotic animal-based sandbox games. After release, clips and stills from the game were shared on social media, causing the game to become an internet meme.
+In June 2022, House House presented Untitled Goose Game Live with the Australian Centre for the Moving Image (ACMI) and Orchestra Victoria. In the show, gameplay was projected onto ACMI's screen and accompanied by arrangements of Golding's soundtrack for Orchestra Victoria. In February 2023, the Australian Government cited the performance as a case study in their "Revive" plan to "renew and revise Australia's arts, entertainment, and cultural sector." The report said Untitled Goose Game Live "brought together multiple genres and art forms and new audiences." The government later introduced the Digital Games Tax Offset to support growth of major development studios and increase investment in indie studios.
+
+
+=== Sales ===
+More than 100,000 copies were sold within its first two weeks of release on the Nintendo Switch. It was noted for having topped the Nintendo Switch sales charts in Australia, the United Kingdom, and the United States, even above the mainline Nintendo game released on the same day, The Legend of Zelda: Link's Awakening. By the end of 2019, it had sold more than a million copies across all platforms.
+As part of a nationwide "Pay the Rent" campaign to provide support to Indigenous Australians "for all the time spent living on Aboriginal land", House House said it would donate 1% of their income to Indigenous groups, as their studio is located on "stolen Wurundjeri land". The end credits of the game contain the line "This game was made on the lands of the Wurundjeri people of the Kulin Nation. We pay our respects to their Elders, past and present. Sovereignty was never ceded."
+
+
+=== Awards ===
+
+
+== Television pilot ==
+In September 2024, House House revealed that a pilot for an animated series titled Untitled Goose Programme was developed. It ultimately was not picked up, but the pilot was posted on their official YouTube page. The proof-of-concept took the form of a prerecorded news program, mixed with goose themed commercials and home videos, and featured a reporter asking a gardener about his work, only for the goose to once again rear its ugly head.
+
+
+== References ==
+
+
+=== Sources ===
+"What Does It Take To Make Untitled Goose Game". GamesTM. No. 206. Future. 1 November 2018. pp. 8–11.
+
+
+== External links ==
+
+Official website 
+Untitled Goose Game entry at Know Your Meme

@@ -1,0 +1,45 @@
+Game: Riders Republic
+appid: 2290180
+Source: Riders Republic
+URL: https://en.wikipedia.org/wiki/Riders_Republic
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Riders Republic is a 2021 sports video game developed by Ubisoft Annecy and published by Ubisoft. In the game, players can participate in four main extreme sports activities, such as mountain biking, skiing, snowboarding and wingsuit flying, in an open world that meshes several locations in the Western United States in one location. It was released for PlayStation 4, PlayStation 5, Stadia, Windows, Xbox One, and Xbox Series X/S on October 28, 2021. The game received generally positive reviews upon release. A film adaptation is in development.
+
+
+== Gameplay ==
+
+The four main activities available in the game include mountain biking, skiing, snowboarding and wingsuit flying. Ubisoft described the game as a "massively multiplayer sports game", as up to 64 players can compete against each other in Mass Races competitions. The PS4 and Xbox One versions only support about 20 players. In addition, players can also play a 6v6 competitive multiplayer mode named "Tricks Battle Arena". In this mode, each team competes in an arena and needs to perform as many tricks as possible in order to score Trick points. The team with the highest score is the winner. The game is set in an open world which meshes seven distinct locations in the Western United States, namely Bryce Canyon, Yosemite Valley, Sequoia Park, Zion, Canyonlands, Mammoth Mountain, and Grand Teton, into one enormous single map. The game features social hubs in which players can meet and interact with each other.
+The game features a career mode, in which players engage in six different disciplines (Bike Freestyle, Bike Racing, Snowboard/Ski Freestyle, Snowboard/Ski Racing, Wingsuit, Rocket Wingsuit). Each of them has its own progression path. Gradually, players would reach important milestones, such as being invited to join competitions like UCI Mountain Bike World Cup, Red Bull Rampage, Red Bull Joyride and the X Games, and signing with real-world sports sponsors. The final objective is to participate in "Riders Ridge Invitational", described as "a never seen before multi-sport competition featuring all sports in one single event". In this event, players can switch between the sport activities at will. As players progress in the career mode, they will unlock new gears, outfits and cosmetic items.
+
+
+== Development ==
+The game is currently being developed by Ubisoft Annecy using Ubisoft's proprietary game engine AnvilNext 2.0, from the team that created Steep, also an extreme sports game, in 2016. Development of the game started in 2017, and the development team expanded to include members from other Ubisoft's studios in Montpellier, Belgrade, Pune, Berlin, Kyiv, and Odesa. The development team recreated the national parks using GPS data, and even though the seven locations are distinct regions in real life, the team integrated them together in order to create one single open world for players to explore. The studio also sent a team to visit these parks to ensure that they are accurately represented in the game.
+Like Steep, the game is not a simulation video game, as the team designed the gameplay to be as accessible as possible. The team worked with experts and athletes to ensure that each activity featured is authentic. For instance, different bike brands have stats that would "mimic real life behaviour". The gameplay was designed to be a social game which emphasizes "excitement and camaraderie of online community". This decision was made after Steep was offered as a free game for PlayStation Plus members in early 2019, which went on to attract more than 10 million new players.
+Riders Republic was announced on September 10, 2020 during the Ubisoft Forward digital event. The game was set to be released on February 25, 2021, but it was delayed by Ubisoft in January 2021. The game was then set to be released on September 2, 2021, but was delayed to October 28. Players who pre-ordered the game would receive the  Bunny Pack, which adds additional cosmetic items into the game. The game would be supported extensively with post-launch downloadable content. It was released for Windows, PlayStation 4, PlayStation 5, Stadia, Xbox One and Xbox Series X on October 28, 2021.
+A skateboarding add-on was released on September 26, 2023.
+
+
+== Reception ==
+
+Riders Republic received "generally favourable" reviews, according to review aggregator website Metacritic. Game Informer awarded the game a 6.75, outlining that "Even though I liked the racing in Riders Republic, overall, I can't say I enjoyed my time with it. It's a missed opportunity of a game, focusing on all the wrong things, making for an experience worth skipping."
+Other reviewers were much more positive in nature, such as GamesRadar, saying that it "prioritizes fun, freedom, and community".
+
+
+=== Awards and accolades ===
+Riders Republic was nominated for Best Sports/Racing Game at The Game Awards 2021, as well as Sports Game of the Year at the 25th Annual D.I.C.E. Awards.
+
+
+== Film adaptation ==
+On May 14, 2025, a film adaptation of Riders Republic was announced with Adil El Arbi and Bilall Fallah set as directors and Gaumont co-producing alongside Ubisoft Film & Television.
+
+
+== Notes ==
+
+
+== References ==
+
+
+== External links ==
+Official website

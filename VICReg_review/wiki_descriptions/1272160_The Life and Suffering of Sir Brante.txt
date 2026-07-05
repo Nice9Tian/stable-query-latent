@@ -1,0 +1,42 @@
+Game: The Life and Suffering of Sir Brante
+appid: 1272160
+Source: The Life and Suffering of Sir Brante
+URL: https://en.wikipedia.org/wiki/The_Life_and_Suffering_of_Sir_Brante
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+The Life and Suffering of Sir Brante is a text-based 2021 role-playing video game developed by Sever and published by 101XP. Players make choices in a branching storyline.
+A sequel, The Life and Suffering of Prince Jerian, is set to release on the 20th of July 2026.
+
+
+== Gameplay ==
+Players make decisions about the life of Sir Brante, a commoner born in a fictional feudal kingdom, from birth to death. This is done similarly to classic Choose Your Own Adventure-style gamebooks. Player choices contribute to statistic and relationship changes, which can affect what choices unlock later in the story, and ultimately what ending the story will receive.
+
+
+== Setting ==
+The story takes place within the Blessed Arknian Empire, a country which claims to have united the entire world-continent under its banner. This world was created by two deities, the Elder and the Younger, who are together known as the Twins and have directly shaped the design of civilisation over the ages, imparting a moral code, a set of laws, a rigid social hierarchy, and an understanding of magic to mortals.
+When a mortal dies in this world, it is not necessarily the end for them. Although mortals born into the zenith of society, such as the royal family, are held to a higher standard by the Twins and granted only one death before their souls are judged and sent to either the peak or the foot of the Pillar (equivalent to Heaven or Hell, with the Pillar representing the universe), the Twins typically permit commoners up to three "Lesser Deaths" over their lifetime, with their fourth, "True Death" prompting the final judgement. Those who experience a Lesser Death are resurrected, with any fatal injury or disease fully healed and a black mark imprinted on their arm to remind them of the ordeal.
+Society in the Arknian Empire is stratified not just along the lines of the three Lots, but also between humans and Arknians. Arknians, a race of tall blue-skinned humanoids with inhumanly long lifespans, believe they were given right to rule over Humans by the Twin Gods. As the name suggests, Arknians founded and rule the empire. They highly revere traditions and their ancestors, and advocate traditions like duelling which enforce a status quo of might makes right throughout the empire.
+
+
+== Plot ==
+Sir Brante is born in the city of Anizotte in the year 1118 to parents of different social ranks, and as a result he holds the rank of a commoner through his mother, and also some of the privileges of noble status through his father. This makes Sir Brante uniquely positioned to pursue any of the three Lots available in the empire. The story follows Sir Brante at different chapters of his life over several decades: childhood, adolescence, entering college, his professional career, and the Revolt. The last chapter sees revolutionaries who are discontent with the Empire's social hierarchy launch an open rebellion that threatens Anizotte and can have dire consequences for the Empire and humanity, with Sir Brante's previous choices determining whether he is forced to flee the wrath of the rebels, or whether he is in a position to fend off their attack, or perhaps even to lead the rebellion. There are various outcomes to Sir Brante's life, ranging from the Empire surviving and enacting reforms, to the Twins being grievously blasphemed and abandoning humanity in disgust forever, to Sir Brante pursuing heresy and becoming a god as powerful as the Twins.
+
+
+== Development ==
+Developer Sever is based in Tomsk, Russia. 101XP published The Life and Suffering of Sir Brante for Windows on March 4, 2021, and for Xbox One and PlayStation 4 on February 10, 2022.
+
+
+== Reception ==
+The Life and Suffering of Sir Brante received positive reviews on Metacritic. RPGFan encountered a software bug in their playthrough that they felt ruined their ending. However, they said up to that point it had the makings of editors choice because of its writing and gameplay. The Games Machine said when judged as interactive fiction, it is excellent. Though it lacks a German translation, Gameswelt praised the writing and role-playing aspects.
+
+
+== See also ==
+Choice of games
+
+
+== References ==
+
+
+== External links ==
+Official website

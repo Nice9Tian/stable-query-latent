@@ -1,0 +1,50 @@
+Game: Asphalt Legends Unite
+appid: 1815780
+Source: Asphalt Legends
+URL: https://en.wikipedia.org/wiki/Asphalt_Legends
+Match score: 7.00
+Retrieved: 2026-07-04
+--------
+Asphalt Legends (launched as Asphalt 9: Legends; formerly known as Asphalt Legends Unite) is a 2018 arcade-style racing video game developed by Gameloft Barcelona and published by Gameloft. It is the ninth main installment in the Asphalt series. It was released on July 25, 2018, for iOS, Android, and Microsoft Windows, with versions for the Nintendo Switch, Xbox, PlayStation, and Nintendo Switch 2 later releasing in 2019, 2021, 2024, and 2026, respectively. In 2024, the major "Unite" update was released, with updated graphics, a new UI, and a retitle to Asphalt Legends Unite. Gameloft would later retire this branding in 2025 and return the title to Asphalt Legends.
+Several new features were added compared to previous editions, such as more playable vehicles, a new control layout, more race modes, and the "Adrenaline" nitro features reimplemented as "Nitro Shockwave" (previously known as "Nitro Pulse") from Asphalt 6: Adrenaline (2010). The graphics were significantly enhanced compared to its predecessor, Asphalt 8: Airborne (2013).
+
+
+== Development ==
+The game was developed by Gameloft's Barcelona Studio, which also made Asphalt 8: Airborne and co-developed Asphalt Xtreme with Gameloft Madrid. The game uses the Bullet physics engine and the Jet game engine. Continuing the tradition from Asphalt 8, the game features licensed soundtracks with a few removed due to their licenses being expired.
+The first rumors of Asphalt Legends began in 2016, with Gameloft posting pictures on their Twitter account, showing Gameloft Barcelona making a map that had not been seen in Asphalt 8: Airborne. According to a Gameloft press release, the game was scheduled to be released in the summer of 2017, and the name was going to be under the name: Asphalt 9: Shockwave.
+On April 1, 2016, Gameloft posted an April Fools joke trailer on their Facebook page that the game was going to be called Asphalt 9: Foolspeed, accompanied by outdated footage of Asphalt 4: Elite Racing.
+In February 2018, Gameloft was doing a live Q&A stream with one of their community managers at Gameloft London, where he responded to questions about Asphalt 9, and said that he was not allowed to comment on the future of the Asphalt series. Four days later, however, a trailer was revealed for Asphalt 9: Legends.
+The game was first released for iOS as a soft launch on February 26, 2018 in the Philippines, then in Thailand on March 22, 2018. It was later released for Android as a soft launch in the Philippines on May 17, 2018. Pre-registration for the worldwide launch began on June 29, 2018. Around the same time, users could pre-register the game on Google Play. On July 24, 2018, Gameloft announced the game's release date of July 26 on a Facebook and YouTube Livestream. However, the game was released a day earlier than planned, and reached 4 million downloads across all platforms within a week.
+On June 6, 2019, Gameloft announced that the game would be available on the Nintendo Switch. The port was released on October 8, 2019, which the game permitted Joy-Con and Touchscreen controls when using the Switch in Handheld Mode, allowing use of either the screen itself or of the controllers.
+A version for macOS Catalina was released on January 17, 2020.
+An Xbox One and Series X/S version was announced in April 2021 and released on August 31, 2021, with cross-progression with the already released Microsoft Store version. An arcade adaptation, developed by IGS and Wahlap Technology under a license from Gameloft, was released worldwide in 2021 under the name Asphalt 9 Legends: Arcade DX.
+A Steam version was announced in July 2022 and was released on August 2, 2022.
+In March 2024, Gameloft announced that an expansion update would be released on July 17, 2024, featuring cross-play compatibility, cloud-based progression besides PlayStation and Switch versions, dynamic lighting for the game's graphic engine, a brand new user-interface, and a new Singapore track. The expansion also changed the title of the game to Asphalt Legends Unite, and the game was also released for the PlayStation 4 and PlayStation 5. However, Gameloft announced on July 16, 2024 that the Nintendo Switch version of Asphalt Legends Unite would be delayed due to unforeseen circumstances. It was finally released on August 19, 2024.
+An Epic Games Store version was released on July 14, 2025. Beginning with the "Legacy of Speed" update released on July 24, 2025, Gameloft discontinued the Unite branding and retitled the game to Asphalt Legends for this update.
+A Nintendo Switch 2 version of the game was released as an upgrade to the already existing Switch version on February 16, 2026 for the Flames of Fortune Update.
+
+
+== Gameplay ==
+
+The gameplay in Asphalt Legends is similar to other Asphalt games. Some differences include the new "nitro" system, a greater emphasis on jumps (which are higher and more numerous), and new features such as double-tapping the brake pedal to force vehicles into a 360-degree flat spin, which can be used to knock out other cars, boost the nitrous bar, or gain extra height on large jumps. Players can choose between three drive modes: Tap-to-steer (which requires the user to tap on the left and right sides of the phone to move it in that direction or brake), Tilt-to-steer (which uses the gyroscope of the phone to steer), and TouchDrive, intended for beginners or casual players (in which the player selects routes and stunts by swiping left and right).
+There were 48 cars featured in the game when it soft-launched, but this increased to 52 by the time of its worldwide release. There are currently 300 cars, as of the 'Legacy of Speed' expansion update. As in previous games, each of the cars belongs to one of five classes, progressively higher performing and less common: D, C, B, A, and S. The player starts with the first car in the lowest class (Class D), the Mitsubishi Lancer Evolution X and ends with the car in the highest class (Class S), the Arash Imperium.
+The game features several race tracks, with new locations for this edition including: Cairo (including Giza), the Himalayas, Wyoming (named U.S. Midwest), Scotland, the Caribbean, Osaka, Auckland (featuring race track-inspired aesthetics), Buenos Aires, Greenland, Tuscany, and Norway. Several locations from previous games were also brought back, such as San Francisco, Rome, Shanghai, New York, Nevada, and Paris. The Legends Unite expansion introduced a new location, Singapore, which was subsequently followed by Chicago, San Diego Harbor (reintroduced from Asphalt 8: Airborne, with certain routes connected to Los Angeles and Cairo), and India.
+The game offers five game modes: Career, Multiplayer, Daily Events, Gauntlet, and Seasonal Events (Grand Prix, Starway, Special Event, Spotlight Event, Showroom, and Drive Syndicate), which includes nine race types.
+
+
+== Reception ==
+
+Asphalt Legends was praised for its improved graphics, new lighting effects, gameplay, and introduction of cross-platform play, private lobbies, and cross-save. However, players also criticized blueprint grinding, limited energy refills, and aggressive monetization that made progression feel like pay-to-win.
+Prasad of GSMArena.com wrote: "Visually, Asphalt 9 is stunning and quite possibly the best-looking game on the mobile platform today", while TechCommuters' review stated, "Regardless of the platform you're playing on, the game delivers...With a wide variety of cars, accessories, tracks, and events, you can play this game for a long time without any dull moment." Nick Tylwalk of Gamezebo also praised the graphics, but wrote that the "blueprint system can be a mixed bag and there are times when you feel stuck, progression-wise." Vishal Mathur of News18 mentioned "every time you run a wheel off the road, the dust that gets thrown up is finely detailed. The cars look very realistic too... However, it isn't exactly easy to get exotic cars. As with most racing games, you start from the bottom of the pyramid and then work your way up. In many races, the rewards that you get are blueprints of vehicles. You will need to collect the required number of blueprints for the car that you are eyeing before you can unlock it. This is slightly difficult, and we feel that element has been added to ensure that players remain active for longer on the game, in the pursuit of their favorite car."
+The game won the award for "Sports Game" at the 2019 Webby Awards.
+Asphalt Legends also won a 2019 Apple Design Awards which became the racing game to win the Design Award..
+
+
+== Notes ==
+
+
+== References ==
+
+
+== External links ==
+Official website

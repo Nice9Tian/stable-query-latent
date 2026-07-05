@@ -1,0 +1,30 @@
+Game: Lost Ruins
+appid: 1306630
+Source: Lost Ruins
+URL: https://en.wikipedia.org/wiki/Lost_Ruins
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Lost Ruins is a 2021 action survival metroidvania video game developed by Altari Games and published by DANGEN Entertainment.
+
+
+== Plot ==
+In Lost Ruins, the player controls a young woman (known as "Heroine" throughout the game), with no memories of who she is. Summoned to a dungeon, she is told by the mage Beatrice that she has been recruited to defeat the Dark Lady, who has been sealed away elsewhere in the castle. Beatrice tells the woman that defeating monsters guarding the Dark Lady will help restore her memories.
+
+
+== Development and release ==
+Developed by South Korean studio Altari Games and published by DANGEN Entertainment, the game was released on PC through Steam on May 13, 2021. The game's art style is anime-inspired. It is an action survival game, as well as a 2D side-scroller.
+On June 6, 2022, the game received a release on the PlayStation 4, Nintendo Switch, and Xbox One platforms. The game later received a physical release through Red Art Games, set to ship in Q2 2024. In December 2023, it was included as a free game as part of GOG's winter sale.
+
+
+== Reception ==
+Lost Ruins received mixed reviews from critics, holding an average critic score of 59/100 on the review aggregator Metacritic.
+In a 7/10 review of the game, Trent Cannon of Nintendo Life wrote that "Between the pixel art style and punishingly difficult combat, this game is a retro love affair. Unfortunately, that isn't always a good thing". He called the game's combat "frustrating" and "a little repetitive", though added "there is enough exploration and weapon variety to ensure that there will be a combat style" to suit the player. Cannon also wrote that "the most appealing part of Lost Ruins is the retro-inspired pixel art, which looks great in both handheld and docked modes on the Switch", but conceded that darker areas were prone to blend together in the background.
+Graham Smith of Rock Paper Shotgun was critical of the game's genre-blending, writing "Is there a subgenre or a taxonomy that helps to categorise this separately from Dead Cells, or do we just call this an action-platformer/metroidvania and then start piling on the adjectives? Can we all agree that 'roguelike' has lost all meaning now?" Smith also criticized the game's anime art style, calling it "a bit uncomfortably horny". Alana Hagues of Nintendo Life gave a more positive review of the game's art, writing that its "gorgeously-lit environments" helped "to match the grandeur" of bosses in the game and showcased "the very best of indie pixel art prowess".
+
+
+== References ==
+
+
+== External links ==
+Official website

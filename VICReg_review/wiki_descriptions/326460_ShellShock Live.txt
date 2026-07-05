@@ -1,0 +1,24 @@
+Game: ShellShock Live
+appid: 326460
+Source: ShellShock Live
+URL: https://en.wikipedia.org/wiki/ShellShock_Live
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+ShellShock Live is a multiplayer artillery strategy video game developed and published by kChamp Games based in California, United States. It is the successor of two flash games in the ShellShock Live series released between 2010 and 2012 by the same developer. It was released on platforms such as Microsoft Windows, Mac, Linux, Xbox One, and PlayStation 4 and is now available on mobile platforms Android and iOS as of May 12, 2022.
+
+
+== Gameplay ==
+
+Players control tanks in a 2D landscape. They aim and shoot the enemy tanks to defeat them with their own in team or free-for-all matches. Shots can be fired after maneuvering its trajectory by adjusting its angle by 360° and power by 0-100. Up to 8 players can play in a match. There are nine game modes and more than 400 weapons that can be obtained by leveling up, completing challenges, or buying in the shop. The game also offers stat and cosmetic upgrades for player tanks and its maps.
+
+
+== Release ==
+It was released as early access on March 11, 2015 on Steam for PC. On March 8, 2019 it was released on Xbox One  and on September 13 of the same year on PlayStation 4. On May 12, 2022, the developers announced on Steam that the game was now available for iOS and Android devices. The release date as well as a beta version had been announced in previous Developer Updates.
+
+
+== External links ==
+Official website
+
+
+== References ==

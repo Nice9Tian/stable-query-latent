@@ -1,0 +1,57 @@
+Game: Back 4 Blood
+appid: 924970
+Source: Back 4 Blood
+URL: https://en.wikipedia.org/wiki/Back_4_Blood
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Back 4 Blood is a 2021 first-person shooter game developed by Turtle Rock Studios and published by Warner Bros. Games. It was released on October 12, 2021, for PlayStation 4, PlayStation 5, Windows, Xbox One, and Xbox Series X/S.
+The game is considered to be a spiritual successor to the Left 4 Dead series, and carries over several key gameplay pillars, such as a strong emphasis on cooperative teamwork, and an AI system called the "Game Director", which dynamically modifies the environment, placement of enemies, items, and obstacles in response to players' progression and behavior.
+
+
+== Gameplay ==
+In the game's primary player versus environment game modes, players join a four-person team of post-apocalypse survivors called Cleaners, who must fight their way through levels populated by zombie-like monsters called The Ridden. Teammates are either controlled by other players or AI bots depending on matchmaking preferences and player availability. A feature of Back 4 Blood is cards. At the start of each level, players need to build their deck with cards that adjust various elements of gameplay, such as modifying the player's health, damage, and stamina. Along with player cards, the AI Director will use Corruption cards against the player to hinder their progress. The AI can spawn extra enemies, activate a fog effect, and increase the size of the horde. The game features pre-defined hero characters who have preset attributes and abilities, and players can purchase upgrades and items with an in-game currency called Copper.
+The game has an eight-person player versus player mode called Swarm, where a team of four players assume the role of Cleaners, and the other team of four control mutated Ridden. The teams are tasked with eliminating one another within a closed area.
+
+
+== Plot ==
+
+
+=== Overview ===
+A parasite called "the Devil Worm" (implied to be of extraterrestrial origin) infects most of humanity, turning them into vicious undead mutants called the "Ridden". One year after the beginning of the outbreak, pockets of humanity attempt to survive in the post-apocalyptic world. A group of veteran survivors called the "Cleaners" fight the Ridden and defend Fort Hope, a settlement within fictional Finleyville, Pennsylvania.
+In the primary game modes, the player can control one of 12 Cleaners: Walker, a United States Army Ranger veteran and de facto leader of the Cleaners; Chris, the eldest Cleaner nicknamed "Mom" because of her maternal attitude; Holly, a brash fighter who wields a baseball bat named Dotty; Evangelo, an optimistic recruit; Hoffman, a socially awkward survivalist and conspiracy theorist; Seo-yeon, who is nicknamed "Doc" for being the group's medic and scientific expert; Jim, an experienced hunter and marksman, Karlee, a cynical lone wolf, Heng, a survivalist and chef at heart, Sharice, a tough as nails former firefighter, "Prophet" Dan, a protector for "the light's chosen", and the newest cleaner, Tala, a former cult member of the children of the worm.
+
+
+=== Story ===
+The game's campaign begins with Walker, "Mom", Evangelo, and Holly, arriving at a settlement in Evansburgh to trade supplies. A horde of mutated Ridden suddenly swarm and overrun Evansburgh. As the team retreats to Fort Hope, their commander, General Phillips, has them demolish the Washington Crossing Bridge to delay the Riddens' advance.
+At Fort Hope, the team finds more Ridden attacking their stronghold and overrunning the town outside its walls. With the help of Hoffman, Karlee, Doc, and Jim, they successfully defend the fort and rescue survivors. The Cleaners are sent to a mine where the Ridden hordes have been emerging from. After sealing the mine, the Cleaners raid a police station and a crashed military cargo plane to secure more armaments.
+Phillips sends the Cleaners to another location to extract Doctor Rogers, a scientist who has developed a chemical weapon called T-5 that is significantly effective against the Ridden. After successfully extracting Rogers and his research materials, the Cleaners travel to an abandoned research and quarantine center to collect materials to produce T-5. There, the Cleaners discover a mass grave, which has become a breeding ground for the Ridden and their new mutant variants.
+After securing the T-5 compounds, the Cleaners fly back to Fort Hope in a helicopter piloted by Rogers, and see Fort Hope being attacked by a massive burrowing Ridden called "the Abomination". The Cleaners weaken the Abomination with a T-5 payload before their helicopter crashes, killing Rogers. On the ground, the Cleaners neutralize the Abomination together. With Fort Hope saved, Walker rallies the Cleaners to hunt down more Abominations and turn the tide against the Ridden.
+During this time, the Cleaners Heng and Sharice join the team due to the surge of "Ridden Hives" which are popping up across Evansburgh and Finleyville. The team venture down into these Hives to clean them out of Ridden, see proof of other groups who are brave enough to venture down into the hives, and collect "Skull Totems" to trade with a mysterious group known as "The Collectors".
+
+
+== Development ==
+Back 4 Blood was developed by Turtle Rock Studios, including seven of the developers who worked on the demo that became Left 4 Dead. According to the development team, Back 4 Blood features a more expanded story than the Left 4 Dead games, and has a more uplifting tone than other zombie games. Phil Robb, the game's creative director, added that the Cleaners are more confident and capable, unlike the everymen from Left 4 Dead. The team included the card systems because they felt that it can keep Back 4 Blood dynamic and challenging for veteran players; Turtle Rock added a Classic mode, a more accessible experience that removes the cards, for new players.
+Back 4 Blood was announced in March 2019 by Turtle Rock and publisher Warner Bros. Games. It was unveiled during The Game Awards 2020, with the closed alpha releasing December 17, 2020. Initially set to be released on June 22, 2021, the game was delayed to October 12, 2021 for PlayStation 4, PlayStation 5, Windows, Xbox One, and Xbox Series X/S. An open beta was released in mid-August 2021. The first phase began with an early access from August 5 to August 9 for players who had pre-ordered Back 4 Blood. The second phase began and was available for all players from August 12 to August 16.
+In January 2022, during a Reddit AMA, Turtle Rock Studios confirmed plans for future paid downloadable content, to which new characters will be tied. The first expansion, titled "Tunnels of Terror", was released on April 12, 2022. The expansion introduces two playable characters and a player-versus-environment activity named Ridden Hives. The second expansion, titled "Children of the Worm", was released on August 30, 2022. This expansion introduces a playable cleaner named "Prophet" Dan, an act for the player-versus-environment campaign mode and four new enemies. On December 6, 2022, the third and final expansion, "River of Blood" was released. In January 2023, Turtle Rock announced that they had shifted their development resources to their next project, and no additional content updates would be released for Back 4 Blood.
+
+
+== Reception ==
+
+Back 4 Blood received "generally favorable" reviews for the PC and PlayStation 5 versions but  "mixed or average" reviews for the Xbox Series X/S version, according to review aggregator Metacritic. Fellow review aggregator OpenCritic assessed that the game received strong approval, being recommended by 71% of critics.
+Neil Bolt, writing for horror magazine Bloody Disgusting, said that "the game still often plods along casually for periods before unleashing far too much confusion and chaos at once", adding that "given the game this is trying to build upon, seemingly random encounters make sense, but there needs to be a level of puppeteering behind the scenes to ensure its not a mess in play", with his conclusion being that Back 4 Blood is  "almost unpleasant to play at times" but that it was a "decent" game. Polygon cited it as the 47th best game of 2021.
+
+
+=== Sales ===
+As of October 26, 2021, Back 4 Blood has had over 6 million players since its launch. By February 2022, more than 10 million players have played the game. Warner Bros. declared it as one of the fastest-selling original intellectual properties released for consoles in 2021. It was the 18th best-selling game in the US in 2021.
+
+
+=== Accolades ===
+The game was nominated at the Golden Joystick Awards 2021 for the "Best Multiplayer" category. The game was also nominated at The Game Awards 2021 for "Best Action Game" and "Best Multiplayer Game", as well as nominated for "Online Game of the Year" at the 25th Annual D.I.C.E. Awards.
+
+
+== References ==
+
+
+== External links ==
+Official website

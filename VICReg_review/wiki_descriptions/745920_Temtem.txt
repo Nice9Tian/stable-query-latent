@@ -1,0 +1,39 @@
+Game: Temtem
+appid: 745920
+Source: Temtem
+URL: https://en.wikipedia.org/wiki/Temtem
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Temtem is a massively multiplayer online role-playing game (MMORPG) developed by Spanish developer Crema, and published by Humble Bundle. It was released in early access through Steam on January 21, 2020, and PlayStation 5 on December 8, 2020, with the Nintendo Switch and Xbox Series X/S versions released alongside the full release of the game on September 6, 2022. Temtem uses the Unity development engine, and is a creature-collection video game greatly inspired by the Pokémon series. The game was partly funded through the crowdfunding platform Kickstarter, from May to June 2018.
+
+
+== Synopsis and gameplay ==
+Temtem's gameplay is largely inspired by Game Freak's Pokémon series. Players explore the area capturing the eponymous Temtem creatures and command them in double battles against other Temtem controlled by an NPC or another player. All battles in Temtem happen in a 2x2 environment, similar to double battles in Pokémon series.
+In the game, players assume the role of a novice Temtem tamer who starts their journey around the six floating islands of the Airborne Archipelago while facing the threat of Clan Belsoto, an evil organization that plans to take over the islands by force.
+
+
+== Development ==
+Temtem is developed by Crema, a Spanish game development studio. The game was first announced on crowdfunding platform Kickstarter in May 2018, with an initial fundraising goal of €61,000. Temtem was launched on Steam's Early Access on January 21, 2020.
+On August 6, 2020, it was announced that Temtem would be released on Nintendo Switch, PlayStation 5 and Xbox Series X/S in 2021. On October 26, 2020, it was announced that the game would be releasing in early access on PlayStation 5 on December 8, 2020.
+
+
+== Sales ==
+Temtem sold over 500,000 units on Steam in its first month. In September 2022, the game had attracted over 1 million players.
+
+
+== Legacy ==
+In June 2023, Crema and Humble released a free-to-play variant of the game, titled Temtem: Showdown, with zero microtransactions. On March 4, 2024, Crema announced it would stop developing new content for the game as of June. Temtem will remain online and all season pass content will be playable. 
+Crema released Temtem: Swarm, a bullet heaven spinoff game inspired by Vampire Survivors, in 2024.
+
+
+== Animated series ==
+In June 2023, it was announced that an animated series adaptation based on the online game named Tentem is being developed by Mediawan's traditional animation studio Somewhere Animation alongside Temtem's developer Marla with producer Josh Hamilton came on board as showrunner of the new series.
+
+
+== References ==
+
+
+== External links ==
+Official website 
+Official Wiki

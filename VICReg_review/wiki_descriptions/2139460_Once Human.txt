@@ -1,0 +1,45 @@
+Game: Once Human
+appid: 2139460
+Source: Once Human (video game)
+URL: https://en.wikipedia.org/wiki/Once_Human_(video_game)
+Match score: 6.87
+Retrieved: 2026-07-04
+--------
+Once Human is a free-to-play post-apocalyptic third-person open world multiplayer survival game. Developed and published by Starry Studio, a NetEase subsidiary, the game was released for Windows on July 9, 2024, and for iOS and Android on April 23, 2025. It is also set to release for PlayStation 5 and Xbox Series X/S in 2026.
+
+
+== Gameplay ==
+Once Human gameplay is a blend of survival and looter shooter mechanics, taking place in a shared sandbox map in an open world. The player loads into the environment and is taken through a tutorial and series of early missions, designed to teach the player how the survival elements work, unlock their individual systems and progress the game narrative.
+Once the player makes it to the main menu, they will choose which scenario they wish to play. Scenarios are story driven narratives based on the main scenario; Manibus. Once a scenario is picked the player will choose which server they wish to join.  Servers have a timed shelf life and wipe after that time expires. Players can choose the most recently created server to have more play time or venture into ones that are older.
+If they wish to be in a server that has been open long enough to unlock timed content, such as memetics, which serve as skills the player can choose to unlock with ciphers, they are earned by completing quests and leveling up.  Player characters are saved along with high end items that survive in a player owned space called Eternaland, an isolated island where a player can store high end items, gear and deviants, that may be carried into new scenarios.  Players are limited on how much they can pull into a new scenario based on the items' rarity. In Eternaland, the player may build anything they have unlocked to build using dust, a material that is created by items within the players inventories that are not allowed to be carried into Eternaland.
+Survival elements of the game include gathering resources, crafting items, base building, eating, and managing the sanity meter system. The player must eat and drink to keep up their hunger and hydration meter. Keeping these meters above a certain threshold grants the player various buffs to health and damage, among others. Certain behaviors, like spending prolonged time in supernatural areas, decreases the sanity meter, which in turn reduces the player's maximum health pool. The player must consume particular resources to restore their sanity meter, or must rest in a bed.
+Early gameplay consists primarily of gathering resources and materials to build a base camp and obtain weapons and ammo in order to explore the map and engage in various main missions, side missions, activities, and world events. Strongholds are large locations on the map which occupy particular areas. They are populated with enemies and hold various treasures and resources. Each stronghold has its own unique objectives for completion and its own theme. Every stronghold has a rift anchor, which, when activated, gives rewards and helps the player progress between monolith battles.
+Monolith battles are pivotal encounters that the player builds towards through progressing the main story and clearing the strongholds in each zone. These are boss battles where the player must complete battle phases to defeat the Monolith. There are currently three unique Monolith bosses. Silos are instance-generated dungeons populating the open world, with multiple difficulty tiers. The silos have basic and elite enemies and a mini boss at the end. Each silo offers particular rewards and can be repeated to farm resources.
+
+
+== Plot ==
+The player wakes up in an apocalyptic future with amnesia. The world had been destroyed by an event known as the Starfall, where the pollution of an alien substance called Stardust caused most living beings to mutate into violent Deviations. A mystical bird called "V" tells the player that they are a Meta-Human: a biologically enhanced human that can control Stardust. These Meta-Humans were created by a company called Rosetta, who had caused the Starfall with their reckless experiments in pursuit of human evolution.
+The main storyline follows the Meta-Human and V as they discover the horrors of Rosetta and defeat the Deviations that the company created. The world is covered in abandoned towns that the player explores, collecting items and learning about the past. Players are able to collect friendly Deviations, known as Deviants, which can help them in battle, or collect resources for them.
+
+
+=== Expansion: The Way of Winter ===
+In September 2024, the new expansion: Way of Winter was released as a new playable scenario. They scenario involves the player to once again meet with Mitsuko, one of the first metahumans and to which the mayflies get their name. Mitsuko informs the player that even with the monoliths defeated, she still feels weakness in the dimensional plains is not getting better.  She notices a presence outside of her Eternaland home and the player goes to investigate.
+They are greeted by a mysterious figure with an opera-like mask named Igna. Igna, who the player can see is a Metahuman--as Igna has a charred arm that is clearly cindering--is delighted to meet the player and claims that he knew this realm existed but was not powerful enough to enter it until now. Igna tries to recruit the player to his side but the malevolent presence of Igna causes the player to decline. Igna, disappointed departs and warns the player not to get in their way. The player returns to Mitsuko who--based on Igna's energy and departure--came from the icy north, a previously locked section of the map as it was considered lost and inhospitable.
+Mitsuko tasks the player to go to the north, where she claims was the last place she knew her mentor went before he disappeared, and maybe the player can find some help. The player departs to the north and goes to the closest settlement of their spawn point. The player encounters members of The Column, survivors of Starfall who have been fighting against the Vultures and Rosetta for years. They inform the player that the Vultures and Roseta have formed an alliance since the north was cut off and both factions suffered heavy losses. They task the player to investigate the nature of their alliance and look for their leader, Roland, who has since disappeared after an ambush not too long ago.
+As the player clears enemy strongholds, they encounter metahuman enhanced Vulture elites and enemy combat deviants. The player eventually rescues a few Column members and learns Roland is alive and was taken west where an active volcano erupted years ago and destroyed the west's largest settlement. The player travels and continues to clear enemy bases in the west until they eventually discover Roland, alive but with a cindering arm similar to Igna's. Roland claims he was captured on purpose to learn more about Igna who has become the Vultures leader and convinced Rosetta to aid them in their quest to create or resurrect The Old Ones, massive deviants created by Rosetta experiments and contained in pocket dimensions. Roland claims Igna experimented on him by injecting something into his arm repeatedly.
+Many died in this experiment but Roland is the only who has survived. The player later discovers that when Igna was young, he gained his powers and revered deviations as gods. His family rebuked his beliefs, causing Igna to lash out and cause the volcano to erupt and directed the flowing lava to the settlement, destroying it and allowing it to be overrun with deviations. The player and Roland venture to the Vulture base to confront Igna, who is about to awaken his own created Old One and refuses to surrender.
+Igna casts himself into the lava causing his deviant creation, a Chaosweaver, to awaken. The Chaosweaver departs, leaving the bases, all while the player can hear the faint yet thunderous laughter of Igna. Roland informs the player there is nothing they can do and must return to the Column to figure out their next moves. The scenario continues as the player expand their base, gather better materials and even create a control tower that can normalize the weather, enhance the surrounding land, and have the chance to fight Chaosweavers in the wild.
+
+
+== Reception ==
+
+Once Human received "mixed or average" reviews according to the review aggregation website Metacritic. Fellow review aggregator OpenCritic assessed that the game received fair approval, being recommended by 54% of critics. IGN's Justin Koreis gave the game a "great" rating of 8/10.
+The game was popular on release, with over 230,000 people playing concurrently on video game service Steam. The developers struggled to meet the demand, and players were forced to wait in queues before entering the game.
+On August 16, 2024, the game ranked No. 1 in the "Top Sellers" ranking on Steam.
+
+
+== References ==
+
+
+== External links ==
+Official website

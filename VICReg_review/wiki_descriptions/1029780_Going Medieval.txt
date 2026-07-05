@@ -1,0 +1,32 @@
+Game: Going Medieval
+appid: 1029780
+Source: Going Medieval
+URL: https://en.wikipedia.org/wiki/Going_Medieval
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Going Medieval is a 2026 colony simulation video game for Microsoft Windows, developed by Serbian independent developer company 
+Foxy Voxel. Set in an alternate history 14th century Britain, the player manages a group of survivors of a deadly Black Death-like plague as they rebuild their lives in a new land.
+The game was launched as an early access on June 1, 2021, and fully released on March 17, 2026. Going Medieval has been compared to RimWorld and Dwarf Fortress due to its simulation and building complexity.
+
+
+== Gameplay ==
+The objective of Going Medieval is to ensure the survival and growth of a colony of settlers in a world inspired by Late Middle Ages Britain.
+Players have to navigate environmental conditions, external threats, and internal challenges within a procedurally generated world. Players are required to construct and manage a settlement that meets the needs of its settlers, which can develop from a small village into a fortified stronghold as the population increases and hostile encounters become more frequent and intense.
+At the start of a game, players select a starting scenario that determines the number of settlers and available resources, followed by a choice of map type (valley, hillside, mountain, or marsh). Each offers distinct terrain features, resource availability, and environmental conditions. The map is procedurally generated using seeds, which also influence the characteristics of surrounding region and the presence of neighbouring settlements. Players may customise their initial settlers by selecting their appearance, background traits, skills, and perks, all of which affect their capabilities in survival and combat.
+Gameplay combines base-building with resource management and indirect control of settlers. Players assign tasks and priorities rather than directly controlling characters, allowing activities such as construction, farming, crafting, hunting, and combat to be carried out autonomously according to schedules and task priorities. Settlement construction is fully three-dimensional represented as voxels, enabling players to dig into terrain, create underground structures such as cellars, and build multi-level fortifications.
+Survival mechanics require players to manage food production, storage, and seasonal changes while responding to random events, including bandit raids, animal attacks, blight, and environmental hazards. Settlers possess individual moods and personalities that must be managed, as poor conditions may lead to dissatisfaction or departure. Players can also engage with other settlements by sending trading caravans to friendly settlements or launching attacks against hostile ones.
+As the settlement develops, players may pursue end-game objectives that increase its prominence and reputation within the game world.
+
+
+== Reception ==
+
+
+== Notes ==
+
+
+== References ==
+
+
+== External links ==
+Official website

@@ -1,0 +1,47 @@
+Game: Cassette Beasts
+appid: 1321440
+Source: Cassette Beasts
+URL: https://en.wikipedia.org/wiki/Cassette_Beasts
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Cassette Beasts is a role-playing video game developed by Bytten Studio and published by Raw Fury. It was released for the PC on April 26, 2023, and was released for the Xbox Series X/S, Xbox One, and Nintendo Switch on May 25, 2023. It was released simultaneously on Xbox Game Pass as the day of its PC release date. It was released for Android and iOS on January 15, 2025.
+The game is inspired by the Pokémon video game series and follows the progress of the player as they transform into monsters using a cassette player while trying to return home. Cassette Beasts received generally favorable reviews from critics, who commented positively on its complexity. The game was nominated for a 2024 BAFTA Games Award, but lost.
+In June 2026, it was announced that a sequel Cassette Beasts 2002 is currently in development and will be released on the PlayStation 5, Xbox Series, Switch 2, and PC.
+
+
+== Gameplay ==
+
+Cassette Beasts is a monster-taming game that follows many common conventions of the collect and battle genre. The game is played in a third-person view, overhead perspective and consists of three basic screens: an overworld on the island of New Wirral, where the player was transported to; a side-view battle screen; and a menu interface in the form of a cassette player, where the player can configure their monsters, items, and settings.
+
+
+=== Battle ===
+The player character and companion can transform into monsters to battle other monsters. The game eschews a random encounter format, and all monsters are visible in the overworld. During battles, each monster can use attacks that are assigned with stickers, which can be transferred between different monsters. Monsters have hit points that determine if they can be used, and the player's character has their own health bar. Once both characters' own health bars reach zero, the player is sent back to Harbourtown. The player receives experience points instead of the monsters, meaning that player characters provide base stats that monsters then add to, providing freedom to try out different setups.
+Players can gain new monsters by "recording" enemy monsters during battle. Combat uses a number of debuffs and requires players to think critically about how different elements would react to one another when using different moves. The elemental strengths and weaknesses of monsters have many potential consequences, such as creating healing steam mists around water monsters by hitting them with fire attacks, or coating metal monsters with poison that lets them do extra damage on contact by hitting them with poison attacks.  Any of the game's monsters can be "fused" during combat temporarily into another monster. There are 120 monsters in the game, and also over 14,000 fusions.
+
+
+=== Overworld ===
+New Wirral, the game's overworld, is an open world. Recording certain types of monsters give the player's character more moves they can use outside of combat to explore the island. The player can receive quests from people in Harbourtown and also can receive tips on where to go next. The player can also find hidden chests and puzzles by walking around the open world and stumbling on them. The game includes a permadeath mode, where monsters that are defeated permanently die in the playthrough, and a map randomizer, to increase replayability.
+The plot of the game follows the player's character as they wake up on the beach of New Wirral, which they were transported to from Earth. The player's character attempts to return home as they are helped by other stranded people who are also stuck on the island. The player meets a number of companions during the game, and can strengthen their relationship with them by battling alongside them, completing their quests, and talking to them at a campfire while resting. Quests in the game include defeating all of the Ranger Captains, skilled members of the Harbourtown militia, a personal quest for the companion Kayleigh which involves facing down a cult which she had previously been a part of, and defeating Aleph and his "round table" of Archangels. The game includes a friendship ranking system and the player is able to engage in a simple romance with companions.
+
+
+== Development ==
+Cassette Beasts was developed by UK-based Bytten Studio, a company of two full-time staff, Jay Baylis and Tom Coxon. Both team members had previous experience working at Chucklefish and had worked on both Wargroove and Starbound among other games. They also had an animator, a character illustrator, and a musician (Jay's brother, Joel) who worked on development of the game part-time. Baylis and Coxon designed the game to be targeted at adults who had grown up with Pokémon and may be looking for a deeper story and more complex gameplay mechanics. In order to create the 14,000 possible fusions in the game, the developers made the monsters modular, allowing for parts to be combined automatically by the game. The combat in the game was inspired by Final Fantasy and Dragon Quest, specifically the aspects where status effects can halt momentum in battle. The game's plot takes inspiration from isekai, where the main character is transported in a portal to another dimension, but it twists the genre conventions by having everyone present have also been transported to the island in a similar manner. In an interview, Baylis said that this approach to the plot allowed them to put the focus on the people who were present.
+The game was developed using the Godot game engine because of its workflow efficiency, and Coxon noted that without it, they could not have developed the game by themselves. The use of the Godot engine led the team to partner with Pineapple Works to port the game to consoles. The game was released simultaneously on Xbox Game Pass on its day of release.
+The game's free 1.2 update, named Catacombs, added more moves, monsters, and a new location.  A paid downloadable content expansion named Pier of the Unknown was released on October 4, 2023.
+During the Cassette Beasts Showcase 2024 video, a few development updates were announced such as a multiplayer update, the game being released on mobile devices, and a crossover with the game Moonstone Island. The update to Cassette Beasts adding cross-platform multiplayer was released on May 20 for PC, Xbox, and Nintendo Switch.
+
+
+== Reception ==
+
+Cassette Beasts received "generally favorable" reviews, according to review aggregator Metacritic. GamesRadar+ noted that user feedback on Steam was extremely positive, with users praising the game for its low price point and comparing it positively to Pokémon.
+Several reviewers felt the game was an improvement of the Pokémon video game series. Eurogamer's Caelyn Ellis said that she loved Cassette Beasts while only liking Pokémon, and felt that it was like a remixed song that was better than the original. RPG Fan's Des Miller felt that the game's Pokémon inspiration was obvious, but that it was unique because of "its aesthetic, design, and most importantly, its heart". Rock, Paper, Shotgun's Katharine Castle noted that it was a Pokémon game for adults, describing it as an "evolutionary offshoot" of the series. Ellis agreed with Castle's sentiment, saying, "Of all the deviations from the standard Pokémon formula, the one I appreciate the most is that Cassette Beasts isn't forced to cater to younger children."
+The game's graphical and musical style was generally praised by critics. Miller called the design of the game "striking" and noted that the pixel art "shines through" in battles, but also noted that it could sometimes be tough to see information because of the color palette of the game. Ellis praised the game's music in particular, calling it "absolutely lovely" and singling out a music theme which shifts between a vocal and instrumental version when walking in and out of buildings. Miller agreed with Ellis, calling the sound design "top-notch". The Gamer's Ben Sledge said that he "liked the designs" of the monsters, but did not feel as positively about the fusions, the majority of which were procedurally generated.
+The Nintendo Switch version of the game received generally positive reviews which highlighted Switch-specific performance issues with the game. Nintendo Life's Lowell Bell noted that the game would "stutter and hitch for a minute or two" when the game was booted up, the player entered a new area on the map, and during all cutscenes.
+
+
+== References ==
+
+
+== External links ==
+Official website

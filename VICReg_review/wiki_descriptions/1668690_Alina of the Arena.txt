@@ -1,0 +1,30 @@
+Game: Alina of the Arena
+appid: 1668690
+Source: Alina of the Arena
+URL: https://en.wikipedia.org/wiki/Alina_of_the_Arena
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Alina of the Arena is a 2022 video game developed by PINIX Games, self-published for Windows, Mac, and Xbox and published by DANGEN Entertainment in 2023 for the Nintendo Switch, PlayStation 4, and PlayStation 5. The game is a deck-building roguelite in which players defeat enemies in an arena. Upon release, the game received generally favorable reviews. 
+
+
+== Gameplay ==
+
+Alina is a deck-building roguelite in which the objective of the game is to survive a series of rounds to complete a run, and collect cards to add new abilities to deal with the increasing difficulty of enemies. Each run is based on a series of zones, made up of five stages of combat and a boss battle. In between combat rounds, players can access a shop to acquire new cards, recharge certain abilities, or buy single-use consumables. 
+Combat takes place in a turn-based area in which players can use available mana to play offensive or defensive cards. The cards and their abilities are determined by the weapons held by the player and the selected class at the start of the game, including a basic class, and seven others, including the Warrior, Mercenary, Bandit, Hunter, Pyromancer, Samurai and Deprived. At the start of a turn, players also can use an initiative card to move a tile. During rounds, an in-game audience in the arena responds to successful use of combos on enemies, prompting them to cheer and add gold, weapons or potions that can be collected from the battlefield.
+
+
+== Development and release ==
+Alina of the Arena was developed by Taiwan-based studio PINIX, and released in early access on Steam on 19 January 2022. The game's console version was announced by publisher DANGEN Entertainment and released for PlayStation 4, PlayStation 5, Xbox One, Xbox Series and Nintendo Switch on 23 November 2023.
+
+
+== Reception ==
+
+Alina of the Arena received "generally favorable" reviews, according to review aggregator Metacritic. Fellow review aggregator OpenCritic assessed that the game received strong approval, being recommended by 57% of critics. Stating the game "succeeds where a lot of prettier deckbuilding games fall flat on replayability", Screen Rant described the game as "intuitive to pick up but extremely difficult to master", although felt it had a "steep learning curve", "lack of in-depth tutorials" and "dull looking enemies".
+
+
+== References ==
+
+
+== External links ==
+Alina of the Arena at MobyGames

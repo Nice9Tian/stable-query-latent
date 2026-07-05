@@ -1,0 +1,5 @@
+This title is a narrative-driven sequel that begins at the exact moment the previous installment ends. It follows a troubled young woman whose inner monologue and conversations reveal a state of intense anxiety, fear, and uncertainty. The writing is structured through fragmented, layered dialogue that often circles around feelings rather than direct explanation, creating a surreal psychological atmosphere.
+
+The experience centers on exploring her distorted perception of reality. Visual presentation uses stylized pixel art to reflect how the world appears through her mind, while the soundtrack is described as oppressive and thick with tension. The game emphasizes unusual, pyramid-like verbal constructions and a psychedelic narrative style.
+
+A notable mechanic is replay variability: each playthrough can differ, and some dialogue lines, images, and scenes appear only with a small chance. This encourages repeated runs and closer interaction with the protagonist to uncover everything she is hiding. Basic controls include a pause menu and a fullscreen/windowed toggle.

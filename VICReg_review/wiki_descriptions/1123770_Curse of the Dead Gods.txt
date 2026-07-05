@@ -1,0 +1,30 @@
+Game: Curse of the Dead Gods
+appid: 1123770
+Source: Curse of the Dead Gods
+URL: https://en.wikipedia.org/wiki/Curse_of_the_Dead_Gods
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Curse of the Dead Gods is a 2021 roguelike video game developed by Passtech Games and published by Focus Home Interactive. The game was released via early access in March 2020, and in full in February 2021 for Microsoft Windows, Nintendo Switch, PlayStation 4, and Xbox One.
+
+
+== Gameplay ==
+Curse of the Dead Gods  is a roguelike and a dungeon crawler played from an isometric perspective. In the game, the player assumes control of an explorer who must navigate three different dungeons in search for money, power and eternal life. The dungeons are procedurally generated, and each of them are filled with deadly traps, hazards and hostile enemies. As the player progresses, they collect new weapons and unlock new upgrades. They also slowly earn Crystal Skulls and Jade Rings, which can be used to purchase permanent upgrades. These upgrades are automatically unlocked during subsequent runs and trials. The game features 12 different weapon classes. Different weapons have different attributes, and weapon effects can be combined. Players also need to manage their stamina during combat.
+In addition to having a life meter, the game features a curse meter. The Curse meter increases as the player ventures into a new room, purchases items with a blood offering instead of gold, or fights enemies in the dark. Illuminating a room with braziers, torches, or fire can reduce darkness damage. Curses hinder the player's abilities and present additional challenges and opportunities. They will be lifted as a reward for beating the in-game bosses.
+
+
+== Development ==
+Curse of the Dead Gods was developed by Passtech Games, a game developer based in Lyon, France. Development for the game started in 2018, just before the release of Masters of Anima. The development team spent an extensive amount of time working on the game's combat system and art style, as they wanted it to be "much darker and punchier" when compared with the studio's other games. Darkest Dungeon and The Legend of Zelda: Breath of the Wild both inspired the game's art style.
+Publisher Focus Home Interactive released the game via early access in March 2020. The early access release included only the "Jaguar section" of the temple. The game left early access and was released for Windows, Nintendo Switch, PlayStation 4 and Xbox One on February 23, 2021. Passtech supported the game with post-launch content. The crossover content update "Curse of the Dead Cells", which added new weapons based on Dead Cells, was released on April 14, 2021.
+
+
+== Reception ==
+
+The game received generally positive reviews upon release according to review aggregator platform Metacritic. Stuart Gipp from Nintendo Life praised the game's combat system and compared it to Hades. He expressed his disappointment regarding the lack of a narrative focus, though he praised its "focused, crunchy gameplay" and rewarding exploration.  He concluded his review by saying that Curse of the Dead Gods is a "breezier, simpler game than its clear inspirations". Mitchell Saltzman from IGN called the game a "standout roguelite", and praised the combat system, the accessibility, and the enemy variety. He singled out the curse system, which added a strategic layer to the game's combat and made the game more unpredictable. Liana Ruppert from Game Informer generally enjoyed the combat, but felt that the gameplay became stale after several trials and runs.
+
+
+== References ==
+
+
+== External links ==
+Official website

@@ -1,0 +1,34 @@
+Game: Potion Craft: Alchemist Simulator
+appid: 1210320
+Source: Potion Craft
+URL: https://en.wikipedia.org/wiki/Potion_Craft
+Match score: 5.27
+Retrieved: 2026-07-04
+--------
+Potion Craft (also titled as Potion Craft: Alchemist Simulator) is a video game created by Russian independent developer niceplay games and published by tinyBuild in 2022. Described as an "atmospheric management simulator set in a medieval fantasy world", Potion Craft is a management simulation game in which players operate a store producing and selling potions using alchemical ingredients. Upon release, Potion Craft received praise from critics for its novel and intuitive crafting mechanics, and was nominated for several awards at the 2023 Independent Games Festival.
+
+
+== Gameplay ==
+
+In Potion Craft, players manage the day-to-day operations of a potion-selling business, with the user interface of the game representing the rooms of the potion-seller's home. In the business simulation aspect of the game, players are required to create potions that meet the needs of customers visiting the shop; for instance, a player may need to create a healing potion for a visitor with a headache. Players can haggle upon the selling price of potions using a minigame, with funds being used to purchase ingredients from sellers and record more recipes for potions. The game also features a reputation system, which is affected if the player offers customers the wrong type of potion or sends the customer away. The game features a daily gameplay loop, with a number of customers visiting the shop once a day, requiring players to meet the customer's needs or turning them away before they are able to progress to the next day.
+Players create potions by grinding ingredients in a mortar and pestle and mixing them together in a cauldron. These actions plot a course on a map, with potions acquiring certain properties when aligned with specific locations upon the map. The choice of ingredient and the extent to which they are ground and mixed affects the direction of the course. The map is enshrouded, requiring players to use different ingredients to explore and identify new effects. Closer alignment against locations of potion effects create stronger potions, which may be requested by customers or grant players higher sales. Players can also source a limited number of ingredients from a garden for additional resources once a day. Progression in the game spans across ten chapters, each marked by milestones in which players must perform more complex actions such as creating and selling more difficult potions to customers.
+
+
+== Development and release ==
+Potion Craft was created by niceplay games, a Russian independent developer founded by Mikhail Chuprakov. Chuprakov stated that the game was inspired by a "mix of mechanics" adapted from a line of alchemy-themed titles previously published by the developer, and the inclusion of a potion-making minigame in the 2018 role-playing video game Kingdom Come: Deliverance. The game was released on early access on 21 September 2021. The developers announced that Potion Craft had met a successful release on Steam, with the game reportedly selling over 100,000 units and topping the Global Top Sellers chart for the platform over three days. Originally released for Windows and Xbox in December 2022, the developers announced the release of the game for the Nintendo Switch, PlayStation 4 and PlayStation 5 in Spring 2023.
+
+
+== Reception ==
+Potion Craft received a positive reception from critics, with praise directed to the intuitive and in-depth alchemy crafting mechanics. Writing for PC Gamer, Fraser Brown describe the game as a "clever, abstract alchemy sim", writing that it "captures the magic of invention and creation in a way more 'realistic' crafting systems often don't." Jordan Devore of Destructoid described the mechanics as "easy enough to grasp", whilst noting the game features "depth", with "operating (the) shop in a sustainable way" amounting to a "satisfying gameplay loop". Describing the mechanics as "the best crafting system ever concocted", Rachel Watts of Rock Paper Shotgun praised the gameplay as "tactile but never difficult, and takes a  wonderful finesse to master...that really captures the art of potion brewing." Jahnathan Haven of CBR described the game's crafting system as "exciting and vivid", writing that the game "gives its players a personal and meaningful relationship with every ingredient and makes sure that players understand the purpose of every crafting step."
+Reviewers also highlighted the game's evocative presentation and relaxed tone. Fran Soto of Hardcore Gamer praised the game for its "charming medieval artistry", writing that the game "offers a cozy atmosphere...wood cut visuals mimic the period while creating a fantasy aesthetic". Fraser Brown of PC Gamer praised the attention to detail in the game's animations, writing "simple, playful animation maintains the manuscript aesthetic while slapping a bit more whimsy on top of it, usually to make interacting with your little shop just that bit more satisfying." Describing the game as "calm to play" and "beautifully presented", Robert Purchese of Eurogamer wrote "there's a soft parchmenty feel to everything and a sense of humour running through it." Describing the game as "tactile", Rachel Watts of Rock Paper Shotgun praised the game's sound design, writing "(a) lovely set of details go into the way that everything sounds: the bubbling of the brew as you heat it up, the crunch of a root as you crush it into powder, and the gentle clanking of the mortar and pestle."
+
+
+=== Accolades ===
+Potion Craft received several 'honorable mention' nominations for awards at the 2023 Independent Games Festival, including for 'Excellence in Design' and 'Excellence in Visual Arts'. The game was also nominated for the 'Sit Back and Relax' category at the 2021 and 2023 Steam Awards, and 'Strategy/Simulation Game of the Year' during the 26th Annual D.I.C.E. Awards.
+
+
+== References ==
+
+
+== External links ==
+Official website

@@ -1,0 +1,51 @@
+Game: The First Descendant
+appid: 2074920
+Source: The First Descendant
+URL: https://en.wikipedia.org/wiki/The_First_Descendant
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+The First Descendant is a free-to-play multiplayer online role-playing looter shooter developed and published by Nexon. The game was released on 2 July 2024.
+
+
+== Gameplay ==
+
+Players take on the role of "Descendants", individuals who possess mysterious powers and have become humanity's only hope against the hostile Vulgus, an invasive alien race. As a Descendant, the player is tasked with objectives related to repelling the Vulgus threat. Albion serves as the main hub where the Descendant can receive quests. The quests themselves are completed in various battle areas unlocked through progressing the main story.
+Each Descendant has one passive skill and four active skills that can be used after a cool-down period. The game features an arsenal of weapons, ranging from submachine guns to launchers, each with their own power levels and effects. Each mission rewards the Descendant with resources which can be used to craft materials, level up the Descendant, and increase their power through the Research system. Mods can be selected to improve weapons, with the player able to permanently upgrade them with enough resources.
+The Descendant can also be rewarded with items such as external components, reactors, and mods. These items aid in Void Intercept Battles, boss battles involving Descendants fighting giant Colossi. These occur at the end of the story chapter and prepare the Descendant for the increase in stats necessary to progress to the next battle area.
+Each Descendant has an affinity to different play styles, from focusing on defense to pure damage. As a result, each Descendant can be built, through the mod system, to maximize their affinities and give the Descendant more power. Each Descendant and weapon have a mod capacity which restricts the amount of mods the player can use. Mod capacity can be increased through the mastery system and by upgrading the mod, which may decrease its cost while increasing its power and effect.
+As the player completes the prologue, they will progress into the end game content or hard mode. The map remains the same, however, the enemies become much harder to fight, while the quality of the rewards increases to reflect the differences between the difficulty modes. Hard mode will have its own unique void intercept battles, with each battle offering high quality rewards. In addition to the mod system, the player can continue to increase the Descendants power level by equipping higher level, weapons, external components and reactors.
+The player can increase the mod capacity of each Descendant and weapon through leveling up, gaining more mastery levels, using a crystallization catalyst and by using an Energy Activator. The crystallization catalyst reduces the Descendant's level to zero, but allows the player to alter mod slots, so the player can equip mods with the same symbol at a reduced cost. This increases the Descendant's power, by allowing the player to equip stronger mods which would require more mod capacity. The energy activators add more mod capacity when used on a Descendant or a weapon, but each weapon and Descendant can only equip one energy activator.
+
+
+== Plot ==
+Ingris was a planet where humanity thrived. The opening of dimensional gates to other worlds triggered an alien invasion by two highly advanced races, the Vulgus and the Colossi, each equipped with advanced weaponry. The Vulgus and Colossi took Ingris in search of something. Originally, the invasion seemed to gear toward the extinction of humanity. However, the Vulgus and Colossi began the invasion to search for a mysterious power source called the Ironheart, believed to be on Ingris.
+The Vulgus scientific faction, the Magisters betrayed their empire and sided with humanity despite its near extinction. The technology and resources the Magisters possessed allowed the remaining humans to evolve. The Magisters were able to activate a dormant gene in the human race called Arche, which gave members of humanity a special power. Armed with this new power and with the technology of the Magisters, humanity began a counter offensive against the Vulgus to protect Ingris.
+The Vulgus General, Karel, continues his search for the Ironheart. As the first descendants of the humans imbued with Arche, the goal is to protect Ingris by defeating Karel and the Colossi.
+
+
+== Development and release ==
+The First Descendant was developed and published by Nexon. It was directed by Ju Minseok and produced by Lee Beomjun. The game was designed for export to North America, and the developers implement many elements and features like anti-cheat to compete with other looter shooters.
+The game was launched on 2 July 2024 for PlayStation 4, PlayStation 5, Xbox One, Xbox Series X/S, and Windows. Supports for the PlayStation 4 and Xbox One versions were discontinued on 19 June 2025. 
+
+
+== Controversies ==
+
+
+=== AI ads ===
+In August 2025, The First Descendant attracted controversy ahead of its third season for its use of generative AI in its ads on TikTok. The ads featured AI generated influencers reacting to footage of the game. The ads attracted criticism from TikTok users and fans of the game. In addition to influencers completely generated from scratch, the ads also featured generatively edited footage of streamer DanieltheDemon. The footage was taken from his most popular video and was edited via generative AI to include him talking about the game.
+Nexon later responded to the controversy, saying that the controversial videos were submitted through TikTok's Creative Challenge program, which allows users to submit their own ads to brands for money. Nexon alleged that TikTok's current system had no means of detecting if footage submitted was potentially infringing on copyright. However, some publications felt that Nexon was at fault for the ads despite that, as they should have checked the ads that were submitted before using them.
+
+
+== Reception ==
+
+The First Descendant received "mixed or average reviews", according to review aggregator Metacritic. Fellow review aggregator OpenCritic assessed that the game received weak approval, being recommended by only 26% of critics.
+The game received mixed reviews on Steam at launch, with players criticizing its grind and feeling it incentivized purchasing microtransactions. Despite this, the game topped Steam's best-sellers chart upon release, and reached a player count of 10 million during its first week. By April 2026, the concurrent player count had fallen below 5,000. Nexon CEO Junghun Lee, in a 2026 investors' briefing, described the game as facing player retention issues, which could not be "fixed with a patch", "[requiring]
+structural changes to game mechanics" to address.
+
+
+== References ==
+
+
+== External links ==
+Official website

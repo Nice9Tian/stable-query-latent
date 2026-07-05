@@ -1,0 +1,108 @@
+Game: Wingspan
+appid: 1054490
+Source: Wingspan (board game)
+URL: https://en.wikipedia.org/wiki/Wingspan_(board_game)
+Match score: 5.56
+Retrieved: 2026-07-04
+--------
+Wingspan is a board game designed by Elizabeth Hargrave and published by Stonemaier Games in 2019. It is a medium-weight, card-driven, engine-building board game in which players compete to attract birds to their wildlife preserves. During the game's development process, Hargrave constructed personal charts of birds observed in Maryland, with statistics sourced from various biological databases; the special powers of birds were also selected to resemble real-life characteristics. 
+Upon its release, Wingspan received critical and commercial acclaim for its gameplay, accurate thematic elements, and artwork. The game also won numerous awards, including the prestigious 2019 Kennerspiel des Jahres. Several expansions and a digital edition have been subsequently published.
+Wingspan has sold over 2.6 million copies worldwide and has been translated into 27 languages to date.
+
+
+== Development ==
+Wingspan was designed by Elizabeth Hargrave, a health consultant in Silver Spring, amateur birder, and former policy analyst for NORC at the University of Chicago. The game was inspired by Hargrave's visits to Lake Artemesia near her home in Maryland. Hargrave stated that she selected the theme because "there were too many games about castles and space, and not enough games about things I'm interested in". During her visits, she would create personal charts of the birds she observed there, with the size of the dataset reaching 596 rows by 100 columns. The special powers afforded by the birds in the game closely resemble the unique characteristics of the actual birds documented by Hargrave's efforts, with statistics on the diet, habitat, status, and wingspan of birds sourced from the Cornell Lab of Ornithology, the IUCN Red List, and National Audubon Society. 
+Hargrave pitched the concept for Wingspan to Stonemaier Games in 2016, a company from St. Louis which had previously published Viticulture and Scythe. The game concept for Wingspan interested Jamey Stegmaier, president of Stonemaier Games, who stated that "[there's] something about birds that instantly captures a human desire to collect, sort, and admire". Stegmaier also praised the engine building mechanism, describing that "[the] key for me wasn’t the birds, but the satisfying feeling of collecting beautiful things". The game's artwork, which included 170 cards, was hand-drawn by Ana Maria Martinez Jaramillo, Natalia Rojas, and Beth Sobel.
+
+
+== Gameplay ==
+
+In Wingspan, players are bird enthusiasts—researchers, bird watchers, ornithologists, and collectors—seeking to discover and attract the best birds to their network of wildlife preserves. Players spend food resources to add birds, which are represented by 170 individually illustrated cards, to the forest, grassland, and wetland habitats on their player boards. Each habitat is associated with a different player action: gaining food resources to pay for birds, laying eggs on birds, or drawing cards. Over the course of four rounds, players take turns activating the habitats on their player boards or adding new birds. As birds are added to a habitat, the basic action of gaining food, laying eggs, or drawing cards associated with that habitat is improved. Additionally, some birds have special abilities that are activated when a player uses their habitat. At the end of the game, players score points for the birds on their board, objectives achieved during each round and throughout the game, eggs accumulated, food stored on cards, and cards stored under cards. The player with the most points wins.
+Beginning September 2019, the latest printings of Wingspan now include 10 additional bird cards and 4 guide manuals, dubbed as the "swift-start promo pack", to help new players through the first 4 turns of the first round of the game.
+Wingspan is a multiplayer game but it also offers solo mode where a single player can compete with "The Automa". It has a separate set of rules but still retains the core game mechanics. In the Oceania expansion (2020), a cooperative variant of automa, called the automarazzi, was introduced where two to four players can compete together against it through exchanging cards, eggs, and food tokens.
+
+
+== Reception ==
+
+
+=== Critical reviews ===
+Wingspan received widespread acclaim upon release. The game's action system was praised by Matt Thrower from IGN, who described it as "an excruciating balance between adding birds, feeding them and scoring points". The review also positively commented on the game's replayability as each bird card is unique. Stuart West from Nature agreed, noting the replay value of each game due to the unique powers of the bird cards and bonus cards. The strategic decisions for the game were also praised. The diverse interconnections of the bird abilities were commented on by Dan Kois from Slate, which stated that the birds were "knitted together into a web of complex, mutually beneficial relationships" as the game progresses. Similarly, Angela Chuang from Science described the engine building mechanisms as "compelling", and their resemblance to community ecology. Writing for the New Scientist, Dino Motti listed Wingspan as one of the nine best science-themed board games and described the game as containing "hundreds of beautifully illustrated bird cards with special abilities that synergise as they inhabit a range of environments".
+Wingspan's accessibility was strongly praised, with Saif Al-Azzawi of the Los Angeles Times commenting on the game's accessibility, stating that it "strikes the perfect balance between strategy and ease". The Guardian, in a review of STEM-based games, noted the game's accessibility, stating that "it deserves to be a hit". The game's theme was positively received as increasing accessibility, with Kois noting its appeal with a wide variety of demographics. Stuart West and Aaron Zimmerman from Ars Technica also praised the game's accessibility.
+
+The component quality of Wingspan and its theme were well received. Stuart West described it as "an obvious labour of love", describing the egg components as "dainty, pastel-hued" and the bird cards as "superbly drawn". Vox reviewer Brian Anderson praised the quality, describing the art as "field guide-caliber illustrations" and praised the "tactile elements" of the birdhouse. Similarly,  Zimmerman praised the components and artwork as "lavishly produced". The New York Times also complimented the game's illustrations and components, including the pastel eggs, which was described as "enticing as Jordan almonds", and the birdhouse. The game's theme was described to "flow elegantly from the biology" by Nature and "committed to scientific integrity" according to Brian Anderson who also commented on the game's use of well-known bird guides and of the Cornell Lab of Ornithology database. In The New York Times, Siobhan Roberts observed the "scientific integrity" of the game.
+However, not all aspects of Wingspan were positively received. Kois critiqued the balance, stating that towards the end of the game, laying eggs is the only preferable strategy. This sentiment was shared by Zimmerman, who criticised the possibly "overpowered" action of laying eggs that resulted in the game's ending to be "one-note". Furthermore, despite praising the accessibility, Zimmerman said that he preferred "a little more crunch in the decision-making", and also described the lack of player interaction.
+
+
+=== Awards and nominations ===
+Over the years, Wingspan and its expansion games have received multiple nominations and awards. Some of its notable wins include the prestigious Kennerspiel des Jahres award presented in 2019 and the Strategy Game of the Year award given by American Tabletop Awards in 2020. It ranks among the most awarded board games of all time.
+
+
+=== Listicles ===
+
+Note
+
+Placed indicates that the published list is not in chronological order
+
+
+=== Success and impact ===
+Since its release, Wingspan has become one of the most successful modern board games, earning both critical acclaim and commercial success. The game has been featured in prominent newspapers like The New York Times, Los Angeles Times, and The Guardian, as well as renowned scientific journals Nature and Science. It was also highlighted by Audubon and Smithsonian magazines, as well as the American Birding Association. Wingspan sold 44,000 copies worldwide over three printings in its first two months of release, with the publisher issuing a public apology for not having more copies available. In 2020, as the pandemic forced people into their homes, Wingspan blew up, outselling every other game its publisher makes combined. By September 2021, sales of Wingspan had reached 1.3 million, which is the highest number of copies sold for Stonemaier Games. As of March 2026, Wingspan, along with its expansions, has now sold over 2.6 million copies worldwide. It has been one of the popular modern board games recognized as an important growth driver in the global board games market, with $100 million in estimated total sales.
+The Times reported that Wingspan has sparked greater interest in ornithology and nature among players around the world. Jon Carter of the British Trust for Ornithology suggested that young birders are drawn to the game because it validates their interest. Medium also described Wingspan as "a game that opened the door to hobbyist games", citing the amount of BoardGameGeek ratings it has and the number of members of an online group dedicated to it. In light of Wingspan's success, games that center on nature have seen a surge in the following years. It has also influenced other game designers to adopt similar themes with a strong scientific and immersive approach. Stonemaier Games later on published two sequel games, Wyrmspan and Finspan dubbed as "Span-verse".
+Wingspan appeared in the February 18, 2022 episode of the British television soap opera, Coronation Street,  and was featured on season 10 of the game show, Um, Actually.
+
+
+== Accompanying games ==
+
+
+=== Expansions ===
+With the base game primarily featuring North American birds, Stonemaier Games has subsequently published expansions based on other continents.
+
+
+=== Wingspan Pocket ===
+Stonemaier Games is set to release a small-box, quick-playing, card-based spin-off version of Wingspan in the third quarter of 2026. Jamey Stegmaier said that "the intent was to see if we could distill the Wingspan experience into a shorter, streamlined game".
+
+
+== Fan service ==
+
+
+=== Official fan-made merchandise ===
+
+In January 2023, Stonemaier Games announced a fan art competition inviting players to share their bird illustrations, which contributed to a special promo pack of Wingspan cards entirely drawn by fans. Participants were instructed not to use AI-generated art or real photographs of birds. They were also limited to the bird species found on existing Wingspan cards, and each person can only submit one piece. The competition was held for one month. Over 300 fans submitted their illustrations, of which 255 were picked. In November 2023, the Wingspan Fan Art Pack was released in retail stores.
+In October 2025, Stonemaier Games announced a new product, Wingspan Fan-Designed Bird Promo Packs, featuring 150 entirely new bird cards (six packs of 25 cards each) from different regions covered by the base game and first three expansion packs based on submissions from fans. Stonemaier president, Jamey Stegmaier, says that he worked with Wingspan designer Elizabeth Hargrave and fan creation coordinator Travis Willse to put together the packs. Each bird is an existing design that's been playtested by fan designers, and they were evenly spread across habitats, costs, and nest types. Stegmaier also confirmed that all fan designers were compensated for their time and creativity, and no AI art has been included in the promo packs.
+
+
+=== Accessibility ===
+In April 2022, Jamey Stegmaier announced that they are "planning to create and release a set of Wingspan bird cards designed for vision impairment and low lighting," which changes the icons, texts, colors, and other details in the card for colorblind and low-vision players. On May 31 2023, they launched the vision-friendly cards pack of the base game and first three expansions. It is a stand-alone product and an optional purchase.
+
+
+== Tournaments ==
+Wingspan is part of the lineup of ring events for the World Series of Board Gaming held in Las Vegas annually since 2022. The event is also held in various locations around the world as qualifying tournaments and satellite events. The gamemasters for the Wingspan ring event were personal recommendations from Elizabeth Hargrave, one of which had edited the original set of rules. Some of the tournament rules include using the green side of the goal board and removal of powerful bird cards.
+
+
+== Related media ==
+
+
+=== Video game adaptation ===
+
+Following the game's popularity, Wingspan was adapted into digital version by a small startup company, Monster Couch. The company's founder, Krzysiek Żarczyński, came across a post on Stonemaier Games’ blog about the company’s expectations and process for working with developers who create digital versions of its games. On January 8, 2019, Żarczyński emailed Stonemaier, introducing himself and expressing interest in working together. Just days after their first email exchange, Monster Couch and Stonemaier Games were inking a deal for the digital port of the game.
+
+The first digital version of the game was released for macOS and Windows via Steam on September 17, 2020, with a port for Nintendo Switch releasing initially in Japan on December 24, 2020, then globally on December 29, 2020. The game was also released the following year in 2021 for Xbox One on June 18, iOS and iPadOS on July 20, and Android on November 9. It later launched onto PlayStation 4 and PlayStation 5 on October 11, 2024.
+The adaptation received generally favorable reviews according to review aggregator Metacritic, with praise for its graphics and soundtrack. PC Gamer rated the game 9/10, praising the mechanics and graphics, comparing them positively with the original board game. Gamezebo, however, preferred the original board game. The adaptation was commercially successful, with 125,000 copies sold across Steam, Nintendo Switch, Xbox One, and iOS by August 2021.
+A browser-based version of the game was added to board game site Tabletopia in January 2019 and to boardgamearena.com in September 2022.
+
+
+=== Companion book ===
+On April 6, 2021, Wingspan illustrators, Natalia Rojas and Ana Maria Martinez Jaramillo, released the companion book Celebrating Birds: An Interactive Field Guide Featuring Art from Wingspan. It is an illustrated and interactive full-color guide to more than 181 birds of North America. Each bird is presented against a white background with an accompanying summary text from Cornell Lab of Ornithology that includes the species’ natural history, mating behavior, diet, name origin, and nesting habits, as well as descriptions of plumage and vocalization.
+The book is published by HarperCollins in hardcover and is also available as an audiobook.
+
+
+=== Sequel games ===
+
+Wyrmspan, a dragon-themed sequel board game to Wingspan, was released by Stonemaier Games in March 2024. Wyrmspan is themed around dragons instead of birds and hosts slightly more complex game mechanics.
+Finspan, an aquatic-themed sequel board game to Wingspan, was released in January 2025. Like Wingspan, it is an engine-building game, with the subject being fish instead of birds.
+
+
+== References ==
+
+
+== External links ==
+Official website

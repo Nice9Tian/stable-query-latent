@@ -1,0 +1,31 @@
+Game: The Thaumaturge
+appid: 1684350
+Source: The Thaumaturge
+URL: https://en.wikipedia.org/wiki/The_Thaumaturge
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+The Thaumaturge is a 2024 isometric role-playing game developed by Fool's Theory and published by 11 Bit Studios. The player controls Wiktor Szulski, a detective that returns to a supernatural Warsaw in 1905 to investigate the mysterious death of his father. The Thaumaturge was released in March 2024 for Windows and in December 2024 for PlayStation 5 and Xbox Series X/S.
+
+
+== Gameplay ==
+
+The game takes place in chapters, during which the player can an explore an area, interacting with NPCs, engaging in combat and completing quests. The player can engage human foes and supernatural ones in turn-based combat, where they are able to use the abilities of ghostly salutors to win brawls. Each salutor represents a human flaw, Recklessness can break enemies' focus, but at added risk to the player, while Pride does damage to foes and heals Wiktor simultaneously.
+Outside of combat, salutors can also be used in dialogue to manipulate specific flaws in characters to learn more or to avoid fights. Depending on the player's stats or choices, certain options might be available or not. Right-clicking allows the player to use Wiktor's perception, able to see traces left behind in the world, from thoughts to knowledge about an object. This knowledge can then be used to solve mysteries in the game world.
+
+
+== Development ==
+The Thaumaturge started full development in 2020 after being pitched to 11 Bit Studios. The setting of Warsaw in 1905 was chosen because of the team's familiarity with the city, and the historical tension stemming from discontent with Russian rule at the time.
+
+
+== Reception ==
+
+The Thaumaturge received "mixed or average" reviews for its Windows version and "generally favorable" reviews for the PlayStation 5 version, according to review aggregator Metacritic. OpenCritic determined that 71% of critics recommended the game.
+Rock Paper Shotgun praised the characterization and writing of the protagonist, "this feeling of never quite fitting in anywhere provides a fantastic stage on which players to role-play Wiktor as they see fit". While feeling the acting could be hit or miss, IGN liked the historical setting of The Thaumaturge, "The constant push and pull between the occupiers and the increasingly more disgruntled citizens is something Wiktor’s supernatural adventure is constantly butting up against". PCGamer criticized the combat as dull, "fights are uniform enough that you only have to buckle down and strategize against bosses, which are few and far between".
+
+
+== References ==
+
+
+== External links ==
+Official website

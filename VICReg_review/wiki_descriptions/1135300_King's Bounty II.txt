@@ -1,0 +1,30 @@
+Game: King's Bounty II
+appid: 1135300
+Source: King's Bounty II
+URL: https://en.wikipedia.org/wiki/King%27s_Bounty_II
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+King's Bounty II is a turn-based tactical role-playing game developed by 1C Entertainment and published by Prime Matter that was released for Windows, Nintendo Switch, PlayStation 4, and Xbox One on August 24, 2021. It is a direct sequel to the first King's Bounty game released in 1990 and follows the 2008 spin-off title King's Bounty: The Legend, developed by Katauri Interactive.
+
+
+== Gameplay ==
+King's Bounty II is a tactical role-playing game played from a third-person perspective. The player assumes control of one of three main playable characters and participates in both world exploration and tactical turn-based battles. World exploration involves completing quests for others, while tactical turn-based battles take place from an isometric perspective in which the player assumes the role of a commander in charge of battling units.
+
+
+== Release ==
+King's Bounty II was initially announced for Microsoft Windows, PlayStation 4, and Xbox One in 2019, and later for the Nintendo Switch during Nintendo Direct Mini presentation in 2020. The game was eventually released on August 24, 2021, after initially being scheduled to release in March of the same year. It was also released for PlayStation 5 and Xbox Series X/S on September 7, 2023.
+
+
+== Reception ==
+
+King's Bounty II received "mixed or average" reviews, according to review aggregator Metacritic.
+Jonathan Bolding of PC Gamer praised the game's "naturalistic" world design and visuals while bemoaning their presence in the context of the game's slow movement speed, janky movement, sterile characters, and dull overworld activities. Jarrett Green of PCGamesN wrote similarly, stating that while combat was both fun and challenging, the game was hindered by unexciting presentation of story, characters, and derivative mechanics. Leana Hafer of IGN criticized the game's inconsistent voice acting, lack of storytelling nuance, inability to form relationships, and its predictable characters and story in contrast to its well-crafted setting. She also noted the abundance of technical issues, from the general glitchiness of the camera to the "phoned-in" story cutscenes. John Rairdin of Nintendo World Report criticized the poor image quality and resolution exclusive to the Nintendo Switch version of the game.
+
+
+== References ==
+
+
+== External links ==
+Official website
+King's Bounty 2 Archived 2020-10-20 at the Wayback Machine at 1C Company official website

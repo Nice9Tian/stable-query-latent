@@ -1,0 +1,33 @@
+Game: Session: Skate Sim
+appid: 861650
+Source: Session: Skate Sim
+URL: https://en.wikipedia.org/wiki/Session:_Skate_Sim
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Session: Skate Sim is a sports video game developed by independent developer Crea-ture Studios for Microsoft Windows, Nintendo Switch, PlayStation 4, PlayStation 5, Xbox One, and Xbox Series X/S. The game is considered a spiritual successor to the Skate series.
+
+
+== Gameplay ==
+
+Session is an open-ended video game. The game is presented in the style of a fish-eye lens from a mini DV format camera.
+Session differs from the Skate and Tony Hawk series by adhering strictly to physics-based simulation of the board.
+
+
+== Development ==
+Session: Skate Sim was conceived in 2015 under two working titles, Project: Session, followed by Session. Developer Marc-Andre Houde described the inspiration for the game as a passion for the sport. Houde stated the game would be developed using Unreal Engine 4. Originally, the team had planned to build the game in Unity, but the team was attracted to Unreal's multiplayer capabilities.
+In early November 2017, Crea-ture Studios released a free demo for Session. A trailer released shows several clips of the demo, which is set in an unnamed jail and allows players to freely skate in a closed skatepark. Later that month, the project was brought to crowdfunding platform Kickstarter, which successfully reached its initial goal after three days. A trailer for Session was unveiled during the Microsoft conference at E3 2018. Session was released on Steam Early Access on 17 September 2019, and for Xbox Game Preview on 17 June 2020. On 18 January 2021, it was announced that Nacon would be publishing Session. In July 2021, it was announced that the game would be released for Microsoft Windows, PlayStation 4, PlayStation 5, Xbox One and Xbox Series X/S. Nearly a year later, it was announced that a full release would be available on 22 September 2022. In February 2022, the game was renamed from Session to Session: Skate Sim. On 22 January 2023, a Nintendo Switch version was announced for a 16 March 2023 release.
+
+A port to Unreal 5 was planned, but its cancellation was eventually announced in September 2024: After in depth study on the stability and feasibility the investment required to get our physics and core gameplay integrated with the change to the physics engine is too high. There are also no guarantees that we would be able to match, or improve, the core gameplay beyond what can be achieved in our current engine version.
+
+
+== Reception ==
+
+Session: Skate Sim received "mixed or average" reviews, according to review aggregator Metacritic.
+
+
+== References ==
+
+
+== External links ==
+Official website and Presskit

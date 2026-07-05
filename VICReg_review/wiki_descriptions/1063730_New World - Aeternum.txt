@@ -1,0 +1,67 @@
+Game: New World: Aeternum
+appid: 1063730
+Source: New World (video game)
+URL: https://en.wikipedia.org/wiki/New_World_(video_game)
+Match score: 6.79
+Retrieved: 2026-07-04
+--------
+New World is a massively multiplayer online role-playing game (MMORPG) developed by Amazon Games Orange County and published by Amazon Games released on September 28, 2021. The game was previously scheduled to release in May 2020 and subsequently August 2021, but was delayed until its worldwide release on September 28, 2021. Set in the mid-seventeenth century, players colonize the lost fantasy land of Aeternum, modeled after the Americas, where everyone who travels to it becomes immortal.
+While New World was initially planned as a free-to-play game, it currently employs the standard business model of a buy-to-play game, a point of historical difference in comparison to many MMORPGs that traditionally utilized subscription models in service of significant regular content updates. The game also offers microtransactions in the form of skins along with a limited selection of both decorative and gameplay-impacting functional items for use within the player housing system.
+PlayStation 5  and Xbox Series X/S versions of the game, under the title New World: Aeternum were released on October 15, 2024, along with significant game updates for existing PC users. A television adaptation, "New World: The Once and Future King", was released on December 10, 2024 as an episode of Secret Level, starring the voices of Arnold Schwarzenegger, Steven Pacey, Gabriel Luna, Arazou, Dana Haqjoo, and Carlo Rota.
+In October 2025, it was announced that Season 10 would be the game's last. Amazon has said they will keep the servers on "through 2026." In January 2026, it was announced that the game will shut down on January 31, 2027.
+
+
+== Gameplay ==
+
+The players may form groups of up to five members, join one of three factions (Marauders, Syndicate, or Covenant), gather raw materials (wood, stone, ore, animal skins etc.) from resource nodes, craft items, gain control over settlements, quest, explore the world, or fight other players or monsters.
+The gameplay involves no auto-locked targeting attacks and, therefore, a steady hand at aiming is required. With each level, the hostile mobs are programmed with increasingly complex and strong sequences of attacking behavior skill sets that will require the player to counter using their mana, stamina, and health with timed attacks, dodges, weapon blocks, retreats, or crawling stealth. The weapon skill tree choices are currently for bow, hammer, hatchet, great axe, fire staff, life staff, musket, blunderbuss, spear, sword/shield, ice gauntlet, void gauntlet, flail, and great sword.
+The character levels up personal attribute skills. Diminishing returns scale as an attribute's skill level increases. The player's character also levels up weapon and trade skills. The trade skills are divided into the three categories of "crafting" (weapon smithing, armoring, engineering, jewel crafting, arcana, cooking, and furnishing), "refining" (smelting, woodworking, leather working, weaving, and stone cutting), and "gathering" (logging, mining, harvesting, and tracking and skinning). There is also a "camping" skill (wilderness survival).
+Three quick travel methods exist and, although in base game no fast speed mounts are available, there is a set of skills for intermittent forward speed boosts. The player may dodge or climb most environmental objects or use the fire staff to cross large aerial spaces.
+Mounts are introduced in Rise of Angry Earth extension released October 2, 2023. Horses, dire wolves, and lions, each with a unique look, are added. New Riding Trade Skill with possibility to earn upgrades like increased speeds, buffs, attachments and others is also added.
+The economy centers around gold coins. The player can dispose of unwanted items through market between players in exchange for gold coins, they can "salvage" (dismantle) the items for resources, they can discard the item on to the ground, or they can make a direct trade with another player. Characters that die do not drop items, but with each combat encounter, use, or death, the player's items undergo damage. This damage can be repaired with repair items and gold coins.
+The player may purchase personal housing and erect furnishings to achieve aesthetic and utility bonuses, as well as obtain a means for fast traveling to the settlement site.
+The game mechanics offer PvP combat with and without questing. Before leaving a safe-zone settlement, players have the option to set the "flagged state" - which will make them vulnerable to attacks from other flagged players and vice versa. PvP Flagged state is activated after 30 seconds cooldown which starts after players leave the zone of settlement.
+
+
+== Synopsis ==
+New World is set in a fictional world during the 17th century during the Age of Exploration. The game is set on a fantasy island in the Atlantic Ocean known as Aeternum, where everyone who travels to it finds themselves immortal with no way to leave. The world is filled with resources to gather and enemies to face, from fierce creatures to rival players. The player is able to traverse this world by foot, on a mount (horse, wolf, or lion), or via teleportation between "Shrines" located in all major settlements and different landmarks. It has a player-driven economy.
+
+
+== Development ==
+New World was first revealed in September 2016, at TwitchCon. Amazon Game Studios announced they would be working on their first three PC games: Breakaway, Crucible and New World. In March 2018, Breakaway was cancelled, leaving the teams to focus on the other two titles, and on October 9, 2020, Relentless Studios announced the cancellation of Crucible, citing the inability to see a sustained future as the reason for cancellation. The studio shifted to aid development of New World instead. On February 16, 2021, it was announced that the game is set to release on August 31, 2021.
+The game was originally planned to be a free-to-play game, however in 2019, prior to its release, the business model has changed into the standard business model of paid games. Players who signed up for the game prior to that change received the game for free.
+On July 20, 2021, the game was launched as a closed beta. The following day, it was reported that many high-end Nvidia GeForce RTX 3090 graphics cards manufactured by EVGA were bricked while running the game. It was theorized that the absence of an FPS limit for menu screens in the game caused the GPUs to render more than 9000 frames per second at full load (while most gaming computers run at below 240 frames per second), while fail-safes in the cards failed to prevent damage. In response, Amazon said that it would implement an FPS limit in the menu screens, while maintaining that the game itself had not damaged the cards. Jason Langevin, a tech YouTuber (popularly known as JayzTwoCents) who first reported the issue, reported that other GPUs including the RTX 3080 Ti and various AMD GPUs were affected, and also reported that EVGA would replace all RTX 3090 GPUs bricked by the game at no cost. Langevin also investigated further by running an EVGA RTX 3090 and an MSi RTX 3090 and found that while the MSi GPU did not cross its rated power limit, the EVGA GPU went 20% above the limit.
+On August 4, 2021, it was announced that the game would be further delayed to September 28, 2021, to allow for additional development based on beta testing feedback. The final open beta period began on September 9, 2021, and continued until September 12.
+
+
+=== Release ===
+On September 28, 2021, Amazon Game Studios released and published New World globally. Five server regions were available on launch: Australia, East Coast of the United States, Europe, South America, and West Coast of the United States. The availability of these regions were staggered, with all becoming playable at 8:00 a.m. local time with the exception of Australia, which became available at 9:00 p.m. AEST to account for the large time zone difference. 
+On the day of the game's release, Steam recorded over 700,000 concurrent players. This proved difficult for the New World servers to handle, with many players reporting extensive queue times, with New World's most popular servers occasionally reaching the 25,000-person limit. This was caused by the limited capacity in each server, which only allowed 2000 players to be connected simultaneously. Amazon responded to this problem by introducing additional servers in all regions within two days of the game's release and explaining that they were undergoing tests to increase the cap from 2000. They also announced that players would be able to transfer their characters between servers for free, enabling people to begin playing on low populated servers without the risk of not being able to play on higher density servers, or with friends, later on. This assisted in alleviating the worst of the queue times, but players continued to express disapproval as PC Gamer described the problem as "far from solved". 
+In October 2021, it was reported that any account who played the game via Steam family sharing received it for free. One month later Amazon decided to disable the family sharing functionality due to an "increase of bots, gold sellers, and ban evaders". On the other hand, Amazon stated that "for players who utilize family sharing for a valid reason, we will update this post with instructions for assistance." and made it possible for selected players to continue playing New World on accounts where the game was never bought.
+In October 2025, Amazon announced that New World would stop receiving new content after the release of Season 10 and the Nighthaven update. The company also committed to keeping the servers operating "through 2026." On January 15, 2026, the game was delisted from digital storefronts, and it was announced that purchases of in-game currency will be discontinued on July 20, and then the game will shut down on January 31, 2027.
+
+
+== Reception ==
+
+New World received "mixed or average" reviews according to review aggregator Metacritic. It was nominated for Best Multiplayer Game at The Game Awards 2021. During several instances in its lifespan, New World managed to position itself in the top played games of Steam.
+
+
+=== Awards ===
+
+
+== Adaptation ==
+
+In August 2024, it was revealed the game would be adapted as an episode of the anthology television series Secret Level. The episode, "New World: The Once and Future King", released December 10, 2024, would be written by J. T. Petty and Philip Gelatt, directed by Maxime Luère, Léon Bérelle, Dominique Boidin, and Rémi Kozyra, and starring the voices of Arnold Schwarzenegger, Steven Pacey, Gabriel Luna, Arazou, Dana Haqjoo, Carlo Rota and Matthew Gilbert.
+
+
+== Notes ==
+
+
+== References ==
+
+
+== Further reading ==
+
+
+== External links ==
+Official website

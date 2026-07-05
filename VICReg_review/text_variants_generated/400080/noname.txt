@@ -1,0 +1,9 @@
+This is a cooperative multiplayer game set in a shared home aboard a spaceship, where players must live together while managing a dangerous alien infestation and turning a chaotic vessel into a comfortable, sustainable living space. It supports both local and online play, and can also be played solo.
+
+Each match takes place in a procedurally generated spaceship home, so the layout and challenges change every time. Players need to plan carefully, work as a team, and balance short-term survival with longer-term organization. The core loop involves generating resources, recycling trash and alien residue, buying and building new technologies, and maintaining the ship so it becomes cleaner, safer, and more efficient over time.
+
+The game blends a casual, easy-to-pick-up party style with strategy-focused decision-making. Matches are designed to be short, but progress depends on thoughtful choices such as expanding into new rooms, improving systems, and automating tasks. Players can place and upgrade technologies to help sustain the ship, including systems for producing energy, cleaning rooms, and supporting resource management. Gardens can be cultivated to help keep everyone fed, and robots can be used to automate tasks like cleaning and harvesting.
+
+The experience also includes missions that guide progression without losing the light, social feel of the game. Achievements unlock additional content, and the game emphasizes cooperative problem-solving rather than combat. There are no weapons; instead, players rely on tools for cleaning and managing the infestation. Other features include taking naps, helping roommates in need, and even adopting helpful dogs that can assist in various ways.
+
+Overall, it is a team-based space-living simulation with procedural variation, lighthearted co-op chaos, and strategic systems for making a messy spaceship feel like home.

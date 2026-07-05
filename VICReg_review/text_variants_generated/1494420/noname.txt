@@ -1,0 +1,7 @@
+This title presents a crossover of first-person and real-time strategy gameplay, placing players in large-scale, photorealistic battles between two opposing factions: one human, one alien. It offers two distinct ways to participate in combat, either by joining the front line as a ground soldier or by taking a command role and directing the wider battle from above.
+
+The game emphasizes combined-arms warfare across a sandy planetary battlefield, where control of land and air vehicles plays a major role in gaining advantage. Players can engage in direct action while also interacting with a broader strategic layer that includes unit coordination and battlefield control.
+
+As a commander, the experience shifts to a top-down perspective focused on tactical decision-making and large-scale operations. This mode is built around managing battles of significant scope, using positioning and coordination to influence the outcome of clashes across the map.
+
+A notable feature is the attention given to unit scale. The battlefield contains a range of units, from small infantry squads to enormous industrial machines and large structures, all presented with careful size differentiation to enhance immersion and realism.

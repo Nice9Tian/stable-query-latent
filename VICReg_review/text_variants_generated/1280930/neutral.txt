@@ -1,0 +1,9 @@
+Astral Ascent is a 2D platformer roguelite set in a modern fantasy world. In the game, players choose one of four heroes, each with distinct personalities, weapons, and combat styles, and attempt to escape from The Garden, an astral prison guarded by 12 powerful bosses known as the Zodiacs.
+
+The game emphasizes build variety and customization. Players can unlock dozens of unique spells for each character, then optimize their own build or experiment with new combinations as they progress. Runs are designed to steadily increase the player’s strength over time, while each attempt tests skill and reaction speed.
+
+Combat revolves around facing the 12 Zodiacs, who are spread across four worlds. Each boss has unique attacks, combat styles, backstories, and motivations, making them major obstacles for anyone trying to leave the Garden. The four playable characters are Ayla, a fast assassin who uses sharp blades; Kiran, a strong fighter who delivers shockwave-inducing attacks; Calie, a warrior who uses magical gemstones to pierce defenses; and Octave, a young fighter who summons ethereal weapons for both close and long-range combat.
+
+Astral Ascent also features a narrative structure that unfolds over repeated playthroughs. As a roguelite with narration, the story is revealed piece by piece, allowing players to learn more about the characters, their motivations, and the secrets of the world they inhabit as they continue to play.
+
+The game supports local two-player co-op, and can also be played online through Steam Remote Play Together. Its world is described as large and colorful, with hand-crafted areas, wide landscapes to traverse, and detailed visuals supported by fluid frame-by-frame animation.

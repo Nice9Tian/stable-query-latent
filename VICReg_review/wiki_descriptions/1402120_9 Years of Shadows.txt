@@ -1,0 +1,30 @@
+Game: 9 Years of Shadows
+appid: 1402120
+Source: 9 Years of Shadows
+URL: https://en.wikipedia.org/wiki/9_Years_of_Shadows
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+9 Years of Shadows is a 2023 video game developed by Halberd Studios and published by Freedom Games. The game is a metroidvania in which players explore the interior of Talos Castle, defeating enemies and bosses to collect new armor pieces and open up new areas. Upon release, the game received average reviews. 
+
+
+== Gameplay ==
+
+Playing as the hero Europa, and accompanied by the teddy bear Apino, 9 Years of Shadows is a metroidvania in which the player navigates through Talos Castle. The objective of the game is to progress through the rooms of the castle and defeat enemies and bosses to acquire new armour pieces, abilities through collecting relics, to create shortcuts and reach new areas. Players attack enemies throughout the castle using a basic attack with Europa's halberd, and avoid counterattacks with a backslide. The player can also command Apino to cast magical projectiles. Healh is replenished through striking enemies, and players can retreat at low health and replenish it by hugging Apino if a quick time event button combination is successfully completed. Collecting new armor pieces throughout the game allow Europa to perform more sophisticated attacks with new weapons through button combinations. Some armor pieces offer new forms, such as the mermaid form which allows the player to swim to new areas.
+
+
+== Development ==
+9 Years of Shadows was developed by Mexico based independent team Halberd Studios. The game was announced at PAX Online in July 2021 the Gamescom Future Games Show on 26 August of the same year. The game features music from composers Michiru Yamane, Manami Matsumae and Norihiko Hibino, who developed soundtracks for the Castlevania, Mega Man and Metal Gear Solid series. A game demo was showcased at the Steam Next Fest in October 2022. The game was released on 9 November 2023 for Nintendo Switch, and 31 July 2025 for Xbox One, Xbox Series and PlayStation 4 consoles.
+
+
+== Reception ==
+
+9 Years of Shadows received "mixed or average" reviews, according to review aggregator platform Metacritic. Fellow review aggregator OpenCritic assessed that the game received fair approval, being recommended by 64% of critics. Describing the game as "polished", NPR stated the game "shines in all the core gameplay mechanics that matter: from its character progression, to its tight controls, creative enemy design, platforming and puzzles", although felt the game had "drawbacks common to the metroidvania genre".
+
+
+== References ==
+
+
+== External links ==
+Official website
+9 Years of Shadows at MobyGames

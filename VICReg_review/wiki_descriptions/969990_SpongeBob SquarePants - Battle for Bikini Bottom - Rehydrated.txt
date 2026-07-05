@@ -1,0 +1,48 @@
+Game: SpongeBob SquarePants: Battle for Bikini Bottom - Rehydrated
+appid: 969990
+Source: SpongeBob SquarePants: Battle for Bikini Bottom – Rehydrated
+URL: https://en.wikipedia.org/wiki/SpongeBob_SquarePants:_Battle_for_Bikini_Bottom_%E2%80%93_Rehydrated
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+SpongeBob SquarePants: Battle for Bikini Bottom – Rehydrated is a 2020 platform game developed by Purple Lamp Studios and published by THQ Nordic. Based on the Nickelodeon animated series SpongeBob SquarePants, it is a remake of the console versions of Heavy Iron Studios' SpongeBob SquarePants: Battle for Bikini Bottom (2003). 
+Development for Rehydrated began as early as January 2018, when THQ Nordic enlisted Purple Lamp Games as one of their developers. In March 2018, THQ Nordic announced plans to remake games based on Nickelodeon properties. "Industrial Park"–a third-party tool by Brazilian modder Igorseabra used for viewing and editing levels from Heavy Iron's back catalogue–to aid in extracting levels as reference material.  
+The game was released on June 23, 2020, for Nintendo Switch, PlayStation 4, Windows, Xbox One, and Stadia. A version for mobile devices was released on January 21, 2021. Despite receiving mixed reviews, the game was a commercial success, selling over 2 million copies. The game later received two spiritual sequels, SpongeBob SquarePants: The Cosmic Shake in 2023 and SpongeBob SquarePants: Titans of the Tide in 2025. 
+
+
+== Gameplay ==
+
+The core gameplay involves collecting items and defeating the robots which have attacked various areas in Bikini Bottom while crossing platforms and avoiding environmental hazards like spikes and flames. Some areas require different characters to beat, as each character has its unique abilities. The player can control SpongeBob, Patrick, and Sandy. Switching characters requires the player to find a Bus Stop, upon using which the current character will switch to another, and using it again will switch back to the previous character, giving the player an option of two characters in each level. The default character throughout the game is SpongeBob; Sandy and Patrick do not share any levels as playable characters.
+Throughout the game, the player will collect Shiny Objects, Socks, and Golden Spatulas. Shiny Objects are dropped by enemies and scattered throughout levels and can be used to pay clams to progress through levels and unlock extra challenges. They can also be traded with Mr. Krabs for Golden Spatulas. Socks are placed in levels in harder-to-reach locations, and 10 of them can be traded to Patrick for a Golden Spatula. Golden Spatulas are used to unlock new areas in the game, and 75 of them are required to fight the final boss.
+A new addition to the remake is a multiplayer horde mode in which two players face waves of robotic enemies. The mode includes cut content from the original game, including a fight against a robotic Squidward, a scrapped version of Patrick's dream, and a cut phase of the Robo-SpongeBob fight.
+
+
+== Development and release ==
+Development for Rehydrated began as early as January 2018, when THQ Nordic enlisted Purple Lamp Games as one of their developers. In March 2018, THQ Nordic announced plans for "the global revival of several game titles" for many older Nickelodeon properties. This led to speculation that they were planning to remake or re-release several Nickelodeon games, including Battle for Bikini Bottom. Purple Lamp used "Industrial Park"–a third-party tool by Brazilian modder Igorseabra used for viewing and editing levels from Heavy Iron's back catalogue–to aid in extracting levels as reference material. Igorseabra contacted Purple Lamp upon noticing their tool being used without their knowledge and was added to the game's credits in an update.
+Rehydrated was first officially announced on June 5, 2019, in the days leading up to E3 2019. The game was not playable until Gamescom, which started August 20 that year, where visitors could get their hands on it at THQ Nordic's booth. On April 16, 2020, it was announced that the game will be released on June 23, 2020. iOS and Android versions of the game were released on January 21, 2021.
+The game is available in two limited editions on all platforms. The Shiny Edition includes wall stickers, six lithographs, special SpongeBob SquarePants tennis socks, and a figurine of SpongeBob with a flexible tongue and a golden spatula in his hand. In addition to that, the F.U.N. Edition also comes with two similarly sized figurines of Sandy Cheeks and Patrick Star, as well as a set of five tiki keyrings.
+The game features both the original archival recordings from the main campaign, as well as new recordings, from the English voice cast, as well as new recordings from the French, German, Italian, Spanish, Latin American Spanish (added on December 19, 2020), Polish and Japanese voice casts. It also supports text and subtitles in Brazilian Portuguese, Russian, Malay, Thai, Korean, and Simplified Chinese, alongside the mentioned voiceover languages.
+The game is powered by Unreal Engine 4 and supports 4K resolution on the enhanced PlayStation 4 Pro and Xbox One X models.
+
+
+== Reception ==
+
+SpongeBob SquarePants: Battle for Bikini Bottom – Rehydrated received "mixed or average" reviews according to Metacritic.
+IGN gave the game 5/10, saying that it "sinks under its reverence to nostalgia" and wrote, "[T]here are bright spots that remain fun almost two decades later, and there are pops of ingenuity in its reworking, but it does little to stand alongside the best, or even the pretty good, platformer remakes and remasters we've seen this generation." In its 2/10 review, GameSpot wrote that "remasters, ports, and remakes are nice because they make games more accessible to new audiences, and the ones that excel understand that some features from the game's era are antiquated and should be updated or removed. SpongeBob SquarePants: Battle for Bikini Bottom – Rehydrated flops like a fish out of water when it comes to this." They concluded that the game "winds up being an unpleasant nostalgia trip that nobody should pack their bags for."
+
+
+=== Sales ===
+SpongeBob SquarePants: Battle for Bikini Bottom – Rehydrated placed at 19 on NPD's list of top 20 sales in the month of June. In the UK, Rehydrated was the 3rd bestselling video game software in the week of June 27, 2020.
+On August 13, 2020, Rehydrated was announced to have sold over 1 million copies. As of May 19, 2021, it reached more than 2 million copies.
+In January 2021, THQ Nordic CEO Klemens Kreuzer called Rehydrated a "fantastic success" due to its sales and hinted at the potential for similar games to be developed by the studio in the future. A spiritual sequel, SpongeBob SquarePants: The Cosmic Shake, was announced on September 17, 2021. The game released for Nintendo Switch, PlayStation 4, Windows, and Xbox One on January 31, 2023.
+
+
+== Notes ==
+
+
+== References ==
+
+
+== External links ==
+
+SpongeBob SquarePants: Battle for Bikini Bottom - Rehydrated on MobyGames

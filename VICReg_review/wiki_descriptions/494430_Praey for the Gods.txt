@@ -1,0 +1,33 @@
+Game: Praey for the Gods
+appid: 494430
+Source: Praey for the Gods
+URL: https://en.wikipedia.org/wiki/Praey_for_the_Gods
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Prey for the Gods is an action-adventure survival game developed by No Matter Studios. Initially released via early access in January 2019, and the full version of the game was released for Microsoft Windows, PlayStation 4, PlayStation 5, and Xbox One in December 2021.
+
+
+== Gameplay ==
+The player character starts her journey stranded on a frozen island, with only the clothes on her back. She must scavenge for resources (weapons, food, etc.) to survive the frozen landscape, dynamically generated weather and other hostilities. After some exploration, players must track down behemoths known as "gods", finding ways to scale their massive bodies and strike the chimes located at critical points. Each one is unique and must be studied to understand how to defeat it. Some hints on how to do so are provided in the form of cave drawings.
+The game utilises an exhaustion system. Over time, the character will become hungry, fatigued and chilled, which all negatively impact her performance. Most actions will exacerbate this, for example: sprinting will increase hunger faster, which decreases the rate of stamina replenishment. If caught in a freezing gale or body of water, the character will need to find shelter and make a fire before the cold affects her health. There are also potions scattered around to help keep these afflictions at bay, although it is strongly advisable to hunt, gather, cook and rest during play. 30 glowing totems can be found around the map, rewarded for solving environmental puzzles or searching obscure locations. Each set of three will increase the maximum stamina of the character (a total of ten enhancements), which is crucial for taking down the gods.
+The crafting system is based on maintaining and upgrading equipment. Resources can be found in crates, dropped by animals and enemies (excluding the "gods" themselves) or found in the environment. There are treasure hunts, involving puzzles, to gain some of the more items. Weapons have certain levels, relative to how easily they can be obtained. Clothing and other miscellaneous items can be upgraded once the resource cost has been fulfilled.
+
+
+== Development ==
+Development of Prey for the Gods began in 2014 in San Francisco. No Matter Studios, the game's developer, consists of three people, Brian Parnell, Hung-Chien Liao, and Tim Wiese. They initially worked part-time on the game. On October 19, 2015, No Matter Studio revealed the game as Prey for the Gods, with a short trailer on YouTube. In February 2016 the studio moved to Seattle, Washington to work on the game full-time. The studio crowdfunded the game through Kickstarter in July 2016. It ended up raising more than half a million dollars, doubling the teams' original expectations (USD$300,000). Due to this, the game's scope and scale were also significantly expanded. According to No Matter, the gameplay was inspired by Shadow of the Colossus, Deus Ex, DayZ, and Bloodborne.
+No Matter Studios filed for trademark protection for the name Prey for the Gods in May 2016; however ZeniMax Media, who owns the trademark to the Prey name in the video game sector, issued an objection to the Prey for the Gods mark, citing that it was too similar to their Prey. No Matter Studios opted to abandon the trademark issue, not wanting to get into a legal battle with ZeniMax, and announced the change to Praey for the Gods in May 2017, just prior to the release of ZeniMax's Prey.
+The game was first released via Steam's early access program on January 31, 2019. The studio initially expected that the game would stay in early access for 6 to 12 months. In October 2020, No Matter announced that the full version of the game is set to be released in 2021 for Windows, PlayStation 4, PlayStation 5, and Xbox One. The game was released on December 14, 2021.
+
+
+== Reception ==
+
+The PlayStation 5 version of Prey for the Gods received "generally negative reviews", while the PC version of the game received "mixed or average reviews", according to review aggregator Metacritic.
+Push Square and IGN both spoke negatively about the game, appreciating its strong visual design while greatly lamenting the abundance of technical problems, irritating movement, and survival mechanics. IGN in particular cited the climbing mechanic as an issue, saying the slow movement and technical glitches made it "more irritating than fun".
+
+
+== References ==
+
+
+== External links ==
+Official website

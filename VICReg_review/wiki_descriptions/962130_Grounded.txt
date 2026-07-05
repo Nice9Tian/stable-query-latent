@@ -1,0 +1,58 @@
+Game: Grounded
+appid: 962130
+Source: Grounded (video game)
+URL: https://en.wikipedia.org/wiki/Grounded_(video_game)
+Match score: 6.56
+Retrieved: 2026-07-04
+--------
+Grounded is a 2022 survival game developed by Obsidian Entertainment and published by Xbox Game Studios for Windows, Xbox One, and Xbox Series X/S. It was released for Windows and Xbox One in early access on July 28, 2020 and was fully released on September 27, 2022. The Nintendo Switch, PlayStation 4 and PlayStation 5 versions were released on April 16, 2024.
+A small team of 13 Obsidian employees began working on Grounded following the completion of Pillars of Eternity II: Deadfire, while the rest of the team began working on The Outer Worlds. In the game, the four protagonists are shrunk in size following a science experiment and must survive in a backyard, combating against various bugs and insects. The core premise of the game was inspired by the films Honey, I Shrunk the Kids and A Bug's Life. The game received generally positive reviews from critics and attracted more than 20 million players upon launch. The sequel, Grounded 2, was released in early access on July 29, 2025, and an animated series adaptation is currently in development.
+
+
+== Gameplay ==
+
+Grounded is a survival game that can be played either in first-person or third-person. In the game, the protagonist is shrunk to the size of an ant and must strive to survive in a backyard. In the game, the player character (Max, Willow, Pete, or Hoops) needs to consume an adequate amount of food and water, or they will lose health due to starvation or dehydration respectively. The backyard is filled with various bugs and insects, such as spiders, bees, dust mites, ladybugs, and many more. Different insects serve different purposes in the game. For instance, spiders are one of the game's apex predators that will hunt down the players, ladybugs can lead players to food sources, and aphids can be cooked and consumed for food. Players can also cut down grass to collect dewdrops. The game has an accessibility option for players who have arachnophobia, which allows players to decide how scary spiders are going to be in the game.
+Throughout the game, players need to scavenge resources in the world in order to construct a base so as to defend themselves from hostile enemies, in particular during nighttime as some of the insects become more aggressive. The resources can also be used to craft different tools, traps and weapons, such as axes, spears, and bows and arrows, to defeat enemies. Players also need to manage their stamina, as the playable character may become exhausted in sustained combat. The game can be played solo, though it also has a four-player cooperative multiplayer mode.
+
+
+== Synopsis ==
+In 1990, Peter "Pete" Boggs (Max Mittelman), Maxwell "Max" Smalls (Luke Youngblood), Willow Branch (Ozioma Akagha), and Ally "Hoops" Nguyen (Charlet Chung) are the latest four teenagers in a string of disappearances. The teens wake up to find themselves shrunken down to the size of a small insect and trapped in a backyard, but have no memory of how they were shrunk or how they ended up in the yard.
+As the teens explore the yard, they come across recordings left behind by scientist Dr. Wendell Tully (Zachary Levi). He invented the SPAC.R, which can shrink objects and people. The teens discover that they are in Tully's backyard and find the SPAC.R. However, the device malfunctions and causes an explosion in a nearby oak tree. The teens head over to investigate the explosion and find an entire miniature lab built inside of the tree. Inside, they find Tully's robotic assistant, BURG.L (Josh Brener). The explosion damaged BURG.L's memory, so it cannot help them repair the SPAC.R until the teens recover its memory backup chips stored in Tully's labs scattered across his backyard. Despite its memory loss, BURG.L assists the teens by providing them blueprints and knowledge on how to survive in the wilderness and defend themselves from hostile insects.
+As the teens locate Tully's labs and recover the memory chips, they also begin to recover their memories, and recall that they were kidnapped and experimented on by a company called Ominent. Once they were shrunk and the experiments were complete, the project's leader Director Dalton Schmector (Roger Craig Smith) ordered the teens to be disposed of. However, one of the scientists took pity on the teens and secretly smuggled them into Tully's backyard, as he is the only person that can help them. BURG.L recovers its memories and explains that a side effect of using the SPAC.R is a condition called Raisining Syndrome, where the shrinking process goes out of control and the person suffering from it eventually shrivels up like a raisin. Ominent was experimenting on children since they appeared to be immune to the effects of Raisining Syndrome, and managed to find a cure. However, Ominent still has been unable to replicate Tully's secret Embiggening Formula, which is needed to reverse the shrinking process.
+BURG.L sends the teens to Tully's last known location. They find a recording left by him explaining that he had begun to suffer the effects of Raisining Syndrome and retreated to an underground lab in an effort to find a cure. The teens head into the lab and find Tully barely being kept alive by a life support pod. Tully further explains that Schmector used to be his supervisor before he left the company to work on the SPAC.R, and is angry that Ominent already built their own version. Seeing the predicament the teens are in, Tully instructs them on how to formulate the Embiggening Formula. Tully also warns the teens that once they start mixing the formula, Ominent will become aware of it and send their army of mind-controlled insects to attack. The teens then have the choice of going ahead with the mixing process or confront Schmector's surveillance robot first. If the robot is defeated, the teens will recover a disk containing all of Ominent's research data, including a cure for the Raisining Syndrome.
+The teens then mix the Embiggening Formula and reactivate the SPAC.R to return to normal size. However, the ending depends on whether they confronted Schmector or not. 
+
+If the teens did not confront Schmector, then they will have no evidence to prove Ominent's wrongdoings. Schmector reveals the SPAC.R to the public and takes all of the credit for its invention. The teens try to return to their normal lives despite being accused of faking their disappearances, while Tully reunites with his family but remains in his shriveled form.
+If the teens confronted Schmector and recovered his research data, then they turn it in to the authorities, and both Ominent and Schmector are put under investigation for illegal human experimentation. The teens are hailed as heroes and Tully is cured of his Raisining Syndrome and is recognized for his invention of the SPAC.R.
+
+
+== Development ==
+Following the release of Pillars of Eternity II: Deadfire, the team at Obsidian Entertainment began brainstorming ideas for a survival game. While the majority of the staff in Obsidian worked on The Outer Worlds, a small team of 13 people began the production of Grounded. The game was already in production before Microsoft's acquisition of Obsidian in 2018. Announced by Xbox Game Studios at X019 in November 2019, the game was released on July 28, 2020, for Steam's early access and Xbox Game Preview. The early access version of the game featured about 20% of the game's main campaign, and Obsidian actively listened to the feedback from the community as they continued work towards the game's full release in 2022. The early access version amassed around 5 million players within 6 months of release. The game was fully released for Windows, Xbox One, and Xbox Series X/S on September 27, 2022, and versions for Nintendo Switch, PlayStation 4 and PlayStation 5 were released on April 16, 2024.
+The team was inspired by films such as Disney's A Bug's Life and Honey, I Shrunk the Kids. They watched long featurettes at YouTube produced by insect enthusiasts to learn about insects. The team chose the backyard as the game's setting as the team felt it to be a recognizable and approachable setting. They also believed that a backyard create a "larger-than-life" feeling and pose "real sense of danger". The game's director, Adam Brennecke, compared the setting to a "theme park", as the team added numerous landmarks into the world with the goal of making it more interesting.
+The team envisioned a game world that was interactive and in which players' actions would change the state of the world. Brennecke added that the game would feature a "memorable" story like other Obsidian's games. The team worked extensively on the artificial intelligence of insects, which govern their behaviors. For instance, ants are curious about the player character and initially do not attack. However, if the player builds a base around their food, or the player character becomes stronger and the ants begin to see them as a threat, they will attack the players.
+
+
+== Future ==
+
+
+=== Sequel ===
+In June 2025, a sequel titled Grounded 2 was officially announced, with a game preview launching on July 29, 2025.
+
+
+=== Television series ===
+In July 2022, it was announced an animated series adaptation of the game is in the works with Brent Friedman developing the series.
+
+
+== Reception ==
+Grounded was met with "generally favorable" reviews, according to review aggregator website Metacritic. Fellow review aggregator OpenCritic assessed that the game received strong approval, being recommended by 84% of critics.
+It was nominated for Innovation in Accessibility at The Game Awards 2020 and won the Xbox Game of the Year award at the Golden Joystick Awards. It also received a nomination for Action Game of the Year at the 26th Annual D.I.C.E. Awards.
+By February 10, 2022, the game had attracted 10 million players. In-part by Xbox Game Pass.
+As of December 2022, the game had attracted more than 15 million players.
+
+
+== References ==
+
+
+== External links ==
+Official website
+Official IMDB

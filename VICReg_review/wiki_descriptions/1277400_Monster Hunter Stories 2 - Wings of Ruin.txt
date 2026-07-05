@@ -1,0 +1,56 @@
+Game: Monster Hunter Stories 2: Wings of Ruin
+appid: 1277400
+Source: Monster Hunter Stories 2: Wings of Ruin
+URL: https://en.wikipedia.org/wiki/Monster_Hunter_Stories_2:_Wings_of_Ruin
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Monster Hunter Stories 2: Wings of Ruin is a 2021 role-playing video game developed by Capcom and Marvelous and published by Capcom for the Nintendo Switch and Windows. It is a spinoff title in the Monster Hunter series and a sequel to Monster Hunter Stories (2016). The game was released worldwide on July 9, 2021. A sequel, Monster Hunter Stories 3: Twisted Reflection, was released in March 2026.
+
+
+== Gameplay ==
+Similarly to Monster Hunter Stories, the player assumes the role of a Rider who befriends monsters by stealing eggs and hatching them. The player character joins their companion monster, or "Monstie", in turn-based battles against wild monsters.
+Monster Hunter Stories 2 adds additional gameplay mechanics, such as the "Buddies" system, in which the player character and their Monstie is joined by an additional character and Monstie.
+
+
+=== Battle ===
+During the player's turn, both the Rider and their Monstie will get to attack the enemy. Attacks for both the player and the enemy come in three types: Power, Speed, and Technical. Each category is stronger against one in particular in a rock-paper-scissors fashion: Power will win against Technical, Technical will win against Speed, and Speed will win against Power. When an enemy monster is targeting someone and that character attempts to attack it, a Head-to-Head will occur which pits their two attack types against each other, with the dominant attack type prevailing in the exchange. If the player character and their Monstie both use the same attack type while the enemy is targeting someone and have the type advantage, they will unleash a Double Attack and prevent the enemy from retaliating altogether. Winning battles will award the player with experience points and items. Beyond the main story, the player can engage in sidequests, called subquests.
+
+
+== Plot ==
+The story begins with the mass disappearance of Rathalos around the world seen at a festival on Hakolo island, as well as large pits emitting a strange, pinkish light appearing everywhere. As the descendant of the legendary Rider named Red, the player character has a fateful encounter with a white-haired Wyverian girl, Ena, who has been entrusted with a Rathalos egg by Guardian Ratha.
+A Rathalos with small black wings bursts out of the egg, which is said to bring ruin to the world in time. As the story progresses, the player character faces many monsters that have pink, glowing eyes.
+These "rage-rayed" monsters attack and destroy everything they see, and the source seems to come from the pits. The Hunters believe that the birth of "Razewing Ratha", the player's Rathalos, is the source and capture it.
+Eventually, it is discovered that the Hunters are working with a mysterious group that wants Ratha for themselves. While the group is initially successful, the player is able to take Ratha back and escape with Ena, with Ratha spreading his wings in the process. Later, the player sees an enormous worm-like creature emerge from one of the pits and devour a Rathalos.
+This monster is later discovered to be a powerful Elder Dragon called Oltura, which has been creating the pits and luring Rathalos in to consume them and gain power. The pits' light starts to turn blue as the player and Ena tries to track down Oltura. Eventually, they go to Hakolo Island, Oltura's birthplace. The player and Ena then confront Zellard, who is revealed to be the leader of the mysterious group and intends to awaken Oltura in order to destroy the world and create a brand new one, having grown disillusioned with humanity after Red's death.
+Zellard nearly sacrifices Ratha to Oltura, who instead consumes Guardian Ratha, which causes it to fully awaken. Kyle discovers during the ensuing fight that Oltura's weak points are its wings and uses two relics that Ena wore around her neck as a pendant to destroy them. The player and Ratha then kill the weakened Oltura, saving the world.
+
+
+== Development ==
+On September 17, 2020, Nintendo revealed the game during a Nintendo Direct Mini: Partner Showcase. This was then followed up with more information during the Monster Hunter-themed Nintendo Direct on the same day. In the broadcast, some story details were mentioned, and it was announced that the game will have some sort of cross-compatibility with Monster Hunter Rise. More information was revealed during the Tokyo Game Show.
+
+
+== Release ==
+The game was released worldwide on the Nintendo Switch and Windows on July 9, 2021. A set of three Amiibo figures (Ena, Razewing Ratha and Tsukino) launched on the same day.
+A PlayStation 4 port was announced on March 11, 2024, and released on June 14, 2024, along with the remastered version of Monster Hunter Stories. Xbox One versions of both games released on November 14, 2025.
+
+
+== Reception ==
+
+Monster Hunter Stories 2: Wings of Ruin received "generally favorable reviews" according to Metacritic.
+PCGamesN writes about the game "While the repetitiveness of its turn-based battle system can become frustrating, Monster Hunter Stories 2 is more than a novel twist on the main series' core components."
+
+
+=== Sales ===
+According to Famitsu, the Nintendo Switch version of the game sold 137,676 copies at retail to rank as the best-selling game in Japan in its week of release. In the United Kingdom, Monster Hunter Stories 2 debuted in third place, reportedly selling more than twice what the original game had done in its first week. In the United States, NPD Group reported that the game ranked as the third best selling release of the month, with sales tripling that of the previous entry's lifetime sales. It topped the global Steam charts in its first week, setting a new peak player count for a Japanese role-playing game's launch on the platform, surpassing Persona 4 Golden.
+On July 20, 2021, Capcom announced that the game had shipped more than one million units worldwide. In May 2022, Capcom confirmed that Monster Hunter Stories 2: Wings of Ruin had sold 1.5 million copies.
+
+
+== Note ==
+
+
+== References ==
+
+
+== External links ==
+Official website

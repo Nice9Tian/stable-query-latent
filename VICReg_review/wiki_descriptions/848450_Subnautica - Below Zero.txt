@@ -1,0 +1,56 @@
+Game: Subnautica: Below Zero
+appid: 848450
+Source: Subnautica: Below Zero
+URL: https://en.wikipedia.org/wiki/Subnautica:_Below_Zero
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Subnautica: Below Zero is an open-world survival action-adventure video game developed and published by Unknown Worlds Entertainment. The game is a spin-off to Subnautica.
+Introduced in early access via Steam and the Epic Games Store in January 2019, Subnautica: Below Zero was released for macOS, Nintendo Switch, PlayStation 4, PlayStation 5, Windows, Xbox One, and Xbox Series X/S on May 14, 2021. A port to Nintendo Switch 2 was released on February 17th, 2026, which owners of the original Nintendo Switch release can upgrade to for free with an Upgrade Pack. A port to mobile devices followed on February 27, 2026. The physical versions of the game were published by Bandai Namco Entertainment. It received generally positive reviews from critics.
+
+
+== Gameplay ==
+Subnautica: Below Zero is a survival adventure game set in an underwater open world environment and played from a first-person perspective. The player controls xenologist Robin Ayou, who lands on ocean planet 4546B in pursuit of answers about her sister's mysterious death. Like its predecessor, gameplay involves exploring and surviving in alien environments while also completing objectives to advance the game's plot. Players collect resources, construct tools, build bases and submersibles, and interact with the planet's wildlife.
+To survive and progress, the player must collect raw materials from the environment, including various minerals, flora samples, and fish, while avoiding or countering threats like hostile fauna and blinding snowstorms. They must also acquire blueprints to craft new items, either through finding and opening databoxes in the world or by scanning fragments of the item. Generally, the player must face harsher environments the further they progress, requiring better equipment or upgrades for old ones, like suits that resist the cold, oxygen tanks with higher capacities, or vehicles that can withstand deeper waters.
+The game primarily takes place underwater, but, unlike its predecessor, there are much more expansive and dangerous land-based areas to explore. There are structures and wrecks to find both above ground and underwater, which serve as key locations for the story, providing blueprints and recordings of conversations that slowly reveal lore.
+Alongside returning mechanics such as oxygen, hunger, and thirst, players now have a body heat gauge which comes into play when walking on land. It functions much like the oxygen gauge does underwater. The player will gradually lose body heat and freeze unless they replenish their body heat by jumping into water, finding shelter, consuming certain items or standing next to a heat source.
+Upon beginning a new game, players must select a difficulty mode from the following five:
+
+Survival — The player must manage health, hunger, thirst, oxygen and temperature. Upon death, they respawn, but certain items are lost from their inventory. This is the "standard" game mode.
+Freedom — Just like survival, but with hunger and thirst disabled.
+Hardcore — Survival mode with permadeath.  If the player dies, the player will not respawn and their save file is deleted.
+Creative — Health, hunger, thirst, oxygen and temperature are disabled, all the crafting blueprints are available at the start, and no resources are required to craft. Additionally, the submersibles, a Seaglide, mobile vehicle bay, knife, flashlight, habitat builder, scanner and a propulsion cannon are provided. They do not need an energy source and cannot be damaged (unless the player damages them intentionally).
+Custom — Various options are given to customize the game, such as weather, day and night length, creature spawn rates and aggression, etc.
+
+
+== Plot ==
+Two years after the events of the original game, the Alterra corporation that originally crashed the Aurora on planet 4546B had built several bases on the planet for research on the Kharaa bacterium, and on the alien precursor race, dubbed Architects, that had studied the bacterium prior. Xenologist Robin Ayou smuggles herself onto the planet in a frozen sector named "Sector Zero" to investigate the circumstances of her sister Sam's death, which Alterra claims was a result of "employee negligence." During the past year, Alterra had recently withdrawn all of its personnel, allowing Robin to land on the planet.
+Shortly after landing, Robin picks up a distress signal and goes to investigate it, discovering an alien sanctuary containing the digitized consciousness of a living Architect. Desperate for a new storage medium as the sanctuary's power is running out, and after an apparent misunderstanding, the Architect downloads itself into Robin's brain. Angry at it for intruding into her mind, Robin initially tries to ignore it, but soon agrees to help it, now introduced as Al-An, to construct a new body to transfer into. To do so, Robin combs the sector for alien installations and artifacts to find the necessary components and materials. Al-An explains that it did not try to contact Alterra for help before because it believed Alterra's motivations did not align with its own, and did not want to risk them finding a way to its homeworld. During their search, Al-An hints that it was involved with the outbreak of Kharaa.
+Meanwhile, Robin also continues her investigation into Sam's death. She encounters Degasi survivor Marguerit Maida several times, who is suspicious of Robin at first, but reveals her part of the story in return for disabling Alterra surveillance of the sector. Robin searches the abandoned Alterra facilities, and finds out that Alterra had discovered the corpse of a leviathan frozen in ice that was still infected by Kharaa. However, instead of destroying the Kharaa, Alterra decided to research the bacterium for useful applications. Fearing another outbreak and concerned that Alterra would use the Kharaa to develop bioweapons, Sam decided to sabotage the project. Encouraged and helped by Marguerit, she synthesized and stashed away a cure for the Kharaa, then used explosives to collapse the cave holding the leviathan, while Marguerit destroyed the lab holding Alterra's Kharaa samples. However, Sam was inadvertently caught in the blast and killed by falling rubble. Unable to determine the cause of the cave-in, Alterra wrote off Samantha's death as a result of negligence. Using this knowledge and some maps and clues, Robin recovers the cache of Kharaa antidote that Sam had made and uses it to neutralize the Kharaa infecting the frozen leviathan, finishing her sister's business and preventing Alterra from continuing their project.
+Alongside this, Robin is eventually able to recover all of the components necessary to build a new body for Al-An, and fabricates it at an alien facility. After transferring itself to the body, Al-An reveals that it was one of the lead scientists researching a cure for the Kharaa bacterium; it disobeyed orders by trying to hatch Sea Dragon leviathan eggs, resulting in the research facility being destroyed by Sea Dragons and the Kharaa being released onto 4546B. Al-An decides to return to its homeworld in order to see for itself what had happened to the other Architects, as well as to atone for its past mistakes. It activates an Architect phasegate and Robin agrees to leave 4546B with it, uncertain of what they will find there.
+
+
+== Development ==
+Subnautica: Below Zero was initially envisioned as a downloadable content (DLC) pack for the original Subnautica (2018), though its scope eventually expanded significantly, prompting Unknown Worlds to release Below Zero as a standalone product. It was initially considered to be a sequel to Subnautica, but with the announcement of the third game in the series having the title Subnautica 2, the game is now considered to be a spin-off. Announced in August 2018, Below Zero was released into early access for macOS and Windows on January 30, 2019. The full game was released for these platforms, along with versions for Nintendo Switch, PlayStation 4, PlayStation 5, Xbox One, and Xbox Series X/S, on May 14, 2021. The game has a larger emphasis on storytelling when compared with the original.
+
+
+== Reception ==
+
+Subnautica: Below Zero received "generally favorable" reviews from critics, according to review aggregator website Metacritic.
+Andrew Reiner of Game Informer praised the game, saying "Below Zero is what every sequel should be, building upon the established core formula in clever ways to make the new content feel just as exciting and unpredictable."  IGN's Leana Hafer commented "New vehicles, new gadgets, and across-the-board tune ups to technical performance and quality of life round out the experience skillfully."  Rick Lane from PC Gamer emphasized the game's environment design, calling it "The main area where the sequel improves over Subnautica."
+The switch from a silent to voiced protagonist received mixed reactions from critics. Lane called the characters "dull" and the story "less engaging" noting that "The issue is partly a dispelling of mystery, as you're having stuff explained to you rather than discovering it yourself."  Nintendo Life's PJ O'Reilly commented "Although we definitely preferred the total isolation of the original's narrative, what's here still manages to remain engaging for its duration." Jordan Devore from Destructoid was more positive on the writing, praising the banter between the two lead characters and commenting "The voice acting is a step up in general, to the point where I didn't want to skip any audio recordings I found in the world."
+Several critics highlighted the segments that take place on dry land as a low point in the game.  O'Reilly commented that "It's just not where Subnautica really excels, we always wanted to be back in the water as soon as we were dragged out of it." Devore described the land sections as "Cooler to look at than they are to play," explaining that "There's no topping the freedom of underwater movement."
+
+
+== See also ==
+List of underwater science fiction works
+
+
+== Notes ==
+
+
+== References ==
+
+
+== External links ==
+Official website

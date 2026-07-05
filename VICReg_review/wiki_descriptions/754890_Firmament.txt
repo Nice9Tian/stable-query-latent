@@ -1,0 +1,43 @@
+Game: Firmament
+appid: 754890
+Source: Firmament (video game)
+URL: https://en.wikipedia.org/wiki/Firmament_(video_game)
+Match score: 6.72
+Retrieved: 2026-07-04
+--------
+Firmament is an adventure video game developed by Cyan Worlds. Similarly to their 2016 title Obduction, it was funded by a Kickstarter campaign beginning in 2018. It was released on Windows PCs on May 18, 2023.
+
+
+== Gameplay ==
+The player takes the role of a "Keeper", charged with maintaining the three "Realms" that make up the "Firmament Project": Curievale, an ice mine for fresh water to power a steam plant; Juleston, a sulphur mine and power station; and St. Andrew, a conservatory. These realms are connected by "Conveyance Pods" through a central hub known as "the Swan". The player is equipped with a Personal Maintenance Adjunct, a mechanical gauntlet that allows them to interface with sockets for opening doors and operating machines. Completing the story in each of the three Realms activates the Adjunct's upgrades: One to apply greater torque to heavier locks, one to concatenate multiple sockets, and one that increases the distance the Adjunct can access a socket.
+Throughout the game, the only interaction the player has is with "the Mentor", the ghost of a deceased Keeper, who provides tips for early puzzles and backstory for the game world.
+
+
+== Plot ==
+The player is awakened in a bunker in Curievale, where they are greeted by the Mentor, who explains they have awakened them from "the Threshold". The Mentor directs the player to raise control spires in each of the three Realms by reaching their Arches, the main control centers in each Realm. As the story progresses, the Mentor explains that she and the other Keepers were "keeping the mission" until the coming of the "Arrivers", led by a man named Turner. Turner's arrival disrupted the Keepers' mission, leading to conflict. By the time it was done, only twelve Keepers remained, and Turner ruled over them as a self-proclaimed god. The Mentor beseeches the player to complete the mission by activating the spires to "Awaken the Embrace".
+Upon activating the Embrace in each of the three Realms, the player finds a door to a hidden lift in the center of the Swan, leading them deeper into the structure. There, they discover that the Firmament Project was an effort in the late 19th century established by Andrew Carnegie, Marie Curie, Karl Marx, Nikola Tesla, Konstantin Tsiolkovsky, and Jules Verne to preserve humanity by developing interstellar travel, and the Swan and the Realms are all part of a massive starship called the Atelis, which launched in 1910; the events of the present are about three hundred years since its launch. The Mentor explains that Turner revealed this truth to her, a concept considered heresy by the other Keepers. Upon reaching the Atelis' bridge, the player is scanned by automated probes that reveal that the player is in fact Turner. The Mentor admits that she had tricked Turner into believing she was on his side, before sedating him and placing him into "the Deep Sleep", a hibernation process used to create Keepers, which erased all of their prior memories. "The Embrace" is revealed to be a space-fold drive, allowing the Atelis to travel to Tau Ceti.
+
+
+== Music ==
+The music for the game was composed by Maclaine Diemer; the end credits and the game's launch trailer feature the song "Collide" from VNV Nation's 2018 studio album Noire.
+
+
+== Reception ==
+
+Firmament received a score of 69 on Metacritic, indicating "mixed or average reviews".
+PC Gamer calls Firmament a "graphically gorgeous descendant of Myst, paradoxically limited by its own ambitions", praising the world design, but feeling the game lacked challenge compared to other puzzle games. Shacknews applauded Cyan Worlds for "continuing to design these games without flashy ruckus, time limits, or deaths to speak of", considering it "ridiculously abstract at times", but felt it captured much the same ambience as Myst. Softpedia praised the world design, but criticized the limitations of the narrative and of the character interaction with the environment, particularly with ascending stairs that were hard to notice. They noted that Firmament had a "built-in audience of Myst fans" to whom the quirks of the developer would appeal, but newcomers "might be impressed by this world at first and will then struggle to engage with it". They also compared the steampunk environment of Firmament's Realms to Columbia in BioShock Infinite, which "reveals there was space for more originality". Inverse criticized the narrative as "too thin" compared to Myst, Riven and Obduction, but praised "Cyan's ability to make players care about fictional worlds", calling it "the most approachable game in the company's history" and a "perfect primer for the puzzle adventure genre at large".
+
+
+=== Debate over artificial intelligence-generated assets ===
+
+Following the game's release, a backlash was encountered by the game's developers when a concerned player brought to fans' attention that the game used "A.I. assisted content", including pieces of artwork like backer portraits and unspecified amounts of the game's in-universe written text. The developers also acknowledged A.I. tools were used to edit the voice acting. Fans noted that they were not informed of this potentially controversial change during the Kickstarter campaign, believing that it resulted in an inferior game and amounted to plagiarism of actual artists.
+In response, Cyan released a statement on June 9, 2023, which goes into detail of their use of the technology, noting that it was used to alter existing voice acting and to "ideate" the writing and art, but not to provide assets directly.
+
+
+== References ==
+
+
+== External links ==
+Official website 
+Firmament at MobyGames
+Firmament at IMDb

@@ -1,0 +1,38 @@
+Game: Darkest Dungeon II
+appid: 1940340
+Source: Darkest Dungeon II
+URL: https://en.wikipedia.org/wiki/Darkest_Dungeon_II
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Darkest Dungeon II is a 2023 roguelike role-playing video game developed and published by Red Hook Studios as the sequel to Darkest Dungeon. The game was released in early access for Windows in October 2021. The full version of the game was released in May 2023.
+
+
+== Gameplay ==
+
+Like its predecessor, Darkest Dungeon II is a roguelike role-playing video game. The game features multiple characters, and each of them have their own unique strengths and abilities. The player can equip these characters with trinkets and combat items. The player commandeers a stagecoach, which is the primary way of navigating the game's world. The ultimate goal is to reach a mountain, which is the source of evil that has overtaken the world. As the player explores, they encounter different locations of interest and roadblocks, many of which cause the player to enter combat scenarios. Combat in the game is turn-based, and the heroes must be positioned properly as some of their skills cannot be used while they are standing in a wrong spot. As the player explores the world, they can also visit Shrines of Reflection, where players can learn more about the backstories of the game's characters.
+As the characters progress in the game, their stress level increases. If a character is under a lot of stress, they will have a debilitating meltdown during combat, which results in a massive decrease in health and the acquisition of negative traits. In addition, high stress levels affect the relationships between the game's characters. If a character is friendly with another, they gain additional gameplay perks. However, if the characters share a hostile relationship, one may stop another from using their skills and increase each other's stress level. The player can visit a Hospital to remove bad character traits. If a member of the team dies another hero may join the player's team once they reach an inn. It is also the place where the players can lower the stress level of characters and improve team dynamics. However, a stay at the inn also increases Loathing, a stat which indicates the all-consuming evil of the world. The flame on the stagecoach represents the team's hope. The player's team suffers from penalties when the flame is nearly extinguished. When a run ends, Profile rank increases, which unlocks new characters and items for players to use in subsequent runs.
+A free update titled Kingdoms was introduced in January 2025. This update introduces a new campaign and three enemy factions. According to Chris Bourassa, the game's director, Kingdoms  "blend[s] some of the permanence and roster management of the original Darkest Dungeon with the traversal and combat of Darkest Dungeon 2".
+
+
+== Plot ==
+Some time after the temporary defeat of the Heart of Darkness, a scientist known as the Scholar begins experimenting with an Eldritch force called the Iron Crown. However, the experiments go awry and the Iron Crown's powers go out of control, causing a "realignment" of the planet that sends the majority of the human population into madness and allows Eldritch beings to invade the physical world. The Scholar meanwhile finds himself trapped in an eternal cycle of repeating events. The Scholar's mentor, the Academic, then approaches the Scholar with the flame of Hope and instructs the Scholar that the only way to undo the damage he caused is to bring Hope to the Mountain where the Iron Crown is kept and come to terms with his mistakes. 
+The Scholar recruits a band of surviving heroes and guides them on the dangerous trek to the Mountain, fighting their way through various bandits, cultists, and beasts along the way. The Scholar has to repeat the journey every time they fail or manage to destroy the Eldritch monster residing in the Mountain. During these journeys, the Scholar also learns about the troubled pasts and motivations of the heroes under his command and recalls their own memories of the world before it went mad. Eventually, the Scholar and the heroes confront the final Eldritch monster, the Body of Work, and over the course of the battle are finally able to come to terms with their pasts and overcome their guilt. The Body of Work is defeated and the Scholar uses the flame of Hope to gain control of the Iron Crown, using it to undo the damage it originally caused. With the Eldritch horrors banished and the world returning to normal, the heroes help the surviving humans rebuild. However, the Academic cautions that even though humanity has prevailed for now, it must remain vigilant since Eldritch forces are still present in the universe and will return if humanity's resolve ever falters.
+
+
+== Development ==
+While the game uses an improved version of the core combat system from its predecessor, the studio stated its intent is to offer a completely different metagame experience, including the transition from 2D to 3D graphics using Unity. Narratively, the game was planned to show the nature of the evils emerging into the world beyond what players saw at the Estate from the first game. To complete the sequel, Red Hook had already expanded its team from 5 developers for the original game to 14 and potentially more. Composer Stuart Chatwood, narrator Wayne June, and sound design team Power Up Audio will continue to support work for the sequel.
+Red Hook announced Darkest Dungeon II in February 2019. Red Hook used early access releases again for the sequel as player feedback was essential to the development of the first game. The sequel was released in early access via the Epic Games Store on October 26, 2021 for Windows. The game was originally set to be released in full in February 2023 via both the Epic Games Store and Steam, but was delayed to May 8, 2023. Versions for Nintendo Switch, PlayStation 4, PlayStation 5, Xbox One, and Xbox Series X/S were released on July 15, 2024.
+
+
+== Reception ==
+
+According to the review aggregator platform Metacritic, Darkest Dungeon II received "generally favorable reviews".
+100,000 copies were sold on the day of the game's early access release. Red Hook announced that the game had sold more than 500,000 copies a week after it left early access.
+
+
+== References ==
+
+
+== External links ==
+Official website

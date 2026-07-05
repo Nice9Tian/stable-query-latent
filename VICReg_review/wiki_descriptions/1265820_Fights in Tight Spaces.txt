@@ -1,0 +1,39 @@
+Game: Fights in Tight Spaces
+appid: 1265820
+Source: Fights in Tight Spaces
+URL: https://en.wikipedia.org/wiki/Fights_in_Tight_Spaces
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Fights in Tight Spaces is a roguelike deck-building tactical game developed by British studio Ground Shatter and published by Mode 7 Games. The game was released in December 2021 for Microsoft Windows, Xbox One and Xbox Series X/S after an Early Access period that started in February 2021. Ports for Nintendo Switch, PlayStation 4 and PlayStation 5 were released in May 2023.  
+The game is based on simulating the melee combat of one protagonist against many enemies in close quarters common in action films, using turn-based combat with playing cards representing various moves the player can make.
+A sequel, Knights in Tight Spaces, was released for PC on Mar 4, 2025, and another, 2 Fights in 2 Tight Spaces, was released in early access on June 7, 2026.
+
+
+== Gameplay ==
+Players take the role of an unnamed agent that is tasked with taking out several boss characters across the game's chapters. To reach the boss, the player must beat several smaller scenarios, defeating the boss's henchmen that will try to stop him. In a roguelike fashion, the order of these scenarios, what type of henchmen the player will face, and the rewards for beating each scenario, will change on each runthrough.
+In a scenario, the game plays similar to a tactical role-playing game and plays out in a turn-based manner. The player's character has a number of action points on each turn to make various moves, which are set by the cards that they have available in their current hand, after drawing up to a fixed number at the start of the turn. Card actions include many attacks that include options to reposition the player-character or move an enemy, movements options, or defensive stances to block or counterattack to opponent attacks. Playing most cards builds up a combo meter for that turn, and some cards require a minimum combo meter amount before they can be used or may terminate a combo. The player is given the indications of what attacks the enemy characters will try to do the next immediate, and can use this to dodge from gunfire or to push an enemy into oncoming gunfire, for example. The player trades turns with the computer opponents until either all the enemies are incapacitated, allowing the player to progress to the next stage, or will end the run-through for the player and will require them to start over. If the player successfully finishes an encounter, they have the option to watch the encounter play out in real time in a cinematic fashion.
+Players gain the choice of a new card to add to their deck between encounters, as well as in-game money that can be used to buy cards, upgrade cards to more damaging versions, or remove cards from the deck at certain points during a runthrough.
+
+
+== Development ==
+Fights in Tight Spaces was first announced in March 2020. While planned originally for a 2020 release into early access, it was pushed back into 2021 but a free Prologue demo, allowing players to run through to the first boss character, was released in December 2020. 
+The game's full early access was launched on Xbox One and Xbox Series X/S via the Xbox Game Preview Program on February 8, 2021 and for Microsoft Windows on February 24, 2021. This was followed by the full release on December 2, 2021. It was later ported to Nintendo Switch, PlayStation 4 and PlayStation 5 on May 25, 2023.
+
+
+== Reception ==
+
+Fights in Tight Spaces received "generally favorable" reviews, according to review aggregator Metacritic. 93% of critics recommended the game, according to OpenCritic.
+Reception of the game in its early access state has been favorable, comparing the resulting gameplay to the James Bond, Bourne and John Wick films done by way of Slay the Spire.
+
+
+== Legacy ==
+A sequel, Knights in Tight Spaces, was announced in 2024, and was released on March 4, 2025. It adapted the core gameplay of Fights in Tight Spaces to a medieval fantasy setting, introducing multiple party members and character classes.
+2 Fights in 2 Tight Spaces was released in early access on June 7, 2026. The sequel features cooperative multiplayer and introduces weapons; picking up a weapon, such as a knife or gun, changes the functionality of players' cards.
+
+
+== References ==
+
+
+== External links ==
+Official website

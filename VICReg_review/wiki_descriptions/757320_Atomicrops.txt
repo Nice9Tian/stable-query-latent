@@ -1,0 +1,30 @@
+Game: Atomicrops
+appid: 757320
+Source: Atomicrops
+URL: https://en.wikipedia.org/wiki/Atomicrops
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Atomicrops is a 2020 roguelike bullet hell farm life simulation game developed by Bird Bath Games and published by Raw Fury for Windows, PlayStation 4, Nintendo Switch and Xbox One. Set during the aftermath of a nuclear fallout, the game sees players tending to a farm, exploring the environment to find upgrades, while tending with hordes of enemies threatening themselves and their crops.
+
+
+== Gameplay ==
+Atomicrops is a roguelike bullet hell farming sim. Runs are divided into four seasons, with three days per season. Players begin each day on their farm plot where they are able to sow, water, and fertilize crops, which are harvested for money. Larger, more valuable crops can be made through planting four identical crops in a square shape and fertilizing them. Players can leave the farm for surrounding areas to fight enemies and collect upgrades that improve their farming and combat capabilities. These include farm animals that perform farming actions and scrolls that do the same en masse. There are also numerous passive items such as one that slows time when weeds are cut. To progress to additional areas, players need to purchase bridges. Once night begins, waves of enemies start to appear on the player's farm, at which point they will need to defend themselves and their crops. Players can fire their weapon and perform farming actions simultaneously.
+At dawn, a helicopter retrieves the player, bringing them to a shop area where they can purchase items and weapons using their money. One variety consists of pickaxes, which are used to create more tiles the player can plant on. Players are also able to flirt with potential spouses using roses they've grown, granting additional items. If the player spends enough roses on a particular character, that spouse will join them on the farm with their own set of abilities. Roses can additionally be spent on healing. Exiting the shop area returns the player to the farm to start the next day.
+Every third night sees a boss appear on the player's farm in addition to the enemy waves. After surviving one of these fights, the next time the player returns to the shop area, their crop performance is evaluated by the mayor. The amount of money the player made that season determines the amount of items they will be gifted.
+The process of going back and forth between the farm and the shop area along with a boss fight every third night repeats across all four main seasons. If the player dies at any point, then their run is over and they are forced to start from the first season again. Should they survive, then they will arrive at a single-day fifth season with the final boss. Defeating the final boss ends the run and unlocks a new difficulty tier for players to access. Players can also purchase upgrades that persist between runs after meeting ant characters. Additional playable characters can also be unlocked for the player to use in future runs.
+
+
+== Development ==
+Atomicrops was developed by Bird Bath Games and published by Raw Fury. The game was programmed by Danny Wynne and the art was created by Toby Dixon. The farming elements of the game were inspired by Stardew Valley and the bullet hell roguelike aspects were motivated by games like Enter the Gungeon and Nuclear Throne. Atomicrops uses Unity as its engine. The game was released on Windows, Nintendo Switch, PlayStation 4, and Xbox One on May 28, 2020.
+
+
+== Reception ==
+Atomicrops received a score of 78/100 on review aggregator website Metacritic. Fellow review aggregator OpenCritic assessed that the game received strong approval, being recommended by 69% of critics. Rock Paper Shotgun felt the farming life sim elements were lackluster compared to the strong bullet hell attributes. However, the combination of farming and shooting created engaging instances of multitasking. In addition, while the difficulty was high at first, they felt that mastering the game with fewer permanent upgrades than other roguelikes made the game feel distinct. Eurogamer believed that the launch version alleviated their main concern of unforgiving health management and would now recommend the game. IGN found the game to be less relaxing and accessible than other farming sims or roguelikes, respectively. They still recommended the game for players interested in a combination of Stardew Valley and Enter the Gungeon.
+
+
+== References ==
+
+
+== External links ==
+Official website

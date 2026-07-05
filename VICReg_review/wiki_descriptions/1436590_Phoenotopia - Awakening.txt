@@ -1,0 +1,40 @@
+Game: Phoenotopia: Awakening
+appid: 1436590
+Source: Phoenotopia: Awakening
+URL: https://en.wikipedia.org/wiki/Phoenotopia:_Awakening
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Phoenotopia: Awakening is a 2020 action-adventure game developed and published by Cape Cosmic. It was released on Nintendo Switch in 2020, and later on Microsoft Windows, macOS, PlayStation 4, Xbox One, and Xbox Series X/S in 2021.
+A remake of the Flash game Phoenotopia, which was originally released on Newgrounds in 2014, Phoenotopia: Awakening expands on the original in all aspects of the game, adding things like a new navigable overworld, more weapons and mechanics, new areas, and a longer campaign. The resulting game has three times the total game area, a plot greatly deepened and expanded, and a script numbering at over 100,000 words. Influences on the game include Cave Story and Zelda II: The Adventure of Link.
+
+
+== Gameplay ==
+Phoenotopia: Awakening is a 2D side-scrolling action-adventure game. The game takes place in a post-apocalyptic fictional Earth ravaged by an ancient war, but since recovered, with modern humans largely rejecting advanced technology and living in pre-industrial conditions. The player assumes control of Gail, a young girl from the farming village of Panselo who seeks to discover what happened to her village after she and the other village children witnessed their abduction by aliens while out in the neighboring forest.
+
+Most gameplay takes place in side-scrolling areas, where towns and dungeons alike are found, linked by a top-down map similar to Zelda II. Various NPCs can be spoken to in towns, providing useful information and offering side quests. Most of them have two or more unique dialogues, which are cycled through with repeated conversation.
+Different areas are connected by the overworld map, similar to Zelda II: The Adventure of Link. As Gail traverses between towns, enemies will spawn in the overworld map and dart around randomly. Coming into contact with them will put her into a small, side-scrolling area where enemies will attack her, which she can exit by running or fighting her way to the sides. In addition to evident locales like cities and bridges, there are a number of smaller areas for Gail to visit, such as caves and rural houses, and there are various secret areas hidden throughout the overworld to discover.
+
+
+== Development ==
+Phoenotopia: Awakening is a remake of the flash game Phoenotopia released on Newgrounds. In remaking it, the developers used the flash version as an outline for the larger game, now made in Unity, and scaled up and enhaced each aspect of the game. Originally planned for the Wii U, years of delays during development pushed release onto the Nintendo Switch instead.
+During early development, Phoenotopia: Awakening was being made alongside the sequel, known tentatively as Phoenotopia 2. Eventually, priority shifted onto the remake, which Quells announced in August, 2016. It was intended to be a polished product worthy of being displayed alongside the sequel, since Quells considered the flash game more of an outline than the final product. It was also to be used as a method to gauge interest in how successful a sequel would be, since the original at the time was just a flash game.
+Each area in Phoenotopia: Awakening corresponds to a different wedge on a color wheel. This was designed to ensure that each area remains visually distinct from the others. Annamária Klimkovič, the game's lead artist, devised this method.
+After release, the game was criticized for difficulty in the combat, money balancing issues, and certain quality of life difficulties. Many of these criticisms were addressed in a patch adding the new accessibility settings, adding options for stamina usage, instant eating, and rapid attacking. This improved ratings, as shown by the difference in Metacritic score between the Switch version (72) and the PC version (85): the former generally reflects the game pre-patch (6 out of 9 scores are from August), whereas the latter reflects the game post-patch, since the PC version was released with the patch, in January 2021.
+
+
+== Reception ==
+
+Initially reviews for Phoenotopia: Awakening from Nintendo Life and Destructoid praised the story and puzzles, but criticized the difficulty. Hardcore Gamer and Switch Player were not as forgiving of the difficulty, giving lukewarm scores due to it, and said that it held back the charming aspects of the game. Nintendo World Report reported that the game felt overambitious, lacked direction, and contained balancing issues. All reviewers praised the art, music, and writing. A few days after these reviews came out, Quells said in an interview with PS4Blog.net that some of the criticisms would be addressed in a patch that was to release in the coming weeks, and was ultimately released on September 11.
+Reviews made after the patch were generally positive. Nintendo Wire praised the combat, finding little issue with it, but Xbox Tavern, while positive about the game as a whole, stated that the combat was "sub-par." The nature of this criticism markedly differs from the complaints of imbalance and difficulty in reviews before the patch. Nintendo Wire also criticized the lack of a minimap and a quest log, which Quells admits had slipped his mind during development, but Nintendo Life found that it enhanced game's pacing. All reviews praised the art, story, writing, and setting, but they all focused on the gameplay, with Nintendo Wire stating that "this isn't a game you play for the writing or the visuals or the audio — it's one you play for the game."
+
+
+== Sequel ==
+A sequel was planned, but has been put on indefinite hold following low sales of Phoenotopia: Awakening, and Quells announced in March 2021 that Cape Cosmic's next game would not be Phoenotopia 2. In an interview, Quells said that were the sequel to be made and a franchise established, he would like to follow a convention where each game's subtitle would begin with the next letter of the alphabet, making Phoenotopia: 2's subtitle begin with "B". In a later interview with Flyhigh Times, he stated that he hopes to create the sequel one day.
+
+
+== References ==
+
+
+== External links ==
+Official website

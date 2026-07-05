@@ -1,0 +1,9 @@
+**Vanta Forge** is a business simulation sandbox game focused on building and managing a growing online company. You begin as the chief executive of a small firm with limited funds and the ambition to create a major web platform capable of competing with the largest technology giants and eventually becoming the most valuable company in history.
+
+The core gameplay centers on operating a website successfully. You must continuously develop and improve features, expand hosting capacity, and run marketing campaigns effectively. As traffic increases, the infrastructure requirements grow as well, pushing you from basic virtual servers toward a fully featured private hosting center. Long-term success depends on maintaining stable, reliable service while scaling the business to meet demand.
+
+Office management is another important part of the experience. The city provides workplaces in a variety of sizes and layouts, and you must choose the one that best fits your needs. After securing an office, you are responsible for organizing and decorating it while keeping employees satisfied. Staff members are essential to the company’s growth, and as the business expands, you will need to recruit more people to support it. Their needs also increase over time, and keeping them happy becomes important to prevent rival companies from luring them away with attractive offers.
+
+Competition plays a major role in the game’s progression. Your goal is to build the biggest website in the industry, and you can do this either by buying and merging with competitors or by outperforming them until they fail. The game supports a sandbox approach, allowing players to choose their own path toward market dominance.
+
+The experience is also designed with community support in mind. It includes modding support through the Steam Workshop and encourages player translation contributions through Localizor, helping extend the game through community involvement.

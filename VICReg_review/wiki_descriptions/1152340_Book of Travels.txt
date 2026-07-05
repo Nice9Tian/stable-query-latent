@@ -1,0 +1,42 @@
+Game: Book of Travels
+appid: 1152340
+Source: Book of Travels
+URL: https://en.wikipedia.org/wiki/Book_of_Travels
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Book of Travels is a role-playing video game formerly under development by Might and Delight. Unlike massively multiplayer online role-playing games (MMORPGs), Book of Travels limits the number of players on each server to create memorable meetings with players. The early access version was released for Windows, Mac, and Linux on October 11, 2021.
+The game was never fully released, and in April 2026 it announced that the game's servers would be shut down, with the game changing to an offline, single-player experience beginning on July 31 of the same year. Might and Delight cited "major obstacles and problems" with an "unsustainable" development process, and that they ultimately "did not have the capacity required for this type of project", yet still wished to somehow preserve the game.
+
+
+== Gameplay ==
+Book of Travels is described as a "social role-playing experience that doesn't hold your hand." Unlike many RPGs, Book of Travels has no overarching goals, beginnings, or ends and pushes the player to create their own journey. Unlike many RPGs, the game focuses on role-playing, exploration, and personality rather than stats and numbers.
+
+
+=== Plot ===
+Players begin their journey in the fantasy world called Braided Shore. Players create characters with various aspects such as star sign, backstory, and personality traits. From the outset, players set off to explore the land of their own will or find people to travel with. Players are able to gather resources, craft items, learn special abilities, with some aspects of combat.
+Player interaction is entirely non-text-based and non-verbal, relying on a limited set of emotes that are gained through experience in the game. The limitations on emotes is aimed at creating a "rich an friendly" multiplayer experience for players. The main way of traversing Book of Travels' world is by walking/running through the game; however, there are alternative ways of travel including manually-powered rail carts. Players will also be able to play instruments together and collect tunes.
+
+
+== Development ==
+Announced in September 2019 at Tokyo Game Show, Book of Travels' development was crowdfunded via Kickstarter. The early access version of the game was scheduled to be released in October 2020 but was postponed four times. The Steam early access version was ultimately released on October 11, 2021.
+Might and Delight had stated that they were committed to expanding the game over time, likening their role to a Dungeon Master, hinting at new scenarios that will be up to players to find on their own. Other content expansions hinted at were new levels and playable areas, characters and storylines and events. The game follows a "hand-painted" artstyle. 
+In December 2024, Might and Delight reduced resources for development of the game, which players criticized as "abandoned" according to MMORPG.com.
+The game's servers will be shut down on July 31, 2026 during its transition to an offline, single-player state. 
+
+
+== Reception ==
+In May 2020, Wholesome Games featured Book of Travels in their Wholesome Direct. Book of Travels was nominated for Best Long Feature Award at A Maze 2020.
+
+
+== References ==
+
+
+== Further reading ==
+Morton, Lauren (2020-05-27). "I hope Book Of Travels turns "tiny MMOs" into the next big thing". Rock, Paper, Shotgun. Archived from the original on 2020-11-09. Retrieved 2020-11-09.
+Gassner, Mitch (11 October 2021). "Book Of Travels Early Access Impressions". mmorpg.com.
+Royce, Bree (2021-10-11). "Kickstarted tiny MMO Book of Travels has officially launched into early access". Massively Overpowered. Retrieved 2023-12-13.
+
+
+== External links ==
+Official website

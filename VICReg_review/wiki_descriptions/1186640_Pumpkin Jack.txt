@@ -1,0 +1,33 @@
+Game: Pumpkin Jack
+appid: 1186640
+Source: Pumpkin Jack
+URL: https://en.wikipedia.org/wiki/Pumpkin_Jack
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Pumpkin Jack is a video game developed by Nicolas Meyssonnier and published by Headup Games. It was released for Windows, Nintendo Switch and Xbox One in 2020 and PlayStation 4, PlayStation 5 and Xbox Series X/S in 2021. It combines elements of action-adventure games, 3D platform games, and hack and slash gameplay.
+
+
+== Gameplay ==
+Players control a spirit revived as a pumpkin-headed man on Halloween. Together with his two companions, an owl and a crow, players guide Pumpkin Jack through various puzzles and 3D platforms to defeat humanity.  Jack can engage in melee combat using various weapons, including a shovel, scythe, and magic sword.
+
+
+== Synopsis ==
+Once upon a time in the great Arc En Ciel Kingdom, the land lived in peace and harmony (and felt pretty boring), however out of sheer desperation for violence and bloodshed, the Devil himself summons the Curse of Eternal Night to spread darkness and unleash mindless hordes of monsters to bring forth chaos to the once peaceful lands.
+Not liking their new lifestyle, the villagers asked the help of a mighty Wizard who promises to end the Devil's curse and bring harmony back to the kingdom. Upon hearing of their champions quest, the prince of darkness makes a deal with the cursed trickster Stingy Jack to forgive his past misdeeds in exchange to find and destroy the Wizard so he will not get rid of the curse. Armed with a assortment of weapons and befriending a crow, the pumpkin headed trickster travels the cursed kingdom to fight off many monsters and search for the powerful sorcerer.
+
+
+== Development ==
+Nicolas Meyssonnier made Pumpkin Jack mostly by himself. Adrien Lucas helped port the game to consoles, and Yohan Jager composed the music. Headup Games released the game for Windows, Xbox One, and Switch on October 23, 2020; PlayStation 4 on February 24, 2021; and PlayStation 5 and Xbox Series X/S on October 27, 2021.
+
+
+== Reception ==
+
+On the review aggregation website Metacritic, Pumpkin Jack received positive reviews on the PlayStation 4 and PlayStation 5 and mixed reviews on Windows and Nintendo Switch. Fellow review aggregator OpenCritic assessed that the game received fair approval, being recommended by 61% of critics. Hardcore Gamer praised the variety of gameplay styles and said that the game is fun despite some rough edges.  Commenting on its retro PlayStation 2-style gameplay, Push Square wrote that it is a "game that knows exactly what it wants to be, and delivers with confidence". Nintendo Life called it "an absolute triumph" and compared it positively to MediEvil. NintendoWorldReport found it "surprisingly charming" and praised the platform elements, while criticizing the combat.
+
+
+== References ==
+
+
+== External links ==
+Official website

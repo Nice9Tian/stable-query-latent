@@ -1,0 +1,54 @@
+Game: Chicory: A Colorful Tale
+appid: 1123450
+Source: Chicory: A Colorful Tale
+URL: https://en.wikipedia.org/wiki/Chicory:_A_Colorful_Tale
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Chicory: A Colorful Tale is an adventure video game by indie developer Greg Lobanov and published by Finji. It was released for Microsoft Windows, macOS, PlayStation 4, and PlayStation 5 in June 2021, for Nintendo Switch in December 2021, and for Xbox One and Xbox Series X and Series S in May 2023. The game features an anthropomorphic dog with a magical paintbrush, which is used to color the game world. Chicory: A Colorful Tale received "universal acclaim" from critics.
+
+
+== Gameplay ==
+
+Chicory: A Colorful Tale, or Chicory, is an adventure role-playing video game where characters are small anthropomorphic animals. The player takes the role of an anthropomorphic dog named after the player's favorite food, or the default name "Pizza" if the player does not choose a favorite food. The world they explore is black and white, but can be painted using The Brush, a large paintbrush. The paintbrush can also be used to solve environmental puzzles. Over the course of the game the player gains new abilities such as the ability to jump and an ability to swim through the paint with later unlocks allowing the player to swim up walls and up waterfalls.
+Boss fights contain the game's only combat mechanics with the player dodging projectiles while using the brush to damage the boss in arenas with dark-negative color filters. The game also has an option to skip boss fights entirely.
+
+
+== Plot ==
+The Picnic Province is a land devoid of color. It is the responsibility of the wielder of the magic Brush to bring color to the world. Ages ago, the Brush was cut from the branch of a magical brush tree. The Brush has been passed down from teacher to apprentice for generations.
+Pizza is a janitor for the current wielder, Chicory. One day, while Pizza is cleaning Chicory's Tower, all color is suddenly drained from the world. Pizza finds the Brush discarded by Chicory's bedroom door and takes it for their own.
+Wandering into Supper Woods, Pizza encounters Blackberry, a former wielder and Chicory's teacher. Blackberry leads them to a corrupted tree deep in the woods. They are attacked by a mysterious entity within the tree, which Pizza fights off with the Brush. Returning to the Wielder Tower, Pizza finds Chicory in a depressive state. She refuses to take back the Brush, giving it to Pizza, who excitedly assures Chicory they will fight the corruptions and fill the world with color again.
+After fighting another corruption, Pizza finds Chicory in an improved mood outside the Tower. She directs Pizza to the next corruption in Gulp Swamp. In the swamp, an apparition of Chicory insults Pizza's abilities as a wielder. Blackberry tells Pizza to confront Chicory, suspecting she is linked to the corruptions in some way. At the Tower, Chicory reveals that she is the source of the corruptions – they are a manifestation of her worst thoughts and fears. Stating she doesn't care who the wielder is, Chicory kicks Pizza out of the Tower.
+A delegation from the bug kingdom leads Pizza to the underground city of Feast, where they must remove yet another corrupted tree. Within, Pizza fights an apparition of themselves, revealing that Chicory isn't the only one linked to the corruptions and thus can't be the source. Back at the Wielder Tower, Pizza finds Chicory's room swallowed by darkness. Chicory lashes out, claiming that everything is her fault and begging Pizza to abandon her. After Pizza calms her down, Chicory deduces that the Brush must be the true source of the corruptions, as it is the only element the two of them have in common. She agrees to formally take Pizza as her apprentice and to guide them through the four wielder trials.
+During one of the trials, Chicory elaborates on her relationship with Blackberry. Blackberry's perfectionism put an immense strain on Chicory, who buried her troubles to hide any sign of weakness. Sensing something was wrong, Blackberry refused to formally pass the Brush onto Chicory at the final trial. Chicory fled with the Brush anyways. After this incident, the corrupted trees began to appear. After completing the trials, Pizza returns to the Wielder Tower to fight the final corruption. Chicory suggests they should destroy the Brush afterwards, as its ability to manifest a wielder's thoughts and feelings causes the corruptions to appear. Entering the corrupted tree on the roof of the Tower, Pizza is confronted by the apparition again, who takes the Brush away and knocks them out of the tree.
+Returning to the base of the Tower, Pizza finds Chicory who explains why she gave them the Brush – she wanted to be free of the institution of the wielders and the burden of their legacy. Pizza, having taken the Brush of their own volition, was proof the institution was unnecessary. Lamenting the loss of the Brush, Pizza wills a new brush tree into existence. Pizza reenters the corrupted tree but struggles to fight the entity within. Chicory arrives, having also grown her own brush. Together, they destroy the original Brush, causing the corruptions to disappear. They agree to teach others to grow their own brushes so that color may be free to all.
+
+
+== Development ==
+Originally under the title Drawdog, Chicory was unveiled via a Kickstarter on August 15, 2019, with a planned 202X release date. The project was started by indie developer Greg Lobanov, who previously worked on Wandersong and was funded within a day. Chicory was showcased at PAX West 2019, and was met with positive reception from RPGamer. The game started development when Lobanov wanted to make an art game that focused on how art interacts with the world.
+In an interview, the game's composer Lena Raine wrote that she wanted to create a contrast between the music of the natural world and the darkness. Raine said that various instruments were used in order to create the tone, "It's almost like the distortion of the natural, so you'll notice that I use a lot of synths and also acoustic instruments run through guitar pedals and amps and all sorts of literal distortion to create a sound that's an amplified and chaotic version of reality." The soundtrack was released alongside the game in June 2021, and was described as one "designed for continuous listening".
+The character of Chicory reportedly suffered difficulties in characterization during development with some playtesters thinking she was the villain in early builds of the game. The character drew from lead artist Alexis Dean-Jones's experiences with obsessive–compulsive disorder in real-life.
+The release date of Chicory—June 10, 2021—was announced in May 2021. The game was released on June 10, 2021, for Mac OS, Microsoft Windows, PlayStation 4, and PlayStation 5. On December 15, 2021, the game was released for the Nintendo Switch. The title was later ported to Xbox One, and Xbox Series X and Series S on May 30, 2023.
+Following the release of the game, Lobanov released a tweet that showed an animated gif of a two legged fox-like creature which stated that he was making another game with the same developers of Chicory, stating he would share more details about the game later in 2022. The game was later revealed to be Beastieball.
+In 2023, the Wishes Unlimited production logo was added to the game was added to opening to the game following the development studios formation that same year, with the company now being credited as the game's developer alongside the names of the main individuals involved in creating the game that was there when the game launched.
+
+
+== Reception ==
+
+According to the review aggregator Metacritic, Chicory: A Colorful Tale received "universal acclaim" for Microsoft Windows and Nintendo Switch and "generally favorable reviews" for PlayStation 5. Fellow review aggregator OpenCritic assessed that the game received "mighty" approval, being recommended by 96% of critics.
+In a positive review for Destructoid, Zoey Handley praised the relatable nature of the story. "if you are the creative type, if you've dealt with self-doubt, the well-intentioned sting of criticism, the frustration of hard work going nowhere, directionlessness in a world that exploits the imaginative... then there is potential that Chicory: A Colorful Tale is going to hit hard." IGN's Rebekah Valentine also enjoyed the cast of characters in Chicory, "there are also supporting characters with brief, sharp at times, but always kind commentary on topics like grief, workaholism, and the struggles of reckoning with sexuality and identity. It is at all times sensitive and empathetic, but doesn't sugar-coat or present a cheesy solution that magically erases the problem." GameSpot's Alessandro Barbosa liked the title's fusion of puzzles and story, writing that, "Satisfying puzzles and cathartic painting mechanics support Chicory: A Colorful Tale's strikingly relatable story about self-doubt".
+Destructoid would later name Chicory the best PC game of 2021 and the best overall game of 2021. Giant Bomb awarded Chicory its "Chillest Game", "Best Soundtrack", and "Best Overall Game of the Year" awards.
+
+
+=== Awards ===
+
+
+== References ==
+
+
+== Further reading ==
+"Something personal and meaningful" - Greg Lobanov talks about creativity and imagination in Chicory: A Colorful Tale
+
+
+== External links ==
+Official website

@@ -1,0 +1,28 @@
+Game: Breathedge
+appid: 738520
+Source: Breathedge
+URL: https://en.wikipedia.org/wiki/Breathedge
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Breathedge is a survival game developed by Redruins Softworks and published by HypeTrain Digital.  Players control a character stuck on an adrift spaceship.
+
+
+== Gameplay ==
+The player controls an unnamed protagonist on an adrift spaceship carrying corpses.  The protagonist seeks to bury his deceased grandfather.  When the spaceship is wrecked, the player attempts to survive various hazards, such as low oxygen and a lack of tools.  They are accompanied by a sarcastic artificial intelligence and an immortal chicken.
+
+
+== Development ==
+Breathedge entered early access on September 13, 2018, and was released on PC on February 25, 2021. It was released on the Nintendo Switch, PlayStation 4, Xbox One and Xbox Series X and S on April 6, 2021.  The PlayStation 5 version was released on February 25, 2022.
+
+
+== Reception ==
+
+Breathedge received mixed reviews on Metacritic.  Writing for PC Gamer, Tyler Wilde said he enjoyed the gameplay, but he stopped playing because of what he felt was outdated and unfunny humor. IGN's reviewer, Jon Bolding, wrote, "Breathedge's concept of survival crafting in space may be good, but it just isn't fun." John Rairdin of Nintendo World Report criticized the long initial load time on the Switch.  He called it "a mediocre survival game with a pretty good story" and recommended it to Subnautica fans.
+
+
+== References ==
+
+
+== External links ==
+Official website

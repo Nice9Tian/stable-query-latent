@@ -1,0 +1,43 @@
+Game: MechWarrior 5: Clans
+appid: 2000890
+Source: MechWarrior 5: Clans
+URL: https://en.wikipedia.org/wiki/MechWarrior_5:_Clans
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+MechWarrior 5: Clans is a mecha video game, developed by Piranha Games and published by Enad Global 7, released worldwide on October 16, 2024. The game tells the in-universe story of OPERATION Revival from the perspective of five newly-minted MechWarriors from Clan Smoke Jaguar. It is the first BattleTech/MechWarrior game told from the perspective of the Clans since MechWarrior 2 (released in 1995).
+
+
+== Synopsis ==
+MechWarrior 5: Clans is set in the BattleTech universe. The player plays the role of star commander Jayden of a Clan Smoke Jaguar star, during the start and middle of the Clan invasion.
+
+
+== Gameplay ==
+Mechwarrior 5: Clans largely follows the mech combat and management established in MechWarrior 5: Mercenaries, but is a story-driven linear campaign structure with a much heavier emphasis on narrative presentation, instead of an open-world sandbox-style like its predecessor. Using the new toolsets provided by Unreal Engine 5, Piranha Games produced pre-rendered cinematic cutscenes that emphasized voice acting and motion-capture performances.
+
+
+== Downloadable Content ==
+
+
+=== Trials of War ===
+Mechwarrior 5: Clans received its first downloadable content (DLC) with the Trials of War expansion on November 25 [1] and was initially sold for 19.99 USD on release. This DLC offered new gameplay systems with 5-player PvP Arena Mode, co-op Horde Mode, and 12 new Omnimech variants. The DLC was received negatively by both critics [2] and fans [3] and Piranha Games made it free, refunded those who bought it, and absorbed the DLC into the base Mechwarrior 5: Clans game [4].
+
+
+=== Ghost Bear Flash Storm ===
+On May 7, 2025, MechWarrior 5: Clans received its first story-focused expansion with a new 12 mission campaign that followed a new cast of characters from Clan Ghost Bear and set in the same time period as the base game's Clan Smoke Jaguar campaign. The DLC also included 4 new OmniMechs and 4 new BattleMechs and introduced 'elementals' as a smaller support unit which had not appeared in the MechWarrior series since MechWarrior 3. The expansion was received positively by critics [5] and players [6]. According to the publisher Enad Global 7, Ghost Bear Flash Storm performed commercially "nicely" and "within expectations" [7].
+
+
+==== Wolves of Tukayyid ====
+On November 5, 2025, Piranha Games announced they are developing a second story-focused DLC Wolves of Tukayyid set to release on December 4, 2025 [8]. The DLC features 20 new missions focused on Clan Wolf and with six new 'Mech chassis.
+
+
+== Reception ==
+
+As of November 2024, MechWarrior 5: Clans had "Generally Favorable" reviews according to review aggregator Metacritic.
+
+
+== References ==
+
+
+== External links ==
+Official website

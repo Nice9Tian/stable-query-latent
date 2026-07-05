@@ -1,0 +1,59 @@
+Game: Returnal
+appid: 1649240
+Source: Returnal
+URL: https://en.wikipedia.org/wiki/Returnal
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Returnal is a 2021 third-person shooter game developed by Housemarque and published by Sony Interactive Entertainment for the PlayStation 5. A port to Windows developed by Climax Studios was released on 15 February 2023. It follows Selene Vassos, an astronaut who lands on the planet Atropos in search of the mysterious "White Shadow" signal and finds herself trapped in a time loop. The gameplay combines bullet hell, third-person shooter and roguelike elements.
+Returnal received generally positive reviews from critics for its visuals, combat, audio design and technical achievements, though its difficulty and roguelike design were met with mixed opinions. It won several end-year accolades, including Best Game at the 18th British Academy Games Awards. The game had sold 866,000 copies by February 2022, before being released for Windows in February 2023. A spiritual successor, Saros, was released in 2026.
+
+
+== Gameplay ==
+
+Returnal is a third-person shooter video game featuring roguelike elements and falling under the psychological horror genre. In a futuristic science fiction setting, the player controls Selene Vassos (Jane Perry), a space pilot, equipped with a suit and armed with high-tech weapons, who is stranded on the alien planet Atropos and stuck in a time loop. After every death, Selene is resurrected, following a pattern of traversing foreign environments and combating extraterrestrial entities with growing visions in an ever changing world. 
+The game is split into two halves, each consisting of three biomes. If the player dies during a run, they are sent to the beginning of the half. Selene has the ability to dash and can later unlock a grappling hook that lets her shoot to predefined points in a room. The xenomorph enemies launch arcade-like geometric arrangements and colors of energy, lines, fireballs in expanding spiral, square and spherical arrays, hoops, lasers which require strategy to navigate. Players can find a variety of weapons in the game, ranging from a basic pistol to an Electropylon Driver. Each weapon has unique traits that can be leveled up to unlock enhanced perks that can deal more damage. Selene additionally has a melee weapon that can be used to attack enemies, destroy resource geodes, or destroy barriers.
+The Ascension update introduces online cooperative multiplayer, which allows up to two players to complete the game's campaign together.
+
+
+== Plot ==
+Disobeying orders, ASTRA Corporation pilot and explorer Selene Vassos attempts to land on the off-limits planet of Atropos to investigate what she dubs the "White Shadow" signal, which somehow seems familiar to her. Upon arrival, Selene's ship, Helios, suffers heavy damage and crash lands. Unable to contact ASTRA, Selene explores the planet and is shocked when she comes across corpses of herself. She learns that every time she dies, time loops back to the moment she crashed, sending her back to her starting point. The planet seems to change with every loop, and Selene begins experiencing vivid visions. 
+Resolving to find the source of the White Shadow, Selene presses on, fighting hostile alien lifeforms and scavenging alien technology left over from the advanced, extinct alien civilization that used to reside on Atropos. As she tracks the White Shadow, Selene comes across what appears to be a replica of her childhood home. Every time she enters it, she recalls old memories and repeatedly encounters an astronaut wearing an antique space suit. Selene eventually learns that she apparently used an alien weapon to paradoxically shoot down her own ship, thus making herself responsible for her being marooned on Atropos. 
+Eventually, Selene tracks down the source of the White Shadow. Afterwards, ASTRA is able to receive her distress call and sends a rescue ship. Selene returns to Earth and eventually dies of old age, only to reawaken back on Atropos, having looped back to the crash. Dismayed that she has failed to escape Atropos, Selene continues to explore the planet. Eventually, her search leads her to an underwater abyss below the planet's surface, where she finds a replica of an old car.
+She proceeds to the bottom of the abyss where she encounters a massive, octopus-like alien creature. She is then shown a vision of a middle-aged woman, who looks similar to Selene, driving through a forest at night with a young child in the back seat. While passing over a bridge, the woman sees the astronaut standing in the middle of the road and swerves to avoid it, driving the car off the bridge and into the lake below. The woman attempts to reach the now unconscious child but is pulled out of the car by dark cloud-like tentacles. A first-person perspective of the lake surface from below is then shown. The cloud-like tentacles reappear, pulling the viewer away from the surface and deeper into the lake.
+If the player then continues the game after the closing credits, and collects six artifacts called "Sunface Fragments", Selene can then return to her home and recover a set of car keys. She then opens the car and confronts a pregnant humanoid creature seated in a wheelchair. Selene fights off the creature and is transported back to the car crash from the perspective of the astronaut, implying that she is the astronaut that the driver swerved to avoid. Selene then finds herself underwater and swims to the surface, crying out the name "Helios" as she does.
+
+
+== Development ==
+Returnal was developed by the Finnish firm Housemarque and published by Sony Interactive Entertainment. The game was in development for more than four years. It takes advantage of the PlayStation 5's DualSense controller and Tempest Engine to support advanced haptic feedback, 3D spatial audio, and real-time ray tracing effects, enhancing the player's immersion and experience. With the increased processing power and inclusion of a custom solid state drive storage in the PlayStation 5, the game features reduced loading times and a wide variety of enemies, visual effects, and objects within gameplay scenes. Additionally, the game runs at 4K resolution and 60 frames per second. Returnal's native resolution is around 1080p. The developers used temporal upsampling to get to 1440p and then checkerboard rendering to get to 4K. Returnal also features an original score composed primarily by Bobby Krlic.
+The game's look relies heavily on a number of visual effects that the development team built in-house as extensions to Unreal Engine: The core visual style of the game relies heavily on particle systems and volumetric rendering.
+Returnal was revealed at Sony's PlayStation 5 reveal stream on 11 June 2020. The game was exclusively developed for the PlayStation 5. The game was initially scheduled for a release on 19 March 2021. On 28 January 2021, it was announced the release date was pushed back a month to 30 April 2021. On 25 March 2021, it was announced that the game had gone gold. A free update titled Ascension, which introduces a cooperative multiplayer mode and an endless mode known as the Tower of Sisyphus, was released on 22 March 2022. On 8 December 2022, at The Game Awards 2022, it was announced that the game would be ported to PC in "early 2023". It was released for Windows on 15 February 2023. 
+
+
+== Reception ==
+
+Returnal received "generally favorable" reviews from critics according to review aggregator website Metacritic. 
+In a review for IGN, Mitchell Saltzman enjoyed how the gameplay integrated with the story, writing that "It makes Selene an interesting protagonist who's in this weird repeating-but-different scenario along with us." Saltzman criticized the need to replay sections in order to reach a higher weapon proficiency, saying that it made the game "ridiculously difficult" and the only way the player could succeed was by grinding to reach a higher level. Writing for The Guardian, Keza MacDonald gave the game a positive review, praising Returnal for its challenging difficulty, its rewarding combat, and engaging gameplay loop. MacDonald also praised the game for its visual and audio design, writing that "The planet looks and sounds extraordinary, each new area a distinctive biotechnological nightmare."
+The game's roguelike gameplay, which requires players to repeatedly play through levels following an in-game death, has been a divisive point among critics and players. In particular, Returnal has received some criticism from players for its lack of a save feature, while critics have been more mixed on its absence. Jon Bailes of GamesRadar+ wrote that the lack of a save feature should be understood as a deliberate choice which highlights the game's themes of mortality. Bailes stated that "Selene's traumatic endeavours were in tune with my attempts to finish the game. The lack of a save feature and extra stuff to do added another dimension to the emotional experience." 
+Eurogamer's Chris Tapsell wrote that "checkpoints only work once per run, so you better be sure when you spend half a day's resources on one." He also noted that at one point during his time with Returnal, "I'd paused the game while on my best-ever run, and came back not two minutes later to find my loaner PS5 in the middle of an auto-update. I lost all progress on the run, roughly a whole morning of my life. Turn auto-updates off!" Criticism of the save system from players and reviewers alike resulted in developer Housemarque issuing a statement that they were working to address the issue but did not know what form a save feature may take. In October 2021, Housemarque released Update 2.0, which allows players to "suspend cycle" to save their game during a run.
+
+
+=== Sales ===
+Returnal sold 6,573 physical units within its first week on sale in Japan, and was the 15th-best-selling retail game of the week in the country. Based on physical sales of the game in the United Kingdom, the game debuted at no. 2 on the sales charts for the week ending 1 May 2021. As of February 2022, the game has sold 866,000 copies (having shipped 1 million units).
+
+
+=== Accolades ===
+
+
+== Successor ==
+In February 2025, Housemarque announced Saros (2026), a spiritual successor to Returnal.
+
+
+== Notes ==
+
+
+== References ==
+
+
+== External links ==
+Official website

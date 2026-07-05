@@ -1,0 +1,54 @@
+Game: The Last Spell
+appid: 1105670
+Source: The Last Spell
+URL: https://en.wikipedia.org/wiki/The_Last_Spell
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+The Last Spell is a roguelite, tactical role-playing game developed by French studio Ishtar Games (formerly known as CCCP) and published by The Arcade Crew. The game released into early access on Steam in June 2021. The final version of the game released on March 9, 2023, on the same day as the launch of the console versions for Nintendo Switch, PlayStation 4, and PlayStation 5. The game is available in English, French, Chinese, and Japanese. 
+
+
+== Plot ==
+The Last Spell takes place in a dark fantasy, post-apocalyptic world ravaged by war and magic. After centuries of fighting, a deranged mage discovers a spell capable of destroying entire cities. The mage casts the spell on the town of Glintfein, engulfing it in purple flames and annihilating all life—including members of the royal family. In turn, the royal family's mages research how to cast this devastating spell, and then begin using it on nearby cities.
+Soon, every nation has acquired a means of casting this devastating magic, turning city after city into ruins engulfed in purple flames. But the ruins do not remain dormant; a purple mist begins emanating from each ruined city, and from the mist marches the undead corpses of those killed by the devastating magic.
+Small groups of survivors gather to fend off the undead, and a fighter known as The Commander takes charge.
+In retribution for the magical destruction, most mages are exiled or killed, but some are spared. Under The Commander's watch, those spared mages discover a spell that could banish all magic from the world, thereby ending the purple mist and stopping the undead hordes. However, the mages need time to channel enough energy to cast the spell, so they need The Commander, along with a ragtag team of heroes, to protect the mages, at any cost, until the last spell is cast.
+Eventually, the Commander successfully leads the heroes in completing the magic circles required for the last spell in the remaining survivor havens. However, unknown to the survivors, the Commander is actually the original mage responsible for the destruction of Glintfein. He initially invented the city destroying spell in hopes that it would put a stop the wars ravaging the land, but did not foresee the destruction of the world, so he developed the last spell as penance for his actions. He also struck a deal with the twin gods Schaden and Freude to gain the power he needs, despite knowing they plan to use his body as a conduit to manifest in the physical world. 
+The Commander returns to the rings of Glintfein to perform the final ritual for the last spell, and defeats Schaden and Freude when they attempt to stop him. Upon casting the last spell, the Commander absorbs all of the world's magic as well as Schaden and Freude into his own body, ascending into godhood. Having saved his world, the Commander decides to use his newfound powers to save other worlds in need of his aid in an act of eternal penance for his crimes.
+
+
+== Gameplay ==
+The Last Spell is a tactical role-playing game in which players, as The Commander, control a small group of randomly generated heroes defending a town against hordes of undead. The game purposefully features an asymmetric tactical imbalance, in that the player starts with three heroes yet must fight against hundreds of undead enemies.
+Players must initially complete a tutorial in which they defend the town of Swampfurt; however, after the tutorial, players use a world map to select which town they want to defend (e.g., Gildenberg, Lakeburg, Glenwald, Elderlitch). Each town has a unique map consisting of a two-dimensional, isometric battlefield with a magic circle at the center. The player must protect the magic circle from the attacking horde of undead, otherwise the player loses. When selecting a town map, the player can choose a limited number of Omens to modify their play experience on that map. Omens are positive buffs, such as giving all heroes one additional movement point or increasing each hero's damage, and last the full length of that map.
+Each town map features a set number of day and night phases. During a day phase, the player can spend gold and materials to construct or repair buildings, purchase heroes, build defenses, acquire items (e.g., weapons, armor, potions), and otherwise prepare for the night phase. Heroes can also level up during the day phase, if they acquired enough experience from killing monsters during the prior night phase.
+During a night phase, the player enters into a turn-based battle alternating between the player's turn and the undead horde's turn. During the player's turn, the player uses their heroes to move or take actions. Heroes move on a battlefield composed of square tiles. Actions include using physical, range, or magical attacks; casting spells; using defensive actions such as temporarily gaining armor points; or using equipped items such as potions. Unlike in a character class system, a hero's available actions are determined by their equipment, and each type of weapon and armor provides the hero with numerous unique actions, making it possible to highly customize a hero for a multitude of battle roles. After the player ends their turn, the entire undead horde then moves some squares toward the magic circle and attacks anything in range, potentially dealing damage to heroes, buildings, defensive walls, or the magic circle. The player then gets another turn, and this back-and-forth between player and undead horde continues until either the player successfully destroys all enemies or the magic circle is destroyed. If the player destroys all enemies, the night phase ends and the player goes into the next day phase, earning themselves some gold and items. 
+Each consecutive night phase challenges the player with more undead enemies than the last. There are numerous types of undead enemies—including sharpshooting archers, quick runners, and magic-wielding ghosts—all with their own abilities and weaknesses. Each night phase features a randomized combination of enemy types, requiring the player to adapt their playstyle to each night phase's particular enemy composition.
+At the end of a town map's set number of day and night phases is a climactic boss battle. Once the player defeats the boss, the player has successfully protected the town and they are victorious. The player then returns to the world map to select another town or replay the same town on a higher difficulty.
+As a rogue-lite game, The Last Spell features a progressive metagame. Whether a player successfully completes a town map or not, they earn metagame currency based on the number of undead defeated and nights survived. Players can use this currency during a day phase or on the world map to unlock new Omens, weapons, armor, buildings, and more. Players can also unlocks rewards based on taking particular actions during the night phases. All of these unlockable rewards increase the player's chances of successfully completing subsequent town maps.
+
+
+=== Post-release additions ===
+Two downloadable content packs introduced additional races, maps, weapons, and mechanics to the game. Dwarves of Runenberg adds the dwarven race, the Runenberg map, three new weapons, and new gameplay elements such as Runestones and Stone Medals. Elves of Amberwald adds the elven race, the Amberwald map, three new weapons, and the "Seeds" system, which allows players to place trap-like defenses that trigger during enemy turns.
+
+
+== Release ==
+On June 3, 2021, Ishtar Games released an early access version of The Last Spell on Steam. On January 25, 2023, Ishtar Games announced that the 1.0 version of The Last Spell will release in early 2023, alongside the launch of the game on the Nintendo Switch, PlayStation 4, and PlayStation 5.
+The full release of the game became available on March 9, 2023.
+
+
+=== Downloadable content ===
+The Last Spell has two released DLC packs, with a third planned for early 2026.
+
+Dwarves of Runenberg was released on April 24, 2024.
+Elves of Amberwald was released on April 22, 2025.
+Tales of Torment was announced in 2025 and is planned for release in early 2026.
+
+
+== Awards and nominations ==
+
+
+== References ==
+
+
+== External links ==
+Official website

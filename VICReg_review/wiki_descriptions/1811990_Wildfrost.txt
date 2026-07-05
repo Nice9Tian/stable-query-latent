@@ -1,0 +1,30 @@
+Game: Wildfrost
+appid: 1811990
+Source: Wildfrost
+URL: https://en.wikipedia.org/wiki/Wildfrost
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Wildfrost is a 2023 roguelike deck-building game developed by Deadpan Games and Gaziter and published by Chucklefish. It was originally released for the Nintendo Switch and Windows and ported to Android, iOS, Xbox One, and Xbox Series X/S in 2024.
+
+
+== Overview ==
+Players take on the role of a randomly generated leader setting out from the city of Snowdwell to stop an endless winter called the Wildfrost. They collect artifacts and recruit fellow adventurers as companions to battle monsters in turn-based card battles. Allies and other cards must be deployed onto a six-slot play space, divided into two lanes mirroring six possible enemy slots, but can afterwards be moved to avoid or block damage from the enemies in a given lane. All characters attack at differing turn intervals. Ally cards are deployed with their own health and turn counters, while weapons and other artifacts can be played directly from the hand. Losing the leader's card in battle immediately ends a given run, however allies can survive a loss to be rescued and recruited by a following run.
+Cards are depicted with a cartoonish artsyle and can have various colour-coded effects. Leaders and companions are drawn from one of three different tribes; Snowdwellers, human survivors focusing on elemental magic and standard combat, Shademancers, black magic users focusing on necromancy or ritual sacrifice, and Clunkmasters, a race of Gnomes focusing on technology and automata.
+Successfully battling one's way to the Eye of the Storm reveals the Wildfrost to be caused by a powerful Emperor Shade, who fight the player as the final boss by way of a possessed Frost Guardian. Defeating the boss causes one's own leader to become possessed as the next Frost Guardian, facing any future runs until they are again defeated and replaced, however also unlocks Storm Bells to progressively customize a run's difficulty. Maxing out the storm bell unlocks the secret true boss in the Heart of the Storm, allowing the player to trap the Emperor Shade in a magic vase, ending the winter rather than becoming possessed.
+
+
+== Development ==
+Wildfrost was developed by Deadpan Games and Gaziter and published by Chucklefish. It was released for Nintendo Switch and Windows on April 12, 2023, and for Android and iOS on April 11, 2024. It also released on Xbox One and Xbox Series X/S on December 10, 2024. Wildfrost was developed using the Unity engine.
+
+
+== Reception ==
+
+Wildfrost received positive reviews on Metacritic.  PC Gamer wrote that the game had a "perfect balance of accessibility and strategic depth" and praised the art style, which it said gives it "buckets of personality".  Though Rock Paper Shotgun said luck sometimes seems to play too much of a role, they called it "a genuinely fun game, with charming details and rewarding tactical combat".  Siliconera said it "suffers from some balance issues", but they said it is "a game as beautiful, cruel, and cold as its sunless environment".
+
+
+== References ==
+
+
+== External links ==
+Official website

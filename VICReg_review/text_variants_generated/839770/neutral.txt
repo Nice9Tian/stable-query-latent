@@ -1,0 +1,9 @@
+Phoenix Point is a strategy game by Julian Gollop, the creator of the original X-COM series, and it includes Steam Workshop support. Set in a world where Earth has been overrun by a mutating alien threat, the game places the player in command of the Phoenix Project, a secret organization tasked with resisting the invasion and helping restore humanity’s future.
+
+The game combines strategic management with tactical combat. Players research and develop new technologies, explore a devastated globe, build bases, manage resources, and lead forces on the battlefield. In combat, Phoenix Point features a free-aiming system that allows direct control over soldiers’ shots, making it possible to target enemy weak spots, weapons, valuables, or simply aim for center mass.
+
+Phoenix Point also includes a diplomacy system centered on multiple factions with differing goals and beliefs. These include New Jericho, the Disciples of Anu, and Synedrion, along with various offshoot subfactions. Players can cooperate with these groups, use subterfuge to steal from them, or confront them through military force. Each faction offers unique rewards for cooperation and potential threats for opposition.
+
+The alien enemy in Phoenix Point is not static. The Pandorans mutate and adapt to the player’s tactics, creating an evolving challenge that continues even as the player’s squad becomes stronger and more advanced. The game also features a complex narrative with multiple endings, encouraging several playthroughs to uncover the full story behind the Pandoravirus, the mutants, and Phoenix Point itself.
+
+In addition to its base content, Phoenix Point has received over two years of updates, upgrades, fixes, and community-suggested additions. Steam Workshop support allows players to subscribe to and enable mods, adjust existing mods, and customize the game to suit their preferences. An example “Custom Campaign” mod is also available to create new campaign setups.

@@ -1,0 +1,31 @@
+Game: Space Haven
+appid: 979110
+Source: Space Haven
+URL: https://en.wikipedia.org/wiki/Space_Haven
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Space Haven is a 2026 simulation video game published by independent developer Bugbyte. It is a management simulation game in which players must protect and maintain a spaceship in search of a planet to colonise. Upon release of its early access version, the game received generally positive reviews, with praise directed to its level of detail and depth of gameplay mechanics, although criticism of its gameplay balance and completeness of some of its features.
+
+
+== Gameplay ==
+
+The objective of the game is to manage and maintain one or more spaceships moving through space with a crew of four or more inhabitants, although the option to manage a stationary facility is also available. Players must construct systems that allow crew to survive in space, including to maintain levels of oxygen and heat. To construct new parts for the ship, players must collect resources mined from raw materials, or from salvaging wrecks of other ships.
+
+
+== Development ==
+Space Haven was announced in 2018 accompanying the release of a trailer. The game was successfully crowdfunded by a Kickstarter campaign in early 2019, and released in early access in 2020. In 2022, the game received several major updates introducing new features, including additional characteristics to crew members, crew relationships, laser and plasma weapons, and faction leaders.
+The game finally out of early access in 2026.
+
+
+== Reception ==
+
+Space Haven received positive pre-release coverage, with Campbell Bird of 148 Apps listing the game as one of their most eagerly anticipated titles in 2018 and 2019 due to its "ambitious combination" of gameplay styles.
+Reviewing the early access version of the game, Steve Hogarty of Rock Paper Shotgun praised the design of Space Haven as a "welcome change of pace", highlighting its combat and salvage mechanics as "distinct from other colony builders". However, Hogarty considered the version suffered from a "lack of joined-up thinking" and its mechanics could be "superficial". Nate Crowley, also for Rock Paper Shotgun, highlighted the "retro aesthetics" and granularity of its simulation gameplay, although felt its gameplay and user interface could be "fiddly as hell". Wired named the game as one of the best of 2020, with Phuc Pham highlighting its "detail-oriented" design. Describing the game as a "compelling management sim", Charlie Hall of Polygon praised the game's "complex, layered systems" and "sense of speed and momentum that other games in the genre lack", but felt the game was "not properly balanced." Jeuxvideo commended the game's "advanced degree of customization and a high level of micromanagement", although noted several limitations to the game, including a lack of scripted content, "dispensable" combat systems, and an interface that is "not very pleasant to the eye".
+
+
+== References ==
+
+
+== External links ==
+Official website

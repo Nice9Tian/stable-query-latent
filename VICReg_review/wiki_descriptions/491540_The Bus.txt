@@ -1,0 +1,49 @@
+Game: The Bus
+appid: 491540
+Source: The Bus (video game)
+URL: https://en.wikipedia.org/wiki/The_Bus_(video_game)
+Match score: 6.36
+Retrieved: 2026-07-04
+--------
+The Bus is a bus simulation game developed by TML-Studios and published by Aerosoft. The early access version was available via Steam for Microsoft Windows on 25 March 2021, and the full version was released additionally on PlayStation 5 and Xbox Series X/S on 26 March 2026.
+
+
+== Gameplay ==
+The Bus has concepts similar to those of Bus Simulator 21. It is described as "the next generation of city bus driving simulation".  It is set in the capital city of Germany, Berlin, featuring a scale of 1:1 recreation of the city.
+
+
+=== Buses ===
+The Bus offers vehicles from these companies and their models:
+
+
+== Downloadable content ==
+The Hamburg City downloadable content (DLC) for The Bus is an expansion set in Hamburg, developed by Halycon Media and published by Aerosoft. It was released on 31 July 2025 and requires the base game to play.
+The expansion introduces multiple bus routes, including Line 6, Line 17, Line 7, and Line 277, set across various districts of Hamburg.
+
+
+== Development and release ==
+The Bus is developed by TML-Studios, who is known for Tourist Bus Simulator, Fernbus Simulator and World of Subways series, with Aerosoft publishes the game. The early access version was available for Microsoft Windows on 25 March 2021. It was initially developed on Unreal Engine 4, and was upgraded to Unreal Engine 5 on 14 December 2022. The game was set to leave early access in 2024, when multiplayer is expected to be available. The game is released on the 26 March 2026 to players on PlayStation 5, Windows and Xbox Series X/S. 
+
+
+=== Updates ===
+Early Access will go through different major phases, but there are regular updates to the game in between them. Even though developers said it will take them around 8 to 16 months, currently, as of June 2025, this game is in phase 3.
+
+
+==== Phase 1 ====
+The Bus was released to Steam platform, and initially included the bus line TXL with various routes, Scania Citywide LF 18m, 10.9m buses, along with simple features like: passenger transport with boarding and deboarding, ticket selling, weather, seasons, also route, line and tour editor tool. This phase ended in December 14, 2022.
+
+
+==== Phase 2 ====
+Introduction to five new lines: Line 200, Line 100, Line 300, Line 245, Line 123. Three new buses with its variants were released – Mercedes-Benz eCitaro (unbranded), MAN Lion's City DD and VDL Citea LLE & SLFA. One of the core features in this phase is multiplayer mode, which hasn't been released yet. Modding was introduced to allow players to make maps and other various modifications to the game. This phase has also got performance optimizations, such as conversion to Unreal Engine's World Partition system.
+
+
+==== Phase 3 ====
+So far, four variants of Solaris Urbino electric bus and Line 147 and beta multiplayer have been released. Economy mode will be released, which includes creating player's own bus company, buying and selling vehicles, hiring and firing staff, etc. Apart from more optimizations and polishing, AI buses and AI trams will be available.
+
+
+== References ==
+
+
+== External links ==
+
+Official website (in English)

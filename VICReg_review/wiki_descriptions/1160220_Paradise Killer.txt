@@ -1,0 +1,32 @@
+Game: Paradise Killer
+appid: 1160220
+Source: Paradise Killer
+URL: https://en.wikipedia.org/wiki/Paradise_Killer
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Paradise Killer is a 2020 adventure game developed by Kaizen Game Works and published by Fellow Traveller.  Players take on the role of protagonist Lady Love Dies, an investigator who is brought out of exile and tasked with uncovering the culprit(s) of a mass murder on Paradise Island. The game's open world and nonlinear design allow players to freely explore the island and interact with other characters over the course of their investigation.
+Paradise Killer released on September 4, 2020 for Nintendo Switch and Windows. It released on March 16, 2022 for PlayStation 4, PlayStation 5, Xbox One, and Xbox Series X/S.
+
+
+== Gameplay ==
+
+Paradise Killer is a detective story told as an open world adventure game. The player wanders a 3D world in search of evidence and clues, in order to solve several mysteries. Although the player can bring the characters to trial at any time, it is more effective to gather more evidence in order to gain a conviction.
+
+
+== Plot ==
+Paradise Killer takes place in a pocket universe in which a group of immortal alien beings, the Syndicate, are trying to create a "perfect society" to reawaken their ancient gods. Paradise Island is an experiment intended to bring this society about; the Syndicate kidnaps humans from Earth and allows them to live as Citizens on the island. However, when the island inevitably fails, the Citizens are all ritually slaughtered and their souls used to build the next iteration of the island. Paradise Island 24, the setting of the game, is the 24th iteration of the experiment.
+On the night of the regular sacrifice, the entire Syndicate Council is found murdered in their chambers, which can only be opened by members of the Council and the transfer to Island 25 is put on hold. Initial evidence points to Henry Division, an imprisoned Citizen possessed by a demon, resulting in a locked-room mystery committed by someone who shouldn't be physically capable of being there. However, the Syndicate Judge believes there's more to the mystery, and sends for Syndicate detective Lady Love Dies, who has been in exile for 3,000,000 days. Love Dies is given authority over the case and authorization to execute any parties proven guilty in court. She sets out to uncover the murderer, soon realizing that nearly everyone on the island has something to hide.
+
+
+== Development ==
+The game was inspired from a variety of different sources including H. P. Lovecraft, Danganronpa, and Franz Kafka. The developers mentioned wanting to create a place that would be familiar and comprehensible to the player, while still feeling alien enough to make the player interested to explore it. Kaizen mentions that the game was designed to feel more real through how artifacts are scattered around the island, creating a sense of mystery. The music of the game is inspired by city pop.
+An update was released in 2022 that included new quests, characters, rewards and ray tracing for the Windows version. Kaizen followed up Paradise Killer with Promise Mascot Agency in 2025.
+
+
+== Reception ==
+
+Paradise Killer received "generally favorable" reviews according to review aggregator platform Metacritic. Fellow review aggregator OpenCritic assessed that the game received strong approval, being recommended by 85% of critics. The game received positive reviews from critics, who praised the soundtrack and the open-ended nature of the investigation mechanics. Alice Bell of Rock Paper Shotgun praised the game's setting and the soundtrack. Joe Skrebels, writing for IGN, enjoyed the vaporwave aesthetic of the game and the endgame trial. GameSpot called it "a detective game like no other, an excellent, bizarre, and utterly singular take on the adventure game". Destructoid said the game was "sometimes boring, often intriguing, frequently funny, and startlingly deep. I didn't go into this expecting such an amazing detective experience, but that's exactly what I got."
+
+
+== References ==

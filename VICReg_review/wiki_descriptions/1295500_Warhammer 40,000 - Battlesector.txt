@@ -1,0 +1,37 @@
+Game: Warhammer 40,000: Battlesector
+appid: 1295500
+Source: Warhammer 40,000: Battlesector
+URL: https://en.wikipedia.org/wiki/Warhammer_40,000:_Battlesector
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Warhammer 40,000: Battlesector is a turn-based tactics video game developed by Black Lab Games and published by Slitherine Software for Windows on July 15, 2021. It is based on Games Workshop's tabletop wargame Warhammer 40,000.
+
+
+== Gameplay ==
+Warhammer 40,000: Battlesector is a turn-based tactics game, played on a grid-based map with 10-25 units sized armies. A 20-mission single-player campaign centres on the Blood Angels fighting Tyranids on the moon Baal Secundus. There is player versus player multiplayer, either via online, hotseat, or play-by-mail methods.
+
+
+== Release ==
+Battlesector was announced on February 9, 2021, for a release in May 2021. Console versions for PlayStation 4 and Xbox One were due for summer 2021. On May 11, 2021, the game was delayed to mid-July 2021. The game was released for Windows on July 22, 2021. On November 15, 2021, the console versions were delayed to December 2, 2021. Two major downloadable content (DLC) packs were released for the game: Necrons and Sisters of Battle both in 2022.
+
+
+== Reception ==
+
+Warhammer 40,000: Battlesector received "mixed or average" reviews according to review aggregator Metacritic.
+Luke Plunkett of Kotaku gave a positive review and said: "My favourite thing about this entire game is its voice acting, which takes a solid strategy game and turns it into a memorable 40K experience."
+Joe Robinson of PCGamesN summarized the game as "[a] solid turn-based strategy experience that explores the Space Marine power fantasy, marred by humdrum mission design."
+Jon Bolding of IGN gave a positive review and said: "The momentum-based tactical system and broad customizability of the forces you lead, combined with randomization in the mission setups, gives you a fun campaign with a tasty side dish of multiplayer skirmish."
+Matt Bassil of Wargamer reviewed the Necrons expansion and summarized: "The Warhammer 40,000 Battlesector – Necrons DLC is a well-made unit pack, but a unique story or a better realised campaign mode would go a long way to improving its overall value. The toys are all there, but they could do with a better box."
+Battlesector was included on Eurogamer's list of "The best Warhammer 40k games to play in 2022". PC Gamer listed the game 10th on its list of best Warhammer 40,000 games.
+
+
+== See also ==
+Battlestar Galactica: Deadlock, the previous strategy game by the same developer and publisher
+
+
+== References ==
+
+
+== External links ==
+Warhammer 40,000: Battlesector at Black Lab Games

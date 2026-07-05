@@ -1,0 +1,33 @@
+Game: Isonzo
+appid: 1556790
+Source: Isonzo (video game)
+URL: https://en.wikipedia.org/wiki/Isonzo_(video_game)
+Match score: 6.13
+Retrieved: 2026-07-04
+--------
+Isonzo is a first-person shooter video game.  It is a team-based multiplayer game set on the Italian Front during World War I. It was released on Windows, PlayStation 4, PlayStation 5, Xbox One and Xbox Series X/S on September 13, 2022. It is the sequel to Verdun and Tannenberg.
+Isonzo is inspired by the Battles of the Isonzo on the Italian Front which took place between 1915 and 1917. The game includes historically accurate World War I weapons, authentic uniforms and equipment, detailed injury and gore modeling, and maps based on the real battlefields of the Southern Front.
+The game runs on the Unity engine and was initially developed by independent studios M2H and BlackMill Games. Since the purchase of the series by Focus Entertainment, the game is being developed solely by BlackMill Games.
+The first free update was released on December 5, 2022, for all platforms: the Caporetto Update added a new Offensive with one map to the game, and a new German faction with their own weapons, equipment and uniforms. Later free updates added two further maps to the new Caporetto Offensive, the Monte Piana map in a separate Mountain War Offensive, a Marmolada map featuring the 'Ice City' built into the Marmolada Glacier, and a special Ascent game mode where Italian mountaineers climb a mountain to capture an Austro-Hungarian command post. Since then, Isonzo has come to Xbox Game Pass and has received several more updates with maps based on Montello, Adamello and Moschin, adding not just important locations but also new weapons to the game.
+
+
+== Gameplay ==
+Isonzo is a tactical team-based multiplayer game with up to 48 players on PC, and 40 players on consoles. Players can choose from six classes, with all classes (except Rifleman) limited in number. Each class can choose from a different selection of weapons, equipment items like ammunition boxes or grenades, and perks which grant special abilities or bonuses to certain actions. The Officer class can fire flares to mark locations, and then use field telephones to call in support abilities like artillery barrages, creeping barrages, poison gas, smoke screens and aircraft including heavy bombers. Players can stand, crouch and crawl, as well as being able to mantle up a limited distance vertically onto flat surfaces.
+The main game mode in Isonzo is the Offensive mode. One team will be attacking and attempting to destroy objectives or capture locations through a series of defensive lines. If the attackers complete the final defensive line, they win, while if the attackers run out of lives the defenders will win. Each Offensive game is based on a historical event and includes 2 or 3 individual maps. If the attackers win the first 2 maps of the 6th Battle of the Isonzo and "German Intervention" Offensives, they will have an increased number of lives in the 3rd map of the respective Offensives.
+A special game mode called Ascent was added on April 3, 2024. Ascent mode added a map specifically for the game mode alongside new mechanics for climbing, placing pitons and ropes to speed up climbing, and for throwing rocks. A team of Italian mountaineers start at the base of part of the Marmolada mountain, and must capture an Austro-Hungarian outpost at the top. There are ledges on the way up where forward spawn points can be built by both teams, though the Italians can also choose to bypass any number of these ledges if they wish. The Austro-Hungarian defenders begin with forward spawn points on all ledges. Both teams are limited to single shot rifles and the Mountaineer class. This was a time limited event that originally ran until April 30, and will be run again in the future.
+
+
+== Reception ==
+
+Isonzo was met with "mixed or average" reception according to video game review aggregator Metacritic, on platforms where it received enough reviews for a rating. PC Gamer was positive to the gameplay and said that "thrilling", if limiting, battlefields fit nicely in the game. IGN called it a "well-made shooter" that sacrifices authenticity and distinctiveness for approachability. Push Square said that the game has good gunplay and interesting maps despite noting its technical issues with performance.
+
+
+== Sequel ==
+A sequel to Isonzo, Gallipoli, was announced in August 2025. It is the fourth installment in the WW1 game series and takes players to the Middle-Eastern Front during World War I. It is a tactical squad-based multiplayer first-person shooter game. Players will either play on the side of Britain or the Ottoman Empire.
+
+
+== References ==
+
+
+== External links ==
+Official website

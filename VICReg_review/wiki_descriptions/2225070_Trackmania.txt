@@ -1,0 +1,103 @@
+Game: Trackmania
+appid: 2225070
+Source: TrackMania
+URL: https://en.wikipedia.org/wiki/TrackMania
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+TrackMania is a series of racing games for Microsoft Windows, PlayStation 4, PlayStation 5, Xbox One, Xbox Series X and Series S, Nintendo DS, and Wii developed by Ubisoft Nadeo and Firebrand Games. In TrackMania the player can create their own tracks using a "building block" process similar to games that existed before the first TrackMania game, such as the 1984 game Excitebike, the 1985 game Racing Destruction Set, and the 1990 game Stunts. The tracks are saved as 3D files, specifically as a .gbx file, which is also how replays are saved.
+TrackMania games typically have a time trial format, with medals awarded for beating set times in single-player mode, as well as the ability to submit times to various online rankings. Players may choose to respawn (retire) after crossing a checkpoint, for example if they land upside down, leave the track, get off to a poor start, or want to improve their position. Multiplayer races operate as concurrent time trials; players' cars visibility can be turned on and off on the same track at the same time, but cannot physically interact with one another.
+
+
+== Games ==
+
+
+=== TrackMania (2003) ===
+
+
+=== TrackMania Sunrise ===
+
+
+=== TrackMania Nations (Electronic Sports World Cup) ===
+
+On January 27, 2006, Nadeo released TrackMania Nations, also called TrackMania Nations ESWC partly as a promotion for the Electronic Sports World Cup, and also for TrackMania itself. This free, stand-alone game had one new environment, "Stadium", and many of the Sunrise edition features, including the advertisement panels, which show ads from sponsors streamed from the internet. The game contains 100 single player tracks, the earlier ones relatively simple in both design and gameplay, but it is largely pitched as an online game. One of the main attractions is the leader board, where players compete for the best times and points. The top five players can be seen on the game's homepage. Nations quickly became popular with almost 1 million registered online players within weeks of its launch, largely due to the wide availability of the freeware game.
+
+
+=== TrackMania United ===
+
+
+=== TrackMania DS ===
+
+TrackMania DS is a TrackMania game for the Nintendo DS which was published in 2008 (EU)/2009 (US). It contained fewer features compared to its PC counterpart, such as no online mode.
+
+
+=== TrackMania Turbo (DS) ===
+
+
+=== TrackMania Wii ===
+On June 30, 2009, a TrackMania game for the Wii, titled TrackMania Wii was announced by jeuxvideo.com in an interview with one of the developers. The game features all the environments from TrackMania United apart from "Bay", due to the complexity of its scenery. The game was supposed to be released in North America under the title TrackMania: Build to Race on July 20, 2010, but on July 19, 2010, Michael Mota of Dreamcatcher Interactive, TrackMania Wii's publisher, told the Examiner "We made the announcement to the major retailers about the TrackMania delay; I'm not sure why that hasn't been changed. The game has been delayed until December." The game eventually came out in North America on March 24, 2011. It has a more primitive online play system than the PC line of games and also uniquely features a special "F" class of tracks unlocked after a certain number of medals are accrued. 
+An updated Wii release date on the Nintendo website for the UK version published by Focus Home Interactive has been given as September 23, 2010. The game was released in Europe with the Build to Race subtitle removed.
+
+
+=== TrackMania2 ===
+
+
+==== TrackMania2: Canyon ====
+Like previous TrackMania games, players can race on tracks while doing various stunts as well as build their own tracks. The game features a new environment, Canyon, as well as two modes, Race and Platform. Platform mode is featured in the free extension pack, TrackMania2: Platform.
+Besides the new environment, the game also includes a split-screen mode, and a scripting language called "ManiaScript" which lets players add their own new features to the game.
+
+
+==== TrackMania2: Stadium ====
+TrackMania2: Stadium was announced on November 2, 2012. This environment was opened to the public with an open beta on February 27, 2013. The game features the classic Stadium environment that was introduced in TrackMania Nations. There have been some improvements to the graphics and some new added blocks in the editor. It uses ManiaPlanet's client and interface. The game was released on June 20, 2013.
+
+
+==== TrackMania2: Valley ====
+TrackMania2: Valley was announced on November 2, 2012. This environment became available on ManiaPlanet on July 4, 2013.
+
+
+==== TrackMania2: Lagoon ====
+TrackMania2: Lagoon was announced on May 9, 2017. This environment became available on ManiaPlanet on May 23, 2017. With this environment ported from TrackMania Turbo (2016), ManiaPlanet was given a large update called "ManiaPlanet 4".
+
+
+=== TrackMania Turbo (2016) ===
+
+Announced at Ubisoft's E3 2015 conference, TrackMania Turbo is a spin-off heavily inspired by 90s arcade racers. The game has been released in North America on March 22, 2016, for the PlayStation 4 and Xbox One and on March 24, 2016, for Microsoft Windows.
+
+
+=== Trackmania (2020) ===
+
+A remake of Trackmania Nations was announced for Microsoft Windows on February 29, 2020, and was due to be released on May 5, 2020, but was delayed until July 1, 2020, due to the COVID-19 pandemic. It was released on consoles and cloud platforms on May 15, 2023.
+The base game is free-to-play, with additional content available with a paid subscription model, including a more advanced in-game track editor, online events and car customization.
+
+
+== Reception ==
+
+The TrackMania series was awarded six world records in Guinness World Records: Gamer's Edition 2008. These include "Biggest Online Race", "Most Popular Online Racing Sim" and "Largest Content Base of Any Racing Game", with hundreds of thousands of user-created tracks and hundreds of unique cars available for download.
+
+
+== Copy protection system ==
+The PC games in the TrackMania series used a copy protection system called StarForce, which silently installed a driver with all versions of TrackMania Original, TrackMania Sunrise and the original TrackMania Nations. Many sources falsely reported that TrackMania Nations updated the StarForce drivers only if they were already installed, although versions released after May 28, 2007, installed the StarForce drivers on all computers even though TrackMania Nations is freeware. The original TrackMania United features StarForce restrictions built into the executable to check the software's key, but it does not install the driver.
+Although Valve originally included it in the system, on June 29, 2007, the company announced that the version of TrackMania United distributed via their Steam digital distribution platform would no longer include StarForce.
+TrackMania United Forever and TrackMania Nations Forever do not include StarForce. If they are applied as upgrades to version of TrackMania United or TrackMania Nations which include StarForce, they attempt to remove it.
+
+
+== Spin-offs ==
+
+As the TrackMania games have grown in popularity, Nadeo started plans for two completely new games; namely, they began work on role-playing and first-person shooter games. These were first announced in 2009 through TrackMania United Forever, where the player's loading screen was replaced with images announcing either Shootmania or Questmania. On 19 February 2012, Nadeo officially announced Shootmania. On 10 April 2013, Nadeo released Shootmania on Maniaplanet. Questmania, however has not been released yet.
+
+
+== See also ==
+Racing Destruction Set
+Stunts, a similar game
+GripShift, a similar game
+Build 'n Race, a similar game
+ModNation Racers, a track-building game
+Hot Wheels Track Attack
+CarlJr., professional TrackMania player
+
+
+== References ==
+
+
+== External links ==
+TrackMania (2020) official website

@@ -1,0 +1,25 @@
+Game: Brighter Shores
+appid: 2791440
+Source: Brighter Shores
+URL: https://en.wikipedia.org/wiki/Brighter_Shores
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Brighter Shores is an upcoming massively multiplayer online role-playing game by Fen Research, released in early access on 6 November 2024 on Steam for Windows and macOS. Brighter Shores was created by Andrew Gower, creator of RuneScape, and shares many gameplay elements with it. Brighter Shores is free-to-play, with a premium pass option but no microtransactions. The game is built on Fen Research's custom Fenforge engine.
+
+
+== Gameplay ==
+Brighter Shores game is set in a fantasy world, allowing players to select from one of three classes. Players exist in a shared multiplayer world, where they can train various professions, such as guard, forager, and chef. Players can train these skills and explore the world by doing activities such as combat, brewing potions, magic, and teleportation. Professions are leveled up by gaining experience points, and higher levels in each profession grant access to more tools to use and activities to do for that profession.
+The game is structured in episodes, with each episode giving access to additional professions, areas, and quests. Episodes One and Two are free to play, and Episodes Three and Four require a subscription.
+Achieving certain level milestones in professions grants players the ability to purchase and wear a cape related to that profession. Capes are awarded at levels 50, 100, 200, and 500 for each profession.
+
+
+== Development ==
+Andrew Gower left Jagex, the company behind RuneScape, in 2010, and shortly after founded Fen Research. Gower began development on Brighter Shores in 2016, and the game released on Steam in early access in November 2024. Andrew Gower's brother and RuneScape co-creator Paul Gower is the game's narrative designer. Regular updates are being released.
+
+
+== References ==
+
+
+== External links ==
+Official website

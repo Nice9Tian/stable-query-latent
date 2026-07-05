@@ -1,0 +1,35 @@
+Game: Escape Simulator
+appid: 1435790
+Source: Escape Simulator
+URL: https://en.wikipedia.org/wiki/Escape_Simulator
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Escape Simulator is a first person puzzle video game developed by Pine Studio and released on October 19, 2021. A sequel, Escape Simulator 2, was released on October 27, 2025.
+
+
+== Gameplay and development ==
+The game is based upon real-life escape rooms, where objects can be taken, inspected and broken and the objective for the player is to figure out how to escape the locked premises. Development took slightly less than two years. The game can be played cooperatively online with up to 10 players, and also comes with a tool which allows for the players to create their own rooms. More than 3,000 rooms have been created.
+
+
+== Sales ==
+In less than a week since its release, the game reportedly sold 50,000 units the revenue of four million HRK. By May 2022, within seven months of its release, Escape Simulator had accumulated sales of 2,000,000 units.
+
+
+== Additional content and DLC ==
+Post-release, Escape Simulator has continued to receive multiple updates, including additional free rooms and many tweaks and added features for the in-game Room Editor. Escape Simulator also received four paid DLC packs; Steampunk, Wild West, Magic, and Spy. Additionally, a free DLC called the Portal Escape Chamber DLC also launched on September 7, 2023. This DLC is based on the renowned Portal series and was officially approved by Valve Corporation before its release.
+
+
+== Reception ==
+
+Escape Simulator received "generally favorable" reviews according to the review aggregation website Metacritic. Screen Rant described it as a great way to experience an escape room digitally, calling it an "enjoyable experience" and giving it 3 1/2 out of 5 stars. GameByte praised the cooperative gameplay, saying "Much of the fun comes from playing the escape rooms with your pals." The A.V. Club considered the game "genuinely thrilling" and the closest thing gaming has to an actual escape room. The Gamer named it as one of the best multiplayer games to play without a microphone. The Escape Room Artist team mentioned that it felt close to a real-life escape room game and listed it as one of their recommended online escape games. John Walker, in an article published on Kotaku, praised how well the first person perspective is combined with the realistic physics, saying it offers a far more tangible feeling of playing an actual escape room. Comic Book Resources called it a wonderfully charming game, praising its easy-to-use editor.
+
+
+== References ==
+
+
+== External links ==
+Official website
+Pine Studio Official website
+Escape Simulator on Steam
+Escape Simulator on Meta Quest

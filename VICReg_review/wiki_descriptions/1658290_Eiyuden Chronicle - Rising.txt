@@ -1,0 +1,39 @@
+Game: Eiyuden Chronicle: Rising
+appid: 1658290
+Source: Eiyuden Chronicle: Rising
+URL: https://en.wikipedia.org/wiki/Eiyuden_Chronicle:_Rising
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Eiyuden Chronicle: Rising is a 2022 action role-playing game developed by Natsume Atari and published by 505 Games. Rising is the first game to be released in the Eiyuden Chronicle series, considered to be a spiritual successor to the Suikoden series.
+The game was announced in June 2020 as a collaboration between multiple veteran Suikoden series developers, including series creator Yoshitaka Murayama, who served as the director of Rising. The game was developed as a stretch goal for Eiyuden Chronicle: Hundred Heroes on the crowdfunding platform Kickstarter. The project's main studio, Rabbit & Bear Studios, assisted Natsume Atari in the development of Rising.
+Rising was released for the Nintendo Switch, PlayStation 4, PlayStation 5, Windows, Xbox One, and Xbox Series X/S on May 10, 2022. The game was met with a mixed-to-positive reception. 
+
+
+== Synopsis ==
+Few years before the event of Hundred Heroes, a ruin hunter girl came to town of New Nevaeh. Her name is CJ, she has permission from Isha, a young woman mayor to pick herb in the Great Forest and mines ore in Quarry. In exchange CJ may get stamps from the townsfolk and adventurers who stop by. A few months before the start of the game, there was an earthquake, which led to the discovery of Runebarrows. Garoo, a half-kangaroo mercenary is interested to help CJ in her journey.
+From underground, raw lenses and Rune-lenses start to appear, becoming entangled with the ancient ruins. The Heroes will find treasure in these ruins, invigorating the town, but behind this treasure hunting adventure, a struggle that will shock the world will turn up.
+While the three main characters are finding treasure in the ruins, they will also assist in the recovery and growth of New Nevaeh, which was damaged in the earthquake and is having economic difficulties. In the process, they will have to settle disputes between those who oppose the exploration of the ruins and the explorers. Furthermore, it will gradually be revealed that the ruin's secret will figure prominently in one character's fate. Behind this treasure hunting adventure, a scheme that will soon shock the world is slowly moving along.
+
+
+== Gameplay ==
+Eiyuden Chronicle: Rising is a 2D side-scrolling action role-playing game, where the player explores a labyrinthine series of rooms presented as a platform game. Players may backtrack to explore areas within a room that were previously impossible to reach as they progress the narrative, a common convention in Metroidvania games. The player assumes the role of a teenage girl named CJ as she arrives in the town of New Nevaeh in search of adventure and treasure, where she meets other characters who joins her as party members. The player may switch between these characters instantly at any time. Besides fighting enemies, the player also gains experience points to level up their characters by performing quests for non-player characters, as well as stamps from these characters as a reward for CJ's services.
+
+
+== Development and release ==
+Eiyuden Chronicle: Rising is a companion title which serves as a prologue to the larger Eiyuden Chronicle: Hundred Heroes. Rising was proposed as a stretch goal for the fundraising campaign for the development of Hundred Heroes, which was conducted through the crowdfunding platform Kickstarter. While Hundred Heroes is designed as a sprawling role-playing game with turn-based combat and a large number of companion characters, Rising is intended to be a smaller project in scale, with its key features being "fast-paced combat, town-building mechanics and 2.5D platforming."
+Rising was announced during E3 2021 for a 2022 release following the decision by Rabbit and Bear Studios to delay Hundred Heroes to 2023. Rising was released on May 10, 2022 with 505 Games as its publisher. It simultaneously launched worldwide for the Nintendo Switch, PlayStation 4, PlayStation 5, Windows, Xbox One, and Xbox Series X/S. It was also included with the Xbox Game Pass subscription service upon release.
+
+
+== Reception ==
+
+Eiyuden Chronicle: Rising received "mixed or average" reviews according to review aggregator platform Metacritic.
+Destructoid gave the game an 8 out of 10, and noted that while the rote dungeons, slow pacing, basic combat, and linear structure might underwhelm the newcomers, its personal, small-scale character-based moments, visual style, and low price more than made up for these faults. Game Informer faulted Rising for its dry story, undeveloped characters, bland combat, mandatory side quests, and hollow progression, writing, "Pretty visuals can only get you far, however, and Eiyuden Chronicle: Rising doesn't offer enough entertaining or unique content to keep it from being anything more than a passable RPG." GameSpot felt that the game had satisfying town-building elements, solid multi-character action gameplay, and good worldbuilding with fun characters and dialogue, but disliked the abundance of filler dialogue, backtracking, and jerky character animations. Hardcore Gamer thought that the world and combat were fun but noted that the limited scope of the game caused long stretches of backtracking, and ultimately concluded that the title was "more than the sum of its parts." IGN took issue with the overly simplistic and easy nature of the combat towards the beginning of the game and found the mission structure to be incredibly repetitive but praised the dynamic cast of characters and townbuilding mechanics. Nintendo Life similarly praised the enjoyable combat, pleasing aesthetic, and charming characters but thought Rising's weaknesses heavily outweighed its strengths, writing, "This game certainly has charm, but it makes you work too hard for it." Nintendo World Report gave the game a 6 out of 10 and wrote, "Eiyuden Chronicle: Rising relies too heavily on [town-building mechanics], at the cost of telling an engaging story or offering compelling action gameplay. The too-frequent backtracking, mind-numbing side quests, and overall lack of variety make for an experience that is tough to recommend." Push Square thought similarly, writing, "If you can stomach its disappointingly dull quests, Eiyuden Chronicle: Rising is a solid enough action RPG. Some pretty visuals and a cosy JRPG vibe do a lot to mask its flaws."
+
+
+== References ==
+
+
+== External links ==
+Official website
+Official wiki

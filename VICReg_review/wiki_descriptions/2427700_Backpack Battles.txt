@@ -1,0 +1,42 @@
+Game: Backpack Battles
+appid: 2427700
+Source: Backpack Battles
+URL: https://en.wikipedia.org/wiki/Backpack_Battles
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Backpack Battles is an auto battler inventory management video game developed by PlayWithFurcifer and published by PlayWithFurcifer and IndieArk. The game was released into early access on Steam on March 8, 2024, and regular work has continued on the game into 2025. The release of the full game was announced for June 13, 2025.
+
+
+== Gameplay ==
+Backpack Battles consists of up to 18 rounds with two phases, the shop phase and the battle phase.
+At the start of the game, the player chooses from four classes: the Berserker, the Pyromancer, the Reaper, or the Ranger. Players also choose a starting backpack from two choices per class. Players may also opt to be randomly assigned a class and starting bag.
+
+In the shop phase, players manage their backpack. Using money provided each round, players can buy items to put into their backpack or buy additional sacks to add to the backpack's capacity. They can also sell items and sacks to earn more money to buy other items. The shop can be re-rolled to get a chance at purchasing different items. Rare, powerful items are more likely to appear in later rounds.
+The items consist of many different shapes and sizes, and they may interact with one another. For example, the Pan weapon will deal more damage in the battle phase if it is next to items classified as food. The Mrs. Struggles doll will trigger its effect faster if items classified as dark are near one of its hands.
+
+In the battle phase, the player's character battles against another player's character asynchronously without player control. Items will trigger at specific intervals for each item and based on other nearby items. Items can provide a number of benefits including dealing damage to the other player, adding armor to absorb attacks, giving the player health regeneration or other buffs (such as increased speed or accuracy), or inflicting debuffs on the opponent (such as poison). The first player to run out of health loses, and the other player wins. Battles typically last for about 10–20 seconds.
+At the end of the battle phase but before the shop phase, items in the bag may combine into more powerful items through the recipe system. For two items to combine, they must be adjacent to each other. As an example, if the Hero Sword (which damages the opponent for 2-4 health points every 1.4 seconds and provides a 2-point damage boost to adjacent weapons) is adjacent to two Whetstones (which each provide adjacent weapons with a 1-point damage boost), they will combine into the Hero Longsword which provides significantly more damage (10-12 damage every 1.6 seconds) and provides a better damage boost to adjacent weapons.
+A player wins the game if they successfully win 10 battles before losing 5 battles. A player who reaches 10 wins is given the option to play in Survival Mode until round 18, but if they lose 5 battles first, they may receive a lower ranking than they would have if they had stopped at the 10th win. As players attain higher ranks within the game, they face other players of similar rank and increasingly difficult battles.
+
+
+=== Other game modes ===
+Backpack Battles includes ranked and unranked play. While the game typically is played asynchronously and opponents are chosen semi-randomly from other players' runs, players can choose to join a custom lobby for synchronous play with friends. There is also an option for players to play with modifiers such as additional money or extra chances at rare items, but these runs are not added to the pool of players that can be matched in ranked or unranked play.
+
+
+== Release ==
+In June 2023, Backpack Battles was released as a free demo to download or play on web gaming portals like itch.io or CrazyGames. In the demo version, there were only two playable classes, the Reaper and the Ranger, and the item pool was small. Prior to its official release, Backpack Battles was wishlisted 500,000 times on Steam, and the demo reached 19,000 concurrent players.
+When Backpack Battles was released into early access on March 8, 2024, two new classes, the Pyromancer and the Berserker, were added. In its first month of release, Backpack Battles sold 640,000 units Steam, including 500,000 within its first two weeks. China has accounted for about half of the game's sales, due in part to IndieArk, one of the game's publishers, being headquartered in Shenzhen. At launch, Backpack Battles peaked at over 36,000 concurrent Steam players. Early bundles with other indie games like Slay the Spire, Brotato, and Balatro represented nearly half of the game's first-month sales.
+Backpack Battles was initially intended to be in early access for 3 to 6 months. The early access period was to be used to balance the two most recently added characters, the Berserker and the Pyromancer, as well as add additional items, the custom lobby functionality, a combat log for evaluating the character's performance in each battle, and additional cosmetics for each character. Initially planned for the full release was a 5th character, the Adventurer, as well as Steam achievements. In May 2025, PlayWithFurcifer announced the game would be released on June 13, 2025. In addition to the Adventurer character, the Mage would be added as a sixth class. With its release in June the game gained positive resonance with 90% of reviews on Steam being positive.
+
+
+== Reception ==
+
+IGN reviewed Backpack Battles shortly after its early access release and awarded it a score of 6 out of 10. IGN described the shop phase of the game as "an enjoyable process that tickles the part of your brain that fires off in other games like Unpacking or just neatly fitting a bunch of your stuff into a closet," but warned that the game lacked enough items to make doing multiple runs interesting. Ali Jones of GamesRadar+ wrote prior to release that he was "already locked in" to the game. 
+
+
+== References ==
+
+
+== External links ==
+Backpack Battles at Steam

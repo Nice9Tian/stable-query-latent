@@ -1,0 +1,53 @@
+Game: Clone Drone in the Danger Zone
+appid: 597170
+Source: Clone Drone in the Danger Zone
+URL: https://en.wikipedia.org/wiki/Clone_Drone_in_the_Danger_Zone
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Clone Drone in the Danger Zone is a beat 'em up video game developed and published by Doborog Games. Initially made available as an early access game on Steam in 2017, it was released for macOS, Microsoft Windows, Nintendo Switch, PlayStation 4, and Xbox One on July 27, 2021.
+In the game, the player's mind has been transferred into a robot gladiator. Playing as a robot, the player must fight against "floors" of enemies by using weapons or the environment around them. The playable area is built like a Colosseum, with similar robot NPCs in the stands of the arena. After each level, the player can upgrade themselves or gain new abilities such as clones, new weapons, or lower cooldowns. The game has 4 modes: story mode, endless mode, challenges, and Twitch mode. Along with 5 separate but similar multiplayer gamemodes: Endless Co-op, Co-op Challenges, Last Bot Standing, Team Battle and Private Duels. A virtual reality sequel called Clone Drone in the Hyperdome was released on December 13, 2024.
+
+
+== Plot ==
+Robots are trying to conquer Earth and have enslaved large parts of humanity. Instead of forcing labor and work, the minds of people are transferred into robotic bodies. Using these robots, the emperor pits them against other fighting robots for their own entertainment, similar to a Colosseum fight.
+
+
+=== Chapter One ===
+If the player makes it to level 10, they will be spoken to by a floating head, later revealed to be the first human to escape the colosseum, helps the player to escape via the garbage chute.
+
+
+=== Chapter Two ===
+Chapter two takes place right after the first, with a new human. Similar to the last, if the player makes it to level 10 they will escape. This time via a garbage bot picking the player up and flying them to a hidden room within the fictional city. In the room is the robot the player previously escaped with in chapter one, waiting for them. It is also revealed in this chapter that the robots are going to invade Earth.
+
+
+=== Chapter Three ===
+Once again, Chapter three takes place right after the last, Emilia, the floating head, talks to the players and informs them of their goal; to stop the robots from invading earth. To do this, however, the player must make their way through a tower that can transfer the player(s) to a ship making its way to earth. Once the player makes it to the top of the tower, they must beat a "fleet overseer" a spider-like boss with various different weapons. Once defeated the player may try to transfer to the ship but gets stopped by the emperor who proceeds to kill one of the allied robots and Emilia, however, the player still makes (with only one robot) it to a ship within the fleet.
+
+
+=== Chapter Four ===
+As the player is transferred into a Mark 1 sword robot aboard one of the ships, they get whisked away into a "storage room", by the ship's commander. Once in said room the player gets killed by a spear bot and gains control of the spear robot with a "mind transfer virus" installed by Emilia before she died. Using this virus the player eventually makes their way through the ship and must take control of the ship. To do this the player must defeat the captain, who is similar to the fleet overseer from chapter three, and her command bots, Warfare, Mind Space, Infantry and Logistics, each with their own weapons and attack styles. Once all of said enemies are defeated, the player may take control of the ship.
+
+
+=== Chapter Five ===
+At the beginning of this chapter, the player fights robot ships with a novel spaceship-battle mechanic. The player is then mind-transferred into the body of a Mark 1 sword robot in The Emperor's ship and is freed from its room by the allied robot killed in Chapter Three who is revealed to not have been actually killed. The player then fights their way through The Emperor's ship until reaching him, whereupon they engage in combat. The player has limited mind transfers to a few different weak robots as backup lives. After the emperor is defeated once, it is revealed to the player that he can in fact just summon backups of him, which would put the player in an infinite loop of combat. This causes a cutscene where the player is seen using a computer terminal to enter The Mindspace, where battle is done with Mindspace variants of existing enemies across a plain floating-island-like landscape made of reflective materials. The player eventually fights the prototype Spider-Tron 7000, and destroys The Emperor's Clone Matrix, which removes his cloning capabilities. The Emperor mocks the player, telling them that all robots are controlled by the Core Instruction, which forces them to harvest life from other planets and make them fight. After the player destroys the Core Instruction, the player exits The Mindspace and battles The Emperor again, who states that his objective is now the total extermination of humanity, and is in a powered-up form. If he is defeated, a victory cutscene plays where other robots, seemingly in executive roles, appear on a screen and realizing The Emeperor is dead, decide to leave the Solar System and relinquish the ship to the human. Then, other human-robots are shown to have been freed, and the game ends.
+
+
+== Development ==
+The game started as an early access game released on Steam on March 16, 2017. Doborog Games was founded by the game's creator, Erik Rydeman at the same time. On May 29, 2020, it was announced via the game's blog that it would be released worldwide in 2021.
+On May 5, 2017, a level editor was released, and custom levels could be uploaded to the Steam Workshop.
+On November 15, 2019, achievements, emotes, skins, and multiplayer were added.
+On June 1, 2021, Doborog announced on Steam that the game would be released on all platforms on July 27, 2021.
+
+
+== Reception ==
+Beta versions of Clone Drone in the Danger Zone received favorable reviews. Critics praised its voxel style and simple gameplay, and often commented on the game's difficulty in the endless mode.
+Steam gave Clone Drone in the Danger Zone a 10/10.
+Kotaku reviewer Heather Alexandra said that "Each victory feels satisfying. Each failure feels brutal.", also commenting that "Clone Drone In The Danger Zone is the video game version of Skittles. Bright and refreshing junk food that serious hits the spot when you need it."
+Robert Purchese of Eurogamer praised the game's comedy and simple gameplay, saying "It's all very Monty Python and it's absolutely supposed to be. Clone Drone in the Danger Zone is a comedy.", and "The combat here isn't as complex. It's been reduced to a few moves: left and right swipes, and an overhead strike."
+
+
+== Notes ==
+
+
+== References ==

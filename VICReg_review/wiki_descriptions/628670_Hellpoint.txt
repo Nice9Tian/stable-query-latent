@@ -1,0 +1,27 @@
+Game: Hellpoint
+appid: 628670
+Source: Hellpoint
+URL: https://en.wikipedia.org/wiki/Hellpoint
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Hellpoint is a 2020 action role-playing game by Canadian developer Cradle Games and published by tinyBuild. It released for Windows, Linux, MacOS, PlayStation 4, and Xbox One on July 30. The player takes on the role of a nameless humanoid stranded on derelict space station Irid Novo, and must battle vicious creatures in order to solve the mystery behind the events that happened there. Irid Novo orbits a massive black hole; the station's position in relation to the black hole affects the strength of enemies. Versions for Stadia and Nintendo Switch were released in February 2021, with PlayStation 5 and Xbox Series X/S versions released in July 2022.
+
+
+== Gameplay ==
+Hellpoint is a third-person action role-playing game. The player has both light and strong attacks in their arsenal, as well as an evade mechanic. The healing gauge is refilled by dealing damage to monsters, and up to two healing injections can be stored. The game relies heavily on exploration, offering a number of secrets to discover. They may be hidden behind secret doors or in seemingly inaccessible places that can be reached by utilizing the jump mechanic.
+Hellpoint has been dubbed a "Soulslike" game, due to similarities in gameplay mechanics with the Dark Souls series.
+
+
+== Development and release ==
+
+In 2017, Cradle Games initiated a Kickstarter campaign to fund the development of their project. With the initial goal of CA$50,000, they managed to gather CA$64,500 over a span of two years. In 2019, the project was declared funded.
+A playable free sequel chapter, Hellpoint: The Thespian Feast, was released on February 20, 2020. The events of this chapter take place half a century after the events of the main game.
+
+
+== Reception ==
+
+Hellpoint received "mixed or average reviews" from critics, according to review aggregator Metacritic. Fellow review aggregator OpenCritic assessed that the game received weak approval, being recommended by 21% of critics.
+
+
+== References ==

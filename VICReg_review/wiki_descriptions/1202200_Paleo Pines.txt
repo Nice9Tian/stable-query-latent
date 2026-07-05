@@ -1,0 +1,29 @@
+Game: Paleo Pines
+appid: 1202200
+Source: Paleo Pines
+URL: https://en.wikipedia.org/wiki/Paleo_Pines
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Paleo Pines, also known as Paleo Pines: The Dino Valley, is an independent life simulation game developed by Italic Pig and published by Modus Games. It was released for Linux, Windows, Nintendo Switch, PlayStation 4, PlayStation 5, Xbox One, and Xbox Series X|S on 26 September 2023. Players take the role of a rancher working in a dinosaur sanctuary while befriending townsfolk and the creatures they care for.
+
+
+== Gameplay and setting ==
+Paleo Pines is a 3D single-player farm life sim taking place on an island where humans and dinosaurs live together. The player takes control of a rancher tasked with collecting, cataloging, and caring for the various dinosaur species who inhabit the area along with their Parasaurolophus companion Lucky. Townsfolk and dinosaurs alike can be befriended and aid the player with specific skills needed to advance the story.
+
+
+== Development ==
+Paleo Pines was announced on 23 April, 2023 by publisher Modus Games accompanied by a reveal trailer. The title was developed by Northern Ireland-based independent game studio Italic Pig, whose team is composed of members active in the UK animation and game industry. In August 2023, Paleo Pines made an appearance at that year's Gamescom convention in Cologne, as well as the MIX Next Showcase which revealed its release date the following September for all platforms.
+In October 2024, Italic Pig revealed that they had been able to support the game over its first year on a "shoestring budget", but that support for a planned follow-up would depend on finding investors and publishers willing to back the project.
+
+
+== Reception ==
+
+Paleo Pines received an average critic score of 65 out of 100 from the review aggregation website Metacritic, equating to "mixed or average reviews". Fellow review aggregator OpenCritic assessed that the game received fair approval, being recommended by 35% of critics. Ryan Thompson-Bamsey of TheGamer called the game "a largely successful execution of standard farming sim formulas," adding that the dinosaur collecting and caring mechanic was the "most compelling" part of the game. Screen Rant's Deven McClure felt that it "has all the right ingredients for a cozy game," but that the sometimes "uninviting" character designs and "shallow" features may put off some players.
+
+
+== References ==
+
+
+== External links ==
+Official website

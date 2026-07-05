@@ -1,0 +1,27 @@
+Game: The Bookwalker: Thief of Tales
+appid: 1432100
+Source: The Bookwalker: Thief of Tales
+URL: https://en.wikipedia.org/wiki/The_Bookwalker:_Thief_of_Tales
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+The Bookwalker: Thief of Tales is a 2023 adventure game developed by Do My Best Games and published by TinyBuild Games.  Players steal items from dimensions where books are real, blending elements of point-and-click adventure games and role-playing video games.
+
+
+== Gameplay ==
+Players control Etienne Quist, a novelist who has been magically cursed with the inability to write.  However, Quist can open portals to dimensions where books are real.  A black market source tells him they can lift the curse if he steals items from books for them.  The gameplay blends elements of adventure games and role-playing video games.  Players talk to non-player characters and solve puzzles to find and steal the objects.  Some of the puzzles also require objects, either from the book or Quist's real-life apartment.  Inside the book realms, players can also find objects they can use to craft power-ups and tools.  Players can melt down other objects to create magical ink, which can change the story to their benefit or give them more powerful attacks in combat.  The combat is turn-based.  In the real world, the point of view is first-person, and in the book realms, it is isometric.
+
+
+== Development ==
+TinyBuild Games released it for PlayStation 4 and 5, Xbox One and Series X/S, and Windows on June 22, 2023.
+
+
+== Reception ==
+On Metacritic, The Bookwalker: Thief of Tales received positive reviews for Windows but mixed reviews for PlayStation 5 and Xbox Series X/S.  Rock Paper Shotgun enjoyed the premise, but they felt The Bookwalker runs out of ideas after several hours.  They also criticized the writing and combat as bland, though they suggested it would be a good game to play on a subscription service.  Windows Central said post-launch patches had fixed the issues they had with the game, and they praised the premise, art, and what they felt was a "simple yet effective gameplay loop".
+
+
+== References ==
+
+
+== External links ==
+Official website

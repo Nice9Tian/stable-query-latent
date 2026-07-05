@@ -1,0 +1,91 @@
+Game: Not For Broadcast
+appid: 1147550
+Source: Not For Broadcast
+URL: https://en.wikipedia.org/wiki/Not_For_Broadcast
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Not For Broadcast is a full motion propaganda simulator developed by British video game studio NotGames and published by tinyBuild. The game released with its first episode in early access on 30 January 2020. The full game, including the third and final episode, was released worldwide on 25 January 2022 for Windows. The game was released for Meta Quest 2, PlayStation 4, PlayStation 5, Xbox One, and Xbox Series X/S on 23 March 2023.
+The game takes place in an unnamed European country (resembling the United Kingdom) in the mid-1980s, where a new populist socialist political party named Advance has won a surprise landslide election victory and begins to handle the country in an increasingly authoritarian dystopian fashion, forcing redistribution of wealth and nationalisation of several large corporations. The player takes the role of Alex Winston, a studio director in a national television station, having to produce a live broadcast, play adverts, censor swear words, and avoid interference in an effort to keep the viewership high.
+On early access release, Not For Broadcast received positive reviews, with praise going to its gameplay and mechanics. Early versions were criticised for confusing political storytelling and dissonance in tone.
+
+
+== Gameplay ==
+
+
+=== Setting ===
+The game is set in a fictional country with similarities to the United Kingdom, from 1984 to 1991.
+
+
+=== Broadcast days ===
+
+The player plays the role of the faceless Gender neutral studio director Alex Winston in the production control room of the National Nightly News.
+The player uses the vision mixer to select which camera feed to broadcast. After a two-second broadcast delay, the feed selected is broadcast. The player is required to censor any profanity or objectionable language by bleeping out the word as it is broadcast. At later levels, the player can also add sound effects such as applause and canned laughter to the broadcast. The player also uses a waveform monitor to control any interference. An audience meter gives feedback on the player's performance: good editing will help raise viewership, while poor editing, failing to censor or allowing interference to interrupt the broadcast will lower viewership. If the audience meter falls to zero, the player fails the level.
+During each broadcast, the player selects three advertisements to play during breaks and which headlines to run in the first segment. The adverts and headlines selected influence the game outcome by promoting Advance or its rival Disrupt, increasing the player's earnings by promoting companies in which the player holds shares, or unlocking variations in the storyline.
+At the end of each broadcast day, the player is graded on their broadcast, which affects their pay. The player is given the option to watch their broadcast as well as the unused footage.
+
+
+=== Non-broadcast days ===
+The protagonist has a life and family outside the broadcast room. This is represented through an "Incident system", a series of text-based choices in visual novel format where the player, based on a brief segment about their private life, makes decisions. These decisions are influenced by what the player chose to do in the Broadcast room. Sometimes, choices made in the incident system can also influence what happens in the broadcast room. Choosing certain options matter to the family, and they affect the dynamic and relationships the player character has with their family.
+
+
+== Plot ==
+
+The plot unfolds over several years in a fictional nation known as the Territory. Alex Winston, who works at the nation's largest television network, Channel One is suddenly thrust into the broadcast manager position for the National Nightly News when the former manager, Dave, flees the country and Alex is forced to edit the election night broadcast in his place.
+The left-wing to Far-left progressive political party Advance, led by lawyer Julia Salisbury and television personality Peter Clement, delivers an acceptance speech for an unexpected landslide victory that occurs after the previous government suffers constant scandals and economic problems, leading to a snap election. Advance implements several radical reforms, such as wealth redistribution, right to die policies, a national quality assurance mark, increased police forces, and nationalisation of several large corporations. As time goes on, Advance becomes increasingly authoritarian in their governance, including limiting the freedom of the press and requesting censorship of anti-government statements. The resistance group Disrupt, who seeks to remove Advance, reverse its policies, and redistribute wealth back to the wealthy forms to counteract Advance's agenda.
+As the event progresses, it is later revealed that Advance's wealth redistribution policies turn out to be successful in significantly reducing poverty in the country and causes a budget surplus. An intergovernmental organisation The World Council, a majority of whose members view Advance as threat due to concerns of it inspiring further left-wing government uprisings and seeks to cripple their wealth redistribution policy, places harsh sanctions on the country that later also includes a blockade, causing economic troubles, eventually causing Advance to declare war.
+Disillusioned due to being fed up with the increase in soft news stories and censorship, anchor Jeremy Donaldson snaps live on-air and holds the studio hostage at gunpoint. Depending on the player's response, Jeremy ends up dying by suicide, being shot dead by police, or being arrested. Disrupt starts to infrequently hijack Channel One's broadcasts via broadcast signal intrusion. 20 weeks later, Advance retaliates against the World Council by detonating nuclear explosives in four major cities on the continent and threatens to detonate more devices if the countries do not unconditionally surrender, causing Advance to win the war and annex a number of World Council nations which leads to the creation of a new federal country known as the "United Territories" which features 36 previously independent states that are only identified with a territory number, with the original nation becoming known as "Territory One".
+A year and a half later, Channel One is nationalised, Peter dies, and Disrupt is branded as a terrorist group after staging attacks. Disrupt spokesperson Alan James asked Alex to manipulate the broadcast to start an uprising against the Advance government. Advance is aware of the uprising and sends in the military to defeat Disrupt. Depending on Disrupt's popularity and whether or not Alex successfully manipulates the broadcast, Alan either successfully retreats while bringing down the broadcast tower or fails to take down the broadcast tower and gets killed. Four and a half years later, The National Nightly News is rebranded as a soft media program called the NNN. Advance attributes rapidly rising sterility to the bombs, and Advance propaganda has made its way into young minds, though continued improvements in their citizens standard of living during the period cause a number of further nations to seek to join the United Territories.
+Nearly two years later, the NNN rebrands again as a talk show called The Nightly Show. Julia appears as a surprise guest to present the winner of the National Anthem competition. There are four different final segments depending on whether Jeremy and Alan are alive or deceased, leading to Jeremy, Alan, both or neither interrupting the broadcast for various reasons. Each different final segment allows playing a tape exposing either Advance or Disrupt, resulting in fourteen different epilogues depending on whether the said tape was played and the player's political stance. Depending on the ending public opinion shifts in favor of advance or disrupt or no faction at all, among the endings notable endings include the United territories falling into anarchy, endings where federalization falls apart and the countries regain independence. And endings focused on an election outcome with Advance, Disrupt, a Collation government featuring Advance and Disrupt, or a government led by a new centrist party named Accord coming to power.
+
+
+== Cast ==
+Paul Baverstock as Jeremy Donaldson
+Sarah Gibbons as Jenny
+Andrea Valls as Megan Wolfe
+Claire Racklyeft as Julia Salisbury
+Roger Alborough as Peter Clement
+Joseph Ayre plays a young Peter Clement
+Jonathan Hawkins as Alan James
+Dan Ellis as Geoff Algebra
+Jade Johnson as Robyn Shorte
+George Vere as Patrick Bannon
+Vere also plays Patrick's father, Graham Bannon
+Adam Willis as Tommy Harris
+Helen Potter as Phillipa Rayden
+Emma Mulkern as Francis, later Not Patrick
+
+
+== Development ==
+The first episode of Not For Broadcast was released in early access on 30 January 2020, with the developers stating their intention to keep it in early access for approximately eighteen months while updating three free new episodes that caused the game's price to increase. Days before filming began for a second episode, the COVID-19 pandemic in the United Kingdom led to lockdowns which ceased all production. Instead of pausing production, the developers chose to create a bonus chapter titled Not For Broadcast: Lockdown, which contains a new storyline, with the cast being stuck at home "as they shelter from a rampaging horde of animatronic children's toys." The chapter was released alongside a new challenge mode, featuring four different challenge variations. Due to the lockdown delaying production on the game, the original plan to have four episodes was revised, and the story was rewritten to be told in three episodes instead. Finally, a year after the original release, on 28 January 2021 a second episode was released, which showcased impacts of certain decisions in previous chapters and was released together with an hour-long documentary, Not for Broadcast: Lights, Camera, Lockdown, about how the development team behind the game managed to produce two video-filled updates of the game amidst a global pandemic. After releasing Episode 2, the production was halted once again by the COVID-19 pandemic lockdowns, which further delayed the release of Episode 3 until 25 January 2022.
+
+
+== Reception ==
+
+Not For Broadcast received generally positive reviews from critics both in early access and upon its full release. The game was complimented for its innovative concept and gameplay, including the satirical over-the-top content video segments and the production control room mechanics. Criticism went to its "on-the-nose political commentary" in the earliest early access version, with Cass Marshall writing for Polygon "[the game is] laying it on pretty thick." On Steam, the game has "overwhelmingly positive" user reviews.
+According to Guinness World Records, the game has a record of the "Most Full Motion Video footage in a videogame", clocking in at 42 hours, 57 minutes, and 52 seconds. This, in turn, was also covered positively by multiple media outlets.
+The game was nominated for the Seumas McNally Grand Prize at the 2023 Independent Games Festival Awards. It was also nominated for the "Outstanding Game, Simulation" and "Outstanding Writing in a Comedy" awards at the 22nd Annual NAVGTR Awards, both of which went to Japanese Rail Sim: Journey to Kyoto and Teenage Mutant Ninja Turtles: Shredder's Revenge. The game was also nominated for Game Beyond Entertainment at the 19th British Academy Games Awards, which went to Endling: Extinction is Forever; and for "Narrative Innovation of the Year" at the MCV/Develop Awards, which went to As Dusk Falls.
+Zero Punctuation named it the Fifth Best Game of 2022.
+
+
+=== Accolades ===
+
+
+== Downloadable content ==
+On 24 January 2023 the game developers and TinyBuild announced the development of three new episodes as premium DLC. The first is called Live & Spooky which sees Alex editing an episode of a late-night paranormal investigation show set in January 1985, where journalist Patrick Bannon is a featured guest in a mystery surrounding an abandoned film studio. The release date for the DLC along with the Season Pass were both announced during IGN Fan Fest on 17 February 2023 and were released on 23 March 2023.  The second one is called Bits of Your Life, where the player, as Dave, produces a broadcast where Peter Clement's life and career is told. It was released on 14 November 2023. Finally, the third and last episode is called The Timeloop, where the first televised science experiment is presented on a special broadcast of the National Nightly News called the "Night of Smiles", as Alex and Boseman find themselves trapped in a timeloop. It was released on 29 August 2024.
+
+
+== Notes ==
+
+
+== References ==
+
+
+== Further reading ==
+Paterson, Alex (5 March 2020). "Writing, directing, and designing FMV censorship simulator Not for Broadcast". Gamasutra (Interview). Interviewed by Harris, John.
+
+
+== External links ==
+Official website
+Developer website
+Not For Broadcast at IMDb

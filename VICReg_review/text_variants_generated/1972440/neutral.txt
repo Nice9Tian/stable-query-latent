@@ -1,0 +1,5 @@
+*Shotgun King: The Final Checkmate* is a chess-inspired game with a darkly humorous premise: your entire army has defected to the white side, leaving you with only a royal shotgun and your wounded pride. In response, you set out to make the white pieces fear the Shotgun King.
+
+The game plays on a turn-based structure where, on each turn, you can either move your king or fire at enemy pieces. After shooting, you must move again to reload your shotgun. The main objective on each floor is to avoid checkmate and eliminate the enemy king. Once a floor is cleared, you are offered a choice between two random combinations, each consisting of one upgrade for you and one for the opposing side. Progressing through these floors and making careful upgrade choices is essential if you want to reclaim your kingdom.
+
+A run typically takes around 20 minutes to complete. The game includes 15 ranks of difficulty, unlockable cards, more than 100 achievements, and an endless mode. It also features a chase mode, in which you are continually attacked from all sides.

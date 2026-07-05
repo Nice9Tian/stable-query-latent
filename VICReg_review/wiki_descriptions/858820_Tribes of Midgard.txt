@@ -1,0 +1,31 @@
+Game: Tribes of Midgard
+appid: 858820
+Source: Tribes of Midgard
+URL: https://en.wikipedia.org/wiki/Tribes_of_Midgard
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Tribes of Midgard is an action role-playing survival video game developed by Norsfell Games and published by Gearbox Publishing. The game was released for Microsoft Windows, PlayStation 4 and PlayStation 5 on July 27, 2021, and was released for Nintendo Switch, Xbox One and Xbox Series X/S on August 16, 2022.
+
+
+== Gameplay ==
+Tribes of Midgard is an action role-playing survival game played from a top-down view. In addition to solo play, players can also form a tribe of 10 players and play cooperatively. In the game, the player assumes control of an Einherjar, a Viking hero who must protect the seed of Yggdrasil from enemies such as Helthings, dark elves, trolls and giants. During day time, the player explores a procedurally generated world, collecting resources used for crafting new weapons, armor, and village defenses. At night time, the enemies will attack the player's settlement in an attempt to destroy the seed of Yggdrasil, and players need to collect the souls of the enemies in order to sustain the seed's life. With each day survived, the enemies in the game will become stronger and more difficult to defeat. The game features eight different gameplay classes, and each class has their own unique combat abilities. The player may also collect runes, which further modify their stats and attributes. The game features two main modes: the story-driven Saga mode, and the more open-ended survival mode.
+
+
+== Development ==
+Development of the game started in 2018 by Norsfell Games. CEO of Norsfell, Julian Maroda, described the game as one that is set in a new genre. The team took inspirations from survival games like Don't Starve Together and action role-playing games like Diablo. Unlike other survival games, Tribes of Midgard does not feature permadeath in order to make the experience more accessible for new players. Players only have one goal in the game: protect the seed of Yggdrasil and supply it with souls. When the seed is destroyed, Ragnarök arrives and the play session will end. The decision to remove common elements of survival games such as thirst and hunger was to further streamline the experience for new players.
+Tribes of Midgard was initially set to be released in 2020, though it was delayed by publisher Gearbox Publishing to early 2021. The game was eventually released for Windows, PlayStation 4 and PlayStation 5 on July 27, 2021, and was released for Nintendo Switch, Xbox One, and Xbox Series X/S.
+
+
+== Reception ==
+Tribes of Midgard received "mixed or average" reviews for Microsoft Windows and PlayStation 5, according to review aggregator Metacritic.
+IGN liked the world and the combat, but criticized the time limit the day system imposed, writing "given how diverse, detailed, and intriguing the world can be... this hindered my ability to really explore and enjoy it". Other players complained of missions that cannot be completed.
+
+
+== References ==
+
+"A blend of action, survival and roguelite": Julian Maroda, CEO of Norsfell, on Tribes of Midgard's Serpent Saga
+
+
+== External links ==
+Official website

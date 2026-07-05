@@ -1,0 +1,20 @@
+Game: Ultimate Epic Battle Simulator 2
+appid: 1468720
+Source: Ultimate Epic Battle Simulator
+URL: https://en.wikipedia.org/wiki/Ultimate_Epic_Battle_Simulator
+Match score: 7.81
+Retrieved: 2026-07-04
+--------
+Ultimate Epic Battle Simulator (UEBS) is a 2017 battle simulation video game developed and published by Canadian developer Brilliant Game Studios. The game was released in Steam early access on April 12, 2017 for Microsoft Windows, and was fully released on June 2, 2017 for Microsoft Windows. The sequel, Ultimate Epic Battle Simulator 2, was released into early access on May 12, 2022.
+
+
+== Gameplay ==
+In the game, players can have two factions compete against each other. For instance, this includes historical units and personalities (e.g. catapults, knights, soldiers or Jesus Christ), film and comic characters (e.g. Chuck Norris or Godzilla), animals or fantasy beings (e.g. orcs or trolls). These have different skills and weapons available. The player also has the option of defining the battlefield and the positioning and number of units. Using artificial intelligence, the units fight against each other until there are no enemy units left.
+
+
+== Reception ==
+GameStar described UEBS as less a game than a technical toy. Since there is no unit limit, all computer hardware will eventually fail the more they are added.
+PC Games Hardware called it an indie game by a one-man team, which offers the player a huge sandbox to simulate gigantic mass battles between thousands and thousands of units. In general, however, some players criticize the lack of game content and say that it is nothing more than a nice tool, but it has a lot of potential and offers funny scenes and moments.
+
+
+== References ==

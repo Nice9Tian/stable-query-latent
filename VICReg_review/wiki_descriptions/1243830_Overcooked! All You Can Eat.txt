@@ -1,0 +1,48 @@
+Game: Overcooked! All You Can Eat
+appid: 1243830
+Source: Overcooked
+URL: https://en.wikipedia.org/wiki/Overcooked
+Match score: 5.33
+Retrieved: 2026-07-04
+--------
+Overcooked is a 2016 cooking simulation game developed by Ghost Town Games and published by Team17. In a local cooperative experience, players control a number of chefs in kitchens filled with various obstacles and hazards to rapidly prepare meals to specific orders under a time limit. The game was released for PlayStation 4, Windows, and Xbox One in August 2016. A Nintendo Switch version was released in July 2017.
+Overcooked was nominated for four awards at the 13th British Academy Games Awards, eventually winning two for Best British Game and Best Family Game. A sequel, Overcooked 2, was released in August 2018. A remastered version bundled with the sequel, subtitled All You Can Eat, was first released as a launch title for both the Xbox Series X and PlayStation 5 in November 2020.
+On 5 November 2025, Netflix announced that a reality TV series based on the game is in production. The series is being worked on by A24 and several of the game's developers. On 5 March 2026, Overcooked! All You Can Eat was launched on Netflix's cloud gaming platform.
+
+
+== Gameplay ==
+Players in Overcooked take on the role of chefs in a kitchen, preparing meals via preparation of ingredients, cooking, serving, and cleaning up all while under a time limit to complete as many dishes as possible. During a round, the players are presented with an order which must be completed within a short time window. The chefs work together to complete that meal in time. Most often, multiple orders of different types or varieties of meals will be presented in a queue, thus requiring the chefs to work together to effectively complete the orders. Completing each order correctly earns coins, with bonuses for speed, while orders that are improperly served do not earn any points but only waste time. The goal is to collect as many coins as possible within the time limit. The players are ranked on a 3-star system based on how many coins they got.
+The cooking aspect is made difficult by the layouts of the kitchen, which change each level. Stations for ingredients, preparation areas, stoves and ovens, serving windows, and dishes are generally all separated across the kitchen, requiring time to move between them. There also may be other obstacles or challenges, such as a kitchen separated by a pedestrian crosswalk, with the pedestrians potentially getting in the chef's way. Another kitchen is set on the back of two trucks traveling at different paces down a road, making switching from one half of the kitchen to the other not always possible. Yet another kitchen is set upon an iceberg, requiring players to make more careful movements lest they fall off, or a level where kitchens move around. There are about 28 different kitchens in the game's campaign along with a final boss level.
+Overcooked was designed as a local cooperative experience for up to four players. There is also a competitive multiplayer option, requiring the chefs to score the most points in a limited time. The game also has a single player mode where the player can control two chefs, switching between them at any time, or by selecting a specific control scheme, can attempt to control them both at the same time. There are no present plans for online multiplayer for the game.
+
+
+== Development ==
+Overcooked was the first video game developed by the Cambridge-based company Ghost Town Games. The company was founded by Phil Duncan and Oli De-Vine, who had previously worked at Frontier Developments for around eight years, before leaving to start their own company. From the beginning, the two knew they wanted to make a cooperative game, and noted how most games only added cooperative elements as an afterthought to the single-player experience. As such, they wanted to develop a game where the cooperative nature was the focal point.
+The kitchen setting was based on Duncan's past experience working as a barman and waiter. According to Duncan: "kitchens have always struck me as a perfect analogy for a cooperative game: an occupation where teamwork, time management, spatial awareness and shouting are all vitally important." The initial level designs were created to emphasise the need to work together. For example, creating a barrier in a kitchen that a player would have to walk around, but transferring an ingredient across to another player would take much less time. They found playtesters quickly caught onto how to manage their characters efficiently in these kitchens, often falling into rote but effective patterns, and then proceeded to add other elements based on this feedback. They included kitchen actions that would take time to complete on their own as make players find other tasks to occupy their chef's time to improve efficiency. A kitchen level would include more tasks than chefs available so that players could not stay at a single station for an entire round. A further addition was disruptions in the kitchen's layout, which they found required players to be in close communications to remain effective, part of the design goals they wanted for the game. To keep the game simple, they eliminated a life-based system in favour of a scoring-based one so that players did not feel pressured by making small mistakes, and a simple icon-based system to show steps to be done or that have been completed to avoid having the complexities of recalling what had already been done by another player to a minimum. Final level designs were optimized to find an appropriate balance between challenge and fun based on playtesting results.
+As only a two-person team developing a game with up to four players, Ghost Town spent much of their time taking the game to gaming festivals and conventions for demonstration as to get feedback from players there, often fixing bugs on the fly at these events. The feedback led to a major shift from focusing the game on the various recipes to more interesting level designs, as they found players would be more vested in performing well in complex and dynamic levels.
+Team17 announced that they would help publish the game in May 2016. Team17 flew the pair to attend the E3 2016 and show off the game; as they had been situated next to the Yooka-Laylee booth, Overcooked gained a lot of attention at the event.
+Following release, plans were made to produce a retail package of the game, and Duncan and De-vine spent much of their time through 2016 developing downloadable content that would be included in the retail version. The Nintendo Switch version includes the current expansions as well as support for the Switch's HD rumble feature. DLC pack released for the game includes "The Lost Morsel" and "Festive Seasoning".
+
+
+== Reception ==
+
+Overcooked has received generally positive reviews on release including appreciation for the dynamics during co-operative play, "Overcooked is terrific because of its commitment to uproarious, hilarious and challenging co-operation". Reviews of the Switch edition complained about the framerate which frequently dipped below 30 frames per second.
+
+
+=== Accolades ===
+
+
+== Sequel and remaster ==
+
+A sequel entitled Overcooked 2 was announced on 12 June 2018 and was released on 7 August 2018 for the Nintendo Switch, PlayStation 4, Xbox One and Microsoft Windows. In addition to local multiplayer, the sequel allows for both wireless and online multiplayer.
+Overcooked: All You Can Eat is a compilation game containing both Overcooked and Overcooked 2. It includes a remastered version of Overcooked, utilizing the Overcooked 2 game engine, as well as online multiplayer and all downloadable content released for both games. All You Can Eat first released as launch titles for the PlayStation 5 and Xbox Series X/S on 12 November 2020, and later released on Nintendo Switch, PlayStation 4, Windows, and Xbox One on March 23, 2021, and Google Stadia on 5 May 2022. All You Can Eat later launched on Netflix's cloud gaming platform on 5 March 2026. This version released on Netflix contains additional Stranger Things and KPop Demon Hunters characters
+
+
+== References ==
+
+
+== Notes ==
+
+
+== External links ==
+Official website

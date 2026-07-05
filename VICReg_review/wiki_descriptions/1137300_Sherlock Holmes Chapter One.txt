@@ -1,0 +1,39 @@
+Game: Sherlock Holmes Chapter One
+appid: 1137300
+Source: Sherlock Holmes Chapter One
+URL: https://en.wikipedia.org/wiki/Sherlock_Holmes_Chapter_One
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Sherlock Holmes Chapter One is an action-adventure mystery video game in the Sherlock Holmes series developed by Frogwares. It is also the first game in the series to be self-published by Frogwares itself. Described as an "origin story", the game follows a young Sherlock Holmes as he investigates a mystery in his family's home on the Mediterranean island of Cordona after his mother's death. It is the first open world title in the series.
+Sherlock Holmes: Chapter One was released for Microsoft Windows, PlayStation 5, and Xbox Series X/S on 16 November 2021, with the PlayStation 4 version released on 28 April 2022. It received mixed to positive reviews from critics, with praise for its detective gameplay and investigations, but criticism for its open world design. An Xbox One version was originally scheduled to release along with the PlayStation 4 version, but has since been delayed indefinitely due to the 2022 Russian invasion of Ukraine.
+
+
+== Premise ==
+The plot follows a 21-year-old Sherlock Holmes at the beginning of his career as a "consulting detective". Following the death of his mother, Violet, the young detective returns to his childhood home on the Mediterranean island of Cordona. There, Holmes uncovers a sinister conspiracy lurking beneath the surface of a seemingly idyllic town where corruption and crime are rampant, and the locals shun outsiders. While investigating, Holmes must also reacquaint himself with his old friend, the enigmatic Jon.
+
+
+== Plot ==
+In 1880, ten years after the passing of his mother, Violet Holmes, 21-year-old Sherlock Holmes returns to the island of Cordona alongside his childhood imaginary friend, Jon. Settling in his family's former residence, the dilapidated Stonewood Manor, Holmes encounters the eccentric gallerist Verner Vogel, who insinuates that Violet Holmes' demise may have undisclosed details. Previously assuming the cause of death to be tuberculosis, Holmes begins to investigate loose ends regarding the case. Tracing a former family friend, who is recently murdered, Holmes begins to piece together events through his patchy childhood memories and figures out that Violet was not, contrary to his brother Mycroft's assertion, suffering from tuberculosis but was in fact stricken with severe mental distress following the death of her husband Siger. A resident physician, a Swiss doctor named Otto Richter, oversaw Violet's therapy and employed a controversial and experimental approach by immersing Violet in the original conditions that led to her breakdown. Mycroft, using his contacts and influence, conducted a background check on the doctor but the search revealed little of use other than academic credentials and an estranged brother named Klaus.
+After Sherlock unlocks his mother's private museum of debunked, bizarre artifacts, he recalls an incident whereby Otto Richter was harshly berated by Mycroft, who later appeared to have testified against the doctor on grounds of the latter's medical malpractice. Further revelations cause adverse effects on Jon, who pleads Sherlock not to pursue his mission any longer and move on. During the investigation of a murder in a masked ball at the mansion of a prominent member of the island community, Holmes encounters an elderly police officer, who provides Sherlock with the missing information to conclude his quest. 
+In a climactic flashback, a ten-year-old Sherlock Holmes walks his ailing mother through their garden; Violet becomes violently agitated at her son's reminder that Siger Holmes is long dead and has a psychotic episode where she attempts to drown Sherlock in the garden pond, explaining Sherlock's severe hydrophobia. The player's choice of reasoning determines the ending; if the conclusion is that Sherlock (with the unwitting prompting of Jon) had tampered with Violet's medication, she is shown to have suffered an allergic reaction, dying despite Otto Richter's attempted tracheotomy. Another possibility is that Richter euthanized the hopeless Violet and was arrested at gunpoint by Mycroft. In all cases, Mycroft returns and confronts his shaken brother. Sherlock and Jon have a bitter or tragic farewell depending on whether Sherlock blames Jon for his mother's death and/or for hiding the truth from him all along. Ultimately, Jon dissipates. 
+Bidding farewell to his mother one last time, Holmes is confronted with Verner Vogel, whom he has deduced to be Klaus Richter, the younger brother of Otto Richter. Despite Holmes' explicit animosity to him, Vogel claims that by spurring him on to confront his past, he has turned Sherlock from a Sisyphus to an Ozymandias, allowing him to cast aside his fixations and setting him out unto the world. Ultimately, depending on Sherlock's choices, he is either exiled from Cordona for the death of his mother or out of ennui. After a short narration of his entry to the University of Cambridge, his interest in chemistry and his occupation in criminal investigation, the game concludes with the rendering of the very first encounter between Sherlock Holmes and Dr. John Watson in the mortuary of Bath Hospital in the opening chapter of A Study in Scarlet, with Sherlock shocked at the exact resemblance of his new flatmate to his lifelong companion.
+
+
+== Reception ==
+
+According to review aggregator Metacritic, the PC and Xbox Series X/S versions of the game received generally favourable reviews, while the PlayStation 5 version received mixed or average reviews. Reviewers praised it for its intriguing, engaging detective gameplay while criticizing its lack of polish, dull open world and inability to tackle social issues with grace.
+Tristan Ogilvie of IGN called Sherlock Holmes Chapter One as a decent detective game set in an open-world that is elementary. GameSpot praised its detective gameplay while criticizing its elementary nature. GamesRadar+ praised it, writing about how it "does detective puzzling like no other series" while calling it flawed, but fascinating. Fraser Brown of PC Gamer lauded the game for its smart writing. Push Square awarded the game six stars out of ten, praising the Sherlock Holmes mechanics while criticizing the open world as dull and frame rate with other technical problems.
+Frogwares announced that Chapter One became the fastest selling game in the series, though the developers did not give exact figures for deliveries or sales.
+Sherlock Holmes Chapter One would go on to win the Narrative category at the Central & Eastern European Game Awards (CEEGA).
+
+
+== Sequel ==
+In 2023, Frogwares developed a remake for the 2007 game, Sherlock Holmes: The Awakened, with Alex Jordan reprising as Sherlock Holmes. The game follows the particular detective and his partner Dr. Watson investigating mysterious kidnappings and blood sacrifices going on which connects to a supernatural cult that worships a eldritch deity related to Lovecraftian horror, but these travels may also lead Sherlock into a path of madness. The plot of the remake was developed as a sequel to Chapter One.
+
+
+== References ==
+
+
+== External links ==
+Official website

@@ -1,0 +1,51 @@
+Game: Maid of Sker
+appid: 826940
+Source: Maid of Sker (video game)
+URL: https://en.wikipedia.org/wiki/Maid_of_Sker_(video_game)
+Match score: 7.11
+Retrieved: 2026-07-04
+--------
+Maid of Sker () is a 2020 first-person survival horror game developed and published by Wales Interactive. The game is set in 1898 in the Sker Hotel, on an imaginary island called Sker Island. The protagonist, Thomas Evans, is invited by his lover, Elisabeth Williams, to uncover the mysteries of the hotel after she notices her family's strange behavior. While exploring the hotel, Thomas learns cult followers called "The Quiet Ones" control the place. He finds notes and gramophone records scattered around the hotel that reveal the history of Elisabeth's family.
+Several Welsh and British folklore tales provided inspiration for the story. One particular source was Sker House—a historic place situated just outside the town of Porthcawl, near Bridgend, Wales—made famous by The Maid of Sker, the three-volume novel written by R. D. Blackmore. The folklore story of the same name titled Y Ferch o'r Sger in Welsh also influenced the game. The game has been compared to Outlast, The Evil Within 2, and Silent Hill. Its saving system was compared to that of Resident Evil, with the typewriter switched to a gramophone in the saving rooms.
+The game was released on 28 July 2020 for Microsoft Windows, PlayStation 4, and Xbox One, and on 26 November 2020 for Nintendo Switch. Critical reception to Maid of Sker was mixed, with reviewers praising the visuals and plot while criticising the gameplay mechanics. A spiritual successor, titled Sker Ritual, launched in 2024 for Windows, PlayStation 5, and Xbox Series X/S.
+
+
+== Gameplay ==
+In Maid of Sker, players take on the role of Thomas Evans, as he navigates through the eerie and abandoned Sker Hotel in 1898. Using a first-person perspective, players must outsmart the hotel's blind enemies known as "The Quiet Ones," who have the ability to track Thomas down by the noise he makes.
+Since Thomas is unable to fight back, players must utilize stealth and distraction tactics to sneak past the enemies and safely explore the hotel grounds. This means avoiding noise at all costs, holding one's breath when near a Quiet One, and carefully navigating through environments to avoid coughing or rustling objects.
+
+Mid-game, players are given a temporary weapon called the Phonic Modulator, which uses shock waves to temporarily damage the enemies' hearing and stun them. However, players must use this weapon sparingly as ammunition is limited.
+The game features a manual save style; there is no autosave. To save the game, the player has to find "safe rooms". These rooms have green-tinted patterned doors, and inside the rooms are gramophones the player has to play to save the game. This saving system has been compared to that in the Resident Evil games. The game has also been compared to Outlast in terms of its gameplay style, and The Evil Within 2 and Silent Hill for its atmosphere.
+The game includes puzzles and missions to unlock special keys that grant access to different areas of the map, as well as collecting brass cylinders and optional collectible doll figures that act as music boxes. As the game progresses, the difficulty increases, making it harder to save, find ammunition and healing items, and survive against the more aggressive enemies.
+
+
+== Plot ==
+
+The game is set in 1898, in the remote Sker Hotel located on the fictional Sker Island. The protagonist, Thomas Evans, receives a letter from Elisabeth Williams, the hotel owner's daughter, in which she tells him she is trapped and in danger. Along with the letter, Elisabeth sends a locket that belonged to her mother, which plays a tune. She asks Thomas to write a counter-song to the tune and bring it with him when he comes to the hotel, saying it will make sense later.
+Upon arriving at the hotel, Thomas is greeted by a gloomy atmosphere and finds the front gate locked. Guided by a dog, he finds a way into the hotel and soon discovers that the people inside are abnormal and cannot see. Elisabeth, who has locked herself in the attic, warns him that the place is no longer safe and tasks him with finding four brass cylinders her father hid on the hotel grounds. She tells Thomas that if they are played on a harmonium, things will return to normal.
+As Thomas explores the hotel, he learns about a cult called "The Quiet Ones" that the family belonged to and that Elisabeth's mother served as a priestess. The cult had planned to control the powers of a Siren they found in a sunken ship near the hotel. Elisabeth was trying to write a counter-song to reverse the effects of the Siren, and asked Thomas and three other composers to help her.
+Thomas must find the other three musical pieces scattered around the hotel and decide how to end the game. If he has found all the musical notes and all the cylinders, he can choose to trust Elisabeth and give her the cylinders, or to perform the song himself. Depending on the player's choices, the game will have a different ending.
+
+
+== Development ==
+The video game "Maid of Sker" is a first-person survival horror game developed by Wales Interactive using Unity engine. It was originally scheduled for release in 2019 and was released on July 28, 2020, for Microsoft Windows, Nintendo Switch, PlayStation 4 and Xbox One. The Nintendo Switch version was later released on November 26, 2020. The game draws inspiration from Welsh folklore tales such as "Y Ferch o'r Sger" and the historic Sker House in Wales, which was made famous by R.D. Blackmore's book of the same name.
+The game follows the story of a man named Thomas Evans and his love interest, Elisabeth Williams, a high-class woman. Elisabeth's father, Isaac, disapproves of the relationship and in one version of the tale, locks her in a room until she starves. Other versions of the tale include Elisabeth dying from a broken heart or being forced to marry someone she does not love and dying from an illness. The game incorporates elements of the folk story, including the haunted Sker House which is said to be haunted by Elisabeth and a sailor ghosts.The game's core survival mechanic is a 3D sound-based AI system,  and it is influenced by the psychological horror genre with gothic elements.
+
+
+== Reception ==
+
+Maid of Sker received "mixed or average" reviews, according to review aggregator Metacritic.
+Andrew King of GameSpot rated the game 4 out of 10, writing that the story and surroundings were initially interesting, but the overall gameplay experience became increasingly disappointing and occasionally frustrating, and took issue with the predictable plot development and ending. Eurogamer writer Vikki Blake thought the gameplay was frustrating at times, but she found the overall experience became more enjoyable over time. She lamented the lack of emotional connection to the game's protagonist, Thomas, and concluded that Maid of Sker "does little to surprise the player or push the genre forward".
+Hooked Gamers praised the game for its music and beautiful scenery while criticizing it for not being complex enough, giving the game a 90/100. GamerMAG praised the game's sound and graphic design, but criticised it for "unkillable opponents and several strange design solutions", giving it an 80/100. GameSpace, Gamers' Temple, and The Games Machine rated the game 8/10, praising the game's narrative. Jeuxvideo.com criticised faults revolving around the AI while praising the game's story.
+Wccftech criticised the game for "not breaking the mold of the Resident Evil formula in any significant way" and not being innovative enough, however they praised the game for its horror elements, rating it 73/100. Edge rated the game a 5/10 and criticised its slow pacing. PC Invasion rated it a 4/10, writing, "while the game has great visuals and design, everything else, from its gameplay systems to its progression and foes, is so weak and ill-considered that I can't imagine most people enjoying what little it has to offer". Meristation rated it 6.8/10, noting the inspiration its story drew from the styles of authors Edgar Allan Poe and H. P. Lovecraft, but criticised the game's stealth mechanic and save system.
+
+
+== Related media ==
+On November 12, 2021, Wales Interactive announced Sker Ritual, a spiritual successor to the game, which was set to launch in Q2 2022 for Windows and a later date for PlayStation 5 and Xbox Series X/S. It will be a co-op survival first-person shooter. On May 9, 2022, the Windows release was updated to summer 2022 and the console releases were said to be later in 2022. It was released on Steam's early access in October 2022, with an expected release date of Q1 2023. Sker Ritual was eventually released on April 18, 2024, for Windows, PlayStation 5 and Xbox Series X/S to "Mixed or Average" reviews on Metacritic.
+
+
+== References ==
+
+
+== External links ==
+Official website

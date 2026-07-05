@@ -1,0 +1,51 @@
+Game: Action Taimanin
+appid: 1335200
+Source: Action Taimanin
+URL: https://en.wikipedia.org/wiki/Action_Taimanin
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Action Taimanin (アクション対魔忍) is a free-to-play action role-playing game developed and published by Gremory Games on mobile, and later ported to Windows PCs by Lilith and Infini-Brain. The game is an all-ages spin-off of Lilith's Taimanin visual novel series.
+
+
+== Story ==
+
+Action Taimanin takes place in an alternate near-future Japan. Demons have crossed over from the dark side, breaking the unspoken rules of non-interference. The rule is now obsolete, and a war rages between the humans and demons. As the fight rages on, crime syndicates are taking advantage of the chaos to rise in power. The government established an organization of ninjas called "Taimanins" to fight the demons.
+The main quest begins with retrieving a stolen bio-weapon from a UFS base and finishes in chapter 16, part 2. A second story arc has been ongoing since.
+
+
+== Gameplay ==
+Action Taimanin features multiple game modes. The game's main story is covered in Story Mode with self-contained stories taking place in Quest Mode. Time Attack mode challenges players to complete stages in as little time as possible. Special Mode features two minigames: a motorbike obstacle race and a shooting gallery. Arena Mode is a PvP multiplayer mode and Private Room is a decoration and figure pose mode.
+By completing objectives, players can unlock additional outfits for their favorite characters. Support characters can aid in combat with various skills and bonding with them unlocks special slice-of-life events.
+
+
+== Characters ==
+In Action Taimanin, the player takes the role of Fuuma Kotarou (ふうま 小太郎), the newly appointed captain of the Taimanin Task Force. Over the course of the game, Kotarou will recruit both playable and non-playable Task Force members. Playable characters can be obtained with in-game currency while Supporters are acquired through gacha banners. The following is a list of playable characters and does not cover the game's Supporters. Since the opening of the global server, the game adds a new playable character every 2 months.
+
+
+== Development ==
+
+Action Taimanin was announced at Tokyo Game Show 2019 as an all-ages 3D action game set in the Taimanin universe. The starting playable characters unveiled were Igawa Asagi, Igawa Sakura, and Mizuki Yukikaze.
+
+
+== Release ==
+Shortly after the Japanese release, users noticed a remixed version of Au5's "Snowblind" was used in-game but the artist wasn't featured in the game's credits. Gremory Games would then issue an apology for copyright infringement and take measures to avoid similar situations in the future.
+In September 2020, it was announced that Action Taimanin would be released globally for PC on Steam, as well as on iOS and Android devices. On May 4, 2021, the Japanese and global server merged with the former folding into the latter. The Japanese server final closure took place on July 27, with urging of Lilith and Gremory for Japanese players to register for a transfer.
+The global server celebrated its first anniversary with several in-game events lasting for all of October 2021 with a second anniversary event taking place October 2022. Reception to the second anniversary was negative due to Gremory Games introducing the first paid-only character, Annerose from Koutetsu no Majo Annerose, without prior notice after she won the game's 2022 character popularity poll.
+On October 31st, 2023, the game was released on the South Korean game distribution platform STOVE.
+
+
+== Reception ==
+Sequential Planet complimented the game's visuals and performance as well as it being F2P-friendly. However, they criticized the stamina system, combat, and enemy variety.  MMOByte praised the character models and fluid animation but noted that the combat consisted of button mashing. Game Rant called Action Taimanin one of the best free anime games on Steam.
+
+
+== Notes ==
+
+
+== References ==
+
+
+== External links ==
+
+Official website 
+Gremory Games official website

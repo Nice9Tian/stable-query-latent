@@ -1,0 +1,49 @@
+Game: Torchlight: Infinite
+appid: 1974050
+Source: Torchlight: Infinite
+URL: https://en.wikipedia.org/wiki/Torchlight:_Infinite
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Torchlight: Infinite is an action role-playing game and the fourth game in the Torchlight series. It is developed and published by Chinese company XD Inc. for Android, iOS, and Windows. These versions are all cross-platform.
+
+
+== Gameplay ==
+Torchlight: Infinite is a dungeon crawler where the player controls a character in a high fantasy world, much like previous installments in the Torchlight series. From an isometric, top-down view, the player controls their character to move about the game's world, using hack and slash with a variety of weapons, magic spells, and skills to fight monsters, collect new items and treasure, and sell and buy items to improve their character's abilities. A focus of these various progression systems is to create more customization options for players.
+Torchlight: Infinite draws from the lore and high-fantasy setting of previous Torchlight games, especially the more linear approach introduced in Torchlight III. Infinite develops a more apocalyptic world and unifies its dungeon levels with relatively rigid quest lines.
+
+
+=== Characters ===
+As of season one, there are six player characters available in Torchlight: Infinite. These characters are analogous to a character class selection in many other games. Each of the six characters is associated with one heavily customizable skill tree, although other trees become available after leveling up.
+
+
+=== Customization ===
+Cosmetics are acquired by completing in-game quests or with real money via the in-game gacha system.
+
+
+=== Seasons ===
+
+
+== Development ==
+Torchlight: Infinite was developed with the Unreal Engine 4 game engine, and this has led to some difficulties as much of the development team at XD Games was unfamiliar with the platform prior to work on this title.
+David Brevik, known primarily for his role in creating the Diablo series, is a consulting producer on the Torchlight: Infinite team. Brevik, a self-described "big Torchlight fan", is involved with media and community outreach in the project.
+The developers at XD were influenced by the MMORPG genre and sought to bring the best of previous Torchlight games together with the best of other genres.
+Liu Heng, the producer of Torchlight: Infinite, has discussed the developers' focus on monetization. Specifically, they wanted to avoid monetizing the skill or power progression, which could be considered pay to win. Instead, XD Inc. limited microtransactions to a gacha system for cosmetic items such as hero skins. The developers also concerned themselves with what similar games, such as Diablo Immortal, had found success with.
+
+
+== Release ==
+Torchlight: Infinite entered its first phase of closed beta on January 18, 2022, exclusively on mobile platforms. The Windows version was announced on July 23, 2022, and was available during the game's final closed beta, which began on September 5, 2022.
+The open beta phase began on October 12, 2022, concurrently with the beginning of the first in-game season.
+In April 2023, Torchlight: Infinite was announced to be coming out of early access/open beta on May 9, 2023.
+
+
+== Reception ==
+
+The game was received with mixed reviews by critics. It has drawn varying comparisons with similar mobile games, especially Diablo Immortal and Path of Exile. One Torchlight fan and critic was unimpressed at launch, saying "Torchlight Infinite is not Torchlight." Similar concessions were made even in more positive reviews, which focused on Torchlight Infinite's successful mechanics rather than franchise consistency.
+
+
+== References ==
+
+
+== External links ==
+Official website

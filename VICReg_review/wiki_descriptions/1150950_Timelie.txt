@@ -1,0 +1,86 @@
+Game: Timelie
+appid: 1150950
+Source: Timelie
+URL: https://en.wikipedia.org/wiki/Timelie
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Timelie is a 2020 single-player stealth puzzle adventure game developed by Urnique Studio. The story follows a young woman who awakens in an unfamiliar dimension and is threatened by hostile robots. The player can control time in the form of a media player, which can be used to defeat enemies. The game was released for Windows and macOS in May 2020 and went on to sell over thirty thousand copies, being nominated for multiple accolades and awards. Thai gaming publications and conventions listed Timelie as Game of the Year. The first free DLC Hell Loop Puzzle Pack was released in October 2020.
+
+
+== Plot ==
+A little girl and her companion cat, lost in nowhere, trying to overcome obstacles to find a way out of this mysterious abstract realm using their power to control time.
+When a child awakes in the middle of a mysterious facility full of hostile robots, she begins looking for a quick exit. Along the way, the innocent girl discovers she has precognitive powers that allow her to explore future timelines until she discovers the optimal route to safety.
+The game's story is told in a pantomime style with no voice acting. Much of the game's story is hinted at through symbols displayed along the bridge in each chapter. The end of the game shows the protagonist waking up in bed in a scene similar to the room they first woke up in. Additionally, in the endgame expansion, the character walks out of the laboratory room and meets an orange-haired boy who resembles the cat encountered in the game.
+
+
+== Gameplay ==
+Timelie is a top-down stealth puzzle adventure game with time-manipulation mechanics. Players are able to freely progress or reverse time in order to predict the movements of enemies and other characters, and redo actions which lead to unfavorable outcomes. In order to reach the exit of each level, players will have to avoid capture by enemy patrol bots, interact with keypads and pressure plates to open and close doors, and collect purple orbs which permanently repair broken pathways and change the layout of a level.
+As the game progresses, players unlock the ability to bend the time of specific objects by picking up white charge orbs. At the cost of a charge, they can use this ability to reverse and repair the damage to broken areas of the floor, or destroy enemies by forcing them to rust. Players also gain access to a second character, the orange cat, as a companion or standalone character. The cat can lure in nearby enemies by meowing, which recharges over time, and avoid detection by traveling through vents in the walls.
+Later chapters introduce additional challenges, such as levels which slowly vanish, which the player must outrun to the exit. Some levels require players to revisit past, already beaten levels in order to change conditions in the present. Past levels can be revisited at any time without changing the completion state of other levels, which may also be helpful for making certain optional challenges easier.
+
+
+== Development ==
+Timelie started from a senior project before going to the contest and winning the "Best Game" in the National Software Contest, and also representing Thailand to win the "Best Game" award in the international Microsoft Imagine Cup Competition.
+Thai indie game created by Urnique Studio from Thailand. In the beginning development team had only a group of five students in the Faculty of Computer Engineering, Chulalongkorn University. The project (Timelie) happened the day they had to finish the project with more people than any other group. Advisor wants their work to be more special than others. Therefore, aiming to reach the national program competition which in the end their work has finally caught up with Microsoft Thailand.
+At Microsoft's 2016 Imagine Cup, Timelie's name became instantly recognizable after winning the first prize in the event. It is the first honourable award received during the game that is not yet developed to the maximum. Indicates the potential of the game that may go further than everyone expected.
+Since 2018, the game has been continuously developed by Urnique Studio in terms of the game system, storyline, characters, graphics, sound design and background music. Currently, Timelie is a puzzle, semi-stealth game where players control two characters a girl and a cat to help them escape safely from a mysterious place. The highlight of the game is that there will be a time bar at the bottom for players to control the time. Can scan to the future or go back to correct past mistakes like watching YouTube video.
+
+
+=== Design ===
+As Timelie is based on the story of time and the journey of a girl and a cat, the game's template design includes travel sounds such as orchestra and choirs. Sounds that reflect mystical locations in the game such as ambience and synth. Personality sounds with the mood of characters such as piano, harp and music box. It has also adapted the sound of different types of clocks into the soundtrack of the game to symbolize the time.
+The concept of design is simple and easy gameplay emphasis on using a few variables in the scene to produce hundreds of thousands of results. By the role of the player is to take the girl character and her trusty cat through the door to the next level. Which the girl said to have special powers, able to go back and forth in time as she wants. Not only affect her position but also affects the objects around her. If she receives an item that meets the game conditions in each scene this ability will be available.
+In the first period, the range of variables is not much. Players will have to worry only about the robots chasing them. They will have a clear pattern for learning and catching the right way to pass the level will be fast. But after a while Game variants will start to increase. Players must collect items and remember the enemy patterns that change after their actions, controlling two characters. The game will gradually increase the challenge, forcing players to have to think about how to find a way to survive.
+
+
+=== Music ===
+The sound of the Timelie game consists of 3 parts. The first part is the sound effect made by Angel Ignace, a French sound designer, and teacher. The second part is the promotional song for the game "No Last Eternity" composed and produced by Aun Jetsada Trirungkit, a singer from The Voice TH 2018, with Nutbua Natthaphon as a singer. And the last part is BGM by Pongsathorn Posayanonth, a film music composer.
+
+
+== Release ==
+
+
+=== Announcement ===
+Initially, the game only supported 5 languages: Thai, English, Simplified Chinese, Traditional Chinese, and Japanese. Later, it came to support 8 more languages: Spanish-Spain, French, German, Italian, Portuguese-Brazil, Korean, Turkish, and Russian.
+
+
+=== Downloadable content ===
+On October 9, 2020, the developers added an expansion content titled TIMELIE: Hell Loop, an expansion that adds 30 new levels. There is no additional storyline. It's just a new level added and will be unlocked for those who have finished playing the main game content. Players can play by the difficulty of solving puzzles that are much more difficult than in the original one. This supplement has been released to those who already have the main game with no additional cost.
+
+
+== Reception ==
+
+
+=== Sales ===
+The development team Urnique Studio has announced that the PC version of Timelie will be released via Steam in spring 2020, along with the first gameplay clip. Currently, the game was released through Steam, Epic Games and GOGcom channels. In addition, the game also revealed that there may be plans to develop more DLC, including porting the game to the Nintendo Switch.
+
+
+=== Awards ===
+The first version of the game uses the Unity Engine to develop and has won national and international awards include:
+
+Best Game from the Microsoft Imagine Cup 2016
+Best Game from the Microsoft Imagine Cup Thailand 2016
+Best Game from the National Software Contest 2016
+Special Award from the National Software Contest 2016
+Best Student Technical Project from the Bangkok International Digital Content Festival 2018
+After the process of development and release to the online platform, awards received include:
+
+Game of The Year from the Bangkok International Digital Contest Festival 2020
+Best of Audio from the Bangkok International Digital Contest Festival 2020
+Best of Visual Art from the Bangkok International Digital Contest Festival 2020
+Best of Game Design from the Bangkok International Digital Contest Festival 2020
+Developers Choice Award from the Bangkok International Digital Contest Festival 2020
+Best Mobile Game from the Taipei Game Show 2020 (Finalist)
+
+
+=== Critiques ===
+
+The game has received a lot of attention among Thai gamers and received a very positive response as well. Like many review bureaus, the ratings were mostly positive.
+
+
+== References ==
+
+
+== External links ==
+Development team website
+Official website

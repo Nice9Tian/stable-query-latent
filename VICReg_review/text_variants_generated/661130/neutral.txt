@@ -1,0 +1,9 @@
+ChilloutVR is a community-driven VR and desktop sandbox game built around creating, exploring, and socializing in a large metaverse. It supports both desktop and VR environments, includes immersive 3D spatialized audio, offers multi-regional instancing for EU, US, and AS regions, and supports full-body tracking, user-created avatars, and user-created worlds. To play, an AlphaLink account is required, and it is created after starting the game.
+
+The game centers on giving players and creators a flexible base for building and experiencing virtual spaces. Players can create their own avatars or use existing ones, then explore a growing collection of public worlds, join friends, meet new people, or open new worlds with a click. ChilloutVR emphasizes a secure and performant foundation intended for both players and creators.
+
+Avatar creation is a major feature. Players can make fully expressive, full-body tracked avatars with lip sync and eye-tracking. Full-body tracking and VR are not required to use the game. Worlds can also be created by users and may include interactable objects.
+
+ChilloutVR is designed to be modular, with scripting and game modes planned through the in-house toolkit “Newton,” though this is not yet available. The intended possibilities include interactive worlds and custom game modes such as Trouble in Terrorist Town, cooperative tower defense, and MMORPG-style experiences, depending on creator ambition and computer performance.
+
+Social features are a key part of the experience. Players can add friends, drop portals to other instances so others can follow them, join public instances to meet new people, and participate in groups and communities. Events, talks, and player-created gatherings are also supported, with online exploration available either privately with friends or publicly with players from around the world.

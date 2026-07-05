@@ -1,0 +1,43 @@
+Game: Sniper Ghost Warrior Contracts 2
+appid: 1338770
+Source: Sniper Ghost Warrior Contracts 2
+URL: https://en.wikipedia.org/wiki/Sniper_Ghost_Warrior_Contracts_2
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Sniper Ghost Warrior Contracts 2 is a 2021 tactical shooter stealth video game developed and published by CI Games. It is the sixth entry in the Sniper: Ghost Warrior series and is the sequel to Sniper Ghost Warrior Contracts. The game was released on 4 June 2021 for Microsoft Windows, PlayStation 4, Xbox One and Xbox Series X/S. A version for PlayStation 5 was released on 24 August 2021.
+
+
+== Gameplay ==
+Sniper Ghost Warrior Contracts 2 refines the gameplay of its predecessor, Sniper Ghost Warrior Contracts. The game and its DLCs feature a total of six missions, distinctly categorized as either "classic" and "long-distance." The classic missions offer an experience comparable to that of the last installment, as they involve a mix of infiltration, close-quarter combat, and stealthy elimination of targets closer than 400 meters (1,300 ft). The long-distance shot missions, however, require the player to eliminate targets further than 1,000 meters (3,300 ft).
+
+
+== Plot ==
+In late 2019, sniper mercenary 'Raven' is hired to destabilise the regime of Bibi Rashida, dictator of the fictional Middle Eastern country of Kuamar (coterminous with southern Iran). Guided by an anonymous handler ('Control'), Raven is first deployed to Zindah Province, eliminating Rashida's quartermaster and arms dealer Antwan Zarza, sniper trainer and former SAS Captain Ronald Payne and the Russian GRU telecommunications expert Colonel Fyodor Novikov.
+With Rashida's operational network crippled, Raven next infiltrates Mount Kuamar, where he destroys the jamming equipment cutting Kuamar off electronically from the world, thus allowing Western news and the Internet in. He then sabotages The Citadel, a massive data facility about to be used to launch a world-crippling cyberattack, and assassinates its mastermind, the hacktivist and Rashida ally Lars Hellström.
+As the regime totters, Raven moves on to free opposition journalist Taj Taheer from captivity and eliminate enforcer Isabella Sanchez, militant ally Hamza Khan and weapons dealer Zivko Dragovic, as well as sabotage the nation's remaining oil infrastructure. A final assault on Rashida's presidential fortress follows, with Raven destroying her stockpile of nuclear missiles and killing the dictator herself.
+Taheer takes the presidency, but his actions cause Control's anonymous employers concern; thus, Raven is deployed in late 2020 to eliminate Taheer and a foreign contact assisting him. Once this is completed, Control reveals what happens next: Kuamar will elect a new president in time, but this is still a strategic failure. With both Rashida and their own candidate gone, there will be no one they can puppet running the nation, which Control admits may be better off. Control then signs off, revealing his name is Alex.
+In a DLC mission, Raven returns to Kuamar to take down the new Zarza Clan leader, Mahmoud 'The Butcher' Zarza, and Russian nerve agent researcher Irina Volkova after her work poisons an entire village.
+
+
+== Development & Release ==
+Sniper Ghost Warrior Contracts 2 was developed by Polish video game developer CI Games, the developer of the Sniper: Ghost Warrior series. The development began shortly after its predecessor Sniper Ghost Warrior Contracts.
+The game was released on Microsoft Windows, PlayStation 4, Xbox One, and Xbox Series X/S on 4 June 2021. It was released on PlayStation 5 on 24 August 2021.
+
+
+== Reception ==
+
+According to review aggregator Metacritic, Sniper Ghost Warrior Contracts 2 received "mixed or average reviews" for the PC, PlayStation 4, and Xbox Series X/S versions, while the PlayStation 5 version received "generally favorable" reviews.
+GameStar's Sascha Penzhorn scored the game 75 out of 100, writing the game is for those who "enjoy planning perfect long-distance shots", but criticizing the story and the inclusion of microtransactions in a single-player game.
+eXputer reviewer Huzaifah Durrani wrote the gameplay excelled at presenting creative scenarios for killing a target. Rick Lane of PC Gamer also has the impression that killing targets without raising alarm is like a puzzle to solve. He has an impression that after making five Ghost Warrior games CI Games "clearly understands the experience it's after". The PCGamer reviewer perceives infiltrating enemy base as James Bond missions, but also writes "The sniping feels authentic". He praises animation, environment design, weapon handling, writing and voice acting. He also likes the size of levels in the game ("Some locations you visit, such as a giant medieval castle that has both an inner and outer fort, would form the entire level in any other game").
+JeuxVideo praises the tutorial, which is good both for those acquainted with Sniper Ghost Warrior Contracts and for newcomers. They also praise "the quality of the level design". They write: "Obviously, the clichés of video game infiltration, with the eternal tall grass, are present". They also praise the array of gadgets to use. They write that "killcam lovers will be able to have fun", saying however that headshots are "particularly gory" and "the PEGI 18 on the jacket is there not by accident".
+As far as newly introduced long-distance shooting in the game is concerned, JeuxVideo thinks it "is an excellent idea". IGN reviewer Tristan Ogilvie thinks such kills are "the strongest sections of Contracts 2" and they remain thrilling long after bloodiness of kills wears off, however he thinks that returning fire from long distance with assault rifles "admittedly shatters the sense of realism somewhat".
+As far as AI is concerned, JeuxVideo writes: "Overall, AI has become more realistic, but unfortunately it happens that it goes off the rails". IGN reviewer admits the guards use a bit of strategy, but generally has an impression their stupidity makes them too easy to kill.
+At the Pixel Heaven 2021 game festival, the game was nominated in the categories "Best Audio", "Big Fish Grand Prix" and "Best Gameplay".
+
+
+== References ==
+
+
+== External links ==
+Official website

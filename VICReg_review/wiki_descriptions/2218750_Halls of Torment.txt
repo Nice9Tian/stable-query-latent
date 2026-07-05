@@ -1,0 +1,39 @@
+Game: Halls of Torment
+appid: 2218750
+Source: Halls of Torment
+URL: https://en.wikipedia.org/wiki/Halls_of_Torment
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Halls of Torment is a role-playing video game developed and published by Chasing Carrots. It entered early access in May 2023. The full game was released on September 24, 2024, for Windows and Linux. A port of the game for Android and iOS was developed by Erabit Studios and released on October 10, 2024. A port of the game was released on PlayStation 5 and Xbox Series consoles on October 28, 2025.
+
+
+== Gameplay ==
+Halls of Torment is a fantasy role-playing game (RPG) that incorporates elements from the action RPG, roguelike, and bullet heaven genres. Characters are controlled from an isometric perspective in a pre-rendered, hellish environment that is visually reminiscent of classic 1990's RPGs, such as Diablo. This "old-school" style features in the stylization of other elements, including grainy character sprites, low fidelity voice-overs for non-player characters (NPCs), and the orb-shaped display of the character's health—a design present in early Blizzard Entertainment games.
+Players descend into the "Halls of Torment," where they must survive combat against waves of enemies in 30 minute runs. There are six levels to choose from, each with unique environments that range from open spaces to a long bridge with enemies on either side. Attacking the player either at range or in melee distance, different fantasy beasts group together to form enemy hordes that become increasingly dense as the run progresses. Players must balance being close enough to deal damage to the group and collect experience points (XP) dropped by enemies while keeping enough distance to prevent being overwhelmed. Aiming and attacking can be automatically performed, akin to Vampire Survivors, or controlled manually using the mouse or analog stick. Destructible objects are present throughout the stage and contain useful consumable items for the current run.
+At various set times throughout each stage, mini bosses will appear with the rest of the horde, attacking the player with telegraphed moves. If the player survives the 30-minute run, they will face one of the Lords. Upon defeat, bosses leave behind a scroll, which grants the player new abilities during the run, as well as a chest that offers the choice between three different pieces of armor or jewelry, which increase stats and grant special abilities. These items can be used in the current run or stored in a well found in the stage to be able to purchase them for permanent use after the run. Experience points can be invested into stats such as health, regen, attack speed. Upon level up, players can choose from four options for stat increases with the opportunity to reroll the choices.
+Before starting a run, players can select from a roster of 11 characters in the overworld. Players initially start as the 'Swordsman' and unlock other characters throughout the course of play, each with distinct weapons and abilities. These characters can be upgraded with gold to improve their stats and make them stronger.
+
+
+== Development ==
+Halls of Torment was developed and published by Chasing Carrots, an indie team based in Stuttgart, Germany. In a talk at the 2023 Game Industry Conference, creative director Paul Lawitzki recalled his desire to play the upcoming Diablo IV during the initial conceptualization of Halls of Torment in October 2022. The team's pitch for the game became "if Diablo was a three course meal, Halls of Torment would be a candy bar"; an initial prototype was completed within a few days. Additionally, the team looked to other modern action RPGs, such as Path of Exile, in an attempt to provide a "small-scale pocket version" of the genre. In an interview with Pieuvre, Chasing Carrots stated that their biggest influence was the 2022 bullet hell game Vampire Survivors, the success of which spurred a wave of games in the similar genre. The team wished to achieve a middle ground between the action of Vampire Survivors and the character progression of action RPGs. The game's visuals took inspiration from "old-school" RPGs, with Chasing Carrots specifically noting Arcanum, Nox, Fallout, and Planescape: Torment. While their previous title, Good Company, was designed in Unity, the team opted for the Godot game engine for Halls of Torment. Lawitzki elaborated that the decision was motivated by previous developmental challenges with Unity, as well as Godot being free and open-source.
+Halls of Torment was announced during a development stream hosted by Lawitzki and producer Mara Mehlitz on January 26, 2023. A free demo version, Halls of Torment: Prelude, was released on Steam on March 9, 2023, featuring three playable characters and two stages with the ability to carry over the save file to the full game. In May 24 of that year, the game was released in early access, selling over 70,000 units in the first week.
+Halls of Torment officially released on September 24, 2024. As of February 2025, the team plans to release further updates, including free updates with small changes as well as paid downloadable content containing new maps, characters, and features.
+A port of the game for Android and iOS was developed by Erabit Studios and released on October 10, 2024.
+
+
+== Reception ==
+
+Halls of Torment received "generally favorable" reviews according to the review aggregator Metacritic. Fellow review aggregator OpenCritic assessed that the game received "mighty" approval, being recommended by 93% of critics. Reviewers favorably called the game as a cross between Diablo and Vampire Survivors. Ars Technica called the game a "near-perfect take" on the genre, praising the gameplay as rewarding, but felt that level design wasn't unique enough across the different stages.
+Within a day of its full launch, Halls of Torment experienced the highest player count since August 2023. In October 2024, Chasing Carrots announced that the game had sold over a million units on Steam.
+The Academy of Interactive Arts & Sciences nominated Halls of Torment for "Mobile Game of the Year" at the 28th Annual D.I.C.E. Awards.
+
+
+== Notes ==
+
+
+== References ==
+
+
+== External links ==
+Chasing Carrots official website

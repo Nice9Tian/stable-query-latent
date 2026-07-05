@@ -1,0 +1,33 @@
+Game: House Flipper 2
+appid: 1190970
+Source: House Flipper 2
+URL: https://en.wikipedia.org/wiki/House_Flipper_2
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+House Flipper 2 is a simulation game developed by Frozen District and Empyrean. Frozen District and PlayWay published it in 2023 for Windows.  It is the sequel to House Flipper (2018) and involves flipping real estate.
+
+
+== Gameplay ==
+Players flip real estate by cleaning up and restoring houses. They can play through a campaign where they are given specific tasks to complete. These tasks must be completed in sequence and are accompanied by a storyline. Assembly mode enables players to build and install items in the house manually, rather than simply clicking them into place, which rewards them with discounts on purchases. Sandbox mode allows players to design a house from scratch, rather than renovating a pre-made one.
+
+
+== Development ==
+Polish companies Empyrean and Frozen District developed both House Flipper and its sequel.  Development began in 2020.  The size of the development team more than doubled compared to House Flipper.  The team wanted a more uniform art style for House Flipper 2.  The first game used asset store packages, each of which had its own art style.  Limitations of the previous design led them to develop House Flipper 2 from a new code base, allowing them to implement features like a sandbox mode that were not possible with the original code.  House Flipper 2 was released for Windows on December 14, 2023.  PlayStation 5 and Xbox Series X/S were released on April 10, 2024.
+
+
+== Reception ==
+
+
+=== Critical reviews ===
+House Flipper 2 received "generally favorable reviews", according to review aggregator platform Metacritic. IGN described it as "a worthwhile iterative upgrade" and praised the new graphics and the new sandbox mode. PC Gamer recommended House Flipper on the strength of its sandbox mode, which they felt was exciting. The Guardian compared it to the simple pleasure of popping bubble wrap with the added bonus of numbers that continually grow larger. Although acknowledging that it is not a realistic simulation, TechRadar said it is "absolutely essential" for fans of the first game and called it addictive fun, though they criticized the load times. GamesRadar praised the new visuals, quality of life improvements, and the gameplay, but they said the sandbox mode can feel overwhelming for players used to being given goals.
+
+
+=== Accolades ===
+
+
+== References ==
+
+
+== External links ==
+Official website

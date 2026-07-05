@@ -1,0 +1,15 @@
+SpaceBourne 2 is a single-player open-universe RPG and third-person shooter that combines role-playing, mining, trading, piracy, crafting, and deep exploration. It continues the story from SpaceBourne, but shifts the player’s focus toward building a new empire in the galaxy, with the path to doing so left entirely to the player.
+
+The game emphasizes large-scale exploration across tens of thousands of solar systems. Each solar system is procedurally generated and features its own unique structure, with different planets and places to discover. The planets themselves are also procedurally generated and come with varied surfaces, climates, gravity, and areas such as cities, villages, caves, outposts, and hidden secrets. According to the page, this creates a galaxy filled with unique systems and numerous opportunities for exploration.
+
+Players take on the roles of both pilot and ship. SpaceBourne 2 includes a character customization system and uses Unreal Engine’s realistic rendering to support lifelike characters. Ships can be modified according to the player’s preferences, reinforcing the game’s focus on personalization and progression.
+
+A major part of the game is faction building and control. Players can establish their own faction and take complete control over its internal operations, policies, governing principles, and management structure. By expanding military power, capturing stations and solar systems, or constructing new stations, players can work toward becoming the ruler of the galaxy.
+
+The game also features a detailed diplomacy system. In addition to factions, players can interact diplomatically with Starlords and Houses. Each House has its own characteristics, stations, planets, cities, and fleets, and the changing relations between Starlords can affect the overall diplomatic situation. This adds strategic weight to player decisions.
+
+SpaceBourne 2 includes companions who can support the player in combat and help lead the team. Team members can be assigned different roles on board based on their skills. The game also offers seven guilds that players can join and progress through. Each guild provides side quests tied to its area of expertise, and completing them allows players to rise in rank and gain unique benefits.
+
+Side missions are scattered throughout the galaxy, offering breaks from the main story while providing extra rewards and opportunities to learn more about the game’s world and characters. The game also presents a “living galaxy,” where players can encounter random events, communicate with other ships, and experience new stories and challenges as they travel.
+
+Overall, SpaceBourne 2 presents a broad sandbox of exploration, progression, diplomacy, faction management, and combat within a procedurally generated galaxy.

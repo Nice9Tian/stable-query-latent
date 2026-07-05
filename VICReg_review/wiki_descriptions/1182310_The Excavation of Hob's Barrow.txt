@@ -1,0 +1,43 @@
+Game: The Excavation of Hob's Barrow
+appid: 1182310
+Source: The Excavation of Hob's Barrow
+URL: https://en.wikipedia.org/wiki/The_Excavation_of_Hob%27s_Barrow
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+The Excavation of Hob's Barrow is a 2022 folk horror point-and-click adventure game developed by Cloak and Dagger Games and published by Wadjet Eye Games in September 28, 2022.  Players attempt to solve a mystery in rural England during the Victorian era.
+
+
+== Gameplay ==
+
+The Excavation of Hob's Barrow is presented in third-person perspective with a pixel art aesthetic. The player controls Thomasina Bateman, a Victorian antiquary who has been invited to the fictional village of Bewlay to excavate a tumulus, navigating 2D screens representing the village of Bewlay and its surrounding moorland. Interaction is performed via a context-sensitive cursor, allowing the player to examine objects, pick up items, and converse with non-playable characters.
+The game emphasizes exploration, dialogue, and inventory-based puzzles. Players collect items, combine them, and use them to overcome obstacles or persuade characters to assist Bateman. Puzzles are largely grounded in everyday logic rather than abstract riddles, keeping with the game's grounded folk horror tone.
+Dialogue plays a significant role, with branching choices that influence how villagers respond to Bateman, though these decisions do not alter the overall story outcome. The narrative is advanced through conversations, dream sequences, and interactive flashbacks to Bateman's childhood. The story is narrated by Bateman several years after the events of the game have taken place.
+Additional features include a journal system that records Bateman's observations and goals, and a fully voiced cast, with Samantha Béart providing the voice of Bateman. The pacing is deliberately slow, reinforcing the atmosphere of unease and mystery characteristic of the folk horror genre.
+
+
+== Plot ==
+In Victorian England, antiquarian Thomasina Bateman travels to the isolated village of Bewlay to excavate a burial mound known as Hob's Barrow, after receiving an invitation from a local man named Leonard Shoulder. Upon arrival, she discovers that Shoulder is missing and the villagers are evasive, warning her away from the site.
+As she explores the village and surrounding moors, Bateman learns from a local wise woman that her father undertook a failed excavation of the same barrow decades earlier, which left him incapacitated. Bateman experiences unsettling dreams involving a goblin and flashbacks to her childhood as her grip on logic and science is gradually eroded. 
+Manipulated by the emerged Shoulder and local landowner Lord Panswyck, Bateman descends beneath the barrow and performs a blood ritual intended to heal her father but instead releases a supernatural entity,  Abraxas, who was previously bound beneath the mound by her father. Possessed by the entity, Bateman murders her father and is later confined to an asylum.
+
+
+== Development ==
+Developed by Shaun Aitcheson, John Inch and Laurie MH of Cloak and Dagger Games, it was published by Wadjet Eye Games for Linux, Mac, and Windows on September 28, 2022, and for Switch on January 25, 2023. 
+For much of the development period the game was known as INCANTAMENTUM. 
+Hob Hurst's House, a Bronze Age barrow on Beeley Moor near Bakewell in Derbyshire, was cited as an inspiration for the game by its writer Shaun Aitcheson.
+On May 20, 2025, Lost in Cult announced The Excavation of Hob's Barrow physical Nintendo Switch edition.
+
+
+== Reception ==
+
+The Excavation of Hob's Barrow received "generably favorable reviews" according to Metacritic. Fellow review aggregator OpenCritic assessed that the game received "mighty" approval, being recommended by 100% of critics. PC Gamer described it as "a splendid adventure that's well paced, excellently voiced, and doesn't outstay its welcome."  Commenting on the atmosphere of dread, Rock Paper Shotgun said it feels like "a beautifully dank, damp, gloomy folk horror".  Eurogamer's reviewer said the game stuck stuck in my mind after completing it, and he enjoyed thinking deeper about its plot and themes.  NPR strongly recommended it to "anyone who loves mysteries or story-focused games".  Adventure Gamers called it "an outstanding horror game", praising the story, art, voice acting, and puzzles. Screen Rant praised the game's "slow-burn dread" and noted its connections to classic British folk horror cinema, drawing comparisons to The Wicker Man (1973) in its portrayal of a sceptical outsider encountering a secretive rural community. Entertainium highlighted how the game "leans heavily into folk horror imagery and narrative beats" arguing that its blending of archaeological mystery with folkloric terror makes it "a spiritual heir to British folk horror's golden age."
+It was nominated for PC Gamer's game of the year for 2022.  At Adventure Gamers, it won best drama writing, best story, and best traditional adventure.  It was nominated for best adventure game and best voice acting.
+Samantha Béart was long listed for a BAFTA Games Award in the category of "Performer in a Leading Role" for their role as Thomasina Bateman. Subsequently, Béart received a BAFTA Breakthrough award for their performance as Bateman. 
+
+
+== References ==
+
+
+== External links ==
+Official website

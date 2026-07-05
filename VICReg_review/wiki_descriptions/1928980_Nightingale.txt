@@ -1,0 +1,31 @@
+Game: Nightingale
+appid: 1928980
+Source: Nightingale (video game)
+URL: https://en.wikipedia.org/wiki/Nightingale_(video_game)
+Match score: 7.00
+Retrieved: 2026-07-04
+--------
+Nightingale is a survival video game by Inflexion Games. It entered early access on February 20, 2024.  Players attempt to survive in a gaslamp fantasy world set in the Victorian era.  It includes light role-playing elements, such as quests.
+
+
+== Gameplay ==
+After the Earth suffers a disaster, interdimensional travelers escape to other realms, each of which is procedurally generated.  Players control one such traveler as they attempt to return to Nightingale, a human enclave created in the "Faewilds" before the emergence of the "Pale" that caused the disaster.  Nightingale takes place in a Victorian-era gaslamp fantasy setting, which uses aesthetics similar to steampunk.  As a survival game, players must find food to eat, rest to recover their stamina, and gather resources to craft tools.  Players can create simple items, such as a bedroll, easily.  Bedrolls do not require shelter, though shelter helps to recover more stamina.  When crafted, umbrellas allow players to glide around like Mary Poppins.  Some creatures are not hostile and will only defend themselves when attacked.  In combat, players can attack with either melee weapons or firearms.  Players can engage in dungeon crawls and raid-style combats.
+Non-player characters can be recruited to assist during fights and gathering resources.  Literary characters, including Victor Frankenstein and Mr. Hyde, can be encountered and give quests.  Once players have enough resources, they can travel between realms, which are hosted on dedicated servers.  Realms can be based on different biomes, such as deserts, woodlands, and swamps, selectable by players using cards to customize the world and what resources can be found.  It can be played single-player, or up to six people can play cooperatively.  It supports first-person and third-person view.
+
+
+== Development ==
+The developer, Inflexion Games, is an independent Canadian studio founded by Aaryn Flynn, a former BioWare veteran.
+Nightingale was initially planned to be an MMORPG, but this was abandoned in favor of a survival game. Unlike role-playing games, Inflexion said they intend to provide an interesting premise and lore rather than a strong narrative, which they said will allow players to create their own stories.
+Nightingale entered early access on February 20, 2024. It will be available for Windows systems only. The early access period is estimated to last about a year. Responding to criticism about the game's always online state, Inflexion announced it was working on an offline mode just two days after launch.
+
+
+== Reception ==
+Rock Paper Shotgun compared the unconventional setting to The Elder Scrolls III: Morrowind and said they enjoyed getting lost in the world and exploring.  However, the interesting world made the traditional survival elements seem banal.  They suggested the early access development focus on making the survival gameplay as interesting as the world and improve the user interface.  PC Gamer said they were eager to return to Nightingale after its launch to discover more about the story and explore the world.  Although they said software bugs were probably going to be a problem during early access, they said nothing in particular bothered them during their gameplay.  Although they found the early game less interesting, Eurogamer said the worldbuilding makes it promising. GameSpot said it has "the usual survival genre stuff" but felt Nightingale's strength was its potential for exploration, which they hoped to see emphasized during early access development. Despite positive reception for its unique "Mary Poppins-meets-Stargate" concept, Nightingale struggled with server issues and low player retention, leading developer Inflexion Games to restructure and lay off dozens of employees while closing its UK studio.
+
+
+== References ==
+
+
+== External links ==
+Official website
+Nightingale at Metacritic

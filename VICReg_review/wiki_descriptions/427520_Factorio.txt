@@ -1,0 +1,78 @@
+Game: Factorio
+appid: 427520
+Source: Factorio
+URL: https://en.wikipedia.org/wiki/Factorio
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Factorio is a factory simulation game developed and published by Czech studio Wube Software. The game follows an engineer crash landing on an alien planet who must harvest resources and create automated industry to build a rocket; players can continue the game after achieving the end goal. There are both single-player and multiplayer modes, as well as eight additional game scenarios.
+The game was announced via a crowdfunding campaign on Indiegogo in 2013 and released for Windows, macOS, and Linux on 14 August 2020 following an early access phase, which was made available on 25 February 2016. The game was released on Nintendo Switch on 28 October 2022 and ported to Nintendo Switch 2 on 22 December 2025.
+A paid expansion called Space Age was released on 21 October 2024, adding 4 new planets and expanding the game past initial planet. In June 2026, Wube Software announced that Factorio 2.1 would be the last major update to the game.
+
+
+== Gameplay ==
+Factorio is a construction and management simulation game focused on resource-gathering with real-time strategy and survival elements. The player advances by locating and harvesting resources to craft various tools and machines, which in turn create more advanced materials that allow for the progression to more sophisticated technologies and machines. Players progress by expanding and managing their factory, which automates the mining, transportation, processing, and assembly of resources and products. Progression incentivizes the player to design and create their factories in ways that allow for larger scales of production and automation. Players research advanced technologies that allow them to create new structures, items, and upgrades, starting with basic automation and eventually leading to oil refining, robots, and the ability to launch a rocket. The game features a blueprint system, which allows players to create reusable blueprints for factory parts or entire factories. The circuit system allows for the creation of complex networks that widen the range of actions one can automate.
+The base game is won by launching a rocket. Constructing a rocket requires a large amount of resources and research of technology, which motivates the player to set up a sizeable, effective factory in order to achieve this goal. After launching the rocket, the player can continue to build their factory.
+
+
+=== Combat ===
+The player is tasked with defending themselves and their factory from the planet's indigenous fauna, known as 'biters', 'spitters', and 'worms', who live in colonies which can be destroyed by the player to prevent further enemy spawning. Additionally, they become increasingly hostile as pollution is emitted by the player's factory, necessitating consideration of the balance between the player's production and the enemy's aggressiveness. The player can use defensive turrets, tanks, and other weapons to eliminate enemies. As the game progresses, enemies evolve and become harder to defeat.
+Players may also elect to set the game setting to "peaceful" during the start of the game, in which the fauna will still spawn but only attack the player and factory in retaliation from direct physical damage on themselves or a neighboring unit.
+
+
+=== Multiplayer ===
+Multiplayer mode allows people to play together cooperatively or against one another both locally and via the Internet. Factorio supports both dedicated servers as well as player-hosted listen servers. Originally, the game used peer-to-peer connectivity; this was later removed as more robust options were developed. Saved world files can be loaded in both single and multiplayer. By default, all players on a server share technologies, unless a system of multiple teams has been instituted by the server host. Friendly fire is present and enabled by default. Players can share construction blueprints with other players on their server via a public blueprint library.
+
+
+=== Modding ===
+Factorio is customisable via mods to create additional content, such as overhaul mods or minor gameplay changes. The developers offer an online portal on its website for mod developers to host their content. An in-game mod manager allows players to download mods. Mods are written in the Lua programming language. Mods range from small ones such as Squeak Through, a simple quality-of-life mod which allows the player to walk between buildings, to mods that add entirely new content, such as Krastorio 2, which adds a wide variety of new mechanics and fully overhauls the combat system.
+
+
+=== Space Age expansion ===
+
+The Space Age expansion include four new planets to explore, as well as a new end goal of interstellar travel. The player can travel to different planets via "space platforms", which are factories in space that can be expanded and moved; players and objects must be launched from rockets to be sent onto space platforms. Each planet features new methods of acquiring resources, unique challenges, and novel technologies. The planets added are Vulcanus, a volcano-themed planet with ways to get basic resources from lava; Fulgora, a lightning-plagued desert planet hosting the ruins of an alien civilization, which can be mined and processed; Gleba, a lush jungle-like planet of diverse lifeforms which can be farmed and processed to get resources; and Aquilo, a frozen planet covered in a liquid ammonia ocean. The expansion encourages users to greatly scale up their factory's production and automate interplanetary logistics, assisted by new machines and equipment. New enemies are also present on Gleba and Vulcanus, taking the forms of a spider-like race called 'pentapods' on Gleba, and large territorial worm-like enemies called 'demolishers' on Vulcanus. 
+The Space Age expansion includes 'Elevated rails', a developer-made mod which enables more flexible rail transport system using elevated railway tracks. The expansion also includes a chance-based tier system for all machines and items in a separate mod called 'Quality' to upgrade their abilities. Both 'Elevated rails' and 'Quality' are required to enable the Space Age expansion, but they can also be enabled in the base game by users who have purchased the expansion. Upon completing the Space Age expansion, players may upload a snapshot of their game, which includes the map of their base and general statistics, into an online star map, called the "Galaxy of Fame".
+The release of the Space Age expansion came with a free update to the base game which introduced a number of quality of life improvements, including updated fluid dynamics and new terrain generation, as well as in-game tips and tricks.
+
+
+== Development ==
+The game has been developed by a team of developers from Prague, Czech Republic, since mid-2012. The development team originally consisted of a single person, but has grown larger. Wube Software was created in September 2014 by Michal Kovařík and Tomáš Kozelek in Prague. The development team began an Indiegogo campaign, which started on 31 January 2013 and concluded on 3 March 2013, to fund the development of the game. The campaign raised €21,626, exceeding its €17,000 goal. Following the crowdfunding success, Wube sold early access editions of the game to raise further funds. The developer credits the April 2014 release of the game's trailer as a significant driver of those sales. As of February 2024, the team consists of 31 members.
+Michal Kovařík, the game's lead designer, cited the Minecraft mods IndustrialCraft and BuildCraft for inspiration during the game's development.
+The game was released on Steam as early access on 25 February 2016, but had been available to download from its official website since early on in development. It was officially released out of early access on 14 August 2020. It was originally planned to be released on 25 September 2020, but was moved up a month as to not compete with the release of Cyberpunk 2077, which, at the time, was scheduled to be released on 17 September 2020.
+A port of the game to Nintendo Switch was released on 28 October 2022. The port does not contain modding features, nor does it support the Space Age expansion. A free upgrade for this version, entitled Factorio: Nintendo Switch 2 Edition, was released on 22 December 2025 for Nintendo Switch 2. This upgrade enables support for 1080p on the system's internal display and 4K when connected to a television or monitor. It also adds support for Joy-Con 2 mouse mode, allowing a control scheme with a cursor mirroring that used in the PC version of the game. Alongside the upgrade, the Space Age expansion was released for Nintendo Switch 2.
+In February 2021, the developers announced that a new expansion pack was in development. The expansion's theme and name, Space Age, were revealed in August 2023. It was made to be as big as the base game, extending gameplay to an interplanetary level. The expansion released on 21 October 2024 alongside a free "2.0" update, which consists of quality-of-life, cosmetic, and minor gameplay changes. In June 2026, Wube Software announced that Factorio 2.1 would be the last major update to the game.
+
+
+=== G2A audit ===
+Video game key reseller G2A was accused of selling stolen keys on its site, affecting developers of games, primarily indie game developers. On 5 July 2019, G2A offered to pay the developers of a game ten times the worth of the stolen game keys if the problem could be proven via audit. Wube was the only developer to respond to the offer, calling G2A "worse than piracy", and emailed a list of 321 canceled Steam keys due to chargebacks. After over ten months, G2A confirmed 198 of those keys were sold on the platform and paid Wube Software $39,600 as part of the promise. Due to the sensitive nature of the investigation, the audit was conducted internally.
+
+
+== Reception ==
+
+Factorio received positive reception from critics while still in early access. By the beginning of 2020, the game had sold two million copies, by the beginning of 2021, the developers reported over two and a half million sold copies, and by its sixth anniversary in February 2022, the game had passed 3.1 million copies sold. In December 2022 the developers confirmed 3.5 million copies sold in total and around 500,000 copies sold per year up to that point.
+Upon its release in 2020, Factorio received positive reviews. Rick Lane of PC Gamer praised Factorio, calling it "a manufacturing masterpiece". Nicolas Perez of Paste praised the game's use of early access, stating that "Factorio has set an example of what the Early Access system is truly capable of." It was named IndieGameReviewer.com's Indie Game of the Year of 2020. In 2021 Rock Paper Shotgun ranked Factorio the 7th best management game for the PC.
+Despite the simplicity of the graphics, the game has earned the nickname Cracktorio due to its addictiveness. Tobias Lütke, a co-founder of Shopify, allows his staff to write off their purchases of Factorio as a business expense.
+
+
+=== Space Age ===
+
+The release of the Space Age expansion has also received similarly positive reviews. Rick Lane of PC Gamer hailed Space Age, stating, "Space Age is an astounding creation, every bit as unique and absorbing as the game it so cleverly extends and embellishes." The expansion sold over 400,000 copies within the first week of its release.
+
+
+=== Awards and nominations ===
+Factorio was voted by Steam users in the 2018 Steam Awards as a runner-up in the "Most Fun with a Machine" category.
+
+
+== Legacy ==
+Neobuthus factorio is a species of scorpion from the family Buthidae found in Somaliland. It was named after the game by one of the researchers who first described the species, František Kovařík, who is the father of the game's lead designer, Michal Kovařík.
+Satisfactory, a factory-building game created by Coffee Stain Studios, has been compared to Factorio and described as a first-person, 3D interpretation of the game.
+
+
+== Notes ==
+
+
+== References ==
+
+
+== External links ==
+Official website

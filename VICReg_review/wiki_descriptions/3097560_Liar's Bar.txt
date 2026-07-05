@@ -1,0 +1,33 @@
+Game: Liar's Bar
+appid: 3097560
+Source: Liar's Bar
+URL: https://en.wikipedia.org/wiki/Liar%27s_Bar
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Liar's Bar is a 2024 video game developed by Curve Animation.
+
+
+== Gameplay ==
+Set in a seedy, rundown sports bar, the game allows players to choose between four respective characters: an African buffalo named Toar, a red fox named Foxy, a Dobermann named Scubby, and a domestic pig named Bristle. Liar's Bar has two game modes:
+
+
+=== Liar's Dice ===
+In this game mode, each player must roll six dice and make a bet on the value of the dice. The next participant must raise the bet, and each player can accuse others of lying at any time. The round ends when someone is caught lying, and the player that lied must drink from a jar of poison.
+
+
+=== Liar's Deck ===
+In this game mode, players throw cards from their deck that match the playing card on the table (an ace, a queen, or a king), and each player can accuse others of lying at any time. The round ends when someone is caught lying, and the player that lied must play Russian roulette with a revolver with a bullet in the six-chamber cylinder—and can continue playing if they survive.
+
+
+== Reception ==
+Shortly after its release, Liar's Bar registered over 110,000 players, surpassing titles such as Diablo IV. It won the 2024 the Steam Award for Most Innovative Gameplay, and the same year it was nominated for the Stream Game of the Year category of The Vtuber Awards.
+
+
+== References ==
+
+
+== External links ==
+Kachel, Brendan (2024-10-27). "Video Game Review: 'Liar's Bar'". Flayrah.
+Stubbs, Mike. "Steam Hit 'Liar's Bar' Is So Simple, But It's Perfectly Executed". Forbes.
+Malen, K. D. (2025-01-10). "How Liar's Bar Shook the Gaming Industry". GameSpace.com.

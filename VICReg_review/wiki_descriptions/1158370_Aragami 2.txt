@@ -1,0 +1,44 @@
+Game: Aragami 2
+appid: 1158370
+Source: Aragami (video game)
+URL: https://en.wikipedia.org/wiki/Aragami_(video_game)
+Match score: 6.56
+Retrieved: 2026-07-04
+--------
+Aragami (荒神) is an action-adventure stealth video game developed and published by Lince Works for Linux, macOS, Windows, PlayStation 4, Xbox One and Nintendo Switch. The game was originally titled Twin Souls: The Path of Shadows. The players take the role of Aragami, an ninja-like assassin who possess the supernatural power of manipulate shadows . The player can teleport between shadows and faces an enemy army that goes by the name of 'Kaiho'. This opposing army is formed by mystical warriors with the power to control the light.
+
+
+== Gameplay ==
+The player controls a shadow spirit, Aragami, attempting to reach the end of all thirteen open-world chapters in order. To complete a chapter, the player must go to certain areas to collect items or destroy obstacles and reach the level's exit. Aragami can teleport to any part of the map in a certain radius where a shadow is cast, but doing so expends "Shadow Essence", displayed as a meter on his cape. Shadow Essence is replenished by standing in the shadows, and drained by standing near intense light sources such as lanterns. Later in the game, the player gains a raven that will show the player the location of objectives through walls, and a set of bells that can be rung to lure enemies elsewhere.
+Each chapter is patrolled by many guards. Basic sword-wielding guards are the most common enemy, and can throw light projectiles to kill the player. There are also archers that patrol elevated areas and can spot the player at a longer distance while aiming, and swordsmen circled by a torch that kills the player on contact. A guard can be killed instantly by attacking him within a certain range, but the only enemy that must be killed to complete a chapter is the boss (if present). Observing evidence of the player's presence (such as the sound of their comrades dying or spotting the player in the distance) will make guards suspicious, causing them to draw their swords and investigate. If they find a corpse or see the player clearly, they will blow a horn, temporarily making all the guards actively search for Aragami, and causing them to become more suspicious if the player evades detection. Any successful hit by a guard will kill Aragami instantly, returning the player to the last checkpoint to try again. The player can also die by falling into water.
+As the player explores the levels, they may find several hidden scrolls. Scrolls can be spent to unlock various useful skills, such as the ability to become temporarily invisible or to make corpses vanish. "Abilities" either rely upon Aragami's Shadow Essence or have infinite uses. "Techniques" are more powerful, but have only two uses, cannot harm bosses, and can only be equipped one at a time (though the player can switch among them at any time). Shrines placed sparsely throughout the level will refill all of the player's equipped techniques.
+
+
+== Plot ==
+Aragami is summoned into existence one night by an astral projection of Yamiko, a girl who identifies herself as a captive of the Kaiho, an army of light adepts. She describes them as oppressors who conquered the land from the shadow aligned Nisshoku, led by the Shadow Empress. She claims that after winning the war, they imprisoned the Empress and her retainers in the Nisshoku's main temple, including Yamiko. She requests Aragami's help in freeing them, for which she needs six talismans to unlock the prison. This must be done before the night's end, for Aragami will dissolve if sunlight touches him.
+As Aragami retrieves the talismans, they trigger strange memories in him. He sees Yamiko's former life as an orphan hiding out in the mountains, and of her being trained alongside the Nisshoku guild's leader and the Shadow Empress's advisor, Hyo. He also witnesses memories of another person who wielded light, concluding that they are the memories of the enemy general he was summoned to kill. They find Hyo's sword fashioned as a grave marker, confirming his death. Yamiko becomes upset and swears vengeance, and Aragami promises to help her attain it. 
+He encounters Hikaru, the last captain of the Kaiho, the other captains having died in the war. Aragami battles and defeats Hikaru. Before dying, Hikaru makes a remark implicating Yamiko as the Shadow Empress, before killing himself in an explosion of light in an attempt to kill Aragami. Aragami survives, and Yamiko admits that she is the Shadow Empress, but claims she was ashamed to tell him because of her helplessness.
+After finding the last talisman, Aragami travels to the temple where Yamiko is held. Sora, the general of the Kaiho, impedes his progress, but he fights his way to the temple and mortally wounds her. As she lies dying, Sora recognizes him by his demeanor: he is the spirit of Ryo, the first general of the Kaiho, and the memories of the light wielder are his own. He, Sora, Hikaru, and the other captains led the Kaiho to purge the evil shadow army of the Nisshoku from the land many years before, but Ryo sacrificed himself to complete the spell that imprisoned the Shadow Empress. While Aragami is distraught for killing his comrades, Sora is grateful for the opportunity to see him again.
+After Sora expires, Yamiko frees herself with the talismans and reveals her true form. She reveals her intent to kill Aragami to reclaim a portion of her soul that was bound to his during Kaiho's sealing ritual, explaining how he experienced her memories. Meanwhile, Aragami taunts her by telling her that she was a pawn Hyo used to build an empire by using fear to rule the land. Aragami then takes up his original sword, carried by Sora after his first death, and defeats Yamiko as dawn begins to break. Recalling the similarities between their childhoods, he describes them as twin souls in an endless cycle of vengeance, and states that he wishes there were another way to end it. Yamiko quietly agrees, and as Aragami slays her they are engulfed by an explosion of light.
+During the credits, an image is shown of the Shadow Empress's throne. Before it Ryo's sword has been embedded into the ground, with Yamiko's childhood doll, the first of the talismans, beside it.
+
+
+== Downloadable content ==
+In May 2018, Lince Works announced the release date for the DLC prequel Aragami: Nightfall which followed the Nisshoku characters, Hyo and Shinobu, as they tried breaking the seal imprisoning the Shadow Empress. There is also a bundle titled Aragami: Shadow Edition, containing the base game and DLC. In August 2018, Lince Works announced a partnership with Merge Games to bring Aragami: Shadow Edition to Nintendo Switch. It was released on February 22, 2019.
+
+
+== Reception ==
+
+Aragami received "mixed or average" reviews according to review aggregator Metacritic. The Xbox version of Aragami: Shadow Edition was called a "perfect stealth game" by Windows Central.
+The game sold over 500,000 copies by March 2020.
+
+
+== Sequel ==
+In 2020, Lince Works announced a sequel titled Aragami 2 for Windows, PlayStation 4, PlayStation 5, Xbox One, and Xbox Series X/S. It was released on September 17, 2021.
+
+
+== References ==
+
+
+== External links ==
+Official website

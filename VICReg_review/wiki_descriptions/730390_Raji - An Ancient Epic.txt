@@ -1,0 +1,50 @@
+Game: Raji: An Ancient Epic
+appid: 730390
+Source: Raji: An Ancient Epic
+URL: https://en.wikipedia.org/wiki/Raji:_An_Ancient_Epic
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Raji: An Ancient Epic is an action-adventure video game developed by Nodding Heads Games based in Pune, Maharashtra, India. It was first released as a timed exclusive for Nintendo Switch on 18 August 2020, and released on 15 October 2020 for Microsoft Windows via Steam, GOG Galaxy and the Epic Games Store, PlayStation 4, and Xbox One.
+On 16 April 2024 the game was released on the PlayStation Plus catalog in a new version for the PlayStation 5 which features graphic enhancements, raytracing, a Platinum Trophy and haptic feedback, lightbar and adaptive triggers for the DualSense Controller.
+The game incorporates Hindu mythology and takes inspiration from epics such as the Mahabharata and Ramayana. Graphically, the game is designed in the style of Pahari paintings, and the in-game architecture is modeled after that of medieval Rajasthan.
+A sequel, Raji: Kaliyuga, is currently in development.
+
+
+== Plot ==
+The story revolves around Raji, an orphaned circus performer. Her only family is her younger brother, Golu, a story teller. On the day of Raksha Bandhan, demons attack the carnival where the siblings work. As the demon army lays waste to the land, three of them abduct Golu. This forces Raji to go on a journey to get her brother back. Meanwhile, watching her are the deities, Goddess Durga and Lord Vishnu. Durga supports her young devotee while Vishnu has some doubts about her. Raji races through the Ruins, and upon reaching a temple of Durga, gets a divine trishula (trident) from her, which she uses to battle and kill the demons and save their captives while also unlocking traditional stories and her childhood memories.
+The mastermind behind Golu's abduction and the demon invasion is revealed to be the demon lord Mahabalasura (lit. 'Mega-strength demon'). He was once one of the Mystics, knowledgeable people with great spiritual power, but was outcast for his arrogance. So, he did penance to please Lord Brahma, who granted him the boon of immortality and a powerful trishula. Using these gifts, he reunited his new people, the demons, and started spreading chaos and destruction on Earth. When Bhoomi Devi (Mother Earth) urged him to stop this, he killed her. This angered Lord Shiva, who imprisoned him. After years of captivity, Mahabalasura has returned for revenge.
+Raji follows the demons who took Golu and many other children to the Fortress of Jaidhar. She is also gifted a divine bow by Lord Vishnu, who starts finding her capable. Upon reaching the fort, the demon Chieftain sends Golu to Mahabalasura via a magic portal before Raji can save him. As Raji kills the Chieftain, Golu reaches Mahabalsura's realm where the demon lord puts him under his control.
+Raji is then sent to Hiranya Nagari (lit. 'Little gold village'), a heavenly and technologically advanced city of Lord Vishnu, which has been taken over by Rangda, a powerful demon queen, who has put the city's guards under her spell and poisoned its waters. Raji races through the city, killing Rangda's minions and repairing the damage she did. She is also gifted a divine sword and shield by the two deities watching her, while being haunted by horrifying visions of Golu. Raji finally vanquishes Rangda and then is taken on Mayura, a giant beautiful white peacock by a Mystic, to his land to stop Mahabalasura.
+As she reaches the Land of the Mystics, Raji finds that many of them have been either killed or turned to stone by Mahabalasura. After fighting through the demon hordes and calming the Naga, the giant serpent demigod and guardian of the land, she finally confronts Mahabalasura. He forces the Mystic chief to give him an ancient scroll and escapes after attacking Raji and being wounded by her. Raji, near death, is revived by the Mystics and reunites with her brother. However, it is revealed that Mahabalasura wants to get revenge on the Gods for imprisoning him. His plan is to open the gates of heaven, allowing him to invade the realm of the Gods and destroy them. The scroll he took from the Mystic chief contained the incantation to open the gates. Raji has been chosen as the warrior who will destroy him and restore the cosmic balance. So, she continues her journey, leaving Golu with the Mystics.
+Raji reaches the Thar Desert, where Mahabalasura has gone to set his plans in motion. She also receives the Sudarshan Chakra, Lord Vishnu's most powerful weapon. Racing through the desert and killing demons, Raji finally faces Mahabalasura using the Chakra. Almost defeated, he tricks Raji by distracting her with several clones of himself. While Raji fights the clones, the demon lord is joined by Golu who, still under his control, recites the chant and opens the gate. (It can be implied that the reason why Golu was abducted was because the chant required a person of pure heart to work, as the two deities once stated.) Now, with his plans successful, Mahabalasura proceeds to assault the Gods' realm, leaving Golu to be once again reunited with Raji, as the fate of both the Gods and humanity is left ambiguous.
+
+
+== Development ==
+Raji: An Ancient Epic is the first game developed by Nodding Heads Games based in Pune, Maharashtra, India. The game was developed by a team of thirteen people. A six-man team at Nodding Heads Games began development on Raji: An Ancient Epic in January 2017. The developers cited Bastion and Journey as being major influences on the game, and God of War, Ico, Brothers: A Tale of Two Sons, and Dark Souls as other influences. Nodding Heads Games attempted to secure funding for the game through Kickstarter with a funding goal of  £120,000 in 2017. The campaign raised over £66,000 but fell short of its funding goal. A twenty-minute demo of the game was made available as a free download on 8 November 2017 alongside the Kickstarter, and was also playable at the Indian Games Expo 2017 and the 2017 Nasscom Game Developer Conference.
+Despite securing funding through the Unreal Dev Grants program, a $5 million fund supporting developers working with Unreal Engine 4, developer Shruti Ghosh had to sell her apartment to sustain the team until they found a publisher.
+Raji was included in the Square Enix Collective in October 2017. The game was developed for Microsoft Windows. Nodding Heads Games co-founder and lead designer Avichal Singh stated in November 2017 that they also planned to release the game on consoles. He stated that they had begun "the dev kit conversation" with Microsoft but had not yet approached Sony or Nintendo. He added, "It's a matter of constraints we follow to make sure the game is running on these platforms because they have technical constraints. As long as they can keep to that we will be good. Unreal Engine 4 makes life a bit easier. You have direct porting options as well."
+Nodding Heads Games announced a partnership with game publisher Super.com in March 2019. The game was demoed at the annual India Game Developer Conference in Hyderabad, Telangana, in October 2019. A new demo of the game was made available through Steam on 23 March 2020. An Xbox One demo of the game was released in July 2020 as part of the Xbox Summer Game Fest.
+Developer Shruti Ghosh told IGN India in April 2021 that Nodding Heads Games had to make several cuts to Raji due to time and budget constraints, and difficulty finding a publisher. The game had originally planned to have completely 3D cutscenes but due to the amount of time required, only a few 3D cutscenes were included in the final game and the rest were made in 2D shadow puppet style. Ghosh felt that 3D cutscenes would have created a more immersive experience and "the player would actually feel a lot more emotion and can be a part of the character's journey." She also noted that a few "good puzzles" were removed and other changes were made to gameplay due to the constraints.
+
+
+== Release ==
+The game was released for Nintendo Switch as a timed exclusive on 18 August 2020. It was released on 15 October 2020 for Microsoft Windows via the Steam client and the Epic Games Store, PlayStation 4, and Xbox One. A DRM-free version of the game was released on GOG.com on 22 March 2021. Raji was added to Xbox Game Pass on 22 July 2021. The game was localized for the Japanese market by Teyon Japan and released for PlayStation 4 and Nintendo Switch on 5 August 2021.  Netflix released it on iOS and Android on 5 April 2023.
+In March 2021, Nodding Head Games announced plans for updates to the game including Hindi voice-overs, RTX support, Wallpaper Engine, and enhancements to gameplay. Raji: An Ancient Epic Enhanced Edition was released as a free upgrade  on 20 July 2022 for Xbox Game Pass and PlayStation 4, and 28 July 2022 for Nintendo Switch. Apart from previously announced features, the Enhanced Edition also includes visual tweaks, rebalanced combat, bug fixes and new game modes. The new Story mode makes Raji invincible, and the One Shot One Kill mode kills the player with a single hit.
+
+
+== Reception ==
+On the review aggregator Metacritic, Raji: An Ancient Epic received mixed reviews. Fellow review aggregator OpenCritic assessed that the game received fair approval, being recommended by 46% of critics. Adesh Thapliyal, writing for Waypoint, commended the game's "feminist" recasting of Hindu myths but criticized the implicit erasure of Muslim influence on the Indian culture represented in the game. Thapliyal placed the game's cultural depictions within the context of Hindutva/Hindu nationalism. Akhil Arora, writing for Gadgets360, praised the game for its lovely background score, sound design,
+visual influences and detail, narrative threading of Indian mythology and feminist fable.
+
+
+=== Awards ===
+It was nominated for best debut game at The Game Awards 2020 but lost to Phasmophobia. This was the first time that an Indian game had been nominated for an award at that show.
+
+
+== References ==
+
+
+== External links ==
+Official website
+Nodding Heads Games website

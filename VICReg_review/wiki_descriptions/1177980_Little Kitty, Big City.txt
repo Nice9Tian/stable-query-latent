@@ -1,0 +1,35 @@
+Game: Little Kitty, Big City
+appid: 1177980
+Source: Little Kitty, Big City
+URL: https://en.wikipedia.org/wiki/Little_Kitty,_Big_City
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Little Kitty, Big City is a 2024 adventure video game and debut release from American indie developer Double Dagger Studio. The player assumes the role of a cat lost within a city, with the main objective of making its way back home. It was released for Nintendo Switch, Windows, the Xbox One, and the Xbox Series X/S on May 9, 2024, and for PlayStation 5 and PlayStation 4 on May 9, 2025.
+
+
+== Gameplay ==
+Little Kitty, Big City is a third-person adventure video game where the player controls a black, domestic cat that is lost within a large Japanese city. The player has to navigate the cat back to its owner's apartment, but can also interact with the city via many typical cat actions, such as catching birds, jumping into boxes and trash cans, stealing items, and emoting. The player can also communicate with other animals and embark on quests, earning new emotes and wearable cosmetic hats as rewards. Hats can also be found by locating hidden capsules around the city, or by collecting shiny objects and exchanging them with a crow. A fast travel system allows the player to quickly move around the city by warping between sewer manholes they have found and activated. By eating fish found throughout the city, the player gains the ability to climb ivy, with each fish increasing the maximum amount of time the cat can continuously climb without running out of stamina; the player must find every fish to reach the cat's apartment and finish the game.
+
+
+== Development and release ==
+In an interview with KING-TV, Double Dagger Studio founder Matt Wood said that the main inspiration of Little Kitty, Big City were his cats Mario and Roxy and his children. On November 13, 2021, it was shown off at the indie Wholesome Games event during its Wholesome Snack showcase.
+In an Indie World presentation on April 19, 2023, it was announced that Little Kitty, Big City would be released for Nintendo Switch. A demo of the game was showcased at Summer Game Fest 2023, where it was slated to be released in early 2024 for both Nintendo Switch and Windows, as well as Xbox One and Xbox Series X/S. A demo of the game was made temporarily available during Steam's Next Fest from June 19 to 26.
+Little Kitty, Big City was released for Windows, Nintendo Switch, Xbox One, and Xbox Series X/S on May 9, 2024, and was also added to Xbox Game Pass on the same day. The game hit 100,000 sales two days after its release. It was released for PlayStation 5 and PlayStation 4 on May 9, 2025.
+
+
+== Reception ==
+
+Little Kitty, Big City received "generally favorable" reviews, according to review aggregator website Metacritic. Fellow review aggregator OpenCritic assessed that the game received strong approval, being recommended by 76% of critics.
+Upon release of the demo, Lauren Aitken of PC Gamer favorably compared the game to Untitled Goose Game, praising its art style, quests, and animations.
+
+
+=== Awards ===
+The Academy of Interactive Arts & Sciences nominated Little Kitty, Big City for "Family Game of the Year" at the 28th Annual D.I.C.E. Awards.
+
+
+== References ==
+
+
+== External links ==
+Official website

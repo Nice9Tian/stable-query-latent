@@ -1,0 +1,41 @@
+Game: Shogun Showdown
+appid: 2084000
+Source: Shogun Showdown
+URL: https://en.wikipedia.org/wiki/Shogun_Showdown
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Shogun Showdown is turn-based tactics roguelike video game developed by Roboatino and published by Goblinz Studio and Gamera Games. It was released in September 2024 for Nintendo Switch, PlayStation 4 and PlayStation 5, Xbox One and Xbox Series X/S, Windows, macOS, and Linux. Shogun received generally positive reviews from critics for its unique battle system.
+
+
+== Gameplay ==
+The battles in Shogun Showdown are fought on a one-dimensional track of 5 to 9 spaces. Each turn, the player may perform one of several actions: moving forward one square, turning around to face the other direction, using a skill, preparing an attack or action, or using the queued attacks and actions (a maximum of 3). Some attacks and actions do not use up the player's turn, and attacks and actions can be freely organized or removed from the queue.
+
+After the player acts, the enemies act on their turns. Enemies can also move one square, turn around, prepare an attack or action, or use queued attacks and actions. The strategy for the game comes about by players knowing ahead of time what the enemy will do on their next turn. In its simplest form, if an enemy plans to use a spear to attack the two tiles in front of it in the next turn, and the player character is two spaces in front of the enemy, the player may choose to move backward one space to avoid the attack. However, if the player has queued a skill that allows the character to swap tiles with an enemy, the player might choose to use that skill to force the enemy with the spear behind the player, which would cause the enemy to strike a different set of tiles. If those tiles contain another enemy, the player has forced one enemy to attack another.
+The attacks and actions come from a set of tiles that the player collects throughout a run of the game. Each character starts with two basic attacks, and players may collect other tiles from shops and randomized events. The tiles can also be upgraded in several ways, including, for example, reducing the cooldown to use the skill another time or increasing the base damage. Each character also starts with a skill that is separate from the tile set. With increasingly complex tiles and skills picked up during the run, the player has the ability to script a battle in a nearly infinite number of ways.
+Between battles and runs, Shogun has the general progression of a modern roguelike. There is a node-based map with randomized shops and enemies. After each run, regardless of whether the player survived the full run, the player can unlock new characters, tiles, and skills. Upon successful completion of a run, the game can be played on the next hardest difficulty.
+
+
+=== Plot ===
+The player in Shogun Showdown is a samurai on a quest to kill the shogun, which has caused some kind of cataclysmic event to ruin the earth and send forth shadowy forces. The shadowy forces are generally ashigaru warriors, and the location of the game is on a series of islands representing islands in feudal Japan.
+
+
+== Development and release ==
+Shogun Showdown was developed by Roboatino, which is a solo game developer named Mirko. In 2021, during the COVID-19 pandemic, Mirko taught himself Unity and began prototyping a deck-building game. Over the next year, he developed the left-right movement scheme of Shogun and posted an alpha build of the game to itch.io in May 2022, hoping to receive some useful feedback. The YouTube content creator Retromation became a fan of the early build, and his videos helped popularize Shogun early in its development.
+Around this time, Mirko was still working full-time as a software developer and designing Shogun in his spare time. Goblinz Studio signed Roboatino, which allowed Mirko to switch to part-time, and then full-time, development on the game. Signing with the publisher allowed Roboatino to hire Oscar di Mondogemello to write the score, while additional pixel art was drawn by Brandon Schenk, who did character and enemy animations, and Camille Blinot, who worked on background art. Gamera Games also joined the team as publishers to the Chinese market.
+On April 4, 2023, a free version of Shogun was released on Steam titled Shogun Showdown: Prologue, which had access to 3 combat locations and a small subset of the tiles that would be in the final product. In June 2023, the full Shogun game entered early access on Steam in June 2023 and was part of Steam Next Fest. Northernlion played Shogun several times on Twitch and posted videos to his wide YouTube fanbase.
+Development on Shogun Showdown continued for about a year and a half after the early access release and was released on all platforms on September 4, 2024. Roboatino did the Nintendo Switch port itself while Entalto Studios handled the PlayStation and Xbox ports.
+
+
+== Reception ==
+
+Shogun Showdown received "generally favorable" reviews from critics, according to review aggregator website Metacritic. 94% of critics recommended the game on OpenCritic.
+In its review, PC Gamer praised the combat which "feels like directing the coolest samurai movie you've ever seen" and lauded the game as a compelling roguelike in the genre's golden age. In awarding Shogun with its Bestest Best award, Rock Paper Shotgun lauded the "exceptional turn-based combat, gorgeous visuals, and refreshingly simple mechanics".
+Reviewing the Nintendo Switch version, Nintendo Life called Shogun "must-play" and "so clever and assured, so simple and refined in its core gameplay loop" while noting that the game's combat felt like a rhythm game.
+
+
+== References ==
+
+
+== External links ==
+Official website

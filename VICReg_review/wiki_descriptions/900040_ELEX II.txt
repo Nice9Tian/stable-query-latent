@@ -1,0 +1,29 @@
+Game: ELEX II
+appid: 900040
+Source: ELEX II
+URL: https://en.wikipedia.org/wiki/ELEX_II
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+ELEX II is a 2022 action role-playing video game developed by Piranha Bytes and published by THQ Nordic. The sequel to the 2017 game ELEX, players control the same protagonist, Jax, to unite the world against invading aliens. It was  Piranha Byte's last game prior to their closure.
+
+
+== Gameplay ==
+Players control Jax, a survivor in a post-apocalyptic, science fantasy setting.  Elex 2 is an action role-playing game played from a third-person perspective.  There are six factions that players can align with, each representing a different philosophy.  The substance elex, which comes from outer space, gives people powers equivalent to magic, and various factions prefer either magic or technology.  Combat uses a system in which actions, such as attacking or defending, drain Jax's stamina.  Without enough stamina, Jax can not attack or defend. Jax is equipped with a jetpack, which players can use to explore the open world.  Gaining levels allows Jax to increase his attributes, which allow him to use better equipment.  The antagonists are techno-organic aliens, which Jax must unite the various factions against.
+
+
+== Development ==
+Piranha Bytes used their proprietary Genome Engine.  THQ Nordic released ELEX II for PlayStation 4 and 5, Xbox One and Series X/S, and Windows on March 1, 2022.
+
+
+== Reception ==
+
+ELEX II received mixed reviews on Metacritic. Rock Paper Shotgun said it is "clunky and janky, but compelling".  Comparing it to the Gothic and Risen series, they said that Piranha Bytes was still making games with the same issues. They found this forgivable but disliked how unappealing and mean-spirited they found all the characters, including the protagonist. IGN said Elex 2 seems stuck in the mid-2000s and ignores all innovations made since Gothic 3. They also criticized some of the dialogue as sounding like "a schlocky B-movie" and said the combat is "clunky, imprecise, and annoying". RPGSite called it "a poorly implemented retread" and said they could not recommend ELEX II to anyone but "the most ardent die-hard fans of ELEX".  RPGFan wrote, "Elex II can be entertaining in all the wrong ways, but as a sequel, it's just more of the same."
+ELEX II was among the top three best-selling games that were released in 2022 at GOG.com.
+
+
+== References ==
+
+
+== External links ==
+Official website

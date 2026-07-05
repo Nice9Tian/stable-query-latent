@@ -1,0 +1,30 @@
+Game: Solium Infernum
+appid: 1893810
+Source: Solium Infernum
+URL: https://en.wikipedia.org/wiki/Solium_Infernum
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Solium Infernum is a turn-based strategy computer game for Windows from independent game developer Cryptic Comet, creator of Armageddon Empires, and was released on November 26, 2009. The remake version developed by League of Geeks was released on February 22, 2024.
+
+
+== Gameplay ==
+Players control an archfiend who is trying to secure the throne of Hell, staving off up to five rivals in the process. The game's artificial intelligence makes up the numbers if not enough players are available to control each archfiend. The game features diplomacy as well as military tactics, making it possible to gamble 'prestige' on the outcome of battles, as well as other tactics to raise the player character's standing amongst the archfiends.
+
+
+== Reception ==
+Solium Infernum failed to receive much attention from the mainstream gaming press, with few publications following the game or publishing reviews; however it was met with critical acclaim from independent journalists and gaming blogs. Quintin Smith was highly enthusiastic towards Solium Infernum, writing in Eurogamer that it "kicked my knees out from under me. It's unlike anything I've ever played" and stating in his GameSetWatch column "more than any game I've played in years Solium Infernum nails the sensation of staring at a screen and losing yourself in the cold glory of a difficult decision." Rock, Paper, Shotgun covered the game heavily, dedicating a large series of posts to a turn-by-turn review of the multiplayer mode, with Kieron Gillen calling Solium Infernum "one of 2009's most intriguing, subtle and just plain best games." PC Gamer gave Solium Infernum 85%.
+
+
+== Remake ==
+Indie game developer and publisher, League of Geeks planned to release the remake version of the game in 2023 with the same title. The demo version has been released on Steam on October 10, 2023 during Steam Next Fest Demo event.
+On December 1, 2023, it was revealed that the release date was postponed to February 14, 2024. Also at the same day, the game designer is revealed to be Anthony Sweet dubbed as Principal Game Designer.
+On February 8, 2024, the release date was postponed again, and finally released on February 22, 2024.
+
+
+== References ==
+
+
+== External links ==
+Official website (original)
+Official website (remake)

@@ -1,0 +1,27 @@
+Game: Cosmoteer: Starship Architect & Commander
+appid: 799600
+Source: Cosmoteer
+URL: https://en.wikipedia.org/wiki/Cosmoteer
+Match score: 4.30
+Retrieved: 2026-07-04
+--------
+Cosmoteer: Starship Architect & Commander is an upcoming space sandbox video game. Players design and build fleets of spaceships, which they use to fight other ships and gather resources. Its central conceit is its modeling of crew, which are modeled moving resources around ships and crewing equipment on them. The game supports a PvE mode in single-player or cooperative multiplayer, and a competitive PvP mode. In development for over 11 years, Cosmoteer was developed and published by Walternate Realities, and released in early access for Windows in October 2022. Critics praised the game's concept and its ship building system in particular, while the other parts of the game, such as its combat, received mixed feedback.
+
+
+== Gameplay ==
+
+Cosmoteer is a single-player, cooperative multiplayer, or competitive multiplayer space-themed sandbox video game where players design and build fleets of spaceships. The gameplay loop involves building ships, using those ships to mine resources or complete contracts to obtain resources, which are then used to upgrade ships. Ships must be crewed and ship systems must be supplied with resources by those crew. Ships are tile-based on a two-dimensional grid, and players build ships by placing down components such as walls, corridors, crew quarters, reactors, thrusters, weapons, and factories. Crew are modeled moving around the ship between various components, so laying out corridors and components is an important part of gameplay. Ships may be edited at any time. Controls for combat are limited: players indicate which direction the ship should fly in and can target areas of enemy ships, but do not command individual crew members.
+The game has a creative and a career mode. In the creative mode, players can build ships without resource constraints. In the career mode, players must obtain resources for their ships. As a sandbox game, progression is freeform, though overall progress is measured through a mechanic called fame awarded by completing missions across various solar systems.
+
+
+== Development and release ==
+Solo developer Walt Destler, based in San Mateo, California, developed and published Cosmoteer under the studio name Walternate Realities. In development for over 11 years, it was released for Windows in early access on 24 October 2022.
+Cosmoteer originated with a prototype named Ship Builder in 2011. Destler cited tabletop wargames and Galaxy Trucker as design influences. He cited the modeling of crew as the key difference between Cosmoteer and other spaceship-building games. Destler made pre-release builds of the game free to download. Despite getting offers from publishers, Destler decided to self publish.
+
+
+== Reception ==
+Shacknews's TJ Denzer praised the variety of content in the game, citing the combat, the economic systems, and the shipbuilding in particular. GameSpark described the crew management as interesting, and found the game's loop to be surprisingly charming. Writing for GameStar, Enrico Marx praised the gameplay and the ability for players to design their own ships, while commenting that the game lacked variety. 4Gamer.net's reviewer said that they had spent the majority of their playtime in the ship designer, complimenting the accessibility and immersion of that mechanic, while commenting that the game's systems outside of that felt bland. Jaina Hill of COGconnected enjoyed the game's premise and ship designer, but "grew pretty sick of the space combat pretty fast", citing what they saw as poor strategic variety in ship combat.
+After its early access launch, Cosmoteer received "overwhelmingly positive" user reviews and over 13,000 concurrent players on Steam. Cosmoteer had sold over 250,000 copies by February 2023.
+
+
+== References ==

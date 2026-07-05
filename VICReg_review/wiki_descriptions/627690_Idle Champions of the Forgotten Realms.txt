@@ -1,0 +1,20 @@
+Game: Idle Champions of the Forgotten Realms
+appid: 627690
+Source: Idle Champions of the Forgotten Realms
+URL: https://en.wikipedia.org/wiki/Idle_Champions_of_the_Forgotten_Realms
+Match score: 6.00
+Retrieved: 2026-07-04
+--------
+Idle Champions of the Forgotten Realms is a 2018 incremental game based on Dungeons & Dragons for Android, iOS, PlayStation 4, Xbox One, macOS, Windows, and Nintendo Switch.
+
+
+== Gameplay ==
+The player confronts waves of enemies by clicking on them or managing a formation of unique champions with individual abilities. Each enemy drops currency that can be spent to unlock new champions or upgrade existing ones to strengthen the formation. Equipment can drop as loot, and be attached to specific champions to further enhance their abilities. The game also revisits settings and storylines based on published adventures like Curse of Strahd and Tomb of Annihilation.
+
+
+== Development ==
+Idle Champions of the Forgotten Realms is developed by Codename Entertainment, whose previous incremental game Crusaders of the Lost Idols garnered popularity and served as a basis for this game. The game entered early access on Steam in September 2017. It was released for iPads and Android tablets on May 17, 2018, followed by PlayStation 4 version on December 11. The game was released for Xbox One in North America on December 14, 2018, and in Europe on August 2, 2019. It was fully released on Steam via Windows and macOS on March 25, 2020. The Nintendo Switch version was released on the eShop on May 7 of the same year.
+The developers continue to add new unlockable champions to the game, some of which are based on characters from D&D novels, or actual player characters from D&D web series, such as Acquisitions Incorporated, Oxventurer's Guild, Rivals of Waterdeep, Dice, Camera, Action, Critical Role, the TV series Dungeons & Dragons, and the video games Baldur's Gate, Neverwinter Nights, and Planescape: Torment.
+
+
+== References ==

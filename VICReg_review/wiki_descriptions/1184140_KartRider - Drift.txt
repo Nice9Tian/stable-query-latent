@@ -1,0 +1,30 @@
+Game: KartRider: Drift
+appid: 1184140
+Source: KartRider: Drift
+URL: https://en.wikipedia.org/wiki/KartRider:_Drift
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+KartRider: Drift was a online multiplayer kart racing game developd by Nitro Studio and published by Nexon. It is part of the Crazy Arcade franchise and a successor to Crazyracing KartRider (2004). It was released for Windows, iOS, and Android on 12 January 2023. Ports for PlayStation 4 and Xbox One was released on 8 March 2023.
+KartRider: Drift was shut down on 16 October 2025. The game was regarded as a commercial failure.
+
+
+== Development and release ==
+KartRider: Drift was dveloped by Nitro Studio and directed by Jo Jaeyun. Its 2004 predecessor, Crazyracing KartRider, was shut down due to being replaced by Drift.
+Two closed beta tests were held on December 6-9, 2019 and June 4-10, 2020 for the Windows and Xbox One platforms. The third closed beta test was held between December 9 and 15, 2021, adding PlayStation 4 support. The open beta test (referred to as "Global Racing Test") began on September 1, 2022 and ended on September 6, adding Android and iOS support.
+The game was released on January 12, 2023 on Windows, Android, and iOS. It was later released for PlayStation 4 and Xbox One on March 8. It supported cross-platform play.
+After repeated changes of direction and not meeting player expectations, global and cross-platform support ended on February 27, 2025. The remaining service for the PC platform in Korea and Taiwan was shut down on October 16, 2025. Nexon had the developer file bankruptcy on October 21, 2025, with its employees either laid off or moved to Nexon's other projects. The developer's net debt at the time of bankruptcy was ₩105,859,000,000, of which  ₩83,000,000,000 was loaned from Nexon Korea.
+
+
+== Legacy ==
+The game is expected to be replaced by KartRider Classic.
+
+
+== Notes ==
+
+
+== References ==
+
+
+== External links ==
+Official website (archived)

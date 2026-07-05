@@ -1,0 +1,29 @@
+Game: Russian Fishing 4
+appid: 766570
+Source: Russian Fishing 4
+URL: https://en.wikipedia.org/wiki/Russian_Fishing_4
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Russian Fishing 4 is a fishing simulator game developed by Russian game studio FishSoft. The game was released in 2018 and is available on PC via Steam. It provides a realistic fishing experience with abundant available fishing techniques, equipments, environments, and fish species. It is free on Steam, with microtransaction options available. 
+
+
+== Gameplay ==
+In Russian Fishing 4, players start with a basic fishing setup of both rod and baits, and can earn money by catching fish and completing quests from cafe. The money can be used to upgrade fishing gears, buy new equipments and access new fishing locations.
+The game features a variety of fishing techniques, such as float fishing, bottom fishing, spinning. Players can also choose from different types of baits and lures, such as worms, Spinners, Crankbaits, Jerkbaits, vegetables, and bait fish.
+The game features a wide range of 110 fish species, such as pike, perch, chinese sleeper, bream, frog, mussel, etc. Each fish species has its unique behavior and requires different fishing techniques and equipments to catch.
+The game's graphics and sound effects are designed to provide a fairly realistic fishing experience, with detailed water effects, realistic fish movements, and ambient sounds of nature. The game also features dynamic weather and day-night cycles, which can affect fishing conditions.
+
+
+== Development ==
+Russian Fishing 4 was released for early access on 15 June 2018, and officially released on 11 November 2021. The game currently has 18 fishing maps, and the developer is still making new maps for future updates.
+
+
+== Reception ==
+It is ranked as one of the best fishing simulator games by IGN, and received many positive reviews from other gaming websites.
+
+
+== Notes ==
+
+
+== References ==

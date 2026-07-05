@@ -1,0 +1,32 @@
+Game: Ravenous Devils
+appid: 1615290
+Source: Ravenous Devils
+URL: https://en.wikipedia.org/wiki/Ravenous_Devils
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Ravenous Devils is a horror cooking simulation game developed and published by Bad Vices Games. It was released for Microsoft Windows, Nintendo Switch, PlayStation 4, PlayStation 5, Xbox One, and Xbox Series X/S on April 29, 2022. The console versions of the game were ported and published by Troglobytes Games.
+The game takes place in 19th century Victorian London, and centers around Percival and Hildred, who run a tailor shop and pub, respectively. Percival provides the ingredients for Hildred's meat-based recipes by murdering his clients and throwing the bodies down a trap door that leads to her kitchen. Hildred then cooks the bodies into meals, to serve them to her customers upstairs. 
+The game draws heavy inspiration from Sweeney Todd both in terms of style and story. It is implied that he was the previous owner of the building Hildred and Percival move into in the intro cinematic, where Percival remarks that it used to belong to "a well-known barber in the town."
+
+
+== Gameplay ==
+The player controls both Hildred and Percival, though the characters are not able to interact directly with each other during the portions of the game where they are player-controlled. The player determines which character they are controlling by vertical side-scrolling, with Percival being able to navigate through the top floors of the building, and Hildred the ground floor and basement. 
+The gameplay is broken up into days, which each last between 10 and 12 minutes. During this time Percival is tasked with selling clothes to customers who are looking to buy new clothes in the front of the shop, and killing the customers who enter the back of his shop to have their measurements taken. After this he steals his victims' clothes and disposes of the body by throwing it down a trap door that leads directly to the basement, where Hildred's kitchen is located. The clothes get patched and put up for sale, and after Percival cleans up the blood he is able to accept new customers in the back of his shop. Later in the game Percival is also tasked with tending to the greenhouse, which is located on the top floor. Occasionally a body has to be dragged upstairs to be used for composting for the vegetables, rather than have them all thrown down the hatch. 
+Meanwhile Hildred has to serve meals to her customers in the pub. The bodies are provided by Percival and turned into raw ingredients by Hildred, who starts off only owning a meat grinder but is later able to turn the bodies into sausages and steaks as well. After this the meat gets cooked and served. Each of these actions take up time, and the animations for meat preparation can't be interrupted, which puts pressure on the player. 
+The moment a customer enters and is unable to buy anything, a timer starts to run that determines the customer's satisfaction. The sooner the customer is served, the higher the reputation gain is for Hildred and Percival, but if the timer runs out completely, they lose reputation as well as a sale. 
+At the end of each day the player's losses and gains in reputation are calculated, as well as the amount of money made. This money can be spent on upgrades (such as new or better equipment, new ingredients, or new recipes, among other things) or new outfits. Sometimes the player receives a letter by a threatening, pseudonymous figure who identifies himself as "J", or a different event happens that serves to move the plot forward. Before starting a new day the player is able to make preparations without a timer running. 
+
+
+== Reception ==
+
+Ravenous Devils received "generally favorable" reviews, according to review aggregator Metacritic, where the game has an average score of 7.5. On Steam the game was well-received, with 93% of the reviews being positive. 
+Brad Gallaway from GameCritics.com praised the game for its controls and its compact, focused design, but criticized its lack of narrative depth and shortness. Simone Tagliaferri from Multiplayer.it remarked that despite its grim subject matter, he found the gameplay to be relaxing thanks to its constant progression and a lack of punishing mechanics for failing, but he did mention that the gameplay starts to feel repetitive after a few hours. Besides the gameplay he praised the game for its art direction and the animations. Andrew Reiner from Game Informer positively remarked on the upgrade system, which not only adds depth to the gameplay, but increases both the difficulty and potential reward. Philip Watson from CGMagazine praised the game for being a well-executed and original twist on the horror and cooking simulator genres, with an excellent art style and musical score, but criticized the repetitive gameplay and issues with controls when playing on the Xbox.
+Multiple reviewers mentioned finding the "steak chopping" animation particularly gruesome.
+
+
+== References ==
+
+
+== External links ==
+Ravenous Devils at MobyGames

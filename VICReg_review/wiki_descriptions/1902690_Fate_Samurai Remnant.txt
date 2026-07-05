@@ -1,0 +1,75 @@
+Game: Fate/Samurai Remnant
+appid: 1902690
+Source: Fate/Samurai Remnant
+URL: https://en.wikipedia.org/wiki/Fate/Samurai_Remnant
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Fate/Samurai Remnant is an action role-playing video game developed by Omega Force and Kou Shibusawa, and published by Koei Tecmo. It was released on September 28, 2023, for Windows, Nintendo Switch, PlayStation 4, and PlayStation 5. The game follows Miyamoto Iori, a samurai who was trained by the master swordsman Miyamoto Musashi. Fate/Samurai Remnant was generally well received by critics, who praised the characterization and gameplay.
+
+
+== Gameplay ==
+
+Fate/Samurai Remnant is an action role-playing game that casts players in the role of Miyamoto Iori. The combat is hack-and-slash style with some similarities to musou gameplay, but it falls under the action role-playing game genre with dodging and exploiting weaknesses being an important element. It features a wide array of stances, which the player character can switch between on the fly. Iori uses dual katanas, a widespread weapon for Samurai during the Edo period. Players can give commands to their servant, launching special attacks and combos. In certain situations, the game allows for full control of Iori's servant. The game allows for exploration of recreated districts of Edo, such as Yoshiwara, Kanda, and Akasaka.
+
+
+== Plot ==
+The story follows Miyamoto Iori, a peacekeeping ronin who is chosen to participate in the Waxing Moon Ritual, a spin-off of the Holy Grail War. He summons a Saber-class servant known as Yamato Takeru. They later form an alliance with Takao Dayu and her Berserker-class servant, Iori's late master Miyamoto Musashi in exchange for information on other Masters and servants.
+While investigating Yui Shousetsu and her Rider-class servant, and fighting Chiemon and his Lancer-class servant, Iori and Saber are taken to safety by Zheng Chenggong and his Archer-class servant Zhou Yu who wish to form an alliance to deal with the problematic Assassin-class servant. After an investigation, the two meet Assassin's master, Dorothea Coyett, who launches a powerful yet attack on the Saber-Berserker-Archer alliance, which leaves Iori injured. This prompts the appearance of the Pseudo-Servant Ototachibana-hime, who has taken residence in Kaya's body. As such, Shousetsu detects this and sends Chiemon and Lancer to capture her.
+Iori and Saber chase after Chiemon and fight Lancer at Kanagawa. However their fight is interrupted by the appearance of Rogue Servants, who had been corrupted by Tsuchimikado, the overseer of the Waxing Moon. Saber is affected but Iori is able to save them in time. Archer however had begun massacring Akasaka, resulting in his own self-sacrifice. Assassin allows his brainwashing to commence and betrays Dorothea, leaving her to ally with Iori and Saber. They find Yui Shousetsu under attack by Rider and several Rogues, while Dayu sends Musashi to quell the chaos with the corrupted servants.
+Shousetsu informs Iori and Saber of Tsuchimikado's whereabouts, which was at his stronghold in Kan’ei-ji Temple. On the way, a corrupt Assassin wreaks havoc, leaving Iori and Saber to decide whenever they wanted to help Dorothea fight him or go straight to Tsuchimikado. 
+
+If the player chooses to pursue Tsuchimikado, they will head for Kan’ei-ji Temple and witness Lancer killing him. However they will learn that Dorothea has lost her life from fighting Assassin, whom she was successfully able to kill.
+If the player chooses to pursue Assassin, they will assist Dorothea in fighting him. However they will learn that Tsuchimikado had been killed by an unknown assailant.
+Both routes end with Shousetsu taking hold of the Waxing Moon's Vessel.
+Having learned that Shousetsu has the Waxing Moon in hand, Iori and Saber confront her, which leads to a fight with Rider who summons a divine beast which required a group effort by the remaining competitors to defeat. Shousetsu is arrested by the Clock Tower mages, while Musashi “times out” to the world after conducting her final duel with her student, Iori.
+With the Vessel in front of them, Iori chooses to destroy it but it is stolen by different people depending on the choices the player made. 
+
+The story diverges into the Flames of Resentment route if the player chose to pursue Tsuchimikado in Chapter 4. In this route, Chiemon steals the Vessel and takes over Edo Castle, where he merges with it to become the Waxing Moon Monster. Iori and Saber manage to defeat Chiemon, but only with Saber sacrificing themself. Iori and Kaya then return home.
+The story diverges into the A Ray of Light Route if the player chose to pursue Assassin in Chapter 4, preventing Dorothea's death. In this route, Zheng's new partnership with Caster is revealed as he ushers his servant in stealing the Vessel and summoning the demigod Yasomagatsuhi. Iori and Saber team up with Shousetsu to defeat Yasomagatsuhi, though at the cost of both Saber and Shousetsu's lives. Though defeated, Zheng swears to find another way to achieve his wish of saving China.
+Entreat the Darkness is only accessible in New Game+ after one of the above routes have been cleared, and diverges in Chapter 5 if Iori chooses to not destroy the Vessel. In this route, Chiemon and Caster both kill each other, while Iori and Saber fight to the death to determine the fate of the Waxing Moon. Saber emerges victorious, and Iori dies lamenting he was born in the wrong age and sought to use the Vessel to create an eternal war he could thrive in. With Iori dead, Saber destroys the Vessel before fading away, and Kaya arrives to find Iori's corpse.
+If Iori completes all of the side quests issued by "Boss" (the Rogue Servant Gilgamesh in disguise) and agrees to become his servant, the A Journey to Conquer the World joke ending is unlocked, where after a fight against him, Boss deems them strong enough and Iori and a reluctant Saber become his retainers.
+The DLC Records Fragment Keiran Command Championship has unique endings for each Servant/Master pair depending on who wins the tournament.
+
+
+== Development ==
+The Japanese companies Type-Moon and Aniplex had announced that a new role-playing video game entry in the Fate series was in development at Koei Tecmo during a special television broadcast on the Japanese satellite television station BS11 in December 2022. Gameplay was leaked a day ahead of its formal showcase at a Nintendo Direct on June 21, 2023. It was announced shortly after that Japanese video game developer Omega Force would be leading development alongside Aniplex and Type-Moon. Japanese author Kinoko Nasu had aided as a supervisor, with veteran Fate series writers Hikaru Sakurai and Yuichiro Higashida writing the game. Composition was handled by Keita Haga, known for his work on Tsukihime and Melty Blood, as well as Daisuke Shinoda, known for Wild Hearts. The opening animation sequence was produced by the Japanese animation studio CloverWorks.
+In an interview with 4gamer, Matsushita mentioned that the development of Fate/Samurai Remnant had initially started at Omega Force in 2018, and that the idea was spurred due to Koei Tecmo CEO Yōichi Erikawa being a fan of Fate/Grand Order. Fate/Samurai Remnant was developed using Koei Tecmo's in-house engine called "Katana Engine".
+
+
+== Promotion and release ==
+Fate/Samurai Remnant was released for Nintendo Switch, PlayStation 4, PlayStation 5 and Windows on September 28, 2023. In addition to the standard edition, a physical "Treasure Box" edition was made available which included supplemental material, a poster, a physical CD to the game's soundtrack and Command Spell stickers.
+
+
+=== Downloadable content ===
+The physical "Treasure Box" edition included a redeemable code for a set of in-game costumes for Iori and Saber. A season pass is also available for purchase, which includes exclusive in-game weapon mountings that can be used immediately in the game. It also gives discounted access to three downloadable content (DLC) chapters released in 2024. The first chapter, Record's Fragment: Keian Command Championship, focuses on Boss and a new servant named Ibuki Douji, and was released on February 9. The second chapter, Record's Fragment: Yagy/+8753.
+u Sword Chronicles, focuses on a new servant named Yagyu Munenori, and was released on April 18. The third and final chapter, Record's Fragment: Bailong and the Crimson Demon, focuses on Zhao Jun and was released on June 20.
+
+
+== Reception ==
+
+
+=== Critical reception ===
+
+Upon release, Fate/Samurai Remnant received "generally favorable" reviews from video game publications based on the review aggregate website Metacritic aimed towards the PC and PS5 ports. Fellow review aggregator OpenCritic assessed that the game received fair approval, being recommended by 92% of critics. 
+Much of the focus within reviews from critics that involved positive feedback in regards to the narrative. In Japan, four critics from Famitsu gave the game a total score of 36 out of 40, with each critic awarding the game a 9 out of 10. Stephanie Liu from Siliconera praised the game's story and characters, calling them "the strongest points of the game". While RPGamer's Alex Fuller similarly praised the story, stating that it "leaves a mark with a strong story and setting", despite criticizing the gameplay. Mitch Vogel of Nintendo Life said that it was a "hugely enjoyable" action role-playing video game that utilizes a "strong" development of the Musou formula. Writing for Destructoid, Smangaliso Simelane had commended the game saying it "does an adequate job of explaining all the elements of its world" while also praising the art style. Push Square's Robert Ramsey expressed that storyline was consistently "intriguing", and that the portrayal of a grounded character navigate "seemingly insurmountable situations" is what made the game "compelling". While Matt S. of Digitally Downloaded felt that it was surprising how "effective" the characterisation in Fate/Samurai Remnant was.
+
+
+=== Sales ===
+As of April 2024, Fate/Samurai Remnant had sold 410,000 units globally.
+
+
+== Other media ==
+A short manga featuring an introduction to the game's setting was published in Type-Moon Ace VOL.15 by Kadokawa.
+A promotional anime featuring Saber and Berserker was broadcast in Japan in December 2023 as part of a New Years' celebration with the Fate series. It depicts Saber and Berserker traveling around Japan and eating.
+Several characters from the game were made playable in Fate/Grand Order as part of its collaboration with Samurai Remnant from January 17 to February 7, 2024.
+
+
+== Notes ==
+
+
+== References ==
+
+
+== External links ==
+Official website

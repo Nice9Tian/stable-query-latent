@@ -1,0 +1,48 @@
+Game: Sackboy: A Big Adventure
+appid: 1599660
+Source: Sackboy: A Big Adventure
+URL: https://en.wikipedia.org/wiki/Sackboy:_A_Big_Adventure
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Sackboy: A Big Adventure is a 2020 platform video game developed by Sumo Digital and published by Sony Interactive Entertainment for the PlayStation 4 and PlayStation 5. A spin-off of the LittleBigPlanet series, it follows Sackboy, and features 3D platforming as opposed to a side-scrolling angle in previous entries. It was ported to Windows in October 2022, marking the LittleBigPlanet series' debut on personal computers. As of February 2022, Sackboy: A Big Adventure sold more than 1.2 million copies worldwide.
+
+
+== Gameplay ==
+Sackboy: A Big Adventure is a platformer. Unlike previous LittleBigPlanet entries with side-scrolling platforming, it features a range of perspectives and 3D movement. Players control Sackboy on world maps which give access to a multitude of platforming levels and bonus content. As Sackboy completes each stage new ones unlock allowing him to progress further. All levels contain collectable objects called Dreamer Orbs which must be collected en-masse to progress to the end of the game.
+Sackboy's move set is greatly expanded from previous entries and players can now slap at will, roll around, nosedive, pick-up objects and flutter jump, to name a few. Moves can be chained together to create combos that allow skilled players to travel greater distances. Each level in the game employs a series of interactable objects that require at least one of Sackboy's moves to progress. 
+Sackboy also has access to multiple stages where he can use new powerups. The Grappling Hook, now called the Clawstring, returns from LittleBigPlanet 2, allowing Sackboy to grab onto object from afar, the Whirltool is a boomerang-like device that can be thrown to defeat enemies and break objects and finally the Plasma Pumps allow Sackboy to hover in the air and fire energy blasts.
+
+
+=== Content creation ===
+The game does not feature any Create Mode akin to LittleBigPlanet entries, only making certain nods to it through collectables. 
+Players can still customize their Sackboy via ZomZom's Shop. ZomZom is a travelling haberdasher that returns after his appearance in LittleBigPlanet 3. In his shop players can buy new costumes, try on collected outfits and even paint costume pieces. Costumes created by the player can be saved and are then available to choose when a level is entered.
+
+
+=== Multiplayer ===
+The game is fully playable in both local and online multiplayer allowing up to 4 players to experience the game together. There are stages in each world that require multiple players to enter and are specifically designed so players must work together to progress. The game originally did not ship with online functionality. The feature was added in a patch a month later on 17 December 2020.
+
+
+== Plot ==
+In Craftworld, in the village of Loom, the Sackpeople are enjoying their lives when the villain Vex (Richard E. Grant) rips through the sky and begins to suck everything up with his machines in order to enslave the Sackpeople to make his Topsy-Turver machine to take over Craftworld with his evil Uproar. Sackboy manages to avoid being enslaved and steals the plans to the Topsy-Turver, escaping into a rocket. He uses the plans to travel all around Craftworld with the help of an elder sackperson, Scarlet (Dawn French) and tries to prevent Vex from getting the final materials he needs to finish the Topsy-Turver and take over the world, solving many of the issues Vex caused and gathering Dreamer Orbs along the way.
+Later on the journey, Vex ambushes Sackboy and steals the latter's Dreamer Orbs, revealing that he manipulated him into gathering them to fuel the Topsy-Turver. Encouraged by Scarlet, Sackboy ventures to the center of Craftworld, where Vex intends to replace the Tree of Imagination with his machine. There he confronts Vex again and rendezvous with Scarlet who reveals a plan to destroy the machine when Vex suddenly knocks her unconscious. Venturing into the Topsy-Turver, Sackboy confronts Vex once more, defeating him and destroying the machine. Afterwards, Scarlet knights Sackboy as a Knitted Knight as peace is restored in Loom and Craftworld.
+
+
+== Development and release ==
+Sackboy: A Big Adventure was developed by Sumo Digital who previously developed LittleBigPlanet 3, and published by Sony Interactive Entertainment. It is the most recent installment in the LittleBigPlanet series.
+Sackboy: A Big Adventure was announced at the PlayStation 5 reveal event on 11 June 2020. The game was released for the PlayStation 4 and PlayStation 5  in North America and Oceania on 12 November 2020 and most other regions on 19 November 2020. A Windows version was released on 27 October 2022.
+
+
+== Reception ==
+
+Sackboy: A Big Adventure received "generally favorable" reviews across all platforms according to review aggregator website Metacritic. Fellow review aggregator OpenCritic assessed that the game received strong approval, being recommended by 83% of critics.
+
+
+=== Sales ===
+Sackboy: A Big Adventure was the 8th most-downloaded PlayStation 5 game in the United States and Canada, and the 9th in Europe in 2020. As of February 2022, the game had sold 1.2 million copies worldwide.
+
+
+=== Awards ===
+
+
+== References ==

@@ -1,0 +1,21 @@
+Game: Sands of Salzaar
+appid: 1094520
+Source: Sands of Salzaar
+URL: https://en.wikipedia.org/wiki/Sands_of_Salzaar
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Sands of Salzaar (Chinese: 部落与弯刀; pinyin: Bùluò yǔ wān dāo; trans.: Tribe and Scimitar) is a 2021 fantasy strategy action role-playing game for Microsoft Windows and iOS. It was developed by Chinese indie video game company Han-Squirrel Studio, and published by Hong Kong company XD. The player controls a customized character to battle, recruit troops, manage a fief, and explore dungeons. The game was launched as an early access on January 3, 2020 and fully released on December 16, 2021.
+The game is set in the fictional realm of Salzaar, a region marred by war after the collapse of a great empire with a fantasy blend of pre-modern Turkic, Chinese, Mongolian, and Arabic cultures. Each area has settlements in which five major factions vie for control. The player may choose one among eight classes or create their own, and pick a side or start their own faction. The game features both story-driven campaign and sandbox mode. Sands of Salzaar has been described as a mix of Mount & Blade, Diablo, League of Legends, and Dynasty Warriors.
+
+
+== Reception ==
+The game's RPG approach and isometric view usually brings comparisons to the Diablo series and games like it: the progression, the equipment, the mouse and keyboard oriented controls, the character's set of skills on the bottom part of the screen.
+It drew comparisons to the war strategy RPG series Mount & Blade and the isometric strategy-oriented gameplay of League of Legends,
+
+
+== References ==
+
+
+== External links ==
+Official website

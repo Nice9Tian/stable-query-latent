@@ -1,0 +1,27 @@
+Game: Gestalt: Steam & Cinder
+appid: 1231990
+Source: Gestalt: Steam and Cinder
+URL: https://en.wikipedia.org/wiki/Gestalt:_Steam_and_Cinder
+Match score: 7.45
+Retrieved: 2026-07-04
+--------
+Gestalt: Steam and Cinder is a Metroidvania video game developed by Metamorphosis Games and published by Fireshine Games.  Players fight robots in a steampunk city.
+
+
+== Gameplay ==
+Players explore a steampunk city in a post-apocalyptic world.  Gestalt: Steam and Cinder is a Metroidvania game, a subgenre of platform games that emphasize exploration.  As the bounty hunter Aletheia, they explore under the city and attempt to learn more about both its history and a mechanical threat.  Players must fight robots and other automatons.  Aletheia's primary attacks are melee weapons, but these attacks can charge up a ranged attack.  Players can customize Aletheia through a skill tree, and power-ups give her temporary boosts.  It uses retro-style pixel art graphics.
+
+
+== Development ==
+Developer Metamorphosis Games is based in Los Angeles. Fireshine Games released Gestalt: Steam and Cinder for Windows on July 16, 2024.  Ports to the Xbox One, PlayStation 4, and Switch are planned for 2025.
+
+
+== Reception ==
+Gestalt: Steam and Cinder received "mixed or average" reviews from critics, according to the review aggregator website Metacritic.  GameSpot enjoyed the combat, steampunk setting, pixel art, and customization options, but they said there was too much exposition, to the point that it became overwhelming.  They concluded that it is "a great start for a potential franchise".  RPGSite called it "an extremely enjoyable experience" and recommended it to people who enjoy action-platformers.  They initially thought it would be good for speedrunning but said the amount of exposition and unskippable cutscenes would make this difficult.  They suggested making changing cutscenes to be skippable.  Shacknews said they enjoyed the game and praised the art.  However, they disliked the ending despite enjoying the rest of the story and the worldbuilding.  They also felt the combat needed more balancing because it became trivial to defeat bosses after becoming overpowered.  Slant Magazine criticized the exposition for being "undercooked but intrusive".  They also disliked the exploration, feeling that it became tedious.
+
+
+== References ==
+
+
+== External links ==
+Official website

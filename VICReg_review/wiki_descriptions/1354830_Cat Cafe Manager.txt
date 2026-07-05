@@ -1,0 +1,24 @@
+Game: Cat Cafe Manager
+appid: 1354830
+Source: Cat Cafe Manager
+URL: https://en.wikipedia.org/wiki/Cat_Cafe_Manager
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Cat Cafe Manager is a 2022 simulation video game developed by Roost Games. Gameplay centers around managing a cat cafe, taking in stray cats, and catering to customers. The game received mixed reception.
+
+
+== Gameplay ==
+Cat Cafe Manager is a simulation video game that takes place in the town of Caterwaul. The main character is given a plot of land, and builds a cat cafe. Players must cater to different types of customers by serving their favorite dishes to receive different things, such as catering to witches to unlock new recipes. Each customer has their own individual story with unique dialogue. Additionally, players must also obtain and take care of stray cats to attract customers, with certain types of cat being more attractive to certain customer types. These cats can be also be adopted by patrons, making room to bring in new cats.
+
+
+== Development and release ==
+The game was developed by Dutch indie game studio Roost Games. It released on April 14, 2022. A sequel, titled Cat Cafe Manager 2: Big City Bliss, is currently in development.
+
+
+== Reception ==
+
+The PC and Nintendo Switch versions of Cat Cafe Manager both received "mixed or average" reviews from reviewers, according to the review aggregation website Metacritic. Fellow review aggregator OpenCritic assessed that the game received weak approval, being recommended by 52% of critics. GamesRadar+'s Alyssa Mercante said that she was "hooked" by the game, praising the depth of its gameplay. The game was also praised by Annette Polis of Siliconera. Mark Delaney of GameSpot was more critical, rating the game 5 out of 10, praising the in-game economy and art design while criticizing the game for all of the bugs in the decoration system. The game also received a 5.5 from Destructoid's Zoey Handley, who heavily criticized the imprecise controls and large number of bugs.
+
+
+== References ==

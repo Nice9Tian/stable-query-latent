@@ -1,0 +1,7 @@
+This is a multiplayer first-person shooter built around tense negotiations, betrayals, and occasional high-speed car chases. It is currently in an extended and indefinite Early Access state, so players are advised to watch gameplay and do some research before deciding to buy it.
+
+The game offers several modes. In **World Mode**, multiple corporations compete for money and influence by controlling different colored disks through either legitimate trades or violent takeovers. Both cash and disks are highly valuable, and they can be used to buy guns, cars, equipment, and clothing that may help a corporation succeed. Players can progress through careful business deals and smooth cooperation, or by using force if they are fast and accurate enough to survive.
+
+In **Round Mode**, the same basic competition is presented in a round-based format. Each corporation competes across a five-day work week, and the total money earned during that period determines the corporation’s position at the end of the round.
+
+In **Eliminator Mode**, one player is secretly chosen as the Eliminator and must kill the player assigned as the Savior. The Savior does not initially know their role, but another player assigned as the Protector does know and can periodically track the Savior, helping them meet and communicate the Savior’s importance. All other players, including the Savior, appear to be Civilians and must either survive the round by avoiding the Eliminator or work together to defeat the Eliminator with a grenade.

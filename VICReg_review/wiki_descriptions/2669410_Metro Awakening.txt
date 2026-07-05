@@ -1,0 +1,39 @@
+Game: Metro Awakening
+appid: 2669410
+Source: Metro Awakening
+URL: https://en.wikipedia.org/wiki/Metro_Awakening
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Metro Awakening is a first-person shooter developed by Vertigo Games and published by Deep Silver. As a spin-off game of the Metro franchise and a prequel to Metro 2033, Awakening was released for virtual reality devices, including PlayStation VR2, Meta Quest 2 and 3, Steam VR and Viveport on November 7, 2024.
+
+
+== Gameplay ==
+As with its predecessors, Metro Awakening is a first-person shooter. The game's story follows Serdar, a doctor who must venture into the treacherous Moscow tunnel system in order to reunite with his wife. The story was described by the team as the origin story for Khan, a stalker with a supernatural skill in the Metro universe, and the story takes place before the events of the first game. The game's combat will be slower, as the game's protagonist is not a skilled soldier. Players can use various firearms to fight against enemies, though bullets in the game are scarce. Alternatively, players can utilize stealth tactics during enemy encounters.
+
+
+== Plot ==
+In 2018, Serdar Iskanderov lives in Polyanka station when it is attacked by nosalises, and he is forced to close the station gate on his friends, trapping them inside with the monsters. A decade later, Serdar and his wife Yana settled in Akademicheskaya station. One day, Serdar comes back from an errand to find out that Yana, in a fit of delusion, had nearly destroyed the station's mushroom farm. Serdar sets out to find medicine for her.
+During his journey, Serdar finds evidence of a cult that worships a "Great Worm". Once he returns to the station, however, Yana had stormed off after learning what he was doing. Serdar follows her trail through tunnels that lead to the Tretyakovskaya station, where Yana's son Petya died. Once Serdar reaches the station, he is knocked out. Serdar regains consciousness and finds himself locked in a cell beside Yana, both of them having been captured by slave traders. After Yana is taken away, Serdar breaks free and goes after her, guided by a woman on the radio named Oksana, who is looking for her husband Alex. He learns of a place called Hell's Mouth, where Yana might be.
+While transversing through the Metro, Serdar tells Oksana that due to a session of hypnotic regression, he is believed to be a reincarnation of Genghis Khan, with his friends of Polyanka and Yana calling him "Khan" because of that. He also finds ghosts of people trapped in the Metro, but dismisses them all as hallucinations. Serdar eventually finds the ghosts of his friends, which convinces him that ghosts and all the phenomena in the Metro are real.
+Serdar returns to Akademicheskaya after it was attacked by cultists and meets the Great Worm, a phenomenon that devours ghosts. He reaches a shrine, where Oksana, revealed to be a ghost, reunites with the ghost of Alex, before both of them bidding farewell. Serdar sets out to find Petya, and eventually finds his ghost. The two of them set out to Tretyakovskaya so Petya can reunite with his mother. After they reach the station, Serdar goes after Yana alone and finds himself in Hell's Mouth, a station filled with cultists. He ends up knocked out and locked in a cage, just to see Yana being sacrificed in a ritual. At this moment, the Great Worm attacks the station, while Serdar and the ghost of Yana manage to escape. They return to Tretyakovskaya where Yana finally reunites with Petya. Afterwards, a ghostly white train appears alongside many white spirits in the station, and both Yana and Petya bid farewell to Serdar, who fully embraces his Khan persona.
+
+
+== Development ==
+The game was developed by Netherlands-based Vertigo Games, the studio behind other VR games such as Arizona Sunshine and its sequel. The studio worked in close collaboration with Dmitry Glukhovsky, who served as the game's lore consultant. The team felt that Glukhovsky had written a very "personal" and "emotional" story for Awakening, and therefore, changed the overall game direction to a more story-driven one. Vertigo chose Khan to be the game's playable character. Unlike Artyom, the series' silent protagonist, Khan was fully voiced. The team also worked closely with 4A Games, which provided the team with gameplay assets and models they had used during the development of earlier games in the series.
+Awakening was announced in January 2024. The game was released worldwide on November 7, 2024.
+
+
+== Reception ==
+According to Metacritic, the game received "generally favourable reviews".
+
+
+=== Accolades ===
+The game was nominated for "Best VR/AR Game at The Game Awards 2024.
+
+
+== References ==
+
+
+== External links ==
+Official website

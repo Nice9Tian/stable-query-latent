@@ -1,0 +1,43 @@
+Game: Warhammer 40,000: Darktide
+appid: 1361210
+Source: Warhammer 40,000: Darktide
+URL: https://en.wikipedia.org/wiki/Warhammer_40,000:_Darktide
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Warhammer 40,000: Darktide is a first-person action video game set in the Warhammer 40,000 universe, developed and published by Fatshark. It is a spiritual successor to the Warhammer: Vermintide series. It was released for Microsoft Windows on 30 November 2022. It also was released for Xbox Series X/S on 4 October 2023, and for PlayStation 5 on 3 December 2024.
+
+
+== Gameplay ==
+The game uses a similar formula to that used in Fatshark's Warhammer: Vermintide 2 in which four players cooperate to defeat periodic waves of AI-controlled enemies. Rather than a set of pre-made characters, the game allows players to customize their class, appearance, and gender. The four classes at launch were Veteran, Zealot, Ogryn, and Psyker; a sharpshooter / support, melee DPS, tank, and ranged DPS class respectively. All classes make use of a regenerating shield. A fifth class, the Arbitrator, was released in June 2025. Unlike the first four classes, prisoners conscripted by the Inquisition, the Arbitrator is an active-duty Imperial law enforcer. The Arbitrator has access to new weapons, including a riot shield paired with a melee weapon or firearm, as well as a combat support pet, the "Cyber-Mastiff". A sixth class, the Hive Scum, was released in December 2025, representing the "Conclave" of criminal cartels on Atoma Prime, the game's setting. The Hive Scum is the only class that can dual-wield weapons, including shivs and automatic pistols, as well as create custom combat stimulants to boost their effectiveness. A seventh class, the Skitarii, was released in June 2026, representing the cyborg infantry of the Adeptus Mechanicus, the techno-priesthood which holds a monopoly on all technological matters in the Imperium. The Skitarii has access to special Mechanicus-crafted weapons and is accompanied by a Servo-Skull combat support pet.
+Unlike in Vermintide 2, multiple missions can take place in the same area, some of which include optional secondary objectives that allow players to obtain better loot. Difficulty has been divided into two variables, one affecting enemy count and the other damage received from enemies. Progression is split between random rewards, an in-game currency that allows the purchase of weapons and a contract system to earn a weapon of your choice. Crafting also allows the player to upgrade their weapons and increase their stats.
+
+
+== Plot ==
+The game's story, written by experienced Games Workshop authors Dan Abnett and Matt Ward, focuses on a squad of "Rejects", prisoners conscripted by the Inquisition, investigating a Chaos uprising in the Hive City of Tertium on the industrial planet of Atoma Prime.
+The player character begins as a prisoner (their crime determined as part of the character creation) aboard the transport ship Tancred Bastion, which is transporting the leadership of the traitorous Moebian 6th Regiment, corrupted by the Chaos God Nurgle. The ship is attacked by elements of the 6th who free their commander, Captain Biron Wolfer, and escape. The player character rescues Explicator Orgustine Zola, an agent of the Inquisition, who agrees to spare them from the death penalty by conscripting them into the service of her master, Inquisitor Grendyl. The player is brought aboard the Rogue Trader Mourningstar and works to gain the trust of the other members of Grendyl's warband, including Interrogator Iven Rannick, Grendyl's right-hand man; Sergeant Major Vincent "Vin" Morrow, a no-nonsense Imperial Guard veteran from Armageddon who oversees the warband's military logistics; and Hadron Omega 7-7, a "technoarchaeologist" from the Adeptus Mechanicus.
+The player is dispatched with other conscripted prisoners to Tertium on missions to undermine the Chaos forces, including claiming supply drops, investigating a daemonic plague, and assassinating Wolfer's key lieutenants. After some time, it is discovered that Wolfer has a spy aboard the Mourningstar, sending out detailed reports of the Inquisition's operations that result in the loss of squads of elite agents planetside. Interrogator Rannick leads the investigation of the Mourningstar's mole problem while also showing interest in the player's progress. Over the course of the campaign, the player character completes multiple unique objectives as they tackle the game's various missions in a fixed sequence, including the defeat of the Karnak Twins, Wolfer's top lieutenants. Once enough trust is earned, Rannick discovers and kills the traitor, and welcomes the player character fully into the Inquisition. Afterwards, the player continues to undertake missions in Tertium as a full member of the warband. New missions, each with their own self-contained story and objective while also having ties to the overall meta narrative, are added in the game's quarterly updates.
+The plot is set to evolve over time in a manner that parallels a live service, continuing to develop on a weekly basis and following a set meta narrative.
+
+
+== Development ==
+The game was first announced in July 2020 during the Xbox Series X and Series S showcase event in which Fatshark showed plans for a 2021 release. A gameplay trailer was released on 10 December 2020, which showcased the use of weapons such as a Lasgun and a chainsword being used to defeat hordes of Poxwalkers and chaos traitors. Among the playable characters, an Imperial Guardsman and an Ogryn could be observed. The developers commented that Darktide is planned to be less melee focused than Vermintide 2, getting closer to a 50/50 split between melee and ranged combat. 
+In July 2021 Fatshark announced that due to difficulties arising as a result of the COVID-19 pandemic, the release date would be pushed back from 2021 to spring 2022. The release date was again pushed back to 13 September 2022 in an announcement which was accompanied by a new trailer. A further delay pushing the release back to 30 November 2022 for Windows was later announced.
+A closed beta was made available to some players on 14 October 2022 and ran for two days.
+On 24 January 2023, Martin Wahlund, CEO & Co-Founder of Fatshark, announced that development on new content was paused while the studio focused on improving progression, stability and performance, in response to the negative reception the game received post-launch. In February 2023, Fatshark released Patch#4, also titled "Blessings of the Omnissiah", which changes the game's loot system and crafting. A revamped class system and progression were released with Patch #13, which saw the game released on consoles.  In August 2023, it was announced that the game would launch on the Xbox Series X and Series S on 4 October 2023. In November 2024, it was announced that the game would launch on the PlayStation 5 on 3 December 2024.
+
+
+=== Expansions ===
+On June 23, 2025, Fatshark released the first paid DLC titled Arbites Class. The DLC added the new playable Arbites class, bringing the total number of classes to five. Alongside the DLC the free "Battle For Tertium" update (Update 1.8.0) was also released, which revamped elements of the games narrative and introductory content for new players. The update also included changes to weapon balancing and difficulty progression, as well as the addition of the new Mortis Trials games mode. On December 2, 2025, the second paid DLC Hive Scum Class was released, adding the titular Hive Scum playable class to the game.
+
+
+== Reception ==
+
+According to Metacritic, Warhammer 40,000: Darktide has received "mixed or average reviews", based on 68 reviews. As of 22 January 2023, the game faced sharp player falloff and negative reviews on Steam for the perceived unfinished state of the game and a lack of communication surrounding updates or improvements. The loot and crafting systems have drawn criticism, described by Rock Paper Shotgun as "[a] fantastic FPS ruined by a rubbish MMO". 
+
+
+== References ==
+
+
+== External links ==
+Official website

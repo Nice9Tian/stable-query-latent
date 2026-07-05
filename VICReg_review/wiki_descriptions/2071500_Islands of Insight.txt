@@ -1,0 +1,21 @@
+Game: Islands of Insight
+appid: 2071500
+Source: Islands of Insight
+URL: https://en.wikipedia.org/wiki/Islands_of_Insight
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Islands of Insight is a shared-world puzzle-adventure game set in a fantasy realm. It is developed by Lunarch Studios and published by Behaviour Interactive. A free demo that served as an open playtest was available from September 7 to 21, 2023. The full game was released on February 13, 2024.
+
+
+== Gameplay ==
+
+In Islands of Insight, the player is a Seeker on a peaceful journey rich in puzzle-solving.
+
+
+== Reception ==
+
+Islands of Insight received "generally favorable" reviews, according to the review aggregation website Metacritic. Fellow review aggregator OpenCritic assessed that the game received strong approval, being recommended by 73% of critics. In a preview, Wesley LeBlanc of Game Informer called the game "something I look forward to going hands-on with in the future", describing its themes as "intriguing" and its setting as "vibrant and diverse". He explained that he was curious why the game was shared-world multiplayer. Jody MacGregor of PC Gamer stated that it stood out for its lack of combat, saying that the puzzles seemed varied. She stated that there was a "Windows wallpaper vibe" to the game's locations. Ken Allsop of PCGamesN called the game "breathtaking", with a "stunning" environment. Both MacGregor and Allsop compared the game to The Witness, citing its mixture of exploration and puzzles.
+
+
+== References ==

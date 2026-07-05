@@ -1,0 +1,19 @@
+Game: Out of Space
+appid: 400080
+Source: Out of Space (video game)
+URL: https://en.wikipedia.org/wiki/Out_of_Space_(video_game)
+Match score: 7.11
+Retrieved: 2026-07-04
+--------
+Out of Space is a survival and strategy co-op multiplayer video game developed by Brazilian development team Behold Studios, the same creators of Chroma Squad. The game was released for Microsoft Windows, macOS, and Linux on February 26, 2020 on Steam. It was later released for the Nintendo Switch, PlayStation 4, and Xbox One as Out of Space: Couch Edition on November 25, 2020.
+
+
+== Gameplay ==
+The players start in a little spaceship, which is being infested by an alien goo. To survive, they need to clean up the dirt left by the goo and keep the power of the spaceship on constantly. The crew can only use cleaning materials, such as a mop and a bucket, in order to clean up the mess made by the aliens in the spaceship. The aliens can be eliminated by throwing them out into space, cooking or grinding them. The game can be played by up to four people. It is possible to play solo, but the difficulty is increased compared to playing in multiplayer.
+
+
+== Awards ==
+The game was elected the best Brazilian game of the year in the Brazil Game Awards 2020. Also won Cubo de Ouro Award for Best Brazilian Indie Game 2019 and Bronze Indigo Award 2020 for Game Design for online.
+
+
+== References ==

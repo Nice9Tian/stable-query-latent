@@ -1,0 +1,44 @@
+Game: HoloCure - Save the Fans!
+appid: 2420510
+Source: HoloCure – Save the Fans!
+URL: https://en.wikipedia.org/wiki/HoloCure_%E2%80%93_Save_the_Fans!
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+HoloCure – Save the Fans! is a 2022 roguelike shoot 'em up video game developed by Kay Yu.  It is a freeware fan game featuring VTubers from Hololive Production with gameplay inspired by Vampire Survivors and Magic Survival. It was originally released on itch.io in 2022 and then on Steam in 2023 with permission from Hololive's parent company Cover Corporation. The game receives regular updates, adding new playable characters and gameplay content.
+
+
+== Gameplay ==
+In HoloCure, the player controls a character who must fight off waves of increasingly powerful enemies. The game is played from the top-down perspective with the player able to move in any direction. The player character will automatically attack nearby enemies, although the player can manually choose what direction to attack in. The player collects money and experience points from defeated enemies, which can be used to level up. Each time the player levels up they can select 1 of 4 random weapons, items, or skills to upgrade their character.  The same item can be selected multiple times to upgrade it. Certain weapons can be combined when fully upgraded to create a more powerful weapon called a "collab". If the player meets certain requirements, some collab items can be further combined into a "super collab". To win, the player must survive for 20 minutes and defeat the final boss of each stage. Completing a stage will unlock additional stages of increasing difficulty, as well as alternate game modes, such as endless mode where the player survives as long as possible to earn a high score.
+Each character has a starting weapon, special move, and 3 passive skills unique to that character. Players unlock new characters through a gacha system, but unlike other gacha games, players cannot spend real money; the game is completely free. Receiving multiple copies of the same character upgrades that character's stats. There is also a "fandom" system where characters earn experience and level up based on how many copies of that character the player has, and how many stages that character has beaten. In addition to upgrading individual characters, the player can also purchase general upgrades that increase the stats of all characters.
+The game also has an alternate game mode called "Holo House", a farm life sim mode. In Holo House, the player can catch fish, grow crops, raise pets, and decorate their house. The Holo House also contains several minigames, such as the fishing rhythm game, the Tower of Suffering (Holocure's version of Jump King), and a number of gambling minigames in the Usada Casino. These activities earn the player money which they can either reinvest into their house, or spend in the main game. Characters the player has unlocked in the main game will also visit their house, and sometimes assist them with fishing and farming.
+
+
+== Characters ==
+HoloCure has 47 playable characters with new characters being added in updates over time.
+
+
+== Development ==
+HoloCure was developed in GameMaker. Before making HoloCure, Kay Yu previously worked as the lead animator of River City Girls and an animator for several TV anime.  The game originally launched in 2022 on itch.io and was downloaded 50,000 times on the first day. This exceeded the developer's expectations, forcing them to temporarily disable the game's online leaderboards due to the server being overloaded. 
+In 2023 Yu received permission from Hololive's parent company Cover Corporation to release HoloCure on Steam as a non-commercial fan game. Players who previously downloaded the itch.io version were able to transfer their save files to the Steam version.
+Yu estimated he developed 75% of HoloCure on his own, hiring outside help for translations and additional artwork. Yu stated that he wasn't interested in monetizing Holocure and that he earned enough working as an animator to fund the game's low development costs. He went on to say, "As long as I can continue living comfortably, have time to work on this game, and people are enjoying the game, that's all that matters to me."
+
+
+== Release ==
+The first public build of HoloCure was released on June 23, 2022, on itch.io.  It included all 11 (at the time) English VTubers from Hololive. Its first major update was released on September 9, 2022, adding Japanese VTubers from Hololive Generation 0 and Hololive Gamers. In February 2023, another update was released adding members from Hololive generations 1 and 2 from Japan. On August 16, 2023, the game was released on Steam, along with an update adding all 9 members of Hololive Indonesia. Update 0.7 was released in November 2024, adding Japanese members from Hololive generations 3 and 4.
+
+
+== Reception ==
+Austin Wood of Games Radar described HoloCure as "The best Vampire Survivors imitator" commenting that "It doesn't matter if you like Hololive or vtubers at all; this is just a genuinely great action game that can go toe-to-toe with the hit that inspired it." Wood also noted the game received "glowing" reviews from audiences, gaining 99% positive user ratings, and 45,000 concurrent players when it released on Steam. Ed Thorn from Rock Paper Shotgun discussed HoloCure saying "I am taken aback by how good it is," and compared it to Vampire Survivors noting that "HoloCure is a much slower burn when it comes to fulfilling the power fantasy, and the interplay of its many menus and investment pots might be a bit much for some."
+On November 15, 2023, Cover unveiled their own publishing label for fangames named Holo Indie to better support fangame creators. Cover staff cited HoloCure and Idol Showdown as their direct inspiration for the establishment of the Holo Indie brand. Kay Yu told Cover that he preferred to keep HoloCure independent, but chose to publish his next game Holo X Break under Holo Indie.
+
+
+=== Accolades ===
+
+
+== References ==
+
+
+== External links ==
+HoloCure on itch.io
+HoloCure on Steam

@@ -1,0 +1,24 @@
+Game: World War 3
+appid: 674020
+Source: World War 3 (video game)
+URL: https://en.wikipedia.org/wiki/World_War_3_(video_game)
+Match score: 7.00
+Retrieved: 2026-07-04
+--------
+World War 3 is a free-to-play first-person shooter video game originally developed by The Farm 51 and published by MY.GAMES and currently by The 4 Winds Entertainment for Microsoft Windows. It features real-world locations of Warsaw, Berlin, Moscow, Smolensk, Polyarny, the Gobi Desert, Tokyo, the Korean DMZ, and Istanbul; the locations have been extensively revamped since the early access release on October 19, 2018. The full version followed on December 10, 2022. In December 2023, Wishlist Games acquired the rights to develop World War 3 from MY.GAMES.
+
+
+== Gameplay ==
+World War 3 is a modern military first-person shooter set in the global conflict of a catastrophic future. 
+Described as "a more hardcore Battlefield" in 2018, in June 2020 the developer The Farm 51 planned a revamp and relaunch together with the publisher My.Games and co-publisher The 4 Winds Entertainment joined in 2021; in 2021 the game seemed to be moving away from the "hardcore". The developer commented that World War 3 aims for as much realism as possible without compromising gameplay: "One of our goals with World War 3 is to offer realistic simulations with an altogether enjoyable experience. We call this playable realism." The game features "an advanced ballistics system, full-body awareness, vehicle physics, and extensive customization.
+
+
+== Shutdown ==
+On June 3, 2026, New Generation Games announced that support for the game would end and the servers would be taken offline on August 3.
+
+
+== References ==
+
+
+== External links ==
+Official website

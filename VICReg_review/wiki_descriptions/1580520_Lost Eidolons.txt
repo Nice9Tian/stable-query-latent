@@ -1,0 +1,47 @@
+Game: Lost Eidolons
+appid: 1580520
+Source: Lost Eidolons
+URL: https://en.wikipedia.org/wiki/Lost_Eidolons
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Lost Eidolons is a 2022 tactical role-playing game developed and published by South Korean game developer Ocean Drive Studio. Gameplay involves the player character, Eden, controlling a group of mercenaries through a series of turn-based tactical battles to overthrow a kingdom's emperor.
+The game received generally positive reviews, with reviewers praising the gameplay, story, characters, and voice acting. However, the pacing of the story's presentation, level of polish of the game, art and animations, and variety of gameplay received more negative feedback. A sequel, Lost Eidolons: Veil of the Witch, was released in early access in November 2024.
+
+
+== Gameplay ==
+Lost Eidolons is a tactical role-playing game, where the player controls a group of mercenaries in a quest to overthrow a kingdom's evil emperor. The game is divided into 27 chapters, each containing combat segments, where the player controls the army through turn-based, grid-based tactical combat, and camp segments, where the player controls the protagonist in real time in their camp.
+Each player and enemy character has a class, as well as equipment. Weapons include melee weapons such as axes, swords, and spears, bows, and magic. Combat revolves around a weakness system, based on characters' equipped weapons and armor. There are also enemy monsters, which use their own weakness system. Stages contain terrain that affects combat; for example by dealing damage or reducing the movement of units. Magic attacks can affect terrain, such as fire attacks lighting igniting wooded areas. By participating in combat, characters level up, allowing them to become stronger and unlock new classes. In combat, the player can undo their actions a number of times per battle.
+Performing activities with the player's companions during the camp phase raises their rapport, allowing the player to recruit new characters and unlock bonuses.
+The game features various difficulty options, including permadeath and turn limits, but both of these can be turned off.
+
+
+== Plot ==
+Eden is a freelance mercenary in the small town of Lonetta, under the rule of the Artemesia Empire, founded by Emperor Ludivictus. Despite Ludivictus's attempts to unify the land into a prosperous empire, Benerio suffers from oppression and corruption after learning of a fateful prophecy by a high priest who claims his empire would fall and enter a reign of madness, on his venerable birthday, the Emperor was said to have disappeared. Eden and his friends, Leon and Francisco, are hired by Sera to rescue her sister, Andrea, from a jail controlled by the corrupt Lord Rodrigo, only to be arrested by the Lonettan Guard on Rodrigo's orders. With the help of Marchelle, an Imperial inquisitor investigating the corruption, Eden and his company escape, but Rodrigo is killed by Sera, and Eden's company is branded as fugitives. With the empire in disarray due to ongoing revolts and corruption from the Emperor's disappearance, Eden flees to the kingdom of Benerio and enlists his services under Isoro Feniche, who is rallying people to rebel against the empire. Working alongside Balastar Feniche, Isoro's nephew, Eden liberates Mora and recruits Gilbert, an Imperial tactician, into the army. Klara, a fellow mercenary, helps Eden capture Selven using subterfuge. Upon arriving at Collis, the Feniche forces learn that one of the Orsios, the heirs of Benerio, is in the city. Eden and Balastar capture the city, find Abramo and his ward, Cristobal, and crown the young heir king of Benerio.
+After Abramo is crowned king, many former noble houses of Artemesia pledge their allegiance to Benerio and the young king Abramo. Lord Sigewolf pledges his allegiance to Benerio on the condition that they take Hullisberg from the Empire. However, during this time, Balastar begins showing signs of increasing ruthlessness, ordering his men to massacre Hullisberg. A subsequent ambush led by Kaspar results in Isoro’s death, which drives Balastar to become even more ruthless. He kills Cristobal to seize the role of High Commander. The Kingdom of Benerio eventually defeats the Empire after Eden captures Leroyaure, the capital of the Artemesia Empire. However, Balastar’s growing ruthlessness leaves the population uneasy about life under the Benerio Kingdom, and tensions rise as Balastar’s army prepares to confront Eden. In an attempt to maintain goodwill, Eden arranges a banquet outside the capital, but he is framed for his uncle’s death due to Kaspar exploiting information from Abramo. Balastar’s army viciously attacks Eden’s forces, and Leon dies in the ensuing conflict, sparking a new civil war within the Benerio Kingdom. 
+During his escape, Eden is empowered with the abilities of the Eidolons, powerful godlike spirits who choose certain mortals to be instruments of their will and has chosen both Balastar and Eden as it's hosts, but this power is insufficient to defeat Balastar. With the Empire fallen and Eden gone, Balastar kills Abramo Orsio and becomes the new tyrant of the Benerio Kingdom. Over the next two years, Eden works to reclaim the kingdom by targeting Leroyaure and confronting the tyranny of Balastar’s rule. He rallies the high houses to avenge Abramo and protect their lands from Balastar’s iron-fisted rule at Hullisberg, only to be repelled, dealing a critical blow to the alliance. Besieged at Polmelde, Eden fights a losing battle against Balastar. Meanwhile, Klara seizes the city of Lampikoz from Balastar but strains her relationship with Eden after her reinforcements fail to arrive. With few options left, Eden fortifies Charteu Ridge in anticipation of Balastar’s assault. Fortune turns when Klara defeats Katarina at Linnoit, allowing Eden to corner Balastar at Kiorzen. Eden attacks Balastar rather than accepting an armistice and kills him as he attempts to flee. Depending on whether Eden saved Gilbert, he either rules as a benevolent king or becomes another ruthless conqueror in the annals of Artemesia’s history.
+
+
+== Development and release ==
+Ocean Drive Studio is a South Korean game development studio founded by a team mostly from Nexon, including creative director Jin Sang Kim and head of operations Jungsoo Lee. Lost Eidolons was their first project, which they undertook as they were interested in creating a story-based game without the monetization limitations of an MMORPG or free-to-play game. Kim described the game as having gameplay influences from the Japanese Fire Emblem series, with the aesthetics of Western titles such as Baldur's Gate or The Witcher.
+Lost Eidolons held a campaign on crowdfunding platform Kickstarter in April 2021, which was held not for the purpose of funding game development, but for the purpose of increasing the game's scope and bringing it to other platforms. The game was released for Windows on 13 October 2022. It was later published for the PlayStation 5 and Xbox Series X and Series S on 24 August 2023.
+
+
+== Reception ==
+
+Lost Eidolons received "generally favorable" reviews according to review aggregator Metacritic. 73% of critics recommended the game according to OpenCritic. In Japan, four critics from Famitsu gave the game a total score of 32 out of 40, with each critic awarding the game an 8 out of 10.
+RPG Site described the game as a good first foray into the genre by Ocean Drive Studio. They praised the game's mechanics, complimenting the depth created by the gear and tactical mechanics. However, they criticized the story, art, and animations. They found that the game borrowed elements of traditional western role-playing games more than typical for the genre, with characters not being locked to classes and a rarity-based equipment system.
+Softpedia praised the amount of content and the complexity of the turn-based combat, but criticized the presentation and considered that the game's first few chapters got off to a slow start.
+RPGamer praised the game's characters and voice acting, but felt that these elements were dragged down by presentation, both graphically by the game's UI and animations, and by the game's story. They also praised the depth of the combat system, while feeling that the latter part of the game and optional battles were repetitive.
+The Escapist  considered the story and characters well written, but commented that the camp portions could be tedious to some players, and that the game could have had more diversity in its battles. The publication also highlighted how the story is intertwined with the combat mechanics in each chapter, rather than just in cutscenes.
+
+
+== Legacy ==
+A spin-off sequel, titled Lost Eidolons: Veil of the Witch, which features roguelike elements, was announced on September 1, 2023. There was a preview event at PAX West 2023. It was released on November 6, 2024 in early access and was fully released on October 9, 2025.
+
+
+== References ==
+
+
+== External links ==
+Official website

@@ -1,0 +1,38 @@
+Game: The Mortuary Assistant
+appid: 1295920
+Source: The Mortuary Assistant
+URL: https://en.wikipedia.org/wiki/The_Mortuary_Assistant
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+The Mortuary Assistant is a 2022 American horror game developed by DarkStone Digital and published by DreadXP. Set in 1998 in a small town in Connecticut, players control a newly hired assistant at a haunted mortuary. 
+A film adaptation of the game was released in 2026.
+
+
+== Gameplay ==
+Players control Rebecca Owens, an assistant at a mortuary who embalms corpses under the watch of her boss, Raymond Delver. Players must engage in the mundane aspects of this job while avoiding demonic possession in the haunted mortuary. This involves various different types of jump scares and puzzles throughout the different gameplays.  PC Gamer described it as "more or less a walking simulator with some haunted scenery". It is played from a first-person perspective. Players must correctly identify which corpses are possessed, the demon possessing them, and perform the correct exorcism to survive. This process is timed, as indicated by a set of Post-It notes to show the progress of the demon possessing Rebecca. She has to perform certain tasks to complete the process of making the body ready while simultaneously working on finding the right one and burning it. It has multiple endings, and a new ending was added in July 2023.  The story is procedurally generated, but the game remembers which vignettes the player has seen and shows different ones in each playthrough.
+
+
+== Plot ==
+In 1998, Rebecca Owens (played by Melissa Medina) arrives at the River Fields mortuary in Connecticut to begin her new role as an assistant to her former teacher and the mortuary's owner, Raymond Delver (portrayed by Adam Bennett). During her orientation, Rebecca encounters some unsettling occurrences, prompting Raymond to send her home early. Later that night, Raymond calls her back for an urgent night shift. Upon her arrival, he locks her inside the mortuary, revealing that a demon is trying to possess her. To prevent this, she must locate the possessed cadaver, perform a ritual to bind the demon to it, and then incinerate it, all while carrying out her normal embalming duties. Rebecca faces interference from the demon, which uses hallucinations and sensory manipulation to hinder her work. If she survives the night, Raymond explains that, having been targeted by the demon, it will haunt her for life unless she continues to work at the mortuary to keep it at bay. After Rebecca endures a second night, Raymond confesses that he too was once a target and has been haunted by demons, which is why he is seeking a permanent solution to banish them.
+On subsequent nights, Rebecca can eventually learn that Raymond keeps a possessed woman, Valery, locked in the mortuary basement and collects her blood to produce the Reagent needed to carry out the binding rituals. Despite reservations, Rebecca continues working in the mortuary and the demon begins taunting her by forcing her to relive memories of her past, where her mother died of a drug overdose and she subsequently became a drug addict nearly dying of an overdose herself, resulting in her father's death when he tried to save her. Realizing the demon is trying to use her guilt over her father's death against her, Rebecca can finally come to terms with his death and briefly witnesses a vision of her father who assures her she is not at fault for his death.
+The game's final ending is triggered when Rebecca attempts to banish the demon possessing Valery. However, the ritual fails and Valery attacks Rebecca. Raymond intervenes and his shirt is torn open to reveal a mysterious sigil drawn on his chest, which destroys Valery and part of the sigil is burned away. Rebecca accuses Raymond of hiding more secrets from her and she angrily storms out of the basement. After Rebecca leaves, Raymond enters a hidden chamber where his possessed mother is chained up. He cuts off a piece of his mother's flesh and uses it to restore the sigil. All the while, the demon taunts Raymond by pointing out his source of Reagent is gone, but Raymond remains committed to fighting the demons.
+
+
+== Development ==
+Brian Clarke developed The Mortuary Assistant himself, based in Connecticut.  He had previously worked on massively multiplayer online role-playing games. Clarke's influences included creepy online videos and found footage films, especially Paranormal Activity.  A prototype was released in 2020, and Clarke was surprised to find that many people wanted a full simulation of embalming. After researching embalming, he mostly implemented it realistically. Some aspects were streamlined for time, and he used archaic procedures when he thought they made scenes creepier.  DreadXP released it on Windows on August 2, 2022, and on Switch on April 20, 2023. The game was released for PlayStation 4, PlayStation 5, Xbox One, and Xbox Series X/S on August 2, 2024, alongside an update containing improvements and added features to the base game. A film adaptation was announced in September 2022. DreadXP said it will focus on "the overall narrative" rather than replicating specific gameplay elements or endings.
+
+
+== Reception ==
+
+On Metacritic, The Mortuary Assistant received mixed reviews for Windows and positive reviews for PlayStation 5. On release, it became a bestseller on Steam.
+Despite saying that it is short and "a little rough", Joel Franey of GamesRadar+ said its atmosphere makes up for these shortcomings, and it would later be included in list of top horror games by GamesRadar+. Cass Marshall, writing for Polygon, called it "a little clunky" and said the puzzles can be confusing, but still "delivers a fun set of scares" while being a satisfying simulation. Andrew Heaton of Rely on Horror praised the game for its unique setting, tapping into the fear of death, but found the gameplay somewhat repetitive and encountered some technical issues. Similarly, Harrison Abott of Bloody Disgusting praised the game's content but claimed to encounter many technical issues.
+Reviewing the PlayStation 5 version, Jordan Biordi of CG Magazine called the gameplay loop "incredibly effective", but complained that the gamepad controls were subpar, concluding that the PS5 version was "vastly inferior" to the PC version. Similarly, Timothy Nunes of Playstation Universe wrote in his review that, despite the interesting concept, he wished that he "had just played it on PC" due to its poor controls.
+
+
+== Film adaptation ==
+
+On September 22, 2022, DreadXP and its parent company Epic Pictures Group announced the development of a movie adaptation of The Mortuary Assistant with Jeremiah Kipp writing and directing, and Willa Holland starring as Rebecca Owens and Paul Sparks as Raymond Delver. On July 25, 2025, Shudder revealed at their Comic-Con panel that they had acquired the film and would release it in 2026. It was released in March of the same year.
+
+
+== References ==

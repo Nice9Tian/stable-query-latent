@@ -1,0 +1,38 @@
+Game: shapez 2
+appid: 2162800
+Source: Shapez 2
+URL: https://en.wikipedia.org/wiki/Shapez_2
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Shapez 2 (stylized as shapez 2) is a factory simulation video game developed by tobspr Game, as a sequel to Shapez (2020). 
+In the series, the player operates a factory which produces geometric shapes, through operations such as cutting and rotating source primitives. Those shapes are in turn used to upgrade and unlock equipment for producing further shapes. Shapez 2 expands on this concept with new mechanics, such as the ability to make 3D layered factories. 
+The game was first released into early access on 15 August 2024 and saw full release on 23 April 2026, to positive reception.
+
+
+== Gameplay ==
+
+Similar to its predecessor Shapez, players extract and process various resources in a procedurally generated world to supply a central hub called the "Vortex". Different types of buildings are available, such as balancers, cutters, and extractors. There are no victory conditions, and all buildings are free of cost, so factories can theoretically expand infinitely.
+As more shapes are supplied and the factory expands, players need to make more complex shapes composed of many layers of cut and dyed shapes. Each shape contains up to four layers of four quadrants. In later stages of the game, players will need to supply thousands of copies of such shapes to the Vortex.
+Unlike Shapez, which is in 2D, Shapez 2 uses 3D graphics, which allows the player to build on multiple layers. Shapes remain in 2D, and most buildings are still limited to one per layer.
+Shapez 2 also adopted a new theme, switching from a plain white background to outer space. Modular islands and space trains were introduced along with the new theme, allowing the player to easily copy-and-paste sections of factories. Players are also given the ability to adjust the game's difficulty, which determines the size of resources and position of islands.
+
+
+== Development and release ==
+The first trailer for Shapez 2 was released on 16 August 2023. An open demo was made available on Steam on 25 January 2024, which received positive reviews from critics. Shapez 2 was released for early access on 15 August 2024. The game released into 1.0 on April 23, 2026.
+On 25 June 2026, Update 1.1 was released, adding Manufacture Hard Mode – a more demanding take on the existing Manufacture Mode – as well as a variety of quality of life improvements. A cosmetic DLC, 'Hyper Skin', was also made available for purchase.
+The game was developed by German indie developer tobspr Games using the Unity engine. The studio received partial funding with a grant of €537,833 from the German government via the "Computerspielförderung des Bundes".
+Unlike its predecessor, which was free and open source, Shapez 2 requires a purchase.
+
+
+== Reception ==
+
+Shapez 2 received "generally favorable" reviews from critics, according to review aggregator website Metacritic.
+Ollie Toms from Rock Paper Shotgun described the game as "peerlessly satisfying", while Lawrence Scotti from PCGamesN said that the game "maintains a zen-like atmosphere."
+
+
+== References ==
+
+
+== External links ==
+Official website

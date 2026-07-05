@@ -1,0 +1,41 @@
+Game: Planet of Lana
+appid: 1608230
+Source: Planet of Lana
+URL: https://en.wikipedia.org/wiki/Planet_of_Lana
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Planet of Lana is a 2023 puzzle-platform game developed by Wishfully and published by Thunderful Publishing for Windows, Xbox One, Xbox Series X/S, Nintendo Switch, PlayStation 4, and PlayStation 5, and later by Playdigious for Android and iOS. In the game, the player assumes control of a teenage girl named Lana and her cat-like companion Mui, as they explore a fictional planet invaded by hostile alien machines. The game was inspired by cinematic platformers such as Inside, while its visuals were inspired by films from Studio Ghibli.
+Planet of Lana received generally positive reviews upon release. Critics praised the game's art direction, storytelling, music, and sound design, though some criticism was aimed towards the lack of innovation in its puzzles and short length. A sequel, titled Planet of Lana II, was released on March 5, 2026.
+
+
+== Gameplay ==
+
+Planet of Lana is a puzzle-platforming game with a side-scrolling perspective. In the game, the player assumes control of Lana, a young girl, as she explores a planet which has been invaded by hostile alien machines in order to rescue her sister who has been abducted. Throughout her adventure, she is accompanied by a cat-like creature named Mui. Both of them must work together in order to traverse the game's world and solve various puzzles. Lana can swim, direct Mui to locations and issue commands to it, while Mui, which is smaller and much more agile, can access out-of-reach places and open up new pathways for Lana. Mui can also hypnotize some hostile creatures, taming them.
+Lana and Mui cannot directly attack the alien machines or other hostile creatures, and must rely on stealth tactics to avoid being detected, or use the environment to their advantage to get past any potential threat. As the player progresses in the game, they will gain the ability to temporarily tame creatures and hack into machines.
+
+
+== Development ==
+Planet of Lana is the debut project of independent developer Wishfully. The game's development originated from a picture that the game's director Adam Stjärnljus drew in 2017. The picture, which sees a girl gazing at a large robot creature, subsequently became the foundations of the game. An adjusted version of the picture was subsequently chosen to be the game's key art. Stjärnljus founded Wishfully in August 2018 with his wife Maria Brunsson to work on the game. The title was inspired by cinematic platformers such as Inside and Limbo, and older adventure video games such as Another World and Oddworld: Abe's Oddysee.  Stjärnljus wanted to create a game that features a colorful sci-fi universe, as opposed to the dark and gloomy backdrops found in other games. Films produced by Studio Ghibli, such as Spirited Away and My Neighbor Totoro, and The Legend of Zelda video games such as Wind Waker and Breath of the Wild, influenced the game's visual style. While the team initially planned to have the world and characters in 2D only, it received "harsh" feedback from publishers, prompting the team to switch to a more 2.5D look.
+Writer and co-director Klas Martin Eriksson added that the team initially wanted the game to have no dialogue, with emotions communicated through body language alone. The team subsequently decided that the story needed more "emotional expression", and prompted the team to create a fictional language. Composer Takeshi Furukawa, who previously worked on The Last Guardian, reached out to Wishfully and offered to work on the game's soundtracks after looking at its artwork. Ericksson added that the game's music will play a "pretty integral part of the story".
+Wishfully and publisher Thunderful Publishing officially announced the game in June 2021 during the Summer Game Fest. Initially set to be released in 2022, the game was delayed to early 2023. The game was released for Windows, Xbox One and Xbox Series X/S on May 23, 2023. It was later launched for Nintendo Switch, PlayStation 4, and PlayStation 5 on April 16, 2024. Playdigious published the Android and iOS versions on December 9, 2025.
+
+
+== Reception ==
+
+Planet of Lana received "generally favourable" reviews, according to review aggregator platform Metacritic.
+Writing for GamesRadar+, Heather Wald described the game as "a beautiful adventure full of mystery, suspense, and charm". She praised the game's story and enjoyed the variety of the puzzles featured in the game, though she remarked that the controls for Mui are unrefined at times. Ravi Sinha from GamingBolt praised the game's presentation and the game's handpainted visual style, calling it "gorgeous". He compared the game favourably to Inside, as the game was "tautly paced with well-executed puzzles but also carried by an undercurrent of mystery". Rachel Watts from Rock, Paper, Shotgun described the story as an "epic odyssey", "one that recalls the scope and drama of Lord of the Rings, but in a setting that feels closer to Star Wars". Despite her praise for the game, in particularly its opening and final act, she wrote that the middle act was "mediocre".
+Marcus Stewart from Game Informer strongly praised the game's visuals and music, calling it one of the best in the year, though he was disappointed by the game's puzzles design for not offering new challenges despite the player's progression. Jordan Helms from Hardcore Gamer, while impressed by the game's visuals and music, wrote that the game was "far from the most inventive or unique take on the puzzle-platformer formula".
+During the 27th Annual D.I.C.E. Awards, Planet of Lana received a nomination for "Outstanding Achievement in Original Music Composition".
+
+
+== Sequel ==
+
+A sequel, Planet of Lana II: Children of the Leaf, was announced in June 2025 and was released on March 5, 2026.
+
+
+== References ==
+
+
+== External links ==
+Official website

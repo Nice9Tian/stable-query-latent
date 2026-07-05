@@ -1,0 +1,28 @@
+Game: Zero Hour
+appid: 1359090
+Source: Zero Hour (video game)
+URL: https://en.wikipedia.org/wiki/Zero_Hour_(video_game)
+Match score: 6.72
+Retrieved: 2026-07-04
+--------
+Zero Hour is a tactical first-person shooter game developed by the Bangladeshi studios M7 Productions and Attrito. It was released on early access in August 2020 on Steam, and fully released on September 9, 2024. The game features in-game voice acting entirely in Bangla and settings inspired by real locations across Bangladesh.
+
+
+== Development ==
+Zero Hour was developed by a team from Bangladesh, led by M7 Productions and Attrito. The project began with a prototype map inspired by tactical shooters like SWAT 4 and Rainbow Six Siege, ultimately evolving into a full-fledged game. All game assets were reportedly developed in-house without reliance on third-party resources. The game’s development took place during the COVID-19 lockdown, allowing the developers time to work on the project. The name Zero Hour refers to the time an operation is set to start.
+
+
+== Gameplay ==
+Zero Hour features a grounded, slow-paced tactical experience that emphasizes teamwork and planning over run-and-gun action. It features online PvP multiplayer and cooperative solo or squad PvE missions. The core multiplayer mode pits two five-person teams against each other: attackers—modeled after Bangladeshi SWAT unit MS Unit-9—must defuse bombs or rescue hostages, while defenders fortify objectives and set traps. The game incorporates realistic weapons, gadgets (like ballistic shields and breaching tools), and tactical equipment, and it uses locations modeled after Bangladeshi settings. Environments feature destructible doors, environmental traps, and darkness manipulation via power cut-offs.
+PvE missions help players practice tactics against AI, though some reviews note the AI is less robust than in multiplayer. Zero Hour also includes features such as a planning table for pre-round strategizing and support elements like a K-9 companion in certain scenarios.
+
+
+== Reception ==
+Zero Hour received praise for its innovation as the first major tactical FPS from Bangladesh, noted for its immersive gameplay and authentic representation of Bangladeshi culture. The game's focus on strategy, and emphasis on teamwork drew comparisons to SWAT 4 and the Tom Clancy's Rainbow Six titles.
+
+
+== References ==
+
+
+== External links ==
+Official website

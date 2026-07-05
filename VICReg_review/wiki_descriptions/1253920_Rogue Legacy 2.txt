@@ -1,0 +1,35 @@
+Game: Rogue Legacy 2
+appid: 1253920
+Source: Rogue Legacy 2
+URL: https://en.wikipedia.org/wiki/Rogue_Legacy_2
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Rogue Legacy 2 is a platform video game developed and published by Cellar Door Games. It is the sequel to 2013's Rogue Legacy, and the game was released for Windows via early access in August 2020. The full version was released in April 2022, for Windows, Xbox One, and Xbox Series X/S, followed by a Nintendo Switch port in November. The game was released for PlayStation 4 and PlayStation 5 in June 2023.
+
+
+== Gameplay ==
+Rogue Legacy 2 is a platform game with roguelite and Metroidvania elements. In the game, the player assumes control of a knight, who must explore procedurally generated dungeons to collect its treasures and defeat enemies. While the knight is equipped with swords and shields and mages can cast magic, the game introduces several additional gameplay classes. These new classes include the Ranger who can summon platforms and use a bow and arrow, and the Barbarian who uses an axe. As a roguelike, players will have to start from the beginning when their player avatar is killed in the game. However, the gold they have collected in each run can be spent on permanent upgrades such as new weapons, gear and runes. When the player starts a run again, they will have to pick a random character with different genetic traits, which may either enhance or hinder the player's combat efficiency. While exploring a dungeon, they will also collect Heirlooms, which are permanent ability upgrades that are hidden in special rooms.
+
+
+== Development ==
+Cellar Door Games announced Rogue Legacy 2 in April 2020. While the studio planned to release the game via early access in July, it was later shifted to August 18 the same year. The initial early access release contained one and a half dungeons, four gameplay classes, and one enemy boss. The studio planned to release large updates every two months, and expected the game to stay in early access for around a year. The game's development lasted for about four years. The game left early access and was fully released on April 28, 2022, for Windows, Xbox One, and Xbox Series X/S.
+
+
+== Reception ==
+
+Rogue Legacy 2 received "universal acclaim" for Xbox Series X/S and PlayStation 5 according to review aggregator platform Metacritic; the Windows and Nintendo Switch versions received "generally favorable" reviews.
+Mitchell Saltzman of IGN awarded the game a 9 out of 10, stating that the game is "a transformative sequel that essentially rebuilds the extraordinarily influential 2013 original into a modern roguelite that stands nearly shoulder to shoulder with the best of the genre".
+PC Gamer gave the game an 88 out of 100, calling it "a cheerful and challenging dungeon crawler where death is a good thing" and "a spectacular follow-up that revitalises the series with fresh ideas while expanding on what made the original so immensely enjoyable in the first place".
+Jordan Devore of Destructoid compared Rogue Legacy 2 favorably against other roguelites in an 9.5 out of 10 review:
+
+Other popular roguelites [...] can still have dicey moments of despair. But I never felt like any of my lost progress was in vain. As expensive as perma-upgrades eventually get, you're always earning in Rogue Legacy 2, and the game isn't afraid to hand out stepping stones to let you focus on your next milestone. There's always hope.
+John Carson of Game Informer awarded the game a score of 9 out of 10, noting that "[t]here's a lot to clean up with the core progression systems to make the ramp from beginning to end escalate more evenly, but I've enjoyed most of my hours struggling through countless generations of my goofy little bloodline".
+In a positive review, Ryan Gilliam of Polygon remarked that "Rogue Legacy 2 refuses to ever let me be bored, and that's more than enough to set it apart from the heap of roguelites that have followed in the original game's wake".
+
+
+== References ==
+
+
+== External links ==
+Official website

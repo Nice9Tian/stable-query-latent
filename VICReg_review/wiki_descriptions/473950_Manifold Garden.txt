@@ -1,0 +1,38 @@
+Game: Manifold Garden
+appid: 473950
+Source: Manifold Garden
+URL: https://en.wikipedia.org/wiki/Manifold_Garden
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Manifold Garden is a puzzle video game developed by American artist William Chyr. It was released on Windows, macOS, and iOS on October 18, 2019. The player must navigate an abstract series of structures that appear to repeat into infinity, while solving a progression of puzzles. Ports for PlayStation 4, Nintendo Switch and Xbox One were released on August 18, 2020. An upgraded version of the game was released for Xbox Series X and Series S as a launch title on November 10, 2020, and an upgraded PlayStation 5 version released on May 20, 2021.
+
+
+== Gameplay ==
+
+The game takes place in a "universe with a different set of physical laws" where the player can manipulate gravity, being able to "turn walls into floors". The player must solve puzzles using the world's geometry in addition to devices within the architecture of the world. To aid the player, the world's tone takes on one of six colors depending on which direction they have manipulated gravity. Several facets of the game's world may only be interacted with when the gravity is oriented directly, with these objects sharing one of the six colors.
+The game's worlds frequently appear to repeat into infinity into all directions. Because of this, many puzzles revolve around falling off a ledge from a lower part of a structure to land back on the top of the next version of that structure below. Later puzzles will involve growing trees and natural elements to bring life back to the "sterile" world.
+
+
+== Development ==
+Creator William Chyr had a passion for large-scale artwork and was previously known for massive balloon sculptures. Seeking to change his work with sculptures, and finding other mediums cost-prohibitive, he decided to move to a video game with no space limitations. Work on the game started in November 2012. Further he wanted to make a puzzle game that he felt he could finish as a player, having learned that after playing through The Witness that there had been an entire section of puzzles he had missed there.
+The game was originally known as Relativity, after the M.C. Escher print Relativity upon which it was based, before it was re-revealed as Manifold Garden. Chyr observed that some have called the game taking place in non-Euclidean geometry, but he asserts Manifold Garden uses "impossible geometry" in Euclidean space, employing a method of world wrapping in three-dimensional space to make the world appear infinite. This often required rendering more than 500 times the typical geometries that a 3D game engine would provide. The game engine still supports the use and rendering of non-Euclidean portals, with the player able to see through a portal into a different level, and with possible recursion if other portals are in view. Chyr attributes the capabilities of the engine to their graphics programmer Arthur Brussee.
+A core part of Chyr's design for the game was to leave it absent of any explicit instructions, using an initial puzzle that required the player, in order to activate a button across a chasm, to jump into the chasm and land on the other side as a result of falling through the game's repeating geometries. His team early on had discovered that playtesters would often become confused in walking around the various levels, combined with the shifting changes in gravity. To help, they designed each outdoor level to appear unique so that players could immediately recognize the setting, and strategic use of windows and other visibility features so that players could have a sense of a reference point with respect to gravity. Chyr had used about 2000 hours of professional playtesting through the game's development to make sure players could navigate the game world and solve the puzzles.
+Chyr worked on the game on his own for the first three years, circa 2015, at which point he brought on additional staff to help build out the game with a stronger focus on finishing the game. He had become concerned at this time by industry fears of a possible "indiepocalpse" due to possible oversaturation of indie games and was not sure if Manifold Garden would reach completion. By April 2018, the development of the game had been ongoing for five years. Chyr stated then that he may leave game development after it is released, due to art games not being financially sustainable. He estimated that the game would have to sell at least 40,000 units to be successful and not a "total disaster" financially. He stated that a lack of experience cost him a year or two of development time, and the development time was protracted by its scope, which was realistically large enough to require three developers. At that point, he and the other developers on the game were not taking a salary outside cost-of-living to maximize the amount of funding they had been able to get. Sometime before release, Chyr signed a year-long exclusivity deal with the Epic Games Store, as well as with Apple Inc., which helped to finance the completion of the game as well as seeing it through the period after release.
+The game's inspirations include video games Starseed Pilgrim, Antichamber, Infinifactory, Portal, Fez, and The Witness.   Chyr was also inspired by the films Inception, Blade Runner, and 2001: A Space Odyssey, the books House of Leaves by Mark Z. Danielewski and Blame! by Tsutomu Nihei, and the architecture of Frank Lloyd Wright and Tadao Ando. The game was also intended as a metaphor for the last 400 years of physics discoveries.
+The game was released on October 18, 2019 for Microsoft Windows, macOS, and for iOS devices through Apple Arcade. Versions for Nintendo Switch, PlayStation 4, and Xbox One were released on August 18, 2020.
+
+
+== Reception ==
+
+Manifold Garden received "generally favorable reviews" according to review aggregator Metacritic. The game was called "beautifully hypnotic" by Philippa Warr of Rock, Paper, Shotgun. Nathan Grayson of Kotaku called the game "incredibly pretty" and "damn cool", remarking that the game "broke" his brain. Christian Donlan of Eurogamer named Manifold Garden as a "Eurogamer Essential" title, praising its puzzle design as its "epiphanies are not cheap at all. They are surprisingly frequent, sure, but each one stands for something, a little bit more understanding, a little bit more progress, a fresh way of viewing the world that had been obscured until now." Polygon's Nicole Carpenter called the game a "surreal masterpiece", and also commented favorably on the puzzle design, stating "I often feel like I have no idea what I'm doing, but I never feel despondent or troubled by that confusion."
+The game was nominated for "Game of the Year" and "Best Audio/Visual Accomplishment" at the Pocket Gamer Mobile Games Awards, and for "Best Debut" with William Chyr Studios at the Game Developers Choice Awards. It also received honorable mentions for Best Audio Design at the Independent Games Festival, and was also nominated for "Debut Game" at the 16th British Academy Games Awards.
+
+
+== References ==
+
+
+== External links ==
+ Media related to Manifold Garden at Wikimedia Commons
+
+Official website

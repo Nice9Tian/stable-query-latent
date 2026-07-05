@@ -1,0 +1,28 @@
+Game: Demeo
+appid: 1484280
+Source: Demeo
+URL: https://en.wikipedia.org/wiki/Demeo
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Demeo is a 2021 role-playing video game developed and published by Resolution Games. It was originally a virtual reality game. Demeo was released on the Oculus Quest and Windows then was later ported to the PlayStation 5 via the PlayStation VR2 headset in 2023.  
+A Spin-off of the game, Demeo Battles, was released on November 9, 2023  Another spiritual successor, Demeo x Dungeons & Dragons: Battlemarked, was released on November 20, 2025.
+
+
+== Gameplay ==
+Demeo is a tabletop-themed role-playing game with survival elements.  It borrows from classic tabletop games Magic: The Gathering and Dungeons & Dragons. The main objective is to get to the "Nevermost Catacombs" and defeat the enemy there. This requires clearing the floor of the "Elvian Necropolis". On each floor a monster holds the key to the floor exit to get to the next floor. The four available heroes are The Guardian, The Assassin, The Sorcerer, and The Hunter, each with their own abilities. The two modes are Skirmish and Multiplayer. In Skirmish Mode the player controls up to three characters. Play is turn-based meaning each character gets a turn to attack. After the turn is over the enemy gets to attack. Each player is given two action points for each turn that they then can choose to use. Actions include Spells, Special Attacks, and Items, all represented by cards. Cards include Banish, which can teleport enemies, Barricade to protect from an enemy, and the Repeating Ballista which shoots three bolts each turn at an enemy until dies.
+Players can visit an in-game shop tilted "Cleepto's Bazzar" where they can buy cards to add to their deck.
+Up to four players can play Demeo, with each player controlling a Hero, playing in turn.
+
+
+== Development ==
+The game was developed and published by Swedish company Resolution Games on May 6, 2021. After the launch, Resolution Games announced a road-map for more content. This content included "Roots of Evil", a new place for players to hangout titled "Players Hangout", and a PC edition.
+
+
+== Reception ==
+
+Demeo received "generally favorable reviews" according to review aggregator Metacritic.
+During the 25th Annual D.I.C.E. Awards, the Academy of Interactive Arts & Sciences nominated Demeo for Immersive Reality Game of the Year.
+
+
+== References ==

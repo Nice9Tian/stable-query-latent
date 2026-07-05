@@ -1,0 +1,55 @@
+Game: Little Nightmares II
+appid: 860510
+Source: Little Nightmares II
+URL: https://en.wikipedia.org/wiki/Little_Nightmares_II
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Little Nightmares II is a puzzle-platform horror adventure game developed by Tarsier Studios and published by Bandai Namco Entertainment. The story follows Mono, who must work together with Six, the protagonist from Little Nightmares, to survive the horrors of the Pale City and discover its dark secrets. The game was released for Google Stadia, Nintendo Switch, PlayStation 4, Windows and Xbox One on 11 February 2021. An upgraded version, titled Little Nightmares II: Enhanced Edition, was developed by Supermassive Games and released on 25 August 2021 for PlayStation 5, Windows and Xbox Series X/S.
+Little Nightmares II received positive reviews upon release. Critics praised its graphics, atmosphere, and quality of life improvements, with some finding it superior to its predecessor. Within one month of release, the game had sold one million units worldwide. A sequel in the series, Little Nightmares III, was developed by Supermassive Games and released in October 2025.
+
+
+== Gameplay ==
+Through the character Mono, the player explores a 3D world, encountering platforming situations and puzzles that must be solved to proceed. Mono has the ability to grab certain items and swing them to break objects or to fight back against smaller foes, although he, like Six in the first game, must rely on stealth and the environment to evade larger foes. Six is a computer-controlled character in this game, however the player is also given the ability to call out to Six and hold her hand to make sure they stay together. Mono and Six must often work together to solve environmental puzzles and defeat or evade enemies, such as a sequence where they both need to operate a ranged weapon. The game also features collectible hats and glitching remains, the latter of which unlock an additional scene upon collecting them all.
+
+
+== Plot ==
+Mono, a boy wearing a paper bag on his head, awakens in the Wilderness from a dream of a door marked with an eye at the end of a hallway. He enters a decrepit shack and frees Six, who is being held prisoner by the masked Hunter who lives there. The Hunter pursues the pair until he corners them but they kill him with a shotgun. Using a door as a raft, Mono and Six drift across a body of water and wash up at the Pale City, which is shrouded by mist and rain and strewn with old television sets. Throughout the journey, Mono attempts to use televisions as portals to enter the hallway from his dream. However, he is always pulled back out by Six before he can reach the door. He also encounters several ghostly, glitching remains of children, which he can absorb by touching them.
+Mono and Six enter the School, where they are separated when Six is captured by the porcelain Bullies, the School's rabid students. Mono saves Six and they escape the long-necked Teacher. The pair reach the Hospital, where they encounter the mannequin-like Patients, their detached Living Hands, and the bulbous Doctor who crawls on the ceilings. Mono lures the Doctor into an incinerator and may choose to either kill him or leave him trapped inside. Mono and Six then exit into the heart of the Pale City. They spot the Signal Tower, which emits a pervasive Transmission that controls the city's inhabitants: the television-addicted Viewers, whose faces have been distorted from prolonged exposure to it. When Mono finally reaches the door through a television set, it opens to reveal the spectral Thin Man. After Mono is pulled out from the television, the Thin Man emerges too and captures Six, leaving behind a glitching shadow of her. Six's shadow remains lead Mono close to the Signal Tower, where he battles the Thin Man. Discovering he has powers similar to the Thin Man's, Mono disintegrates him before pulling the Signal Tower towards himself.
+Mono enters the Signal Tower and finds Six, now a distorted giant. She becomes hostile when Mono damages her music box, but he returns her to normal by destroying it. As the Signal Tower's interior crumbles, the children are pursued by the gelatinous mass of flesh and eyes which forms its core. They outrun the mass, but Six betrays Mono and allows him to fall into a chasm before escaping through a television portal. Alone and surrounded by the mass, Mono sits in a solitary chair and resigns himself to his fate, and he is transported to the room at the end of the hallway from his dream. Time passes, and Mono grows older and taller while slowly being corrupted by the Signal Tower's influence, ultimately becoming the Thin Man.
+If the player has collected all of the glitching remains, the final scene shows Six exiting the television portal and encountering her shadow self, which gestures to a pamphlet on the floor advertising the Maw. Six's stomach suddenly growls with hunger, setting the events of the first game in motion.
+
+
+== Development ==
+
+In regards to a sequel, Tarsier Studios stated that they had many ideas for things they want to continue to explore. At Gamescom 2019, Little Nightmares II was announced for a 2020 release. It features a new player character called Mono, with Six returning as a computer-controlled character, and its story precedes the events of Little Nightmares. However, it was delayed due to the COVID-19 pandemic and because the game needed "more time and love". According to game's producer Lucas Rousell, at the start of pre-production the team considered the possibility that it would be a co-op game, but quickly scrapped that to match the story.
+A demo for the game was released on 30 October 2020. The game was released on February 11, 2021.
+On 20 February 2021, Tarsier, which was acquired by Embracer Group in 2019, announced that they would not continue making Little Nightmares games, but publisher Bandai Namco Entertainment expressed an intent to continue the franchise in the future.
+
+
+== Reception ==
+
+Little Nightmares II received "generally favorable" reviews, depending on a platform, according to review aggregator website Metacritic.
+Jordan Devore from Destructoid wrote: "Little Nightmares II has this entertaining intensity to it that's as fun to watch as it is to play." He awarded the game an 8.5/10. Easy Allies scored the game an 8.5/10, writing: "Little Nightmares II once again takes you on a disturbing journey through a vividly realized world, and the sense of danger and desperation you feel is as chilling as ever."
+Game Informer acclaimed the game, giving a score of 9.25/10 as he wrote: "This impressive follow-up builds on its predecessor with emotional gut punches and unnerving visuals that stick with you." GameRevolution wrote: "Little Nightmares 2 succeeds in building on the foundation that the original game laid out. The folks at Tarsier Studios have expanded on the story and lore with new characters and settings, added gameplay mechanics that don't overcomplicate the action or bloat the pacing, and proven themselves worryingly imaginative when it comes to thinking up dastardly denizens of a perfectly grim world." The game was scored a 7.5/10. GamesRadar+ scored the game a 4/5 stars, writing: "An amazing little horror game that can be as frustrating as it is brilliant." Hardcore Gamer rated the game a 4/5. Jordan Helm wrote: "That same distortion and monstrous-like exaggeration of previous may be out in full force once again, but Little Nightmares II succeeds on its bolder and more refined continuation from the 2017 original."
+IGN gave the game a score of 7/10: "Little Nightmares 2 delivers similar stealth and scares to the original, but leaves less of a lasting impact." Nintendo Life scored the game an 8/10: "Little Nightmares II is nothing less than engaging from start to finish, with superb pacing, entertainingly varied level design and excellent graphics and performance." PC Gamer (US) awarded the game a 76/100 as he wrote: "Little Nightmares 2 understands exactly what it wants to be, and mostly pulls it off."
+Shacknews also acclaimed the game as he scored it a 9/10: "Little Nightmares 2 is bigger (literally twice as long) and better than the first game. Yet, it keeps that personal, closed-in feel that Little Nightmares established." VG247 wrote: "Little Nightmares 2 is a superb sequel that carries on the impressive tone of the original, but improves in all key areas." They scored the game a 4/5. VideoGamer.com awarded the game a 7/10, as they wrote: "It's worth pointing out that few other studios have the confidence to take this approach to horror: not to jolt you with sudden frights or to ration your ammunition, but to probe and puncture your emotional ease by putting foulness in such close proximity to the childish."
+In a more critical review, Push Square scored the game a 6/10: "Little Nightmares II is worth experiencing for its art direction alone, although its hand cramping controls can be an obstacle at times."
+
+
+=== Sales ===
+In Japan, the Nintendo Switch version of Little Nightmares II was the third bestselling retail game during its first week of release, with 24,470 copies being sold, while the PlayStation 4 version sold 11,163 copies in Japan throughout the same week, making it the seventh bestselling retail game of the week in the country. The game debuted at the seventh position in the UK and sixth position in the Switzerland in the all-format charts. Within one month of release, the game had sold one million units worldwide.
+
+
+=== Accolades ===
+
+
+== Sequel ==
+In August 2023, Little Nightmares III, developed by Supermassive Games, was announced at Gamescom. Initially set for a 2024 release, it was later delayed to 2025. The game was released on 10 October 2025.
+
+
+== References ==
+
+
+== External links ==
+Official website

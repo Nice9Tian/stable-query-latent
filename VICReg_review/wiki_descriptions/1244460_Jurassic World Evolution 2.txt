@@ -1,0 +1,46 @@
+Game: Jurassic World Evolution 2
+appid: 1244460
+Source: Jurassic World Evolution 2
+URL: https://en.wikipedia.org/wiki/Jurassic_World_Evolution_2
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Jurassic World Evolution 2 is a construction and management simulation video game developed and published by Frontier Developments. A sequel to Jurassic World Evolution (2018) and set between Jurassic World: Fallen Kingdom and Jurassic World Dominion, the game was released for PlayStation 4, PlayStation 5, Windows, Xbox One, and Xbox Series X and Series S on November 9, 2021. It received generally favorable reviews from critics, who deemed it an improvement over its predecessor. A sequel, Jurassic World Evolution 3, was released on October 21, 2025.
+
+
+== Gameplay ==
+
+Similar to the first game, Evolution 2 is a business simulation in which the player constructs a Jurassic World prehistoric theme park. The game features more than 75 prehistoric species, including various dinosaurs, pterosaurs and marine reptiles. Players need to build enclosures, aviaries and lagoons to contain these animals for visitors' viewing. These animals have different needs, such as the type of food they eat and the extent of forestation they require in their habitat, that must be met to keep them healthy and satisfied. The game features a dynamic territory system which sees animals combating against each other for resources if they live in the same habitat. Their territories are constantly shifting depending on the resources available in their habitat. When compared with its predecessors, the game features a more complex artificial intelligence for the prehistoric species, which will hunt in packs and interact with others more frequently and realistically. The terrain tool was completely reworked, with players needing to plant the appropriate trees and shrubs for the herbivores to eat.
+Players need to build various facilities and recruit scientists for research and incubating the prehistoric species. The scientists recruited offer different gameplay benefits, but overworked and disgruntled workers will sabotage the park and intentionally let the animals escape. To incubate a prehistoric animal, the player must first extract their DNA from their fossils. Their DNA can be adjusted to give the animals unique traits, such as resilience towards a certain kind of disease. Players also need to recruit rangers and veterinarians in order to keep the animals happy and healthy. To entertain the guests, players can construct different rides such as the Gyrospheres, which can now pass through multiple enclosures and be attacked by prehistoric animals. Guests are categorized into different groups with different interests. For instance, nature lovers are more keen to see herbivores, while adventurists are more interested in seeing carnivores. Amenities such as toilets, gift shops and restaurants also need to be constructed and players can customize them with different modules and decorations in order to meet the needs of different guests.
+Unlike the first game, which is set on the fictional archipelago of Las Cinco Muertas, Evolution 2 is set in the outside world, featuring various biomes such as forests and deserts, with each providing unique challenges for the player while they are designing their parks. The maps featured in the game are significantly larger than those in the first game. The game features various modes, including a campaign mode which is set between Jurassic World: Fallen Kingdom and Jurassic World Dominion, a "Chaos Theory" mode which revisits key narrative moments in the Park and World trilogies (such as constructing the Jurassic Park facility near San Diego, as seen in The Lost World: Jurassic Park) and the Challenge and Sandbox modes also return. Jeff Goldblum and Bryce Dallas Howard return to provide the voice for Ian Malcolm and Claire Dearing respectively.
+
+
+== Development and release ==
+Jurassic World Evolution 2 was developed and published by Frontier Developments. The game was announced by Goldblum in June 2021 during Summer Game Fest. The game's campaign mode is considered canon with the films, taking place between Jurassic World: Fallen Kingdom and Jurassic World Dominion. Frontier worked closely with Universal Pictures, ensuring that the game fits into the studio's future plans for the franchise. The company was given access to Universal's collection of sound effects and theme music from the films.
+Jurassic World Evolution 2 was released on November 9, 2021, for PlayStation 4, PlayStation 5, Windows, Xbox One, and Xbox Series X and Series S. Players who pre-ordered the game received three vehicle skins inspired by The Lost World: Jurassic Park. At launch, the Deluxe Upgrade Pack was released and added five new species.
+
+
+=== Updates and downloadable content ===
+Jurassic World Evolution 2 is supported post-launch with the release of paid downloadable content (DLC) and free updates. The first DLC, the Early Cretaceous Pack, was released on December 9, 2021, and added four new species from the era. The second DLC, the Camp Cretaceous Dinosaur Pack, was released on March 8, 2022, and added one new species, one hybrid species and new appearances based on the animated televisions series Jurassic World Camp Cretaceous.
+The game's first expansion, the Dominion Biosyn Expansion, was released on June 14, 2022, and features a new campaign, four new species, and new appearances based on Jurassic World Dominion. The third DLC, the Late Cretaceous Pack, was released on September 15, 2022, and added four new species from that era.
+The game's second expansion, the Dominion Malta Expansion, was released on December 8, 2022, and features a new campaign, four new species, and new appearances based on Jurassic World Dominion. The fourth DLC, the Feathered Species Pack, was released on March 30, 2023, and added three feathered species and one flying reptile. A free update that added decorations inspired by the first movie was released on June 8, 2023, in advance of its 30th anniversary.
+The fifth DLC, the Prehistoric Marine Species Pack was released on August 10, 2023, and added four new marine species. The sixth DLC, the Cretaceous Predator Pack, was released on November 30, 2023, and added four new carnivorous species. The seventh DLC, the Secret Species Pack, was released on March 13, 2024, and added three hybrid species from the first game and a new hybrid featured in Camp Cretaceous. The eighth DLC, the Park Managers' Collection Pack, was released on May 16, 2024, and added four new species.
+
+
+== Reception ==
+
+The game received "generally favorable reviews", according to review aggregator platform Metacritic.
+PCGames N awarded the game 7: "Improves on its predecessor in clever ways and still boasts the most gorgeous dinosaurs ever made in a game. But dealing with disastrous events beyond your control still isn't any fun, even if it's thematic for the  Jurassic Park IP".
+Early sales on the PC were lower than expected, as the game was released during the same week as several other high-profile PC games. The home console versions sold as expected, and the game had approximately 500,000 players across all platforms within two weeks of its release. Frontier expected the game to raise more revenue than its predecessor within its first year, in part because of the upcoming release of Jurassic World Dominion.
+
+
+== Sequel ==
+
+A sequel, Jurassic World Evolution 3, was announced by Frontier Developments in May 2024 and released on October 21, 2025.
+
+
+== References ==
+
+
+== External links ==
+Official website

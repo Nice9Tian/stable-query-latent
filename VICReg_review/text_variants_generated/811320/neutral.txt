@@ -1,0 +1,7 @@
+Jupiter Hell is a turn-based roguelike set in a classic 90s-flavored sci-fi universe. It is designed for players who miss games that do not hold their hand: action follows every move, so when you act, enemies act as well. Death is permanent, and each run must be approached carefully.
+
+The game puts you in the role of a hero fighting through hordes of demonic and alien enemies with weapons such as a shotgun, chaingun, railgun, and even a chainsaw. Its presentation evokes the look of CRT monitors, while also featuring improved graphics. Combat is built around tactical decision-making, with every step and attack carrying consequences.
+
+Jupiter Hell includes procedurally generated levels, so each run is different. Players can unlock new perks, test different builds, and develop their character to better survive the dangers ahead. If you manage to survive, you can unlock new challenges, which are described as even harder and more punishing.
+
+The game is developed by ChaosForge, a team known for creating Doom, the Roguelike (DRL). Jupiter Hell is presented as a spiritual successor to DRL, drawing on more than 20 years of experience making top-down cosmic-hell roguelikes.

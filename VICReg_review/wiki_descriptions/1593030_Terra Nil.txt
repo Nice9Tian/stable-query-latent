@@ -1,0 +1,39 @@
+Game: Terra Nil
+appid: 1593030
+Source: Terra Nil
+URL: https://en.wikipedia.org/wiki/Terra_Nil
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Terra Nil is a strategy video game developed by Free Lives and published by Devolver Digital. The game was released for Android, iOS, and Windows on March 28, 2023; the mobile ports were published through Netflix Games. Ports for macOS, Linux, and the Nintendo Switch were released later in 2023.
+While the gameplay focuses on placing buildings, as is common in city-building games, Terra Nil is the reverse – focusing instead on ecosystem reconstruction. Rather than promoting the consumption of resources to expand, the game is inspired by the rewilding movement and the climate crisis, and seeks to restore nature rather than exploit it.
+
+
+== Gameplay ==
+ 
+Players are tasked with turning a barren wasteland into an ecological paradise with a variety of flora and fauna.
+This is achieved by placing a number of buildings on the landscape which allow you to terraform. Wind turbines provide power, but can only be placed on stone tiles. These are used to power toxin scrubbers, which prepare the soil for irrigation. Water pumps are used to refill dried river beds, while additional tools allow the player to create new rivers anywhere on the map and new stone tiles  on select river beds.
+For each tile which is converted from wasteland into lush ecosystem, the player is rewarded with points, which can be spent on further buildings and upgrades.
+In the second stage of the game, players can upgrade existing buildings to create biomes such as wetlands, wildflower meadows and dense forests. Restoring these biomes will cause herds of deer, flocks of birds, schools of fish and lone wandering bears to populate the map.
+The unique selling point of the game comes in the third phase, where – once a sufficient amount of the ecosystem and weather has been restored – the player is tasked with recycling the buildings they have placed in order to create an airship on which they will leave the map. Doing so, they will leave no trace of their presence; just a rewilded paradise.
+
+
+== Development ==
+Terra Nil was developed by a three-person team (Sam Alfred, Jonathan Hau-Yoon, and Jarred Lunt) at the South African studio Free Lives using the Unity game engine. It was announced on June 7, 2021. The game was originally developed by Sam Alfred, Jonathan Hau-Yoon, and Jarred Lunt for Ludum Dare 45 in October 2019 and released on Itch.io. However, in October 2020, the developers formed a partnership with Free Lives to produce a more in-depth version with more levels and upgraded graphics.
+A free demo was made available to download on 16 June 2021 as part of the Steam Next Fest. The game was released for Windows, Android, and iOS on March 28, 2023. The mobile versions are part of the Netflix Games subscription service. The PC release was updated to support Linux and macOS on October 5, 2023. A Nintendo Switch version was released on December 18, 2023.
+
+
+== Reception ==
+
+Terra Nil received "generally positive" reviews on Metacritic.
+PC Gamer said that the game is "a consistently relaxing, satisfying experience" that does not aim to supplant established, complex games like Civilization or Anno. Hardcore Gamer praised its "simple yet incredibly fun gameplay, striking and gorgeous visuals, and a nice level of challenge". Rock Paper Shotgun found the reverse city-builder puzzle elements to be "an unavoidable punishment", though Hardcore Gamer singled them out as the game's "most clever and unique hook". Criticizing the game's focus on "chasing numbers", Rock Paper Shotgun's reviewer felt that the game's later stages ruin its relaxing mood. In contrast, The Guardian found the gameplay to be "more forgiving than expected" and praised how the game's elements come together to make it relaxing. They also felt the game's simplicity and easiness reinforced its message that cleaning up the environment could be made simple.
+
+
+=== Awards and nominations ===
+
+
+== References ==
+
+
+== External links ==
+Official website

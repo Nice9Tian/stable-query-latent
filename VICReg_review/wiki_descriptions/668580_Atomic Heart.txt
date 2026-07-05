@@ -1,0 +1,122 @@
+Game: Atomic Heart
+appid: 668580
+Source: Atomic Heart
+URL: https://en.wikipedia.org/wiki/Atomic_Heart
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Atomic Heart is a 2023 first-person shooter video game developed by Mundfish Studio. It was published by VK Play, Focus Entertainment, and 4Divinity.  
+The game is set in an alternate history version of the Soviet Union, during the 1950s. Initially depicted as a retrofuturistic utopia, the game follows the collapse of an advanced Soviet research city after a robot uprising. 
+Atomic Heart was released for PlayStation 4, PlayStation 5, Windows, Xbox One, and Xbox Series X/S on February 21, 2023. It gained several awards.
+A sequel, titled Atomic Heart 2, is in development.
+
+
+== Gameplay ==
+Atomic Heart is a first-person shooter video game with role-playing elements. Weapons include conventional firearms, energy-based weapons, and melee weapons. A wide variety of enemies are featured, most of which are robots; mutants are another type of enemy consisting of human corpses animated by genetically-engineered plant-like organisms called sprouts. A crafting system allows the player to piece weapons together from metal parts that can be detached from robots or taken from household appliances.  Ammo in the game is scarce, so the player also has the option to use rechargeable energy guns. Quick-time events are featured in the game.
+The player wears a special glove, the Polymer Glove, which grants powers such as telekinesis, freezing, shield, electricity and others to defeat foes. Its powers can be combined with both melee and ranged weapons.
+Weapons can be upgraded and embedded with various elemental effects using cartridges. These cartridges can be looted, crafted and equipped by the player on both melee and ranged weapons.
+To cover distances faster in certain large open spaces, players can use cars left in these areas. Players also have to solve various puzzles that are encountered throughout the main campaign and side Polygons (Testing Grounds). After one of the released patches in June 2024, the game also offers accessibility settings, which include not only puzzles auto-solve, but also colorblind mode, auto QTE, auto-heal, and some others.
+
+
+== Plot ==
+
+
+=== Setting ===
+Atomic Heart takes place on the grounds of Facility 3826, the Soviet Union's foremost scientific research hub in an alternate history 1955, located in the Kazakh SSR. In 1936, scientist Dmitry Sechenov developed a liquidized programmable module called the Polymer, sparking massive technological breakthroughs in the fields of cold fusion and robotics in the USSR, freeing much of the populace from manual labor. When World War II broke out, the Soviets quickly gained the upper hand, but just before Nazi Germany was defeated in 1942, the Nazis secretly unleashed the Brown Plague virus, leaving millions dead and creating an international demand for Soviet robots to compensate for the resulting worker shortage. As part of the Soviet Union's post-war reconstruction program, Dr. Sechenov created a wireless, networked artificial intelligence called "Kollektiv 1.0" that linked his robots together for greater efficiency.
+Sechenov later developed the THOUGHT, a neuroconnector that integrates Polymer into the human body, enabling direct interaction with robots. Designed to launch alongside Kollektiv 2.0, it was intended to usher in a true post-labor era. However, the launch resulted in a catastrophic failure, plunging Facility 3826 into chaos.
+
+
+=== Synopsis ===
+Major Sergey "P-3" Nechayev is a special agent with memory loss, saved from a life-threatening injury by Dmitry Sechenov. As Sechenov's agent, Sergey is sent to assist with the Kollektiv 2.0 rollout at Facility 3826, only to discover that the facility's robots have gone rogue, killing most of the human staff. Sechenov informs him that Viktor Petrov, a robotics designer, sabotaged the Kollektiv node and orders Sergey to capture him. Accompanied by his AI partner CHAR-les, integrated into his glove, Sergey must confront the facility’s rogue robots and failed biomechanical experiments.
+Sergey finds Petrov working with neurosurgeon Larisa Filatova, but Petrov seemingly dies while fleeing. Suspicious of Facility 3826, the Politburo sends Yegor Molotov, who threatens to halt the launch of Kollektiv 2.0. CHAR-les reveals a power struggle over Kollektiv between Sechenov and the Politburo. Sechenov orders Sergey to accompany Molotov, but Sergey blacks out and later finds Molotov murdered. Sechenov then reveals that Petrov is alive, having faked his death with Filatova’s help.
+Sergey finds Petrov at the Theater, where Petrov reveals that civilian robots always had a combat mode secretly installed and accuses Sechenov of planning to use them for global domination. He gives Sergey a pair of rings before committing suicide. Suspecting the "Atomic Heart" project involves deploying combat robots to seize nuclear plants, Sergey takes Petrov's head to Michael Stockhausen, Sechenov's deputy, for memory extraction. However, Filatova intervenes and throws a grenade, resulting in Stockhausen’s death and knocking Sergey unconscious. CHAR-les reveals that the rings are top-secret devices which allow the wearer to join Kollektiv 2.0 while remaining "invisible" to the network, thus gaining unrestricted authority and control within the Kollektiv.
+When Sergey wakes up, Filatova contacts him and meets him in secret at a secluded area in Facility 3826. She reveals to him that Kollektiv is a means to mind-control people, and Filatova was in charge of the facility that houses numerous volunteers of the project. Sergey also discovers that CHAR-les isn't an AI, but rather the preserved consciousness of Chariton Zakharov, Sechenov's colleague and a fellow researcher presumably murdered by Sechenov. Using Chariton's security clearance, they uncover more of Sergey's past: he was previously critically injured in a mission in Bulgaria alongside his wife and fellow agent, Ekaterina "Katya" Nechayeva. While Katya did not survive, Sechenov managed to fix Sergey's brain injury by installing a Polymer implant, erasing memories of Katya while also implanting her memories into robotic ballerina bodyguards called the Twins. In doing so, Sechenov gains control over Sergey. Furious, Sergey decides to confront Sechenov. However, he blacks out again and wakes up in the care of his mother-in-law, Zinaida Muravyova, who has been anonymously assisting him throughout his mission in Facility 3826. She reveals that Sergey had killed Filatova while blacked out. At this point, Sergey can either choose to leave Facility 3826 or confront Sechenov, resulting in different endings.
+If Sergey refuses to confront Sechenov, he destroys Chariton and slips out of Facility 3826 and disappears, allowing Sechenov to continue with his plans to activate Kollektiv 2.0. Chariton is shown to still be alive as a small mass of living Polymer and he manages to escape as well.
+If Sergey chooses to confront Sechenov, he enters his office, where they argue before Sechenov orders the Twins to attack. After Sergey defeats them, Sechenov draws a pistol, but Sergey uses his glove to disarm him and shoots him in the gut. Wounded, Sechenov reveals that Chariton manipulated Sergey’s blackouts, making him unknowingly kill Molotov and Filatova. Enraged, Sergey tries to remove Chariton from his glove, but Chariton electrocutes him and escapes as a gray mass. Declaring his intent to exterminate humanity, Chariton jumps into a vat of red Polymer, transforming into a massive black humanoid. He then picks up Sechenov, breaks his neck, and later consumes his body before vanishing. Sergey later awakens in an illusion, where one of the Twins reaches out to him as Katya’s voice speaks.
+
+
+==== Annihilation Instinct ====
+Taking place three days after the ending where Sergey refuses to confront Sechenov, Kollektiv 2.0 is fully operational, but Chariton, merged within the network, has brainwashed people and leaked information, sparking a civil war. Sergey wakes in the Mendeleev Complex, now controlled by the rogue AI NORA, who has fallen in love with him and synced to his implant. She orders him to eliminate Zinaida, now leading an anti-Kollektiv faction. Heading to the surface, Sergey encounters NORA's inventor, Alexey Lebedev. He repairs Sergey’s glove and explains that Zinaida seeks to control NORA for her weapon-making capabilities. To stop her, Sergey must collect BEA-D robots containing NORA’s code to reset her.
+NORA tempts Sergey with secrets about Katya, but Lebedev connects him to Sechenov, who reveals that he preserved Katya's brain in neuropolymer to revive her. He offers Sergey full access to his past and a leave of absence. Sergey agrees, resets NORA with the Twins' help, and restores order. As promised, Sechenov grants him leave, but as Sergey departs, Zinaida follows.
+
+
+==== Trapped in Limbo ====
+Taking place after the ending in which Sergey confronts Sechenov and is betrayed by Chariton, Sergey awakens in Limbo, the same surreal dimension he encountered during his blackouts in the main game. Katya, now in the form of a Polymer teardrop, guides Sergey through this dimension as they recover the latter's memory. She reveals that her consciousness has also been trapped in Limbo, which was designed by Sechenov to house the minds of those using the Kollektiv in order to mind-control people. Katya also briefs Sergey on the events in the real world, informing the latter that while Sechenov's body has disappeared, Kollektiv 2.0 has yet to launch, and Sergey's own unconscious body has been taken to a lab alongside the bodies of the Twins. By completing puzzles and traversing a surreal, platforming-based landscape, Sergey eventually escapes Limbo and awakens, and sets out to find the rings he threw in the lake in order to restore Katya.
+
+
+==== Enchantment Under the Sea ====
+Taking place after Trapped in Limbo, Sergey interacts with one of the Twins' bodies, which allows Katya to take over his glove and function similarly to Chariton. The two of them escape Facility 3826, though Sergey's arm is injured in the process. They reunite with Zinaida, who learns of her daughter's survival. She then sends them to Triton, an underwater facility where they can acquire tools to retrieve the rings.
+At Triton, Sergey and Katya meet new allies: technician Nikolai, cetologist Nastya, and security officer Hunter. After helping them relocate a school of dolphins, one is assigned to retrieve the rings. Zinaida later sends one of the Twins’ bodies to Triton, upsetting Katya. Nikolai reveals he was sent to deliver Samodelkin, a high-tech repair system created by Dr. Lebedev, and identifies Katya as its key activator. With Samodelkin, Sergey repairs his arm and links it to Katya.
+As the group prepares to escape Triton, Sergey and Katya are intercepted by MOR-4Y, a gigantic eel robot roaming the facility. Katya, through Samodelkin's connection, transfers her consciousness to the Twin robot body, and assists Sergey in destroying MOR-4Y. The dolphin later returns and gives Sergey the rings, which he then puts on Katya's hand. After taking a moment of respite on the surface, Sergey decides they are ready to pursue Chariton.
+
+
+==== Blood on Crystal ====
+After recovering the rings in Triton, Sergey, Katya and their allies all plan an assault at the Wave facility, where Chariton is currently hiding. However they would soon discover another facility underneath Wave that is hidden even by the USSR, the Crystal Complex, which Chariton has been using in order to create his next stage of human evolution, the Polymorphs. To assist Sergey further, Lebedev helps integrate NORA into Sergey's glove. As they navigate the Crystal Complex, Sergey also creates a Polymorph body for Nastya to remotely control and provide support. Sergey eventually encounters the other Twin robot, now under Chariton's command. During combat, NORA forces Sergey to transfer her to the Twin's body, allowing her to take control. NORA then betrays Sergey and incapacitates Katya, revealing that she accepted Chariton's offer to join his side. Chariton reveals his ultimate plan: to hack into Sechenov's consciousness, which was stored away in the Crystal Complex, using NORA as a conduit and activate the Needle protocol, which would fire a massive laser weapon to bring a passing astroid towards Earth and wipe out humanity, allowing Chariton and the Polymorphs to dominate the planet.
+After narrowly escaping death, Sergey continues to navigate Crystal, and reunites with the Triton crew. With Nikolai and Hunter's assistance, Sergey locates Sechenov's consciousness, stored away within the facility, and integrates him in his glove. Chariton, however, hacks Nastya's Polymorph body and fatally wounds Nikolai. Sergey confronts Chariton and battles him; in the midst of the battle, Chariton integrates with NORA's robot body. However, it is revealed that this was a trap set by Sergey and his allies; NORA surrenders her body, allowing Sergey and Katya to extract Chariton's Polymer essence and trap him in an infinite loop using the rings.
+In the aftermath, Sergey manages to stop the Needle protocol by misfiring its blast away from the asteroid, thus saving humanity. With the main threat finally neutralized, the team uses Samodelkin to create a new body for Sechenov. Sechenov entrusts Sergey with safeguarding Chariton's prison cube.
+
+
+== Development ==
+Mundfish Studio was founded in 2017. Its key figures are the company's president Robert Bagratuni, CFO Evgenia Sedova, art director Artem Galeev, and producer Oleg Gorodishenin.
+Bagratuni and Galeev have known each other since the early 2000s, having worked at advertising companies. Bagratuni focused on marketing, while Galeev specialized in computer graphics. After the economic downturn in 2008, when the advertising market collapsed, the share of video games increased. Sedova and Bagratuni met at the company Newmedia Stars. Before merging with Galeev and founding the game studio Mundfish, they had completed several joint projects. The key figures at Mundfish do not have direct ties to Russia or its president, Vladimir Putin.
+Mundfish has the main office in Cyprus and development offices in Abu Dhabi and Yerevan. At the age of 19, a producer Oleg Gorodishenin joined the studio (listed in Forbes 30 Under 30 in 2023). The development of Atomic Heart was initially funded by Bagratuni, Sedova, and non-public shareholders. According to Crunchbase, Mundfish raised $16 million in two investment rounds in 2019 and 2021. According to Forbes, the amount from the Chinese investment holding Tencent, the international investment company GEM Capital, and the founder of the game studio Gaijin Entertainment, Anton Yudintsev, could be around $20 million.
+In the summer of 2018, Nvidia offered Mundfish Studio to release the game on the RTX platform, which supports ray tracing and DLSS technology for GeForce RTX graphics cards. They provided their equipment, access to a special version of the Unreal Engine 4, and tools for the game's implementation. Nvidia partially took on the marketing promotion, showcasing RTX capabilities at maximum settings in an Atomic Heart trailer at the Gamescom gaming convention in Cologne. However, ray tracing was not implemented at the time of release. It was added in a beta version after an update on June 11, 2024.
+
+
+== Soundtrack ==
+The game's soundtrack was written by three composers: Mick Gordon, famous for his work for video-game titles such as Doom, Prey and Wolfenstein (The New Order, The Old Blood, The New Colossus), Andrey "Boogrov" Bugrov, and Geoffrey Day.
+Along with the original tracks created solely for the game, Atomic Heart also features popular Soviet songs and their remixes, including "Arlekino" and "Zvyozdnoye leto" by Alla Pugacheva, "Trava u doma" by Zemlyane, "Kosil Yas' Konyushinu" by Pesniary and more.
+The game's music composer Mick Gordon released a statement condemning the Russian invasion of Ukraine and donating his fee from the project to the Red Cross Ukraine Crisis appeal.
+
+
+== Release ==
+In February 2022 a story trailer showed that Atomic Heart will launch in "#######BER", suggesting the game's release some time in Q4 2022. However, later in November, it was announced that the game will be released on February 21, 2023, published by VK Play in the CIS, co-published by 4Divinity from Singapore-based entertainment marketing group GCL in Asia, and published by French-based company Focus Entertainment elsewhere.
+The game's first DLC expansion, titled Annihilation Instinct, was released on all platforms on August 2, 2023. The second DLC, Trapped in Limbo, was released on February 6, 2024. The third DLC, Enchantment Under the Sea, was released on January 28, 2025. It introduced new weapons, abilities, and allowed players to explore the underwater Triton complex. In November 2024, a collaboration with artist Taras Yoom was announced to coincide with the DLC release. Yoom unveiled limited-edition sculptures, "Comrade and Union," which were integrated into the expansion. The final DLC, Blood on Crystal, was released on April 16, 2026.
+
+
+=== Sales ===
+Atomic Heart sold above expectations, raising Mundfish's revenue to an all-time high. Three weeks after the game's launch, Mundfish announced that the game had been played by five million players. However, the game was also available upon launch on Xbox Game Pass, which accounted for an unknown percentage of players. It was removed from Game Pass on August 31, 2024. 
+In May 2025, Mundfish announced that Atomic Heart had surpassed 10 million players worldwide.
+
+
+== Criticisms ==
+The company has faced significant criticism for the Russian origins of its founders. Since February 2024, Mundfish has removed mentions of its Russian office from the official website and positions itself as international company with "an incredible team… from 10 countries including Poland, Ukraine, Austria, Georgia, Israel, Armenia, UAE, Serbia, and Cyprus." In 2018, the studio employed just over 20 people, while by early 2023, that number had grown to around 130.
+The studio is carefully distancing from Russian political statements. Many game developers and publishers have spoken out against the war, stopped selling games in Russia and Belarus, and donated to humanitarian causes. The Ukrainian Ministry of Digital Transformation critiqued Mundfish, noting that "the developers of the game did not come out with a public statement condemning the Putin regime" and the Russian invasion of Ukraine, also pointing out that the game has "Russian roots and romanticizes communist ideology and the Soviet Union." The February 21 release date drew criticism because it nearly coinciding with the first year anniversary of the 2022 Russian invasion of Ukraine and Defender of the Fatherland Day, on February 24 and 23 respectively. Developer Mundfish stated that the company is neutral in world affairs and "do not comment on politics or religion". Mundfish also added that the studio "is undeniably a pro-peace organization against violence against people".
+Mundfish has been accused of collecting data of users based in Russia and providing it to the Federal Security Service. The developer denied these allegations, stating: "Our game and website DO NOT collect any information or data. The website’s privacy statement is outdated and wrong, and should have been removed years ago." In January 2023, the studio replaced the Russian-language Privacy Policy on the website with an English-language version, removing all mentions of Russia.
+
+
+== Reception ==
+
+Atomic Heart received "mixed or average" reviews from critics for the PS5 and Xbox Series X/S versions, while the PC version received "generally favorable" reviews, according to review aggregator website Metacritic.
+IGN praised Atomic Heart for being "deeply ambitious, highly imaginative, and consistently impressive", though criticized its writing and "tedious" elements of gameplay, such as fetch quests. PC Gamer called it "one of the oddest" AAA games. They felt it took primary influence from BioShock, but criticized its combat and progression system as inferior, while being conflicted towards the story and characters. Similarly, Polygon felt that Atomic Heart failed to eclipse BioShock through its gameplay and attempts to tackle multiple themes at once.
+
+
+=== Themes and analysis ===
+Atomic Heart was interpreted by many game critics and journalists as a political satire of authoritarianism, artificial intelligence, and communism. Ed Power of The Daily Telegraph wrote that:
+
+"Playing the game, the player will be left with no doubt as to the dark side of Soviet manifest destiny. The central conflict is between the Politburo and Sechenov. The implication is that the latter is a power-hungry madman who has poisoned the Communist dream. Whatever Atomic Heart is, it isn't a love letter to the Soviet Union. This is a paradise lost, fatally undone by its Prometheus complex."
+Journalist Kevin Purdy of Ars Technica wrote that within the game:
+
+ The USSR makes the world's best robots, its citizens live in a utopia where those robots do their menial tasks and labor, and even greater things are just about to happen...a world full of astounding promises, yet take apart that optimism by showing the hypocrisy, the false promises, the ego-driven leaders and actors causing so much pain, and the impact on real people's lives when it all comes apart...The Soviet State in Atomic Heart, and its maniacal leaders, are responsible for the death of untold thousands or millions of citizens at the hands of their own robots. There are plans to foist this death on the rest of the world, rather than win them over with the benefits of collectivist effort. The KGB, for which your protagonist formerly worked, are not the good guys.
+Renata Price of Vice News wrote that the game "depicts a scenario where the Soviet Union's quest for technology and expansion—there are numerous sarcastic references to conquering the stars—has gone horribly, murderously wrong...To call Atomic Heart a straight-up celebration of the Soviet Union would be a misrepresentation."
+
+
+== Awards ==
+
+In November 2023, Atomic Heart joined the Hall of Fame of the Russian gaming industry, winning in the Legendary Video Games categories.
+
+
+== Sequel ==
+
+In 2021, two years prior to release of the Atomic Heart, the developers stated that they already had plans for a sequel. In June 2023, Mundfish's studio head officially confirmed the development of a sequel. During Summer Game Fest 2025, a sequel, Atomic Heart 2, was announced alongside a massively multiplayer online role-playing game spinoff called The Cube.
+
+
+== Notes ==
+
+
+== References ==
+
+
+== External links ==
+Official website 
+Interview with SFO Evgenia Sedova for Gold Magazine

@@ -1,0 +1,43 @@
+Game: Buckshot Roulette
+appid: 2835570
+Source: Buckshot Roulette
+URL: https://en.wikipedia.org/wiki/Buckshot_Roulette
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Buckshot Roulette is a 2023 indie tabletop horror video game developed and published by Estonian video game developer Mike Klubnika on itch.io. It was released on Steam by Critical Reflex on 4 April 2024 to coincide with a new update. The game has been likened to the 2021 roguelike video game Inscryption, despite contrasting visual styles. Klubnika developed the game in the Godot game engine and also composed the game's soundtrack.
+Released on 28 December 2023, Buckshot Roulette became popular in early 2024 and was praised by critics and players for its strategic gameplay and replay value. The Steam release reportedly sold a million copies in two weeks. By December 2024, the game had sold 4 million copies.
+
+
+== Gameplay ==
+The regular game mode involves the player playing a modified game of Russian roulette in a nightclub with a mysterious entity known as "The Dealer", using an eight round pump action shotgun instead of the revolver traditionally used in Russian roulette.
+The game consists of three rounds. At the start of each round, the computer-controlled Dealer loads the shotgun with a specified number of red live shells and blueish-gray blanks in a random order. The player then chooses to shoot either the Dealer or themself. If the shell is live, whoever was shot loses a life and the shotgun is forfeited to the Dealer, who plays their turn. If the player shoots themself with a blank, they take another turn. Lives are represented by defibrillator charges administered by a scorekeeping machine, starting with two charges on round 1, four on round 2, and five on round 3; the first party to deplete all their charges loses the round. The player and the Dealer can respawn indefinitely during rounds 1 and 2, but during round 3, the defibrillator's wires are cut, leaving the affected party in "sudden death" mode, forcing the player to restart from the beginning if they lose. If the shotgun's magazine is emptied and neither party has lost all their charges, the Dealer reloads the shotgun with another load of shells.
+Starting in round 2, a random set of consumable items is distributed to both the player and the Dealer before every turn, giving each party different advantages; two are given during round 2 and four during round 3. Both the player and the Dealer can possess a maximum of 8 items.
+When the Dealer has been defeated, an endless game mode called "Double or Nothing" can be accessed if the player takes optional pills at the beginning of the game. In Double or Nothing, a random number of items is given at the start of every round along with a random number of charges. Upon defeating the Dealer, the player is rewarded with up to 70,000 points, based on how long it took. They are then prompted to either leave normally or continue the game, doubling their earnings if they win another three rounds. This loop is repeated until they lose, which forces the player to restart completely or leave with an amount of cash equal to their points. On April 4, 2024, along with the release of the Steam version, four new items exclusive to Double or Nothing were introduced: the Burner Phone, the Inverter, the Adrenaline, and the Expired Medicine. On October 31, 2024, a multiplayer mode was released for up to 4 players. Two items were added exclusively for multiplayer games: the Jammer and the Remote.
+
+
+== Plot ==
+Set in a nightclub in 1998, the game begins with the player in a dilapidated bathroom with an old computer monitor and a bottle of pills on the countertop after first defeating the Dealer that may be consumed to start Double or Nothing mode. They leave it to reveal an energetic rave happening below. The player enters the room with the Dealer and signs a General Release of Liability waiver by entering their name. Midway through round 2, the player pulls out a bloody contract with the name "GOD" signed in the name box, resembling the waiver the Dealer made the player sign before playing the game. If the player defeats the Dealer in the sudden death round, the player is shown driving home with the shotgun and a briefcase of money. If the player is defeated in sudden death, they are shown entering a rusted, bronze gate with metallic spikes jutting into an all-white sky, presumably Heaven, and the text "YOU ARE DEAD" appears on the screen.
+The multiplayer game mode starts outside the building at nighttime while loud music from the rave plays. The camera reveals a mechanic working on a van's engine, a waste container, and a boombox atop of a pile of pallets outside before swerving to a drain that leads to a room beneath the rave where the game takes place. The game ends outside the building at daytime, when the rave has finished.
+
+
+== Development ==
+In developing the game, Klubnika was heavily inspired by Half-Life, Silent Hill, and Postal 2.
+
+
+== Reception ==
+
+Released to positive reviews, Buckshot Roulette quickly gained popularity on Twitch and TikTok, which subsequently led to increased popularity on YouTube. It has been noted for its similarity to Inscryption, with multiple reviewers commending the strategic element introduced by the game's item system.
+
+
+== Awards and nominations ==
+
+
+== References ==
+
+
+== Notes ==
+
+
+== External links ==
+Official website

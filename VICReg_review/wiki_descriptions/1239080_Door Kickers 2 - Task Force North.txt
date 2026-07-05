@@ -1,0 +1,35 @@
+Game: Door Kickers 2: Task Force North
+appid: 1239080
+Source: Door Kickers 2: Task Force North
+URL: https://en.wikipedia.org/wiki/Door_Kickers_2:_Task_Force_North
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Door Kickers 2: Task Force North is a real-time tactics video game developed and published by KillHouse Games for Microsoft Windows and macOS. It is the sequel to the 2014 video game Door Kickers, featuring similar overall gameplay with various fundamental improvements. Set in the fictional Middle Eastern country of Nowheraki, Door Kickers 2 has the player command special forces and paramilitary units in counterinsurgency operations against terrorist groups threatening the region's stability.
+Door Kickers 2 was released in early access on November 3, 2020, and was fully released on February 10, 2025, to generally positive reviews.
+
+
+== Gameplay ==
+
+Door Kickers 2 combines elements of strategy games and tactical shooters and is presented from a 3D top-down perspective, providing a full view of each level.
+The core gameplay in Door Kickers 2 is similar to that of its predecessor. In each level, players select the unit and troopers they wish to deploy, plan each trooper's movement pathing and actions to whatever degree they please, and send the troopers to follow their assigned paths in real-time with the option to alter the plan by adding new routes and actions where desired. Troopers engage enemies and reveal fog of war-obscured areas in their line of sight as they follow their paths, can be angled to look in certain directions (briefly, centered on one point, or rigidly in one direction), and can be set to hold their position until ordered, until visible enemies are clear, or until one of four "go orders" is activated by the player. Troopers themselves can be customized with different weapons and equipment that have varying effects both actively in use and passively on the trooper's combat effectiveness, which can be unlocked with stars acquired from completing levels. Campaigns—divided into linear "Operations" and randomly-generated "Tours of Duty" with selectable levels—are also available in which players complete levels over several in-game "days" while dealing with persistent trooper injuries and optional permadeath, with "battle honors" acquired from completing campaigns that can be used to unlock unique weapons and equipment.
+However, Door Kickers 2 features substantial additions, including night vision devices to see through night time with low light environments, man-portable and stationary machine guns, explosive weapons (including grenades, grenade launchers, rocket launchers, and enemy suicide bombers), a limited destructible environment that allows for explosive breaching, a revamped stealth system, and the ability to customize each weapon's sights, equipped suppressor, and ammunition types.
+The most major addition is the implementation of different "squads" instead of the singular SWAT team featured in Door Kickers. These squads are the "Rangers", an all-rounded combat unit based on the U.S. Army Rangers from the 75th Ranger Regiment; "Nowheraki SWAT", a joint task force of Nowheraki's security forces made up of local army reserve troops, law enforcement SWAT officers and volunteer civilian militiamen; and "CIA", a small stealth-centric covert operations team based on the Central Intelligence Agency's Special Activities Center. Each unit features different classes and unique arsenal, equipment, gadgets and doctrine trees, which affect gameplay and how plans are made with their respective pros and cons accordingly: Rangers are generally "jack of all trades" due to their superior training, quality, combat experience, funding, expertise and logistics but don't excel in stealth, Nowheraki SWAT already not stealthy suffers from poor quality, funding, expertise and logistics but excels in quantity and familiar use of cost-effective equipment, and CIA performs poorly in frontline combat due to just a 4 people fireteam but excels in using irregular warfare tactics such as hit-and-run attacks, intelligence gathering networks and stealthy undercover infiltration behind enemy lines.
+Like its predecessor, Door Kickers 2 features a level editor and full modding support for both Steam Workshop and Nexus Mods. Owing to the new squad feature, modding in Door Kickers 2 supports not just custom levels, but also custom squads with their own weapons, equipment, and appearances.
+
+
+== Development and release ==
+Door Kickers 2 was first teased by KillHouse Games in a Door Kickers Steam announcement on January 4, 2016, with a formal announcement of its development on January 17, 2016, the three-year anniversary of the original reveal announcement of Door Kickers. The announcement mentioned features such as UAV aerial reconnaissance, enemy booby traps, and "Tactical Abilities" that included grouping up troopers and establishing rules of engagement (all of which were ultimately cut by the game's full release), and slated an early access release for Q4 2016. However, the game apparently entered development hell, with no further news until February 4, 2020, when KillHouse released a "re-announcement" trailer featuring gameplay on their website, with an early access release supposedly set for Q2 2020. When that date passed, on November 3, 2020, a frustrated fan demanded that KillHouse "[r]elease the damn game!!" on the Steam forums for Door Kickers 2; in response, a KillHouse developer replied "ok, give us 10-20 minutes", and within 10 minutes, Door Kickers 2 was released through Steam Early Access.
+On February 8, 2025, KillHouse Games announced Door Kickers 2 would be fully released on February 10, 2025. On that date, the game left early access and version 1.0 was released on Steam.
+
+
+== Reception ==
+Door Kickers 2 received mostly positive reviews upon release. Review aggregator Metacritic displays a score of 84 out of 100 based on 6 critic reviews.
+Ed Smith, reporting on Door Kickers 2's full release for PCGamesN, called the game a "brutally realistic" combination of XCOM, Company of Heroes, and Arma. Derek Johnson of Jump Dash Roll likewise described the game as "essentially a full game version" of the planning sequences of Tom Clancy's Rainbow Six and Tom Clancy's Rainbow Six: Rogue Spear with enough interesting and unique elements added to become "far and away one of the best strategy games ever created". ekianjo of Boiling Steam lauded the game, particularly the various different approaches that can be taken in levels, the high replayability, and the trial and error nature of gameplay. Cosmin Vasile of Softpedia lauded the game for being "unpredictable and ruthless" while also having a low learning curve that encourages learning from failures, but noted that the game's setting and worldbuilding felt minimized.
+
+
+== References ==
+
+
+== External links ==
+Official website

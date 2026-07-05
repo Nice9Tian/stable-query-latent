@@ -1,0 +1,34 @@
+Game: Yu-Gi-Oh! Master Duel
+appid: 1449850
+Source: Yu-Gi-Oh! Master Duel
+URL: https://en.wikipedia.org/wiki/Yu-Gi-Oh!_Master_Duel
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Yu-Gi-Oh! Master Duel is a free-to-play digital collectible card game based on the Yu-Gi-Oh! Trading Card Game, developed and published by Konami for Microsoft Windows, Nintendo Switch, PlayStation 4, PlayStation 5, Xbox One, Xbox Series X/S, Android, and iOS.
+Initially released on January 19, 2022 for consoles and PC it rapidly climbed to the top of the Steam charts with over 10 million downloads by February 6. The game would later on be released in a few regions to iOS and Android January 26, 2022, with many more regional launches on February 2, 2022.
+
+
+== Development ==
+Development of the title began in 2019 as a follow on from Yu-Gi-Oh! Duel Links, released in 2017. Konami wanted to develop a new game that would appeal to more experienced players, as opposed to Duel Links which was for more casual players.  During the development of the game, the idea arose of implementing a game mode that could be played alone, participating in duels against the AI. This eventually led to the implementation of Solo Mode in Master Duel. The game's music was mainly composed by Yasunori Nishiki.
+
+
+== Gameplay ==
+
+The gameplay is a simulated version of the Yu-Gi-Oh! Trading Card Game. However, the game has a different Forbidden and Limited List and card release schedule than both the Yu-Gi-Oh! TCG and OCG. This creates a different library of cards available to build a deck from.
+You can play either single-player, known in game as Solo Mode, where you proceed through a story of the cards involved playing against a computer opponent. In Multiplayer there exists a casual, unranked matchmaking system and a competitive, ranked system allowing you to compete with other players' strategies. 
+
+
+== Reception ==
+
+Yu-Gi-Oh! Master Duel received "generally favorable" reviews according to review aggregator website Metacritic.
+Within a week, Yu-Gi-Oh! Master Duel reached 262,333 concurrent players on Steam.
+On PlayStation Partner Awards 2022 Japan Asia, Yu-Gi-Oh! Master Duel and 4 other video games received Partner Awards for being the highest grossing video games worldwide.
+
+
+== References ==
+
+
+== External links ==
+Official website
+Steam page

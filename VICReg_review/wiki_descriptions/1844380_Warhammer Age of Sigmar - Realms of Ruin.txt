@@ -1,0 +1,52 @@
+Game: Warhammer Age of Sigmar: Realms of Ruin
+appid: 1844380
+Source: Warhammer Age of Sigmar: Realms of Ruin
+URL: https://en.wikipedia.org/wiki/Warhammer_Age_of_Sigmar:_Realms_of_Ruin
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Warhammer Age of Sigmar: Realms of Ruin is a real-time strategy game developed and published by Frontier Developments in collaboration with Games Workshop. Based on the Warhammer: Age of Sigmar miniature wargame, it was released for Windows,  PlayStation 5 and Xbox Series X/S on November 17, 2023. It received mixed reviews and underperformed commercially.
+
+
+== Gameplay ==
+The gameplay takes inspiration from Warhammer 40,000: Dawn of War II. In-game, the player has access to two main types of buildings. A command post, which allows the recruitment of units -that spawn at Realm gates- and serves as a retreating point; and bastions (of 4 different types) which are built on captured arcane conduits and give various tactical advantages (ie. healing, fog of war dispersal..) . Two resources, "Command" and "Realmstone", are generated through captured territory (via the capturing of control nodes called Arcane Conduits) and can be used to recruit units, enact unit's special abilities and upgrading the tech tree. The game features four factions at launch: The Stormcast Eternals, the Orruk Kruleboyz, the Nighthaunt  and the Disciples of Tzeentch.
+Players take command of squads of units, each with their own abilities. Units have a "rock-paper-scissors" approach when it comes to strengths and weaknesses. For instance, Offensive units are strong against Defensive units but are weak to Ranged units.
+Online multiplayer is one of the game's featured modes. Players can play against each other in all platforms via cross-platform play.
+
+
+== Synopsis ==
+
+
+=== Setting ===
+Realms of Ruin is set in the high fantasy setting of Warhammer: Age of Sigmar (A sequel setting of Warhammer Fantasy), set in the Mortal Realms, a system of eight interconnected realms spawned from the Winds of Magic after an apocalyptic event known as "The End Times".
+Four factions from the Grand Alliances of Order, Destruction, Death and Chaos battle in the Realm of Beasts. The Stormcast Eternals, semi-divine warriors forged by the God-King Sigmar. Kruleboyz, swamp dwelling, sadistic orruks who worship the orruk God, Mork. The Nighthaunt, tormented and vengeful spirits from Shyish, the Realm of Death. The Disciples of Tzeentch, composed of mortal followers and daemons devoted to Tzeentch, the Chaos God of Sorcery, Manipulation and Mutation.
+
+
+=== Plot ===
+The main story campaign is centered in Ghur, the Realm of Beasts. A dawnbringer settlement called Harkanibus has been under relentless assault by Orruk Kruleboyz. Lord-Celestant Sigrun of the Stormhost, the Hammers of Sigmar, leads the city's defense, but constant attacks have left her forces depleted. Following the divinations of the Celestial Wizard, Demechrios, she leads a Stormhost into the swamps of Ghur in hopes of finding an artifact that will turn the tide in their favor and save Harkanibus.
+Fighting their way through hordes of Kruleboyz, the Stormhost discover an ancient city and the artifact. However, the spectral Nighthaunt, led by Lord Gloam, guard the artifact and attack the Stormhost. The Stormcast Eternals manage to defeat the Nighthaunt and secure the artifact, but before being banished, Lord Gloam warns them that the artifact is dangerous. Heeding the specter's warning, Demechrios casts a spell to decipher the artifacts origins whilst Sigrun orders her Stormhost to defend him.
+Scrying into the artifacts past, Demechrios discovers that Lord Gloam fought against the Magister of Tzeentch known as Strylka Twingaze. Strylka had sought to destroy the artifact in hopes of gaining enough favor from Tzeentch to ascend to immortal daemonhood. Witnessing the artifacts power, Demechrios believes that the artifact will allow them to defeat the Orruks and states to Sigrun that they must return it to Harkanibus for further study.
+The Stormcast fight their way through hordes of Orruks on their way back to the settlement, all the while the leader of the Kruleboyz, Dankfeer, has his shaman, Murkfang, enact a terrible spell. Sigrun chooses to stay behind whilst the rest of the Stormhost flee back to Harkanibus. Fighting her way through his minions, Sigrun reaches Dankfeer and during the fight, she breaks Murkfang's staff, disrupting the ritual. Sigrun ultimately dies and her body disappears in a flash of lightning, indicating that her soul returns to Azyr (The Realm of Heavens and the Kingdom of Sigmar).
+Murkfang is consumed by the spell, which takes the form of an enormous, tentacled being of mud and bones known as The Retch. Wanting to use its powers to his own ends, Dankfeer is informed by another shaman named Bludstew that in order to control the Retch, they must repair Murkfang's staff. To do this, he marches his horde into the lands of a rival killaboss named Ripklaw, and sacrifices Ripklaws minions to a shrine of Mork to repair the staff. After eliminating Ripklaw and repairing the staff, Dankfeer takes the staff for himself and marches his horde to take over Harkanibus.
+In the absence of Sigrun, Iden takes command of the Stormhost and leads the city's defense. Through infiltration and subterfuge, Dankfeer manages to destroy the city's defenses and supplies and forces the Stormcast deeper into the inner city. Iden decides to blow up several arcane conduits with the hope that the explosion will be enough to destroy the Retch. The Retch is wounded in the explosions, and Dankfeer is forced to retreat into the swamps.
+Iden leads the Stormhost into the swamps to eliminate Dankfeer once and for all. During the battle, Sigrun returns after having been reforged and brings Iden reinforcements. However, Sigrun orders Iden to finish off the Orruks and Dankfeer whilst she leaves for Harkanibus with another Stormhost, the Knights Excelsior, for an unknown purpose. Iden and his forces manages to defeat the Retch, and during his confrontation with Dankfeer, manages to destroy his staff. With the staff broken, Dankfeer is consumed by the Retch before the Retch disappears into nothing. The remaining Kruleboyz retreat, while Iden is left exhausted and laments how their victory was at a great cost.
+Demechrios is seen again scrying the artifacts past. After fighting her way through Lord Gloam's forces, Strylka manages to reach the artifact. She is suddenly aware of Demechrios' presence from the future and gleefully reveals that her intention was never to destroy the artifact. She instead taints the artifact with chaos magic, and further reveals that it will taint the user of its power and the lands around it with the corrupting powers of Chaos.
+A horrified Demechrios is soon confronted by Sigrun and the Knights Excelsior, and it is revealed that they too are aware of the true nature of the artifact. Deeming the city of Harkanibus corrupted by Chaos, the Knights Excelsior begin a purge of the city of all its inhabitants, starting by slaying Demechrios.
+
+
+== Development ==
+It was announced that a deal was made between Games Workshop and Frontier Developments for the creation of an Age of Sigmar RTS game. During the Warhammer Skulls Event in May 2023, an announcement trailer for Realms of Ruin was shown.  In August 2023, it was announced that Realms of Ruin would be released on November 17, 2023, for Windows and consoles.
+In November 2023 during a Twitch livestream, it was announced that Yndrasta, the Celestial Spear, and Gobsprakk, the Mouth of Mork, would be available for Stormcast Eternals and the Orruk Kruleboyz as downloadable content, either as pre-order bonuses or post-launch purchase.
+
+
+== Reception ==
+
+Realms of Ruin "mixed or average" reviews according to review aggregator Metacritic. It was nominated for "British Game" at the 20th British Academy Games Awards.
+Frontier revealed in November 2023 that the sales were lower than expected. The RoR concurrent players on Steam peaked at 1,572 with just 129 playing on Steam on 27 November 2023. Gaming news outlets described Realms of Ruin as a flop. According to Video Game Insights, 69,330 copies were sold via Steam with 36 active players (24h peak) and 54.1% positive reviews by 18 July 2024.
+
+
+== References ==
+
+
+== External links ==
+Official website

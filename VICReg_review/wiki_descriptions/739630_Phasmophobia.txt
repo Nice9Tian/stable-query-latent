@@ -1,0 +1,151 @@
+Game: Phasmophobia
+appid: 739630
+Source: Phasmophobia (video game)
+URL: https://en.wikipedia.org/wiki/Phasmophobia_(video_game)
+Match score: 7.11
+Retrieved: 2026-07-04
+--------
+Phasmophobia is a 2020 paranormal horror game developed and published by British indie game studio Kinetic Games (based in Southampton). The game became available in early access for Microsoft Windows with virtual reality support in September 2020. In the game, one to four players take on the role of ghost hunters who work to complete a contract where they must identify the type of ghost haunting a designated site and complete other optional objectives.
+Phasmophobia rose in popularity after many Twitch streamers and YouTubers played it during October 2020, becoming the sixth-most popular game on Twitch of that month and the best selling game on Steam globally for several weeks from October to November 2020. It earned positive reviews from critics, who praised its innovativeness. Phasmophobia is the 48th best-selling video game as of June 2026.
+
+
+== Gameplay ==
+Phasmophobia is a horror investigation survival game played from a first-person perspective. The player works solo or in a group with up to three other players to complete a contract in which they must identify the type of ghost haunting the specified site. Players can communicate through voice chat, both locally within a short distance and globally via walkie-talkies. Phasmophobia features speech recognition allowing certain pieces of equipment, Cursed Possessions, and the ghost to understand key words and phrases spoken by players. Gathering evidence to determine the correct ghost type and surviving will net the majority of the cash and XP, but completing objectives and taking photos, videos, and audio will augment or even double the rewards. Investigators are encouraged to complete as much as possible to level up and earn money to unlock maps, levels, and item upgrades.
+Players create or join a lobby where preparation for the contracts takes place. Phasmophobia gives players the option to customize their appearance by picking between eight different paranormal investigators to distinguish between group members. Located at two corkboards in the lobby, a contract location is voted on between players, while the difficulty is set by the host. All equipment is purchased and upgraded at a computer in the lobby and selected to be loaded into a van from which the group will operate upon arriving at the site. Players who survive and have completed their objectives (or wish to give up) must return to the van and close the van's barn doors to leave.
+Phasmophobia features twenty-nine different ghosts, each of which behaves differently and provides unique clues. Upon arriving at the site, one of these ghost types will be randomly assigned for the mission. As players attempt to complete the contract, sanity will drain, with certain events and circumstances affecting the rate at which it does so. When sanity is low enough, a ghost will begin to hunt and attempt to kill the players (assuming the "Friendly Ghost" custom difficulty setting, which disables hunts, is not enabled). During the hunting phase, all exit doors are locked so players must outrun and/or hide from the ghost until the end of the hunt. Depending on the ghost type's strengths and weaknesses, it may be able to hunt when sanity is higher or lower.
+
+
+=== Locations ===
+
+
+==== Small maps ====
+6 Tanglewood Drive
+10 Ridgeview Court
+13 Willow Street
+42 Edgefield Road
+Camp Woodwind
+Grafton Farmhouse
+Nell’s Diner
+
+
+==== Medium maps ====
+Bleasdale Farmhouse
+Maple Lodge Campsite
+Point Hope
+Prison
+Sunny Meadows Restricted
+
+
+==== Large maps ====
+Brownstone High School
+Sunny Meadows
+Removed
+
+Asylum
+
+
+=== Equipment ===
+Upon starting the game for the first time, players will be presented with a set of rudimentary starter equipment consisting of eight Tier I items: an old radio, a notepad, a laser pen, an electromagnetic field detector, an old camcorder, a mercury thermometer, a small UV flashlight, and a retro metallic flashlight, with more of these available to buy in the store, assuming the player has enough funds to do so. Additional equipment types or upgrades can be unlocked depending on player level and subsequently purchased. Certain types of equipment like Firelights, Igniters, Incense, and Crucifixes may be needed to complete the optional objectives and protect players.
+Upon loading into the contract, players will start in the van where they will find the equipment they have selected and the Objective Board, listing the objectives they need to complete as well as the name of the ghost and showing all ten of their photos. It also houses the Surveillance Computer (used to monitor CCTV cameras and video feeds), the Sanity Monitor (used to monitor player sanity), a map of the current site, the Sound Sensor Screen (used to stream audio into the Truck and monitor said audio), and the Site Activity Monitor (used to monitor the ghost's activity). This set of equipment is permanently located inside the van and is used to track the status of the players and ghost’s activity, although on certain difficulties, the Sanity Monitor and Site Activity monitor may be disabled and appear as smashed screens. Players also have a journal on hand where information about the ghosts, evidence, objectives, and photos can be found. Evidence and ghost identification must be marked in the Journal to receive money and XP that can be used to purchase and upgrade more equipment.
+
+
+=== Evidence ===
+Players must utilize the various pieces of equipment to identify the three pieces of evidence unique to the type of ghost they are dealing with, and often to complete optional objectives as well. However, on Nightmare difficulty and higher, the ghost will only show two or lower pieces of evidence, forcing players to use the ghost's special traits and abilities to determine the correct ghost type. Some ghosts also have forced evidence, which will always show up as long as there's at least 1 evidence given. As of November 2025, there are seven possible pieces of ghost evidence.
+
+
+=== Media ===
+In the Chronicle update in June of 2025, the media system was introduced as a way for players to earn extra money and to get perfect games. Each media type has different recordable items and are recorded using different types of equipment. 
+Photo evidence can be taken with a photo camera. Items that count towards photo evidence include ghosts, bones, dead bodies (of teammates), fingerprints, footprints, EMF readings, freezing temperature readings, dirty water, used crucifixes, ghost writing, and cursed possessions.
+Video evidence can be recorded with a video camera. Recordable videos include ghosts, teammates dying, ghost writing, ghost orbs, items being thrown, lights being switched, doors moving, motion sensors going off, salt being disturbed, candles blowing out, Ouija Boards, crucifixes burning, and other assorted interactions.
+Audio evidence is recorded with a sound recorder. Recordable sounds include EMF 5, music boxes, Ouija Boards, candles blowing out, crucifixes burning, ghost writing, spirit box responses, ghost audio, and assorted paranormal sounds.
+In order to get a perfect game, players must have five unique photos, five unique videos, and three unique sounds. A unique piece of media is one that has not been taken before (ex: if a ghost photo has already been taken, subsequent ghost photos of the same type will become duplicates, which give less money; however, if a different photo is taken, it will be unique). Players must also balance the unique media requirements with the limited number of deletions, after which media cannot be deleted. Lower difficulties have upwards of five deletions, while higher difficulties will only have three deletions.
+
+
+=== Cursed Possessions ===
+Cursed Possessions, also called "Cursed Items" or "Cursed Objects", are a group of items in Phasmophobia that allow players to directly interact with the ghost itself. Some abilities of the Cursed Possessions include the ability to make the ghost appear, force a hunt, ask the ghost questions, or even kill the player. As of May 2024, there are a total of seven cursed possessions in Phasmophobia. They include the Ouija Board, Music Box, Haunted Mirror, Tarot Cards, Summoning Circle, Voodoo Doll, and the Monkey Paw. Each item offers a distinct way of interacting with the ghost. Each cursed item has a 1 in 7 chance to spawn on each map, with different spawn locations for each item. Only one cursed possession will spawn on the map unless set otherwise via custom difficulty. The only exception being insanity difficulty in which no cursed possessions spawn. Having any Cursed Possession reduces the multiplier of custom games, while specifically choosing once lowers it further. The Monkey Paw is the most extreme, with a 5x multiplier reduction. The Music Box, Haunted Mirror, Tarot Cards, Summoning Circle, and Voodoo Doll were all released in version 0.5.0, known as the Cursed Possessions update. The Monkey Paw item was added at a later time, in update 0.8.1.0.
+
+The Ouija Board was the first Cursed Possession in Phasmophobia, being present in early alpha and the initial release. Similar to a Spirit Box, the Ouija Board allows players to ask the ghost questions, such as "Where are you?" or "How old are you?". The Ouija Board can give players more helpful answers than a Spirit Box. The ghost will respond by moving the dial to one letter at a time, spelling out an answer. Asking questions on the Ouija Board will lower the player's sanity more or less depending on the question. Asking the question "Hide and Seek" will count down and trigger a cursed hunt, and asking a question without enough sanity will break the Ouija Board and trigger a cursed hunt.
+The Music Box is an item that allows the player to locate the ghost. Once the Music Box is obtained, a player can trigger it, and the ghost will begin to creepily hum along with the music. Any players nearby will start losing sanity. Once a player drops the Music Box or runs out of sanity while the song is playing, the Music Box gets too close to the ghost, or the ghost is near the Music Box for too long, the ghost will immediately begin a cursed hunt.
+The Haunted Mirror is a Cursed Possession that allows players to peer into it and see the ghost room. Each time a player looks into the mirror, their sanity will decrease by a significant chunk immediately, and then further over time. If a player runs out of sanity while looking into it, it will break and trigger a cursed hunt.
+Tarot Cards are a Cursed Possession that can be used by "pulling" cards from the deck. There are a total of 10 tarot cards in the deck. When pulling a tarot card, the card will burn with a distinct flame effect, the color present in this effect depends on what card was pulled. Some tarot cards can benefit the player, such as restoring their sanity significantly or even fully restoring it. There are also tarot cards that are less desirable to receive as a player, such as "The Moon", a card that drops a player's sanity to 0%, or "Death", a card that triggers a cursed hunt.
+The Summoning Circle is a Cursed Possession that only spawns on floors and cannot be picked up or moved. The Summoning Circle is a circle outlined in red that is surrounded by 5 candles. Players can light the candles using an igniter. Each candle lit will drain some of the player's sanity. Once all 5 candles are lit, the ghost will appear in the middle of the circle. After appearing, if the player had the required amount of sanity to light all 5 candles, the ghost will remain still for a few seconds before beginning a cursed hunt. If not, the ghost will immediately begin a cursed hunt.
+The Voodoo Doll is a cursed item that allows players to trigger ghost interactions. There are a total of 10 pins in the Voodoo Doll, and ghost interactions can be triggered by pushing the pins into the doll. Each pin that is pushed into the doll will drain the player's sanity slightly. If the heart pin is pushed into the doll, it will trigger a cursed hunt and drain a slightly bigger chunk of sanity. If the player does not have enough sanity to use the doll and still tries to push a pin, all remaining pins will be forced into the doll and a cursed hunt will begin.
+The Monkey Paw, the 7th Cursed Possession, was added in the 0.8.1.0 content update on February 27, 2023. The Monkey Paw allows the players to make a variety of different wishes by speaking into their microphone (using one of 10 phrases). Once a wish is made, a finger on the monkey paw will then curl, showing that the wish has been granted. A player can make a maximum of 5 wishes using the monkey paw depending on the difficulty multiplier, with the minimum amount of wishes being 3. Each wish has both an upside and a downside, which are proportional to the strength of the wish in question. For example, wishing for knowledge eliminates an incorrect evidence but neuters the wishing player's senses of hearing and sight for the rest of the contract.
+
+
+=== Ghost types ===
+As of December 2025, Phasmophobia has 27 different ghost types, most of which are based on creatures and entities from various cultures and religions. The types of ghost are:
+
+Banshee from Irish folklore;
+Dayan from Indian and Pakistani folklore;
+Demon from Christianity;
+Deogen from Belgian folklore;
+Gallu from ancient Mesopotamian religion
+Goryo from Japanese folklore;
+Hantu from Indonesian and Malay folklore;
+Jinn from Islamic folklore;
+Mare from Germanic and Slavic folklore;
+Moroi from Hungarian and Romanian folklore;
+Myling from Scandinavian folklore;
+Obake from Japanese folklore;
+Obambo from Central African folklore;
+Oni from Japanese folklore;
+Onryo from Japanese folklore;
+Phantom;
+Poltergeist from German folklore;
+Raiju from Japanese folklore;
+Revenant from Celtic and Norse folklore;
+Shade from Greek folklore;
+Spirit;
+Thayé from Burmese folklore;
+The Mimic;
+The Twins;
+Wraith;
+Yokai from Japanese folklore;
+Yurei from Japanese folklore.
+Each ghost type is the same at its base, simply modified with different abilities it can use, as well as times it can hunt. The Spirit is the best example of this base, only possessing a simple weakness.
+
+
+=== Sanity ===
+Sanity is a parameter that determines a number of factors during gameplay. Sanity begins at 100% at the start of a game and decreases passively as the player wanders in dark areas. Active ghost actions such as ghost events will drain sanity faster, and certain ghosts' abilities will drop sanity even faster. The lower the average sanity, the more likely a ghost is to perform certain actions, including ghost events, interactions, and hunts. Sanity drain can be reduced by holding a lit Firelight by different amounts depending on the Tier or standing in lit areas. Sanity can be restored by using Sanity Medication or using Cursed Possessions, most of which use sanity as a cost for their abilities.
+
+
+=== Hunts ===
+The hunt is a gameplay feature designed to add complexity and danger to players' investigation of a specific location. When a hunt occurs, the ghost manifests and wanders throughout the area to eliminate one or more players, depending on the difficulty. A standard hunt can be prevented with a crucifix, but a Cursed hunt, triggered by a Cursed Possession, can only be prevented with a Tier III crucifix. Throughout an unprevented hunt, the lights near the ghost's current position will intermittently flicker, all exit doors will be locked, and the ghost will disrupt active electronic devices nearby. Some ghosts exhibit abilities during hunts that could make them stronger or weaker, depending on the ghost, and these abilities can be used to determine the ghost type if the investigators know what they're looking for. In addition to the varying abilities amongst ghosts, all ghosts exhibit the ability to hear other players talking through their microphones. Talking during a hunt when near the ghost will alert the ghost of the player's location and they will move in the direction of the player's voice. During a hunt, leaving electronic devices active in one's hand or inventory, such as the flashlight, will also attract the ghost to the player's location if the ghost is close enough. Hunts will last longer on bigger maps; and on higher difficulties, hunts will be extended if the ghost kills someone. Cursed Possessions can elongate hunt durations further.
+
+
+=== Custom difficulty ===
+In September 2022 an update was released which added the custom difficulty to the game, with a rebalance in February 2023. This custom difficulty makes the player able to change certain settings to the mission. Changing the settings will result in money and XP multipliers that could be more or less rewarding, depending on the difficulty of the settings. Changeable settings include player/ghost speed, weather, hiding places, flashlights working, Cursed Possession amounts, evidence amounts, starting sanity, and more.
+
+
+== Development ==
+The game's Steam page was launched in March 2020. An announcement trailer was released three months later, announcing additional VR support and a release date for the early access build. On September 18, 2020, the game was released in early access for $14. After the release, the game received two major updates regarding bug fixes in the following week and several major content updates over the next 3 years. On June 13, 2023, Kinetic Games announced that console versions of the game would be released in August; however, due to a fire that occurred at the Kinetic Games office, they were pushed back to October. On October 17, 2023, Kinetic Games announced that console versions of the game were delayed again due to “Unforeseen challenges” caused by the fire and were pushed back with no confirmed date. Following these delays, Kinetic Games released the console versions of the game on October 29, 2024.
+In the future, Kinetic Games has promised reworks to core systems like horror, hunts, events, and more, as well as new additions, including character customization, new character models and animations, new optional objectives and tasks, new interactions, hallucinations, and new ghost models.
+
+
+== Release ==
+Although first released on 18 September 2020, the game began to rise in popularity around the beginning of October for Halloween. This was the game's first time trending and was being played by many notable Twitch streamers and YouTubers. This was likely due to the game entering early access around the beginning of the Halloween season, as well as being similar in popularity to its inspiration P.T. In addition to gameplay by notable content creators, many of the game's early players took to social media to share clips of the game. Users on these social media platforms would re-share the clips or download the game for themselves. A large portion of Phasmophobia's immediate popularity and success can be attributed to its presence on social media. It could also be due to the start of the second wave of the COVID-19 pandemic causing many people to stay at home.
+With the influx of players due to the large number of popular streamers playing the game, hackers became widespread during the later weeks of the game's release, mostly by trying to jumpscare players or spawn an infinite amount of items. One of the more concerning examples of hacking were stream snipers, who changed their player models to a more NSFW one, likely causing said streamers to receive warnings and bans for inappropriate content. The developers then began working on updates to solve the problem.
+On Twitch, the game grew exponentially and even reached the top 5 most viewed games in mid-October, overtaking games such as Among Us, Fortnite Battle Royale, FIFA 21, and Genshin Impact. According to online player tracker GitHyp, the game hit a peak of over 86,000 active players around October 10.
+
+
+== Reception ==
+
+Phasmophobia was well-received by critics. GameRant named it the best horror game available on Steam, saying that "Even with no official Metacritic score, players on Steam have been incredibly impressed with Phasmophobia, and with the game coming to consoles soon, even more players will get to experience the horror in no time." Since August 2023, IGN considered it one of the "12 Best Horror Games on PC", stating that "Nothing beats that moment when you suddenly see your friend twist and contort from getting got by one of Phasmophobia’s many evil spirits as you all scramble to the exit for a hasty escape."
+Rich Stanton of PC Gamer called it "the best ghost game ever made", as well as declaring that it was "unlike anything else I've played", and that it "comes up with shit that'll turn you white". Cass Marshall, writing in Polygon, also gave a positive review, describing it as "a nice, cozy kind of horror and once it gets rolling, it is brilliant", while also finding that the game had numerous bugs which have since been fixed. Jeuxvideo.com described the game as being quite original and imaginative, on top of being creepy. They felt that the maps in the game were well thought out and that the level of progression was well-paced. Whilst the review criticized the game for its animations and certain redundancies, they felt that they would likely be smoothed out with constant updates before the game's release. A review by CBR described the game as "the perfect game for the Halloween season", praising it for its unique jumpscares, as well as for its sound design. The game has been compared to many other horror games of a similar nature, such as Friday the 13th: The Game and Dead by Daylight.
+
+
+=== Sales ===
+The game became a Steam top-seller, and by the end of October 2020, was the best selling game of that week, beating out Fall Guys and pre-orders for Cyberpunk 2077. It was the highest selling game on Steam for three weeks in a row. As of December 2024, Phasmophobia has exceeded one million console sales and nearly 22 million total sales since its 2020 release.
+As of February 2025, Phasmophobia has sold over two million units across PlayStation 5, PlayStation VR2, and Xbox Series platforms, 104 days after its console launch.
+As of June 2025, a film adaptation of the video game was reported to be in development, with production from the horror film company Blumhouse Productions.
+
+
+=== Awards ===
+
+
+== References ==
+
+
+== External links ==
+Official website

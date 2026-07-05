@@ -1,0 +1,38 @@
+Game: PlateUp!
+appid: 1599600
+Source: PlateUp!
+URL: https://en.wikipedia.org/wiki/PlateUp!
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+PlateUp! is a 2022 restaurant management simulation video game with roguelike elements, developed by It's Happening and published by Yogscast Games. Gameplay involves one to four players operating a restaurant by taking orders, preparing food, serving food, and cleaning dishes. Over each run lasting 15 in-game days, players choose randomly generated upgrades and difficulty modifiers for their restaurant. PlateUp! was developed as the first game of, and initially as a solo project by, Alastair Janse van Rensburg. The game was released initially for Microsoft Windows on 4 August 2022, with a console edition being released on 15 February 2024 for Nintendo Switch, PlayStation 4, PlayStation 5, Xbox One, and Xbox Series X and Series S.
+The game received "fair" reviews from critics, who praised the gameplay of the game while criticizing its art and interface. The game was commercially successful, selling more than 1.5 million copies on Steam.
+
+
+== Gameplay ==
+
+PlateUp! is a co-op restaurant management simulation video game for one to four players, where players must operate a restaurant by taking orders, preparing food, serving food, and cleaning dishes. Taking too long for these tasks causes customers to become disgruntled, causing the players to lose the game. The game is structured into days: after each day, randomly generated upgrades are offered to players to purchase, such as a new sink or stovetop. Between days players must also choose one of two cards that increase difficulty and permanently alter their run, either by increasing the complexity of the menu, modifying player mechanics, or changing the behavior of the customers.
+The game is structured into runs, each normally lasting up to 15 days. Between runs, players have a warehouse where they can progress, unlocking new features after each attempt in a roguelike fashion. The warehouse also allows players to select parameters for their next restaurant.
+
+
+== Development and release ==
+Developer It's Happening is based in Bristol, England. It's Happening consists of solo developer Alastair Janse van Rensburg, a former cybersecurity researcher, who developed PlateUp! as his first game. The game originated from Rensburg and his friends searching for co-op games to play during COVID-19 lockdowns. Rensburg described the game as being designed to be accessible to new players, to which extent he made a game where players could work together rather than having specific roles, and simplified the game to having its functions mapped to one or two buttons.
+PlateUp! was released for Windows on 4 August 2022. A console edition, initially scheduled to release in 2023, was delayed until 15 February 2024, when it was released for Nintendo Switch, PlayStation 4, PlayStation 5, Xbox One, and Xbox Series X and Series S. On Xbox, it was included in Xbox Game Pass.
+The game has been supported by content updates after its release, adding event gamemodes, recipes, and appliances.
+
+
+== Reception ==
+
+PlateUp! received "fair" reviews according to review aggregation website OpenCritic, with 82% of critics recommending the game.
+Reviewers generally praised the gameplay of the game. Nintendo Life considered the roguelike elements and progression between runs of the game to provide variety and encourage repeat play, describing the game as addicting. Push Square described the game as encouraging collaboration rather than chaos and as being divisible into tasks, making the game calming. Polygon praised the roguelike mechanics for improving the strategy and replayability of the game, and considered the game fun in groups, describing it as a "fantastic double-date game". In contrast, TheGamer claimed the game would be divisive due to its difficulty curve, especially among games of its type.
+The art and interface received more negative feedback. Multiple reviewers criticized the controls, describing them as "imprecise" and "clunky", and the interface, describing it as "cluttered", or commenting that the graphics made it difficult to identify items.
+PlateUp! drew comparisons to Team17's 2016 cooking simulation game Overcooked. Nintendo Life considered the games similar, but considered the roguelike elements and progression to make them different experiences. Push Square considered that, while Overcooked caused chaos and arguments, PlateUp! encouraged players to collaborate and work on simple tasks.
+The game was commercially successful, and had sold more than 1.5 million copies on Steam as of February 2024.
+
+
+== References ==
+
+
+== External links ==
+Official website
+PlateUp! at IMDb

@@ -1,0 +1,50 @@
+Game: Exoprimal
+appid: 1286320
+Source: Exoprimal
+URL: https://en.wikipedia.org/wiki/Exoprimal
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Exoprimal is a 2023 multiplayer third-person shooter game developed and published by Capcom. In the game, the player controls an "exofighter", an exosuit-equipped soldier, who must complete objectives while fighting hordes of dinosaurs with the goal of defeating the sinister artificial intelligence Leviathan. In gameplay, players are grouped into two teams of five, and must compete with each other to defeat waves of dinosaurs and complete objectives before the opposing team can.
+Exoprimal was released for PlayStation 4, PlayStation 5, Windows, Xbox One and Xbox Series X/S on July 14, 2023. The game received mixed reviews from critics and had sold under 940,000 units by September 2023. Capcom announced in July 2024 it would no longer receive new content.
+
+
+== Gameplay ==
+
+Exoprimal is a "player-versus-player-versus-environment" video game where players, controlling exofighters, are divided into two teams and compete to complete objectives first. The game features multiple exosuits, each with their own weapons and abilities, categorized into three character classes: Assault, Tank, and Support. For instance, Roadblock is a tank character who is equipped with a shield, the Witchdoctor is a supporting character who can heal other players, and Barrage is an explosive expert. Players can change their classes during gameplay, or apply "rigs" to their characters, which grant them abilities from other classes. Players can also progress through the game's Survival Pass to unlock new skins and cosmetic items for their exosuits and weapons.
+The main mode in the game is "Dino Survival". Two teams of five players must race against each other to complete the objectives set by Leviathan. The main opponents in the game are dinosaurs unleashed from mysterious vortexes, including Tyrannosaurus, Triceratops, Pachycephalosaurus, Pteranodon, and massive hordes of raptors, as well as mutated prehistoric creatures named "neosaurs" which have special combat abilities. The objectives and combat challenges players must complete include Dinosaur Cull, VTOL Defense, Data Key Security, Omega Charge, and Energy Taker. According to game director Takuro Hiraoka, players are sometimes required to fight against or fight with each other. Dinosaur Cull requires players to eliminate a specific kind of dinosaur, while VTOL Defense tasks players to guard a grounded aircraft and protect it from dinosaur attacks. As the player completes objectives, they will gain experience points, which would allow them to further upgrade their characters and unlock more story missions.
+
+
+== Plot ==
+In the near future of 2040, interdimensional time-travelling portals known as "vortexes" begin to appear on Earth. The only thing that comes out of them are massive hordes of hostile dinosaurs and "neosaurs", genetically-modified dinosaurs mutated by the chemicals Hi-Xol and its more unstable form of Lo-Xol, causing global chaos and destruction. Humanity fights back by fielding "exofighters", soldiers equipped with specialized exosuits manufactured by the Aibius Corporation. Aibius also develops "Leviathan", an advanced artificial intelligence designed to assist the exofighters by developing new exosuits, augmenting their operations and predicting where the next vortex will open.
+In 2043, Patrol Squad #52585 "Hammerheads"—consisting of Ace, a rookie exofighter and the fully-customizable player character; Lorenzo, the squad leader and mechanic; Alders, an engineer; Majesty, a skilled but serious exofighter; and Sandy, the squad's android assistant—are caught in a vortex during a mission and find themselves on Bikitoa Island which has been sealed off by Leviathan since 2040. Ace meets veteran exofighter Magnum, who assists him and the Hammerheads, as well as Leviathan, who has seemingly gone rogue and is now hosting "wargames". These consist of various "combat tests" that send the participants, back in time to a specific date in 2040 where they must fight waves of dinosaurs and neosaurs appearing through vortexes opened by Leviathan itself. Ace, supported by Magnum and the Hammerheads, takes part in the wargames while attempting to uncover Leviathan's secrets.
+Magnum is eventually able to establish communications with the Hammerheads, and reveals that he is from an alternate timeline and works under an alternate version of Lorenzo. He explains that Leviathan has been capturing exofighters from various timelines in order to send them to 2040 to collect combat data for exosuit development under threat of death. In light of this, the Hammerheads research the original Bikitoa Incident in 2040, which began when the Stratovator space elevator on the island collapsed, causing catastrophic damage before the island was cut off from the outside world by a spacetime distortion. However, the Hammerheads begin to suspect that Leviathan is actually the cause for the incident. During the wargames, Magnum is able to collect critical data that he attempts to transmit to the Hammerheads, but he is apparently killed by a hostile exofighter named Durban.
+The Hammerheads are then contacted by an alternate version of Dr. Garrett Synes, Aibius' head scientist, who requests them to retrieve his research data from 2040 in order to recover Leviathan's override codes, though the Hammerheads are wary that he may have ulterior motives. They investigate further and discover Synes' "Golden Goose" project, which uses time traveling Vortexer technology to harvest Hi-Xol superfuel for Aibius. They also discover that exosuits and vortexers were derived from the Origin Suit, an exosuit that was sent million years in the past and recovered by Aibius in 2023. The Hammerheads confront Synes about this new information, and he sends Durban, revealed to be an alternate Alders, to steal their data.
+While searching for Durban, the Hammerheads find another ancient exosuit left behind by an alternate version of Majesty from 2050, who left a recording warning that in the far future, Aibius builds additional Stratovators all over the world to harvest Hi-Xol, but the temporal harvesting was destroying the very fabric of reality, creating the vortexes that summon dinosaurs and causing outbreaks. She provides the algorithm required for time travel. In addition, they find out the Origin Suit's original pilot, Yannick Nadi, attempted to travel back in time from the 24th century to stop the construction of the Stratovators in the future, but ended up and died in the Cretaceous Period and the remnants of his mind left in the suit were partly used to create Leviathan. Nadi still lives on inside Leviathan, trying to reach out to people like the alternate Majesty and Lorenzo's sister Haruka to try and complete his mission. They realize that if they can transport their plane back to 2040, they can help Haruka's plan succeed, destroy Leviathan, and avert the disaster altogether. They convince Synes to tell them how to transport their plane, but Durban betrays and kills him shortly after so he can take Golden Goose for himself.
+With their preparations ready, the Hammerheads transport their plane to 2040 while Nadi sends the exofighters to attack Leviathan's core directly. The Hammerheads use the plane to convert Levithan's Hi-Xol reserves into the more volatile Lo-Xol, which explodes and destroys the AI's core. In desperation, Leviathan hijacks the Behemoth exosuit Durban is piloting, killing him in the process. The combined might of the exofighters is eventually able to destroy the Behemoth and Leviathan for good. The Hammerheads then return to 2043, where they find that the Bikitoa Incident has been completely averted and Haruka is still alive. However, Haruka warns them that Aibius knows they possess the complete Golden Goose data and are accusing them of theft. After being provided coordinates for a safe location, the Hammerheads fly off, intent to keep resisting Aibius and prevent them from using Golden Goose and threaten reality ever again.
+
+
+== Development ==
+Exoprimal was developed by Capcom. The team's goal was to design an action game that was distinct from Capcom's previous titles, and they envisioned a game in which players are required to overcome and eliminate hordes of enemies, unlike Monster Hunter in which players only take on one single enemy at a time. Dinosaurs were chosen as the game's main enemy type because Hiraoka and the team believed that "it would be fun to experience the threat of history's most fearsome predators", especially if they attack players in a massive horde. The game is not related to the Dino Crisis series, though the producer of that series, Hiroyuki Kobayashi, was involved in the development and production of Exoprimal.
+
+
+== Release ==
+Exoprimal was announced during a PlayStation State of Play livestream in March 2022. Capcom arranged network tests for PC players in July and August 2022, allowing them to play a pre-release version of the game. An open beta for the game was held from 17 to 19 March 2023. The game was released for PlayStation 4, PlayStation 5, Windows, Xbox One, and Xbox Series X/S as a fully-priced product on July 14, 2023. It also launched on Xbox Game Pass for cloud, console, and PC.
+In July 2024, Capcom announced all planned seasonal content had been finished, and the game would no longer receive any new update.
+
+
+== Reception ==
+
+Exoprimal received "mixed or average" reviews from critics, according to review aggregator website Metacritic. OpenCritic determined that 31% of critics recommend the game.
+
+
+=== Sales ===
+In two weeks, Exoprimal had reached over one million players.
+By the end of September 2023, the game had sold under 940,000 units.
+
+
+== References ==
+
+
+== External links ==
+Official website

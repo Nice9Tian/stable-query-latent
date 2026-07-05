@@ -1,0 +1,83 @@
+Game: Vampire Survivors
+appid: 1794680
+Source: Vampire Survivors
+URL: https://en.wikipedia.org/wiki/Vampire_Survivors
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Vampire Survivors, also known as Vampire Survivors — First Survivaton, is a 2022 independent roguelike shoot 'em up video game developed and published by Luca Galante under the studio name poncle. Following an early access period that began in December 2021, it was released for macOS, Windows, Xbox One, Xbox Series X/S, Android, and iOS in late 2022. A port for Nintendo Switch was released on August 17, 2023, and on August 29, 2024, a port was released for PlayStation 4 and PlayStation 5. A virtual reality port for the Meta Quest was released in November 2025.
+In the game, players control an automatically attacking character while battling continuous waves of monsters, aiming to survive the onslaught for as long as possible and unlock additional characters, weapons, and relics for future sessions. The game was initially a small project Galante made while unemployed and released at a very low cost. It drew far greater sales than Galante expected, leading to him bringing on additional developers to improve the engine and expand the game. The game has since had several free and paid expansions, including an official pack based on Castlevania, a series Galante had used for inspiration. 
+Vampire Survivors received accolades at the Golden Joystick Awards, New York Game Awards, and D.I.C.E. Awards. The game was nominated in five categories at the British Academy Games Awards, winning two: Game Design and Best Game. The game is considered one of the first "bullet heaven" games and has led to numerous titles with similar auto-combat mechanics. A spin-off roguelike deck-builder, Vampire Crawlers, was released on April 21, 2026.
+
+
+== Gameplay ==
+Players select one of multiple characters, each with different starting weapons and bonuses, and control them on an endless stage featuring an auto-generated, repeating layout. The player's weapons attack automatically, and the goal is to survive as long as possible against constant waves of monsters that inflict damage upon contact. Defeating monsters and exploring the stage allows players to collect experience gems, which are used to level up; "floor chicken", which restores the player's health; and other helpful items. Each level increase gives players the choice of three or four weapons and power-ups named "passives". Once players have collected six weapons and six power-ups and upgraded them fully, any further levels gained will offer only gold coins or floor chicken.
+Another way to upgrade weapons and passives is by opening chests, which are dropped by particularly powerful monsters and may contain one, three, or five random items. Most weapons have an ultimate (or "evolved") form that can be attained by opening a chest after fully upgrading them and meeting other specific conditions, typically having a specific passive or that passive at max level. 
+Sessions of Vampire Survivors have a soft time limit of 15, 20, or 30 minutes, depending on the selected stage. When the time limit is reached, all enemies are cleared from the stage, and a final, immensely powerful enemy named The Reaper spawns. One additional Reaper will appear every consecutive minute thereafter to ensure the player's eventual demise. A session that meets or exceeds the stage's time limit is considered a successful completion and rewards bonus gold coins. Between sessions, accumulated gold coins can be spent to unlock new characters and persistent power-ups. Additionally, by completing challenges, players can unlock new stages, weapons, and characters, as well as various game modifiers, such as an endless mode that removes the soft time limit, a hyper mode that increases player and enemy speed, and a limit break mode that allows players to continue enhancing weapon attributes even after fully leveling them. Players can obtain golden eggs by defeating certain enemies or purchasing them from an in-game vendor, which provide permanent attribute improvements to their currently selected character.
+
+
+== Plot ==
+Vampire Survivors is nominally set in rural Italy in 2021. Hordes of monsters summoned by the evil Bisconte Draculó (a villain inspired by Count Dracula) ravage the land, prompting the Belpaese family and other heroic survivors to take it upon themselves to hunt down and defeat Draculó. This quest takes them through monster-infested locales such as a cursed forest, a haunted library, an abandoned dairy plant, an ominous tower, and an otherworldly chapel, culminating in a battle against an Eldritch otherworldly being referred to as "The Directer". Despite the game's title, the characters do not fight any vampires in the story.
+
+
+== Development ==
+
+Italian developer Luca "poncle" Galante began developing Vampire Survivors in 2020 using the Phaser framework while he was unemployed. He aimed to create Vampire Survivors to manage a community, drawing from his past experience as an administrator for an Ultima Online server. The game was inspired by Magic Survival, a 2019 mobile game that also featured a character that automatically attacks enemies. 
+Development of the initial early access version took about a year, during which Galante spent around £1,100 on assets, art, and music. Galante was inspired by the Castlevania games, and one of the art asset packs included sprites in a similar style to the characters in the early Castlevania games. Prior to developing Vampire Survivors, Galante worked in the gambling industry, using his knowledge of flashy graphics for slot machines as part of the appeal for the game's chest-opening animations.
+Galante released his initial version of Vampire Survivors on itch.io, but did not see much engagement. He then decided to release it on Steam before the end of 2021, keeping the cost low since the game had minimal art aesthetics. The low price meant that his game could reach a larger audience. However, on the same day, he contracted COVID-19 and focused his attention on his recovery rather than on how his game was selling. In early 2022, he learned that the game had caught the attention of some YouTube creators, which led to an increase in Steam sales.  
+The success of the game exceeded Galante's expectations and allowed him to quit his job in February 2022 to focus entirely on its development. He was informally assisted by "a few friends" in their spare time. Planned content included additional weapons, characters, stages, and an "endless mode". Galante's intent was to bring Vampire Survivors out of early access by the end of 2022. 
+In March 2022, Galante hired multiple freelancers to expand the Vampire Survivors team and accelerate development. In addition to outlining the scope of the promised new content with a roadmap, he explained that a major milestone slated for mid-2022 would be porting Vampire Survivors to an "industry-standard" game engine to improve its overall performance.
+The full game was released for macOS and Windows on October 20, 2022. The game was also ported to Xbox One and Xbox Series X/S on November 10, 2022. Ports for Android and iOS devices were released on December 8, 2022. The mobile versions were fast-tracked for development in response to a number of clones that appeared on mobile app stores with stolen code and assets from the original game. While the game released on other platforms as an inexpensive but premium game, the mobile versions are free-to-play with optional ads.
+The Nintendo Switch version of the game was released on August 17, 2023. This also included support for local co-op play for up to four people, a feature that was simultaneously released for all versions of the game.
+The Tesla Cars version was released in September 2023 with the 2023.26 firmware update for vehicles with the correct hardware.
+A free update, titled Whiteout, was released on October 19, 2023, adding a new snow-themed stage and additional characters and weapons. In April 2024, poncle surprise released the free Laborratory update.
+In April 2024, it was announced that the game would be coming to PlayStation systems, with PlayStation 4 and PlayStation 5 versions set for release on August 29, 2024.
+An update in April 2025 introduced the ability to use cross-saves between most of the games' supported platforms after linking with a free Poncle account. While this was also planned to be used for the PlayStation versions, legal issues blocked this feature.
+Online cooperative gameplay was introduced in beta testing by August 2025 for the Windows version and fully implemented into the game with the October 2025 update.
+A virtual reality port for the Meta Quest was released on November 13, 2025. The port includes the Legacy of the Moonspell and Tides of the Foscari downloadable content.
+As part of a free update in June 2026, the game's name was expanded as Vampire Survivors — First Survivaton. This came as Poncle began to release other bullet heaven style games that it had developed. The term "Survivaton" is a play on the phrase "survive a ton", and was added to establish Vampire Survivors as the flagship title in these games.
+
+
+=== Downloadable content ===
+The first paid DLC expansion for the game, titled Legacy of the Moonspell, was announced on December 6, 2022. Inspired by Japanese folklore and anime, it adds thirteen weapons, eight characters, and a new stage featuring enemies designed after yōkai and oni. The expansion was released on December 15, 2022, for macOS, Windows, and Xbox platforms, with a mobile release in early 2023. A second paid DLC expansion, Tides of Foscari, was released in April 2023. It introduces 13 new weapons, 8 new characters and a new passive only obtained with some of the new characters and in both new stages. In addition, Tides of Foscari features 2 new stages inspired by fairy tales. A third original expansion, Legacy of the Bloodmoon, is scheduled for a mid-2026 release, and is described as the "evil twin" of Legacy of the Moonspell.
+The game has also released DLC expansions featuring elements from other video games. Emergency Meeting, based on Innersloth's Among Us, was released on December 18, 2023, with 15 new weapons, 9 new characters and 8 passives. It also features a stage based on the Among Us map Polus. Operation Guns, based on Konami's Contra, was released on May 9, 2024, with 12 new characters, 22 new weapons and 2 stages, as well as a new passive. Ode to Castlevania, based on Konami's Castlevania series, was released on October 31, 2024, coinciding with Halloween. It is the largest DLC, with 80 characters on release, and was later updated to add 16 more, over 100 weapons, with new weapons being added later, and one new huge stage, with more weapons and characters than the  base game. Galante said that Ode to Castlevania was a "full circle moment" for him with the game. The Ode to Castlevania includes voicework from Neil Newbon as Dracula and SungWon Cho as Richter Belmont. Emerald Diorama, based on Square Enix's SaGa: Emerald Beyond, was released for free on April 10, 2025, adding 16 new characters, 35 new weapons, a new stage and a new 'glimmer' mechanic. Ante Chamber, a small expansion based on LocalThunk's Balatro, was released for free on October 28, 2025, with 4 characters, 8 weapons, a new stage based on Balatro's UI and a new passive.
+
+
+=== Vampire Crawlers ===
+ 
+In 2025, Poncle announced a spinoff of Vampire Survivors, named Vampire Crawlers, developed by Nosebleed Interactive, released on April 21, 2026. Vampire Crawlers is a roguelike deck-building game, with the player traveling between encounters, using a deck of cards they build up to fight enemies and gain rewards. While it uses the same approach as traditional deck-builder games where the player has time to think about how to play their cards, Vampire Crawlers also allows the player to rapidly play cards for different effects. According to Galante, work on Vampire Crawlers had started shortly after Vampire Survivors had become a success around 2021. Galante had considered talking to other studios to make spin-offs of Vampire Survivors, one prototype from Nosebleed which became Vampire Crawlers. With all the assets that Poncle had developed for Vampire Survivors, they reused most of the same characters, weapons, creatures, and other assets with Vampire Crawlers, in part to avoid having to develop a new narrative angle while also simplifying development.
+
+
+=== Film adaptation ===
+An animated Vampire Survivors television series was announced in April 2023, to be produced by Story Kitchen in partnership with Luca Galante. However, in January 2025, it was confirmed that the project was being reworked into a live-action film, with Story Kitchen still involved in the production.
+
+
+=== Comic series ===
+A four-issue comic series will be published by Titan Comics starting in September 2026. The series will be written by David Hazan and illustrated by Jimmy Kucaj.
+
+
+== Reception ==
+
+While Vampire Survivors was initially obscure upon its release, it became a hit by late January 2022, reaching over 30,000 concurrent players on Steam. This number continued to rise, with the game surpassing 70,000 concurrent players the following month. Due to the success of Vampire Survivors, Galante was estimated by The Sunday Times in August 2024 to have accumulated £40 million, making him one of the wealthiest game developers in the United Kingdom. 
+While not the first game in its genre, Vampire Survivors inspired several other titles referred to as bullet heavens or reverse bullet hells, characterized by automatic gameplay and roguelike progression, which were released in the following year, mostly at a low price and in early access. Some of these include Deep Rock Galactic: Survivor and HoloCure – Save the Fans!. In one case, Poncle licensed the Vampire Survivors name and engine for a Warhammer 40,000 themed take on the game, the upcoming Warhammer Survivors, while Jujutsu Kaisen Rumble: Survivaton, based on the Jujutsu Kaisen works and published by Shueisha Games, adds battle royale-style multiplayer concepts.
+
+Vampire Survivors received "generally favorable" reviews for Windows according to review aggregator platform Metacritic; the Xbox Series X/S and iOS versions received "universal acclaim".
+Ian Walker of Kotaku and Graham Smith of Rock Paper Shotgun praised the game, both comparing it to dopamine. Polygon's Nicole Carpenter noted the game's depth, stating, "no one streamer I've watched played entirely the same." Aaron Zimmerman of Ars Technica named Vampire Survivors as his pick for game of the year. Marie Dealessandri of GamesIndustry.biz also selected Vampire Survivors as her game of the year, highlighting its excellent performance on the handheld Steam Deck, which also released in 2022.
+
+
+=== Accolades ===
+
+
+=== Impact ===
+With the financial success of  Vampire Survivors, Galante established an indie publishing group, Poncle Presents, in September 2024, intended to help indie developers bring their game to market. Galante said the aim was not to act as a traditional publisher but to help fund and guide indie developers even past release, focusing on smaller indie teams. Two titles were released, Berserk or Die (June 2025) and Kill the Brickman (Aug 2025). By April 2026, poncle had paused its publication arm and instead was focusing on expanding with additional small studios in Japan and Italy, with up to 15 projects in their pipeline that include spinoffs from Vampire Survivors, Survivor-like games made in collaboration with other developers such as Warhammer Survivors, and new IPs.
+
+
+== Notes ==
+
+
+== References ==
+
+
+== External links ==
+Vampire Survivors at IMDb 
+Official wiki

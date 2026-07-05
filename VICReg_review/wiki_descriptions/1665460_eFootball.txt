@@ -1,0 +1,45 @@
+Game: eFootball
+appid: 1665460
+Source: EFootball
+URL: https://en.wikipedia.org/wiki/EFootball
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+eFootball is a 2021 association football video game developed, published, and updated annually by Konami. It is the revamped successor to the popular Pro Evolution Soccer franchise, known as Winning Eleven in Japan.
+Unlike its predecessor, it was designed as a free-to-play digital video game that includes microtransactions and optional additional content, with the goal of offering more features and online and offline game modes such as Master League, as well as enabling cross-platform play. This eliminates the need for annual physical releases and instead provides periodic, free content updates that introduce new seasons. The first season of the video game, titled eFootball 2022, was released on 30 September 2021. It was followed by eFootball 2023 on 25 August 2022; eFootball 2024 on 7 September 2023; eFootball 2025 on 12 September 2024; and eFootball 2026 on 14 August 2025. This video game is part of the International Esports Federation's World Championship, the Northern and Eastern Europe League (NEEC), and the FIFAe World Cup.
+It was released for Microsoft Windows, Xbox One, Xbox Series X/S, PlayStation 4, and PlayStation 5 on 30 September 2021, and for Android and iOS on June 2, 2022. The Chinese version of eFootball was published by NetEase for Android and iOS in 2022. A separate standalone version of eFootball for Nintendo Switch 2, called eFootball Kick Off!, was published on 3 June 2026, serving as a spin-off title.
+
+
+== Gameplay ==
+In eFootball there are present two focal forms of gameplay. The first is named “Authentic Team”, which allows users to control virtual real-time soccer teams in offline games (against AI) or locally with friends. There you can also play online user matches: the latter will be playable in events and in friendly matches, where you can challenge another person remotely. The second game mode is called Dream Team, in which you can play online and offline matches with an original team, created by hiring coaches and players. Each formation can be customized with its name, its uniform and its playing style. With this club you can play both offline and online through the Events section.
+
+
+== Seasons ==
+
+
+== Development ==
+On 21 July 2021, Konami released a six-minute video revealing the new game. The announcement revealed that the Pro Evolution Soccer (Winning Eleven) brand had been dropped.
+The game was released on PlayStation 4, PlayStation 5, Microsoft Windows, Xbox One, and Xbox Series X/S on 30 September 2021. It was built using Unreal Engine 4 for the first time in the franchise.
+On 8 October 2021, Konami announced that it would release a new update with fixes for the game's issues on 28 October 2021. The update was delayed and the release postponed to November 2021. Konami then launched the update 0.9.1 on 6 November, and announced that the 1.0 update release was delayed until Spring 2022. Version 1.0.0 of eFootball 2022 was finally announced on 6 April 2022, with release date on 14 April 2022.
+On 31 May 2022, Konami announced their roadmap for the rest of 2022 up until 2023 for features such as Master League and the number of teams that can be used in offline mode which will all be released as paid content.  However, as of September 2024 of eFootball's latest series release, features such as Master League and Edit Mode have not been released on PC or consoles, and no further announcements have been made by Konami.
+
+
+== Reception ==
+
+At launch, eFootball 2022 was panned by critics and players, who criticized the "atrocious" graphics, lack of content, laggy engine and finicky controls. With 92% negative reviews, it became the worst-rated game on Steam a day after launch, and the lowest-rated game of 2021 on the review aggregator Metacritic. Konami later apologised for the game's many issues and said they would work on improving it. A major "1.0" update, that aimed to address many of these issues, was released 14 April 2022 on PC and consoles. 
+A 2022 review by Simon Cardy of IGN after the 1.0 update gave it a 4/10, writing that "In truth, it's still hard to recommend playing eFootball, even if it is completely free to do so" and that it's "disappointing in so many areas that it's hard to see a quick fix forthcoming". Cardy also criticized the skill moves and gameplay, writing that it's inconsistent and that its AI is dense and dull. Other things he criticized were the pay to win model, the lack of game modes, the atmosphere in games, the commentary in games, and the user interface. However, he praised the presentation of the pitch along with the player and stadium models.
+
+
+== See also ==
+List of association football video games
+List of video games notable for negative reception
+
+
+== References ==
+
+
+== External links ==
+
+Official website 
+eFootball at IMDb
+eFootball 2022 at Metacritic

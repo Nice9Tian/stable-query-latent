@@ -1,0 +1,39 @@
+Game: Infection Free Zone
+appid: 1465460
+Source: Infection Free Zone
+URL: https://en.wikipedia.org/wiki/Infection_Free_Zone
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Infection Free Zone is a post-apocalyptic survival city-building game developed by Jutsu Games and published by Games Operators for Windows. It was released for early access on April 11, 2024. The game takes place in a post-apocalyptic world where the "Mad Virus" has rapidly spread globally, transforming humans into aggressive infected creatures and causing the collapse of civilization within weeks. Players manage groups of survivors during the day to scavenge for resources and construct defenses, while defending their settlements against waves of infected during nighttime attacks.
+
+
+== Gameplay ==
+In Infection Free Zone, players assume control of a group of survivors tasked with establishing and defending a settlement against infected hordes and hostile factions. The core gameplay revolves around a day-night cycle where players manage squads of armed survivors who scavenge buildings for essential resources including food, medicine, weapons, and construction materials during daylight hours while the infected remain dormant indoors.
+Players must strategically choose their headquarters location and adapt existing real-world buildings into functional facilities such as medical bays, workshops, farms, and research centers to create a self-sustaining settlement. Defense preparation is crucial, as each night brings waves of aggressive infected that attack the player's zone, requiring the construction of walls, watchtowers, gates, and strategic positioning of armed squads to repel assaults. The game emphasizes resource management and strategic planning, with players needing to balance exploration for supplies against maintaining adequate defenses, while also managing survivor morale through proper food distribution and shelter.
+Advanced gameplay includes diplomacy with other survivor groups, research and development of technologies including potential vaccines, vehicle acquisition for faster travel and combat, and long-term settlement expansion through building demolition and reconstruction to optimize defensive layouts.
+
+
+== Plot ==
+At some time in the modern world, the plague dubbed "Mad Virus" appeared "out of nowhere" and began turning people feral and hostile to all other living beings. In the next few weeks, chaos emerges and societal order collapses worldwide. The intro cinematic shots hint to the beginning outbreak occurring somewhere in Northern Europe. Doomsday preppers banded together to live underground and form a stockpile of materials. For at least several years, they would live in their bunkers.[1] As supplies became scarce and life support systems began failing, an automated radio frequency declared that the infected population was declining and encouraging survivors to form new settlements. Regardless of what map players choose, they will always start in April 2030.
+As players continue developing their society they will continue to encounter other groups in the wasteland, including merchants, wandering migrants, bandits, signs of increasing intelligence within the infected, infected animals, and military factions, largely through the use of radio.
+Players may choose to turn off Story events and/or Illness Events upon creating their base. Doing this will disable radio events (excluding migrants) and the intro cinematic.
+
+
+== Development ==
+The demo version of the game titled Infection Free Zone – Prologue was released on October 19, 2023, for Steam. In this demo, player can play at six major cities, including Paris and Cambridge, for eight days in-game duration only.
+
+
+== Reception ==
+
+Infection Free Zone received mixed reviews upon its early access release in April 2024. Ed Smith of PCGamesN described the game as effectively mixing elements from Cities Skylines II, Dying Light, and Frostpunk.
+
+
+== References ==
+
+a.^A scene from the intro cinematic in the bunker suggests the survivors have been underground for at least three years(before April 2027).
+
+
+== External links ==
+Official website
+Infection Free Zone at MobyGames

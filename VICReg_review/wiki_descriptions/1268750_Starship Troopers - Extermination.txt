@@ -1,0 +1,43 @@
+Game: Starship Troopers: Extermination
+appid: 1268750
+Source: Starship Troopers: Extermination
+URL: https://en.wikipedia.org/wiki/Starship_Troopers:_Extermination
+Match score: 8.00
+Retrieved: 2026-07-04
+--------
+Starship Troopers: Extermination is a 2024 first-person shooter video game part of the larger Starship Troopers franchise and developed and published by Offworld Industries and Knights Peak. The game released for PlayStation 5, Windows, and Xbox Series X/S on October 11, 2024. It received mixed reviews from critics.
+
+
+== Development ==
+Announced in November 2022, the game is developed and published by Canadian studio Offworld Industries, previously known for developing the 2020 video game Squad.
+Part of the Starship Troopers media franchise, the game takes place in the Starship Troopers film universe.
+Although Extermination was originally expected to support up to 12-player action, this number was later increased to include 16-player player versus environment (PvE). The game entered its early access phase on May 17, 2023 and was released on October 11, 2024, concurrently extending the release to consoles by publisher Knights Peak Interactive.  Offworld revealed that Casper Van Dien has provided voice-over work for the single-player component of the game.
+
+
+== Gameplay ==
+
+
+=== Multiplayer ===
+The game features cooperative (co-op) gameplay, in which players assume the role of a Trooper. There are six Trooper classes: Sniper, Ranger, Demolisher, Guardian, Engineer, and Medic. Meanwhile, there are numerous types of "bugs," including Drone, Warrior, Gunner, Plasma Grenadier, and Tiger Elite. More Bug enemies are added as development continues. There is also a ping system similar to the ones included in Apex Legends and Halo Infinite, to assist with player-to-player communication in-game.
+Each match will see the players deploy on one of multiple planets, such as Valaka and Agni-Prime, from a dropship, with a task to explore it. There are currently four types of game modes. In AAS (Advance And Secure), Players will need to complete missions and gather resources with the goal of creating a base defendable from the bugs. On horde mode, players will have to defend the mobile HQ from ten increasingly hard waves of bugs. When playing the game mode ARC, players will have to collect ore and gas to power the ARC, while having to defend it. When the ARC is powered, a horde of bugs will try to destroy the ARC. On Hive Hunt, players will march into bug hives and use T.O.A.D canisters to destroy the hives. Ultimately, the players will attempt to reach the extraction point.
+With "The New Vanguard" update, player progression was revamped to introduce classes that possess unique equipment and roles. Players gain experience points to level up classes and ranks at the end of a session, unlocking new weapons, tools, and cosmetic items.
+A June 2024 update introduced the "Carnage system". Previously, when a player killed a Bug enemy, the corpse would disappear. The Carnage system instead keeps Bug corpses on the battlefield, creating new terrain and obstacles, while the Bugs update their navigation accordingly. This can lead to enemies finding new paths and reaching previously inaccessible areas, including player bases. The update also introduced blood splatters that stain the environment for the remainder of the match.
+
+
+=== Single-player ===
+
+Aside from the training scenario to accustom players to the cooperative mode, a single-player component was released with 25 unique missions based in different environments. The mode features General Rico, played by Casper Van Dien who reprised his role from various Starship Troopers media. Players assume the role as elite operations group members within the Mobile Infantry. 
+A veteran of the Bug War, the older General Rico has matured into a wise and empathetic figure, watchful over the younger troopers and considering their lives a priority above the mission and his own duties. Offworld has stated that Rico's depiction in Extermination is canon to the franchise.
+
+
+== Reception ==
+
+Starship Troopers: Extermination received "mixed or average" reviews from critics, according to review aggregator website Metacritic. On OpenCritic, the game is recommended by 11% of 37 critic reviews.
+IGN rated it six out of ten, and wrote: "It's a serviceable battle that can get frantic in the thick of it, but there are far more noble causes to give your virtual lives for in 2024 than this."Push Square rated it seven out of ten, and wrote: "The whole aesthetic of the missions and the menus is retro PS3 at its best, but unfortunately the game's performance tanks when too many bugs are on screen, which is most of the time."PC Gamer rated it 66 out of 100, and was critical of the single-player mode.
+
+
+== References ==
+
+
+== External links ==
+Official website
