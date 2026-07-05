@@ -64,6 +64,11 @@ def main() -> None:
                         "(same as training/battery); used only if a combo's "
                         "eval feature cache is missing and features must be "
                         "re-extracted from bulk vectors")
+    p.add_argument("--prefetch-workers", type=int, default=8,
+                   help="parallel readers that pull ALL this shard's feature-"
+                        "cache npz bytes into RAM up front (distributed-FS "
+                        "reads overlap the GPU work; RAM acts as the disk). "
+                        "0 disables prefetch.")
     args = p.parse_args()
 
     if args.selfstop:
@@ -134,6 +139,32 @@ def main() -> None:
     todo = [c for i, c in enumerate(pool) if i % shard_n == shard_i]
     print(f"shard {args.shard}: {len(todo)}/{len(pool)} combos in scope", flush=True)
 
+    # ---- RAM prefetch: pull every pending combo's feature-cache npz bytes in
+    # parallel BEFORE/WHILE computing. Reads overlap GPU work (futures resolve
+    # in the loop), each entry is dropped right after its combo finishes.
+    prefetched: dict = {}
+    if args.prefetch_workers > 0:
+        import concurrent.futures as cf
+
+        def _read_bytes(path: Path):
+            return path.read_bytes()
+
+        pending = []
+        for c in todo:
+            cdir = out_root / c.combo_id
+            if (cdir / OUT_NAME).exists() and not args.overwrite:
+                continue
+            if not worker.combo_ready(cdir)[0]:
+                continue
+            cp = sweep.eval_feature_cache_path(cdir)
+            if cp.exists():
+                pending.append((c.combo_id, cp))
+        pf_pool = cf.ThreadPoolExecutor(max_workers=args.prefetch_workers)
+        prefetched = {cid: pf_pool.submit(_read_bytes, cp) for cid, cp in pending}
+        total_mb = sum(cp.stat().st_size for _cid, cp in pending) / 2**20
+        print(f"prefetch: {len(pending)} feature caches ({total_mb:.0f} MiB) "
+              f"loading into RAM with {args.prefetch_workers} readers", flush=True)
+
     done = skip = fail = 0
     for combo in todo:
         cdir = out_root / combo.combo_id
@@ -145,7 +176,15 @@ def main() -> None:
             skip += 1
             continue
         try:
-            feats, names = sweep.build_vicreg_feature_cache(ev, ckpt, cdir)
+            fut = prefetched.pop(combo.combo_id, None)
+            if fut is not None:
+                import io
+                data = np.load(io.BytesIO(fut.result()), allow_pickle=True)
+                feats = data["feats"].astype(np.float32)
+                names = [str(n) for n in data["names"]]
+                del data, fut
+            else:
+                feats, names = sweep.build_vicreg_feature_cache(ev, ckpt, cdir)
             feats = np.asarray(feats)
             anchor = feats.mean(axis=1).astype(np.float32)
             n2i = {n: i for i, n in enumerate(names)}
@@ -304,6 +343,8 @@ def main() -> None:
         except Exception as e:
             fail += 1
             print(f"FAIL {combo.combo_id}: {type(e).__name__}: {e}", flush=True)
+    if args.prefetch_workers > 0:
+        pf_pool.shutdown(wait=False)
     rebuild_summary()
     print(f"shard {args.shard} exit: done={done} skip={skip} fail={fail}", flush=True)
 
