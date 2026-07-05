@@ -90,15 +90,47 @@ def chat(system: str, user: str) -> str:
         try:
             return chat_once(system, user)
         except urllib.error.HTTPError as e:
+            body = ""
+            try:
+                body = e.read().decode("utf-8", "replace")[:200]
+            except Exception:
+                pass
             transient = e.code in (429, 500, 502, 503, 504)
             if not transient or attempt == MAX_RETRIES - 1:
-                raise
-        except (urllib.error.URLError, TimeoutError, json.JSONDecodeError, KeyError):
+                raise RuntimeError(f"HTTP {e.code}: {body}") from e
+            print(f"    retry {attempt + 1}/{MAX_RETRIES - 1}: HTTP {e.code} {body}",
+                  flush=True)
+        except (urllib.error.URLError, TimeoutError, json.JSONDecodeError, KeyError) as e:
             if attempt == MAX_RETRIES - 1:
                 raise
+            print(f"    retry {attempt + 1}/{MAX_RETRIES - 1}: {type(e).__name__}: {e}",
+                  flush=True)
         time.sleep(delay)
         delay = min(delay * 2, 60.0)
     raise RuntimeError("unreachable")
+
+
+def preflight() -> None:
+    """One tiny call before the real run: a misconfigured MODEL / BASE_URL /
+    token otherwise burns ~30 s of silent retry backoff PER GAME and looks
+    like a hang."""
+    try:
+        chat_once("You are a helpful assistant.", "Reply with the single word: ok")
+    except urllib.error.HTTPError as e:
+        body = ""
+        try:
+            body = e.read().decode("utf-8", "replace")[:300]
+        except Exception:
+            pass
+        raise SystemExit(
+            f"preflight FAILED: HTTP {e.code} from {BASE_URL} (model={MODEL})\n"
+            f"  response: {body}\n"
+            "  -> check MODEL (is it available on this gateway?), BASE_URL and API_TOKEN."
+        )
+    except Exception as e:
+        raise SystemExit(f"preflight FAILED: {type(e).__name__}: {e}\n"
+                         "  -> check BASE_URL / network / API_TOKEN.")
+    print(f"preflight ok: {MODEL} @ {BASE_URL}", flush=True)
 
 
 def write_atomic(path: Path, text: str) -> None:
@@ -197,6 +229,7 @@ def main() -> None:
         return
     if not API_TOKEN:
         raise SystemExit("API_TOKEN is empty -- paste your key at the top of this script.")
+    preflight()
 
     ok = err = 0
     t0 = time.time()
