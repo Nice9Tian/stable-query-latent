@@ -36,6 +36,7 @@ TEMPERATURE = 0.7
 CONCURRENCY = 8
 MAX_RETRIES = 5
 MIN_DESC_CHARS = 200                # skip games whose description is too thin
+LIMIT = 0                           # cap games per run; 0 = all (CLI --limit overrides)
 
 SYSTEM_PROMPTS = {
     "negative": (
@@ -131,7 +132,8 @@ def main() -> None:
     ap.add_argument("--games-json", default=str(REPO / "game_review_data" / "games.json"))
     ap.add_argument("--out-dir", default=str(SCRIPT_DIR / "text_variants_generated"))
     ap.add_argument("--split", default="test", choices=("test", "val", "train"))
-    ap.add_argument("--limit", type=int, default=0, help="cap games (0 = all)")
+    ap.add_argument("--limit", type=int, default=LIMIT,
+                    help=f"cap games (0 = all; default from LIMIT constant = {LIMIT})")
     ap.add_argument("--dry-run", action="store_true",
                     help="no API calls: report coverage and what would be generated")
     args = ap.parse_args()
