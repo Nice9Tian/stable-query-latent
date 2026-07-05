@@ -2,14 +2,14 @@
 
 The battery's real_text_tag eval discovers `text_variant_dir/<appid>/<variant>.txt`
 automatically -- coverage today is 2 hand-collected games. This script expands it
-to the whole tag-eval TEST split (303 games): for each game's Steam
-`about_the_game` description it asks a chat-completions API for three rewrites
--- critical (negative), praising (positive), and de-identified (noname: every
-game/character/item name swapped for invented words) -- all preserving the
-factual content / gameplay / mechanics, and stores the original description as
-the neutral variant for free. Loop order is GAME-major: each game's missing
-rewrites fire concurrently and the game is fully completed before the next one
-starts, so an interrupted run leaves whole games, never one variant everywhere.
+to the whole tag-eval TEST split (303 games): each game's FULL Steam store
+page text goes to a chat-completions API, which summarizes it into a
+descriptive article in four styles -- neutral (中立), praising (赞扬肯定),
+critical (消极批评), and noname (neutral tone but every game/character/item
+name swapped for invented words) -- all preserving the factual gameplay /
+mechanics content. Loop order is GAME-major: each game's missing variants fire
+concurrently and the game is fully completed before the next one starts, so an
+interrupted run leaves whole games, never one variant everywhere.
 
 Run LOCALLY (games.json lives in game_review_data/):
     python VICReg_review/generate_text_variants.py --dry-run   # coverage check
@@ -38,21 +38,23 @@ MAX_RETRIES = 5
 MIN_DESC_CHARS = 200                # skip games whose description is too thin
 LIMIT = 10                           # cap games per run; 0 = all (CLI --limit overrides)
 
+# The user message carries the game's FULL store-page text; the model
+# summarizes it into a descriptive article in the requested tone.
+_SUMMARIZE = (
+    "阅读用户提供的完整游戏页面文本，从中总结出一篇游戏描述性质的文章。"
+    "完整保留游戏内容/游戏玩法/游戏机制的真实信息，不要虚构页面中不存在的内容。"
+    "语言风格要求：{tone}。用英文撰写，直接输出文章正文。"
+)
 SYSTEM_PROMPTS = {
-    "negative": (
-        "完整保留游戏内容/游戏玩法/游戏机制的真实内容，"
-        "但是使用批评态度来完成一篇关于游戏的描述文章。"
-        "不要虚构游戏中不存在的内容。用英文撰写，直接输出文章正文。"
-    ),
-    "positive": (
-        "完整保留游戏内容/游戏玩法/游戏机制的真实内容，"
-        "但是使用赞扬态度来完成一篇关于游戏的描述文章。"
-        "不要虚构游戏中不存在的内容。用英文撰写，直接输出文章正文。"
-    ),
+    "neutral": _SUMMARIZE.format(tone="中立"),
+    "positive": _SUMMARIZE.format(tone="赞扬肯定"),
+    "negative": _SUMMARIZE.format(tone="消极批评"),
     "noname": (
-        "保留完整的文章内容，但是不要暴露出游戏的名字/角色的名字/道具的名字"
-        "等信息，全部替换成假想的虚构单词，其余内容保持不变。"
-        "不要虚构游戏中不存在的内容。用英文撰写，直接输出文章正文。"
+        "阅读用户提供的完整游戏页面文本，从中总结出一篇游戏描述性质的文章，"
+        "语言风格中立。完整保留游戏内容/游戏玩法/游戏机制的真实信息，"
+        "不要虚构页面中不存在的内容。但是不要暴露出游戏的名字/角色的名字/"
+        "道具的名字等信息，全部替换成假想的虚构单词。"
+        "用英文撰写，直接输出文章正文。"
     ),
 }
 
@@ -108,22 +110,19 @@ def write_atomic(path: Path, text: str) -> None:
 
 def gen_variant(appid: str, name: str, desc: str, variant: str, out_root: Path) -> str:
     """One API call -> one <appid>/<variant>.txt."""
-    user_msg = f"Game: {name}\n\nOfficial description:\n{desc}"
+    user_msg = f"Game: {name}\n\nFull store page text:\n{desc}"
     text = chat(SYSTEM_PROMPTS[variant], user_msg)
     write_atomic(out_root / appid / f"{variant}.txt", text)
     return variant
 
 
 def one_game(appid: str, name: str, desc: str, out_root: Path) -> tuple[list, list]:
-    """Complete ONE game before moving on: neutral written first (free), then
-    the missing rewrites fire CONCURRENTLY and we wait for all of them. An
-    interrupted run therefore leaves N fully-finished games, not one variant
-    scattered across every game. Returns (made, failed_variants)."""
+    """Complete ONE game before moving on: its missing variants (all four are
+    LLM summaries of the full page text now, incl. neutral) fire CONCURRENTLY
+    and we wait for all of them. An interrupted run therefore leaves N
+    fully-finished games, not one variant scattered across every game.
+    Returns (made, failed_variants)."""
     made, failed = [], []
-    neutral = out_root / appid / "neutral.txt"
-    if not neutral.exists():
-        write_atomic(neutral, desc)
-        made.append("neutral")
     variants = [v for v in SYSTEM_PROMPTS if not (out_root / appid / f"{v}.txt").exists()]
     if variants:
         with cf.ThreadPoolExecutor(max_workers=len(variants)) as pool:
@@ -171,7 +170,9 @@ def main() -> None:
         if not meta:
             missing.append(appid)
             continue
-        desc = strip_html(meta.get("about_the_game") or meta.get("detailed_description")
+        # FULL page text (detailed_description is the whole store page); the
+        # model does the condensing itself
+        desc = strip_html(meta.get("detailed_description") or meta.get("about_the_game")
                           or meta.get("short_description") or "")
         if len(desc) < MIN_DESC_CHARS:
             thin.append(appid)
