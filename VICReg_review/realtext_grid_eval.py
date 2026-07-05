@@ -57,6 +57,11 @@ def main() -> None:
                         "the auto notebooks)")
     p.add_argument("--runpod-api-key", default="",
                    help="override for pod_selfstop (else env RUNPOD_API_KEY)")
+    p.add_argument("--local-data-dir", default="/root/data",
+                   help="machine-local dir holding the resident vectors .dat "
+                        "(same as training/battery); used only if a combo's "
+                        "eval feature cache is missing and features must be "
+                        "re-extracted from bulk vectors")
     args = p.parse_args()
 
     if args.selfstop:
@@ -89,6 +94,19 @@ def main() -> None:
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     with h5py.File(ev.h5, "r") as h5:
         input_dim = int(h5.attrs["input_dim"])
+
+    # I/O ladder for the rare feature-cache miss: point the trainer module at
+    # the machine-local resident .dat (H5 -> local NVMe .dat -> OS page cache)
+    # exactly like the battery worker, so any extract_features fallback never
+    # streams bulk vectors over the shared FS with the GPU idle.
+    dat = worker.enable_resident_vectors(ev.h5, args.local_data_dir)
+    if dat:
+        print(f"resident .dat ON: {dat} (fallback feature extraction reads local NVMe)",
+              flush=True)
+    else:
+        print(f"resident .dat not staged under {args.local_data_dir}; fine as long "
+              "as every combo has its eval feature cache (a cache MISS would "
+              "stream bulk vectors over the shared FS -- slow)", flush=True)
 
     # sentence-embedding cache is combo-independent: build/load once
     names_all, appids = tve.load_h5_names(Path(ev.h5))
