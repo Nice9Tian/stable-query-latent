@@ -36,6 +36,11 @@ def main() -> None:
     p.add_argument("--combos", default="dim036_nogrl_n2000_view20")
     p.add_argument("--epochs", type=int, default=300)
     p.add_argument("--seed", type=int, default=20260705)
+    p.add_argument("--fixed-gallery", action="store_true",
+                   help="do NOT pass the gallery through the head at eval "
+                        "(query-side adaptation only, matching the grid "
+                        "contrastive protocol); removes a confound when "
+                        "comparing objectives across models")
     args = p.parse_args()
 
     import h5py
@@ -119,11 +124,12 @@ def main() -> None:
         def art(g, v):
             return (np.asarray(vfeat[(g, v)], dtype=np.float32) - mu[0]) / sd[0]
 
-        def eval_head(head, te_games):
+        def eval_head(head, te_games, variant="neutral"):
             with torch.no_grad():
-                gal = head(A_std) if head is not None else A_std
+                gal = (head(A_std) if (head is not None and not args.fixed_gallery)
+                       else A_std)
                 gal = gal / gal.norm(dim=1, keepdim=True)
-                q = torch.tensor(np.stack([art(g, "neutral") for g in te_games]),
+                q = torch.tensor(np.stack([art(g, variant) for g in te_games]),
                                  device=device)
                 q = head(q) if head is not None else q
                 q = q / q.norm(dim=1, keepdim=True)
@@ -208,7 +214,34 @@ def main() -> None:
             "vicreg_linear_anchor": ("vic", 0, True),
             "vicreg_mlp_anchor": ("vic", dim // 4, True),
         }
+        # tag labels + split for the downstream tag evaluation of each head
+        y_lab, _tags = tve.align_labels(Path(ev.h5), names)
+        split = tve.make_or_load_split(
+            Path(getattr(ev, "tag_text_split_json", "") or out_root / "tag_text_eval_split.json"),
+            names, ev)
+        A_std_np = A_std.cpu().numpy()
+
+        def tag_eval(head, te_games):
+            """Retrain the ridge on the head-transformed anchors (identity for
+            query-side heads), score the head-transformed test articles.
+            Returns mean-over-4-variants micro-F1 on te_games."""
+            with torch.no_grad():
+                A_cfg = (head(A_std).cpu().numpy()
+                         if (head is not None and not args.fixed_gallery) else A_std_np)
+            scaler, ridge, _al, th, _vm = tve.train_anchor_ridge(
+                ev, A_cfg.astype(np.float32), y_lab, n2i, split)
+            yte = np.stack([y_lab[n2i[g]] for g in te_games])
+            f1s = []
+            for v in VARIANTS:
+                X = torch.tensor(np.stack([art(g, v) for g in te_games]), device=device)
+                with torch.no_grad():
+                    q = (head(X) if head is not None else X).cpu().numpy()
+                f1s.append(tve.micro_prf(yte, ridge.predict(scaler.transform(q)), th)["micro_f1"])
+            return float(np.mean(f1s))
+
         results = {k: [] for k in CONFIGS}
+        results_pv = {k: {v: [] for v in VARIANTS} for k in CONFIGS}
+        results_tag = {k: [] for k in CONFIGS}   # (n_te, f1) per fold
         for k in range(5):
             te = [games[i] for i in folds[k]]
             tr_idx = np.concatenate([folds[j] for j in range(5) if j != k])
@@ -217,17 +250,30 @@ def main() -> None:
             fit_g, val_g = tr[:n_fit], tr[n_fit:]
             for name, cfg in CONFIGS.items():
                 if cfg is None:
-                    results[name].append(eval_head(None, te))
-                    continue
-                kind, hidden, with_anchor = cfg
-                head = (train_con(fit_g, val_g) if kind == "con"
-                        else train_vicreg(fit_g, val_g, hidden, with_anchor))
+                    head = None
+                else:
+                    kind, hidden, with_anchor = cfg
+                    head = (train_con(fit_g, val_g) if kind == "con"
+                            else train_vicreg(fit_g, val_g, hidden, with_anchor))
                 results[name].append(eval_head(head, te))
+                for v in VARIANTS:
+                    results_pv[name][v].append(eval_head(head, te, v))
+                results_tag[name].append((len(te), tag_eval(head, te)))
                 del head
             print(f"  fold {k + 1}/5 done", flush=True)
 
+        pv = {name: {v: agg(rks) for v, rks in per_v.items()}
+              for name, per_v in results_pv.items()}
+        for name in pv:
+            pv[name]["mean4_hit_at_1"] = float(np.mean(
+                [pv[name][v]["hit_at_1"] for v in VARIANTS]))
+        tag_out = {name: float(np.average([f for _n, f in folds_],
+                                          weights=[_n for _n, f in folds_]))
+                   for name, folds_ in results_tag.items()}
         report = {"combo_id": cid, "hidden_mlp": dim // 4,
-                  "results": {name: agg(rks) for name, rks in results.items()}}
+                  "results": {name: agg(rks) for name, rks in results.items()},
+                  "per_variant": pv,
+                  "tag_mean4": tag_out}
         tve.atomic_json_write(report, cdir / OUT_NAME)
         print(f"\n{cid}  (5-fold CV, neutral queries, g-transformed gallery)")
         print(f"{'config':22} {'hit@1':>7} {'hit@10':>7} {'median':>7}")
