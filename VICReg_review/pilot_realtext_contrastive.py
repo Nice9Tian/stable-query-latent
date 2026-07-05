@@ -88,6 +88,40 @@ def main() -> None:
                 "hit_at_10": float((ranks <= 10).float().mean()),
                 "median_rank": float(ranks.float().median())}
 
+    # ---- series grouping (name heuristic): strip trailing numbers / roman
+    # numerals / year / edition words, and cut at ':' / ' - ' -- so
+    # 'WWE 2K24'~'WWE 2K23', 'King Arthur: Knight's Tale'~'King Arthur II'.
+    import re as _re
+    _games_meta = json.loads((ROOT / "game_review_data" / "games.json")
+                             .read_text(encoding="utf-8"))
+    _STOP = {"edition", "definitive", "remastered", "remaster", "complete", "goty",
+             "deluxe", "ultimate", "enhanced", "hd", "prologue", "demo"}
+    _ROMAN = {"i", "ii", "iii", "iv", "v", "vi", "vii", "viii", "ix", "x"}
+
+    def series_key(title: str):
+        t = _re.sub(r"[®™©]", "", (title or "").lower())
+        t = t.split(":")[0].split(" - ")[0]
+        toks = _re.findall(r"[a-z0-9]+", t)
+        while toks and (toks[-1].isdigit() or toks[-1] in _ROMAN
+                        or toks[-1] in _STOP or _re.fullmatch(r"2k\d+", toks[-1])):
+            toks.pop()
+        key = " ".join(toks)
+        return key if len(key) >= 3 else None
+
+    def hits_series(sims, labels, allowed_lists):
+        """rank of the BEST allowed game (truth + series mates)."""
+        import numpy as _np
+        s = sims.cpu().numpy()
+        ranks = []
+        for qi, allowed in enumerate(allowed_lists):
+            best = max(s[qi, j] for j in allowed)
+            ranks.append(int((s[qi] > best).sum()) + 1)
+        r = _np.asarray(ranks)
+        return {"hit_at_1": float((r == 1).mean()),
+                "hit_at_5": float((r <= 5).mean()),
+                "hit_at_10": float((r <= 10).mean()),
+                "median_rank": float(_np.median(r))}
+
     for cid in [c.strip() for c in args.combos.split(",") if c.strip()]:
         cdir = out_root / cid
         ready, ckpt = worker.combo_ready(cdir)
@@ -125,6 +159,23 @@ def main() -> None:
         Xt, yt = qtensor(te_games, ("neutral",))
         Xt_all, yt_all = qtensor(te_games)
 
+        # per-gallery-game series keys; allowed set per test game = self + mates
+        key_by_idx = {}
+        for n, i in name_to_index.items():
+            key_by_idx[i] = series_key((_games_meta.get(n.split("_", 1)[0]) or {}).get("name"))
+        groups: dict[str, list[int]] = {}
+        for i, k in key_by_idx.items():
+            if k:
+                groups.setdefault(k, []).append(i)
+        allowed_neutral = []
+        n_with_mates = 0
+        for g in te_games:
+            gi = name_to_index[g]
+            k = key_by_idx.get(gi)
+            allowed = sorted(set(groups.get(k, [])) | {gi})
+            n_with_mates += len(allowed) > 1
+            allowed_neutral.append(allowed)
+
         def evaluate(head):
             with torch.no_grad():
                 out = {}
@@ -132,6 +183,9 @@ def main() -> None:
                     q = head(X) if head is not None else X
                     q = q / q.norm(dim=1, keepdim=True)
                     out[tag] = hits(q @ A.T, lab)
+                q = head(Xt) if head is not None else Xt
+                q = q / q.norm(dim=1, keepdim=True)
+                out["neutral_series"] = hits_series(q @ A.T, yt, allowed_neutral)
                 return out
 
         report = {"combo_id": cid, "n_train": len(tr_games), "n_test": len(te_games),
@@ -188,15 +242,21 @@ def main() -> None:
             head.eval()
             report["heads"][tag_h] = evaluate(head)
 
+        report["n_test_with_series_mates"] = int(n_with_mates)
         tve.atomic_json_write(report, cdir / OUT_NAME)
-        print(f"\n{cid}  (train {len(tr_games)} games, test {len(te_games)})")
+        print(f"\n{cid}  (train {len(tr_games)} games, test {len(te_games)}; "
+              f"{n_with_mates} test games have series mates in the gallery)")
         print(f"{'head':12} {'neu@1':>7} {'neu@5':>7} {'neu@10':>7} {'neu_med':>8} "
-              f"{'all@1':>7} {'all_med':>8}")
+              f"{'all@1':>7} {'all_med':>8} {'ser@1':>7} {'ser@5':>7} {'ser_med':>8}")
         for h, m in report["heads"].items():
+            ms = m.get("neutral_series", {})
             print(f"{h:12} {m['neutral']['hit_at_1']:7.3f} {m['neutral']['hit_at_5']:7.3f} "
                   f"{m['neutral']['hit_at_10']:7.3f} {m['neutral']['median_rank']:8.1f} "
                   f"{m['all_variants']['hit_at_1']:7.3f} "
-                  f"{m['all_variants']['median_rank']:8.1f}")
+                  f"{m['all_variants']['median_rank']:8.1f} "
+                  f"{ms.get('hit_at_1', float('nan')):7.3f} "
+                  f"{ms.get('hit_at_5', float('nan')):7.3f} "
+                  f"{ms.get('median_rank', float('nan')):8.1f}")
 
         # -- what does top-1 confuse? (neutral, best contrastive head)
         with torch.no_grad():
