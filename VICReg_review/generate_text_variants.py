@@ -7,8 +7,9 @@ to the whole tag-eval TEST split (303 games): for each game's Steam
 -- critical (negative), praising (positive), and de-identified (noname: every
 game/character/item name swapped for invented words) -- all preserving the
 factual content / gameplay / mechanics, and stores the original description as
-the neutral variant for free. A game's rewrites run CONCURRENTLY (one task per
-missing file), so no variant systematically finishes before another.
+the neutral variant for free. Loop order is GAME-major: each game's missing
+rewrites fire concurrently and the game is fully completed before the next one
+starts, so an interrupted run leaves whole games, never one variant everywhere.
 
 Run LOCALLY (games.json lives in game_review_data/):
     python VICReg_review/generate_text_variants.py --dry-run   # coverage check
@@ -33,10 +34,9 @@ API_TOKEN = ""                      # <-- paste your key here before running
 MODEL = "gemma-7b-it"
 
 TEMPERATURE = 0.7
-CONCURRENCY = 8
 MAX_RETRIES = 5
 MIN_DESC_CHARS = 200                # skip games whose description is too thin
-LIMIT = 0                           # cap games per run; 0 = all (CLI --limit overrides)
+LIMIT = 10                           # cap games per run; 0 = all (CLI --limit overrides)
 
 SYSTEM_PROMPTS = {
     "negative": (
@@ -107,13 +107,35 @@ def write_atomic(path: Path, text: str) -> None:
 
 
 def gen_variant(appid: str, name: str, desc: str, variant: str, out_root: Path) -> str:
-    """One API call -> one <appid>/<variant>.txt. Tasks are submitted per
-    (game, variant) so a game's positive/negative/noname run CONCURRENTLY --
-    no 'all negatives first' ordering, and resume is per-file."""
+    """One API call -> one <appid>/<variant>.txt."""
     user_msg = f"Game: {name}\n\nOfficial description:\n{desc}"
     text = chat(SYSTEM_PROMPTS[variant], user_msg)
     write_atomic(out_root / appid / f"{variant}.txt", text)
-    return f"{appid}/{variant}"
+    return variant
+
+
+def one_game(appid: str, name: str, desc: str, out_root: Path) -> tuple[list, list]:
+    """Complete ONE game before moving on: neutral written first (free), then
+    the missing rewrites fire CONCURRENTLY and we wait for all of them. An
+    interrupted run therefore leaves N fully-finished games, not one variant
+    scattered across every game. Returns (made, failed_variants)."""
+    made, failed = [], []
+    neutral = out_root / appid / "neutral.txt"
+    if not neutral.exists():
+        write_atomic(neutral, desc)
+        made.append("neutral")
+    variants = [v for v in SYSTEM_PROMPTS if not (out_root / appid / f"{v}.txt").exists()]
+    if variants:
+        with cf.ThreadPoolExecutor(max_workers=len(variants)) as pool:
+            futs = {pool.submit(gen_variant, appid, name, desc, v, out_root): v
+                    for v in variants}
+            for fut in cf.as_completed(futs):
+                v = futs[fut]
+                try:
+                    made.append(fut.result())
+                except Exception as e:
+                    failed.append(f"{v} ({type(e).__name__}: {e})")
+    return made, failed
 
 
 def main() -> None:
@@ -159,44 +181,36 @@ def main() -> None:
         todo = todo[: args.limit]
 
     out_root = Path(args.out_dir)
-    # one task per MISSING (game, variant) file -> a game's three rewrites run
-    # concurrently and a rerun resumes at file granularity
-    tasks = [(a, n, d, v) for a, n, d in todo for v in SYSTEM_PROMPTS
-             if not (out_root / a / f"{v}.txt").exists()]
+    # game-major: only games with at least one missing rewrite are visited,
+    # and each is fully completed (3 concurrent calls) before the next starts
+    pending = [(a, n, d) for a, n, d in todo
+               if any(not (out_root / a / f"{v}.txt").exists() for v in SYSTEM_PROMPTS)]
     print(f"{args.split} split: {len(names)} games | with usable description: {len(todo)} "
           f"| missing meta: {len(missing)} | too-thin desc: {len(thin)}")
-    print(f"variant files to generate: {len(tasks)} "
-          f"(= missing files among {len(todo)} games x {list(SYSTEM_PROMPTS)})")
+    print(f"games to process: {len(pending)} (complete: {len(todo) - len(pending)}; "
+          f"each = up to {len(SYSTEM_PROMPTS)} concurrent API calls)")
     if args.dry_run:
-        for appid, name, _desc, variant in tasks[:12]:
-            print(f"  would generate {appid}/{variant}.txt   {name[:40]!r}")
+        for appid, name, _desc in pending[:12]:
+            miss = [v for v in SYSTEM_PROMPTS if not (out_root / appid / f"{v}.txt").exists()]
+            print(f"  would generate {appid} {name[:40]!r}: {', '.join(miss)}")
         return
     if not API_TOKEN:
         raise SystemExit("API_TOKEN is empty -- paste your key at the top of this script.")
 
-    # neutral = the original description, written up front (no API cost)
-    for appid, _name, desc in todo:
-        neutral = out_root / appid / "neutral.txt"
-        if not neutral.exists():
-            write_atomic(neutral, desc)
-
     ok = err = 0
     t0 = time.time()
-    with cf.ThreadPoolExecutor(max_workers=CONCURRENCY) as pool:
-        futs = {pool.submit(gen_variant, a, n, d, v, out_root): (a, v)
-                for a, n, d, v in tasks}
-        for i, fut in enumerate(cf.as_completed(futs), 1):
-            appid, variant = futs[fut]
-            try:
-                fut.result()
-                ok += 1
-                print(f"[{i}/{len(tasks)}] {appid}/{variant} ok", flush=True)
-            except Exception as e:                      # keep going; rerun resumes
-                err += 1
-                print(f"[{i}/{len(tasks)}] {appid}/{variant} FAILED: "
-                      f"{type(e).__name__}: {e}", flush=True)
-    print(f"\ndone in {(time.time() - t0) / 60:.1f} min: {ok} file(s) ok, {err} failed "
-          f"-> {out_root}")
+    for i, (appid, name, desc) in enumerate(pending, 1):
+        made, failed = one_game(appid, name, desc, out_root)
+        if failed:
+            err += 1
+            print(f"[{i}/{len(pending)}] {appid} {name[:36]!r} "
+                  f"PARTIAL: ok={made} failed={failed}", flush=True)
+        else:
+            ok += 1
+            print(f"[{i}/{len(pending)}] {appid} {name[:36]!r} ok ({', '.join(made)})",
+                  flush=True)
+    print(f"\ndone in {(time.time() - t0) / 60:.1f} min: {ok} game(s) complete, "
+          f"{err} with failures -> {out_root}")
     if err:
         print("rerun the same command to retry failures (existing files are skipped).")
 
