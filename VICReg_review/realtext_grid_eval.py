@@ -64,6 +64,10 @@ def main() -> None:
                         "(same as training/battery); used only if a combo's "
                         "eval feature cache is missing and features must be "
                         "re-extracted from bulk vectors")
+    p.add_argument("--warmup-only", action="store_true",
+                   help="build the shared article-embedding cache, then exit "
+                        "(run ONCE before spawning shards so N workers never "
+                        "duplicate the embedding work)")
     p.add_argument("--prefetch-workers", type=int, default=8,
                    help="parallel readers that pull ALL this shard's feature-"
                         "cache npz bytes into RAM up front (distributed-FS "
@@ -119,6 +123,9 @@ def main() -> None:
     names_all, appids = tve.load_h5_names(Path(ev.h5))
     records = tve.discover_variant_records(variant_dir, names_all, appids)
     cache = tve.load_or_embed_variant_texts(ev, records, ev.text_variant_cache)
+    if args.warmup_only:
+        print(f"warmup done: article cache ready at {ev.text_variant_cache}", flush=True)
+        return
 
     def rebuild_summary():
         pool, _live, full_n = worker.full_pool(Path(ROOT / "VICReg_review/sweep/sweep.yaml"))

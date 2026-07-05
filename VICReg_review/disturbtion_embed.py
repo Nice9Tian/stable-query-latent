@@ -84,9 +84,15 @@ def split_text(text: str, max_sentences: int) -> list[str]:
 
 
 def atomic_npz_write(path: Path, **payload) -> None:
+    # unique per-writer staging name: concurrent writers (e.g. N GPU shards all
+    # building the same shared cache) must not share one .tmp, or the loser of
+    # the rename race dies with FileNotFoundError (same bug class as the
+    # trainer's duelling-writer fix)
+    import os as _os
+    import uuid as _uuid
     path = Path(path)
     path.parent.mkdir(parents=True, exist_ok=True)
-    tmp_path = path.with_suffix(path.suffix + ".tmp")
+    tmp_path = path.with_name(f"{path.name}.tmp.{_os.getpid()}.{_uuid.uuid4().hex[:6]}")
     try:
         with tmp_path.open("wb") as handle:
             np.savez_compressed(handle, **payload)
