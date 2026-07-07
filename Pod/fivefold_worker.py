@@ -34,6 +34,9 @@ RECIPES = {
     "n4pull300": dict(N=4, W=16, pull=1.0, epochs=300, patience=48),
     "n4pull150": dict(N=4, W=16, pull=1.0, epochs=150, patience=24),
     "n4fresh300": dict(N=4, W=16, pull=0.0, epochs=300, patience=9999),
+    # champion challenger: Q1 ties Q4 on the fixed split (FT m4 0.646 vs 0.641);
+    # whether Q4's fine-tune generalization edge is real is decided HERE.
+    "q1pull300": dict(N=1, W=16, pull=1.0, epochs=300, patience=48),
 }
 SPLIT_SEED = 20260705   # same rng as the fixed 77/27/154 protocol split
 VAL_FRAC = 0.15         # of the non-test games, in permutation order
