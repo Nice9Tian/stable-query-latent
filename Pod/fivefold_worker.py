@@ -31,12 +31,15 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 RECIPES = {
-    "n4pull300": dict(N=4, W=16, pull=1.0, epochs=300, patience=48),
-    "n4pull150": dict(N=4, W=16, pull=1.0, epochs=150, patience=24),
-    "n4fresh300": dict(N=4, W=16, pull=0.0, epochs=300, patience=9999),
-    # champion challenger: Q1 ties Q4 on the fixed split (FT m4 0.646 vs 0.641);
-    # whether Q4's fine-tune generalization edge is real is decided HERE.
-    "q1pull300": dict(N=1, W=16, pull=1.0, epochs=300, patience=48),
+    # defending champion family (existing CV results are reused on resume)
+    "n4pull300": dict(kind="pull", N=4, W=16, pull=1.0, epochs=300, patience=48),
+    "n4pull150": dict(kind="pull", N=4, W=16, pull=1.0, epochs=150, patience=24),
+    "n4fresh300": dict(kind="pull", N=4, W=16, pull=0.0, epochs=300, patience=9999),
+    "q1pull300": dict(kind="pull", N=1, W=16, pull=1.0, epochs=300, patience=48),
+    # fixed-split campaign finalists (MEMO rounds 10-34)
+    "v4art_ft020": dict(kind="v4art", epochs=600, patience=96, kgrow=0),
+    "ultimate": dict(kind="v4art", epochs=600, patience=9999, kgrow=128),
+    "byol": dict(kind="byol", epochs=600, patience=9999),
 }
 SPLIT_SEED = 20260705   # same rng as the fixed 77/27/154 protocol split
 VAL_FRAC = 0.15         # of the non-test games, in permutation order
@@ -125,6 +128,7 @@ def main():
     train_pool_games = np.array([i for i in range(NG) if names[i] not in val_g])
     print(f"[fold {args.fold}/{args.n_folds}] test {len(test_g)} / val {len(val_g)} / "
           f"train {len(train_g)} article games", flush=True)
+    tr_neu_pre = [i for i, g in enumerate(art_games) if g in train_g and variants[i] == "neutral"]
 
     # tag-ridge protocol objects (seed-42 split over the 2020 games; fold-independent)
     targs = SimpleNamespace(tag_text_train_frac=0.7, tag_text_val_frac=0.15,
@@ -199,6 +203,132 @@ def main():
         model.load_state_dict(bs_); model.eval()
         return model, ep + 1
 
+    # fold-local article map for tower-level article views (train games only)
+    g2art_t = {int(A["gidx"][i]): i for i in tr_neu_pre}
+
+    def train_v4art(epochs, patience, kgrow, seed=0, W=16, bs=192, per_epoch=3072):
+        """Fixed-split champion family: 4 views (one = real train article),
+        frozen tau=0.02, 6-pair cosine pull; optional growing negative set."""
+        from itertools import combinations
+        torch.manual_seed(seed)
+        rng = np.random.default_rng(seed)
+        model = SetPoolN(4).to(dev)
+        NV = 4
+        inv_t = 1.0 / 0.02
+        opt = torch.optim.AdamW(model.parameters(), lr=5e-4, weight_decay=1e-4)
+        amp = amp_cls()
+        pairs = list(combinations(range(NV), 2))
+        best, bs_, pat = -1.0, None, 0
+        for ep in range(epochs):
+            if kgrow:
+                prog = ep / max(1, epochs - 1)
+                KNEG = min(NG, int(round(kgrow * (NG / kgrow) ** prog)))
+            model.train()
+            for _ in range(per_epoch // bs):
+                gids = rng.choice(train_pool_games, bs, replace=False)
+                is_art = np.array([g in g2art_t for g in gids])
+                with torch.amp.autocast("cuda"):
+                    if kgrow and KNEG < NG:
+                        negs = rng.choice(NG, KNEG, replace=False)
+                        ids = np.unique(np.concatenate([gids, negs]))
+                        pos = {g: i for i, g in enumerate(ids)}
+                        tgt = torch.tensor([pos[g] for g in gids]).to(dev)
+                        ids_t = torch.tensor(ids).to(dev)
+                        outs = []
+                        for i in range(0, len(ids_t), 256):
+                            outs.append(model(SGal[ids_t[i:i+256]]))
+                        Zg = torch.cat(outs)
+                    else:
+                        tgt = torch.tensor(gids).to(dev)
+                        Zg = gallery(model, grad=True)
+                    Zs = [model(sample_views(gids, W, rng)) for _ in range(NV - 1)]
+                    Zlast = torch.empty(bs, DM, device=dev, dtype=Zs[0].dtype)
+                    if is_art.any():
+                        rows = [g2art_t[g] for g in gids[is_art]]
+                        Zlast[torch.tensor(is_art).to(dev)] = model(SA[rows], mA[rows])
+                    rest_ids = gids[~is_art]
+                    if len(rest_ids):
+                        Zlast[torch.tensor(~is_art).to(dev)] = model(
+                            sample_views(rest_ids, W, rng))
+                    Zs.append(Zlast)
+                    loss = sum(F.cross_entropy(Z @ Zg.T * inv_t, tgt) for Z in Zs)
+                    loss = loss + sum((1 - (Zs[i] * Zs[j]).sum(-1)).mean()
+                                      for i, j in pairs) / len(pairs)
+                opt.zero_grad(); amp.scale(loss).backward()
+                amp.unscale_(opt); torch.nn.utils.clip_grad_norm_(model.parameters(), 5.0)
+                amp.step(opt); amp.update()
+            if ep % 2 == 1:
+                model.eval()
+                h1 = val_hit(model)
+                if h1 > best:
+                    best, pat = h1, 0
+                    bs_ = {k: v.detach().clone() for k, v in model.state_dict().items()}
+                else:
+                    pat += 1
+                if pat >= patience:
+                    break
+        model.load_state_dict(bs_); model.eval()
+        return model, ep + 1
+
+    def train_byol(epochs, patience, seed=0, W=16, bs=192, per_epoch=3072):
+        """Negative-free tag channel: predictor + EMA target + stop-grad, 2 views
+        (one = article when available), NO CE. Runs the full budget."""
+        import copy
+        torch.manual_seed(seed)
+        rng = np.random.default_rng(seed)
+        model = SetPoolN(4).to(dev)
+        pred = nn.Sequential(nn.Linear(DM, 256), nn.GELU(), nn.Linear(256, DM)).to(dev)
+        target = copy.deepcopy(model).to(dev)
+        for prm in target.parameters():
+            prm.requires_grad_(False)
+        TAU_EMA = 0.996
+        opt = torch.optim.AdamW(list(model.parameters()) + list(pred.parameters()),
+                                lr=5e-4, weight_decay=1e-4)
+        amp = amp_cls()
+        P = lambda z: F.normalize(pred(z), dim=-1)
+        best, bs_ = -1.0, None
+        for ep in range(epochs):
+            model.train(); pred.train()
+            for _ in range(per_epoch // bs):
+                gids = rng.choice(train_pool_games, bs, replace=False)
+                is_art = np.array([g in g2art_t for g in gids])
+                with torch.amp.autocast("cuda"):
+                    Va = model(sample_views(gids, W, rng))
+                    Vb = torch.empty_like(Va)
+                    if is_art.any():
+                        rows = [g2art_t[g] for g in gids[is_art]]
+                        Vb[torch.tensor(is_art).to(dev)] = model(SA[rows], mA[rows])
+                    rest_ids = gids[~is_art]
+                    if len(rest_ids):
+                        Vb[torch.tensor(~is_art).to(dev)] = model(
+                            sample_views(rest_ids, W, rng))
+                    with torch.no_grad():
+                        Ta = target(sample_views(gids, W, rng))
+                        Tb = torch.empty_like(Ta)
+                        if is_art.any():
+                            rows = [g2art_t[g] for g in gids[is_art]]
+                            Tb[torch.tensor(is_art).to(dev)] = target(SA[rows], mA[rows])
+                        if len(rest_ids):
+                            Tb[torch.tensor(~is_art).to(dev)] = target(
+                                sample_views(rest_ids, W, rng))
+                    loss = (1 - (P(Va) * Tb.detach()).sum(-1)).mean() + (
+                        1 - (P(Vb) * Ta.detach()).sum(-1)).mean()
+                opt.zero_grad(); amp.scale(loss).backward()
+                amp.unscale_(opt); torch.nn.utils.clip_grad_norm_(
+                    list(model.parameters()) + list(pred.parameters()), 5.0)
+                amp.step(opt); amp.update()
+                with torch.no_grad():
+                    for pt, po in zip(target.parameters(), model.parameters()):
+                        pt.data.mul_(TAU_EMA).add_(po.data, alpha=1 - TAU_EMA)
+            if ep % 2 == 1:
+                model.eval()
+                h1 = val_hit(model)
+                if h1 > best:
+                    best = h1
+                    bs_ = {k: v.detach().clone() for k, v in model.state_dict().items()}
+        model.load_state_dict(bs_); model.eval()
+        return model, ep + 1
+
     # ---- tower (cached per fold so head-only reruns are cheap) ----
     feat_path = out_dir / f"tower_{args.recipe}_fold{args.fold}.npz"
     if feat_path.exists() and not args.overwrite:
@@ -208,7 +338,15 @@ def main():
         print(f"[tower] reusing {feat_path.name} (ep{tower_ep})", flush=True)
     else:
         t0 = time.time()
-        model, tower_ep = train_tower(seed=0, **RECIPES[args.recipe])
+        rc = dict(RECIPES[args.recipe])
+        kind = rc.pop("kind")
+        if kind == "pull":
+            model, tower_ep = train_tower(seed=0, **rc)
+        elif kind == "v4art":
+            model, tower_ep = train_v4art(**rc)
+        else:
+            rc.pop("kgrow", None)
+            model, tower_ep = train_byol(**rc)
         SQs = rown(torch.tensor(Qs["S"]).to(dev).float()).half()
         mQs = torch.arange(SQs.shape[1], device=dev)[None, :] >= torch.tensor(Qs["S_len"]).to(dev)[:, None]
         with torch.no_grad():
