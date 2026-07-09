@@ -40,6 +40,12 @@ RECIPES = {
     "v4art_ft020": dict(kind="v4art", epochs=600, patience=96, kgrow=0),
     "ultimate": dict(kind="v4art", epochs=600, patience=9999, kgrow=128),
     "byol": dict(kind="byol", epochs=600, patience=9999),
+    # DECON factorization (review-only towers; article view disabled -> no wiki
+    # text in tower training; head still trains on legal LLM-neutral docs).
+    # Matched architecture (Q4/600ep/tau0.02), objective is the only variable.
+    "ice_clean":  dict(kind="v4art", epochs=600, patience=96, kgrow=0, decon=True),
+    "ce_clean":   dict(kind="v4art", epochs=600, patience=96, kgrow=0, decon=True, no_inv=True),
+    "byol_clean": dict(kind="byol", epochs=600, patience=9999, decon=True),
 }
 SPLIT_SEED = 20260705   # same rng as the fixed 77/27/154 protocol split
 VAL_FRAC = 0.15         # of the non-test games, in permutation order
@@ -206,9 +212,12 @@ def main():
     # fold-local article map for tower-level article views (train games only)
     g2art_t = {int(A["gidx"][i]): i for i in tr_neu_pre}
 
-    def train_v4art(epochs, patience, kgrow, seed=0, W=16, bs=192, per_epoch=3072):
+    def train_v4art(epochs, patience, kgrow, decon=False, no_inv=False,
+                    seed=0, W=16, bs=192, per_epoch=3072):
         """Fixed-split champion family: 4 views (one = real train article),
-        frozen tau=0.02, 6-pair cosine pull; optional growing negative set."""
+        frozen tau=0.02, 6-pair cosine pull; optional growing negative set.
+        decon=True disables the article view (review-only tower); no_inv=True
+        drops the invariance term (pure InfoNCE)."""
         from itertools import combinations
         torch.manual_seed(seed)
         rng = np.random.default_rng(seed)
@@ -226,7 +235,8 @@ def main():
             model.train()
             for _ in range(per_epoch // bs):
                 gids = rng.choice(train_pool_games, bs, replace=False)
-                is_art = np.array([g in g2art_t for g in gids])
+                is_art = (np.zeros(len(gids), dtype=bool) if decon
+                          else np.array([g in g2art_t for g in gids]))
                 with torch.amp.autocast("cuda"):
                     if kgrow and KNEG < NG:
                         negs = rng.choice(NG, KNEG, replace=False)
@@ -252,8 +262,9 @@ def main():
                             sample_views(rest_ids, W, rng))
                     Zs.append(Zlast)
                     loss = sum(F.cross_entropy(Z @ Zg.T * inv_t, tgt) for Z in Zs)
-                    loss = loss + sum((1 - (Zs[i] * Zs[j]).sum(-1)).mean()
-                                      for i, j in pairs) / len(pairs)
+                    if not no_inv:
+                        loss = loss + sum((1 - (Zs[i] * Zs[j]).sum(-1)).mean()
+                                          for i, j in pairs) / len(pairs)
                 opt.zero_grad(); amp.scale(loss).backward()
                 amp.unscale_(opt); torch.nn.utils.clip_grad_norm_(model.parameters(), 5.0)
                 amp.step(opt); amp.update()
@@ -270,9 +281,10 @@ def main():
         model.load_state_dict(bs_); model.eval()
         return model, ep + 1
 
-    def train_byol(epochs, patience, seed=0, W=16, bs=192, per_epoch=3072):
+    def train_byol(epochs, patience, decon=False, seed=0, W=16, bs=192, per_epoch=3072):
         """Negative-free tag channel: predictor + EMA target + stop-grad, 2 views
-        (one = article when available), NO CE. Runs the full budget."""
+        (one = article when available), NO CE. Runs the full budget.
+        decon=True disables the article view (review-only tower)."""
         import copy
         torch.manual_seed(seed)
         rng = np.random.default_rng(seed)
@@ -291,7 +303,8 @@ def main():
             model.train(); pred.train()
             for _ in range(per_epoch // bs):
                 gids = rng.choice(train_pool_games, bs, replace=False)
-                is_art = np.array([g in g2art_t for g in gids])
+                is_art = (np.zeros(len(gids), dtype=bool) if decon
+                          else np.array([g in g2art_t for g in gids]))
                 with torch.amp.autocast("cuda"):
                     Va = model(sample_views(gids, W, rng))
                     Vb = torch.empty_like(Va)
