@@ -161,9 +161,10 @@ def main():
     variants = [str(x) for x in A["variants"]]
     art_games = [str(x) for x in A["names"]]
     Qs = np.load(C / "ss_queries_rev.npz")
-    # pseudo-queries stay in HOST RAM (only touched at checkpoint projection,
-    # a few seconds each) -- saves 8.5 GB of VRAM so 48 GB cards fit all jobs.
-    QS_G = torch.tensor(np.load(C / "ss_queries_rev_S.npy"))              # fp16, CPU
+    # pseudo-queries as an mmap (page cache SHARED across all GPU workers on
+    # the machine -- 9 workers cost the same RAM as one; only touched at
+    # checkpoint projection). Saves 8.5 GB VRAM and 8.5 GB RAM per worker.
+    QS_G = np.load(C / "ss_queries_rev_S.npy", mmap_mode="r")            # fp16 mmap
     y = np.load(C / "tag_labels.npz", allow_pickle=True)["y"]
 
     def load_views(fname):
@@ -337,13 +338,13 @@ def main():
     def pad_flat(off, idx):
         segs = [(int(off[j]), int(off[j + 1])) for j in idx]
         LM = max(e - s for s, e in segs)
-        X = torch.zeros(len(segs), LM, 1024, dtype=QS_G.dtype)
+        X = np.zeros((len(segs), LM, 1024), np.float16)
         L = torch.zeros(len(segs), dtype=torch.long, device=dev)
         for k, (s, e) in enumerate(segs):
             X[k, :e - s] = QS_G[s:e]
             L[k] = e - s
         m = torch.arange(LM, device=dev)[None, :] >= L[:, None]
-        return X.to(dev, non_blocking=True), m
+        return torch.from_numpy(X).to(dev, non_blocking=True), m
 
     def gallery(model, chunk=128, grad=False):
         outs = []
