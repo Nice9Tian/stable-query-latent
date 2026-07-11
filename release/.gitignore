@@ -1,3 +1,6 @@
-data/
+data/**
+!data/**/
+!data/README.md
+!data/**/README.md
 llmAPI.txt
 __pycache__/
