@@ -66,6 +66,9 @@ def parse_args():
     ap.add_argument("--anchor-cap", type=int, default=512)
     ap.add_argument("--no-sp-view", action="store_true",
                     help="doc tier = wiki_clean ONLY (drop the sp_raw fallback)")
+    ap.add_argument("--wiki-src", choices=("clean", "llm"), default="clean",
+                    help="wiki doc source: clean=raw wiki text; llm=sentence-wise "
+                         "paraphrase (pretraining-leak ablation)")
     ap.add_argument("--doc-lead", type=int, default=0,
                     help=">0: truncate doc VIEWS to the first N sentences "
                          "(length-attribution ablation)")
@@ -116,7 +119,8 @@ def main():
     name = (f"w9_{args.arm}"
             + (f"_g{args.anchor_cap}" if args.anchor_cap != 512 else "")
             + ("_nsp" if args.no_sp_view else "")
-            + (f"_ld{args.doc_lead}" if args.doc_lead else ""))
+            + (f"_ld{args.doc_lead}" if args.doc_lead else "")
+            + ("_wllm" if args.wiki_src == "llm" else ""))
     dev = torch.device("cuda")
     C, OUT = Path(args.data_dir), Path(args.out_dir)
     OUT.mkdir(parents=True, exist_ok=True)
@@ -151,7 +155,7 @@ def main():
             torch.tensor(d["S_len"]).to(dev)[:, None]
         return d, Sx, mx
 
-    WK, SW, mW = load_views("wiki_clean_views.npz")
+    WK, SW, mW = load_views(f"wiki_{args.wiki_src}_views.npz")
     ST, SS, mS = load_views("sp_raw_views.npz")
     if args.doc_lead:
         mW = mW | (torch.arange(SW.shape[1], device=dev)[None, :] >= args.doc_lead)
