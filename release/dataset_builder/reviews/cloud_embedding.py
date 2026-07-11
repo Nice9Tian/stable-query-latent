@@ -21,13 +21,17 @@ import requests
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 
-# Endpoint URL and token both come from the gitignored credentials file at the
-# project root (this script's own directory). No URL is hardcoded — change the
-# endpoint by editing that file.
+# Endpoint URL and token both come from a gitignored credentials file — no
+# URL is ever hardcoded. Default search order: dataset_builder/embeddingAPI.txt
+# (copy from embeddingAPI.template.txt), then legacy tokenAPI.txt fallbacks.
 # Format (one KEY=VALUE per line, '#' for comments, blank lines allowed):
 #     url=https://<your-endpoint>.huggingface.cloud
 #     token=hf_xxx...
-DEFAULT_TOKEN_FILE = str(SCRIPT_DIR / "tokenAPI.txt")
+_CRED_CANDIDATES = [SCRIPT_DIR.parent / "embeddingAPI.txt",
+                    SCRIPT_DIR / "embeddingAPI.txt",
+                    SCRIPT_DIR / "tokenAPI.txt"]
+DEFAULT_TOKEN_FILE = str(next((c for c in _CRED_CANDIDATES if c.exists()),
+                              _CRED_CANDIDATES[0]))
 # When this script is used as a standalone CLI for the game-review flat-vector
 # pipeline, point at the data dirs under game_review_data/.
 DEFAULT_INPUT_DIR = str(SCRIPT_DIR / "game_review_data" / "game_review_cleaned_3_sentences")

@@ -1,0 +1,3 @@
+# HF TEI embedding endpoint credentials (copy to embeddingAPI.txt, gitignored)
+url=https://<endpoint>.huggingface.cloud
+token=hf_xxx...

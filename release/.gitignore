@@ -3,4 +3,6 @@ data/**
 !data/README.md
 !data/**/README.md
 llmAPI.txt
+embeddingAPI.txt
+tokenAPI.txt
 __pycache__/

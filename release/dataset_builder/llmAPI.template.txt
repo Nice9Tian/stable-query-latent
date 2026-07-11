@@ -1,0 +1,4 @@
+# LLM chat-completions API for corpus rewriting (copy to llmAPI.txt, gitignored)
+url=https://<your-llm-gateway>/v1
+token=sk-...
+model=gpt-5.4-mini

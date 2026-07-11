@@ -1,45 +1,60 @@
-# contrast_experiment — 全量对照实验层
+# contrast_experiment — the full contrast suite
 
-训练**除冠军外的一切塔**并完成对比(冠军走
-`steam_reviews_framework/run.py`)。臂的声明式清单在
-`contrast_models/roster.py`(18 臂:I-CE 家族 / 纯CE / ArcFace / BYOL /
-CE 门控 I 剂量阶梯 / I 门控镜像 / 随机门与 nodoc 对照 / wiki_llm 泄露消融),
-对应头配在 `contrast_heads/configs.py`。
+Trains **every tower except the champion** and produces the comparison
+(the champion is path 1: `steam_reviews_framework/run.py`). The
+declarative arm roster lives in `contrast_models/roster.py` (18 arms:
+I-CE family / pure CE / ArcFace / BYOL / the CE-gate I-dose ladder / the
+I-gate mirror / random-gate and nodoc controls / wiki_llm leak ablations);
+matching head grids are in `contrast_heads/configs.py`.
 
 ```bash
-python contrast_experiment/run.py                 # 一键:数据准备 + 18 臂 + 对照表
-python contrast_experiment/run.py --arms ce byol  # 子集
-python contrast_experiment/run.py --cv            # 追加 6 配方 × 5 折 CV
-python contrast_experiment/report.py              # 单独重出汇总表
+python contrast_experiment/run.py                 # one-click: data prep + 18 arms + table
+python contrast_experiment/run.py --arms ce byol  # a subset
+python contrast_experiment/run.py --cv            # + 6 recipes × 5 folds CV
+python contrast_experiment/report.py              # regenerate the summary table
 ```
 
-一切断点续跑:跑完的塔/头/折自动跳过,可随时中断重启。
+Everything is resume-safe: finished towers / heads / folds are skipped on
+relaunch, so the run can be interrupted at any point.
 
-## pod/ —— 多机并行通路(本层的加速器)
+## pod/ — the multi-machine parallel route (this layer's accelerator)
 
-**全量对照 = 大量互相独立的作业(18 臂 + 30 个 CV 折次),天然适合
-多机并行**。`pod/` 提供在 RunPod(或任何带共享网络卷的 GPU 云)上把
-整个 roster 撒到 N 台机器同时跑的完整方案:
+**The full contrast suite is a large set of mutually independent jobs
+(18 arms + 30 CV fold-runs) — a natural fit for multi-machine
+parallelism.** `pod/` is a complete recipe for spraying the whole roster
+across N machines on RunPod (or any GPU cloud with a shared network
+volume):
 
-- **分布式存储共享数据**:所有机器挂同一个网络卷(等价于 S3 桶),
-  资产只需准备一次(原子改名 + READY 标记,断点续传),结果也汇聚
-  在卷上,任何一台机器都能出完整对照表;
-- **多机原子认领**:每个作业一个 claim 文件(排它创建),一臂只会被
-  一台机器认领;机器中途死掉,claim 超过 12h 自动过期被他机接管——
-  **开 N 台机器 ≈ N 倍吞吐,互不踩踏,无需任何中心调度**;
-- **本地暂存**:`h5_staging.parallel_copy` 把全量池多线程拷到本地盘/
-  共享内存再 mmap(网络卷随机读极慢,这一步是 10 倍级提速);
-- **断点续跑**:worker 每检查点落一份 rolling resume bundle,机器重启
-  后从断点继续;
-- **自动关机**:队列空且审计通过后 `pod_selfstop` 关机,杜绝空耗。
+- **Distributed storage shares the data**: every machine mounts the same
+  network volume (equivalent to an S3 bucket). Assets are prepared ONCE
+  (atomic rename + READY marker, resumable), and results converge on the
+  volume — any single machine can emit the complete comparison table;
+- **Atomic multi-machine claims**: each job is claimed by
+  exclusive-creating a claim file, so an arm is only ever trained by one
+  machine; if a machine dies, its claim expires after 12 h and another
+  machine takes over — **N machines ≈ N× throughput, no collisions, no
+  central scheduler**;
+- **Local staging**: `h5_staging.parallel_copy` bulk-copies the full
+  review pool to local disk / shared memory before mmap-ing it (random
+  reads on a network volume are slow; this step is an order-of-magnitude
+  speedup);
+- **Resume**: workers persist a rolling resume bundle at every checkpoint
+  and continue from it after a restart;
+- **Self-stop**: when the queue is empty and the audit passes,
+  `pod_selfstop` shuts the pod down — no idle burn.
 
-用法:每台机器各开一份 `pod/w9_all.ipynb` 顺序执行即可;最省钱的
-姿势是先让第一台完成"ONE-TIME 资产准备"再开其余机器。作业清单在
-notebook 第一格(与本层 roster 同一套臂定义)。
+Usage: open one copy of `pod/w9_all.ipynb` per machine and run it top to
+bottom. The cheapest pattern is to let the FIRST machine finish the
+"ONE-TIME asset preparation" cell before starting the others. The job
+list sits in the notebook's first cell (the same arm definitions as this
+layer's roster).
 
-## 依赖方向
+## Dependency direction
 
-本层 → `steam_reviews_framework` → `main_model`;对照塔复用主模型的塔
-骨架、替换损失(`contrast_models/byol.py`、`arcface.py`),对照头复用
-框架的两阶段头机制、只换损失哲学(`contrast_heads/configs.py`)。
-框架对本层不可见——删掉整个 contrast_experiment 不影响冠军复现。
+This layer → `steam_reviews_framework` → `main_model`. Contrast towers
+reuse the main model's tower skeleton and swap the loss
+(`contrast_models/byol.py`, `arcface.py`); contrast heads reuse the
+framework's two-phase head machinery and swap only the loss philosophy
+(`contrast_heads/configs.py`). The framework never sees this layer —
+deleting the whole of contrast_experiment does not affect champion
+reproduction.

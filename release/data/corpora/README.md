@@ -1,32 +1,36 @@
-# data/corpora/ — 文本语料
+# data/corpora/ — text corpora
 
-**来源:仓库内置压缩包**(`steam_reviews_framework/corpora_bundles/` 的
-`wikipage.zip` + `storepage.zip`),由 `steam_reviews_framework/run.py`
-自动解压到这里。**复现铁律:永远使用内置语料——不重新抓取 wiki,
-不重新过 LLM**(wiki 会被编辑、LLM 改写非确定,重采会导致结果漂移)。
+**Source: the zips bundled in the repository**
+(`steam_reviews_framework/corpora_bundles/`: `wikipage.zip` +
+`storepage.zip`), auto-unpacked here by `steam_reviews_framework/run.py`.
+**Reproducibility rule: the bundled corpora are ALWAYS used — Wikipedia is
+never re-scraped and the LLM is never re-run** (wiki pages get edited and
+LLM rewrites are non-deterministic; re-collecting would make results
+drift).
 
-所有文件 UTF-8;`<appid>` = Steam appid,与 `assets/games.npz` 的
-游戏名前缀对应(`<appid>_<GameName>`)。
+All files are UTF-8. `<appid>` is the Steam appid, matching the game-name
+prefix in `assets/games.npz` (`<appid>_<GameName>`).
 
-## wikipage.zip 解出(每套 814 游戏)
+## From wikipage.zip (814 games per set)
 
-| 目录/文件 | 结构 | 用途 |
+| Path | Structure | Role |
 |---|---|---|
-| `wiki_clean/<appid>_<GameName>.txt` | 净化维基页:仅保留游戏内容章节,匹配校验通过 | 塔训练文档视图(clean 家族) |
-| `wiki_variants/<appid>/{neutral,noname,positive,negative}.txt` | 四风格 LLM 改写,每篇 ≥300 字符 | **评测查询**(wiki_eval.npz 的文本源) |
-| `wiki_llm/<appid>_….txt` | 逐句忠实改写(与 wiki_clean 同名) | 预训练泄露消融(*_wllm 臂) |
-| `wiki_clean_manifest.json` | 每页保留章节/字数/匹配名次/判定 | 溯源 |
+| `wiki_clean/<appid>_<GameName>.txt` | cleaned wiki page: game-content sections only, match-validated | tower doc views (clean family) |
+| `wiki_variants/<appid>/{neutral,noname,positive,negative}.txt` | four LLM rewriting styles, ≥300 chars each | **evaluation queries** (the text source of wiki_eval.npz) |
+| `wiki_llm/<appid>_….txt` | faithful sentence-by-sentence rewrite (same filenames as wiki_clean) | pretraining-leak ablation (*_wllm arms) |
+| `wiki_clean_manifest.json` | per page: kept sections / chars / match rank / verdict | provenance |
 
-## storepage.zip 解出(每套 1811 游戏,`<appid>.txt`)
+## From storepage.zip (1,811 games per set, `<appid>.txt`)
 
-| 目录 | 内容 |
+| Directory | Contents |
 |---|---|
-| `sp_raw/` | 商店页原文(清洗后)。**锚的文档前缀** + 塔的 sp 文档视图 |
-| `sp_neutral/` | 中立改写 |
-| `sp_llm/` | 逐句忠实改写 |
-| `sp_positive/` / `sp_negative/` | 情感改写 |
-| `sp_noname/` | 中立且抹除全部名字(专名换虚构词) |
-| `sp_manifest.json` | 生成溯源 |
+| `sp_raw/` | store-page text (cleaned). **The anchor's document prefix** + the tower's sp doc view |
+| `sp_neutral/` | neutral rewrite |
+| `sp_llm/` | faithful sentence-by-sentence rewrite |
+| `sp_positive/` / `sp_negative/` | sentiment rewrites |
+| `sp_noname/` | neutral with every name removed (proper nouns → invented words) |
+| `sp_manifest.json` | generation provenance |
 
-消费方式:`dataset_builder/build_assets.py` 用 SaT 分句(丢 <10 字符碎片,
-**不设句数上限**)→ Qwen3-Embedding-0.6B 嵌入 → `assets/*_views.npz`。
+Consumption: `dataset_builder/build_assets.py` splits with SaT (drops
+<10-char fragments, **no sentence cap**), embeds every sentence with
+Qwen3-Embedding-0.6B, and writes `assets/*_views.npz`.

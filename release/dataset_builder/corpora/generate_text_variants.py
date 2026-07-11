@@ -38,7 +38,8 @@ def _load_llm_credentials():
     cred = {"url": os.environ.get("LLM_API_URL", ""),
             "token": os.environ.get("LLM_API_TOKEN", ""),
             "model": os.environ.get("LLM_API_MODEL", "gpt-5.4-mini")}
-    for cand in (Path(__file__).resolve().parents[2] / "llmAPI.txt",
+    for cand in (Path(__file__).resolve().parents[1] / "llmAPI.txt",
+                 Path(__file__).resolve().parents[2] / "llmAPI.txt",
                  Path(__file__).resolve().parent / "llmAPI.txt"):
         if cand.exists():
             for line in cand.read_text(encoding="utf-8").splitlines():
@@ -52,7 +53,8 @@ def _load_llm_credentials():
     if not cred["url"] or not cred["token"]:
         raise SystemExit(
             "LLM API credentials missing: create llmAPI.txt (url=..., "
-            "token=..., model=...) at the release root, or set "
+            "token=..., model=...) in dataset_builder/ (see "
+            "llmAPI.template.txt), or set "
             "LLM_API_URL / LLM_API_TOKEN.")
     return cred
 
