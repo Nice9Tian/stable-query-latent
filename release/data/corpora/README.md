@@ -28,5 +28,5 @@
 | `sp_noname/` | 中立且抹除全部名字(专名换虚构词) |
 | `sp_manifest.json` | 生成溯源 |
 
-消费方式:`data_pipeline/build_assets.py` 用 SaT 分句(丢 <10 字符碎片,
+消费方式:`dataset_builder/build_assets.py` 用 SaT 分句(丢 <10 字符碎片,
 **不设句数上限**)→ Qwen3-Embedding-0.6B 嵌入 → `assets/*_views.npz`。

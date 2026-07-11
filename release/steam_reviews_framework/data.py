@@ -13,7 +13,7 @@ import h5py
 import numpy as np
 import torch
 
-from data_pipeline.paths import ASSETS, TEXT_H5
+from dataset_builder.paths import ASSETS, TEXT_H5
 from .protocol import load_split
 from .sampler import build_review_table
 from .backhead_tag import make_or_load_split

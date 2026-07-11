@@ -3,7 +3,7 @@
 获取方式二选一:
 - 设 `LARICE_EMBED_H5_URL` / `LARICE_TEXT_H5_URL`,由
   `steam_reviews_framework/run.py` 自动下载;
-- 从 Kaggle 原始数据重建一次:`data_pipeline/reviews/`
+- 从 Kaggle 原始数据重建一次:`dataset_builder/reviews/`
   (prepare_kaggle_steam_reviews → build.py 清洗分句 → Build_new.py
   全量嵌入 → h5_corpus.py 组装)。
 
@@ -37,5 +37,5 @@
 ## games.json(可选)
 
 2,020 游戏商店元数据(描述原文等)。**仅在重新生成 sp 语料时需要**
-(`data_pipeline/corpora/build_sp_corpus.py`);正常复现走内置压缩包,
+(`dataset_builder/corpora/build_sp_corpus.py`);正常复现走内置压缩包,
 不需要此文件。

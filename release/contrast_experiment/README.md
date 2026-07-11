@@ -39,7 +39,7 @@ notebook 第一格(与本层 roster 同一套臂定义)。
 
 ## 依赖方向
 
-本层 → `steam_reviews_framework` → `larice`;对照塔复用 larice 的塔
+本层 → `steam_reviews_framework` → `main_model`;对照塔复用主模型的塔
 骨架、替换损失(`contrast_models/byol.py`、`arcface.py`),对照头复用
 框架的两阶段头机制、只换损失哲学(`contrast_heads/configs.py`)。
 框架对本层不可见——删掉整个 contrast_experiment 不影响冠军复现。

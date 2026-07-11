@@ -44,7 +44,7 @@ slot is a deployable sub-space of its own.
 ## Usage
 
 ```python
-from larice import LariceConfig, LariceTower, champion_loss
+from main_model import LariceConfig, LariceTower, champion_loss
 
 cfg = LariceConfig(num_queries=4, dim_model=128, input_dim=1024,
                   num_views=4, tau=0.02, inv_weight=2.0, readout="pool")

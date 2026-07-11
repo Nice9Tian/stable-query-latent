@@ -110,7 +110,7 @@
 ```
 larice/                                 (发布仓库,Latent Represent I-CE)
 │
-├── larice/                 ★★ 模型本体 LariceTower —— 将来独立上 GitHub 的就是这一层
+├── main_model/             ★★ 主模型 larice 本体(LariceTower)—— 将来独立上 GitHub 的就是这一层
 │   │                          只有冠军塔,不带任何塔后头;任务无关
 │   ├── model.py            LariceTower(I-CE + CE门控配方;参数化:q 数量 N、
 │   │                       视图数 NV、tau(frozen 值/learnable 初值)、
@@ -149,7 +149,7 @@ larice/                                 (发布仓库,Latent Represent I-CE)
 │   └── pod/                多机并行通路:w9_all.ipynb(暂存+认领+队列+
 │                           审计+自停)、workers、h5_staging、pod_selfstop
 │
-├── data_pipeline/          数据重建 —— 与模型完全解耦
+├── dataset_builder/          数据重建 —— 与模型完全解耦
 │   ├── reviews/            Kaggle评论 → 清洗 → 分句 → 全量嵌入 h5
 │   ├── corpora/            wiki 抓取→清洗→四变体/llm;sp 六语料(读 tokenAPI)
 │   └── build_assets.py     池/锚/伪查询/视图npz/评测npz/分割json
@@ -175,10 +175,10 @@ archive/ 后与 `steam_reviews_framework/backhead_name.py`/`backhead_tag.py` 不
 
 ```
 路径① 冠军复现:
-  python data_pipeline/rebuild_data.py      # 或从发布桶直接下载 data/
+  python dataset_builder/rebuild_data.py      # 或从发布桶直接下载 data/
   python steam_reviews_framework/train_champion.py    # cegate2: CE门控+I×2, vsel选优
 路径② 全对照复现(R60 设计,不含任何旧设计):
-  python data_pipeline/rebuild_data.py
+  python dataset_builder/rebuild_data.py
   python contrast_experiment/run_all.py [--cv]   # 13 臂 + 可选 6配方×5折
 pod 路径:开 pod → 跑 steam_reviews_framework/pod/w9_all.ipynb(同一套 train.py 内核,
   experiment 的臂清单通过 arms.yaml 注入)
@@ -192,7 +192,7 @@ pod 路径:开 pod → 跑 steam_reviews_framework/pod/w9_all.ipynb(同一套 tr
 2. **迁移 scratchpad 七件**入仓(это当前协议的单点故障——临时目录一旦清理,本机管线即失传);
 3. **worker 合一**:w9_cell / w9_a100_worker / w9_cv_worker → `steam_reviews_framework/train.py` + 三个薄壳(本机 CLI、pod 固定分割、pod CV),消除三份拷贝漂移;
 4. **建 `archive/`** 并移入全部 📦 项(git mv,历史保留);顺带把工作区里悬置的 ~1000 个 `text_variants_generated` 删除记录一并提交;
-5. **数据/模型分离**:`data/` 统一收纳 + .gitignore 更新;`data_pipeline/` 收纳全部构建脚本;
+5. **数据/模型分离**:`data/` 统一收纳 + .gitignore 更新;`dataset_builder/` 收纳全部构建脚本;
 6. **重写 README** + 补 `requirements.txt` + 两个入口脚本;
 7. 待 R60 战役出全数据后,把冠军配置固化进 `configs/arms.yaml` 默认值,`steam_reviews_framework/` 拆分独立仓。
 

@@ -4,8 +4,8 @@ I x2, frozen tau 0.02, wiki_clean > sp_raw doc views, I-CE head).
 
     python steam_reviews_framework/train_champion.py [--epochs 1000] [--cv-fold K]
 
-Prerequisite: data assets built (see data_pipeline/rebuild_data.py) or
-linked via LARICE_* environment variables (data_pipeline/paths.py).
+Prerequisite: data assets built (see dataset_builder/rebuild_data.py) or
+linked via LARICE_* environment variables (dataset_builder/paths.py).
 """
 import argparse
 import sys

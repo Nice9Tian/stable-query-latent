@@ -1,6 +1,6 @@
 # data/assets/ — 训练/评测张量资产
 
-全部由 `data_pipeline/build_assets.py` 生成(固定 SEED=20260711,断点续建:
+全部由 `dataset_builder/build_assets.py` 生成(固定 SEED=20260711,断点续建:
 已存在的文件自动跳过)。`gidx` 一律指 `games.npz` 里的行号。
 
 | 文件 | 结构 | 说明 |
@@ -17,4 +17,4 @@
 | `_tag_split.json` | train/val/test 游戏名列表 | 标签探针分割(seed 42,0.7/0.15) |
 
 协议分割不在此目录:权威 `wiki_eval_split.json`(seed 20260711,
-204/203/407)随代码入库在 `data_pipeline/` 下。
+204/203/407)随代码入库在 `dataset_builder/` 下。

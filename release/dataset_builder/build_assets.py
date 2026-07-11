@@ -12,7 +12,7 @@ Steps (each resume-safe — existing outputs are skipped):
                           @512), pseudo-queries (anchor-shaped, 4/game, flat)
   4. wiki_eval.npz        eval queries: wiki 4-variant docs, COMPLETE text
 
-Usage:  python data_pipeline/build_assets.py [--step 1 2 3 4]
+Usage:  python dataset_builder/build_assets.py [--step 1 2 3 4]
 """
 import argparse
 import sys
@@ -23,7 +23,7 @@ import numpy as np
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 sys.path.insert(0, str(Path(__file__).resolve().parent / "reviews"))
 
-from data_pipeline.paths import ASSETS, CORPORA, EMBED_H5, SPLIT_JSON
+from dataset_builder.paths import ASSETS, CORPORA, EMBED_H5, SPLIT_JSON
 
 SEED = 20260711
 CAP, TOPK = 2048, 3          # review pool budget / gold-guarantee count

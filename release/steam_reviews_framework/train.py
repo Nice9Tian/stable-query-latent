@@ -15,13 +15,13 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-from larice import LariceConfig, LariceTower, invariance_loss
+from main_model import LariceConfig, LariceTower, invariance_loss
 
 from .anchors import gallery, gallery_nodoc, gallery_train
 from .backhead_name import train_backhead_name
 from .data import load_views
 from .eval import metrics4, zs_metrics, VORDER
-from data_pipeline.paths import RESULTS
+from dataset_builder.paths import RESULTS
 from .protocol import SPLIT_SEED
 from .sampler import pad_flat, sample_views
 

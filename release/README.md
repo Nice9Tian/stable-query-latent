@@ -4,19 +4,20 @@
 源自 SetPoolN 血统)构建于冻结句嵌入之上。
 参考任务:在 Steam 评论域训练、在 wiki 改写查询域评测(R60 全归纳协议)。
 
-## 三层结构(依赖严格单向:experiment → framework → larice)
+## 三层结构(依赖严格单向:experiment → framework → main_model)
 
 ```
-larice/           模型本体(LariceTower + LariceConfig)—— 只有冠军塔,
+main_model/       主模型 larice 本体(LariceTower + LariceConfig)——
+                  只有冠军塔,
                   无任何塔后头,可独立成仓;张量协议 [data, view]:
                   x[B,V,S,D]+mask → z[B,V,N×DM](concat)
-steam_reviews_framework/    Steam 任务绑定 —— 调用 larice:协议/采样/锚/
+steam_reviews_framework/    Steam 任务绑定 —— 调用 main_model:协议/采样/锚/
                   统一训练器/backhead_name(名称召回两阶段头)/
                   backhead_tag(23标签)/run.py+train_champion.py(路径①)
 contrast_experiment/   全量对照 —— contrast_models(CE/BYOL/ArcFace/门控与剂量
                   变体)+ contrast_heads + run.py(全对照一键,--cv 五折)+ report
                   + pod/(RunPod 多机并行通路,见其 README)
-data_pipeline/    数据重建 —— reviews(Kaggle→清洗→分句→全量嵌入 h5)、
+dataset_builder/    数据重建 —— reviews(Kaggle→清洗→分句→全量嵌入 h5)、
                   corpora(wiki 抓取→净化→改写;sp 六语料)、build_assets
 data/             (gitignored)全部重数据:h5 / npz / 语料文本 / 结果
 ```
@@ -44,8 +45,8 @@ python contrast_experiment/run.py [--cv]
    语料:不重新抓取 wiki、不重新过 LLM**——避免 wiki 后续被编辑、或清洗
    口径不一致导致结果漂移;
 2. **评论重型文件** —— 缺失时按 `LARICE_EMBED_H5_URL`/`LARICE_TEXT_H5_URL`
-   自动下载,或用 `data_pipeline/reviews/` 从 Kaggle 原始数据重建一次;
-3. **张量资产** —— `data_pipeline/build_assets.py` 自动补齐缺失项。
+   自动下载,或用 `dataset_builder/reviews/` 从 Kaggle 原始数据重建一次;
+3. **张量资产** —— `dataset_builder/build_assets.py` 自动补齐缺失项。
 
 ## 数据与代码分离
 
@@ -57,7 +58,7 @@ LARICE_ASSETS      训练/评测张量npz     LARICE_RESULTS   检查点与结�
 LARICE_CORPORA     语料文本             LARICE_EMBED_H5  / LARICE_TEXT_H5  评论h5
 ```
 
-`data_pipeline/rebuild_data.py --check` 会逐层报告缺什么、用哪条命令补。
+`dataset_builder/rebuild_data.py --check` 会逐层报告缺什么、用哪条命令补。
 LLM 改写语料需要 `llmAPI.txt`(url=/token=/model=,gitignored)。
 
 ## 协议要点(R60,2026-07-11 定稿)

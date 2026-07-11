@@ -13,7 +13,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-from larice import LariceConfig, LariceTower
+from main_model import LariceConfig, LariceTower
 from steam_reviews_framework.sampler import sample_views
 from steam_reviews_framework.train import ArmSpec, make_doc_tiers, _amp_scaler
 

@@ -11,8 +11,8 @@ What it does, in order:
                  edits or non-deterministic rewrites.
   2. reviews   — the heavy review-embedding files are fetched on demand
                  (LARICE_EMBED_H5_URL / LARICE_TEXT_H5_URL), or you build
-                 them once from the Kaggle dump via data_pipeline/reviews/.
-  3. assets    — training/eval tensors built by data_pipeline/build_assets.
+                 them once from the Kaggle dump via dataset_builder/reviews/.
+  3. assets    — training/eval tensors built by dataset_builder/build_assets.
   4. train     — the champion tower (cegate2) + BackHeads + vsel selection.
 
 Every step is resume-safe; rerunning skips whatever already exists.
@@ -30,7 +30,7 @@ FRAMEWORK = Path(__file__).resolve().parent
 RELEASE = FRAMEWORK.parent
 sys.path.insert(0, str(RELEASE))
 
-from data_pipeline.paths import ASSETS, CORPORA, EMBED_H5, TEXT_H5
+from dataset_builder.paths import ASSETS, CORPORA, EMBED_H5, TEXT_H5
 
 BUNDLES = {                       # bundle -> corpora dirs it provides
     "wikipage.zip": ("wiki_clean", "wiki_variants", "wiki_llm"),
@@ -101,7 +101,7 @@ def ensure_reviews():
             print(f"reviews: MISSING {p}\n"
                   f"  option A: set {env} to a download source and rerun\n"
                   f"  option B: build once from the Kaggle dump —\n"
-                  f"    data_pipeline/reviews/: prepare_kaggle_steam_reviews "
+                  f"    dataset_builder/reviews/: prepare_kaggle_steam_reviews "
                   f"-> build.py -> Build_new.py (embed) -> h5_corpus.py",
                   flush=True)
     if not ok:
@@ -115,7 +115,7 @@ def ensure_assets():
         return
     print(f"assets: building {len(missing)} missing ...", flush=True)
     subprocess.check_call([sys.executable,
-                           str(RELEASE / "data_pipeline" / "build_assets.py")])
+                           str(RELEASE / "dataset_builder" / "build_assets.py")])
 
 
 def ensure_data():

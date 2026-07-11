@@ -2,15 +2,15 @@
 """One-click data rebuild: checks every layer, tells you exactly what is
 missing and which command produces it, then builds what it can.
 
-    python data_pipeline/rebuild_data.py           # report + build assets
-    python data_pipeline/rebuild_data.py --check   # report only
+    python dataset_builder/rebuild_data.py           # report + build assets
+    python dataset_builder/rebuild_data.py --check   # report only
 
 Layers (top depends on bottom):
   assets   <- build_assets.py            (needs corpora + reviews h5)
   corpora  <- corpora/*.py               (needs games.json + LLM API)
   reviews  <- reviews/*.py               (needs the Kaggle dump + GPU)
 Already-built artefacts are used as-is — link an existing layout via the
-LARICE_* environment variables (see data_pipeline/paths.py) to skip rebuilds.
+LARICE_* environment variables (see dataset_builder/paths.py) to skip rebuilds.
 """
 import argparse
 import subprocess
@@ -18,7 +18,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from data_pipeline.paths import ASSETS, CORPORA, EMBED_H5, TEXT_H5
+from dataset_builder.paths import ASSETS, CORPORA, EMBED_H5, TEXT_H5
 
 DP = Path(__file__).resolve().parent
 
