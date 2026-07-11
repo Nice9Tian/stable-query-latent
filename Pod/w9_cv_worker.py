@@ -556,12 +556,14 @@ def main():
                         pt.data.mul_(0.996).add_(po.data, alpha=0.004)
             if (ep + 1) % args.ckpt_every == 0:
                 sd = {k: v.detach().cpu().clone() for k, v in model.state_dict().items()}
-                torch.save(sd, OUT / f"ckpt_{name}_ep{ep+1}.pt")
+                pd = {k: v.detach().cpu().clone() for k, v in pred.state_dict().items()}
+                td = {k: v.detach().cpu().clone() for k, v in target.state_dict().items()}
+                # archive predictor + EMA target PER CHECKPOINT (user decree)
+                torch.save(dict(model=sd, pred=pd, target=td),
+                           OUT / f"ckpt_{name}_ep{ep+1}.pt")
                 bundle = dict(model=sd,
-                              pred={k: v.detach().cpu().clone()
-                                    for k, v in pred.state_dict().items()},
-                              target={k: v.detach().cpu().clone()
-                                      for k, v in target.state_dict().items()},
+                              pred=pd,
+                              target=td,
                               opt=opt.state_dict(), amp=amp.state_dict(),
                               cpu_rng=torch.get_rng_state(),
                               cuda_rng=torch.cuda.get_rng_state(),
@@ -787,9 +789,10 @@ def main():
             npz = OUT / f"tower_{name}_ep{ek}.npz"
             if npz.exists():
                 continue                                # projection-level resume
+            st = torch.load(ck, map_location="cpu")
+            sd = st["model"] if "model" in st else st     # byol ckpts are nested
             m2 = SetPoolN(4).to(dev)
-            m2.load_state_dict({k: v.to(dev) for k, v in torch.load(
-                ck, map_location="cpu").items()})
+            m2.load_state_dict({k: v.to(dev) for k, v in sd.items()})
             m2.eval()
             zk = zs_metrics(m2)
             zs_traj[f"ep{ek}"] = zk
