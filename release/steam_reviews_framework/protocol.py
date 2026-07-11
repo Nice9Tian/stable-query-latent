@@ -12,7 +12,7 @@ import math
 
 import numpy as np
 
-from .paths import SPLIT_JSON
+from data_pipeline.paths import SPLIT_JSON
 
 SPLIT_SEED = 20260711
 

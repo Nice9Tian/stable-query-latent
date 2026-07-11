@@ -21,7 +21,7 @@ from .anchors import gallery, gallery_nodoc, gallery_train
 from .backhead_name import train_backhead_name
 from .data import load_views
 from .eval import metrics4, zs_metrics, VORDER
-from .paths import RESULTS
+from data_pipeline.paths import RESULTS
 from .protocol import SPLIT_SEED
 from .sampler import pad_flat, sample_views
 

@@ -19,7 +19,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import numpy as np
 
 from steam_reviews_framework.eval import VORDER
-from steam_reviews_framework.paths import RESULTS
+from data_pipeline.paths import RESULTS
 
 
 def agg(runs):

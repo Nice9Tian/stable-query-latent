@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Data/model separation: ALL heavy artefacts live under one data root,
+"""The DATA LAYER owns every location: heavy artefacts under one data root,
 outside the code tree. Every location is overridable by environment
 variable so an existing local layout can be linked in without copying.
 
@@ -28,5 +28,5 @@ EMBED_H5 = _p("LARICE_EMBED_H5", DATA / "reviews" / "embedding_h5.h5")
 TEXT_H5 = _p("LARICE_TEXT_H5", DATA / "reviews" / "text_h5.h5")
 
 # The authoritative fixed split (seed 20260711, 204/203/407 over the 814
-# clean wiki universe) ships WITH the code — it pins the protocol.
+# clean wiki universe) ships WITH the data layer — it pins the protocol.
 SPLIT_JSON = Path(__file__).resolve().parent / "wiki_eval_split.json"

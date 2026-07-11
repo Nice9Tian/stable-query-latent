@@ -23,7 +23,7 @@ import numpy as np
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 sys.path.insert(0, str(Path(__file__).resolve().parent / "reviews"))
 
-from steam_reviews_framework.paths import ASSETS, CORPORA, EMBED_H5, SPLIT_JSON
+from data_pipeline.paths import ASSETS, CORPORA, EMBED_H5, SPLIT_JSON
 
 SEED = 20260711
 CAP, TOPK = 2048, 3          # review pool budget / gold-guarantee count
