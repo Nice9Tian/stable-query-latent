@@ -35,13 +35,20 @@ import os
 
 
 def _load_llm_credentials():
-    cred = {"url": os.environ.get("LLM_API_URL", ""),
-            "token": os.environ.get("LLM_API_TOKEN", ""),
-            "model": os.environ.get("LLM_API_MODEL", "gpt-5.4-mini")}
+    """Two sources, either alone is fine: the in-code API block at the top
+    of steam_reviews_framework/run.py (exported as LLM_API_* env vars —
+    they WIN) and dataset_builder/llmAPI.txt. A mismatch is only reported
+    when BOTH sources are non-empty and differ."""
+    env = {"url": os.environ.get("LLM_API_URL", ""),
+           "token": os.environ.get("LLM_API_TOKEN", ""),
+           "model": os.environ.get("LLM_API_MODEL", "")}
+    cred = {"url": "", "token": "", "model": ""}
+    src = None
     for cand in (Path(__file__).resolve().parents[1] / "llmAPI.txt",
                  Path(__file__).resolve().parents[2] / "llmAPI.txt",
                  Path(__file__).resolve().parent / "llmAPI.txt"):
         if cand.exists():
+            src = cand
             for line in cand.read_text(encoding="utf-8").splitlines():
                 line = line.strip()
                 if not line or line.startswith("#") or "=" not in line:
@@ -50,6 +57,14 @@ def _load_llm_credentials():
                 if k.strip() in cred and v.strip():
                     cred[k.strip()] = v.strip()
             break
+    for k in cred:
+        # a mismatch needs BOTH sources present; one side missing is fine
+        if env[k] and cred[k] and env[k] != cred[k]:
+            print(f"NOTE: LLM-API {k} set in code differs from {src} — "
+                  f"using the in-code value.", flush=True)
+        if env[k]:
+            cred[k] = env[k]
+    cred["model"] = cred["model"] or "gpt-5.4-mini"
     if not cred["url"] or not cred["token"]:
         raise SystemExit(
             "LLM API credentials missing: create llmAPI.txt (url=..., "

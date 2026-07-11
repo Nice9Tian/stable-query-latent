@@ -11,6 +11,11 @@ Data preparation (bundled corpora -> reviews h5 -> assets) is shared with
 the champion entry and runs automatically. Everything is resume-safe:
 finished towers/heads/folds are skipped on relaunch. Ends by writing the
 comparison table (report.py).
+
+API SETTINGS (embedding endpoint, LLM gateway, h5 download URLs): fill in
+the block at the top of steam_reviews_framework/run.py — it is shared by
+this entry through ensure_data(). Credential files under dataset_builder/
+work too; in-code values win, mismatches are printed.
 """
 import argparse
 import copy

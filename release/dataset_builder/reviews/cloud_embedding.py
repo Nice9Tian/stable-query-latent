@@ -51,25 +51,40 @@ def resolve_script_relative(path):
 
 
 def load_credentials(token_file):
-    """Parse the gitignored credentials file. Returns {'url': ..., 'token': ...}.
-    Supports KEY=VALUE lines (CRLF or LF), '#' comments, and blank lines."""
+    """Return {'url': ..., 'token': ...} from TWO possible sources:
+    the in-code constants at the top of steam_reviews_framework/run.py
+    (propagated as EMBEDDING_API_URL / EMBEDDING_API_TOKEN env vars — they
+    WIN), and the gitignored credentials file (KEY=VALUE lines, CRLF or LF,
+    '#' comments, blank lines). Either source alone is fine."""
+    import os
+    env = {"url": os.environ.get("EMBEDDING_API_URL", "").strip(),
+           "token": os.environ.get("EMBEDDING_API_TOKEN", "").strip()}
+    creds = {}
     token_path = resolve_script_relative(token_file)
-    if not token_path.exists():
+    if token_path.exists():
+        for raw_line in token_path.read_text(encoding="utf-8").splitlines():
+            line = raw_line.strip()
+            if not line or line.startswith("#"):
+                continue
+            if "=" not in line:
+                raise ValueError(
+                    f"{token_path}: invalid line (expected KEY=VALUE): {raw_line!r}")
+            key, _, value = line.partition("=")
+            creds[key.strip().lower()] = value.strip()
+    for k in ("url", "token"):
+        # a mismatch needs BOTH sources present; one side missing is fine
+        if env[k] and creds.get(k) and env[k] != creds[k]:
+            print(f"NOTE: embedding-API {k} set in code differs from "
+                  f"{token_path} — using the in-code value.", flush=True)
+        if env[k]:
+            creds[k] = env[k]
+    if not token_path.exists() and not (env["url"] and env["token"]):
         raise FileNotFoundError(
             f"Credentials file not found: {token_path}. Create it with two lines:\n"
             f"  url=https://<your-endpoint>.huggingface.cloud\n"
-            f"  token=hf_xxx..."
+            f"  token=hf_xxx...\n"
+            f"or fill in the API block at the top of steam_reviews_framework/run.py"
         )
-    creds = {}
-    for raw_line in token_path.read_text(encoding="utf-8").splitlines():
-        line = raw_line.strip()
-        if not line or line.startswith("#"):
-            continue
-        if "=" not in line:
-            raise ValueError(f"{token_path}: invalid line (expected KEY=VALUE): {raw_line!r}")
-        key, _, value = line.partition("=")
-        creds[key.strip().lower()] = value.strip()
-
     missing = [k for k in ("url", "token") if not creds.get(k)]
     if missing:
         raise ValueError(
