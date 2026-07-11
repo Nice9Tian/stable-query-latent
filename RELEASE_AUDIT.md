@@ -136,9 +136,7 @@ larice/                                 (发布仓库,Latent Represent I-CE)
 │   ├── data.py             语料/资产装载(h5、npz、mmap、GPU/RAM 布局)
 │   ├── train.py            统一训练器(塔+检查点+断点续跑+头网格+事后寻优)
 │   ├── eval.py             metrics4 / 裸塔ZS / 冻结基线 / 锚成分(SPg_nd)
-│   ├── train_champion.py   路径①入口:冠军配方(cegate2)一键复现
-│   └── pod/                w9_all.ipynb(薄壳:暂存+认领+队列+审计+自停)、
-│                           h5_staging.py、pod_selfstop.py
+│   └── train_champion.py   路径①入口:冠军配方(cegate2)一键复现
 │
 ├── contrast_experiment/         ★ 全量实验启动器 —— 训练各种塔、完成对比
 │   ├── contrast_models/    全部对照塔(纯CE / BYOL / ArcFace / 各门控与
@@ -147,7 +145,9 @@ larice/                                 (发布仓库,Latent Represent I-CE)
 │   ├── arms.yaml           全部臂的声明式定义(臂 = 塔配方 + 门控 + 头配)
 │   ├── run_all.py          路径②入口:13 臂固定分割 roster(本机或 pod 队列)
 │   ├── run_cv.py           6 配方 × 5 折 CV
-│   └── report.py           横评总表 / 学习曲线 / 剂量曲线聚合
+│   ├── report.py           横评总表 / 学习曲线 / 剂量曲线聚合
+│   └── pod/                多机并行通路:w9_all.ipynb(暂存+认领+队列+
+│                           审计+自停)、workers、h5_staging、pod_selfstop
 │
 ├── data_pipeline/          数据重建 —— 与模型完全解耦
 │   ├── reviews/            Kaggle评论 → 清洗 → 分句 → 全量嵌入 h5

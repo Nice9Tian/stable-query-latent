@@ -12,10 +12,10 @@ larice/           模型本体(LariceTower + LariceConfig)—— 只有冠军塔
                   x[B,V,S,D]+mask → z[B,V,N×DM](concat)
 steam_reviews_framework/    Steam 任务绑定 —— 调用 larice:协议/采样/锚/
                   统一训练器/backhead_name(名称召回两阶段头)/
-                  backhead_tag(23标签)/train_champion.py(路径①)/
-                  pod/(RunPod 通路)
+                  backhead_tag(23标签)/run.py+train_champion.py(路径①)
 contrast_experiment/   全量对照 —— contrast_models(CE/BYOL/ArcFace/门控与剂量
                   变体)+ contrast_heads + run.py(全对照一键,--cv 五折)+ report
+                  + pod/(RunPod 多机并行通路,见其 README)
 data_pipeline/    数据重建 —— reviews(Kaggle→清洗→分句→全量嵌入 h5)、
                   corpora(wiki 抓取→净化→改写;sp 六语料)、build_assets
 data/             (gitignored)全部重数据:h5 / npz / 语料文本 / 结果
@@ -32,7 +32,7 @@ python steam_reviews_framework/run.py
 # 路径② 一键训练全部对照组合(18 臂;--cv 加跑 6 配方 × 5 折;末尾自动出对照表)
 python contrast_experiment/run.py [--cv]
 
-# pod 路径:在 RunPod 打开 steam_reviews_framework/pod/w9_all.ipynb(见其 README)
+# pod 路径(多机并行全对照):RunPod 打开 contrast_experiment/pod/w9_all.ipynb
 ```
 
 两个 run.py 分工:**框架的 run = 只训冠军;实验的 run = 训全部对照**。
