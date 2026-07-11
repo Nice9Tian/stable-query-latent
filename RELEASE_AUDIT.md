@@ -108,7 +108,7 @@
 ## 第二部分:可发布版目标结构
 
 ```
-studable-query-latent/                  (发布仓库)
+larice/                                 (发布仓库,Latent Represent I-CE)
 │
 ├── model/                  ★★ 通用模型包 —— 将来独立上 GitHub 的就是这一层
 │   │                          只有冠军塔,不带任何塔后头;任务无关

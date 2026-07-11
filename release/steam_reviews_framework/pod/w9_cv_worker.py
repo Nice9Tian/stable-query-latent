@@ -121,8 +121,9 @@ def main():
     args = parse_args()
     import sys
     sys.path.insert(0, args.repo)
-    from VICReg_review.text_variant_eval import (train_anchor_ridge,
-                                                 make_or_load_split, micro_prf)
+    from steam_reviews_framework.backhead_tag import (train_anchor_ridge,
+                                                       make_or_load_split,
+                                                       micro_prf)
 
     tower_kind, FT = ARMS[args.arm]
     IW = _IW.get(tower_kind, 0.0)

@@ -25,8 +25,8 @@ import os as _os
 SCRIPT_DIR = (Path(_os.environ["LARICE_CORPORA"]) if _os.environ.get("LARICE_CORPORA")
               else Path(__file__).resolve().parents[2] / "data" / "corpora")
 ROOT = SCRIPT_DIR.parent
-SC = Path(r"C:/Users/admin/AppData/Local/Temp/claude/C--Users-admin-Documents-studable-query-latent"
-          r"/f61c4010-5a2e-42bd-a560-64dc160587f6/scratchpad")
+SC = (Path(_os.environ["LARICE_ASSETS"]) if _os.environ.get("LARICE_ASSETS")
+      else Path(__file__).resolve().parents[2] / "data" / "assets")
 MIN_IN = 300
 
 RAW = SCRIPT_DIR / "sp_raw"
@@ -41,7 +41,7 @@ def strip_html(t: str) -> str:
 
 def main() -> None:
     import numpy as np
-    G = np.load(SC / "fusion_cache" / "games.npz", allow_pickle=True)
+    G = np.load(SC / "games.npz", allow_pickle=True)
     names = [str(x) for x in G["names"]]
     games = json.loads((SCRIPT_DIR.parent / "reviews" / "games.json").read_text(encoding="utf-8"))
 

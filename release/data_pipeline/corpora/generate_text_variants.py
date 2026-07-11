@@ -208,13 +208,13 @@ def main() -> None:
         description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog=(
             "after generation, upload + re-embed:\n"
-            "  aws s3 cp <out-dir> s3://<bucket>/stable-query-latent/VICReg_review/"
+            "  aws s3 cp <out-dir> s3://<bucket>/larice/VICReg_review/"
             "text_variants_generated/ --recursive ...\n"
             "  (on a pod) point --text-variant-dir at the uploaded dir and delete the\n"
             "  text_variant_embedding_cache.npz so the eval re-embeds the new files."
         ))
     ap.add_argument("--split-json", default=str(
-        Path(r"C:/runpod_data/stable-query-latent/VICReg_review/heads"
+        Path(r"C:/runpod_data/larice/VICReg_review/heads"
              r"/cloud_full_sweep_a100/tag_text_eval_split.json")))
     ap.add_argument("--games-json", default=str(SCRIPT_DIR.parent / "reviews" / "games.json"))
     ap.add_argument("--out-dir", default=str(SCRIPT_DIR / "text_variants_generated"))
