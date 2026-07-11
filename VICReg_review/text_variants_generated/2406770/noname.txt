@@ -1,9 +1,0 @@
-This game is an ultra-realistic multiplayer first-person shooter built with a next-generation engine, aiming to push the limits of realism and photorealism. Developed by a small French team of young creators, it is presented as a high-ambition project designed to deliver a visually striking and immersive combat experience.
-
-The gameplay focuses on intense team-based firefights where players coordinate with teammates, plan tactics, and make use of their equipment to outmaneuver opponents. Ultra-detailed environments are intended to support both immersion and strategic depth, with combat and movement systems described as especially advanced and distinctive.
-
-Several classic competitive modes are included, such as Warground and Team Warground, alongside a separate objective-based mode called Vortex Bomb. Success depends heavily on cooperation and communication, making teamwork a core part of the experience.
-
-The game is being launched in early access, with a public roadmap that outlines planned updates for 2024. Community suggestions will play an active role in shaping future additions, as players can submit and vote on ideas through the developers’ social channels. The roadmap is not fixed, and further features may be added as development continues.
-
-Overall, this is positioned as a realistic, competitive shooter with cutting-edge visuals, immersive audio, and a strong emphasis on tactical multiplayer action.

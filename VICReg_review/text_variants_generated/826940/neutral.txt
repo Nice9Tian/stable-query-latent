@@ -1,7 +1,0 @@
-*Maid of Sker* is a first-person survival horror game set in a remote hotel steeped in a gory and macabre history drawn from Welsh folklore. The game takes place in 1898 and follows a story inspired by the haunting tale of Elisabeth Williams. Its narrative centers on a family empire shaped by torture, slavery, piracy, and a supernatural mystery that haunts the hotel grounds.
-
-Players must survive by relying on stealth, using only a defensive sound device to avoid the cult of sound-based AI enemies known as the Quiet Ones. The core gameplay focuses on a 3D sound-based AI system, making audio awareness a central part of survival. The game emphasizes tension and caution, with the player instructed to avoid panic and even breathing too loudly.
-
-The experience is presented with realistic visuals, supporting uncapped 4K resolution on PC, with 1080p at 60fps as a minimum. Its atmosphere blends psychological horror, gothic horror, and British horror influences. The soundtrack includes re-imagined versions of Welsh hymns such as *Calon Lân* (*A Pure Heart*), *Suo-Gân* (*Welsh Lullaby*), and *Ar Hyd Y Nos* (*All Through the Night*), performed by Tia Kalmaru.
-
-The game was created and developed by Wales Interactive, with a plot crafted by writing talent and designers involved in titles such as *SOMA*, *Don’t Knock Twice*, and *Battlefield 1*.

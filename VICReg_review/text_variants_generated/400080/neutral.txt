@@ -1,9 +1,0 @@
-Out of Space is a local and online co-op multiplayer game about living together in a house in space. Players move into a spaceship home and must deal with a deadly alien infestation while working to build a sustainable living space. The goal is to make the ship feel as cozy as home, despite the chaos.
-
-Each match takes place in a procedurally generated spaceship house, so every session presents a different challenge. The game combines couch-friendly short matches with strategy elements that require both short- and long-term decisions. Players expand into new rooms, build technology, and manage resources to keep the spaceship efficient and sustainable.
-
-Gameplay revolves around generating resources, recycling trash and alien goo, buying and building technologies, and taking care of one another. Players must power the ship by recycling alien goo and producing energy batteries, harvest and maintain gardens to keep everyone fed, and clean rooms with mops and water while containing the alien threat. The game also includes automation systems such as robots for cleaning and harvesting.
-
-Out of Space has no weapons of any kind. Instead, players use mops and teamwork to deal with danger. The game supports single-player, local multiplayer, and online multiplayer. It also features missions to guide progression, unlockable content tied to achievements, and adoption of dogs, which can help players in various ways.
-
-The game is developed by Behold Studios, the team behind Knights of Pen & Paper, Chroma Squad, and Galaxy of Pen & Paper. According to the page, the developers have worked with community feedback, shared builds and milestones, and invited players to join their official Discord server to help improve the game.

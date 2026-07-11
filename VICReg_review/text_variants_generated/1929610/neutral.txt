@@ -1,7 +1,0 @@
-Demonologist is a co-op horror game designed for 1 to 4 players. The main objective is to identify the type of evil spirit haunting cursed locations and exorcise it using the equipment available, either solo or with a team.
-
-The game features random events and ghost encounters in every session, so each playthrough can unfold differently. In addition to speaking with ghosts, players must be careful with their own words, as cursed places may react to what is said. According to the game, even a single word can open a secret door.
-
-Demonologist is developed with Unreal Engine 5 and presents itself as a visually advanced title within the co-op horror genre. Players can invite others to their safe house, choose paranormal locations to investigate, and display achievements in a dedicated showcase. Money earned through play can be used to improve the safe house or purchase a new one, and players can also buy a pet that stays with them in the safe house.
-
-The game includes multiple maps and equipment options, along with daily and weekly tasks. It also offers unique events and missions on special dates.

@@ -1,7 +1,0 @@
-DON'T SCREAM is an Unreal Engine 5 horror game inspired by ’90s camcorder found footage. The core challenge is straightforward: survive a night in the Forest without screaming or dying. However, the game adds a distinctive microphone-based mechanic—if you scream, gasp, or even whimper into your microphone, the game restarts.
-
-The game’s tension comes from several systems working together. Time only progresses as the player moves, which means every step matters. The scares are dynamic and unpredictable, so no two playthroughs are the same. Players must also collect batteries to keep the recording going; if the batteries run out, it is game over.
-
-The Forest itself is described as vast and haunted by bizarre and terrifying threats. Among these are vile hunters that must be evaded, creating a constant danger of being seen before you see them. In addition to survival, players can search for relics scattered through the environment, with these lost items hinting at stories from the past.
-
-Overall, DON'T SCREAM focuses on survival, exploration, and reactive horror, using microphone input, dynamic scares, and movement-based time progression to create a tense and unpredictable experience.

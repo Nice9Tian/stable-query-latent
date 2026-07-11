@@ -1,7 +1,0 @@
-Sub Rosa is a multiplayer first-person shooter focused on tense deals, double-crosses, and occasional high-speed car chases. It is currently in an extended and indefinite Early Access period, and the store page advises players not to purchase it without watching gameplay or doing some research first.
-
-The game features several modes. In World Mode, multiple corporations compete for money and power by controlling differently colored disks through trade or force. Both cash and disks are important resources that players can use to buy guns, cars, equipment, and clothing, all of which can help their corporation succeed. Players can gain wealth through successful transactions and business-like cooperation, or through combat if they are willing to take risks.
-
-Round Mode is a round-based variation of World Mode. It follows a five-day work week, and a corporation’s total money across those days determines its final standing at the end of the round.
-
-Eliminator Mode is a hidden-role mode in which one player is secretly the Eliminator and must kill the player assigned as the Savior. The Savior does not initially know their role, but another player, the Protector, is informed and can periodically track the Savior. This allows them to meet and explain the Savior’s importance. All other players, including the Savior, are treated as Civilians and must either survive the round by avoiding the Eliminator or stop them using a grenade.

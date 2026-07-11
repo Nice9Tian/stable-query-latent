@@ -1,9 +1,0 @@
-In this city-building strategy game, you guide a community of exiled wanderers as they attempt to begin again in an unfamiliar land. Starting with little more than the clothes they wear and a cart of supplies from their former home, they must build a settlement from the ground up and secure a future in harsh conditions.
-
-The people of the town are the central resource. They are born, age, work, raise children, and eventually die, so maintaining their health, happiness, and food supply is crucial to growth. Simply constructing houses is not enough; there must also be enough inhabitants to fill them and form new families.
-
-The game does not use skill trees, and structures can be built at any time as long as the needed resources have been gathered. It also does not use currency. Instead, players trade their accumulated materials with arriving merchant vessels. These traders are especially important for obtaining livestock and annual crops, though their long journeys can also introduce foreign illnesses.
-
-There are twenty occupations available to the townspeople, including farming, hunting, blacksmithing, mining, teaching, and healing. Different maps can present different shortages, so no single approach works in every settlement. Players may choose to replant forests, mine iron, or quarry stone, but each of these decisions takes up land that can no longer be used for expansion.
-
-Overall, the game emphasizes careful management of risk and resources, where the success or failure of a town depends on balancing survival, labor, trade, and long-term planning.

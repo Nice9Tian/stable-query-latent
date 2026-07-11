@@ -1,9 +1,0 @@
-This title is a free, open-source desktop companion application presented as a game, designed to provide interactive pet-like behavior on the computer desktop. It is closely related to a separate simulator project, but remains an independent product with its own functionality and identity.
-
-The experience centers on a highly interactive virtual pet with a large amount of movement and response content. According to the page, it includes more than 200 animation types, with examples such as touching the head or body, dancing, and climbing walls. The overall focus is on making the desktop companion feel lively and reactive through repeated visual interactions.
-
-A major feature of the application is its support for user customization and community expansion. It works with a workshop system, allowing users to create and share animations and interactions with other characters and desktop pets. The workshop can also be used to add or modify a wide range of content, including pet animations, consumable items and drinks, work-related behaviors, speech text, themes, and code-based plugins. These plugins can be used to add new desktop-pet content through code, introduce new animation logic or display methods, and even expand the software with additional functions such as alarms or dashboards.
-
-The project is also described as fully open source, with its code hosted publicly and users invited to propose ideas or participate in development. It is possible to modify the code to create a personalized version of the desktop companion, although the page notes that most content can already be handled through workshop support without direct code changes.
-
-Overall, the application combines free access, extensive animation support, open-source development, and workshop-driven customization into a desktop pet platform centered on interaction, creativity, and community contribution.

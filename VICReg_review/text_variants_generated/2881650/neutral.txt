@@ -1,7 +1,0 @@
-Content Warning is a co-op horror game about filming spooky events with friends in an effort to go viral. Players form a squad, customize their faces using the ASCII face customizer, buy gear, and use a diving bell to descend into the Old World. There, they encounter physics-animated monsters, cursed relics, and other artefacts while trying to capture as many frightening moments as possible on camera.
-
-The core gameplay revolves around recording scary content before running out of oxygen, camera battery, or even friends. If the team survives, they must return to the diving bell to bring themselves and any remaining teammates back to the surface. The footage is then uploaded to SpöökTube, where players can watch their recordings, wait for views to increase, and earn ad revenue.
-
-Each run lasts three in-game days. The more scary material players film, the more viral their content becomes. Revenue from SpöökTube videos can be used to upgrade gear, helping players film better videos and survive more easily in the Old World. If the team earns enough views within the three days, they can continue their SpöökTube career and pursue fame and fortune.
-
-The game also includes sponsorship deals that grant MC, which can be used to buy island upgrades and hats. Listed features include in-game handheld working video camera support, 2-4 player online co-op, voice chat, ASCII face customization, saveable in-game recordings, physics-based scary monsters, cursed artefacts, flashlights, and various store items such as upgraded gear, emotes, props, and medical equipment.

@@ -1,7 +1,0 @@
-This roguelite action game presents a flashy combat experience built around stylish character designs, dramatic animations, and responsive controls. Its battles emphasize fluid movement, strong combat feedback, and highly flexible combo construction, giving players many ways to experiment with offensive patterns.
-
-The game features ten playable heroes, each with a distinct personality, combat style, and full voice performance. Players can build around hundreds of different moves, along with a wide range of elemental effects and inherited abilities that can be passed between fighters. These systems create a highly customizable progression structure, encouraging repeated runs and the creation of personalized combat setups.
-
-Set in a future world consumed by chaos, the story follows people entering a cyberspace known as Aether Core Exchange, or ACE, in search of a way to solve a global crisis. The narrative centers on a protagonist who knows the truth and must decide how to respond, with choices that shape the future of humanity. The story is framed around the idea that an ending can also be a beginning.
-
-The game also includes a photosensitivity warning, noting that some visual effects, such as flashing screens, may affect players with photosensitive epilepsy.

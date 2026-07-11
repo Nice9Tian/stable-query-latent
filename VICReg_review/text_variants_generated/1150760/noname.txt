@@ -1,7 +1,0 @@
-This first-person stealth horror shooter places the player in a mysterious abduction scenario set within a forgotten Victorian metropolis undergoing a grotesque transformation. The experience focuses on moving through fog-shrouded streets, dark tunnels, and ornate mansions while uncovering the secrets behind an accursed mystery.
-
-The game presents itself as an immersive sim with handcrafted environments and open-ended exploration. Players can move across rooftops, navigate hidden passages, and choose their own routes through the city, creating a strong emphasis on freedom of approach. Stealth is supported by systems that track visibility and simulate sound propagation throughout the world, making light and noise important factors in moment-to-moment survival.
-
-Combat and infiltration are supported by a varied selection of equipment, including a melee weapon, a revolver, a shotgun, traps, and a harpoon-based long-range tool with rope functionality. The game also emphasizes environmental interaction, allowing players to lean to listen in, peek through cracks, inspect ammunition, and mantle onto ledges. Many objects in the world can be picked up, thrown, climbed on, smashed, or otherwise used to gain an advantage.
-
-Opposition comes from monstrous and ghostly inhabitants with heightened senses, including clawed humanoids and scavenging corpse hunters. Overall, the game combines horror atmosphere, stealth mechanics, and flexible level traversal in a detailed gothic setting where careful movement and improvisation are central to progression.

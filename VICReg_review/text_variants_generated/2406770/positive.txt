@@ -1,9 +1,0 @@
-**Bodycam** is an ultra-realistic multiplayer first-person shooter developed with next-generation Unreal Engine 5 technology. Created by two French game enthusiasts, aged 17 and 20, the game sets out to push the boundaries of realism and photorealism, delivering a bold and forward-looking experience for the genre.
-
-Powered by Unreal Engine 5, Bodycam offers stunning visuals, immersive sound effects, and a shooting and movement system designed to feel revolutionary. Its ultra-detailed environments are built to support total immersion and tactical depth, encouraging players to think carefully, coordinate with teammates, and make full use of their equipment in combat.
-
-The game centers on intense multiplayer action where teamwork and communication play a vital role. Players can dive into familiar modes such as Deathmatch and Team Deathmatch, as well as Body Bomb, a brand-new competitive mode created specifically for Bodycam. Whether working together to outsmart opponents or fighting through fast-paced combat phases, the experience emphasizes strategy and cooperation.
-
-Bodycam is launching in early access, with a 2024 roadmap that includes ongoing updates and community-driven requests. Players will be able to vote on ideas from the Discord suggestions channel at the start of each quarter, helping shape the game’s future. The developers also plan to continue refining and expanding the experience through regular correction and content patches, guided by community feedback.
-
-With its strong technical ambition, immersive presentation, and clear commitment to evolution, Bodycam stands out as an exciting and impressive step forward for realistic multiplayer shooters.

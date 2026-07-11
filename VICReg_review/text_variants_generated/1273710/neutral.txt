@@ -1,5 +1,0 @@
-King of Crabs is a real-time multiplayer game centered on becoming the largest crab on the island. It supports matches with up to 100 players, placing players in a large island world that can be explored and contested.
-
-The game focuses on fast-paced combat and progression. Players can scrap, scavenge, and fight through waves of crustaceans while competing to climb the leaderboard and prove they are the strongest crab. It features a variety of crab species to collect, along with advanced skills and unique skins that can be unlocked.
-
-Customization and upgrades are part of the experience, allowing players to improve their crabs as they rank up. The game also includes several modes, such as PVE, PVP iO-style gameplay, Battle Royale, Team modes, and Daily Special Events. Additional content, including new crabs, skins, maps, special events, and game modes, is planned for future updates.

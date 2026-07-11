@@ -1,7 +1,0 @@
-Calico is a day-in-the-life community simulation game centered on rebuilding a town’s cat café and filling it with cute, cuddly creatures. Players are tasked with bringing the café back to life by adding furniture, decorations, pastries, and animals, creating a cozy space that is meant to feel warm, relaxed, and low-stress.
-
-The game includes a character creator that lets players make their own magical person and collect clothing throughout the experience. Animals play an interactive role in the world: after befriending them, players can name them, add them to their party, or send them to live at the café. Party animals follow the player and obey commands, while animals placed in the café relax and play with visiting customers.
-
-A key part of Calico is café decoration. Players can customize the space with furniture in different styles to build the kind of home and café environment they want for themselves and their animals. The game also features a cooking minigame focused on making baked goods and drinks for townspeople, with players learning villagers’ preferences so they can choose what to sell.
-
-Calico also includes a magic system designed to expand what players can do. Magic potions can alter the rules of the game in playful ways, such as the More-to-pet Potion, which makes a single animal giant-sized. This can allow players to hang out with a giant animal or even ride a giant cat.

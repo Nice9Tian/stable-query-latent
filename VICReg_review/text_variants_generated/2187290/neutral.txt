@@ -1,7 +1,0 @@
-Wall World is a mining rogue-lite with tower defense elements set on an endless Wall. Players explore procedurally generated mines, uncover fantastical biomes, and search for resources and technologies to buy upgrades. The game combines free exploration with a constant need to defend against hostile creatures using a mobile base.
-
-In Wall World, the player can roam the Wall day and night and in different weather conditions, while digging into it from various locations. Mining deeper can reveal new biomes, mysterious places, and traces of “the others,” but it also means returning to the robospider in time for the next monster attack.
-
-Combat focuses on fighting off waves of aggressive monsters with a range of weapons, from machine guns to homing missiles. The player can also break camp quickly and keep moving to survive on the go. Progression includes upgrading the exosuit to move faster and break through harder rocks, as well as improving the robospider’s combat stats to face stronger enemies.
-
-The game also includes building mechanics. Players can construct automatic turrets, repair stations, and resource harvesters, then upgrade those buildings to improve their chances of success. However, blueprints must first be found in the depths of the Wall before these structures can be built.

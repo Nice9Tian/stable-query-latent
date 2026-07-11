@@ -1,9 +1,0 @@
-This is a narrative-driven tactical role-playing game set in a vast and dangerous frontier of space. Players command a personal giant voidship and travel between many star systems in a barely charted region filled with threats, opportunities, and potential for profit. The setting emphasizes exploration, risk, and the sense of operating at the edge of a larger empire.
-
-A central part of the experience is assembling a diverse retinue. The player does not journey alone, but instead gathers a group of loyal heroes, unstable psychic individuals, and alien outsiders, each of whom can provide advice, fight alongside the player, and develop through their own personal storylines. These relationships are part of the game’s progression, with the player able to influence the fates of companions through their choices.
-
-The game places strong emphasis on player decision-making. Choices made during quests, in dialogue, and even during character creation can affect the open world and the people within it. The player may choose mercy or cruelty, devotion or compromise, and these decisions shape both the story and the broader state of the game world.
-
-Combat is presented in fully isometric, turn-based tactical form. Battles rely on positioning, environmental advantages, and cover, encouraging careful planning rather than simple direct confrontation. Companion abilities play an important role as well, offering additional tactical tools that can turn difficult encounters in the player’s favor.
-
-Overall, the game adapts a classic tabletop ruleset into a computer role-playing experience with a large number of possible outcomes, a focus on crew management, and a strong blend of exploration, narrative choice, and strategic combat.

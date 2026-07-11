@@ -1,7 +1,0 @@
-Mechabellum is a tactical wargame centered on planning ahead, adapting to changing battlefield conditions, and outmaneuvering opponents. Players command a mechanized army in battles against human or AI enemies, using unit customization, ability choices, and strategic placement to shape the outcome of each match.
-
-The game features a wide range of unique units, from the nimble Wasp light aircraft to the large, flame-wielding Vulcan. Each unit has its own strengths and weaknesses, and players can customize units and their abilities before and during battles to increase their effectiveness. Positioning is a key part of combat, as players must anticipate enemy actions and respond by selecting the right unit combinations, loadouts, and battlefield placements as the battle progresses.
-
-Mechabellum also includes tactical support options that can change the course of a fight. An accurately placed airstrike can help reverse a losing battle, while calling in crawler bots can disrupt enemy formations. Battles feature large-scale clashes between mechanized armies, with visual effects such as shrapnel, incendiary bombs, and massive lasers emphasizing the destruction on screen.
-
-Players can first face advanced AI opponents before entering PvP combat, allowing them to experiment with different unit combinations and abilities without immediately facing real players.

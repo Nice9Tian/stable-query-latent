@@ -1,5 +1,0 @@
-Webbed is an adventure game about a happy little spider on a mission to rescue her boyfriend from a big mean bowerbird. The game takes place in a dangerous wilderness that players must explore using only webs and wit.
-
-A core part of the experience is web swinging, which can be practiced to move quickly through the world. The game also emphasizes player expression through web mechanics: webs can be spun through an interconnected environment to leave a unique mark, and they can be attached to almost anything to create custom paths.
-
-Along the journey, players can make friends with bugs and even dance with them. Some of these bugs may need help from a friend, and they may join the rescue effort in return.

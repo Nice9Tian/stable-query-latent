@@ -1,7 +1,0 @@
-A stranded survivor from a distant spud-themed world crashes on an alien planet and must endure a hostile environment while waiting for rescue. The experience centers on fast-paced survival runs built around short waves, each lasting about 20 to 90 seconds, where the goal is to defeat as many alien foes as possible before the next pause.
-
-Combat is defined by a distinctive weapon system: weapons fire automatically by default, though manual aiming is also available. The survivor can carry up to six weapons at once, creating flexible builds that can be assembled from a large selection of firearms, explosive tools, and improvised melee options. Between waves, collected materials are used to gain experience and purchase items from a shop, encouraging constant adaptation over the course of each run.
-
-The game offers a wide roster of characters, each supporting different playstyles and special run modifiers. These include options such as one-handed, chaotic, lucky, mage-like, and many more, allowing players to tailor the challenge and strategy. Runs are designed to be quick, typically lasting under 30 minutes, and the overall structure favors repeated replaying with new combinations of characters, weapons, and items.
-
-Local co-op is supported for up to four players, adding a shared survival mode to the experience. In addition, accessibility settings let players adjust enemy health, damage, and speed, making it possible to tune the difficulty to a preferred level.

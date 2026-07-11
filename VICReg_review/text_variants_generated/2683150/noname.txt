@@ -1,9 +1,0 @@
-This is a cooperative first-person fantasy tavern simulation set in an open world, blending action, fishing, hunting, exploration, cooking, and a wide range of quests. Players can experience it alone or with friends, taking on the role of the owner of an abandoned inn-like establishment in a cozy, colorful fantasy setting.
-
-The core objective is to restore the venue’s former reputation and prosperity. To do this, players manage day-to-day operations, prepare meals and drinks for visitors, decorate the building, and complete deliveries and crafting tasks. The game also includes systems for growing plants, breeding animals, and discovering new recipes, all of which support the tavern’s development and services.
-
-Beyond management, the experience extends into the surrounding world, where players can explore a handcrafted open environment filled with activities and secrets. They can take part in hunting and fishing, complete story quests, and meet a variety of distinctive characters. The world is described as dynamic and visually polished, with a strong emphasis on freedom of play and the ability to choose one’s own pace and goals.
-
-Combat is also part of the experience, with players facing different enemies and monsters using a range of weapons. To help with running the tavern, automated helpers can be used, allowing certain tasks to be handled more efficiently. The game supports cooperative play for up to four people, making it possible to share responsibilities and progress together.
-
-Overall, the game presents a mix of tavern management, adventure, and sandbox-style freedom. Players are encouraged to build, cook, explore, fight, and experiment with whatever activities they enjoy most while working to make the tavern successful again.

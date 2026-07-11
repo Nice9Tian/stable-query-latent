@@ -1,5 +1,0 @@
-**Ghost Watchers** is a ghost-hunting game set in abandoned houses filled with supernatural entities. The game features ghosts that may be the souls of suicides, demons, or even vampire spirits. Players are tasked with exploring these haunted locations, gathering evidence, identifying the ghost’s type, age, and mood, and then attempting to catch it.
-
-The game includes 20 types of unique ghosts, including human souls, strange creatures, and several kinds of demons. Each ghost has its own attacks and animations. To support investigation and combat, the game offers more than 60 detailed tools for collecting evidence and fighting ghosts. There are also 7 locations to explore, which contain clues for tracking ghosts as well as Easter eggs. In addition, different game modifiers are available to vary the gameplay.
-
-According to the game description, Ghost Watchers is in Early Access, and the developers plan to add new ghosts and new locations over time.

@@ -1,9 +1,0 @@
-Between the Stars is a space action game that combines RPG progression with real-time combat, placing the player in command of an interstellar cruiser. The core premise centers on defending civilization from the Children of the Sun, a faction that controls border planets and is trying to expand its reach across the galaxy.
-
-The game revolves around traveling from sector to sector, where each warp jump can lead to new challenges and events. Players make difficult decisions that influence the ship, crew, and the broader universe, while also upgrading equipment and fighting to survive. Combat takes place in intense real-time space battles, where timing ship abilities can be crucial to gaining an advantage.
-
-Progression is a major part of the experience. Players can unlock, upgrade, personalize, and purchase different playable ships and their systems as they work toward conquering the galaxy. They also create a captain and develop them over the course of the adventure, leveling up and gaining attributes based on the decisions they make.
-
-The game features a procedural stellar map with generated events, along with space stations and planets spread across multiple sectors. Crew management is another important layer: players can hire and improve crew members, keep them safe, cover casualties, and level them up to help face the dangers of the universe. The game also includes hundreds of text-based events that test both the captain and the crew against a wide range of threats.
-
-In addition, players can craft, salvage, and investigate new weaponry to strengthen their offensive capabilities. Choices made during events can have consequences that affect the rest of the playthrough, giving decisions lasting impact. Between the Stars offers both a standard difficulty mode and an optional permadeath mode for players seeking a greater challenge.

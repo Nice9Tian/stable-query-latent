@@ -1,5 +1,0 @@
-Nightmare Reaper is a dark and violent blend of retro and modern action game design, inspired by classic 2.5D first-person shooters from the 1990s and combining elements of modern looter shooters and rogue-lites. It emphasizes intense, addictive gameplay built around open-ended levels packed with enemies, surprises, and explosions of blood and treasure.
-
-The game features character progression through gold collected in play, which can be spent on upgrades and new abilities via minigames. Its weapon system offers substantial variety, with 80 unique weapons that can appear as loot and can include over 30 types of enchantments. Nightmare Reaper also includes multiple game modes, a mix of manual and random level generation, and many random events and secrets.
-
-The presentation is supported by music and audio from Andrew Hulshult. Its story is described as non-intrusive but mysterious, framing the player’s role as someone who rises to prevent “her” doom and battles nightmares in pursuit of salvation through blood.

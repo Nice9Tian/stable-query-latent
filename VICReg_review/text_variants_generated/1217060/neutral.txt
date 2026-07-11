@@ -1,5 +1,0 @@
-Gunfire Reborn is an adventure game that combines FPS, roguelite, and RPG elements. Players control unique heroes, each with distinct abilities, and progress through procedurally generated, level-based stages. Weapons are randomly dropped, and every restart offers a new experience thanks to the game’s randomized structure.
-
-The game can be played solo or in cooperative mode with up to four players. Across each run, players encounter different heroes, weapons, items, checkpoints, and combat rhythms. Its gameplay emphasizes building varied character setups through the death-and-retry cycle, allowing different experiences over time.
-
-Gunfire Reborn features more than 100 items, a wide range of weapons, multiple heroes, and several New Game Plus modes with different game mechanisms. It also presents a unique art style and is designed as a co-op level-based adventure.

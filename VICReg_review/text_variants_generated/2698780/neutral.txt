@@ -1,7 +1,0 @@
-ContractVille is an open-world simulator about building a business and progressing from a nearly penniless newcomer to a company CEO. The game begins in a port town, where players take neighborhood jobs to earn a modest income and gradually develop their own company, which can include up to four people. Work can be divided by authorizing team members in different areas, and in co-op play one player serves as CEO and controls these permissions.
-
-A central part of the game is property and construction. Players can purchase land, design a house, build it, and decorate it with personal touches before selling it at auction. The land belongs entirely to the player, allowing them to decide how it is used. The game also includes a more hands-on side, such as demolishing large houses with a sledgehammer or cleaning large properties.
-
-Progression is tied to skills and specialization. As players gain experience, they earn skill points and choose which skills or tools to focus on. Having coworkers specialize in different areas can make tasks easier. Another way to earn money is through logistics jobs, such as delivering cargo of different types.
-
-The game is structured around contracts. These can involve decoration, demolition, building, logistics, or combinations of these jobs. In co-op, players can manage the entire process together, making ContractVille a business-and-construction simulator centered on teamwork, property development, and contract-based work.

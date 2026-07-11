@@ -1,9 +1,0 @@
-*Startup Company* is a polished business simulation sandbox that puts you in the role of the CEO of a small startup with big ambitions. Starting with a modest investment, you are challenged to build an outstanding website capable of competing with the world’s largest tech giants, all in pursuit of becoming the most valuable company in history.
-
-At the heart of the game is the management of your website and the steady growth of your company. You must continuously develop and improve features, expand hosting capacity, and run effective marketing campaigns to attract more traffic and drive success. As your platform grows, so does the need for infrastructure: you begin with virtual servers, then eventually move toward your own fully featured hosting center to support increasing demand.
-
-The game also emphasizes office and team management. The city offers offices in a variety of sizes and shapes, and it is up to you to choose the one that best fits your needs. From there, you organize and decorate the workspace while making sure your employees remain happy and productive. Recruiting is an ongoing responsibility as your company expands, and employee satisfaction becomes increasingly important as they grow more demanding over time. Keeping morale high is essential, especially when competitors start offering your staff opportunities they may find hard to refuse.
-
-Competition plays a major role in the experience. You can buy and merge rival companies or focus on outpacing them until they fail. The overall objective is clear: build the biggest website in the industry and dominate the market through smart decisions, strong management, and strategic growth.
-
-Beyond the core gameplay, *Startup Company* also supports a strong community-driven ecosystem. The game is fully moddable through the Steam Workshop, and players are encouraged to help translate the game through Localizor.

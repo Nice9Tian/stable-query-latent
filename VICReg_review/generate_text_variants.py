@@ -30,13 +30,13 @@ from pathlib import Path
 
 # ---- API credentials (paste locally; NEVER commit a real token) -------------
 BASE_URL = "https://yunwu.ai/v1"
-API_TOKEN = ""                      # <-- paste your key here before running
-MODEL = "gemma-7b-it"
+API_TOKEN = "sk-EHoVK8Ooys3Nu9OceLSDZ6s12Mhy9kwC7Ja7xwA9TS9LcO1H"                      # <-- paste your key here before running
+MODEL = "gpt-5.4-mini"
 
 TEMPERATURE = 0.7
 MAX_RETRIES = 5
-MIN_DESC_CHARS = 200                # skip games whose description is too thin
-LIMIT = 10                           # cap games per run; 0 = all (CLI --limit overrides)
+MIN_DESC_CHARS = 500                # skip games whose description is too thin
+LIMIT = 0                         # cap games per run; 0 = all (CLI --limit overrides)
 
 # The user message carries the game's FULL store-page text; the model
 # summarizes it into a descriptive article in the requested tone.

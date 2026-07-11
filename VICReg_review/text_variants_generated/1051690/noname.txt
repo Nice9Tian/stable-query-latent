@@ -1,9 +1,0 @@
-A dark and violent blend of retro and modern action design, this game draws clear inspiration from classic 2.5D first-person shooters of the 1990s while adding elements commonly found in modern looter shooters and rogue-lite experiences. The result is an intense, fast-paced experience built around dense combat and constant discovery.
-
-Gameplay centers on open-ended levels packed with enemies, hidden surprises, and frequent bursts of treasure. The structure combines manually crafted content with random level generation, creating a play style that can shift from one run to the next. Random events and secrets are also woven throughout, adding variety and encouraging exploration.
-
-Character growth is an important part of the loop. Currency collected during play can be spent on upgrades and new abilities through minigame-based progression systems. This gives players a way to strengthen their build over time while continuing to push deeper into the game’s dangerous environments.
-
-Weapon variety is another major feature. A large number of unique weapons can appear as loot, each potentially carrying a mix of many different enchantment types. This creates a flexible loot system focused on experimentation and build variety.
-
-The presentation is supported by music and audio from Andrew Hulshult, and the story is described as subtle but mysterious rather than overtly intrusive. Multiple game modes are included, adding further replay value. Overall, the game presents a grim, action-heavy journey in which the player rises against nightmare forces in a relentless fight for survival.

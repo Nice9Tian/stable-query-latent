@@ -1,5 +1,0 @@
-This digital pinball collection offers a free-to-start experience with a limited-time complimentary pass that unlocks access to most tables for one day. It also includes three free tables available for unlimited play, giving players a way to practice and continue improving their skills without cost.
-
-The library is broad, featuring more than 100 unique tables with enhanced visuals, including both newly created exclusive tables and returning favorites from a large digital archive. The selection spans a mix of themed content inspired by major entertainment brands and faithful recreations of classic real-world machines, alongside original creations from the developer. New tables are added regularly, keeping the lineup fresh over time.
-
-Beyond the tables themselves, the game includes a customizable 3D playroom where players can display collectible items earned through play. On the technical side, it emphasizes a high-end pinball simulation, with advanced physics applied across the full library, plus 4K HDR graphics and ray tracing support for a more detailed presentation.

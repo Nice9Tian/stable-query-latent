@@ -1,7 +1,0 @@
-This is a turn-based action roguelike set in a classic 1990s-inspired science-fiction world, presented with modern visuals and a retro CRT-style atmosphere. It is built around a strict “you act, then enemies act” system, where every move advances the situation and death is permanent. The game emphasizes careful decision-making, as there is no hand-holding and survival depends on planning ahead.
-
-Players take on the role of a lone hero fighting through hordes of demonic and alien foes using a range of weapons, from a trusty blaster to heavier options such as a spin-gun, a beam-rifle, or even a chain-blade. The game combines fast tactical encounters with roguelike structure, making each run distinct. Its levels are procedurally generated, so routes, threats, and encounters change from one attempt to the next.
-
-Progression comes through unlocking new perks and experimenting with different builds to improve durability and adaptability. Surviving the journey can also unlock additional challenge modes, which are designed to raise the difficulty rather than ease it. Overall, the experience is centered on replayability, harsh consequences, and strategic character building in a hostile cosmic setting.
-
-The game is developed by a studio known for its experience with top-down, science-fiction roguelikes, and it is presented as a spiritual successor to an earlier project from the same creators.

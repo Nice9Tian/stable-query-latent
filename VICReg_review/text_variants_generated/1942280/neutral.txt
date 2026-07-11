@@ -1,5 +1,0 @@
-Brotato is a survival action game set after a spaceship from Potato World crashes on an alien planet. The lone survivor is Brotato, a potato capable of carrying up to six weapons at once, and the goal is to stay alive until rescue arrives.
-
-The game features auto-firing weapons by default, with a manual aiming option available. Runs are fast, typically taking under 30 minutes. Players can choose from dozens of characters to customize their runs, including options such as one-handed, crazy, lucky, mage, and others. The game also offers hundreds of items and weapons, ranging from flamethrowers and SMGs to rocket launchers and even sticks and stones.
-
-Brotato supports local co-op for up to four players. Gameplay revolves around surviving waves that last between 20 and 90 seconds, during which players must kill as many aliens as possible. Between waves, materials can be collected to gain experience and purchase items from the shop. Accessibility options allow players to adjust enemy health, damage, and speed to better match the desired difficulty.

@@ -1,9 +1,0 @@
-VPet-Simulator is a desktop pet game/software that offers a range of interactive features. It is an open-source project, free to use, and supports Steam Workshop content. The game is separate from the built-in desktop pet tutorial program in VUP Simulator, though it is presented as a related project and can be added to a wishlist if desired.
-
-A major focus of VPet-Simulator is its large amount of interactions and animations. The page states that it includes more than 200 types of animations, with examples such as touching the pet’s head or body, dancing, and climbing walls. Additional image resources and details are available in the open-source documentation.
-
-The game is completely free, and its main purpose is to promote VUP-Simulator, where this desktop pet is also included. VPet-Simulator is open source on GitHub, and users are encouraged to share ideas, suggestions, or participate in development. The code can also be modified to create a personal desktop pet, although most content already supports Workshop usage without code changes.
-
-Steam Workshop support is a central feature. Users can create and upload animations or interactions with other characters and desktop pets to share with the community. The Workshop supports adding or modifying several kinds of content, including desktop pet animations, items such as food and beverages, work-related content for the pet, speech text, themes, and code plugins. Through plugins, it is possible to add desktop pet content by writing code, introduce new animation logic or display schemes such as l2d or spin, and add new features like alarms or dashboards.
-
-Overall, VPet-Simulator is positioned as a flexible and highly customizable desktop pet experience with open-source development, extensive animation support, and broad Workshop-based modding capabilities.

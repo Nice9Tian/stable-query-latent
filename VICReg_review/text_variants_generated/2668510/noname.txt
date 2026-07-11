@@ -1,5 +1,0 @@
-This PC release presents a complete single-player package that combines two connected experiences: a western narrative adventure and its zombie-horror companion story. It includes bonus material from a Game of the Year edition, but does not include multiplayer content.
-
-The first experience follows a former outlaw named Jorin Marlow as he pursues the final surviving members of a notorious gang. The second expands the same world with an undead-themed storyline, offering a contrasting tone while remaining part of the broader package. Together, the two campaigns provide a substantial story-focused offering built around exploration, combat, and mission-driven progression.
-
-The PC version adds several technical enhancements designed to improve presentation and performance. These include HDR lighting, native 4K resolution, support for refresh rates up to 144hz on compatible hardware, and display options for ultrawide and super ultrawide monitors. Additional graphical controls allow players to adjust draw distance and shadow quality, among other settings.

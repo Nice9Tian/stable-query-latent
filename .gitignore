@@ -49,3 +49,13 @@ tokenAPI.txt
 /game_review_data/full_najzeko_cloud_v2
 /Pod_Cloud
 
+/VICReg_review/_deprecated
+/VICReg_review/sp_llm
+/VICReg_review/sp_negative
+/VICReg_review/sp_neutral
+/VICReg_review/sp_noname
+/VICReg_review/sp_positive
+/VICReg_review/sp_raw
+/VICReg_review/wiki_variants
+/VICReg_review/wiki_llm
+/VICReg_review/wiki_clean

@@ -1,9 +1,0 @@
-This sports simulation title presents an updated American football experience built around player choice, career progression, and team management. It lets players shape games through on-field decisions while taking part in several distinct modes focused on long-term progression and roster building.
-
-One of the main career modes places the player in a professional journey starting in a fifth-season scenario at a chosen skill position. From there, the objective is to secure a new opportunity with one of many teams through a short-term “prove-it” contract and then earn rewards through strong performance. The mode adds new drive-based goals and summary feedback during games, allowing players to adjust their approach and receive rewards based on how well they perform. Between games, weekly activities and training contribute performance boosts, while career ratings are updated as the player works toward a high prestige ranking.
-
-Another major mode centers on running a franchise like a head coach. It features improved scouting, staff management, and weekly strategy systems, along with more detailed athlete motivations such as team location and salary demands that influence contract negotiations. The trading system has also been updated so that star players are valued more realistically, making trade offers feel fairer and more grounded.
-
-The roster-building mode focuses on creating a custom dream team from current stars, legendary athletes, and more. It includes a challenge and reward tracking system designed to give players constant goals, as well as a token-based entry path into competitive play that can be taken at the player’s convenience. Set building has been simplified to make roster management easier and to help players improve their team throughout the season.
-
-The game also supports optional in-game purchases of virtual currency, which can be used to obtain virtual items, including randomized selections.

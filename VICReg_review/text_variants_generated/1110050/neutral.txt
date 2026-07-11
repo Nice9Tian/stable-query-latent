@@ -1,5 +1,0 @@
-Evan’s Remains is a mystery-thriller puzzle adventure centered on the search for a missing boy named Evan. The game combines logic-based platform puzzles with a narrative structure inspired by Japanese graphic adventure games.
-
-In gameplay, progression is tied to puzzle solving: after the player completes two to three puzzles, the story advances and new mechanics are introduced. The puzzles are designed around figuring out what to do rather than relying on execution-based skill. As the difficulty increases, later challenges become more complex by combining two or more previously introduced mechanics.
-
-The story follows Evan, described as a genius boy who has been missing for years. One day, a letter signed by him arrives, stating that he is on an uninhabited island somewhere in the Pacific Ocean. The letter specifically asks for a girl named Dysis to come looking for him. The player controls Dysis, a character whose background is initially unclear. As her journey unfolds, questions are answered gradually, and the game’s seemingly unrelated puzzle pieces begin to connect as the truth is slowly revealed.

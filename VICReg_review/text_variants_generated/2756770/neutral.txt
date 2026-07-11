@@ -1,7 +1,0 @@
-Tavern Manager Simulator is a management game centered on rebuilding, expanding, and improving a tavern. Players take on the role of a tavern owner and can approach the running of the establishment in different ways while facing challenges from the outside world to shape their own story.
-
-The game focuses on several core activities. Players renovate their workspace, buy resources, and begin serving customers in order to earn money for further upgrades and improvements. Cooking is another key part of the experience: beer is poured into large mugs, vegetables are thrown into a cauldron, and meat can be chopped and tenderized. The more time spent cooking, the more skilled the dishes become, which in turn leads to better tips.
-
-Customer service is also important. Guests expect fast and high-quality service, with tables filled with mugs of beer and appetizers at once. To keep the tavern running smoothly, players must order beer and cooking resources on time, maintain fires in the work stations, control the quality of food and drink, and purchase improvements that make work more efficient.
-
-Overall, Tavern Manager Simulator presents a tavern management experience built around renovation, cooking, service, and ongoing upgrades, with the goal of growing the tavern’s reputation throughout the kingdom.
