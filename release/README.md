@@ -4,14 +4,16 @@
 源自 SetPoolN 血统)构建于冻结句嵌入之上。
 参考任务:在 Steam 评论域训练、在 wiki 改写查询域评测(R60 全归纳协议)。
 
-## 三层结构(依赖严格单向:experiment → framework → model)
+## 三层结构(依赖严格单向:experiment → framework → larice)
 
 ```
-model/            通用模型包 —— 只有冠军塔,无任何塔后头,可独立成仓
-                  张量协议 [data, view]:x[B,V,S,D]+mask → z[B,V,N×DM](concat)
-steam_reviews_framework/    Steam 任务绑定 —— 调用 model:协议/采样/锚/统一训练器/
-                  backhead_name(名称召回两阶段头)/backhead_tag(23标签)/
-                  train_champion.py(路径①)/pod/(RunPod 通路)
+larice/           模型本体(LariceTower + LariceConfig)—— 只有冠军塔,
+                  无任何塔后头,可独立成仓;张量协议 [data, view]:
+                  x[B,V,S,D]+mask → z[B,V,N×DM](concat)
+steam_reviews_framework/    Steam 任务绑定 —— 调用 larice:协议/采样/锚/
+                  统一训练器/backhead_name(名称召回两阶段头)/
+                  backhead_tag(23标签)/train_champion.py(路径①)/
+                  pod/(RunPod 通路)
 contrast_experiment/   全量对照 —— contrast_models(CE/BYOL/ArcFace/门控与剂量
                   变体)+ contrast_heads + run_all/run_cv/report
 data_pipeline/    数据重建 —— reviews(Kaggle→清洗→分句→全量嵌入 h5)、
