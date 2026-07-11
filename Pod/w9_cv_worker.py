@@ -79,6 +79,9 @@ def parse_args():
     ap.add_argument("--doc-lead", type=int, default=0,
                     help=">0: truncate doc VIEWS to the first N sentences "
                          "(length-attribution ablation)")
+    ap.add_argument("--full-pool-path", default="",
+                    help="path of full_pool_fp16.npy (meta npz expected beside "
+                         "it); empty = <data-dir>/full_pool_fp16.npy")
     ap.add_argument("--full-pool", action="store_true",
                     help="draw training views from the FULL review corpus "
                          "(host-RAM flat npy) instead of the 2048-sent pool")
@@ -150,8 +153,10 @@ def main():
     POOL = (torch.tensor(np.load(C / "wscan_pool_rev.npy"), device=dev)
             if need_pool else None)                                      # fp16
     if args.full_pool:
-        FULLV = np.load(C / "full_pool_fp16.npy", mmap_mode="r")
-        FMETA = np.load(C / "full_pool_meta.npz", allow_pickle=True)
+        fp = Path(args.full_pool_path) if args.full_pool_path             else C / "full_pool_fp16.npy"
+        FULLV = np.load(fp, mmap_mode="r")
+        FMETA = np.load(fp.with_name("full_pool_meta.npz"), allow_pickle=True)
+        print(f"full pool source: {fp}", flush=True)
         f_gro = FMETA["game_review_offsets"]
         f_ro = FMETA["review_offsets"]
         f_e2i = {str(n): i for i, n in enumerate(FMETA["game_names"])}
