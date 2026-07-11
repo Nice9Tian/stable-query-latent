@@ -1,6 +1,13 @@
 # -*- coding: utf-8 -*-
-"""R60 wcle-protocol worker for A100 pods: one ARM = tower (1000ep, ckpt/50)
-+ per-checkpoint heads (3 seeds) + post-hoc vsel pick topped to 10 seeds.
+"""R60 wcle-protocol 5-FOLD CV worker: one (ARM, FOLD) job = tower (600ep,
+ckpt/50) + per-checkpoint heads (2 seeds) + post-hoc vsel pick topped to 10.
+
+FOLD PROTOCOL: the 814-game clean wiki universe is permuted once (--cv-seed)
+and split into 5 folds. Fold k = TEST (~163), fold (k+1)%5 = VAL (~163),
+remaining 3 folds = TRAIN docs (~488). Every exclusion (doc bans, review
+train_pool, pseudo-queries, head phase-2/selection) is recomputed per fold
+under the same fully-inductive rules as the fixed split. A frozen-embedder
+baseline for the fold is computed once into w9cv_frozen_fold<k>.json.
 
 A100 adaptations vs the local (RTX3080) cells:
   * EVERYTHING lives in VRAM: the 2048-sentence review pool (8.5 GB), the
@@ -64,14 +71,17 @@ def parse_args():
     ap.add_argument("--repo", required=True)
     ap.add_argument("--arm", required=True, choices=sorted(ARMS))
     ap.add_argument("--anchor-cap", type=int, default=512)
+    ap.add_argument("--fold", type=int, required=True)
+    ap.add_argument("--n-folds", type=int, default=5)
+    ap.add_argument("--cv-seed", type=int, default=20260711)
     ap.add_argument("--no-sp-view", action="store_true",
                     help="doc tier = wiki_clean ONLY (drop the sp_raw fallback)")
     ap.add_argument("--doc-lead", type=int, default=0,
                     help=">0: truncate doc VIEWS to the first N sentences "
                          "(length-attribution ablation)")
-    ap.add_argument("--epochs", type=int, default=1000)
+    ap.add_argument("--epochs", type=int, default=600)
     ap.add_argument("--ckpt-every", type=int, default=50)
-    ap.add_argument("--ckpt-seeds", type=int, default=3)
+    ap.add_argument("--ckpt-seeds", type=int, default=2)
     ap.add_argument("--topup-seeds", type=int, default=10)
     return ap.parse_args()
 
@@ -113,7 +123,7 @@ def main():
     HIW = _IW.get(tower_kind, 1.0)
     CE_GATED = tower_kind.startswith("cegate") or tower_kind == "rgate2"
     I_GATED = tower_kind.startswith("igate")
-    name = (f"w9_{args.arm}"
+    name = (f"w9cv_{args.arm}_fold{args.fold}"
             + (f"_g{args.anchor_cap}" if args.anchor_cap != 512 else "")
             + ("_nsp" if args.no_sp_view else "")
             + (f"_ld{args.doc_lead}" if args.doc_lead else ""))
@@ -160,11 +170,17 @@ def main():
 
     # ---------------- split + inductive machinery ----------------
     sp = json.loads((C / "wiki_eval_split.json").read_text())
-    assert sp["seed"] == SPLIT_SEED
-    test_g = {appid2name[a] for a in sp["test"]}
-    val_g = {appid2name[a] for a in sp["val"]}
-    traing = {appid2name[a] for a in sp["train"]}
-    assert len(test_g) + len(val_g) == 407
+    universe = sorted(set(sp["test"]) | set(sp["val"]) | set(sp["train"]))
+    rngF = np.random.default_rng(args.cv_seed)
+    perm = rngF.permutation(len(universe))
+    folds = np.array_split(perm, args.n_folds)
+    te = {universe[i] for i in folds[args.fold]}
+    va = {universe[i] for i in folds[(args.fold + 1) % args.n_folds]}
+    test_g = {appid2name[a] for a in te}
+    val_g = {appid2name[a] for a in va}
+    traing = {appid2name[a] for a in universe} - test_g - val_g
+    print(f"fold {args.fold}/{args.n_folds}: test {len(test_g)} / val {len(val_g)} / "
+          f"train-doc {len(traing)}", flush=True)
     excl = test_g | val_g
     train_pool_games = np.array([i for i in range(NG) if names[i] not in excl])
     pos_of_g = np.full(NG, -1, dtype=np.int64)
@@ -658,6 +674,17 @@ def main():
             return (fwd(Xg).cpu().numpy(), fwd(Xa).cpu().numpy(),
                     {"vscore": float(bsel[0]), "v_neu": float(bsel[1]),
                      "v_non": float(bsel[2]), "v_non5": float(bsel[3])})
+
+    # ---------------- fold frozen-embedder baseline (once per fold) ----------
+    fb = OUT / f"w9cv_frozen_fold{args.fold}.json"
+    if not fb.exists():
+        with torch.no_grad():
+            w_ = (~mGal).float().unsqueeze(-1)
+            Zg0 = ((SGal.float() * w_).sum(1) / w_.sum(1).clamp(min=1)).cpu().numpy()
+            wA_ = (~mA).float().unsqueeze(-1)
+            Za0 = ((SA.float() * wA_).sum(1) / wA_.sum(1).clamp(min=1)).cpu().numpy()
+        json.dump(metrics4(Zg0, Za0), open(fb, "w"), indent=2)
+        print(f"frozen baseline written: {fb.name}", flush=True)
 
     # ---------------- tower + checkpoints ----------------
     DONE_FLAG = OUT / f"tower_{name}_ep{args.epochs}.npz"
