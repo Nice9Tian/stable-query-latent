@@ -116,12 +116,20 @@ studable-query-latent/                  (发布仓库)
 │   │                       视图数 NV、tau(frozen 值/learnable 初值)、
 │   │                       I 权重与门控函数、DM、heads、kdim)
 │   ├── config.py           ModelConfig —— 一个 dataclass 生成一座冠军塔
-│   └── README.md           读出说明:默认输出 = N 槽直接 concat(通用表征);
-│                           名称召回类任务改用 pool(均值池化)读出效果更好
+│   └── README.md           张量协议 + 读出说明(见下)
+│
+│   ◆ 标准张量协议:一切输入前两轴固定为 [data, view] ——
+│     x[B, V, S, D_in] + mask[B, V, S](S=集合元素数,D_in=上游嵌入维,
+│     任何任务只要把样本嵌入摆成这个形状即可用);单视图任务 V=1;
+│     输出 z[B, V, N×DM](N 槽直接 concat)。
+│     I 不变性损失沿 view 轴收,CE 沿 data 轴收。
+│     README 注明:名称召回类任务改用 pool(均值池化)读出效果更好。
 │
 ├── sql_framework/          ★ Steam-reviews 任务绑定 —— 调用 model 完成任务
-│   ├── backheads.py        冠军塔在 Steam 任务中的 BackHeads(两阶段头:
-│   │                       phase1 伪查询名 + phase2 wiki-neutral,ICEtf 微调)
+│   ├── backhead_name.py    名称召回 BackHead(两阶段:phase1 伪查询名 +
+│   │                       phase2 wiki-neutral,ICEtf 微调;vsel 选优)
+│   ├── backhead_tag.py     标签 BackHead(23-tag anchor-ridge 读出,
+│   │                       m4/tag 指标)
 │   ├── protocol.py         814 宇宙分割、归纳排除集、vsel 三轴选择公式
 │   ├── sampler.py          评论级拒绝采样 a(L)、全量池/2048池、pad+mask
 │   ├── anchors.py          sp_clean+评论混合锚、画廊(train/full/nodoc)
@@ -161,7 +169,7 @@ contrast_models/ 与 contrast_heads/,不污染 model。将来独立发布时:
 `model/` 原样成仓(通用框架);`sql_framework` 是它的第一个应用示例;
 `sql_experiment` 是论文复现包。
 (命名注意:根目录旧 `backheads/` 目录是推荐头时代产物,归档进
-archive/ 后与 `sql_framework/backheads.py` 不冲突。)
+archive/ 后与 `sql_framework/backhead_name.py`/`backhead_tag.py` 不冲突。)
 
 **两条用户路径**(README 主线):
 
