@@ -13,7 +13,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-from model import ModelConfig, SetPoolTower
+from larice import LariceConfig, LariceTower
 from steam_reviews_framework.sampler import sample_views
 from steam_reviews_framework.train import ArmSpec, make_doc_tiers, _amp_scaler
 
@@ -24,8 +24,8 @@ def train_byol(B, spec: ArmSpec, seed=0, W=16, bs=192, per_epoch=3072,
                log_cb=print):
     torch.manual_seed(seed)
     rng = np.random.default_rng(seed)
-    cfg = ModelConfig(readout="pool", num_views=spec.num_views, inv_weight=0.0)
-    model = SetPoolTower(cfg).to(B.dev)
+    cfg = LariceConfig(readout="pool", num_views=spec.num_views, inv_weight=0.0)
+    model = LariceTower(cfg).to(B.dev)
     DM = cfg.dim_model
     pred = nn.Sequential(nn.Linear(DM, 256), nn.GELU(),
                          nn.Linear(256, DM)).to(B.dev)

@@ -1,6 +1,7 @@
-# SetPool — invariant set-representation tower
+# larice — Latent Represent I-CE
 
-A small (~0.4 M params), task-agnostic tower that turns a *set* of upstream
+A small (~0.4 M params), task-agnostic set-representation tower
+(architecture lineage: SetPoolN) that turns a *set* of upstream
 embeddings (sentences, patches, events, …) into one invariant vector.
 `N` learnable latent queries cross-attend over the set; the training
 objective factorises into two orthogonal forces:
@@ -38,16 +39,16 @@ slot is a deployable sub-space of its own.
 > **Note — name/identity recall:** for retrieval-style tasks where the
 > query must hit one specific item (name recall), the **pooled** readout
 > (`readout="pool"`: mean over slots → MLP → L2) consistently outperforms
-> concat in our experiments. Use `ModelConfig(readout="pool")` there.
+> concat in our experiments. Use `LariceConfig(readout="pool")` there.
 
 ## Usage
 
 ```python
-from model import ModelConfig, SetPoolTower, champion_loss
+from larice import LariceConfig, LariceTower, champion_loss
 
-cfg = ModelConfig(num_queries=4, dim_model=128, input_dim=1024,
+cfg = LariceConfig(num_queries=4, dim_model=128, input_dim=1024,
                   num_views=4, tau=0.02, inv_weight=2.0, readout="pool")
-tower = SetPoolTower(cfg)
+tower = LariceTower(cfg)
 
 z = tower(x, mask)                      # [B, V, out_dim]
 loss = champion_loss(z, gallery, targets, cfg, gate=has_doc_view)

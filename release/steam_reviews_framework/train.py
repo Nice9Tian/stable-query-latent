@@ -15,7 +15,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-from model import ModelConfig, SetPoolTower, invariance_loss
+from larice import LariceConfig, LariceTower, invariance_loss
 
 from .anchors import gallery, gallery_nodoc, gallery_train
 from .backhead_name import train_backhead_name
@@ -119,9 +119,9 @@ def train_tower(B, spec: ArmSpec, seed=0, W=16, bs=192, per_epoch=3072,
     objective (used by contrast arms like ArcFace)."""
     torch.manual_seed(seed)
     rng = np.random.default_rng(seed)
-    cfg = ModelConfig(readout="pool", num_views=spec.num_views, tau=spec.tau,
+    cfg = LariceConfig(readout="pool", num_views=spec.num_views, tau=spec.tau,
                       inv_weight=spec.inv_weight)
-    model = SetPoolTower(cfg).to(B.dev)
+    model = LariceTower(cfg).to(B.dev)
     inv_t = 1.0 / spec.tau
     opt = torch.optim.AdamW(model.parameters(), lr=5e-4, weight_decay=1e-4)
     amp = _amp_scaler()
@@ -268,7 +268,7 @@ def run_arm(B, spec: ArmSpec, out_dir=None, seeds_pass1=3, seeds_final=10,
         zs_traj = {}
         for ek in sorted(ckpts):
             torch.save(ckpts[ek], out / f"ckpt_{name}_ep{ek}.pt")
-            m2 = SetPoolTower(ModelConfig(readout="pool")).to(B.dev)
+            m2 = LariceTower(LariceConfig(readout="pool")).to(B.dev)
             m2.load_state_dict({k: v.to(B.dev) for k, v in ckpts[ek].items()})
             m2.eval()
             zk = zs_metrics(m2, B)

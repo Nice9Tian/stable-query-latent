@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
-"""SetPool champion tower + champion loss (I-CE with CE gating).
+"""larice — Latent Represent I-CE: the champion tower + champion loss
+(architecture lineage: SetPoolN — N latent queries cross-attending a set).
 
 Tensor protocol (see README): the leading two axes of every input are
 [data, view] —
@@ -22,15 +23,15 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 
-from .config import ModelConfig
+from .config import LariceConfig
 
 
-class SetPoolTower(nn.Module):
+class LariceTower(nn.Module):
     """N learnable latent queries cross-attend over an embedding set."""
 
-    def __init__(self, cfg: ModelConfig | None = None, **kw):
+    def __init__(self, cfg: LariceConfig | None = None, **kw):
         super().__init__()
-        self.cfg = cfg or ModelConfig(**kw)
+        self.cfg = cfg or LariceConfig(**kw)
         c = self.cfg
         self.q0 = nn.Parameter(torch.randn(1, c.num_queries, c.dim_model) * 0.02)
         self.attn = nn.MultiheadAttention(c.dim_model, c.num_heads,
@@ -101,7 +102,7 @@ def gated_ce_loss(z, gallery, targets, inv_tau, gate=None):
                                targets) for zv in zs)
 
 
-def champion_loss(z, gallery, targets, cfg: ModelConfig, gate=None,
+def champion_loss(z, gallery, targets, cfg: LariceConfig, gate=None,
                   inv_tau=None):
     """Full champion objective: gated CE (data axis) + I (view axis)."""
     it = inv_tau if inv_tau is not None else 1.0 / cfg.tau

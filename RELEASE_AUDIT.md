@@ -110,12 +110,12 @@
 ```
 larice/                                 (发布仓库,Latent Represent I-CE)
 │
-├── model/                  ★★ 通用模型包 —— 将来独立上 GitHub 的就是这一层
+├── larice/                 ★★ 模型本体 LariceTower —— 将来独立上 GitHub 的就是这一层
 │   │                          只有冠军塔,不带任何塔后头;任务无关
-│   ├── setpool.py          冠军塔(I-CE + CE门控配方;参数化:q 数量 N、
+│   ├── model.py            LariceTower(I-CE + CE门控配方;参数化:q 数量 N、
 │   │                       视图数 NV、tau(frozen 值/learnable 初值)、
 │   │                       I 权重与门控函数、DM、heads、kdim)
-│   ├── config.py           ModelConfig —— 一个 dataclass 生成一座冠军塔
+│   ├── config.py           LariceConfig —— 一个 dataclass 生成一座冠军塔
 │   └── README.md           张量协议 + 读出说明(见下)
 │
 │   ◆ 标准张量协议:一切输入前两轴固定为 [data, view] ——

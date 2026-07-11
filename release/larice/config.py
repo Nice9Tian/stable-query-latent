@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
-"""ModelConfig — one dataclass builds one champion tower.
+"""LariceConfig — one dataclass builds one larice tower
+(larice = Latent Represent I-CE).
 
 The model package is task-agnostic: it knows nothing about Steam, corpora,
 or evaluation protocols. Everything a downstream task can tune lives here.
@@ -8,7 +9,7 @@ from dataclasses import dataclass
 
 
 @dataclass
-class ModelConfig:
+class LariceConfig:
     # ---- architecture ----
     num_queries: int = 4       # N latent query slots
     dim_model: int = 128       # DM: query/attention/output width per slot

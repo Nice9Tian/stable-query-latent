@@ -1,6 +1,7 @@
 # larice — Latent Represent I-CE
 
-跨域鲁棒的集合表征学习框架:冻结句嵌入之上的 SetPool 塔(I-CE + CE 门控)。
+跨域鲁棒的集合表征学习:larice 塔(I-CE + CE 门控;N 潜查询交叉注意力,
+源自 SetPoolN 血统)构建于冻结句嵌入之上。
 参考任务:在 Steam 评论域训练、在 wiki 改写查询域评测(R60 全归纳协议)。
 
 ## 三层结构(依赖严格单向:experiment → framework → model)
