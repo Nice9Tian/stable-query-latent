@@ -2,8 +2,8 @@
 """5-fold CV over the 814-game wiki universe (fold k = test, k+1 = val,
 other three = train; permutation seed 20260711).
 
-    python larice_experiment/run_cv.py                      # 6 recipes x 5 folds
-    python larice_experiment/run_cv.py --recipes ce --folds 0 1
+    python contrast_experiment/run_cv.py                      # 6 recipes x 5 folds
+    python contrast_experiment/run_cv.py --recipes ce --folds 0 1
 """
 import argparse
 import copy
@@ -14,10 +14,10 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 import torch
 
-from larice_framework.data import load_bundle
-from larice_framework.train import CHAMPION, run_arm
-from larice_experiment.contrast_models.roster import ARMS, CV_RECIPES
-from larice_experiment.run_all import train_fn_for
+from steam_reviews_framework.data import load_bundle
+from steam_reviews_framework.train import CHAMPION, run_arm
+from contrast_experiment.contrast_models.roster import ARMS, CV_RECIPES
+from contrast_experiment.run_all import train_fn_for
 
 
 def main():

@@ -2,10 +2,10 @@
 """Path 1 entry point: reproduce the CHAMPION (cegate2 = CE-gated I-CE,
 I x2, frozen tau 0.02, wiki_clean > sp_raw doc views, I-CE head).
 
-    python larice_framework/train_champion.py [--epochs 1000] [--cv-fold K]
+    python steam_reviews_framework/train_champion.py [--epochs 1000] [--cv-fold K]
 
 Prerequisite: data assets built (see data_pipeline/rebuild_data.py) or
-linked via LARICE_* environment variables (larice_framework/paths.py).
+linked via LARICE_* environment variables (steam_reviews_framework/paths.py).
 """
 import argparse
 import sys
@@ -15,8 +15,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 import torch
 
-from larice_framework.data import load_bundle
-from larice_framework.train import CHAMPION, run_arm
+from steam_reviews_framework.data import load_bundle
+from steam_reviews_framework.train import CHAMPION, run_arm
 
 
 def main():

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """Contrast head grids — the two-phase BackHead-NAME mechanics live in
-larice_framework.backhead_name; each contrast arm only declares WHICH loss
+steam_reviews_framework.backhead_name; each contrast arm only declares WHICH loss
 philosophy drives the two phases.
 
 Row format: (suffix, phase1, phase2, label_smoothing)

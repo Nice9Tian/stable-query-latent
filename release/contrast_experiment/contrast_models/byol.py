@@ -14,8 +14,8 @@ import torch.nn as nn
 import torch.nn.functional as F
 
 from model import ModelConfig, SetPoolTower
-from larice_framework.sampler import sample_views
-from larice_framework.train import ArmSpec, make_doc_tiers, _amp_scaler
+from steam_reviews_framework.sampler import sample_views
+from steam_reviews_framework.train import ArmSpec, make_doc_tiers, _amp_scaler
 
 TAU_EMA = 0.996
 

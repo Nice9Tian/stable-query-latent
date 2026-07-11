@@ -10,7 +10,7 @@ Layers (top depends on bottom):
   corpora  <- corpora/*.py               (needs games.json + LLM API)
   reviews  <- reviews/*.py               (needs the Kaggle dump + GPU)
 Already-built artefacts are used as-is — link an existing layout via the
-LARICE_* environment variables (see larice_framework/paths.py) to skip rebuilds.
+LARICE_* environment variables (see steam_reviews_framework/paths.py) to skip rebuilds.
 """
 import argparse
 import subprocess
@@ -18,7 +18,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
-from larice_framework.paths import ASSETS, CORPORA, EMBED_H5, TEXT_H5
+from steam_reviews_framework.paths import ASSETS, CORPORA, EMBED_H5, TEXT_H5
 
 DP = Path(__file__).resolve().parent
 
