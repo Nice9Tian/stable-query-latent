@@ -62,6 +62,8 @@ def parse_args():
     ap.add_argument("--repo", required=True)
     ap.add_argument("--arm", required=True, choices=sorted(ARMS))
     ap.add_argument("--anchor-cap", type=int, default=512)
+    ap.add_argument("--no-sp-view", action="store_true",
+                    help="doc tier = wiki_clean ONLY (drop the sp_raw fallback)")
     ap.add_argument("--epochs", type=int, default=1000)
     ap.add_argument("--ckpt-every", type=int, default=50)
     ap.add_argument("--ckpt-seeds", type=int, default=3)
@@ -106,7 +108,7 @@ def main():
     HIW = _IW.get(tower_kind, 1.0)
     CE_GATED = tower_kind.startswith("cegate")
     I_GATED = tower_kind.startswith("igate")
-    name = f"w9_{args.arm}" + (f"_g{args.anchor_cap}" if args.anchor_cap != 512 else "")
+    name = f"w9_{args.arm}" + (f"_g{args.anchor_cap}" if args.anchor_cap != 512 else "")         + ("_nsp" if args.no_sp_view else "")
     dev = torch.device("cuda")
     C, OUT = Path(args.data_dir), Path(args.out_dir)
     OUT.mkdir(parents=True, exist_ok=True)
@@ -162,7 +164,11 @@ def main():
               if str(WK["names"][i]) not in excl}
     g2store = {int(ST["gidx"][i]): i for i in range(len(ST["gidx"]))
                if str(ST["names"][i]) not in excl and int(ST["gidx"][i]) not in g2wiki}
-    tiers = [(g2wiki, SW, mW), (g2store, SS, mS)]
+    if args.no_sp_view:
+        g2store = {}                    # wiki-pure tower views (user decree)
+        tiers = [(g2wiki, SW, mW)]
+    else:
+        tiers = [(g2wiki, SW, mW), (g2store, SS, mS)]
     if CE_GATED or I_GATED:
         scope_wiki = tower_kind.endswith("w")
         gate_games = set(g2wiki) if scope_wiki else set(g2wiki) | set(g2store)
