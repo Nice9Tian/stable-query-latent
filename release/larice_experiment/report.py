@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """Aggregate every finished arm into one comparison table (markdown).
 
-    python sql_experiment/report.py [--out RESULTS/summary.md]
+    python larice_experiment/report.py [--out RESULTS/summary.md]
 
 Reads ft4var_<arm>_best*.json (post-hoc-picked, 10-seed) from the results
 dir; ranks by mean-of-4 hit@1. Also emits the CV table (mean +- std across
@@ -18,8 +18,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 import numpy as np
 
-from sql_framework.eval import VORDER
-from sql_framework.paths import RESULTS
+from larice_framework.eval import VORDER
+from larice_framework.paths import RESULTS
 
 
 def agg(runs):

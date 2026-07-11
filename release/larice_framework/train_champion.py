@@ -2,10 +2,10 @@
 """Path 1 entry point: reproduce the CHAMPION (cegate2 = CE-gated I-CE,
 I x2, frozen tau 0.02, wiki_clean > sp_raw doc views, I-CE head).
 
-    python sql_framework/train_champion.py [--epochs 1000] [--cv-fold K]
+    python larice_framework/train_champion.py [--epochs 1000] [--cv-fold K]
 
 Prerequisite: data assets built (see data_pipeline/rebuild_data.py) or
-linked via SQL_* environment variables (sql_framework/paths.py).
+linked via LARICE_* environment variables (larice_framework/paths.py).
 """
 import argparse
 import sys
@@ -15,8 +15,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 import torch
 
-from sql_framework.data import load_bundle
-from sql_framework.train import CHAMPION, run_arm
+from larice_framework.data import load_bundle
+from larice_framework.train import CHAMPION, run_arm
 
 
 def main():

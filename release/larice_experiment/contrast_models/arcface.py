@@ -25,5 +25,5 @@ def arcface_ce(logits, tgt):
 
 
 def arc_loss_hook(Zs, Zg, tgt, gate_idx=None):
-    """Drop-in loss_hook for sql_framework.train.train_tower."""
+    """Drop-in loss_hook for larice_framework.train.train_tower."""
     return sum(arcface_ce(Z.float() @ Zg.T.float(), tgt) for Z in Zs)

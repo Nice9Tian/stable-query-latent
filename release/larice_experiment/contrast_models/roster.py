@@ -2,7 +2,7 @@
 """The full contrast roster (CURRENT design only — R60 wiki protocol).
 
 Arm = ArmSpec (tower recipe + gate + head grid). The champion tower lives in
-model/ + sql_framework; every OTHER philosophy and dose lives here.
+model/ + larice_framework; every OTHER philosophy and dose lives here.
 
 Factorised axes:
   loss family     I-CE (ice/i2ce) | pure CE | ArcFace | BYOL
@@ -13,7 +13,7 @@ Factorised axes:
                   the pretraining-leak ablation, applied to CE/ARC/BYOL
                   single-constraint towers and the champion)
 """
-from sql_framework.train import ArmSpec
+from larice_framework.train import ArmSpec
 
 from ..contrast_heads.configs import (HEAD_ARC, HEAD_BYOL, HEAD_CE, HEAD_ICE,
                                       HEAD_ICE_P1CE)

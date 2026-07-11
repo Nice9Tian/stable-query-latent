@@ -12,7 +12,7 @@ SCRIPT_DIR = Path(__file__).resolve().parent
 _CODE_DIR = SCRIPT_DIR
 import os as _os
 # data/code separation: corpora TEXT lives under the data root, not the repo
-SCRIPT_DIR = (Path(_os.environ["SQL_CORPORA"]) if _os.environ.get("SQL_CORPORA")
+SCRIPT_DIR = (Path(_os.environ["LARICE_CORPORA"]) if _os.environ.get("LARICE_CORPORA")
               else Path(__file__).resolve().parents[2] / "data" / "corpora")
 sys.path.insert(0, str(_CODE_DIR))
 from generate_text_variants import chat, SYSTEM_PROMPTS  # noqa: E402

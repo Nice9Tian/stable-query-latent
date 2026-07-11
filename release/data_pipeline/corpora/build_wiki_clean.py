@@ -23,12 +23,12 @@ SCRIPT_DIR = Path(__file__).resolve().parent
 _CODE_DIR = SCRIPT_DIR
 import os as _os
 # data/code separation: corpora TEXT lives under the data root, not the repo
-SCRIPT_DIR = (Path(_os.environ["SQL_CORPORA"]) if _os.environ.get("SQL_CORPORA")
+SCRIPT_DIR = (Path(_os.environ["LARICE_CORPORA"]) if _os.environ.get("LARICE_CORPORA")
               else Path(__file__).resolve().parents[2] / "data" / "corpora")
 SRC = SCRIPT_DIR / "wiki_descriptions"
 DST = SCRIPT_DIR / "wiki_clean"
 DST.mkdir(exist_ok=True)
-SC = (Path(_os.environ["SQL_ASSETS"]) if _os.environ.get("SQL_ASSETS")
+SC = (Path(_os.environ["LARICE_ASSETS"]) if _os.environ.get("LARICE_ASSETS")
       else Path(__file__).resolve().parents[2] / "data" / "assets")
 
 KEEP_KEYS = ("gameplay", "plot", "synopsis", "story", "character", "setting",

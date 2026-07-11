@@ -125,7 +125,7 @@ studable-query-latent/                  (发布仓库)
 │     I 不变性损失沿 view 轴收,CE 沿 data 轴收。
 │     README 注明:名称召回类任务改用 pool(均值池化)读出效果更好。
 │
-├── sql_framework/          ★ Steam-reviews 任务绑定 —— 调用 model 完成任务
+├── larice_framework/          ★ Steam-reviews 任务绑定 —— 调用 model 完成任务
 │   ├── backhead_name.py    名称召回 BackHead(两阶段:phase1 伪查询名 +
 │   │                       phase2 wiki-neutral,ICEtf 微调;vsel 选优)
 │   ├── backhead_tag.py     标签 BackHead(23-tag anchor-ridge 读出,
@@ -140,7 +140,7 @@ studable-query-latent/                  (发布仓库)
 │   └── pod/                w9_all.ipynb(薄壳:暂存+认领+队列+审计+自停)、
 │                           h5_staging.py、pod_selfstop.py
 │
-├── sql_experiment/         ★ 全量实验启动器 —— 训练各种塔、完成对比
+├── larice_experiment/         ★ 全量实验启动器 —— 训练各种塔、完成对比
 │   ├── contrast_models/    全部对照塔(纯CE / BYOL / ArcFace / 各门控与
 │   │                       I 剂量变体…)—— 复用 model 的塔骨架,替换损失
 │   ├── contrast_heads/     对照塔的头(CEtf / BYtf / ARCtf / 纯CE 两阶段等)
@@ -161,26 +161,26 @@ studable-query-latent/                  (发布仓库)
 └── requirements.txt / tokenAPI.template.txt / CLAUDE.md
 ```
 
-**依赖方向(严格单向)**:`sql_experiment → sql_framework → model`;
-model 不 import 任何上层;sql_framework 不 import experiment。
+**依赖方向(严格单向)**:`larice_experiment → larice_framework → model`;
+model 不 import 任何上层;larice_framework 不 import experiment。
 职责边界:**model 只含冠军塔与配置(干净、无头)**;冠军塔在 Steam 任务
 上的 BackHeads 归 framework;全部对照塔与对照头收在 experiment 的
 contrast_models/ 与 contrast_heads/,不污染 model。将来独立发布时:
-`model/` 原样成仓(通用框架);`sql_framework` 是它的第一个应用示例;
-`sql_experiment` 是论文复现包。
+`model/` 原样成仓(通用框架);`larice_framework` 是它的第一个应用示例;
+`larice_experiment` 是论文复现包。
 (命名注意:根目录旧 `backheads/` 目录是推荐头时代产物,归档进
-archive/ 后与 `sql_framework/backhead_name.py`/`backhead_tag.py` 不冲突。)
+archive/ 后与 `larice_framework/backhead_name.py`/`backhead_tag.py` 不冲突。)
 
 **两条用户路径**(README 主线):
 
 ```
 路径① 冠军复现:
   python data_pipeline/rebuild_data.py      # 或从发布桶直接下载 data/
-  python sql_framework/train_champion.py    # cegate2: CE门控+I×2, vsel选优
+  python larice_framework/train_champion.py    # cegate2: CE门控+I×2, vsel选优
 路径② 全对照复现(R60 设计,不含任何旧设计):
   python data_pipeline/rebuild_data.py
-  python sql_experiment/run_all.py [--cv]   # 13 臂 + 可选 6配方×5折
-pod 路径:开 pod → 跑 sql_framework/pod/w9_all.ipynb(同一套 train.py 内核,
+  python larice_experiment/run_all.py [--cv]   # 13 臂 + 可选 6配方×5折
+pod 路径:开 pod → 跑 larice_framework/pod/w9_all.ipynb(同一套 train.py 内核,
   experiment 的臂清单通过 arms.yaml 注入)
 ```
 
@@ -190,10 +190,10 @@ pod 路径:开 pod → 跑 sql_framework/pod/w9_all.ipynb(同一套 train.py 内
 
 1. **⚠️ 安全第一**:`generate_text_variants.py` 硬编码 key 改为读 `tokenAPI.txt`;全库扫一遍确认无其它密钥;
 2. **迁移 scratchpad 七件**入仓(это当前协议的单点故障——临时目录一旦清理,本机管线即失传);
-3. **worker 合一**:w9_cell / w9_a100_worker / w9_cv_worker → `sql_framework/train.py` + 三个薄壳(本机 CLI、pod 固定分割、pod CV),消除三份拷贝漂移;
+3. **worker 合一**:w9_cell / w9_a100_worker / w9_cv_worker → `larice_framework/train.py` + 三个薄壳(本机 CLI、pod 固定分割、pod CV),消除三份拷贝漂移;
 4. **建 `archive/`** 并移入全部 📦 项(git mv,历史保留);顺带把工作区里悬置的 ~1000 个 `text_variants_generated` 删除记录一并提交;
 5. **数据/模型分离**:`data/` 统一收纳 + .gitignore 更新;`data_pipeline/` 收纳全部构建脚本;
 6. **重写 README** + 补 `requirements.txt` + 两个入口脚本;
-7. 待 R60 战役出全数据后,把冠军配置固化进 `configs/arms.yaml` 默认值,`sql_framework/` 拆分独立仓。
+7. 待 R60 战役出全数据后,把冠军配置固化进 `configs/arms.yaml` 默认值,`larice_framework/` 拆分独立仓。
 
 **风险提示**:第 2、3 步做完前不要清理 scratchpad;第 4 步 git mv 会让 pod 的旧 notebook 路径失效——先等当前战役跑完再动 `Pod/` 旧文件。

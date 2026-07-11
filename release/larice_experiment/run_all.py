@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 """Path 2 entry point: train ALL contrast arms (current design) and compare.
 
-    python sql_experiment/run_all.py                 # every arm
-    python sql_experiment/run_all.py --arms ce byol  # a subset
-    python sql_experiment/run_all.py --epochs 300    # quick pass
+    python larice_experiment/run_all.py                 # every arm
+    python larice_experiment/run_all.py --arms ce byol  # a subset
+    python larice_experiment/run_all.py --epochs 300    # quick pass
 
 Resume-safe: finished towers/heads are skipped, so the run can be
 interrupted and relaunched freely. The champion itself is path 1
-(sql_framework/train_champion.py); run it too for the full comparison table.
+(larice_framework/train_champion.py); run it too for the full comparison table.
 """
 import argparse
 import sys
@@ -17,11 +17,11 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
 import torch
 
-from sql_framework.data import load_bundle
-from sql_framework.train import run_arm, train_tower
-from sql_experiment.contrast_models.roster import ARMS
-from sql_experiment.contrast_models.arcface import arc_loss_hook
-from sql_experiment.contrast_models.byol import train_byol
+from larice_framework.data import load_bundle
+from larice_framework.train import run_arm, train_tower
+from larice_experiment.contrast_models.roster import ARMS
+from larice_experiment.contrast_models.arcface import arc_loss_hook
+from larice_experiment.contrast_models.byol import train_byol
 
 
 def train_fn_for(spec):
@@ -54,7 +54,7 @@ def main():
         spec.epochs = args.epochs
         spec.ckpt_every = args.ckpt_every
         run_arm(B, spec, train_fn=train_fn_for(spec), log_cb=log)
-    log("run_all done — build the table with: python sql_experiment/report.py")
+    log("run_all done — build the table with: python larice_experiment/report.py")
 
 
 if __name__ == "__main__":

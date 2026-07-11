@@ -9,8 +9,8 @@
 - `w9_a100_worker.py` — 固定分割作业(一臂 = 塔 + 每检查点头 + vsel 选优),
   滚动 resume bundle,重启后从断点继续;
 - `w9_cv_worker.py` — 五折 CV 作业(fold 参数化);
-- 两个 worker 与本机 `sql_framework/train.py` 是同一协议(R60)的实现,
-  产物 json/npz 命名兼容,`sql_experiment/report.py` 可直接聚合。
+- 两个 worker 与本机 `larice_framework/train.py` 是同一协议(R60)的实现,
+  产物 json/npz 命名兼容,`larice_experiment/report.py` 可直接聚合。
 
 多机并行:每台机器各开一份 notebook,claim 机制保证一个作业只被一台
 认领;先让第一台完成"ONE-TIME 资产准备"再开其余机器最省钱。
