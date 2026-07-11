@@ -15,29 +15,37 @@ steam_reviews_framework/    Steam 任务绑定 —— 调用 larice:协议/采�
                   backhead_tag(23标签)/train_champion.py(路径①)/
                   pod/(RunPod 通路)
 contrast_experiment/   全量对照 —— contrast_models(CE/BYOL/ArcFace/门控与剂量
-                  变体)+ contrast_heads + run_all/run_cv/report
+                  变体)+ contrast_heads + run.py(全对照一键,--cv 五折)+ report
 data_pipeline/    数据重建 —— reviews(Kaggle→清洗→分句→全量嵌入 h5)、
                   corpora(wiki 抓取→净化→改写;sp 六语料)、build_assets
 data/             (gitignored)全部重数据:h5 / npz / 语料文本 / 结果
 ```
 
-## 两条复现路径
+## 两条一键复现路径
 
 ```bash
 pip install -r requirements.txt
 
-# 路径① 本机重建数据 → 训练冠军模型(cegate2:CE门控 + I×2,vsel 选优)
-python data_pipeline/rebuild_data.py
-python steam_reviews_framework/train_champion.py
+# 路径① 一键训练冠军模型(cegate2:CE门控 + I×2,vsel 选优)
+python steam_reviews_framework/run.py
 
-# 路径② 本机重建数据 → 训练全部对照组合(本次 R60 设计,不含旧设计)
-python data_pipeline/rebuild_data.py
-python contrast_experiment/run_all.py            # 18 对照臂,断点续跑(冠军走路径①)
-python contrast_experiment/run_cv.py             # 可选:6 配方 × 5 折
-python contrast_experiment/report.py             # 汇总对照表
+# 路径② 一键训练全部对照组合(18 臂;--cv 加跑 6 配方 × 5 折;末尾自动出对照表)
+python contrast_experiment/run.py [--cv]
 
 # pod 路径:在 RunPod 打开 steam_reviews_framework/pod/w9_all.ipynb(见其 README)
 ```
+
+两个 run.py 分工:**框架的 run = 只训冠军;实验的 run = 训全部对照**。
+它们共享同一套数据准备(自动执行、断点续跑):
+
+1. **语料(内置压缩包,复现性优先)** —— `steam_reviews_framework/corpora_bundles/`
+   里的 `wikipage.zip`(wiki_clean/variants/llm,814 游戏)与 `storepage.zip`
+   (sp 六语料,1811 游戏)自动解压到 `data/corpora/`。**永远优先使用内置
+   语料:不重新抓取 wiki、不重新过 LLM**——避免 wiki 后续被编辑、或清洗
+   口径不一致导致结果漂移;
+2. **评论重型文件** —— 缺失时按 `LARICE_EMBED_H5_URL`/`LARICE_TEXT_H5_URL`
+   自动下载,或用 `data_pipeline/reviews/` 从 Kaggle 原始数据重建一次;
+3. **张量资产** —— `data_pipeline/build_assets.py` 自动补齐缺失项。
 
 ## 数据与代码分离
 
