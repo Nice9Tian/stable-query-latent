@@ -1,0 +1,2 @@
+# ship the authoritative protocol split despite the repo-global *.json rule
+!wiki_eval_split.json
