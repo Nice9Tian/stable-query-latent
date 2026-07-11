@@ -111,17 +111,17 @@
 studable-query-latent/                  (发布仓库)
 │
 ├── model/                  ★★ 通用模型包 —— 将来独立上 GitHub 的就是这一层
-│   │                          任务无关:不知道 Steam、不知道协议,只有模型与损失
-│   ├── setpool.py          SetPoolN 塔(参数化:q 数量 N、DM、heads、kdim)
-│   ├── losses.py           CE(τ:frozen 值 / learnable 初值 可选)、
-│   │                       I 不变性项(权重可调、门控函数可注入)、
-│   │                       ArcFace(s、m 可调)、BYOL(EMA 动量、predictor)
-│   ├── probe.py            线性评测探针 + 两阶段微调损失(ICEtf/CEtf/BYtf/ARCtf)
-│   └── config.py           ModelConfig:N(q数)、NV(视图数)、tau(mode,value)、
-│                           inv(weight,gate)、arc(s,m)、byol(ema) —— 一个
-│                           dataclass 生成任意一座塔
+│   │                          只有冠军塔,不带任何塔后头;任务无关
+│   ├── setpool.py          冠军塔(I-CE + CE门控配方;参数化:q 数量 N、
+│   │                       视图数 NV、tau(frozen 值/learnable 初值)、
+│   │                       I 权重与门控函数、DM、heads、kdim)
+│   ├── config.py           ModelConfig —— 一个 dataclass 生成一座冠军塔
+│   └── README.md           读出说明:默认输出 = N 槽直接 concat(通用表征);
+│                           名称召回类任务改用 pool(均值池化)读出效果更好
 │
-├── sql_framework/          ★ Steam-reviews 任务绑定 —— 只"调用" model 完成任务
+├── sql_framework/          ★ Steam-reviews 任务绑定 —— 调用 model 完成任务
+│   ├── backheads.py        冠军塔在 Steam 任务中的 BackHeads(两阶段头:
+│   │                       phase1 伪查询名 + phase2 wiki-neutral,ICEtf 微调)
 │   ├── protocol.py         814 宇宙分割、归纳排除集、vsel 三轴选择公式
 │   ├── sampler.py          评论级拒绝采样 a(L)、全量池/2048池、pad+mask
 │   ├── anchors.py          sp_clean+评论混合锚、画廊(train/full/nodoc)
@@ -133,7 +133,10 @@ studable-query-latent/                  (发布仓库)
 │                           h5_staging.py、pod_selfstop.py
 │
 ├── sql_experiment/         ★ 全量实验启动器 —— 训练各种塔、完成对比
-│   ├── arms.yaml           全部臂的声明式定义(每臂 = ModelConfig + 门控 + 头配)
+│   ├── contrast_models/    全部对照塔(纯CE / BYOL / ArcFace / 各门控与
+│   │                       I 剂量变体…)—— 复用 model 的塔骨架,替换损失
+│   ├── contrast_heads/     对照塔的头(CEtf / BYtf / ARCtf / 纯CE 两阶段等)
+│   ├── arms.yaml           全部臂的声明式定义(臂 = 塔配方 + 门控 + 头配)
 │   ├── run_all.py          路径②入口:13 臂固定分割 roster(本机或 pod 队列)
 │   ├── run_cv.py           6 配方 × 5 折 CV
 │   └── report.py           横评总表 / 学习曲线 / 剂量曲线聚合
@@ -152,8 +155,13 @@ studable-query-latent/                  (发布仓库)
 
 **依赖方向(严格单向)**:`sql_experiment → sql_framework → model`;
 model 不 import 任何上层;sql_framework 不 import experiment。
-将来独立发布时:`model/` 原样成仓(通用框架);`sql_framework` 是它的
-第一个应用示例;`sql_experiment` 是论文复现包。
+职责边界:**model 只含冠军塔与配置(干净、无头)**;冠军塔在 Steam 任务
+上的 BackHeads 归 framework;全部对照塔与对照头收在 experiment 的
+contrast_models/ 与 contrast_heads/,不污染 model。将来独立发布时:
+`model/` 原样成仓(通用框架);`sql_framework` 是它的第一个应用示例;
+`sql_experiment` 是论文复现包。
+(命名注意:根目录旧 `backheads/` 目录是推荐头时代产物,归档进
+archive/ 后与 `sql_framework/backheads.py` 不冲突。)
 
 **两条用户路径**(README 主线):
 
