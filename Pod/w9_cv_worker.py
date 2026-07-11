@@ -79,6 +79,9 @@ def parse_args():
     ap.add_argument("--doc-lead", type=int, default=0,
                     help=">0: truncate doc VIEWS to the first N sentences "
                          "(length-attribution ablation)")
+    ap.add_argument("--full-pool", action="store_true",
+                    help="draw training views from the FULL review corpus "
+                         "(host-RAM flat npy) instead of the 2048-sent pool")
     ap.add_argument("--epochs", type=int, default=600)
     ap.add_argument("--ckpt-every", type=int, default=50)
     ap.add_argument("--ckpt-seeds", type=int, default=2)
@@ -126,7 +129,8 @@ def main():
     name = (f"w9cv_{args.arm}_fold{args.fold}"
             + (f"_g{args.anchor_cap}" if args.anchor_cap != 512 else "")
             + ("_nsp" if args.no_sp_view else "")
-            + (f"_ld{args.doc_lead}" if args.doc_lead else ""))
+            + (f"_ld{args.doc_lead}" if args.doc_lead else "")
+            + ("_fp" if args.full_pool else ""))
     dev = torch.device("cuda")
     C, OUT = Path(args.data_dir), Path(args.out_dir)
     OUT.mkdir(parents=True, exist_ok=True)
@@ -140,9 +144,19 @@ def main():
     n2i = {n: i for i, n in enumerate(names)}
     appid2name = {n.split("_")[0]: n for n in names}
 
-    POOL = torch.tensor(np.load(C / "wscan_pool_rev.npy"), device=dev)   # fp16
     RIDp = np.load(C / "wscan_pool_rev_rid.npy")
     plen = np.load(C / "wscan_pool_rev_len.npy")
+    need_pool = (not args.full_pool) or args.anchor_cap != 512
+    POOL = (torch.tensor(np.load(C / "wscan_pool_rev.npy"), device=dev)
+            if need_pool else None)                                      # fp16
+    if args.full_pool:
+        FULLV = np.load(C / "full_pool_fp16.npy", mmap_mode="r")
+        FMETA = np.load(C / "full_pool_meta.npz", allow_pickle=True)
+        f_gro = FMETA["game_review_offsets"]
+        f_ro = FMETA["review_offsets"]
+        f_e2i = {str(n): i for i, n in enumerate(FMETA["game_names"])}
+        print(f"full pool: {FULLV.shape[0]:,} sentences (host RAM/page cache)",
+              flush=True)
     A = np.load(C / "wiki_eval.npz", allow_pickle=True)
     SA = rown(torch.tensor(A["S"]).to(dev).float()).half()
     mA = torch.arange(SA.shape[1], device=dev)[None, :] >= \
@@ -269,15 +283,21 @@ def main():
     # ---------------- review table + GPU view sampler ----------------
     REV_TAB = []
     for g in range(NG):
-        r = RIDp[g]
-        n = int(r.max()) + 1
-        lens = np.bincount(r[r >= 0], minlength=n).astype(np.int64)
-        starts = np.zeros(n, np.int64)
-        starts[1:] = np.cumsum(lens)[:-1]
+        if args.full_pool:
+            i = f_e2i[names[g]]
+            r0, r1 = int(f_gro[i]), int(f_gro[i + 1])
+            starts = f_ro[r0:r1].astype(np.int64)          # ABSOLUTE sent idx
+            lens = (f_ro[r0 + 1:r1 + 1] - f_ro[r0:r1]).astype(np.int64)
+        else:
+            r = RIDp[g]
+            n = int(r.max()) + 1
+            lens = np.bincount(r[r >= 0], minlength=n).astype(np.int64)
+            starts = np.zeros(n, np.int64)
+            starts[1:] = np.cumsum(lens)[:-1]
         if lens.max() > lens.min():
             a = 0.2 + 0.7 * (lens - lens.min()) / (lens.max() - lens.min())
         else:
-            a = np.full(n, 0.9)
+            a = np.full(len(lens), 0.9)
         REV_TAB.append((starts, lens, a))
 
     def sample_views(gids, W, rng):
@@ -299,6 +319,22 @@ def main():
             idx_rows.append(seg)
             lens.append(len(seg))
         LM = max(lens)
+        if args.full_pool:
+            flat = np.concatenate(idx_rows)
+            order = np.argsort(flat, kind="stable")          # sorted reads
+            vec = np.empty((len(flat), 1024), np.float32)
+            vec[order] = FULLV[flat[order]].astype(np.float32)
+            vec = (vec - vec.mean(-1, keepdims=True)) / \
+                (vec.std(-1, keepdims=True) + 1e-6)          # rown on the fly
+            X = np.zeros((len(gids), LM, 1024), np.float16)
+            pos = 0
+            for k, seg in enumerate(idx_rows):
+                X[k, :len(seg)] = vec[pos:pos + len(seg)]
+                pos += len(seg)
+            S = torch.from_numpy(X).to(dev, non_blocking=True)
+            L = torch.as_tensor(lens, device=dev)
+            m = torch.arange(LM, device=dev)[None, :] >= L[:, None]
+            return S, m
         idx = np.zeros((len(gids), LM), np.int64)
         for k, seg in enumerate(idx_rows):
             idx[k, :len(seg)] = seg
@@ -380,8 +416,20 @@ def main():
         opt = torch.optim.AdamW(model.parameters(), lr=5e-4, weight_decay=1e-4)
         amp = amp_cls()
         ckpts = {}
+        RES = OUT / f"resume_{name}.pt"
+        start_ep = 0
+        if RES.exists():
+            st = torch.load(RES, map_location="cpu")
+            model.load_state_dict({k: v.to(dev) for k, v in st["model"].items()})
+            opt.load_state_dict(st["opt"])
+            amp.load_state_dict(st["amp"])
+            torch.set_rng_state(st["cpu_rng"])
+            torch.cuda.set_rng_state(st["cuda_rng"])
+            rng.bit_generator.state = st["np_rng"]
+            start_ep = int(st["ep"])
+            print(f"RESUME from ep{start_ep}", flush=True)
         t0 = time.time()
-        for ep in range(args.epochs):
+        for ep in range(start_ep, args.epochs):
             model.train()
             for _ in range(per_epoch // bs):
                 gids = rng.choice(train_pool_games, bs, replace=False)
@@ -419,12 +467,19 @@ def main():
                 amp.step(opt)
                 amp.update()
             if (ep + 1) % args.ckpt_every == 0:
-                ckpts[ep + 1] = {k: v.detach().cpu().clone()
-                                 for k, v in model.state_dict().items()}
+                sd = {k: v.detach().cpu().clone() for k, v in model.state_dict().items()}
+                torch.save(sd, OUT / f"ckpt_{name}_ep{ep+1}.pt")   # persist NOW
+                bundle = dict(model=sd, opt=opt.state_dict(), amp=amp.state_dict(),
+                              cpu_rng=torch.get_rng_state(),
+                              cuda_rng=torch.cuda.get_rng_state(),
+                              np_rng=rng.bit_generator.state, ep=ep + 1)
+                tmp = RES.with_suffix(".tmp")
+                torch.save(bundle, tmp)
+                tmp.replace(RES)
             if ep % 100 == 99:
                 print(f"  [ep{ep+1}] {time.time()-t0:.0f}s", flush=True)
         model.eval()
-        return model, ckpts
+        return model
 
     def train_byol(seed=0, W=16, bs=192, per_epoch=3072):
         import copy
@@ -440,8 +495,22 @@ def main():
         amp = amp_cls()
         P = lambda z: F.normalize(pred(z.float()), dim=-1)
         ckpts = {}
+        RES = OUT / f"resume_{name}.pt"
+        start_ep = 0
+        if RES.exists():
+            st = torch.load(RES, map_location="cpu")
+            model.load_state_dict({k: v.to(dev) for k, v in st["model"].items()})
+            pred.load_state_dict({k: v.to(dev) for k, v in st["pred"].items()})
+            target.load_state_dict({k: v.to(dev) for k, v in st["target"].items()})
+            opt.load_state_dict(st["opt"])
+            amp.load_state_dict(st["amp"])
+            torch.set_rng_state(st["cpu_rng"])
+            torch.cuda.set_rng_state(st["cuda_rng"])
+            rng.bit_generator.state = st["np_rng"]
+            start_ep = int(st["ep"])
+            print(f"RESUME from ep{start_ep}", flush=True)
         t0 = time.time()
-        for ep in range(args.epochs):
+        for ep in range(start_ep, args.epochs):
             model.train(); pred.train()
             for _ in range(per_epoch // bs):
                 gids = rng.choice(train_pool_games, bs, replace=False)
@@ -486,12 +555,24 @@ def main():
                     for pt, po in zip(target.parameters(), model.parameters()):
                         pt.data.mul_(0.996).add_(po.data, alpha=0.004)
             if (ep + 1) % args.ckpt_every == 0:
-                ckpts[ep + 1] = {k: v.detach().cpu().clone()
-                                 for k, v in model.state_dict().items()}
+                sd = {k: v.detach().cpu().clone() for k, v in model.state_dict().items()}
+                torch.save(sd, OUT / f"ckpt_{name}_ep{ep+1}.pt")
+                bundle = dict(model=sd,
+                              pred={k: v.detach().cpu().clone()
+                                    for k, v in pred.state_dict().items()},
+                              target={k: v.detach().cpu().clone()
+                                      for k, v in target.state_dict().items()},
+                              opt=opt.state_dict(), amp=amp.state_dict(),
+                              cpu_rng=torch.get_rng_state(),
+                              cuda_rng=torch.cuda.get_rng_state(),
+                              np_rng=rng.bit_generator.state, ep=ep + 1)
+                tmp = RES.with_suffix(".tmp")
+                torch.save(bundle, tmp)
+                tmp.replace(RES)
             if ep % 100 == 99:
                 print(f"  [byol ep{ep+1}] {time.time()-t0:.0f}s", flush=True)
         model.eval()
-        return model, ckpts
+        return model
 
     # ---------------- eval machinery ----------------
     VORDER = ["neutral", "noname", "positive", "negative"]
@@ -693,23 +774,31 @@ def main():
     if not DONE_FLAG.exists():
         t0 = time.time()
         if tower_kind == "byol":
-            model, ckpts = train_byol(seed=0)
+            train_byol(seed=0)
         else:
-            model, ckpts = train_v4doc(seed=0)
-        print(f"tower {name} trained in {time.time()-t0:.0f}s", flush=True)
-        zs_traj = {}
-        for ek in sorted(ckpts):
-            torch.save(ckpts[ek], OUT / f"ckpt_{name}_ep{ek}.pt")
+            train_v4doc(seed=0)
+        print(f"tower {name} train phase done in {time.time()-t0:.0f}s", flush=True)
+        traj_p = OUT / f"zs_traj_{name}.json"
+        zs_traj = json.loads(traj_p.read_text()) if traj_p.exists() else {}
+        cks = sorted(OUT.glob(f"ckpt_{name}_ep*.pt"),
+                     key=lambda q: int(q.stem.split("_ep")[-1]))
+        for ck in cks:
+            ek = int(ck.stem.split("_ep")[-1])
+            npz = OUT / f"tower_{name}_ep{ek}.npz"
+            if npz.exists():
+                continue                                # projection-level resume
             m2 = SetPoolN(4).to(dev)
-            m2.load_state_dict({k: v.to(dev) for k, v in ckpts[ek].items()})
+            m2.load_state_dict({k: v.to(dev) for k, v in torch.load(
+                ck, map_location="cpu").items()})
             m2.eval()
             zk = zs_metrics(m2)
             zs_traj[f"ep{ek}"] = zk
             print(f"ZS(ep{ek}): {dict((k, round(v, 3)) for k, v in zk.items())}",
                   flush=True)
-            project_cache(m2, OUT / f"tower_{name}_ep{ek}.npz")
+            json.dump(zs_traj, open(traj_p, "w"), indent=2)
+            project_cache(m2, npz)
             del m2
-        json.dump(zs_traj, open(OUT / f"zs_traj_{name}.json", "w"), indent=2)
+        (OUT / f"resume_{name}.pt").unlink(missing_ok=True)
 
     # ---------------- heads: per-checkpoint 3 seeds -> vsel pick -> topup ----
     if tower_kind == "byol":
