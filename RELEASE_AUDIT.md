@@ -110,41 +110,62 @@
 ```
 studable-query-latent/                  (发布仓库)
 │
-├── sql_framework/          ★ 模型框架 —— 将来可独立成仓上 GitHub
-│   ├── model.py            SetPoolN 塔 + 线性评测探针
-│   ├── losses.py           CE / I-CE / ArcFace / BYOL + CE门控/I门控/随机门
-│   ├── sampler.py          评论级拒绝采样(a(L)=0.2→0.9)、全量池/2048池双模、pad+mask
-│   ├── protocol.py         分割加载、归纳排除集、锚/画廊、vsel 三轴选择公式
-│   ├── train.py            统一训练器(= 现 w9 worker 内核:塔+检查点+续跑+头网格+寻优)
-│   ├── eval.py             metrics4 / 裸塔ZS / 冻结基线 / 锚成分(SPg_nd)
-│   ├── configs/arms.yaml   全部臂的声明式定义(冠军=cegate2)
-│   └── pod/                w9_all.ipynb(薄壳:暂存+认领+队列+审计+自停)、h5_staging、pod_selfstop
+├── model/                  ★★ 通用模型包 —— 将来独立上 GitHub 的就是这一层
+│   │                          任务无关:不知道 Steam、不知道协议,只有模型与损失
+│   ├── setpool.py          SetPoolN 塔(参数化:q 数量 N、DM、heads、kdim)
+│   ├── losses.py           CE(τ:frozen 值 / learnable 初值 可选)、
+│   │                       I 不变性项(权重可调、门控函数可注入)、
+│   │                       ArcFace(s、m 可调)、BYOL(EMA 动量、predictor)
+│   ├── probe.py            线性评测探针 + 两阶段微调损失(ICEtf/CEtf/BYtf/ARCtf)
+│   └── config.py           ModelConfig:N(q数)、NV(视图数)、tau(mode,value)、
+│                           inv(weight,gate)、arc(s,m)、byol(ema) —— 一个
+│                           dataclass 生成任意一座塔
 │
-├── data_pipeline/          ★ 数据重建 —— 与模型完全解耦
-│   ├── reviews/            Kaggle评论 → 清洗 → 分句 → 全量嵌入 h5(整并 Build_new/combine 系)
-│   ├── corpora/            wiki 抓取→清洗→四变体/llm改写;sp 六语料(LLM 改写脚本,读 tokenAPI)
-│   └── build_assets.py     池(2048)/锚(512, sp_clean+评论)/伪查询/视图npz/评测npz/分割json
+├── sql_framework/          ★ Steam-reviews 任务绑定 —— 只"调用" model 完成任务
+│   ├── protocol.py         814 宇宙分割、归纳排除集、vsel 三轴选择公式
+│   ├── sampler.py          评论级拒绝采样 a(L)、全量池/2048池、pad+mask
+│   ├── anchors.py          sp_clean+评论混合锚、画廊(train/full/nodoc)
+│   ├── data.py             语料/资产装载(h5、npz、mmap、GPU/RAM 布局)
+│   ├── train.py            统一训练器(塔+检查点+断点续跑+头网格+事后寻优)
+│   ├── eval.py             metrics4 / 裸塔ZS / 冻结基线 / 锚成分(SPg_nd)
+│   ├── train_champion.py   路径①入口:冠军配方(cegate2)一键复现
+│   └── pod/                w9_all.ipynb(薄壳:暂存+认领+队列+审计+自停)、
+│                           h5_staging.py、pod_selfstop.py
+│
+├── sql_experiment/         ★ 全量实验启动器 —— 训练各种塔、完成对比
+│   ├── arms.yaml           全部臂的声明式定义(每臂 = ModelConfig + 门控 + 头配)
+│   ├── run_all.py          路径②入口:13 臂固定分割 roster(本机或 pod 队列)
+│   ├── run_cv.py           6 配方 × 5 折 CV
+│   └── report.py           横评总表 / 学习曲线 / 剂量曲线聚合
+│
+├── data_pipeline/          数据重建 —— 与模型完全解耦
+│   ├── reviews/            Kaggle评论 → 清洗 → 分句 → 全量嵌入 h5
+│   ├── corpora/            wiki 抓取→清洗→四变体/llm;sp 六语料(读 tokenAPI)
+│   └── build_assets.py     池/锚/伪查询/视图npz/评测npz/分割json
 │
 ├── data/                   (gitignored)h5、npz、语料文本 —— 桶下载或管线重建
-├── scripts/
-│   ├── rebuild_data.py     一键:reviews→corpora→assets(断点续跑)
-│   ├── train_champion.py   路径①:冠军 cegate2(塔+头+评测,单命令)
-│   └── train_all_arms.py   路径②:R60 全对照(13臂固定分割 + 可选 6配方五折CV)
-├── archive/                全部 📦 项(PXIbench_test/ sst/ backheads/ vicreg_era/ old_pods/ docs/)
+├── archive/                全部 📦 项(PXIbench_test/ sst/ backheads/ vicreg_era/
+│                           old_pods/ docs/)
 ├── README.md               重写:两条路径 + 本机/pod 双端说明
 └── requirements.txt / tokenAPI.template.txt / CLAUDE.md
 ```
+
+**依赖方向(严格单向)**:`sql_experiment → sql_framework → model`;
+model 不 import 任何上层;sql_framework 不 import experiment。
+将来独立发布时:`model/` 原样成仓(通用框架);`sql_framework` 是它的
+第一个应用示例;`sql_experiment` 是论文复现包。
 
 **两条用户路径**(README 主线):
 
 ```
 路径① 冠军复现:
-  python scripts/rebuild_data.py          # 或从发布桶直接下载 data/assets
-  python scripts/train_champion.py        # cegate2: CE门控+I×2, 全量采样, vsel选优
-路径② 全对照复现(本次 R60 设计):
-  python scripts/rebuild_data.py
-  python scripts/train_all_arms.py [--cv] # 13 臂 + 可选 6配方×5折
-pod 路径:开 pod → 跑 sql_framework/pod/w9_all.ipynb(同一套 train.py 内核)
+  python data_pipeline/rebuild_data.py      # 或从发布桶直接下载 data/
+  python sql_framework/train_champion.py    # cegate2: CE门控+I×2, vsel选优
+路径② 全对照复现(R60 设计,不含任何旧设计):
+  python data_pipeline/rebuild_data.py
+  python sql_experiment/run_all.py [--cv]   # 13 臂 + 可选 6配方×5折
+pod 路径:开 pod → 跑 sql_framework/pod/w9_all.ipynb(同一套 train.py 内核,
+  experiment 的臂清单通过 arms.yaml 注入)
 ```
 
 ---
