@@ -55,11 +55,17 @@ ARMS = {
     "wcle_cegate2c_icetf": ("cegate2c", "ice"),    # champion recipe with
     # TRAIN-TIME centering: outputs get mu-EMA subtracted BEFORE the L2
     # normalize, so CE/I never spend capacity on a common direction
+    "wcle_i2cce_icetf": ("i2cce", "ice"),          # I2CCE: CE all + I x2 + C x1
+    # (VICReg-style off-diag covariance penalty ON the 128-d outputs --
+    # decorrelated dims = feature-richness constraint, no expander needed)
+    "wcle_i2ccec_icetf": ("i2ccec", "ice"),        # I2CCE + train-time centering
 }
-CENTER_ARMS = {"cegate2c"}
+CENTER_ARMS = {"cegate2c", "i2ccec"}
+_CW = {"i2cce": 1.0, "i2ccec": 1.0}    # covariance weight (user-set I=2 C=1)
 _IW = {"ice": 1.0, "i2ce": 2.0, "cegate1": 1.0, "cegate2": 2.0, "cegate3": 3.0,
        "cegate4": 4.0, "cegate1w": 1.0, "cegate2w": 2.0, "igate1": 1.0,
-       "igate1w": 1.0, "rgate2": 2.0, "nodoc": 2.0, "cegate2c": 2.0}
+       "igate1w": 1.0, "rgate2": 2.0, "nodoc": 2.0, "cegate2c": 2.0,
+       "i2cce": 2.0, "i2ccec": 2.0}
 SPLIT_SEED = 20260711
 DM, HEADS, NV = 128, 4, 4
 ARC_S_T, ARC_M_T = 50.0, 0.2       # tower ArcFace
@@ -135,6 +141,15 @@ def rown(x, eps=1e-6):
     return (x - m) / (s + eps)
 
 
+def cov_pen(z):
+    """VICReg-style covariance penalty: mean squared off-diagonal of the
+    batch covariance, normalized by dim. Sample axis = games in the batch."""
+    z = z - z.mean(0, keepdim=True)
+    cov = (z.T @ z) / (z.shape[0] - 1)
+    off = cov.flatten()[:-1].view(cov.shape[0] - 1, cov.shape[0] + 1)[:, 1:]
+    return off.pow(2).sum() / z.shape[1]
+
+
 def S_fn(x, x0):
     return (-K1 * (math.exp(S_A * (x0 - x)) - 1) if x < x0
             else K2 * (x - x0) ** S_B)
@@ -154,6 +169,7 @@ def main():
     CE_GATED = tower_kind.startswith("cegate") or tower_kind == "rgate2"
     I_GATED = tower_kind.startswith("igate")
     CENTERED = tower_kind in CENTER_ARMS
+    CW = _CW.get(tower_kind, 0.0)
     name = (f"w9_{args.arm}"
             + (f"_g{args.anchor_cap}" if args.anchor_cap != 512 else "")
             + ("_nsp" if args.no_sp_view else "")
@@ -523,6 +539,9 @@ def main():
                             loss = loss + IW * sum(
                                 (1 - (Zs[i].float() * Zs[j].float()).sum(-1)).mean()
                                 for i, j in pairs) / len(pairs)
+                    if CW > 0:
+                        loss = loss + CW * sum(cov_pen(Z.float())
+                                               for Z in Zs) / len(Zs)
                 opt.zero_grad()
                 amp.scale(loss).backward()
                 amp.unscale_(opt)
