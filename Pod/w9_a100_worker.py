@@ -98,6 +98,9 @@ def parse_args():
     ap.add_argument("--full-pool", action="store_true",
                     help="draw training views from the FULL review corpus "
                          "(host-RAM flat npy) instead of the 2048-sent pool")
+    ap.add_argument("--view-w", type=int, default=16,
+                    help="sentence budget per training review view (whole "
+                         "reviews accumulated until >= W); 16 = historical")
     ap.add_argument("--epochs", type=int, default=1000)
     ap.add_argument("--ckpt-every", type=int, default=50)
     ap.add_argument("--ckpt-seeds", type=int, default=3)
@@ -175,12 +178,13 @@ def main():
             + ("_nsp" if args.no_sp_view else "")
             + (f"_ld{args.doc_lead}" if args.doc_lead else "")
             + ("_wllm" if args.wiki_src == "llm" else "")
+            + (f"_w{args.view_w}" if args.view_w != 16 else "")
             + ("_fp" if args.full_pool else ""))
     dev = torch.device("cuda")
     C, OUT = Path(args.data_dir), Path(args.out_dir)
     OUT.mkdir(parents=True, exist_ok=True)
-    print(f"[{name}] tower={tower_kind} ft={FT} IW={IW} anchor_cap={args.anchor_cap}",
-          flush=True)
+    print(f"[{name}] tower={tower_kind} ft={FT} IW={IW} anchor_cap={args.anchor_cap}"
+          f" view_w={args.view_w}", flush=True)
 
     # ---------------- corpus: ALL of it onto the GPU ----------------
     G = np.load(C / "games.npz", allow_pickle=True)
@@ -935,11 +939,11 @@ def main():
     if not DONE_FLAG.exists():
         t0 = time.time()
         if tower_kind.startswith("byol"):
-            train_byol(seed=0)
+            train_byol(seed=0, W=args.view_w)
         elif tower_kind in VIC_W:
-            train_vicreg(seed=0)
+            train_vicreg(seed=0, W=args.view_w)
         else:
-            train_v4doc(seed=0)
+            train_v4doc(seed=0, W=args.view_w)
         print(f"tower {name} train phase done in {time.time()-t0:.0f}s", flush=True)
         traj_p = OUT / f"zs_traj_{name}.json"
         zs_traj = json.loads(traj_p.read_text()) if traj_p.exists() else {}
