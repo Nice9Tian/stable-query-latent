@@ -52,10 +52,14 @@ ARMS = {
     "wcle_vic2_cetf": ("vic2", "ce"),              # C-dose ablation (C 20 -> 15)
     "wcle_byol2_bytf": ("byol2", "by"),            # BYOL + BN: BatchNorm1d in
     # projector head and a 3-layer BN predictor (implicit-contrast channel)
+    "wcle_cegate2c_icetf": ("cegate2c", "ice"),    # champion recipe with
+    # TRAIN-TIME centering: outputs get mu-EMA subtracted BEFORE the L2
+    # normalize, so CE/I never spend capacity on a common direction
 }
+CENTER_ARMS = {"cegate2c"}
 _IW = {"ice": 1.0, "i2ce": 2.0, "cegate1": 1.0, "cegate2": 2.0, "cegate3": 3.0,
        "cegate4": 4.0, "cegate1w": 1.0, "cegate2w": 2.0, "igate1": 1.0,
-       "igate1w": 1.0, "rgate2": 2.0, "nodoc": 2.0}
+       "igate1w": 1.0, "rgate2": 2.0, "nodoc": 2.0, "cegate2c": 2.0}
 SPLIT_SEED = 20260711
 DM, HEADS, NV = 128, 4, 4
 ARC_S_T, ARC_M_T = 50.0, 0.2       # tower ArcFace
@@ -96,7 +100,7 @@ def parse_args():
 
 
 class SetPoolN(nn.Module):
-    def __init__(s, N, bn=False):
+    def __init__(s, N, bn=False, center=False):
         super().__init__()
         s.q0 = nn.Parameter(torch.randn(1, N, DM) * 0.02)
         s.attn = nn.MultiheadAttention(DM, HEADS, kdim=1024, vdim=1024,
@@ -106,11 +110,23 @@ class SetPoolN(nn.Module):
         s.head = (nn.Sequential(nn.Linear(DM, 256), nn.BatchNorm1d(256),
                                 nn.GELU(), nn.Linear(256, DM)) if bn else
                   nn.Sequential(nn.Linear(DM, 256), nn.GELU(), nn.Linear(256, DM)))
+        # center=True (cegate2c arm): running-mean centering BEFORE the L2
+        # normalize (mu is a buffer: EMA'd on train forwards, frozen at eval,
+        # archived in every checkpoint).
+        s.center = center
+        if center:
+            s.register_buffer("mu", torch.zeros(DM))
 
     def forward(s, S, m=None):
         a, _ = s.attn(s.q0.expand(S.shape[0], -1, -1), S.float(), S.float(),
                       key_padding_mask=m, need_weights=False)
-        return F.normalize(s.head(a.mean(1)), dim=-1)
+        h = s.head(a.mean(1))
+        if s.center:
+            if s.training:
+                with torch.no_grad():
+                    s.mu.mul_(0.99).add_(h.detach().float().mean(0), alpha=0.01)
+            h = h - s.mu.to(h.dtype)
+        return F.normalize(h, dim=-1)
 
 
 def rown(x, eps=1e-6):
@@ -137,6 +153,7 @@ def main():
     HIW = _IW.get(tower_kind, 1.0)
     CE_GATED = tower_kind.startswith("cegate") or tower_kind == "rgate2"
     I_GATED = tower_kind.startswith("igate")
+    CENTERED = tower_kind in CENTER_ARMS
     name = (f"w9_{args.arm}"
             + (f"_g{args.anchor_cap}" if args.anchor_cap != 512 else "")
             + ("_nsp" if args.no_sp_view else "")
@@ -458,7 +475,7 @@ def main():
     def train_v4doc(seed=0, W=16, bs=192, per_epoch=3072):
         torch.manual_seed(seed)
         rng = np.random.default_rng(seed)
-        model = SetPoolN(4).to(dev)
+        model = SetPoolN(4, center=CENTERED).to(dev)
         opt = torch.optim.AdamW(model.parameters(), lr=5e-4, weight_decay=1e-4)
         amp = amp_cls()
         ckpts = {}
@@ -916,7 +933,7 @@ def main():
                 continue                                # projection-level resume
             st = torch.load(ck, map_location="cpu")
             sd = st["model"] if "model" in st else st     # byol ckpts are nested
-            m2 = SetPoolN(4, bn=tower_kind == "byol2").to(dev)
+            m2 = SetPoolN(4, bn=tower_kind == "byol2", center=CENTERED).to(dev)
             m2.load_state_dict({k: v.to(dev) for k, v in sd.items()})
             m2.eval()
             zk = zs_metrics(m2)
