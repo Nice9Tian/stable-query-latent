@@ -49,6 +49,7 @@ ARMS = {
     "wcle_nodoc_i2ce_icetf": ("nodoc", "ice"),     # zero doc views, CE all + I x2
     "wcle_vic_cetf": ("vic", "ce"),                # VICReg tower: negative-free
     # like BYOL, but V/C terms supply the anti-collapse force BYOL lacks
+    "wcle_vic2_cetf": ("vic2", "ce"),              # C-dose ablation (C 20 -> 15)
 }
 _IW = {"ice": 1.0, "i2ce": 2.0, "cegate1": 1.0, "cegate2": 2.0, "cegate3": 3.0,
        "cegate4": 4.0, "cegate1w": 1.0, "cegate2w": 2.0, "igate1": 1.0,
@@ -56,10 +57,11 @@ _IW = {"ice": 1.0, "i2ce": 2.0, "cegate1": 1.0, "cegate2": 2.0, "cegate3": 3.0,
 SPLIT_SEED = 20260711
 DM, HEADS, NV = 128, 4, 4
 ARC_S_T, ARC_M_T = 50.0, 0.2       # tower ArcFace
-# VICReg tower weights. The paper's 25/25/1 assumes unnormalized high-dim
-# features; on unit-norm 128-d game centroids the budget shifts away from
-# invariance toward spread/decorrelation (user-set).
-VIC_I, VIC_V, VIC_C = 10.0, 20.0, 20.0
+# VICReg tower weights (I, V, C) per arm. The paper's 25/25/1 assumes
+# unnormalized high-dim features; on unit-norm 128-d game centroids the budget
+# shifts away from invariance toward spread/decorrelation (user-set).
+# vic2 backs C off to 15 in case C=20 over-decorrelates.
+VIC_W = {"vic": (10.0, 20.0, 20.0), "vic2": (10.0, 20.0, 15.0)}
 K1, K2, S_A, S_B = 1.0, 1.0, 10.0, 1.0   # vsel piecewise score
 
 
@@ -619,6 +621,7 @@ def main():
         # variance/covariance terms provide the explicit anti-collapse force
         # BYOL lacks. Invariance is MSE between unit-norm centroids; V/C act
         # on expander(centroid) where std>=1 is actually reachable.
+        vic_i, vic_v, vic_c = VIC_W[tower_kind]
         torch.manual_seed(seed)
         rng = np.random.default_rng(seed)
         model = SetPoolN(4).to(dev)
@@ -649,8 +652,8 @@ def main():
                     Zs.append(assemble_doc_view(model, gids, W, rng, bs))
                     loss = sum(vicreg_centroid_loss(
                         Zs[i].float(), Zs[j].float(), expander,
-                        invariance_weight=VIC_I, variance_weight=VIC_V,
-                        covariance_weight=VIC_C)["loss"]
+                        invariance_weight=vic_i, variance_weight=vic_v,
+                        covariance_weight=vic_c)["loss"]
                         for i, j in pairs) / len(pairs)
                 opt.zero_grad()
                 amp.scale(loss).backward()
@@ -868,7 +871,7 @@ def main():
         t0 = time.time()
         if tower_kind == "byol":
             train_byol(seed=0)
-        elif tower_kind == "vic":
+        elif tower_kind in VIC_W:
             train_vicreg(seed=0)
         else:
             train_v4doc(seed=0)
