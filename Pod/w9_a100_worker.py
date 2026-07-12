@@ -47,6 +47,8 @@ ARMS = {
     "wcle_igate1w_icetf": ("igate1w", "ice"),
     "wcle_rgate2_icetf": ("rgate2", "ice"),        # CE on RANDOM coverage-matched set
     "wcle_nodoc_i2ce_icetf": ("nodoc", "ice"),     # zero doc views, CE all + I x2
+    "wcle_vic_cetf": ("vic", "ce"),                # VICReg tower: negative-free
+    # like BYOL, but V/C terms supply the anti-collapse force BYOL lacks
 }
 _IW = {"ice": 1.0, "i2ce": 2.0, "cegate1": 1.0, "cegate2": 2.0, "cegate3": 3.0,
        "cegate4": 4.0, "cegate1w": 1.0, "cegate2w": 2.0, "igate1": 1.0,
@@ -54,6 +56,10 @@ _IW = {"ice": 1.0, "i2ce": 2.0, "cegate1": 1.0, "cegate2": 2.0, "cegate3": 3.0,
 SPLIT_SEED = 20260711
 DM, HEADS, NV = 128, 4, 4
 ARC_S_T, ARC_M_T = 50.0, 0.2       # tower ArcFace
+# VICReg tower weights. The paper's 25/25/1 assumes unnormalized high-dim
+# features; on unit-norm 128-d game centroids the budget shifts away from
+# invariance toward spread/decorrelation (user-set).
+VIC_I, VIC_V, VIC_C = 10.0, 20.0, 20.0
 K1, K2, S_A, S_B = 1.0, 1.0, 10.0, 1.0   # vsel piecewise score
 
 
@@ -116,6 +122,7 @@ def main():
     sys.path.insert(0, args.repo)
     from VICReg_review.text_variant_eval import (train_anchor_ridge,
                                                  make_or_load_split, micro_prf)
+    from VICReg_review.model import GameCentroidExpander, vicreg_centroid_loss
 
     tower_kind, FT = ARMS[args.arm]
     IW = _IW.get(tower_kind, 0.0)
@@ -607,6 +614,70 @@ def main():
         model.eval()
         return model
 
+    def train_vicreg(seed=0, W=16, bs=192, per_epoch=3072):
+        # Negative-free like BYOL (same 4 views, no gallery CE), but VICReg's
+        # variance/covariance terms provide the explicit anti-collapse force
+        # BYOL lacks. Invariance is MSE between unit-norm centroids; V/C act
+        # on expander(centroid) where std>=1 is actually reachable.
+        torch.manual_seed(seed)
+        rng = np.random.default_rng(seed)
+        model = SetPoolN(4).to(dev)
+        expander = GameCentroidExpander(input_dim=DM).to(dev)
+        opt = torch.optim.AdamW(list(model.parameters()) + list(expander.parameters()),
+                                lr=5e-4, weight_decay=1e-4)
+        amp = amp_cls()
+        RES = OUT / f"resume_{name}.pt"
+        start_ep = 0
+        if RES.exists():
+            st = torch.load(RES, map_location="cpu")
+            model.load_state_dict({k: v.to(dev) for k, v in st["model"].items()})
+            expander.load_state_dict({k: v.to(dev) for k, v in st["expander"].items()})
+            opt.load_state_dict(st["opt"])
+            amp.load_state_dict(st["amp"])
+            torch.set_rng_state(st["cpu_rng"])
+            torch.cuda.set_rng_state(st["cuda_rng"])
+            rng.bit_generator.state = st["np_rng"]
+            start_ep = int(st["ep"])
+            print(f"RESUME from ep{start_ep}", flush=True)
+        t0 = time.time()
+        for ep in range(start_ep, args.epochs):
+            model.train(); expander.train()
+            for _ in range(per_epoch // bs):
+                gids = rng.choice(train_pool_games, bs, replace=False)
+                with torch.amp.autocast("cuda"):
+                    Zs = [model(*sample_views(gids, W, rng)) for _ in range(NV - 1)]
+                    Zs.append(assemble_doc_view(model, gids, W, rng, bs))
+                    loss = sum(vicreg_centroid_loss(
+                        Zs[i].float(), Zs[j].float(), expander,
+                        invariance_weight=VIC_I, variance_weight=VIC_V,
+                        covariance_weight=VIC_C)["loss"]
+                        for i, j in pairs) / len(pairs)
+                opt.zero_grad()
+                amp.scale(loss).backward()
+                amp.unscale_(opt)
+                torch.nn.utils.clip_grad_norm_(
+                    list(model.parameters()) + list(expander.parameters()), 5.0)
+                amp.step(opt)
+                amp.update()
+            if (ep + 1) % args.ckpt_every == 0:
+                sd = {k: v.detach().cpu().clone() for k, v in model.state_dict().items()}
+                xd = {k: v.detach().cpu().clone() for k, v in expander.state_dict().items()}
+                # archive the expander per checkpoint (same decree as BYOL aux)
+                torch.save(dict(model=sd, expander=xd),
+                           OUT / f"ckpt_{name}_ep{ep+1}.pt")
+                bundle = dict(model=sd, expander=xd,
+                              opt=opt.state_dict(), amp=amp.state_dict(),
+                              cpu_rng=torch.get_rng_state(),
+                              cuda_rng=torch.cuda.get_rng_state(),
+                              np_rng=rng.bit_generator.state, ep=ep + 1)
+                tmp = RES.with_suffix(".tmp")
+                torch.save(bundle, tmp)
+                tmp.replace(RES)
+            if ep % 100 == 99:
+                print(f"  [vic ep{ep+1}] {time.time()-t0:.0f}s", flush=True)
+        model.eval()
+        return model
+
     # ---------------- eval machinery ----------------
     VORDER = ["neutral", "noname", "positive", "negative"]
 
@@ -797,6 +868,8 @@ def main():
         t0 = time.time()
         if tower_kind == "byol":
             train_byol(seed=0)
+        elif tower_kind == "vic":
+            train_vicreg(seed=0)
         else:
             train_v4doc(seed=0)
         print(f"tower {name} train phase done in {time.time()-t0:.0f}s", flush=True)
