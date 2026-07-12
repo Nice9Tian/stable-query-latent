@@ -64,7 +64,9 @@ ARMS = {
     # All three terms on the expander OUTPUT pair (paper wiring) -- kills the
     # vic/vic2 loophole where centroid collapse zeroed the invariance MSE
     # while the expander's input LayerNorm faked V/C from noise.
-    "wcle_epd_v25i25c1_cetf": ("epd_v25i25c1", "ce"),
+    "wcle_epd_v25i25c1_cetf": ("epd_v25i25c1", "ce"),   # paper (image) weights
+    "wcle_epd_v20i10c20_cetf": ("epd_v20i10c20", "ce"),  # OUR allocation
+    "wcle_epd_v20i10c15_cetf": ("epd_v20i10c15", "ce"),  # OUR allocation, C backoff
 }
 CENTER_ARMS = {"cegate2c", "i2ccec"}
 _CW = {"i2cce": 1.0, "i2ccec": 1.0}    # covariance weight (user-set I=2 C=1)
