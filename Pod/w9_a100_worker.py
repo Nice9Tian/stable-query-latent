@@ -143,7 +143,8 @@ def main():
 
     RIDp = np.load(C / "wscan_pool_rev_rid.npy")
     plen = np.load(C / "wscan_pool_rev_len.npy")
-    need_pool = (not args.full_pool) or args.anchor_cap != 512
+    need_pool = ((not args.full_pool)
+                 or (args.anchor_cap != 512 and args.anchor_cap <= int(plen.max())))
     POOL = (torch.tensor(np.load(C / "wscan_pool_rev.npy"), device=dev)
             if need_pool else None)                                      # fp16
     if args.full_pool:
@@ -247,7 +248,13 @@ def main():
         gal_doc = torch.tensor(GALd["gal_doc_len"]).to(dev)
     else:
         GCAP = args.anchor_cap
-        print(f"building {GCAP}-sentence anchors on GPU ...", flush=True)
+        full_src = GCAP > int(plen.max())     # the 2048 pool cannot fill past itself
+        if full_src:
+            assert args.full_pool, (
+                f"anchor_cap {GCAP} exceeds the {int(plen.max())}-sentence pool; "
+                "run with --full-pool so anchors can come from the full corpus")
+        print(f"building {GCAP}-sentence anchors on GPU "
+              f"(source: {'FULL corpus' if full_src else '2048 pool'}) ...", flush=True)
         SGal = torch.zeros(NG, GCAP, 1024, dtype=torch.float16, device=dev)
         gal_len = torch.zeros(NG, dtype=torch.long, device=dev)
         gal_doc = torch.zeros(NG, dtype=torch.long, device=dev)
@@ -259,14 +266,35 @@ def main():
                 SGal[g, :dl] = SS[sp_row[g], :dl]
                 row = dl
                 gal_doc[g] = dl
-            r_lens = np.bincount(RIDp[g, :plen[g]])
-            r_starts = np.zeros(len(r_lens), np.int64)
-            r_starts[1:] = np.cumsum(r_lens)[:-1]
-            for j in rngA.permutation(len(r_lens)):
-                L = int(r_lens[j])
-                if row + L <= GCAP:
-                    SGal[g, row:row + L] = POOL[g, r_starts[j]:r_starts[j] + L]
-                    row += L
+            if full_src:
+                fi = f_e2i[names[g]]
+                r0, r1 = int(f_gro[fi]), int(f_gro[fi + 1])
+                r_starts = f_ro[r0:r1].astype(np.int64)      # ABSOLUTE sent idx
+                r_lens = (f_ro[r0 + 1:r1 + 1] - f_ro[r0:r1]).astype(np.int64)
+                segs = []
+                for j in rngA.permutation(len(r_lens)):
+                    L = int(r_lens[j])
+                    if row + L <= GCAP:
+                        segs.append((int(r_starts[j]), L))
+                        row += L
+                if segs:
+                    flat = np.concatenate([np.arange(s, s + L) for s, L in segs])
+                    order = np.argsort(flat, kind="stable")  # sorted mmap reads
+                    vec = np.empty((len(flat), 1024), np.float32)
+                    vec[order] = FULLV[flat[order]].astype(np.float32)
+                    vec = (vec - vec.mean(-1, keepdims=True)) / \
+                        (vec.std(-1, keepdims=True) + 1e-6)  # rown (pool is pre-rown)
+                    SGal[g, row - len(flat):row] = \
+                        torch.from_numpy(vec.astype(np.float16)).to(dev)
+            else:
+                r_lens = np.bincount(RIDp[g, :plen[g]])
+                r_starts = np.zeros(len(r_lens), np.int64)
+                r_starts[1:] = np.cumsum(r_lens)[:-1]
+                for j in rngA.permutation(len(r_lens)):
+                    L = int(r_lens[j])
+                    if row + L <= GCAP:
+                        SGal[g, row:row + L] = POOL[g, r_starts[j]:r_starts[j] + L]
+                        row += L
             gal_len[g] = row
         print(f"anchors: used med {int(gal_len.float().median())}", flush=True)
     mGal = torch.arange(SGal.shape[1], device=dev)[None, :] >= gal_len[:, None]
