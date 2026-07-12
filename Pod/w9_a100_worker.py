@@ -50,6 +50,8 @@ ARMS = {
     "wcle_vic_cetf": ("vic", "ce"),                # VICReg tower: negative-free
     # like BYOL, but V/C terms supply the anti-collapse force BYOL lacks
     "wcle_vic2_cetf": ("vic2", "ce"),              # C-dose ablation (C 20 -> 15)
+    "wcle_byol2_bytf": ("byol2", "by"),            # BYOL + BN: BatchNorm1d in
+    # projector head and a 3-layer BN predictor (implicit-contrast channel)
 }
 _IW = {"ice": 1.0, "i2ce": 2.0, "cegate1": 1.0, "cegate2": 2.0, "cegate3": 3.0,
        "cegate4": 4.0, "cegate1w": 1.0, "cegate2w": 2.0, "igate1": 1.0,
@@ -94,12 +96,16 @@ def parse_args():
 
 
 class SetPoolN(nn.Module):
-    def __init__(s, N):
+    def __init__(s, N, bn=False):
         super().__init__()
         s.q0 = nn.Parameter(torch.randn(1, N, DM) * 0.02)
         s.attn = nn.MultiheadAttention(DM, HEADS, kdim=1024, vdim=1024,
                                        batch_first=True)
-        s.head = nn.Sequential(nn.Linear(DM, 256), nn.GELU(), nn.Linear(256, DM))
+        # bn=True (byol2 arm): BatchNorm1d in the projector head -- BN's
+        # cross-sample statistics are BYOL's implicit anti-collapse channel.
+        s.head = (nn.Sequential(nn.Linear(DM, 256), nn.BatchNorm1d(256),
+                                nn.GELU(), nn.Linear(256, DM)) if bn else
+                  nn.Sequential(nn.Linear(DM, 256), nn.GELU(), nn.Linear(256, DM)))
 
     def forward(s, S, m=None):
         a, _ = s.attn(s.q0.expand(S.shape[0], -1, -1), S.float(), S.float(),
@@ -525,11 +531,31 @@ def main():
         import copy
         torch.manual_seed(seed)
         rng = np.random.default_rng(seed)
-        model = SetPoolN(4).to(dev)
-        pred = nn.Sequential(nn.Linear(DM, 256), nn.GELU(), nn.Linear(256, DM)).to(dev)
+        bn = tower_kind == "byol2"
+        model = SetPoolN(4, bn=bn).to(dev)
+        # byol2: 3-layer BN predictor (BYOL-paper shape scaled to DM=128) --
+        # more capacity to break online/target symmetry, BN to push the batch
+        # apart. Plain byol keeps the original 2-layer GELU predictor.
+        pred = (nn.Sequential(nn.Linear(DM, 512), nn.BatchNorm1d(512), nn.GELU(),
+                              nn.Linear(512, 512), nn.BatchNorm1d(512), nn.GELU(),
+                              nn.Linear(512, DM)) if bn else
+                nn.Sequential(nn.Linear(DM, 256), nn.GELU(),
+                              nn.Linear(256, DM))).to(dev)
         target = copy.deepcopy(model).to(dev)
         for p in target.parameters():
             p.requires_grad_(False)
+
+        def _safe(net, S, m):
+            # BN in train mode crashes on 1-row sub-batches (doc-view tiers
+            # can select a single game); fall back to running stats for those.
+            if bn and S.shape[0] == 1:
+                was = net.training
+                net.eval()
+                out = net(S, m)
+                if was:
+                    net.train()
+                return out
+            return net(S, m)
         opt = torch.optim.AdamW(list(model.parameters()) + list(pred.parameters()),
                                 lr=5e-4, weight_decay=1e-4)
         amp = amp_cls()
@@ -559,7 +585,8 @@ def main():
                     Zo = [model(S, m) for S, m in views]
                     with torch.no_grad():
                         Zt = [target(S, m) for S, m in views]
-                    Zo.append(assemble_doc_view(model, gids, W, rng, bs))
+                    Zo.append(assemble_doc_view(
+                        lambda S, m: _safe(model, S, m), gids, W, rng, bs))
                     with torch.no_grad():
                         Zlast_t = torch.empty(bs, DM, device=dev, dtype=torch.float16)
                         assigned = np.zeros(bs, bool)
@@ -569,12 +596,12 @@ def main():
                             if msk.any():
                                 rows = [g2x[g] for g in gids[msk]]
                                 Zlast_t[torch.tensor(msk).to(dev)] = \
-                                    target(Sx[rows], mx[rows]).half()
+                                    _safe(target, Sx[rows], mx[rows]).half()
                                 assigned |= msk
                         rest = ~assigned
                         if rest.any():
                             Zlast_t[torch.tensor(rest).to(dev)] = \
-                                target(*sample_views(gids[rest], W, rng)).half()
+                                _safe(target, *sample_views(gids[rest], W, rng)).half()
                         Zt.append(Zlast_t)
                     loss, npairs = 0.0, 0
                     for i in range(NV):
@@ -594,6 +621,8 @@ def main():
                 with torch.no_grad():
                     for pt, po in zip(target.parameters(), model.parameters()):
                         pt.data.mul_(0.996).add_(po.data, alpha=0.004)
+                    for bt, bo in zip(target.buffers(), model.buffers()):
+                        bt.data.copy_(bo.data)     # BN running stats: copy, not EMA
             if (ep + 1) % args.ckpt_every == 0:
                 sd = {k: v.detach().cpu().clone() for k, v in model.state_dict().items()}
                 pd = {k: v.detach().cpu().clone() for k, v in pred.state_dict().items()}
@@ -869,7 +898,7 @@ def main():
     DONE_FLAG = OUT / f"tower_{name}_ep{args.epochs}.npz"
     if not DONE_FLAG.exists():
         t0 = time.time()
-        if tower_kind == "byol":
+        if tower_kind.startswith("byol"):
             train_byol(seed=0)
         elif tower_kind in VIC_W:
             train_vicreg(seed=0)
@@ -887,7 +916,7 @@ def main():
                 continue                                # projection-level resume
             st = torch.load(ck, map_location="cpu")
             sd = st["model"] if "model" in st else st     # byol ckpts are nested
-            m2 = SetPoolN(4).to(dev)
+            m2 = SetPoolN(4, bn=tower_kind == "byol2").to(dev)
             m2.load_state_dict({k: v.to(dev) for k, v in sd.items()})
             m2.eval()
             zk = zs_metrics(m2)
@@ -900,7 +929,7 @@ def main():
         (OUT / f"resume_{name}.pt").unlink(missing_ok=True)
 
     # ---------------- heads: per-checkpoint 3 seeds -> vsel pick -> topup ----
-    if tower_kind == "byol":
+    if tower_kind.startswith("byol"):
         HEAD_CFGS = [("", "by", "by", 0.0), ("_ce", "ce", "ce", 0.0),
                      ("_cetf", "ce", "ce", 0.1)]
     elif FT == "ice":
