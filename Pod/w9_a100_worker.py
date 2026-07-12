@@ -144,7 +144,8 @@ def main():
     RIDp = np.load(C / "wscan_pool_rev_rid.npy")
     plen = np.load(C / "wscan_pool_rev_len.npy")
     need_pool = ((not args.full_pool)
-                 or (args.anchor_cap != 512 and args.anchor_cap <= int(plen.max())))
+                 or (args.anchor_cap != 512 and args.anchor_cap <= int(plen.max())
+                     and not (C / f"wscan_gal_rev_g{args.anchor_cap}.npz").exists()))
     POOL = (torch.tensor(np.load(C / "wscan_pool_rev.npy"), device=dev)
             if need_pool else None)                                      # fp16
     if args.full_pool:
@@ -246,6 +247,14 @@ def main():
         SGal = torch.tensor(GALd["gal"]).to(dev)
         gal_len = torch.tensor(GALd["gal_len"]).to(dev)
         gal_doc = torch.tensor(GALd["gal_doc_len"]).to(dev)
+    elif (C / f"wscan_gal_rev_g{args.anchor_cap}.npz").exists():
+        # prebuilt pack (built locally from embedding_h5, uploaded to the volume)
+        GALd = np.load(C / f"wscan_gal_rev_g{args.anchor_cap}.npz")
+        SGal = torch.tensor(GALd["gal"]).to(dev)
+        gal_len = torch.tensor(np.asarray(GALd["gal_len"], np.int64)).to(dev)
+        gal_doc = torch.tensor(np.asarray(GALd["gal_doc_len"], np.int64)).to(dev)
+        print(f"anchors: prebuilt g{args.anchor_cap} pack, "
+              f"used med {int(gal_len.float().median())}", flush=True)
     else:
         GCAP = args.anchor_cap
         full_src = GCAP > int(plen.max())     # the 2048 pool cannot fill past itself
