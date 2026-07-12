@@ -21,6 +21,7 @@ Output: <out-dir>/<files mirroring the local naming>.
 import argparse
 import json
 import math
+import re
 import time
 from itertools import combinations
 from pathlib import Path
@@ -59,6 +60,11 @@ ARMS = {
     # (VICReg-style off-diag covariance penalty ON the 128-d outputs --
     # decorrelated dims = feature-richness constraint, no expander needed)
     "wcle_i2ccec_icetf": ("i2ccec", "ice"),        # I2CCE + train-time centering
+    # epd_v{V}i{I}c{C}: CANONICAL VICReg (weights parsed from the codename).
+    # All three terms on the expander OUTPUT pair (paper wiring) -- kills the
+    # vic/vic2 loophole where centroid collapse zeroed the invariance MSE
+    # while the expander's input LayerNorm faked V/C from noise.
+    "wcle_epd_v25i25c1_cetf": ("epd_v25i25c1", "ce"),
 }
 CENTER_ARMS = {"cegate2c", "i2ccec"}
 _CW = {"i2cce": 1.0, "i2ccec": 1.0}    # covariance weight (user-set I=2 C=1)
@@ -164,7 +170,8 @@ def main():
     sys.path.insert(0, args.repo)
     from VICReg_review.text_variant_eval import (train_anchor_ridge,
                                                  make_or_load_split, micro_prf)
-    from VICReg_review.model import GameCentroidExpander, vicreg_centroid_loss
+    from VICReg_review.model import (GameCentroidExpander, vicreg_loss,
+                                     vicreg_centroid_loss)
 
     tower_kind, FT = ARMS[args.arm]
     IW = _IW.get(tower_kind, 0.0)
@@ -690,7 +697,14 @@ def main():
         # variance/covariance terms provide the explicit anti-collapse force
         # BYOL lacks. Invariance is MSE between unit-norm centroids; V/C act
         # on expander(centroid) where std>=1 is actually reachable.
-        vic_i, vic_v, vic_c = VIC_W[tower_kind]
+        # epd_* arms use the CANONICAL wiring instead: all three terms on the
+        # expander OUTPUT pair -- centroid collapse then violates V (constant
+        # expander output), so the vic/vic2 degenerate solution is closed.
+        epd = re.match(r"epd_v(\d+)i(\d+)c(\d+)$", tower_kind)
+        if epd:
+            vic_v, vic_i, vic_c = (float(g) for g in epd.groups())
+        else:
+            vic_i, vic_v, vic_c = VIC_W[tower_kind]
         torch.manual_seed(seed)
         rng = np.random.default_rng(seed)
         model = SetPoolN(4).to(dev)
@@ -719,11 +733,18 @@ def main():
                 with torch.amp.autocast("cuda"):
                     Zs = [model(*sample_views(gids, W, rng)) for _ in range(NV - 1)]
                     Zs.append(assemble_doc_view(model, gids, W, rng, bs))
-                    loss = sum(vicreg_centroid_loss(
-                        Zs[i].float(), Zs[j].float(), expander,
-                        invariance_weight=vic_i, variance_weight=vic_v,
-                        covariance_weight=vic_c)["loss"]
-                        for i, j in pairs) / len(pairs)
+                    if epd:
+                        Es = [expander(Z.float()) for Z in Zs]
+                        loss = sum(vicreg_loss(
+                            Es[i], Es[j], invariance_weight=vic_i,
+                            variance_weight=vic_v, covariance_weight=vic_c)["loss"]
+                            for i, j in pairs) / len(pairs)
+                    else:
+                        loss = sum(vicreg_centroid_loss(
+                            Zs[i].float(), Zs[j].float(), expander,
+                            invariance_weight=vic_i, variance_weight=vic_v,
+                            covariance_weight=vic_c)["loss"]
+                            for i, j in pairs) / len(pairs)
                 opt.zero_grad()
                 amp.scale(loss).backward()
                 amp.unscale_(opt)
@@ -940,7 +961,7 @@ def main():
         t0 = time.time()
         if tower_kind.startswith("byol"):
             train_byol(seed=0, W=args.view_w)
-        elif tower_kind in VIC_W:
+        elif tower_kind in VIC_W or tower_kind.startswith("epd_"):
             train_vicreg(seed=0, W=args.view_w)
         else:
             train_v4doc(seed=0, W=args.view_w)
