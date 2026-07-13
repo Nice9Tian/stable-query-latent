@@ -74,6 +74,14 @@ ARMS = {
     "wcle_epda_v25i25c1_cetf": ("epda_v25i25c1", "ce"),
     "wcle_epda_v20i10c20_cetf": ("epda_v20i10c20", "ce"),
     "wcle_epda_v20i10c15_cetf": ("epda_v20i10c15", "ce"),
+    # epdb_*: TRUE batch=all -- epd wiring untouched (all three terms on the
+    # view embeddings), but every step draws views for the ENTIRE train pool
+    # (~1613 games) instead of 192; steps/epoch unchanged. (epda's mistake
+    # was moving V/C to a different population; epdb keeps them on the
+    # aligned one and only enlarges the moment-estimate sample.)
+    "wcle_epdb_v25i25c1_cetf": ("epdb_v25i25c1", "ce"),
+    "wcle_epdb_v20i10c20_cetf": ("epdb_v20i10c20", "ce"),
+    "wcle_epdb_v20i10c15_cetf": ("epdb_v20i10c15", "ce"),
     "wcle_pi2ccec_icetf": ("pi2ccec", "ice"),      # i2ccec + PROJECTED I/C:
     # per-SOURCE linear heads (rev / wiki / sp; doc-fallback rows gate to the
     # rev head) absorb the invariance tax so the deployed space keeps
@@ -770,8 +778,9 @@ def main():
         # epd_* arms use the CANONICAL wiring instead: all three terms on the
         # expander OUTPUT pair -- centroid collapse then violates V (constant
         # expander output), so the vic/vic2 degenerate solution is closed.
-        epd = re.match(r"(epda?)_v(\d+)i(\d+)c(\d+)$", tower_kind)
+        epd = re.match(r"(epd[ab]?)_v(\d+)i(\d+)c(\d+)$", tower_kind)
         gal_vc = bool(epd) and epd.group(1) == "epda"    # V/C on full gallery
+        all_batch = bool(epd) and epd.group(1) == "epdb"  # views for ALL games
         if epd:
             vic_v, vic_i, vic_c = (float(g) for g in epd.groups()[1:])
         else:
@@ -800,10 +809,13 @@ def main():
         for ep in range(start_ep, args.epochs):
             model.train(); expander.train()
             for _ in range(per_epoch // bs):
-                gids = rng.choice(train_pool_games, bs, replace=False)
+                # epdb: full-population step -- views drawn for EVERY train
+                # game; steps/epoch identical, only the moment sample grows.
+                gids = (train_pool_games if all_batch else
+                        rng.choice(train_pool_games, bs, replace=False))
                 with torch.amp.autocast("cuda"):
                     Zs = [model(*sample_views(gids, W, rng)) for _ in range(NV - 1)]
-                    Zs.append(assemble_doc_view(model, gids, W, rng, bs))
+                    Zs.append(assemble_doc_view(model, gids, W, rng, len(gids)))
                     if gal_vc:
                         Es = [expander(Z.float()) for Z in Zs]
                         inv = sum(F.mse_loss(Es[i], Es[j])
