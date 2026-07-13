@@ -67,18 +67,10 @@ ARMS = {
     "wcle_epd_v25i25c1_cetf": ("epd_v25i25c1", "ce"),   # paper (image) weights
     "wcle_epd_v20i10c20_cetf": ("epd_v20i10c20", "ce"),  # OUR allocation
     "wcle_epd_v20i10c15_cetf": ("epd_v20i10c15", "ce"),  # OUR allocation, C backoff
-    # epda_*: batch=ALL fairness variant -- invariance stays on the view
-    # pairs, but V/C are computed on expander(FULL train gallery) every step
-    # (same per-step gallery forward the CE arms burn; 1613-sample moment
-    # estimates instead of 192).
-    "wcle_epda_v25i25c1_cetf": ("epda_v25i25c1", "ce"),
-    "wcle_epda_v20i10c20_cetf": ("epda_v20i10c20", "ce"),
-    "wcle_epda_v20i10c15_cetf": ("epda_v20i10c15", "ce"),
     # epdb_*: TRUE batch=all -- epd wiring untouched (all three terms on the
     # view embeddings), but every step draws views for the ENTIRE train pool
-    # (~1613 games) instead of 192; steps/epoch unchanged. (epda's mistake
-    # was moving V/C to a different population; epdb keeps them on the
-    # aligned one and only enlarges the moment-estimate sample.)
+    # (~1613 games) instead of 192; steps/epoch unchanged (pure batch-size
+    # effect on the moment estimates).
     "wcle_epdb_v25i25c1_cetf": ("epdb_v25i25c1", "ce"),
     "wcle_epdb_v20i10c20_cetf": ("epdb_v20i10c20", "ce"),
     "wcle_epdb_v20i10c15_cetf": ("epdb_v20i10c15", "ce"),
@@ -778,8 +770,7 @@ def main():
         # epd_* arms use the CANONICAL wiring instead: all three terms on the
         # expander OUTPUT pair -- centroid collapse then violates V (constant
         # expander output), so the vic/vic2 degenerate solution is closed.
-        epd = re.match(r"(epd[ab]?)_v(\d+)i(\d+)c(\d+)$", tower_kind)
-        gal_vc = bool(epd) and epd.group(1) == "epda"    # V/C on full gallery
+        epd = re.match(r"(epdb?)_v(\d+)i(\d+)c(\d+)$", tower_kind)
         all_batch = bool(epd) and epd.group(1) == "epdb"  # views for ALL games
         if epd:
             vic_v, vic_i, vic_c = (float(g) for g in epd.groups()[1:])
@@ -816,18 +807,7 @@ def main():
                 with torch.amp.autocast("cuda"):
                     Zs = [model(*sample_views(gids, W, rng)) for _ in range(NV - 1)]
                     Zs.append(assemble_doc_view(model, gids, W, rng, len(gids)))
-                    if gal_vc:
-                        Es = [expander(Z.float()) for Z in Zs]
-                        inv = sum(F.mse_loss(Es[i], Es[j])
-                                  for i, j in pairs) / len(pairs)
-                        Eg = expander(gallery_train(model).float())
-                        # vicreg_loss(Eg, Eg) with inv weight 0 = V*var + C*cov
-                        # of the FULL train gallery (population statistics)
-                        reg = vicreg_loss(Eg, Eg, invariance_weight=0.0,
-                                          variance_weight=vic_v,
-                                          covariance_weight=vic_c)["loss"]
-                        loss = vic_i * inv + reg
-                    elif epd:
+                    if epd:
                         Es = [expander(Z.float()) for Z in Zs]
                         loss = sum(vicreg_loss(
                             Es[i], Es[j], invariance_weight=vic_i,
