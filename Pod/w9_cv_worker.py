@@ -89,6 +89,10 @@ def parse_args():
     ap.add_argument("--ckpt-every", type=int, default=50)
     ap.add_argument("--ckpt-seeds", type=int, default=2)
     ap.add_argument("--topup-seeds", type=int, default=10)
+    ap.add_argument("--claim-file", default="",
+                    help="claim file on the shared volume; when set, a 30s "
+                         "heartbeat thread keeps it fresh (silent >2 min = "
+                         "host presumed dead, job claimable by other hosts)")
     return ap.parse_args()
 
 
@@ -117,8 +121,42 @@ def S_fn(x, x0):
             else K2 * (x - x0) ** S_B)
 
 
+def start_claim_beat(path):
+    """Heartbeat thread: every BEAT(30)s rewrite the claim file with
+    "<host> <now>". If the claim changes owner (this host was presumed dead
+    after 2 min of silence and another machine took the job over), YIELD by
+    exiting immediately -- two workers on one job would corrupt checkpoints."""
+    import os
+    import socket
+    import threading
+    import time
+    from pathlib import Path
+    host = socket.gethostname() + ":" + os.environ.get("RUNPOD_POD_ID", "?")
+    p = Path(path)
+
+    def _beat():
+        while True:
+            try:
+                parts = p.read_text().split()
+                if parts and parts[0] != host:
+                    print(f"[beat] claim {p.name} now owned by {parts[0]} "
+                          f"-- yielding (this host was presumed dead)",
+                          flush=True)
+                    os._exit(3)
+                tmp = p.with_name(p.name + ".beat_tmp")
+                tmp.write_text(f"{host} {time.time():.0f}")
+                os.replace(tmp, p)                       # atomic on the volume
+            except Exception:
+                pass
+            time.sleep(30)
+
+    threading.Thread(target=_beat, daemon=True).start()
+
+
 def main():
     args = parse_args()
+    if args.claim_file:
+        start_claim_beat(args.claim_file)
     import sys
     sys.path.insert(0, args.repo)
     from VICReg_review.text_variant_eval import (train_anchor_ridge,

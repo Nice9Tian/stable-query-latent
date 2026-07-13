@@ -67,7 +67,9 @@ FS_EPOCHS, CV_EPOCHS = 1000, 600
 FULL_POOL = True    # views drawn from the ENTIRE review corpus (host RAM);
                     # False = the 2048-sentence pool (local-protocol parity)
 CKPT_EVERY, FS_CKPT_SEEDS, CV_CKPT_SEEDS, TOPUP_SEEDS = 50, 3, 2, 10
-CLAIM_STALE_H = 12
+BEAT_SEC = 30            # worker heartbeat period (written into its claim)
+DEAD_SEC = 120           # heartbeat silent for this long => host presumed dead
+TAKEOVER_LOCK_STALE = 600  # a .takeover lock older than this = taker died too
 VORD = ["neutral", "noname", "positive", "negative"]
 
 # ---------------- labels (THE compatibility contract) ----------------
@@ -98,6 +100,11 @@ def summary():
 HOST = socket.gethostname() + ":" + os.environ.get("RUNPOD_POD_ID", "?")
 
 def try_claim(claim_dir, nm):
+    """Claim = "<host> <heartbeat-ts>", beaten every BEAT_SEC by the OWNING
+    worker (--claim-file). A heartbeat silent > DEAD_SEC means the host is
+    presumed dead and the job may be taken over. Takeover is made atomic by
+    an exclusive-create .takeover lock: two hosts racing for the same corpse
+    cannot both succeed (one os.O_EXCL create must fail)."""
     claim_dir.mkdir(parents=True, exist_ok=True)
     cl = claim_dir / f"{nm}.claim"
     try:
@@ -106,17 +113,41 @@ def try_claim(claim_dir, nm):
         os.close(fd)
         return True
     except FileExistsError:
-        try:
-            owner, ts = cl.read_text().split()
-            if owner == HOST:
-                return True                      # our own earlier claim (restart)
-            if time.time() - float(ts) > CLAIM_STALE_H * 3600:
-                cl.write_text(f"{HOST} {time.time():.0f}")   # stale takeover
-                print(f"[claim] took over stale {nm} (was {owner})", flush=True)
-                return True
-        except Exception:
+        pass
+    try:
+        owner, ts = cl.read_text().split()
+    except Exception:
+        return False                    # unreadable mid-rewrite; retry later
+    if owner == HOST:
+        return True                     # our own earlier claim (crash restart)
+    if time.time() - float(ts) <= DEAD_SEC:
+        return False                    # owner's heartbeat is alive
+    # presumed dead -> atomic takeover via temp lock file
+    tk = claim_dir / f"{nm}.claim.takeover"
+    try:
+        fd = os.open(tk, os.O_CREAT | os.O_EXCL | os.O_WRONLY)
+        os.write(fd, f"{HOST} {time.time():.0f}".encode())
+        os.close(fd)
+    except FileExistsError:
+        try:                            # taker itself died mid-takeover?
+            if time.time() - tk.stat().st_mtime > TAKEOVER_LOCK_STALE:
+                tk.unlink()
+        except OSError:
             pass
         return False
+    try:
+        try:
+            owner2, ts2 = cl.read_text().split()
+        except Exception:
+            return False
+        if owner2 != owner or ts2 != ts:
+            return False                # owner beat again (or a 3rd host won)
+        cl.write_text(f"{HOST} {time.time():.0f}")
+        print(f"[claim] took over {nm} (was {owner}, heartbeat silent "
+              f"{time.time() - float(ts):.0f}s)", flush=True)
+        return True
+    finally:
+        tk.unlink(missing_ok=True)
 
 def _monitor(log_dirs, stop_evt, period=180):
     seen = {}
@@ -219,6 +250,8 @@ def run_queue(cls, repo, data_dir, out_fs, out_cv, full_pool_path="",
             tag = f"cv {r}/fold{k}"
         if FULL_POOL:
             cmd += ["--full-pool", "--full-pool-path", full_pool_path]
+        cdir = (Path(out_fs) if it[0] == "fs" else Path(out_cv)) / "claims"
+        cmd += ["--claim-file", str(cdir / f"{it[1]}.claim")]
         print(f"[gpu{gpu}] start {tag}", flush=True)
         t0 = time.time()
         with open(log, "w") as fh:
