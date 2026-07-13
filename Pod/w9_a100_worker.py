@@ -67,6 +67,13 @@ ARMS = {
     "wcle_epd_v25i25c1_cetf": ("epd_v25i25c1", "ce"),   # paper (image) weights
     "wcle_epd_v20i10c20_cetf": ("epd_v20i10c20", "ce"),  # OUR allocation
     "wcle_epd_v20i10c15_cetf": ("epd_v20i10c15", "ce"),  # OUR allocation, C backoff
+    # epda_*: batch=ALL fairness variant -- invariance stays on the view
+    # pairs, but V/C are computed on expander(FULL train gallery) every step
+    # (same per-step gallery forward the CE arms burn; 1613-sample moment
+    # estimates instead of 192).
+    "wcle_epda_v25i25c1_cetf": ("epda_v25i25c1", "ce"),
+    "wcle_epda_v20i10c20_cetf": ("epda_v20i10c20", "ce"),
+    "wcle_epda_v20i10c15_cetf": ("epda_v20i10c15", "ce"),
 }
 CENTER_ARMS = {"cegate2c", "i2ccec"}
 _CW = {"i2cce": 1.0, "i2ccec": 1.0}    # covariance weight (user-set I=2 C=1)
@@ -702,9 +709,10 @@ def main():
         # epd_* arms use the CANONICAL wiring instead: all three terms on the
         # expander OUTPUT pair -- centroid collapse then violates V (constant
         # expander output), so the vic/vic2 degenerate solution is closed.
-        epd = re.match(r"epd_v(\d+)i(\d+)c(\d+)$", tower_kind)
+        epd = re.match(r"(epda?)_v(\d+)i(\d+)c(\d+)$", tower_kind)
+        gal_vc = bool(epd) and epd.group(1) == "epda"    # V/C on full gallery
         if epd:
-            vic_v, vic_i, vic_c = (float(g) for g in epd.groups())
+            vic_v, vic_i, vic_c = (float(g) for g in epd.groups()[1:])
         else:
             vic_i, vic_v, vic_c = VIC_W[tower_kind]
         torch.manual_seed(seed)
@@ -735,7 +743,18 @@ def main():
                 with torch.amp.autocast("cuda"):
                     Zs = [model(*sample_views(gids, W, rng)) for _ in range(NV - 1)]
                     Zs.append(assemble_doc_view(model, gids, W, rng, bs))
-                    if epd:
+                    if gal_vc:
+                        Es = [expander(Z.float()) for Z in Zs]
+                        inv = sum(F.mse_loss(Es[i], Es[j])
+                                  for i, j in pairs) / len(pairs)
+                        Eg = expander(gallery_train(model).float())
+                        # vicreg_loss(Eg, Eg) with inv weight 0 = V*var + C*cov
+                        # of the FULL train gallery (population statistics)
+                        reg = vicreg_loss(Eg, Eg, invariance_weight=0.0,
+                                          variance_weight=vic_v,
+                                          covariance_weight=vic_c)["loss"]
+                        loss = vic_i * inv + reg
+                    elif epd:
                         Es = [expander(Z.float()) for Z in Zs]
                         loss = sum(vicreg_loss(
                             Es[i], Es[j], invariance_weight=vic_i,
@@ -963,7 +982,7 @@ def main():
         t0 = time.time()
         if tower_kind.startswith("byol"):
             train_byol(seed=0, W=args.view_w)
-        elif tower_kind in VIC_W or tower_kind.startswith("epd_"):
+        elif tower_kind in VIC_W or tower_kind.startswith("epd"):
             train_vicreg(seed=0, W=args.view_w)
         else:
             train_v4doc(seed=0, W=args.view_w)
