@@ -74,13 +74,31 @@ ARMS = {
     "wcle_epdb_v25i25c1_cetf": ("epdb_v25i25c1", "ce"),
     "wcle_epdb_v20i10c20_cetf": ("epdb_v20i10c20", "ce"),
     "wcle_epdb_v20i10c15_cetf": ("epdb_v20i10c15", "ce"),
+    # ---- anchor MEMORY-BANK family (InstDisc/XBM-style; NOT MoCo -- online
+    # encoder snapshots, no momentum encoder). Bank = one 128-d row per train
+    # entity; each step only a small set of rows is re-encoded, the rest keep
+    # their last snapshot. Per-step anchor cost = k*cap, DECOUPLED from N.
+    #   bkq{k}i2cce: QUEUE rotation -- refresh the next k rows in cyclic
+    #                order; every anchor (positives included) is at most
+    #                ceil(N/k) steps stale; NO gradient through any anchor.
+    #   bkbi2cce:    refresh = the CURRENT BATCH's 192 entities -- positive
+    #                columns are always fresh AND carry gradient (as in the
+    #                full recipe); only the cold columns are stale snapshots.
+    "wcle_bkq192i2cce_icetf": ("bkq192i2cce", "ice"),
+    "wcle_bkq48i2cce_icetf": ("bkq48i2cce", "ice"),
+    "wcle_bkq12i2cce_icetf": ("bkq12i2cce", "ice"),
+    "wcle_bkbi2cce_icetf": ("bkbi2cce", "ice"),
 }
 CENTER_ARMS = {"cegate2c", "i2ccec"}
-_CW = {"i2cce": 1.0, "i2ccec": 1.0}                   # covariance weight
+_CW = {"i2cce": 1.0, "i2ccec": 1.0,
+       "bkq192i2cce": 1.0, "bkq48i2cce": 1.0, "bkq12i2cce": 1.0,
+       "bkbi2cce": 1.0}                               # covariance weight
 _IW = {"ice": 1.0, "i2ce": 2.0, "cegate1": 1.0, "cegate2": 2.0, "cegate3": 3.0,
        "cegate4": 4.0, "cegate1w": 1.0, "cegate2w": 2.0, "igate1": 1.0,
        "igate1w": 1.0, "rgate2": 2.0, "nodoc": 2.0, "cegate2c": 2.0,
-       "i2cce": 2.0, "i2ccec": 2.0}
+       "i2cce": 2.0, "i2ccec": 2.0,
+       "bkq192i2cce": 2.0, "bkq48i2cce": 2.0, "bkq12i2cce": 2.0,
+       "bkbi2cce": 2.0}
 SPLIT_SEED = 20260711
 DM, HEADS, NV = 128, 4, 4
 ARC_S_T, ARC_M_T = 50.0, 0.2       # tower ArcFace
@@ -227,6 +245,9 @@ def main():
     I_GATED = tower_kind.startswith("igate")
     CENTERED = tower_kind in CENTER_ARMS
     CW = _CW.get(tower_kind, 0.0)
+    bank_m = re.match(r"bk(?:q(\d+)|b)i2cce$", tower_kind)
+    BANK_POLICY = (("q" if bank_m.group(1) else "b") if bank_m else None)
+    BANK_K = int(bank_m.group(1)) if bank_m and bank_m.group(1) else 0
     name = (f"w9_{args.arm}"
             + (f"_g{args.anchor_cap}" if args.anchor_cap != 512 else "")
             + ("_nsp" if args.no_sp_view else "")
@@ -515,6 +536,14 @@ def main():
             outs.append(model(SGal[r], mGal[r]))
         return torch.cat(outs)
 
+    def gallery_rows(model, pos_rows, chunk=128):
+        """Encode the anchors of train-pool POSITIONS pos_rows (bank refresh)."""
+        outs = []
+        for i in range(0, len(pos_rows), chunk):
+            r = torch.as_tensor(train_pool_games[pos_rows[i:i + chunk]], device=dev)
+            outs.append(model(SGal[r], mGal[r]))
+        return torch.cat(outs)
+
     try:
         amp_cls = lambda: torch.amp.GradScaler("cuda")
         amp_cls()
@@ -553,6 +582,8 @@ def main():
         opt = torch.optim.AdamW(model.parameters(), lr=5e-4, weight_decay=1e-4)
         amp = amp_cls()
         ckpts = {}
+        n_train = len(train_pool_games)
+        bank, bank_ptr = None, 0
         RES = OUT / f"resume_{name}.pt"
         start_ep = 0
         if RES.exists():
@@ -564,7 +595,13 @@ def main():
             torch.cuda.set_rng_state(st["cuda_rng"])
             rng.bit_generator.state = st["np_rng"]
             start_ep = int(st["ep"])
+            if BANK_POLICY and "bank" in st:
+                bank = st["bank"].to(dev)
+                bank_ptr = int(st.get("bank_ptr", 0))
             print(f"RESUME from ep{start_ep}", flush=True)
+        if BANK_POLICY and bank is None:
+            with torch.no_grad():                       # fresh full init (age 0)
+                bank = gallery_train(model).float().clone()
         t0 = time.time()
         for ep in range(start_ep, args.epochs):
             model.train()
@@ -572,7 +609,28 @@ def main():
                 gids = rng.choice(train_pool_games, bs, replace=False)
                 tgt = pos_of_g_t[gids].to(dev)
                 with torch.amp.autocast("cuda"):
-                    Zg = gallery_train(model)
+                    if BANK_POLICY == "q":
+                        # queue rotation: refresh the next BANK_K rows (no
+                        # grad), then the whole anchor matrix is the bank.
+                        rows = np.arange(bank_ptr, bank_ptr + BANK_K) % n_train
+                        bank_ptr = int((bank_ptr + BANK_K) % n_train)
+                        with torch.no_grad():
+                            bank[torch.as_tensor(rows, device=dev)] = \
+                                gallery_rows(model, rows).float()
+                        Zg = bank
+                    elif BANK_POLICY == "b":
+                        # refresh = batch: encode THIS batch's anchors fresh
+                        # (grad flows, as in the full recipe); cold columns
+                        # come from the bank; write the fresh ones back.
+                        rows = pos_of_g[gids]
+                        rows_t = torch.as_tensor(rows, device=dev)
+                        fresh = gallery_rows(model, rows).float()
+                        Zg = bank.detach().clone()
+                        Zg[rows_t] = fresh              # autograd via index put
+                        with torch.no_grad():
+                            bank[rows_t] = fresh.detach()
+                    else:
+                        Zg = gallery_train(model)
                     Zs = [model(*sample_views(gids, W, rng)) for _ in range(NV - 1)]
                     Zs.append(assemble_doc_view(model, gids, W, rng, bs))
                     if tower_kind == "arc":
@@ -613,6 +671,9 @@ def main():
                               cpu_rng=torch.get_rng_state(),
                               cuda_rng=torch.cuda.get_rng_state(),
                               np_rng=rng.bit_generator.state, ep=ep + 1)
+                if BANK_POLICY:
+                    bundle["bank"] = bank.detach().cpu()
+                    bundle["bank_ptr"] = bank_ptr
                 tmp = RES.with_suffix(".tmp")
                 torch.save(bundle, tmp)
                 tmp.replace(RES)
