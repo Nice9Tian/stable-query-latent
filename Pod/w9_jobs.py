@@ -107,6 +107,13 @@ FS_JOBS = [
     ("wcle_ce_cetf", 4096, False, 0),  # pure-CE anchor curve, 3rd point: user
     # hypothesis = CE declines monotonically past 512 while i2ce keeps scaling
     # (i2ce ZS: 0.846@512nsp -> 0.880@2048 -> 0.888@4096); needs 512/2048/4096
+    # ---- mq unlocks the anchor-CAP axis (user insight): the queue removes
+    # the full-gallery-with-grad pass that made g8192 infeasible (~72 GB) --
+    # per-step anchor encoding drops to 192*cap no-grad through the shadow.
+    # Curve: mq@2048 (done, 0.799) -> 4096 -> 8192. Class BIG (SGal at g8192
+    # is ~34 GB fp16 on-GPU at eval; batch-forward VRAM is the small part).
+    ("wcle_mq3072i2cce_icetf", 4096, False, 0, "clean", 16, "big"),
+    ("wcle_mq3072i2cce_icetf", 8192, False, 0, "clean", 16, "big"),
 ]
 
 def _pad(j):
