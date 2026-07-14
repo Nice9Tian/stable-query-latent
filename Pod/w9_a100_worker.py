@@ -74,27 +74,21 @@ ARMS = {
     "wcle_epdb_v25i25c1_cetf": ("epdb_v25i25c1", "ce"),
     "wcle_epdb_v20i10c20_cetf": ("epdb_v20i10c20", "ce"),
     "wcle_epdb_v20i10c15_cetf": ("epdb_v20i10c15", "ce"),
-    "wcle_qpi2cce_icetf": ("qpi2cce", "ice"),      # QUERY-PROJECTED everything:
-    # CE + I + C all computed on the per-source projected views while the
+    "wcle_qpi2cce_icetf": ("qpi2cce", "ice"),      # QUERY-PROJECTED (user design):
+    # CE + I + C all computed on the per-source projected views (rev / wiki /
+    # sp linear heads; doc-fallback rows gate to the rev head) while the
     # anchors stay RAW -- heads become source->anchor-space translators and
-    # the deployed space keeps CE pressure via the gallery side. No centering
-    # (pi2ccec's NaN: centering with no same-space partner). Eval projects
-    # the query side too (wiki head for articles, rev head for pseudo-queries).
-    "wcle_pi2ccec_icetf": ("pi2ccec", "ice"),      # i2ccec + PROJECTED I/C:
-    # per-SOURCE linear heads (rev / wiki / sp; doc-fallback rows gate to the
-    # rev head) absorb the invariance tax so the deployed space keeps
-    # source-specific structure; CE + centering stay on the tower output.
-    # C after the heads also blocks the rank-collapse cheat (two heads
-    # projecting onto one shared line would max out I for free).
+    # the deployed space keeps CE pressure via the gallery side. C after the
+    # heads blocks the rank-collapse cheat. Eval projects the query side too
+    # (wiki head for articles, rev head for pseudo-queries).
 }
-CENTER_ARMS = {"cegate2c", "i2ccec", "pi2ccec"}
-PROJ_ARMS = {"pi2ccec", "qpi2cce"}
-_CW = {"i2cce": 1.0, "i2ccec": 1.0, "pi2ccec": 1.0,
-       "qpi2cce": 1.0}                                # covariance weight
+CENTER_ARMS = {"cegate2c", "i2ccec"}
+PROJ_ARMS = {"qpi2cce"}
+_CW = {"i2cce": 1.0, "i2ccec": 1.0, "qpi2cce": 1.0}   # covariance weight
 _IW = {"ice": 1.0, "i2ce": 2.0, "cegate1": 1.0, "cegate2": 2.0, "cegate3": 3.0,
        "cegate4": 4.0, "cegate1w": 1.0, "cegate2w": 2.0, "igate1": 1.0,
        "igate1w": 1.0, "rgate2": 2.0, "nodoc": 2.0, "cegate2c": 2.0,
-       "i2cce": 2.0, "i2ccec": 2.0, "pi2ccec": 2.0, "qpi2cce": 2.0}
+       "i2cce": 2.0, "i2ccec": 2.0, "qpi2cce": 2.0}
 SPLIT_SEED = 20260711
 DM, HEADS, NV = 128, 4, 4
 ARC_S_T, ARC_M_T = 50.0, 0.2       # tower ArcFace
