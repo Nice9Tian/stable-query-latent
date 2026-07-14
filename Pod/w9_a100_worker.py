@@ -74,21 +74,13 @@ ARMS = {
     "wcle_epdb_v25i25c1_cetf": ("epdb_v25i25c1", "ce"),
     "wcle_epdb_v20i10c20_cetf": ("epdb_v20i10c20", "ce"),
     "wcle_epdb_v20i10c15_cetf": ("epdb_v20i10c15", "ce"),
-    "wcle_qpi2cce_icetf": ("qpi2cce", "ice"),      # QUERY-PROJECTED (user design):
-    # CE + I + C all computed on the per-source projected views (rev / wiki /
-    # sp linear heads; doc-fallback rows gate to the rev head) while the
-    # anchors stay RAW -- heads become source->anchor-space translators and
-    # the deployed space keeps CE pressure via the gallery side. C after the
-    # heads blocks the rank-collapse cheat. Eval projects the query side too
-    # (wiki head for articles, rev head for pseudo-queries).
 }
 CENTER_ARMS = {"cegate2c", "i2ccec"}
-PROJ_ARMS = {"qpi2cce"}
-_CW = {"i2cce": 1.0, "i2ccec": 1.0, "qpi2cce": 1.0}   # covariance weight
+_CW = {"i2cce": 1.0, "i2ccec": 1.0}                   # covariance weight
 _IW = {"ice": 1.0, "i2ce": 2.0, "cegate1": 1.0, "cegate2": 2.0, "cegate3": 3.0,
        "cegate4": 4.0, "cegate1w": 1.0, "cegate2w": 2.0, "igate1": 1.0,
        "igate1w": 1.0, "rgate2": 2.0, "nodoc": 2.0, "cegate2c": 2.0,
-       "i2cce": 2.0, "i2ccec": 2.0, "qpi2cce": 2.0}
+       "i2cce": 2.0, "i2ccec": 2.0}
 SPLIT_SEED = 20260711
 DM, HEADS, NV = 128, 4, 4
 ARC_S_T, ARC_M_T = 50.0, 0.2       # tower ArcFace
@@ -235,8 +227,6 @@ def main():
     I_GATED = tower_kind.startswith("igate")
     CENTERED = tower_kind in CENTER_ARMS
     CW = _CW.get(tower_kind, 0.0)
-    PROJ = tower_kind in PROJ_ARMS
-    QPROJ = tower_kind == "qpi2cce"    # CE also on projected views (raw anchors)
     name = (f"w9_{args.arm}"
             + (f"_g{args.anchor_cap}" if args.anchor_cap != 512 else "")
             + ("_nsp" if args.no_sp_view else "")
@@ -539,22 +529,18 @@ def main():
                           phi, cos_t - ARC_M_T * math.sin(ARC_M_T))
         return F.cross_entropy(logits.scatter(1, tgt[:, None], phi) * ARC_S_T, tgt)
 
-    def assemble_doc_view(model, gids, W, rng, bs, return_prov=False):
+    def assemble_doc_view(model, gids, W, rng, bs):
         Zlast = torch.empty(bs, DM, device=dev, dtype=torch.float16)
-        prov = np.zeros(bs, np.int64)          # 0=review fallback, 1=wiki, 2=sp
         assigned = np.zeros(bs, bool)
-        for t_i, (g2x, Sx, mx) in enumerate(tiers):
+        for g2x, Sx, mx in tiers:
             msk = np.array([(not a) and (g in g2x) for a, g in zip(assigned, gids)])
             if msk.any():
                 rows = [g2x[g] for g in gids[msk]]
                 Zlast[torch.tensor(msk).to(dev)] = model(Sx[rows], mx[rows]).half()
-                prov[msk] = t_i + 1
                 assigned |= msk
         rest = ~assigned
         if rest.any():
             Zlast[torch.tensor(rest).to(dev)] = model(*sample_views(gids[rest], W, rng)).half()
-        if return_prov:
-            return Zlast, prov
         return Zlast
 
     pairs = list(combinations(range(NV), 2))
@@ -564,20 +550,7 @@ def main():
         torch.manual_seed(seed)
         rng = np.random.default_rng(seed)
         model = SetPoolN(4, center=CENTERED).to(dev)
-        projs = None
-        if PROJ:
-            # per-source alignment heads, identity-initialized so step 0 is
-            # exactly the unprojected recipe; they exist only inside the
-            # I/C loss -- the deployed representation is the tower output.
-            def _idlin():
-                lin = nn.Linear(DM, DM)
-                with torch.no_grad():
-                    lin.weight.copy_(torch.eye(DM))
-                    lin.bias.zero_()
-                return lin
-            projs = nn.ModuleDict({k: _idlin() for k in ("rev", "wiki", "sp")}).to(dev)
-        params = list(model.parameters()) + (list(projs.parameters()) if projs else [])
-        opt = torch.optim.AdamW(params, lr=5e-4, weight_decay=1e-4)
+        opt = torch.optim.AdamW(model.parameters(), lr=5e-4, weight_decay=1e-4)
         amp = amp_cls()
         ckpts = {}
         RES = OUT / f"resume_{name}.pt"
@@ -585,8 +558,6 @@ def main():
         if RES.exists():
             st = torch.load(RES, map_location="cpu")
             model.load_state_dict({k: v.to(dev) for k, v in st["model"].items()})
-            if PROJ and "projs" in st:
-                projs.load_state_dict({k: v.to(dev) for k, v in st["projs"].items()})
             opt.load_state_dict(st["opt"])
             amp.load_state_dict(st["amp"])
             torch.set_rng_state(st["cpu_rng"])
@@ -597,56 +568,25 @@ def main():
         t0 = time.time()
         for ep in range(start_ep, args.epochs):
             model.train()
-            if projs is not None:
-                projs.train()
             for _ in range(per_epoch // bs):
                 gids = rng.choice(train_pool_games, bs, replace=False)
                 tgt = pos_of_g_t[gids].to(dev)
                 with torch.amp.autocast("cuda"):
                     Zg = gallery_train(model)
                     Zs = [model(*sample_views(gids, W, rng)) for _ in range(NV - 1)]
-                    if PROJ:
-                        Zdoc, prov = assemble_doc_view(model, gids, W, rng, bs,
-                                                       return_prov=True)
-                        Zs.append(Zdoc)
-                    else:
-                        Zs.append(assemble_doc_view(model, gids, W, rng, bs))
-                    if PROJ:
-                        # per-source heads: doc rows pick their head by
-                        # provenance (fallback rows -> rev).
-                        pv = [F.normalize(projs["rev"](Z.float()), dim=-1)
-                              for Z in Zs[:-1]]
-                        zd = Zs[-1].float()
-                        pd = projs["rev"](zd)
-                        for t_name, t_id in (("wiki", 1), ("sp", 2)):
-                            m_ = torch.tensor(prov == t_id).to(dev)
-                            if m_.any():
-                                pd = torch.where(m_[:, None],
-                                                 projs[t_name](zd), pd)
-                        pv.append(F.normalize(pd, dim=-1))
-                    # QPROJ: CE also runs on the projected views (anchors RAW,
-                    # so the deployed space keeps CE pressure via Zg's side).
-                    CEV = pv if QPROJ else Zs
+                    Zs.append(assemble_doc_view(model, gids, W, rng, bs))
                     if tower_kind == "arc":
-                        loss = sum(arcface_ce(Z.float() @ Zg.T.float(), tgt) for Z in CEV)
+                        loss = sum(arcface_ce(Z.float() @ Zg.T.float(), tgt) for Z in Zs)
                     elif CE_GATED:
                         hd = torch.tensor(np.array([g in gate_games for g in gids])
                                           ).to(dev).nonzero(as_tuple=True)[0]
                         loss = (sum(F.cross_entropy(Z.float()[hd] @ Zg.T.float() * inv_t,
-                                                    tgt[hd]) for Z in CEV)
+                                                    tgt[hd]) for Z in Zs)
                                 if len(hd) else torch.zeros((), device=dev))
                     else:
                         loss = sum(F.cross_entropy(Z.float() @ Zg.T.float() * inv_t, tgt)
-                                   for Z in CEV)
-                    if PROJ:
-                        # I and C in the PROJECTED space: heads absorb the
-                        # invariance tax.
-                        loss = loss + IW * sum(
-                            (1 - (pv[i] * pv[j]).sum(-1)).mean()
-                            for i, j in pairs) / len(pairs)
-                        loss = loss + CW * sum(cov_pen(p.float())
-                                               for p in pv) / len(pv)
-                    elif IW > 0:
+                                   for Z in Zs)
+                    if IW > 0:
                         if I_GATED:
                             hd = torch.tensor(np.array([g in gate_games for g in gids],
                                                        dtype=np.float32)).to(dev)
@@ -657,30 +597,22 @@ def main():
                             loss = loss + IW * sum(
                                 (1 - (Zs[i].float() * Zs[j].float()).sum(-1)).mean()
                                 for i, j in pairs) / len(pairs)
-                    if CW > 0 and not PROJ:
+                    if CW > 0:
                         loss = loss + CW * sum(cov_pen(Z.float())
                                                for Z in Zs) / len(Zs)
                 opt.zero_grad()
                 amp.scale(loss).backward()
                 amp.unscale_(opt)
-                torch.nn.utils.clip_grad_norm_(params, 5.0)
+                torch.nn.utils.clip_grad_norm_(model.parameters(), 5.0)
                 amp.step(opt)
                 amp.update()
             if (ep + 1) % args.ckpt_every == 0:
                 sd = {k: v.detach().cpu().clone() for k, v in model.state_dict().items()}
-                if PROJ:
-                    pj = {k: v.detach().cpu().clone()
-                          for k, v in projs.state_dict().items()}
-                    torch.save(dict(model=sd, projs=pj),
-                               OUT / f"ckpt_{name}_ep{ep+1}.pt")
-                else:
-                    torch.save(sd, OUT / f"ckpt_{name}_ep{ep+1}.pt")   # persist NOW
+                torch.save(sd, OUT / f"ckpt_{name}_ep{ep+1}.pt")   # persist NOW
                 bundle = dict(model=sd, opt=opt.state_dict(), amp=amp.state_dict(),
                               cpu_rng=torch.get_rng_state(),
                               cuda_rng=torch.cuda.get_rng_state(),
                               np_rng=rng.bit_generator.state, ep=ep + 1)
-                if PROJ:
-                    bundle["projs"] = pj
                 tmp = RES.with_suffix(".tmp")
                 torch.save(bundle, tmp)
                 tmp.replace(RES)
@@ -893,16 +825,11 @@ def main():
     # ---------------- eval machinery ----------------
     VORDER = ["neutral", "noname", "positive", "negative"]
 
-    def zs_metrics(model, projs=None):
-        # projs (QPROJ arms): query side passes its source head at eval --
-        # eval articles are wiki-derived -> wiki head; gallery stays RAW.
+    def zs_metrics(model):
         with torch.no_grad():
             Zg = gallery(model).float().cpu().numpy()
-            Za_t = torch.cat([model(SA[i:i+256], mA[i:i+256])
-                              for i in range(0, SA.shape[0], 256)])
-            if projs is not None:
-                Za_t = F.normalize(projs["wiki"](Za_t.float()), dim=-1)
-            Za = Za_t.float().cpu().numpy()
+            Za = torch.cat([model(SA[i:i+256], mA[i:i+256])
+                            for i in range(0, SA.shape[0], 256)]).float().cpu().numpy()
         gz = Zg / (np.linalg.norm(Zg, axis=1, keepdims=True) + 1e-8)
         az = Za / (np.linalg.norm(Za, axis=1, keepdims=True) + 1e-8)
         out = {}
@@ -941,23 +868,17 @@ def main():
     d_rows = [g2wiki[g] for g in sorted(g2wiki)]
     d_gidx = np.array(sorted(g2wiki), np.int64)
 
-    def project_cache(model, path, projs=None):
-        # projs (QPROJ arms): query-side tensors pass their source head
-        # (articles/doc views are wiki text -> wiki head; pseudo-queries are
-        # review sentences -> rev head); gallery anchors stay RAW.
-        def _ph(key, Z):
-            return Z if projs is None else F.normalize(projs[key](Z.float()), dim=-1)
+    def project_cache(model, path):
         NQ = len(Qs["gidx"])
         with torch.no_grad():
             SPg = gallery(model).float().cpu().numpy()
             SPg_nd = gallery_nodoc(model).float().cpu().numpy()
-            SPa = _ph("wiki", torch.cat([model(SA[i:i+256], mA[i:i+256])
-                      for i in range(0, SA.shape[0], 256)])).float().cpu().numpy()
-            SPq = _ph("rev", torch.cat(
-                      [model(*pad_flat(Qs["off"], range(i, min(i+64, NQ)))).float()
-                       for i in range(0, NQ, 64)])).float().cpu().numpy()
-            SPd = _ph("wiki", torch.cat([model(SW[d_rows[i:i+256]], mW[d_rows[i:i+256]])
-                      for i in range(0, len(d_rows), 256)])).float().cpu().numpy()
+            SPa = torch.cat([model(SA[i:i+256], mA[i:i+256])
+                             for i in range(0, SA.shape[0], 256)]).float().cpu().numpy()
+            SPq = torch.cat([model(*pad_flat(Qs["off"], range(i, min(i+64, NQ)))).float()
+                             for i in range(0, NQ, 64)]).cpu().numpy()
+            SPd = torch.cat([model(SW[d_rows[i:i+256]], mW[d_rows[i:i+256]])
+                             for i in range(0, len(d_rows), 256)]).float().cpu().numpy()
         np.savez(path, SPg=SPg, SPg_nd=SPg_nd, SPa=SPa, SPq=SPq,
                  SPd=SPd, SPd_gidx=d_gidx)
 
@@ -1110,18 +1031,12 @@ def main():
             m2 = SetPoolN(4, bn=tower_kind == "byol2", center=CENTERED).to(dev)
             m2.load_state_dict({k: v.to(dev) for k, v in sd.items()})
             m2.eval()
-            pj2 = None
-            if QPROJ and isinstance(st, dict) and "projs" in st:
-                pj2 = nn.ModuleDict({k: nn.Linear(DM, DM)
-                                     for k in ("rev", "wiki", "sp")}).to(dev)
-                pj2.load_state_dict({k: v.to(dev) for k, v in st["projs"].items()})
-                pj2.eval()
-            zk = zs_metrics(m2, projs=pj2)
+            zk = zs_metrics(m2)
             zs_traj[f"ep{ek}"] = zk
             print(f"ZS(ep{ek}): {dict((k, round(v, 3)) for k, v in zk.items())}",
                   flush=True)
             json.dump(zs_traj, open(traj_p, "w"), indent=2)
-            project_cache(m2, npz, projs=pj2)
+            project_cache(m2, npz)
             del m2
         (OUT / f"resume_{name}.pt").unlink(missing_ok=True)
 
