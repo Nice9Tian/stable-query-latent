@@ -88,6 +88,9 @@ FS_JOBS = [
     ("wcle_ce_cetf", 512, False, 0, "llm"),
     ("wcle_arc_arctf", 512, False, 0, "llm"),
     ("wcle_byol_bytf", 512, False, 0, "llm"),
+    ("wcle_i2ccec_icetf", 2048, False, 0, "llm"),  # NEW-champion leak ablation:
+    # the wllm firewall row must sit on the configuration the paper leads with
+    # (the existing wllm rows cover the OLD champion cegate2@512 only)
 ]
 
 def _pad(j):
