@@ -91,6 +91,16 @@ FS_JOBS = [
     ("wcle_i2ccec_icetf", 2048, False, 0, "llm"),  # NEW-champion leak ablation:
     # the wllm firewall row must sit on the configuration the paper leads with
     # (the existing wllm rows cover the OLD champion cegate2@512 only)
+    # ---- anchor-supply scaling ladder (bank + MoCo queue), control = the
+    # existing i2cce@g2048 row. Nominally g2048 but size-overridden "small":
+    # they eliminate the full-gallery-with-grad pass that makes g2048 "big"
+    # (per-step anchors 192*cap vs 1613*cap), static VRAM 18.6 GB << L40 48 GB.
+    # mq FIRST (user priority).
+    ("wcle_mq3072i2cce_icetf", 2048, False, 0, "clean", 16, "small"),
+    ("wcle_bkq192i2cce_icetf", 2048, False, 0, "clean", 16, "small"),
+    ("wcle_bkq48i2cce_icetf", 2048, False, 0, "clean", 16, "small"),
+    ("wcle_bkq12i2cce_icetf", 2048, False, 0, "clean", 16, "small"),
+    ("wcle_bkbi2cce_icetf", 2048, False, 0, "clean", 16, "small"),
 ]
 
 def _pad(j):
