@@ -88,17 +88,26 @@ ARMS = {
     "wcle_bkq48i2cce_icetf": ("bkq48i2cce", "ice"),
     "wcle_bkq12i2cce_icetf": ("bkq12i2cce", "ice"),
     "wcle_bkbi2cce_icetf": ("bkbi2cce", "ice"),
+    # ---- true MoCo queue (user design): shadow tower (weight-EMA of the
+    # main tower, m=0.99) encodes the current batch's anchors each step;
+    # they enter at the queue HEAD and serve as this step's positives, the
+    # rest of the FIFO ring (historical keys) are the negatives; the write
+    # pointer shifts by bs per step, evicting the oldest. Entity-ID mask
+    # kills same-game stale keys (small-N false-negative collisions).
+    # Negatives coverage = last Q/bs steps' samples, NOT the full catalog --
+    # that is the trade this arm measures. Gradient: query side only.
+    "wcle_mq1536i2cce_icetf": ("mq1536i2cce", "ice"),
 }
 CENTER_ARMS = {"cegate2c", "i2ccec"}
 _CW = {"i2cce": 1.0, "i2ccec": 1.0,
        "bkq192i2cce": 1.0, "bkq48i2cce": 1.0, "bkq12i2cce": 1.0,
-       "bkbi2cce": 1.0}                               # covariance weight
+       "bkbi2cce": 1.0, "mq1536i2cce": 1.0}           # covariance weight
 _IW = {"ice": 1.0, "i2ce": 2.0, "cegate1": 1.0, "cegate2": 2.0, "cegate3": 3.0,
        "cegate4": 4.0, "cegate1w": 1.0, "cegate2w": 2.0, "igate1": 1.0,
        "igate1w": 1.0, "rgate2": 2.0, "nodoc": 2.0, "cegate2c": 2.0,
        "i2cce": 2.0, "i2ccec": 2.0,
        "bkq192i2cce": 2.0, "bkq48i2cce": 2.0, "bkq12i2cce": 2.0,
-       "bkbi2cce": 2.0}
+       "bkbi2cce": 2.0, "mq1536i2cce": 2.0}
 SPLIT_SEED = 20260711
 DM, HEADS, NV = 128, 4, 4
 ARC_S_T, ARC_M_T = 50.0, 0.2       # tower ArcFace
@@ -248,6 +257,9 @@ def main():
     bank_m = re.match(r"bk(?:q(\d+)|b)i2cce$", tower_kind)
     BANK_POLICY = (("q" if bank_m.group(1) else "b") if bank_m else None)
     BANK_K = int(bank_m.group(1)) if bank_m and bank_m.group(1) else 0
+    mq_m = re.match(r"mq(\d+)i2cce$", tower_kind)
+    MQ_LEN = int(mq_m.group(1)) if mq_m else 0
+    MQ_M = 0.99                        # shadow-tower weight-EMA momentum
     name = (f"w9_{args.arm}"
             + (f"_g{args.anchor_cap}" if args.anchor_cap != 512 else "")
             + ("_nsp" if args.no_sp_view else "")
@@ -584,6 +596,12 @@ def main():
         ckpts = {}
         n_train = len(train_pool_games)
         bank, bank_ptr = None, 0
+        shadow, mqueue, mq_gid, mq_ptr = None, None, None, 0
+        if MQ_LEN:
+            import copy
+            shadow = copy.deepcopy(model).to(dev)
+            for p in shadow.parameters():
+                p.requires_grad_(False)
         RES = OUT / f"resume_{name}.pt"
         start_ep = 0
         if RES.exists():
@@ -598,10 +616,27 @@ def main():
             if BANK_POLICY and "bank" in st:
                 bank = st["bank"].to(dev)
                 bank_ptr = int(st.get("bank_ptr", 0))
+            if MQ_LEN and "mqueue" in st:
+                shadow.load_state_dict({k: v.to(dev) for k, v in st["shadow"].items()})
+                mqueue = st["mqueue"].to(dev)
+                mq_gid = st["mq_gid"].to(dev)
+                mq_ptr = int(st["mq_ptr"])
             print(f"RESUME from ep{start_ep}", flush=True)
         if BANK_POLICY and bank is None:
             with torch.no_grad():                       # fresh full init (age 0)
                 bank = gallery_train(model).float().clone()
+        if MQ_LEN and mqueue is None:
+            # prefill the FIFO ring with shadow(=main at t0) keys of random
+            # entities so the first steps see a full negative set.
+            mqueue = torch.zeros(MQ_LEN, DM, device=dev)
+            mq_gid = torch.full((MQ_LEN,), -1, dtype=torch.long, device=dev)
+            fill = rng.choice(train_pool_games, MQ_LEN,
+                              replace=MQ_LEN > n_train)
+            with torch.no_grad():
+                for i in range(0, MQ_LEN, 256):
+                    sub = fill[i:i + 256]
+                    mqueue[i:i + len(sub)] = gallery_rows(shadow, pos_of_g[sub]).float()
+                    mq_gid[i:i + len(sub)] = torch.as_tensor(sub, device=dev)
         t0 = time.time()
         for ep in range(start_ep, args.epochs):
             model.train()
@@ -609,7 +644,9 @@ def main():
                 gids = rng.choice(train_pool_games, bs, replace=False)
                 tgt = pos_of_g_t[gids].to(dev)
                 with torch.amp.autocast("cuda"):
-                    if BANK_POLICY == "q":
+                    if MQ_LEN:
+                        Zg = None                       # queue replaces gallery
+                    elif BANK_POLICY == "q":
                         # queue rotation: refresh the next BANK_K rows (no
                         # grad), then the whole anchor matrix is the bank.
                         rows = np.arange(bank_ptr, bank_ptr + BANK_K) % n_train
@@ -633,7 +670,27 @@ def main():
                         Zg = gallery_train(model)
                     Zs = [model(*sample_views(gids, W, rng)) for _ in range(NV - 1)]
                     Zs.append(assemble_doc_view(model, gids, W, rng, bs))
-                    if tower_kind == "arc":
+                    if MQ_LEN:
+                        # user design: current keys enter at the ring head and
+                        # ARE this step's positives; the rest of the ring
+                        # (historical keys) are the negatives; pointer shifts
+                        # by bs, evicting the oldest. Entity-ID mask removes
+                        # stale same-game keys (false negatives at small N).
+                        with torch.no_grad():
+                            keys = gallery_rows(shadow, pos_of_g[gids]).float()
+                        gid_t = torch.as_tensor(gids, device=dev)
+                        slot = (torch.arange(bs, device=dev) + mq_ptr) % MQ_LEN
+                        mqueue[slot] = keys
+                        mq_gid[slot] = gid_t
+                        mq_ptr = int((mq_ptr + bs) % MQ_LEN)
+                        fmask = mq_gid[None, :] == gid_t[:, None]
+                        fmask[torch.arange(bs, device=dev), slot] = False
+                        loss = 0
+                        for Z in Zs:
+                            lg = Z.float() @ mqueue.T * inv_t
+                            loss = loss + F.cross_entropy(
+                                lg.masked_fill(fmask, -1e4), slot)
+                    elif tower_kind == "arc":
                         loss = sum(arcface_ce(Z.float() @ Zg.T.float(), tgt) for Z in Zs)
                     elif CE_GATED:
                         hd = torch.tensor(np.array([g in gate_games for g in gids])
@@ -664,9 +721,19 @@ def main():
                 torch.nn.utils.clip_grad_norm_(model.parameters(), 5.0)
                 amp.step(opt)
                 amp.update()
+                if MQ_LEN:
+                    with torch.no_grad():
+                        for pk, pq in zip(shadow.parameters(), model.parameters()):
+                            pk.data.mul_(MQ_M).add_(pq.data, alpha=1 - MQ_M)
             if (ep + 1) % args.ckpt_every == 0:
                 sd = {k: v.detach().cpu().clone() for k, v in model.state_dict().items()}
-                torch.save(sd, OUT / f"ckpt_{name}_ep{ep+1}.pt")   # persist NOW
+                if MQ_LEN:
+                    torch.save(dict(model=sd,
+                                    shadow={k: v.detach().cpu().clone()
+                                            for k, v in shadow.state_dict().items()}),
+                               OUT / f"ckpt_{name}_ep{ep+1}.pt")
+                else:
+                    torch.save(sd, OUT / f"ckpt_{name}_ep{ep+1}.pt")   # persist NOW
                 bundle = dict(model=sd, opt=opt.state_dict(), amp=amp.state_dict(),
                               cpu_rng=torch.get_rng_state(),
                               cuda_rng=torch.cuda.get_rng_state(),
@@ -674,6 +741,12 @@ def main():
                 if BANK_POLICY:
                     bundle["bank"] = bank.detach().cpu()
                     bundle["bank_ptr"] = bank_ptr
+                if MQ_LEN:
+                    bundle["shadow"] = {k: v.detach().cpu().clone()
+                                        for k, v in shadow.state_dict().items()}
+                    bundle["mqueue"] = mqueue.detach().cpu()
+                    bundle["mq_gid"] = mq_gid.detach().cpu()
+                    bundle["mq_ptr"] = mq_ptr
                 tmp = RES.with_suffix(".tmp")
                 torch.save(bundle, tmp)
                 tmp.replace(RES)
