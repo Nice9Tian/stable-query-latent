@@ -622,6 +622,25 @@ def main():
                 mq_gid = st["mq_gid"].to(dev)
                 mq_ptr = int(st["mq_ptr"])
             print(f"RESUME from ep{start_ep}", flush=True)
+        if start_ep == 0 and not RES.exists():
+            # EXTEND fallback: the resume bundle is deleted when a run
+            # completes; to train PAST the old budget, rebuild from the
+            # newest checkpoint. Weights (+ mq shadow) come back exactly;
+            # opt/amp/rng restart fresh; bank and mqueue fall through to
+            # their cold-start inits below (mq prefills from the shadow).
+            cands = [c for c in OUT.glob(f"ckpt_{name}_ep*.pt")
+                     if int(c.stem.split("_ep")[-1]) < args.epochs]
+            if cands:
+                ck = max(cands, key=lambda c: int(c.stem.split("_ep")[-1]))
+                st = torch.load(ck, map_location="cpu")
+                sd = st["model"] if isinstance(st, dict) and "model" in st else st
+                model.load_state_dict({k: v.to(dev) for k, v in sd.items()})
+                if MQ_LEN and isinstance(st, dict) and "shadow" in st:
+                    shadow.load_state_dict({k: v.to(dev)
+                                            for k, v in st["shadow"].items()})
+                start_ep = int(ck.stem.split("_ep")[-1])
+                print(f"EXTEND from ckpt ep{start_ep} (fresh opt/amp/rng)",
+                      flush=True)
         if BANK_POLICY and bank is None:
             with torch.no_grad():                       # fresh full init (age 0)
                 bank = gallery_train(model).float().clone()

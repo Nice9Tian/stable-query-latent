@@ -343,6 +343,49 @@ def run_queue(cls, repo, data_dir, out_fs, out_cv, full_pool_path="",
         print("  FAILED:", tag, "->", log)
     return fails
 
+# ---------------- extension (续训) ----------------
+def extend_fs(job6, epochs, repo, data_dir, out_fs, full_pool_path="", gpu="0"):
+    """EXTEND a finished fixed-split arm past its original budget. The worker
+    rebuilds training state from its newest checkpoint (weights + mq shadow;
+    fresh opt/rng; mq queue re-prefills from the shadow). Stale best-jsons
+    are removed so the head phase re-picks over ALL checkpoints (old + new
+    per-epoch probe jsons are reused, only new ones get computed)."""
+    arm, cap, nsp, lead, wsrc, vw = job6
+    nm = fs_label(arm, cap, nsp, lead, wsrc, vw)
+    cdir = Path(out_fs) / "claims"
+    if not try_claim(cdir, nm):
+        print(f"[extend] {nm} held by another machine -- skipped")
+        return None
+    for f in Path(out_fs).glob(f"ft4var_{nm}{'_fp' if FULL_POOL else ''}_best*.json"):
+        print("[extend] removing stale", f.name)
+        f.unlink()
+    log = Path(out_fs) / "logs" / f"{arm}_g{cap}_ext{epochs}.log"
+    log.parent.mkdir(parents=True, exist_ok=True)
+    cmd = ["python", "-u", FS_WORKER,
+           "--data-dir", data_dir, "--out-dir", out_fs, "--repo", repo,
+           "--arm", arm, "--anchor-cap", str(cap),
+           "--epochs", str(epochs), "--ckpt-every", str(CKPT_EVERY),
+           "--ckpt-seeds", str(FS_CKPT_SEEDS), "--topup-seeds", str(TOPUP_SEEDS)]
+    if nsp:
+        cmd.append("--no-sp-view")
+    if lead:
+        cmd += ["--doc-lead", str(lead)]
+    if wsrc == "llm":
+        cmd += ["--wiki-src", "llm"]
+    if vw != 16:
+        cmd += ["--view-w", str(vw)]
+    if FULL_POOL:
+        cmd += ["--full-pool", "--full-pool-path", full_pool_path]
+    cmd += ["--claim-file", str(cdir / f"{nm}.claim")]
+    print(f"[extend] {nm} -> {epochs} epochs", flush=True)
+    t0 = time.time()
+    with open(log, "w") as fh:
+        p = subprocess.run(cmd, stdout=fh, stderr=subprocess.STDOUT,
+                           env=dict(os.environ, CUDA_VISIBLE_DEVICES=str(gpu)))
+    print(("[extend] ok" if p.returncode == 0 else "[extend] FAIL")
+          + f" {nm} [{(time.time()-t0)/60:.1f} min] -> {log}", flush=True)
+    return p.returncode
+
 # ---------------- aggregate + audit ----------------
 def aggregate(out_fs, out_cv):
     import numpy as np
