@@ -74,6 +74,12 @@ ARMS = {
     "wcle_epdb_v25i25c1_cetf": ("epdb_v25i25c1", "ce"),
     "wcle_epdb_v20i10c20_cetf": ("epdb_v20i10c20", "ce"),
     "wcle_epdb_v20i10c15_cetf": ("epdb_v20i10c15", "ce"),
+    "wcle_qpi2cce_icetf": ("qpi2cce", "ice"),      # QUERY-PROJECTED everything:
+    # CE + I + C all computed on the per-source projected views while the
+    # anchors stay RAW -- heads become source->anchor-space translators and
+    # the deployed space keeps CE pressure via the gallery side. No centering
+    # (pi2ccec's NaN: centering with no same-space partner). Eval projects
+    # the query side too (wiki head for articles, rev head for pseudo-queries).
     "wcle_pi2ccec_icetf": ("pi2ccec", "ice"),      # i2ccec + PROJECTED I/C:
     # per-SOURCE linear heads (rev / wiki / sp; doc-fallback rows gate to the
     # rev head) absorb the invariance tax so the deployed space keeps
@@ -82,12 +88,13 @@ ARMS = {
     # projecting onto one shared line would max out I for free).
 }
 CENTER_ARMS = {"cegate2c", "i2ccec", "pi2ccec"}
-PROJ_ARMS = {"pi2ccec"}
-_CW = {"i2cce": 1.0, "i2ccec": 1.0, "pi2ccec": 1.0}   # covariance weight
+PROJ_ARMS = {"pi2ccec", "qpi2cce"}
+_CW = {"i2cce": 1.0, "i2ccec": 1.0, "pi2ccec": 1.0,
+       "qpi2cce": 1.0}                                # covariance weight
 _IW = {"ice": 1.0, "i2ce": 2.0, "cegate1": 1.0, "cegate2": 2.0, "cegate3": 3.0,
        "cegate4": 4.0, "cegate1w": 1.0, "cegate2w": 2.0, "igate1": 1.0,
        "igate1w": 1.0, "rgate2": 2.0, "nodoc": 2.0, "cegate2c": 2.0,
-       "i2cce": 2.0, "i2ccec": 2.0, "pi2ccec": 2.0}
+       "i2cce": 2.0, "i2ccec": 2.0, "pi2ccec": 2.0, "qpi2cce": 2.0}
 SPLIT_SEED = 20260711
 DM, HEADS, NV = 128, 4, 4
 ARC_S_T, ARC_M_T = 50.0, 0.2       # tower ArcFace
@@ -235,6 +242,7 @@ def main():
     CENTERED = tower_kind in CENTER_ARMS
     CW = _CW.get(tower_kind, 0.0)
     PROJ = tower_kind in PROJ_ARMS
+    QPROJ = tower_kind == "qpi2cce"    # CE also on projected views (raw anchors)
     name = (f"w9_{args.arm}"
             + (f"_g{args.anchor_cap}" if args.anchor_cap != 512 else "")
             + ("_nsp" if args.no_sp_view else "")
@@ -609,21 +617,9 @@ def main():
                         Zs.append(Zdoc)
                     else:
                         Zs.append(assemble_doc_view(model, gids, W, rng, bs))
-                    if tower_kind == "arc":
-                        loss = sum(arcface_ce(Z.float() @ Zg.T.float(), tgt) for Z in Zs)
-                    elif CE_GATED:
-                        hd = torch.tensor(np.array([g in gate_games for g in gids])
-                                          ).to(dev).nonzero(as_tuple=True)[0]
-                        loss = (sum(F.cross_entropy(Z.float()[hd] @ Zg.T.float() * inv_t,
-                                                    tgt[hd]) for Z in Zs)
-                                if len(hd) else torch.zeros((), device=dev))
-                    else:
-                        loss = sum(F.cross_entropy(Z.float() @ Zg.T.float() * inv_t, tgt)
-                                   for Z in Zs)
                     if PROJ:
-                        # I and C move to the PROJECTED space: per-source
-                        # heads absorb the invariance tax; doc rows pick
-                        # their head by provenance (fallback rows -> rev).
+                        # per-source heads: doc rows pick their head by
+                        # provenance (fallback rows -> rev).
                         pv = [F.normalize(projs["rev"](Z.float()), dim=-1)
                               for Z in Zs[:-1]]
                         zd = Zs[-1].float()
@@ -634,6 +630,23 @@ def main():
                                 pd = torch.where(m_[:, None],
                                                  projs[t_name](zd), pd)
                         pv.append(F.normalize(pd, dim=-1))
+                    # QPROJ: CE also runs on the projected views (anchors RAW,
+                    # so the deployed space keeps CE pressure via Zg's side).
+                    CEV = pv if QPROJ else Zs
+                    if tower_kind == "arc":
+                        loss = sum(arcface_ce(Z.float() @ Zg.T.float(), tgt) for Z in CEV)
+                    elif CE_GATED:
+                        hd = torch.tensor(np.array([g in gate_games for g in gids])
+                                          ).to(dev).nonzero(as_tuple=True)[0]
+                        loss = (sum(F.cross_entropy(Z.float()[hd] @ Zg.T.float() * inv_t,
+                                                    tgt[hd]) for Z in CEV)
+                                if len(hd) else torch.zeros((), device=dev))
+                    else:
+                        loss = sum(F.cross_entropy(Z.float() @ Zg.T.float() * inv_t, tgt)
+                                   for Z in CEV)
+                    if PROJ:
+                        # I and C in the PROJECTED space: heads absorb the
+                        # invariance tax.
                         loss = loss + IW * sum(
                             (1 - (pv[i] * pv[j]).sum(-1)).mean()
                             for i, j in pairs) / len(pairs)
@@ -886,11 +899,16 @@ def main():
     # ---------------- eval machinery ----------------
     VORDER = ["neutral", "noname", "positive", "negative"]
 
-    def zs_metrics(model):
+    def zs_metrics(model, projs=None):
+        # projs (QPROJ arms): query side passes its source head at eval --
+        # eval articles are wiki-derived -> wiki head; gallery stays RAW.
         with torch.no_grad():
             Zg = gallery(model).float().cpu().numpy()
-            Za = torch.cat([model(SA[i:i+256], mA[i:i+256])
-                            for i in range(0, SA.shape[0], 256)]).float().cpu().numpy()
+            Za_t = torch.cat([model(SA[i:i+256], mA[i:i+256])
+                              for i in range(0, SA.shape[0], 256)])
+            if projs is not None:
+                Za_t = F.normalize(projs["wiki"](Za_t.float()), dim=-1)
+            Za = Za_t.float().cpu().numpy()
         gz = Zg / (np.linalg.norm(Zg, axis=1, keepdims=True) + 1e-8)
         az = Za / (np.linalg.norm(Za, axis=1, keepdims=True) + 1e-8)
         out = {}
@@ -929,17 +947,23 @@ def main():
     d_rows = [g2wiki[g] for g in sorted(g2wiki)]
     d_gidx = np.array(sorted(g2wiki), np.int64)
 
-    def project_cache(model, path):
+    def project_cache(model, path, projs=None):
+        # projs (QPROJ arms): query-side tensors pass their source head
+        # (articles/doc views are wiki text -> wiki head; pseudo-queries are
+        # review sentences -> rev head); gallery anchors stay RAW.
+        def _ph(key, Z):
+            return Z if projs is None else F.normalize(projs[key](Z.float()), dim=-1)
         NQ = len(Qs["gidx"])
         with torch.no_grad():
             SPg = gallery(model).float().cpu().numpy()
             SPg_nd = gallery_nodoc(model).float().cpu().numpy()
-            SPa = torch.cat([model(SA[i:i+256], mA[i:i+256])
-                             for i in range(0, SA.shape[0], 256)]).float().cpu().numpy()
-            SPq = torch.cat([model(*pad_flat(Qs["off"], range(i, min(i+64, NQ)))).float()
-                             for i in range(0, NQ, 64)]).cpu().numpy()
-            SPd = torch.cat([model(SW[d_rows[i:i+256]], mW[d_rows[i:i+256]])
-                             for i in range(0, len(d_rows), 256)]).float().cpu().numpy()
+            SPa = _ph("wiki", torch.cat([model(SA[i:i+256], mA[i:i+256])
+                      for i in range(0, SA.shape[0], 256)])).float().cpu().numpy()
+            SPq = _ph("rev", torch.cat(
+                      [model(*pad_flat(Qs["off"], range(i, min(i+64, NQ)))).float()
+                       for i in range(0, NQ, 64)])).float().cpu().numpy()
+            SPd = _ph("wiki", torch.cat([model(SW[d_rows[i:i+256]], mW[d_rows[i:i+256]])
+                      for i in range(0, len(d_rows), 256)])).float().cpu().numpy()
         np.savez(path, SPg=SPg, SPg_nd=SPg_nd, SPa=SPa, SPq=SPq,
                  SPd=SPd, SPd_gidx=d_gidx)
 
@@ -1092,12 +1116,18 @@ def main():
             m2 = SetPoolN(4, bn=tower_kind == "byol2", center=CENTERED).to(dev)
             m2.load_state_dict({k: v.to(dev) for k, v in sd.items()})
             m2.eval()
-            zk = zs_metrics(m2)
+            pj2 = None
+            if QPROJ and isinstance(st, dict) and "projs" in st:
+                pj2 = nn.ModuleDict({k: nn.Linear(DM, DM)
+                                     for k in ("rev", "wiki", "sp")}).to(dev)
+                pj2.load_state_dict({k: v.to(dev) for k, v in st["projs"].items()})
+                pj2.eval()
+            zk = zs_metrics(m2, projs=pj2)
             zs_traj[f"ep{ek}"] = zk
             print(f"ZS(ep{ek}): {dict((k, round(v, 3)) for k, v in zk.items())}",
                   flush=True)
             json.dump(zs_traj, open(traj_p, "w"), indent=2)
-            project_cache(m2, npz)
+            project_cache(m2, npz, projs=pj2)
             del m2
         (OUT / f"resume_{name}.pt").unlink(missing_ok=True)
 
