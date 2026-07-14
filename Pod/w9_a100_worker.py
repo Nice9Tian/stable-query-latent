@@ -96,18 +96,18 @@ ARMS = {
     # kills same-game stale keys (small-N false-negative collisions).
     # Negatives coverage = last Q/bs steps' samples, NOT the full catalog --
     # that is the trade this arm measures. Gradient: query side only.
-    "wcle_mq1536i2cce_icetf": ("mq1536i2cce", "ice"),
+    "wcle_mq3072i2cce_icetf": ("mq3072i2cce", "ice"),
 }
 CENTER_ARMS = {"cegate2c", "i2ccec"}
 _CW = {"i2cce": 1.0, "i2ccec": 1.0,
        "bkq192i2cce": 1.0, "bkq48i2cce": 1.0, "bkq12i2cce": 1.0,
-       "bkbi2cce": 1.0, "mq1536i2cce": 1.0}           # covariance weight
+       "bkbi2cce": 1.0, "mq3072i2cce": 1.0}           # covariance weight
 _IW = {"ice": 1.0, "i2ce": 2.0, "cegate1": 1.0, "cegate2": 2.0, "cegate3": 3.0,
        "cegate4": 4.0, "cegate1w": 1.0, "cegate2w": 2.0, "igate1": 1.0,
        "igate1w": 1.0, "rgate2": 2.0, "nodoc": 2.0, "cegate2c": 2.0,
        "i2cce": 2.0, "i2ccec": 2.0,
        "bkq192i2cce": 2.0, "bkq48i2cce": 2.0, "bkq12i2cce": 2.0,
-       "bkbi2cce": 2.0, "mq1536i2cce": 2.0}
+       "bkbi2cce": 2.0, "mq3072i2cce": 2.0}
 SPLIT_SEED = 20260711
 DM, HEADS, NV = 128, 4, 4
 ARC_S_T, ARC_M_T = 50.0, 0.2       # tower ArcFace
