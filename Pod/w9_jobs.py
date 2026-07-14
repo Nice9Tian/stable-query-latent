@@ -104,6 +104,9 @@ FS_JOBS = [
     ("wcle_ce_cetf", 2048, False, 0),  # pure CE at the champion's anchor cap:
     # closes the matrix's empty cell -- the I-term premium at g2048 needs a
     # same-cap CE-only reference (CV pins it at 512 only; user challenge)
+    ("wcle_ce_cetf", 4096, False, 0),  # pure-CE anchor curve, 3rd point: user
+    # hypothesis = CE declines monotonically past 512 while i2ce keeps scaling
+    # (i2ce ZS: 0.846@512nsp -> 0.880@2048 -> 0.888@4096); needs 512/2048/4096
 ]
 
 def _pad(j):
