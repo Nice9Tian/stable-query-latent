@@ -101,6 +101,9 @@ FS_JOBS = [
     ("wcle_bkq48i2cce_icetf", 2048, False, 0, "clean", 16, "small"),
     ("wcle_bkq12i2cce_icetf", 2048, False, 0, "clean", 16, "small"),
     ("wcle_bkbi2cce_icetf", 2048, False, 0, "clean", 16, "small"),
+    ("wcle_ce_cetf", 2048, False, 0),  # pure CE at the champion's anchor cap:
+    # closes the matrix's empty cell -- the I-term premium at g2048 needs a
+    # same-cap CE-only reference (CV pins it at 512 only; user challenge)
 ]
 
 def _pad(j):
