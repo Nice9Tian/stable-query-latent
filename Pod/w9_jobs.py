@@ -113,7 +113,8 @@ FS_JOBS = [
     # Curve: mq@2048 (done, 0.799) -> 4096 -> 8192. Class BIG (SGal at g8192
     # is ~34 GB fp16 on-GPU at eval; batch-forward VRAM is the small part).
     ("wcle_mq3072i2cce_icetf", 4096, False, 0, "clean", 16, "big"),
-    ("wcle_mq3072i2cce_icetf", 8192, False, 0, "clean", 16, "big"),
+    # g8192 moved to the DEDICATED Pod/w9_mq_i2ce_8192.ipynb (user decree:
+    # important experiment gets its own pod); label/claims stay compatible.
 ]
 
 def _pad(j):
