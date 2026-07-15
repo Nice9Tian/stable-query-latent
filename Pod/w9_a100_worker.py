@@ -60,8 +60,9 @@ ARMS = {
     # NAMING GRAMMAR (user decree): [I position][CE path]. "i2exp..." = I in
     # the DEPLOYED space (the ORIGINAL n4expce design); "expi2..." = I after
     # the expander (E-space, the NEW design).
-    "wcle_expi2ce_icetf": ("expi2ce", "ice"),            # I@E + per-view CE@dep
-    # (with expi2poolce: the "expander serves ONLY I" pair, per-view flavor)
+    "wcle_ceexpi2_icetf": ("ceexpi2", "ice"),            # per-view CE@dep + I@E
+    # (with poolceexpi2: the "expander serves ONLY I" pair; deployed-CE
+    # terms lead the name, expi2 trails = I after the expander)
     # E-sharing grammar (user decree): "expi2expce"/"expi2poolexpce" carry TWO
     # exp tokens = I and CE use SEPARATE expanders (E_I, E_CE). The "shexp"
     # prefix = ONE SHARED E serves every E-space loss of the arm.
@@ -69,7 +70,7 @@ ARMS = {
     "wcle_shexpi2ce_icetf": ("shexpi2ce", "ice"),        # I@E + CE@E, SHARED E
     "wcle_shexpi2poolce_icetf": ("shexpi2poolce", "ice"),  # I@E + pool->E->CE,
     # SHARED E
-    "wcle_expi2poolce_icetf": ("expi2poolce", "ice"),    # I@E + pooled CE@dep
+    "wcle_poolceexpi2_icetf": ("poolceexpi2", "ice"),    # pooled CE@dep + I@E
     # (the expander exists ONLY to give I its tax space)
     "wcle_expi2poolexpce_icetf": ("expi2poolexpce", "ice"),  # I@E + pool->E->CE
     "wcle_poolce_cetf": ("poolce", "ce"),          # pooled CE, NO I
@@ -134,7 +135,7 @@ _IW = {"ice": 1.0, "i2ce": 2.0, "cegate1": 1.0, "cegate2": 2.0, "cegate3": 3.0,
        "cegate4": 4.0, "cegate1w": 1.0, "cegate2w": 2.0, "igate1": 1.0,
        "igate1w": 1.0, "rgate2": 2.0, "nodoc": 2.0, "cegate2c": 2.0,
        "i2cce": 2.0, "i2ccec": 2.0, "i2expce": 2.0, "i2poolce": 2.0,
-       "expi2ce": 2.0, "expi2expce": 2.0, "expi2poolce": 2.0, "expi2poolexpce": 2.0,
+       "ceexpi2": 2.0, "expi2expce": 2.0, "poolceexpi2": 2.0, "expi2poolexpce": 2.0,
        "shexpi2ce": 2.0, "shexpi2poolce": 2.0,
        "bkq192i2cce": 2.0, "bkq48i2cce": 2.0, "bkq12i2cce": 2.0,
        "bkbi2cce": 2.0, "mq3072i2cce": 2.0}
@@ -285,9 +286,9 @@ def main():
     CENTERED = tower_kind in CENTER_ARMS
     _CE_E = ("i2expce", "expce", "expi2expce", "poolexpce", "expi2poolexpce",
              "shexpi2ce", "shexpi2poolce")
-    _CE_POOL = ("i2poolce", "poolce", "expi2poolce", "poolexpce",
+    _CE_POOL = ("i2poolce", "poolce", "poolceexpi2", "poolexpce",
                 "expi2poolexpce", "shexpi2poolce")
-    _I_E = ("expi2ce", "expi2expce", "expi2poolce", "expi2poolexpce",
+    _I_E = ("ceexpi2", "expi2expce", "poolceexpi2", "expi2poolexpce",
             "shexpi2ce", "shexpi2poolce")
     _DUAL = ("expi2expce", "expi2poolexpce")   # I and CE use SEPARATE E's
     XCE = tower_kind in _CE_E          # CE computed in expander space
