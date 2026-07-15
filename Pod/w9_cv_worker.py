@@ -93,6 +93,11 @@ def parse_args():
                     help="claim file on the shared volume; when set, a 30s "
                          "heartbeat thread keeps it fresh (silent >2 min = "
                          "host presumed dead, job claimable by other hosts)")
+    ap.add_argument("--head", action="store_true", default=False,
+                    help="legacy FT head phase (ZS-only is the default)")
+    ap.add_argument("--measure-vram", default="",
+                    help="run 3 real steps, write peak max_memory_allocated "
+                         "bytes to this file, exit(0). Scheduler warmup.")
     return ap.parse_args()
 
 
@@ -473,6 +478,9 @@ def main():
             start_ep = int(st["ep"])
             print(f"RESUME from ep{start_ep}", flush=True)
         t0 = time.time()
+        mv_steps = 0
+        if args.measure_vram and dev.type == "cuda":
+            torch.cuda.reset_peak_memory_stats()
         for ep in range(start_ep, args.epochs):
             model.train()
             for _ in range(per_epoch // bs):
@@ -510,6 +518,15 @@ def main():
                 torch.nn.utils.clip_grad_norm_(model.parameters(), 5.0)
                 amp.step(opt)
                 amp.update()
+                if args.measure_vram:
+                    mv_steps += 1
+                    if mv_steps >= 3:
+                        torch.cuda.synchronize()
+                        peak = int(torch.cuda.max_memory_allocated())
+                        Path(args.measure_vram).write_text(str(peak))
+                        print(f"[measure-vram] cap={args.anchor_cap} "
+                              f"peak={peak / 2**30:.2f}GiB", flush=True)
+                        raise SystemExit(0)
             if (ep + 1) % args.ckpt_every == 0:
                 sd = {k: v.detach().cpu().clone() for k, v in model.state_dict().items()}
                 torch.save(sd, OUT / f"ckpt_{name}_ep{ep+1}.pt")   # persist NOW
@@ -623,20 +640,30 @@ def main():
     # ---------------- eval machinery ----------------
     VORDER = ["neutral", "noname", "positive", "negative"]
 
-    def zs_metrics(model):
-        with torch.no_grad():
-            Zg = gallery(model).float().cpu().numpy()
-            Za = torch.cat([model(SA[i:i+256], mA[i:i+256])
-                            for i in range(0, SA.shape[0], 256)]).float().cpu().numpy()
+    def zs_from_arrays(Zg, Za):
+        # ZS-only CV metrics + NEW selection (user): cvsel = noname_h1 +
+        # noname_h5 + 2*noname_tagF1, all on the VAL fold. Also all-4 test
+        # variants (h1+h5) and test tag for the readout.
         gz = Zg / (np.linalg.norm(Zg, axis=1, keepdims=True) + 1e-8)
         az = Za / (np.linalg.norm(Za, axis=1, keepdims=True) + 1e-8)
         out = {}
-        for var in ("neutral", "noname"):
-            ii = [i for i, g in enumerate(art_games) if g in test_g and variants[i] == var]
-            sim = az[ii] @ gz.T
-            tgt = A["gidx"][ii]
-            rk = (sim > sim[np.arange(len(ii)), tgt][:, None]).sum(1) + 1
+
+        def _rk(idx):
+            sim = az[idx] @ gz.T
+            tgt = A["gidx"][idx]
+            return (sim > sim[np.arange(len(idx)), tgt][:, None]).sum(1) + 1
+
+        for var in VORDER:
+            ii = [i for i, g in enumerate(art_games)
+                  if g in test_g and variants[i] == var]
+            rk = _rk(ii)
             out["nm_" + var] = float((rk == 1).mean())
+            out["h5_" + var] = float((rk <= 5).mean())
+        rkv = _rk(va_neu)
+        out["v_neu"] = float((rkv == 1).mean())
+        rkv = _rk(va_non)
+        out["v_non"] = float((rkv == 1).mean())
+        out["v_non5"] = float((rkv <= 5).mean())
         sc, rg, al, th, _ = train_anchor_ridge(targs, Zg, y, n2i, tag_split)
         for var in ("neutral", "noname"):
             idx = [i for i in range(len(art_games))
@@ -644,7 +671,19 @@ def main():
             s = rg.predict(sc.transform(np.stack([Za[i] for i in idx]).astype(np.float32)))
             labs = np.stack([y[n2i[art_games[i]]] for i in idx])
             out["tag_" + var] = micro_prf(labs, s, th)["micro_f1"]
+        # VAL noname tag F1 (same ridge, predicted on val noname queries)
+        s = rg.predict(sc.transform(np.stack([Za[i] for i in va_non]).astype(np.float32)))
+        labs = np.stack([y[n2i[art_games[i]]] for i in va_non])
+        out["v_non_tag"] = micro_prf(labs, s, th)["micro_f1"]
+        out["cvsel"] = out["v_non"] + out["v_non5"] + 2.0 * out["v_non_tag"]
         return out
+
+    def zs_metrics(model):
+        with torch.no_grad():
+            Zg = gallery(model).float().cpu().numpy()
+            Za = torch.cat([model(SA[i:i+256], mA[i:i+256])
+                            for i in range(0, SA.shape[0], 256)]).float().cpu().numpy()
+        return zs_from_arrays(Zg, Za)
 
     def metrics4(gal, art):
         gz = gal / (np.linalg.norm(gal, axis=1, keepdims=True) + 1e-8)
@@ -847,79 +886,105 @@ def main():
             del m2
         (OUT / f"resume_{name}.pt").unlink(missing_ok=True)
 
-    # ---------------- heads: per-checkpoint 3 seeds -> vsel pick -> topup ----
-    if tower_kind == "byol":
-        HEAD_CFGS = [("", "by", "by", 0.0), ("_ce", "ce", "ce", 0.0),
-                     ("_cetf", "ce", "ce", 0.1)]
-    elif FT == "ice":
-        HEAD_CFGS = [("", "ice", "ice", 0.0), ("_p1ce", "ce", "ice", 0.0)] \
-            if tower_kind in ("ice", "i2ce") else [("", "ice", "ice", 0.0)]
-    else:
-        HEAD_CFGS = [("", "ce", FT, 0.0)]
-
-    VORD = VORDER
-
-    def head_runs(path, seeds, p1, p2, ls, tag_):
-        T = np.load(path)
-        g0 = T["SPg"]
-        d_pos = pos_of_g_t[T["SPd_gidx"]].to(dev)
-        mu, sd = g0.mean(0, keepdims=True), g0.std(0, keepdims=True) + 1e-6
-        tt = lambda x: torch.tensor((x - mu) / sd, dtype=torch.float32).to(dev)
-        Xg, Xa, Xq, Xd = tt(g0), tt(T["SPa"]), tt(T["SPq"]), tt(T["SPd"])
-        Xg_nd = tt(T["SPg_nd"])
-        runs = []
-        for seed in seeds:
-            gal, art, vs = train_userft_mrr(Xg, Xg_nd, Xa, Xq, Xd, d_pos, seed,
-                                            p1=p1, p2=p2, ls=ls, iw=HIW)
-            m = metrics4(gal, art)
-            m.update(vs)
-            runs.append(m)
-            print(f"{tag_} seed{seed}: neu {m['neutral']['h1']:.3f} "
-                  f"non {m['noname']['h1']:.3f} vsel {vs['vscore']:.3f}", flush=True)
-        return runs
-
-    def agg_print(tag_, runs):
-        for var in VORD:
-            h1m = np.mean([r[var]["h1"] for r in runs])
-            h5m = np.mean([r[var]["h5"] for r in runs])
-            tm = np.mean([r[var]["tag"] for r in runs])
-            print(f"AGG {tag_} {var:9s} h1={h1m:.3f} h5={h5m:.3f} tag={tm:.3f}",
-                  flush=True)
-        m4 = np.mean([np.mean([r[v]["h1"] for r in runs]) for v in VORD])
-        vm = np.mean([r["vscore"] for r in runs])
-        print(f"AGG {tag_} mean-of-4 = {m4:.3f} | val-score = {vm:.3f}", flush=True)
-
-    ck_paths = sorted(OUT.glob(f"tower_{name}_ep*.npz"),
-                      key=lambda p: int(p.stem.split("_ep")[-1]))
-    for hsuf, p1, p2, ls in HEAD_CFGS:
-        for path in ck_paths:
-            ek = path.stem.split("_ep")[-1]
-            tag_ = f"{name}_ep{ek}{hsuf}"
-            outj = OUT / f"ft4var_{tag_}.json"
-            if outj.exists():
-                continue
-            runs = head_runs(path, range(args.ckpt_seeds), p1, p2, ls, tag_)
-            agg_print(tag_, runs)
-            json.dump({"per_seed": runs}, open(outj, "w"), indent=2)
-        outb = OUT / f"ft4var_{name}_best{hsuf}.json"
-        if outb.exists():
+    # ---------------- ZS-primary: refresh traj + select zsbest by cvsel ----
+    # cvsel = noname_h1 + noname_h5 + 2*noname_tagF1 (val) -- the user's CV
+    # selection. Old traj entries refresh from the projection npz (no GPU).
+    traj_p = OUT / f"zs_traj_{name}.json"
+    zs_traj = json.loads(traj_p.read_text()) if traj_p.exists() else {}
+    for npzp in sorted(OUT.glob(f"tower_{name}_ep*.npz"),
+                       key=lambda q: int(q.stem.split("_ep")[-1])):
+        ek = npzp.stem.split("_ep")[-1]
+        if "cvsel" in zs_traj.get(f"ep{ek}", {}):
             continue
-        vms = {}
-        for path in ck_paths:
-            ek = path.stem.split("_ep")[-1]
-            rs = json.loads((OUT / f"ft4var_{name}_ep{ek}{hsuf}.json").read_text())["per_seed"]
-            vms[ek] = float(np.mean([r["vscore"] for r in rs]))
-        bek = max(vms, key=vms.get)
-        bpath = OUT / f"tower_{name}_ep{bek}.npz"
-        tag_ = f"{name}_best{hsuf}(ep{bek})"
-        print(f"POST-HOC pick {name}{hsuf}: ep{bek} (val-score {vms[bek]:.3f})",
+        T0 = np.load(npzp)
+        zs_traj[f"ep{ek}"] = zs_from_arrays(T0["SPg"], T0["SPa"])
+        print(f"ZS-refresh(ep{ek}) cvsel={zs_traj[f'ep{ek}']['cvsel']:.3f}",
               flush=True)
-        prev = json.loads((OUT / f"ft4var_{name}_ep{bek}{hsuf}.json").read_text())["per_seed"]
-        runs = prev + head_runs(bpath, range(args.ckpt_seeds, args.topup_seeds),
-                                p1, p2, ls, tag_)
-        agg_print(tag_, runs)
-        json.dump({"best_ep": int(bek), "val_score_by_ep": vms, "per_seed": runs},
-                  open(outb, "w"), indent=2)
+        json.dump(zs_traj, open(traj_p, "w"), indent=2)
+    cand = {k: v for k, v in zs_traj.items() if "cvsel" in v}
+    if cand:
+        bk = max(cand, key=lambda k: (cand[k]["cvsel"], -int(k[2:])))
+        json.dump(dict(best_ep=int(bk[2:]), **cand[bk]),
+                  open(OUT / f"zsbest_{name}.json", "w"), indent=2)
+        b = cand[bk]
+        print(f"ZSBEST {name}: ep{bk[2:]} cvsel={b['cvsel']:.3f} "
+              f"non={b['nm_noname']:.3f}/{b['h5_noname']:.3f} "
+              f"tag={b['tag_noname']:.3f}", flush=True)
+
+    # ---------------- heads (LEGACY, --head only) ----------------------------
+    if args.head:
+        if tower_kind == "byol":
+            HEAD_CFGS = [("", "by", "by", 0.0), ("_ce", "ce", "ce", 0.0),
+                         ("_cetf", "ce", "ce", 0.1)]
+        elif FT == "ice":
+            HEAD_CFGS = [("", "ice", "ice", 0.0), ("_p1ce", "ce", "ice", 0.0)] \
+                if tower_kind in ("ice", "i2ce") else [("", "ice", "ice", 0.0)]
+        else:
+            HEAD_CFGS = [("", "ce", FT, 0.0)]
+
+        VORD = VORDER
+
+        def head_runs(path, seeds, p1, p2, ls, tag_):
+            T = np.load(path)
+            g0 = T["SPg"]
+            d_pos = pos_of_g_t[T["SPd_gidx"]].to(dev)
+            mu, sd = g0.mean(0, keepdims=True), g0.std(0, keepdims=True) + 1e-6
+            tt = lambda x: torch.tensor((x - mu) / sd, dtype=torch.float32).to(dev)
+            Xg, Xa, Xq, Xd = tt(g0), tt(T["SPa"]), tt(T["SPq"]), tt(T["SPd"])
+            Xg_nd = tt(T["SPg_nd"])
+            runs = []
+            for seed in seeds:
+                gal, art, vs = train_userft_mrr(Xg, Xg_nd, Xa, Xq, Xd, d_pos, seed,
+                                                p1=p1, p2=p2, ls=ls, iw=HIW)
+                m = metrics4(gal, art)
+                m.update(vs)
+                runs.append(m)
+                print(f"{tag_} seed{seed}: neu {m['neutral']['h1']:.3f} "
+                      f"non {m['noname']['h1']:.3f} vsel {vs['vscore']:.3f}", flush=True)
+            return runs
+
+        def agg_print(tag_, runs):
+            for var in VORD:
+                h1m = np.mean([r[var]["h1"] for r in runs])
+                h5m = np.mean([r[var]["h5"] for r in runs])
+                tm = np.mean([r[var]["tag"] for r in runs])
+                print(f"AGG {tag_} {var:9s} h1={h1m:.3f} h5={h5m:.3f} tag={tm:.3f}",
+                      flush=True)
+            m4 = np.mean([np.mean([r[v]["h1"] for r in runs]) for v in VORD])
+            vm = np.mean([r["vscore"] for r in runs])
+            print(f"AGG {tag_} mean-of-4 = {m4:.3f} | val-score = {vm:.3f}", flush=True)
+
+        ck_paths = sorted(OUT.glob(f"tower_{name}_ep*.npz"),
+                          key=lambda p: int(p.stem.split("_ep")[-1]))
+        for hsuf, p1, p2, ls in HEAD_CFGS:
+            for path in ck_paths:
+                ek = path.stem.split("_ep")[-1]
+                tag_ = f"{name}_ep{ek}{hsuf}"
+                outj = OUT / f"ft4var_{tag_}.json"
+                if outj.exists():
+                    continue
+                runs = head_runs(path, range(args.ckpt_seeds), p1, p2, ls, tag_)
+                agg_print(tag_, runs)
+                json.dump({"per_seed": runs}, open(outj, "w"), indent=2)
+            outb = OUT / f"ft4var_{name}_best{hsuf}.json"
+            if outb.exists():
+                continue
+            vms = {}
+            for path in ck_paths:
+                ek = path.stem.split("_ep")[-1]
+                rs = json.loads((OUT / f"ft4var_{name}_ep{ek}{hsuf}.json").read_text())["per_seed"]
+                vms[ek] = float(np.mean([r["vscore"] for r in rs]))
+            bek = max(vms, key=vms.get)
+            bpath = OUT / f"tower_{name}_ep{bek}.npz"
+            tag_ = f"{name}_best{hsuf}(ep{bek})"
+            print(f"POST-HOC pick {name}{hsuf}: ep{bek} (val-score {vms[bek]:.3f})",
+                  flush=True)
+            prev = json.loads((OUT / f"ft4var_{name}_ep{bek}{hsuf}.json").read_text())["per_seed"]
+            runs = prev + head_runs(bpath, range(args.ckpt_seeds, args.topup_seeds),
+                                    p1, p2, ls, tag_)
+            agg_print(tag_, runs)
+            json.dump({"best_ep": int(bek), "val_score_by_ep": vms, "per_seed": runs},
+                      open(outb, "w"), indent=2)
     print("all done", flush=True)
 
 
