@@ -117,6 +117,12 @@ ARMS = {
     "wcle_i2poolce_icetf": ("i2poolce", "ice"),        # CE on the normalized MEAN
     # of the 4 views (x4 weight keeps the effective 4:2 CE:I ratio); I
     # unchanged -- w9 re-cert of the old 6-direction pooled-CE verdict.
+    "wcle_ai2lse_icetf": ("ai2lse", "ice"),        # ANCHOR-IN-I + LSE (user):
+    # I pairs span {4 views + OWN ANCHOR} (10 edges) so alignment itself ties
+    # anchor_g to its view cluster; repulsion = same negative-only LSE.
+    # = CE fully decomposed W&I-style: symmetric constant-weight attraction
+    # (incl. the positive edge) + DCL uniformity. vs i2lse isolates the
+    # anchor-edge's worth; vs i2ce isolates softmax-adaptive vs constant pull.
     "wcle_i2lse_icetf": ("i2lse", "ice"),          # UNIFORMITY-ONLY (user
     # decomposition, Wang&Isola lineage): loss = I x2 (all attraction) +
     # per-view logsumexp over NEGATIVE anchors only (pure repulsion; the
@@ -175,7 +181,7 @@ _CW = {"i2cce": 1.0, "i2ccec": 1.0,
 _IW = {"ice": 1.0, "i2ce": 2.0, "cegate1": 1.0, "cegate2": 2.0, "cegate3": 3.0,
        "cegate4": 4.0, "cegate1w": 1.0, "cegate2w": 2.0, "igate1": 1.0,
        "igate1w": 1.0, "rgate2": 2.0, "nodoc": 2.0, "cegate2c": 2.0,
-       "i2cce": 2.0, "i2ccec": 2.0, "i2lse": 2.0, "i2expce": 2.0, "i2poolce": 2.0,
+       "i2cce": 2.0, "i2ccec": 2.0, "i2lse": 2.0, "ai2lse": 2.0, "i2expce": 2.0, "i2poolce": 2.0,
        "ceexpi2": 2.0, "expi2expce": 2.0, "poolceexpi2": 2.0, "expi2poolexpce": 2.0,
        "shexpi2ce": 2.0, "shexpi2poolce": 2.0, "i2cmpce": 2.0, "shcmpi2ce": 2.0,
        "i2poolexpce": 2.0, "i2poolcmpce": 2.0, "expi2cmpce": 2.0,
@@ -882,7 +888,7 @@ def main():
                         zm = F.normalize(
                             torch.stack([Z.float() for Z in Zs]).mean(0), dim=-1)
                         loss = 4.0 * F.cross_entropy(zm @ Zg.T.float() * inv_t, tgt)
-                    elif tower_kind == "i2lse":
+                    elif tower_kind in ("i2lse", "ai2lse"):
                         # uniformity-only: repel from every WRONG anchor; no
                         # positive term (attraction is entirely the I block)
                         loss = 0.0
@@ -901,7 +907,13 @@ def main():
                     else:
                         loss = sum(F.cross_entropy(Z.float() @ Zg.T.float() * inv_t, tgt)
                                    for Z in Zs)
-                    if IW > 0 and IE:
+                    if IW > 0 and tower_kind == "ai2lse":
+                        # anchor joins the alignment set: 4 views + own anchor
+                        objs = [Z.float() for Z in Zs] + [Zg[tgt].float()]
+                        loss = loss + IW * sum(
+                            (1 - (objs[i] * objs[j]).sum(-1)).mean()
+                            for i in range(5) for j in range(i + 1, 5)) / 10.0
+                    elif IW > 0 and IE:
                         # E-space I; dual arms pay I into their OWN expander
                         _ei = xpd2 if DUAL else xpd
                         Ev = [F.normalize(_ei(Z.float()), dim=-1) for Z in Zs]

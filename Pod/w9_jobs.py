@@ -62,6 +62,7 @@ FS_JOBS = [
     ("wcle_shcmpi2poolcmpce_icetf", 512, False, 0),
     # symmetry completion (30-cell final grid)
     ("wcle_i2lse_icetf", 512, False, 0),  # uniformity-only (cell 31)
+    ("wcle_ai2lse_icetf", 512, False, 0),  # anchor-in-I + LSE (cell 32)
     ("wcle_poolcmpce_cetf", 512, False, 0),
     ("wcle_cecmpi2_icetf", 512, False, 0),
     ("wcle_poolcecmpi2_icetf", 512, False, 0),
