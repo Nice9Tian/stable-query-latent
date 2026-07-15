@@ -68,7 +68,8 @@ ARMS = {
     # prefix = ONE SHARED E serves every E-space loss of the arm.
     "wcle_expi2expce_icetf": ("expi2expce", "ice"),      # I@E_I + CE@E_CE (dual)
     "wcle_shexpi2ce_icetf": ("shexpi2ce", "ice"),        # I@E + CE@E, SHARED E
-    "wcle_shexpi2poolce_icetf": ("shexpi2poolce", "ice"),  # I@E + pool->E->CE,
+    "wcle_shexpi2poolce_icetf": ("shexpi2poolce", "ice"),  # I@E + pool-AFTER-E
+    # CE = CE(mean(E(views))) -- REWIRED per the pool-position grammar,
     # SHARED E
     "wcle_poolceexpi2_icetf": ("poolceexpi2", "ice"),    # pooled CE@dep + I@E
     # (the expander exists ONLY to give I its tax space)
@@ -81,6 +82,21 @@ ARMS = {
     "wcle_cmpce_cetf": ("cmpce", "ce"),            # no-I, per-view CE@cmp
     "wcle_i2cmpce_icetf": ("i2cmpce", "ice"),      # I@dep + per-view CE@cmp
     "wcle_shcmpi2ce_icetf": ("shcmpi2ce", "ice"),  # SHARED cmp: I@cmp + CE@cmp
+    # direction-closure wave (user decree): every template gets its exp/cmp
+    # variants; DUAL mixed directions allowed; "pool...E" order encodes pool
+    # position (poolexpce = pool BEFORE E; shexpi2poolce = pool AFTER E).
+    "wcle_i2poolexpce_icetf": ("i2poolexpce", "ice"),    # I@dep + pool->exp->CE
+    "wcle_i2poolcmpce_icetf": ("i2poolcmpce", "ice"),    # I@dep + pool->cmp->CE
+    "wcle_expi2cmpce_icetf": ("expi2cmpce", "ice"),      # DUAL: I@exp + CE@cmp
+    "wcle_cmpi2expce_icetf": ("cmpi2expce", "ice"),      # DUAL: I@cmp + CE@exp
+    "wcle_cmpi2cmpce_icetf": ("cmpi2cmpce", "ice"),      # DUAL: I@cmp + CE@cmp
+    "wcle_poolcmpceexpi2_icetf": ("poolcmpceexpi2", "ice"),  # DUAL: I@exp +
+    # pool->cmp->CE (poolexpceexpi2 would equal expi2poolexpce -- not duped)
+    "wcle_shexpi2poolexpce_icetf": ("shexpi2poolexpce", "ice"),  # SHARED exp:
+    # I@E + pool-BEFORE-E CE (the old shexpi2poolce wiring, renamed)
+    "wcle_shcmpi2poolcmpce_icetf": ("shcmpi2poolcmpce", "ice"),  # SHARED cmp:
+    # I@E + pool-BEFORE-E CE (user wrote shexpi2poolcmpce; shared module is
+    # single-direction, cmp assumed)
     "wcle_expce_cetf": ("expce", "ce"),            # PURE expander CE (user
     # design): NO I anywhere -- the deployed space receives no direct loss,
     # all shaping arrives via backprop through E. SimCLR-orthodox member of
@@ -143,6 +159,9 @@ _IW = {"ice": 1.0, "i2ce": 2.0, "cegate1": 1.0, "cegate2": 2.0, "cegate3": 3.0,
        "i2cce": 2.0, "i2ccec": 2.0, "i2expce": 2.0, "i2poolce": 2.0,
        "ceexpi2": 2.0, "expi2expce": 2.0, "poolceexpi2": 2.0, "expi2poolexpce": 2.0,
        "shexpi2ce": 2.0, "shexpi2poolce": 2.0, "i2cmpce": 2.0, "shcmpi2ce": 2.0,
+       "i2poolexpce": 2.0, "i2poolcmpce": 2.0, "expi2cmpce": 2.0,
+       "cmpi2expce": 2.0, "cmpi2cmpce": 2.0, "poolcmpceexpi2": 2.0,
+       "shexpi2poolexpce": 2.0, "shcmpi2poolcmpce": 2.0,
        "bkq192i2cce": 2.0, "bkq48i2cce": 2.0, "bkq12i2cce": 2.0,
        "bkbi2cce": 2.0, "mq3072i2cce": 2.0}
 SPLIT_SEED = 20260711
@@ -291,17 +310,41 @@ def main():
     I_GATED = tower_kind.startswith("igate")
     CENTERED = tower_kind in CENTER_ARMS
     _CE_E = ("i2expce", "expce", "expi2expce", "poolexpce", "expi2poolexpce",
-             "shexpi2ce", "shexpi2poolce", "cmpce", "i2cmpce", "shcmpi2ce")
+             "shexpi2ce", "shexpi2poolce", "cmpce", "i2cmpce", "shcmpi2ce",
+             "i2poolexpce", "i2poolcmpce", "expi2cmpce", "cmpi2expce",
+             "cmpi2cmpce", "poolcmpceexpi2", "shexpi2poolexpce",
+             "shcmpi2poolcmpce")
     _CE_POOL = ("i2poolce", "poolce", "poolceexpi2", "poolexpce",
-                "expi2poolexpce", "shexpi2poolce")
+                "expi2poolexpce", "shexpi2poolce", "i2poolexpce",
+                "i2poolcmpce", "poolcmpceexpi2", "shexpi2poolexpce",
+                "shcmpi2poolcmpce")
     _I_E = ("ceexpi2", "expi2expce", "poolceexpi2", "expi2poolexpce",
-            "shexpi2ce", "shexpi2poolce", "shcmpi2ce")
-    _DUAL = ("expi2expce", "expi2poolexpce")   # I and CE use SEPARATE E's
+            "shexpi2ce", "shexpi2poolce", "shcmpi2ce", "expi2cmpce",
+            "cmpi2expce", "cmpi2cmpce", "poolcmpceexpi2",
+            "shexpi2poolexpce", "shcmpi2poolcmpce")
+    _DUAL = ("expi2expce", "expi2poolexpce", "expi2cmpce", "cmpi2expce",
+             "cmpi2cmpce", "poolcmpceexpi2")   # I and CE use SEPARATE E's
+    _POOL_AFTER = ("shexpi2poolce",)   # CE pools the E-outputs (not the views)
+    # per-module E direction: (CE's E, I's E); None = that loss not in E
+    _EDIR = {"expce": ("exp", None), "cmpce": ("cmp", None),
+             "poolexpce": ("exp", None), "i2expce": ("exp", None),
+             "i2cmpce": ("cmp", None), "i2poolexpce": ("exp", None),
+             "i2poolcmpce": ("cmp", None), "ceexpi2": (None, "exp"),
+             "poolceexpi2": (None, "exp"), "shexpi2ce": ("exp", "exp"),
+             "shcmpi2ce": ("cmp", "cmp"), "shexpi2poolce": ("exp", "exp"),
+             "shexpi2poolexpce": ("exp", "exp"),
+             "shcmpi2poolcmpce": ("cmp", "cmp"),
+             "expi2expce": ("exp", "exp"), "expi2cmpce": ("cmp", "exp"),
+             "cmpi2expce": ("exp", "cmp"), "cmpi2cmpce": ("cmp", "cmp"),
+             "expi2poolexpce": ("exp", "exp"),
+             "poolcmpceexpi2": ("cmp", "exp")}
     XCE = tower_kind in _CE_E          # CE computed in expander space
     PCE = tower_kind in _CE_POOL       # CE pools the views first
     IE = tower_kind in _I_E            # I pairs live in expander space
     XPD = XCE or IE                    # arm carries the expander module
     DUAL = tower_kind in _DUAL         # separate E_I (xpd2) and E_CE (xpd)
+    POOL_AFTER = tower_kind in _POOL_AFTER
+    EDIR = _EDIR.get(tower_kind, (None, None))
     # naming grammar (user decree): i2exp* = I in DEPLOYED space (original
     # n4expce design); expi2* = I after the expander (new design)
     CW = _CW.get(tower_kind, 0.0)
@@ -642,18 +685,18 @@ def main():
         torch.manual_seed(seed)
         rng = np.random.default_rng(seed)
         model = SetPoolN(4, center=CENTERED).to(dev)
+        def _mkE(direction):
+            # disposable loss space, discarded at eval -- deploy = pre-E.
+            # exp goes UP (VICReg heritage), cmp goes DOWN (SimCLR bottleneck).
+            d = (256, 512) if direction == "exp" else (128, 64)
+            return nn.Sequential(nn.Linear(DM, d[0]), nn.GELU(),
+                                 nn.Linear(d[0], d[1])).to(dev)
         xpd, xpd2 = None, None
         if DUAL:
-            # I gets its OWN expander; xpd below stays CE's
-            xpd2 = nn.Sequential(nn.Linear(DM, 256), nn.GELU(),
-                                 nn.Linear(256, 512)).to(dev)
+            # I gets its OWN E (direction independent of CE's)
+            xpd2 = _mkE(EDIR[1])
         if XPD:
-            # disposable loss space, discarded at eval -- deploy = pre-E.
-            # exp arms go UP (VICReg heritage), cmp arms go DOWN (SimCLR
-            # bottleneck direction, user callout).
-            _dims = (128, 64) if "cmp" in tower_kind else (256, 512)
-            xpd = nn.Sequential(nn.Linear(DM, _dims[0]), nn.GELU(),
-                                nn.Linear(_dims[0], _dims[1])).to(dev)
+            xpd = _mkE(EDIR[0] or EDIR[1])   # CE's E (or I's when CE not in E)
         params = (list(model.parameters())
                   + (list(xpd.parameters()) if xpd else [])
                   + (list(xpd2.parameters()) if xpd2 else []))
@@ -785,8 +828,16 @@ def main():
                             lg = Z.float() @ mqueue.T * inv_t
                             loss = loss + F.cross_entropy(
                                 lg.masked_fill(fmask, -1e4), slot)
+                    elif XCE and PCE and POOL_AFTER:
+                        # shexpi2poolce: E each view FIRST, then pool the
+                        # E-outputs (pool-position grammar: pool AFTER E)
+                        Eg = F.normalize(xpd(Zg.float()), dim=-1)
+                        em = F.normalize(torch.stack(
+                            [F.normalize(xpd(Z.float()), dim=-1)
+                             for Z in Zs]).mean(0), dim=-1)
+                        loss = 4.0 * F.cross_entropy(em @ Eg.T * inv_t, tgt)
                     elif XCE and PCE:
-                        # (i2)poolexpce: pool the views, then CE in E-space
+                        # pool->E->CE: pool the views, then CE in E-space
                         Eg = F.normalize(xpd(Zg.float()), dim=-1)
                         zm = F.normalize(
                             torch.stack([Z.float() for Z in Zs]).mean(0), dim=-1)
