@@ -75,6 +75,12 @@ ARMS = {
     "wcle_expi2poolexpce_icetf": ("expi2poolexpce", "ice"),  # I@E + pool->E->CE
     "wcle_poolce_cetf": ("poolce", "ce"),          # pooled CE, NO I
     "wcle_poolexpce_cetf": ("poolexpce", "ce"),    # pool -> E -> CE, NO I
+    # cmp = COMPRESSOR (SimCLR-direction gate, user callout): same lifecycle
+    # as exp but DOWN-projecting (128->128->64) -- an information bottleneck
+    # for the loss instead of head-room. exp arms stay up (128->256->512).
+    "wcle_cmpce_cetf": ("cmpce", "ce"),            # no-I, per-view CE@cmp
+    "wcle_i2cmpce_icetf": ("i2cmpce", "ice"),      # I@dep + per-view CE@cmp
+    "wcle_shcmpi2ce_icetf": ("shcmpi2ce", "ice"),  # SHARED cmp: I@cmp + CE@cmp
     "wcle_expce_cetf": ("expce", "ce"),            # PURE expander CE (user
     # design): NO I anywhere -- the deployed space receives no direct loss,
     # all shaping arrives via backprop through E. SimCLR-orthodox member of
@@ -136,7 +142,7 @@ _IW = {"ice": 1.0, "i2ce": 2.0, "cegate1": 1.0, "cegate2": 2.0, "cegate3": 3.0,
        "igate1w": 1.0, "rgate2": 2.0, "nodoc": 2.0, "cegate2c": 2.0,
        "i2cce": 2.0, "i2ccec": 2.0, "i2expce": 2.0, "i2poolce": 2.0,
        "ceexpi2": 2.0, "expi2expce": 2.0, "poolceexpi2": 2.0, "expi2poolexpce": 2.0,
-       "shexpi2ce": 2.0, "shexpi2poolce": 2.0,
+       "shexpi2ce": 2.0, "shexpi2poolce": 2.0, "i2cmpce": 2.0, "shcmpi2ce": 2.0,
        "bkq192i2cce": 2.0, "bkq48i2cce": 2.0, "bkq12i2cce": 2.0,
        "bkbi2cce": 2.0, "mq3072i2cce": 2.0}
 SPLIT_SEED = 20260711
@@ -285,11 +291,11 @@ def main():
     I_GATED = tower_kind.startswith("igate")
     CENTERED = tower_kind in CENTER_ARMS
     _CE_E = ("i2expce", "expce", "expi2expce", "poolexpce", "expi2poolexpce",
-             "shexpi2ce", "shexpi2poolce")
+             "shexpi2ce", "shexpi2poolce", "cmpce", "i2cmpce", "shcmpi2ce")
     _CE_POOL = ("i2poolce", "poolce", "poolceexpi2", "poolexpce",
                 "expi2poolexpce", "shexpi2poolce")
     _I_E = ("ceexpi2", "expi2expce", "poolceexpi2", "expi2poolexpce",
-            "shexpi2ce", "shexpi2poolce")
+            "shexpi2ce", "shexpi2poolce", "shcmpi2ce")
     _DUAL = ("expi2expce", "expi2poolexpce")   # I and CE use SEPARATE E's
     XCE = tower_kind in _CE_E          # CE computed in expander space
     PCE = tower_kind in _CE_POOL       # CE pools the views first
@@ -642,10 +648,12 @@ def main():
             xpd2 = nn.Sequential(nn.Linear(DM, 256), nn.GELU(),
                                  nn.Linear(256, 512)).to(dev)
         if XPD:
-            # disposable CE space (n4expce lineage, random init as historical):
-            # trained alongside the tower, discarded at eval -- deploy = pre-E.
-            xpd = nn.Sequential(nn.Linear(DM, 256), nn.GELU(),
-                                nn.Linear(256, 512)).to(dev)
+            # disposable loss space, discarded at eval -- deploy = pre-E.
+            # exp arms go UP (VICReg heritage), cmp arms go DOWN (SimCLR
+            # bottleneck direction, user callout).
+            _dims = (128, 64) if "cmp" in tower_kind else (256, 512)
+            xpd = nn.Sequential(nn.Linear(DM, _dims[0]), nn.GELU(),
+                                nn.Linear(_dims[0], _dims[1])).to(dev)
         params = (list(model.parameters())
                   + (list(xpd.parameters()) if xpd else [])
                   + (list(xpd2.parameters()) if xpd2 else []))

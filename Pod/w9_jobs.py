@@ -50,6 +50,9 @@ FS_JOBS = [
     ("wcle_expi2poolexpce_icetf", 512, False, 0),  # I@E_I + pool->E_CE->CE (dual)
     ("wcle_shexpi2ce_icetf", 512, False, 0),    # SHARED E: I@E + CE@E
     ("wcle_shexpi2poolce_icetf", 512, False, 0),  # SHARED E: I@E + pool->E->CE
+    ("wcle_cmpce_cetf", 512, False, 0),     # DOWN-projector (SimCLR dir) trio
+    ("wcle_i2cmpce_icetf", 512, False, 0),
+    ("wcle_shcmpi2ce_icetf", 512, False, 0),
     ("wcle_poolce_cetf", 512, False, 0),
     ("wcle_poolexpce_cetf", 512, False, 0),
     ("wcle_i2ce_icetf", 512, False, 0),  # clean@512 i2ce (only nsp existed):
