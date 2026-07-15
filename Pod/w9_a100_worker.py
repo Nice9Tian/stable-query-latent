@@ -174,6 +174,11 @@ ARMS = {
     "wcle_pjai25expauni2_icetf": ("pjai25expauni2", "ice"),
     "wcle_pjai25cmpauni2_icetf": ("pjai25cmpauni2", "ice"),
     "wcle_pjai25pjauni2_icetf": ("pjai25pjauni2", "ice"),
+    # shared-E (sh{g}): ONE projection E_g serves BOTH align and
+    # uniformity (vs the dual grid separate E's) -- like shexpi2ce.
+    "wcle_shexpai25auni2_icetf": ("shexpai25auni2", "ice"),
+    "wcle_shcmpai25auni2_icetf": ("shcmpai25auni2", "ice"),
+    "wcle_shpjai25auni2_icetf": ("shpjai25auni2", "ice"),
     "wcle_i4uni2_icetf": ("i4uni2", "ice"),      # i4 rung of i6uni2
     # digit grammar (user decree v2, ONE dial in i units): the number after
     # i/ai == IW, same scale as i2ce's "2". Invariance == align/2 on the
@@ -242,6 +247,7 @@ _IW = {"ice": 1.0, "i2ce": 2.0, "cegate1": 1.0, "cegate2": 2.0, "cegate3": 3.0,
        "i4uni2": 4.0,   # W&I i-units: digit == IW (2x paper align_w, alpha2)
        "ai25auni2": 25.0,   # deployed high-pull anchor-W&I (user)
        "expai25expauni2": 25.0, "expai25cmpauni2": 25.0, "expai25pjauni2": 25.0, "cmpai25expauni2": 25.0, "cmpai25cmpauni2": 25.0, "cmpai25pjauni2": 25.0, "pjai25expauni2": 25.0, "pjai25cmpauni2": 25.0, "pjai25pjauni2": 25.0,   # gated anchor-W&I 3x3 (all IW25)
+       "shexpai25auni2": 25.0, "shcmpai25auni2": 25.0, "shpjai25auni2": 25.0,   # shared-E (IW25)
        "i2expce": 2.0, "i2poolce": 2.0,   # (were bug-commented -> IW0)
        "ceexpi2": 2.0, "expi2expce": 2.0, "poolceexpi2": 2.0, "expi2poolexpce": 2.0,
        "shexpi2ce": 2.0, "shexpi2poolce": 2.0, "i2cmpce": 2.0, "shcmpi2ce": 2.0,
@@ -450,10 +456,14 @@ def main():
     # E_g1, anchor-uniformity(push) in E_g2, dual projections g in
     # {exp,cmp,pj}. Reuses the DUAL wiring: xpd=push E_g2, xpd2=pull E_g1.
     _gm = re.match(r"^(exp|cmp|pj)ai25(exp|cmp|pj)auni2$", tower_kind)
-    GAUNI = _gm is not None
-    if GAUNI:
+    _gs = re.match(r"^sh(exp|cmp|pj)ai25auni2$", tower_kind)   # ONE shared E
+    GAUNI = (_gm is not None) or (_gs is not None)
+    if _gm:
         EDIR = (_gm.group(2), _gm.group(1))   # (push g2 -> xpd, pull g1 -> xpd2)
         DUAL = XPD = True
+    elif _gs:
+        EDIR = (_gs.group(1), None)   # single shared E_g -> xpd (both losses)
+        XPD = True
     # naming grammar (user decree): i2exp* = I in DEPLOYED space (original
     # n4expce design); expi2* = I after the expander (new design)
     CW = _CW.get(tower_kind, 0.0)
@@ -1034,8 +1044,9 @@ def main():
                     if IW > 0 and GAUNI:
                         # pull: anchor joins align, in E_g1 (xpd2). 4
                         # views + own anchor, 10 edges, weight IW (=25).
-                        E1 = [F.normalize(xpd2(Z.float()), dim=-1) for Z in Zs] \
-                            + [F.normalize(xpd2(Zg[tgt].float()), dim=-1)]
+                        _ep = xpd2 if DUAL else xpd   # shared xpd for sh*
+                        E1 = [F.normalize(_ep(Z.float()), dim=-1) for Z in Zs] \
+                            + [F.normalize(_ep(Zg[tgt].float()), dim=-1)]
                         loss = loss + IW * sum(
                             (1 - (E1[i] * E1[j]).sum(-1)).mean()
                             for i in range(5) for j in range(i + 1, 5)) / 10.0
