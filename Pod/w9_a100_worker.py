@@ -36,6 +36,16 @@ ARMS = {
     "wcle_ice_icetf": ("ice", "ice"),
     "wcle_i2ce_icetf": ("i2ce", "ice"),
     "wcle_ce_cetf": ("ce", "ce"),
+    # bce family (user): CE with BATCH negatives = in-batch NT-Xent/SimCLR.
+    # Bare "ce" above is grandfathered anchored-CE (== ace in the grammar;
+    # paper notation aCE). bce uses NO anchor gallery: keys = this step's
+    # 4*bs views, positive = the NEXT view (ring) of the same game, self +
+    # remaining siblings masked. Same tau .02 (controlled); per-view sum
+    # keeps the weight-4 push convention. bce/i2bce skip the full-gallery
+    # re-encode entirely; ai2bce pays it only for the I rope rows.
+    "wcle_bce_cetf": ("bce", "ce"),          # pure SimCLR baseline
+    "wcle_i2bce_icetf": ("i2bce", "ice"),    # + I x2 (views)
+    "wcle_ai2bce_icetf": ("ai2bce", "ice"),  # + anchor joins I (CE stays batch)
     "wcle_byol_bytf": ("byol", "by"),
     "wcle_arc_arctf": ("arc", "arc"),
     "wcle_cegate1_icetf": ("cegate1", "ice"),
@@ -214,7 +224,7 @@ _CW = {"i2cce": 1.0, "i2ccec": 1.0,
 _IW = {"ice": 1.0, "i2ce": 2.0, "cegate1": 1.0, "cegate2": 2.0, "cegate3": 3.0,
        "cegate4": 4.0, "cegate1w": 1.0, "cegate2w": 2.0, "igate1": 1.0,
        "igate1w": 1.0, "rgate2": 2.0, "nodoc": 2.0, "cegate2c": 2.0,
-       "i2cce": 2.0, "i2ccec": 2.0, "ai2auni25": 2.0, "ai2ce": 2.0,
+       "i2cce": 2.0, "i2ccec": 2.0, "ai2auni25": 2.0, "ai2ce": 2.0, "i2bce": 2.0, "ai2bce": 2.0,
        "ai6uni2": 6.0, "i6uni2": 6.0, "ai6auni2": 6.0, "ai4auni2": 4.0, "i4uni2": 4.0,   # = 2x W&I align_w 3 (alpha=2 = 2*(1-cos)) "i2expce": 2.0, "i2poolce": 2.0,
        "ceexpi2": 2.0, "expi2expce": 2.0, "poolceexpi2": 2.0, "expi2poolexpce": 2.0,
        "shexpi2ce": 2.0, "shexpi2poolce": 2.0, "i2cmpce": 2.0, "shcmpi2ce": 2.0,
@@ -410,6 +420,7 @@ def main():
              "cmpi2poolexpce": ("exp", "cmp"),
              "cmpi2poolcmpce": ("cmp", "cmp")}
     XCE = tower_kind in _CE_E          # CE computed in expander space
+    BCE = tower_kind in ("bce", "i2bce", "ai2bce")   # in-batch negatives
     PCE = tower_kind in _CE_POOL       # CE pools the views first
     IE = tower_kind in _I_E            # I pairs live in expander space
     XPD = XCE or IE                    # arm carries the expander module
@@ -875,6 +886,8 @@ def main():
                         Zg[rows_t] = fresh              # autograd via index put
                         with torch.no_grad():
                             bank[rows_t] = fresh.detach()
+                    elif tower_kind in ("bce", "i2bce"):
+                        Zg = None       # anchor-free: no gallery re-encode
                     else:
                         Zg = gallery_train(model)
                     Zs = [model(*sample_views(gids, W, rng)) for _ in range(NV - 1)]
@@ -899,6 +912,20 @@ def main():
                             lg = Z.float() @ mqueue.T * inv_t
                             loss = loss + F.cross_entropy(
                                 lg.masked_fill(fmask, -1e4), slot)
+                    elif BCE:
+                        # in-batch NT-Xent: logits vs ALL 4*bs views of this
+                        # step; target = ring sibling; self + other siblings
+                        # masked (false negatives).
+                        keys = torch.cat([Z.float() for Z in Zs])
+                        ar = torch.arange(bs, device=dev)
+                        loss = 0.0
+                        for v in range(NV):
+                            lg = Zs[v].float() @ keys.T * inv_t
+                            for u in range(NV):
+                                if u != (v + 1) % NV:
+                                    lg[ar, u * bs + ar] = -1e4
+                            loss = loss + F.cross_entropy(
+                                lg, ((v + 1) % NV) * bs + ar)
                     elif XCE and PCE and POOL_AFTER:
                         # shexpi2poolce: E each view FIRST, then pool the
                         # E-outputs (pool-position grammar: pool AFTER E)
@@ -963,7 +990,7 @@ def main():
                     else:
                         loss = sum(F.cross_entropy(Z.float() @ Zg.T.float() * inv_t, tgt)
                                    for Z in Zs)
-                    if IW > 0 and tower_kind in ("ai2ce", "ai2auni25", "ai6uni2", "ai6auni2", "ai4auni2"):
+                    if IW > 0 and tower_kind in ("ai2ce", "ai2bce", "ai2auni25", "ai6uni2", "ai6auni2", "ai4auni2"):
                         # anchor joins the alignment set: 4 views + own anchor
                         objs = [Z.float() for Z in Zs] + [Zg[tgt].float()]
                         loss = loss + IW * sum(

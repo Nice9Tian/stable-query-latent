@@ -40,6 +40,10 @@ FS_JOBS = [
     ("wcle_ai4auni2_icetf", 512, False, 0),  # i4 rung
     ("wcle_i6uni2_icetf", 512, False, 0),    # pure W&I anchor-free (i6)
     ("wcle_i4uni2_icetf", 512, False, 0),    # i4 rung
+    # bce family: CE push from BATCH views (bare ce stays anchored == ace)
+    ("wcle_bce_cetf", 512, False, 0),        # pure SimCLR baseline
+    ("wcle_i2bce_icetf", 512, False, 0),     # + I x2
+    ("wcle_ai2bce_icetf", 512, False, 0),    # + anchor rope (I only)
     ("wcle_ai6uni2_icetf", 512, False, 0),   # mixed source (parked, not in flash)
     # CE-attachment matrix at the champion cap (user decree): where CE
     # attaches x anchor cap; A/B = i2ce@g2048 (done) / i2ce@512 (queued)
