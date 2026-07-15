@@ -161,6 +161,19 @@ ARMS = {
     # ai2auni25 -> ai6auni2 = kernel softness + pull:push budget (source fixed);
     # ai6auni2 -> ai6uni2 = repulsion source only (recipe fixed).
     "wcle_ai4auni2_icetf": ("ai4auni2", "ice"),  # i4 rung of ai6auni2
+    "wcle_ai25auni2_icetf": ("ai25auni2", "ice"),   # deployed high-pull (IW25)
+    # gated anchor-W&I 3x3 (user): {pull gate}ai25{push gate}auni2 --
+    # align(IW25)@E_g1 + anchor-uniformity(t2)@E_g2, g in {exp,cmp,pj};
+    # pj = parallel proj 128->256->128 (no scaling). @512, 2000ep.
+    "wcle_expai25expauni2_icetf": ("expai25expauni2", "ice"),
+    "wcle_expai25cmpauni2_icetf": ("expai25cmpauni2", "ice"),
+    "wcle_expai25pjauni2_icetf": ("expai25pjauni2", "ice"),
+    "wcle_cmpai25expauni2_icetf": ("cmpai25expauni2", "ice"),
+    "wcle_cmpai25cmpauni2_icetf": ("cmpai25cmpauni2", "ice"),
+    "wcle_cmpai25pjauni2_icetf": ("cmpai25pjauni2", "ice"),
+    "wcle_pjai25expauni2_icetf": ("pjai25expauni2", "ice"),
+    "wcle_pjai25cmpauni2_icetf": ("pjai25cmpauni2", "ice"),
+    "wcle_pjai25pjauni2_icetf": ("pjai25pjauni2", "ice"),
     "wcle_i4uni2_icetf": ("i4uni2", "ice"),      # i4 rung of i6uni2
     # digit grammar (user decree v2, ONE dial in i units): the number after
     # i/ai == IW, same scale as i2ce's "2". Invariance == align/2 on the
@@ -225,7 +238,11 @@ _IW = {"ice": 1.0, "i2ce": 2.0, "cegate1": 1.0, "cegate2": 2.0, "cegate3": 3.0,
        "cegate4": 4.0, "cegate1w": 1.0, "cegate2w": 2.0, "igate1": 1.0,
        "igate1w": 1.0, "rgate2": 2.0, "nodoc": 2.0, "cegate2c": 2.0,
        "i2cce": 2.0, "i2ccec": 2.0, "ai2auni25": 2.0, "ai2ce": 2.0, "i2bce": 2.0, "ai2bce": 2.0,
-       "ai6uni2": 6.0, "i6uni2": 6.0, "ai6auni2": 6.0, "ai4auni2": 4.0, "i4uni2": 4.0,   # = 2x W&I align_w 3 (alpha=2 = 2*(1-cos)) "i2expce": 2.0, "i2poolce": 2.0,
+       "ai6uni2": 6.0, "i6uni2": 6.0, "ai6auni2": 6.0, "ai4auni2": 4.0,
+       "i4uni2": 4.0,   # W&I i-units: digit == IW (2x paper align_w, alpha2)
+       "ai25auni2": 25.0,   # deployed high-pull anchor-W&I (user)
+       "expai25expauni2": 25.0, "expai25cmpauni2": 25.0, "expai25pjauni2": 25.0, "cmpai25expauni2": 25.0, "cmpai25cmpauni2": 25.0, "cmpai25pjauni2": 25.0, "pjai25expauni2": 25.0, "pjai25cmpauni2": 25.0, "pjai25pjauni2": 25.0,   # gated anchor-W&I 3x3 (all IW25)
+       "i2expce": 2.0, "i2poolce": 2.0,   # (were bug-commented -> IW0)
        "ceexpi2": 2.0, "expi2expce": 2.0, "poolceexpi2": 2.0, "expi2poolexpce": 2.0,
        "shexpi2ce": 2.0, "shexpi2poolce": 2.0, "i2cmpce": 2.0, "shcmpi2ce": 2.0,
        "i2poolexpce": 2.0, "i2poolcmpce": 2.0, "expi2cmpce": 2.0,
@@ -429,6 +446,14 @@ def main():
     DUAL = tower_kind in _DUAL         # separate E_I (xpd2) and E_CE (xpd)
     POOL_AFTER = tower_kind in _POOL_AFTER
     EDIR = _EDIR.get(tower_kind, (None, None))
+    # gated anchor-W&I (user 3x3): {g1}ai25{g2}auni2 -- align(pull) in
+    # E_g1, anchor-uniformity(push) in E_g2, dual projections g in
+    # {exp,cmp,pj}. Reuses the DUAL wiring: xpd=push E_g2, xpd2=pull E_g1.
+    _gm = re.match(r"^(exp|cmp|pj)ai25(exp|cmp|pj)auni2$", tower_kind)
+    GAUNI = _gm is not None
+    if GAUNI:
+        EDIR = (_gm.group(2), _gm.group(1))   # (push g2 -> xpd, pull g1 -> xpd2)
+        DUAL = XPD = True
     # naming grammar (user decree): i2exp* = I in DEPLOYED space (original
     # n4expce design); expi2* = I after the expander (new design)
     CW = _CW.get(tower_kind, 0.0)
@@ -771,8 +796,10 @@ def main():
         model = SetPoolN(4, center=CENTERED).to(dev)
         def _mkE(direction):
             # disposable loss space, discarded at eval -- deploy = pre-E.
-            # exp goes UP (VICReg heritage), cmp goes DOWN (SimCLR bottleneck).
-            d = (256, 512) if direction == "exp" else (128, 64)
+            # exp UP (VICReg), cmp DOWN (SimCLR bottleneck), pj FLAT
+            # (parallel projection 128->256->128, no dim scaling; user).
+            d = {"exp": (256, 512), "cmp": (128, 64),
+                 "pj": (256, 128)}.get(direction, (128, 64))
             return nn.Sequential(nn.Linear(DM, d[0]), nn.GELU(),
                                  nn.Linear(d[0], d[1])).to(dev)
         xpd, xpd2 = None, None
@@ -960,7 +987,7 @@ def main():
                             lg = (Z.float() @ Zg.T.float() * inv_t).scatter(
                                 1, tgt[:, None], -1e4)      # k^- only
                             loss = loss + torch.logsumexp(lg, dim=1).mean()
-                    elif tower_kind in ("ai6auni2", "ai4auni2"):
+                    elif tower_kind in ("ai6auni2", "ai4auni2", "ai25auni2"):
                         # W&I uniformity vs the WRONG anchors (kernel zeroed
                         # at the own column) -- soft ai2auni25, tau_eff 0.25.
                         loss = 0.0
@@ -981,6 +1008,18 @@ def main():
                         for Z in Zs:
                             d2 = torch.pdist(Z.float()).pow(2)
                             loss = loss + d2.mul(-UNI_T).exp().mean().log() / len(Zs)
+                    elif GAUNI:
+                        # push: anchor-uniformity in E_g2 (xpd). Kernel
+                        # exp(2t(cos-1)) of E(views) vs E(WRONG anchors),
+                        # own column zeroed; t = UNI_T (=2, "auni2").
+                        Eg = F.normalize(xpd(Zg.float()), dim=-1)
+                        loss = 0.0
+                        for Z in Zs:
+                            Ez = F.normalize(xpd(Z.float()), dim=-1)
+                            ker = ((Ez @ Eg.T - 1.0) * (2 * UNI_T)).exp(
+                                ).scatter(1, tgt[:, None], 0.0)
+                            loss = loss + ker.sum(1).div(
+                                ker.shape[1] - 1).log().mean() / len(Zs)
                     elif tower_kind == "arc":
                         loss = sum(arcface_ce(Z.float() @ Zg.T.float(), tgt) for Z in Zs)
                     elif CE_GATED:
@@ -992,7 +1031,15 @@ def main():
                     else:
                         loss = sum(F.cross_entropy(Z.float() @ Zg.T.float() * inv_t, tgt)
                                    for Z in Zs)
-                    if IW > 0 and tower_kind in ("ai2ce", "ai2bce", "ai2auni25", "ai6uni2", "ai6auni2", "ai4auni2"):
+                    if IW > 0 and GAUNI:
+                        # pull: anchor joins align, in E_g1 (xpd2). 4
+                        # views + own anchor, 10 edges, weight IW (=25).
+                        E1 = [F.normalize(xpd2(Z.float()), dim=-1) for Z in Zs] \
+                            + [F.normalize(xpd2(Zg[tgt].float()), dim=-1)]
+                        loss = loss + IW * sum(
+                            (1 - (E1[i] * E1[j]).sum(-1)).mean()
+                            for i in range(5) for j in range(i + 1, 5)) / 10.0
+                    elif IW > 0 and tower_kind in ("ai2ce", "ai2bce", "ai2auni25", "ai6uni2", "ai6auni2", "ai4auni2", "ai25auni2"):
                         # anchor joins the alignment set: 4 views + own anchor
                         objs = [Z.float() for Z in Zs] + [Zg[tgt].float()]
                         loss = loss + IW * sum(
