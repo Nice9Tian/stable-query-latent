@@ -135,7 +135,6 @@ ARMS = {
     # epdg_*: GRID-HARMONIZED canonical VICReg (dedicated flash_byol_vicreg
     # notebook): epd wiring, but the expander is the 30-cell grid's exp module
     "wcle_epdg_v25i25c1_cetf": ("epdg_v25i25c1", "ce"),
-    "wcle_epdg_v20i10c20_cetf": ("epdg_v20i10c20", "ce"),
     "wcle_epdg_v20i10c15_cetf": ("epdg_v20i10c15", "ce"),
     "wcle_epdb_v25i25c1_cetf": ("epdb_v25i25c1", "ce"),
     "wcle_epdb_v20i10c20_cetf": ("epdb_v20i10c20", "ce"),
