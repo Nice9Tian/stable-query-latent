@@ -60,7 +60,12 @@ ARMS = {
     # NAMING GRAMMAR (user decree): [I position][CE path]. "i2exp..." = I in
     # the DEPLOYED space (the ORIGINAL n4expce design); "expi2..." = I after
     # the expander (E-space, the NEW design).
+    "wcle_expi2ce_icetf": ("expi2ce", "ice"),            # I@E + per-view CE@dep
+    # (with expi2poolce: the "expander serves ONLY I" pair, per-view flavor)
     "wcle_expi2expce_icetf": ("expi2expce", "ice"),      # I@E + per-view CE@E
+    # (ONE shared E serves both losses -- convention: all E-space terms of an
+    # arm share a single expander; a decoupled-dual-E variant would need its
+    # own codename)
     "wcle_expi2poolce_icetf": ("expi2poolce", "ice"),    # I@E + pooled CE@dep
     # (the expander exists ONLY to give I its tax space)
     "wcle_expi2poolexpce_icetf": ("expi2poolexpce", "ice"),  # I@E + pool->E->CE
@@ -126,7 +131,7 @@ _IW = {"ice": 1.0, "i2ce": 2.0, "cegate1": 1.0, "cegate2": 2.0, "cegate3": 3.0,
        "cegate4": 4.0, "cegate1w": 1.0, "cegate2w": 2.0, "igate1": 1.0,
        "igate1w": 1.0, "rgate2": 2.0, "nodoc": 2.0, "cegate2c": 2.0,
        "i2cce": 2.0, "i2ccec": 2.0, "i2expce": 2.0, "i2poolce": 2.0,
-       "expi2expce": 2.0, "expi2poolce": 2.0, "expi2poolexpce": 2.0,
+       "expi2ce": 2.0, "expi2expce": 2.0, "expi2poolce": 2.0, "expi2poolexpce": 2.0,
        "bkq192i2cce": 2.0, "bkq48i2cce": 2.0, "bkq12i2cce": 2.0,
        "bkbi2cce": 2.0, "mq3072i2cce": 2.0}
 SPLIT_SEED = 20260711
@@ -277,7 +282,7 @@ def main():
     _CE_E = ("i2expce", "expce", "expi2expce", "poolexpce", "expi2poolexpce")
     _CE_POOL = ("i2poolce", "poolce", "expi2poolce", "poolexpce",
                 "expi2poolexpce")
-    _I_E = ("expi2expce", "expi2poolce", "expi2poolexpce")
+    _I_E = ("expi2ce", "expi2expce", "expi2poolce", "expi2poolexpce")
     XCE = tower_kind in _CE_E          # CE computed in expander space
     PCE = tower_kind in _CE_POOL       # CE pools the views first
     IE = tower_kind in _I_E            # I pairs live in expander space

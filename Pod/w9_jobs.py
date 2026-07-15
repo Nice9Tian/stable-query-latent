@@ -44,6 +44,7 @@ FS_JOBS = [
     # matrix {no-I, I2} x {per-view, expander, pooled, pool->expander}.
     # ce@512 done (0.835); the other 7 cells below/above. Results decide
     # which structure the scaling theory is built on.
+    ("wcle_expi2ce_icetf", 512, False, 0),      # I@E + per-view CE@dep
     ("wcle_expi2expce_icetf", 512, False, 0),   # I@E + CE@E (new design)
     ("wcle_expi2poolce_icetf", 512, False, 0),  # I@E + pooled CE@dep
     ("wcle_expi2poolexpce_icetf", 512, False, 0),  # I@E + pool->E->CE
