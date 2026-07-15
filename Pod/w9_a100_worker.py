@@ -56,7 +56,11 @@ ARMS = {
     "wcle_cegate2c_icetf": ("cegate2c", "ice"),    # champion recipe with
     # TRAIN-TIME centering: outputs get mu-EMA subtracted BEFORE the L2
     # normalize, so CE/I never spend capacity on a common direction
-    "wcle_i2expce_icetf": ("i2expce", "ice"),          # n4expce revival (w9 cert; I x2 kept):
+    "wcle_i2expce_icetf": ("i2expce", "ice"),
+    "wcle_expce_cetf": ("expce", "ce"),            # PURE expander CE (user
+    # design): NO I anywhere -- the deployed space receives no direct loss,
+    # all shaping arrives via backprop through E. SimCLR-orthodox member of
+    # the attachment matrix; A/B = ce (deployed CE, no I) at the same cap.          # n4expce revival (w9 cert; I x2 kept):
     # CE paid in a DISPOSABLE expander space (E = norm(MLP 128->256->512),
     # CE on E(view) @ E(gallery)); I stays in the deployed space; deploy =
     # pre-expander tower output. A/B = i2ce at the same cap.
@@ -260,7 +264,7 @@ def main():
     CE_GATED = tower_kind.startswith("cegate") or tower_kind == "rgate2"
     I_GATED = tower_kind.startswith("igate")
     CENTERED = tower_kind in CENTER_ARMS
-    XCE = tower_kind == "i2expce"        # CE in a disposable expander space
+    XCE = tower_kind in ("i2expce", "expce")        # CE in a disposable expander space
     PCE = tower_kind == "i2poolce"       # CE on the view mean (x4 weight)
     CW = _CW.get(tower_kind, 0.0)
     bank_m = re.match(r"bk(?:q(\d+)|b)i2cce$", tower_kind)

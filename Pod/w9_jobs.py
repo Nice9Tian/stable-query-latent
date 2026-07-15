@@ -38,6 +38,8 @@ FS_JOBS = [
     ("wcle_i2poolce_icetf", 2048, False, 0),
     ("wcle_i2expce_icetf", 512, False, 0),   # CE-attachment matrix @512
     ("wcle_i2poolce_icetf", 512, False, 0),
+    ("wcle_expce_cetf", 2048, False, 0),   # pure expander-CE (no I)
+    ("wcle_expce_cetf", 512, False, 0),
     ("wcle_i2ce_icetf", 512, False, 0),  # clean@512 i2ce (only nsp existed):
     # fixes the i2ce anchor-curve ORIGIN (512 point was nsp-handicapped)
     # and completes the clean same-cap ce-vs-i2ce pair at 512
