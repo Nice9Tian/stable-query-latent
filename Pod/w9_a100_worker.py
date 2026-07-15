@@ -807,9 +807,10 @@ def main():
         def _mkE(direction):
             # disposable loss space, discarded at eval -- deploy = pre-E.
             # exp UP (VICReg), cmp DOWN (SimCLR bottleneck), pj FLAT
-            # (parallel projection 128->256->128, no dim scaling; user).
+            # (parallel projection 128->128->128, EQUAL width -- faithful to
+            # Wang&Isola's fc7 4096->4096, no scaling between layers; user).
             d = {"exp": (256, 512), "cmp": (128, 64),
-                 "pj": (256, 128)}.get(direction, (128, 64))
+                 "pj": (128, 128)}.get(direction, (128, 64))
             return nn.Sequential(nn.Linear(DM, d[0]), nn.GELU(),
                                  nn.Linear(d[0], d[1])).to(dev)
         xpd, xpd2 = None, None
