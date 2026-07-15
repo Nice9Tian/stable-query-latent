@@ -304,6 +304,11 @@ def parse_args():
                     help="claim file on the shared volume; when set, a 30s "
                          "heartbeat thread keeps it fresh (silent >2 min = "
                          "host presumed dead, job claimable by other hosts)")
+    ap.add_argument("--measure-vram", default="",
+                    help="VRAM calibration: run 3 real training steps at this "
+                         "cap (incl. the 4x-view backward loss matrices), write "
+                         "peak max_memory_allocated bytes to this file, exit(0). "
+                         "Used by the scheduler warmup.")
     return ap.parse_args()
 
 
@@ -898,6 +903,9 @@ def main():
                     mqueue[i:i + len(sub)] = gallery_rows(shadow, pos_of_g[sub]).float()
                     mq_gid[i:i + len(sub)] = torch.as_tensor(sub, device=dev)
         t0 = time.time()
+        mv_steps = 0
+        if args.measure_vram and dev.type == "cuda":
+            torch.cuda.reset_peak_memory_stats()
         for ep in range(start_ep, args.epochs):
             model.train()
             for _ in range(per_epoch // bs):
@@ -1084,6 +1092,15 @@ def main():
                 torch.nn.utils.clip_grad_norm_(params, 5.0)
                 amp.step(opt)
                 amp.update()
+                if args.measure_vram:
+                    mv_steps += 1
+                    if mv_steps >= 3:
+                        torch.cuda.synchronize()
+                        peak = int(torch.cuda.max_memory_allocated())
+                        Path(args.measure_vram).write_text(str(peak))
+                        print(f"[measure-vram] cap={args.anchor_cap} "
+                              f"peak={peak / 2**30:.2f}GiB", flush=True)
+                        raise SystemExit(0)
                 if MQ_LEN:
                     with torch.no_grad():
                         for pk, pq in zip(shadow.parameters(), model.parameters()):
