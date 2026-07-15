@@ -123,7 +123,13 @@ ARMS = {
     # = CE fully decomposed W&I-style: symmetric constant-weight attraction
     # (incl. the positive edge) + DCL uniformity. (i2lse, the no-anchor-rope
     # variant, was purged pre-run: desert equilibria made it foreseeable.)
-    # vs i2ce isolates softmax-adaptive vs constant-weight pull.
+    # vs ai2ce isolates dropping CE's adaptive pull (LSE keeps the push).
+    "wcle_ai2ce_icetf": ("ai2ce", "ice"),          # BOTH pulls (user, 2x2 corner):
+    # full per-view CE (adaptive pull + push, tau .02) AND anchor-in-I
+    # (constant rope, 10 edges). vs i2ce = the anchor edge's worth ON TOP
+    # of CE; vs ai2lse = CE's adaptive pull's worth GIVEN the rope.
+    # Completes {CE-pull x anchor-in-I}: i2ce(Y/N) ai2ce(Y/Y) ai2lse(N/Y),
+    # i2lse(N/N) purged.
     "wcle_ai2uni_icetf": ("ai2uni", "ice"),        # W&I uniformity swap:
     # same anchor-in-I attraction as ai2lse, but repulsion = Wang&Isola
     # batch uniformity log mean exp(-t*d^2) (t=2) over the 192 batch views
@@ -197,7 +203,7 @@ _CW = {"i2cce": 1.0, "i2ccec": 1.0,
 _IW = {"ice": 1.0, "i2ce": 2.0, "cegate1": 1.0, "cegate2": 2.0, "cegate3": 3.0,
        "cegate4": 4.0, "cegate1w": 1.0, "cegate2w": 2.0, "igate1": 1.0,
        "igate1w": 1.0, "rgate2": 2.0, "nodoc": 2.0, "cegate2c": 2.0,
-       "i2cce": 2.0, "i2ccec": 2.0, "ai2lse": 2.0,
+       "i2cce": 2.0, "i2ccec": 2.0, "ai2lse": 2.0, "ai2ce": 2.0,
        "ai2uni": 6.0, "i2uni": 6.0, "ai2auni": 6.0,   # = 2x W&I align_w 3 (alpha=2 = 2*(1-cos)) "i2expce": 2.0, "i2poolce": 2.0,
        "ceexpi2": 2.0, "expi2expce": 2.0, "poolceexpi2": 2.0, "expi2poolexpce": 2.0,
        "shexpi2ce": 2.0, "shexpi2poolce": 2.0, "i2cmpce": 2.0, "shcmpi2ce": 2.0,
@@ -946,7 +952,7 @@ def main():
                     else:
                         loss = sum(F.cross_entropy(Z.float() @ Zg.T.float() * inv_t, tgt)
                                    for Z in Zs)
-                    if IW > 0 and tower_kind in ("ai2lse", "ai2uni", "ai2auni"):
+                    if IW > 0 and tower_kind in ("ai2ce", "ai2lse", "ai2uni", "ai2auni"):
                         # anchor joins the alignment set: 4 views + own anchor
                         objs = [Z.float() for Z in Zs] + [Zg[tgt].float()]
                         loss = loss + IW * sum(

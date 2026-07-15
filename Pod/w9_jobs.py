@@ -35,6 +35,7 @@ FS_JOBS = [
     # USER TOP PRIORITY small row: CE decomposed (anchor-in-I + LSE(k-))
     ("wcle_ai2lse_icetf", 512, False, 0),
     # W&I decomposition controls: 3*align + uniform(t=2, batch repulsion)
+    ("wcle_ai2ce_icetf", 512, False, 0),    # both pulls: CE + anchor rope
     ("wcle_ai2auni_icetf", 512, False, 0),  # paper recipe, BOTH at anchors
     ("wcle_ai2uni_icetf", 512, False, 0),   # pull fixed, repulsion swapped
     ("wcle_i2uni_icetf", 512, False, 0),    # pure paper cell, anchor-free
