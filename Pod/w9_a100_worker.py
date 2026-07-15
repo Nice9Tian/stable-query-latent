@@ -919,8 +919,11 @@ def main():
                         # at the own column) -- soft ai2lse, tau_eff 0.25.
                         loss = 0.0
                         for Z in Zs:
-                            d2 = torch.cdist(Z.float(), Zg.float()).pow(2)
-                            ker = d2.mul(-UNI_T).exp()
+                            # exp(-t*||z-a||^2) == exp(2t*(cos-1)) on the
+                            # sphere; computed via cos because cdist's
+                            # BACKWARD is numerically wrong (~20x) here.
+                            sim = Z.float() @ Zg.T.float()
+                            ker = ((sim - 1.0) * (2 * UNI_T)).exp()
                             ker = ker.scatter(1, tgt[:, None], 0.0)
                             loss = loss + ker.sum(1).div(ker.shape[1] - 1)                                .log().mean() / len(Zs)
                     elif tower_kind in ("i2uni", "ai2uni"):
