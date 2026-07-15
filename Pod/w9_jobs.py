@@ -32,6 +32,9 @@ FS_JOBS = [
     # i2ce keeps scaling? Same-cap I-premium reference at the champion caps.
     ("wcle_ce_cetf", 2048, False, 0),
     ("wcle_ce_cetf", 4096, False, 0),
+    # SCALE showdown (user, w9_scale.ipynb): ai2ce joins the cap ladder
+    ("wcle_ai2ce_icetf", 2048, False, 0),
+    ("wcle_ai2ce_icetf", 4096, False, 0),
     # USER TOP PRIORITY small row: CE decomposed (anchor-in-I + LSE(k-))
     ("wcle_ai2auni25_icetf", 512, False, 0),
     # W&I decomposition controls: 3*align + uniform(t=2, batch repulsion)
@@ -44,6 +47,10 @@ FS_JOBS = [
     ("wcle_bce_cetf", 512, False, 0),        # pure SimCLR baseline
     ("wcle_i2bce_icetf", 512, False, 0),     # + I x2
     ("wcle_ai2bce_icetf", 512, False, 0),    # + anchor rope (I only)
+    # SCALE @1024: brand-new cap point for the showdown trio
+    ("wcle_ce_cetf", 1024, False, 0),
+    ("wcle_i2ce_icetf", 1024, False, 0),
+    ("wcle_ai2ce_icetf", 1024, False, 0),
     ("wcle_ai6uni2_icetf", 512, False, 0),   # mixed source (parked, not in flash)
     # CE-attachment matrix at the champion cap (user decree): where CE
     # attaches x anchor cap; A/B = i2ce@g2048 (done) / i2ce@512 (queued)
