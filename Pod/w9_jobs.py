@@ -60,6 +60,13 @@ FS_JOBS = [
     ("wcle_poolcmpceexpi2_icetf", 512, False, 0),
     ("wcle_shexpi2poolexpce_icetf", 512, False, 0),
     ("wcle_shcmpi2poolcmpce_icetf", 512, False, 0),
+    # symmetry completion (30-cell final grid)
+    ("wcle_poolcmpce_cetf", 512, False, 0),
+    ("wcle_cecmpi2_icetf", 512, False, 0),
+    ("wcle_poolcecmpi2_icetf", 512, False, 0),
+    ("wcle_shcmpi2poolce_icetf", 512, False, 0),
+    ("wcle_cmpi2poolexpce_icetf", 512, False, 0),
+    ("wcle_cmpi2poolcmpce_icetf", 512, False, 0),
     ("wcle_i2cmpce_icetf", 512, False, 0),
     ("wcle_shcmpi2ce_icetf", 512, False, 0),
     ("wcle_poolce_cetf", 512, False, 0),

@@ -97,6 +97,16 @@ ARMS = {
     "wcle_shcmpi2poolcmpce_icetf": ("shcmpi2poolcmpce", "ice"),  # SHARED cmp:
     # I@E + pool-BEFORE-E CE (user wrote shexpi2poolcmpce; shared module is
     # single-direction, cmp assumed)
+    # symmetry-completion wave (user decree: full 30-cell grid)
+    "wcle_poolcmpce_cetf": ("poolcmpce", "ce"),        # no-I, pool->cmp->CE
+    "wcle_cecmpi2_icetf": ("cecmpi2", "ice"),          # per-view CE@dep + I@cmp
+    "wcle_poolcecmpi2_icetf": ("poolcecmpi2", "ice"),  # pooled CE@dep + I@cmp
+    "wcle_shcmpi2poolce_icetf": ("shcmpi2poolce", "ice"),  # SHARED cmp,
+    # pool-AFTER-E (CE on mean of E-outputs) -- twin of shexpi2poolce
+    "wcle_cmpi2poolexpce_icetf": ("cmpi2poolexpce", "ice"),  # DUAL: I@cmp +
+    # pool->exp->CE
+    "wcle_cmpi2poolcmpce_icetf": ("cmpi2poolcmpce", "ice"),  # DUAL: I@cmp +
+    # pool->cmp->CE
     "wcle_expce_cetf": ("expce", "ce"),            # PURE expander CE (user
     # design): NO I anywhere -- the deployed space receives no direct loss,
     # all shaping arrives via backprop through E. SimCLR-orthodox member of
@@ -162,6 +172,8 @@ _IW = {"ice": 1.0, "i2ce": 2.0, "cegate1": 1.0, "cegate2": 2.0, "cegate3": 3.0,
        "i2poolexpce": 2.0, "i2poolcmpce": 2.0, "expi2cmpce": 2.0,
        "cmpi2expce": 2.0, "cmpi2cmpce": 2.0, "poolcmpceexpi2": 2.0,
        "shexpi2poolexpce": 2.0, "shcmpi2poolcmpce": 2.0,
+       "cecmpi2": 2.0, "poolcecmpi2": 2.0, "shcmpi2poolce": 2.0,
+       "cmpi2poolexpce": 2.0, "cmpi2poolcmpce": 2.0,
        "bkq192i2cce": 2.0, "bkq48i2cce": 2.0, "bkq12i2cce": 2.0,
        "bkbi2cce": 2.0, "mq3072i2cce": 2.0}
 SPLIT_SEED = 20260711
@@ -313,18 +325,23 @@ def main():
              "shexpi2ce", "shexpi2poolce", "cmpce", "i2cmpce", "shcmpi2ce",
              "i2poolexpce", "i2poolcmpce", "expi2cmpce", "cmpi2expce",
              "cmpi2cmpce", "poolcmpceexpi2", "shexpi2poolexpce",
-             "shcmpi2poolcmpce")
+             "shcmpi2poolcmpce", "poolcmpce", "shcmpi2poolce",
+             "cmpi2poolexpce", "cmpi2poolcmpce")
     _CE_POOL = ("i2poolce", "poolce", "poolceexpi2", "poolexpce",
                 "expi2poolexpce", "shexpi2poolce", "i2poolexpce",
                 "i2poolcmpce", "poolcmpceexpi2", "shexpi2poolexpce",
-                "shcmpi2poolcmpce")
+                "shcmpi2poolcmpce", "poolcmpce", "poolcecmpi2",
+                "shcmpi2poolce", "cmpi2poolexpce", "cmpi2poolcmpce")
     _I_E = ("ceexpi2", "expi2expce", "poolceexpi2", "expi2poolexpce",
             "shexpi2ce", "shexpi2poolce", "shcmpi2ce", "expi2cmpce",
             "cmpi2expce", "cmpi2cmpce", "poolcmpceexpi2",
-            "shexpi2poolexpce", "shcmpi2poolcmpce")
+            "shexpi2poolexpce", "shcmpi2poolcmpce", "cecmpi2",
+            "poolcecmpi2", "shcmpi2poolce", "cmpi2poolexpce",
+            "cmpi2poolcmpce")
     _DUAL = ("expi2expce", "expi2poolexpce", "expi2cmpce", "cmpi2expce",
-             "cmpi2cmpce", "poolcmpceexpi2")   # I and CE use SEPARATE E's
-    _POOL_AFTER = ("shexpi2poolce",)   # CE pools the E-outputs (not the views)
+             "cmpi2cmpce", "poolcmpceexpi2", "cmpi2poolexpce",
+             "cmpi2poolcmpce")   # I and CE use SEPARATE E's
+    _POOL_AFTER = ("shexpi2poolce", "shcmpi2poolce")   # CE pools E-outputs
     # per-module E direction: (CE's E, I's E); None = that loss not in E
     _EDIR = {"expce": ("exp", None), "cmpce": ("cmp", None),
              "poolexpce": ("exp", None), "i2expce": ("exp", None),
@@ -337,7 +354,11 @@ def main():
              "expi2expce": ("exp", "exp"), "expi2cmpce": ("cmp", "exp"),
              "cmpi2expce": ("exp", "cmp"), "cmpi2cmpce": ("cmp", "cmp"),
              "expi2poolexpce": ("exp", "exp"),
-             "poolcmpceexpi2": ("cmp", "exp")}
+             "poolcmpceexpi2": ("cmp", "exp"), "poolcmpce": ("cmp", None),
+             "cecmpi2": (None, "cmp"), "poolcecmpi2": (None, "cmp"),
+             "shcmpi2poolce": ("cmp", "cmp"),
+             "cmpi2poolexpce": ("exp", "cmp"),
+             "cmpi2poolcmpce": ("cmp", "cmp")}
     XCE = tower_kind in _CE_E          # CE computed in expander space
     PCE = tower_kind in _CE_POOL       # CE pools the views first
     IE = tower_kind in _I_E            # I pairs live in expander space
