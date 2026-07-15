@@ -57,8 +57,13 @@ ARMS = {
     # TRAIN-TIME centering: outputs get mu-EMA subtracted BEFORE the L2
     # normalize, so CE/I never spend capacity on a common direction
     "wcle_i2expce_icetf": ("i2expce", "ice"),
-    "wcle_i2poolexpce_icetf": ("i2poolexpce", "ice"),  # pool -> E -> CE;
-    # I on per-view E outputs (user rule: with an expander, I attaches there)
+    # NAMING GRAMMAR (user decree): [I position][CE path]. "i2exp..." = I in
+    # the DEPLOYED space (the ORIGINAL n4expce design); "expi2..." = I after
+    # the expander (E-space, the NEW design).
+    "wcle_expi2expce_icetf": ("expi2expce", "ice"),      # I@E + per-view CE@E
+    "wcle_expi2poolce_icetf": ("expi2poolce", "ice"),    # I@E + pooled CE@dep
+    # (the expander exists ONLY to give I its tax space)
+    "wcle_expi2poolexpce_icetf": ("expi2poolexpce", "ice"),  # I@E + pool->E->CE
     "wcle_poolce_cetf": ("poolce", "ce"),          # pooled CE, NO I
     "wcle_poolexpce_cetf": ("poolexpce", "ce"),    # pool -> E -> CE, NO I
     "wcle_expce_cetf": ("expce", "ce"),            # PURE expander CE (user
@@ -121,7 +126,7 @@ _IW = {"ice": 1.0, "i2ce": 2.0, "cegate1": 1.0, "cegate2": 2.0, "cegate3": 3.0,
        "cegate4": 4.0, "cegate1w": 1.0, "cegate2w": 2.0, "igate1": 1.0,
        "igate1w": 1.0, "rgate2": 2.0, "nodoc": 2.0, "cegate2c": 2.0,
        "i2cce": 2.0, "i2ccec": 2.0, "i2expce": 2.0, "i2poolce": 2.0,
-       "i2poolexpce": 2.0,
+       "expi2expce": 2.0, "expi2poolce": 2.0, "expi2poolexpce": 2.0,
        "bkq192i2cce": 2.0, "bkq48i2cce": 2.0, "bkq12i2cce": 2.0,
        "bkbi2cce": 2.0, "mq3072i2cce": 2.0}
 SPLIT_SEED = 20260711
@@ -269,10 +274,16 @@ def main():
     CE_GATED = tower_kind.startswith("cegate") or tower_kind == "rgate2"
     I_GATED = tower_kind.startswith("igate")
     CENTERED = tower_kind in CENTER_ARMS
-    XCE = tower_kind in ("i2expce", "expce", "i2poolexpce", "poolexpce")
-    PCE = tower_kind in ("i2poolce", "poolce", "i2poolexpce", "poolexpce")
-    # user rule: I always attaches after the multi-views, and AFTER the
-    # expander whenever one exists (I pairs live in E-space for XCE arms)
+    _CE_E = ("i2expce", "expce", "expi2expce", "poolexpce", "expi2poolexpce")
+    _CE_POOL = ("i2poolce", "poolce", "expi2poolce", "poolexpce",
+                "expi2poolexpce")
+    _I_E = ("expi2expce", "expi2poolce", "expi2poolexpce")
+    XCE = tower_kind in _CE_E          # CE computed in expander space
+    PCE = tower_kind in _CE_POOL       # CE pools the views first
+    IE = tower_kind in _I_E            # I pairs live in expander space
+    XPD = XCE or IE                    # arm carries the expander module
+    # naming grammar (user decree): i2exp* = I in DEPLOYED space (original
+    # n4expce design); expi2* = I after the expander (new design)
     CW = _CW.get(tower_kind, 0.0)
     bank_m = re.match(r"bk(?:q(\d+)|b)i2cce$", tower_kind)
     BANK_POLICY = (("q" if bank_m.group(1) else "b") if bank_m else None)
@@ -612,7 +623,7 @@ def main():
         rng = np.random.default_rng(seed)
         model = SetPoolN(4, center=CENTERED).to(dev)
         xpd = None
-        if XCE:
+        if XPD:
             # disposable CE space (n4expce lineage, random init as historical):
             # trained alongside the tower, discarded at eval -- deploy = pre-E.
             xpd = nn.Sequential(nn.Linear(DM, 256), nn.GELU(),
@@ -648,7 +659,7 @@ def main():
                 mqueue = st["mqueue"].to(dev)
                 mq_gid = st["mq_gid"].to(dev)
                 mq_ptr = int(st["mq_ptr"])
-            if XCE and "xpd" in st:
+            if XPD and "xpd" in st:
                 xpd.load_state_dict({k: v.to(dev) for k, v in st["xpd"].items()})
             print(f"RESUME from ep{start_ep}", flush=True)
         if start_ep == 0 and not RES.exists():
@@ -667,7 +678,7 @@ def main():
                 if MQ_LEN and isinstance(st, dict) and "shadow" in st:
                     shadow.load_state_dict({k: v.to(dev)
                                             for k, v in st["shadow"].items()})
-                if XCE and isinstance(st, dict) and "xpd" in st:
+                if XPD and isinstance(st, dict) and "xpd" in st:
                     xpd.load_state_dict({k: v.to(dev)
                                          for k, v in st["xpd"].items()})
                 start_ep = int(ck.stem.split("_ep")[-1])
@@ -768,8 +779,8 @@ def main():
                     else:
                         loss = sum(F.cross_entropy(Z.float() @ Zg.T.float() * inv_t, tgt)
                                    for Z in Zs)
-                    if IW > 0 and XCE:
-                        # user rule: with an expander, I pairs live in E-space
+                    if IW > 0 and IE:
+                        # expi2* arms: I pairs live in E-space
                         Ev = [F.normalize(xpd(Z.float()), dim=-1) for Z in Zs]
                         loss = loss + IW * sum(
                             (1 - (Ev[i] * Ev[j]).sum(-1)).mean()
@@ -805,7 +816,7 @@ def main():
                                     shadow={k: v.detach().cpu().clone()
                                             for k, v in shadow.state_dict().items()}),
                                OUT / f"ckpt_{name}_ep{ep+1}.pt")
-                elif XCE:
+                elif XPD:
                     torch.save(dict(model=sd,
                                     xpd={k: v.detach().cpu().clone()
                                          for k, v in xpd.state_dict().items()}),
@@ -816,7 +827,7 @@ def main():
                               cpu_rng=torch.get_rng_state(),
                               cuda_rng=torch.cuda.get_rng_state(),
                               np_rng=rng.bit_generator.state, ep=ep + 1)
-                if XCE:
+                if XPD:
                     bundle["xpd"] = {k: v.detach().cpu().clone()
                                      for k, v in xpd.state_dict().items()}
                 if BANK_POLICY:
