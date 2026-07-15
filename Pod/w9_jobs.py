@@ -27,6 +27,11 @@ CV_WORKER = str(PKG / "w9_cv_worker.py")
 # ---------------- campaign job table (fixed-split) ----------------
 # (arm, anchor_cap, nsp, doc_lead[, wiki_src[, view_w[, size-override]]])
 FS_JOBS = [
+    # ---- FRONT OF THE BIG QUEUE (user priority: the CE scaling question) ----
+    # pure-CE anchor curve 512(done)/2048/4096: does CE decline past 512 while
+    # i2ce keeps scaling? Same-cap I-premium reference at the champion caps.
+    ("wcle_ce_cetf", 2048, False, 0),
+    ("wcle_ce_cetf", 4096, False, 0),
     ("wcle_cegate3_icetf", 512, False, 0),
     ("wcle_cegate4_icetf", 512, False, 0),
     ("wcle_cegate2_icetf", 2048, False, 0),
@@ -102,12 +107,6 @@ FS_JOBS = [
     ("wcle_bkq48i2cce_icetf", 2048, False, 0, "clean", 16, "small"),
     ("wcle_bkq12i2cce_icetf", 2048, False, 0, "clean", 16, "small"),
     ("wcle_bkbi2cce_icetf", 2048, False, 0, "clean", 16, "small"),
-    ("wcle_ce_cetf", 2048, False, 0),  # pure CE at the champion's anchor cap:
-    # closes the matrix's empty cell -- the I-term premium at g2048 needs a
-    # same-cap CE-only reference (CV pins it at 512 only; user challenge)
-    ("wcle_ce_cetf", 4096, False, 0),  # pure-CE anchor curve, 3rd point: user
-    # hypothesis = CE declines monotonically past 512 while i2ce keeps scaling
-    # (i2ce ZS: 0.846@512nsp -> 0.880@2048 -> 0.888@4096); needs 512/2048/4096
 ]
 
 def _pad(j):
