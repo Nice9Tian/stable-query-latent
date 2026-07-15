@@ -117,7 +117,7 @@ ARMS = {
     "wcle_i2poolce_icetf": ("i2poolce", "ice"),        # CE on the normalized MEAN
     # of the 4 views (x4 weight keeps the effective 4:2 CE:I ratio); I
     # unchanged -- w9 re-cert of the old 6-direction pooled-CE verdict.
-    "wcle_ai2lse_icetf": ("ai2lse", "ice"),        # ANCHOR-IN-I + LSE (user):
+    "wcle_ai2auni25_icetf": ("ai2auni25", "ice"),        # ANCHOR-IN-I + uni@t25 (ex-ai2lse):
     # I pairs span {4 views + OWN ANCHOR} (10 edges) so alignment itself ties
     # anchor_g to its view cluster; repulsion = same negative-only LSE.
     # = CE fully decomposed W&I-style: symmetric constant-weight attraction
@@ -127,35 +127,40 @@ ARMS = {
     "wcle_ai2ce_icetf": ("ai2ce", "ice"),          # BOTH pulls (user, 2x2 corner):
     # full per-view CE (adaptive pull + push, tau .02) AND anchor-in-I
     # (constant rope, 10 edges). vs i2ce = the anchor edge's worth ON TOP
-    # of CE; vs ai2lse = CE's adaptive pull's worth GIVEN the rope.
-    # Completes {CE-pull x anchor-in-I}: i2ce(Y/N) ai2ce(Y/Y) ai2lse(N/Y),
+    # of CE; vs ai2auni25 = CE's adaptive pull's worth GIVEN the rope.
+    # Completes {CE-pull x anchor-in-I}: i2ce(Y/N) ai2ce(Y/Y) ai2auni25(N/Y),
     # i2lse(N/N) purged.
-    "wcle_ai6uni_icetf": ("ai6uni", "ice"),        # W&I uniformity swap:
-    # same anchor-in-I attraction as ai2lse, but repulsion = Wang&Isola
+    "wcle_ai6uni2_icetf": ("ai6uni2", "ice"),        # W&I uniformity swap:
+    # same anchor-in-I attraction as ai2auni25, but repulsion = Wang&Isola
     # batch uniformity log mean exp(-t*d^2) (t=2) over the 192 batch views
     # per branch -- NOT the anchor field. On the sphere that kernel is
-    # exp(2t*cos) => LSE over cos at tau=1/(2t)=0.25. vs ai6auni isolates
+    # exp(2t*cos) => LSE over cos at tau=1/(2t)=0.25. vs ai6auni2 isolates
     # repulsion SOURCE alone (paper recipe fixed, anchors -> batch).
-    "wcle_i6uni_icetf": ("i6uni", "ice"),          # PURE Wang&Isola cell:
+    "wcle_i6uni2_icetf": ("i6uni2", "ice"),          # PURE Wang&Isola cell:
     # 3*align (= IW 6 x mean(1-cos), alpha=2 identity) + 1*uniformity,
     # official-repo STL-10 flagship weights. NO anchor edge anywhere =
     # first anchor-free NEGATIVE-based arm (BYOL/VICReg are anchor-free
     # but negative-free). No desert trap: batch self-repulsion has no
     # fixed field to hide from, unlike the purged i2lse. Doc VIEW stays
     # (protocol constant NV=4), so anchor-free != doc-free.
-    "wcle_ai6auni_icetf": ("ai6auni", "ice"),      # W&I BOTH-AT-ANCHOR (user):
+    "wcle_ai6auni2_icetf": ("ai6auni2", "ice"),      # W&I BOTH-AT-ANCHOR (user):
     # paper recipe (3*align IW6 + 1*uniform t=2) with BOTH forces aimed at
     # the anchor field: pull = anchor-in-I, push = Gaussian kernel vs the
-    # WRONG anchors. Gradient-identical to ai2lse's LSE at tau=1/(2t)=0.25
+    # WRONG anchors. Gradient-identical to ai2auni25's LSE at tau=1/(2t)=0.25
     # (log-mean vs log-sum = additive const), so the ladder factorizes:
-    # ai2lse -> ai6auni = kernel softness + pull:push budget (source fixed);
-    # ai6auni -> ai6uni = repulsion source only (recipe fixed).
-    "wcle_ai4auni_icetf": ("ai4auni", "ice"),  # i4 rung of ai6auni
-    "wcle_i4uni_icetf": ("i4uni", "ice"),      # i4 rung of i6uni
+    # ai2auni25 -> ai6auni2 = kernel softness + pull:push budget (source fixed);
+    # ai6auni2 -> ai6uni2 = repulsion source only (recipe fixed).
+    "wcle_ai4auni2_icetf": ("ai4auni2", "ice"),  # i4 rung of ai6auni2
+    "wcle_i4uni2_icetf": ("i4uni2", "ice"),      # i4 rung of i6uni2
     # digit grammar (user decree v2, ONE dial in i units): the number after
     # i/ai == IW, same scale as i2ce's "2". Invariance == align/2 on the
     # sphere (same operator), so W&I repo-flagship 3*align+1*uniform == i6
     # and its align_w-2 rung == i4.
+    # push grammar (user decree v3): uni{t} == Gaussian-kernel/LSE repulsion
+    # at tau = 1/(2t); a- prefix = vs the WRONG anchors, bare = batch views.
+    # t=25 -> tau .02 == tower tau (the cell formerly named ai2lse); t=2 =
+    # W&I repo default. ce keeps its own token: the only push that is FUSED
+    # with an adaptive pull inside one softmax.
     "wcle_i2cce_icetf": ("i2cce", "ice"),          # I2CCE: CE all + I x2 + C x1
     # (VICReg-style off-diag covariance penalty ON the 128-d outputs --
     # decorrelated dims = feature-richness constraint, no expander needed)
@@ -209,8 +214,8 @@ _CW = {"i2cce": 1.0, "i2ccec": 1.0,
 _IW = {"ice": 1.0, "i2ce": 2.0, "cegate1": 1.0, "cegate2": 2.0, "cegate3": 3.0,
        "cegate4": 4.0, "cegate1w": 1.0, "cegate2w": 2.0, "igate1": 1.0,
        "igate1w": 1.0, "rgate2": 2.0, "nodoc": 2.0, "cegate2c": 2.0,
-       "i2cce": 2.0, "i2ccec": 2.0, "ai2lse": 2.0, "ai2ce": 2.0,
-       "ai6uni": 6.0, "i6uni": 6.0, "ai6auni": 6.0, "ai4auni": 4.0, "i4uni": 4.0,   # = 2x W&I align_w 3 (alpha=2 = 2*(1-cos)) "i2expce": 2.0, "i2poolce": 2.0,
+       "i2cce": 2.0, "i2ccec": 2.0, "ai2auni25": 2.0, "ai2ce": 2.0,
+       "ai6uni2": 6.0, "i6uni2": 6.0, "ai6auni2": 6.0, "ai4auni2": 4.0, "i4uni2": 4.0,   # = 2x W&I align_w 3 (alpha=2 = 2*(1-cos)) "i2expce": 2.0, "i2poolce": 2.0,
        "ceexpi2": 2.0, "expi2expce": 2.0, "poolceexpi2": 2.0, "expi2poolexpce": 2.0,
        "shexpi2ce": 2.0, "shexpi2poolce": 2.0, "i2cmpce": 2.0, "shcmpi2ce": 2.0,
        "i2poolexpce": 2.0, "i2poolcmpce": 2.0, "expi2cmpce": 2.0,
@@ -918,7 +923,7 @@ def main():
                         zm = F.normalize(
                             torch.stack([Z.float() for Z in Zs]).mean(0), dim=-1)
                         loss = 4.0 * F.cross_entropy(zm @ Zg.T.float() * inv_t, tgt)
-                    elif tower_kind == "ai2lse":
+                    elif tower_kind == "ai2auni25":
                         # uniformity-only: repel from every WRONG anchor; no
                         # positive term (attraction is entirely the I block)
                         loss = 0.0
@@ -926,9 +931,9 @@ def main():
                             lg = (Z.float() @ Zg.T.float() * inv_t).scatter(
                                 1, tgt[:, None], -1e4)      # k^- only
                             loss = loss + torch.logsumexp(lg, dim=1).mean()
-                    elif tower_kind in ("ai6auni", "ai4auni"):
+                    elif tower_kind in ("ai6auni2", "ai4auni2"):
                         # W&I uniformity vs the WRONG anchors (kernel zeroed
-                        # at the own column) -- soft ai2lse, tau_eff 0.25.
+                        # at the own column) -- soft ai2auni25, tau_eff 0.25.
                         loss = 0.0
                         for Z in Zs:
                             # exp(-t*||z-a||^2) == exp(2t*(cos-1)) on the
@@ -938,7 +943,7 @@ def main():
                             ker = ((sim - 1.0) * (2 * UNI_T)).exp()
                             ker = ker.scatter(1, tgt[:, None], 0.0)
                             loss = loss + ker.sum(1).div(ker.shape[1] - 1)                                .log().mean() / len(Zs)
-                    elif tower_kind in ("i6uni", "i4uni", "ai6uni"):
+                    elif tower_kind in ("i6uni2", "i4uni2", "ai6uni2"):
                         # W&I uniformity, official-repo form per view branch:
                         # log mean exp(-t*pdist^2) over the batch. Repulsion
                         # source = BATCH samples (self-organizing), never the
@@ -958,7 +963,7 @@ def main():
                     else:
                         loss = sum(F.cross_entropy(Z.float() @ Zg.T.float() * inv_t, tgt)
                                    for Z in Zs)
-                    if IW > 0 and tower_kind in ("ai2ce", "ai2lse", "ai6uni", "ai6auni", "ai4auni"):
+                    if IW > 0 and tower_kind in ("ai2ce", "ai2auni25", "ai6uni2", "ai6auni2", "ai4auni2"):
                         # anchor joins the alignment set: 4 views + own anchor
                         objs = [Z.float() for Z in Zs] + [Zg[tgt].float()]
                         loss = loss + IW * sum(
