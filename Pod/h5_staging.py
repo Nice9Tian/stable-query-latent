@@ -76,8 +76,13 @@ def validate_training_h5_quick(path: str | os.PathLike, *, expected_size: int | 
         }
 
 
-def parallel_copy(src: str | os.PathLike, dst: str | os.PathLike, *, workers: int = 8, chunk: int = 64 << 20) -> None:
-    """Thread-parallel byte-range copy for large H5 files."""
+def parallel_copy(src: str | os.PathLike, dst: str | os.PathLike, *, workers: int = 8, chunk: int = 64 << 20,
+                  progress: float = 20.0) -> None:
+    """Thread-parallel byte-range copy for large H5/npy files.
+
+    progress: seconds between progress lines (0 disables). A 140 GiB stage
+    off the network volume runs 10-30 min; without these lines it looks hung.
+    """
     src = str(src)
     dst = str(dst)
     size = os.path.getsize(src)
@@ -85,10 +90,11 @@ def parallel_copy(src: str | os.PathLike, dst: str | os.PathLike, *, workers: in
     with open(dst, "wb") as f:
         f.truncate(size)
 
-    bounds = [(i * size // workers, (i + 1) * size // workers) for i in range(workers)]
+    bounds = [(i, i * size // workers, (i + 1) * size // workers) for i in range(workers)]
     errors = []
+    done = [0] * workers
 
-    def copy_range(start: int, end: int) -> None:
+    def copy_range(i: int, start: int, end: int) -> None:
         sfd = os.open(src, os.O_RDONLY)
         dfd = os.open(dst, os.O_WRONLY)
         try:
@@ -99,6 +105,7 @@ def parallel_copy(src: str | os.PathLike, dst: str | os.PathLike, *, workers: in
                     break
                 os.pwrite(dfd, data, off)
                 off += len(data)
+                done[i] += len(data)
         except BaseException as exc:
             errors.append(exc)
         finally:
@@ -108,6 +115,20 @@ def parallel_copy(src: str | os.PathLike, dst: str | os.PathLike, *, workers: in
     threads = [threading.Thread(target=copy_range, args=bounds_i) for bounds_i in bounds]
     for thread in threads:
         thread.start()
+    if progress:
+        t0 = last = time.time()
+        while any(t.is_alive() for t in threads):
+            time.sleep(2.0)
+            now = time.time()
+            if now - last < progress:
+                continue
+            last = now
+            got = sum(done)
+            rate = got / max(now - t0, 1e-6)
+            eta = (size - got) / max(rate, 1)
+            print(f"  copy {_gib(got):6.1f}/{_gib(size):.0f} GiB "
+                  f"({100 * got / size:3.0f}%)  {rate / 2**20:6.0f} MB/s  "
+                  f"ETA {eta / 60:4.1f} min", flush=True)
     for thread in threads:
         thread.join()
     if errors:
