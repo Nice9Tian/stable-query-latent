@@ -234,6 +234,7 @@ ARMS = {
     # Negatives coverage = last Q/bs steps' samples, NOT the full catalog --
     # that is the trade this arm measures. Gradient: query side only.
     "wcle_mq3072i2cce_icetf": ("mq3072i2cce", "ice"),
+    "wcle_mq3072ce_cetf": ("mq3072ce", "ce"),   # CE-only MoCo queue (no I/C; queue CE baseline)
 }
 CENTER_ARMS = {"cegate2c", "i2ccec"}
 _CW = {"i2cce": 1.0, "i2ccec": 1.0,
@@ -475,7 +476,8 @@ def main():
     bank_m = re.match(r"bk(?:q(\d+)|b)i2cce$", tower_kind)
     BANK_POLICY = (("q" if bank_m.group(1) else "b") if bank_m else None)
     BANK_K = int(bank_m.group(1)) if bank_m and bank_m.group(1) else 0
-    mq_m = re.match(r"mq(\d+)i2cce$", tower_kind)
+    # mq{N}i2cce = MoCo queue + I2CCE (I2+C+CE); mq{N}ce = CE-ONLY queue
+    mq_m = re.match(r"mq(\d+)(?:i2cce|ce)$", tower_kind)
     MQ_LEN = int(mq_m.group(1)) if mq_m else 0
     MQ_M = 0.99                        # shadow-tower weight-EMA momentum
     name = (f"w9_{args.arm}"
