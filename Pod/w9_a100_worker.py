@@ -132,6 +132,11 @@ ARMS = {
     # view embeddings), but every step draws views for the ENTIRE train pool
     # (~1613 games) instead of 192; steps/epoch unchanged (pure batch-size
     # effect on the moment estimates).
+    # epdg_*: GRID-HARMONIZED canonical VICReg (dedicated flash_byol_vicreg
+    # notebook): epd wiring, but the expander is the 30-cell grid's exp module
+    "wcle_epdg_v25i25c1_cetf": ("epdg_v25i25c1", "ce"),
+    "wcle_epdg_v20i10c20_cetf": ("epdg_v20i10c20", "ce"),
+    "wcle_epdg_v20i10c15_cetf": ("epdg_v20i10c15", "ce"),
     "wcle_epdb_v25i25c1_cetf": ("epdb_v25i25c1", "ce"),
     "wcle_epdb_v20i10c20_cetf": ("epdb_v20i10c20", "ce"),
     "wcle_epdb_v20i10c15_cetf": ("epdb_v20i10c15", "ce"),
@@ -1085,8 +1090,11 @@ def main():
         # epd_* arms use the CANONICAL wiring instead: all three terms on the
         # expander OUTPUT pair -- centroid collapse then violates V (constant
         # expander output), so the vic/vic2 degenerate solution is closed.
-        epd = re.match(r"(epdb?)_v(\d+)i(\d+)c(\d+)$", tower_kind)
+        epd = re.match(r"(epd[bg]?)_v(\d+)i(\d+)c(\d+)$", tower_kind)
         all_batch = bool(epd) and epd.group(1) == "epdb"  # views for ALL games
+        grid_e = bool(epd) and epd.group(1) == "epdg"     # GRID-harmonized E:
+        # same module as the 30-cell grid's exp (128->256->512, NO LayerNorm)
+        # so "expce vs epdg" isolates the loss functional in an identical room
         if epd:
             vic_v, vic_i, vic_c = (float(g) for g in epd.groups()[1:])
         else:
@@ -1094,7 +1102,9 @@ def main():
         torch.manual_seed(seed)
         rng = np.random.default_rng(seed)
         model = SetPoolN(4).to(dev)
-        expander = GameCentroidExpander(input_dim=DM).to(dev)
+        expander = (nn.Sequential(nn.Linear(DM, 256), nn.GELU(),
+                                  nn.Linear(256, 512)).to(dev) if grid_e else
+                    GameCentroidExpander(input_dim=DM).to(dev))
         opt = torch.optim.AdamW(list(model.parameters()) + list(expander.parameters()),
                                 lr=5e-4, weight_decay=1e-4)
         amp = amp_cls()
