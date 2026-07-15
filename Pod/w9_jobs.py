@@ -34,10 +34,10 @@ FS_JOBS = [
     ("wcle_ce_cetf", 4096, False, 0),
     # CE-attachment matrix at the champion cap (user decree): where CE
     # attaches x anchor cap; A/B = i2ce@g2048 (done) / i2ce@512 (queued)
-    ("wcle_expce_icetf", 2048, False, 0),
-    ("wcle_poolce_icetf", 2048, False, 0),
-    ("wcle_expce_icetf", 512, False, 0),   # CE-attachment matrix @512
-    ("wcle_poolce_icetf", 512, False, 0),
+    ("wcle_i2expce_icetf", 2048, False, 0),
+    ("wcle_i2poolce_icetf", 2048, False, 0),
+    ("wcle_i2expce_icetf", 512, False, 0),   # CE-attachment matrix @512
+    ("wcle_i2poolce_icetf", 512, False, 0),
     ("wcle_i2ce_icetf", 512, False, 0),  # clean@512 i2ce (only nsp existed):
     # fixes the i2ce anchor-curve ORIGIN (512 point was nsp-handicapped)
     # and completes the clean same-cap ce-vs-i2ce pair at 512

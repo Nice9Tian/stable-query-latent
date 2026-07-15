@@ -56,11 +56,11 @@ ARMS = {
     "wcle_cegate2c_icetf": ("cegate2c", "ice"),    # champion recipe with
     # TRAIN-TIME centering: outputs get mu-EMA subtracted BEFORE the L2
     # normalize, so CE/I never spend capacity on a common direction
-    "wcle_expce_icetf": ("expce", "ice"),          # n4expce revival (w9 cert):
+    "wcle_i2expce_icetf": ("i2expce", "ice"),          # n4expce revival (w9 cert; I x2 kept):
     # CE paid in a DISPOSABLE expander space (E = norm(MLP 128->256->512),
     # CE on E(view) @ E(gallery)); I stays in the deployed space; deploy =
     # pre-expander tower output. A/B = i2ce at the same cap.
-    "wcle_poolce_icetf": ("poolce", "ice"),        # CE on the normalized MEAN
+    "wcle_i2poolce_icetf": ("i2poolce", "ice"),        # CE on the normalized MEAN
     # of the 4 views (x4 weight keeps the effective 4:2 CE:I ratio); I
     # unchanged -- w9 re-cert of the old 6-direction pooled-CE verdict.
     "wcle_i2cce_icetf": ("i2cce", "ice"),          # I2CCE: CE all + I x2 + C x1
@@ -112,7 +112,7 @@ _CW = {"i2cce": 1.0, "i2ccec": 1.0,
 _IW = {"ice": 1.0, "i2ce": 2.0, "cegate1": 1.0, "cegate2": 2.0, "cegate3": 3.0,
        "cegate4": 4.0, "cegate1w": 1.0, "cegate2w": 2.0, "igate1": 1.0,
        "igate1w": 1.0, "rgate2": 2.0, "nodoc": 2.0, "cegate2c": 2.0,
-       "i2cce": 2.0, "i2ccec": 2.0, "expce": 2.0, "poolce": 2.0,
+       "i2cce": 2.0, "i2ccec": 2.0, "i2expce": 2.0, "i2poolce": 2.0,
        "bkq192i2cce": 2.0, "bkq48i2cce": 2.0, "bkq12i2cce": 2.0,
        "bkbi2cce": 2.0, "mq3072i2cce": 2.0}
 SPLIT_SEED = 20260711
@@ -260,8 +260,8 @@ def main():
     CE_GATED = tower_kind.startswith("cegate") or tower_kind == "rgate2"
     I_GATED = tower_kind.startswith("igate")
     CENTERED = tower_kind in CENTER_ARMS
-    XCE = tower_kind == "expce"        # CE in a disposable expander space
-    PCE = tower_kind == "poolce"       # CE on the view mean (x4 weight)
+    XCE = tower_kind == "i2expce"        # CE in a disposable expander space
+    PCE = tower_kind == "i2poolce"       # CE on the view mean (x4 weight)
     CW = _CW.get(tower_kind, 0.0)
     bank_m = re.match(r"bk(?:q(\d+)|b)i2cce$", tower_kind)
     BANK_POLICY = (("q" if bank_m.group(1) else "b") if bank_m else None)
