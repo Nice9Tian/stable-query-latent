@@ -1,0 +1,9 @@
+# First-run runtime deps, pip-installed into the bundled python312 by
+# larice_bridge.bootstrap(). When nvidia-smi reports a GPU, torch is pulled
+# from the CUDA wheel index automatically (cu128); override the index with
+# LARICE_TORCH_INDEX. Machines without NVIDIA GPUs get the CPU wheel.
+numpy
+torch
+transformers>=4.51.0
+safetensors
+huggingface_hub

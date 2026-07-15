@@ -1,0 +1,8 @@
+build/
+dist/
+tools/
+external/
+__pycache__/
+CMakeLists.txt.user
+assets/*
+!assets/.gitkeep
