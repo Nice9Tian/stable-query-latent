@@ -32,6 +32,8 @@ FS_JOBS = [
     # i2ce keeps scaling? Same-cap I-premium reference at the champion caps.
     ("wcle_ce_cetf", 2048, False, 0),
     ("wcle_ce_cetf", 4096, False, 0),
+    # USER TOP PRIORITY small row: CE decomposed (anchor-in-I + LSE(k-))
+    ("wcle_ai2lse_icetf", 512, False, 0),
     # CE-attachment matrix at the champion cap (user decree): where CE
     # attaches x anchor cap; A/B = i2ce@g2048 (done) / i2ce@512 (queued)
     ("wcle_i2expce_icetf", 2048, False, 0),
@@ -44,8 +46,6 @@ FS_JOBS = [
     # matrix {no-I, I2} x {per-view, expander, pooled, pool->expander}.
     # ce@512 done (0.835); the other 7 cells below/above. Results decide
     # which structure the scaling theory is built on.
-    # USER TOP PRIORITY: CE decomposed = anchor-in-I attraction + LSE(k-)
-    ("wcle_ai2lse_icetf", 512, False, 0),
     ("wcle_ceexpi2_icetf", 512, False, 0),      # per-view CE@dep + I@E
     ("wcle_expi2expce_icetf", 512, False, 0),   # I@E + CE@E (new design)
     ("wcle_poolceexpi2_icetf", 512, False, 0),  # pooled CE@dep + I@E
