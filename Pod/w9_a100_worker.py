@@ -124,6 +124,19 @@ ARMS = {
     # (incl. the positive edge) + DCL uniformity. (i2lse, the no-anchor-rope
     # variant, was purged pre-run: desert equilibria made it foreseeable.)
     # vs i2ce isolates softmax-adaptive vs constant-weight pull.
+    "wcle_ai2uni_icetf": ("ai2uni", "ice"),        # W&I uniformity swap:
+    # same anchor-in-I attraction as ai2lse, but repulsion = Wang&Isola
+    # batch uniformity log mean exp(-t*d^2) (t=2) over the 192 batch views
+    # per branch -- NOT the anchor field. On the sphere that kernel is
+    # exp(2t*cos) => LSE over cos at tau=1/(2t)=0.25. vs ai2lse isolates
+    # repulsion source+softness (anchor LSE@0.02 -> batch Gaussian@0.25).
+    "wcle_i2uni_icetf": ("i2uni", "ice"),          # PURE Wang&Isola cell:
+    # 3*align (= IW 6 x mean(1-cos), alpha=2 identity) + 1*uniformity,
+    # official-repo STL-10 flagship weights. NO anchor edge anywhere =
+    # first anchor-free NEGATIVE-based arm (BYOL/VICReg are anchor-free
+    # but negative-free). No desert trap: batch self-repulsion has no
+    # fixed field to hide from, unlike the purged i2lse. Doc VIEW stays
+    # (protocol constant NV=4), so anchor-free != doc-free.
     "wcle_i2cce_icetf": ("i2cce", "ice"),          # I2CCE: CE all + I x2 + C x1
     # (VICReg-style off-diag covariance penalty ON the 128-d outputs --
     # decorrelated dims = feature-richness constraint, no expander needed)
@@ -177,7 +190,8 @@ _CW = {"i2cce": 1.0, "i2ccec": 1.0,
 _IW = {"ice": 1.0, "i2ce": 2.0, "cegate1": 1.0, "cegate2": 2.0, "cegate3": 3.0,
        "cegate4": 4.0, "cegate1w": 1.0, "cegate2w": 2.0, "igate1": 1.0,
        "igate1w": 1.0, "rgate2": 2.0, "nodoc": 2.0, "cegate2c": 2.0,
-       "i2cce": 2.0, "i2ccec": 2.0, "ai2lse": 2.0, "i2expce": 2.0, "i2poolce": 2.0,
+       "i2cce": 2.0, "i2ccec": 2.0, "ai2lse": 2.0,
+       "ai2uni": 6.0, "i2uni": 6.0,   # = 2x W&I align_w 3 (alpha=2 = 2*(1-cos)) "i2expce": 2.0, "i2poolce": 2.0,
        "ceexpi2": 2.0, "expi2expce": 2.0, "poolceexpi2": 2.0, "expi2poolexpce": 2.0,
        "shexpi2ce": 2.0, "shexpi2poolce": 2.0, "i2cmpce": 2.0, "shcmpi2ce": 2.0,
        "i2poolexpce": 2.0, "i2poolcmpce": 2.0, "expi2cmpce": 2.0,
@@ -190,6 +204,7 @@ _IW = {"ice": 1.0, "i2ce": 2.0, "cegate1": 1.0, "cegate2": 2.0, "cegate3": 3.0,
 SPLIT_SEED = 20260711
 DM, HEADS, NV = 128, 4, 4
 ARC_S_T, ARC_M_T = 50.0, 0.2       # tower ArcFace
+UNI_T = 2.0                        # W&I uniformity Gaussian t (repo default)
 # VICReg tower weights (I, V, C) per arm. The paper's 25/25/1 assumes
 # unnormalized high-dim features; on unit-norm 128-d game centroids the budget
 # shifts away from invariance toward spread/decorrelation (user-set).
@@ -892,6 +907,15 @@ def main():
                             lg = (Z.float() @ Zg.T.float() * inv_t).scatter(
                                 1, tgt[:, None], -1e4)      # k^- only
                             loss = loss + torch.logsumexp(lg, dim=1).mean()
+                    elif tower_kind in ("i2uni", "ai2uni"):
+                        # W&I uniformity, official-repo form per view branch:
+                        # log mean exp(-t*pdist^2) over the batch. Repulsion
+                        # source = BATCH samples (self-organizing), never the
+                        # anchor field; on the sphere == LSE(cos) at tau 0.25.
+                        loss = 0.0
+                        for Z in Zs:
+                            d2 = torch.pdist(Z.float()).pow(2)
+                            loss = loss + d2.mul(-UNI_T).exp().mean().log() / len(Zs)
                     elif tower_kind == "arc":
                         loss = sum(arcface_ce(Z.float() @ Zg.T.float(), tgt) for Z in Zs)
                     elif CE_GATED:
@@ -903,7 +927,7 @@ def main():
                     else:
                         loss = sum(F.cross_entropy(Z.float() @ Zg.T.float() * inv_t, tgt)
                                    for Z in Zs)
-                    if IW > 0 and tower_kind == "ai2lse":
+                    if IW > 0 and tower_kind in ("ai2lse", "ai2uni"):
                         # anchor joins the alignment set: 4 views + own anchor
                         objs = [Z.float() for Z in Zs] + [Zg[tgt].float()]
                         loss = loss + IW * sum(

@@ -34,6 +34,9 @@ FS_JOBS = [
     ("wcle_ce_cetf", 4096, False, 0),
     # USER TOP PRIORITY small row: CE decomposed (anchor-in-I + LSE(k-))
     ("wcle_ai2lse_icetf", 512, False, 0),
+    # W&I decomposition controls: 3*align + uniform(t=2, batch repulsion)
+    ("wcle_ai2uni_icetf", 512, False, 0),   # pull fixed, repulsion swapped
+    ("wcle_i2uni_icetf", 512, False, 0),    # pure paper cell, anchor-free
     # CE-attachment matrix at the champion cap (user decree): where CE
     # attaches x anchor cap; A/B = i2ce@g2048 (done) / i2ce@512 (queued)
     ("wcle_i2expce_icetf", 2048, False, 0),
