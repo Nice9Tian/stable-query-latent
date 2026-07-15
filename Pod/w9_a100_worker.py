@@ -56,6 +56,13 @@ ARMS = {
     "wcle_cegate2c_icetf": ("cegate2c", "ice"),    # champion recipe with
     # TRAIN-TIME centering: outputs get mu-EMA subtracted BEFORE the L2
     # normalize, so CE/I never spend capacity on a common direction
+    "wcle_expce_icetf": ("expce", "ice"),          # n4expce revival (w9 cert):
+    # CE paid in a DISPOSABLE expander space (E = norm(MLP 128->256->512),
+    # CE on E(view) @ E(gallery)); I stays in the deployed space; deploy =
+    # pre-expander tower output. A/B = i2ce at the same cap.
+    "wcle_poolce_icetf": ("poolce", "ice"),        # CE on the normalized MEAN
+    # of the 4 views (x4 weight keeps the effective 4:2 CE:I ratio); I
+    # unchanged -- w9 re-cert of the old 6-direction pooled-CE verdict.
     "wcle_i2cce_icetf": ("i2cce", "ice"),          # I2CCE: CE all + I x2 + C x1
     # (VICReg-style off-diag covariance penalty ON the 128-d outputs --
     # decorrelated dims = feature-richness constraint, no expander needed)
@@ -105,7 +112,7 @@ _CW = {"i2cce": 1.0, "i2ccec": 1.0,
 _IW = {"ice": 1.0, "i2ce": 2.0, "cegate1": 1.0, "cegate2": 2.0, "cegate3": 3.0,
        "cegate4": 4.0, "cegate1w": 1.0, "cegate2w": 2.0, "igate1": 1.0,
        "igate1w": 1.0, "rgate2": 2.0, "nodoc": 2.0, "cegate2c": 2.0,
-       "i2cce": 2.0, "i2ccec": 2.0,
+       "i2cce": 2.0, "i2ccec": 2.0, "expce": 2.0, "poolce": 2.0,
        "bkq192i2cce": 2.0, "bkq48i2cce": 2.0, "bkq12i2cce": 2.0,
        "bkbi2cce": 2.0, "mq3072i2cce": 2.0}
 SPLIT_SEED = 20260711
@@ -253,6 +260,8 @@ def main():
     CE_GATED = tower_kind.startswith("cegate") or tower_kind == "rgate2"
     I_GATED = tower_kind.startswith("igate")
     CENTERED = tower_kind in CENTER_ARMS
+    XCE = tower_kind == "expce"        # CE in a disposable expander space
+    PCE = tower_kind == "poolce"       # CE on the view mean (x4 weight)
     CW = _CW.get(tower_kind, 0.0)
     bank_m = re.match(r"bk(?:q(\d+)|b)i2cce$", tower_kind)
     BANK_POLICY = (("q" if bank_m.group(1) else "b") if bank_m else None)
@@ -591,7 +600,14 @@ def main():
         torch.manual_seed(seed)
         rng = np.random.default_rng(seed)
         model = SetPoolN(4, center=CENTERED).to(dev)
-        opt = torch.optim.AdamW(model.parameters(), lr=5e-4, weight_decay=1e-4)
+        xpd = None
+        if XCE:
+            # disposable CE space (n4expce lineage, random init as historical):
+            # trained alongside the tower, discarded at eval -- deploy = pre-E.
+            xpd = nn.Sequential(nn.Linear(DM, 256), nn.GELU(),
+                                nn.Linear(256, 512)).to(dev)
+        params = list(model.parameters()) + (list(xpd.parameters()) if xpd else [])
+        opt = torch.optim.AdamW(params, lr=5e-4, weight_decay=1e-4)
         amp = amp_cls()
         ckpts = {}
         n_train = len(train_pool_games)
@@ -621,6 +637,8 @@ def main():
                 mqueue = st["mqueue"].to(dev)
                 mq_gid = st["mq_gid"].to(dev)
                 mq_ptr = int(st["mq_ptr"])
+            if XCE and "xpd" in st:
+                xpd.load_state_dict({k: v.to(dev) for k, v in st["xpd"].items()})
             print(f"RESUME from ep{start_ep}", flush=True)
         if start_ep == 0 and not RES.exists():
             # EXTEND fallback: the resume bundle is deleted when a run
@@ -638,6 +656,9 @@ def main():
                 if MQ_LEN and isinstance(st, dict) and "shadow" in st:
                     shadow.load_state_dict({k: v.to(dev)
                                             for k, v in st["shadow"].items()})
+                if XCE and isinstance(st, dict) and "xpd" in st:
+                    xpd.load_state_dict({k: v.to(dev)
+                                         for k, v in st["xpd"].items()})
                 start_ep = int(ck.stem.split("_ep")[-1])
                 print(f"EXTEND from ckpt ep{start_ep} (fresh opt/amp/rng)",
                       flush=True)
@@ -709,6 +730,15 @@ def main():
                             lg = Z.float() @ mqueue.T * inv_t
                             loss = loss + F.cross_entropy(
                                 lg.masked_fill(fmask, -1e4), slot)
+                    elif XCE:
+                        Eg = F.normalize(xpd(Zg.float()), dim=-1)
+                        loss = sum(F.cross_entropy(
+                            F.normalize(xpd(Z.float()), dim=-1) @ Eg.T * inv_t,
+                            tgt) for Z in Zs)
+                    elif PCE:
+                        zm = F.normalize(
+                            torch.stack([Z.float() for Z in Zs]).mean(0), dim=-1)
+                        loss = 4.0 * F.cross_entropy(zm @ Zg.T.float() * inv_t, tgt)
                     elif tower_kind == "arc":
                         loss = sum(arcface_ce(Z.float() @ Zg.T.float(), tgt) for Z in Zs)
                     elif CE_GATED:
@@ -737,7 +767,7 @@ def main():
                 opt.zero_grad()
                 amp.scale(loss).backward()
                 amp.unscale_(opt)
-                torch.nn.utils.clip_grad_norm_(model.parameters(), 5.0)
+                torch.nn.utils.clip_grad_norm_(params, 5.0)
                 amp.step(opt)
                 amp.update()
                 if MQ_LEN:
@@ -751,12 +781,20 @@ def main():
                                     shadow={k: v.detach().cpu().clone()
                                             for k, v in shadow.state_dict().items()}),
                                OUT / f"ckpt_{name}_ep{ep+1}.pt")
+                elif XCE:
+                    torch.save(dict(model=sd,
+                                    xpd={k: v.detach().cpu().clone()
+                                         for k, v in xpd.state_dict().items()}),
+                               OUT / f"ckpt_{name}_ep{ep+1}.pt")
                 else:
                     torch.save(sd, OUT / f"ckpt_{name}_ep{ep+1}.pt")   # persist NOW
                 bundle = dict(model=sd, opt=opt.state_dict(), amp=amp.state_dict(),
                               cpu_rng=torch.get_rng_state(),
                               cuda_rng=torch.cuda.get_rng_state(),
                               np_rng=rng.bit_generator.state, ep=ep + 1)
+                if XCE:
+                    bundle["xpd"] = {k: v.detach().cpu().clone()
+                                     for k, v in xpd.state_dict().items()}
                 if BANK_POLICY:
                     bundle["bank"] = bank.detach().cpu()
                     bundle["bank_ptr"] = bank_ptr
