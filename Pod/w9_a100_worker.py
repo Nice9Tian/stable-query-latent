@@ -123,11 +123,6 @@ ARMS = {
     # = CE fully decomposed W&I-style: symmetric constant-weight attraction
     # (incl. the positive edge) + DCL uniformity. vs i2lse isolates the
     # anchor-edge's worth; vs i2ce isolates softmax-adaptive vs constant pull.
-    "wcle_i2lse_icetf": ("i2lse", "ice"),          # UNIFORMITY-ONLY (user
-    # decomposition, Wang&Isola lineage): loss = I x2 (all attraction) +
-    # per-view logsumexp over NEGATIVE anchors only (pure repulsion; the
-    # view->own-anchor pull is REMOVED). Tests whether negatives buy the
-    # repulsion itself or the anchor-pull rope.
     "wcle_i2cce_icetf": ("i2cce", "ice"),          # I2CCE: CE all + I x2 + C x1
     # (VICReg-style off-diag covariance penalty ON the 128-d outputs --
     # decorrelated dims = feature-richness constraint, no expander needed)
@@ -181,7 +176,7 @@ _CW = {"i2cce": 1.0, "i2ccec": 1.0,
 _IW = {"ice": 1.0, "i2ce": 2.0, "cegate1": 1.0, "cegate2": 2.0, "cegate3": 3.0,
        "cegate4": 4.0, "cegate1w": 1.0, "cegate2w": 2.0, "igate1": 1.0,
        "igate1w": 1.0, "rgate2": 2.0, "nodoc": 2.0, "cegate2c": 2.0,
-       "i2cce": 2.0, "i2ccec": 2.0, "i2lse": 2.0, "ai2lse": 2.0, "i2expce": 2.0, "i2poolce": 2.0,
+       "i2cce": 2.0, "i2ccec": 2.0, "ai2lse": 2.0, "i2expce": 2.0, "i2poolce": 2.0,
        "ceexpi2": 2.0, "expi2expce": 2.0, "poolceexpi2": 2.0, "expi2poolexpce": 2.0,
        "shexpi2ce": 2.0, "shexpi2poolce": 2.0, "i2cmpce": 2.0, "shcmpi2ce": 2.0,
        "i2poolexpce": 2.0, "i2poolcmpce": 2.0, "expi2cmpce": 2.0,
@@ -888,7 +883,7 @@ def main():
                         zm = F.normalize(
                             torch.stack([Z.float() for Z in Zs]).mean(0), dim=-1)
                         loss = 4.0 * F.cross_entropy(zm @ Zg.T.float() * inv_t, tgt)
-                    elif tower_kind in ("i2lse", "ai2lse"):
+                    elif tower_kind == "ai2lse":
                         # uniformity-only: repel from every WRONG anchor; no
                         # positive term (attraction is entirely the I block)
                         loss = 0.0
