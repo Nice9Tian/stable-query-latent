@@ -40,6 +40,13 @@ FS_JOBS = [
     ("wcle_i2poolce_icetf", 512, False, 0),
     ("wcle_expce_cetf", 2048, False, 0),   # pure expander-CE (no I)
     ("wcle_expce_cetf", 512, False, 0),
+    # ---- @512 STRUCTURE BLITZ (user top priority): full 2x4 CE-attachment
+    # matrix {no-I, I2} x {per-view, expander, pooled, pool->expander}.
+    # ce@512 done (0.835); the other 7 cells below/above. Results decide
+    # which structure the scaling theory is built on.
+    ("wcle_i2poolexpce_icetf", 512, False, 0),
+    ("wcle_poolce_cetf", 512, False, 0),
+    ("wcle_poolexpce_cetf", 512, False, 0),
     ("wcle_i2ce_icetf", 512, False, 0),  # clean@512 i2ce (only nsp existed):
     # fixes the i2ce anchor-curve ORIGIN (512 point was nsp-handicapped)
     # and completes the clean same-cap ce-vs-i2ce pair at 512

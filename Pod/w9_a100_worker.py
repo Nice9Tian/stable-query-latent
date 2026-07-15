@@ -57,6 +57,10 @@ ARMS = {
     # TRAIN-TIME centering: outputs get mu-EMA subtracted BEFORE the L2
     # normalize, so CE/I never spend capacity on a common direction
     "wcle_i2expce_icetf": ("i2expce", "ice"),
+    "wcle_i2poolexpce_icetf": ("i2poolexpce", "ice"),  # pool -> E -> CE;
+    # I on per-view E outputs (user rule: with an expander, I attaches there)
+    "wcle_poolce_cetf": ("poolce", "ce"),          # pooled CE, NO I
+    "wcle_poolexpce_cetf": ("poolexpce", "ce"),    # pool -> E -> CE, NO I
     "wcle_expce_cetf": ("expce", "ce"),            # PURE expander CE (user
     # design): NO I anywhere -- the deployed space receives no direct loss,
     # all shaping arrives via backprop through E. SimCLR-orthodox member of
@@ -117,6 +121,7 @@ _IW = {"ice": 1.0, "i2ce": 2.0, "cegate1": 1.0, "cegate2": 2.0, "cegate3": 3.0,
        "cegate4": 4.0, "cegate1w": 1.0, "cegate2w": 2.0, "igate1": 1.0,
        "igate1w": 1.0, "rgate2": 2.0, "nodoc": 2.0, "cegate2c": 2.0,
        "i2cce": 2.0, "i2ccec": 2.0, "i2expce": 2.0, "i2poolce": 2.0,
+       "i2poolexpce": 2.0,
        "bkq192i2cce": 2.0, "bkq48i2cce": 2.0, "bkq12i2cce": 2.0,
        "bkbi2cce": 2.0, "mq3072i2cce": 2.0}
 SPLIT_SEED = 20260711
@@ -264,8 +269,10 @@ def main():
     CE_GATED = tower_kind.startswith("cegate") or tower_kind == "rgate2"
     I_GATED = tower_kind.startswith("igate")
     CENTERED = tower_kind in CENTER_ARMS
-    XCE = tower_kind in ("i2expce", "expce")        # CE in a disposable expander space
-    PCE = tower_kind == "i2poolce"       # CE on the view mean (x4 weight)
+    XCE = tower_kind in ("i2expce", "expce", "i2poolexpce", "poolexpce")
+    PCE = tower_kind in ("i2poolce", "poolce", "i2poolexpce", "poolexpce")
+    # user rule: I always attaches after the multi-views, and AFTER the
+    # expander whenever one exists (I pairs live in E-space for XCE arms)
     CW = _CW.get(tower_kind, 0.0)
     bank_m = re.match(r"bk(?:q(\d+)|b)i2cce$", tower_kind)
     BANK_POLICY = (("q" if bank_m.group(1) else "b") if bank_m else None)
@@ -734,6 +741,13 @@ def main():
                             lg = Z.float() @ mqueue.T * inv_t
                             loss = loss + F.cross_entropy(
                                 lg.masked_fill(fmask, -1e4), slot)
+                    elif XCE and PCE:
+                        # (i2)poolexpce: pool the views, then CE in E-space
+                        Eg = F.normalize(xpd(Zg.float()), dim=-1)
+                        zm = F.normalize(
+                            torch.stack([Z.float() for Z in Zs]).mean(0), dim=-1)
+                        loss = 4.0 * F.cross_entropy(
+                            F.normalize(xpd(zm), dim=-1) @ Eg.T * inv_t, tgt)
                     elif XCE:
                         Eg = F.normalize(xpd(Zg.float()), dim=-1)
                         loss = sum(F.cross_entropy(
@@ -754,7 +768,13 @@ def main():
                     else:
                         loss = sum(F.cross_entropy(Z.float() @ Zg.T.float() * inv_t, tgt)
                                    for Z in Zs)
-                    if IW > 0:
+                    if IW > 0 and XCE:
+                        # user rule: with an expander, I pairs live in E-space
+                        Ev = [F.normalize(xpd(Z.float()), dim=-1) for Z in Zs]
+                        loss = loss + IW * sum(
+                            (1 - (Ev[i] * Ev[j]).sum(-1)).mean()
+                            for i, j in pairs) / len(pairs)
+                    elif IW > 0:
                         if I_GATED:
                             hd = torch.tensor(np.array([g in gate_games for g in gids],
                                                        dtype=np.float32)).to(dev)
