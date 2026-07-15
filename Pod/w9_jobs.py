@@ -36,9 +36,11 @@ FS_JOBS = [
     ("wcle_ai2lse_icetf", 512, False, 0),
     # W&I decomposition controls: 3*align + uniform(t=2, batch repulsion)
     ("wcle_ai2ce_icetf", 512, False, 0),    # both pulls: CE + anchor rope
-    ("wcle_aaliauni_icetf", 512, False, 0),  # paper recipe, BOTH at anchors
-    ("wcle_aaliuni_icetf", 512, False, 0),   # pull fixed, repulsion swapped
-    ("wcle_aliuni_icetf", 512, False, 0),    # pure paper cell, anchor-free
+    ("wcle_aali3auni_icetf", 512, False, 0),  # W&I both-at-anchor, align_w 3
+    ("wcle_aali2auni_icetf", 512, False, 0),  # align_w 2 rung
+    ("wcle_ali3uni_icetf", 512, False, 0),    # pure W&I anchor-free, align_w 3
+    ("wcle_ali2uni_icetf", 512, False, 0),    # align_w 2 rung
+    ("wcle_aali3uni_icetf", 512, False, 0),   # mixed source (parked, not in flash)
     # CE-attachment matrix at the champion cap (user decree): where CE
     # attaches x anchor cap; A/B = i2ce@g2048 (done) / i2ce@512 (queued)
     ("wcle_i2expce_icetf", 2048, False, 0),
