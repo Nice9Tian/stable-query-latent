@@ -32,6 +32,9 @@ FS_JOBS = [
     # i2ce keeps scaling? Same-cap I-premium reference at the champion caps.
     ("wcle_ce_cetf", 2048, False, 0),
     ("wcle_ce_cetf", 4096, False, 0),
+    ("wcle_i2ce_icetf", 512, False, 0),  # clean@512 i2ce (only nsp existed):
+    # fixes the i2ce anchor-curve ORIGIN (512 point was nsp-handicapped)
+    # and completes the clean same-cap ce-vs-i2ce pair at 512
     ("wcle_cegate3_icetf", 512, False, 0),
     ("wcle_cegate4_icetf", 512, False, 0),
     ("wcle_cegate2_icetf", 2048, False, 0),
