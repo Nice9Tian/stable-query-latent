@@ -128,8 +128,8 @@ ARMS = {
     # same anchor-in-I attraction as ai2lse, but repulsion = Wang&Isola
     # batch uniformity log mean exp(-t*d^2) (t=2) over the 192 batch views
     # per branch -- NOT the anchor field. On the sphere that kernel is
-    # exp(2t*cos) => LSE over cos at tau=1/(2t)=0.25. vs ai2lse isolates
-    # repulsion source+softness (anchor LSE@0.02 -> batch Gaussian@0.25).
+    # exp(2t*cos) => LSE over cos at tau=1/(2t)=0.25. vs ai2auni isolates
+    # repulsion SOURCE alone (paper recipe fixed, anchors -> batch).
     "wcle_i2uni_icetf": ("i2uni", "ice"),          # PURE Wang&Isola cell:
     # 3*align (= IW 6 x mean(1-cos), alpha=2 identity) + 1*uniformity,
     # official-repo STL-10 flagship weights. NO anchor edge anywhere =
@@ -137,6 +137,13 @@ ARMS = {
     # but negative-free). No desert trap: batch self-repulsion has no
     # fixed field to hide from, unlike the purged i2lse. Doc VIEW stays
     # (protocol constant NV=4), so anchor-free != doc-free.
+    "wcle_ai2auni_icetf": ("ai2auni", "ice"),      # W&I BOTH-AT-ANCHOR (user):
+    # paper recipe (3*align IW6 + 1*uniform t=2) with BOTH forces aimed at
+    # the anchor field: pull = anchor-in-I, push = Gaussian kernel vs the
+    # WRONG anchors. Gradient-identical to ai2lse's LSE at tau=1/(2t)=0.25
+    # (log-mean vs log-sum = additive const), so the ladder factorizes:
+    # ai2lse -> ai2auni = kernel softness + pull:push budget (source fixed);
+    # ai2auni -> ai2uni = repulsion source only (recipe fixed).
     "wcle_i2cce_icetf": ("i2cce", "ice"),          # I2CCE: CE all + I x2 + C x1
     # (VICReg-style off-diag covariance penalty ON the 128-d outputs --
     # decorrelated dims = feature-richness constraint, no expander needed)
@@ -191,7 +198,7 @@ _IW = {"ice": 1.0, "i2ce": 2.0, "cegate1": 1.0, "cegate2": 2.0, "cegate3": 3.0,
        "cegate4": 4.0, "cegate1w": 1.0, "cegate2w": 2.0, "igate1": 1.0,
        "igate1w": 1.0, "rgate2": 2.0, "nodoc": 2.0, "cegate2c": 2.0,
        "i2cce": 2.0, "i2ccec": 2.0, "ai2lse": 2.0,
-       "ai2uni": 6.0, "i2uni": 6.0,   # = 2x W&I align_w 3 (alpha=2 = 2*(1-cos)) "i2expce": 2.0, "i2poolce": 2.0,
+       "ai2uni": 6.0, "i2uni": 6.0, "ai2auni": 6.0,   # = 2x W&I align_w 3 (alpha=2 = 2*(1-cos)) "i2expce": 2.0, "i2poolce": 2.0,
        "ceexpi2": 2.0, "expi2expce": 2.0, "poolceexpi2": 2.0, "expi2poolexpce": 2.0,
        "shexpi2ce": 2.0, "shexpi2poolce": 2.0, "i2cmpce": 2.0, "shcmpi2ce": 2.0,
        "i2poolexpce": 2.0, "i2poolcmpce": 2.0, "expi2cmpce": 2.0,
@@ -907,6 +914,15 @@ def main():
                             lg = (Z.float() @ Zg.T.float() * inv_t).scatter(
                                 1, tgt[:, None], -1e4)      # k^- only
                             loss = loss + torch.logsumexp(lg, dim=1).mean()
+                    elif tower_kind == "ai2auni":
+                        # W&I uniformity vs the WRONG anchors (kernel zeroed
+                        # at the own column) -- soft ai2lse, tau_eff 0.25.
+                        loss = 0.0
+                        for Z in Zs:
+                            d2 = torch.cdist(Z.float(), Zg.float()).pow(2)
+                            ker = d2.mul(-UNI_T).exp()
+                            ker = ker.scatter(1, tgt[:, None], 0.0)
+                            loss = loss + ker.sum(1).div(ker.shape[1] - 1)                                .log().mean() / len(Zs)
                     elif tower_kind in ("i2uni", "ai2uni"):
                         # W&I uniformity, official-repo form per view branch:
                         # log mean exp(-t*pdist^2) over the batch. Repulsion
@@ -927,7 +943,7 @@ def main():
                     else:
                         loss = sum(F.cross_entropy(Z.float() @ Zg.T.float() * inv_t, tgt)
                                    for Z in Zs)
-                    if IW > 0 and tower_kind in ("ai2lse", "ai2uni"):
+                    if IW > 0 and tower_kind in ("ai2lse", "ai2uni", "ai2auni"):
                         # anchor joins the alignment set: 4 views + own anchor
                         objs = [Z.float() for Z in Zs] + [Zg[tgt].float()]
                         loss = loss + IW * sum(
