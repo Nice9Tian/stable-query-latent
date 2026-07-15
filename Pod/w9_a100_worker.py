@@ -90,7 +90,7 @@ ARMS = {
     "wcle_expi2cmpce_icetf": ("expi2cmpce", "ice"),      # DUAL: I@exp + CE@cmp
     "wcle_cmpi2expce_icetf": ("cmpi2expce", "ice"),      # DUAL: I@cmp + CE@exp
     "wcle_cmpi2cmpce_icetf": ("cmpi2cmpce", "ice"),      # DUAL: I@cmp + CE@cmp
-    "wcle_poolcmpceexpi2_icetf": ("poolcmpceexpi2", "ice"),  # DUAL: I@exp +
+    "wcle_expi2poolcmpce_icetf": ("expi2poolcmpce", "ice"),  # DUAL: I@exp +
     # pool->cmp->CE (poolexpceexpi2 would equal expi2poolexpce -- not duped)
     "wcle_shexpi2poolexpce_icetf": ("shexpi2poolexpce", "ice"),  # SHARED exp:
     # I@E + pool-BEFORE-E CE (the old shexpi2poolce wiring, renamed)
@@ -170,7 +170,7 @@ _IW = {"ice": 1.0, "i2ce": 2.0, "cegate1": 1.0, "cegate2": 2.0, "cegate3": 3.0,
        "ceexpi2": 2.0, "expi2expce": 2.0, "poolceexpi2": 2.0, "expi2poolexpce": 2.0,
        "shexpi2ce": 2.0, "shexpi2poolce": 2.0, "i2cmpce": 2.0, "shcmpi2ce": 2.0,
        "i2poolexpce": 2.0, "i2poolcmpce": 2.0, "expi2cmpce": 2.0,
-       "cmpi2expce": 2.0, "cmpi2cmpce": 2.0, "poolcmpceexpi2": 2.0,
+       "cmpi2expce": 2.0, "cmpi2cmpce": 2.0, "expi2poolcmpce": 2.0,
        "shexpi2poolexpce": 2.0, "shcmpi2poolcmpce": 2.0,
        "cecmpi2": 2.0, "poolcecmpi2": 2.0, "shcmpi2poolce": 2.0,
        "cmpi2poolexpce": 2.0, "cmpi2poolcmpce": 2.0,
@@ -324,22 +324,22 @@ def main():
     _CE_E = ("i2expce", "expce", "expi2expce", "poolexpce", "expi2poolexpce",
              "shexpi2ce", "shexpi2poolce", "cmpce", "i2cmpce", "shcmpi2ce",
              "i2poolexpce", "i2poolcmpce", "expi2cmpce", "cmpi2expce",
-             "cmpi2cmpce", "poolcmpceexpi2", "shexpi2poolexpce",
+             "cmpi2cmpce", "expi2poolcmpce", "shexpi2poolexpce",
              "shcmpi2poolcmpce", "poolcmpce", "shcmpi2poolce",
              "cmpi2poolexpce", "cmpi2poolcmpce")
     _CE_POOL = ("i2poolce", "poolce", "poolceexpi2", "poolexpce",
                 "expi2poolexpce", "shexpi2poolce", "i2poolexpce",
-                "i2poolcmpce", "poolcmpceexpi2", "shexpi2poolexpce",
+                "i2poolcmpce", "expi2poolcmpce", "shexpi2poolexpce",
                 "shcmpi2poolcmpce", "poolcmpce", "poolcecmpi2",
                 "shcmpi2poolce", "cmpi2poolexpce", "cmpi2poolcmpce")
     _I_E = ("ceexpi2", "expi2expce", "poolceexpi2", "expi2poolexpce",
             "shexpi2ce", "shexpi2poolce", "shcmpi2ce", "expi2cmpce",
-            "cmpi2expce", "cmpi2cmpce", "poolcmpceexpi2",
+            "cmpi2expce", "cmpi2cmpce", "expi2poolcmpce",
             "shexpi2poolexpce", "shcmpi2poolcmpce", "cecmpi2",
             "poolcecmpi2", "shcmpi2poolce", "cmpi2poolexpce",
             "cmpi2poolcmpce")
     _DUAL = ("expi2expce", "expi2poolexpce", "expi2cmpce", "cmpi2expce",
-             "cmpi2cmpce", "poolcmpceexpi2", "cmpi2poolexpce",
+             "cmpi2cmpce", "expi2poolcmpce", "cmpi2poolexpce",
              "cmpi2poolcmpce")   # I and CE use SEPARATE E's
     _POOL_AFTER = ("shexpi2poolce", "shcmpi2poolce")   # CE pools E-outputs
     # per-module E direction: (CE's E, I's E); None = that loss not in E
@@ -354,7 +354,7 @@ def main():
              "expi2expce": ("exp", "exp"), "expi2cmpce": ("cmp", "exp"),
              "cmpi2expce": ("exp", "cmp"), "cmpi2cmpce": ("cmp", "cmp"),
              "expi2poolexpce": ("exp", "exp"),
-             "poolcmpceexpi2": ("cmp", "exp"), "poolcmpce": ("cmp", None),
+             "expi2poolcmpce": ("cmp", "exp"), "poolcmpce": ("cmp", None),
              "cecmpi2": (None, "cmp"), "poolcecmpi2": (None, "cmp"),
              "shcmpi2poolce": ("cmp", "cmp"),
              "cmpi2poolexpce": ("exp", "cmp"),

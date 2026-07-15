@@ -57,7 +57,7 @@ FS_JOBS = [
     ("wcle_expi2cmpce_icetf", 512, False, 0),
     ("wcle_cmpi2expce_icetf", 512, False, 0),
     ("wcle_cmpi2cmpce_icetf", 512, False, 0),
-    ("wcle_poolcmpceexpi2_icetf", 512, False, 0),
+    ("wcle_expi2poolcmpce_icetf", 512, False, 0),
     ("wcle_shexpi2poolexpce_icetf", 512, False, 0),
     ("wcle_shcmpi2poolcmpce_icetf", 512, False, 0),
     # symmetry completion (30-cell final grid)
