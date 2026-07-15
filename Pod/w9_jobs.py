@@ -47,7 +47,9 @@ FS_JOBS = [
     ("wcle_expi2ce_icetf", 512, False, 0),      # I@E + per-view CE@dep
     ("wcle_expi2expce_icetf", 512, False, 0),   # I@E + CE@E (new design)
     ("wcle_expi2poolce_icetf", 512, False, 0),  # I@E + pooled CE@dep
-    ("wcle_expi2poolexpce_icetf", 512, False, 0),  # I@E + pool->E->CE
+    ("wcle_expi2poolexpce_icetf", 512, False, 0),  # I@E_I + pool->E_CE->CE (dual)
+    ("wcle_shexpi2ce_icetf", 512, False, 0),    # SHARED E: I@E + CE@E
+    ("wcle_shexpi2poolce_icetf", 512, False, 0),  # SHARED E: I@E + pool->E->CE
     ("wcle_poolce_cetf", 512, False, 0),
     ("wcle_poolexpce_cetf", 512, False, 0),
     ("wcle_i2ce_icetf", 512, False, 0),  # clean@512 i2ce (only nsp existed):

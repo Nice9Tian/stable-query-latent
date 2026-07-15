@@ -62,10 +62,13 @@ ARMS = {
     # the expander (E-space, the NEW design).
     "wcle_expi2ce_icetf": ("expi2ce", "ice"),            # I@E + per-view CE@dep
     # (with expi2poolce: the "expander serves ONLY I" pair, per-view flavor)
-    "wcle_expi2expce_icetf": ("expi2expce", "ice"),      # I@E + per-view CE@E
-    # (ONE shared E serves both losses -- convention: all E-space terms of an
-    # arm share a single expander; a decoupled-dual-E variant would need its
-    # own codename)
+    # E-sharing grammar (user decree): "expi2expce"/"expi2poolexpce" carry TWO
+    # exp tokens = I and CE use SEPARATE expanders (E_I, E_CE). The "shexp"
+    # prefix = ONE SHARED E serves every E-space loss of the arm.
+    "wcle_expi2expce_icetf": ("expi2expce", "ice"),      # I@E_I + CE@E_CE (dual)
+    "wcle_shexpi2ce_icetf": ("shexpi2ce", "ice"),        # I@E + CE@E, SHARED E
+    "wcle_shexpi2poolce_icetf": ("shexpi2poolce", "ice"),  # I@E + pool->E->CE,
+    # SHARED E
     "wcle_expi2poolce_icetf": ("expi2poolce", "ice"),    # I@E + pooled CE@dep
     # (the expander exists ONLY to give I its tax space)
     "wcle_expi2poolexpce_icetf": ("expi2poolexpce", "ice"),  # I@E + pool->E->CE
@@ -132,6 +135,7 @@ _IW = {"ice": 1.0, "i2ce": 2.0, "cegate1": 1.0, "cegate2": 2.0, "cegate3": 3.0,
        "igate1w": 1.0, "rgate2": 2.0, "nodoc": 2.0, "cegate2c": 2.0,
        "i2cce": 2.0, "i2ccec": 2.0, "i2expce": 2.0, "i2poolce": 2.0,
        "expi2ce": 2.0, "expi2expce": 2.0, "expi2poolce": 2.0, "expi2poolexpce": 2.0,
+       "shexpi2ce": 2.0, "shexpi2poolce": 2.0,
        "bkq192i2cce": 2.0, "bkq48i2cce": 2.0, "bkq12i2cce": 2.0,
        "bkbi2cce": 2.0, "mq3072i2cce": 2.0}
 SPLIT_SEED = 20260711
@@ -279,14 +283,18 @@ def main():
     CE_GATED = tower_kind.startswith("cegate") or tower_kind == "rgate2"
     I_GATED = tower_kind.startswith("igate")
     CENTERED = tower_kind in CENTER_ARMS
-    _CE_E = ("i2expce", "expce", "expi2expce", "poolexpce", "expi2poolexpce")
+    _CE_E = ("i2expce", "expce", "expi2expce", "poolexpce", "expi2poolexpce",
+             "shexpi2ce", "shexpi2poolce")
     _CE_POOL = ("i2poolce", "poolce", "expi2poolce", "poolexpce",
-                "expi2poolexpce")
-    _I_E = ("expi2ce", "expi2expce", "expi2poolce", "expi2poolexpce")
+                "expi2poolexpce", "shexpi2poolce")
+    _I_E = ("expi2ce", "expi2expce", "expi2poolce", "expi2poolexpce",
+            "shexpi2ce", "shexpi2poolce")
+    _DUAL = ("expi2expce", "expi2poolexpce")   # I and CE use SEPARATE E's
     XCE = tower_kind in _CE_E          # CE computed in expander space
     PCE = tower_kind in _CE_POOL       # CE pools the views first
     IE = tower_kind in _I_E            # I pairs live in expander space
     XPD = XCE or IE                    # arm carries the expander module
+    DUAL = tower_kind in _DUAL         # separate E_I (xpd2) and E_CE (xpd)
     # naming grammar (user decree): i2exp* = I in DEPLOYED space (original
     # n4expce design); expi2* = I after the expander (new design)
     CW = _CW.get(tower_kind, 0.0)
@@ -627,13 +635,19 @@ def main():
         torch.manual_seed(seed)
         rng = np.random.default_rng(seed)
         model = SetPoolN(4, center=CENTERED).to(dev)
-        xpd = None
+        xpd, xpd2 = None, None
+        if DUAL:
+            # I gets its OWN expander; xpd below stays CE's
+            xpd2 = nn.Sequential(nn.Linear(DM, 256), nn.GELU(),
+                                 nn.Linear(256, 512)).to(dev)
         if XPD:
             # disposable CE space (n4expce lineage, random init as historical):
             # trained alongside the tower, discarded at eval -- deploy = pre-E.
             xpd = nn.Sequential(nn.Linear(DM, 256), nn.GELU(),
                                 nn.Linear(256, 512)).to(dev)
-        params = list(model.parameters()) + (list(xpd.parameters()) if xpd else [])
+        params = (list(model.parameters())
+                  + (list(xpd.parameters()) if xpd else [])
+                  + (list(xpd2.parameters()) if xpd2 else []))
         opt = torch.optim.AdamW(params, lr=5e-4, weight_decay=1e-4)
         amp = amp_cls()
         ckpts = {}
@@ -666,6 +680,8 @@ def main():
                 mq_ptr = int(st["mq_ptr"])
             if XPD and "xpd" in st:
                 xpd.load_state_dict({k: v.to(dev) for k, v in st["xpd"].items()})
+            if DUAL and "xpd2" in st:
+                xpd2.load_state_dict({k: v.to(dev) for k, v in st["xpd2"].items()})
             print(f"RESUME from ep{start_ep}", flush=True)
         if start_ep == 0 and not RES.exists():
             # EXTEND fallback: the resume bundle is deleted when a run
@@ -686,6 +702,9 @@ def main():
                 if XPD and isinstance(st, dict) and "xpd" in st:
                     xpd.load_state_dict({k: v.to(dev)
                                          for k, v in st["xpd"].items()})
+                if DUAL and isinstance(st, dict) and "xpd2" in st:
+                    xpd2.load_state_dict({k: v.to(dev)
+                                          for k, v in st["xpd2"].items()})
                 start_ep = int(ck.stem.split("_ep")[-1])
                 print(f"EXTEND from ckpt ep{start_ep} (fresh opt/amp/rng)",
                       flush=True)
@@ -785,8 +804,9 @@ def main():
                         loss = sum(F.cross_entropy(Z.float() @ Zg.T.float() * inv_t, tgt)
                                    for Z in Zs)
                     if IW > 0 and IE:
-                        # expi2* arms: I pairs live in E-space
-                        Ev = [F.normalize(xpd(Z.float()), dim=-1) for Z in Zs]
+                        # E-space I; dual arms pay I into their OWN expander
+                        _ei = xpd2 if DUAL else xpd
+                        Ev = [F.normalize(_ei(Z.float()), dim=-1) for Z in Zs]
                         loss = loss + IW * sum(
                             (1 - (Ev[i] * Ev[j]).sum(-1)).mean()
                             for i, j in pairs) / len(pairs)
@@ -822,16 +842,22 @@ def main():
                                             for k, v in shadow.state_dict().items()}),
                                OUT / f"ckpt_{name}_ep{ep+1}.pt")
                 elif XPD:
-                    torch.save(dict(model=sd,
-                                    xpd={k: v.detach().cpu().clone()
-                                         for k, v in xpd.state_dict().items()}),
-                               OUT / f"ckpt_{name}_ep{ep+1}.pt")
+                    _pay = dict(model=sd,
+                                xpd={k: v.detach().cpu().clone()
+                                     for k, v in xpd.state_dict().items()})
+                    if DUAL:
+                        _pay["xpd2"] = {k: v.detach().cpu().clone()
+                                        for k, v in xpd2.state_dict().items()}
+                    torch.save(_pay, OUT / f"ckpt_{name}_ep{ep+1}.pt")
                 else:
                     torch.save(sd, OUT / f"ckpt_{name}_ep{ep+1}.pt")   # persist NOW
                 bundle = dict(model=sd, opt=opt.state_dict(), amp=amp.state_dict(),
                               cpu_rng=torch.get_rng_state(),
                               cuda_rng=torch.cuda.get_rng_state(),
                               np_rng=rng.bit_generator.state, ep=ep + 1)
+                if DUAL:
+                    bundle["xpd2"] = {k: v.detach().cpu().clone()
+                                      for k, v in xpd2.state_dict().items()}
                 if XPD:
                     bundle["xpd"] = {k: v.detach().cpu().clone()
                                      for k, v in xpd.state_dict().items()}
