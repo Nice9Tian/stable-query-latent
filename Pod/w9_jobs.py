@@ -44,6 +44,8 @@ FS_JOBS = [
     # matrix {no-I, I2} x {per-view, expander, pooled, pool->expander}.
     # ce@512 done (0.835); the other 7 cells below/above. Results decide
     # which structure the scaling theory is built on.
+    # USER TOP PRIORITY: CE decomposed = anchor-in-I attraction + LSE(k-)
+    ("wcle_ai2lse_icetf", 512, False, 0),
     ("wcle_ceexpi2_icetf", 512, False, 0),      # per-view CE@dep + I@E
     ("wcle_expi2expce_icetf", 512, False, 0),   # I@E + CE@E (new design)
     ("wcle_poolceexpi2_icetf", 512, False, 0),  # pooled CE@dep + I@E
@@ -61,8 +63,6 @@ FS_JOBS = [
     ("wcle_shexpi2poolexpce_icetf", 512, False, 0),
     ("wcle_shcmpi2poolcmpce_icetf", 512, False, 0),
     # symmetry completion (30-cell final grid)
-    ("wcle_i2lse_icetf", 512, False, 0),  # uniformity-only (cell 31)
-    ("wcle_ai2lse_icetf", 512, False, 0),  # anchor-in-I + LSE (cell 32)
     ("wcle_poolcmpce_cetf", 512, False, 0),
     ("wcle_cecmpi2_icetf", 512, False, 0),
     ("wcle_poolcecmpi2_icetf", 512, False, 0),

@@ -121,8 +121,9 @@ ARMS = {
     # I pairs span {4 views + OWN ANCHOR} (10 edges) so alignment itself ties
     # anchor_g to its view cluster; repulsion = same negative-only LSE.
     # = CE fully decomposed W&I-style: symmetric constant-weight attraction
-    # (incl. the positive edge) + DCL uniformity. vs i2lse isolates the
-    # anchor-edge's worth; vs i2ce isolates softmax-adaptive vs constant pull.
+    # (incl. the positive edge) + DCL uniformity. (i2lse, the no-anchor-rope
+    # variant, was purged pre-run: desert equilibria made it foreseeable.)
+    # vs i2ce isolates softmax-adaptive vs constant-weight pull.
     "wcle_i2cce_icetf": ("i2cce", "ice"),          # I2CCE: CE all + I x2 + C x1
     # (VICReg-style off-diag covariance penalty ON the 128-d outputs --
     # decorrelated dims = feature-richness constraint, no expander needed)
