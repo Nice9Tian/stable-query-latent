@@ -235,6 +235,8 @@ ARMS = {
     # that is the trade this arm measures. Gradient: query side only.
     "wcle_mq3072i2cce_icetf": ("mq3072i2cce", "ice"),
     "wcle_mq3072ce_cetf": ("mq3072ce", "ce"),   # CE-only MoCo queue (no I/C; queue CE baseline)
+    "wcle_mq3072i2ce_icetf": ("mq3072i2ce", "ice"),  # queue + I2 (NO C: aligned
+    # with the scale grid pair {ce, i2ce}; C shown null-to-harmful, user trim)
 }
 CENTER_ARMS = {"cegate2c", "i2ccec"}
 _CW = {"i2cce": 1.0, "i2ccec": 1.0,
@@ -258,7 +260,7 @@ _IW = {"ice": 1.0, "i2ce": 2.0, "cegate1": 1.0, "cegate2": 2.0, "cegate3": 3.0,
        "cecmpi2": 2.0, "poolcecmpi2": 2.0, "shcmpi2poolce": 2.0,
        "cmpi2poolexpce": 2.0, "cmpi2poolcmpce": 2.0,
        "bkq192i2cce": 2.0, "bkq48i2cce": 2.0, "bkq12i2cce": 2.0,
-       "bkbi2cce": 2.0, "mq3072i2cce": 2.0}
+       "bkbi2cce": 2.0, "mq3072i2cce": 2.0, "mq3072i2ce": 2.0}
 SPLIT_SEED = 20260711
 DM, HEADS, NV = 128, 4, 4
 ARC_S_T, ARC_M_T = 50.0, 0.2       # tower ArcFace
@@ -477,7 +479,7 @@ def main():
     BANK_POLICY = (("q" if bank_m.group(1) else "b") if bank_m else None)
     BANK_K = int(bank_m.group(1)) if bank_m and bank_m.group(1) else 0
     # mq{N}i2cce = MoCo queue + I2CCE (I2+C+CE); mq{N}ce = CE-ONLY queue
-    mq_m = re.match(r"mq(\d+)(?:i2cce|ce)$", tower_kind)
+    mq_m = re.match(r"mq(\d+)(?:i2cce|i2ce|ce)$", tower_kind)
     MQ_LEN = int(mq_m.group(1)) if mq_m else 0
     MQ_M = 0.99                        # shadow-tower weight-EMA momentum
     name = (f"w9_{args.arm}"
