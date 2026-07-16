@@ -178,8 +178,7 @@ def _pad(j):
 FS_JOBS = [_pad(j) for j in FS_JOBS]
 
 # ---------------- CV jobs ----------------
-CV_RECIPES = ["wcle_cegate2_icetf", "wcle_i2ce_icetf", "wcle_ce_cetf",
-              "wcle_rgate2_icetf", "wcle_nodoc_i2ce_icetf", "wcle_ice_icetf"]
+CV_RECIPES = ["wcle_ce_cetf", "wcle_i2ce_icetf"]   # core: I-CE vs CE (user)
 N_FOLDS = 5
 
 # ---------------- budgets / protocol constants ----------------
