@@ -253,6 +253,22 @@ ARMS = {
     # that is the trade this arm measures. Gradient: query side only.
     "wcle_mq3072i2cce_icetf": ("mq3072i2cce", "ice"),
     "wcle_mq3072ce_cetf": ("mq3072ce", "ce"),   # CE-only MoCo queue (no I/C; queue CE baseline)
+    # --- save-the-4096-tag trio (user; owned by w9_save_4096_tag.ipynb) ---
+    # Diagnosis: tag decay at big caps tracks the ANCHOR SUPPLY, not I
+    # (512: i2ce tag > ce; mq queue @2048 keeps I and restores tag .736).
+    # Culprit = anchor co-adaptation: CE grad flows through Zg and games
+    # the pack embeddings off the content manifold late in training.
+    "wcle_i2q2ce_icetf": ("i2q2ce", "ice"),   # 1: soft-band I, lambda*(1-cos)^2
+    # (gradient ratio vs plain = 2*(1-cos): equal at cos=.5, 5x softer at
+    # .9, 25x at .98 -- a near-aligned dead band preserves per-view
+    # individuality; n generalizes as i2q{n}ce if 2 proves out)
+    "wcle_i2sgce_icetf": ("i2sgce", "ice"),   # 5a: stop-grad gallery
+    # (anchors can't be gamed; no_grad also drops the 1613 x cap backward
+    # activations -> cap 8192 fits 80G)
+    "wcle_i2esce_icetf": ("i2esce", "ice"),   # 5b: EMA-shadow gallery
+    # (stop-grad + target smoothing, tau = 1/(1-MQ_M) = 100 steps ~ 6 ep;
+    # fixed points = i2sgce's, transients damped; mq's consistency lesson
+    # at full-gallery width)
     "wcle_mq3072i2ce_icetf": ("mq3072i2ce", "ice"),  # queue + I2 (NO C: aligned
     # with the scale grid pair {ce, i2ce}; C shown null-to-harmful, user trim)
 }
@@ -279,6 +295,7 @@ _IW = {"ice": 1.0, "i2ce": 2.0, "cegate1": 1.0, "cegate2": 2.0, "cegate3": 3.0,
        "cmpi2poolexpce": 2.0, "cmpi2poolcmpce": 2.0,
        "bkq192i2cce": 2.0, "bkq48i2cce": 2.0, "bkq12i2cce": 2.0,
        "bkbi2cce": 2.0, "mq3072i2cce": 2.0, "mq3072i2ce": 2.0,
+       "i2q2ce": 2.0, "i2sgce": 2.0, "i2esce": 2.0,
        "d1r4_i2ce": 2.0, "d1r5_i2ce": 2.0, "d1r6_i2ce": 2.0,
        "w1sp1r3_i2ce": 2.0}
 SPLIT_SEED = 20260711
@@ -502,6 +519,7 @@ def main():
     mq_m = re.match(r"mq(\d+)(?:i2cce|i2ce|ce)$", tower_kind)
     MQ_LEN = int(mq_m.group(1)) if mq_m else 0
     MQ_M = 0.99                        # shadow-tower weight-EMA momentum
+    USE_SHADOW = bool(MQ_LEN) or tower_kind == "i2esce"   # EMA twin needed
     # view-composition grid, explicit grammar (see model_history.md):
     # [d<k>][w<k>][sp<k>]r<n>_i2ce -- d = tiered doc slots (wiki -> sp ->
     # review fallback, the protocol slot), w = wiki-only slots, sp =
@@ -879,7 +897,7 @@ def main():
         n_train = len(train_pool_games)
         bank, bank_ptr = None, 0
         shadow, mqueue, mq_gid, mq_ptr = None, None, None, 0
-        if MQ_LEN:
+        if USE_SHADOW:
             import copy
             shadow = copy.deepcopy(model).to(dev)
             for p in shadow.parameters():
@@ -903,6 +921,8 @@ def main():
                 mqueue = st["mqueue"].to(dev)
                 mq_gid = st["mq_gid"].to(dev)
                 mq_ptr = int(st["mq_ptr"])
+            elif USE_SHADOW and "shadow" in st:
+                shadow.load_state_dict({k: v.to(dev) for k, v in st["shadow"].items()})
             if XPD and "xpd" in st:
                 xpd.load_state_dict({k: v.to(dev) for k, v in st["xpd"].items()})
             if DUAL and "xpd2" in st:
@@ -921,7 +941,7 @@ def main():
                 st = torch.load(ck, map_location="cpu")
                 sd = st["model"] if isinstance(st, dict) and "model" in st else st
                 model.load_state_dict({k: v.to(dev) for k, v in sd.items()})
-                if MQ_LEN and isinstance(st, dict) and "shadow" in st:
+                if USE_SHADOW and isinstance(st, dict) and "shadow" in st:
                     shadow.load_state_dict({k: v.to(dev)
                                             for k, v in st["shadow"].items()})
                 if XPD and isinstance(st, dict) and "xpd" in st:
@@ -980,6 +1000,18 @@ def main():
                         Zg[rows_t] = fresh              # autograd via index put
                         with torch.no_grad():
                             bank[rows_t] = fresh.detach()
+                    elif tower_kind == "i2sgce":
+                        # 5a stop-grad gallery: no grad through the anchors,
+                        # AND no retained forward activations (torch.no_grad,
+                        # NOT .detach() -- detach builds then discards the
+                        # graph, so the forward peak wouldn't drop).
+                        with torch.no_grad():
+                            Zg = gallery_train(model)
+                    elif tower_kind == "i2esce":
+                        # 5b EMA-shadow gallery: stop-grad + slow target
+                        # (lag 1/(1-MQ_M) = 100 steps ~ 6 ep).
+                        with torch.no_grad():
+                            Zg = gallery_train(shadow)
                     elif tower_kind in ("bce", "i2bce"):
                         Zg = None       # anchor-free: no gallery re-encode
                     else:
@@ -1116,6 +1148,11 @@ def main():
                         loss = loss + IW * sum(
                             (1 - (E1[i] * E1[j]).sum(-1)).mean()
                             for i in range(5) for j in range(i + 1, 5)) / 10.0
+                    elif IW > 0 and tower_kind == "i2q2ce":
+                        # soft-band I (user): lambda*(1-cos)^2 per view pair.
+                        loss = loss + IW * sum(
+                            ((1 - (Zs[i].float() * Zs[j].float()).sum(-1)) ** 2
+                             ).mean() for i, j in pairs) / len(pairs)
                     elif IW > 0 and tower_kind in ("ai2ce", "ai2bce", "ai2auni25", "ai6uni2", "ai6auni2", "ai4auni2", "ai25auni2"):
                         # anchor joins the alignment set: 4 views + own anchor
                         objs = [Z.float() for Z in Zs] + [Zg[tgt].float()]
@@ -1158,13 +1195,13 @@ def main():
                         print(f"[measure-vram] cap={args.anchor_cap} "
                               f"peak={peak / 2**30:.2f}GiB", flush=True)
                         raise SystemExit(0)
-                if MQ_LEN:
+                if USE_SHADOW:
                     with torch.no_grad():
                         for pk, pq in zip(shadow.parameters(), model.parameters()):
                             pk.data.mul_(MQ_M).add_(pq.data, alpha=1 - MQ_M)
             if (ep + 1) % args.ckpt_every == 0:
                 sd = {k: v.detach().cpu().clone() for k, v in model.state_dict().items()}
-                if MQ_LEN:
+                if USE_SHADOW:
                     torch.save(dict(model=sd,
                                     shadow={k: v.detach().cpu().clone()
                                             for k, v in shadow.state_dict().items()}),
@@ -1192,9 +1229,10 @@ def main():
                 if BANK_POLICY:
                     bundle["bank"] = bank.detach().cpu()
                     bundle["bank_ptr"] = bank_ptr
-                if MQ_LEN:
+                if USE_SHADOW:
                     bundle["shadow"] = {k: v.detach().cpu().clone()
                                         for k, v in shadow.state_dict().items()}
+                if MQ_LEN:
                     bundle["mqueue"] = mqueue.detach().cpu()
                     bundle["mq_gid"] = mq_gid.detach().cpu()
                     bundle["mq_ptr"] = mq_ptr
