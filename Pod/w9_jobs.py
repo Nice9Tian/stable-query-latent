@@ -25,7 +25,8 @@ FS_WORKER = str(PKG / "w9_a100_worker.py")
 CV_WORKER = str(PKG / "w9_cv_worker.py")
 
 # ---------------- campaign job table (fixed-split) ----------------
-# (arm, anchor_cap, nsp, doc_lead[, wiki_src[, view_w[, size-override]]])
+# (arm, anchor_cap, nsp, doc_lead[, wiki_src[, view_w[, size-override
+#  [, epochs-override]]]]) -- epochs None = FS_EPOCHS
 FS_JOBS = [
     # ---- FRONT OF THE BIG QUEUE (user priority: the CE scaling question) ----
     # pure-CE anchor curve 512(done)/2048/4096: does CE decline past 512 while
@@ -158,6 +159,21 @@ FS_JOBS = [
     ("wcle_i2ccec_icetf", 2048, False, 0, "llm"),  # NEW-champion leak ablation:
     # the wllm firewall row must sit on the configuration the paper leads with
     # (the existing wllm rows cover the OLD champion cegate2@512 only)
+    # ---- view-COMPOSITION grid (user; explicit grammar, see repo-root
+    # model_history.md): [d<k>][w<k>][sp<k>]r<n>_i2ce -- d = tiered doc
+    # slot (wiki -> sp -> review fallback, the protocol slot), w = wiki-
+    # only slot, sp = store-page-only slot (wiki games NOT excluded), r =
+    # review views; protocol i2ce == d1r3. d1r4/5/6 = v_review dose ladder
+    # (baselines: i2ce@512 = d1r3, nodoc = 4R+0D); w1sp1r3 = wiki AND sp
+    # views COEXIST in one step (tiering never lets a game see both);
+    # missing docs fall back to review views. All @512 clean; per-view-sum
+    # convention: CE terms and I edges grow with NV.
+    # 2000ep (single-budget curve, matches the scale grid's @512 cells;
+    # per-job override -- other pending rows stay at FS_EPOCHS).
+    ("wcle_d1r4_i2ce_icetf", 512, False, 0, "clean", 16, None, 2000),
+    ("wcle_d1r5_i2ce_icetf", 512, False, 0, "clean", 16, None, 2000),
+    ("wcle_d1r6_i2ce_icetf", 512, False, 0, "clean", 16, None, 2000),
+    ("wcle_w1sp1r3_i2ce_icetf", 512, False, 0, "clean", 16, None, 2000),
     # ---- anchor-supply scaling ladder (bank + MoCo queue), control = the
     # existing i2cce@g2048 row. Nominally g2048 but size-overridden "small":
     # they eliminate the full-gallery-with-grad pass that makes g2048 "big"
@@ -174,7 +190,8 @@ FS_JOBS = [
 def _pad(j):
     j = j if len(j) >= 5 else (*j, "clean")
     j = j if len(j) >= 6 else (*j, 16)
-    return j if len(j) == 7 else (*j, None)         # optional size override
+    j = j if len(j) >= 7 else (*j, None)            # optional size override
+    return j if len(j) == 8 else (*j, None)         # optional epochs override
 FS_JOBS = [_pad(j) for j in FS_JOBS]
 
 # ---------------- CV jobs ----------------
@@ -192,7 +209,9 @@ TAKEOVER_LOCK_STALE = 600  # a .takeover lock older than this = taker died too
 VORD = ["neutral", "noname", "positive", "negative"]
 
 # ---------------- labels (THE compatibility contract) ----------------
-def fs_label(arm, cap, nsp, lead, wsrc, vw, size=None):
+def fs_label(arm, cap, nsp, lead, wsrc, vw, size=None, epochs=None):
+    # NOTE: epochs is NOT in the label -- a label owns ONE budget; changing
+    # a row's budget after results exist means extend/retrain, not a fork.
     return (f"w9_{arm}" + (f"_g{cap}" if cap != 512 else "")
             + ("_nsp" if nsp else "") + (f"_ld{lead}" if lead else "")
             + ("_wllm" if wsrc == "llm" else "") + (f"_w{vw}" if vw != 16 else ""))
@@ -337,7 +356,7 @@ def run_queue(cls, repo, data_dir, out_fs, out_cv, full_pool_path="",
     def run_job(gpu, it):
         env = dict(os.environ, CUDA_VISIBLE_DEVICES=gpu)
         if it[0] == "fs":
-            _, nm, (arm, cap, nsp, lead, wsrc, vw, _sz) = it
+            _, nm, (arm, cap, nsp, lead, wsrc, vw, _sz, _ep) = it
             sfx = (("_nsp" if nsp else "") + (f"_ld{lead}" if lead else "")
                    + ("_wllm" if wsrc == "llm" else "")
                    + (f"_w{vw}" if vw != 16 else ""))
@@ -345,7 +364,7 @@ def run_queue(cls, repo, data_dir, out_fs, out_cv, full_pool_path="",
             cmd = ["python", "-u", FS_WORKER,
                    "--data-dir", data_dir, "--out-dir", out_fs, "--repo", repo,
                    "--arm", arm, "--anchor-cap", str(cap),
-                   "--epochs", str(FS_EPOCHS), "--ckpt-every", str(CKPT_EVERY),
+                   "--epochs", str(_ep or FS_EPOCHS), "--ckpt-every", str(CKPT_EVERY),
                    "--ckpt-seeds", str(FS_CKPT_SEEDS),
                    "--topup-seeds", str(TOPUP_SEEDS)]
             if nsp:

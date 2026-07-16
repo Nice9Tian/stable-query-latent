@@ -58,6 +58,24 @@ ARMS = {
     "wcle_igate1w_icetf": ("igate1w", "ice"),
     "wcle_rgate2_icetf": ("rgate2", "ice"),        # CE on RANDOM coverage-matched set
     "wcle_nodoc_i2ce_icetf": ("nodoc", "ice"),     # zero doc views, CE all + I x2
+    # ---- view-COMPOSITION grid (user; explicit grammar, see repo-root
+    # model_history.md): [d<k>][w<k>][sp<k>]r<n>_i2ce -- every token states
+    # its view count. d = TIERED doc slot (wiki -> sp -> review fallback,
+    # the protocol slot), w = wiki-ONLY slot, sp = store-page-ONLY slot
+    # (full sp coverage, wiki-bearing games NOT excluded), r = review
+    # views. Each doc-type slot falls back to a review view where its doc
+    # is missing, so every game always gets the full NV. The protocol
+    # NV=4 == d1r3 (implicit for every non-grid arm).
+    # Per-view-sum convention preserved: CE terms and I pairs grow with NV
+    # (4->5/6/7 CE terms; 6->10/15/21 I edges) -- these cells scale the
+    # WHOLE objective with the view count, not I alone.
+    # (nodoc above = doc value at constant NV; d1r4 = +1 view instead.)
+    "wcle_d1r4_i2ce_icetf": ("d1r4_i2ce", "ice"),     # 4R+1D  NV=5
+    "wcle_d1r5_i2ce_icetf": ("d1r5_i2ce", "ice"),     # 5R+1D  NV=6
+    "wcle_d1r6_i2ce_icetf": ("d1r6_i2ce", "ice"),     # 6R+1D  NV=7
+    # w1sp1r3: wiki view AND store-page view COEXIST in the same step
+    # (the tiered protocol slot never allows both on one game), NV=5.
+    "wcle_w1sp1r3_i2ce_icetf": ("w1sp1r3_i2ce", "ice"),
     "wcle_vic_cetf": ("vic", "ce"),                # VICReg tower: negative-free
     # like BYOL, but V/C terms supply the anti-collapse force BYOL lacks
     "wcle_vic2_cetf": ("vic2", "ce"),              # C-dose ablation (C 20 -> 15)
@@ -260,7 +278,9 @@ _IW = {"ice": 1.0, "i2ce": 2.0, "cegate1": 1.0, "cegate2": 2.0, "cegate3": 3.0,
        "cecmpi2": 2.0, "poolcecmpi2": 2.0, "shcmpi2poolce": 2.0,
        "cmpi2poolexpce": 2.0, "cmpi2poolcmpce": 2.0,
        "bkq192i2cce": 2.0, "bkq48i2cce": 2.0, "bkq12i2cce": 2.0,
-       "bkbi2cce": 2.0, "mq3072i2cce": 2.0, "mq3072i2ce": 2.0}
+       "bkbi2cce": 2.0, "mq3072i2cce": 2.0, "mq3072i2ce": 2.0,
+       "d1r4_i2ce": 2.0, "d1r5_i2ce": 2.0, "d1r6_i2ce": 2.0,
+       "w1sp1r3_i2ce": 2.0}
 SPLIT_SEED = 20260711
 DM, HEADS, NV = 128, 4, 4
 ARC_S_T, ARC_M_T = 50.0, 0.2       # tower ArcFace
@@ -482,6 +502,18 @@ def main():
     mq_m = re.match(r"mq(\d+)(?:i2cce|i2ce|ce)$", tower_kind)
     MQ_LEN = int(mq_m.group(1)) if mq_m else 0
     MQ_M = 0.99                        # shadow-tower weight-EMA momentum
+    # view-composition grid, explicit grammar (see model_history.md):
+    # [d<k>][w<k>][sp<k>]r<n>_i2ce -- d = tiered doc slots (wiki -> sp ->
+    # review fallback, the protocol slot), w = wiki-only slots, sp =
+    # store-page-only slots (full sp coverage), r = review views. Every
+    # non-grid arm is implicitly d1r3 (protocol NV=4) -- NV_ARM == NV.
+    vp_m = re.match(r"(?:d(\d+))?(?:w(\d+))?(?:sp(\d+))?r(\d+)_i2ce$",
+                    tower_kind)
+    N_DOC = int(vp_m.group(1) or 0) if vp_m else 1     # tiered doc slots
+    N_WIKI = int(vp_m.group(2) or 0) if vp_m else 0    # wiki-only slots
+    N_SP = int(vp_m.group(3) or 0) if vp_m else 0      # sp-only slots
+    N_REV = int(vp_m.group(4)) if vp_m else NV - 1     # review views
+    NV_ARM = N_REV + N_DOC + N_WIKI + N_SP
     name = (f"w9_{args.arm}"
             + (f"_g{args.anchor_cap}" if args.anchor_cap != 512 else "")
             + ("_nsp" if args.no_sp_view else "")
@@ -492,8 +524,13 @@ def main():
     dev = torch.device("cuda")
     C, OUT = Path(args.data_dir), Path(args.out_dir)
     OUT.mkdir(parents=True, exist_ok=True)
+    assert not (N_SP and args.no_sp_view), \
+        "sp<k> arms need the sp view; --no-sp-view contradicts the arm"
+    _vplan = (f"{N_REV}R" + (f"+{N_DOC}D" if N_DOC else "")
+              + (f"+{N_WIKI}W" if N_WIKI else "")
+              + (f"+{N_SP}SP" if N_SP else ""))
     print(f"[{name}] tower={tower_kind} ft={FT} IW={IW} anchor_cap={args.anchor_cap}"
-          f" view_w={args.view_w}", flush=True)
+          f" view_w={args.view_w} nv={NV_ARM}({_vplan})", flush=True)
 
     # ---------------- corpus: ALL of it onto the GPU ----------------
     G = np.load(C / "games.npz", allow_pickle=True)
@@ -565,6 +602,11 @@ def main():
               if str(WK["names"][i]) not in excl}
     g2store = {int(ST["gidx"][i]): i for i in range(len(ST["gidx"]))
                if str(ST["names"][i]) not in excl and int(ST["gidx"][i]) not in g2wiki}
+    # sp<k> slots (e.g. w1sp1r3_i2ce): full sp coverage INCLUDING
+    # wiki-bearing games (the tiered g2store above deliberately excludes
+    # them; the coexisting-doc arms want both docs in the same step).
+    g2store_all = {int(ST["gidx"][i]): i for i in range(len(ST["gidx"]))
+                   if str(ST["names"][i]) not in excl}
     n_doc_cover = len(g2wiki) + len(g2store)
     if args.no_sp_view:
         g2store = {}                    # wiki-pure tower views (user decree)
@@ -792,10 +834,10 @@ def main():
                           phi, cos_t - ARC_M_T * math.sin(ARC_M_T))
         return F.cross_entropy(logits.scatter(1, tgt[:, None], phi) * ARC_S_T, tgt)
 
-    def assemble_doc_view(model, gids, W, rng, bs):
+    def assemble_doc_view(model, gids, W, rng, bs, tiers_=None):
         Zlast = torch.empty(bs, DM, device=dev, dtype=torch.float16)
         assigned = np.zeros(bs, bool)
-        for g2x, Sx, mx in tiers:
+        for g2x, Sx, mx in (tiers if tiers_ is None else tiers_):
             msk = np.array([(not a) and (g in g2x) for a, g in zip(assigned, gids)])
             if msk.any():
                 rows = [g2x[g] for g in gids[msk]]
@@ -806,7 +848,7 @@ def main():
             Zlast[torch.tensor(rest).to(dev)] = model(*sample_views(gids[rest], W, rng)).half()
         return Zlast
 
-    pairs = list(combinations(range(NV), 2))
+    pairs = list(combinations(range(NV_ARM), 2))
     inv_t = 1.0 / 0.02
 
     def train_v4doc(seed=0, W=16, bs=192, per_epoch=3072):
@@ -942,8 +984,19 @@ def main():
                         Zg = None       # anchor-free: no gallery re-encode
                     else:
                         Zg = gallery_train(model)
-                    Zs = [model(*sample_views(gids, W, rng)) for _ in range(NV - 1)]
-                    Zs.append(assemble_doc_view(model, gids, W, rng, bs))
+                    # view plan (explicit grammar): N_REV review views, then
+                    # the doc-type slots -- d = tiered protocol slot, w =
+                    # wiki-only, sp = store-page-only; every doc slot falls
+                    # back to a review view where its doc is missing.
+                    Zs = [model(*sample_views(gids, W, rng)) for _ in range(N_REV)]
+                    for _ in range(N_DOC):
+                        Zs.append(assemble_doc_view(model, gids, W, rng, bs))
+                    for _ in range(N_WIKI):
+                        Zs.append(assemble_doc_view(model, gids, W, rng, bs,
+                                                    tiers_=[(g2wiki, SW, mW)]))
+                    for _ in range(N_SP):
+                        Zs.append(assemble_doc_view(model, gids, W, rng, bs,
+                                                    tiers_=[(g2store_all, SS, mS)]))
                     if MQ_LEN:
                         # user design: current keys enter at the ring head and
                         # ARE this step's positives; the rest of the ring
