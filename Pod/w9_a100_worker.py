@@ -457,6 +457,12 @@ def main():
              "cmpi2cmpce", "expi2poolcmpce", "shexpi2poolexpce",
              "shcmpi2poolcmpce", "poolcmpce", "shcmpi2poolce",
              "cmpi2poolexpce", "cmpi2poolcmpce")
+    # USER LAW (2026-07-17, 16/16 structure cells): pooled CE is a SHORTCUT
+    # -- only the mean direction is constrained, so the encoder learns an
+    # input-conditional policy (signal into easy views, cancelling noise in
+    # the rest) and per-view eval collapses (pool cells mean neu .572/non
+    # .261 vs per-view .877/.575; pool->E->CE worst, zvsel to -223). CE must
+    # be PER-VIEW in every future arm; the pool cells stay as evidence.
     _CE_POOL = ("i2poolce", "poolce", "poolceexpi2", "poolexpce",
                 "expi2poolexpce", "shexpi2poolce", "i2poolexpce",
                 "i2poolcmpce", "expi2poolcmpce", "shexpi2poolexpce",

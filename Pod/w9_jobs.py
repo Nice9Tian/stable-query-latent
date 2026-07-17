@@ -56,7 +56,6 @@ FS_JOBS = [
     # CE-attachment matrix at the champion cap (user decree): where CE
     # attaches x anchor cap; A/B = i2ce@g2048 (done) / i2ce@512 (queued)
     ("wcle_i2expce_icetf", 2048, False, 0),
-    ("wcle_i2poolce_icetf", 2048, False, 0),
     ("wcle_i2expce_icetf", 512, False, 0),   # CE-attachment matrix @512
     ("wcle_i2poolce_icetf", 512, False, 0),
     ("wcle_expce_cetf", 2048, False, 0),   # pure expander-CE (no I)
