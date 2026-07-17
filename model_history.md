@@ -166,3 +166,56 @@ RAM），每 view 整条 review 累积到 ≥W=16 句，句向量读取后逐行
 arm 计费——同 @512 但 NV 不同峰值不同；readout 参照行 = i2ce@512(d1r3) 与
 nodoc）。同名行也在 `w9_jobs.FS_JOBS`（w9_l40 可认领），双路径靠 claim
 文件互斥。
+
+## 7. 读出协议：ZS-only（2026-07-16 起，user decree "不再 fine tune"）
+
+- **主口径 = 裸塔 zero-shot**。FT readout head 整段退役为 `--head` 显式
+  选通（默认关）；两个 worker（fs / cv）同步。
+- **zs_traj**（每 50ep 一条）：test 侧全 4 变体 h1+h5、tag(neu/non)、
+  **val 侧** neu/non 检索 + `zvsel`；旧 traj 缺 val 键时从投影 npz
+  免 GPU 补算（`tower_{name}_ep{k}.npz` 存 SPg/SPa）。
+- **选点**：`zsbest_{name}.json` = val 选点（平分取更早 ep）。
+  - fs：`zvsel = max(S(v_non@1;0.45), S(v_non5@5;0.65)) + S(v_neu@1;0.85)`
+    （头时代 vsel 分段分原公式移植；S_fn 低于目标指数罚、高于线性奖）。
+  - cv：`cvsel = v_non@1 + v_non@5 + 2·v_non_tagF1`（user 公式，noname
+    聚焦；val noname tag 用同一 anchor-ridge 在 val 查询上预测）。
+- **完成标志 = `tower_{name}_fp_ep{N}.npz` 存在**（不再是 ft4var
+  best.json——ZS-only 下后者根本不写）；notebook drain 全按此跳过，
+  worker 对低预算完成的塔自动从最新 ckpt 续训（EXTEND 回退）。
+
+## 8. 结构裁决与逐视图 CE 铁律（2026-07-17，30 格 @512 网格完赛）
+
+- **结构最优 = 素面 i2ce**（部署态、逐视图 CE、无投影）：ZS
+  .926/.657，tag .721/.745（@2000ep）。E 空间（exp/cmp/pj）、共享 E、
+  双 E、池化——所有结构修饰零增益到灾难。缩放理论建在 i2ce 上。
+- **铁律（user law，16/16 无例外）**：**池化 CE 是视图压制捷径**——池化
+  只约束均值方向，编码器学会条件策略（信号进好认的视图、其余输出互相
+  抵消的噪声），逐视图评测崩塌。pool 格均值 neu .572/non .261 vs 逐视图
+  .877/.575；pool→E→CE 最惨（neu .31-.42，zvsel 至 −223）；tag 同步掉。
+  **此后一切 arm 的 CE 必须逐视图**；`_CE_POOL` 处有法条注释；16 个
+  池化格保留为论文反面证据。i2poolce@2048（唯一未跑池化行）已除名。
+
+## 9. 锚供给变体：tag 保卫战（2026-07-17，`Pod/w9_save_4096_tag.ipynb`）
+
+- **诊断**（数据定罪）：tag 随 cap 下降跟**锚供给机制**走、不跟 I 走——
+  512 下 i2ce tag（.728）> ce（.702）；C 项无效（i2cce@2048 .706 ≈
+  i2ce .707）；mq 队列同 cap/同 I/同 C 恢复 tag（.736）。凶手 = **锚共
+  适应**：CE 梯度穿过 Zg（1613 锚每步带梯度重编），把锚嵌入朝"可分但
+  离内容流形"方向游戏化，cap 越大锚包越平滑越可游戏（i2ce@4096 的 ZS
+  tag 训练内单调衰减 .726→.709）。
+- **三臂**（@4096/2000ep，ZS-only）：
+  - `i2q2ce`：软带 I，`IW·(1−cos)²`——梯度比 = 2(1−cos)（cos=.5 等强、
+    .9 时 5× 软、.98 时 25× 软），近对齐死区保个性；n 可推广为 q{n}。
+  - `i2sgce`：**stop-grad gallery**，锚编码包 `torch.no_grad()`（**非
+    .detach()**——detach 先建图再丢，前向峰值不降）。实测显存：4096
+    45G→18G（一张 A100 可双塔）、**8192 89G→36G ⇒ 全库 8192 锚解锁**，
+    `i2sgce@8192` 已入列（史上首个 full-gallery 8192 格）。
+  - `i2esce`：**EMA 影子 gallery**（m=0.99，滞后 1/(1−m)=100 步≈6ep）。
+    `USE_SHADOW` 旗标把 mq 的影子机械泛化（创建/EMA/ckpt/resume/extend
+    七处，mq 行为不变）。动力学：不动点与 sgce 相同；CE 不管的子空间
+    线性化特征值 {0, −(η+1−m)}——差模衰减、共模冻结（个性被保存）。
+- **调度**：该 notebook 的 VRAM warmup 按 **(arm, cap)** 分测（同 cap
+  下 grad 与 no-grad 臂峰值差 ~2.5×，按 cap 一刀切会误排）。
+- **token 速查**（新增代号语法）：`q{n}` = I 的 (1−cos)^n 软带；`sg` =
+  stop-grad gallery；`es` = EMA-shadow gallery。
+

@@ -1,5 +1,10 @@
 # 整体模型 Pipeline 设计说明
 
+> **状态（2026-07-17）**：本文是**第 0 代**模型（VICReg + GRL +
+> LatentArrayMLP，256 slot × 18d game code）的设计说明，作**历史存档**
+> 保留，内容不再随代码更新。现行 W 系列（SetPoolN 塔 + I-CE 锚协议 +
+> ZS-only 读出）的总体视角见 `model_history.md`；两代结果不可混比。
+
 
 ## 1. 一句话概览
 
@@ -617,3 +622,16 @@ game code = 256 latent slots x 18 dims
 ```
 
 这个 code 才是整个 pipeline 的核心产物。
+
+## 14. 第 0 代 → 现行 W 系列演化对照（2026-07-17 补记）
+
+| 第 0 代（本文） | 现行 W 系列 | 变化动因 |
+|---|---|---|
+| LatentArrayMLP：256 latent × 18d game code | `SetPoolN(4)`：4 query × 128d → MLP head → L2，≈0.36M 参数 | 部署空间即输出；128-d 单向量检索 |
+| 60% 均匀双 view + 句级截断（会打碎 review） | 拒绝采样**整条** review 累积 ≥W=16，多视图（3 review + 1 doc 槽），fp 全量协议 | 长金矿 review 可达、view 语义完整 |
+| VICReg（I+V+C，无负样本） | **I×2 + 全库锚 CE**（τ=0.02，逐视图铁律）；V 弃用；C 仅 i2cce 支线（对 tag 无效已证） | 负样本买身份；锚 = 跨域桥（检索 +0.48） |
+| Sentiment GRL 对抗头 | 移除 | 鲁棒性来自锚协议与语料净化，非对抗 |
+| VICReg V/C 防坍缩 | CE 负样本防坍缩；结构裁决：素面 i2ce 为最优结构 | 30 格结构网格 16/16 池化捷径判死 |
+| TagRegressionHead（可训练 MLP probe） | anchor-ridge 探针，内置于 ZS 读出（tag_neu/tag_non 逐 ckpt 上盘） | 探针零训练开销、随 traj 存档 |
+| validation.py 交互式验证 | ZS-only 协议：zs_traj + zsbest（zvsel/cvsel val 选点） | 头税不对称，裸塔才是可比口径 |
+| 单代协议 | 供给侧演化中：grad gallery → mq 队列 → sg/es（stop-grad / EMA 影子），tag 保卫战 @4096/8192 | 锚共适应磨 tag，见 model_history §9 |
