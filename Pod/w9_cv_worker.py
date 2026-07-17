@@ -656,7 +656,7 @@ def main():
     # ---------------- eval machinery ----------------
     VORDER = ["neutral", "noname", "positive", "negative"]
 
-    def zs_from_arrays(Zg, Za):
+    def zs_from_arrays(Zg, Za, Zq):
         # ZS-only CV metrics + NEW selection (user): cvsel = noname_h1 +
         # noname_h5 + 2*noname_tagF1, all on the VAL fold. Also all-4 test
         # variants (h1+h5) and test tag for the readout.
@@ -692,6 +692,26 @@ def main():
         labs = np.stack([y[n2i[art_games[i]]] for i in va_non])
         out["v_non_tag"] = micro_prf(labs, s, th)["micro_f1"]
         out["cvsel"] = out["v_non"] + out["v_non5"] + 2.0 * out["v_non_tag"]
+        # --- REVIEW-based selection (user 2026-07-18): deployment has NO
+        # rewrites, so the checkpoint pick uses the val fold's REVIEW
+        # pseudo-queries (ss_queries): rvsel = q@1 + q@RSEL_K + 2*q_tagF1.
+        # (User once wrote '@2'; the canonical formula was @5 -> RSEL_K=5,
+        # single-constant change if @2 was intended.) Rewrite metrics stay
+        # as REPORT-ONLY columns.
+        RSEL_K = 5
+        qz = Zq / (np.linalg.norm(Zq, axis=1, keepdims=True) + 1e-8)
+        qg = np.asarray(Qs["gidx"])
+        for pref, gset in (("v", val_g), ("t", test_g)):
+            qi = [i for i in range(len(qg)) if names[qg[i]] in gset]
+            sim = qz[qi] @ gz.T
+            tgtq = qg[qi]
+            rkq = (sim > sim[np.arange(len(qi)), tgtq][:, None]).sum(1) + 1
+            out[pref + "_q1"] = float((rkq == 1).mean())
+            out[pref + "_q5"] = float((rkq <= RSEL_K).mean())
+            sq = rg.predict(sc.transform(qz[qi].astype(np.float32)))
+            labq = np.stack([y[qg[i]] for i in qi])
+            out[pref + "_qtag"] = micro_prf(labq, sq, th)["micro_f1"]
+        out["rvsel"] = out["v_q1"] + out["v_q5"] + 2.0 * out["v_qtag"]
         return out
 
     def zs_metrics(model):
@@ -898,12 +918,13 @@ def main():
             m2 = SetPoolN(4).to(dev)
             m2.load_state_dict({k: v.to(dev) for k, v in sd.items()})
             m2.eval()
-            zk = zs_metrics(m2)
+            project_cache(m2, npz)          # SPq/SPg/SPa saved once ...
+            T0 = np.load(npz)
+            zk = zs_from_arrays(T0["SPg"], T0["SPa"], T0["SPq"])
             zs_traj[f"ep{ek}"] = zk
             print(f"ZS(ep{ek}): {dict((k, round(v, 3)) for k, v in zk.items())}",
                   flush=True)
             json.dump(zs_traj, open(traj_p, "w"), indent=2)
-            project_cache(m2, npz)
             del m2
         (OUT / f"resume_{name}.pt").unlink(missing_ok=True)
 
@@ -915,20 +936,21 @@ def main():
     for npzp in sorted(OUT.glob(f"tower_{name}_ep*.npz"),
                        key=lambda q: int(q.stem.split("_ep")[-1])):
         ek = npzp.stem.split("_ep")[-1]
-        if "cvsel" in zs_traj.get(f"ep{ek}", {}):
+        if "rvsel" in zs_traj.get(f"ep{ek}", {}):
             continue
         T0 = np.load(npzp)
-        zs_traj[f"ep{ek}"] = zs_from_arrays(T0["SPg"], T0["SPa"])
-        print(f"ZS-refresh(ep{ek}) cvsel={zs_traj[f'ep{ek}']['cvsel']:.3f}",
+        zs_traj[f"ep{ek}"] = zs_from_arrays(T0["SPg"], T0["SPa"], T0["SPq"])
+        print(f"ZS-refresh(ep{ek}) cvsel={zs_traj[f'ep{ek}']['rvsel']:.3f}",
               flush=True)
         json.dump(zs_traj, open(traj_p, "w"), indent=2)
-    cand = {k: v for k, v in zs_traj.items() if "cvsel" in v}
+    cand = {k: v for k, v in zs_traj.items() if "rvsel" in v}
     if cand:
-        bk = max(cand, key=lambda k: (cand[k]["cvsel"], -int(k[2:])))
+        bk = max(cand, key=lambda k: (cand[k]["rvsel"], -int(k[2:])))
         json.dump(dict(best_ep=int(bk[2:]), **cand[bk]),
                   open(OUT / f"zsbest_{name}.json", "w"), indent=2)
         b = cand[bk]
-        print(f"ZSBEST {name}: ep{bk[2:]} cvsel={b['cvsel']:.3f} "
+        print(f"ZSBEST {name}: ep{bk[2:]} rvsel={b['rvsel']:.3f} "
+              f"(q1 {b['v_q1']:.3f} q5 {b['v_q5']:.3f} qtag {b['v_qtag']:.3f}) "
               f"non={b['nm_noname']:.3f}/{b['h5_noname']:.3f} "
               f"tag={b['tag_noname']:.3f}", flush=True)
 
