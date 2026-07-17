@@ -278,6 +278,13 @@ ARMS = {
     "wcle_pk2i2cevce_icetf": ("pk2i2cevce", "ice"),
     "wcle_pk2i2cevi2ce_icetf": ("pk2i2cevi2ce", "ice"),
     "wcle_pk2i2cesgvce_icetf": ("pk2i2cesgvce", "ice"),   # sg BOUNDARY (user):
+    # capacity/read-out grid (user): slot{N}i2ce{mean|line}, N in {4,8,16};
+    # (4,mean) == existing i2ce (kept, not re-run). Loss = plain i2ce.
+    "wcle_slot4i2celine_icetf": ("slot4i2celine", "ice"),
+    "wcle_slot8i2cemean_icetf": ("slot8i2cemean", "ice"),
+    "wcle_slot8i2celine_icetf": ("slot8i2celine", "ice"),
+    "wcle_slot16i2cemean_icetf": ("slot16i2cemean", "ice"),
+    "wcle_slot16i2celine_icetf": ("slot16i2celine", "ice"),
     # scale-autonomy version -- packs train THEMSELVES (pack-CE + pack-I,
     # grad); views do CE against the DETACHED mean gallery (one-way chase,
     # views can never game the anchors; the user's original mental model
@@ -313,6 +320,7 @@ _IW = {"ice": 1.0, "i2ce": 2.0, "cegate1": 1.0, "cegate2": 2.0, "cegate3": 3.0,
        "bkbi2cce": 2.0, "mq3072i2cce": 2.0, "mq3072i2ce": 2.0,
        "i2q2ce": 2.0, "i2sgce": 2.0, "i2esce": 2.0,
        "pk2i2cevi2ce": 2.0,   # vce variant has NO view-I (pack-I is hardcoded 2)
+       "slot4i2celine": 2.0, "slot8i2cemean": 2.0, "slot8i2celine": 2.0, "slot16i2cemean": 2.0, "slot16i2celine": 2.0,
        "d1r4_i2ce": 2.0, "d1r5_i2ce": 2.0, "d1r6_i2ce": 2.0,
        "w1sp1r3_i2ce": 2.0}
 SPLIT_SEED = 20260711
@@ -370,11 +378,23 @@ def parse_args():
 
 
 class SetPoolN(nn.Module):
-    def __init__(s, N, bn=False, center=False):
+    def __init__(s, N, bn=False, center=False, pool="mean"):
         super().__init__()
         s.q0 = nn.Parameter(torch.randn(1, N, DM) * 0.02)
         s.attn = nn.MultiheadAttention(DM, HEADS, kdim=1024, vdim=1024,
                                        batch_first=True)
+        s.pool = pool
+        if pool == "line":
+            # learned linear pool over the N slots (slot-concat -> DM).
+            # Initialized to the block [I/N ... I/N] so it EQUALS mean-pool
+            # at init -> identical start, any learned deviation = pure signal.
+            s.lp = nn.Linear(N * DM, DM)
+            with torch.no_grad():
+                w = torch.zeros(DM, N * DM)
+                for n in range(N):
+                    w[:, n * DM:(n + 1) * DM] = torch.eye(DM) / N
+                s.lp.weight.copy_(w)
+                s.lp.bias.zero_()
         # bn=True (byol2 arm): BatchNorm1d in the projector head -- BN's
         # cross-sample statistics are BYOL's implicit anti-collapse channel.
         s.head = (nn.Sequential(nn.Linear(DM, 256), nn.BatchNorm1d(256),
@@ -390,7 +410,9 @@ class SetPoolN(nn.Module):
     def forward(s, S, m=None):
         a, _ = s.attn(s.q0.expand(S.shape[0], -1, -1), S.float(), S.float(),
                       key_padding_mask=m, need_weights=False)
-        h = s.head(a.mean(1))
+        pooled = (s.lp(a.reshape(a.shape[0], -1)) if s.pool == "line"
+                  else a.mean(1))
+        h = s.head(pooled)
         if s.center:
             if s.training:
                 with torch.no_grad():
@@ -515,6 +537,9 @@ def main():
     XCE = tower_kind in _CE_E          # CE computed in expander space
     BCE = tower_kind in ("bce", "i2bce", "ai2bce")   # in-batch negatives
     PK = tower_kind in ("pk2i2cevce", "pk2i2cevi2ce", "pk2i2cesgvce")   # twin-pack fractal
+    slot_m = re.match(r"slot(\d+)i2ce(mean|line)$", tower_kind)   # capacity grid
+    SLOTS = int(slot_m.group(1)) if slot_m else 4
+    POOL = slot_m.group(2) if slot_m else "mean"
     PCE = tower_kind in _CE_POOL       # CE pools the views first
     IE = tower_kind in _I_E            # I pairs live in expander space
     XPD = XCE or IE                    # arm carries the expander module
@@ -918,7 +943,7 @@ def main():
     def train_v4doc(seed=0, W=16, bs=192, per_epoch=3072):
         torch.manual_seed(seed)
         rng = np.random.default_rng(seed)
-        model = SetPoolN(4, center=CENTERED).to(dev)
+        model = SetPoolN(SLOTS, center=CENTERED, pool=POOL).to(dev)
         def _mkE(direction):
             # disposable loss space, discarded at eval -- deploy = pre-E.
             # exp UP (VICReg), cmp DOWN (SimCLR bottleneck), pj FLAT
@@ -1771,7 +1796,7 @@ def main():
                 continue                                # projection-level resume
             st = torch.load(ck, map_location="cpu")
             sd = st["model"] if "model" in st else st     # byol ckpts are nested
-            m2 = SetPoolN(4, bn=tower_kind == "byol2", center=CENTERED).to(dev)
+            m2 = SetPoolN(SLOTS, bn=tower_kind == "byol2", center=CENTERED, pool=POOL).to(dev)
             m2.load_state_dict({k: v.to(dev) for k, v in sd.items()})
             m2.eval()
             project_cache(m2, npz)          # SPq/SPg/SPa saved once ...
