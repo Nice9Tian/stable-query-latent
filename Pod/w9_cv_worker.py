@@ -477,6 +477,22 @@ def main():
             rng.bit_generator.state = st["np_rng"]
             start_ep = int(st["ep"])
             print(f"RESUME from ep{start_ep}", flush=True)
+        if start_ep == 0 and not RES.exists():
+            # EXTEND fallback (ported from the fs worker for w9_i2ce_continue):
+            # the resume bundle is deleted when a run completes; to train PAST
+            # the old budget, rebuild from the newest checkpoint. Weights come
+            # back exactly; opt/amp/rng restart fresh (rng re-seeded by
+            # seed=fold, same semantics as the fs EXTEND).
+            cands = [c for c in OUT.glob(f"ckpt_{name}_ep*.pt")
+                     if int(c.stem.split("_ep")[-1]) < args.epochs]
+            if cands:
+                ck = max(cands, key=lambda c: int(c.stem.split("_ep")[-1]))
+                st = torch.load(ck, map_location="cpu")
+                sd = st["model"] if isinstance(st, dict) and "model" in st else st
+                model.load_state_dict({k: v.to(dev) for k, v in sd.items()})
+                start_ep = int(ck.stem.split("_ep")[-1])
+                print(f"EXTEND from ckpt ep{start_ep} (fresh opt/amp/rng)",
+                      flush=True)
         t0 = time.time()
         mv_steps = 0
         if args.measure_vram and dev.type == "cuda":
