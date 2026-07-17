@@ -539,7 +539,7 @@ def main():
     PK = tower_kind in ("pk2i2cevce", "pk2i2cevi2ce", "pk2i2cesgvce")   # twin-pack fractal
     slot_m = re.match(r"slot(\d+)i2ce(mean|line)$", tower_kind)   # capacity grid
     SLOTS = int(slot_m.group(1)) if slot_m else 4
-    POOL = slot_m.group(2) if slot_m else "mean"
+    POOL_MODE = slot_m.group(2) if slot_m else "mean"   # slot pooling (NOT the sentence POOL tensor!)
     PCE = tower_kind in _CE_POOL       # CE pools the views first
     IE = tower_kind in _I_E            # I pairs live in expander space
     XPD = XCE or IE                    # arm carries the expander module
@@ -951,7 +951,7 @@ def main():
     def train_v4doc(seed=0, W=16, bs=192, per_epoch=3072):
         torch.manual_seed(seed)
         rng = np.random.default_rng(seed)
-        model = SetPoolN(SLOTS, center=CENTERED, pool=POOL).to(dev)
+        model = SetPoolN(SLOTS, center=CENTERED, pool=POOL_MODE).to(dev)
         def _mkE(direction):
             # disposable loss space, discarded at eval -- deploy = pre-E.
             # exp UP (VICReg), cmp DOWN (SimCLR bottleneck), pj FLAT
@@ -1804,7 +1804,7 @@ def main():
                 continue                                # projection-level resume
             st = torch.load(ck, map_location="cpu")
             sd = st["model"] if "model" in st else st     # byol ckpts are nested
-            m2 = SetPoolN(SLOTS, bn=tower_kind == "byol2", center=CENTERED, pool=POOL).to(dev)
+            m2 = SetPoolN(SLOTS, bn=tower_kind == "byol2", center=CENTERED, pool=POOL_MODE).to(dev)
             m2.load_state_dict({k: v.to(dev) for k, v in sd.items()})
             m2.eval()
             project_cache(m2, npz)          # SPq/SPg/SPa saved once ...
