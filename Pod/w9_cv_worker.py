@@ -858,10 +858,15 @@ def main():
     DONE_FLAG = OUT / f"tower_{name}_ep{args.epochs}.npz"
     if not DONE_FLAG.exists():
         t0 = time.time()
+        # PER-FOLD TRAIN SEED (user design 2026-07-17): seed = fold index.
+        # The 5 folds then jointly sample split variance AND seed variance,
+        # so the across-fold std is the TOTAL error bar; within a fold both
+        # recipes share the seed (and the split), keeping ce-vs-i2ce PAIRED.
+        # Fold identity is untouched (--cv-seed drives the permutation).
         if tower_kind == "byol":
-            train_byol(seed=0)
+            train_byol(seed=args.fold)
         else:
-            train_v4doc(seed=0)
+            train_v4doc(seed=args.fold)
         print(f"tower {name} train phase done in {time.time()-t0:.0f}s", flush=True)
         traj_p = OUT / f"zs_traj_{name}.json"
         zs_traj = json.loads(traj_p.read_text()) if traj_p.exists() else {}
