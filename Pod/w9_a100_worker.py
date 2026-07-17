@@ -277,6 +277,11 @@ ARMS = {
     # that keeps view-I). Eval/deploy gallery = normalize(mean(eA, eB)).
     "wcle_pk2i2cevce_icetf": ("pk2i2cevce", "ice"),
     "wcle_pk2i2cevi2ce_icetf": ("pk2i2cevi2ce", "ice"),
+    "wcle_pk2i2cesgvce_icetf": ("pk2i2cesgvce", "ice"),   # sg BOUNDARY (user):
+    # scale-autonomy version -- packs train THEMSELVES (pack-CE + pack-I,
+    # grad); views do CE against the DETACHED mean gallery (one-way chase,
+    # views can never game the anchors; the user's original mental model
+    # of anchor semantics, layered on the fractal design).
     # (stop-grad + target smoothing, tau = 1/(1-MQ_M) = 100 steps ~ 6 ep;
     # fixed points = i2sgce's, transients damped; mq's consistency lesson
     # at full-gallery width)
@@ -509,7 +514,7 @@ def main():
              "cmpi2poolcmpce": ("cmp", "cmp")}
     XCE = tower_kind in _CE_E          # CE computed in expander space
     BCE = tower_kind in ("bce", "i2bce", "ai2bce")   # in-batch negatives
-    PK = tower_kind in ("pk2i2cevce", "pk2i2cevi2ce")   # twin-pack fractal
+    PK = tower_kind in ("pk2i2cevce", "pk2i2cevi2ce", "pk2i2cesgvce")   # twin-pack fractal
     PCE = tower_kind in _CE_POOL       # CE pools the views first
     IE = tower_kind in _I_E            # I pairs live in expander space
     XPD = XCE or IE                    # arm carries the expander module
@@ -1052,7 +1057,11 @@ def main():
                             _la.append(model(SGalA[_r], mGalA[_r]))
                             _lb.append(model(SGalB[_r], mGalB[_r]))
                         eA, eB = torch.cat(_la), torch.cat(_lb)
-                        Zg = F.normalize((eA + eB) / 2, dim=-1)
+                        Zg_pk = F.normalize((eA + eB) / 2, dim=-1)
+                        # sg arm: views chase a DETACHED gallery; pack terms
+                        # keep the grad path (they train the anchors).
+                        Zg = (Zg_pk.detach() if tower_kind == "pk2i2cesgvce"
+                              else Zg_pk)
                     elif tower_kind == "i2sgce":
                         # 5a stop-grad gallery: no grad through the anchors,
                         # AND no retained forward activations (torch.no_grad,
@@ -1195,12 +1204,14 @@ def main():
                     if PK:
                         # pack-level i2ce: each pack separable vs the mean
                         # gallery (2 CE terms, all train games as queries)
-                        # + pack-I x2 (twin-pack stability).
-                        _tga = torch.arange(Zg.shape[0], device=dev)
+                        # + pack-I x2 (twin-pack stability). Uses Zg_pk (the
+                        # GRAD gallery) so the sg arm's boundary only cuts
+                        # the view->anchor edge, never the pack level.
+                        _tga = torch.arange(Zg_pk.shape[0], device=dev)
                         loss = loss + F.cross_entropy(
-                            eA.float() @ Zg.T.float() * inv_t, _tga)
+                            eA.float() @ Zg_pk.T.float() * inv_t, _tga)
                         loss = loss + F.cross_entropy(
-                            eB.float() @ Zg.T.float() * inv_t, _tga)
+                            eB.float() @ Zg_pk.T.float() * inv_t, _tga)
                         loss = loss + 2.0 * (
                             1 - (eA.float() * eB.float()).sum(-1)).mean()
                     if IW > 0 and GAUNI:
