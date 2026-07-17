@@ -266,6 +266,17 @@ ARMS = {
     # (anchors can't be gamed; no_grad also drops the 1613 x cap backward
     # activations -> cap 8192 fits 80G)
     "wcle_i2esce_icetf": ("i2esce", "ice"),   # 5b: EMA-shadow gallery
+    # --- twin-pack fractal (user, w9_packageview.ipynb): i2ce recursed one
+    # scale up. Anchor budget cap is SPLIT into two cap/2 packs (contiguous
+    # halves of the SAME pack -> at g1024 sentence-identical to i2ce@1024;
+    # doc prefix lands in pack A). Pack level runs i2ce: per-pack CE vs the
+    # normalized-mean gallery (each 512-pack must identify its game alone;
+    # the anchor side gets its OWN discriminative objective instead of being
+    # shaped only through view-CE backprop = another anti-gaming lever) +
+    # pack-I x2. Views: CE only (vce) or full i2ce (vi2ce, the paired cell
+    # that keeps view-I). Eval/deploy gallery = normalize(mean(eA, eB)).
+    "wcle_pk2i2cevce_icetf": ("pk2i2cevce", "ice"),
+    "wcle_pk2i2cevi2ce_icetf": ("pk2i2cevi2ce", "ice"),
     # (stop-grad + target smoothing, tau = 1/(1-MQ_M) = 100 steps ~ 6 ep;
     # fixed points = i2sgce's, transients damped; mq's consistency lesson
     # at full-gallery width)
@@ -296,6 +307,7 @@ _IW = {"ice": 1.0, "i2ce": 2.0, "cegate1": 1.0, "cegate2": 2.0, "cegate3": 3.0,
        "bkq192i2cce": 2.0, "bkq48i2cce": 2.0, "bkq12i2cce": 2.0,
        "bkbi2cce": 2.0, "mq3072i2cce": 2.0, "mq3072i2ce": 2.0,
        "i2q2ce": 2.0, "i2sgce": 2.0, "i2esce": 2.0,
+       "pk2i2cevi2ce": 2.0,   # vce variant has NO view-I (pack-I is hardcoded 2)
        "d1r4_i2ce": 2.0, "d1r5_i2ce": 2.0, "d1r6_i2ce": 2.0,
        "w1sp1r3_i2ce": 2.0}
 SPLIT_SEED = 20260711
@@ -497,6 +509,7 @@ def main():
              "cmpi2poolcmpce": ("cmp", "cmp")}
     XCE = tower_kind in _CE_E          # CE computed in expander space
     BCE = tower_kind in ("bce", "i2bce", "ai2bce")   # in-batch negatives
+    PK = tower_kind in ("pk2i2cevce", "pk2i2cevi2ce")   # twin-pack fractal
     PCE = tower_kind in _CE_POOL       # CE pools the views first
     IE = tower_kind in _I_E            # I pairs live in expander space
     XPD = XCE or IE                    # arm carries the expander module
@@ -736,6 +749,18 @@ def main():
     mGal = torch.arange(SGal.shape[1], device=dev)[None, :] >= gal_len[:, None]
     mGal_nd = mGal | (torch.arange(SGal.shape[1], device=dev)[None, :] <
                       gal_doc[:, None])
+    if PK:
+        # twin-pack split: two cap/2 halves of the SAME pack (views, no copy)
+        assert args.anchor_cap % 2 == 0 and args.anchor_cap >= 1024, \
+            "pk2 arms run at even cap >= 1024 (each pack = cap/2)"
+        _h = SGal.shape[1] // 2
+        _arh = torch.arange(_h, device=dev)[None, :]
+        lenA = torch.clamp(gal_len, max=_h)
+        lenB = torch.clamp(gal_len - _h, min=0)
+        SGalA, SGalB = SGal[:, :_h], SGal[:, _h:]
+        mGalA = _arh >= lenA[:, None]
+        mGalB = _arh >= lenB[:, None]
+        mGalA_nd = mGalA | (_arh < torch.clamp(gal_doc, max=_h)[:, None])
     print(f"VRAM after load: {torch.cuda.memory_allocated()/1e9:.1f} GB", flush=True)
 
     # ---------------- review table + GPU view sampler ----------------
@@ -818,14 +843,24 @@ def main():
         ctx = torch.enable_grad() if grad else torch.no_grad()
         with ctx:
             for i in range(0, NG, chunk):
-                outs.append(model(SGal[i:i + chunk], mGal[i:i + chunk]))
+                if PK:
+                    _a = model(SGalA[i:i + chunk], mGalA[i:i + chunk])
+                    _b = model(SGalB[i:i + chunk], mGalB[i:i + chunk])
+                    outs.append(F.normalize((_a + _b) / 2, dim=-1))
+                else:
+                    outs.append(model(SGal[i:i + chunk], mGal[i:i + chunk]))
         return torch.cat(outs)
 
     def gallery_nodoc(model, chunk=128):
         outs = []
         with torch.no_grad():
             for i in range(0, NG, chunk):
-                outs.append(model(SGal[i:i + chunk], mGal_nd[i:i + chunk]))
+                if PK:
+                    _a = model(SGalA[i:i + chunk], mGalA_nd[i:i + chunk])
+                    _b = model(SGalB[i:i + chunk], mGalB[i:i + chunk])
+                    outs.append(F.normalize((_a + _b) / 2, dim=-1))
+                else:
+                    outs.append(model(SGal[i:i + chunk], mGal_nd[i:i + chunk]))
         return torch.cat(outs)
 
     def gallery_train(model, chunk=128):
@@ -1006,6 +1041,18 @@ def main():
                         Zg[rows_t] = fresh              # autograd via index put
                         with torch.no_grad():
                             bank[rows_t] = fresh.detach()
+                    elif PK:
+                        # twin packs WITH grad (train pool); CE gallery = the
+                        # normalized mean; per-pack CE + pack-I added after
+                        # the view-CE chain.
+                        _la, _lb = [], []
+                        for _i in range(0, len(train_pool_games), 128):
+                            _r = torch.as_tensor(
+                                train_pool_games[_i:_i + 128], device=dev)
+                            _la.append(model(SGalA[_r], mGalA[_r]))
+                            _lb.append(model(SGalB[_r], mGalB[_r]))
+                        eA, eB = torch.cat(_la), torch.cat(_lb)
+                        Zg = F.normalize((eA + eB) / 2, dim=-1)
                     elif tower_kind == "i2sgce":
                         # 5a stop-grad gallery: no grad through the anchors,
                         # AND no retained forward activations (torch.no_grad,
@@ -1145,6 +1192,17 @@ def main():
                     else:
                         loss = sum(F.cross_entropy(Z.float() @ Zg.T.float() * inv_t, tgt)
                                    for Z in Zs)
+                    if PK:
+                        # pack-level i2ce: each pack separable vs the mean
+                        # gallery (2 CE terms, all train games as queries)
+                        # + pack-I x2 (twin-pack stability).
+                        _tga = torch.arange(Zg.shape[0], device=dev)
+                        loss = loss + F.cross_entropy(
+                            eA.float() @ Zg.T.float() * inv_t, _tga)
+                        loss = loss + F.cross_entropy(
+                            eB.float() @ Zg.T.float() * inv_t, _tga)
+                        loss = loss + 2.0 * (
+                            1 - (eA.float() * eB.float()).sum(-1)).mean()
                     if IW > 0 and GAUNI:
                         # pull: anchor joins align, in E_g1 (xpd2). 4
                         # views + own anchor, 10 edges, weight IW (=25).
