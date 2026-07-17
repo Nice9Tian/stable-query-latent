@@ -791,6 +791,14 @@ def main():
         mGalA = _arh >= lenA[:, None]
         mGalB = _arh >= lenB[:, None]
         mGalA_nd = mGalA | (_arh < torch.clamp(gal_doc, max=_h)[:, None])
+    if args.full_pool and POOL is not None:
+        # POOL (2020x2048 sentence pool, ~8.5 GB on GPU) is only needed to
+        # BUILD anchors at startup under the fp protocol -- the view sampler
+        # reads FULLV (host mmap), never POOL. Freeing it returns ~8.5 GB
+        # per worker; the 3-tower packageview co-residency was riding the
+        # 80G edge with it resident (~22G/tower -> ~13.5G).
+        POOL = None
+        torch.cuda.empty_cache()
     print(f"VRAM after load: {torch.cuda.memory_allocated()/1e9:.1f} GB", flush=True)
 
     # ---------------- review table + GPU view sampler ----------------
