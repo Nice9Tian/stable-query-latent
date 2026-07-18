@@ -283,9 +283,10 @@ ARMS = {
     # their OWN CE partition [now-batch | window] with immediate backward
     # (window activations freed between passes: compute-for-VRAM); the
     # now-batch anchors are ALWAYS in the field with grad (the noname edge
-    # stays open); pointer += S*W per step. NO cache anywhere -- the bkq/
-    # bkb corpses proved cached fast-student rows make an incoherent field.
-    "wcle_swin168step1loop2i2ce_icetf": ("swin168step1loop2i2ce", "ice"),
+    # stays open); micro-pass l starts at p + l*S, pointer += L*S per step
+    # (S = games slid per micro-pass; W-S overlap between passes). NO cache
+    # anywhere -- bkq/bkb proved cached fast-student rows = incoherent field.
+    "wcle_swin168step84loop2i2ce_icetf": ("swin168step84loop2i2ce", "ice"),
     "wcle_pk4i2cevi2ce_icetf": ("pk4i2cevi2ce", "ice"),   # QUAD pack (user):
     # 4 packs of cap/4 (@2048 -> 4x512), full i2ce at pack AND view level.
     # Capacity ladder vs pk2@1024 (2x512) / pk2@2048 (2x1024) / pk2@4096.
@@ -335,7 +336,7 @@ _IW = {"ice": 1.0, "i2ce": 2.0, "cegate1": 1.0, "cegate2": 2.0, "cegate3": 3.0,
        "bkq192i2cce": 2.0, "bkq48i2cce": 2.0, "bkq12i2cce": 2.0,
        "bkbi2cce": 2.0, "mq3072i2cce": 2.0, "mq3072i2ce": 2.0,
        "i2q2ce": 2.0, "i2sgce": 2.0, "i2esce": 2.0,
-       "pk2i2cevi2ce": 2.0, "pk4i2cevi2ce": 2.0, "swin168step1loop2i2ce": 2.0,   # vce variant has NO view-I (pack-I is hardcoded 2)
+       "pk2i2cevi2ce": 2.0, "pk4i2cevi2ce": 2.0, "swin168step84loop2i2ce": 2.0,   # vce variant has NO view-I (pack-I is hardcoded 2)
        "slot4i2celine": 2.0, "slot8i2cemean": 2.0, "slot8i2celine": 2.0, "slot16i2cemean": 2.0, "slot16i2celine": 2.0,
        "d1r4_i2ce": 2.0, "d1r5_i2ce": 2.0, "d1r6_i2ce": 2.0,
        "w1sp1r3_i2ce": 2.0}
@@ -1411,10 +1412,14 @@ def main():
                     # the shared view/eNow graphs alive; the final generic
                     # backward (I terms) releases them. Window columns that
                     # duplicate a now-batch game are masked (their positive
-                    # already sits in the now block).
+                    # already sits in the now block). SEMANTICS (user): pass
+                    # l's window starts at p + l*S (S = games slid per
+                    # micro-pass; consecutive passes overlap W-S); after the
+                    # step p += L*S. S=W/2, L=2 => half-overlap chain, every
+                    # ring position covered by exactly W/S=2 passes/sweep.
                     _arb = torch.arange(bs, device=dev)
                     for _l in range(SWIN_L):
-                        _w = (swin_ptr + SWIN_W * _l
+                        _w = (swin_ptr + SWIN_S * _l
                               + np.arange(SWIN_W)) % n_train
                         _wt = torch.as_tensor(_w, device=dev)
                         _dup = torch.isin(_wt, rows_now_t)
@@ -1428,7 +1433,7 @@ def main():
                                       ).masked_fill(_dup[None, :], -1e4)], 1)
                                 lw = lw + F.cross_entropy(lg, _arb)
                         amp.scale(lw).backward(retain_graph=True)
-                    swin_ptr = int((swin_ptr + SWIN_S * SWIN_W) % n_train)
+                    swin_ptr = int((swin_ptr + SWIN_L * SWIN_S) % n_train)
                 amp.scale(loss).backward()
                 amp.unscale_(opt)
                 torch.nn.utils.clip_grad_norm_(params, 5.0)
