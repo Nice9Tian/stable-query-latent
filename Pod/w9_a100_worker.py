@@ -277,6 +277,15 @@ ARMS = {
     # that keeps view-I). Eval/deploy gallery = normalize(mean(eA, eB)).
     "wcle_pk2i2cevce_icetf": ("pk2i2cevce", "ice"),
     "wcle_pk2i2cevi2ce_icetf": ("pk2i2cevi2ce", "ice"),
+    # ---- SWIN family (user): swin{W}step{S}loop{L}i2ce -- fresh-only
+    # sliding window over the anchor catalog (ring order). Per optimizer
+    # step, L micro-passes each fresh-encode the NEXT W ring games and run
+    # their OWN CE partition [now-batch | window] with immediate backward
+    # (window activations freed between passes: compute-for-VRAM); the
+    # now-batch anchors are ALWAYS in the field with grad (the noname edge
+    # stays open); pointer += S*W per step. NO cache anywhere -- the bkq/
+    # bkb corpses proved cached fast-student rows make an incoherent field.
+    "wcle_swin168step1loop2i2ce_icetf": ("swin168step1loop2i2ce", "ice"),
     "wcle_pk4i2cevi2ce_icetf": ("pk4i2cevi2ce", "ice"),   # QUAD pack (user):
     # 4 packs of cap/4 (@2048 -> 4x512), full i2ce at pack AND view level.
     # Capacity ladder vs pk2@1024 (2x512) / pk2@2048 (2x1024) / pk2@4096.
@@ -326,7 +335,7 @@ _IW = {"ice": 1.0, "i2ce": 2.0, "cegate1": 1.0, "cegate2": 2.0, "cegate3": 3.0,
        "bkq192i2cce": 2.0, "bkq48i2cce": 2.0, "bkq12i2cce": 2.0,
        "bkbi2cce": 2.0, "mq3072i2cce": 2.0, "mq3072i2ce": 2.0,
        "i2q2ce": 2.0, "i2sgce": 2.0, "i2esce": 2.0,
-       "pk2i2cevi2ce": 2.0, "pk4i2cevi2ce": 2.0,   # vce variant has NO view-I (pack-I is hardcoded 2)
+       "pk2i2cevi2ce": 2.0, "pk4i2cevi2ce": 2.0, "swin168step1loop2i2ce": 2.0,   # vce variant has NO view-I (pack-I is hardcoded 2)
        "slot4i2celine": 2.0, "slot8i2cemean": 2.0, "slot8i2celine": 2.0, "slot16i2cemean": 2.0, "slot16i2celine": 2.0,
        "d1r4_i2ce": 2.0, "d1r5_i2ce": 2.0, "d1r6_i2ce": 2.0,
        "w1sp1r3_i2ce": 2.0}
@@ -546,6 +555,11 @@ def main():
     PK = tower_kind in ("pk2i2cevce", "pk2i2cevi2ce", "pk2i2cesgvce",
                         "pk2i2vce", "pk4i2cevi2ce")   # N-pack fractal
     PKN = int(re.match(r"pk(\d+)", tower_kind).group(1)) if PK else 0
+    swin_m = re.match(r"swin(\d+)step(\d+)loop(\d+)i2ce$", tower_kind)
+    SWIN = bool(swin_m)                # fresh-only sliding-window CE field
+    SWIN_W = int(swin_m.group(1)) if swin_m else 0
+    SWIN_S = int(swin_m.group(2)) if swin_m else 0
+    SWIN_L = int(swin_m.group(3)) if swin_m else 0
     slot_m = re.match(r"slot(\d+)i2ce(mean|line)$", tower_kind)   # capacity grid
     SLOTS = int(slot_m.group(1)) if slot_m else 4
     POOL_MODE = slot_m.group(2) if slot_m else "mean"   # slot pooling (NOT the sentence POOL tensor!)
@@ -1041,6 +1055,7 @@ def main():
         ckpts = {}
         n_train = len(train_pool_games)
         bank, bank_ptr = None, 0
+        swin_ptr = 0
         shadow, mqueue, mq_gid, mq_ptr = None, None, None, 0
         if USE_SHADOW:
             import copy
@@ -1061,6 +1076,8 @@ def main():
             if BANK_POLICY and "bank" in st:
                 bank = st["bank"].to(dev)
                 bank_ptr = int(st.get("bank_ptr", 0))
+            if SWIN:
+                swin_ptr = int(st.get("swin_ptr", 0))
             if MQ_LEN and "mqueue" in st:
                 shadow.load_state_dict({k: v.to(dev) for k, v in st["shadow"].items()})
                 mqueue = st["mqueue"].to(dev)
@@ -1089,6 +1106,8 @@ def main():
                 if USE_SHADOW and isinstance(st, dict) and "shadow" in st:
                     shadow.load_state_dict({k: v.to(dev)
                                             for k, v in st["shadow"].items()})
+                if SWIN and isinstance(st, dict) and "swin_ptr" in st:
+                    swin_ptr = int(st["swin_ptr"])
                 if XPD and isinstance(st, dict) and "xpd" in st:
                     xpd.load_state_dict({k: v.to(dev)
                                          for k, v in st["xpd"].items()})
@@ -1125,6 +1144,17 @@ def main():
                 with torch.amp.autocast("cuda"):
                     if MQ_LEN:
                         Zg = None                       # queue replaces gallery
+                    elif SWIN:
+                        # fresh-only sliding-window field: NO gallery, NO
+                        # cache. CE lives entirely in the L window micro-
+                        # passes grafted at the backward stage; here only
+                        # the NOW anchors are encoded (grad, always in the
+                        # field). Generic CE chain gets an empty ride; the
+                        # I chain still runs on the views.
+                        rows_now = pos_of_g[gids]
+                        rows_now_t = torch.as_tensor(rows_now, device=dev)
+                        eNow = gallery_rows(model, rows_now).float()
+                        Zg = None
                     elif BANK_POLICY == "q":
                         # queue rotation: refresh the next BANK_K rows (no
                         # grad), then the whole anchor matrix is the bank.
@@ -1213,6 +1243,8 @@ def main():
                             lg = Z.float() @ mqueue.T * inv_t
                             loss = loss + F.cross_entropy(
                                 lg.masked_fill(fmask, -1e4), slot)
+                    elif SWIN:
+                        loss = torch.zeros((), device=dev)
                     elif BCE:
                         # in-batch NT-Xent: logits vs ALL 4*bs views of this
                         # step; target = ring sibling; self + other siblings
@@ -1370,6 +1402,33 @@ def main():
                         loss = loss + CW * sum(cov_pen(Z.float())
                                                for Z in Zs) / len(Zs)
                 opt.zero_grad()
+                if SWIN:
+                    # L window micro-passes (compute-for-VRAM): each pass
+                    # fresh-encodes the next W ring games, builds its OWN
+                    # CE partition [now | window] for every view, and
+                    # backwards IMMEDIATELY -- the window's activations are
+                    # freed before the next pass. retain_graph keeps only
+                    # the shared view/eNow graphs alive; the final generic
+                    # backward (I terms) releases them. Window columns that
+                    # duplicate a now-batch game are masked (their positive
+                    # already sits in the now block).
+                    _arb = torch.arange(bs, device=dev)
+                    for _l in range(SWIN_L):
+                        _w = (swin_ptr + SWIN_W * _l
+                              + np.arange(SWIN_W)) % n_train
+                        _wt = torch.as_tensor(_w, device=dev)
+                        _dup = torch.isin(_wt, rows_now_t)
+                        with torch.amp.autocast("cuda"):
+                            eWin = gallery_rows(model, _w).float()
+                            lw = 0.0
+                            for Z in Zs:
+                                lg = torch.cat(
+                                    [Z.float() @ eNow.T * inv_t,
+                                     (Z.float() @ eWin.T * inv_t
+                                      ).masked_fill(_dup[None, :], -1e4)], 1)
+                                lw = lw + F.cross_entropy(lg, _arb)
+                        amp.scale(lw).backward(retain_graph=True)
+                    swin_ptr = int((swin_ptr + SWIN_S * SWIN_W) % n_train)
                 amp.scale(loss).backward()
                 amp.unscale_(opt)
                 torch.nn.utils.clip_grad_norm_(params, 5.0)
@@ -1425,6 +1484,8 @@ def main():
                     bundle["mqueue"] = mqueue.detach().cpu()
                     bundle["mq_gid"] = mq_gid.detach().cpu()
                     bundle["mq_ptr"] = mq_ptr
+                if SWIN:
+                    bundle["swin_ptr"] = swin_ptr
                 tmp = RES.with_suffix(".tmp")
                 torch.save(bundle, tmp)
                 tmp.replace(RES)
