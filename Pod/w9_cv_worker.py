@@ -28,6 +28,7 @@ Output: <out-dir>/<files mirroring the local naming>.
 import argparse
 import json
 import math
+import re
 import time
 from itertools import combinations
 from pathlib import Path
@@ -54,8 +55,14 @@ ARMS = {
     "wcle_igate1w_icetf": ("igate1w", "ice"),
     "wcle_rgate2_icetf": ("rgate2", "ice"),        # CE on RANDOM coverage-matched set
     "wcle_nodoc_i2ce_icetf": ("nodoc", "ice"),     # zero doc views, CE all + I x2
+    # ---- 5fold-wave2 (user 2026-07-19, w9_experiment_5fold_2.ipynb) ----
+    "wcle_slot8i2cemean_icetf": ("i2ce", "ice"),   # 8-slot tower, plain i2ce
+    #   loss (slot count parsed from the ARM NAME -> NSLOT; loss untouched)
+    "wcle_mq3072i2ce_icetf": ("mq3072i2ce", "ice"),   # MoCo queue + view-I x2
+    "wcle_mq3072ce_cetf": ("mq3072ce", "ce"),         # MoCo queue, CE only
+    "wcle_epdb_v20i10c20_cetf": ("epdb_v20i10c20", "ce"),   # VICReg epd b=all
 }
-_IW = {"ice": 1.0, "i2ce": 2.0, "cegate1": 1.0, "cegate2": 2.0, "cegate3": 3.0,
+_IW = {"ice": 1.0, "i2ce": 2.0, "mq3072i2ce": 2.0, "cegate1": 1.0, "cegate2": 2.0, "cegate3": 3.0,
        "cegate4": 4.0, "cegate1w": 1.0, "cegate2w": 2.0, "igate1": 1.0,
        "igate1w": 1.0, "rgate2": 2.0, "nodoc": 2.0}
 SPLIT_SEED = 20260711
@@ -166,8 +173,14 @@ def main():
     sys.path.insert(0, args.repo)
     from VICReg_review.text_variant_eval import (train_anchor_ridge,
                                                  make_or_load_split, micro_prf)
+    from VICReg_review.model import GameCentroidExpander, vicreg_loss
 
     tower_kind, FT = ARMS[args.arm]
+    slot_am = re.match(r"wcle_slot(\d+)i2cemean_", args.arm)
+    NSLOT = int(slot_am.group(1)) if slot_am else 4   # slot count from ARM name
+    mq_m = re.match(r"mq(\d+)(i2ce|ce)$", tower_kind)
+    MQ_LEN = int(mq_m.group(1)) if mq_m else 0        # MoCo FIFO ring length
+    MQ_M = 0.99                                       # shadow weight-EMA momentum
     IW = _IW.get(tower_kind, 0.0)
     HIW = _IW.get(tower_kind, 1.0)
     CE_GATED = tower_kind.startswith("cegate") or tower_kind == "rgate2"
@@ -461,10 +474,17 @@ def main():
     def train_v4doc(seed=0, W=16, bs=192, per_epoch=3072):
         torch.manual_seed(seed)
         rng = np.random.default_rng(seed)
-        model = SetPoolN(4).to(dev)
+        model = SetPoolN(NSLOT).to(dev)
         opt = torch.optim.AdamW(model.parameters(), lr=5e-4, weight_decay=1e-4)
         amp = amp_cls()
         ckpts = {}
+        shadow, mqueue, mq_gid, mq_ptr = None, None, None, 0
+        if MQ_LEN:
+            # true MoCo: frozen weight-EMA twin encodes the keys
+            import copy
+            shadow = copy.deepcopy(model).to(dev)
+            for _pp in shadow.parameters():
+                _pp.requires_grad_(False)
         RES = OUT / f"resume_{name}.pt"
         start_ep = 0
         if RES.exists():
@@ -477,6 +497,12 @@ def main():
             rng.bit_generator.state = st["np_rng"]
             start_ep = int(st["ep"])
             print(f"RESUME from ep{start_ep}", flush=True)
+            if MQ_LEN and "mqueue" in st:
+                shadow.load_state_dict({k: v.to(dev)
+                                        for k, v in st["shadow"].items()})
+                mqueue = st["mqueue"].to(dev)
+                mq_gid = st["mq_gid"].to(dev)
+                mq_ptr = int(st["mq_ptr"])
         if start_ep == 0 and not RES.exists():
             # EXTEND fallback (ported from the fs worker for w9_i2ce_continue):
             # the resume bundle is deleted when a run completes; to train PAST
@@ -493,6 +519,20 @@ def main():
                 start_ep = int(ck.stem.split("_ep")[-1])
                 print(f"EXTEND from ckpt ep{start_ep} (fresh opt/amp/rng)",
                       flush=True)
+                if MQ_LEN and isinstance(st, dict) and "shadow" in st:
+                    shadow.load_state_dict({k: v.to(dev)
+                                            for k, v in st["shadow"].items()})
+        if MQ_LEN and mqueue is None:
+            # prefill the FIFO ring with shadow(=main at t0) keys
+            mqueue = torch.zeros(MQ_LEN, DM, device=dev)
+            mq_gid = torch.full((MQ_LEN,), -1, dtype=torch.long, device=dev)
+            fill = rng.choice(train_pool_games, MQ_LEN,
+                              replace=MQ_LEN > len(train_pool_games))
+            with torch.no_grad():
+                for _i in range(0, MQ_LEN, 256):
+                    sub = torch.as_tensor(fill[_i:_i + 256], device=dev)
+                    mqueue[_i:_i + len(sub)] = shadow(SGal[sub], mGal[sub]).float()
+            mq_gid[:] = torch.as_tensor(fill, device=dev)
         t0 = time.time()
         mv_steps = 0
         if args.measure_vram and dev.type == "cuda":
@@ -503,10 +543,29 @@ def main():
                 gids = rng.choice(train_pool_games, bs, replace=False)
                 tgt = pos_of_g_t[gids].to(dev)
                 with torch.amp.autocast("cuda"):
-                    Zg = gallery_train(model)
+                    Zg = None if MQ_LEN else gallery_train(model)
                     Zs = [model(*sample_views(gids, W, rng)) for _ in range(NV - 1)]
                     Zs.append(assemble_doc_view(model, gids, W, rng, bs))
-                    if tower_kind == "arc":
+                    if MQ_LEN:
+                        # current keys enter the ring head and ARE this
+                        # step's positives; the rest of the ring = negatives;
+                        # entity-ID mask kills stale same-game keys.
+                        with torch.no_grad():
+                            _r = torch.as_tensor(gids, device=dev)
+                            keys = shadow(SGal[_r], mGal[_r]).float()
+                        gid_t = torch.as_tensor(gids, device=dev)
+                        slot = (torch.arange(bs, device=dev) + mq_ptr) % MQ_LEN
+                        mqueue[slot] = keys
+                        mq_gid[slot] = gid_t
+                        mq_ptr = int((mq_ptr + bs) % MQ_LEN)
+                        fmask = mq_gid[None, :] == gid_t[:, None]
+                        fmask[torch.arange(bs, device=dev), slot] = False
+                        loss = 0
+                        for Z in Zs:
+                            lg = Z.float() @ mqueue.T * inv_t
+                            loss = loss + F.cross_entropy(
+                                lg.masked_fill(fmask, -1e4), slot)
+                    elif tower_kind == "arc":
                         loss = sum(arcface_ce(Z.float() @ Zg.T.float(), tgt) for Z in Zs)
                     elif CE_GATED:
                         hd = torch.tensor(np.array([g in gate_games for g in gids])
@@ -534,6 +593,11 @@ def main():
                 torch.nn.utils.clip_grad_norm_(model.parameters(), 5.0)
                 amp.step(opt)
                 amp.update()
+                if MQ_LEN:
+                    with torch.no_grad():
+                        for _pk, _pq in zip(shadow.parameters(),
+                                            model.parameters()):
+                            _pk.data.mul_(MQ_M).add_(_pq.data, alpha=1 - MQ_M)
                 if args.measure_vram:
                     mv_steps += 1
                     if mv_steps >= 3:
@@ -545,11 +609,23 @@ def main():
                         raise SystemExit(0)
             if (ep + 1) % args.ckpt_every == 0:
                 sd = {k: v.detach().cpu().clone() for k, v in model.state_dict().items()}
-                torch.save(sd, OUT / f"ckpt_{name}_ep{ep+1}.pt")   # persist NOW
+                if MQ_LEN:
+                    torch.save(dict(model=sd,
+                                    shadow={k: v.detach().cpu().clone()
+                                            for k, v in shadow.state_dict().items()}),
+                               OUT / f"ckpt_{name}_ep{ep+1}.pt")
+                else:
+                    torch.save(sd, OUT / f"ckpt_{name}_ep{ep+1}.pt")   # persist NOW
                 bundle = dict(model=sd, opt=opt.state_dict(), amp=amp.state_dict(),
                               cpu_rng=torch.get_rng_state(),
                               cuda_rng=torch.cuda.get_rng_state(),
                               np_rng=rng.bit_generator.state, ep=ep + 1)
+                if MQ_LEN:
+                    bundle["shadow"] = {k: v.detach().cpu().clone()
+                                        for k, v in shadow.state_dict().items()}
+                    bundle["mqueue"] = mqueue.detach().cpu()
+                    bundle["mq_gid"] = mq_gid.detach().cpu()
+                    bundle["mq_ptr"] = mq_ptr
                 tmp = RES.with_suffix(".tmp")
                 torch.save(bundle, tmp)
                 tmp.replace(RES)
@@ -558,11 +634,96 @@ def main():
         model.eval()
         return model
 
+
+    def train_vicreg(seed=0, W=16, bs=192, per_epoch=3072):
+        # Negative-free (no gallery CE); epd wiring = all three VICReg terms
+        # on the expander OUTPUT pair (ported verbatim from the fs worker).
+        # epdb: views drawn for EVERY train game per step (batch=all moments).
+        epd = re.match(r"(epd[bg]?)_v(\d+)i(\d+)c(\d+)$", tower_kind)
+        all_batch = bool(epd) and epd.group(1) == "epdb"
+        vic_v, vic_i, vic_c = (float(x) for x in epd.groups()[1:])
+        torch.manual_seed(seed)
+        rng = np.random.default_rng(seed)
+        model = SetPoolN(NSLOT).to(dev)
+        expander = GameCentroidExpander(input_dim=DM).to(dev)
+        opt = torch.optim.AdamW(
+            list(model.parameters()) + list(expander.parameters()),
+            lr=5e-4, weight_decay=1e-4)
+        amp = amp_cls()
+        RES = OUT / f"resume_{name}.pt"
+        start_ep = 0
+        if RES.exists():
+            st = torch.load(RES, map_location="cpu")
+            model.load_state_dict({k: v.to(dev) for k, v in st["model"].items()})
+            expander.load_state_dict({k: v.to(dev)
+                                      for k, v in st["expander"].items()})
+            opt.load_state_dict(st["opt"])
+            amp.load_state_dict(st["amp"])
+            torch.set_rng_state(st["cpu_rng"])
+            torch.cuda.set_rng_state(st["cuda_rng"])
+            rng.bit_generator.state = st["np_rng"]
+            start_ep = int(st["ep"])
+            print(f"RESUME from ep{start_ep}", flush=True)
+        t0 = time.time()
+        mv_steps = 0
+        if args.measure_vram and dev.type == "cuda":
+            torch.cuda.reset_peak_memory_stats()
+        for ep in range(start_ep, args.epochs):
+            model.train(); expander.train()
+            for _ in range(per_epoch // bs):
+                gids = (train_pool_games if all_batch else
+                        rng.choice(train_pool_games, bs, replace=False))
+                with torch.amp.autocast("cuda"):
+                    Zs = [model(*sample_views(gids, W, rng))
+                          for _ in range(NV - 1)]
+                    Zs.append(assemble_doc_view(model, gids, W, rng, len(gids)))
+                    Es = [expander(Z.float()) for Z in Zs]
+                    loss = sum(vicreg_loss(
+                        Es[i], Es[j], invariance_weight=vic_i,
+                        variance_weight=vic_v,
+                        covariance_weight=vic_c)["loss"]
+                        for i, j in pairs) / len(pairs)
+                opt.zero_grad()
+                amp.scale(loss).backward()
+                amp.unscale_(opt)
+                torch.nn.utils.clip_grad_norm_(
+                    list(model.parameters()) + list(expander.parameters()), 5.0)
+                amp.step(opt)
+                amp.update()
+                if args.measure_vram:
+                    mv_steps += 1
+                    if mv_steps >= 3:
+                        torch.cuda.synchronize()
+                        peak = int(torch.cuda.max_memory_allocated())
+                        Path(args.measure_vram).write_text(str(peak))
+                        print(f"[measure-vram] cap={args.anchor_cap} "
+                              f"peak={peak / 2**30:.2f}GiB", flush=True)
+                        raise SystemExit(0)
+            if (ep + 1) % args.ckpt_every == 0:
+                sd = {k: v.detach().cpu().clone()
+                      for k, v in model.state_dict().items()}
+                xd = {k: v.detach().cpu().clone()
+                      for k, v in expander.state_dict().items()}
+                torch.save(dict(model=sd, expander=xd),
+                           OUT / f"ckpt_{name}_ep{ep+1}.pt")
+                bundle = dict(model=sd, expander=xd,
+                              opt=opt.state_dict(), amp=amp.state_dict(),
+                              cpu_rng=torch.get_rng_state(),
+                              cuda_rng=torch.cuda.get_rng_state(),
+                              np_rng=rng.bit_generator.state, ep=ep + 1)
+                tmp = RES.with_suffix(".tmp")
+                torch.save(bundle, tmp)
+                tmp.replace(RES)
+            if ep % 100 == 99:
+                print(f"  [vic ep{ep+1}] {time.time()-t0:.0f}s", flush=True)
+        model.eval()
+        return model
+
     def train_byol(seed=0, W=16, bs=192, per_epoch=3072):
         import copy
         torch.manual_seed(seed)
         rng = np.random.default_rng(seed)
-        model = SetPoolN(4).to(dev)
+        model = SetPoolN(NSLOT).to(dev)
         pred = nn.Sequential(nn.Linear(DM, 256), nn.GELU(), nn.Linear(256, DM)).to(dev)
         target = copy.deepcopy(model).to(dev)
         for p in target.parameters():
@@ -587,6 +748,9 @@ def main():
             start_ep = int(st["ep"])
             print(f"RESUME from ep{start_ep}", flush=True)
         t0 = time.time()
+        mv_steps = 0
+        if args.measure_vram and dev.type == "cuda":
+            torch.cuda.reset_peak_memory_stats()
         for ep in range(start_ep, args.epochs):
             model.train(); pred.train()
             for _ in range(per_epoch // bs):
@@ -631,6 +795,15 @@ def main():
                 with torch.no_grad():
                     for pt, po in zip(target.parameters(), model.parameters()):
                         pt.data.mul_(0.996).add_(po.data, alpha=0.004)
+                if args.measure_vram:
+                    mv_steps += 1
+                    if mv_steps >= 3:
+                        torch.cuda.synchronize()
+                        peak = int(torch.cuda.max_memory_allocated())
+                        Path(args.measure_vram).write_text(str(peak))
+                        print(f"[measure-vram] cap={args.anchor_cap} "
+                              f"peak={peak / 2**30:.2f}GiB", flush=True)
+                        raise SystemExit(0)
             if (ep + 1) % args.ckpt_every == 0:
                 sd = {k: v.detach().cpu().clone() for k, v in model.state_dict().items()}
                 pd = {k: v.detach().cpu().clone() for k, v in pred.state_dict().items()}
@@ -901,6 +1074,8 @@ def main():
         # Fold identity is untouched (--cv-seed drives the permutation).
         if tower_kind == "byol":
             train_byol(seed=args.fold)
+        elif tower_kind.startswith("epd"):
+            train_vicreg(seed=args.fold)
         else:
             train_v4doc(seed=args.fold)
         print(f"tower {name} train phase done in {time.time()-t0:.0f}s", flush=True)
@@ -915,7 +1090,7 @@ def main():
                 continue                                # projection-level resume
             st = torch.load(ck, map_location="cpu")
             sd = st["model"] if "model" in st else st     # byol ckpts are nested
-            m2 = SetPoolN(4).to(dev)
+            m2 = SetPoolN(NSLOT).to(dev)
             m2.load_state_dict({k: v.to(dev) for k, v in sd.items()})
             m2.eval()
             project_cache(m2, npz)          # SPq/SPg/SPa saved once ...
