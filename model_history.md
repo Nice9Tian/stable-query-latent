@@ -318,3 +318,17 @@ nodoc）。同名行也在 `w9_jobs.FS_JOBS`（w9_l40 可认领），双路径�
   i2ce@4096（.716 vs .706，1/4 锚预算）。④pk2 2×2048（g4096）从未跑
   成：单卡三塔叠 78.8G OOM 启动即死（claim 已清，重开 packageview 会
   独跑它）；它是"双包结构是否在 4096 成立"的缺席法官。
+
+## 13. 第二波 5 折 @4096（用户 2026-07-19，`Pod/w9_experiment_5fold_2.ipynb`）
+
+- **动机**：pk2 每包仍是 4 槽——聚合容量在 4096 的问题由
+  `slot8i2cemean@4096` 直接裁决（slot 名义臂映射为普通 i2ce 损失 + 8 槽
+  塔，NSLOT 从臂名解析）；同场补齐四基线的 5 折：`mq3072i2ce`（I2CE 的
+  MoCo 队列版）/`mq3072ce`/`byol`/`epdb_v20i10c20`（VICReg epd，
+  batch=all；byol/VICReg 训练侧不碰锚，4096 只作用于评测画廊）。
+- **规模**：5 臂 × 5 折 = 25 塔 @2000ep，seed=fold 与第一波 ce/i2ce
+  配对；readout 引第一波 ce/i2ce@4096 五折为参照行。
+- **CV worker 移植**：MoCo 影子塔+环（prefill/供给/CE/EMA/ckpt/resume/
+  EXTEND 七处，fs 语义逐字）；train_vicreg（epd 接线，VICReg_review.model
+  依赖）；epd 分派；train_byol 补 measure-vram（否则 warmup 测不出成本
+  永不调度）；warmup 改按【臂】计量（slot8≈45G，mq/byol/epd 远轻）。
