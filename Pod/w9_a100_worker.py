@@ -277,6 +277,10 @@ ARMS = {
     # that keeps view-I). Eval/deploy gallery = normalize(mean(eA, eB)).
     "wcle_pk2i2cevce_icetf": ("pk2i2cevce", "ice"),
     "wcle_pk2i2cevi2ce_icetf": ("pk2i2cevi2ce", "ice"),
+    "wcle_pk2i2vce_icetf": ("pk2i2vce", "ice"),   # PACK-I ONLY (user): packs
+    # tied by I x2 with NO pack-CE -- anchors trained by pack-I + view-CE
+    # backprop through the mean gallery; views = per-view CE only. Single-
+    # factor pair vs pk2i2cevce (.647): isolates the pack-CE term.
     "wcle_pk2i2cesgvce_icetf": ("pk2i2cesgvce", "ice"),   # sg BOUNDARY (user):
     # capacity/read-out grid (user): slot{N}i2ce{mean|line}, N in {4,8,16};
     # (4,mean) == existing i2ce (kept, not re-run). Loss = plain i2ce.
@@ -536,7 +540,7 @@ def main():
              "cmpi2poolcmpce": ("cmp", "cmp")}
     XCE = tower_kind in _CE_E          # CE computed in expander space
     BCE = tower_kind in ("bce", "i2bce", "ai2bce")   # in-batch negatives
-    PK = tower_kind in ("pk2i2cevce", "pk2i2cevi2ce", "pk2i2cesgvce")   # twin-pack fractal
+    PK = tower_kind in ("pk2i2cevce", "pk2i2cevi2ce", "pk2i2cesgvce", "pk2i2vce")   # twin-pack fractal
     slot_m = re.match(r"slot(\d+)i2ce(mean|line)$", tower_kind)   # capacity grid
     SLOTS = int(slot_m.group(1)) if slot_m else 4
     POOL_MODE = slot_m.group(2) if slot_m else "mean"   # slot pooling (NOT the sentence POOL tensor!)
@@ -1240,11 +1244,12 @@ def main():
                         # + pack-I x2 (twin-pack stability). Uses Zg_pk (the
                         # GRAD gallery) so the sg arm's boundary only cuts
                         # the view->anchor edge, never the pack level.
-                        _tga = torch.arange(Zg_pk.shape[0], device=dev)
-                        loss = loss + F.cross_entropy(
-                            eA.float() @ Zg_pk.T.float() * inv_t, _tga)
-                        loss = loss + F.cross_entropy(
-                            eB.float() @ Zg_pk.T.float() * inv_t, _tga)
+                        if tower_kind != "pk2i2vce":   # pack-I-only arm skips pack-CE
+                            _tga = torch.arange(Zg_pk.shape[0], device=dev)
+                            loss = loss + F.cross_entropy(
+                                eA.float() @ Zg_pk.T.float() * inv_t, _tga)
+                            loss = loss + F.cross_entropy(
+                                eB.float() @ Zg_pk.T.float() * inv_t, _tga)
                         loss = loss + 2.0 * (
                             1 - (eA.float() * eB.float()).sum(-1)).mean()
                     if IW > 0 and GAUNI:
