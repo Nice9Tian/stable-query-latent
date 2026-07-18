@@ -277,11 +277,6 @@ ARMS = {
     # that keeps view-I). Eval/deploy gallery = normalize(mean(eA, eB)).
     "wcle_pk2i2cevce_icetf": ("pk2i2cevce", "ice"),
     "wcle_pk2i2cevi2ce_icetf": ("pk2i2cevi2ce", "ice"),
-    "wcle_pk2i2cevi2ce_ranAn_icetf": ("pk2i2cevi2ce", "ice"),   # _ranAn (user):
-    # the @1024 champion cell RERUN under seeded RANDOM packs -- same
-    # tower_kind, new label so it cannot collide with the old disjoint-
-    # slice tower's done marker. Old .716 = disjoint halves; this cell
-    # re-baselines the pack construction for the ladder.
     "wcle_pk4i2cevi2ce_icetf": ("pk4i2cevi2ce", "ice"),   # QUAD pack (user):
     # 4 packs of cap/4 (@2048 -> 4x512), full i2ce at pack AND view level.
     # Capacity ladder vs pk2@1024 (2x512) / pk2@2048 (2x1024) / pk2@4096.
