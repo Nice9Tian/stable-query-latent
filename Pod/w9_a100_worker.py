@@ -802,8 +802,11 @@ def main():
         # Degenerate doc-only rows (no reviews) keep pack 0 only; their
         # later packs stay dead: position 0 unmasked (finite attention)
         # and aliveW weights them out of every mean/CE/pack-I term.
-        assert args.anchor_cap % PKN == 0 and args.anchor_cap // PKN >= 512, \
-            f"pk{PKN} arms need cap % {PKN} == 0 and packs >= 512"
+        assert args.anchor_cap % PKN == 0 and args.anchor_cap // PKN >= 128, \
+            f"pk{PKN} arms need cap % {PKN} == 0 and packs >= 128"
+        # (128 floor = pk4@512's 4x128 packs, the smallest cell the user
+        # has ordered; doc prefixes longer than a pack are truncated by
+        # the min(_d, _h) below.)
         PK_SEED = 20260718
         _h = SGal.shape[1] // PKN
         idxP = torch.zeros(PKN, NG, _h, dtype=torch.long)
