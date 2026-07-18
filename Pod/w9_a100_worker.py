@@ -277,6 +277,9 @@ ARMS = {
     # that keeps view-I). Eval/deploy gallery = normalize(mean(eA, eB)).
     "wcle_pk2i2cevce_icetf": ("pk2i2cevce", "ice"),
     "wcle_pk2i2cevi2ce_icetf": ("pk2i2cevi2ce", "ice"),
+    "wcle_pk4i2cevi2ce_icetf": ("pk4i2cevi2ce", "ice"),   # QUAD pack (user):
+    # 4 packs of cap/4 (@2048 -> 4x512), full i2ce at pack AND view level.
+    # Capacity ladder vs pk2@1024 (2x512) / pk2@2048 (2x1024) / pk2@4096.
     "wcle_pk2i2vce_icetf": ("pk2i2vce", "ice"),   # PACK-I ONLY (user): packs
     # tied by I x2 with NO pack-CE -- anchors trained by pack-I + view-CE
     # backprop through the mean gallery; views = per-view CE only. Single-
@@ -323,7 +326,7 @@ _IW = {"ice": 1.0, "i2ce": 2.0, "cegate1": 1.0, "cegate2": 2.0, "cegate3": 3.0,
        "bkq192i2cce": 2.0, "bkq48i2cce": 2.0, "bkq12i2cce": 2.0,
        "bkbi2cce": 2.0, "mq3072i2cce": 2.0, "mq3072i2ce": 2.0,
        "i2q2ce": 2.0, "i2sgce": 2.0, "i2esce": 2.0,
-       "pk2i2cevi2ce": 2.0,   # vce variant has NO view-I (pack-I is hardcoded 2)
+       "pk2i2cevi2ce": 2.0, "pk4i2cevi2ce": 2.0,   # vce variant has NO view-I (pack-I is hardcoded 2)
        "slot4i2celine": 2.0, "slot8i2cemean": 2.0, "slot8i2celine": 2.0, "slot16i2cemean": 2.0, "slot16i2celine": 2.0,
        "d1r4_i2ce": 2.0, "d1r5_i2ce": 2.0, "d1r6_i2ce": 2.0,
        "w1sp1r3_i2ce": 2.0}
@@ -540,7 +543,9 @@ def main():
              "cmpi2poolcmpce": ("cmp", "cmp")}
     XCE = tower_kind in _CE_E          # CE computed in expander space
     BCE = tower_kind in ("bce", "i2bce", "ai2bce")   # in-batch negatives
-    PK = tower_kind in ("pk2i2cevce", "pk2i2cevi2ce", "pk2i2cesgvce", "pk2i2vce")   # twin-pack fractal
+    PK = tower_kind in ("pk2i2cevce", "pk2i2cevi2ce", "pk2i2cesgvce",
+                        "pk2i2vce", "pk4i2cevi2ce")   # N-pack fractal
+    PKN = int(re.match(r"pk(\d+)", tower_kind).group(1)) if PK else 0
     slot_m = re.match(r"slot(\d+)i2ce(mean|line)$", tower_kind)   # capacity grid
     SLOTS = int(slot_m.group(1)) if slot_m else 4
     POOL_MODE = slot_m.group(2) if slot_m else "mean"   # slot pooling (NOT the sentence POOL tensor!)
@@ -784,17 +789,32 @@ def main():
     mGal_nd = mGal | (torch.arange(SGal.shape[1], device=dev)[None, :] <
                       gal_doc[:, None])
     if PK:
-        # twin-pack split: two cap/2 halves of the SAME pack (views, no copy)
-        assert args.anchor_cap % 2 == 0 and args.anchor_cap >= 1024, \
-            "pk2 arms run at even cap >= 1024 (each pack = cap/2)"
-        _h = SGal.shape[1] // 2
+        # N-pack split: PKN contiguous cap/PKN slices of the SAME pack
+        # (views, no copy). At big caps a small game's LATER packs can be
+        # EMPTY (pool < k*pack): guard = unmask position 0 there so the
+        # attention stays finite (it reads the zero pad row), and weight
+        # the pack OUT of every mean/CE/pack-I term via aliveW.
+        assert args.anchor_cap % PKN == 0 and args.anchor_cap // PKN >= 512, \
+            f"pk{PKN} arms need cap % {PKN} == 0 and packs >= 512"
+        _h = SGal.shape[1] // PKN
         _arh = torch.arange(_h, device=dev)[None, :]
-        lenA = torch.clamp(gal_len, max=_h)
-        lenB = torch.clamp(gal_len - _h, min=0)
-        SGalA, SGalB = SGal[:, :_h], SGal[:, _h:]
-        mGalA = _arh >= lenA[:, None]
-        mGalB = _arh >= lenB[:, None]
-        mGalA_nd = mGalA | (_arh < torch.clamp(gal_doc, max=_h)[:, None])
+        lenP = [torch.clamp(gal_len - k * _h, min=0, max=_h)
+                for k in range(PKN)]
+        SGalP = [SGal[:, k * _h:(k + 1) * _h] for k in range(PKN)]
+        mGalP = [_arh >= lenP[k][:, None] for k in range(PKN)]
+        for k in range(1, PKN):            # NaN guard for empty packs
+            mGalP[k][lenP[k] == 0, 0] = False
+        # doc prefix lives in pack 0 only
+        mGalP_nd = [mGalP[0] | (_arh < torch.clamp(gal_doc, max=_h)[:, None])] \
+            + mGalP[1:]
+        aliveW = torch.stack([(l > 0).float() for l in lenP], 1)   # (NG, PKN)
+
+        def pk_mean(embs, w):
+            # alive-weighted normalized mean of per-pack embeddings.
+            # embs: PKN x (B, D); w: (B, PKN). Pack 0 is always alive.
+            e = torch.stack(embs, 1)
+            return F.normalize((e * w[:, :, None]).sum(1)
+                               / w.sum(1, keepdim=True), dim=-1)
     if args.full_pool and POOL is not None:
         # POOL (2020x2048 sentence pool, ~8.5 GB on GPU) is only needed to
         # BUILD anchors at startup under the fp protocol -- the view sampler
@@ -886,9 +906,9 @@ def main():
         with ctx:
             for i in range(0, NG, chunk):
                 if PK:
-                    _a = model(SGalA[i:i + chunk], mGalA[i:i + chunk])
-                    _b = model(SGalB[i:i + chunk], mGalB[i:i + chunk])
-                    outs.append(F.normalize((_a + _b) / 2, dim=-1))
+                    _es = [model(SGalP[k][i:i + chunk], mGalP[k][i:i + chunk])
+                           for k in range(PKN)]
+                    outs.append(pk_mean(_es, aliveW[i:i + chunk]))
                 else:
                     outs.append(model(SGal[i:i + chunk], mGal[i:i + chunk]))
         return torch.cat(outs)
@@ -898,9 +918,10 @@ def main():
         with torch.no_grad():
             for i in range(0, NG, chunk):
                 if PK:
-                    _a = model(SGalA[i:i + chunk], mGalA_nd[i:i + chunk])
-                    _b = model(SGalB[i:i + chunk], mGalB[i:i + chunk])
-                    outs.append(F.normalize((_a + _b) / 2, dim=-1))
+                    _es = [model(SGalP[k][i:i + chunk],
+                                 mGalP_nd[k][i:i + chunk])
+                           for k in range(PKN)]
+                    outs.append(pk_mean(_es, aliveW[i:i + chunk]))
                 else:
                     outs.append(model(SGal[i:i + chunk], mGal_nd[i:i + chunk]))
         return torch.cat(outs)
@@ -1084,17 +1105,20 @@ def main():
                         with torch.no_grad():
                             bank[rows_t] = fresh.detach()
                     elif PK:
-                        # twin packs WITH grad (train pool); CE gallery = the
-                        # normalized mean; per-pack CE + pack-I added after
-                        # the view-CE chain.
-                        _la, _lb = [], []
+                        # N packs WITH grad (train pool); CE gallery = the
+                        # alive-weighted normalized mean; per-pack CE +
+                        # pack-I added after the view-CE chain.
+                        _ls = [[] for _ in range(PKN)]
                         for _i in range(0, len(train_pool_games), 128):
                             _r = torch.as_tensor(
                                 train_pool_games[_i:_i + 128], device=dev)
-                            _la.append(model(SGalA[_r], mGalA[_r]))
-                            _lb.append(model(SGalB[_r], mGalB[_r]))
-                        eA, eB = torch.cat(_la), torch.cat(_lb)
-                        Zg_pk = F.normalize((eA + eB) / 2, dim=-1)
+                            for _k in range(PKN):
+                                _ls[_k].append(
+                                    model(SGalP[_k][_r], mGalP[_k][_r]))
+                        eP = [torch.cat(x) for x in _ls]
+                        aliveT = aliveW[torch.as_tensor(
+                            train_pool_games, device=dev)]
+                        Zg_pk = pk_mean(eP, aliveT)
                         # sg arm: views chase a DETACHED gallery; pack terms
                         # keep the grad path (they train the anchors).
                         Zg = (Zg_pk.detach() if tower_kind == "pk2i2cesgvce"
@@ -1239,19 +1263,30 @@ def main():
                         loss = sum(F.cross_entropy(Z.float() @ Zg.T.float() * inv_t, tgt)
                                    for Z in Zs)
                     if PK:
-                        # pack-level i2ce: each pack separable vs the mean
-                        # gallery (2 CE terms, all train games as queries)
-                        # + pack-I x2 (twin-pack stability). Uses Zg_pk (the
-                        # GRAD gallery) so the sg arm's boundary only cuts
-                        # the view->anchor edge, never the pack level.
+                        # pack-level i2ce, alive-weighted: per-pack CE vs the
+                        # mean gallery (empty packs sit out) + pack-I x2 over
+                        # every alive pack pair. Uses Zg_pk (the GRAD
+                        # gallery) so the sg arm's boundary only cuts the
+                        # view->anchor edge, never the pack level. For pk2
+                        # with all packs alive this reduces EXACTLY to the
+                        # old eA/eB code (mean over the single pair).
                         if tower_kind != "pk2i2vce":   # pack-I-only arm skips pack-CE
                             _tga = torch.arange(Zg_pk.shape[0], device=dev)
-                            loss = loss + F.cross_entropy(
-                                eA.float() @ Zg_pk.T.float() * inv_t, _tga)
-                            loss = loss + F.cross_entropy(
-                                eB.float() @ Zg_pk.T.float() * inv_t, _tga)
-                        loss = loss + 2.0 * (
-                            1 - (eA.float() * eB.float()).sum(-1)).mean()
+                            for _k in range(PKN):
+                                _al = aliveT[:, _k] > 0
+                                if _al.any():
+                                    loss = loss + F.cross_entropy(
+                                        eP[_k][_al].float()
+                                        @ Zg_pk.T.float() * inv_t, _tga[_al])
+                        _is, _ic = 0.0, 0.0
+                        for _a in range(PKN):
+                            for _b in range(_a + 1, PKN):
+                                _w = aliveT[:, _a] * aliveT[:, _b]
+                                _is = _is + ((1 - (eP[_a].float()
+                                                  * eP[_b].float()).sum(-1))
+                                             * _w).sum()
+                                _ic = _ic + _w.sum()
+                        loss = loss + 2.0 * _is / _ic.clamp(min=1.0)
                     if IW > 0 and GAUNI:
                         # pull: anchor joins align, in E_g1 (xpd2). 4
                         # views + own anchor, 10 edges, weight IW (=25).
