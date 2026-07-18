@@ -789,42 +789,63 @@ def main():
     mGal_nd = mGal | (torch.arange(SGal.shape[1], device=dev)[None, :] <
                       gal_doc[:, None])
     if PK:
-        # N-pack split: PKN contiguous cap/PKN slices of the SAME pack
-        # (views, no copy).
+        # SEEDED RANDOM PACKS (user): each of the PKN packs is an
+        # INDEPENDENT random h-sample of the game's anchor sentences --
+        # packs may OVERLAP (the user rejected disjoint contiguous
+        # slices). Per-game fixed Generator seed => packs are bit-
+        # identical across restarts/resume/eval. Review indices come from
+        # a TILED randperm over [gal_doc, gal_len): without replacement
+        # while the pool lasts, balanced wrap when the pool is short (so
+        # under-filled games need no refill and no dead packs). The doc
+        # prefix stays pinned at the head of pack 0 and never enters the
+        # sample (copies elsewhere would escape the pack-0 nodoc mask).
+        # Degenerate doc-only rows (no reviews) keep pack 0 only; their
+        # later packs stay dead: position 0 unmasked (finite attention)
+        # and aliveW weights them out of every mean/CE/pack-I term.
         assert args.anchor_cap % PKN == 0 and args.anchor_cap // PKN >= 512, \
             f"pk{PKN} arms need cap % {PKN} == 0 and packs >= 512"
-        # Cyclic refill (user): a game whose pool is short of cap does NOT
-        # close its later packs -- the REVIEW region [gal_doc, gal_len) is
-        # copied back IN ORDER, wrapping, until the row is full. Doc prefix
-        # is excluded from the cycle (copies would escape the pack-0 nodoc
-        # mask). After this every pack is alive; the aliveW machinery below
-        # is kept as a belt-and-suspenders no-op.
-        _L = SGal.shape[1]
-        for _g in (gal_len < _L).nonzero().flatten().tolist():
-            _l, _d = int(gal_len[_g]), int(gal_doc[_g])
-            if _l - _d <= 0:
-                continue                    # doc-only row: nothing to cycle
-            _src = SGal[_g, _d:_l]
-            _need = _L - _l
-            SGal[_g, _l:] = _src.repeat(
-                _need // (_l - _d) + 1, 1)[:_need]
-            gal_len[_g] = _L
-        # masks were built from the pre-refill gal_len -- rebuild them
-        mGal = torch.arange(_L, device=dev)[None, :] >= gal_len[:, None]
-        mGal_nd = mGal | (torch.arange(_L, device=dev)[None, :] <
-                          gal_doc[:, None])
+        PK_SEED = 20260718
         _h = SGal.shape[1] // PKN
-        _arh = torch.arange(_h, device=dev)[None, :]
-        lenP = [torch.clamp(gal_len - k * _h, min=0, max=_h)
-                for k in range(PKN)]
-        SGalP = [SGal[:, k * _h:(k + 1) * _h] for k in range(PKN)]
-        mGalP = [_arh >= lenP[k][:, None] for k in range(PKN)]
-        for k in range(1, PKN):            # NaN guard for empty packs
-            mGalP[k][lenP[k] == 0, 0] = False
-        # doc prefix lives in pack 0 only
-        mGalP_nd = [mGalP[0] | (_arh < torch.clamp(gal_doc, max=_h)[:, None])] \
+        idxP = torch.zeros(PKN, NG, _h, dtype=torch.long)
+        _mP = torch.ones(PKN, NG, _h, dtype=torch.bool)
+        aliveW = torch.ones(NG, PKN)
+        for _g in range(NG):
+            _l, _d = int(gal_len[_g]), int(gal_doc[_g])
+            _R = _l - _d
+            _gen = torch.Generator().manual_seed(PK_SEED + _g)
+            for _k in range(PKN):
+                _dk = min(_d, _h) if _k == 0 else 0
+                _need = _h - _dk
+                if _need == 0:               # pack 0 entirely doc prefix
+                    idxP[_k, _g] = torch.arange(_h)
+                    _mP[_k, _g] = False
+                elif _R > 0:
+                    _pm = torch.cat([torch.randperm(_R, generator=_gen)
+                                     for _ in range(-(-_need // _R))])[:_need]
+                    if _dk:
+                        idxP[_k, _g] = torch.cat(
+                            [torch.arange(_dk), _d + _pm])
+                    else:
+                        idxP[_k, _g] = _d + _pm
+                    _mP[_k, _g] = False
+                elif _k == 0:                # doc-only row, short prefix
+                    idxP[_k, _g, :_dk] = torch.arange(_dk)
+                    _mP[_k, _g, :_dk] = False
+                else:                        # dead pack: NaN guard only
+                    _mP[_k, _g, 0] = False
+                    aliveW[_g, _k] = 0.0
+        idxP = idxP.to(dev)
+        aliveW = aliveW.to(dev)
+        mGalP = [_mP[k].to(dev) for k in range(PKN)]
+        mGalP_nd = [mGalP[0] | (torch.arange(_h, device=dev)[None, :] <
+                                torch.clamp(gal_doc, max=_h)[:, None])] \
             + mGalP[1:]
-        aliveW = torch.stack([(l > 0).float() for l in lenP], 1)   # (NG, PKN)
+
+        def pk_sg(k, rows):
+            # gather pack k's sentences for the given game rows on the fly
+            # (rows: 1-D long tensor) -> (len(rows), _h, D); no cap-sized
+            # copies are ever materialized.
+            return SGal[rows[:, None], idxP[k][rows]]
 
         def pk_mean(embs, w):
             # alive-weighted normalized mean of per-pack embeddings.
@@ -923,7 +944,8 @@ def main():
         with ctx:
             for i in range(0, NG, chunk):
                 if PK:
-                    _es = [model(SGalP[k][i:i + chunk], mGalP[k][i:i + chunk])
+                    _rw = torch.arange(i, min(i + chunk, NG), device=dev)
+                    _es = [model(pk_sg(k, _rw), mGalP[k][i:i + chunk])
                            for k in range(PKN)]
                     outs.append(pk_mean(_es, aliveW[i:i + chunk]))
                 else:
@@ -935,8 +957,8 @@ def main():
         with torch.no_grad():
             for i in range(0, NG, chunk):
                 if PK:
-                    _es = [model(SGalP[k][i:i + chunk],
-                                 mGalP_nd[k][i:i + chunk])
+                    _rw = torch.arange(i, min(i + chunk, NG), device=dev)
+                    _es = [model(pk_sg(k, _rw), mGalP_nd[k][i:i + chunk])
                            for k in range(PKN)]
                     outs.append(pk_mean(_es, aliveW[i:i + chunk]))
                 else:
@@ -1131,7 +1153,7 @@ def main():
                                 train_pool_games[_i:_i + 128], device=dev)
                             for _k in range(PKN):
                                 _ls[_k].append(
-                                    model(SGalP[_k][_r], mGalP[_k][_r]))
+                                    model(pk_sg(_k, _r), mGalP[_k][_r]))
                         eP = [torch.cat(x) for x in _ls]
                         aliveT = aliveW[torch.as_tensor(
                             train_pool_games, device=dev)]
