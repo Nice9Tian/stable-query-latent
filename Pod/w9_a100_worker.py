@@ -790,12 +790,29 @@ def main():
                       gal_doc[:, None])
     if PK:
         # N-pack split: PKN contiguous cap/PKN slices of the SAME pack
-        # (views, no copy). At big caps a small game's LATER packs can be
-        # EMPTY (pool < k*pack): guard = unmask position 0 there so the
-        # attention stays finite (it reads the zero pad row), and weight
-        # the pack OUT of every mean/CE/pack-I term via aliveW.
+        # (views, no copy).
         assert args.anchor_cap % PKN == 0 and args.anchor_cap // PKN >= 512, \
             f"pk{PKN} arms need cap % {PKN} == 0 and packs >= 512"
+        # Cyclic refill (user): a game whose pool is short of cap does NOT
+        # close its later packs -- the REVIEW region [gal_doc, gal_len) is
+        # copied back IN ORDER, wrapping, until the row is full. Doc prefix
+        # is excluded from the cycle (copies would escape the pack-0 nodoc
+        # mask). After this every pack is alive; the aliveW machinery below
+        # is kept as a belt-and-suspenders no-op.
+        _L = SGal.shape[1]
+        for _g in (gal_len < _L).nonzero().flatten().tolist():
+            _l, _d = int(gal_len[_g]), int(gal_doc[_g])
+            if _l - _d <= 0:
+                continue                    # doc-only row: nothing to cycle
+            _src = SGal[_g, _d:_l]
+            _need = _L - _l
+            SGal[_g, _l:] = _src.repeat(
+                _need // (_l - _d) + 1, 1)[:_need]
+            gal_len[_g] = _L
+        # masks were built from the pre-refill gal_len -- rebuild them
+        mGal = torch.arange(_L, device=dev)[None, :] >= gal_len[:, None]
+        mGal_nd = mGal | (torch.arange(_L, device=dev)[None, :] <
+                          gal_doc[:, None])
         _h = SGal.shape[1] // PKN
         _arh = torch.arange(_h, device=dev)[None, :]
         lenP = [torch.clamp(gal_len - k * _h, min=0, max=_h)
