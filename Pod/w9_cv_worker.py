@@ -62,6 +62,10 @@ ARMS = {
     "wcle_mq3072ce_cetf": ("mq3072ce", "ce"),         # MoCo queue, CE only
     "wcle_epdb_v20i10c20_cetf": ("epdb_v20i10c20", "ce"),   # VICReg epd b=all
     "wcle_swin168step84loop2i2ce_icetf": ("swin168step84loop2i2ce", "ice"),
+    # ---- tau sweep (user 2026-07-19, w9_i2ce_t.ipynb) ----
+    "wcle_i2cet05_icetf": ("i2ce", "ice"),   # tau = 0.05 (from ARM name)
+    "wcle_i2cet10_icetf": ("i2ce", "ice"),   # tau = 0.10
+    "wcle_i2ce_icetl": ("i2ce", "ice"),      # LEARNABLE tau (init 0.02)
     # sliding fresh-window i2ce (user): CE field = now-batch 192 anchors +
     # L ring windows of W (fresh, grad, no cache); micro-pass backward.
 }
@@ -477,13 +481,33 @@ def main():
         return Zlast
 
     pairs = list(combinations(range(NV), 2))
-    inv_t = 1.0 / 0.02
+    t_m = re.match(r"wcle_i2cet(\d{2})_", args.arm)
+    TAU = int(t_m.group(1)) / 100.0 if t_m else 0.02   # from ARM name
+    TAU_LEARN = args.arm.endswith("_icetl")            # learnable tau arm
+    inv_t = 1.0 / TAU
+    TAUP = {}                     # filled by train_v4doc for the tl arm
+
+    def _invt():
+        # CE logit scale: constant for fixed-tau arms; exp(log_invt)
+        # (clamped to tau in [0.005, 0.2]) for the learnable arm.
+        return (torch.exp(TAUP["p"]).clamp(5.0, 200.0) if "p" in TAUP
+                else inv_t)
 
     def train_v4doc(seed=0, W=16, bs=192, per_epoch=3072):
         torch.manual_seed(seed)
         rng = np.random.default_rng(seed)
         model = SetPoolN(NSLOT).to(dev)
-        opt = torch.optim.AdamW(model.parameters(), lr=5e-4, weight_decay=1e-4)
+        if TAU_LEARN:
+            # log-parameterized inverse temperature, NO weight decay (wd
+            # would pull tau toward 1.0); joins the optimizer + grad clip.
+            TAUP["p"] = torch.nn.Parameter(
+                torch.tensor(math.log(1.0 / TAU), device=dev))
+        params_all = list(model.parameters()) + (
+            [TAUP["p"]] if TAU_LEARN else [])
+        opt = torch.optim.AdamW(
+            [{"params": model.parameters()},
+             {"params": [TAUP["p"]], "weight_decay": 0.0}] if TAU_LEARN
+            else model.parameters(), lr=5e-4, weight_decay=1e-4)
         amp = amp_cls()
         ckpts = {}
         shadow, mqueue, mq_gid, mq_ptr = None, None, None, 0
@@ -508,6 +532,8 @@ def main():
             print(f"RESUME from ep{start_ep}", flush=True)
             if SWIN:
                 swin_ptr = int(st.get("swin_ptr", 0))
+            if TAU_LEARN and "log_invt" in st:
+                TAUP["p"].data = st["log_invt"].to(dev)
             if MQ_LEN and "mqueue" in st:
                 shadow.load_state_dict({k: v.to(dev)
                                         for k, v in st["shadow"].items()})
@@ -577,7 +603,7 @@ def main():
                         fmask[torch.arange(bs, device=dev), slot] = False
                         loss = 0
                         for Z in Zs:
-                            lg = Z.float() @ mqueue.T * inv_t
+                            lg = Z.float() @ mqueue.T * _invt()
                             loss = loss + F.cross_entropy(
                                 lg.masked_fill(fmask, -1e4), slot)
                     elif SWIN:
@@ -589,11 +615,11 @@ def main():
                     elif CE_GATED:
                         hd = torch.tensor(np.array([g in gate_games for g in gids])
                                           ).to(dev).nonzero(as_tuple=True)[0]
-                        loss = (sum(F.cross_entropy(Z.float()[hd] @ Zg.T.float() * inv_t,
+                        loss = (sum(F.cross_entropy(Z.float()[hd] @ Zg.T.float() * _invt(),
                                                     tgt[hd]) for Z in Zs)
                                 if len(hd) else torch.zeros((), device=dev))
                     else:
-                        loss = sum(F.cross_entropy(Z.float() @ Zg.T.float() * inv_t, tgt)
+                        loss = sum(F.cross_entropy(Z.float() @ Zg.T.float() * _invt(), tgt)
                                    for Z in Zs)
                     if IW > 0:
                         if I_GATED:
@@ -625,15 +651,15 @@ def main():
                             lw = 0.0
                             for Z in Zs:
                                 lg = torch.cat(
-                                    [Z.float() @ eNow.T * inv_t,
-                                     (Z.float() @ eWin.T * inv_t
+                                    [Z.float() @ eNow.T * _invt(),
+                                     (Z.float() @ eWin.T * _invt()
                                       ).masked_fill(_dup[None, :], -1e4)], 1)
                                 lw = lw + F.cross_entropy(lg, _arb)
                         amp.scale(lw).backward(retain_graph=True)
                     swin_ptr = int((swin_ptr + SWIN_L * SWIN_S) % _ntr)
                 amp.scale(loss).backward()
                 amp.unscale_(opt)
-                torch.nn.utils.clip_grad_norm_(model.parameters(), 5.0)
+                torch.nn.utils.clip_grad_norm_(params_all, 5.0)
                 amp.step(opt)
                 amp.update()
                 if MQ_LEN:
@@ -665,6 +691,10 @@ def main():
                               np_rng=rng.bit_generator.state, ep=ep + 1)
                 if SWIN:
                     bundle["swin_ptr"] = swin_ptr
+                if TAU_LEARN:
+                    bundle["log_invt"] = TAUP["p"].detach().cpu()
+                    print(f"  tau={1.0 / float(torch.exp(TAUP['p'])):.4f}",
+                          flush=True)
                 if MQ_LEN:
                     bundle["shadow"] = {k: v.detach().cpu().clone()
                                         for k, v in shadow.state_dict().items()}
