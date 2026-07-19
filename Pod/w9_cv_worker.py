@@ -61,8 +61,11 @@ ARMS = {
     "wcle_mq3072i2ce_icetf": ("mq3072i2ce", "ice"),   # MoCo queue + view-I x2
     "wcle_mq3072ce_cetf": ("mq3072ce", "ce"),         # MoCo queue, CE only
     "wcle_epdb_v20i10c20_cetf": ("epdb_v20i10c20", "ce"),   # VICReg epd b=all
+    "wcle_swin168step84loop2i2ce_icetf": ("swin168step84loop2i2ce", "ice"),
+    # sliding fresh-window i2ce (user): CE field = now-batch 192 anchors +
+    # L ring windows of W (fresh, grad, no cache); micro-pass backward.
 }
-_IW = {"ice": 1.0, "i2ce": 2.0, "mq3072i2ce": 2.0, "cegate1": 1.0, "cegate2": 2.0, "cegate3": 3.0,
+_IW = {"ice": 1.0, "i2ce": 2.0, "mq3072i2ce": 2.0, "swin168step84loop2i2ce": 2.0, "cegate1": 1.0, "cegate2": 2.0, "cegate3": 3.0,
        "cegate4": 4.0, "cegate1w": 1.0, "cegate2w": 2.0, "igate1": 1.0,
        "igate1w": 1.0, "rgate2": 2.0, "nodoc": 2.0}
 SPLIT_SEED = 20260711
@@ -181,6 +184,11 @@ def main():
     mq_m = re.match(r"mq(\d+)(i2ce|ce)$", tower_kind)
     MQ_LEN = int(mq_m.group(1)) if mq_m else 0        # MoCo FIFO ring length
     MQ_M = 0.99                                       # shadow weight-EMA momentum
+    swin_m = re.match(r"swin(\d+)step(\d+)loop(\d+)i2ce$", tower_kind)
+    SWIN = bool(swin_m)                # fresh sliding-window CE field
+    SWIN_W = int(swin_m.group(1)) if swin_m else 0
+    SWIN_S = int(swin_m.group(2)) if swin_m else 0
+    SWIN_L = int(swin_m.group(3)) if swin_m else 0
     IW = _IW.get(tower_kind, 0.0)
     HIW = _IW.get(tower_kind, 1.0)
     CE_GATED = tower_kind.startswith("cegate") or tower_kind == "rgate2"
@@ -479,6 +487,7 @@ def main():
         amp = amp_cls()
         ckpts = {}
         shadow, mqueue, mq_gid, mq_ptr = None, None, None, 0
+        swin_ptr = 0
         if MQ_LEN:
             # true MoCo: frozen weight-EMA twin encodes the keys
             import copy
@@ -497,6 +506,8 @@ def main():
             rng.bit_generator.state = st["np_rng"]
             start_ep = int(st["ep"])
             print(f"RESUME from ep{start_ep}", flush=True)
+            if SWIN:
+                swin_ptr = int(st.get("swin_ptr", 0))
             if MQ_LEN and "mqueue" in st:
                 shadow.load_state_dict({k: v.to(dev)
                                         for k, v in st["shadow"].items()})
@@ -543,7 +554,11 @@ def main():
                 gids = rng.choice(train_pool_games, bs, replace=False)
                 tgt = pos_of_g_t[gids].to(dev)
                 with torch.amp.autocast("cuda"):
-                    Zg = None if MQ_LEN else gallery_train(model)
+                    Zg = None if (MQ_LEN or SWIN) else gallery_train(model)
+                    if SWIN:
+                        # NOW anchors: fresh, grad, always in the field.
+                        gids_t = torch.as_tensor(gids, device=dev)
+                        eNow = model(SGal[gids_t], mGal[gids_t]).float()
                     Zs = [model(*sample_views(gids, W, rng)) for _ in range(NV - 1)]
                     Zs.append(assemble_doc_view(model, gids, W, rng, bs))
                     if MQ_LEN:
@@ -565,6 +580,10 @@ def main():
                             lg = Z.float() @ mqueue.T * inv_t
                             loss = loss + F.cross_entropy(
                                 lg.masked_fill(fmask, -1e4), slot)
+                    elif SWIN:
+                        # CE lives in the window micro-passes at the
+                        # backward stage; I chain still runs on the views.
+                        loss = torch.zeros((), device=dev)
                     elif tower_kind == "arc":
                         loss = sum(arcface_ce(Z.float() @ Zg.T.float(), tgt) for Z in Zs)
                     elif CE_GATED:
@@ -588,6 +607,30 @@ def main():
                                 (1 - (Zs[i].float() * Zs[j].float()).sum(-1)).mean()
                                 for i, j in pairs) / len(pairs)
                 opt.zero_grad()
+                if SWIN:
+                    # L window micro-passes: fresh-encode the next W ring
+                    # games (grad), own CE partition [now | window] per
+                    # view, IMMEDIATE backward (window activations freed
+                    # between passes). Ring positions index train_pool_games.
+                    _arb = torch.arange(bs, device=dev)
+                    _ntr = len(train_pool_games)
+                    for _l in range(SWIN_L):
+                        _wpos = (swin_ptr + SWIN_S * _l
+                                 + np.arange(SWIN_W)) % _ntr
+                        _wt = torch.as_tensor(
+                            np.asarray(train_pool_games)[_wpos], device=dev)
+                        _dup = torch.isin(_wt, gids_t)
+                        with torch.amp.autocast("cuda"):
+                            eWin = model(SGal[_wt], mGal[_wt]).float()
+                            lw = 0.0
+                            for Z in Zs:
+                                lg = torch.cat(
+                                    [Z.float() @ eNow.T * inv_t,
+                                     (Z.float() @ eWin.T * inv_t
+                                      ).masked_fill(_dup[None, :], -1e4)], 1)
+                                lw = lw + F.cross_entropy(lg, _arb)
+                        amp.scale(lw).backward(retain_graph=True)
+                    swin_ptr = int((swin_ptr + SWIN_L * SWIN_S) % _ntr)
                 amp.scale(loss).backward()
                 amp.unscale_(opt)
                 torch.nn.utils.clip_grad_norm_(model.parameters(), 5.0)
@@ -620,6 +663,8 @@ def main():
                               cpu_rng=torch.get_rng_state(),
                               cuda_rng=torch.cuda.get_rng_state(),
                               np_rng=rng.bit_generator.state, ep=ep + 1)
+                if SWIN:
+                    bundle["swin_ptr"] = swin_ptr
                 if MQ_LEN:
                     bundle["shadow"] = {k: v.detach().cpu().clone()
                                         for k, v in shadow.state_dict().items()}

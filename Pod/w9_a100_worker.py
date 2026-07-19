@@ -287,6 +287,10 @@ ARMS = {
     # (S = games slid per micro-pass; W-S overlap between passes). NO cache
     # anywhere -- bkq/bkb proved cached fast-student rows = incoherent field.
     "wcle_swin168step84loop2i2ce_icetf": ("swin168step84loop2i2ce", "ice"),
+    "wcle_swin84step42loop2i2ce_icetf": ("swin84step42loop2i2ce", "ice"),
+    # coverage-scan low point: (192+126)/1613 ~ 19.7%/step
+    "wcle_swin336step168loop2i2ce_icetf": ("swin336step168loop2i2ce", "ice"),
+    # coverage-scan high point: (192+504)/1613 ~ 43.2%/step
     "wcle_pk4i2cevi2ce_icetf": ("pk4i2cevi2ce", "ice"),   # QUAD pack (user):
     # 4 packs of cap/4 (@2048 -> 4x512), full i2ce at pack AND view level.
     # Capacity ladder vs pk2@1024 (2x512) / pk2@2048 (2x1024) / pk2@4096.
@@ -336,7 +340,7 @@ _IW = {"ice": 1.0, "i2ce": 2.0, "cegate1": 1.0, "cegate2": 2.0, "cegate3": 3.0,
        "bkq192i2cce": 2.0, "bkq48i2cce": 2.0, "bkq12i2cce": 2.0,
        "bkbi2cce": 2.0, "mq3072i2cce": 2.0, "mq3072i2ce": 2.0,
        "i2q2ce": 2.0, "i2sgce": 2.0, "i2esce": 2.0,
-       "pk2i2cevi2ce": 2.0, "pk4i2cevi2ce": 2.0, "swin168step84loop2i2ce": 2.0,   # vce variant has NO view-I (pack-I is hardcoded 2)
+       "pk2i2cevi2ce": 2.0, "pk4i2cevi2ce": 2.0, "swin168step84loop2i2ce": 2.0, "swin84step42loop2i2ce": 2.0, "swin336step168loop2i2ce": 2.0,   # vce variant has NO view-I (pack-I is hardcoded 2)
        "slot4i2celine": 2.0, "slot8i2cemean": 2.0, "slot8i2celine": 2.0, "slot16i2cemean": 2.0, "slot16i2celine": 2.0,
        "d1r4_i2ce": 2.0, "d1r5_i2ce": 2.0, "d1r6_i2ce": 2.0,
        "w1sp1r3_i2ce": 2.0}
