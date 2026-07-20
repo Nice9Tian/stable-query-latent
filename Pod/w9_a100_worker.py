@@ -390,6 +390,13 @@ def parse_args():
                     help="claim file on the shared volume; when set, a 30s "
                          "heartbeat thread keeps it fresh (silent >2 min = "
                          "host presumed dead, job claimable by other hosts)")
+    ap.add_argument("--init-ckpt", default="",
+                    help="warm-start tower weights from this ckpt (state dict "
+                         "or dict with a model key); name suffix _bw")
+    ap.add_argument("--nemesis", type=int, default=0,
+                    help="static hard-negative list size K: top-K confusable "
+                         "train games per game, computed ONCE from the (warm) "
+                         "gallery; resident negatives in swin micro-passes")
     ap.add_argument("--measure-vram", default="",
                     help="VRAM calibration: run 3 real training steps at this "
                          "cap (incl. the 4x-view backward loss matrices), write "
@@ -614,6 +621,8 @@ def main():
             + ("_nsp" if args.no_sp_view else "")
             + (f"_ld{args.doc_lead}" if args.doc_lead else "")
             + ("_wllm" if args.wiki_src == "llm" else "")
+            + ("_bw" if args.init_ckpt else "")
+            + (f"_nm{args.nemesis}" if args.nemesis else "")
             + (f"_w{args.view_w}" if args.view_w != 16 else "")
             + ("_fp" if args.full_pool else ""))
     dev = torch.device("cuda")
@@ -1125,6 +1134,26 @@ def main():
         if BANK_POLICY and bank is None:
             with torch.no_grad():                       # fresh full init (age 0)
                 bank = gallery_train(model).float().clone()
+        if start_ep == 0 and args.init_ckpt:
+            # STAGE-1 handover: warm-start the tower (e.g. from the BYOL
+            # tower). Only the tower weights; opt/amp start fresh.
+            st0 = torch.load(args.init_ckpt, map_location="cpu")
+            sd0 = st0["model"] if isinstance(st0, dict) and "model" in st0 else st0
+            model.load_state_dict({k: v.to(dev) for k, v in sd0.items()})
+            print(f"WARM INIT from {args.init_ckpt}", flush=True)
+        NM_LIST = None
+        if args.nemesis and SWIN:
+            # static nemesis list: ONE offline neighbour search over the
+            # (warm) gallery -- each train game's top-K most confusable
+            # train games, frozen for the whole run.
+            with torch.no_grad():
+                _z0 = gallery_train(model).float()
+                _sim = _z0 @ _z0.T
+                _sim.fill_diagonal_(-2)
+                NM_LIST = torch.topk(_sim, args.nemesis, dim=1).indices.cpu().numpy()
+                del _z0, _sim
+            print(f"nemesis list: static top-{args.nemesis} per train game",
+                  flush=True)
         if MQ_LEN and mqueue is None:
             # prefill the FIFO ring with shadow(=main at t0) keys of random
             # entities so the first steps see a full negative set.
@@ -1422,6 +1451,17 @@ def main():
                     # step p += L*S. S=W/2, L=2 => half-overlap chain, every
                     # ring position covered by exactly W/S=2 passes/sweep.
                     _arb = torch.arange(bs, device=dev)
+                    eNem = None
+                    if NM_LIST is not None:
+                        # resident nemesis window: the batch games' static
+                        # top-K rivals (dedup, batch rows excluded, capped),
+                        # fresh-encoded WITH grad; columns join every
+                        # micro-pass partition as extra negatives.
+                        _cand = np.unique(NM_LIST[rows_now].ravel())
+                        _cand = _cand[~np.isin(_cand, rows_now)][:384]
+                        if len(_cand):
+                            with torch.amp.autocast("cuda"):
+                                eNem = gallery_rows(model, _cand).float()
                     for _l in range(SWIN_L):
                         _w = (swin_ptr + SWIN_S * _l
                               + np.arange(SWIN_W)) % n_train
@@ -1431,10 +1471,12 @@ def main():
                             eWin = gallery_rows(model, _w).float()
                             lw = 0.0
                             for Z in Zs:
-                                lg = torch.cat(
-                                    [Z.float() @ eNow.T * inv_t,
-                                     (Z.float() @ eWin.T * inv_t
-                                      ).masked_fill(_dup[None, :], -1e4)], 1)
+                                _cols = [Z.float() @ eNow.T * inv_t,
+                                         (Z.float() @ eWin.T * inv_t
+                                          ).masked_fill(_dup[None, :], -1e4)]
+                                if eNem is not None:
+                                    _cols.append(Z.float() @ eNem.T * inv_t)
+                                lg = torch.cat(_cols, 1)
                                 lw = lw + F.cross_entropy(lg, _arb)
                         amp.scale(lw).backward(retain_graph=True)
                     swin_ptr = int((swin_ptr + SWIN_L * SWIN_S) % n_train)
