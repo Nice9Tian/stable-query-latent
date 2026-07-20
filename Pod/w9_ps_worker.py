@@ -2174,7 +2174,7 @@ def main():
                 (q.grad if q.grad is not None else
                  torch.zeros_like(q)).reshape(-1)
                 for q in model.parameters()]).float().cpu()
-            tmp = inbox / f".tmp_{args.ps_id}_{n_push}"
+            tmp = inbox / f"tmp_{args.ps_id}_{n_push}"  # no dot (torch.save quirk)
             torch.save(dict(g=g, v=last_v), tmp)
             tmp.replace(inbox / f"g_{args.ps_id}_{n_push:07d}.pt")
             n_push += 1
@@ -2197,7 +2197,7 @@ def main():
         RING = {0: flat()}
 
         def publish():
-            tmp = pdir / ".wtmp"
+            tmp = pdir / "wtmp.pt"   # NO leading dot: PyTorchFileWriter rejects dot-names
             torch.save(dict(v=v, vec=RING[v]), tmp)
             tmp.replace(pdir / "weights.pt")
 
