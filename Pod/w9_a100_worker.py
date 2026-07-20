@@ -207,6 +207,9 @@ ARMS = {
     # t=25 -> tau .02 == tower tau (the cell formerly named ai2lse); t=2 =
     # W&I repo default. ce keeps its own token: the only push that is FUSED
     # with an adaptive pull inside one softmax.
+    "wcle_spb64i2ce_icetf": ("spb64i2ce", "ice"), # sparse-backward full field:
+    # no-grad FULL fresh gallery as the CE partition (query grad == full
+    # coupling); positives + top-64 loss-mass anchors re-encoded WITH grad.
     "wcle_i2cce_icetf": ("i2cce", "ice"),          # I2CCE: CE all + I x2 + C x1
     # (VICReg-style off-diag covariance penalty ON the 128-d outputs --
     # decorrelated dims = feature-richness constraint, no expander needed)
@@ -520,6 +523,9 @@ def main():
 
     tower_kind, FT = ARMS[args.arm]
     IW = _IW.get(tower_kind, 0.0)
+    if re.match(r"spb\d+i2ce$", tower_kind):
+        IW = 2.0                                  # spb = i2ce family: I x2
+
     HIW = _IW.get(tower_kind, 1.0)
     CE_GATED = tower_kind.startswith("cegate") or tower_kind == "rgate2"
     I_GATED = tower_kind.startswith("igate")
@@ -574,6 +580,9 @@ def main():
                         "pk2i2vce", "pk4i2cevi2ce")   # N-pack fractal
     PKN = int(re.match(r"pk(\d+)", tower_kind).group(1)) if PK else 0
     swin_m = re.match(r"swin(\d+)step(\d+)loop(\d+)i2ce$", tower_kind)
+    spb_m = re.match(r"spb(\d+)i2ce$", tower_kind)
+    SPB_K = int(spb_m.group(1)) if spb_m else 0   # top-K grad anchors per view
+    SPB_CAP = 512                                 # grad-pack union ceiling
     SWIN = bool(swin_m)                # fresh-only sliding-window CE field
     SWIN_W = int(swin_m.group(1)) if swin_m else 0
     SWIN_S = int(swin_m.group(2)) if swin_m else 0
@@ -1253,6 +1262,11 @@ def main():
                         # (lag 1/(1-MQ_M) = 100 steps ~ 6 ep).
                         with torch.no_grad():
                             Zg = gallery_train(shadow)
+                    elif SPB_K:
+                        # spb: full fresh field WITHOUT activations; gradient
+                        # returns via the sparse column overwrite in the loss.
+                        with torch.no_grad():
+                            Zg = gallery_train(model)
                     elif tower_kind in ("bce", "i2bce"):
                         Zg = None       # anchor-free: no gallery re-encode
                     else:
@@ -1379,6 +1393,38 @@ def main():
                         loss = (sum(F.cross_entropy(Z.float()[hd] @ Zg.T.float() * inv_t,
                                                     tgt[hd]) for Z in Zs)
                                 if len(hd) else torch.zeros((), device=dev))
+                    elif SPB_K:
+                        # sparse-backward full-field CE (user): partition =
+                        # ALL n_train fresh anchors (negatives never
+                        # subsampled, no window bias); grad reaches the
+                        # teacher only through the batch positives + the
+                        # union of each view's top-K softmax-mass columns
+                        # (InfoNCE's anchor-side gradient weight IS p_h, so
+                        # top-K by p captures ~97% of it at K=64). Union
+                        # over SPB_CAP is trimmed by peak mass, positives
+                        # immune.
+                        with torch.no_grad():
+                            selm = torch.zeros(n_train, dtype=torch.bool,
+                                               device=dev)
+                            selm[tgt] = True
+                            pmax = torch.zeros(n_train, device=dev)
+                            for Z in Zs:
+                                pv = F.softmax(
+                                    Z.float() @ Zg.T.float() * inv_t, -1)
+                                selm[pv.topk(SPB_K, 1).indices.flatten()] = True
+                                pmax = torch.maximum(pmax, pv.max(0).values)
+                            if int(selm.sum()) > SPB_CAP:
+                                pmax[tgt] = 2.0        # positives immune
+                                selm.zero_()
+                                selm[pmax.topk(SPB_CAP).indices] = True
+                            sel = selm.nonzero(as_tuple=True)[0]
+                        Zsel = gallery_rows(model, sel.cpu().numpy())
+                        loss = 0.0
+                        for Z in Zs:
+                            lg = Z.float() @ Zg.T.float() * inv_t
+                            lg = lg.index_copy(
+                                1, sel, Z.float() @ Zsel.T.float() * inv_t)
+                            loss = loss + F.cross_entropy(lg, tgt)
                     else:
                         loss = sum(F.cross_entropy(Z.float() @ Zg.T.float() * inv_t, tgt)
                                    for Z in Zs)
