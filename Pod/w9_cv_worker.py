@@ -46,6 +46,9 @@ ARMS = {
     "wcle_as8dc5i2ce_icetf": ("as8dc5i2ce", "ice"),    # DC-ASGD sim: 8 workers, lambda 0.5
     "wcle_ce_cetf": ("ce", "ce"),
     "wcle_byol_bytf": ("byol", "by"),
+    "wcle_mv3_bytf": ("mv3", "by"),   # MoCo v3 analog: in-batch InfoNCE
+    # (no queue, per v3), EMA target (m=0.99) + prediction head; the
+    # symmetrized q/k pairing runs over all ordered view pairs.
     "wcle_arc_arctf": ("arc", "arc"),
     "wcle_cegate1_icetf": ("cegate1", "ice"),
     "wcle_cegate2_icetf": ("cegate2", "ice"),
@@ -904,6 +907,9 @@ def main():
         import copy
         torch.manual_seed(seed)
         rng = np.random.default_rng(seed)
+        MV3 = tower_kind == "mv3"       # v3: in-batch CE keys, m=0.99
+        mom = 0.99 if MV3 else 0.996
+        _ar = torch.arange(bs, device=dev)
         model = SetPoolN(NSLOT).to(dev)
         pred = nn.Sequential(nn.Linear(DM, 256), nn.GELU(), nn.Linear(256, DM)).to(dev)
         target = copy.deepcopy(model).to(dev)
@@ -963,7 +969,15 @@ def main():
                         for j in range(NV):
                             if i == j:
                                 continue
-                            loss = loss + (1 - (P(Zo[i]) * Zt[j].float().detach()).sum(-1)).mean()
+                            if MV3:
+                                # v3: symmetrized in-batch InfoNCE -- query
+                                # pred(online view i) vs EMA keys of view j
+                                # for the whole batch; positive = own column.
+                                lg = P(Zo[i]) @ Zt[j].float().detach().T \
+                                    * _invt()
+                                loss = loss + F.cross_entropy(lg, _ar)
+                            else:
+                                loss = loss + (1 - (P(Zo[i]) * Zt[j].float().detach()).sum(-1)).mean()
                             npairs += 1
                     loss = loss / npairs
                 opt.zero_grad()
@@ -975,7 +989,7 @@ def main():
                 amp.update()
                 with torch.no_grad():
                     for pt, po in zip(target.parameters(), model.parameters()):
-                        pt.data.mul_(0.996).add_(po.data, alpha=0.004)
+                        pt.data.mul_(mom).add_(po.data, alpha=1 - mom)
                 if args.measure_vram:
                     mv_steps += 1
                     if mv_steps >= 3:
@@ -1253,7 +1267,7 @@ def main():
         # so the across-fold std is the TOTAL error bar; within a fold both
         # recipes share the seed (and the split), keeping ce-vs-i2ce PAIRED.
         # Fold identity is untouched (--cv-seed drives the permutation).
-        if tower_kind == "byol":
+        if tower_kind in ("byol", "mv3"):
             train_byol(seed=args.fold)
         elif tower_kind.startswith("epd"):
             train_vicreg(seed=args.fold)
