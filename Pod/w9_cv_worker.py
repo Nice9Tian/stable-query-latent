@@ -372,6 +372,16 @@ def main():
     mGal = torch.arange(SGal.shape[1], device=dev)[None, :] >= gal_len[:, None]
     mGal_nd = mGal | (torch.arange(SGal.shape[1], device=dev)[None, :] <
                       gal_doc[:, None])
+    if tower_kind.startswith(("epd", "vic")):
+        # VICReg family: training never reads the anchors (they are eval-
+        # only), and batch=all view activations need the room -- park the
+        # anchor tensors on pinned host RAM; the gallery encoders move
+        # chunk slices back on the fly.
+        SGal = SGal.cpu().pin_memory()
+        mGal = mGal.cpu()
+        mGal_nd = mGal_nd.cpu()
+        torch.cuda.empty_cache()
+        print("anchors parked on host RAM (VICReg family)", flush=True)
     print(f"VRAM after load: {torch.cuda.memory_allocated()/1e9:.1f} GB", flush=True)
 
     # ---------------- review table + GPU view sampler ----------------
@@ -454,22 +464,27 @@ def main():
         ctx = torch.enable_grad() if grad else torch.no_grad()
         with ctx:
             for i in range(0, NG, chunk):
-                outs.append(model(SGal[i:i + chunk], mGal[i:i + chunk]))
+                outs.append(model(
+                    SGal[i:i + chunk].to(dev, non_blocking=True),
+                    mGal[i:i + chunk].to(dev, non_blocking=True)))
         return torch.cat(outs)
 
     def gallery_nodoc(model, chunk=128):
         outs = []
         with torch.no_grad():
             for i in range(0, NG, chunk):
-                outs.append(model(SGal[i:i + chunk], mGal_nd[i:i + chunk]))
+                outs.append(model(
+                    SGal[i:i + chunk].to(dev, non_blocking=True),
+                    mGal_nd[i:i + chunk].to(dev, non_blocking=True)))
         return torch.cat(outs)
 
     def gallery_train(model, chunk=128):
         rows = train_pool_games
         outs = []
         for i in range(0, len(rows), chunk):
-            r = torch.as_tensor(rows[i:i + chunk], device=dev)
-            outs.append(model(SGal[r], mGal[r]))
+            r = torch.as_tensor(rows[i:i + chunk], device=SGal.device)
+            outs.append(model(SGal[r].to(dev, non_blocking=True),
+                              mGal[r].to(dev, non_blocking=True)))
         return torch.cat(outs)
 
     try:
