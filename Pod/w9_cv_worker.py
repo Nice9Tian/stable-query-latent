@@ -42,6 +42,7 @@ import torch.nn.functional as F
 ARMS = {
     "wcle_ice_icetf": ("ice", "ice"),
     "wcle_i2ce_icetf": ("i2ce", "ice"),
+    "wcle_slotc10i2ce_icetf": ("slotc10i2ce", "ice"),  # i2ce + slot-C x1.0
     "wcle_ce_cetf": ("ce", "ce"),
     "wcle_byol_bytf": ("byol", "by"),
     "wcle_arc_arctf": ("arc", "arc"),
@@ -128,6 +129,8 @@ class SetPoolN(nn.Module):
     def forward(s, S, m=None):
         a, _ = s.attn(s.q0.expand(S.shape[0], -1, -1), S.float(), S.float(),
                       key_padding_mask=m, need_weights=False)
+        if getattr(s, "slot_buf", None) is not None:
+            s.slot_buf.append(a)      # pre-pool slots, graph kept (slot-C)
         return F.normalize(s.head(a.mean(1)), dim=-1)
 
 
@@ -191,12 +194,16 @@ def main():
     MQ_LEN = int(mq_m.group(1)) if mq_m else 0        # MoCo FIFO ring length
     MQ_M = 0.99                                       # shadow weight-EMA momentum
     BCE = tower_kind == "bce"          # in-batch views, no gallery
+    sc_m = re.match(r"slotc(\d+)i2ce$", tower_kind)
+    SC_W = (int(sc_m.group(1)) / 10.0) if sc_m else 0.0   # slot-C weight
     swin_m = re.match(r"swin(\d+)step(\d+)loop(\d+)i2ce$", tower_kind)
     SWIN = bool(swin_m)                # fresh sliding-window CE field
     SWIN_W = int(swin_m.group(1)) if swin_m else 0
     SWIN_S = int(swin_m.group(2)) if swin_m else 0
     SWIN_L = int(swin_m.group(3)) if swin_m else 0
     IW = _IW.get(tower_kind, 0.0)
+    if re.match(r"slotc\d+i2ce$", tower_kind):
+        IW = 2.0                       # slotc = i2ce family: I x2
     HIW = _IW.get(tower_kind, 1.0)
     CE_GATED = tower_kind.startswith("cegate") or tower_kind == "rgate2"
     I_GATED = tower_kind.startswith("igate")
@@ -588,6 +595,7 @@ def main():
                         # NOW anchors: fresh, grad, always in the field.
                         gids_t = torch.as_tensor(gids, device=dev)
                         eNow = model(SGal[gids_t], mGal[gids_t]).float()
+                    model.slot_buf = [] if SC_W else None
                     Zs = [model(*sample_views(gids, W, rng)) for _ in range(NV - 1)]
                     Zs.append(assemble_doc_view(model, gids, W, rng, bs))
                     if MQ_LEN:
@@ -650,6 +658,20 @@ def main():
                             loss = loss + IW * sum(
                                 (1 - (Zs[i].float() * Zs[j].float()).sum(-1)).mean()
                                 for i, j in pairs) / len(pairs)
+                    if SC_W and model.slot_buf:
+                        # slot-C (user): orthogonality pressure on the 4
+                        # slot vectors of every view forward -- mean squared
+                        # off-diagonal of the unit-slot Gram matrix.
+                        _sp = 0.0
+                        for _sl in model.slot_buf:
+                            _u = F.normalize(_sl.float(), dim=-1)
+                            _g = _u @ _u.transpose(1, 2)
+                            _n = _g.shape[1]
+                            _off = _g - torch.eye(_n, device=_g.device)
+                            _sp = _sp + (_off ** 2).sum((1, 2)).mean() \
+                                / (_n * (_n - 1))
+                        loss = loss + SC_W * _sp / len(model.slot_buf)
+                        model.slot_buf = None   # NOT []: eval must not append
                 opt.zero_grad()
                 if SWIN:
                     # L window micro-passes: fresh-encode the next W ring
