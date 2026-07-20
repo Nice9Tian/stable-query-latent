@@ -410,6 +410,13 @@ def parse_args():
                          "the measured mean query swing)")
     ap.add_argument("--nemesis-refresh", type=int, default=50,
                     help="rebuild the neighbour index every N epochs")
+    ap.add_argument("--async-workers", type=int, default=0,
+                    help="DC-ASGD sim: M round-robin workers, each computing "
+                         "its step gradient at the weights it last pulled "
+                         "(constant staleness M-1). 0 = off, 1 = sync control")
+    ap.add_argument("--dc-lambda", type=float, default=0.0,
+                    help="delay-compensation strength: g + l*g*g*(W_t-W_pull) "
+                         "(DC-ASGD diagonal-Hessian Taylor term)")
     ap.add_argument("--measure-vram", default="",
                     help="VRAM calibration: run 3 real training steps at this "
                          "cap (incl. the 4x-view backward loss matrices), write "
@@ -648,6 +655,10 @@ def main():
             + ("_wllm" if args.wiki_src == "llm" else "")
             + ("_bw" if args.init_ckpt else "")
             + (f"_nm{args.nemesis}" if args.nemesis else "")
+            + ((f"_as{args.async_workers}"
+                + (f"dc{int(round(args.dc_lambda * 10))}"
+                   if args.dc_lambda else ""))
+               if args.async_workers else "")
             + (f"_w{args.view_w}" if args.view_w != 16 else "")
             + ("_fp" if args.full_pool else ""))
     dev = torch.device("cuda")
@@ -1166,6 +1177,17 @@ def main():
             sd0 = st0["model"] if isinstance(st0, dict) and "model" in st0 else st0
             model.load_state_dict({k: v.to(dev) for k, v in sd0.items()})
             print(f"WARM INIT from {args.init_ckpt}", flush=True)
+        AS_M, as_step, as_pulls = args.async_workers, 0, None
+        if AS_M:
+            assert not (SWIN or MQ_LEN or PK or BCE or SPB_K), \
+                "async sim: plain-gallery arms only"
+            _v0 = torch.nn.utils.parameters_to_vector(
+                model.parameters()).detach().clone()
+            as_pulls = [_v0.clone() for _ in range(AS_M)]
+            # NOTE on resume: pulls re-init at the CURRENT weights, so the
+            # first M steps after a restart are transiently synchronous.
+            print(f"DC-ASGD sim: {AS_M} workers, staleness {AS_M - 1}, "
+                  f"lambda {args.dc_lambda}", flush=True)
         NM_LIST, NM_DIST = None, None
 
         def build_nemesis(tag):
@@ -1206,6 +1228,16 @@ def main():
             model.train()
             for _ in range(per_epoch // bs):
                 gids = rng.choice(train_pool_games, bs, replace=False)
+                if AS_M:
+                    # the scheduled worker computes THIS step at the weights
+                    # it pulled as_step-M+1 PS-steps ago (swap-in; every
+                    # forward below -- gallery, views, doc tiers -- sees the
+                    # stale weights, exactly like a real PS worker).
+                    _ps_vec = torch.nn.utils.parameters_to_vector(
+                        model.parameters()).detach().clone()
+                    _wk = as_step % AS_M
+                    torch.nn.utils.vector_to_parameters(
+                        as_pulls[_wk], model.parameters())
                 tgt = pos_of_g_t[gids].to(dev)
                 with torch.amp.autocast("cuda"):
                     if MQ_LEN:
@@ -1578,9 +1610,33 @@ def main():
                     swin_ptr = int((swin_ptr + SWIN_L * SWIN_S) % n_train)
                 amp.scale(loss).backward()
                 amp.unscale_(opt)
+                if AS_M:
+                    # DC-ASGD (user): stale gradient g(W_pull) is compensated
+                    # toward g(W_t) with the diagonal-Hessian Taylor term
+                    # lambda * g*g * (W_t - W_pull), then applied at the
+                    # CURRENT weights through the shared AdamW.
+                    _g = torch.cat([
+                        (q.grad if q.grad is not None else
+                         torch.zeros_like(q)).reshape(-1)
+                        for q in model.parameters()])
+                    if args.dc_lambda:
+                        _g = _g + args.dc_lambda * _g * _g * \
+                            (_ps_vec - as_pulls[_wk])
+                    torch.nn.utils.vector_to_parameters(
+                        _ps_vec, model.parameters())
+                    _o = 0
+                    for q in model.parameters():
+                        _n = q.numel()
+                        if q.grad is not None:
+                            q.grad.copy_(_g[_o:_o + _n].view_as(q))
+                        _o += _n
                 torch.nn.utils.clip_grad_norm_(params, 5.0)
                 amp.step(opt)
                 amp.update()
+                if AS_M:
+                    as_pulls[_wk] = torch.nn.utils.parameters_to_vector(
+                        model.parameters()).detach().clone()
+                    as_step += 1
                 if args.measure_vram:
                     mv_steps += 1
                     if mv_steps >= 3:
