@@ -43,6 +43,7 @@ ARMS = {
     "wcle_ice_icetf": ("ice", "ice"),
     "wcle_i2ce_icetf": ("i2ce", "ice"),
     "wcle_slotc10i2ce_icetf": ("slotc10i2ce", "ice"),  # i2ce + slot-C x1.0
+    "wcle_as8dc5i2ce_icetf": ("as8dc5i2ce", "ice"),    # DC-ASGD sim: 8 workers, lambda 0.5
     "wcle_ce_cetf": ("ce", "ce"),
     "wcle_byol_bytf": ("byol", "by"),
     "wcle_arc_arctf": ("arc", "arc"),
@@ -194,6 +195,9 @@ def main():
     MQ_LEN = int(mq_m.group(1)) if mq_m else 0        # MoCo FIFO ring length
     MQ_M = 0.99                                       # shadow weight-EMA momentum
     BCE = tower_kind == "bce"          # in-batch views, no gallery
+    as_m = re.match(r"as(\d+)(?:dc(\d+))?i2ce$", tower_kind)
+    AS_M = int(as_m.group(1)) if as_m else 0          # async workers (sim)
+    DC_L = (int(as_m.group(2)) / 10.0) if (as_m and as_m.group(2)) else 0.0
     sc_m = re.match(r"slotc(\d+)i2ce$", tower_kind)
     SC_W = (int(sc_m.group(1)) / 10.0) if sc_m else 0.0   # slot-C weight
     swin_m = re.match(r"swin(\d+)step(\d+)loop(\d+)i2ce$", tower_kind)
@@ -204,6 +208,8 @@ def main():
     IW = _IW.get(tower_kind, 0.0)
     if re.match(r"slotc\d+i2ce$", tower_kind):
         IW = 2.0                       # slotc = i2ce family: I x2
+    if AS_M:
+        IW = 2.0                       # as*dc* = i2ce family: I x2
     HIW = _IW.get(tower_kind, 1.0)
     CE_GATED = tower_kind.startswith("cegate") or tower_kind == "rgate2"
     I_GATED = tower_kind.startswith("igate")
@@ -580,6 +586,16 @@ def main():
                     sub = torch.as_tensor(fill[_i:_i + 256], device=dev)
                     mqueue[_i:_i + len(sub)] = shadow(SGal[sub], mGal[sub]).float()
             mq_gid[:] = torch.as_tensor(fill, device=dev)
+        as_step, as_pulls = 0, None
+        if AS_M:
+            assert not (SWIN or MQ_LEN or BCE), "async sim: plain gallery only"
+            _v0 = torch.nn.utils.parameters_to_vector(
+                model.parameters()).detach().clone()
+            as_pulls = [_v0.clone() for _ in range(AS_M)]
+            # resume: pulls re-init at current weights -> first M steps
+            # transiently synchronous.
+            print(f"DC-ASGD sim: {AS_M} workers, staleness {AS_M - 1}, "
+                  f"lambda {DC_L}", flush=True)
         t0 = time.time()
         mv_steps = 0
         if args.measure_vram and dev.type == "cuda":
@@ -589,6 +605,15 @@ def main():
             for _ in range(per_epoch // bs):
                 gids = rng.choice(train_pool_games, bs, replace=False)
                 tgt = pos_of_g_t[gids].to(dev)
+                if AS_M:
+                    # scheduled worker computes THIS step at the weights it
+                    # pulled M-1 PS-steps ago (swap-in: gallery, views, doc
+                    # tiers below all see the stale pull).
+                    _ps_vec = torch.nn.utils.parameters_to_vector(
+                        model.parameters()).detach().clone()
+                    _wk = as_step % AS_M
+                    torch.nn.utils.vector_to_parameters(
+                        as_pulls[_wk], model.parameters())
                 with torch.amp.autocast("cuda"):
                     Zg = None if (MQ_LEN or SWIN or BCE) else gallery_train(model)
                     if SWIN:
@@ -699,9 +724,31 @@ def main():
                     swin_ptr = int((swin_ptr + SWIN_L * SWIN_S) % _ntr)
                 amp.scale(loss).backward()
                 amp.unscale_(opt)
+                if AS_M:
+                    # DC-ASGD (user): compensate the stale gradient with the
+                    # diagonal-Hessian Taylor term lambda*g*g*(W_t - W_pull),
+                    # then apply at the CURRENT weights via the shared AdamW.
+                    _g = torch.cat([
+                        (q.grad if q.grad is not None else
+                         torch.zeros_like(q)).reshape(-1)
+                        for q in model.parameters()])
+                    if DC_L:
+                        _g = _g + DC_L * _g * _g * (_ps_vec - as_pulls[_wk])
+                    torch.nn.utils.vector_to_parameters(
+                        _ps_vec, model.parameters())
+                    _o = 0
+                    for q in model.parameters():
+                        _n = q.numel()
+                        if q.grad is not None:
+                            q.grad.copy_(_g[_o:_o + _n].view_as(q))
+                        _o += _n
                 torch.nn.utils.clip_grad_norm_(params_all, 5.0)
                 amp.step(opt)
                 amp.update()
+                if AS_M:
+                    as_pulls[_wk] = torch.nn.utils.parameters_to_vector(
+                        model.parameters()).detach().clone()
+                    as_step += 1
                 if MQ_LEN:
                     with torch.no_grad():
                         for _pk, _pq in zip(shadow.parameters(),
