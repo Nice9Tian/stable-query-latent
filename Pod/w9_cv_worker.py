@@ -61,6 +61,8 @@ ARMS = {
     "wcle_mq3072i2ce_icetf": ("mq3072i2ce", "ice"),   # MoCo queue + view-I x2
     "wcle_mq3072ce_cetf": ("mq3072ce", "ce"),         # MoCo queue, CE only
     "wcle_epdb_v20i10c20_cetf": ("epdb_v20i10c20", "ce"),   # VICReg epd b=all
+    "wcle_bce_cetf": ("bce", "ce"),   # SimCLR-style in-batch NT-Xent over
+    # the step's 4*bs view encodings (ring-sibling positives, no anchors)
     "wcle_swin168step84loop2i2ce_icetf": ("swin168step84loop2i2ce", "ice"),
     # ---- tau sweep (user 2026-07-19, w9_i2ce_t.ipynb) ----
     "wcle_i2cet05_icetf": ("i2ce", "ice"),   # tau = 0.05 (from ARM name)
@@ -188,6 +190,7 @@ def main():
     mq_m = re.match(r"mq(\d+)(i2ce|ce)$", tower_kind)
     MQ_LEN = int(mq_m.group(1)) if mq_m else 0        # MoCo FIFO ring length
     MQ_M = 0.99                                       # shadow weight-EMA momentum
+    BCE = tower_kind == "bce"          # in-batch views, no gallery
     swin_m = re.match(r"swin(\d+)step(\d+)loop(\d+)i2ce$", tower_kind)
     SWIN = bool(swin_m)                # fresh sliding-window CE field
     SWIN_W = int(swin_m.group(1)) if swin_m else 0
@@ -580,7 +583,7 @@ def main():
                 gids = rng.choice(train_pool_games, bs, replace=False)
                 tgt = pos_of_g_t[gids].to(dev)
                 with torch.amp.autocast("cuda"):
-                    Zg = None if (MQ_LEN or SWIN) else gallery_train(model)
+                    Zg = None if (MQ_LEN or SWIN or BCE) else gallery_train(model)
                     if SWIN:
                         # NOW anchors: fresh, grad, always in the field.
                         gids_t = torch.as_tensor(gids, device=dev)
@@ -610,6 +613,21 @@ def main():
                         # CE lives in the window micro-passes at the
                         # backward stage; I chain still runs on the views.
                         loss = torch.zeros((), device=dev)
+                    elif BCE:
+                        # in-batch NT-Xent: logits vs ALL 4*bs views of this
+                        # step; target = ring sibling; self + other siblings
+                        # masked (false negatives). Ported verbatim from the
+                        # fs worker.
+                        keys = torch.cat([Z.float() for Z in Zs])
+                        _ar = torch.arange(bs, device=dev)
+                        loss = 0.0
+                        for v in range(NV):
+                            lg = Zs[v].float() @ keys.T * _invt()
+                            for u in range(NV):
+                                if u != (v + 1) % NV:
+                                    lg[_ar, u * bs + _ar] = -1e4
+                            loss = loss + F.cross_entropy(
+                                lg, ((v + 1) % NV) * bs + _ar)
                     elif tower_kind == "arc":
                         loss = sum(arcface_ce(Z.float() @ Zg.T.float(), tgt) for Z in Zs)
                     elif CE_GATED:
