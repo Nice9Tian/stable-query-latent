@@ -207,6 +207,10 @@ ARMS = {
     # t=25 -> tau .02 == tower tau (the cell formerly named ai2lse); t=2 =
     # W&I repo default. ce keeps its own token: the only push that is FUSED
     # with an adaptive pull inside one softmax.
+    "wcle_slotc10i2ce_icetf": ("slotc10i2ce", "ice"), # full i2ce + slot-C:
+    # mean squared off-diagonal of the per-input slot Gram (cos^2 between
+    # slots -> orthogonality pressure), weight = digits/10. Slot audit: the
+    # champion's 4 slots are 93-95%% redundant at the readout.
     "wcle_spb64i2ce_icetf": ("spb64i2ce", "ice"), # sparse-backward full field:
     # no-grad FULL fresh gallery as the CE partition (query grad == full
     # coupling); positives + top-64 loss-mass anchors re-encoded WITH grad.
@@ -447,6 +451,8 @@ class SetPoolN(nn.Module):
     def forward(s, S, m=None):
         a, _ = s.attn(s.q0.expand(S.shape[0], -1, -1), S.float(), S.float(),
                       key_padding_mask=m, need_weights=False)
+        if getattr(s, "slot_buf", None) is not None:
+            s.slot_buf.append(a)      # pre-pool slots, graph kept (slot-C)
         pooled = (s.lp(a.reshape(a.shape[0], -1)) if s.pool == "line"
                   else a.mean(1))
         h = s.head(pooled)
@@ -525,6 +531,8 @@ def main():
     IW = _IW.get(tower_kind, 0.0)
     if re.match(r"spb\d+i2ce$", tower_kind):
         IW = 2.0                                  # spb = i2ce family: I x2
+    if re.match(r"slotc\d+i2ce$", tower_kind):
+        IW = 2.0                                  # slotc = i2ce family: I x2
 
     HIW = _IW.get(tower_kind, 1.0)
     CE_GATED = tower_kind.startswith("cegate") or tower_kind == "rgate2"
@@ -580,6 +588,8 @@ def main():
                         "pk2i2vce", "pk4i2cevi2ce")   # N-pack fractal
     PKN = int(re.match(r"pk(\d+)", tower_kind).group(1)) if PK else 0
     swin_m = re.match(r"swin(\d+)step(\d+)loop(\d+)i2ce$", tower_kind)
+    sc_m = re.match(r"slotc(\d+)i2ce$", tower_kind)
+    SC_W = (int(sc_m.group(1)) / 10.0) if sc_m else 0.0   # slot-C weight
     spb_m = re.match(r"spb(\d+)i2ce$", tower_kind)
     SPB_K = int(spb_m.group(1)) if spb_m else 0   # top-K grad anchors per view
     SPB_CAP = 512                                 # grad-pack union ceiling
@@ -1275,6 +1285,7 @@ def main():
                     # the doc-type slots -- d = tiered protocol slot, w =
                     # wiki-only, sp = store-page-only; every doc slot falls
                     # back to a review view where its doc is missing.
+                    model.slot_buf = [] if SC_W else None
                     Zs = [model(*sample_views(gids, W, rng)) for _ in range(N_REV)]
                     for _ in range(N_DOC):
                         Zs.append(assemble_doc_view(model, gids, W, rng, bs))
@@ -1494,6 +1505,20 @@ def main():
                     if CW > 0:
                         loss = loss + CW * sum(cov_pen(Z.float())
                                                for Z in Zs) / len(Zs)
+                    if SC_W and model.slot_buf:
+                        # slot-C (user): push the 4 slot vectors of every view
+                        # forward toward orthogonality -- mean squared
+                        # off-diagonal of the unit-slot Gram matrix.
+                        _sp = 0.0
+                        for _sl in model.slot_buf:
+                            _u = F.normalize(_sl.float(), dim=-1)
+                            _g = _u @ _u.transpose(1, 2)
+                            _n = _g.shape[1]
+                            _off = _g - torch.eye(_n, device=_g.device)
+                            _sp = _sp + (_off ** 2).sum((1, 2)).mean() \
+                                / (_n * (_n - 1))
+                        loss = loss + SC_W * _sp / len(model.slot_buf)
+                        model.slot_buf = None   # NOT []: eval forwards must not append
                 opt.zero_grad()
                 if SWIN:
                     # L window micro-passes (compute-for-VRAM): each pass
