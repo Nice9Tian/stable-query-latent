@@ -394,9 +394,15 @@ def parse_args():
                     help="warm-start tower weights from this ckpt (state dict "
                          "or dict with a model key); name suffix _bw")
     ap.add_argument("--nemesis", type=int, default=0,
-                    help="static hard-negative list size K: top-K confusable "
-                         "train games per game, computed ONCE from the (warm) "
-                         "gallery; resident negatives in swin micro-passes")
+                    help="hard-negative index size K: store each train game's "
+                         "top-K nearest train anchors; per step the batch's "
+                         "under-threshold rivals occupy the FIXED part of the "
+                         "swin window, random draws fill the rest")
+    ap.add_argument("--nemesis-thresh", type=float, default=0.179,
+                    help="cosine-distance gate for the fixed block (default = "
+                         "the measured mean query swing)")
+    ap.add_argument("--nemesis-refresh", type=int, default=50,
+                    help="rebuild the neighbour index every N epochs")
     ap.add_argument("--measure-vram", default="",
                     help="VRAM calibration: run 3 real training steps at this "
                          "cap (incl. the 4x-view backward loss matrices), write "
@@ -1141,19 +1147,23 @@ def main():
             sd0 = st0["model"] if isinstance(st0, dict) and "model" in st0 else st0
             model.load_state_dict({k: v.to(dev) for k, v in sd0.items()})
             print(f"WARM INIT from {args.init_ckpt}", flush=True)
-        NM_LIST = None
-        if args.nemesis and SWIN:
-            # static nemesis list: ONE offline neighbour search over the
-            # (warm) gallery -- each train game's top-K most confusable
-            # train games, frozen for the whole run.
+        NM_LIST, NM_DIST = None, None
+
+        def build_nemesis(tag):
+            # offline neighbour search over the CURRENT gallery: per train
+            # game its top-K nearest train anchors + cosine distances.
             with torch.no_grad():
                 _z0 = gallery_train(model).float()
                 _sim = _z0 @ _z0.T
                 _sim.fill_diagonal_(-2)
-                NM_LIST = torch.topk(_sim, args.nemesis, dim=1).indices.cpu().numpy()
+                _v, _idx = torch.topk(_sim, args.nemesis, dim=1)
                 del _z0, _sim
-            print(f"nemesis list: static top-{args.nemesis} per train game",
-                  flush=True)
+            print(f"nemesis index [{tag}]: top-{args.nemesis}, "
+                  f"gate < {args.nemesis_thresh}", flush=True)
+            return _idx.cpu().numpy(), (1.0 - _v).cpu().numpy()
+
+        if args.nemesis and SWIN:
+            NM_LIST, NM_DIST = build_nemesis("warm")   # first build at warm-up
         if MQ_LEN and mqueue is None:
             # prefill the FIFO ring with shadow(=main at t0) keys of random
             # entities so the first steps see a full negative set.
@@ -1171,6 +1181,9 @@ def main():
         if args.measure_vram and dev.type == "cuda":
             torch.cuda.reset_peak_memory_stats()
         for ep in range(start_ep, args.epochs):
+            if (NM_LIST is not None and ep > start_ep
+                    and ep % args.nemesis_refresh == 0):
+                NM_LIST, NM_DIST = build_nemesis(f"ep{ep}")
             model.train()
             for _ in range(per_epoch // bs):
                 gids = rng.choice(train_pool_games, bs, replace=False)
@@ -1451,32 +1464,44 @@ def main():
                     # step p += L*S. S=W/2, L=2 => half-overlap chain, every
                     # ring position covered by exactly W/S=2 passes/sweep.
                     _arb = torch.arange(bs, device=dev)
-                    eNem = None
+                    _wins = None
                     if NM_LIST is not None:
-                        # resident nemesis window: the batch games' static
-                        # top-K rivals (dedup, batch rows excluded, capped),
-                        # fresh-encoded WITH grad; columns join every
-                        # micro-pass partition as extra negatives.
-                        _cand = np.unique(NM_LIST[rows_now].ravel())
-                        _cand = _cand[~np.isin(_cand, rows_now)][:384]
-                        if len(_cand):
-                            with torch.amp.autocast("cuda"):
-                                eNem = gallery_rows(model, _cand).float()
+                        # FIXED + RANDOM window (user): the batch games'
+                        # stored rivals whose cosine distance is under the
+                        # swing gate form the fixed block (overflow randomly
+                        # subsampled); random draws fill the remaining W*L
+                        # slots; the ring sweep is bypassed in this mode.
+                        _hits = NM_LIST[rows_now][NM_DIST[rows_now]
+                                                  < args.nemesis_thresh]
+                        _cand = np.unique(_hits)
+                        _cand = _cand[~np.isin(_cand, rows_now)]
+                        _wtot = SWIN_W * SWIN_L
+                        if len(_cand) > _wtot:
+                            _cand = rng.choice(_cand, _wtot, replace=False)
+                        _rest = np.setdiff1d(
+                            np.arange(n_train),
+                            np.concatenate([_cand, rows_now]))
+                        _nfill = _wtot - len(_cand)
+                        _fill = (rng.choice(_rest, _nfill, replace=False)
+                                 if _nfill > 0 else
+                                 np.empty(0, dtype=np.int64))
+                        _all = np.concatenate([_cand, _fill]).astype(np.int64)
+                        _wins = [_all[_l * SWIN_W:(_l + 1) * SWIN_W]
+                                 for _l in range(SWIN_L)]
                     for _l in range(SWIN_L):
-                        _w = (swin_ptr + SWIN_S * _l
-                              + np.arange(SWIN_W)) % n_train
+                        _w = (_wins[_l] if _wins is not None else
+                              (swin_ptr + SWIN_S * _l
+                               + np.arange(SWIN_W)) % n_train)
                         _wt = torch.as_tensor(_w, device=dev)
                         _dup = torch.isin(_wt, rows_now_t)
                         with torch.amp.autocast("cuda"):
                             eWin = gallery_rows(model, _w).float()
                             lw = 0.0
                             for Z in Zs:
-                                _cols = [Z.float() @ eNow.T * inv_t,
-                                         (Z.float() @ eWin.T * inv_t
-                                          ).masked_fill(_dup[None, :], -1e4)]
-                                if eNem is not None:
-                                    _cols.append(Z.float() @ eNem.T * inv_t)
-                                lg = torch.cat(_cols, 1)
+                                lg = torch.cat(
+                                    [Z.float() @ eNow.T * inv_t,
+                                     (Z.float() @ eWin.T * inv_t
+                                      ).masked_fill(_dup[None, :], -1e4)], 1)
                                 lw = lw + F.cross_entropy(lg, _arb)
                         amp.scale(lw).backward(retain_graph=True)
                     swin_ptr = int((swin_ptr + SWIN_L * SWIN_S) % n_train)
