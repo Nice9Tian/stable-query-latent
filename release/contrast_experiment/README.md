@@ -58,3 +58,11 @@ framework's two-phase head machinery and swap only the loss philosophy
 (`contrast_heads/configs.py`). The framework never sees this layer —
 deleting the whole of contrast_experiment does not affect champion
 reproduction.
+
+## w9/ — the full experiment suite
+
+The complete campaign behind the paper's tables (fixed-split arms, 5-fold
+grids, scaling sweep, anchor-supply/readout/temperature ablations) lives in
+[`w9/`](w9/README.md). It is self-contained: workers, notebooks, and the
+minimal model package they import, with no repository-sync or cloud-provider
+operations.
