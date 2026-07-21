@@ -835,7 +835,10 @@ def main():
     elif (C / f"wscan_gal_rev_g{args.anchor_cap}.npz").exists():
         # prebuilt pack (built locally from embedding_h5, uploaded to the volume)
         GALd = np.load(C / f"wscan_gal_rev_g{args.anchor_cap}.npz")
-        SGal = torch.tensor(GALd["gal"]).to(dev)
+        _gal_cpu = (args.ps_role == "worker" and args.ps_cover > 0)
+        SGal = torch.tensor(GALd["gal"])
+        if not _gal_cpu:
+            SGal = SGal.to(dev)   # workers in cover mode slice from CPU
         gal_len = torch.tensor(np.asarray(GALd["gal_len"], np.int64)).to(dev)
         gal_doc = torch.tensor(np.asarray(GALd["gal_doc_len"], np.int64)).to(dev)
         print(f"anchors: prebuilt g{args.anchor_cap} pack, "
@@ -891,6 +894,17 @@ def main():
                         row += L
             gal_len[g] = row
         print(f"anchors: used med {int(gal_len.float().median())}", flush=True)
+    if args.ps_role == "master":
+        # PS prep: persist the pack so workers LOAD (CPU path) instead of
+        # each re-scanning the 73M-sentence pool and parking 17G on GPU.
+        _gp = C / f"wscan_gal_rev_g{args.anchor_cap}.npz"
+        if not _gp.exists():
+            _tmp = C / f"galtmp_{args.anchor_cap}.npz"
+            np.savez(_tmp, gal=SGal.cpu().numpy(),
+                     gal_len=gal_len.cpu().numpy(),
+                     gal_doc_len=gal_doc.cpu().numpy())
+            _tmp.replace(_gp)
+            print(f"[ps-master] gallery pack saved -> {_gp.name}", flush=True)
     mGal = torch.arange(SGal.shape[1], device=dev)[None, :] >= gal_len[:, None]
     mGal_nd = mGal | (torch.arange(SGal.shape[1], device=dev)[None, :] <
                       gal_doc[:, None])
@@ -2178,6 +2192,7 @@ def main():
         inbox = pdir / "inbox"
         inbox.mkdir(parents=True, exist_ok=True)
         SG_pool = mG_pool = None
+        n_train = len(train_pool_games)
         if args.ps_shard and args.ps_cover > 0:
             # STATIC OVERLAPPING POOLS (user): stage 1 -- every game draws a
             # random home worker; stage 2 -- each worker borrows games from
@@ -2202,10 +2217,9 @@ def main():
             np.savez(pdir / f"ps_pool_{args.ps_id}.npz",
                      rows=ps_worker._rows,
                      games=train_pool_games[ps_worker._rows])
-            _gid = torch.as_tensor(train_pool_games[ps_worker._rows],
-                                   device=dev)
-            SG_pool = SGal[_gid].clone()
-            mG_pool = mGal[_gid].clone()
+            _games = train_pool_games[ps_worker._rows]
+            SG_pool = SGal[torch.as_tensor(_games)].to(dev)
+            mG_pool = mGal[torch.as_tensor(_games, device=mGal.device)].to(dev)
             SGal = None
             mGal = None
             torch.cuda.empty_cache()
