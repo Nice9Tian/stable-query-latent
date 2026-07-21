@@ -415,6 +415,9 @@ def parse_args():
                          "worker pulls published weights and pushes gradients")
     ap.add_argument("--ps-dir", default="/dev/shm/w9_ps",
                     help="shared-memory rendezvous: weights.pt + inbox/ + STOP")
+    ap.add_argument("--ps-backlog", type=int, default=16,
+                    help="worker backpressure: pause while the inbox holds "
+                         "this many pending gradients (bounds real staleness)")
     ap.add_argument("--ps-id", type=int, default=0,
                     help="worker index (seeds its data stream)")
     ap.add_argument("--async-workers", type=int, default=0,
@@ -2146,6 +2149,11 @@ def main():
         n_push, last_v = 0, -1
         print(f"[ps-worker {args.ps_id}] up", flush=True)
         while not (pdir / "STOP").exists():
+            # BACKPRESSURE (v2): a queue of stale gradients is worse than an
+            # idle worker -- wait until the master has drained the inbox.
+            if len(list(inbox.glob("g_*.pt"))) >= args.ps_backlog:
+                time.sleep(0.05)
+                continue
             try:
                 st = torch.load(pdir / "weights.pt", map_location="cpu")
             except Exception:
@@ -2176,7 +2184,7 @@ def main():
                 for q in model.parameters()]).float().cpu()
             tmp = inbox / f"tmp_{args.ps_id}_{n_push}"  # no dot (torch.save quirk)
             torch.save(dict(g=g, v=last_v), tmp)
-            tmp.replace(inbox / f"g_{args.ps_id}_{n_push:07d}.pt")
+            tmp.replace(inbox / f"g_{n_push:07d}_{args.ps_id}.pt")   # count-first: arrival-interleaved sort
             n_push += 1
         print(f"[ps-worker {args.ps_id}] {n_push} pushes, stop", flush=True)
 
@@ -2202,7 +2210,7 @@ def main():
             tmp.replace(pdir / "weights.pt")
 
         publish()
-        pushes, ep, clamped = 0, 0, 0
+        pushes, ep, dropped = 0, 0, 0
         target = args.epochs * 16
         t0 = time.time()
         st_ver = {}
@@ -2222,8 +2230,10 @@ def main():
                 g, gv = st["g"], int(st["v"])
                 base = RING.get(gv)
                 if base is None:
-                    base = RING[min(RING)]
-                    clamped += 1
+                    # over-aged (beyond the version ring): a wrong Taylor
+                    # base poisons the update -- DISCARD, never clamp.
+                    dropped += 1
+                    continue
                 st_ver[v - gv] = st_ver.get(v - gv, 0) + 1
                 if lam:
                     g = g + lam * g * g * (RING[v] - base)
@@ -2240,7 +2250,8 @@ def main():
                 for k in list(RING):
                     if k < v - 64:
                         del RING[k]
-                publish()
+                if v % 4 == 0:
+                    publish()   # stride-4: 4x fewer 1.4MB writes, +<=3 staleness
                 pushes += 1
                 if pushes % 16 == 0:
                     ep += 1
@@ -2253,9 +2264,10 @@ def main():
                         _mean = sum(k * c for k, c in st_ver.items()) / _tot
                         print(f"[ps-master] ep{ep} pushes={pushes} "
                               f"{time.time() - t0:.0f}s staleness mean "
-                              f"{_mean:.1f} clamped {clamped}", flush=True)
+                              f"{_mean:.1f} dropped {dropped}", flush=True)
         (pdir / "STOP").write_text("done")
-        json.dump({str(k): c for k, c in sorted(st_ver.items())},
+        st_ver["dropped"] = dropped
+        json.dump({str(k): c for k, c in sorted(st_ver.items(), key=lambda kv: str(kv[0]))},
                   open(OUT / f"ps_staleness_{name}.json", "w"), indent=1)
         print(f"[ps-master] done: {pushes} pushes {time.time() - t0:.0f}s",
               flush=True)
