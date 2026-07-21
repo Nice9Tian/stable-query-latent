@@ -66,6 +66,8 @@ ARMS = {
     "wcle_mq3072i2ce_icetf": ("mq3072i2ce", "ice"),   # MoCo queue + view-I x2
     "wcle_mq3072ce_cetf": ("mq3072ce", "ce"),         # MoCo queue, CE only
     "wcle_epdb_v20i10c20_cetf": ("epdb_v20i10c20", "ce"),   # VICReg epd b=all
+    "wcle_epd_v20i10c20_cetf": ("epd_v20i10c20", "ce"),     # VICReg epd bs=192
+    #   (user 2026-07-22: batch=all retired -- 22h/fold; bs=192 is the 5fold arm)
     "wcle_bce_cetf": ("bce", "ce"),   # SimCLR-style in-batch NT-Xent over
     # the step's 4*bs view encodings (ring-sibling positives, no anchors)
     "wcle_swin168step84loop2i2ce_icetf": ("swin168step84loop2i2ce", "ice"),
