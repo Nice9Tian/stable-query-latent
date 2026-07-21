@@ -425,6 +425,17 @@ def parse_args():
                          "published version, zero coordination)")
     ap.add_argument("--ps-nworkers", type=int, default=0,
                     help="total worker count (shard partition denominator)")
+    ap.add_argument("--ps-cover", type=float, default=0.0,
+                    help="overlap factor: fraction of each worker's pool "
+                         "that also lives in other workers' pools (static "
+                         "overlapping pools; replaces rotation)")
+    ap.add_argument("--ps-epoch-push", action="store_true",
+                    help="worker accumulates one EPOCH (16 steps at the "
+                         "frozen pulled weights) per push")
+    ap.add_argument("--ps-barrier", action="store_true",
+                    help="master updates only after a fresh push from EVERY "
+                         "worker: compensate each, average, one step; one "
+                         "round = one epoch")
     ap.add_argument("--ps-reshuffle", type=int, default=50,
                     help="epochs between shard re-partitions")
     ap.add_argument("--ps-backlog", type=int, default=16,
@@ -684,7 +695,11 @@ def main():
             + (((f"_psdc{int(round(args.dc_lambda * 10))}"
                  if args.dc_lambda else "_ps")
                 + (f"a{args.ps_avg}" if args.ps_avg > 1 else "")
-                + (f"sh{args.ps_reshuffle}" if args.ps_shard else ""))
+                + ((f"shc{int(round(args.ps_cover * 100))}"
+                    if args.ps_cover > 0 else f"sh{args.ps_reshuffle}")
+                   if args.ps_shard else "")
+                + ("b" if args.ps_barrier else "")
+                + ("e" if args.ps_epoch_push else ""))
                if args.ps_role else "")
             + (f"_w{args.view_w}" if args.view_w != 16 else "")
             + ("_fp" if args.full_pool else ""))
@@ -1278,7 +1293,10 @@ def main():
                         # I chain still runs on the views.
                         rows_now = pos_of_g[gids]
                         rows_now_t = torch.as_tensor(rows_now, device=dev)
-                        eNow = gallery_rows(model, rows_now).float()
+                        eNow = (model(SG_pool[rows_now_local],
+                                  mG_pool[rows_now_local]).float()
+                            if (args.ps_shard and args.ps_cover > 0) else
+                            gallery_rows(model, rows_now).float())
                         Zg = None
                     elif BANK_POLICY == "q":
                         # queue rotation: refresh the next BANK_K rows (no
@@ -2155,9 +2173,47 @@ def main():
                      "v_non": float(bsel[2]), "v_non5": float(bsel[3])})
 
     def ps_worker(W=16, bs=192):
+        nonlocal SGal, mGal
         pdir = Path(args.ps_dir)
         inbox = pdir / "inbox"
         inbox.mkdir(parents=True, exist_ok=True)
+        SG_pool = mG_pool = None
+        if args.ps_shard and args.ps_cover > 0:
+            # STATIC OVERLAPPING POOLS (user): stage 1 -- every game draws a
+            # random home worker; stage 2 -- each worker borrows games from
+            # OTHER homes until borrowed/|pool| = cover, so at least that
+            # fraction of its pool provably lives elsewhere too (home games
+            # borrowed by others push the true overlap higher). The overlap
+            # is the cross-pool glue that replaces rotation.
+            assert args.ps_nworkers > 0
+            _rng0 = np.random.default_rng(4242)
+            _home = _rng0.integers(0, args.ps_nworkers, n_train)
+            _mine = np.where(_home == args.ps_id)[0]
+            _oth = np.where(_home != args.ps_id)[0]
+            _nb = int(round(args.ps_cover / (1.0 - args.ps_cover) * len(_mine)))
+            _rngb = np.random.default_rng(4242 + 1000 + args.ps_id)
+            _bor = _rngb.choice(_oth, min(_nb, len(_oth)), replace=False)
+            ps_worker._rows = np.sort(np.concatenate([_mine, _bor]))
+            ps_worker._g2s = {int(pp): i for i, pp in enumerate(ps_worker._rows)}
+            # the npz cut: record the assignment; then SLICE the pool's
+            # anchors and FREE the full gallery -- from here on this worker
+            # physically cannot touch anchors outside its pool, and its
+            # VRAM is the pool share, not the catalog.
+            np.savez(pdir / f"ps_pool_{args.ps_id}.npz",
+                     rows=ps_worker._rows,
+                     games=train_pool_games[ps_worker._rows])
+            _gid = torch.as_tensor(train_pool_games[ps_worker._rows],
+                                   device=dev)
+            SG_pool = SGal[_gid].clone()
+            mG_pool = mGal[_gid].clone()
+            SGal = None
+            mGal = None
+            torch.cuda.empty_cache()
+            print(f"[ps-worker {args.ps_id}] pool {len(ps_worker._rows)} "
+                  f"games (home {len(_mine)} + borrowed {len(_bor)}, "
+                  f"cover {args.ps_cover}); full gallery freed "
+                  f"({torch.cuda.memory_allocated()/2**30:.1f}G resident)",
+                  flush=True)
         model = SetPoolN(SLOTS, bn=False, center=CENTERED, pool=POOL_MODE).to(dev)
         rng = np.random.default_rng(1000 + args.ps_id)
         torch.manual_seed(1000 + args.ps_id)
@@ -2171,39 +2227,49 @@ def main():
             if len(list(inbox.glob("g_*.pt"))) >= args.ps_backlog:
                 time.sleep(0.05)
                 continue
-            try:
-                st = torch.load(pdir / "weights.pt", map_location="cpu")
-            except Exception:
-                time.sleep(0.05)
-                continue
-            torch.nn.utils.vector_to_parameters(st["vec"].to(dev),
-                                                model.parameters())
-            last_v = int(st["v"])
+            if not (args.ps_epoch_push
+                    and getattr(ps_worker, "_ep_steps", 0) > 0):
+                try:
+                    st = torch.load(pdir / "weights.pt", map_location="cpu")
+                except Exception:
+                    time.sleep(0.05)
+                    continue
+                torch.nn.utils.vector_to_parameters(st["vec"].to(dev),
+                                                    model.parameters())
+                last_v = int(st["v"])
+                model.zero_grad(set_to_none=False)
             model.train()
-            if args.ps_shard:
-                # SAMPLE POOLS (user): the catalog is randomly partitioned
-                # into K disjoint pools; each worker samples ONLY its pool
-                # (at true scale it would LOAD only its pool -- the memory
-                # pillar). The partition is a pure function of the published
-                # version, so all workers re-shuffle in lockstep every
-                # --ps-reshuffle epochs with zero coordination; rotation is
-                # what re-couples cross-pool pairs that block-diagonal
-                # contrast never repels directly.
-                assert args.ps_nworkers > 0, "--ps-shard needs --ps-nworkers"
-                _round = last_v // (16 * args.ps_reshuffle)
-                if getattr(ps_worker, "_round", None) != _round:
-                    _perm = np.random.default_rng(4242 + _round).permutation(n_train)
-                    ps_worker._rows = np.sort(_perm[args.ps_id::args.ps_nworkers])
-                    ps_worker._round = _round
-                    ps_worker._g2s = {int(p): i for i, p in
-                                      enumerate(ps_worker._rows)}
-                    print(f"[ps-worker {args.ps_id}] shard round {_round}: "
-                          f"{len(ps_worker._rows)} games", flush=True)
-                my_rows = ps_worker._rows
-                _bs = min(bs, len(my_rows))
-                gids = rng.choice(train_pool_games[my_rows], _bs, replace=False)
-                tgt = torch.tensor([ps_worker._g2s[int(p)]
-                                    for p in pos_of_g[gids]], device=dev)
+            if args.ps_shard and args.ps_cover > 0:
+                # static overlapping pool: sampling comes FROM the pool.
+                _bs = min(bs, len(ps_worker._rows))
+                _loc = rng.choice(len(ps_worker._rows), _bs, replace=False)
+                gids = train_pool_games[ps_worker._rows[_loc]]
+                rows_now_local = torch.as_tensor(_loc, device=dev)
+                tgt = rows_now_local
+            elif args.ps_shard:
+                    # SAMPLE POOLS (user): the catalog is randomly partitioned
+                    # into K disjoint pools; each worker samples ONLY its pool
+                    # (at true scale it would LOAD only its pool -- the memory
+                    # pillar). The partition is a pure function of the published
+                    # version, so all workers re-shuffle in lockstep every
+                    # --ps-reshuffle epochs with zero coordination; rotation is
+                    # what re-couples cross-pool pairs that block-diagonal
+                    # contrast never repels directly.
+                    assert args.ps_nworkers > 0, "--ps-shard needs --ps-nworkers"
+                    _round = last_v // (16 * args.ps_reshuffle)
+                    if getattr(ps_worker, "_round", None) != _round:
+                        _perm = np.random.default_rng(4242 + _round).permutation(n_train)
+                        ps_worker._rows = np.sort(_perm[args.ps_id::args.ps_nworkers])
+                        ps_worker._round = _round
+                        ps_worker._g2s = {int(p): i for i, p in
+                                          enumerate(ps_worker._rows)}
+                        print(f"[ps-worker {args.ps_id}] shard round {_round}: "
+                              f"{len(ps_worker._rows)} games", flush=True)
+                    my_rows = ps_worker._rows
+                    _bs = min(bs, len(my_rows))
+                    gids = rng.choice(train_pool_games[my_rows], _bs, replace=False)
+                    tgt = torch.tensor([ps_worker._g2s[int(p)]
+                                        for p in pos_of_g[gids]], device=dev)
             else:
                 gids = rng.choice(train_pool_games, bs, replace=False)
                 tgt = pos_of_g_t[gids].to(dev)
@@ -2215,8 +2281,11 @@ def main():
                 # sweep the ring K times faster), own CE partition per
                 # pass, immediate backward frees window activations; the
                 # final backward carries the I terms. bf16, no scaler.
-                rows_now = pos_of_g[gids]
-                rows_now_t = torch.as_tensor(rows_now, device=dev)
+                if args.ps_shard and args.ps_cover > 0:
+                    rows_now_t = rows_now_local
+                else:
+                    rows_now = pos_of_g[gids]
+                    rows_now_t = torch.as_tensor(rows_now, device=dev)
                 _arb = torch.arange(bs, device=dev)
                 with torch.amp.autocast("cuda", dtype=torch.bfloat16):
                     eNow = gallery_rows(model, rows_now).float()
@@ -2227,26 +2296,39 @@ def main():
                     loss = IW * sum(
                         (1 - (Zs[i].float() * Zs[j].float()).sum(-1)).mean()
                         for i, j in pairs) / len(pairs)
-                model.zero_grad(set_to_none=False)
+                if not args.ps_epoch_push:
+                    model.zero_grad(set_to_none=False)
                 for _l in range(SWIN_L):
-                    if args.ps_shard:
-                        # THE WINDOW IS THE SHARD (user): each swin worker's
-                        # ring is its own sample pool -- the window slides
-                        # over pool rows only, so the negative field, the
-                        # sweep, and (at true scale) the loaded data all
-                        # live inside the pool; rotation re-couples pools.
-                        _rows_pool = ps_worker._rows
-                        _ns = len(_rows_pool)
+                    if args.ps_shard and args.ps_cover > 0:
+                        # pool-local window: slides over the POOL SLICE.
+                        _ns = SG_pool.shape[0]
                         _wlen = min(SWIN_W, _ns)
-                        _w = _rows_pool[(ps_swin_ptr + SWIN_S * _l
-                                         + np.arange(_wlen)) % _ns]
+                        _wl = torch.as_tensor(
+                            (ps_swin_ptr + SWIN_S * _l
+                             + np.arange(_wlen)) % _ns, device=dev)
+                        _dup = torch.isin(_wl, rows_now_t)
+                        with torch.amp.autocast("cuda", dtype=torch.bfloat16):
+                            eWin = model(SG_pool[_wl], mG_pool[_wl]).float()
+                        _use_pool_window = True
+                    elif args.ps_shard:
+                            # THE WINDOW IS THE SHARD (user): each swin worker's
+                            # ring is its own sample pool -- the window slides
+                            # over pool rows only, so the negative field, the
+                            # sweep, and (at true scale) the loaded data all
+                            # live inside the pool; rotation re-couples pools.
+                            _rows_pool = ps_worker._rows
+                            _ns = len(_rows_pool)
+                            _wlen = min(SWIN_W, _ns)
+                            _w = _rows_pool[(ps_swin_ptr + SWIN_S * _l
+                                             + np.arange(_wlen)) % _ns]
                     else:
                         _w = (ps_swin_ptr + SWIN_S * _l
                               + np.arange(SWIN_W)) % n_train
-                    _wt = torch.as_tensor(_w, device=dev)
-                    _dup = torch.isin(_wt, rows_now_t)
-                    with torch.amp.autocast("cuda", dtype=torch.bfloat16):
-                        eWin = gallery_rows(model, _w).float()
+                    if not (args.ps_shard and args.ps_cover > 0):
+                        _wt = torch.as_tensor(_w, device=dev)
+                        _dup = torch.isin(_wt, rows_now_t)
+                        with torch.amp.autocast("cuda", dtype=torch.bfloat16):
+                            eWin = gallery_rows(model, _w).float()
                         lw = 0.0
                         for Z in Zs:
                             lg = torch.cat(
@@ -2256,12 +2338,18 @@ def main():
                             lw = lw + F.cross_entropy(lg, _arb)
                     lw.backward(retain_graph=True)
                 ps_swin_ptr = int((ps_swin_ptr + SWIN_L * SWIN_S)
-                                  % (len(ps_worker._rows)
-                                     if args.ps_shard else n_train))
+                                  % (SG_pool.shape[0]
+                                     if (args.ps_shard and args.ps_cover > 0)
+                                     else (len(ps_worker._rows)
+                                           if args.ps_shard else n_train)))
                 loss.backward()
             else:
                 with torch.amp.autocast("cuda", dtype=torch.bfloat16):
-                    Zg = (gallery_rows(model, ps_worker._rows)
+                    Zg = (torch.cat([model(SG_pool[i:i + 128],
+                                           mG_pool[i:i + 128])
+                                     for i in range(0, SG_pool.shape[0], 128)])
+                          if (args.ps_shard and args.ps_cover > 0) else
+                          gallery_rows(model, ps_worker._rows)
                           if args.ps_shard else gallery_train(model))
                     Zs = [model(*sample_views(gids, W, rng))
                           for _ in range(N_REV)]
@@ -2274,12 +2362,19 @@ def main():
                         for i, j in pairs) / len(pairs)
                 model.zero_grad(set_to_none=False)
                 loss.backward()
+            if args.ps_epoch_push:
+                ep_steps = getattr(ps_worker, "_ep_steps", 0) + 1
+                ps_worker._ep_steps = ep_steps
+                if ep_steps < 16:
+                    continue          # keep accumulating at frozen weights
+                ps_worker._ep_steps = 0
+            _scale = 16.0 if args.ps_epoch_push else 1.0
             g = torch.cat([
                 (q.grad if q.grad is not None else
                  torch.zeros_like(q)).reshape(-1)
-                for q in model.parameters()]).float().cpu()
+                for q in model.parameters()]).float().cpu() / _scale
             tmp = inbox / f"tmp_{args.ps_id}_{n_push}"  # no dot (torch.save quirk)
-            torch.save(dict(g=g, v=last_v), tmp)
+            torch.save(dict(g=g, v=last_v, wid=args.ps_id), tmp)
             tmp.replace(inbox / f"g_{n_push:07d}_{args.ps_id}.pt")   # count-first: arrival-interleaved sort
             n_push += 1
         print(f"[ps-worker {args.ps_id}] {n_push} pushes, stop", flush=True)
@@ -2290,7 +2385,8 @@ def main():
         inbox.mkdir(parents=True, exist_ok=True)
         (pdir / "STOP").unlink(missing_ok=True)
         model = SetPoolN(SLOTS, bn=False, center=CENTERED, pool=POOL_MODE).to(dev)
-        _lr = 5e-4 * (args.ps_avg ** 0.5)   # sqrt rule for averaged groups
+        _grp = args.ps_nworkers if args.ps_barrier else args.ps_avg
+        _lr = 5e-4 * (max(_grp, 1) ** 0.5)   # sqrt rule for averaged groups
         opt = torch.optim.AdamW(model.parameters(), lr=_lr, weight_decay=1e-4)
         lam = args.dc_lambda
         if args.ps_avg > 1:
@@ -2312,7 +2408,8 @@ def main():
         publish()
         pushes, ep, dropped = 0, 0, 0
         acc, acc_n = None, 0
-        target = args.epochs * 16
+        slot = {}                      # barrier mode: freshest push per worker
+        target = args.epochs if args.ps_barrier else args.epochs * 16
         t0 = time.time()
         st_ver = {}
         while pushes < target:
@@ -2336,6 +2433,13 @@ def main():
                     dropped += 1
                     continue
                 st_ver[v - gv] = st_ver.get(v - gv, 0) + 1
+                if args.ps_barrier:
+                    # HARD BARRIER (user): stash the freshest gradient per
+                    # worker; only when EVERY worker has reported does the
+                    # round close -- each stash is compensated to the
+                    # CURRENT version at consumption time below.
+                    slot[int(st.get("wid", 0))] = (g, gv)
+                    continue
                 if lam:
                     g = g + lam * g * g * (RING[v] - base)
                 # averaging mode (user): compensate EACH push to the current
@@ -2374,6 +2478,42 @@ def main():
                         del RING[k]
                 if v % 4 == 0:
                     publish()   # stride-4: 4x fewer 1.4MB writes, +<=3 staleness
+            if args.ps_barrier and len(slot) >= args.ps_nworkers \
+                    and pushes < target:
+                gs = []
+                for wid, (gg, gv) in sorted(slot.items()):
+                    base = RING.get(gv)
+                    if base is not None and lam:
+                        gg = gg + lam * gg * gg * (RING[v] - base)
+                    gs.append(gg)
+                slot.clear()
+                g = sum(gs) / len(gs)
+                gdev = g.to(dev)
+                o = 0
+                for q in model.parameters():
+                    n = q.numel()
+                    q.grad = gdev[o:o + n].view_as(q).clone()
+                    o += n
+                torch.nn.utils.clip_grad_norm_(model.parameters(), 5.0)
+                opt.step()
+                v += 1
+                RING[v] = flat()
+                for k in list(RING):
+                    if k < v - 64:
+                        del RING[k]
+                publish()              # every round: workers must see it
+                pushes += 1
+                ep += 1
+                if ep % args.ckpt_every == 0:
+                    sd = {k2: q.detach().cpu().clone()
+                          for k2, q in model.state_dict().items()}
+                    torch.save(dict(model=sd),
+                               OUT / f"ckpt_{name}_ep{ep}.pt")
+                    _tot = max(1, sum(st_ver.values()))
+                    _mean = sum(k * c for k, c in st_ver.items()) / _tot
+                    print(f"[ps-master] round/ep{ep} {time.time() - t0:.0f}s "
+                          f"staleness mean {_mean:.1f} dropped {dropped}",
+                          flush=True)
         (pdir / "STOP").write_text("done")
         st_ver["dropped"] = dropped
         json.dump({str(k): c for k, c in sorted(st_ver.items(), key=lambda kv: str(kv[0]))},
