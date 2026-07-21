@@ -429,6 +429,15 @@ def parse_args():
                     help="overlap factor: fraction of each worker's pool "
                          "that also lives in other workers' pools (static "
                          "overlapping pools; replaces rotation)")
+    ap.add_argument("--ps-rotate", type=int, default=0,
+                    help="cover mode: rotate the BORROW slice every this "
+                         "many epochs -- home stays GPU-resident, the next "
+                         "round's chunk is prefetched from the raw store "
+                         "on --ps-store by a CPU thread; 0 = static pools")
+    ap.add_argument("--ps-store", default="",
+                    help="dir of the raw gallery store (the disk/network "
+                         "tier rotating borrows page from); default: the "
+                         "cache dir")
     ap.add_argument("--ps-epoch-push", action="store_true",
                     help="worker accumulates one EPOCH (16 steps at the "
                          "frozen pulled weights) per push")
@@ -695,7 +704,8 @@ def main():
             + (((f"_psdc{int(round(args.dc_lambda * 10))}"
                  if args.dc_lambda else "_ps")
                 + (f"a{args.ps_avg}" if args.ps_avg > 1 else "")
-                + ((f"shc{int(round(args.ps_cover * 100))}"
+                + (((f"shc{int(round(args.ps_cover * 100))}"
+                     + (f"r{args.ps_rotate}" if args.ps_rotate else ""))
                     if args.ps_cover > 0 else f"sh{args.ps_reshuffle}")
                    if args.ps_shard else "")
                 + ("b" if args.ps_barrier else "")
@@ -827,6 +837,7 @@ def main():
 
     # ---------------- anchors (512 shipped / 2048 built here) ----------------
     sp_row = {int(ST["gidx"][i]): i for i in range(len(ST["gidx"]))}
+    GAL_MM = None   # raw-store mmap (rotating-cover workers only)
     if args.anchor_cap == 512:
         GALd = np.load(C / "wscan_gal_rev.npz")
         SGal = torch.tensor(GALd["gal"]).to(dev)
@@ -836,9 +847,21 @@ def main():
         # prebuilt pack (built locally from embedding_h5, uploaded to the volume)
         GALd = np.load(C / f"wscan_gal_rev_g{args.anchor_cap}.npz")
         _gal_cpu = (args.ps_role == "worker" and args.ps_cover > 0)
-        SGal = torch.tensor(GALd["gal"])
-        if not _gal_cpu:
-            SGal = SGal.to(dev)   # workers in cover mode slice from CPU
+        if _gal_cpu and args.ps_rotate > 0:
+            # rotating-cover worker: the raw store IS the disk/network
+            # tier -- never materialize the multi-GB pack in host RAM;
+            # home + each round's borrow chunk are paged in on demand.
+            _rdir = Path(args.ps_store) if args.ps_store else C
+            _rp = _rdir / f"wscan_gal_raw_g{args.anchor_cap}.npy"
+            assert _rp.exists(), f"raw store missing: {_rp} (master saves it)"
+            GAL_MM = np.load(_rp, mmap_mode="r")
+            SGal = None
+            print(f"anchors: raw store mmap {_rp.name} "
+                  f"shape {GAL_MM.shape}", flush=True)
+        else:
+            SGal = torch.tensor(GALd["gal"])
+            if not _gal_cpu:
+                SGal = SGal.to(dev)   # workers in cover mode slice from CPU
         gal_len = torch.tensor(np.asarray(GALd["gal_len"], np.int64)).to(dev)
         gal_doc = torch.tensor(np.asarray(GALd["gal_doc_len"], np.int64)).to(dev)
         print(f"anchors: prebuilt g{args.anchor_cap} pack, "
@@ -905,8 +928,18 @@ def main():
                      gal_doc_len=gal_doc.cpu().numpy())
             _tmp.replace(_gp)
             print(f"[ps-master] gallery pack saved -> {_gp.name}", flush=True)
-    mGal = torch.arange(SGal.shape[1], device=dev)[None, :] >= gal_len[:, None]
-    mGal_nd = mGal | (torch.arange(SGal.shape[1], device=dev)[None, :] <
+        if args.ps_rotate > 0:
+            _rdir = Path(args.ps_store) if args.ps_store else C
+            _rp = _rdir / f"wscan_gal_raw_g{args.anchor_cap}.npy"
+            if not _rp.exists():
+                _tr = _rdir / f"galraw_tmp_{args.anchor_cap}.npy"
+                np.save(_tr, SGal.cpu().numpy())
+                _tr.replace(_rp)
+                print(f"[ps-master] raw store saved -> {_rp} "
+                      f"(disk tier for rotating borrows)", flush=True)
+    _Lg = SGal.shape[1] if SGal is not None else GAL_MM.shape[1]
+    mGal = torch.arange(_Lg, device=dev)[None, :] >= gal_len[:, None]
+    mGal_nd = mGal | (torch.arange(_Lg, device=dev)[None, :] <
                       gal_doc[:, None])
     if PK:
         # SEEDED RANDOM PACKS (user): each of the PKN packs is an
@@ -2191,40 +2224,126 @@ def main():
         SG_pool = mG_pool = None
         n_train = len(train_pool_games)
         if args.ps_shard and args.ps_cover > 0:
-            # STATIC OVERLAPPING POOLS (user): stage 1 -- every game draws a
-            # random home worker; stage 2 -- each worker borrows games from
-            # OTHER homes until borrowed/|pool| = cover, so at least that
-            # fraction of its pool provably lives elsewhere too (home games
-            # borrowed by others push the true overlap higher). The overlap
-            # is the cross-pool glue that replaces rotation.
+            # OVERLAPPING POOLS (user): stage 1 -- every game draws a random
+            # home worker; stage 2 -- each worker borrows games from OTHER
+            # homes until borrowed/|pool| = cover. Static (--ps-rotate 0):
+            # the borrow set is fixed for the whole run (cross-home pairs
+            # outside any shared pool are NEVER directly contrasted).
+            # Rotating (--ps-rotate R): home stays GPU-resident; the borrow
+            # slice is re-drawn every R epochs and its chunk is paged in
+            # from the raw store on disk by a PREFETCH thread while the
+            # current round trains -- time-unbiased cross-pool coverage at
+            # a bandwidth cost of one borrow chunk per R epochs.
             assert args.ps_nworkers > 0
             _rng0 = np.random.default_rng(4242)
             _home = _rng0.integers(0, args.ps_nworkers, n_train)
             _mine = np.where(_home == args.ps_id)[0]
             _oth = np.where(_home != args.ps_id)[0]
             _nb = int(round(args.ps_cover / (1.0 - args.ps_cover) * len(_mine)))
-            _rngb = np.random.default_rng(4242 + 1000 + args.ps_id)
-            _bor = _rngb.choice(_oth, min(_nb, len(_oth)), replace=False)
-            ps_worker._rows = np.sort(np.concatenate([_mine, _bor]))
-            ps_worker._g2s = {int(pp): i for i, pp in enumerate(ps_worker._rows)}
-            # the npz cut: record the assignment; then SLICE the pool's
-            # anchors and FREE the full gallery -- from here on this worker
-            # physically cannot touch anchors outside its pool, and its
-            # VRAM is the pool share, not the catalog.
-            np.savez(pdir / f"ps_pool_{args.ps_id}.npz",
-                     rows=ps_worker._rows,
-                     games=train_pool_games[ps_worker._rows])
-            _games = train_pool_games[ps_worker._rows]
-            SG_pool = SGal[torch.as_tensor(_games)].to(dev)
-            mG_pool = mGal[torch.as_tensor(_games, device=mGal.device)].to(dev)
-            SGal = None
-            mGal = None
-            torch.cuda.empty_cache()
-            print(f"[ps-worker {args.ps_id}] pool {len(ps_worker._rows)} "
-                  f"games (home {len(_mine)} + borrowed {len(_bor)}, "
-                  f"cover {args.ps_cover}); full gallery freed "
-                  f"({torch.cuda.memory_allocated()/2**30:.1f}G resident)",
-                  flush=True)
+
+            def _bor_rows(rr):
+                # pure function of (id, round): a restarted worker rebuilds
+                # the same pool with zero coordination. rr=0 with rotate
+                # off reproduces the static seed exactly.
+                _sd = (4242 + 1000 + args.ps_id
+                       + (100003 * rr if args.ps_rotate else 0))
+                return np.sort(np.random.default_rng(_sd).choice(
+                    _oth, min(_nb, len(_oth)), replace=False))
+
+            if args.ps_rotate:
+                import threading
+                assert GAL_MM is not None, (
+                    "--ps-rotate needs the prebuilt raw store (anchor pack)")
+
+                def _fetch_chunk(rr):
+                    # CPU tier: fancy-index the round's borrow games out of
+                    # the mmap -- the OS pages exactly those chunks in from
+                    # the network volume.
+                    br = _bor_rows(rr)
+                    return br, torch.tensor(np.asarray(
+                        GAL_MM[train_pool_games[br]]))
+
+                def _mount(br, bS_cpu):
+                    # IN-PLACE tail swap (audit): the home prefix never
+                    # changes and the borrow block is constant-size, so
+                    # rotation reallocates nothing -- no steady-state
+                    # home duplicate, no boundary transient.
+                    assert len(br) == SG_pool.shape[0] - len(_mine)
+                    rows = np.concatenate([_mine, br])
+                    g2s = {int(pp): i for i, pp in enumerate(rows)}
+                    _gs = train_pool_games[rows]
+                    SG_pool[len(_mine):].copy_(bS_cpu)
+                    mG_pool.copy_(mGal[torch.as_tensor(
+                        _gs, device=mGal.device)])
+                    return rows, g2s
+
+                def _kick(rr):
+                    _pf.clear()
+                    _pf["r"] = rr
+                    _pf["th"] = threading.Thread(
+                        target=lambda: _pf.__setitem__("d", _fetch_chunk(rr)),
+                        daemon=True)
+                    _pf["th"].start()
+
+                # boot on the TRUE round (audit): a restarted worker
+                # reads the published version first instead of fetching
+                # round 0 and throwing it away. A stale weights.pt from
+                # a dead run just costs one prefetch miss later.
+                _rr0 = 0
+                try:
+                    _rr0 = (int(torch.load(pdir / "weights.pt",
+                                           map_location="cpu")["v"])
+                            // args.ps_rotate)
+                except Exception:
+                    pass
+                _pf = {}
+                _br0, _bS0 = _fetch_chunk(_rr0)
+                _P = len(_mine) + len(_br0)
+                SG_pool = torch.empty((_P,) + tuple(GAL_MM.shape[1:]),
+                                      dtype=torch.float16, device=dev)
+                SG_pool[:len(_mine)].copy_(torch.from_numpy(
+                    np.asarray(GAL_MM[train_pool_games[_mine]])))
+                mG_pool = torch.empty((_P, GAL_MM.shape[1]),
+                                      dtype=torch.bool, device=dev)
+                ps_worker._rows, ps_worker._g2s = _mount(_br0, _bS0)
+                _bS0 = None      # on GPU now; drop the CPU chunk (audit)
+                ps_worker._rot = _rr0
+                _kick(_rr0 + 1)
+                np.savez(pdir / f"ps_pool_{args.ps_id}.npz",
+                         rows=ps_worker._rows,
+                         games=train_pool_games[ps_worker._rows],
+                         rotate=args.ps_rotate)
+                print(f"[ps-worker {args.ps_id}] rotating pool "
+                      f"{len(ps_worker._rows)} games (home {len(_mine)} + "
+                      f"borrow {len(_br0)}, cover {args.ps_cover}, rotate "
+                      f"every {args.ps_rotate} ep from the raw store, "
+                      f"boot round {ps_worker._rot}; "
+                      f"{torch.cuda.memory_allocated()/2**30:.1f}G resident)",
+                      flush=True)
+            else:
+                _bor = _bor_rows(0)
+                ps_worker._rows = np.sort(np.concatenate([_mine, _bor]))
+                ps_worker._g2s = {int(pp): i
+                                  for i, pp in enumerate(ps_worker._rows)}
+                # the npz cut: record the assignment; then SLICE the pool's
+                # anchors and FREE the full gallery -- from here on this
+                # worker physically cannot touch anchors outside its pool,
+                # and its VRAM is the pool share, not the catalog.
+                np.savez(pdir / f"ps_pool_{args.ps_id}.npz",
+                         rows=ps_worker._rows,
+                         games=train_pool_games[ps_worker._rows])
+                _games = train_pool_games[ps_worker._rows]
+                SG_pool = SGal[torch.as_tensor(_games)].to(dev)
+                mG_pool = mGal[torch.as_tensor(_games,
+                                               device=mGal.device)].to(dev)
+                SGal = None
+                mGal = None
+                torch.cuda.empty_cache()
+                print(f"[ps-worker {args.ps_id}] pool {len(ps_worker._rows)} "
+                      f"games (home {len(_mine)} + borrowed {len(_bor)}, "
+                      f"cover {args.ps_cover}); full gallery freed "
+                      f"({torch.cuda.memory_allocated()/2**30:.1f}G resident)",
+                      flush=True)
         model = SetPoolN(SLOTS, bn=False, center=CENTERED, pool=POOL_MODE).to(dev)
         rng = np.random.default_rng(1000 + args.ps_id)
         torch.manual_seed(1000 + args.ps_id)
@@ -2250,6 +2369,28 @@ def main():
                 torch.nn.utils.vector_to_parameters(st["vec"].to(dev),
                                                     model.parameters())
                 last_v = int(st["v"])
+                if (args.ps_shard and args.ps_cover > 0 and args.ps_rotate
+                        and last_v // args.ps_rotate != ps_worker._rot):
+                    # ROTATION BOUNDARY (barrier mode: one version = one
+                    # epoch). Swap in the prefetched borrow chunk; a late
+                    # prefetch blocks in the join below (announced).
+                    _rr = last_v // args.ps_rotate
+                    if _pf["th"].is_alive():
+                        print(f"[ps-worker {args.ps_id}] rotation r{_rr}: "
+                              f"waiting on prefetch", flush=True)
+                    _pf["th"].join()
+                    if _pf.get("r") != _rr or "d" not in _pf:
+                        print(f"[ps-worker {args.ps_id}] rotation r{_rr}: "
+                              f"prefetch miss, synchronous fetch", flush=True)
+                        _pf["d"] = _fetch_chunk(_rr)
+                    _brr, _bSr = _pf["d"]
+                    ps_worker._rows, ps_worker._g2s = _mount(_brr, _bSr)
+                    _bSr = None   # swapped onto the GPU tail in place
+                    ps_worker._rot = _rr
+                    ps_swin_ptr %= SG_pool.shape[0]
+                    _kick(_rr + 1)
+                    print(f"[ps-worker {args.ps_id}] rotation r{_rr} mounted "
+                          f"(borrow {len(_brr)})", flush=True)
                 model.zero_grad(set_to_none=False)
             model.train()
             if args.ps_shard and args.ps_cover > 0:
@@ -2441,8 +2582,12 @@ def main():
             _resume_ep = int(_cks[-1].stem.split("_ep")[-1])
             print(f"[ps-master] EXTEND from ckpt ep{_resume_ep} "
                   f"(weights only, fresh opt/version)", flush=True)
-        v = 0
-        RING = {0: flat()}
+        # barrier mode: 1 version = 1 epoch -- resume the version clock
+        # with the epoch clock so the borrow-rotation schedule
+        # (last_v // R) CONTINUES after an EXTEND instead of replaying
+        # round 0 with identical seeds (audit).
+        v = _resume_ep if args.ps_barrier else 0
+        RING = {v: flat()}
 
         def publish():
             tmp = pdir / "wtmp.pt"   # NO leading dot: PyTorchFileWriter rejects dot-names
