@@ -1307,10 +1307,7 @@ def main():
                         # I chain still runs on the views.
                         rows_now = pos_of_g[gids]
                         rows_now_t = torch.as_tensor(rows_now, device=dev)
-                        eNow = (model(SG_pool[rows_now_local],
-                                  mG_pool[rows_now_local]).float()
-                            if (args.ps_shard and args.ps_cover > 0) else
-                            gallery_rows(model, rows_now).float())
+                        eNow = gallery_rows(model, rows_now).float()
                         Zg = None
                     elif BANK_POLICY == "q":
                         # queue rotation: refresh the next BANK_K rows (no
@@ -2302,7 +2299,10 @@ def main():
                     rows_now_t = torch.as_tensor(rows_now, device=dev)
                 _arb = torch.arange(bs, device=dev)
                 with torch.amp.autocast("cuda", dtype=torch.bfloat16):
-                    eNow = gallery_rows(model, rows_now).float()
+                    eNow = (model(SG_pool[rows_now_local],
+                                  mG_pool[rows_now_local]).float()
+                            if (args.ps_shard and args.ps_cover > 0) else
+                            gallery_rows(model, rows_now).float())
                     Zs = [model(*sample_views(gids, W, rng))
                           for _ in range(N_REV)]
                     for _ in range(N_DOC):
