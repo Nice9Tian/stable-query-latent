@@ -2400,12 +2400,22 @@ def main():
         print(f"[ps-worker {args.ps_id}] {n_push} pushes, stop", flush=True)
 
     def ps_master():
+        nonlocal SGal, mGal, mGal_nd
         pdir = Path(args.ps_dir)
         inbox = pdir / "inbox"
         inbox.mkdir(parents=True, exist_ok=True)
         (pdir / "STOP").unlink(missing_ok=True)
         for _f in list(inbox.glob("g_*.pt")) + list(inbox.glob("tmp_*")):
             _f.unlink(missing_ok=True)   # purge leftovers of prior runs
+        # the gallery pack is saved; the master never reads anchors during
+        # rounds -- free ~17G so two workers fit beside it, reload at exit.
+        SGal = None
+        mGal = None
+        mGal_nd = None
+        torch.cuda.empty_cache()
+        print(f"[ps-master] gallery freed for the round loop "
+              f"({torch.cuda.memory_allocated()/2**30:.1f}G resident)",
+              flush=True)
         torch.manual_seed(0)
         model = SetPoolN(SLOTS, bn=False, center=CENTERED, pool=POOL_MODE).to(dev)
         _grp = args.ps_nworkers if args.ps_barrier else args.ps_avg
@@ -2570,6 +2580,15 @@ def main():
         st_ver["dropped"] = dropped
         json.dump({str(k): c for k, c in sorted(st_ver.items(), key=lambda kv: str(kv[0]))},
                   open(OUT / f"ps_staleness_{name}.json", "w"), indent=1)
+        _gp = C / f"wscan_gal_rev_g{args.anchor_cap}.npz"
+        _gd = np.load(_gp)
+        SGal = torch.tensor(_gd["gal"]).to(dev)
+        _gl = torch.tensor(np.asarray(_gd["gal_len"], np.int64)).to(dev)
+        _gdoc = torch.tensor(np.asarray(_gd["gal_doc_len"], np.int64)).to(dev)
+        mGal = torch.arange(SGal.shape[1], device=dev)[None, :] >= _gl[:, None]
+        mGal_nd = mGal | (torch.arange(SGal.shape[1], device=dev)[None, :]
+                          < _gdoc[:, None])
+        print(f"[ps-master] gallery reloaded for projection", flush=True)
         print(f"[ps-master] done: {pushes} pushes {time.time() - t0:.0f}s",
               flush=True)
 
