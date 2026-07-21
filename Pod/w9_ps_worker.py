@@ -2230,6 +2230,8 @@ def main():
         torch.manual_seed(1000 + args.ps_id)
         n_push, last_v = 0, -1
         ps_swin_ptr = (args.ps_id * 997) % max(n_train, 1)   # stagger sweeps
+        if args.ps_shard and args.ps_cover > 0 and SG_pool is not None:
+            ps_swin_ptr %= SG_pool.shape[0]
         print(f"[ps-worker {args.ps_id}] up"
               + (f" (swin ptr {ps_swin_ptr})" if SWIN else ""), flush=True)
         while not (pdir / "STOP").exists():
@@ -2297,7 +2299,7 @@ def main():
                 else:
                     rows_now = pos_of_g[gids]
                     rows_now_t = torch.as_tensor(rows_now, device=dev)
-                _arb = torch.arange(bs, device=dev)
+                _arb = torch.arange(len(gids), device=dev)
                 with torch.amp.autocast("cuda", dtype=torch.bfloat16):
                     eNow = (model(SG_pool[rows_now_local],
                                   mG_pool[rows_now_local]).float()
@@ -2306,7 +2308,7 @@ def main():
                     Zs = [model(*sample_views(gids, W, rng))
                           for _ in range(N_REV)]
                     for _ in range(N_DOC):
-                        Zs.append(assemble_doc_view(model, gids, W, rng, bs))
+                        Zs.append(assemble_doc_view(model, gids, W, rng, len(gids)))
                     loss = IW * sum(
                         (1 - (Zs[i].float() * Zs[j].float()).sum(-1)).mean()
                         for i, j in pairs) / len(pairs)
@@ -2323,7 +2325,6 @@ def main():
                         _dup = torch.isin(_wl, rows_now_t)
                         with torch.amp.autocast("cuda", dtype=torch.bfloat16):
                             eWin = model(SG_pool[_wl], mG_pool[_wl]).float()
-                        _use_pool_window = True
                     elif args.ps_shard:
                             # THE WINDOW IS THE SHARD (user): each swin worker's
                             # ring is its own sample pool -- the window slides
@@ -2369,13 +2370,14 @@ def main():
                     Zs = [model(*sample_views(gids, W, rng))
                           for _ in range(N_REV)]
                     for _ in range(N_DOC):
-                        Zs.append(assemble_doc_view(model, gids, W, rng, bs))
+                        Zs.append(assemble_doc_view(model, gids, W, rng, len(gids)))
                     loss = sum(F.cross_entropy(
                         Z.float() @ Zg.T.float() * inv_t, tgt) for Z in Zs)
                     loss = loss + IW * sum(
                         (1 - (Zs[i].float() * Zs[j].float()).sum(-1)).mean()
                         for i, j in pairs) / len(pairs)
-                model.zero_grad(set_to_none=False)
+                if not args.ps_epoch_push:
+                    model.zero_grad(set_to_none=False)
                 loss.backward()
             if not getattr(ps_worker, "_stepped", False):
                 print(f"[ps-worker {args.ps_id}] first step done", flush=True)
@@ -2402,6 +2404,9 @@ def main():
         inbox = pdir / "inbox"
         inbox.mkdir(parents=True, exist_ok=True)
         (pdir / "STOP").unlink(missing_ok=True)
+        for _f in list(inbox.glob("g_*.pt")) + list(inbox.glob("tmp_*")):
+            _f.unlink(missing_ok=True)   # purge leftovers of prior runs
+        torch.manual_seed(0)
         model = SetPoolN(SLOTS, bn=False, center=CENTERED, pool=POOL_MODE).to(dev)
         _grp = args.ps_nworkers if args.ps_barrier else args.ps_avg
         _lr = 5e-4 * (max(_grp, 1) ** 0.5)   # sqrt rule for averaged groups
@@ -2415,6 +2420,17 @@ def main():
             return torch.nn.utils.parameters_to_vector(
                 model.parameters()).detach().cpu().clone()
 
+        _cks = sorted(OUT.glob(f"ckpt_{name}_ep*.pt"),
+                      key=lambda q: int(q.stem.split("_ep")[-1]))
+        _resume_ep = 0
+        if _cks:
+            _st = torch.load(_cks[-1], map_location="cpu")
+            model.load_state_dict({k2: q.to(dev) for k2, q in
+                                   (_st["model"] if "model" in _st
+                                    else _st).items()})
+            _resume_ep = int(_cks[-1].stem.split("_ep")[-1])
+            print(f"[ps-master] EXTEND from ckpt ep{_resume_ep} "
+                  f"(weights only, fresh opt/version)", flush=True)
         v = 0
         RING = {0: flat()}
 
@@ -2424,7 +2440,9 @@ def main():
             tmp.replace(pdir / "weights.pt")
 
         publish()
-        pushes, ep, dropped = 0, 0, 0
+        print(f"[ps-master] barrier={args.ps_barrier} K={args.ps_nworkers} "
+              f"lambda={args.dc_lambda}", flush=True)
+        pushes, ep, dropped = _resume_ep, _resume_ep, 0
         acc, acc_n = None, 0
         slot = {}                      # barrier mode: freshest push per worker
         target = args.epochs if args.ps_barrier else args.epochs * 16
@@ -2433,6 +2451,20 @@ def main():
         while pushes < target:
             files = sorted(inbox.glob("g_*.pt"))
             if not files:
+                if args.ps_barrier:
+                    _now = time.time()
+                    if _now - getattr(ps_master, "_wd", t0) > 120:
+                        ps_master._wd = _now
+                        _miss = sorted(set(range(args.ps_nworkers))
+                                       - set(slot))
+                        print(f"[ps-master] waiting: round {ep + 1}, "
+                              f"missing worker(s) {_miss}", flush=True)
+                        if _now - getattr(ps_master, "_last_round",
+                                          t0) > 1800:
+                            (pdir / "STOP").write_text("watchdog")
+                            raise SystemExit(
+                                "barrier watchdog: no round in 30min; "
+                                f"missing {_miss} -- check worker logs")
                 time.sleep(0.004)
                 continue
             for f in files:
@@ -2450,7 +2482,6 @@ def main():
                     # base poisons the update -- DISCARD, never clamp.
                     dropped += 1
                     continue
-                st_ver[v - gv] = st_ver.get(v - gv, 0) + 1
                 if args.ps_barrier:
                     # HARD BARRIER (user): stash the freshest gradient per
                     # worker; only when EVERY worker has reported does the
@@ -2458,6 +2489,7 @@ def main():
                     # CURRENT version at consumption time below.
                     slot[int(st.get("wid", 0))] = (g, gv)
                     continue
+                st_ver[v - gv] = st_ver.get(v - gv, 0) + 1
                 if lam:
                     g = g + lam * g * g * (RING[v] - base)
                 # averaging mode (user): compensate EACH push to the current
@@ -2500,6 +2532,7 @@ def main():
                     and pushes < target:
                 gs = []
                 for wid, (gg, gv) in sorted(slot.items()):
+                    st_ver[v - gv] = st_ver.get(v - gv, 0) + 1
                     base = RING.get(gv)
                     if base is not None and lam:
                         gg = gg + lam * gg * gg * (RING[v] - base)
@@ -2520,6 +2553,7 @@ def main():
                     if k < v - 64:
                         del RING[k]
                 publish()              # every round: workers must see it
+                ps_master._last_round = time.time()
                 pushes += 1
                 ep += 1
                 if ep % args.ckpt_every == 0:
