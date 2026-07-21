@@ -2229,8 +2229,20 @@ def main():
                         for i, j in pairs) / len(pairs)
                 model.zero_grad(set_to_none=False)
                 for _l in range(SWIN_L):
-                    _w = (ps_swin_ptr + SWIN_S * _l
-                          + np.arange(SWIN_W)) % n_train
+                    if args.ps_shard:
+                        # THE WINDOW IS THE SHARD (user): each swin worker's
+                        # ring is its own sample pool -- the window slides
+                        # over pool rows only, so the negative field, the
+                        # sweep, and (at true scale) the loaded data all
+                        # live inside the pool; rotation re-couples pools.
+                        _rows_pool = ps_worker._rows
+                        _ns = len(_rows_pool)
+                        _wlen = min(SWIN_W, _ns)
+                        _w = _rows_pool[(ps_swin_ptr + SWIN_S * _l
+                                         + np.arange(_wlen)) % _ns]
+                    else:
+                        _w = (ps_swin_ptr + SWIN_S * _l
+                              + np.arange(SWIN_W)) % n_train
                     _wt = torch.as_tensor(_w, device=dev)
                     _dup = torch.isin(_wt, rows_now_t)
                     with torch.amp.autocast("cuda", dtype=torch.bfloat16):
@@ -2243,7 +2255,9 @@ def main():
                                   ).masked_fill(_dup[None, :], -1e4)], 1)
                             lw = lw + F.cross_entropy(lg, _arb)
                     lw.backward(retain_graph=True)
-                ps_swin_ptr = int((ps_swin_ptr + SWIN_L * SWIN_S) % n_train)
+                ps_swin_ptr = int((ps_swin_ptr + SWIN_L * SWIN_S)
+                                  % (len(ps_worker._rows)
+                                     if args.ps_shard else n_train))
                 loss.backward()
             else:
                 with torch.amp.autocast("cuda", dtype=torch.bfloat16):
