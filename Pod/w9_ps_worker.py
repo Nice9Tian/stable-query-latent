@@ -418,6 +418,15 @@ def parse_args():
     ap.add_argument("--ps-avg", type=int, default=1,
                     help="master averages groups of A compensated pushes into "
                          "ONE AdamW step at lr*sqrt(A) (data-aligned epochs)")
+    ap.add_argument("--ps-shard", action="store_true",
+                    help="DATA SHARDING (user): each worker samples inside "
+                         "its own random pool of games; pools re-randomize "
+                         "every --ps-reshuffle epochs (derived from the "
+                         "published version, zero coordination)")
+    ap.add_argument("--ps-nworkers", type=int, default=0,
+                    help="total worker count (shard partition denominator)")
+    ap.add_argument("--ps-reshuffle", type=int, default=50,
+                    help="epochs between shard re-partitions")
     ap.add_argument("--ps-backlog", type=int, default=16,
                     help="worker backpressure: pause while the inbox holds "
                          "this many pending gradients (bounds real staleness)")
@@ -674,7 +683,8 @@ def main():
                if args.async_workers else "")
             + (((f"_psdc{int(round(args.dc_lambda * 10))}"
                  if args.dc_lambda else "_ps")
-                + (f"a{args.ps_avg}" if args.ps_avg > 1 else ""))
+                + (f"a{args.ps_avg}" if args.ps_avg > 1 else "")
+                + (f"sh{args.ps_reshuffle}" if args.ps_shard else ""))
                if args.ps_role else "")
             + (f"_w{args.view_w}" if args.view_w != 16 else "")
             + ("_fp" if args.full_pool else ""))
@@ -2170,8 +2180,33 @@ def main():
                                                 model.parameters())
             last_v = int(st["v"])
             model.train()
-            gids = rng.choice(train_pool_games, bs, replace=False)
-            tgt = pos_of_g_t[gids].to(dev)
+            if args.ps_shard:
+                # SAMPLE POOLS (user): the catalog is randomly partitioned
+                # into K disjoint pools; each worker samples ONLY its pool
+                # (at true scale it would LOAD only its pool -- the memory
+                # pillar). The partition is a pure function of the published
+                # version, so all workers re-shuffle in lockstep every
+                # --ps-reshuffle epochs with zero coordination; rotation is
+                # what re-couples cross-pool pairs that block-diagonal
+                # contrast never repels directly.
+                assert args.ps_nworkers > 0, "--ps-shard needs --ps-nworkers"
+                _round = last_v // (16 * args.ps_reshuffle)
+                if getattr(ps_worker, "_round", None) != _round:
+                    _perm = np.random.default_rng(4242 + _round).permutation(n_train)
+                    ps_worker._rows = np.sort(_perm[args.ps_id::args.ps_nworkers])
+                    ps_worker._round = _round
+                    ps_worker._g2s = {int(p): i for i, p in
+                                      enumerate(ps_worker._rows)}
+                    print(f"[ps-worker {args.ps_id}] shard round {_round}: "
+                          f"{len(ps_worker._rows)} games", flush=True)
+                my_rows = ps_worker._rows
+                _bs = min(bs, len(my_rows))
+                gids = rng.choice(train_pool_games[my_rows], _bs, replace=False)
+                tgt = torch.tensor([ps_worker._g2s[int(p)]
+                                    for p in pos_of_g[gids]], device=dev)
+            else:
+                gids = rng.choice(train_pool_games, bs, replace=False)
+                tgt = pos_of_g_t[gids].to(dev)
             if SWIN:
                 # swin worker step (user: async exists to make SWIN fast):
                 # mirror of the train_v4doc micro-pass machinery -- fresh
@@ -2212,7 +2247,8 @@ def main():
                 loss.backward()
             else:
                 with torch.amp.autocast("cuda", dtype=torch.bfloat16):
-                    Zg = gallery_train(model)
+                    Zg = (gallery_rows(model, ps_worker._rows)
+                          if args.ps_shard else gallery_train(model))
                     Zs = [model(*sample_views(gids, W, rng))
                           for _ in range(N_REV)]
                     for _ in range(N_DOC):
