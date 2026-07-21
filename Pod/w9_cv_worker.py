@@ -116,6 +116,9 @@ def parse_args():
                          "host presumed dead, job claimable by other hosts)")
     ap.add_argument("--head", action="store_true", default=False,
                     help="legacy FT head phase (ZS-only is the default)")
+    ap.add_argument("--init-ckpt", default="",
+                    help="warm-start tower weights from this ckpt (dict with "
+                         "a model key or plain state dict); name suffix _bw")
     ap.add_argument("--measure-vram", default="",
                     help="run 3 real steps, write peak max_memory_allocated "
                          "bytes to this file, exit(0). Scheduler warmup.")
@@ -224,6 +227,7 @@ def main():
             + ("_nsp" if args.no_sp_view else "")
             + (f"_ld{args.doc_lead}" if args.doc_lead else "")
             + ("_wllm" if args.wiki_src == "llm" else "")
+            + ("_bw" if args.init_ckpt else "")
             + ("_fp" if args.full_pool else ""))
     dev = torch.device("cuda")
     C, OUT = Path(args.data_dir), Path(args.out_dir)
@@ -597,6 +601,14 @@ def main():
                 if MQ_LEN and isinstance(st, dict) and "shadow" in st:
                     shadow.load_state_dict({k: v.to(dev)
                                             for k, v in st["shadow"].items()})
+        if start_ep == 0 and args.init_ckpt:
+            # STAGE-1 handover (concat): warm-start the tower only;
+            # opt/amp/rng start fresh. BYOL cv ckpts are dicts with a
+            # model key (pred/target ignored).
+            st0 = torch.load(args.init_ckpt, map_location="cpu")
+            sd0 = st0["model"] if isinstance(st0, dict) and "model" in st0 else st0
+            model.load_state_dict({k: v.to(dev) for k, v in sd0.items()})
+            print(f"WARM INIT from {args.init_ckpt}", flush=True)
         if MQ_LEN and mqueue is None:
             # prefill the FIFO ring with shadow(=main at t0) keys
             mqueue = torch.zeros(MQ_LEN, DM, device=dev)
