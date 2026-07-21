@@ -415,6 +415,9 @@ def parse_args():
                          "worker pulls published weights and pushes gradients")
     ap.add_argument("--ps-dir", default="/dev/shm/w9_ps",
                     help="shared-memory rendezvous: weights.pt + inbox/ + STOP")
+    ap.add_argument("--ps-avg", type=int, default=1,
+                    help="master averages groups of A compensated pushes into "
+                         "ONE AdamW step at lr*sqrt(A) (data-aligned epochs)")
     ap.add_argument("--ps-backlog", type=int, default=16,
                     help="worker backpressure: pause while the inbox holds "
                          "this many pending gradients (bounds real staleness)")
@@ -669,8 +672,10 @@ def main():
                 + (f"dc{int(round(args.dc_lambda * 10))}"
                    if args.dc_lambda else ""))
                if args.async_workers else "")
-            + ((f"_psdc{int(round(args.dc_lambda * 10))}"
-                if args.dc_lambda else "_ps") if args.ps_role else "")
+            + (((f"_psdc{int(round(args.dc_lambda * 10))}"
+                 if args.dc_lambda else "_ps")
+                + (f"a{args.ps_avg}" if args.ps_avg > 1 else ""))
+               if args.ps_role else "")
             + (f"_w{args.view_w}" if args.view_w != 16 else "")
             + ("_fp" if args.full_pool else ""))
     dev = torch.device("cuda")
@@ -2147,7 +2152,9 @@ def main():
         rng = np.random.default_rng(1000 + args.ps_id)
         torch.manual_seed(1000 + args.ps_id)
         n_push, last_v = 0, -1
-        print(f"[ps-worker {args.ps_id}] up", flush=True)
+        ps_swin_ptr = (args.ps_id * 997) % max(n_train, 1)   # stagger sweeps
+        print(f"[ps-worker {args.ps_id}] up"
+              + (f" (swin ptr {ps_swin_ptr})" if SWIN else ""), flush=True)
         while not (pdir / "STOP").exists():
             # BACKPRESSURE (v2): a queue of stale gradients is worse than an
             # idle worker -- wait until the master has drained the inbox.
@@ -2165,19 +2172,58 @@ def main():
             model.train()
             gids = rng.choice(train_pool_games, bs, replace=False)
             tgt = pos_of_g_t[gids].to(dev)
-            with torch.amp.autocast("cuda", dtype=torch.bfloat16):
-                Zg = gallery_train(model)
-                Zs = [model(*sample_views(gids, W, rng))
-                      for _ in range(N_REV)]
-                for _ in range(N_DOC):
-                    Zs.append(assemble_doc_view(model, gids, W, rng, bs))
-                loss = sum(F.cross_entropy(
-                    Z.float() @ Zg.T.float() * inv_t, tgt) for Z in Zs)
-                loss = loss + IW * sum(
-                    (1 - (Zs[i].float() * Zs[j].float()).sum(-1)).mean()
-                    for i, j in pairs) / len(pairs)
-            model.zero_grad(set_to_none=False)
-            loss.backward()
+            if SWIN:
+                # swin worker step (user: async exists to make SWIN fast):
+                # mirror of the train_v4doc micro-pass machinery -- fresh
+                # now-anchors, L half-overlap windows from THIS worker's
+                # ring pointer (staggered by ps_id so K workers jointly
+                # sweep the ring K times faster), own CE partition per
+                # pass, immediate backward frees window activations; the
+                # final backward carries the I terms. bf16, no scaler.
+                rows_now = pos_of_g[gids]
+                rows_now_t = torch.as_tensor(rows_now, device=dev)
+                _arb = torch.arange(bs, device=dev)
+                with torch.amp.autocast("cuda", dtype=torch.bfloat16):
+                    eNow = gallery_rows(model, rows_now).float()
+                    Zs = [model(*sample_views(gids, W, rng))
+                          for _ in range(N_REV)]
+                    for _ in range(N_DOC):
+                        Zs.append(assemble_doc_view(model, gids, W, rng, bs))
+                    loss = IW * sum(
+                        (1 - (Zs[i].float() * Zs[j].float()).sum(-1)).mean()
+                        for i, j in pairs) / len(pairs)
+                model.zero_grad(set_to_none=False)
+                for _l in range(SWIN_L):
+                    _w = (ps_swin_ptr + SWIN_S * _l
+                          + np.arange(SWIN_W)) % n_train
+                    _wt = torch.as_tensor(_w, device=dev)
+                    _dup = torch.isin(_wt, rows_now_t)
+                    with torch.amp.autocast("cuda", dtype=torch.bfloat16):
+                        eWin = gallery_rows(model, _w).float()
+                        lw = 0.0
+                        for Z in Zs:
+                            lg = torch.cat(
+                                [Z.float() @ eNow.T * inv_t,
+                                 (Z.float() @ eWin.T * inv_t
+                                  ).masked_fill(_dup[None, :], -1e4)], 1)
+                            lw = lw + F.cross_entropy(lg, _arb)
+                    lw.backward(retain_graph=True)
+                ps_swin_ptr = int((ps_swin_ptr + SWIN_L * SWIN_S) % n_train)
+                loss.backward()
+            else:
+                with torch.amp.autocast("cuda", dtype=torch.bfloat16):
+                    Zg = gallery_train(model)
+                    Zs = [model(*sample_views(gids, W, rng))
+                          for _ in range(N_REV)]
+                    for _ in range(N_DOC):
+                        Zs.append(assemble_doc_view(model, gids, W, rng, bs))
+                    loss = sum(F.cross_entropy(
+                        Z.float() @ Zg.T.float() * inv_t, tgt) for Z in Zs)
+                    loss = loss + IW * sum(
+                        (1 - (Zs[i].float() * Zs[j].float()).sum(-1)).mean()
+                        for i, j in pairs) / len(pairs)
+                model.zero_grad(set_to_none=False)
+                loss.backward()
             g = torch.cat([
                 (q.grad if q.grad is not None else
                  torch.zeros_like(q)).reshape(-1)
@@ -2194,8 +2240,12 @@ def main():
         inbox.mkdir(parents=True, exist_ok=True)
         (pdir / "STOP").unlink(missing_ok=True)
         model = SetPoolN(SLOTS, bn=False, center=CENTERED, pool=POOL_MODE).to(dev)
-        opt = torch.optim.AdamW(model.parameters(), lr=5e-4, weight_decay=1e-4)
+        _lr = 5e-4 * (args.ps_avg ** 0.5)   # sqrt rule for averaged groups
+        opt = torch.optim.AdamW(model.parameters(), lr=_lr, weight_decay=1e-4)
         lam = args.dc_lambda
+        if args.ps_avg > 1:
+            print(f"[ps-master] averaging groups of {args.ps_avg}, "
+                  f"lr {_lr:.2e}", flush=True)
 
         def flat():
             return torch.nn.utils.parameters_to_vector(
@@ -2211,6 +2261,7 @@ def main():
 
         publish()
         pushes, ep, dropped = 0, 0, 0
+        acc, acc_n = None, 0
         target = args.epochs * 16
         t0 = time.time()
         st_ver = {}
@@ -2237,6 +2288,27 @@ def main():
                 st_ver[v - gv] = st_ver.get(v - gv, 0) + 1
                 if lam:
                     g = g + lam * g * g * (RING[v] - base)
+                # averaging mode (user): compensate EACH push to the current
+                # weights first, then average A of them into ONE step.
+                acc = acc + g if acc is not None else g
+                acc_n += 1
+                pushes += 1
+                if pushes % 16 == 0:
+                    ep += 1
+                    if ep % args.ckpt_every == 0:
+                        sd = {k2: q.detach().cpu().clone()
+                              for k2, q in model.state_dict().items()}
+                        torch.save(dict(model=sd),
+                                   OUT / f"ckpt_{name}_ep{ep}.pt")
+                        _tot = max(1, sum(st_ver.values()))
+                        _mean = sum(k * c for k, c in st_ver.items()) / _tot
+                        print(f"[ps-master] ep{ep} pushes={pushes} "
+                              f"{time.time() - t0:.0f}s staleness mean "
+                              f"{_mean:.1f} dropped {dropped}", flush=True)
+                if acc_n < args.ps_avg:
+                    continue
+                g = acc / acc_n
+                acc, acc_n = None, 0
                 gdev = g.to(dev)
                 o = 0
                 for q in model.parameters():
@@ -2252,19 +2324,6 @@ def main():
                         del RING[k]
                 if v % 4 == 0:
                     publish()   # stride-4: 4x fewer 1.4MB writes, +<=3 staleness
-                pushes += 1
-                if pushes % 16 == 0:
-                    ep += 1
-                    if ep % args.ckpt_every == 0:
-                        sd = {k2: q.detach().cpu().clone()
-                              for k2, q in model.state_dict().items()}
-                        torch.save(dict(model=sd),
-                                   OUT / f"ckpt_{name}_ep{ep}.pt")
-                        _tot = max(1, sum(st_ver.values()))
-                        _mean = sum(k * c for k, c in st_ver.items()) / _tot
-                        print(f"[ps-master] ep{ep} pushes={pushes} "
-                              f"{time.time() - t0:.0f}s staleness mean "
-                              f"{_mean:.1f} dropped {dropped}", flush=True)
         (pdir / "STOP").write_text("done")
         st_ver["dropped"] = dropped
         json.dump({str(k): c for k, c in sorted(st_ver.items(), key=lambda kv: str(kv[0]))},
