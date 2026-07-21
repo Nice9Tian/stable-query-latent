@@ -2343,6 +2343,7 @@ def main():
                         _dup = torch.isin(_wt, rows_now_t)
                         with torch.amp.autocast("cuda", dtype=torch.bfloat16):
                             eWin = gallery_rows(model, _w).float()
+                    with torch.amp.autocast("cuda", dtype=torch.bfloat16):
                         lw = 0.0
                         for Z in Zs:
                             lg = torch.cat(
@@ -2376,6 +2377,9 @@ def main():
                         for i, j in pairs) / len(pairs)
                 model.zero_grad(set_to_none=False)
                 loss.backward()
+            if not getattr(ps_worker, "_stepped", False):
+                print(f"[ps-worker {args.ps_id}] first step done", flush=True)
+                ps_worker._stepped = True
             if args.ps_epoch_push:
                 ep_steps = getattr(ps_worker, "_ep_steps", 0) + 1
                 ps_worker._ep_steps = ep_steps
