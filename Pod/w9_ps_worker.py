@@ -386,6 +386,12 @@ def parse_args():
     ap.add_argument("--full-pool", action="store_true",
                     help="draw training views from the FULL review corpus "
                          "(host-RAM flat npy) instead of the 2048-sent pool")
+    ap.add_argument("--pfc-shards", type=int, default=0,
+                    help="distributed sharded softmax (Partial-FC): split "
+                         "the ring into K shards, each sweeps a swin window "
+                         "inside its 1/K, and the CE partition is the exact "
+                         "union of eNow + all K shard windows (single-proc "
+                         "concat == the multi-node per-step all_reduce)")
     ap.add_argument("--view-w", type=int, default=16,
                     help="sentence budget per training review view (whole "
                          "reviews accumulated until >= W); 16 = historical")
@@ -726,6 +732,7 @@ def main():
                            if args.ps_far_w != 1.0 else ""))
                    if args.ps_far else ""))
                if args.ps_role else "")
+            + (f"_pfc{args.pfc_shards}" if args.pfc_shards else "")
             + (f"_w{args.view_w}" if args.view_w != 16 else "")
             + ("_fp" if args.full_pool else ""))
     dev = torch.device("cuda")
@@ -1210,6 +1217,14 @@ def main():
         n_train = len(train_pool_games)
         bank, bank_ptr = None, 0
         swin_ptr = 0
+        PFC = args.pfc_shards
+        if PFC:
+            # each shard = a strided 1/K slice of the sorted ring, so every
+            # shard is a representative sample; its swin never leaves it.
+            _pfc_rows = [np.sort(np.arange(n_train)[_k::PFC])
+                         for _k in range(PFC)]
+            pfc_ptr = [(_k * 997) % max(len(_pfc_rows[_k]), 1)
+                       for _k in range(PFC)]   # stagger shard sweeps
         shadow, mqueue, mq_gid, mq_ptr = None, None, None, 0
         if USE_SHADOW:
             import copy
@@ -1227,6 +1242,8 @@ def main():
             torch.cuda.set_rng_state(st["cuda_rng"])
             rng.bit_generator.state = st["np_rng"]
             start_ep = int(st["ep"])
+            if args.pfc_shards and "pfc_ptr" in st:
+                pfc_ptr = list(st["pfc_ptr"])
             if BANK_POLICY and "bank" in st:
                 bank = st["bank"].to(dev)
                 bank_ptr = int(st.get("bank_ptr", 0))
@@ -1695,23 +1712,54 @@ def main():
                         _all = np.concatenate([_cand, _fill]).astype(np.int64)
                         _wins = [_all[_l * SWIN_W:(_l + 1) * SWIN_W]
                                  for _l in range(SWIN_L)]
-                    for _l in range(SWIN_L):
-                        _w = (_wins[_l] if _wins is not None else
-                              (swin_ptr + SWIN_S * _l
-                               + np.arange(SWIN_W)) % n_train)
-                        _wt = torch.as_tensor(_w, device=dev)
-                        _dup = torch.isin(_wt, rows_now_t)
+                    if PFC:
+                        # DISTRIBUTED SHARDED SOFTMAX (Partial-FC, user):
+                        # K shards each sweep a swin window inside their own
+                        # 1/K; the CE partition is the EXACT union of eNow +
+                        # all K shard windows. This single-process concat is
+                        # numerically identical to the real multi-node run's
+                        # per-step all_reduce of partial partitions, and each
+                        # shard's encode never leaves its 1/K slice.
+                        _ews, _dups = [], []
+                        for _k in range(PFC):
+                            _sr = _pfc_rows[_k]
+                            _wl = min(SWIN_W, len(_sr))
+                            _w = _sr[(pfc_ptr[_k] + np.arange(_wl)) % len(_sr)]
+                            _dups.append(torch.isin(
+                                torch.as_tensor(_w, device=dev), rows_now_t))
+                            with torch.amp.autocast("cuda"):
+                                _ews.append(gallery_rows(model, _w).float())
+                            pfc_ptr[_k] = int((pfc_ptr[_k] + SWIN_S)
+                                              % len(_sr))
                         with torch.amp.autocast("cuda"):
-                            eWin = gallery_rows(model, _w).float()
                             lw = 0.0
                             for Z in Zs:
-                                lg = torch.cat(
-                                    [Z.float() @ eNow.T * inv_t,
-                                     (Z.float() @ eWin.T * inv_t
-                                      ).masked_fill(_dup[None, :], -1e4)], 1)
-                                lw = lw + F.cross_entropy(lg, _arb)
+                                _cols = [Z.float() @ eNow.T * inv_t]
+                                for _e, _d in zip(_ews, _dups):
+                                    _cols.append(
+                                        (Z.float() @ _e.T * inv_t)
+                                        .masked_fill(_d[None, :], -1e4))
+                                lw = lw + F.cross_entropy(
+                                    torch.cat(_cols, 1), _arb)
                         amp.scale(lw).backward(retain_graph=True)
-                    swin_ptr = int((swin_ptr + SWIN_L * SWIN_S) % n_train)
+                    else:
+                        for _l in range(SWIN_L):
+                            _w = (_wins[_l] if _wins is not None else
+                                  (swin_ptr + SWIN_S * _l
+                                   + np.arange(SWIN_W)) % n_train)
+                            _wt = torch.as_tensor(_w, device=dev)
+                            _dup = torch.isin(_wt, rows_now_t)
+                            with torch.amp.autocast("cuda"):
+                                eWin = gallery_rows(model, _w).float()
+                                lw = 0.0
+                                for Z in Zs:
+                                    lg = torch.cat(
+                                        [Z.float() @ eNow.T * inv_t,
+                                         (Z.float() @ eWin.T * inv_t
+                                          ).masked_fill(_dup[None, :], -1e4)], 1)
+                                    lw = lw + F.cross_entropy(lg, _arb)
+                            amp.scale(lw).backward(retain_graph=True)
+                        swin_ptr = int((swin_ptr + SWIN_L * SWIN_S) % n_train)
                 amp.scale(loss).backward()
                 amp.unscale_(opt)
                 if AS_M:
@@ -1793,6 +1841,8 @@ def main():
                     bundle["mq_ptr"] = mq_ptr
                 if SWIN:
                     bundle["swin_ptr"] = swin_ptr
+                    if PFC:
+                        bundle["pfc_ptr"] = pfc_ptr
                 tmp = RES.with_suffix(".tmp")
                 torch.save(bundle, tmp)
                 tmp.replace(RES)
