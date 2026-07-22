@@ -31,6 +31,7 @@ import numpy as np
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
+import torch.utils.checkpoint as _tuc
 
 ARMS = {
     "wcle_ice_icetf": ("ice", "ice"),
@@ -1233,6 +1234,15 @@ def main():
                          for _k in range(PFC)]
             pfc_ptr = [(_k * 997) % max(len(_pfc_rows[_k]), 1)
                        for _k in range(PFC)]   # stagger shard sweeps
+
+            def _pfc_enc(ww):
+                # gradient checkpoint: keep only the [W,128] output; the
+                # [W,4096,1024] activation is recomputed one window at a
+                # time during backward, so K shard windows no longer sit
+                # live simultaneously (the OOM fix). Exact same output ->
+                # the combined softmax is unchanged.
+                with torch.amp.autocast("cuda"):
+                    return gallery_rows(model, ww).float()
         shadow, mqueue, mq_gid, mq_ptr = None, None, None, 0
         if USE_SHADOW:
             import copy
@@ -1736,8 +1746,8 @@ def main():
                             _w = _sr[(pfc_ptr[_k] + np.arange(_wl)) % len(_sr)]
                             _dups.append(torch.isin(
                                 torch.as_tensor(_w, device=dev), rows_now_t))
-                            with torch.amp.autocast("cuda"):
-                                _ews.append(gallery_rows(model, _w).float())
+                            _ews.append(_tuc.checkpoint(
+                                _pfc_enc, _w, use_reentrant=False))
                             pfc_ptr[_k] = int((pfc_ptr[_k] + SWIN_S)
                                               % len(_sr))
                         with torch.amp.autocast("cuda"):
