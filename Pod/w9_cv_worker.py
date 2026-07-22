@@ -67,6 +67,12 @@ ARMS = {
     "wcle_mq3072ce_cetf": ("mq3072ce", "ce"),         # MoCo queue, CE only
     "wcle_epdb_v20i10c20_cetf": ("epdb_v20i10c20", "ce"),   # VICReg epd b=all
     "wcle_epd_v20i10c20_cetf": ("epd_v20i10c20", "ce"),     # VICReg epd bs=192
+    "wcle_vfai2ce_icetf": ("vfai2ce", "ice"),   # views-first anchors + I x2
+    #   (user 2026-07-23: the step's 4 student views open the teacher pack,
+    #   fixed pack fills the rest; teacher = superset of student evidence)
+    #   Audited note: store-tier games' doc view duplicates the pack's store
+    #   prefix (2x weight); wiki-tier gains new doc evidence. By design --
+    #   review views likewise duplicate pack reviews; eval packs unchanged.
     #   (user 2026-07-22: batch=all retired -- 22h/fold; bs=192 is the 5fold arm)
     "wcle_bce_cetf": ("bce", "ce"),   # SimCLR-style in-batch NT-Xent over
     # the step's 4*bs view encodings (ring-sibling positives, no anchors)
@@ -81,7 +87,7 @@ ARMS = {
     # sliding fresh-window i2ce (user): CE field = now-batch 192 anchors +
     # L ring windows of W (fresh, grad, no cache); micro-pass backward.
 }
-_IW = {"ice": 1.0, "i2ce": 2.0, "mq3072i2ce": 2.0, "swin168step84loop2i2ce": 2.0, "swin84step42loop2i2ce": 2.0, "cegate1": 1.0, "cegate2": 2.0, "cegate3": 3.0,
+_IW = {"ice": 1.0, "i2ce": 2.0, "vfai2ce": 2.0, "mq3072i2ce": 2.0, "swin168step84loop2i2ce": 2.0, "swin84step42loop2i2ce": 2.0, "cegate1": 1.0, "cegate2": 2.0, "cegate3": 3.0,
        "cegate4": 4.0, "cegate1w": 1.0, "cegate2w": 2.0, "igate1": 1.0,
        "igate1w": 1.0, "rgate2": 2.0, "nodoc": 2.0}
 SPLIT_SEED = 20260711
@@ -217,6 +223,7 @@ def main():
     MQ_LEN = int(mq_m.group(1)) if mq_m else 0        # MoCo FIFO ring length
     MQ_M = 0.99                                       # shadow weight-EMA momentum
     BCE = tower_kind == "bce"          # in-batch views, no gallery
+    VFA = tower_kind == "vfai2ce"      # views-first anchors (user 2026-07-23)
     as_m = re.match(r"as(\d+)(?:dc(\d+))?i2ce$", tower_kind)
     AS_M = int(as_m.group(1)) if as_m else 0          # async workers (sim)
     DC_L = (int(as_m.group(2)) / 10.0) if (as_m and as_m.group(2)) else 0.0
@@ -536,6 +543,55 @@ def main():
             Zlast[torch.tensor(rest).to(dev)] = model(*sample_views(gids[rest], W, rng)).half()
         return Zlast
 
+    _TIER_LENS = [(~mx).sum(1).cpu().numpy() for _, __, mx in tiers]
+
+    def doc_view_raw(gids, W, rng):
+        # raw twin of assemble_doc_view: each game's doc-view SENTENCES
+        # (wiki tier, then store tier, then a review-view fallback),
+        # reusable by both the view encode and the vfa pack build.
+        out = [None] * len(gids)
+        for ti, (g2x, Sx, mx) in enumerate(tiers):
+            for k, g in enumerate(gids):
+                if out[k] is None and g in g2x:
+                    r = g2x[g]
+                    out[k] = Sx[r, :int(_TIER_LENS[ti][r])]
+        rest = [k for k in range(len(gids)) if out[k] is None]
+        if rest:
+            S2, m2 = sample_views(np.asarray(gids)[rest], W, rng)
+            L2 = (~m2).sum(1).cpu().numpy()
+            for j, k in enumerate(rest):
+                out[k] = S2[j, :int(L2[j])]
+        return out
+
+    def encode_doc_rows(model, rows):
+        LM = max(r.shape[0] for r in rows)
+        S = torch.zeros(len(rows), LM, 1024, dtype=torch.float16, device=dev)
+        for k, r in enumerate(rows):
+            S[k, :r.shape[0]] = r
+        L = torch.as_tensor([r.shape[0] for r in rows], device=dev)
+        m = torch.arange(LM, device=dev)[None, :] >= L[:, None]
+        return model(S, m)
+
+    def vfa_packs(gids, vraw, dparts):
+        # views-first teacher packs for the batch games: the step's three
+        # review views + the doc view open the pack, the game's fixed
+        # anchor pack fills the remainder, truncated at the cap.
+        GC = SGal.shape[1]
+        gl = gal_len.detach().cpu().numpy()
+        vlens = [(~mv).sum(1).cpu().numpy() for _, mv in vraw]
+        S = torch.zeros(len(gids), GC, 1024, dtype=torch.float16, device=dev)
+        lens = []
+        for k, g in enumerate(gids):
+            parts = [Sv[k, :int(vlens[v][k])] for v, (Sv, _) in enumerate(vraw)]
+            parts.append(dparts[k])
+            parts.append(SGal[int(g), :int(gl[int(g)])])
+            row = torch.cat(parts)[:GC]
+            S[k, :row.shape[0]] = row
+            lens.append(row.shape[0])
+        L = torch.as_tensor(lens, device=dev)
+        m = torch.arange(GC, device=dev)[None, :] >= L[:, None]
+        return S, m
+
     pairs = list(combinations(range(NV), 2))
     t_m = re.match(r"wcle_i2cet(\d{2})_", args.arm)
     TAU = int(t_m.group(1)) / 100.0 if t_m else 0.02   # from ARM name
@@ -664,13 +720,29 @@ def main():
                         as_pulls[_wk], model.parameters())
                 with torch.amp.autocast("cuda"):
                     Zg = None if (MQ_LEN or SWIN or BCE) else gallery_train(model)
+                    if VFA:
+                        # views-first anchors: draw the raw views ONCE, put
+                        # them at the head of this step's teacher packs for
+                        # the batch games, and swap those teachers into the
+                        # gallery. Eval anchors stay the fixed packs.
+                        vraw = [sample_views(gids, W, rng)
+                                for _ in range(NV - 1)]
+                        dparts = doc_view_raw(gids, W, rng)
+                        S_vfa, m_vfa = vfa_packs(gids, vraw, dparts)
+                        Zg = Zg.clone()
+                        Zg[tgt] = model(S_vfa, m_vfa)
                     if SWIN:
                         # NOW anchors: fresh, grad, always in the field.
                         gids_t = torch.as_tensor(gids, device=dev)
                         eNow = model(SGal[gids_t], mGal[gids_t]).float()
                     model.slot_buf = [] if SC_W else None
-                    Zs = [model(*sample_views(gids, W, rng)) for _ in range(NV - 1)]
-                    Zs.append(assemble_doc_view(model, gids, W, rng, bs))
+                    if VFA:
+                        Zs = [model(Sv, mv) for (Sv, mv) in vraw]
+                        Zs.append(encode_doc_rows(model, dparts))
+                    else:
+                        Zs = [model(*sample_views(gids, W, rng))
+                              for _ in range(NV - 1)]
+                        Zs.append(assemble_doc_view(model, gids, W, rng, bs))
                     if MQ_LEN:
                         # current keys enter the ring head and ARE this
                         # step's positives; the rest of the ring = negatives;
