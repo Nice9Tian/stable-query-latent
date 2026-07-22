@@ -97,6 +97,10 @@ def parse_args():
     ap.add_argument("--repo", required=True)
     ap.add_argument("--arm", required=True, choices=sorted(ARMS))
     ap.add_argument("--anchor-cap", type=int, default=512)
+    ap.add_argument("--view-w", type=int, default=16,
+                    help="STUDENT view size: soft sentence-stop threshold for "
+                         "each small view (whole reviews never split). fs "
+                         "worker default 16; sweep for student scaling.")
     ap.add_argument("--fold", type=int, required=True)
     ap.add_argument("--n-folds", type=int, default=5)
     ap.add_argument("--cv-seed", type=int, default=20260711)
@@ -237,6 +241,7 @@ def main():
             + (f"_ld{args.doc_lead}" if args.doc_lead else "")
             + ("_wllm" if args.wiki_src == "llm" else "")
             + ("_bw" if args.init_ckpt else "")
+            + (f"_w{args.view_w}" if args.view_w != 16 else "")
             + ("_fp" if args.full_pool else ""))
     dev = torch.device("cuda")
     C, OUT = Path(args.data_dir), Path(args.out_dir)
@@ -1329,11 +1334,11 @@ def main():
         # recipes share the seed (and the split), keeping ce-vs-i2ce PAIRED.
         # Fold identity is untouched (--cv-seed drives the permutation).
         if tower_kind in ("byol", "mv3"):
-            train_byol(seed=args.fold)
+            train_byol(seed=args.fold, W=args.view_w)
         elif tower_kind.startswith("epd"):
-            train_vicreg(seed=args.fold)
+            train_vicreg(seed=args.fold, W=args.view_w)
         else:
-            train_v4doc(seed=args.fold)
+            train_v4doc(seed=args.fold, W=args.view_w)
         print(f"tower {name} train phase done in {time.time()-t0:.0f}s", flush=True)
         traj_p = OUT / f"zs_traj_{name}.json"
         zs_traj = json.loads(traj_p.read_text()) if traj_p.exists() else {}
