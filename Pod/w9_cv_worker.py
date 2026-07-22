@@ -1046,9 +1046,11 @@ def main():
     VORDER = ["neutral", "noname", "positive", "negative"]
 
     def zs_from_arrays(Zg, Za, Zq):
-        # ZS-only CV metrics + NEW selection (user): cvsel = noname_h1 +
-        # noname_h5 + 2*noname_tagF1, all on the VAL fold. Also all-4 test
-        # variants (h1+h5) and test tag for the readout.
+        # ZS-only CV metrics + selection (user 2026-07-23): cvsel = noname_h1
+        # + noname_h5 + 2*val_tag, all on the VAL fold, where val_tag is the
+        # CLEAN-inductive tag (probe on the train pool, scored on val_g
+        # neutral) -- the old 2*noname_tagF1 used the leaky tag_split probe.
+        # Also all-4 test variants (h1+h5) and test_tag for the readout.
         gz = Zg / (np.linalg.norm(Zg, axis=1, keepdims=True) + 1e-8)
         az = Za / (np.linalg.norm(Za, axis=1, keepdims=True) + 1e-8)
         out = {}
@@ -1092,11 +1094,22 @@ def main():
             np.stack([Za[i] for i in _ti]).astype(np.float32)))
         _lab2 = np.stack([y[n2i[art_games[i]]] for i in _ti])
         out["test_tag"] = micro_prf(_lab2, _s2, _th2)["micro_f1"]
+        # val-side twin of test_tag (same clean probe, scored on val_g
+        # neutral) -- the LEAK-FREE selection tag; replaces v_non_tag, whose
+        # tag_split probe had seen most held-out anchors (user 2026-07-23).
+        _vi = [i for i in range(len(art_games))
+               if variants[i] == "neutral" and art_games[i] in val_g]
+        _vs = _rg2.predict(_sc2.transform(
+            np.stack([Za[i] for i in _vi]).astype(np.float32)))
+        _vlab = np.stack([y[n2i[art_games[i]]] for i in _vi])
+        out["val_tag"] = micro_prf(_vlab, _vs, _th2)["micro_f1"]
         # VAL noname tag F1 (same ridge, predicted on val noname queries)
         s = rg.predict(sc.transform(np.stack([Za[i] for i in va_non]).astype(np.float32)))
         labs = np.stack([y[n2i[art_games[i]]] for i in va_non])
         out["v_non_tag"] = micro_prf(labs, s, th)["micro_f1"]
-        out["cvsel"] = out["v_non"] + out["v_non5"] + 2.0 * out["v_non_tag"]
+        out["cvsel"] = out["v_non"] + out["v_non5"] + 2.0 * out["val_tag"]
+        out["cvsel_leaky"] = (out["v_non"] + out["v_non5"]
+                              + 2.0 * out["v_non_tag"])   # old, report-only
         # --- REVIEW-based selection (user 2026-07-18): deployment has NO
         # rewrites, so the checkpoint pick uses the val fold's REVIEW
         # pseudo-queries (ss_queries): rvsel = q@1 + q@RSEL_K + 2*q_tagF1.
@@ -1347,27 +1360,34 @@ def main():
         (OUT / f"resume_{name}.pt").unlink(missing_ok=True)
 
     # ---------------- ZS-primary: refresh traj + select zsbest by cvsel ----
-    # cvsel = noname_h1 + noname_h5 + 2*noname_tagF1 (val) -- the user's CV
-    # selection. Old traj entries refresh from the projection npz (no GPU).
+    # cvsel = noname_h1 + noname_h5 + 2*val_tag (val fold), val_tag = clean-
+    # inductive tag (train-pool probe, val_g neutral). Old traj entries
+    # refresh from the projection npz (no GPU) to gain test_tag + val_tag.
     traj_p = OUT / f"zs_traj_{name}.json"
     zs_traj = json.loads(traj_p.read_text()) if traj_p.exists() else {}
     for npzp in sorted(OUT.glob(f"tower_{name}_ep*.npz"),
                        key=lambda q: int(q.stem.split("_ep")[-1])):
         ek = npzp.stem.split("_ep")[-1]
-        if "test_tag" in zs_traj.get(f"ep{ek}", {}):
-            continue   # (was "rvsel"): recompute stale entries to add test_tag
+        if "val_tag" in zs_traj.get(f"ep{ek}", {}):
+            continue   # gate on val_tag (the field ONLY the clean-selection
+        # code writes): entries scored by an earlier version carry test_tag +
+        # the OLD leaky cvsel but no val_tag, so they MUST be recomputed to
+        # gain val_tag + the clean cvsel -- keying on test_tag would skip them
+        # and silently re-select on the leaky metric.
         T0 = np.load(npzp)
         zs_traj[f"ep{ek}"] = zs_from_arrays(T0["SPg"], T0["SPa"], T0["SPq"])
-        print(f"ZS-refresh(ep{ek}) cvsel={zs_traj[f'ep{ek}']['rvsel']:.3f}",
+        print(f"ZS-refresh(ep{ek}) cvsel={zs_traj[f'ep{ek}']['cvsel']:.3f}",
               flush=True)
         json.dump(zs_traj, open(traj_p, "w"), indent=2)
-    cand = {k: v for k, v in zs_traj.items() if "rvsel" in v}
+    cand = {k: v for k, v in zs_traj.items() if "val_tag" in v}   # only
+    # entries with the CLEAN cvsel (val_tag present) are selection candidates
     if cand:
-        bk = max(cand, key=lambda k: (cand[k]["rvsel"], -int(k[2:])))
+        bk = max(cand, key=lambda k: (cand[k]["cvsel"], -int(k[2:])))
         json.dump(dict(best_ep=int(bk[2:]), **cand[bk]),
                   open(OUT / f"zsbest_{name}.json", "w"), indent=2)
         b = cand[bk]
-        print(f"ZSBEST {name}: ep{bk[2:]} rvsel={b['rvsel']:.3f} "
+        print(f"ZSBEST {name}: ep{bk[2:]} cvsel={b['cvsel']:.3f} "
+              f"test_tag={b['test_tag']:.3f} "
               f"(q1 {b['v_q1']:.3f} q5 {b['v_q5']:.3f} qtag {b['v_qtag']:.3f}) "
               f"non={b['nm_noname']:.3f}/{b['h5_noname']:.3f} "
               f"tag={b['tag_noname']:.3f}", flush=True)

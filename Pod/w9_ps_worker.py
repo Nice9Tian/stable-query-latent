@@ -2110,6 +2110,15 @@ def main():
             np.stack([Za[i] for i in _ti]).astype(np.float32)))
         _lab2 = np.stack([y[n2i[art_games[i]]] for i in _ti])
         out["test_tag"] = micro_prf(_lab2, _s2, _th2)["micro_f1"]
+        # val-side twin of test_tag (same clean probe, scored on val_g
+        # neutral) -- the LEAK-FREE selection tag; replaces v_non_tag, whose
+        # tag_split probe had seen most held-out anchors (user 2026-07-23).
+        _vi = [i for i in range(len(art_games))
+               if variants[i] == "neutral" and art_games[i] in val_g]
+        _vs = _rg2.predict(_sc2.transform(
+            np.stack([Za[i] for i in _vi]).astype(np.float32)))
+        _vlab = np.stack([y[n2i[art_games[i]]] for i in _vi])
+        out["val_tag"] = micro_prf(_vlab, _vs, _th2)["micro_f1"]
         # --- REVIEW-based selection (user 2026-07-18): deployment has NO
         # rewrites, so the checkpoint pick uses the val fold's REVIEW
         # pseudo-queries (ss_queries): rvsel = q@1 + q@RSEL_K + 2*q_tagF1.
