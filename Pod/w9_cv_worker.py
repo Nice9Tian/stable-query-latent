@@ -1069,6 +1069,22 @@ def main():
             s = rg.predict(sc.transform(np.stack([Za[i] for i in idx]).astype(np.float32)))
             labs = np.stack([y[n2i[art_games[i]]] for i in idx])
             out["tag_" + var] = micro_prf(labs, s, th)["micro_f1"]
+        # CLEAN INDUCTIVE TAG (user 2026-07-23): the default tag probe fits
+        # on tag_split (70% of ALL games -> it sees most held-out anchors).
+        # test_tag refits the ridge on the RETRIEVAL train pool only, picks
+        # the threshold on val_g, and scores the test games' NEUTRAL queries
+        # -- a fully held-out tag-generalization number matching the
+        # retrieval eval's rigor. noname is unnecessary: the tower never saw
+        # these games, so a name in the neutral text cannot be memorized.
+        _ctag = {"train": [names[i] for i in train_pool_games],
+                 "val": sorted(val_g), "test": sorted(test_g)}
+        _sc2, _rg2, _, _th2, _ = train_anchor_ridge(targs, Zg, y, n2i, _ctag)
+        _ti = [i for i in range(len(art_games))
+               if variants[i] == "neutral" and art_games[i] in test_g]
+        _s2 = _rg2.predict(_sc2.transform(
+            np.stack([Za[i] for i in _ti]).astype(np.float32)))
+        _lab2 = np.stack([y[n2i[art_games[i]]] for i in _ti])
+        out["test_tag"] = micro_prf(_lab2, _s2, _th2)["micro_f1"]
         # VAL noname tag F1 (same ridge, predicted on val noname queries)
         s = rg.predict(sc.transform(np.stack([Za[i] for i in va_non]).astype(np.float32)))
         labs = np.stack([y[n2i[art_games[i]]] for i in va_non])
