@@ -438,6 +438,13 @@ def parse_args():
                     help="dir of the raw gallery store (the disk/network "
                          "tier rotating borrows page from); default: the "
                          "cache dir")
+    ap.add_argument("--ps-far", action="store_true",
+                    help="workers publish their pool's 128-d anchor "
+                         "encodings with each push; the barrier master "
+                         "assembles a global far table and republishes "
+                         "it -- every OUT-OF-POOL game joins the CE field "
+                         "as a one-round-stale detached negative "
+                         "(identity pressure without the raw data)")
     ap.add_argument("--ps-epoch-push", action="store_true",
                     help="worker accumulates one EPOCH (16 steps at the "
                          "frozen pulled weights) per push")
@@ -709,7 +716,8 @@ def main():
                     if args.ps_cover > 0 else f"sh{args.ps_reshuffle}")
                    if args.ps_shard else "")
                 + ("b" if args.ps_barrier else "")
-                + ("e" if args.ps_epoch_push else ""))
+                + ("e" if args.ps_epoch_push else "")
+                + ("f" if args.ps_far else ""))
                if args.ps_role else "")
             + (f"_w{args.view_w}" if args.view_w != 16 else "")
             + ("_fp" if args.full_pool else ""))
@@ -2348,6 +2356,7 @@ def main():
         rng = np.random.default_rng(1000 + args.ps_id)
         torch.manual_seed(1000 + args.ps_id)
         n_push, last_v = 0, -1
+        _far_out = None    # --ps-far: out-of-pool stale negative columns
         ps_swin_ptr = (args.ps_id * 997) % max(n_train, 1)   # stagger sweeps
         if args.ps_shard and args.ps_cover > 0 and SG_pool is not None:
             ps_swin_ptr %= SG_pool.shape[0]
@@ -2391,6 +2400,16 @@ def main():
                     _kick(_rr + 1)
                     print(f"[ps-worker {args.ps_id}] rotation r{_rr} mounted "
                           f"(borrow {len(_brr)})", flush=True)
+                if args.ps_far and "far" in st:
+                    # STALE FAR FIELD: the master's table of every pool's
+                    # last-round encodings; keep rows OUTSIDE this pool
+                    # (in-pool rows are contrasted fresh) that are filled.
+                    _fok = st["far_ok"]
+                    _msk = torch.ones(n_train, dtype=torch.bool)
+                    _msk[ps_worker._rows] = False
+                    _sel = (_msk & _fok).nonzero().squeeze(1)
+                    _far_out = (st["far"][_sel].float().to(dev)
+                                if len(_sel) else None)
                 model.zero_grad(set_to_none=False)
             model.train()
             if args.ps_shard and args.ps_cover > 0:
@@ -2488,10 +2507,16 @@ def main():
                     with torch.amp.autocast("cuda", dtype=torch.bfloat16):
                         lw = 0.0
                         for Z in Zs:
-                            lg = torch.cat(
-                                [Z.float() @ eNow.T * inv_t,
-                                 (Z.float() @ eWin.T * inv_t
-                                  ).masked_fill(_dup[None, :], -1e4)], 1)
+                            _blk = [Z.float() @ eNow.T * inv_t,
+                                    (Z.float() @ eWin.T * inv_t
+                                     ).masked_fill(_dup[None, :], -1e4)]
+                            if _far_out is not None:
+                                # far block: one-round-stale out-of-pool
+                                # encodings, detached -- gradient flows
+                                # only through the query side; batch is
+                                # inside the pool, so no self-collision.
+                                _blk.append(Z.float() @ _far_out.T * inv_t)
+                            lg = torch.cat(_blk, 1)
                             lw = lw + F.cross_entropy(lg, _arb)
                     lw.backward(retain_graph=True)
                 ps_swin_ptr = int((ps_swin_ptr + SWIN_L * SWIN_S)
@@ -2534,8 +2559,22 @@ def main():
                 (q.grad if q.grad is not None else
                  torch.zeros_like(q)).reshape(-1)
                 for q in model.parameters()]).float().cpu() / _scale
+            _pay = dict(g=g, v=last_v, wid=args.ps_id)
+            if args.ps_far and args.ps_shard and args.ps_cover > 0:
+                # publish THIS pool's 128-d anchor encodings (at the pulled
+                # weights, ~150KB) -- the master assembles the global far
+                # table from all pools; costs ~5 no-grad forwards per epoch.
+                with torch.no_grad(), torch.amp.autocast(
+                        "cuda", dtype=torch.bfloat16):
+                    _fe = torch.cat([model(SG_pool[i:i + 128],
+                                           mG_pool[i:i + 128])
+                                     for i in range(0, SG_pool.shape[0],
+                                                    128)])
+                _pay["far"] = _fe.half().cpu()
+                _pay["rows"] = torch.as_tensor(
+                    np.asarray(ps_worker._rows, np.int64))
             tmp = inbox / f"tmp_{args.ps_id}_{n_push}"  # no dot (torch.save quirk)
-            torch.save(dict(g=g, v=last_v, wid=args.ps_id), tmp)
+            torch.save(_pay, tmp)
             tmp.replace(inbox / f"g_{n_push:07d}_{args.ps_id}.pt")   # count-first: arrival-interleaved sort
             n_push += 1
         print(f"[ps-worker {args.ps_id}] {n_push} pushes, stop", flush=True)
@@ -2589,9 +2628,15 @@ def main():
         v = _resume_ep if args.ps_barrier else 0
         RING = {v: flat()}
 
+        FAR = None      # --ps-far: global table of per-pool 128-d
+        FAR_OK = None   # encodings, assembled from worker pushes
         def publish():
             tmp = pdir / "wtmp.pt"   # NO leading dot: PyTorchFileWriter rejects dot-names
-            torch.save(dict(v=v, vec=RING[v]), tmp)
+            _d = dict(v=v, vec=RING[v])
+            if args.ps_far and FAR is not None:
+                _d["far"] = FAR
+                _d["far_ok"] = FAR_OK
+            torch.save(_d, tmp)
             tmp.replace(pdir / "weights.pt")
 
         publish()
@@ -2642,7 +2687,8 @@ def main():
                     # worker; only when EVERY worker has reported does the
                     # round close -- each stash is compensated to the
                     # CURRENT version at consumption time below.
-                    slot[int(st.get("wid", 0))] = (g, gv)
+                    slot[int(st.get("wid", 0))] = (
+                        g, gv, st.get("far"), st.get("rows"))
                     continue
                 st_ver[v - gv] = st_ver.get(v - gv, 0) + 1
                 if lam:
@@ -2686,7 +2732,16 @@ def main():
             if args.ps_barrier and len(slot) >= args.ps_nworkers \
                     and pushes < target:
                 gs = []
-                for wid, (gg, gv) in sorted(slot.items()):
+                for wid, (gg, gv, gfar, grows) in sorted(slot.items()):
+                    if args.ps_far and gfar is not None:
+                        if FAR is None:
+                            FAR = torch.zeros(len(train_pool_games),
+                                              gfar.shape[1],
+                                              dtype=torch.float16)
+                            FAR_OK = torch.zeros(len(train_pool_games),
+                                                 dtype=torch.bool)
+                        FAR[grows] = gfar
+                        FAR_OK[grows] = True
                     st_ver[v - gv] = st_ver.get(v - gv, 0) + 1
                     base = RING.get(gv)
                     if base is not None and lam:
