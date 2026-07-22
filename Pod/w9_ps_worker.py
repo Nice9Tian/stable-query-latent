@@ -386,6 +386,12 @@ def parse_args():
     ap.add_argument("--full-pool", action="store_true",
                     help="draw training views from the FULL review corpus "
                          "(host-RAM flat npy) instead of the 2048-sent pool")
+    ap.add_argument("--pfc-window", type=int, default=0,
+                    help="per-shard negatives per step (0 = SWIN_W). Set "
+                         "below the shard size to probe low per-step "
+                         "coverage: per-step union = K*W, coverage K*W/N; "
+                         "the window slides within each shard, sweeping "
+                         "the full 1/K over epochs")
     ap.add_argument("--pfc-shards", type=int, default=0,
                     help="distributed sharded softmax (Partial-FC): split "
                          "the ring into K shards, each sweeps a swin window "
@@ -732,7 +738,9 @@ def main():
                            if args.ps_far_w != 1.0 else ""))
                    if args.ps_far else ""))
                if args.ps_role else "")
-            + (f"_pfc{args.pfc_shards}" if args.pfc_shards else "")
+            + ((f"_pfc{args.pfc_shards}"
+                + (f"w{args.pfc_window}" if args.pfc_window else ""))
+               if args.pfc_shards else "")
             + (f"_w{args.view_w}" if args.view_w != 16 else "")
             + ("_fp" if args.full_pool else ""))
     dev = torch.device("cuda")
@@ -1723,7 +1731,8 @@ def main():
                         _ews, _dups = [], []
                         for _k in range(PFC):
                             _sr = _pfc_rows[_k]
-                            _wl = min(SWIN_W, len(_sr))
+                            _wl = min(args.pfc_window or SWIN_W,
+                                      len(_sr))
                             _w = _sr[(pfc_ptr[_k] + np.arange(_wl)) % len(_sr)]
                             _dups.append(torch.isin(
                                 torch.as_tensor(_w, device=dev), rows_now_t))
