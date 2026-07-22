@@ -445,6 +445,11 @@ def parse_args():
                          "it -- every OUT-OF-POOL game joins the CE field "
                          "as a one-round-stale detached negative "
                          "(identity pressure without the raw data)")
+    ap.add_argument("--ps-far-w", type=float, default=0.7,
+                    help="weight of each stale far negative in the CE "
+                         "partition, folded in as +log(w) on the far "
+                         "logits (w*exp(s) = exp(s+log w)); 1.0 = full "
+                         "strength")
     ap.add_argument("--ps-epoch-push", action="store_true",
                     help="worker accumulates one EPOCH (16 steps at the "
                          "frozen pulled weights) per push")
@@ -717,7 +722,9 @@ def main():
                    if args.ps_shard else "")
                 + ("b" if args.ps_barrier else "")
                 + ("e" if args.ps_epoch_push else "")
-                + ("f" if args.ps_far else ""))
+                + (("f" + (str(int(round(args.ps_far_w * 10)))
+                           if args.ps_far_w != 1.0 else ""))
+                   if args.ps_far else ""))
                if args.ps_role else "")
             + (f"_w{args.view_w}" if args.view_w != 16 else "")
             + ("_fp" if args.full_pool else ""))
@@ -2515,7 +2522,11 @@ def main():
                                 # encodings, detached -- gradient flows
                                 # only through the query side; batch is
                                 # inside the pool, so no self-collision.
-                                _blk.append(Z.float() @ _far_out.T * inv_t)
+                                # +log(w) folds the staleness discount
+                                # into the partition: each far column
+                                # counts as w fresh negatives (user 0.7).
+                                _blk.append(Z.float() @ _far_out.T * inv_t
+                                            + math.log(args.ps_far_w))
                             lg = torch.cat(_blk, 1)
                             lw = lw + F.cross_entropy(lg, _arb)
                     lw.backward(retain_graph=True)
