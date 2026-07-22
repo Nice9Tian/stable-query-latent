@@ -71,6 +71,9 @@ ARMS = {
     "wcle_bce_cetf": ("bce", "ce"),   # SimCLR-style in-batch NT-Xent over
     # the step's 4*bs view encodings (ring-sibling positives, no anchors)
     "wcle_swin168step84loop2i2ce_icetf": ("swin168step84loop2i2ce", "ice"),
+    "wcle_swin84step42loop2i2ce_icetf": ("swin84step42loop2i2ce", "ice"),
+    #   20G recipe (user 2026-07-22): W=84 window x cap 2048 -- both proven
+    #   free (A4 window sweep + A2 saturation); store 8.5G, fits a 20G card.
     # ---- tau sweep (user 2026-07-19, w9_i2ce_t.ipynb) ----
     "wcle_i2cet05_icetf": ("i2ce", "ice"),   # tau = 0.05 (from ARM name)
     "wcle_i2cet10_icetf": ("i2ce", "ice"),   # tau = 0.10
@@ -78,7 +81,7 @@ ARMS = {
     # sliding fresh-window i2ce (user): CE field = now-batch 192 anchors +
     # L ring windows of W (fresh, grad, no cache); micro-pass backward.
 }
-_IW = {"ice": 1.0, "i2ce": 2.0, "mq3072i2ce": 2.0, "swin168step84loop2i2ce": 2.0, "cegate1": 1.0, "cegate2": 2.0, "cegate3": 3.0,
+_IW = {"ice": 1.0, "i2ce": 2.0, "mq3072i2ce": 2.0, "swin168step84loop2i2ce": 2.0, "swin84step42loop2i2ce": 2.0, "cegate1": 1.0, "cegate2": 2.0, "cegate3": 3.0,
        "cegate4": 4.0, "cegate1w": 1.0, "cegate2w": 2.0, "igate1": 1.0,
        "igate1w": 1.0, "rgate2": 2.0, "nodoc": 2.0}
 SPLIT_SEED = 20260711
@@ -102,6 +105,10 @@ def parse_args():
     ap.add_argument("--doc-lead", type=int, default=0,
                     help=">0: truncate doc VIEWS to the first N sentences "
                          "(length-attribution ablation)")
+    ap.add_argument("--eval-only", action="store_true",
+                    help="skip training/projection; just refresh the "
+                         "trajectory from existing tower npz and rewrite "
+                         "zsbest (used to backfill test_tag post-hoc)")
     ap.add_argument("--full-pool-path", default="",
                     help="path of full_pool_fp16.npy (meta npz expected beside "
                          "it); empty = <data-dir>/full_pool_fp16.npy")
@@ -1134,6 +1141,17 @@ def main():
             out[var] = dict(h1=float((rk == 1).mean()), h5=float((rk <= 5).mean()),
                             med=float(np.median(rk)),
                             tag=micro_prf(labs, s, th)["micro_f1"])
+        # clean-inductive tag on the frozen (or head) embeddings: probe on
+        # the train pool only, threshold on val_g, score test_g neutral.
+        _ctag = {"train": [names[i] for i in train_pool_games],
+                 "val": sorted(val_g), "test": sorted(test_g)}
+        _sc2, _rg2, _, _th2, _ = train_anchor_ridge(targs, gal, y, n2i, _ctag)
+        _ti = [i for i, g in enumerate(art_games)
+               if g in test_g and variants[i] == "neutral"]
+        _s2 = _rg2.predict(_sc2.transform(
+            np.stack([art[i] for i in _ti]).astype(np.float32)))
+        _lab2 = np.stack([y[n2i[art_games[i]]] for i in _ti])
+        out["test_tag"] = micro_prf(_lab2, _s2, _th2)["micro_f1"]
         return out
 
     d_rows = [g2wiki[g] for g in sorted(g2wiki)]
@@ -1290,7 +1308,7 @@ def main():
 
     # ---------------- tower + checkpoints ----------------
     DONE_FLAG = OUT / f"tower_{name}_ep{args.epochs}.npz"
-    if not DONE_FLAG.exists():
+    if not DONE_FLAG.exists() and not args.eval_only:
         t0 = time.time()
         # PER-FOLD TRAIN SEED (user design 2026-07-17): seed = fold index.
         # The 5 folds then jointly sample split variance AND seed variance,
@@ -1336,8 +1354,8 @@ def main():
     for npzp in sorted(OUT.glob(f"tower_{name}_ep*.npz"),
                        key=lambda q: int(q.stem.split("_ep")[-1])):
         ek = npzp.stem.split("_ep")[-1]
-        if "rvsel" in zs_traj.get(f"ep{ek}", {}):
-            continue
+        if "test_tag" in zs_traj.get(f"ep{ek}", {}):
+            continue   # (was "rvsel"): recompute stale entries to add test_tag
         T0 = np.load(npzp)
         zs_traj[f"ep{ek}"] = zs_from_arrays(T0["SPg"], T0["SPa"], T0["SPq"])
         print(f"ZS-refresh(ep{ek}) cvsel={zs_traj[f'ep{ek}']['rvsel']:.3f}",
