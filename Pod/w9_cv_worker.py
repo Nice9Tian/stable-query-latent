@@ -410,9 +410,24 @@ def main():
         SGal = torch.tensor(GALd["gal"]).to(dev)
         gal_len = torch.tensor(GALd["gal_len"]).to(dev)
         gal_doc = torch.tensor(GALd["gal_doc_len"]).to(dev)
+    elif (C / f"wscan_gal_rev_g{args.anchor_cap}.npz").exists():
+        # PREBUILT pack from the volume. Built from the full corpus, so it
+        # actually reaches the cap (med 4096 at cap 4096) instead of the
+        # ~2068 the 2048-sentence POOL can supply. This matters for any arm
+        # that SUB-SAMPLES the pack (multi-anchor): with a POOL-built pack
+        # the per-game review supply equals the per-pack budget and every
+        # pack covers the whole pool.
+        GALd = np.load(C / f"wscan_gal_rev_g{args.anchor_cap}.npz")
+        SGal = torch.tensor(GALd["gal"]).to(dev)
+        gal_len = torch.tensor(np.asarray(GALd["gal_len"], np.int64)).to(dev)
+        gal_doc = torch.tensor(np.asarray(GALd["gal_doc_len"], np.int64)).to(dev)
+        print(f"anchors: PREBUILT g{args.anchor_cap} pack, used med "
+              f"{int(gal_len.float().median())}", flush=True)
     else:
         GCAP = args.anchor_cap
-        print(f"building {GCAP}-sentence anchors on GPU ...", flush=True)
+        print(f"building {GCAP}-sentence anchors on GPU "
+              f"(POOL source, caps at {POOL.shape[1] if POOL is not None else '?'} "
+              f"review sentences) ...", flush=True)
         SGal = torch.zeros(NG, GCAP, 1024, dtype=torch.float16, device=dev)
         gal_len = torch.zeros(NG, dtype=torch.long, device=dev)
         gal_doc = torch.zeros(NG, dtype=torch.long, device=dev)
@@ -490,16 +505,20 @@ def main():
         # and the packs collapse onto each other -- multi-anchor degenerates
         # to single-anchor. That happens when the anchors are built from the
         # 2048-sentence POOL instead of --full-pool.
-        _Rv = (gal_len - gal_doc).clamp(min=0)
-        _degen = int((_Rv < _h).sum())
-        if _degen:
-            print(f"WARNING: {_degen}/{NG} games have < {_h} review sentences; "
-                  f"their packs are tiled permutations of the same set and "
-                  f"will collapse together. Use --full-pool for cap {args.anchor_cap}.",
-                  flush=True)
-        assert _degen < NG * 0.05, (
-            f"{_degen}/{NG} games would produce degenerate (near-identical) "
-            f"packs at cap {args.anchor_cap}; multi-anchor is meaningless here")
+        # Two packs of _h drawn from R review sentences overlap by about
+        # _h/R. R == _h is TOTAL degeneracy (each pack is the whole pool),
+        # not the boundary case -- so test the overlap itself, not R < _h.
+        _Rv = (gal_len - gal_doc).clamp(min=1)
+        _ov = (torch.full_like(_Rv, _h, dtype=torch.float) / _Rv).clamp(max=1.0)
+        _mo = float(_ov.median())
+        print(f"pack overlap: median {_mo:.0%} (target ~50%; review supply "
+              f"median {int(_Rv.median())} vs per-pack {_h})", flush=True)
+        assert _mo <= 0.75, (
+            f"packs would overlap {_mo:.0%} of their sentences (review supply "
+            f"median {int(_Rv.median())} vs per-pack budget {_h}) -- the two "
+            f"anchors would be near-identical and multi-anchor is meaningless. "
+            f"Build/upload the prebuilt wscan_gal_rev_g{args.anchor_cap}.npz "
+            f"(full-corpus anchors) or lower MA_N / raise --anchor-cap.")
 
     def ma_sg(k, rows):
         """Pack k's sentences for game rows -> (len(rows), _h, D)."""
@@ -1644,10 +1663,24 @@ def main():
     fb = OUT / f"w9cv_frozen_fold{args.fold}.json"
     if not fb.exists():
         with torch.no_grad():
-            w_ = (~mGal).float().unsqueeze(-1)
-            Zg0 = ((SGal.float() * w_).sum(1) / w_.sum(1).clamp(min=1)).cpu().numpy()
-            wA_ = (~mA).float().unsqueeze(-1)
-            Za0 = ((SA.float() * wA_).sum(1) / wA_.sum(1).clamp(min=1)).cpu().numpy()
+            # CHUNKED: SGal.float() on the whole [NG, cap, 1024] tensor is
+            # 31.6 GiB in one allocation at cap 4096 and OOMs an 80G card
+            # that already holds the fp16 gallery.
+            Zg0 = np.zeros((NG, SGal.shape[-1]), np.float32)
+            for _i in range(0, NG, 64):
+                _s = SGal[_i:_i + 64].float()
+                _w = (~mGal[_i:_i + 64]).float().unsqueeze(-1)
+                Zg0[_i:_i + 64] = ((_s * _w).sum(1)
+                                   / _w.sum(1).clamp(min=1)).cpu().numpy()
+                del _s, _w
+            Za0 = np.zeros((SA.shape[0], SA.shape[-1]), np.float32)
+            for _i in range(0, SA.shape[0], 256):
+                _s = SA[_i:_i + 256].float()
+                _w = (~mA[_i:_i + 256]).float().unsqueeze(-1)
+                Za0[_i:_i + 256] = ((_s * _w).sum(1)
+                                    / _w.sum(1).clamp(min=1)).cpu().numpy()
+                del _s, _w
+            torch.cuda.empty_cache()
         json.dump(metrics4(Zg0, Za0), open(fb, "w"), indent=2)
         print(f"frozen baseline written: {fb.name}", flush=True)
 
