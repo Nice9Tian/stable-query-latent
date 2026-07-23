@@ -69,6 +69,10 @@ ARMS = {
     "wcle_epdb_v20i10c20_cetf": ("epdb_v20i10c20", "ce"),   # VICReg epd b=all
     "wcle_epd_v20i10c20_cetf": ("epd_v20i10c20", "ce"),     # VICReg epd bs=192
     "wcle_vfai2ce_icetf": ("vfai2ce", "ice"),   # views-first anchors + I x2
+    "wcle_ma2i2ce_icetf": ("ma2i2ce", "ice"),   # MULTI-ANCHOR (user
+    #   2026-07-23): 2 independent teacher packs per game, BOTH in the
+    #   gallery as separate entries; CE is multi-positive over them; no
+    #   pack averaging and no pack-pack pull. Eval takes per-game max.   # views-first anchors + I x2
     #   (user 2026-07-23: the step's 4 student views open the teacher pack,
     #   fixed pack fills the rest; teacher = superset of student evidence)
     #   Audited note: store-tier games' doc view duplicates the pack's store
@@ -100,7 +104,7 @@ ARMS = {
     # sliding fresh-window i2ce (user): CE field = now-batch 192 anchors +
     # L ring windows of W (fresh, grad, no cache); micro-pass backward.
 }
-_IW = {"ice": 1.0, "i2ce": 2.0, "vfai2ce": 2.0, "mq3072i2ce": 2.0, "swin168step84loop2i2ce": 2.0, "swin84step42loop2i2ce": 2.0, "cegate1": 1.0, "cegate2": 2.0, "cegate3": 3.0,
+_IW = {"ice": 1.0, "i2ce": 2.0, "ma2i2ce": 2.0, "vfai2ce": 2.0, "mq3072i2ce": 2.0, "swin168step84loop2i2ce": 2.0, "swin84step42loop2i2ce": 2.0, "cegate1": 1.0, "cegate2": 2.0, "cegate3": 3.0,
        "cegate4": 4.0, "cegate1w": 1.0, "cegate2w": 2.0, "igate1": 1.0,
        "igate1w": 1.0, "rgate2": 2.0, "nodoc": 2.0,
        "i4uni2": 4.0, "i6uni2": 6.0, "i2au2": 2.0, "i2au25": 2.0}
@@ -252,6 +256,8 @@ def main():
     AU = bool(_au)                     # (anchor align + anchor Gaussian uniform)
     AU_T = int(_au.group(1)) if _au else 0
     VFA = tower_kind == "vfai2ce"      # views-first anchors (user 2026-07-23)
+    ma_m = re.match(r"ma(\d+)i2ce$", tower_kind)
+    MA_N = int(ma_m.group(1)) if ma_m else 0   # multi-anchor pack count
     as_m = re.match(r"as(\d+)(?:dc(\d+))?i2ce$", tower_kind)
     AS_M = int(as_m.group(1)) if as_m else 0          # async workers (sim)
     DC_L = (int(as_m.group(2)) / 10.0) if (as_m and as_m.group(2)) else 0.0
@@ -355,6 +361,9 @@ def main():
     pos_of_g = np.full(NG, -1, dtype=np.int64)
     pos_of_g[train_pool_games] = np.arange(len(train_pool_games))
     pos_of_g_t = torch.tensor(pos_of_g)
+    ma_dead = (torch.cat([aliveW[torch.as_tensor(train_pool_games), k] == 0
+                          for k in range(MA_N)]).to(dev)
+               if MA_N else None)   # gallery entries that are dead packs
     tp_t = torch.tensor(train_pool_games).to(dev)
 
     g2wiki = {int(WK["gidx"][i]): i for i in range(len(WK["gidx"]))
@@ -431,6 +440,53 @@ def main():
     mGal = torch.arange(SGal.shape[1], device=dev)[None, :] >= gal_len[:, None]
     mGal_nd = mGal | (torch.arange(SGal.shape[1], device=dev)[None, :] <
                       gal_doc[:, None])
+    idxP = mGalP = aliveW = None
+    if MA_N:
+        # N independent random samples of each game's anchor sentences.
+        # Packs MAY overlap (independent draws, not disjoint slices); a
+        # per-game fixed seed makes them bit-identical across restarts and
+        # between training and evaluation. The doc prefix is pinned to the
+        # head of pack 0 only. Games with no reviews keep pack 0 and mark
+        # the rest dead (aliveW 0) so they never enter a numerator and are
+        # masked out of every denominator.
+        MA_SEED = 20260723
+        _h = SGal.shape[1] // MA_N
+        assert _h >= 512, f"ma{MA_N} needs cap//{MA_N} >= 512, got {_h}"
+        idxP = torch.zeros(MA_N, NG, _h, dtype=torch.long)
+        _mP = torch.ones(MA_N, NG, _h, dtype=torch.bool)
+        aliveW = torch.ones(NG, MA_N)
+        for _g in range(NG):
+            _l, _d = int(gal_len[_g]), int(gal_doc[_g])
+            _R = _l - _d
+            _gen = torch.Generator().manual_seed(MA_SEED + _g)
+            for _k in range(MA_N):
+                _dk = min(_d, _h) if _k == 0 else 0
+                _need = _h - _dk
+                if _need == 0:                      # pack 0 all doc prefix
+                    idxP[_k, _g] = torch.arange(_h)
+                    _mP[_k, _g] = False
+                elif _R > 0:
+                    _pm = torch.cat([torch.randperm(_R, generator=_gen)
+                                     for _ in range(-(-_need // _R))])[:_need]
+                    idxP[_k, _g] = (torch.cat([torch.arange(_dk), _d + _pm])
+                                    if _dk else _d + _pm)
+                    _mP[_k, _g] = False
+                elif _k == 0:                       # doc-only, short prefix
+                    idxP[_k, _g, :_dk] = torch.arange(_dk)
+                    _mP[_k, _g, :_dk] = False
+                else:                               # dead pack
+                    _mP[_k, _g, 0] = False
+                    aliveW[_g, _k] = 0.0
+        idxP = idxP.to(dev)
+        aliveW = aliveW.to(dev)
+        mGalP = [_mP[k].to(dev) for k in range(MA_N)]
+        print(f"multi-anchor: {MA_N} packs x {_h} sentences; "
+              f"{int((aliveW[:, 1:] == 0).any(1).sum())} games with dead packs",
+              flush=True)
+
+    def ma_sg(k, rows):
+        """Pack k's sentences for game rows -> (len(rows), _h, D)."""
+        return SGal[rows[:, None], idxP[k][rows]]
     if tower_kind.startswith(("epd", "vic")):
         # VICReg family: training never reads the anchors (they are eval-
         # only), and batch=all view activations need the room -- park the
@@ -536,6 +592,29 @@ def main():
                     SGal[i:i + chunk].to(dev, non_blocking=True),
                     mGal_nd[i:i + chunk].to(dev, non_blocking=True)))
         return torch.cat(outs)
+
+    def gallery_train_ma(model, chunk=128):
+        """[MA_N * n_train, D]: pack k of train-pool position p at
+        k*n_train + p. Every entry carries gradient."""
+        rows = train_pool_games
+        outs = []
+        for k in range(MA_N):
+            for i in range(0, len(rows), chunk):
+                r = torch.as_tensor(rows[i:i + chunk], device=dev)
+                outs.append(model(ma_sg(k, r), mGalP[k][r]))
+        return torch.cat(outs)
+
+    def gallery_ma(model, chunk=128):
+        """[MA_N, NG, D] for evaluation (no grad)."""
+        outs = []
+        with torch.no_grad():
+            for k in range(MA_N):
+                ok = []
+                for i in range(0, NG, chunk):
+                    r = torch.arange(i, min(i + chunk, NG), device=dev)
+                    ok.append(model(ma_sg(k, r), mGalP[k][r]))
+                outs.append(torch.cat(ok))
+        return torch.stack(outs)
 
     def gallery_train(model, chunk=128):
         rows = train_pool_games
@@ -768,7 +847,9 @@ def main():
                     torch.nn.utils.vector_to_parameters(
                         as_pulls[_wk], model.parameters())
                 with torch.amp.autocast("cuda"):
-                    Zg = None if (MQ_LEN or SWIN or BCE or UNI) else gallery_train(model)
+                    Zg = (None if (MQ_LEN or SWIN or BCE or UNI)
+                          else (gallery_train_ma(model) if MA_N
+                                else gallery_train(model)))
                     if VFA:
                         # views-first anchors: draw the raw views ONCE, put
                         # them at the head of this step's teacher packs for
@@ -861,6 +942,23 @@ def main():
                         loss = (sum(F.cross_entropy(Z.float()[hd] @ Zg.T.float() * _invt(),
                                                     tgt[hd]) for Z in Zs)
                                 if len(hd) else torch.zeros((), device=dev))
+                    elif MA_N:
+                        # MULTI-POSITIVE CE (SupCon L_out): every student view
+                        # is classified against all MA_N*n_train packs; the
+                        # game's own packs are ALL positives, scored once each
+                        # and averaged. Dead packs are alive-weighted out of
+                        # the numerator and -inf-masked out of the denominator.
+                        _nt = len(train_pool_games)
+                        _wg = aliveW[torch.as_tensor(gids, device=dev)]  # [bs,MA_N]
+                        loss = 0.0
+                        for Z in Zs:
+                            lg = (Z.float() @ Zg.T.float() * _invt()
+                                  ).masked_fill(ma_dead[None, :], -1e4)
+                            _num = torch.zeros(len(gids), device=dev)
+                            for k in range(MA_N):
+                                _num = _num + _wg[:, k] * F.cross_entropy(
+                                    lg, tgt + k * _nt, reduction="none")
+                            loss = loss + (_num / _wg.sum(1).clamp(min=1e-6)).mean()
                     else:
                         loss = sum(F.cross_entropy(Z.float() @ Zg.T.float() * _invt(), tgt)
                                    for Z in Zs)
@@ -1232,12 +1330,27 @@ def main():
         # CLEAN-inductive tag (probe on the train pool, scored on val_g
         # neutral) -- the old 2*noname_tagF1 used the leaky tag_split probe.
         # Also all-4 test variants (h1+h5) and test_tag for the readout.
-        gz = Zg / (np.linalg.norm(Zg, axis=1, keepdims=True) + 1e-8)
+        # multi-anchor: Zg is [K, NG, D]. Retrieval scores a game by the
+        # MAX over its packs (a query matching any facet counts); the tag
+        # probe reads the concatenation (the deployed representation is all
+        # K vectors, so the probe is entitled to all of them).
+        _MA = (Zg.ndim == 3)
+        if _MA:
+            gz = Zg / (np.linalg.norm(Zg, axis=2, keepdims=True) + 1e-8)
+            Zg_probe = np.concatenate(list(Zg), axis=1)
+        else:
+            gz = Zg / (np.linalg.norm(Zg, axis=1, keepdims=True) + 1e-8)
+            Zg_probe = Zg
         az = Za / (np.linalg.norm(Za, axis=1, keepdims=True) + 1e-8)
         out = {}
 
+        def _sim(a):
+            if _MA:
+                return np.stack([a @ gz[k].T for k in range(gz.shape[0])]).max(0)
+            return a @ gz.T
+
         def _rk(idx):
-            sim = az[idx] @ gz.T
+            sim = _sim(az[idx])
             tgt = A["gidx"][idx]
             return (sim > sim[np.arange(len(idx)), tgt][:, None]).sum(1) + 1
 
@@ -1252,7 +1365,7 @@ def main():
         rkv = _rk(va_non)
         out["v_non"] = float((rkv == 1).mean())
         out["v_non5"] = float((rkv <= 5).mean())
-        sc, rg, al, th, _ = train_anchor_ridge(targs, Zg, y, n2i, tag_split)
+        sc, rg, al, th, _ = train_anchor_ridge(targs, Zg_probe, y, n2i, tag_split)
         for var in ("neutral", "noname"):
             idx = [i for i in range(len(art_games))
                    if variants[i] == var and art_games[i] in test_g]
@@ -1268,7 +1381,7 @@ def main():
         # these games, so a name in the neutral text cannot be memorized.
         _ctag = {"train": [names[i] for i in train_pool_games],
                  "val": sorted(val_g), "test": sorted(test_g)}
-        _sc2, _rg2, _, _th2, _ = train_anchor_ridge(targs, Zg, y, n2i, _ctag)
+        _sc2, _rg2, _, _th2, _ = train_anchor_ridge(targs, Zg_probe, y, n2i, _ctag)
         _ti = [i for i in range(len(art_games))
                if variants[i] == "neutral" and art_games[i] in test_g]
         _s2 = _rg2.predict(_sc2.transform(
@@ -1302,7 +1415,7 @@ def main():
         qg = np.asarray(Qs["gidx"])
         for pref, gset in (("v", val_g), ("t", test_g)):
             qi = [i for i in range(len(qg)) if names[qg[i]] in gset]
-            sim = qz[qi] @ gz.T
+            sim = _sim(qz[qi])
             tgtq = qg[qi]
             rkq = (sim > sim[np.arange(len(qi)), tgtq][:, None]).sum(1) + 1
             out[pref + "_q1"] = float((rkq == 1).mean())
@@ -1315,7 +1428,8 @@ def main():
 
     def zs_metrics(model):
         with torch.no_grad():
-            Zg = gallery(model).float().cpu().numpy()
+            Zg = ((gallery_ma(model) if MA_N else gallery(model))
+                  .float().cpu().numpy())
             Za = torch.cat([model(SA[i:i+256], mA[i:i+256])
                             for i in range(0, SA.shape[0], 256)]).float().cpu().numpy()
         return zs_from_arrays(Zg, Za)
@@ -1354,7 +1468,8 @@ def main():
     def project_cache(model, path):
         NQ = len(Qs["gidx"])
         with torch.no_grad():
-            SPg = gallery(model).float().cpu().numpy()
+            SPg = ((gallery_ma(model) if MA_N else gallery(model))
+                   .float().cpu().numpy())
             SPg_nd = gallery_nodoc(model).float().cpu().numpy()
             SPa = torch.cat([model(SA[i:i+256], mA[i:i+256])
                              for i in range(0, SA.shape[0], 256)]).float().cpu().numpy()
