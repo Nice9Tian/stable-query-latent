@@ -74,6 +74,11 @@ ARMS = {
     #   prefix (2x weight); wiki-tier gains new doc evidence. By design --
     #   review views likewise duplicate pack reviews; eval packs unchanged.
     #   (user 2026-07-22: batch=all retired -- 22h/fold; bs=192 is the 5fold arm)
+    "wcle_i4uni2_icetf": ("i4uni2", "ice"),  # pure Wang&Isola align+uniform
+    "wcle_i6uni2_icetf": ("i6uni2", "ice"),  # (views only, anchor-free): view-view
+    #   align (IW=4/6 x mean(1-cos)) + batch-view Gaussian uniformity (t=2).
+    #   Controlled loss ablation vs CE -- SAME tower/views/2000ep/cvsel/readout,
+    #   ONLY the loss changes (no anchor softmax). i4=align_w2, i6=align_w3.
     "wcle_bce_cetf": ("bce", "ce"),   # SimCLR-style in-batch NT-Xent over
     # the step's 4*bs view encodings (ring-sibling positives, no anchors)
     "wcle_swin168step84loop2i2ce_icetf": ("swin168step84loop2i2ce", "ice"),
@@ -89,7 +94,8 @@ ARMS = {
 }
 _IW = {"ice": 1.0, "i2ce": 2.0, "vfai2ce": 2.0, "mq3072i2ce": 2.0, "swin168step84loop2i2ce": 2.0, "swin84step42loop2i2ce": 2.0, "cegate1": 1.0, "cegate2": 2.0, "cegate3": 3.0,
        "cegate4": 4.0, "cegate1w": 1.0, "cegate2w": 2.0, "igate1": 1.0,
-       "igate1w": 1.0, "rgate2": 2.0, "nodoc": 2.0}
+       "igate1w": 1.0, "rgate2": 2.0, "nodoc": 2.0,
+       "i4uni2": 4.0, "i6uni2": 6.0}
 SPLIT_SEED = 20260711
 DM, HEADS, NV = 128, 4, 4
 ARC_S_T, ARC_M_T = 50.0, 0.2       # tower ArcFace
@@ -223,6 +229,8 @@ def main():
     MQ_LEN = int(mq_m.group(1)) if mq_m else 0        # MoCo FIFO ring length
     MQ_M = 0.99                                       # shadow weight-EMA momentum
     BCE = tower_kind == "bce"          # in-batch views, no gallery
+    UNI = tower_kind in ("i4uni2", "i6uni2")   # W&I: batch uniformity, no anchor
+    UNI_T = 2.0                        # W&I uniformity Gaussian t (repo default)
     VFA = tower_kind == "vfai2ce"      # views-first anchors (user 2026-07-23)
     as_m = re.match(r"as(\d+)(?:dc(\d+))?i2ce$", tower_kind)
     AS_M = int(as_m.group(1)) if as_m else 0          # async workers (sim)
@@ -719,7 +727,7 @@ def main():
                     torch.nn.utils.vector_to_parameters(
                         as_pulls[_wk], model.parameters())
                 with torch.amp.autocast("cuda"):
-                    Zg = None if (MQ_LEN or SWIN or BCE) else gallery_train(model)
+                    Zg = None if (MQ_LEN or SWIN or BCE or UNI) else gallery_train(model)
                     if VFA:
                         # views-first anchors: draw the raw views ONCE, put
                         # them at the head of this step's teacher packs for
@@ -781,6 +789,14 @@ def main():
                                     lg[_ar, u * bs + _ar] = -1e4
                             loss = loss + F.cross_entropy(
                                 lg, ((v + 1) % NV) * bs + _ar)
+                    elif UNI:
+                        # W&I uniformity (official-repo form): log mean
+                        # exp(-t*pdist^2) over the batch views per branch;
+                        # the align term is the IW block below (no anchor CE).
+                        loss = 0.0
+                        for Z in Zs:
+                            d2 = torch.pdist(Z.float()).pow(2)
+                            loss = loss + d2.mul(-UNI_T).exp().mean().log() / len(Zs)
                     elif tower_kind == "arc":
                         loss = sum(arcface_ce(Z.float() @ Zg.T.float(), tgt) for Z in Zs)
                     elif CE_GATED:
