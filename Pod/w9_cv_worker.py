@@ -38,6 +38,7 @@ import numpy as np
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
+import torch.utils.checkpoint as _tuc
 
 ARMS = {
     "wcle_ice_icetf": ("ice", "ice"),
@@ -74,6 +75,13 @@ ARMS = {
     #   prefix (2x weight); wiki-tier gains new doc evidence. By design --
     #   review views likewise duplicate pack reviews; eval packs unchanged.
     #   (user 2026-07-22: batch=all retired -- 22h/fold; bs=192 is the 5fold arm)
+    "wcle_i2au2_icetf": ("i2au2", "ice"),    # I2CE, CE->align+uniform (t=2 soft)
+    "wcle_i2au25_icetf": ("i2au25", "ice"),  # I2CE, CE->align+uniform (t=25 = CE tau)
+    #   keeps i2ce's view-view I (IW=2); ONLY the CE term is replaced by
+    #   explicit Wang&Isola align(view->own anchor) + Gaussian uniformity
+    #   (view vs WRONG anchors, kernel exp(2t(cos-1))). Tests whether I
+    #   stabilizes align+uniform the way it stabilizes CE (anchor-only a+u
+    #   without a separate view-view I collapsed to .005).
     "wcle_i4uni2_icetf": ("i4uni2", "ice"),  # pure Wang&Isola align+uniform
     "wcle_i6uni2_icetf": ("i6uni2", "ice"),  # (views only, anchor-free): view-view
     #   align (IW=4/6 x mean(1-cos)) + batch-view Gaussian uniformity (t=2).
@@ -95,7 +103,7 @@ ARMS = {
 _IW = {"ice": 1.0, "i2ce": 2.0, "vfai2ce": 2.0, "mq3072i2ce": 2.0, "swin168step84loop2i2ce": 2.0, "swin84step42loop2i2ce": 2.0, "cegate1": 1.0, "cegate2": 2.0, "cegate3": 3.0,
        "cegate4": 4.0, "cegate1w": 1.0, "cegate2w": 2.0, "igate1": 1.0,
        "igate1w": 1.0, "rgate2": 2.0, "nodoc": 2.0,
-       "i4uni2": 4.0, "i6uni2": 6.0}
+       "i4uni2": 4.0, "i6uni2": 6.0, "i2au2": 2.0, "i2au25": 2.0}
 SPLIT_SEED = 20260711
 DM, HEADS, NV = 128, 4, 4
 ARC_S_T, ARC_M_T = 50.0, 0.2       # tower ArcFace
@@ -109,6 +117,15 @@ def parse_args():
     ap.add_argument("--repo", required=True)
     ap.add_argument("--arm", required=True, choices=sorted(ARMS))
     ap.add_argument("--anchor-cap", type=int, default=512)
+    ap.add_argument("--pfc-shards", type=int, default=0,
+                    help="distributed sharded softmax (Partial-FC): split "
+                         "the ring into K shards, each sweeps a swin window "
+                         "inside its 1/K, CE partition = exact union of "
+                         "eNow + all K shard windows (single-proc concat == "
+                         "multi-node per-step all_reduce)")
+    ap.add_argument("--pfc-window", type=int, default=0,
+                    help="per-shard negatives/step (0 = SWIN_W); set below "
+                         "the shard size to probe low per-step coverage")
     ap.add_argument("--view-w", type=int, default=16,
                     help="STUDENT view size: soft sentence-stop threshold for "
                          "each small view (whole reviews never split). fs "
@@ -231,6 +248,9 @@ def main():
     BCE = tower_kind == "bce"          # in-batch views, no gallery
     UNI = tower_kind in ("i4uni2", "i6uni2")   # W&I: batch uniformity, no anchor
     UNI_T = 2.0                        # W&I uniformity Gaussian t (repo default)
+    _au = re.match(r"i2au(\d+)$", tower_kind)   # I2CE with CE->align+uniform
+    AU = bool(_au)                     # (anchor align + anchor Gaussian uniform)
+    AU_T = int(_au.group(1)) if _au else 0
     VFA = tower_kind == "vfai2ce"      # views-first anchors (user 2026-07-23)
     as_m = re.match(r"as(\d+)(?:dc(\d+))?i2ce$", tower_kind)
     AS_M = int(as_m.group(1)) if as_m else 0          # async workers (sim)
@@ -256,6 +276,9 @@ def main():
             + (f"_ld{args.doc_lead}" if args.doc_lead else "")
             + ("_wllm" if args.wiki_src == "llm" else "")
             + ("_bw" if args.init_ckpt else "")
+            + ((f"_pfc{args.pfc_shards}"
+                + (f"w{args.pfc_window}" if args.pfc_window else ""))
+               if args.pfc_shards else "")
             + (f"_w{args.view_w}" if args.view_w != 16 else "")
             + ("_fp" if args.full_pool else ""))
     dev = torch.device("cuda")
@@ -632,6 +655,22 @@ def main():
         ckpts = {}
         shadow, mqueue, mq_gid, mq_ptr = None, None, None, 0
         swin_ptr = 0
+        PFC = args.pfc_shards
+        if PFC:
+            _ntr0 = len(train_pool_games)
+            _pfc_rows = [np.sort(np.arange(_ntr0)[_k::PFC])
+                         for _k in range(PFC)]
+            pfc_ptr = [(_k * 997) % max(len(_pfc_rows[_k]), 1)
+                       for _k in range(PFC)]   # stagger shard sweeps
+            _tpg = np.asarray(train_pool_games)
+
+            def _pfc_enc(_wt):
+                # gradient checkpoint: keep only the [W,128] output; the big
+                # [W,4096,1024] activation is recomputed one window at a
+                # time in backward, so K shard windows never sit live
+                # simultaneously (the OOM fix). Exact same output.
+                with torch.amp.autocast("cuda"):
+                    return model(SGal[_wt], mGal[_wt]).float()
         if MQ_LEN:
             # true MoCo: frozen weight-EMA twin encodes the keys
             import copy
@@ -652,6 +691,8 @@ def main():
             print(f"RESUME from ep{start_ep}", flush=True)
             if SWIN:
                 swin_ptr = int(st.get("swin_ptr", 0))
+                if args.pfc_shards and "pfc_ptr" in st:
+                    pfc_ptr = list(st["pfc_ptr"])
             if TAU_LEARN and "log_invt" in st:
                 TAUP["p"].data = st["log_invt"].to(dev)
             if MQ_LEN and "mqueue" in st:
@@ -789,6 +830,21 @@ def main():
                                     lg[_ar, u * bs + _ar] = -1e4
                             loss = loss + F.cross_entropy(
                                 lg, ((v + 1) % NV) * bs + _ar)
+                    elif AU:
+                        # I2CE with CE replaced by Wang&Isola align+uniformity
+                        # on the anchor field (view-view I stays, IW block).
+                        # align = pull each view to its OWN anchor (1-cos);
+                        # uniform = Gaussian kernel exp(2t(cos-1)) vs the
+                        # WRONG anchors (own column zeroed). Summed per view
+                        # like the CE it replaces.
+                        loss = 0.0
+                        for Z in Zs:
+                            sim = Z.float() @ Zg.T.float()
+                            own = sim.gather(1, tgt[:, None]).squeeze(1)
+                            ker = ((sim - 1.0) * (2 * AU_T)).exp().scatter(
+                                1, tgt[:, None], 0.0)
+                            loss = loss + (1 - own).mean() + ker.sum(1).div(
+                                ker.shape[1] - 1).log().mean()
                     elif UNI:
                         # W&I uniformity (official-repo form): log mean
                         # exp(-t*pdist^2) over the batch views per branch;
@@ -841,23 +897,53 @@ def main():
                     # between passes). Ring positions index train_pool_games.
                     _arb = torch.arange(bs, device=dev)
                     _ntr = len(train_pool_games)
-                    for _l in range(SWIN_L):
-                        _wpos = (swin_ptr + SWIN_S * _l
-                                 + np.arange(SWIN_W)) % _ntr
-                        _wt = torch.as_tensor(
-                            np.asarray(train_pool_games)[_wpos], device=dev)
-                        _dup = torch.isin(_wt, gids_t)
+                    if PFC:
+                        # DISTRIBUTED SHARDED SOFTMAX (Partial-FC): K shards
+                        # each sweep a swin window inside their own 1/K; the
+                        # CE partition is the EXACT union of eNow + all K
+                        # shard windows (concat == multi-node all_reduce).
+                        # Each window encode is gradient-checkpointed.
+                        _ews, _dups = [], []
+                        for _k in range(PFC):
+                            _sr = _pfc_rows[_k]
+                            _wl = min(args.pfc_window or SWIN_W, len(_sr))
+                            _wpos = _sr[(pfc_ptr[_k]
+                                         + np.arange(_wl)) % len(_sr)]
+                            _wt = torch.as_tensor(_tpg[_wpos], device=dev)
+                            _dups.append(torch.isin(_wt, gids_t))
+                            _ews.append(_tuc.checkpoint(
+                                _pfc_enc, _wt, use_reentrant=False))
+                            pfc_ptr[_k] = int((pfc_ptr[_k] + SWIN_S)
+                                              % len(_sr))
                         with torch.amp.autocast("cuda"):
-                            eWin = model(SGal[_wt], mGal[_wt]).float()
                             lw = 0.0
                             for Z in Zs:
-                                lg = torch.cat(
-                                    [Z.float() @ eNow.T * _invt(),
-                                     (Z.float() @ eWin.T * _invt()
-                                      ).masked_fill(_dup[None, :], -1e4)], 1)
-                                lw = lw + F.cross_entropy(lg, _arb)
+                                _cols = [Z.float() @ eNow.T * _invt()]
+                                for _e, _d in zip(_ews, _dups):
+                                    _cols.append(
+                                        (Z.float() @ _e.T * _invt())
+                                        .masked_fill(_d[None, :], -1e4))
+                                lw = lw + F.cross_entropy(
+                                    torch.cat(_cols, 1), _arb)
                         amp.scale(lw).backward(retain_graph=True)
-                    swin_ptr = int((swin_ptr + SWIN_L * SWIN_S) % _ntr)
+                    else:
+                        for _l in range(SWIN_L):
+                            _wpos = (swin_ptr + SWIN_S * _l
+                                     + np.arange(SWIN_W)) % _ntr
+                            _wt = torch.as_tensor(
+                                np.asarray(train_pool_games)[_wpos], device=dev)
+                            _dup = torch.isin(_wt, gids_t)
+                            with torch.amp.autocast("cuda"):
+                                eWin = model(SGal[_wt], mGal[_wt]).float()
+                                lw = 0.0
+                                for Z in Zs:
+                                    lg = torch.cat(
+                                        [Z.float() @ eNow.T * _invt(),
+                                         (Z.float() @ eWin.T * _invt()
+                                          ).masked_fill(_dup[None, :], -1e4)], 1)
+                                    lw = lw + F.cross_entropy(lg, _arb)
+                            amp.scale(lw).backward(retain_graph=True)
+                        swin_ptr = int((swin_ptr + SWIN_L * SWIN_S) % _ntr)
                 amp.scale(loss).backward()
                 amp.unscale_(opt)
                 if AS_M:
@@ -914,6 +1000,8 @@ def main():
                               np_rng=rng.bit_generator.state, ep=ep + 1)
                 if SWIN:
                     bundle["swin_ptr"] = swin_ptr
+                    if PFC:
+                        bundle["pfc_ptr"] = pfc_ptr
                 if TAU_LEARN:
                     bundle["log_invt"] = TAUP["p"].detach().cpu()
                     print(f"  tau={1.0 / float(torch.exp(TAUP['p'])):.4f}",
