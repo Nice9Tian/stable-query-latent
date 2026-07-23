@@ -361,9 +361,6 @@ def main():
     pos_of_g = np.full(NG, -1, dtype=np.int64)
     pos_of_g[train_pool_games] = np.arange(len(train_pool_games))
     pos_of_g_t = torch.tensor(pos_of_g)
-    ma_dead = (torch.cat([aliveW[torch.as_tensor(train_pool_games), k] == 0
-                          for k in range(MA_N)]).to(dev)
-               if MA_N else None)   # gallery entries that are dead packs
     tp_t = torch.tensor(train_pool_games).to(dev)
 
     g2wiki = {int(WK["gidx"][i]): i for i in range(len(WK["gidx"]))
@@ -440,7 +437,7 @@ def main():
     mGal = torch.arange(SGal.shape[1], device=dev)[None, :] >= gal_len[:, None]
     mGal_nd = mGal | (torch.arange(SGal.shape[1], device=dev)[None, :] <
                       gal_doc[:, None])
-    idxP = mGalP = aliveW = None
+    idxP = mGalP = aliveW = ma_dead = None
     if MA_N:
         # N independent random samples of each game's anchor sentences.
         # Packs MAY overlap (independent draws, not disjoint slices); a
@@ -483,6 +480,26 @@ def main():
         print(f"multi-anchor: {MA_N} packs x {_h} sentences; "
               f"{int((aliveW[:, 1:] == 0).any(1).sum())} games with dead packs",
               flush=True)
+        # gallery rows that are dead packs, in the SAME k-major order
+        # gallery_train_ma emits them (pack k of train-pos p at k*n_train+p).
+        _tp = torch.as_tensor(train_pool_games, device=dev)
+        ma_dead = torch.cat([aliveW[_tp, k] == 0 for k in range(MA_N)])
+        # PACK INDEPENDENCE GUARD: a pack is a random half of the game's
+        # review sentences. If a game has fewer than _h review sentences the
+        # sampler tiles a permutation, so every pack covers the whole pool
+        # and the packs collapse onto each other -- multi-anchor degenerates
+        # to single-anchor. That happens when the anchors are built from the
+        # 2048-sentence POOL instead of --full-pool.
+        _Rv = (gal_len - gal_doc).clamp(min=0)
+        _degen = int((_Rv < _h).sum())
+        if _degen:
+            print(f"WARNING: {_degen}/{NG} games have < {_h} review sentences; "
+                  f"their packs are tiled permutations of the same set and "
+                  f"will collapse together. Use --full-pool for cap {args.anchor_cap}.",
+                  flush=True)
+        assert _degen < NG * 0.05, (
+            f"{_degen}/{NG} games would produce degenerate (near-identical) "
+            f"packs at cap {args.anchor_cap}; multi-anchor is meaningless here")
 
     def ma_sg(k, rows):
         """Pack k's sentences for game rows -> (len(rows), _h, D)."""
@@ -1337,7 +1354,16 @@ def main():
         _MA = (Zg.ndim == 3)
         if _MA:
             gz = Zg / (np.linalg.norm(Zg, axis=2, keepdims=True) + 1e-8)
-            Zg_probe = np.concatenate(list(Zg), axis=1)
+            # RETRIEVAL takes the per-game max over packs (above). The TAG
+            # PROBE instead reads a MEAN-POOLED 128-d vector: the same
+            # structure and dimensionality every other arm feeds its probe,
+            # so the tag number is directly comparable to BYOL / VICReg /
+            # SimCLR. Averaging is wrong for retrieval (it is exactly what
+            # this arm was built to remove) but right here -- the probe must
+            # not collect a dimensionality bonus. A concat read is kept
+            # alongside as a diagnostic only.
+            _mp = Zg.mean(0)
+            Zg_probe = _mp / (np.linalg.norm(_mp, axis=1, keepdims=True) + 1e-8)
         else:
             gz = Zg / (np.linalg.norm(Zg, axis=1, keepdims=True) + 1e-8)
             Zg_probe = Zg
@@ -1388,6 +1414,16 @@ def main():
             np.stack([Za[i] for i in _ti]).astype(np.float32)))
         _lab2 = np.stack([y[n2i[art_games[i]]] for i in _ti])
         out["test_tag"] = micro_prf(_lab2, _s2, _th2)["micro_f1"]
+        if _MA:
+            # A concat probe would need a 2*D query side that does not exist
+            # (queries are single 128-d views), so it is not computed. The
+            # useful diagnostic is whether the packs stayed DIFFERENT: if
+            # pack_cos approaches 1 the arm has degenerated to single-anchor
+            # and any comparison against I-CE is meaningless.
+            _p = Zg / (np.linalg.norm(Zg, axis=2, keepdims=True) + 1e-8)
+            _cs = [float((_p[a] * _p[b]).sum(1).mean())
+                   for a in range(_p.shape[0]) for b in range(a + 1, _p.shape[0])]
+            out["pack_cos"] = float(np.mean(_cs))
         # val-side twin of test_tag (same clean probe, scored on val_g
         # neutral) -- the LEAK-FREE selection tag; replaces v_non_tag, whose
         # tag_split probe had seen most held-out anchors (user 2026-07-23).
