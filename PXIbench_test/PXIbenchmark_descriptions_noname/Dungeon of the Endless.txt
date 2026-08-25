@@ -1,0 +1,5 @@
+**Gloam Bastion** is a roguelike tower defense game set within a loosely connected saga of three titles. It combines procedural level generation with permadeath, so each run unfolds differently and carries lasting risk.
+
+The game centers on guiding survivors from a shattered prison vessel after a crash landing on an unfamiliar alien world. Players move these survivors through multiple floors in an effort to reach escape. At the start of each run, two characters are chosen, and each one brings distinct statistics such as vitality, attack strength, defense, and movement speed, along with a set of special abilities.
+
+Rather than relying on a fixed narrative, the experience is shaped by its systems: randomized layouts, character selection, and the pressure of surviving each attempt while pushing deeper toward the exit.

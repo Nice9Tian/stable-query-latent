@@ -1,0 +1,1 @@
+Lunavo is a multiplayer mobile word game developed by Håkon Bertheussen in 2010. Built around the mechanics of a classic tile-laying word game, it lets players take part in as many as 30 matches at once against friends or randomly matched opponents. The game drew positive reviews from TechRadar and PC World, and by 2011 it had reached nearly eight million users worldwide.

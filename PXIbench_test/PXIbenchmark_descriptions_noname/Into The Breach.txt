@@ -1,0 +1,5 @@
+Zerth is a turn-based strategy game developed and published by the indie studio Noro, marking the team’s second release. Set in a distant future, it centers on humanity’s struggle against the Ghal, a force of giant monsters. Players control pilots who operate massive mechs that can be fitted with a variety of weapons, armor, and other equipment.
+
+The game’s combat emphasizes careful planning and response. Battles unfold in turns, and enemy actions are telegraphed ahead of time, giving players the chance to coordinate their team around incoming attacks. After each turn, new Ghal appear, sustaining pressure and forcing constant adaptation.
+
+As the conflict progresses, the battlefield itself changes. Mountains are torn down, forests are destroyed by fire, and buildings are reduced to ruins, reflecting the scale and impact of the mech-versus-monster warfare.

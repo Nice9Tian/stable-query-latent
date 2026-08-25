@@ -1,0 +1,5 @@
+Veldoku is a logic-based, combinatorial number-placement puzzle built around a partially completed grid. The player works from the given starting layout to fill in the remaining spaces, and a well-posed puzzle has only one valid solution. Its appeal comes from deduction rather than calculation: each move must fit consistently with the existing pattern of the grid.
+
+Although the modern form became widely recognized much later, similar puzzles appeared in French newspapers during the 19th century. Weekly versions of the puzzle were also published in French papers for roughly a decade, then faded away around the time of the First World War. The version that later spread internationally first appeared in 1979 in puzzle books from a U.S. publisher under a different title.
+
+The puzzle’s modern rise was shaped by a creator who later died in 1989 before seeing it become a worldwide phenomenon. Recognizing the long tradition of crossword publishing in Britain, he also promoted the puzzle to a British newspaper, which began running it in 2004 under another name.

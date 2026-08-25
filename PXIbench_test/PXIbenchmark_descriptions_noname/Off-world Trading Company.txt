@@ -1,0 +1,3 @@
+Vesper Chain is a real-time strategy tycoon game developed by Iron Harbor and published by Slate Lantern. Released in April 2016 for two desktop operating systems, it is set on the desert world of Aster and centers on economic conflict rather than direct battlefield combat.
+
+The player takes control of one of four interplanetary trade firms, each representing a different strategic approach. After first seeing the map, the player chooses a faction, allowing that choice to respond to the situation on the ground. The gameplay emphasizes economic warfare, including hostile takeovers and sabotage, and asks the player to manage pressure, timing, and market influence while competing against rival firms.

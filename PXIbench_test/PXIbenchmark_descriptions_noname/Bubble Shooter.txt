@@ -1,0 +1,3 @@
+This title, here referred to as “Vela Pop,” is a clone of an arcade puzzle game first released in 1994. The current rights to the property are held by “Luron Dynamics,” following its acquisition from “Ablestat,” the company that released the original version in 2002.
+
+The core objective is to clear the playfield by forming clusters of three or more “glims” of the same color. Points increase based on how many glims are removed with a single shot, rewarding larger chain clears with higher scores. The game ends if the glims reach the bottom line of the screen. No fixed plot or story premise is included.

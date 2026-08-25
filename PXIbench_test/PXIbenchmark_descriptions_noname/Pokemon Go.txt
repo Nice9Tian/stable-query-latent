@@ -1,0 +1,5 @@
+This 2016 augmented-reality mobile game for iOS and Android combines real-world movement with creature collection, training, and battles. Using GPS, it places the player’s avatar on an in-game map that mirrors the player’s actual location as they explore their surroundings. After creating an account, players can customize their avatar or keep the default appearance.
+
+The map includes special locations and battle sites, and players can attach lure-like enhancements to certain locations to draw in wild creatures, including some that are harder to find. The game encourages movement through physical spaces, with the avatar traveling across the map in step with the player’s real-world position.
+
+At launch and over time, the game became one of the most popular and profitable mobile apps of its year. It surpassed 500 million downloads worldwide, reached more than 147 million monthly active users by May 2018, and had been downloaded over 1 billion times globally by early 2019.

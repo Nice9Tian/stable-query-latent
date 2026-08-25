@@ -1,0 +1,5 @@
+SkyWisp is a 2013 casual mobile game created by a Vietnamese video game artist and programmer working through his own studio, Quillforge. It is a side-scrolling arcade game in which the player guides a small birdlike character, Luma, as it continuously moves to the right through pairs of green pipe-like obstacles.
+
+The central challenge is to pass through gaps between the obstacles, which appear at random heights and are always the same size. Luma falls automatically over time, and the player can only make it rise by tapping the touchscreen, so success depends on carefully timed taps and steady control.
+
+The game later gained notable cultural attention. On New Year’s Eve in 2014, a Google Doodle animated the game alongside other widely searched phenomena of the year, including a major international football tournament, a viral ice-bucket challenge, and a comet lander mission. In 2016, a video game player and livestreamer recreated the game inside a classic platform title through code injection.

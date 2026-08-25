@@ -1,0 +1,5 @@
+This title is a turn-based strategy and real-time tactics game released for Windows in June 2000, and it served as the first entry in a long-running strategy series. It is set in the Sengoku period of Japanese history, a time of prolonged conflict that lasted from the mid-15th century to the early 17th century. The player takes the role of a regional warlord and aims to unite Japan by relying on military force, diplomacy, espionage, trade, and religion, ultimately seeking supreme rule.
+
+Its structure centers on two main modes of play. On the turn-based campaign map, the player moves armies, negotiates with other factions, constructs provincial infrastructure, and carries out other administrative tasks needed to manage their domain. The main campaign asks the player to choose a clan and work toward defeating rival powers across feudal Japan.
+
+Province management plays an important role in this system. Each province can be developed with farmland, border watchtowers, and a castle, while some provinces contain natural resources that can only be exploited by building a mine.

@@ -1,0 +1,5 @@
+This is a two-dimensional, top-down construction and management simulation set in a distant future where humanity has spread across the universe without the ability to travel faster than light. Because worlds and star systems develop in isolation, societies evolve at very different rates, ranging from primitive tribal communities to highly advanced machine-like civilizations that approach godhood.
+
+The player oversees a small settlement of inhabitants, here called the “Veyns,” and must keep the colony alive through a steady stream of randomly generated events. These challenges can come from the environment, from internal problems within the group, or from broader pressures that affect the settlement over time. As the colony grows and survives longer, the situations it faces become progressively more difficult.
+
+Progress is tied to research, which unlocks more advanced “Arclume” technologies and expands the colony’s options for survival and development. The game emphasizes long-term planning, adaptation, and resource management within a customizable world shaped by unpredictable conditions.

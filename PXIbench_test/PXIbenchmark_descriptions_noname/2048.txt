@@ -1,0 +1,3 @@
+This single-player sliding-tile puzzle was created by the Italian web developer Norev Latti and released on GitHub. It takes place on a plain 4x4 grid, where numbered tiles can be moved with the four arrow keys. The aim is to slide matching tiles together until they combine into a tile labeled 2048, though play can continue after that point, allowing even larger numbers to be formed.
+
+The session begins with two tiles already placed on the board, each showing either 2 or 4. After every turn, another tile appears in a random empty space. A tile with the value 2 is generated 90% of the time, while a tile with the value 4 appears 10% of the time. No fixed plot or story premise is presented.

@@ -1,0 +1,5 @@
+This title is a multiplayer first-person tactical extraction shooter developed for Windows, built around a realistic and hardcore approach that also incorporates survival mechanics and elements drawn from online role-playing games. It is set in the fictional city of Varrin, the capital of the Northwind Special Economic Zone in northwestern Russia, during a period spanning 2015 to 2026.
+
+The story background centers on a war between two private military factions, the Helix Unit and the Iron Banner Regiment. Political scandals and the collapse of major corporations lead to the breakdown of society, leaving the city fragmented and overrun in many areas. Parts of the city fall under the control of hostile locals known as the Strays, who occupy and defend sections of the ruined urban landscape.
+
+In its current form, the game includes five modes: Contract Raid, Outcast Raid, PvE, Practice, and Arena.

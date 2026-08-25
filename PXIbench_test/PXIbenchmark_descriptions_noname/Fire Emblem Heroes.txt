@@ -1,0 +1,3 @@
+This free-to-play tactical role-playing game for Android and iOS is a mobile spin-off of a larger fantasy series, bringing together figures from across that universe through a collectible summoning system. It uses a streamlined version of the genre’s usual combat, keeping the strategic, turn-based grid movement while leaving out several of the more complex mechanics found in the mainline entries, including the permanent-loss rule for defeated units.
+
+Battles take place on an 8x6 map, where players guide a small squad of up to four Vardens against opposing teams that can vary in size. The design emphasizes short, accessible encounters and team composition, with the summoning system serving as the main way to expand the roster and assemble different lineups for combat.

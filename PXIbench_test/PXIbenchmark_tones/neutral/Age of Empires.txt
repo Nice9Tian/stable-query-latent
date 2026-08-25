@@ -1,0 +1,5 @@
+Age of Empires is a 1997 real-time strategy game set in the ancient world. Developed by Ensemble Studios and published by Microsoft, it is the first entry in the Age of Empires series and uses the Genie Engine, a 2D sprite-based game engine.
+
+In the game, the player develops a civilization from a small group of hunter-gatherers into a large Iron Age empire. Success depends on gathering resources to pay for units, buildings, and more advanced technologies. Resource management is important because resources do not renew as the game progresses; for example, trees that are cut down do not grow back.
+
+Age of Empires also includes four single-player campaigns. These campaigns are made up of scenarios that must be completed in a linear order, each with specific objectives the player is required to fulfill.

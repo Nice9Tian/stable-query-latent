@@ -1,0 +1,7 @@
+Sid Meier's Civilization is a 1991 turn-based strategy 4X video game developed and published by MicroProse. Originally created for MS-DOS on PC, the game has since undergone numerous revisions for different platforms.
+
+Civilization is a single-player strategy game in which the player assumes the role of the ruler of a civilization. The game begins with one, or occasionally two, settler units, and the objective is to build an empire while competing against two to seven other civilizations. Players directly control individual units and guide the exploration, conquest, and settlement of the game world.
+
+The civilizations included in the game are Americans, Aztecs, Babylonians, Chinese, Egyptians, English, French, Germans, Greeks, Indians, Mongols, Romans, Russians, and Zulus. Civilization has sold 1.5 million copies since release and is regarded as one of the most influential computer games in history for helping establish the 4X genre.
+
+The choice of civilization affects the starting position on the "Play on Earth" map, which in turn influences the resources available in initial cities. However, it does not affect the starting position in random world games or customized world games.

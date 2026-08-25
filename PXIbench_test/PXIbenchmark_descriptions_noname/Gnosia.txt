@@ -1,0 +1,5 @@
+`Starloop Verdict` is a single-player visual novel role-playing game that blends social deduction with RNG-driven events and a timeloop structure. Set aboard a spaceship in the far future, it places the player and several NPCs in a situation where they must identify which passenger has become a hostile `Vorn`, an alien-like presence that kills ordinary humans.
+
+The story takes place in a civilization that has expanded across space and is struggling with the spread of the `Vorn` infestation, a force that compels people to murder others in the name of a deity called `Zor`. The player begins as a refugee traveling away from a planet devastated by this threat, only to face a new crisis during the journey when the ship’s computer, `Astra`, detects an infection on board.
+
+Following protocol, the passengers and crew must work together to deduce which among them is the `Vorn` and place that person into cold sleep. The timeloop design allows new situations to emerge across repeated cycles, giving the game its shifting structure and supporting its deduction-focused gameplay.

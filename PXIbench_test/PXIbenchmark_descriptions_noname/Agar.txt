@@ -1,0 +1,5 @@
+In the game “Veyra,” players control one or more circular cells inside a petri-dish-like arena. The main goal is to grow by consuming randomly generated pellets and smaller player-controlled cells, while avoiding larger cells that can absorb them in turn. This creates a simple but tense survival loop built around movement, positioning, and steady growth.
+
+The browser version offers five different modes: a free-for-all format, a last-survivor arena, a team-based format, an experimental mode, and a party-style mode. The mobile version includes a classic format similar to free-for-all, a battle-royale variant, a burst-oriented rush mode, and a relaxed mode where the other participants are bots that gradually increase in size.
+
+There is no fixed story premise or narrative campaign. The experience is instead defined by competitive growth, changing match formats, and the constant pressure to balance risk and expansion in a shared multiplayer space.

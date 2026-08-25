@@ -1,0 +1,5 @@
+Candy Crush Saga is a free-to-play tile-matching video game developed by King and released on April 12, 2012, originally on Facebook. Later versions were released for iOS, Android, Windows Phone, and Windows 10. The game is a variation of King’s browser game Candy Crush.
+
+The gameplay is based on the “match three” mechanic. Players swap two adjacent candies on the game board to create a row or column of at least three candies of the same color. When a match is made, the candies are removed from the board, and the candies above them fall into the empty spaces. New candies then appear from the top of the board. This can lead to additional matches, which are cleared automatically in the same way.
+
+The game uses a lives system. If the player runs out of lives, they must wait for a period of real-world time while lives regenerate before trying the level again. In its first major expansion, Candy Crush Saga added a separate set of levels in the Dreamworld. Dreamworld levels used a different set of lives from the main game, allowing players to switch between the two modes.

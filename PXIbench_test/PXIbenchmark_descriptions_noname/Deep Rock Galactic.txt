@@ -1,0 +1,7 @@
+This cooperative first-person shooter was developed by a Danish studio and published by a separate publishing label. It first entered early access on February 28, 2018, and later reached full release on May 13, 2020 for Microsoft Windows and Xbox One.
+
+The experience is built around team-based missions set in fully destructible, procedurally generated underground cave networks. Each assignment can differ in terrain layout, goals, environmental dangers, and enemy presence depending on the chosen region and mission category. After arriving by orbital descent capsule, players must complete an objective such as extracting resources or restoring abandoned equipment.
+
+One mission variant places the team in a previously explored cave, where the goal is to repair storage automatons and a derelict descent capsule left behind by an earlier mining crew so that extraction can proceed.
+
+A major challenge during development was creating the procedural world generator. After the game received a positive response, two additional crowdfunding campaigns were successfully supported: the first funded expansions called the Skyhold and Biome additions in 2023, and the second funded the Terrors of Hoxxes and Rival Onslaught additions in 2025.

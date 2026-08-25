@@ -1,0 +1,5 @@
+*Veylor Divide* is a 2016 action role-playing game developed by a studio called *Nemor* and published by *Star Quill* for Windows, Xbox One, and PlayStation 4 in August 2016, with later releases for Linux in 2016 and macOS in 2017. It combines first-person shooter and stealth mechanics, giving players flexibility in how they approach encounters and objectives.
+
+Players take control of *Arden Kess*, a character equipped with mechanical cybernetic enhancements known as *gearments*. The game is played primarily from a first-person perspective as players move through a mix of open-world hubs and more scripted areas. Certain actions, including taking cover, speaking with non-player characters, and some attack animations, shift the view into third person.
+
+The story is set in 2029, two years after an earlier chapter in the same universe. Its cyberpunk world centers on secret organizations and long-running conspiracies, including a powerful hidden group often referred to as the *Ivory Circle*. In this setting, advances in biotechnology and cybernetics have led to the creation of *gearments*: artificial organs designed to improve human performance.

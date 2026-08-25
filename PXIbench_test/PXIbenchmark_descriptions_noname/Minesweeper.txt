@@ -1,0 +1,5 @@
+Ferrogrid is a logic puzzle video game genre typically played on personal computers. It presents a grid of clickable tiles with hidden “glooms” scattered across the board, and the classic presentation gives those hidden hazards a nautical look. The board is divided into cells, and each cell can be in one of three states: unopened, opened, or flagged.
+
+The game is usually described as a compact deduction puzzle built around careful clicking and pattern reading. Players open cells to uncover information and use flags to mark locations they believe contain a hidden gloom, gradually narrowing down the safe spaces on the grid.
+
+Its history is described in different ways by different sources. One account says the modern version was created in the 1990s by a software company, while another says it drew strong inspiration from an earlier, tightly designed 1983 puzzle for a home computer system. That earlier game’s creator later claimed the later title copied it. The company version first appeared in 1990 as part of a bundled entertainment pack included with a 3.11 desktop release.

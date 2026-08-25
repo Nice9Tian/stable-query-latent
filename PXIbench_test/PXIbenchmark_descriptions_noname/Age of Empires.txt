@@ -1,0 +1,3 @@
+This 1997 real-time strategy title is set in the ancient world and was developed by Ensemble Studios and published by Microsoft. Built on a 2D sprite-based engine, it asks the player to guide a small group of hunter-gatherers into a vast Iron Age empire. Progress depends on careful resource management, since new supplies do not appear as the match advances and depleted materials, such as cut trees, do not return.
+
+Victory is achieved by gathering enough resources to fund new units, buildings, and more advanced technology. The game also includes four single-player campaign arcs, each composed of a sequence of scenarios that must be completed in order and that require the player to meet specific objectives.

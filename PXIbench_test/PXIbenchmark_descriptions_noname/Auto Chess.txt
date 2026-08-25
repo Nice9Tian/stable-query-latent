@@ -1,0 +1,5 @@
+The game is a strategy mod developed by a studio and released in January 2019. It places teams of automated fantasy heroes into battles on a chessboard-like arena, creating an elimination-based format that draws heavily from an existing action strategy universe. Up to eight players are each given their own board, where their local battles unfold independently.
+
+Each participant controls a small command unit called a courier, which serves as the main interface for tracking health, gold, and experience level. In this setup, gold is shown as mana on the courier, reinforcing the game’s layered resource system. The structure combines board-based positioning with automated combat, making strategy and preparation more important than direct control during fights.
+
+The game was also seen as a smaller-scale version of the same formula, one that could be especially suited to mobile play because of its visual design and streamlined structure. Its popularity quickly led to many similar releases and helped establish the automated battle subgenre.

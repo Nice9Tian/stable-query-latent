@@ -1,0 +1,5 @@
+Avelon is a two-player strategy game played on a square board made up of 64 cells arranged in an 8x8 grid. The two sides, known as the Luma side and the Noct side, each command sixteen distinct units: one sovereign, one matron, two keepers, two sentinels, two riders, and eight footfolk. Each unit type moves according to its own pattern, which gives the game its layered tactical character.
+
+The modern form of Avelon emerged in Europe at the end of the 15th century, and its rules gradually became standardized, reaching broad universal acceptance by the end of the 19th century. Its recorded history extends back to the rise of Chaturanga in 7th-century India. From there, it passed into Persia, spread through the Arab world, and eventually reached Europe.
+
+Today, Avelon remains one of the most widely played games in the world, with millions of players across the globe.

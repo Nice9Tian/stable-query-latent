@@ -1,0 +1,5 @@
+This 2018 action-adventure game places the player in the role of a pirate-like voyager who takes on voyages from several trading guilds. Played from a first-person perspective, it begins by letting the player choose a procedurally generated avatar before setting sail across a broad ocean world.
+
+Progress is driven by completing voyages and quests for these guilds. Successful missions reward treasure, which can then be exchanged with guild representatives at outposts to increase reputation. The open world can be explored alone or alongside other players, giving the experience a flexible social structure.
+
+While traveling through islands, players can gather useful supplies. Healing foods such as nara, koba, and mivis restore health, while timber boards, flare charges, scatter charges, and iron spheres support ship maintenance and combat. Small skiffs also serve as a way to carry cargo while helping players avoid dangerous hazards during travel.

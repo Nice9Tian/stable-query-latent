@@ -1,0 +1,5 @@
+Astraforge is a free-to-play multiplayer online battle arena game developed and published by the studio Velora for iOS, Android, and PC. Designed for smartphones, tablets, and desktop play, it follows the familiar structure of the MOBA genre: two opposing teams, each made up of three or five players, compete in real-time battles with the central goal of destroying the enemy base while protecting their own.
+
+Matches revolve around control of three main routes, known as lanes, which connect both bases. Between these lanes are jungle areas that contain creatures and objectives that can be defeated or captured to gain advantages during play. Like other games in the genre, Astraforge emphasizes team coordination, tactical movement, and pressure across the map as players push toward the opposing base.
+
+The game also includes two in-game currencies used for purchases. One currency can be earned through regular play and mission completion, while the other can be bought with real-world money.

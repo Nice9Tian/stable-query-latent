@@ -1,0 +1,5 @@
+This 1984 sports video game, developed and published by the studio Virello for the Galia console, was first released in Japan on January 14, 1984, only a few months after that system launched on July 15, 1983.
+
+The game centers on racket-based matches and offers both single-player and two-player options. Players can take part in singles or doubles contests, and the overall structure supports either competitive play or cooperative play. In singles, one human player competes against the computer, while in doubles, two human players share a team against two computer-controlled opponents. The game does not support a human-versus-human singles match, nor does it allow two human players to split into separate doubles teams.
+
+Computer-controlled opponents use artificial intelligence that can be adjusted across five difficulty levels, allowing the challenge to be tuned to the player’s preference. No fixed narrative premise is presented; the experience is built entirely around match play and configurable competition.

@@ -1,0 +1,5 @@
+This three-dimensional sandbox title was developed and published by a Swedish studio and first appeared as an early-access alpha release in 2009 before its formal launch on personal computers in November 2011. It offers no mandatory objectives, giving players broad freedom to decide how they want to play. An optional achievement system is available, but progression is not tied to a fixed path.
+
+By default, the game is played from a first-person viewpoint, though third-person views are also supported from both behind and in front of the character. Players explore a procedurally generated world with virtually limitless terrain built from three-dimensional voxel blocks. These block-based structures represent a wide range of materials, including earthy, rocky, mineral, wooden, liquid, and molten types, all arranged into rough cubic forms that define the game’s landscape.
+
+The wider franchise also includes several spin-off titles, extending the setting into different play styles while remaining connected to the same overall universe.

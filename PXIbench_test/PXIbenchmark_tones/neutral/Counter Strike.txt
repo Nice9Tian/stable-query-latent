@@ -1,0 +1,7 @@
+Counter-Strike, also known as Half-Life: Counter-Strike or Counter-Strike 1.6, is a 2000 tactical first-person shooter developed by Valve Corporation and published by Sierra Studios. It is the first installment in the Counter-Strike series.
+
+The game is a team-based multiplayer first-person shooter in which players take on the roles of either Terrorists (T) or Counter-Terrorists (CT). Each match begins with both teams spawning at the same time, using one of eight default character models, with four assigned to each side. At the start of a round, each player has $800, two magazines of ammunition, a knife, and a handgun: a Heckler & Koch USP for Counter-Terrorists or a Glock 18c for Terrorists.
+
+Counter-Strike: Condition Zero, released in 2004, was the first follow-up and featured a single-player campaign that received mixed reviews. Some weapon models in Counter-Strike differ from their real-world counterparts because Le had to make assumptions about how certain weapons would behave in animations due to limited information.
+
+By August 2004, Counter-Strike had generated $75 million in revenue and was estimated to have two million players worldwide.

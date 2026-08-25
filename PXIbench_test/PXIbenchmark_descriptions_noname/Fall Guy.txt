@@ -1,0 +1,5 @@
+“Wobble Quest” is a free-to-play platform battle royale in which up to 32 players compete in fast-paced rounds across a three-dimensional arena. The experience centers on colorful, jellybean-like “morphs” that can jump, dive, dive-slide, piggyback, and grab as they navigate obstacle-filled stages and try to outlast rivals.
+
+The game offers two main competition formats, “Arcade” and “Crownfall,” both built around elimination-based multiplayer matches. In certain stages, players can also collect temporary “burst” upgrades that grant special abilities for a limited time or until the round ends. To support its free-to-play structure, the game uses a season pass system with both free and premium reward tracks, with the premium track unlocked through real-world payment.
+
+Originally launched on home computer and console platforms, “Wobble Quest” later expanded to additional systems and added full cross-platform play across all supported platforms. It was also released on mobile through a storefront relaunch, reaching Android worldwide and iOS in the European Union.

@@ -1,0 +1,3 @@
+Released on 19 June 2008 for multiple desktop and mobile platforms, “Vellora” is a puzzle game built around a simple progression loop: solve rounds, earn coins, and use that currency to create and improve a virtual aquarium. The player spends in-game money on different aquatic creatures, decorative elements, and comfort items that make the habitat more appealing.
+
+Each round takes place on a separate grid and focuses on matching gems to complete objectives. A key goal is to earn golden tiles by making at least one match over each target tile. Progress is tracked through three meter gauges, and filling them unlocks one of three trophies: bronze, silver, or gold.

@@ -1,0 +1,5 @@
+In the multiplayer puzzle title “Virel 99,” players compete in a battle royale format built around fast-paced block placement. The game was released in 2019 and adapts the classic formula for online play, allowing 99 participants to face one another at the same time with the goal of being the last one remaining.
+
+The core gameplay centers on moving and dropping shaped pieces called “glimms” onto a board. Players rotate these pieces and position them to complete full rows, which then clear from the playfield. Success depends on managing the stack efficiently while reacting to the pressure of simultaneous competition. If the pieces rise too high and spill past the top edge of the board, the player is eliminated.
+
+Rather than following a fixed plot or story premise, the experience focuses entirely on competitive puzzle mechanics, speed, and survival within a shared multiplayer match.

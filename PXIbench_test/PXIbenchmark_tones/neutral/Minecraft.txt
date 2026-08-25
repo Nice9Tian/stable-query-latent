@@ -1,0 +1,7 @@
+Minecraft is a sandbox game developed and published by the Swedish company Mojang Studios. It was first released as an early access title in public alpha in 2009 and later formally released in November 2011 for personal computers.
+
+The game is a three-dimensional sandbox experience with no required goals, allowing players significant freedom in how they choose to play. It includes an optional achievement system. By default, gameplay is shown from a first-person perspective, though third-person views are also available, both from behind and from the front.
+
+In Minecraft, players explore a procedurally generated world with virtually infinite terrain. The environment is built from three-dimensional blocks represented as voxels. These blocks form rough 3D objects, mainly cubes, and represent different materials such as dirt, stone, ores, logs, water, and lava.
+
+Minecraft has also expanded into a wider franchise that includes spin-off games such as Minecraft: Story Mode, Minecraft Dungeons, and Minecraft Legends.

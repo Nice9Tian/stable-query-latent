@@ -1,0 +1,5 @@
+Voryn is a fantasy MMORPG developed by the Korean creator Jae Sol and his studio, Xel Forge. It launched in Korea on January 15, 2013, and later arrived in Europe and North America on September 16, 2014.
+
+The game uses a seamless world rather than separated zones, and it can be played from either a first-person or third-person perspective. Its presentation includes modern visual effects such as tessellation and ambient occlusion, along with a physics engine that supports its world simulation.
+
+A notable feature of Voryn is player collision, which is uncommon in many online role-playing games. As a result, movement can be blocked by other players or by non-player characters. The game also emphasizes open-world combat: many of its regions allow player-versus-player conflict, and recurring world events further encourage it, including the Halyon War and the Abyssal Assault.

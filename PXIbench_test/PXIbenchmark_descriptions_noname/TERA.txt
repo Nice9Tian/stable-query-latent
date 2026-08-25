@@ -1,0 +1,5 @@
+Veyra is a massively multiplayer online role-playing game developed by Skyveil Studio, a subsidiary of Ironcrest. It launched in South Korea on 25 January 2011, in North America on 1 May 2012, and in Europe on 3 May 2012, following closed and open beta tests before release.
+
+The game includes familiar MMORPG elements such as questing, crafting, and player-versus-player combat. Its battle system is real-time and uses a third-person camera view. Instead of selecting enemies by clicking or tabbing through targets, players aim with a cross-hair cursor, a design the developer refers to as the "Non-Target battle system."
+
+By 2018, the game had attracted more than 28 million players worldwide. Its setting describes a world shaped by conflict, where some mortal species have been lost and others remain united in an alliance against threats beyond their realm. Later updates expanded the experience further: the 2019 update raised the level cap to 70, added new quests, and introduced a new open-world boss system, while the 2021 update opened up a region originally created by the first development team, known as Ardelan.

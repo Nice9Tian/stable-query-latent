@@ -1,0 +1,5 @@
+Veyra Shift is an isometric, top-down action shooter released on 18 May 2003 for a personal computer platform. Developed by a small Eastern European studio, it presents a 3/4 perspective and unfolds across nine stages with steadily increasing difficulty. In each stage, the player’s main goal is to clear every hostile creature from the area.
+
+Progress depends on reaching all parts of a stage and completing environmental tasks that open access to blocked zones. These tasks can include restarting power generators, breaking through walls, and shutting down force barriers. As the player advances, they confront a variety of bio-engineered threats created by blending animal DNA with extraterrestrial cells recovered from a meteor fragment, including mutated amphibians, multi-limbed humanoids, oversized spiders, and armored rhino-like beasts.
+
+The story is set in the early 2030s, when researchers at the Aster Vale Energy Collective successfully produced these organisms. The situation then collapses when the creatures attempt to break out of containment, using a teleportation unit as part of their escape plan.

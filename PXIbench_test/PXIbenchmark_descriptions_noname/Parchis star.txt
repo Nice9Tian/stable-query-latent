@@ -1,0 +1,3 @@
+Ludara is a Spanish board game in the Cross and Circle family, adapted from an earlier Indian game. It is not based entirely on chance, because the four pawns under each player’s control require a degree of strategy. The standard version supports up to four players and uses a board with 68 spaces, divided into four colors: yellow, blue, red, and green. Larger variants are also available, including six-player boards with 102 spaces that add orange and purple, and eight-player boards with 136 spaces that can be found in larger toy stores.
+
+Traditionally, each player uses a roll-cup to shake and cast the dice. In modern versions, some applications also support real-time multiplayer play, allowing users to compete against opponents from around the world.

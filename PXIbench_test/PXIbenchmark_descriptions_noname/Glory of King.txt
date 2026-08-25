@@ -1,0 +1,5 @@
+This mobile multiplayer online battle arena was developed by the fictional Varo Studio Group and published by the fictional Kairo Games label for iOS, HarmonyOS NEXT, and Android. It first launched in mainland China on 25 October 2015.
+
+In play, the game lets each player control a character with unique abilities and compete against non-player characters and opposing players to earn experience points and gold. Experience is used to unlock new abilities or strengthen existing ones, and each character can reach a maximum level of 15.
+
+The game emerged in a market where mobile competitive games were still uncommon. After a major fictional parent company fully acquired another fictional studio in 2015, it asked that studio to create a mobile version of a well-known desktop MOBA. At the time, one other notable mobile title from a separate fictional developer was among the few examples in the genre. The parent company aimed to capture the underserved mobile market, but the studio declined, arguing that competitive gameplay was not yet well suited to smartphones and that the original experience could not be faithfully reproduced on mobile devices.

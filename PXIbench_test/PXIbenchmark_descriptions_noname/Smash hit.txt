@@ -1,0 +1,3 @@
+Vesh is a 2014 first-person rail shooter developed and published by a Swedish indie studio. Across 11 stages, the player advances along a fixed path and fires `luma orbs` to break `glassine barriers` while carefully managing a limited supply. The experience ends when the player runs out of orbs, and colliding with an obstacle causes a loss of ten orbs.
+
+More orbs can be collected by shooting at `prisms`, with the amount gained depending on each prism’s shape. The game focuses on forward movement, precision, and resource management, and it does not present a fixed plot or story premise.

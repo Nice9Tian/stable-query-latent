@@ -1,0 +1,5 @@
+This 1991 turn-based 4X strategy title was developed and published for MS-DOS on PC, and later received multiple revisions for other platforms. It is a single-player game in which the player rules a growing empire, beginning with one, or sometimes two, starter units and competing against two to seven rival civilizations.
+
+The core experience centers on controlling individual units to explore the world, settle new territory, and expand through conquest and development. The game features a roster of 14 selectable historical-style factions, though the choice does not change the start position in random-world or custom-world games. On an Earth-like map, however, the selected faction affects the initial location and the resources available in the opening cities.
+
+Released to strong success, the title sold about 1.5 million copies and became highly influential for helping define the 4X strategy genre.

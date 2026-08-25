@@ -1,0 +1,5 @@
+Pokémon Go is a 2016 augmented reality mobile game developed and published by Niantic in partnership with Nintendo and The Pokémon Company for iOS and Android devices. The game uses GPS to place the player in a real-world map environment, where they can locate, capture, train, and battle Pokémon.
+
+After creating an account, players can customize their avatars or keep the default appearance. These avatars are shown on the game map according to the player’s GPS location, and they move across the map as players explore their surroundings in real life. The map includes PokéStops and Pokémon Gyms, and players can equip PokéStops with Lure Modules to attract wild Pokémon, including potentially rare ones.
+
+Pokémon Go became one of the most popular and profitable mobile apps of 2016, with over 500 million downloads worldwide. By May 2018, it had more than 147 million monthly active users, and by early 2019 it had been downloaded more than 1 billion times worldwide.

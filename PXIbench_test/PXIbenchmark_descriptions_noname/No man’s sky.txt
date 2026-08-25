@@ -1,0 +1,5 @@
+**Astra Veil** is an action-adventure survival game presented from either a first-person or third-person perspective. It centers on four main pillars: exploration, survival, combat, and trading. The player assumes the role of a humanoid alien explorer known in-game as a **Veylar** or **Nullborn**, stranded in an uncharted universe.
+
+The journey begins on a randomly generated planet near a crashed spacecraft at the edge of the galaxy. Equipped with a survival **skyframe** that includes a jetpack and a multifunction **arcforge**, the player can scan environments, mine and gather resources, and defend against hostile creatures and other threats. The protagonist awakens on a remote world with no memory and must first locate the damaged starship.
+
+Once the ship is found, its onboard system directs the player to carry out repairs and collect the materials needed to fuel a hyperspace jump to another planetary system. During this process, the player encounters members of three alien civilizations: the **Grel**, the **Korath**, and the **Veyn**, each of which inhabits the galaxy and contributes to the wider interstellar setting.

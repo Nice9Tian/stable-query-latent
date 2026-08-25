@@ -1,0 +1,3 @@
+`Virelix` is a 2013 free puzzle game for mobile devices that focuses on arranging color gradients across a grid of squares. Some squares begin with colors already placed, while others are left empty for the player to complete. The game was created by a small studio formed by two independent developers.
+
+The core objective is to fill the blank spaces from a palette so that the colors form smooth sequences both horizontally and vertically. Progress depends on placing the colors in the correct order, with each level cleared only when the grid creates a consistent visual flow. The available source does not identify any fixed storyline or narrative premise.

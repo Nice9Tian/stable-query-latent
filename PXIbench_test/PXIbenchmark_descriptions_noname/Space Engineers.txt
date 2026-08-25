@@ -1,0 +1,7 @@
+AstraForge is a voxel-based sandbox title that supports both single-player and multiplayer play. It does not present a fixed objective or a traditional end point. Instead, players are encouraged to define their own goals and work toward them through engineering, whether in orbital settings, on planetary surfaces, or across environments such as asteroids and moons.
+
+Progress is built through the careful placement of modular components, along with the use of in-game systems and mechanical interactions. These elements combine to let players construct increasingly complex creations over time, shaping their own solutions and strategies rather than following a linear path.
+
+For those who prefer more directed content, the game also includes built-in non-player interactions and a selection of story-driven scenarios. In addition, players can access custom instances made by others, expanding the available experiences beyond the core sandbox framework.
+
+Before play begins, users choose or join a world and adjust its settings. Advanced creation options allow changes to gameplay variables such as tool and machine efficiency, inventory capacity, and procedural generation. When enabled, this system supports the creation of an effectively infinite universe, offering a highly customizable foundation for experimentation and long-term play.

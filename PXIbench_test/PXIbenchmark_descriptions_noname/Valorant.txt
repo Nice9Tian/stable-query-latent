@@ -1,0 +1,5 @@
+Asteris is a 2020 first-person tactical hero shooter developed and published by Riot Games. It is free to play and draws inspiration from the Counter-Strike series, sharing mechanics such as a buy menu, spray patterns, and reduced accuracy while moving.
+
+Set in the near future, the game is built around team-based matches in which players choose from a roster of Operatives, characters inspired by different countries and cultures around the world. In the main mode, each match divides players into attacking and defending teams, with five players on each side.
+
+The game also introduced a competitive feature called Paragon, which first appeared in alpha testing in Brazil before being expanded worldwide by 2024.

@@ -1,0 +1,3 @@
+Velor is a multiplayer board game designed by Klaus Teuber. It was first published in Germany in 1995 by Franckh-Kosmos Verlag (Kosmos) under an earlier German title. In the game, players take the role of pioneers establishing new communities on a fictional island, gradually expanding across the map by building small hubs, larger hubs, and connecting routes.
+
+The play area is made of hexagonal terrain tiles arranged randomly at the start of each session, giving each game a different layout. The set includes an official two-player variant, and an online service provides a Java application that acts as a portal for internet play with other members. In November 2019, Niantic announced development of an augmented-reality mobile project based on the same property.

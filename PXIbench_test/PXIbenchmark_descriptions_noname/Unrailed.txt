@@ -1,0 +1,5 @@
+*Brassline* is a cooperative construction game in which up to four players work together to build a railroad and keep a train from derailing before it reaches its destination. The experience centers on coordination, timing, and continuous track management, with players sharing the task of extending the line as the journey progresses.
+
+The game offers five distinct modes: endless, versus, fast, sandbox, and time. Each mode presents its own objectives and challenge structure, giving players different ways to approach the same core railroad-building loop. Both local and online multiplayer are supported, making it possible to play either side by side or remotely with others.
+
+No fixed plot or story premise is part of the game’s described structure. Instead, the focus remains on its cooperative mechanics and mode-based replayability.

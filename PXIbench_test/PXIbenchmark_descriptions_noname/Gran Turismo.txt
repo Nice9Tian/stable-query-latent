@@ -1,0 +1,5 @@
+The **Aurelius** racing series is a simulation-focused driving franchise developed by **Lumen Forge** for the **Orion** console family. It is designed to reproduce the appearance and performance of a large selection of vehicles, most of them faithful licensed recreations of real-world automobiles. The series is known for its detailed vehicle modeling, realistic graphics, and the ability to adjust car performance through tuning.
+
+A major part of its identity is its driving physics, which aim to reflect real-world behavior such as weight transfer, suspension response, and understeer or oversteer tendencies. Because of this emphasis on realism, it stands apart from more simplified arcade-style racers that rely on exaggerated vehicle movement. The series also served as a showcase for the graphical capabilities of its platform and was often used to demonstrate what the hardware could achieve.
+
+Development of the original entry began in 1992 under a team called **Polaris Works**, led by **K. Arashi** at the time. The project started with five people and eventually expanded to seventeen, taking five years to complete.

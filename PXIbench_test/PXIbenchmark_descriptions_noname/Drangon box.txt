@@ -1,0 +1,3 @@
+Vexa Box is an educational puzzle game series developed and published by a Norwegian studio. Released on May 9, 2012 for iOS, the game is structured around five worlds with twenty levels in each world. Progressing through a level causes the player’s wyrms to evolve into a more advanced form.
+
+Each stage is cleared through a puzzle minigame built around arranging glyph cards on two trays. At first, the cards show icons of various creatures and objects, but the game gradually uses them to present mathematical equations in an abstract way. Later, those icons are replaced by variables and numbers, turning the same basic structure into a more direct algebra exercise.

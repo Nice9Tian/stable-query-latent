@@ -1,0 +1,5 @@
+This 2015 puzzle-strategy title places the player in charge of building an efficient rail transit system for a rapidly expanding city. Set across several selectable cities, the game focuses on network design and constant adaptation rather than narrative progression. Its interface and visual presentation are modeled after modern transit maps, using straight lines and bold colours to create a clean, minimalist look.
+
+During play, stations with different geometric forms appear at random across the map. Passengers also appear as smaller shapes beside stations, and each passenger’s form indicates the type of station they need to reach. The player must connect stations, manage routes, and keep the network functioning smoothly as the city grows and new demands emerge.
+
+The experience is structured as an ongoing logistical puzzle, with no fixed plot or story premise. The main challenge lies in maintaining an efficient transport system under increasing pressure, balancing simplicity, coverage, and flow within the limits of the map.

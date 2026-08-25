@@ -1,0 +1,5 @@
+“Luma Park” is a business simulation and construction-management game centered on designing and running a theme park. Players can build a variety of rides and roller coasters, shaping their own park experience with a focus on creative planning and management. On the computer version, players begin by creating their own avatar before starting play.
+
+In its Sandbox mode, the game gives players an empty plot of land and asks them to build a park from scratch. This approach emphasizes freedom of construction and experimentation, letting players develop their own amusement park without being constrained by a fixed starting layout.
+
+The game was first released worldwide on 17 November 2016 for Windows, and a console edition later arrived on 10 November 2020 for PlayStation 4, Xbox One, and Xbox Series X/S.

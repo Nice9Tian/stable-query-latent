@@ -1,0 +1,5 @@
+Tetris 99 is a 2019 battle royale puzzle video game developed by Arika and published by Nintendo for the Nintendo Switch. It is an online multiplayer adaptation of Tetris that brings the traditional falling-block formula into a competitive format for 99 players.
+
+In the game, players move and drop puzzle pieces called tetrominoes onto a playing board. As in classic Tetris, the pieces can be rotated and positioned to complete horizontal rows. When a row is filled completely, it is cleared from the board. Players must continue managing their stack carefully, since they lose if the tetrominoes overflow past the top of the board.
+
+The game’s central mode is a multiplayer battle royale in which 99 players compete at the same time, with the goal of being the last player remaining. No fixed plot or story premise is provided in the source material.

@@ -1,0 +1,7 @@
+Vexline is a 2010 arcade-style racing and vehicular combat game released for Microsoft Windows, PlayStation 3, and Xbox 360. Developed by the studio Arclight Forge and published by Meridian Play, it combines high-speed racing with direct car-to-car combat.
+
+Its core gameplay is built around combat-driven racing. During a match, cars can collect eight different types of powerups, each offering a distinct tactical advantage. A vehicle can hold up to three powerups at once, and the player may switch between them, activate them whenever needed, or discard them to make room for others.
+
+The driving model uses arcade-style handling rather than strict simulation, while still featuring real-world cars and locations. The tracks are simplified versions of actual environments, including canal areas inspired by Los Angeles and several sections modeled after London. This gives the game a recognizable setting while keeping the pace fast and accessible.
+
+One of its match types, called Orbit Run, functions as a quick-play option for players who want to enter a race immediately. Overall, Vexline focuses on blending familiar automotive settings with aggressive combat and straightforward pickup-and-play competition.

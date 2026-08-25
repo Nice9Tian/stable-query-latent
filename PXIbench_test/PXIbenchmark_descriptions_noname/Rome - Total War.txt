@@ -1,0 +1,7 @@
+This strategy title combines turn-based empire management with real-time tactical combat. It was developed by The Creative Assembly and first released on Microsoft Windows in 2004, with publishing rights later transferring from Activision to Sega.
+
+The game is built around two main layers of play. On the strategic side, the player moves across an overhead campaign map in turns, guiding a faction through diplomacy, economic planning, government management, and military expansion. Territory is controlled by capturing and holding settlements, which serve as the basis for regional power. New cities can be taken either by training soldiers in already controlled cities and using them to besiege enemy settlements, or by bribing a city into changing allegiance.
+
+When armies meet, the game shifts into real-time battles on 3D battlefields. These encounters emphasize tactical positioning, timing, and battlefield control, complementing the broader strategic layer. The campaign spans from 270 BC to 14 AD, covering the rise and final centuries of a republican order and the early decades of an imperial era in the ancient Mediterranean world.
+
+Across the campaign, the player manages a wide-ranging map that includes most of Europe, North Africa, and the Near East. Progress is driven by meeting objectives while balancing military conquest with the demands of governance and resource management.

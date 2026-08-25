@@ -1,0 +1,5 @@
+*The Sims* is a 2000 social simulation video game developed by Maxis and published by Electronic Arts. It lets players create and control virtual people known as “Sims” and manage their daily lives in a suburban environment. Built as an agent-based artificial life program, the game features advanced artificial intelligence that allows Sims to respond independently to outside conditions, although player intervention is often needed to keep them on track.
+
+The game is structured around open-ended play rather than a fixed victory condition. There is no true way to win, giving it effectively unlimited replay value and allowing players to continue indefinitely. When the free will option is enabled, Sims can autonomously interact with their surroundings, but most of these actions can still be overridden by the player through the action queue at the top of the screen.
+
+*The Sims* was commercially successful, selling more than 41 million copies worldwide across the original game and its expansions by 2004, and an estimated 70 million copies worldwide overall, making it one of the best-selling PC games of all time.
